@@ -20,6 +20,9 @@
           vect: ["{\\overrightarrow{#1}}",1],
         }
     },
+    CommonHTML: {
+      scale: 90
+    },
     extensions: ["tex2jax.js"],
     jax: ["input/TeX", "output/HTML-CSS"],
     tex2jax: {

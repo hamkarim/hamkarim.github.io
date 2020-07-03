@@ -68,7 +68,14 @@ function showhideFunction() {
     "HTML-CSS": { fonts: ["TeX"] }
   });
 </script-->
-      
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  CommonHTML: {
+    scale: 80
+  }
+});
+</script>
 <!-- script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script-->
 <script type="text/javascript"
@@ -168,7 +175,7 @@ In an affine space, there is no distinguished point that serves as an origin. He
 </blockquote>
 
 <p>
-អំណេះតទៅ យើងសន្មតការកំណត់សរសេរអក្សរ $\E$ ឬ $\vect{\E}$ តាងអោយលំហវ៉ិចទ័រមួយកំណត់លើកាយ $\mathbb K$ (អាចជា $\R$ ឬ $\Cc$) ហើយការសរសេរអក្សរ $E$ តាងជាចំណុចមួយរបស់លំហអាហ្វីន $\calE$ -- លើកលែងតែមានការកំណត់ផ្សេងពីនេះ។
+អំណេះតទៅ យើងសន្មតការកំណត់សរសេរអក្សរ $\E$ ឬ $\vect{\E}$ តាងអោយលំហវ៉ិចទ័រមួយកំណត់លើកាយ $\mathbb K$ (អាចជា $\R$ ឬ $\Cc$) ហើយការសរសេរអក្សរ $E$ តាងអោយចំណុចមួយរបស់លំហអាហ្វីន $\calE$ -- លើកលែងតែមានការកំណត់ផ្សេងពីនេះ។
 </p>
 
 <h2 class="frame-sect">1. និយមន័យ និងលក្ខណៈបឋមៗ  </h2> <!-- \section{និយមន័យ និងលក្ខណៈបឋមៗ}  -->
@@ -197,33 +204,51 @@ In an affine space, there is no distinguished point that serves as an origin. He
 </div>
 </div>
 
+<p style="text-indent: 0px"><b>ចំណាំ :</b>
+    បើ $\mathcal{E}$ ជាលំហអាហ្វីន តាមទិសដៅ $\vect{\E}$ នោះធាតុរបស់ $\mathcal{E}$ ហៅថា <b>ចំណុច</b> ហើយគេកំណត់សរសេរដោយអក្សរធំ $A,B, C,D,M,N,P$, $\cdots$។ ចំណែកឯធាតុរបស់លំហ $\vect{\E}$ ហៅថា <b> វ៉ិចទ័រ</b> ហើយកំណត់សរសេរដោយអក្សរតូច មានសញ្ញាព្រួញនៅខាងលើ គឺ $\vec{i}, \vec{j}, \vec{k}, \vec{u}, \vec{v}, \cdots $។
+    </p>
 
+<example><b>ឧទាហរណ៍ .</b>
+    ពិនិត្យមើលឧទាហរណ៍ខាងក្រោម៖
+<ol class="parenthnum">
+    <li> បើ $\dim\big(\vect\E\big)=1$ នោះគេនិយាយថា  $\mathcal{E}$ គឺជា <a href="####ssssss">បន្ទាត់អាហ្វីន</a>។ </li>
+    <li>បើ $\dim\big(\vect\E\big)=2$ នោះគេថា $\mathcal{E}$ គឺជា <a href="https://en.wikipedia.org/wiki/Affine_plane_(incidence_geometry)">ប្លង់អាហ្វីន</a>។</li>
+    <li>គ្រប់លំហវ៉ិចទ័រ $\vect{\E}$ កំណត់លើកាយ $\mathbb{R}$ តាមន័យកាណូនិច អាចចាត់ទុកថាជាលំហអាហ្វីនមួយ ដែលភ្ជាប់ទៅនឹងខ្លួនវា នៅពេលណាគេមានអនុវត្តន៍ដូចតទៅ៖ <!-- peut-être considéré, canoniquement, comme un espace affine attaché à lui même, lorsqu' on considère l'application suivante:-->
+    	$$
+    	\begin{array}{ccl}
+            \vect\E\times \vect\E  &\longrightarrow & \vect\E\\
+            (a,b) &\longmapsto & \vect{ab} = b-a
+            \end{array}
+        $$ ដែលផ្ទៀងផ្ទាត់ទៅនឹងលក្ខខណ្ឌនៃនិយមន័យ។ <!--qui vérifie les conditions de la définition. -->
+</li> 
+    </ol>
+</example>
+    
+    
+<p style="text-indent: 0px"><b>ចំណាំ: </b> ដោយសារបែបនេះហើយ ទើបធាតុរបស់លំហវ៉ិចទ័រកំណត់លើកាយ $\mathbb{R}$ នៅក្នុងបរិបទខ្លះ ត្រូវបានចាត់ទុកថាជា ចំណុច ឬក៏ជា វ៉ិចទ័រ។
+    </p>
+    
+<h2> 1.1 វិធានគណនា</h2>
+<p>
+    យក $\mathcal{E}$ ជាលំហអាហ្វីនភ្ជាប់ទៅនឹងលំហវ៉ិចទ័រ $\vect{\E}$ ។ ដូច្នេះគេបាន
+<ol class="parenthnum">
+    <li>$\forall M, N \in \mathcal{E},\ \vect{AM}= \vect{AN}\Longrightarrow  M = N$ </li>
+	<li>$\forall A, B \in \mathcal{E},\  \vect{AB}  =\vect{0} \Longleftrightarrow A=B$</li>
+	<li> $\forall A, B \in \mathcal{E},\ \vect{BA} = -\vect{AB}$</li>
+	<li>$\forall A, B, C \in \mathcal{E},\ \vect{BC} = \vect{AC} - \vect{AB}$</li>
+	<li>ចំពោះគ្រប់ចំណុច $A\in \mathcal{E}$ និងគ្រប់វ៉ិចទ័រ $\vect{u} \in \vect\E$ នោះមានចំណុចតែមួយគត់ $M\in \mathcal{E}$ ដែល $\vect{AM} = \vect{u}$</li>
+	<li>បើ $A$ និង $B$ គឺជាចំណុចពីររបស់ $\mathcal{E}$ នោះមានវ៉ិចទ័រតែមួយគត់ $\vect{u}\in \vect\E$ ដែល $\vect{AB} =  \vect{u}$</li>
+    </ol>
+    
+    </p>
+    
 
 <example>
 <p> <i>
-	<b>Example</b> - For what numbers $b$ is the following matrix positive semidefinite?
-\[ M =
-\left(\begin{array}{ccc}
-2 & -1 & b \\
--1 & 2 & -1 \\
-b & -1 & 2
-\end{array}\right)
-\]
+	<b>Example</b> - 
 	</i>
 	 </p>
 <p>
-<b>ចម្លើយ -</b> យក $x\in \mathbb{R}^3$ គេបាន៖
-  \begin{eqnarray*}
-	x^T M x &=& (m\;\; n\;\; p)\begin{pmatrix} 2 & -1 & b \\
--1 & 2 & -1 \\
-b & -1 & 2 \end{pmatrix} \begin{pmatrix} m\\ n\\ p \end{pmatrix} \\
-	&=& \begin{pmatrix} 2m-n+bp & -m+2n-p & bm-n+2p \end{pmatrix}\begin{pmatrix} m\\ n\\ p \end{pmatrix} \\
-	&=& m(2m-n+bp) + n(-m+2n-p) + p(bm-n+2p)\\
-	&=& 2m^2 - mn + bmp - mn + 2n^2 - np + bmp - np + 2p^2\\
-	&=& 2(m^2+n^2+p^2) + 2(bmp - mn - np)
-	\end{eqnarray*}
-
-	</p>
 </example>
 
 

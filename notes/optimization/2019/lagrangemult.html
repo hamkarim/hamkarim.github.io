@@ -64,6 +64,9 @@ function showhideFunction() {
       bold: ["{\\bf #1}",1],
       Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""]
     },
+    CommonHTML: {
+      scale: 90
+    },
     tex2jax: {
       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
       processEscapes: true,
@@ -71,8 +74,9 @@ function showhideFunction() {
     }
   });
 </script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+<script type="text/javascript"  async
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script><!-- src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"-->
 
 <!-- To get it to work in old versions of Internet Explorer, you need to append this script to the head (Important if you need it to work in older versions of IE!): -->
  <!--[if lt IE 9] -->
@@ -136,7 +140,7 @@ October
 <p>
 <ol class="parenthnum">
 	<li>
-The <a href="https://en.wikipedia.org/wiki/File:LagrangeMultipliers2D.svg"><b>Lagrange multiplier technique</b></a> lets us find the maximum or minimum of a scalar field $f: \mathcal S \subseteq \mathbb{R}^n \longrightarrow \mathbb R$, when there is some constraints on the input values you are allowed to use.
+<a href="https://en.wikipedia.org/wiki/File:LagrangeMultipliers2D.svg"><b>វិធីសាស្ត្ររកមេគុណឡាហ្ក្រង់ </b> (Lagrange multiplier technique)</a> អាចអោយយើងរកបានចំណុចបរមាធៀបរបស់​ដែនស្កាលែរ  $f: \mathcal S \subseteq \mathbb{R}^n \longrightarrow \mathbb R$ នៅពេលណាគេមានកម្រិតលក្ខខណ្ឌមួយចំនួន កំណត់លើអថេរមិនអាស្រ័យ។ <!--lets us find the maximum or minimum of a scalar field $f: \mathcal S \subseteq \mathbb{R}^n \longrightarrow \mathbb R$, when there is some constraints on the input values you are allowed to use.-->
 <br>
 
 This technique only applies to constraints that look something like this:
@@ -228,10 +232,10 @@ and sufficient condition). </li>
   By using the way of relaxation with indicator function, we can turn the constrained problem into an unconstrained problem :
   $$
 I_{-}(x)= \begin{cases} 0&\mbox{if } x \leq \infty \\
-  \infty & \mbox{if } x > 0 \end{cases}, \quad \text { and } \quad
+  \infty & \mbox{if } x \gt 0 \end{cases}, \quad \text { and } \quad
 I_{0}(x)=\left\{\begin{array}{cl}
 0 & \text { if } x=0 \\
-\infty & \text { if } x>0
+\infty & \text { if } x \gt 0
 \end{array}\right.
   $$
   Thus, we get

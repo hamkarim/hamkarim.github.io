@@ -353,6 +353,11 @@ text-align: left;
 font-size: 16px;
 font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content'
 }
+ol li{
+    /* margin-bottom:1em;*/
+    font-size:16px;
+    font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content'
+}
 ol.parenthalpha li {
 counter-increment: section;
 /*display: table-row;*/
