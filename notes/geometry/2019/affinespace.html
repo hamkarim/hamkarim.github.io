@@ -45,9 +45,9 @@
 
 <!-- Script to show and hide proof -->
 <script type="text/javascript" src="../../../assets/js/showhide.js"></script>
-    
+
 <!-- For local function, define to exchange text -->
-<script> 
+<script>
 function showhideFunction() {
     document.getElementById('getid').innerHTML === '[Hide proof]' ? document.getElementById('getid').innerHTML = '[Show proof]' : document.getElementById('getid').innerHTML = '[Hide proof]';
 }
@@ -69,23 +69,16 @@ function showhideFunction() {
   });
 </script-->
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  CommonHTML: {
-    scale: 80
-  }
-});
-</script>
 <!-- script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script-->
 <script type="text/javascript"
    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,https://hamkarim.github.io/MathJax/config/local/local.js">
 </script>
-<!--script type="text/javascript"
+<!--script type="text/javascript" config=TeX-MML-AM_CHTML
    src="">
 </script-->
-      
-      
+
+
 <!--
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
 
@@ -190,11 +183,11 @@ In an affine space, there is no distinguished point that serves as an origin. He
 \]
 ផ្ទៀងផ្ទាត់ស្វ័យសត្ស ដូចខាងក្រោម៖ </p>
 <ol class="parenthnum">
-    <li> យកចំណុចទូទៅ $A\in \mathcal{E}$ នោះ អនុវត្តន៍មួយ
+    <li>យកចំណុចទូទៅ $A\in \mathcal{E}$ នោះ អនុវត្តន៍មួយ
             $\varphi_A:\; \mathcal{E} \longrightarrow  \vect\E$ ដែល $\forall M\in \mathcal E:  M \longmapsto \vect{AM}$
         ជាអនុវត្តន៍មួយទល់មួយ។
     </li>
-    <li> ទំនាក់ទំនងហ្សាល (Relation de Chasles)
+    <li>ទំនាក់ទំនងហ្សាល (Relation de Chasles)
            $$\forall M, N, P\in \mathcal{E},\ \varphi(M,P) = \varphi(M,N) + \varphi(N,P)$$
     </li>
 </ol>
@@ -211,7 +204,7 @@ In an affine space, there is no distinguished point that serves as an origin. He
 <example><b>ឧទាហរណ៍ .</b>
     ពិនិត្យមើលឧទាហរណ៍ខាងក្រោម៖
 <ol class="parenthnum">
-    <li> បើ $\dim\big(\vect\E\big)=1$ នោះគេនិយាយថា  $\mathcal{E}$ គឺជា <a href="####ssssss">បន្ទាត់អាហ្វីន</a>។ </li>
+    <li>បើ $\dim\big(\vect\E\big)=1$ នោះគេនិយាយថា  $\mathcal{E}$ គឺជា <a href="####ssssss">បន្ទាត់អាហ្វីន</a>។ </li>
     <li>បើ $\dim\big(\vect\E\big)=2$ នោះគេថា $\mathcal{E}$ គឺជា <a href="https://en.wikipedia.org/wiki/Affine_plane_(incidence_geometry)">ប្លង់អាហ្វីន</a>។</li>
     <li>គ្រប់លំហវ៉ិចទ័រ $\vect{\E}$ កំណត់លើកាយ $\mathbb{R}$ តាមន័យកាណូនិច អាចចាត់ទុកថាជាលំហអាហ្វីនមួយ ដែលភ្ជាប់ទៅនឹងខ្លួនវា នៅពេលណាគេមានអនុវត្តន៍ដូចតទៅ៖ <!-- peut-être considéré, canoniquement, comme un espace affine attaché à lui même, lorsqu' on considère l'application suivante:-->
     	$$
@@ -220,14 +213,14 @@ In an affine space, there is no distinguished point that serves as an origin. He
             (a,b) &\longmapsto & \vect{ab} = b-a
             \end{array}
         $$ ដែលផ្ទៀងផ្ទាត់ទៅនឹងលក្ខខណ្ឌនៃនិយមន័យ។ <!--qui vérifie les conditions de la définition. -->
-</li> 
+</li>
     </ol>
 </example>
-    
-    
+
+
 <p style="text-indent: 0px"><b>ចំណាំ: </b> ដោយសារបែបនេះហើយ ទើបធាតុរបស់លំហវ៉ិចទ័រកំណត់លើកាយ $\mathbb{R}$ នៅក្នុងបរិបទខ្លះ ត្រូវបានចាត់ទុកថាជា ចំណុច ឬក៏ជា វ៉ិចទ័រ។
     </p>
-    
+
 <h2> 1.1 វិធានគណនា</h2>
 <p>
     យក $\mathcal{E}$ ជាលំហអាហ្វីនភ្ជាប់ទៅនឹងលំហវ៉ិចទ័រ $\vect{\E}$ ។ ដូច្នេះគេបាន
@@ -239,13 +232,13 @@ In an affine space, there is no distinguished point that serves as an origin. He
 	<li>ចំពោះគ្រប់ចំណុច $A\in \mathcal{E}$ និងគ្រប់វ៉ិចទ័រ $\vect{u} \in \vect\E$ នោះមានចំណុចតែមួយគត់ $M\in \mathcal{E}$ ដែល $\vect{AM} = \vect{u}$</li>
 	<li>បើ $A$ និង $B$ គឺជាចំណុចពីររបស់ $\mathcal{E}$ នោះមានវ៉ិចទ័រតែមួយគត់ $\vect{u}\in \vect\E$ ដែល $\vect{AB} =  \vect{u}$</li>
     </ol>
-    
+
     </p>
-    
+
 
 <example>
 <p> <i>
-	<b>Example</b> - 
+	<b>Example</b> -
 	</i>
 	 </p>
 <p>
