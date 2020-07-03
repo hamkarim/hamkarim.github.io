@@ -1,0 +1,289 @@
+/* Fall back colors? Eg educator, talks & interviews */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#khanType {
+  /* Used to style the topic title on a topic page, eg
+  "Introduction to algebra" on /math/algebra/introduction-to-algebra.
+  Also used for the tutorial title on tutorial landing pages.
+  Not restricted to styling the titles of "Topic" entities. */
+}
+.vertical-shadow {
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #aaa;
+  box-shadow: 0 1px 3px #ccc;
+}
+html.page-container-min-width-zero body,
+html.page-container-min-width-zero #page-container {
+  min-width: 0;
+}
+.notification-bar.challenge-notification {
+  background: #338a57;
+  color: #acddac;
+  min-width: 1000px;
+}
+.notification-bar.challenge-notification .countdown {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2px 5px 0 5px;
+  border-radius: 2px;
+  font-size: 15px;
+  color: white;
+  font-family: "Courier New Bold", monospace;
+}
+.notification-bar.challenge-notification .challenge-points {
+  color: white;
+}
+.notification-bar.challenge-notification .challenge-badge {
+  vertical-align: middle;
+}
+.notification-bar.challenge-notification .spacer {
+  display: inline-block;
+  width: 30px;
+}
+.notification-bar.challenge-notification .right-x:hover {
+  color: white;
+  cursor: pointer;
+}
+.user-notifications .notification {
+  border-bottom: 1px solid #ddd;
+}
+.user-notifications .notification.unread {
+  background-color: #ECEEF4;
+}
+.user-notifications .notification a {
+  text-decoration: none;
+  display: block;
+  padding: 5px 10px;
+  font-weight: normal;
+  white-space: normal;
+  color: #444;
+}
+.user-notifications .notification a:hover {
+  border-color: #2c3747;
+}
+.user-notifications .notification .notification-icon {
+  margin-top: 5px;
+  float: left;
+}
+.user-notifications .notification .notification-icon img {
+  width: 40px;
+  height: 40px;
+}
+.user-notifications .notification .controls {
+  margin: 10px 0;
+}
+.user-notifications .notification .notification-content,
+.user-notifications .notification .notification-date {
+  margin-left: 50px;
+  width: 330px;
+}
+.user-notifications .notification .notification-date {
+  color: #aaa;
+}
+.user-notifications .notification:hover {
+  background-color: #2c3747;
+}
+.user-notifications .notification:hover a,
+.user-notifications .notification:hover .notification-date {
+  color: white;
+}
+.user-notifications .unclickable {
+  background-color: #ECEEF4;
+}
+.user-notifications .unclickable:hover {
+  background-color: #ECEEF4;
+}
+.user-notifications .unclickable:hover a {
+  color: #444;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+.user-notifications .unclickable:hover a .notification-date {
+  color: #aaa;
+}
+.user-notifications .unclickable.unread {
+  background-color: #ECEEF4;
+}
+.user-notifications .unclickable.unread:hover {
+  background-color: #ECEEF4;
+}
+.user-notifications .unclickable a {
+  cursor: default;
+  color: #444;
+  text-shadow: none;
+}
+#link-email-modal {
+  margin: 0 0 0 -200px;
+  width: 400px;
+}
+#link-email-modal #email {
+  width: 380px;
+}
+#link-email-modal p {
+  margin: 0 0 22px 0;
+}
+.bibliotron-header .user-notifications .notification,
+.bibliotron-header .user-notifications .notification a {
+  background-color: transparent !important;
+  border: none;
+  color: inherit !important;
+}
+.bibliotron-header .user-notifications .notification a {
+  display: flex;
+  flex-flow: row wrap;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 16px;
+}
+.bibliotron-header .user-notifications .notification.unread {
+  background-color: #f0f1f2 !important;
+}
+.bibliotron-header .user-notifications .notification-icon {
+  float: none;
+  flex: 0 30px;
+  margin-right: 9px;
+}
+.bibliotron-header .user-notifications .notification-icon img {
+  width: 30px;
+  height: 30px;
+}
+.bibliotron-header .user-notifications .notification-content {
+  flex: 1 0;
+  margin-left: 0;
+  margin-bottom: 10px;
+}
+.bibliotron-header .user-notifications .notification-date {
+  color: #aaaaaa !important;
+  flex: 1 100%;
+  margin-left: 39px;
+}
+.notification-tip {
+  padding: 5px 5px 5px 10px;
+  margin: 10px 0 15px 0;
+  border-radius: 5px;
+}
+.notification.error,
+.notification-tip.error {
+  /* Color values pulled from variables.less */
+  color: #b94a48;
+  background-color: #f2dede;
+}
+.notification.success,
+.notification-tip.success {
+  /* Color values pulled from variables.less */
+  color: #468847;
+  background-color: #dff0d8;
+}
+.notification-tip {
+  box-sizing: border-box;
+  width: 300px;
+}
+.notification-dialog {
+  width: 730px;
+  margin-left: -365px;
+}
+.notification-dialog .modal-img-caption {
+  font-size: 12px;
+  text-align: left;
+  line-height: 20px;
+}
+.notification-dialog .modal-img {
+  width: 100%;
+}
+.notification-dialog .modal-img-caption-separator {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.notification-dialog .modal-body-text-container {
+  text-align: justify;
+}
+.accept-terms-of-service-modal-label a:link,
+.accept-terms-of-service-modal-label a:visited,
+.accept-terms-of-service-modal-label a:hover,
+.accept-terms-of-service-modal-label a:focus,
+.accept-terms-of-service-modal-label a:active {
+  color: #1865f2;
+  font-weight: bold;
+}
+.accept-terms-of-service-modal-label a:link,
+.accept-terms-of-service-modal-label a:visited {
+  text-decoration: none;
+}
+.accept-terms-of-service-modal-label a:hover,
+.accept-terms-of-service-modal-label a:focus,
+.accept-terms-of-service-modal-label a:active {
+  text-decoration: underline;
+  outline: none;
+}
+.age-check-modal.notification-dialog {
+  min-height: 360px;
+  width: 550px;
+  margin-left: -275px;
+  background: url('/images/avatars/avatar-team.png') no-repeat left -44px bottom -18px;
+  background-color: white;
+}
+@media screen and (max-width: 550px) {
+  .age-check-modal.notification-dialog {
+    top: 0 !important;
+    left: 0  !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+    width: 100% !important;
+    height: 100%;
+    position: fixed !important;
+  }
+}
+.age-check-modal.notification-dialog p:first-child {
+  margin-top: 0;
+}
+.age-check-modal.notification-dialog #done-button-container,
+.age-check-modal.notification-dialog #age-question {
+  text-align: center;
+}
+.age-check-modal.notification-dialog #age-question {
+  margin: 10px 0;
+}
+.age-check-modal.notification-dialog #age-question select {
+  border: 1px solid #CCC;
+  background-color: #FFF;
+  height: 30px;
+  line-height: 30px;
+  width: 90px;
+  text-align: center;
+  margin-left: 15px;
+}
+.age-check-modal.notification-dialog #age-question label {
+  width: 160px;
+  padding-top: 5px;
+}
+.age-check-modal.notification-dialog #u13-coach-error {
+  color: red;
+  text-align: center;
+  padding-top: 20px;
+  display: none;
+}
+

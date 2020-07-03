@@ -1,7 +1,9 @@
-/*! normalize.css v3.0.2 | MIT License | git.io/normalize -Share:400,700&subset=latin,latin-ext */@import url(https://fonts.googleapis.com/css?family='CMU Serif'|'Noto Serif Khmer'|'Khmer');html{font-family:san-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+@charset "utf-8";
+/* Global Styles */
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize -Share:400,700&subset=latin,latin-ext */
+@import url(https://fonts.googleapis.com/css?family=san-serif|Khmer); html{font-family:san-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
 
-body{margin:0}
-article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,section,summary{display:block}
+article,aside,details,footer,header,hgroup,main,menu,section,summary{display:block}
 audio,canvas,progress,video{display:inline-block;vertical-align:baseline}
 audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}
 a:active,a:hover{outline:0}
@@ -16,7 +18,7 @@ sup{top:-0.5em}
 sub{bottom:-0.25em}
 img{border:0}
 svg:not(:root){overflow:hidden}
-figure{margin:1em 40px}
+/*figure{margin:1em 40px}*/
 hr{box-sizing:content-box;height:0}
 pre{overflow:auto}
 code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}
@@ -98,12 +100,27 @@ td,th{padding:0}
 .highlight .o{color:#000000;font-weight:bold}
 .highlight .w{color:#bbbbbb}
 .highlight{background-color:#f8f8f8}
+
+/*.caption{text-align:center;font-size:18px;margin-bottom:10px} */
+
 table{border:none}
-tr{align:center}*{box-sizing:border-box}
+tr{align-content: center}*{box-sizing:border-box}
 
-p{font-family:'Century Gothic','Noto Serif Khmer','Khmer OS Content', sans-serif;font-size:16px;font-weight:normal;line-height:200%;margin:0 0 14px}
+p{
+	text-indent:30px;
+	font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content";
+	font-size:16px;
+	font-weight:normal;
+	line-height:200%;
+	margin:0 0 14px
+}
 
-body{padding:0;margin:0;font-family:"Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;font-size:30px;line-height:2.0;color:#606c71}
+body{padding:0;margin:0;font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content";font-size:16px;line-height:2.0;color:#606c71}
+
+/*body{margin:0;
+   font-family:"Noto Serif Khmer","CMU Serif","Khmer OS Content","Century Gothic", Helvetica, Arial, "sans-serif";
+   font-size: 14px;
+}*/
 
 a{color:#1e6bb8;text-decoration:none}
 a:hover{text-decoration:underline}
@@ -121,14 +138,8 @@ a:hover{text-decoration:underline}
 .tabs__item{width:100%;float:left}@media screen and (min-width: 40em){.tabs__item{display:table-cell;float:none;width:auto}}
 .tabs__link{display:block}
 
-ul{padding-left:0}
-.caption{text-align:center;font-size:18px;margin-bottom:10px}
-
-ul li{margin-bottom:1em;font-size:14px;font-family:sans-serif,'Century Gothic','Noto Serif Khmer','Khmer OS Battambang'}
-center{font-size:15px}
-
 .primary-nav{text-align:center;border-radius:0;overflow:hidden}
-.primary-nav a{padding:.75em 1em;color:white;background:black;color:#fff;text-decoration:none;border-right:1px solid #000;font-weight:400;font-size:1.25em}
+.primary-nav a{padding:.75em 1em;color:white;background:black;text-decoration:none;border-right:1px solid #000;font-weight:400;font-size:1.25em}
 .primary-nav a:hover{color:blue;background:white}
 .project-name{margin-top:0;margin-bottom:0}@media screen and (min-width: 64em){.project-name{font-size:3.25rem}}@media screen and (min-width: 42em) and (max-width: 64em){.project-name{font-size:2.25rem}}@media screen and (max-width: 42em){.project-name{font-size:1.75rem}}
 .project-tagline{margin-top:1rem;margin-bottom:-0.5rem;font-weight:normal;opacity:0.9}@media screen and (min-width: 64em){.project-tagline{font-size:.825rem}}@media screen and (min-width: 42em) and (max-width: 64em){.project-tagline{font-size:.775rem}}@media screen and (max-width: 42em){.project-tagline{font-size:.6rem}}
@@ -137,10 +148,10 @@ center{font-size:15px}
 .main-content :first-child{margin-top:0}@media screen and (min-width: 64em){.main-content{max-width:64rem;padding:2rem 6rem;margin:0 auto}}@media screen and (min-width: 42em) and (max-width: 64em){.main-content{padding:2rem 4rem}}@media screen and (max-width: 42em){.main-content{padding:2rem 1rem}}
 .main-content img{max-width:100%;width:"40%";height:"40%"}
 .main-content h1,.main-content h2,.main-content h3,.main-content h4,.main-content h5,.main-content h6{margin-top:2rem;margin-bottom:1rem;font-family:'Century Gothic', sans-serif;color:#000;font-weight:bold;line-height:1}
-.main-content h1{font-size:1.2em;font-family:'Century Gothic', 'Noto Serif Khmer','CMU Serif',san-serif,'Khmer OS Battambang'}
-.main-content h2{font-size:0.95em;color:#7A0002;font-family:'Century Gothic','Noto Serif Khmer','CMU Serif',san-serif,'Khmer OS Battambang'}
-.main-content h3{font-size:0.75em;font-family:'Century Gothic','Noto Serif Khmer','CMU Serif',san-serif,'Khmer OS Battambang'}
-.main-content h5{font-size:0.6em;font-family: 'Noto Serif Khmer','CMU Serif',san-serif,'Khmer OS Battambang'}
+.main-content h1{font-size:1.3em;font-family:'Century Gothic', 'Noto Serif Khmer','CMU Serif',san-serif,'Khmer OS Battambang'}
+.main-content h2{font-size:1.1em;color:#7A0002;font-family:'Century Gothic','Noto Serif Khmer','CMU Serif',san-serif,'Khmer OS Battambang'}
+.main-content h3{font-size:0.85em;font-family:'Century Gothic','Noto Serif Khmer','CMU Serif',san-serif,'Khmer OS Battambang'}
+.main-content h5{font-size:0.65em;font-family: 'Noto Serif Khmer','CMU Serif',san-serif,'Khmer OS Battambang'}
 .main-content code{padding:2px 4px;font-family:Consolas, "Liberation Mono", Menlo, Courier, monospace;font-size:0.9rem;color:#567482;background-color:#f3f6fa;border-radius:0.3rem}
 .main-content pre{padding:0.8rem;margin-top:0;margin-bottom:1rem;font:1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;color:#567482;word-wrap:normal;background-color:#f3f6fa;border:solid 1px #dce6f0;border-radius:0.3rem}
 .main-content pre>code{padding:0;margin:0;font-size:0.9rem;color:#567482;word-break:normal;white-space:pre;background:transparent;border:0}
@@ -153,7 +164,7 @@ center{font-size:15px}
 .main-content blockquote{padding:0 1rem;margin-left:0;margin-top:10px;margin-bottom:10px;color:#819198;border-left:0.3rem solid #dce6f0}
 .main-content blockquote>:first-child{margin-top:0}
 .main-content blockquote>:last-child{margin-bottom:0}
-.main-content thead{text-align:left;align:left}
+.main-content thead{text-align:left; align-content:left}
 .main-content table{width:100%;font:'Century Gothic';overflow:auto;font-size:15px;word-break:normal;word-break:keep-all;-webkit-overflow-scrolling:touch}
 .main-content table th{text-align:left;font-weight:bold}
 .main-content table td{width:25%;padding:0.5rem 0rem;border:0px solid #e9ebec}
@@ -165,6 +176,29 @@ center{font-size:15px}
 .site-footer-owner{display:block;font-weight:bold}
 .site-footer-credits{color:#819198}
 
+.main-content .blockproof{padding:0 1rem;margin-left:0;margin-top:2px;margin-bottom:10px;color:#0037A8;border-left:0.1rem solid #960000;
+text-align: left;
+font-size: 16px;
+font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content'
+}
+.main-content .blockproof>:first-child{margin-top:0}
+.main-content .blockproof>:last-child{margin-bottom:0}
+
+.main-content example{
+    display:block;
+    padding:0 0 0 1rem;
+    margin-left:0;
+    margin-top:0;
+    margin-bottom:10px;
+    color:#076422;
+    border-left:0.4rem solid #EB0000;
+    text-align: left;
+    font-size: 16px;
+    font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content'
+}
+.main-content example>:first-child{margin-top:0}
+.main-content example>:last-child{margin-bottom:0}
+
 .line-bottom
 {
     border-bottom:5px solid black;
@@ -172,7 +206,7 @@ center{font-size:15px}
 .frame{
 border-bottom: 5px solid black;
 /*-border-top: 2px solid black;
-/*- border-radius: 2px; 
+/*- border-radius: 2px;
 background-color: royalblue;
 padding-left: 15px;
 padding-right: 15px;
@@ -183,7 +217,7 @@ padding-bottom: 8px;
 .frame-sect{
 border-bottom: 1px solid green;
 /*-border-top: 2px solid black;
-/*- border-radius: 2px; 
+/*- border-radius: 2px;
 background-color: royalblue;
 padding-left: 15px;
 padding-right: 15px;
@@ -202,26 +236,221 @@ padding-bottom: 2px;
  float: right;
  padding: 0 10px 0 0;}
 
+/* background for methodology*/
+.method{
+  display:inline-block;
+  width:100%;
+  background:linear-gradient(to right, blue 1%, blue 0%, white 90%, white 100%);
+  border-radius: 3px 15px;
+  border: #CC0F12;
+  color: white;
+  padding: 0 10px 0 20px;
+  font-size: 105%;
+}
 
+/* background for definition*/
+.definition{
+  display:inline-block;
+  width:100%;
+  background:linear-gradient(to right, red 1%, red 0%, white 90%, white 100%);
+  border-radius: 15px 5px;
+  border: #CC0F12;
+  color: white;
+  padding: 0 10px 0 20px;
+  font-size: 102%;
+}
+.definitionb{ /* To define border and style around text*/
+   color: darkblue;
+   display:inline-block;
+   background-color: lightyellow;
+   border-radius: 0px 0px  20px 20px;
+   width:100%;
+   /*padding:0 0 0 0; */
+   margin-right:0px;
+   margin-left:8px;
+   margin-top:-0.14em;
+   margin-bottom:20px;
+   padding-left:15px;
+   padding-right:10px;
+   padding-top:0px;
+   padding-bottom:5px;
+   /*color:#076422;*/
+   border-left:  0.2rem solid #0E81C1;
+   border-right: 0.2em solid #0E81C1;
+   border-top: 0.1rem solid #0E81C1;
+   border-bottom: 0.2rem solid #0E81C1;
+   border-style: dotted;
+   /* text-align: left; * border-left-width:;*/
+   font-size: 16px;
+   font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content";
+   /*text-indent: 10px; */
+}
+
+ul{
+  padding-left:0;
+  display: table-cell;
+  padding-right: 0;
+  text-align: left;
+  font-size: 16px;
+}
+
+ul li{
+    /* margin-bottom:1em;*/
+    font-size:16px;
+    font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content'
+}
+center{font-size:15px}
+
+ul.leftborder{
+   color: darkred;
+    display:inline-block;
+    width:100%;
+    /*padding:0 0 0 0; */
+    margin-right:0px;
+    margin-left:10px;
+    margin-top:0px;
+    margin-bottom:10px;
+    padding-left:30px;
+    /*color:#076422;*/
+    border-left:  0.2rem solid #0E81C1;
+    border-right:0;
+    border-top:0;
+    border-bottom:0;
+    border-style: dotted;
+    /* text-align: left; * border-left-width:;*/
+    font-size: 16px;
+    font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content";
+    /*text-indent: 10px; */
+}
+.leftstyleborder{
+   color: darkred;
+    display:inline-block;
+    width:100%;
+    /*padding:0 0 0 0; */
+    margin-right:0px;
+    margin-left:10px;
+    margin-top:0px;
+    margin-bottom:10px;
+    padding-left:30px;
+    /*color:#076422;*/
+    border-left:  0.2rem solid #0E81C1;
+    border-right:0;
+    border-top:0;
+    border-bottom:0;
+    border-style: dotted;
+    /* text-align: left; * border-left-width:;*/
+    font-size: 16px;
+    font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content";
+    /*text-indent: 10px; */
+}
+
+ol{
+ /*table-cell;*/
+counter-reset: item;
+padding-left: 0px;
+margin-left: 0;
+text-align: left;
+font-size: 16px;
+font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content'
+}
 ol.parenthalpha li {
 counter-increment: section;
-display: table-row;
-} 
+/*display: table-row;*/
+display: block;
+margin-bottom: .5em;
+margin-left: 2em;
+font-size: 16px;
+font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content'
+}
 ol.parenthalpha li::before {
 content: "(" counter(section, lower-alpha) ") ";
-display: table-cell;
-padding-right: 10px;
+/*display: table-cell;*/
+display: inline-block;
 text-align: left;
+font-size: 16px;
+font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content'
 }
-
 ol.parenthnum li {
-counter-increment: section;
-display: table-row;
-} 
+display: block;
+margin-bottom: .5em;
+margin-left: 3em;
+/*counter-increment: section;*/
+/*display: table-row; */
+font-size: 16px;
+}
 ol.parenthnum li::before {
-content: "(" counter(section, lower-alpha) ") ";
-display: table-cell;
-padding-right: 10px;
-text-align: left;
+/*content: "(" counter(section) ") ";
+display: table-cell;*/
+padding-right: 0px;
+display: inline-block;
+content: "(" counter(item) ")";
+counter-increment: item;
+width: 2em;
+margin-left: -4em;
+padding-left: 1.7em;
+/*text-align: left;*/
+font-size: 16px;
+font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content'
 }
 
+#recentposts ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+}
+#recentposts .item-thumbnail {
+    float: left;
+    margin: 0 5px 5px 0;
+}
+
+#vert-line {
+  width: 1px;
+  min-height: 400px;
+  background: red;
+}
+
+figure {
+  display: inlin-block;
+  /*border: 1px dotted gray;*/
+  margin: 10px; /* adjust as needed */
+  text-align: center;
+  /* margin: auto;*/
+  /*float: left;*/
+}
+figure img {
+  vertical-align: top;
+}
+figure figcaption {
+  display: block;
+  /*border: 1px dotted blue;
+  background-color: black;*/
+  color: rgb(188, 5, 5);
+  font-style: italic;
+  font-size: 10px;
+  padding: 2px;
+ /*border: 1px dotted blue;*/
+}
+div.divfigure {
+  float: right;
+  width: 40%;
+  text-align: center;
+  font-style: italic;
+  font-size: 11px;
+  color: rgb(188, 5, 5);
+  text-indent: 0;
+  border: thin silver solid;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+/* panel to show and hide text block of examples and extra */
+.hidepanel {
+  display: none;
+}
+
+.toggle.bground{
+    background-color:#1860C1;
+    color:white;padding: 1px 10px 3px 10px;
+    text-align:right;
+    font-style:italic;
+    font-size: 110%;
+}

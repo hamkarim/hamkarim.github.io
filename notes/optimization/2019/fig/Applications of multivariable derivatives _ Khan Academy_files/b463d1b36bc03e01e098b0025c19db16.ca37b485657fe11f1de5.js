@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["b463d1b36bc03e01e098b0025c19db16"],{M05J:function(e,n,t){"use strict";t("yXV3");t("EnZy");e.exports=function(e){var n=e.split("@");if(n.length!==2){return false}if(n[0].length<1){return false}var t=n[1].indexOf(".");if(t<1||t>=n[1].length-2){return false}return true}}}]);
+//# sourceMappingURL=../../sourcemaps/en/b463d1b36bc03e01e098b0025c19db16.ca37b485657fe11f1de5.js.map
