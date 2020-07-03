@@ -43,39 +43,39 @@
     <link rel="stylesheet" href="../../topology/2019/../../../assets/css/style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245">
     <script src="https://d3js.org/d3.v4.min.js"></script>
 
-	  <!-- script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script-->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: {
-        Macros: {
-          RR: "{\\bf R}",
-          E: "{\\bf E}",
-          F: "{\\bf F}",
-          G: "{\\bf G}",
-          H: "{\\bf H}",
-          calE: "{\\mathcal E}",
-          calF: "{\\mathcal F}",
-          calG: "{\\mathcal G}",
-          calH: "{\\mathcal H}",
-          R: "{\\mathbb R}",
-          Cc: "{\\mathbb C}",
-          bold: ["{\\bf #1}",1],
-          bfseries: ["{\\bf{\\text{ #1 }}",1],
-          fontbold: ["{\\bf{\\text{ #1 }}}",1],
-          Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
-          vect: ["{\\overrightarrow{#1}}",1],
-        }
-    },
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true,
-      equationNumbers: { autoNumber: "AMS" }
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<!-- Script to show and hide proof -->
+<script type="text/javascript" src="../../../assets/js/showhide.js"></script>
+    
+<!-- For local function, define to exchange text -->
+<script> 
+function showhideFunction() {
+    document.getElementById('getid').innerHTML === '[Hide proof]' ? document.getElementById('getid').innerHTML = '[Show proof]' : document.getElementById('getid').innerHTML = '[Hide proof]';
+}
 </script>
 
+<!-- script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,https://hamkarim.github.io/MathJax/config/local/local.js"></script -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { fonts: ["TeX"] }
+  });
+</script>
+      
+<!-- script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script-->
+<script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,https://hamkarim.github.io/MathJax/config/local/local.js">
+</script>
+      
+      
 <!--
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
 
@@ -143,7 +143,7 @@
 
 <section class="main-content">
 
-  <h1>ជំពូក១ : លំហអាហ្វីន និង លំហ (Affine Spaces) </h1>
+  <h1>ជំពូក១ : លំហអាហ្វីន (Affine Spaces) </h1>
 <p style="font-style: italic; font-weight:bold; font-family: Arial; opacity: 0.5;">
 October
 2nd, 2020
@@ -191,7 +191,6 @@ In an affine space, there is no distinguished point that serves as an origin. He
 <p>
 លំហអាហ្វីន $\mathcal{E}$ ជាលំហមានវិមាត្ររាប់អស់ បើលំហវ៉ិចទ័រ $\vect{\E}$ ជាលំហមានវិមាត្ររាប់អស់។ ក្នុងករណីនេះ វិមាត្ររបស់ $\mathcal{E}$ ស្មើនឹងវិមាត្ររបស់លំហទិសដៅ។ <!--est égale à celle de sa direction. -->
 </p>
-<ol>
 </div>
 </div>
 
