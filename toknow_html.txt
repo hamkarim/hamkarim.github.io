@@ -2,3 +2,6 @@
 1. 	For figure tag
 	https://www.w3.org/Style/Examples/007/figures.en.html
 2.	
+
+
+vscode://vscode.github-authentication/did-authenticate?windowId=1&code=8b6993eba789b41b033a&state=e3f34bd5-af6f-4012-b1f9-6ac22782d25b
