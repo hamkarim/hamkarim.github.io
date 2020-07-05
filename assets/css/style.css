@@ -281,7 +281,7 @@ padding-bottom: 2px;
   padding: 0 10px 0 20px;
   font-size: 102%;
 }
-.definitionb{ /* To define border and style around text*/
+div.definitionb{ /* To define border and style around text*/
    color: darkblue;
    display:inline-block;
    background-color: lightyellow;
