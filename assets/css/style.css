@@ -158,7 +158,7 @@ a:hover{text-decoration:underline}
 .tabs__item{width:100%;float:left}@media screen and (min-width: 40em){.tabs__item{display:table-cell;float:none;width:auto}}
 .tabs__link{
     display:block;
-    font-family: 'Bayon';
+    font-family: 'Bayon','Didact Gothic';
 }
 
 .primary-nav{text-align:center;border-radius:0;overflow:hidden}
@@ -166,7 +166,7 @@ a:hover{text-decoration:underline}
 .primary-nav a:hover{color:blue;background:white}
 .project-name{
     margin-top:0;
-    font-display: 'Angkor';
+    font-family: 'Angkor', 'Didact Gothic';
     margin-bottom:0}@media screen and (min-width: 64em){.project-name{font-size:3.25rem}}@media screen and (min-width: 42em) and (max-width: 64em){.project-name{font-size:2.25rem}}@media screen and (max-width: 42em){.project-name{font-size:1.75rem}}
 .project-tagline{margin-top:1rem;margin-bottom:-0.5rem;font-weight:normal;opacity:0.9}@media screen and (min-width: 64em){.project-tagline{font-size:.825rem}}@media screen and (min-width: 42em) and (max-width: 64em){.project-tagline{font-size:.775rem}}@media screen and (max-width: 42em){.project-tagline{font-size:.6rem}}
 
