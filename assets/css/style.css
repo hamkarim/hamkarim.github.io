@@ -156,12 +156,18 @@ a:hover{text-decoration:underline}
 
 .tabs{margin:0;padding:0;list-style:none;display:table;table-layout:fixed;width:100%}
 .tabs__item{width:100%;float:left}@media screen and (min-width: 40em){.tabs__item{display:table-cell;float:none;width:auto}}
-.tabs__link{display:block}
+.tabs__link{
+    display:block;
+    font-family: 'Bayon';
+}
 
 .primary-nav{text-align:center;border-radius:0;overflow:hidden}
 .primary-nav a{padding:.75em 1em;color:white;background:black;text-decoration:none;border-right:1px solid #000;font-weight:400;font-size:1.25em}
 .primary-nav a:hover{color:blue;background:white}
-.project-name{margin-top:0;margin-bottom:0}@media screen and (min-width: 64em){.project-name{font-size:3.25rem}}@media screen and (min-width: 42em) and (max-width: 64em){.project-name{font-size:2.25rem}}@media screen and (max-width: 42em){.project-name{font-size:1.75rem}}
+.project-name{
+    margin-top:0;
+    font-display: 'Angkor';
+    margin-bottom:0}@media screen and (min-width: 64em){.project-name{font-size:3.25rem}}@media screen and (min-width: 42em) and (max-width: 64em){.project-name{font-size:2.25rem}}@media screen and (max-width: 42em){.project-name{font-size:1.75rem}}
 .project-tagline{margin-top:1rem;margin-bottom:-0.5rem;font-weight:normal;opacity:0.9}@media screen and (min-width: 64em){.project-tagline{font-size:.825rem}}@media screen and (min-width: 42em) and (max-width: 64em){.project-tagline{font-size:.775rem}}@media screen and (max-width: 42em){.project-tagline{font-size:.6rem}}
 
 .main-content{
