@@ -180,7 +180,7 @@ a:hover{text-decoration:underline}
 .main-content h1,.main-content h2,.main-content h3,.main-content h4,.main-content h5,.main-content h6{
 	margin-top:2rem;
 	margin-bottom:1rem;
-	font-family:'Angkor'; /*'Century Gothic','Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang'; */
+	font-family:'Angkor','Didact Gothic'; /*'Century Gothic','Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang'; */
 	color:#000;
 	font-weight:bold;
 	line-height:1
