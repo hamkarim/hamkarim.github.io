@@ -5,3 +5,28 @@
 
 
 vscode://vscode.github-authentication/did-authenticate?windowId=1&code=8b6993eba789b41b033a&state=e3f34bd5-af6f-4012-b1f9-6ac22782d25b
+
+
+
+
+/* content-regular - khmer  and  open sans*/
+@font-face {
+  font-family: 'Khmer', 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://hamkarim.github.io/fonts/khmer-v12-khmer-regular.eot"),url('https://hamkarim.github.io/fonts/open-sans-v17-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Khmer','Open Sans Regular','OpenSans-Regular'),
+        url('https://hamkarim.github.io/fonts/khmer-v12-khmer-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('https://hamkarim.github.io/fonts/khmer-v12-khmer-regular.woff2') format('woff2'), /* Super Modern Browsers */
+        url('https://hamkarim.github.io/fonts/khmer-v12-khmer-regular.woff') format('woff'), /* Modern Browsers */
+        url('https://hamkarim.github.io/fonts/khmer-v12-khmer-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('https://hamkarim.github.io/fonts/khmer-v12-khmer-regular.svg#Khmer') format('svg'), /* Legacy iOS */
+		url('https://hamkarim.github.io/fonts/open-sans-v17-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		url('https://hamkarim.github.io/fonts/open-sans-v17-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+		url('https://hamkarim.github.io/fonts/open-sans-v17-latin-regular.woff') format('woff'), /* Modern Browsers */
+		url('https://hamkarim.github.io/fonts/open-sans-v17-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('https://hamkarim.github.io/fonts/open-sans-v17-latin-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+html, body{
+    font: normal 16px Khmer, OpenSans, sans-serif;
+}
