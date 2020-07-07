@@ -21,7 +21,7 @@
         }
     },
     CommonHTML: {
-      scale: 90
+      scale: 95
     },
     extensions: ["tex2jax.js"],
     jax: ["input/TeX", "output/HTML-CSS"],
