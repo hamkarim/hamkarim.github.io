@@ -1,9 +1,9 @@
 @charset "utf-8";
 /* Global Styles */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize -Share:400,700&subset=latin,latin-ext */
-@import url("https://fonts.googleapis.com/css?family=Didact Gothic|Angkor|Siemreap|Bayon"); 
+@import url("https://fonts.googleapis.com/css?family=Open Sans|Didact Gothic|Angkor|Siemreap|Bayon");
 html, body{
-    font-family:'Didact Gothic','Siemreap';
+    font-family:'Century Gothic','Didact Gothic','Siemreap';
     -ms-text-size-adjust:100%;
     -webkit-text-size-adjust:100%;
     padding:0;
@@ -12,14 +12,14 @@ html, body{
     font-size:16px;
     line-height:2.0;
     color:#606c71
-} 
+}
 
-/*  <style type="text/css"> 
+/*  <style type="text/css">
 @font-face {
   font-family: 'Didact Gothic', 'Angkor', 'Siemreap', 'Bayon';
   font-style: normal;
   font-weight: 400;
-  src: url("../../fonts/angkor-v12-khmer-regular.eot, ../../fonts/siemreap-v12-khmer-regular.eot, ../../fonts/bayon-v13-khmer-regular.eot, ../../fonts/didact-gothic-v13-latin-regular.eot"); /* IE9 Compat Modes 
+  src: url("../../fonts/angkor-v12-khmer-regular.eot, ../../fonts/siemreap-v12-khmer-regular.eot, ../../fonts/bayon-v13-khmer-regular.eot, ../../fonts/didact-gothic-v13-latin-regular.eot"); /* IE9 Compat Modes
   src: local('Didact Gothic','Angkor','Siemreap','Bayon'), local('DidactGothic-Regular','Angkor-Regular','Bayon-Regular'),
        url("../../fonts/didact-gothic-v13-latin-regular.eot?#iefix, ../../fonts/angkor-v12-khmer-regular.eot?#iefix, ../../fonts/siemreap-v12-khmer-regular.eot?#iefix, ../../fonts/bayon-v13-khmer-regular.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 *
        url("../../fonts/didact-gothic-v13-latin-regular.woff2, ../../fonts/bayon-v13-khmer-regular.woff2, ../../fonts/siemreap-v12-khmer-regular.woff2, ../../fonts/angkor-v12-khmer-regular.woff2") format('woff2'), /* Super Modern Browsers *
@@ -206,7 +206,7 @@ a:hover{text-decoration:underline}
     /* font-family:'Century Gothic', 'Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang' */
 }
 .main-content h2{
-	font-size:1.3em;color:#7A0002; 
+	font-size:1.3em;color:#7A0002;
     /* font-family:'Century Gothic','Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang' */
 }
 .main-content h3{
@@ -229,6 +229,23 @@ a:hover{text-decoration:underline}
 	font-size:16px;
 	/*font-family: 'Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang' */
 }
+
+/*Section counter*/
+body {counter-reset:section;}
+    h2.sectcounter  {counter-reset:subsection;}
+    h2.sectcounter:before
+    {
+        counter-increment:section;
+        content:counter(section) ". ";
+        font-weight:bold;
+    }
+    h3.sectcounter:before
+    {
+        counter-increment:subsection;
+        content:counter(section) "." counter(subsection) "  ";
+        font-weight:bold;
+    }
+
 .main-content code{padding:2px 4px;font-family:Consolas, "Liberation Mono", Menlo, Courier, monospace;font-size:0.9rem;color:#567482;background-color:#f3f6fa;border-radius:0.3rem}
 .main-content pre{padding:0.8rem;margin-top:0;margin-bottom:1rem;font:1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;color:#567482;word-wrap:normal;background-color:#f3f6fa;border:solid 1px #dce6f0;border-radius:0.3rem}
 .main-content pre>code{padding:0;margin:0;font-size:0.9rem;color:#567482;word-break:normal;white-space:pre;background:transparent;border:0}
@@ -237,7 +254,7 @@ a:hover{text-decoration:underline}
 .main-content .highlight pre,.main-content pre{padding:0.8rem;overflow:auto;font-size:0.9rem;line-height:1.45;border-radius:0.3rem;-webkit-overflow-scrolling:touch}
 .main-content pre code,.main-content pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}
 .main-content pre code:before,.main-content pre code:after,.main-content pre tt:before,.main-content pre tt:after{content:normal}
-.main-content ul,.main-content ol{margin-top:0;margin:auto;width:90%}
+.main-content ul,.main-content ol{margin-top:0;margin:auto;width:100%}
 .main-content blockquote{padding:0 1rem;margin-left:0;margin-top:10px;margin-bottom:10px;color:#819198;border-left:0.3rem solid #dce6f0}
 .main-content blockquote>:first-child{margin-top:0}
 .main-content blockquote>:last-child{margin-bottom:0}
@@ -259,28 +276,52 @@ a:hover{text-decoration:underline}
 .site-footer-owner{display:block;font-weight:bold}
 .site-footer-credits{color:#819198}
 
-.main-content .blockproof{padding:0 1rem;margin-left:0;margin-top:2px;margin-bottom:10px;color:#0037A8;border-left:0.1rem solid #960000;
-text-align: left;
-font-size: 16px;
+.main-content .blockproof{display:inline-block;
+    padding:0 0 0 1em;
+    margin-left:0;
+    margin-top:0;
+    margin-bottom:0px;
+    color:#0037A8;
+    border-left:0.15rem solid #960000;
+    border-right:0;
+    border-top:0px;
+    border-bottom:0;
+    border-style: dotted;
+    text-align: left;
+    font-size: 16px;
 /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
 .main-content .blockproof>:first-child{margin-top:0}
 .main-content .blockproof>:last-child{margin-bottom:0}
 
 .main-content example{
-    display:block;
-    padding:0 0 0 1rem;
-    margin-left:0;
-    margin-top:0;
-    margin-bottom:10px;
-    color:#076422;
-    border-left:0.4rem solid #EB0000;
-    text-align: left;
-    font-size: 16px;
+          display:block;
+          padding:0 0 0 1rem;
+          margin-left:0;
+          margin-top:0;
+          margin-bottom:10px;
+          color:#076422;
+          border-left:0.4rem solid #EB0000;
+          text-align: left;
+          font-size: 16px;
     /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
 .main-content example>:first-child{margin-top:0}
 .main-content example>:last-child{margin-bottom:0}
+
+/*example counter*/
+ .main-content{
+  counter-reset: counterex;
+}
+.main-content example::before
+    {
+        counter-increment:counterex;
+        content: "ឧទាហរណ៍ " counter(section)"." counter(counterex) "  ";
+        font-weight:bold;
+        font-family: Angkor;
+ }
+
+
 
 .line-bottom
 {
@@ -332,16 +373,6 @@ padding-bottom: 2px;
 }
 
 /* background for definition*/
-.definition{
-  display:inline-block;
-  width:100%;
-  background:linear-gradient(to right, red 1%, red 0%, white 90%, white 100%);
-  border-radius: 15px 5px;
-  border: #CC0F12;
-  color: white;
-  padding: 0 10px 0 20px;
-  font-size: 102%;
-}
 div.definitionb{ /* To define border and style around text*/
    color: darkblue;
    display:inline-block;
@@ -368,6 +399,38 @@ div.definitionb{ /* To define border and style around text*/
    /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
    /*text-indent: 10px; */
 }
+.main-content defn{
+          display:block;
+          padding:0 0 0 0rem;
+          margin-left:0;
+          margin-top:0;
+          margin-bottom:0px;
+          font-size: 16px;
+}
+.main-content defn>:first-child{margin-top:0}
+.main-content defn>:last-child{margin-bottom:0}
+
+/*example counter*/
+ section{
+  counter-reset: counterdef;
+}
+defn .definition{
+   display:inline-block;
+   width:100%;
+   background:linear-gradient(to right, red 1%, red 0%, white 90%, white 100%);
+   border-radius: 15px 1px;
+   border: #CC0F12;
+   color: white;
+   padding: 0 10px 0 20px;
+   font-size: 102%;
+ }
+defn .definition:before
+     {
+         counter-increment:counterdef;
+         content: "និយមន័យ " counter(section)"." counter(counterdef) "  ";
+         font-weight:bold;
+  }
+
 
 ul{
   padding-left:3em;
