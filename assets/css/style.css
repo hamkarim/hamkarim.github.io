@@ -1,40 +1,31 @@
 @charset "utf-8";
 /* Global Styles */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize -Share:400,700&subset=latin,latin-ext */
-/*@import url("https://fonts.googleapis.com/css?family=Didact Gothic|Angkor|Siemreap|Bayon"); 
+@import url("https://fonts.googleapis.com/css?family=Didact Gothic|Angkor|Siemreap|Bayon"); 
 html, body{
     font-family:'Didact Gothic','Siemreap';
     -ms-text-size-adjust:100%;
     -webkit-text-size-adjust:100%;
     padding:0;
     margin:0;
-    /*font-family: 'Khmer OS Battambang', 'sans-serif';/*"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; /
+    /*font-family: 'Khmer OS Battambang', 'sans-serif';/*"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
     font-size:16px;
     line-height:2.0;
     color:#606c71
-} */
+} 
 
-p{
-	text-indent:30px;
-	/*font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
-	font-size:16px; /*,"Noto Serif Khmer","Khmer OS Content"*/
-	font-weight:normal;
-	/*line-height:200%; */
-	margin:0 0 14px
-}
-
-/* <style type="text/css"> */
+/*  <style type="text/css"> 
 @font-face {
   font-family: 'Didact Gothic', 'Angkor', 'Siemreap', 'Bayon';
   font-style: normal;
   font-weight: 400;
-  src: url("https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.eot, https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.eot, https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.eot, https://hamkarim.github.io/didact-gothic-v13-latin-regular.eot"); /* IE9 Compat Modes */
+  src: url("../../fonts/angkor-v12-khmer-regular.eot, ../../fonts/siemreap-v12-khmer-regular.eot, ../../fonts/bayon-v13-khmer-regular.eot, ../../fonts/didact-gothic-v13-latin-regular.eot"); /* IE9 Compat Modes 
   src: local('Didact Gothic','Angkor','Siemreap','Bayon'), local('DidactGothic-Regular','Angkor-Regular','Bayon-Regular'),
-       url("https://hamkarim.github.io/fonts/didact-gothic-v13-latin-regular.eot?#iefix, https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.eot?#iefix, https://hamkarim.github.io//fonts/siemreap-v12-khmer-regular.eot?#iefix, fonts/bayon-v13-khmer-regular.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
-       url("https://hamkarim.github.io/fonts/didact-gothic-v13-latin-regular.woff2, https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.woff2, https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.woff2, https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.woff2") format('woff2'), /* Super Modern Browsers */
-       url("https://hamkarim.github.io/fonts/didact-gothic-v13-latin-regular.woff, https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.woff, https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.woff, https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.woff") format('woff'), /* Modern Browsers */
-       url("https://hamkarim.github.io/fonts/didact-gothic-v13-latin-regular.ttf, https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.ttf, https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.ttf, https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.ttf") format('truetype'), /* Safari, Android, iOS */
-       url("https://hamkarim.github.io/fonts/didact-gothic-v13-latin-regular.svg#DidactGothic, https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.svg#Angkor, https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.svg#Siemreap, https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.svg#Bayon") format('svg'); /* Legacy iOS */
+       url("../../fonts/didact-gothic-v13-latin-regular.eot?#iefix, ../../fonts/angkor-v12-khmer-regular.eot?#iefix, ../../fonts/siemreap-v12-khmer-regular.eot?#iefix, ../../fonts/bayon-v13-khmer-regular.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 *
+       url("../../fonts/didact-gothic-v13-latin-regular.woff2, ../../fonts/bayon-v13-khmer-regular.woff2, ../../fonts/siemreap-v12-khmer-regular.woff2, ../../fonts/angkor-v12-khmer-regular.woff2") format('woff2'), /* Super Modern Browsers *
+       url("../../fonts/didact-gothic-v13-latin-regular.woff, ../../fonts/angkor-v12-khmer-regular.woff, ../../fonts/siemreap-v12-khmer-regular.woff, ../../fonts/bayon-v13-khmer-regular.woff") format('woff'), /* Modern Browsers *
+       url("../../fonts/didact-gothic-v13-latin-regular.ttf, ../../fonts/siemreap-v12-khmer-regular.ttf, ../../fonts/bayon-v13-khmer-regular.ttf, ../../fonts/angkor-v12-khmer-regular.ttf") format('truetype'), /* Safari, Android, iOS *
+       url("../../fonts/didact-gothic-v13-latin-regular.svg#DidactGothic, ../../fonts/angkor-v12-khmer-regular.svg#Angkor, ../../fonts/siemreap-v12-khmer-regular.svg#Siemreap, ../../fonts/bayon-v13-khmer-regular.svg#Bayon") format('svg'); /* Legacy iOS *
 }
 html, body{
     font-family: 'Didact Gothic', 'Angkor', 'Siemreap', 'Bayon';
@@ -46,7 +37,17 @@ html, body{
     padding:0;
     margin:0;
 }
-/* </style> */
+/*</style> */
+
+
+p{
+	text-indent:30px;
+	/*font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
+	font-size:16px; /*,"Noto Serif Khmer","Khmer OS Content"*/
+	font-weight:normal;
+	/*line-height:200%; */
+	margin:0 0 14px
+}
 
 article,aside,details,footer,header,hgroup,main,menu,section,summary{display:block}
 audio,canvas,progress,video{display:inline-block;vertical-align:baseline}
