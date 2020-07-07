@@ -411,7 +411,7 @@ div.definitionb{ /* To define border and style around text*/
 .main-content defn>:last-child{margin-bottom:0}
 
 /*example counter*/
- section{
+section{
   counter-reset: counterdef;
 }
 defn .definition{
@@ -437,7 +437,7 @@ ul{
   display: table-cell;
   padding-right: 0;
   text-align: left;
-  font-size: 16px;
+  /*font-size: 16px; */
 }
 
 ul li{
@@ -469,7 +469,7 @@ ul.leftborder{
     /*text-indent: 10px; */
 }
 .leftstyleborder{
-   color: darkred;
+    color: darkred;
     display:inline-block;
     width:100%;
     /*padding:0 0 0 0; */
@@ -491,13 +491,13 @@ ul.leftborder{
 }
 
 ol{
- /*table-cell;*/
-counter-reset: item;
-padding-left: 0px;
-margin-left: 0;
-text-align: left;
-font-size: 16px;
-/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
+	/*table-cell;*/
+	counter-reset: item;
+	padding-left: 0px;
+	margin-left: 0px;
+	text-align: left;
+	/* font-size: 16px;
+	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
 ol li{
     /* margin-bottom:1em;*/
@@ -505,43 +505,43 @@ ol li{
     /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
 ol.parenthalpha li {
-counter-increment: section;
-/*display: table-row;*/
-display: block;
-margin-bottom: .5em;
-margin-left: 2em;
-font-size: 16px;
-/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
+	counter-increment: section;
+	/*display: table-row;*/
+	display: block;
+	margin-bottom: .5em;
+	margin-left: 2em;
+	/*font-size: 16px;
+	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
 ol.parenthalpha li::before {
-content: "(" counter(section, lower-alpha) ") ";
-/*display: table-cell;*/
-display: inline-block;
-text-align: left;
-font-size: 16px;
-/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
+	content: "(" counter(section, lower-alpha) ") ";
+	/*display: table-cell;*/
+	display: inline-block;
+	text-align: left;
+	/*font-size: 16px;
+	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
 ol.parenthnum li {
-display: block;
-margin-bottom: .5em;
-margin-left: 3em;
-/*counter-increment: section;*/
-/*display: table-row; */
-font-size: 16px;
+	display: block;
+	margin-bottom: .5em;
+	margin-left: 4em;
+	/*counter-increment: section;*/
+	/*display: table-row; 
+	font-size: 16px; */
 }
 ol.parenthnum li::before {
-/*content: "(" counter(section) ") ";
-display: table-cell;*/
-padding-right: 0px;
-display: inline-block;
-content: "(" counter(item) ")";
-counter-increment: item;
-width: 2em;
-margin-left: -4em;
-padding-left: 2em;
-/*text-align: left;*/
-font-size: 16px;
-/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
+	/*content: "(" counter(section) ") ";
+	display: table-cell;*/
+	padding-right: 0px;
+	display: inline-block;
+	content: "(" counter(item) ")";
+	counter-increment: item;
+	width: 2em;
+	margin-left: -4em;
+	padding-left: 2em;
+	/*text-align: left;
+	font-size: 16px;
+	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
 
 #recentposts ul {
