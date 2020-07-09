@@ -30,7 +30,7 @@
     },
     "HTML-CSS": { fonts: ["TeX"],
       linebreaks: { automatic: true } ,
-     scale:58},
+     scale:85},
       //CommonHTML: { scale: 20, linebreaks: { automatic: true } },
       //CommonHTML: {scale: 20},
       SVG: { linebreaks: { automatic:true } },
