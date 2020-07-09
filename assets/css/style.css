@@ -3,49 +3,38 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize -Share:400,700&subset=latin,latin-ext */
 
 /* @font-face {
-  font-family: "Siemreap";
-  src: url('https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.ttf'), url('https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.ttf'), url('https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.ttf', 'https://hamkarim.github.io/fonts/CenturyGothicRegular.ttf');
-}   */
-
-@font-face {
    font-family: 'Siemreap';
-   font-style: normal;
-   font-weight: 400;
-   src: url("https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.eot"); /* IE9 Compat Modes */
+   src: url("https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.eot"); /* IE9 Compat Modes *
    src: local('Siemreap'),
-   url("https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
-     url("https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.woff2") format('woff2'), /* Super Modern Browsers */
-    url("https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.woff") format('woff'), /* Modern Browsers */
-     url("https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.ttf") format('truetype'), /* Safari, Android, iOS */
-     url("https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.svg#Siemreap") format('svg'); /* Legacy iOS */
+   url("https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 *
+     url("https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.woff2") format('woff2'), /* Super Modern Browsers *
+    url("https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.woff") format('woff'), /* Modern Browsers *
+     url("https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.ttf") format('truetype'), /* Safari, Android, iOS *
+     url("https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.svg#Siemreap") format('svg'); /* Legacy iOS *
    }
 @font-face {
       font-family: 'Angkor';
-      font-style: normal;
-      font-weight: 400;
-      src: url("https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.eot"); /* IE9 Compat Modes */
+      src: url("https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.eot"); /* IE9 Compat Modes *
       src: local('Siemreap'), local('Angkor-Regular'),
-      url("https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
-        url("https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.woff2") format('woff2'), /* Super Modern Browsers */
-       url("https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.woff") format('woff'), /* Modern Browsers */
-        url("https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.ttf") format('truetype'), /* Safari, Android, iOS */
-        url("https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.svg#Siemreap") format('svg'); /* Legacy iOS */
+      url("https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 *
+        url("https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.woff2") format('woff2'), /* Super Modern Browsers *
+       url("https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.woff") format('woff'), /* Modern Browsers *
+        url("https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.ttf") format('truetype'), /* Safari, Android, iOS *
+        url("https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.svg#Siemreap") format('svg'); /* Legacy iOS *
       }
 
       @font-face {
             font-family: 'Bayon';
-            font-style: normal;
-            font-weight: 400;
-            src: url("https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.eot"); /* IE9 Compat Modes */
+            src: url("https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.eot"); /* IE9 Compat Modes *
             src: local('Siemreap'), local('Bayon-Regular'),
-            url("https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
-              url("https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.woff2") format('woff2'), /* Super Modern Browsers */
-             url("https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.woff") format('woff'), /* Modern Browsers */
-              url("https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.ttf") format('truetype'), /* Safari, Android, iOS */
-              url("https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.svg#Siemreap") format('svg'); /* Legacy iOS */
-            }
+            url("https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 *
+              url("https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.woff2") format('woff2'), /* Super Modern Browsers *
+             url("https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.woff") format('woff'), /* Modern Browsers *
+              url("https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.ttf") format('truetype'), /* Safari, Android, iOS *
+              url("https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.svg#Siemreap") format('svg'); /* Legacy iOS *
+            }  */
 
-/* @import url("https://fonts.googleapis.com/css?family=Open Sans|Didact Gothic|Angkor|Siemreap|Bayon"); */
+@import url("https://fonts.googleapis.com/css?family=Open Sans|Didact Gothic|Angkor|Siemreap|Bayon");
 html, body{
     font-family: 'Siemreap', 'Century Gothic', 'Didact Gothic';
     -ms-text-size-adjust:100%;
