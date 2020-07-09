@@ -3,16 +3,16 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize -Share:400,700&subset=latin,latin-ext */
 
 @import url("https://fonts.googleapis.com/css?family=Open Sans|Didact Gothic|Siemreap|Angkor|Bayon|Battambang|Koulen");
-html,body{
-    font-family: 'Ang Daunsok','Siemreap', 'Century Gothic', 'Didact Gothic';
-    -ms-text-size-adjust:100%;
-    -webkit-text-size-adjust:100%;
-    padding:0;
-    margin:0;
+html, body {  /*for html, body fonts*/
+          font-family: 'Ang DaunKeo','Siemreap', 'Century Gothic', 'Didact Gothic';
+          -ms-text-size-adjust:100%;
+          -webkit-text-size-adjust:100%;
+          padding:0;
+          margin:0;
     /*font-family: 'Khmer OS Battambang', 'sans-serif';/*"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
-    font-size:16px;
-    line-height:2.0;
-    color:#606c71
+          font-size:16px;
+          line-height:2.0;
+          color:#606c71
 }
 p{
 	text-indent:30px;
@@ -587,8 +587,9 @@ div.divfigure {
 
 .toggle.bground{
     background-color:#1860C1;
-    color:white;padding: 1px 10px 3px 10px;
+    color:white;
+    padding: 0px 10px 0px 10px;
     text-align:right;
     font-style:italic;
-    font-size: 110%;
+    font-size: 100%;
 }
