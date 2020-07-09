@@ -32,7 +32,7 @@
       linebreaks: { automatic: true } ,
      //scale:90
 },
-      CommonHTML: { scale: 20, linebreaks: { automatic: true } },
+      CommonHTML: { scale: 94, linebreaks: { automatic: true } },
       //CommonHTML: {scale: 20},
       SVG: { linebreaks: { automatic:true } },
     /*tex2jax: {
