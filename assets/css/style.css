@@ -321,7 +321,7 @@ body {counter-reset:section;}
 .main-content example::before
     {
         counter-increment:counterex;
-        content: "ឧទាហរណ៍ " counter(section)"." counter(counterex) "  ";
+        content: "ឧទាហរណ៍ " counter(section,khmer)"." counter(counterex,khmer) "  ";
         font-weight:bold;
         font-family: Angkor;
  }
