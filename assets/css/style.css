@@ -241,13 +241,13 @@ body {counter-reset:section;}
     h2.sectcounter:before
     {
         counter-increment:section;
-        content:counter(section) ". ";
+        content:counter(section,khmer) ". ";
         font-weight:bold;
     }
     h3.sectcounter:before
     {
         counter-increment:subsection;
-        content:counter(section) "." counter(subsection) "  ";
+        content:counter(section, khmer) "." counter(subsection,khmer) "  ";
         font-weight:bold;
     }
 
@@ -551,7 +551,7 @@ ol.parenthnum li::before {
 	display: table-cell;*/
 	padding-right: 0px;
 	display: inline-block;
-	content: "(" counter(item) ")";
+	content: "(" counter(item,khmer) ")";
 	counter-increment: item;
 	width: 2em;
 	margin-left: -4em;
