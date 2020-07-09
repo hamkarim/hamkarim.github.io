@@ -3,7 +3,7 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize -Share:400,700&subset=latin,latin-ext */
 @import url("https://fonts.googleapis.com/css?family=Open Sans|Didact Gothic|Angkor|Siemreap|Bayon");
 html, body{
-    font-family:'Century Gothic','Didact Gothic','Siemreap';
+    font-family:'Noto Sans Khmer','Century Gothic','Didact Gothic','Siemreap';
     -ms-text-size-adjust:100%;
     -webkit-text-size-adjust:100%;
     padding:0;
@@ -538,7 +538,7 @@ ol.parenthnum li {
 	margin-bottom: .5em;
 	margin-left: 4em;
 	/*counter-increment: section;*/
-	/*display: table-row; 
+	/*display: table-row;
 	font-size: 16px; */
 }
 ol.parenthnum li::before {
