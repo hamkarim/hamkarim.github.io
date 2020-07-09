@@ -33,7 +33,6 @@
               url("https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.ttf") format('truetype'), /* Safari, Android, iOS *
               url("https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.svg#Siemreap") format('svg'); /* Legacy iOS *
             }  */
-
 @import url("https://fonts.googleapis.com/css?family=Open Sans|Didact Gothic|Angkor|Siemreap|Bayon");
 html, body{
     font-family: 'Siemreap', 'Century Gothic', 'Didact Gothic';
