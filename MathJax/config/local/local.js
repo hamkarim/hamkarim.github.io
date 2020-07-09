@@ -20,9 +20,7 @@
           vect: ["{\\overrightarrow{#1}}",1],
         }
     },
-    CommonHTML: {
-      scale: 85
-    },
+    //CommonHTML: { scale: 85},
     extensions: ["tex2jax.js"],
     jax: ["input/TeX", "output/HTML-CSS"],
     tex2jax: {
@@ -30,7 +28,12 @@
       displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
       processEscapes: true
     },
-    "HTML-CSS": { fonts: ["TeX"] }
+    "HTML-CSS": { fonts: ["TeX"],
+      linebreaks: { automatic: true } ,
+     scale:58},
+      //CommonHTML: { scale: 20, linebreaks: { automatic: true } },
+      //CommonHTML: {scale: 20},
+      SVG: { linebreaks: { automatic:true } },
     /*tex2jax: {
       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
       processEscapes: true,
