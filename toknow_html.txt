@@ -1,7 +1,7 @@
 
 1. 	For figure tag
 	https://www.w3.org/Style/Examples/007/figures.en.html
-2.	
+2.
 
 
 vscode://vscode.github-authentication/did-authenticate?windowId=1&code=8b6993eba789b41b033a&state=e3f34bd5-af6f-4012-b1f9-6ac22782d25b
@@ -90,7 +90,7 @@ html, body{
 }
 
 
-Environment for definition
+// Environment for definition
 
 <defn>
  <div class="definition"> </div>
@@ -99,3 +99,55 @@ Environment for definition
 លំហអាហ្វីន $\mathcal{E}$ ជាលំហមានវិមាត្ររាប់អស់ បើលំហវ៉ិចទ័រ $\vect{\E}$ ជាលំហមានវិមាត្ររាប់អស់។ ក្នុងករណីនេះ វិមាត្ររបស់ $\mathcal{E}$ ស្មើនឹងវិមាត្ររបស់លំហទិសដៅ។  </p>
 </div>
 </defn>
+
+// Another method of block proof
+<div class="showhidebground">
+    <a href="#proofNo.1" class="input_name" id="showanswer">[Show proof]</a>
+    <a href="#proofNo.1" class="input_name" id="hideanswer"  style="display:none;">[Hide proof]</a>
+</div><br>
+<div class="block_proof" style="display:none">
+<div><b><span class="headproof">សម្រាយបញ្ជាក់.</span> </b> </div>
+<p>
+This is the last part in our series exploring how to get new topological spaces from old ones. For now, at least. We mentioned the definition of the product topology for a finite product way back in Example 2.3 .6 in the lecture notes concerning bases of topologies, but we did not do anything with it at the time. In that same section we also discussed the following basis on $\mathbb{R}^{2}$
+that we were eventually able to show generates the usual topology on $\mathbb{R}^{2}$ :
+
+\[
+\mathcal{B} = \left\{(a, b) \times(c, d) \subseteq \mathbb{R}^{2}:\; a &lt; b, c &lt; d\right\}
+\]
+</p>
+</div>
+
+
+.example-content {
+  padding: 10px 5px 0 5px;
+}
+
+
+.soln-title {
+  font-weight: bold;
+  font-style: italic;
+  font-size: unset;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+
+.S-Hint {
+  color: rgb(188,43,43);
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.SH-Link {
+  font-size: smaller;
+  font-weight: bold;
+  color: #0000cc;
+}
+
+.SH-Link-Hover {
+  font-size: smaller;
+  font-weight: bold;
+  color: #FF00FF;
+  cursor: pointer;
+}
+
