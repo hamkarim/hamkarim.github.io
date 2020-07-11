@@ -621,4 +621,125 @@ div.divfigure {
     text-align: left;
     font-size: 16px;
 }
-/*%%%%%%%%%%%%%%*/
+
+/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Show hide answer in examples
+%%%%%%%%%%% style  */
+
+.example {
+  border: 2px solid #000000;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  width: 100%;
+  padding: 5px;
+  margin: 0 0 20px 0;
+  box-shadow: 0 0 3px 2px rgba(188,43,43, 0.6);
+}
+
+.example-title {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.example-content {
+  padding: 10px 5px 0 5px;
+}
+
+.example_parts_list, .example_parts_sub_list {
+  margin: 5px 0 10px 0;
+  padding-left: 15px;
+}
+
+  .example_parts_list:first-of-type, .example_parts_sub_list:first-of-type {
+    counter-reset: item;
+  }
+
+  .example_parts_list > li, .example_parts_sub_list > li {
+    display: block;
+    margin-bottom: 12px;
+    margin-left: 5px;
+  }
+
+    .example_parts_list > li:last-child, .example_parts_sub_list > li:last-child {
+      display: block;
+      margin-bottom: unset;
+      margin-left: 5px;
+    }
+
+    .example_parts_list > li::before {
+      counter-increment: item;
+      content: "(" counter(item, lower-alpha) ")";
+      padding-right: 5px;
+      margin-left: -3px;
+      font-weight: bold;
+    }
+
+    .example_parts_sub_list > li::before {
+      counter-increment: item;
+      content: "(" counter(item, lower-roman) ")";
+      padding-right: 5px;
+      margin-left: -3px;
+      font-weight: bold;
+    }
+
+.soln-title {
+  font-weight: bold;
+  font-style: italic;
+  font-size: unset;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+
+.S-Hint {
+  color: rgb(188,43,43);
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.SH-Link {
+  font-size: smaller;
+  font-weight: bold;
+  color: #0000cc;
+}
+
+.SH-Link-Hover {
+  font-size: smaller;
+  font-weight: bold;
+  color: #FF00FF;
+  cursor: pointer;
+}
+
+.SH-padding {
+  padding-right: 10px;
+}
+
+.SH-All::before, .SH-Bracket::before, .practice-soln-link::before {
+  content: "[";
+  color: #000000;
+}
+
+  .SH-All::before:hover, .SH-Bracket::before:hover, .practice-soln-link::before:hover {
+    content: "[";
+    color: #000000;
+  }
+
+.SH-All::after, .SH-Bracket::after, .practice-soln-link::after {
+  content: "]";
+  color: #000000;
+}
+
+  .SH-All::after:hover, .SH-Bracket::after:hover, .practice-soln-link::after:hover {
+    content: "]";
+    color: #000000;
+  }
+
+.SH-Show {
+  display: block !important;
+}
+
+.SH-Hide {
+  display: none;
+}
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */

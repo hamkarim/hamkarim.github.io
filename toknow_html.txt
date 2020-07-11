@@ -118,10 +118,68 @@ that we were eventually able to show generates the usual topology on $\mathbb{R}
 </div>
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Show hide solutions in example
+
+%%%%%%%%%% style 
+
+.example {
+  border: 2px solid #000000;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  width: 100%;
+  padding: 5px;
+  margin: 0 0 20px 0;
+  box-shadow: 0 0 3px 2px rgba(188,43,43, 0.6);
+}
+
+.example-title {
+  font-weight: bold;
+  font-style: italic;
+}
+
 .example-content {
   padding: 10px 5px 0 5px;
 }
 
+.example_parts_list, .example_parts_sub_list {
+  margin: 5px 0 10px 0;
+  padding-left: 15px;
+}
+
+  .example_parts_list:first-of-type, .example_parts_sub_list:first-of-type {
+    counter-reset: item;
+  }
+
+  .example_parts_list > li, .example_parts_sub_list > li {
+    display: block;
+    margin-bottom: 12px;
+    margin-left: 5px;
+  }
+
+    .example_parts_list > li:last-child, .example_parts_sub_list > li:last-child {
+      display: block;
+      margin-bottom: unset;
+      margin-left: 5px;
+    }
+
+    .example_parts_list > li::before {
+      counter-increment: item;
+      content: "(" counter(item, lower-alpha) ")";
+      padding-right: 5px;
+      margin-left: -3px;
+      font-weight: bold;
+    }
+
+    .example_parts_sub_list > li::before {
+      counter-increment: item;
+      content: "(" counter(item, lower-roman) ")";
+      padding-right: 5px;
+      margin-left: -3px;
+      font-weight: bold;
+    }
 
 .soln-title {
   font-weight: bold;
@@ -150,4 +208,140 @@ that we were eventually able to show generates the usual topology on $\mathbb{R}
   color: #FF00FF;
   cursor: pointer;
 }
+
+.SH-padding {
+  padding-right: 10px;
+}
+
+.SH-All::before, .SH-Bracket::before, .practice-soln-link::before {
+  content: "[";
+  color: #000000;
+}
+
+  .SH-All::before:hover, .SH-Bracket::before:hover, .practice-soln-link::before:hover {
+    content: "[";
+    color: #000000;
+  }
+
+.SH-All::after, .SH-Bracket::after, .practice-soln-link::after {
+  content: "]";
+  color: #000000;
+}
+
+  .SH-All::after:hover, .SH-Bracket::after:hover, .practice-soln-link::after:hover {
+    content: "]";
+    color: #000000;
+  }
+
+.SH-Show {
+  display: block !important;
+}
+
+.SH-Hide {
+  display: none;
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%% code in body and header
+<head>
+<script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
+ 
+<script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>  
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+  
+  
+</head>
+
+<div class="example">
+    <span class="example-title">Example 3</span> Evaluate the following integral.
+             
+$$\int{{\left( {3t + 5} \right)\cos \left( {\frac{t}{4}} \right)\,dt}}$$
+<div class="example-content">
+      <span id="SHLink_Soln3" class="soln-title SH-Link">Show Solution</span> 
+	  <span id="SHImg_Soln3" class="fa fa-caret-right" aria-hidden="true"></span>
+ <div id="SHObj_Soln3" class="soln-content" style="display: none;">
+<p>There are two ways to proceed with this example.  For many, the first thing that they try is multiplying the cosine through the parenthesis, splitting up the integral and then doing integration by parts on the first integral.</p>
+          
+ <p>While that is a perfectly acceptable way of doing the problem it’s more work than we really need to do.  Instead of splitting the integral up let’s instead use the following choices for </p>
+            
+ \begin{align*}u & = 3t + 5& \hspace{0.5in}dv & = \cos \left( {\frac{t}{4}} \right)\,dt\\ du & = 3\,dt & \hspace{0.5in}v & = 4\sin \left( {\frac{t}{4}} \right)\end{align*}
+
+ <p>The integral is then,</p>
+      
+\begin{align*}\int{{\left( {3t + 5} \right)\cos \left( {\frac{t}{4}} \right)\,dt}} & = 4\left( {3t + 5} \right)\sin \left( {\frac{t}{4}} \right) - 12\int{{\sin \left( {\frac{t}{4}} \right)\,dt}}\\ &  = 4\left( {3t + 5} \right)\sin \left( {\frac{t}{4}} \right) + 48\cos \left( {\frac{t}{4}} \right) + c\end{align*}
+
+<p>Notice that we pulled any constants out of the integral when we used the integration by parts formula.  We will usually do this in order to simplify the integral a little.</p>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+
+<div class="example">
+    <span class="example-title">Example 5</span> Evaluate the following integral
+              $$\int{{x\sqrt {x + 1} \,dx}}$$
+    <ol class="example_parts_list">
+      <li>Using Integration by Parts.</li>
+      <li>Using a standard Calculus I substitution.</li>
+    </ol>
+    <span id="SHALink_S_Soln5" class="SH-All SH-Link">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln5" class="SH-All SH-Link">Hide All Solutions</span>
+    
+<div class="example-content">
+      <span class="soln-list-item soln-list-subitem">a</span> Using Integration by Parts. <span id="SHLink_Soln5a" class="soln-title SH-Link">Show Solution</span> <span id="SHImg_Soln5a" class="fa fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5a" class="soln-content" style="display: none;">
+        <p>First notice that there are no trig functions or exponentials in this integral.  While a good many integration by parts integrals will involve trig functions and/or exponentials not all of them will so don’t get too locked into the idea of expecting them to show up.</p>
+          
+          <p>In this case we’ll use the following choices for $u$ and $dv$.</p>
+            \begin{align*}u & = x & \hspace{0.5in}dv & = \sqrt {x + 1} \,dx\\ du & = dx & \hspace{0.5in}v & = \frac{2}{3}{\left( {x + 1} \right)^{\frac{3}{2}}}\end{align*}
+
+          <p>The integral is then,</p>
+           \begin{align*}\int{{x\sqrt {x + 1} \,dx}} &= \frac{2}{3}x{\left( {x + 1} \right)^{\frac{3}{2}}} - \frac{2}{3}\int{{{{\left( {x + 1} \right)}^{\frac{3}{2}}}\,dx}}\\ &  = \frac{2}{3}x{\left( {x + 1} \right)^{\frac{3}{2}}} - \frac{4}{{15}}{\left( {x + 1} \right)^{\frac{5}{2}}} + c\end{align*}
+      </div>
+
+      <br>
+      <span class="soln-list-item soln-list-subitem">b</span> Using a standard Calculus I substitution. <span id="SHLink_Soln5b" class="soln-title SH-Link">Show Solution</span> <span id="SHImg_Soln5b" class="fa fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5b" class="soln-content" style="display: none;">
+        <p>Now let’s do the integral with a substitution.  We can use the following substitution.</p>
+
+            $$u = x + 1\hspace{0.5in}x = u - 1\hspace{0.5in}du = dx$$
+          
+          <p>Notice that we’ll actually use the substitution twice, once for the quantity under the square root and once for the  in front of the square root.  The integral is then,</p>
+          
+            \begin{align*}\int{{x\sqrt {x + 1} \,dx}} & = \int{{\left( {u - 1} \right)\sqrt u \,du}}\\ &  = \int{{{u^{\frac{3}{2}}} - {u^{\frac{1}{2}}}\,du}}\\ &  = \frac{2}{5}{u^{\frac{5}{2}}} - \frac{2}{3}{u^{\frac{3}{2}}} + c\\ &  = \frac{2}{5}{\left( {x + 1} \right)^{\frac{5}{2}}} - \frac{2}{3}{\left( {x + 1} \right)^{\frac{3}{2}}} + c\end{align*}
+      </div>
+    </div>
+  </div>
+
+
+
+<h1>fa fa-caret-down</h1>
+
+<i class="fa fa-caret-down"></i>
+<i class="fa fa-caret-down" style="font-size:24px"></i>
+<i class="fa fa-caret-down" style="font-size:36px"></i>
+<i class="fa fa-caret-down" style="font-size:48px;color:red"></i>
+<br>
+
+<p>Used on a button:</p>
+<button style="font-size:24px">Button <i class="fa fa-caret-right"></i></button>
+
+<p>Unicode:</p>
+<i style="font-size:24px" class="fa">&#xf0d7;</i>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
