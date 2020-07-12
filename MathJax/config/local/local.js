@@ -24,15 +24,14 @@
     extensions: ["tex2jax.js"],
     jax: ["input/TeX", "output/HTML-CSS"],
     tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-      processEscapes: true
-    },
-    "HTML-CSS": { fonts: ["TeX"],
-      linebreaks: { automatic: true } ,
+             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+             displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+             processEscapes: true },
+             "HTML-CSS": { fonts: ["TeX"],
+             linebreaks: { automatic: true } ,
      //scale:90
-},
-      CommonHTML: { scale: 88, linebreaks: { automatic: true } },
+          },
+      CommonHTML: { scale: 90, linebreaks: { automatic: true } },
       //CommonHTML: {scale: 20},
       SVG: { linebreaks: { automatic:true } },
     /*tex2jax: {
@@ -43,7 +42,5 @@
   });
 
 MathJax.Ajax.loadComplete("https://hamkarim.github.io/MathJax/config/local/local.js");
-
-
 
 //</script> //
