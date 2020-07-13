@@ -1,6 +1,7 @@
 /* <script type="text/x-mathjax-config"> */
   MathJax.Hub.Config({
     TeX: {
+          tags: 'ams',
         Macros: {
           RR: "{\\bf R}",
           E: "{\\bf E}",
@@ -23,10 +24,10 @@
     //CommonHTML: { scale: 85},
     extensions: ["tex2jax.js"],
     jax: ["input/TeX", "output/HTML-CSS"],
-    window.MathJax = {
-                tex: {
-                          tags: 'ams'
-                } },
+ //   window.MathJax = {
+//                tex: {
+//                          tags: 'ams'
+//                } },
     tex2jax: {
              inlineMath: [ ['$','$'], ["\\(","\\)"] ],
              displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
