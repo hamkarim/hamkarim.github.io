@@ -33,7 +33,7 @@
           },
           tex: {
                     tags: 'ams'
-          }
+          },
       CommonHTML: { scale: 90, linebreaks: { automatic: true } },
       //CommonHTML: {scale: 20},
       SVG: { linebreaks: { automatic:true } },
