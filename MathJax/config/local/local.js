@@ -31,11 +31,6 @@
              linebreaks: { automatic: true } ,
      //scale:90
           },
-          window.MathJax = {
-                    tex: {
-                              tags: 'ams'
-                    }
-          };
       CommonHTML: { scale: 90, linebreaks: { automatic: true } },
       //CommonHTML: {scale: 20},
       SVG: { linebreaks: { automatic:true } },
@@ -45,6 +40,11 @@
       equationNumbers: { autoNumber: "AMS" }
     }*/
   });
+  window.MathJax = {
+            tex: {
+                      tags: 'ams'
+            }
+ };
 
 MathJax.Ajax.loadComplete("https://hamkarim.github.io/MathJax/config/local/local.js");
 
