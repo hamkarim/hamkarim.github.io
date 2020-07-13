@@ -1,7 +1,7 @@
 /* <script type="text/x-mathjax-config"> */
   MathJax.Hub.Config({
     TeX: {
-          tags: 'ams',
+          equationNumbers: {autoNumber: "AMS"},
         Macros: {
           RR: "{\\bf R}",
           E: "{\\bf E}",
