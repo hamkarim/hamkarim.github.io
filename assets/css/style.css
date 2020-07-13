@@ -2,7 +2,10 @@
 /* Global Styles */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize -Share:400,700&subset=latin,latin-ext */
 
-@import url("https://fonts.googleapis.com/css?family=Open Sans|Didact Gothic|Siemreap|Angkor|Bayon|Battambang|Koulen");
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Koulen&family=Bangers&family=Kaushan+Script&family=Modak&family=Ultra&family=Fjalla+One&family=Lalezar&display=swap');
+
+@import url("https://fonts.googleapis.com/css?family=Open Sans|Didact Gothic|Siemreap|Angkor|Bayon|Battambang|");
 html, body {  /*for html, body fonts*/
           font-family: 'Ang DaunKeo','Siemreap', 'Century Gothic', 'Didact Gothic';
           -ms-text-size-adjust:100%;
@@ -148,7 +151,7 @@ a:hover{text-decoration:underline}
 .tabs__item{width:100%;float:left}@media screen and (min-width: 40em){.tabs__item{display:table-cell;float:none;width:auto}}
 .tabs__link{
     display:block;
-    font-family: 'Bayon','Didact Gothic';
+    font-family: 'Angkor','Bangers', cursive;
 }
 
 .primary-nav{text-align:center;border-radius:0;overflow:hidden}
@@ -167,21 +170,31 @@ a:hover{text-decoration:underline}
 }
 .main-content :first-child{margin-top:0}@media screen and (min-width: 64em){.main-content{max-width:64rem;padding:2rem 6rem;margin:0 auto}}@media screen and (min-width: 42em) and (max-width: 64em){.main-content{padding:2rem 4rem}}@media screen and (max-width: 42em){.main-content{padding:2rem 1rem}}
 .main-content img{max-width:100%;width:"40%";height:"40%"}
-.main-content h1,.main-content h2,.main-content h3,.main-content h4,.main-content h5,.main-content h6{
+
+.main-content h3,.main-content h4,.main-content h5,.main-content h6{
 	margin-top:2rem;
 	margin-bottom:1rem;
-	font-family:'Angkor','Didact Gothic'; /*'Century Gothic','Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang'; */
+	font-family:'Bayon','Kaushan Script', cursive; /*'Didact Gothic'; /*'Century Gothic','Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang'; */
 	color:#000;
-	font-weight:bold;
+	/* font-weight:bold; */
 	line-height:1
 }
 .main-content h1{
 	font-size:1.5em;
-    /* font-family:'Century Gothic', 'Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang' */
+    margin-top:2rem;
+	margin-bottom:1rem;
+	font-family:'Angkor','Bangers', cursive; /*'Didact Gothic'; /*'Century Gothic','Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang'; */
+	color:#000;
+	/* font-weight:bold; */
+	line-height:1
 }
 .main-content h2{
 	font-size:1.3em;color:#7A0002;
-    /* font-family:'Century Gothic','Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang' */
+    margin-top:2rem;
+	margin-bottom:1rem;
+	font-family:'Angkor','Fjalla One', sans-serif; /*'Didact Gothic'; /*'Century Gothic','Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang'; */
+	/*font-weight:bold;*/
+	line-height:1
 }
 .main-content h3{
 	font-size:1.1em;
@@ -367,13 +380,13 @@ div.definitionb{ /* To define border and style around text*/
    width:100%;
    /*padding:0 0 0 0; */
    margin-right:0px;
-   margin-left:8px;
+   margin-left:5px;
    margin-top:-0.14em;
-   margin-bottom:20px;
+   margin-bottom:20px!important;
    padding-left:15px;
    padding-right:10px;
    padding-top:0px;
-   padding-bottom:5px;
+   padding-bottom:2px;
    /*color:#076422;*/
    border-left:  0.2rem solid #0E81C1;
    border-right: 0.2em solid #0E81C1;
@@ -408,14 +421,17 @@ defn .definition{
    border: #CC0F12;
    color: white;
    padding: 0 10px 0 20px;
-   font-size: 102%;
+   font-size: 100%;
+   /* font-family: 'Bangers', cursive; */
+   font-family: 'Kaushan Script', serif;
  }
 defn .definition:before
      {
          counter-increment:counterdef;
          content: "និយមន័យ " counter(section,khmer)"." counter(counterdef,khmer) "  ";
-         font-weight:bold;
-         font-family: Koulen;
+         /*font-weight:bold; */
+         font-family: 'Koulen', cursive;
+
   }
 
 

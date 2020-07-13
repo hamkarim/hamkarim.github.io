@@ -345,3 +345,16 @@ $$\int{{\left( {3t + 5} \right)\cos \left( {\frac{t}{4}} \right)\,dt}}$$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+Environment for definitions
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+<defn>
+          <div class="definition">[Matrix Transpose] </div>
+ <div class="definitionb">
+ <p>
+
+</p>
+</div>
+ </defn>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
