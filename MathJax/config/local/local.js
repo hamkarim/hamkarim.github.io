@@ -23,6 +23,10 @@
     //CommonHTML: { scale: 85},
     extensions: ["tex2jax.js"],
     jax: ["input/TeX", "output/HTML-CSS"],
+    window.MathJax = {
+                tex: {
+                          tags: 'ams'
+                } },
     tex2jax: {
              inlineMath: [ ['$','$'], ["\\(","\\)"] ],
              displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
@@ -40,11 +44,6 @@
       equationNumbers: { autoNumber: "AMS" }
     }*/
   });
-  window.MathJax = {
-            tex: {
-                      tags: 'ams'
-            }
- };
 
 MathJax.Ajax.loadComplete("https://hamkarim.github.io/MathJax/config/local/local.js");
 
