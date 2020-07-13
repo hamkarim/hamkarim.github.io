@@ -15,7 +15,7 @@ var SHInfo = {
   "NoteCalcIII": { "ShowText": "Show Calculus III Notice", "HideText": "Hide Calculus III Notice", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down"},
   "NoteDE": { "ShowText": "Show Diff. Eqns. Notice", "HideText": "Hide Diff. Eqns. Notice", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down" },
   "Answer": { "ShowText": "Show Answer", "HideText": "Hide Answer", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down" },
-  "Solution": { "ShowText": "Show Solution", "HideText": "Hide Solution", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down" },
+  "Solution": { "ShowText": "បង្ហាញដំណោះស្រាយ", "HideText": "លាក់ដំណោះស្រាយ", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down" },
   "SolutionDiscuss": { "ShowText": "Show Discussion", "HideText": "Hide Discussion", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down" },
   "Step": { "ShowText": "Show Step", "HideText": "Hide Step", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down" },
   "Step1": { "ShowText": "Start Solution", "HideText": "Hide Solution", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down" },
@@ -35,14 +35,14 @@ var MobileWidth = 900;
 
 // jQuery code
 $(document).ready(function () {
-  
+
   // Show/Hide specific element
   // Using "*" here instead of span or i or whatever to catch all of them
   $("*[id^='SHLink']").on({
     "mouseenter": function () {
       var link = this;
       var linkID = link.id;
-      
+
       if (linkID.indexOf("Note") !== -1) {
         $(link).toggleClass("SH-Link SH-Link-Hover");
       } else {
@@ -75,7 +75,7 @@ $(document).ready(function () {
       else {
         ShowHide(objID);
       }
-      
+
     }
   });
 
@@ -123,12 +123,12 @@ $(document).ready(function () {
       } else {
         isShowing = linkText.indexOf("Show") === -1;
       }
-                  
+
       $("div[id*='" + objID + "']").each(function () {
         obj = this;
         divID = obj.id;
         objSubID = divID.substring(6, divID.length);
-        
+
         ShowHide(objSubID, isShowing, useCookie);
       });
     }
@@ -257,7 +257,7 @@ $(document).ready(function () {
         nav_Action = "Site Navigation";
 
         if (isSide) {
-          nav_Category = "Side Menu";          
+          nav_Category = "Side Menu";
         } else if (isBC) {
           nav_Category = "Breadcrumb";
         } else if (isIntroPage) {
@@ -346,7 +346,7 @@ $(document).ready(function () {
 
     var scrollTop = $(window).scrollTop();
 
-    // Stops flickering when scrolling to bottom of page.... 
+    // Stops flickering when scrolling to bottom of page....
     if (scrollTop + windowHeight === getDocHeight()) {
       return;
     }
@@ -424,7 +424,7 @@ function init(NotesOptions)
       // The mobile option in the css was overriding the stuff here so eliminated that
       // and am doing the check here so the cookie option will be followed.
       isMobile = partsOptions[0].indexOf("Mobile") !== -1;
-      showMobile = $(window).width() < MobileWidth; 
+      showMobile = $(window).width() < MobileWidth;
 
       // Snag the Show cookie and see what it has to say...
       cookieShow = GetCookie(partsOptions[0] + "Show");
@@ -434,7 +434,7 @@ function init(NotesOptions)
         {
           forceShowHide = true;
         }
-        else 
+        else
         {
           forceShowHide = cookieShow === "false";
         }
@@ -464,7 +464,7 @@ function init(NotesOptions)
           break;
         }
         newPubDate = new Date(noteDateParts[2], noteDateParts[0], noteDateParts[1]);
-        
+
         if (newPubDate > pubDate)
         {
           // This is a new note and so override any cookie settings to make sure it shows.
@@ -494,7 +494,7 @@ function init(NotesOptions)
   {
     $("#SHALink_S_Note").hide();
     $("#SHALink_H_Note").hide();
-  } 
+  }
 
   var loc = location.href;
   var isContact = loc.toUpperCase().indexOf("CONTACT.ASPX") !== -1 || loc.toUpperCase().indexOf("CONFIRM.ASPX") !== -1;
@@ -526,7 +526,7 @@ function ShowHide(objID, forceShowHide, useCookie, notePublishDate) {
   var isShowing;
   var objInfo;
   var ImgClass;
-  
+
   if (objID.indexOf("Note") !== -1) {
     objInfo = SHInfo[objID] !== undefined ? SHInfo[objID] : SHInfo["Default"];
   } else if (objID.indexOf("Help") !== -1) {
@@ -534,7 +534,7 @@ function ShowHide(objID, forceShowHide, useCookie, notePublishDate) {
   } else if (objID.indexOf("DSoln") !== -1) {
     objInfo = SHInfo["SolutionDiscuss"];
   } else if (objID.indexOf("Soln") !== -1) {
-    objInfo = SHInfo["Solution"]; 
+    objInfo = SHInfo["Solution"];
   } else if (objID.indexOf("StepAS") !== -1) {
     objInfo = SHInfo["StepAS"];
   } else if (objID.indexOf("Step") !== -1) {
@@ -560,12 +560,12 @@ function ShowHide(objID, forceShowHide, useCookie, notePublishDate) {
       objInfo = SHInfo["Step"];
     }
 
-    
+
   } else {
     objInfo = SHInfo["Default"];
   }
   ImgClass = objInfo.ShowImg + " " + objInfo.HideImg;
-  
+
   // If there is no linkText then either we have a note that can't be hidden (i.e. Assignment)
   // or something like the Mobile note that won't always be showing.  In these cases just gracefully exit.
   if (linkText === undefined || $(linkID).is(':hidden')) {
@@ -578,15 +578,15 @@ function ShowHide(objID, forceShowHide, useCookie, notePublishDate) {
 
   // Determine if we're going to force a show all or a hide all
   isShowing = forceShowHide === null ? linkText.indexOf("Show") !== -1 || linkText.indexOf("Start") !== -1 : !forceShowHide;
-  
+
   // If the text and/or image object doesn't exist this will gracefully fail....
   if (isShowing) {
-    // Only do this if we're toggling a single item (forceShow == null) or if the item 
+    // Only do this if we're toggling a single item (forceShow == null) or if the item
     // is hidden and we're forcing all to show (forceShow != null (i.e. false) )
     if (forceShowHide === null || (forceShowHide !== null && $(imgID).hasClass(objInfo.ShowImg))) {
       $(linkID).text(objInfo.HideText);
       $(imgID).toggleClass(ImgClass);
-      $(divID).show(); 
+      $(divID).show();
     }
 
     if (useCookie) {
@@ -596,12 +596,12 @@ function ShowHide(objID, forceShowHide, useCookie, notePublishDate) {
       }
     }
   } else {
-    // Only do this if we're toggling a single item (forceShow == null) or if the item 
+    // Only do this if we're toggling a single item (forceShow == null) or if the item
     // is showing and we're forcing all to hide (forceShow != null (i.e. true)
     if (forceShowHide === null || (forceShowHide !== null && $(imgID).hasClass(objInfo.HideImg))) {
       $(linkID).text(objInfo.ShowText);
       $(imgID).toggleClass(ImgClass);
-      $(divID).hide(); 
+      $(divID).hide();
     }
 
     if (useCookie) {
