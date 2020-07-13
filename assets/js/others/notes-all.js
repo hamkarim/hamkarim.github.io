@@ -15,7 +15,7 @@ var SHInfo = {
   "NoteCalcIII": { "ShowText": "Show Calculus III Notice", "HideText": "Hide Calculus III Notice", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down"},
   "NoteDE": { "ShowText": "Show Diff. Eqns. Notice", "HideText": "Hide Diff. Eqns. Notice", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down" },
   "Answer": { "ShowText": "Show Answer", "HideText": "Hide Answer", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down" },
-  "Solution": { "ShowText": "បង្ហាញដំណោះស្រាយ", "HideText": "លាក់ដំណោះស្រាយ", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down" },
+  "Solution": { "ShowText": "Show Solution", "HideText": "Hide Solution", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down" },
   "SolutionDiscuss": { "ShowText": "Show Discussion", "HideText": "Hide Discussion", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down" },
   "Step": { "ShowText": "Show Step", "HideText": "Hide Step", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down" },
   "Step1": { "ShowText": "Start Solution", "HideText": "Hide Solution", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down" },
