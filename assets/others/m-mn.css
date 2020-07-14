@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+.slideMenu{display:none;z-index:1000;position:fixed;top:0;right:-100%;width:100%;height:100%;background-color:#045738;overflow-y:scroll;/* -webkit-overflow-scrolling:touch; */}
+.m-gnb{position:relative;min-height:calc(100vh - 89px);background-color:#ebebeb;}
+.m-header{padding:20px 10px;background-color:#fff;border-top:10px solid #045739;border-bottom:2px solid #045739;}
+.m-header:after{content:'';display:block;clear:both;}
+.m-header .m-logo{float:left;padding:3px 0 0;}
+.m-header .m-logo a{display:block;width:140px;}
+.m-header .m-logo a img{max-width:100%;}
+
+.dep1{width:30%;background-color:#045738;min-height:calc(100vh - 89px);}
+.dep1 > li > a{display:block;padding:46px 10px 10px;background-repeat:no-repeat;background-position:center top 10px;background-size:40px;font-size:15px;line-height:20px;color:#fff;text-align:center;box-sizing:border-box;opacity:0.7;white-space:normal;word-break:break-all;}
+.dep1 > li > a.selected{background-color:#05422b;opacity:1;}
+.dep1 > li.active > a{background-color:#05422b;opacity:1;}
+.dep1 > li:nth-of-type(1) > a{background-image:url(/_res/ewha/img/common/ico-m-mn01.png);}
+.dep1 > li:nth-of-type(2) > a{background-image:url(/_res/ewha/img/common/ico-m-mn02.png);}
+.dep1 > li:nth-of-type(3) > a{background-image:url(/_res/ewha/img/common/ico-m-mn03.png);}
+.dep1 > li:nth-of-type(4) > a{background-image:url(/_res/ewha/img/common/ico-m-mn04.png);}
+.dep1 > li:nth-of-type(5) > a{background-image:url(/_res/ewha/img/common/ico-m-mn05.png);}
+.dep1 > li:nth-of-type(6) > a{background-image:url(/_res/ewha/img/common/ico-m-mn06.png);}
+.dep1 > li:nth-of-type(7) > a{background-image:url(/_res/ewha/img/common/ico-m-mn07.png);}
+
+.dep2{display:none;position:absolute;top:0;left:30%;width:70%;}
+.dep2 > li > a{display:block;position:relative;padding:17px 35px 17px 30px;background:#ebebeb url(/_res/ewha/img/common/btn-m-menu-list-open.png) no-repeat right 15px center;background-size:13px;font-weight:500;font-size:16px;color:#000;line-height:22px;}
+.dep2 > li > a:after{content:'';position:absolute;bottom:0;right:0;width:100%;height:1px;background-color:#d0d0d0;}
+.dep2 > li > a.selected{color:#222;}
+.dep2 > li > a.selected{background:#ebebeb url(/_res/ewha/img/common/btn-m-menu-list-close.png) no-repeat right 15px center;background-size:13px;}
+.dep2 > li > a.no-menu{padding:17px 30px;background:none;}
+.dep2 > li > a:not(.has-dep03-open){background:none;}
+
+.dep3{display:none;padding:10px 0;background:#dae2df none repeat scroll 0 0;}
+.dep3 > li > a{display:inline-block;position:relative;padding:10px 45px 10px 42px;background-repeat:no-repeat;background-position:right 15px center;background-size:10px;font-size:14px;color:#222;}
+.dep3 > li > a.has-dep03-open{background-image:url(/_res/ewha/img/common/btn-m-menu-list-open.png);}
+.dep3 > li > a.has-dep03-close{background-image:url(/_res/ewha/img/common/btn-m-menu-list-close.png);}
+.dep3 > li > a.active{color:#045738;font-weight:500;text-decoration:underline;}
+.dep3 > li > a.selected{background-image:url(/_res/ewha/img/common/btn-m-menu-list-close.png);font-weight:500;}
+.dep3 > li > a:before{content:'';display:block;position:absolute;top:17px;left:33px;width:4px;height:1px;background-color:#222;}
+
+.set-group{float:right;width:100%;background-color:#fff;color:#000;font-size:17px;}
+.slide-close{display:block;float:right;width:35px;height:35px;background:url(/_res/ewha/img/common/btn-m-menu-close.png) no-repeat center center;border:1px solid #ccc;background-size:17px;}
+.m-gnb-bg{display:none;position:fixed;top:0;left:0;z-index:30;width:100%;height:100%;background-color:rgba(0,0,0,0.8);}
+
+.middle-header-box .m-util-box{float:left;width:calc(100% - 177px);text-align:right;box-sizing:border-box;}
+.middle-header-box .m-util-box:after{content:'';display:block;clear:both;}
+.middle-header-box .m-util-box > li{display:inline-block;position:relative;padding:0 15px 0 0;}
+.middle-header-box .m-util-box > li > a{display:block;padding:12px 21px 12px 0;font-size:13px;color:#191919;}
+.middle-header-box .m-util-box > li > .login{background:url(/_res/ewha/img/common/ico-login.png) no-repeat right center;background-size:12px;}
+.middle-header-box .m-util-box > li > .logout{background:url(/_res/ewha/img/common/ico-login-on.png) no-repeat right center;background-size:12px;}
+.middle-header-box .m-util-box > li > .btn-lang{padding-right:25px;background:url(/_res/ewha/img/common/ico-lang.png) no-repeat right 2px center;background-size:14px;}
+.middle-header-box .m-util-box > li .lang-box{display:block;display:none;position:absolute;top:calc(100% - 1px);left:-5px;z-index:50;padding:6px 0;background:#fff;border:1px solid #045738;text-align:center;}
+.middle-header-box .m-util-box > li .lang-box li a{display:block;padding:4px 20px;font-size:12px;font-weight:500;color:#777;}
+.middle-header-box .m-util-box > li .lang-box li a:hover{color:#000;}
+
+@media screen and (max-width: 400px) {
+	.middle-header-box .m-util-box{padding:6px 6px 0 0;}
+	.middle-header-box .m-util-box > li > a{padding:12px 10px;}
+	.middle-header-box .m-util-box > li > .login{background-position:center center;}
+	.middle-header-box .m-util-box > li > .logout{background-position:center center;}
+	.middle-header-box .m-util-box > li > a span{display:none;}
+	.middle-header-box .m-util-box > li > .btn-lang{padding-right:10px;background-position:center center;}
+	.middle-header-box .m-util-box > li .lang-box{left:-100%;min-width:92px;}
+}

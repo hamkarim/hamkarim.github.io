@@ -193,12 +193,12 @@ July 13th, 2020
 </p>
 
     <p>
-    In this section, we will review matrix concepts critical for the general understanding of general linear programming algorithms. 
+    In this section, we will review matrix concepts critical for the general understanding of general linear programming algorithms.
 
-Let $\mathbf{x}$ and $\mathbf{y}$ be two vectors in $\mathbb{R}^n$. Recall we denote the dot product of the two vectors as $\mathbf{x} \cdot \mathbf{y}$. 
+Let $\mathbf{x}$ and $\mathbf{y}$ be two vectors in $\mathbb{R}^n$. Recall we denote the dot product of the two vectors as $\mathbf{x} \cdot \mathbf{y}$.
     </p>
 
-<h2 class="frame-sect sectcounter">&nbsp; ម៉ាទ្រីស </h2> 
+<h2 class="frame-sect sectcounter">&nbsp; ម៉ាទ្រីស </h2>
 <p>
     Recall an $m \times n$ matrix is a rectangular array of numbers, usually drawn from a field such as $\mathbb{R}$. We write an $m \times n$ matrix with values in $\mathbb{R}$ as $\mathbf{A} \in \mathbb{R}^{m \times n}$. The matrix consists of $m$ rows and $n$ columns. The element in the $i^\text{th}$ row and $j^\text{th}$ column of $\mathbf{A}$ is written as $\mathbf{A}_{ij}$. The $j^\text{th}$ column of $\mathbf{A}$ can be written as $\mathbf{A}_{\cdot j}$, where the $\cdot$ is interpreted as ranging over every value of $i$ (from $1$ to $m$). Similarly, the $i^{th}$ row of $\mathbf{A}$ can be written as $\mathbf{A}_{i\cdot}$. When $m = n$, then the matrix $\mathbf{A}$ is called <i>square.</i>
     </p>
@@ -206,8 +206,8 @@ Let $\mathbf{x}$ and $\mathbf{y}$ be two vectors in $\mathbb{R}^n$. Recall we de
 <defn >
           <div class="definition"> </div>
  <div class="definitionb">
-    <p> 
-        If $\mathbf{A}$ and $\mathbf{B}$ are both in $\mathbb{R}^{m \times n}$, then $\mathbf{C} = \mathbf{A} + \mathbf{B}$ is the matrix sum of $\mathbf{A}$ and $\mathbf{B}$ and 
+    <p>
+        If $\mathbf{A}$ and $\mathbf{B}$ are both in $\mathbb{R}^{m \times n}$, then $\mathbf{C} = \mathbf{A} + \mathbf{B}$ is the matrix sum of $\mathbf{A}$ and $\mathbf{B}$ and
 \begin{equation}
 \mathbf{C}_{ij} = \mathbf{A}_{ij} + \mathbf{B}_{ij}\;\; \text{for $i=1,\dots,m$ and $j=1,\dots,n$} \tag{1.1}
 \end{equation}
@@ -221,19 +221,19 @@ Let $\mathbf{x}$ and $\mathbf{y}$ be two vectors in $\mathbb{R}^n$. Recall we de
 1 & 2\\
 3 & 4
 \end{array}
-\right] + 
+\right] +
 \left[
 \begin{array}{cc}
 5 & 6\\
 7 & 8
 \end{array}
-\right] = 
+\right] =
 \left[
 \begin{array}{cc}
 1 + 5 & 2 + 6\\
 3 + 7 & 4 + 8
 \end{array}
-\right] = 
+\right] =
 \left[
 \begin{array}{cc}
 6 & 8\\
@@ -241,9 +241,9 @@ Let $\mathbf{x}$ and $\mathbf{y}$ be two vectors in $\mathbb{R}^n$. Recall we de
 \end{array}
 \right]
 \end{equation}
-</example> 
+</example>
 
-    
+
 <defn>
           <div class="definition">[Row/Column Vector] </div>
  <div class="definitionb">
@@ -263,42 +263,42 @@ If $\mathbf{A} \in \mathbb{R}^{m \times n}$ and $B \in \mathbb{R}^{n \times p}$,
 \begin{equation}
 \mathbf{C}_{ij} = \mathbf{A}_{i\cdot} \cdot \mathbf{B}_{\cdot j}
 \end{equation}
-Note, $\mathbf{A}_{i\cdot} \in \mathbb{R}^{1 \times n}$ (an $n$-dimensional vector) and $\mathbf{B}_{\cdot j} \in \mathbb{R}^{n \times 1}$ (another $n$-dimensional vector), thus making the dot product meaningful. 
+Note, $\mathbf{A}_{i\cdot} \in \mathbb{R}^{1 \times n}$ (an $n$-dimensional vector) and $\mathbf{B}_{\cdot j} \in \mathbb{R}^{n \times 1}$ (another $n$-dimensional vector), thus making the dot product meaningful.
 </p>
 </div>
  </defn>
 
-<example>    
+<example>
 \begin{equation}
 \left[
 \begin{array}{cc}
 1 & 2\\
 3 & 4
 \end{array}
-\right] 
+\right]
 \left[
 \begin{array}{cc}
 5 & 6\\
 7 & 8
 \end{array}
-\right] = 
+\right] =
 \left[
 \begin{array}{cc}
 1(5) + 2(7) & 1(6) + 2(8)\\
 3(5) + 4(7) & 3(6) + 4(8)
 \end{array}
-\right] = 
+\right] =
 \left[
 \begin{array}{cc}
 19 & 22\\
 43 & 50
 \end{array}
 \right]
-\end{equation}  
-    
+\end{equation}
+
     </example>
-    
- 
+
+
 <defn>
           <div class="definition">[Matrix Transpose] </div>
  <div class="definitionb">
@@ -318,13 +318,13 @@ If $\mathbf{A} \in \mathbb{R}^{m \times n}$ is a $m \times n$ matrix, then the <
 1 & 2\\
 3 & 4
 \end{array}
-\right]^T = 
+\right]^T =
 \left[
 \begin{array}{cc}
 1 & 3\\
 2 & 4
 \end{array}
-\right] 
+\right]
 \end{equation}
     </example>
 
@@ -332,8 +332,8 @@ If $\mathbf{A} \in \mathbb{R}^{m \times n}$ is a $m \times n$ matrix, then the <
     The matrix transpose is a particularly useful operation and makes it easy to transform column vectors into row vectors, which enables multiplication. For example, suppose $\mathbf{x}$ is an $n \times 1$ column vector (i.e., $\mathbf{x}$ is a vector in $\mathbb{R}^n$) and suppose $\mathbf{y}$ is an $n \times 1$ column vector. Then:
 \begin{equation}
 \mathbf{x} \cdot \mathbf{y} = \mathbf{x}^T\mathbf{y}
-\end{equation}  
-    
+\end{equation}
+
     </p>
 
 <p>
@@ -341,11 +341,11 @@ If $\mathbf{A} \in \mathbb{R}^{m \times n}$ is a $m \times n$ matrix, then the <
 \begin{equation}
 (\mathbf{A} + \mathbf{B})^T = \mathbf{A}^T + \mathbf{B}^T
 \end{equation}
-[Hint: If $\mathbf{C} = \mathbf{A} + \mathbf{B}$, then $\mathbf{C}_{ij} = \mathbf{A}_{ij} + \mathbf{B}_{ij}$, the element in the $(i,j)$ position of matrix $\mathbf{C}$. This element moves to the $(j,i)$ position in the transpose. The $(j,i)$ position of $\mathbf{A}^T + \mathbf{B}^T$ is $\mathbf{A}_{ji}^T + \mathbf{B}^T_{ji}$, but $\mathbf{A}_{ji}^T = \mathbf{A}_{ij}$. Reason from this point.] 
+[Hint: If $\mathbf{C} = \mathbf{A} + \mathbf{B}$, then $\mathbf{C}_{ij} = \mathbf{A}_{ij} + \mathbf{B}_{ij}$, the element in the $(i,j)$ position of matrix $\mathbf{C}$. This element moves to the $(j,i)$ position in the transpose. The $(j,i)$ position of $\mathbf{A}^T + \mathbf{B}^T$ is $\mathbf{A}_{ji}^T + \mathbf{B}^T_{ji}$, but $\mathbf{A}_{ji}^T = \mathbf{A}_{ij}$. Reason from this point.]
 </p>
 
 <p>
-    <b>Exercise</b> Let $\mathbf{A}, \mathbf{B} \in \mathbb{R}^{m \times n}$. Prove by example that $\mathbf{A}\mathbf{B} \neq \mathbf{B}\mathbf{A}$; that is, matrix multiplication is \textit{not commutative}. [Hint: Almost any pair of matrices you pick (that can be multiplied) will not commute.]    
+    <b>Exercise</b> Let $\mathbf{A}, \mathbf{B} \in \mathbb{R}^{m \times n}$. Prove by example that $\mathbf{A}\mathbf{B} \neq \mathbf{B}\mathbf{A}$; that is, matrix multiplication is \textit{not commutative}. [Hint: Almost any pair of matrices you pick (that can be multiplied) will not commute.]
     </p>
 
 <p><b>Exercises</b> Let $\mathbf{A} \in \mathbb{R}^{m \times n}$ and let, $\mathbf{B} \in \mathbb{R}^{n \times p}$. Use the definitions of matrix multiplication and transpose to prove that:
@@ -353,7 +353,7 @@ If $\mathbf{A} \in \mathbb{R}^{m \times n}$ is a $m \times n$ matrix, then the <
 (\mathbf{A}\mathbf{B})^T = \mathbf{B}^T\mathbf{A}^T
 \end{equation}
 [Hint: Use similar reasoning to the hint in Exercise \ref{exer:AdditionTranspose}. But this time, note that $\mathbf{C}_{ij} = \mathbf{A}_{i\cdot} \cdot \mathbf{B}_{\cdot j}$, which moves to the $(j,i)$ position. Now figure out what is in the $(j,i)$ position of $\mathbf{B}^T\mathbf{A}^T$.]
-</p> 
+</p>
 
 <p>
 Let $\mathbf{A}$ and $\mathbf{B}$ be two matrices with the same number of rows (so $\mathbf{A} \in \mathbb{R}^{m \times n}$ and $\mathbf{B} \in \mathbb{R}^{m \times p}$). Then the augmented matrix $\left[\mathbf{A}|\mathbf{B}\right]$ is:
@@ -367,12 +367,12 @@ a_{m1} & a_{m2} & \dots & a_{mn} & b_{m1} & b_{m2} & \dots & b_{mp}\\
 \end{array}
 \right]
 \end{equation}
-Thus, $\left[\mathbf{A}|\mathbf{B}\right]$ is a matrix in $\mathbb{R}^{m \times (n + p)}$. 
+Thus, $\left[\mathbf{A}|\mathbf{B}\right]$ is a matrix in $\mathbb{R}^{m \times (n + p)}$.
     </p>
 
 <example> Consider the following matrices:
 \[
-\mathbf{A} = \left[ 
+\mathbf{A} = \left[
 \begin{array}{cc}
 1 & 2\\
 3 & 4
@@ -384,21 +384,21 @@ Thus, $\left[\mathbf{A}|\mathbf{B}\right]$ is a matrix in $\mathbb{R}^{m \times 
 \end{array}
 \right]
 \]
-    
+
 Then $\left[\mathbf{A}|\mathbf{B}\right]$ is:
 \[
-\left[\mathbf{A}|\mathbf{B}\right] = \left[ 
+\left[\mathbf{A}|\mathbf{B}\right] = \left[
 \begin{array}{cc|c}
 1 & 2 & 7\\
 3 & 4 & 8
 \end{array}
 \right]
 \]
-    
+
  </example>
 
 <p><b>Exercise</b> By analogy define the augmented matrix $\left[\frac{\mathbf{A}}{\mathbf{B}}\right]$. Note, this is \textbf{not} a fraction. In your definition, identify the appropriate requirements on the relationship between the number of rows and columns that the matrices must have. [Hint: Unlike $\left[\mathbf{A}|\mathbf{B}\right]$, the number of rows don't have to be the same, since your concatenating on the rows, not columns. There should be a relation between the numbers of columns though.]
-    
+
     </p>
 
 <h2> Special Matrices and Vectors</h2>
@@ -408,7 +408,7 @@ Then $\left[\mathbf{A}|\mathbf{B}\right]$ is:
  <p>
 The $n \times n$ <b>identify matrix</b> is:
 \begin{equation}
-\mathbf{I}_n = 
+\mathbf{I}_n =
 \left[
 \begin{array}{cccc}
 1 & 0 & \dots & 0\\
@@ -420,10 +420,10 @@ The $n \times n$ <b>identify matrix</b> is:
 </p>
 </div>
  </defn>
-    
-<p>    
+
+<p>
     When it is clear from context, we may simply write $\mathbf{I}$ and omit the subscript $n$. </p>
-    
+
 <p><b>Exercise</b>Let $\mathbf{A} \in \mathbb{R}^{n \times n}$. Show that $\mathbf{A}\mathbf{I}_n = \mathbf{I}_n\mathbf{A} = \mathbf{A}$. Hence, $\mathbf{I}$ is an identify for the matrix multiplication operation on square matrices. [Hint: Do the multiplication out long hand.] </p>
 
     <defn>
@@ -438,28 +438,28 @@ The standard basis vector $\mathbf{e}_i \in \mathbb{R}^n$ is:
 </p>
 </div>
  </defn>
-    
-<p>  
-Note, this definition is only valid for $n \geq i$. Further the standard basis vector $\mathbf{e}_i$ is also the $i^{\text{th}}$ row or column of $\mathbf{I}_n$. 
+
+<p>
+Note, this definition is only valid for $n \geq i$. Further the standard basis vector $\mathbf{e}_i$ is also the $i^{\text{th}}$ row or column of $\mathbf{I}_n$.
     </p>
 
 <defn>
           <div class="definition">[Unit and Zero Vectors] </div>
  <div class="definitionb">
  <p>
-  The vector $\mathbf{e} \in \mathbb{R}^n$ is the <i>one vector</i> $\mathbf{e} = (1,1,\dots,1)$. Similarly, the <i>zero vector</i> $\mathbf{0} = (0,0,\dots,0) \in \mathbb{R}^n$. We assume that the length of $\mathbf{e}$ and $\mathbf{0}$ will be determined from context. 
+  The vector $\mathbf{e} \in \mathbb{R}^n$ is the <i>one vector</i> $\mathbf{e} = (1,1,\dots,1)$. Similarly, the <i>zero vector</i> $\mathbf{0} = (0,0,\dots,0) \in \mathbb{R}^n$. We assume that the length of $\mathbf{e}$ and $\mathbf{0}$ will be determined from context.
 </p>
 </div>
  </defn>
-    
-    
+
+
 <p><b>Exercise. </b>
     Let $\mathbf{x} \in \mathbb{R}^n$, considered as a column vector (our standard assumption). Define:
 \[
 \mathbf{y} = \frac{\mathbf{x}}{\mathbf{e}^T\mathbf{x}}
 \]
 Show that $\mathbf{e}^T\mathbf{y} = \mathbf{y}^T\mathbf{e} = 1$. [Hint: First remember that $\mathbf{e}^T\mathbf{x}$ is a scalar value (it's $\mathbf{e}\cdot\mathbf{x}$. Second, remember that a scalar times a vector is just a new vector with each term multiplied by the scalar. Last, use these two pieces of information to write the product $\mathbf{e}^T\mathbf{y}$ as a sum of fractions.]
-    </p> 
+    </p>
 
 <h2>Matrices and Linear Programming Expression</h2>
 
@@ -496,7 +496,7 @@ s.t.\;\;&\mathbf{A}\mathbf{x} \leq \mathbf{b}\\
 \label{eqn:GeneralLPMaxMatrixForm}
 \end{equation}
 </p>
-    
+
 <p>For historical reasons, linear programs are not written in the general form of Expression \ref{eqn:GeneralLPMaxMatrixForm}. </p>
 
 <defn>
@@ -513,7 +513,7 @@ s.t.\;\;&\mathbf{A}\mathbf{x} \leq \mathbf{b}\\
 \end{aligned}\right. \tag{1.2}
 \label{eqn:CanonicalFormMax}
 \end{equation}
- 
+
 A minimization linear programming problem is in <b>canonical form</b> if it is written as:
 \begin{equation}
 \left\{
@@ -521,29 +521,28 @@ A minimization linear programming problem is in <b>canonical form</b> if it is w
 \min\;\; & z(\mathbf{x}) = \mathbf{c}^T\mathbf{x}\\
 s.t.\;\;&\mathbf{A}\mathbf{x} \geq \mathbf{b}\\
 & \mathbf{x} \geq \mathbf{0}
-\end{aligned}\right.
+\end{aligned}\right. \tag{1.3}
 \label{eqn:MinCanonicalFormMax}
 \end{equation}
 </p>
 </div>
  </defn>
-    
- 
+
+
 <defn>
           <div class="definition">[Standard Form (Max Problem)] </div>
  <div class="definitionb">
  <p>
-A maximization linear programming problem is in \textit{standard form} if it is written as:
+A maximization linear programming problem is in <b>standard form</b> if it is written as:
 \begin{equation}
 \left\{
 \begin{aligned}
 \max\;\; & z(\mathbf{x}) = \mathbf{c}^T\mathbf{x}\\
 s.t.\;\;&\mathbf{A}\mathbf{x} = \mathbf{b}\\
 & \mathbf{x} \geq \mathbf{0}
-\end{aligned}\right.
+\end{aligned}\right. \tag{1.4}
 \label{eqn:StandardFormMax}
 \end{equation}
-
 </p>
 </div>
  </defn>
@@ -556,8 +555,9 @@ s.t.\;\;&\mathbf{A}\mathbf{x} = \mathbf{b}\\
 <p><b>Theorem. </b>
 Every linear programming problem in canonical form can be put into standard form.
     </p>
-      
-{proof} Consider the constraint corresponding to the first row of the matrix $\mathbf{A}$:
+
+<div class="blockproof">
+<p> Consider the constraint corresponding to the first row of the matrix $\mathbf{A}$:
 \begin{equation}
 a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n \leq b_1
 \end{equation}
@@ -587,7 +587,8 @@ s.t.\;\;&\left[\mathbf{A}|\mathbf{I}_m\right]\left[\frac{\mathbf{x}}{\mathbf{s}}
 \label{eqn:CanonicalFormMax}
 \]
 Clearly, this new linear programming problem is in standard form and any solution maximizing the original problem will necessarily maximize this one.
-\end{proof}
+</p>
+</div>
 
 \begin{example} Consider the Toy Maker problem from Example \ref{ex:ToyMaker}. The problem in canonical form is:
 \[
@@ -628,7 +629,7 @@ in a similar way. In this case we subtract a surplus variable $s_i$ to obtain:
 \[
 a_{i1}x_1 + a_{i2}x_2 + \dots + a_{in}x_n - s_i = b_i
 \]
-Again, we must have $s_i \geq 0$. 
+Again, we must have $s_i \geq 0$.
 \end{remark}
 
 \begin{theorem} Every linear programming problem in standard form can be put into canonical form.
@@ -649,9 +650,9 @@ Defining the appropriate augmented matrices allows us to convert this linear pro
 \begin{exercise} Complete the ``pedantic'' proof of the preceding theorem by defining the correct augmented matrices to show that the linear program in Expression \ref{eqn:StandardConversion} is in canonical form.
 \end{exercise}
 
-The standard solution method for linear programming models (the Simplex Algorithm) assumes that all variables are non-negative. Though this assumption can be easily relaxed, the first implementation we will study imposes this restriction. The general linear programming problem we posed in Expression \ref{eqn:GeneralLPMaxMatrixForm} does not (necessarily) impose any sign restriction on the variables. We will show that we can transform a problem in which $x_i$ is unrestricted into a new problem in which all variables are positive. Clearly, if $x_i \leq 0$, then we simply replace $x_i$ by $-y_i$ in every expression and then $y_i \geq 0$. On the other hand, if we have the constraint $x_i \geq l_i$, then clearly we can write $y_i = x_i - l_i$ and $y_i \geq 0$. We can then replace $x_i$ by $y_i + l_i$ in every equation or inequality where $x_i$ appears. Finally, if $x_i \leq u_i$, but $x_i$ may be negative, then we may write $y_i = u_i - x_i$. Clearly, $y_i \geq 0$ and we can replace $x_i$ by $u_i - y_i$ in every equation or inequality where $x_i$ appears. 
+The standard solution method for linear programming models (the Simplex Algorithm) assumes that all variables are non-negative. Though this assumption can be easily relaxed, the first implementation we will study imposes this restriction. The general linear programming problem we posed in Expression \ref{eqn:GeneralLPMaxMatrixForm} does not (necessarily) impose any sign restriction on the variables. We will show that we can transform a problem in which $x_i$ is unrestricted into a new problem in which all variables are positive. Clearly, if $x_i \leq 0$, then we simply replace $x_i$ by $-y_i$ in every expression and then $y_i \geq 0$. On the other hand, if we have the constraint $x_i \geq l_i$, then clearly we can write $y_i = x_i - l_i$ and $y_i \geq 0$. We can then replace $x_i$ by $y_i + l_i$ in every equation or inequality where $x_i$ appears. Finally, if $x_i \leq u_i$, but $x_i$ may be negative, then we may write $y_i = u_i - x_i$. Clearly, $y_i \geq 0$ and we can replace $x_i$ by $u_i - y_i$ in every equation or inequality where $x_i$ appears.
 
-If $x_i$ is unrestricted in sign and has no upper or lower bounds, then let $x_i = y_i - z_i$ where $y_i, z_i \geq 0$ and replace $x_i$ by $(y_i-z_i)$ in the objective, equations and inequalities of a general linear programming problem. Since $y_i, z_i \geq 0$ and may be given any values as a part of the solution, clearly $x_i$ may take any value in $\mathbb{R}$. 
+If $x_i$ is unrestricted in sign and has no upper or lower bounds, then let $x_i = y_i - z_i$ where $y_i, z_i \geq 0$ and replace $x_i$ by $(y_i-z_i)$ in the objective, equations and inequalities of a general linear programming problem. Since $y_i, z_i \geq 0$ and may be given any values as a part of the solution, clearly $x_i$ may take any value in $\mathbb{R}$.
 \begin{exercise} Convince yourself that the general linear programming problem shown in Expression \ref{eqn:GeneralLPMaxMatrixForm} can be converted into canonical (or standard) form using the following steps:
 \begin{enumerate*}
 \item Every constraint of the form $x_i \leq u_i$ can be dealt with by substituting $y_i = u_i - x_i$, $y_i \geq 0$.
@@ -663,11 +664,11 @@ Thus, Expression \ref{eqn:GeneralLPMaxMatrixForm} can be transformed to standard
 \end{exercise}
 
 \section{Gauss-Jordan Elimination and Solution to Linear Equations}
-In this sub-section, we'll review Gauss-Jordan Elimination as a solution method for linear equations. We'll use Gauss-Jordan Elimination \textit{extensively} in the coming chapters. 
+In this sub-section, we'll review Gauss-Jordan Elimination as a solution method for linear equations. We'll use Gauss-Jordan Elimination \textit{extensively} in the coming chapters.
 
 \begin{definition}[Elementary Row Operation] Let $\mathbf{A} \in \mathbb{R}^{m \times n}$ be a matrix. Recall $\mathbf{A}_{i \cdot}$ is the $i^\text{th}$ row of $\mathbf{A}$. There are three \textit{elementary row operations}:
 \begin{enumerate}
-\item (Scalar Multiplication of a Row) Row $\mathbf{A}_{i \cdot}$ is replaced by $\alpha \mathbf{A}_{i \cdot}$, where $\alpha \in \mathbb{R}$ and $\alpha \neq 0$. 
+\item (Scalar Multiplication of a Row) Row $\mathbf{A}_{i \cdot}$ is replaced by $\alpha \mathbf{A}_{i \cdot}$, where $\alpha \in \mathbb{R}$ and $\alpha \neq 0$.
 \item (Row Swap) Row $\mathbf{A}_{i \cdot}$ is swapped with Row $\mathbf{A}_{j \cdot}$ for $i \neq j$.
 \item (Scalar Multiplication and Addition) Row $\mathbf{A}_{j \cdot}$ is replaced by $\alpha \mathbf{A}_{i \cdot} + \mathbf{A}_{j \cdot}$ for $\alpha \in \mathbb{R}$ and $i \neq j$.
 \end{enumerate}
@@ -675,7 +676,7 @@ In this sub-section, we'll review Gauss-Jordan Elimination as a solution method 
 
 \begin{example} Consider the matrix:
 \[
-\mathbf{A} = 
+\mathbf{A} =
 \begin{bmatrix}
 1 & 2\\
 3 & 4
@@ -683,7 +684,7 @@ In this sub-section, we'll review Gauss-Jordan Elimination as a solution method 
 \]
 In an example of scalar multiplication of a row by a constant, we can multiply the second row by $1/3$ to obtain:
 \[
-\mathbf{B} = 
+\mathbf{B} =
 \begin{bmatrix}
 1 & 2\\
 1 & \frac{4}{3}
@@ -691,11 +692,11 @@ In an example of scalar multiplication of a row by a constant, we can multiply t
 \]
 As an example of scalar multiplication and addition, we can multiply the second row by $(-1)$ and add the result to the first row to obtain:
 \[
-\mathbf{C} = 
+\mathbf{C} =
 \begin{bmatrix}
 0 & 2-\frac{4}{3}\\
 1 & \frac{4}{3}
-\end{bmatrix} = 
+\end{bmatrix} =
 \begin{bmatrix}
 0 & \frac{2}{3}\\
 1 & \frac{4}{3}
@@ -703,7 +704,7 @@ As an example of scalar multiplication and addition, we can multiply the second 
 \]
 We can then use scalar multiplication and multiply the first row by $(3/2)$ to obtain:
 \[
-\mathbf{D} = 
+\mathbf{D} =
 
 \begin{bmatrix}
 0 & 1\\
@@ -713,7 +714,7 @@ We can then use scalar multiplication and multiply the first row by $(3/2)$ to o
 
 We can then use scalar multiplication and addition to multiply the first row by $(-4/3)$ add it to the second row to obtain:
 \[
-\mathbf{E} = 
+\mathbf{E} =
 \begin{bmatrix}
 0 & 1\\
 1 & 0
@@ -721,7 +722,7 @@ We can then use scalar multiplication and addition to multiply the first row by 
 \]
 Finally, we can swap row 2 and row 1 to obtain:
 \[
-\mathbf{I}_2 = 
+\mathbf{I}_2 =
 \begin{bmatrix}
 1 & 0\\
 0 & 1
@@ -758,7 +759,7 @@ a_{1j}\\
 a_{2j}\\
 \vdots\\
 a_{mj}
-\end{bmatrix} = 
+\end{bmatrix} =
 \begin{bmatrix}
 a_{1j}\\
 \alpha(a_{1j}) + a_{2j}\\
@@ -766,7 +767,7 @@ a_{1j}\\
 a_{mj}
 \end{bmatrix}
 \end{equation}
-That is, we have taken the first element of $\mathbf{A}_{\cdot j}$ and multiplied it by $\alpha$ and added it to the second element of $\mathbf{A}_{\cdot j}$ to obtain the new second element of the product. All other elements of $\mathbf{A}_{\cdot j}$ are unchanged. Since we chose an arbitrary column of $\mathbf{A}$, it's clear this will occur in each case. Thus $\mathbf{E} \mathbf{A}$ will be the new matrix with rows the same as $\mathbf{A}$ \textit{except} for the second row, which will be replaced by the first row of $\mathbf{A}$ multiplied by the constant $\alpha$ and added to the second row of $\mathbf{A}$. To multiply the $i^\text{th}$ row of $\mathbf{A}$ and add it to the $j^\text{th}$ row, we would simply make a matrix $E$ by starting with $\mathbf{I}_m$ and replacing the $i^\text{th}$ element of row $j$ with $\alpha$.  
+That is, we have taken the first element of $\mathbf{A}_{\cdot j}$ and multiplied it by $\alpha$ and added it to the second element of $\mathbf{A}_{\cdot j}$ to obtain the new second element of the product. All other elements of $\mathbf{A}_{\cdot j}$ are unchanged. Since we chose an arbitrary column of $\mathbf{A}$, it's clear this will occur in each case. Thus $\mathbf{E} \mathbf{A}$ will be the new matrix with rows the same as $\mathbf{A}$ \textit{except} for the second row, which will be replaced by the first row of $\mathbf{A}$ multiplied by the constant $\alpha$ and added to the second row of $\mathbf{A}$. To multiply the $i^\text{th}$ row of $\mathbf{A}$ and add it to the $j^\text{th}$ row, we would simply make a matrix $E$ by starting with $\mathbf{I}_m$ and replacing the $i^\text{th}$ element of row $j$ with $\alpha$.
 \end{proof}
 \begin{exercise} Complete the proof by showing that scalar multiplication and row swapping can be accomplished by a matrix multiplication. [Hint: Scalar multiplication should be easy, given the proof above. For row swap, try multiplying matrix $\mathbf{A}$ from Example \ref{ex:ElemRowOps} by:
 \[
@@ -801,7 +802,7 @@ then matrix $\mathbf{A}$ is said to be \textit{invertible} (or \textit{nonsingul
 \label{exer:MatrixInv1}
 \end{exercise}
 
-The proof of the following theorem is beyond the scope of this class. Proofs can be found in \cite{Str87} (Chapter 2) and \cite{Cull72} (Chapter 1) and should be covered in a Linear Algebra course (Math 436). 
+The proof of the following theorem is beyond the scope of this class. Proofs can be found in \cite{Str87} (Chapter 2) and \cite{Cull72} (Chapter 1) and should be covered in a Linear Algebra course (Math 436).
 \begin{theorem} If $\mathbf{A} \in \mathbb{R}^{n \times n}$ is a square matrix and $\mathbf{X} \in \mathbb{R}^{n \times n}$ so that $\mathbf{X}\mathbf{A} = \mathbf{I}_n$, then:
 \begin{enumerate}
 \item $\mathbf{A}\mathbf{X} = \mathbf{I}_n$
@@ -810,22 +811,22 @@ The proof of the following theorem is beyond the scope of this class. Proofs can
 \end{enumerate}
 \end{theorem}
 
-The process we've illustrated in Example \ref{ex:ElemRowOps} is an instance of Gauss-Jordan elimination and can be used to find the inverse of any matrix (or to solve systems of linear equations). This process is summarized in Algorithm \ref{alg:GaussJordanEliminationInv}. 
+The process we've illustrated in Example \ref{ex:ElemRowOps} is an instance of Gauss-Jordan elimination and can be used to find the inverse of any matrix (or to solve systems of linear equations). This process is summarized in Algorithm \ref{alg:GaussJordanEliminationInv}.
 \begin{definition}[Pivoting]
 In Algorithm \ref{alg:GaussJordanEliminationInv} when $\mathbf{A}_{ii} \neq 0$, the process performed in Steps 4 and 5 is called \textit{pivoting} on element $(i,i)$.
 \end{definition}
 We illustrate this algorithm in the following example.
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
 
 <p style="text-indent: 0px"><b>ចំណាំ :</b>
     បើ $\mathcal{E}$ ជាលំហអាហ្វីន តាមទិសដៅ $\vect{\E}$ នោះធាតុរបស់ $\mathcal{E}$ ហៅថា <b>ចំណុច</b> ហើយគេកំណត់សរសេរដោយអក្សរធំ $A,B, C,D,M,N,P$, $\cdots$។ ចំណែកឯធាតុរបស់លំហ $\vect{\E}$ ហៅថា <b> វ៉ិចទ័រ</b> ហើយកំណត់សរសេរដោយអក្សរតូច មានសញ្ញាព្រួញនៅខាងលើ គឺ $\vec{i}, \vec{j}, \vec{k}, \vec{u}, \vec{v}, \cdots $។
