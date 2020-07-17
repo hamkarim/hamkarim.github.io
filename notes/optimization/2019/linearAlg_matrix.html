@@ -529,7 +529,7 @@ s.t.\;\;&\mathbf{A}\mathbf{x} \geq \mathbf{b}\\
  </defn>
 
 
-<defn>
+ <defn>
           <div class="definition">[Standard Form (Max Problem)] </div>
  <div class="definitionb">
  <p>
@@ -552,11 +552,14 @@ s.t.\;\;&\mathbf{A}\mathbf{x} = \mathbf{b}\\
 <p><b>Remark. </b>In the previous definition, a problem is in standard form as long as its constraints have form $\mathbf{A}\mathbf{x} = \mathbf{b}$ and $\mathbf{x} \geq \mathbf{0}$. The problem can be either a maximization or minimization problem.
     </p>
 
+
+
 <p><b>Theorem. </b>
 Every linear programming problem in canonical form can be put into standard form.
     </p>
-
-<div class="blockproof">
+    <p align="right"><a class="toggle bground" id="getid" href="#proofOfstandard" onclick="showhideFunction()"> [Show proof]</a></p>
+<div class="hidepanel block_proof" id="proofOfstandard" style="color:#1860C1">
+<b>សម្រាយបញ្ជាក់. </b>
 <p> Consider the constraint corresponding to the first row of the matrix $\mathbf{A}$:
 \begin{equation}
 a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n \leq b_1
@@ -565,32 +568,35 @@ Then we can add a new \textit{slack} variable $s_1$ so that $s_1 \geq 0$ and we 
 \begin{equation}
 a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n + s_1 = b_1
 \end{equation}
+
 This act can be repeated for each row of $\mathbf{A}$ (constraint) yielding $m$ new variables $s_1,\dots,s_m$, which we can express as a row $\mathbf{s}$. Then the new linear programming problem can be expressed as:
 \[
-\left\{
-\begin{aligned}
-\max\;\; z(\mathbf{x}) = &\mathbf{c}^T\mathbf{x}\\
+ \left\{
+ \begin{aligned}
+ \max\;\; & z(\mathbf{x}) = \mathbf{c}^T\mathbf{x}\\
 s.t.\;\;&\mathbf{A}\mathbf{x} + \mathbf{I}_m\mathbf{s}= \mathbf{b}\\
-& \mathbf{x},\mathbf{s} \geq \mathbf{0}
-\end{aligned}\right.
-\label{eqn:CanonicalFormMax}
+ & \mathbf{x},\mathbf{s} \geq \mathbf{0}
+ \end{aligned}\right.
+  \label{eqn:CanFormMax1}
 \]
 
 Using augmented matrices, we can express this as:
-\[
-\left\{
-\begin{aligned}
-\max\;\; z(\mathbf{x}) = &\left[\frac{\mathbf{c}}{\mathbf{0}}\right]^T\left[\frac{\mathbf{x}}{\mathbf{s}}\right]\\
-s.t.\;\;&\left[\mathbf{A}|\mathbf{I}_m\right]\left[\frac{\mathbf{x}}{\mathbf{s}}\right]= \mathbf{b}\\
-& \left[\frac{\mathbf{x}}{\mathbf{s}}\right] \geq \mathbf{0}
-\end{aligned}\right.
-\label{eqn:CanonicalFormMax}
-\]
+    \[
+    \left\{
+    \begin{aligned}
+    \max\;\; &z(\mathbf{x}) = \left[\frac{\mathbf{c}}{\mathbf{0}}\right]^T\left[\frac{\mathbf{x}}{\mathbf{s}}\right]\\
+    s.t.\;\;&\left[\mathbf{A}|\mathbf{I}_m\right]\left[\frac{\mathbf{x}}{\mathbf{s}}\right]= \mathbf{b}\\
+    & \left[\frac{\mathbf{x}}{\mathbf{s}}\right] \geq \mathbf{0}
+    \end{aligned}\right.
+       \label{eqn:CanFormMax2}
+     \]
 Clearly, this new linear programming problem is in standard form and any solution maximizing the original problem will necessarily maximize this one.
 </p>
-</div>
+        </div>
 
-\begin{example} Consider the Toy Maker problem from Example \ref{ex:ToyMaker}. The problem in canonical form is:
+
+<example>
+          Consider the Toy Maker problem from Example \ref{ex:ToyMaker}. The problem in canonical form is:
 \[
 \left\{
 \begin{aligned}
@@ -615,9 +621,9 @@ s.t.\;\;&  3x_1 + x_2 + s_1 = 120\\
 & x_2 \geq 0
 \end{aligned}
 \right.
-\]
 \label{ex:ToyMakerStandard}
-\end{example}
+\]
+</example>
 
 \begin{remark}
 We can deal with constraints of the form:

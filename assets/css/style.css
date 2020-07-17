@@ -192,7 +192,7 @@ a:hover{text-decoration:underline}
 	font-size:1.3em;color:#7A0002;
                           margin-top:2rem;
 	margin-bottom:1rem;
-	font-family:'Angkor','Noto Sans', sans-serif; /*'Didact Gothic'; /*'Century Gothic','Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang'; */
+	font-family:'Angkor','Oswald', sans-serif; /*'Didact Gothic'; /*'Century Gothic','Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang'; */
 	/*font-weight:bold;*/
 	line-height:1
 }
