@@ -483,6 +483,7 @@ ul.leftborder{
     margin-top:0px;
     margin-bottom:0px;
     padding-left:10px;
+    padding-bottom:5px;
     /*color:#076422;*/
     border:  0.1rem solid #0E81C1;
     border-style: dotted;
