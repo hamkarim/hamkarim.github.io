@@ -16,6 +16,7 @@ var SHInfo = {
   "NoteDE": { "ShowText": "Show Diff. Eqns. Notice", "HideText": "Hide Diff. Eqns. Notice", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down" },
   "Answer": { "ShowText": "Show Answer", "HideText": "Hide Answer", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down" },
   "Solution": { "ShowText": "Show Solution", "HideText": "Hide Solution", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down" },
+    "myHint": { "ShowText": "Show Hint", "HideText": "Hide Hint", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down" },
   "SolutionDiscuss": { "ShowText": "Show Discussion", "HideText": "Hide Discussion", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down" },
   "Step": { "ShowText": "Show Step", "HideText": "Hide Step", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down" },
   "Step1": { "ShowText": "Start Solution", "HideText": "Hide Solution", "ShowImg": "fa-caret-right", "HideImg": "fa-caret-down" },
@@ -535,6 +536,8 @@ function ShowHide(objID, forceShowHide, useCookie, notePublishDate) {
     objInfo = SHInfo["SolutionDiscuss"];
   } else if (objID.indexOf("Soln") !== -1) {
     objInfo = SHInfo["Solution"];
+} else if (objID.indexOf("Hint") !== -1) {
+    objInfo = SHInfo["myHint"];
   } else if (objID.indexOf("StepAS") !== -1) {
     objInfo = SHInfo["StepAS"];
   } else if (objID.indexOf("Step") !== -1) {

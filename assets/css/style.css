@@ -493,20 +493,30 @@ ul.leftborder{
     /*text-indent: 10px; */
 }
 
+/*style for ol and ul*/
 ol{
 	/*table-cell;*/
 	counter-reset: item;
-	padding-left: 0px;
-	margin-left: 0px;
+	padding-left: 1em;
+	margin: 0;
 	text-align: left;
-	/* font-size: 16px;
-	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
+	/* font-size: 16px; */
 }
-ol li{
+ol > li{
     /* margin-bottom:1em;*/
     font-size:16px;
+    padding-left:0.4em;
+    margin: 0;
+    counter-increment: item;
+    margin-bottom: 0.6em;
     /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
+
+li ol > li {
+  margin: 0;
+}
+
+
 ol.parenthalpha li {
 	counter-increment: section;
 	/*display: table-row;*/
@@ -699,12 +709,43 @@ Show hide answer in examples
       font-weight: bold;
     }
 
+
+.soln-parts-list > li {
+  margin-bottom: 20px;
+}
+
+.soln-content {
+  display: none;
+}
+
 .soln-title {
   font-weight: bold;
   font-style: italic;
   font-size: unset;
   display: inline-block;
   padding-bottom: 5px;
+}
+
+/* These are for solution sub-items a, b, c, etc. that aren't in an ol environment.. */
+.soln-list-item {
+  font-weight: bold;
+}
+
+  .soln-list-item::before {
+    content: "(";
+  }
+
+  .soln-list-item::after {
+    content: ")";
+  }
+
+.soln-list-subitem {
+  display: inline-block;
+  padding-bottom: 20px;
+}
+
+.soln-list-subitem-padding-20 {
+  padding-bottom: 25px;
 }
 
 
