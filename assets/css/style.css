@@ -22,8 +22,8 @@ p{
 	/*font-family:"Noto Sans Khmer","Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
 	/*font-size:16px; /*,"Noto Serif Khmer","Khmer OS Content"*/
 	font-weight:normal;
-	/*line-height:200%; */
-	margin:0 0 14px
+	/*line-height:200%; *
+	margin:0 0 14px */
 }
 
 article,aside,details,footer,header,hgroup,main,menu,section,summary{display:block}
@@ -472,6 +472,23 @@ ul.leftborder{
     /*text-indent: 10px; */
 }
 
+.centerborder{
+    color: darkred;
+    display:inline-block;
+    background-color: lightblue;
+    border-radius: 50px 0;
+    width:80%      ;
+    /*padding:0 0 0 0; */
+    margin: auto;
+    padding:10px;
+    /*color:#076422;*/
+    border:  0.1rem solid #0E81C1;
+    border-style: dotted;
+    /* text-align: left; * border-left-width:;*/
+    font-size: 16px;
+   /*  font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
+    /*text-indent: 10px; */
+}
 .borderstyle{
     color: darkred;
     display:inline-block;
