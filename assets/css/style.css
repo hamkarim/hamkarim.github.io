@@ -145,23 +145,72 @@ a:hover{text-decoration:underline}
 .btn:hover{color:rgba(255,255,255,0.8);text-decoration:none;background-color:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.3)}
 .btn+.btn{margin-left:1rem}@media screen and (min-width: 64em){.btn{padding:0.75rem 1rem}}@media screen and (min-width: 42em) and (max-width: 64em){.btn{padding:0.6rem 0.9rem;font-size:0.9rem}}@media screen and (max-width: 42em){.btn{display:block;width:100%;padding:0.75rem;font-size:0.9rem}.btn+.btn{margin-top:1rem;margin-left:0}}
 
-.page-header{color:#fff;text-align:center;background-color:black}@media screen and (min-width: 64em){.page-header{padding:3rem 4rem}}@media screen and (min-width: 42em) and (max-width: 64em){.page-header{padding:2rem 3rem}}@media screen and (max-width: 42em){.page-header{padding:1rem 1rem}}*{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;padding:0;margin:0}
+.page-header{
+          color:#fff;
+          text-align:center;
+          background-color:black}
+@media screen and (min-width: 64em){
+          .page-header{padding:3rem 4rem}
+}
+@media screen and (min-width: 42em) and (max-width: 64em){
+          .page-header{padding:2rem 3rem}
+}
+@media screen and (max-width: 42em){
+          .page-header{
+                    padding:1rem 1rem}
+          }*{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;padding:0;margin:0}
 
-.tabs{margin:0;padding:0;list-style:none;display:table;table-layout:fixed;width:100%}
-.tabs__item{width:100%;float:left}@media screen and (min-width: 40em){.tabs__item{display:table-cell;float:none;width:auto}}
+.tabs{
+          margin:0;
+          padding:0;
+          list-style:none;
+          display:table;
+          table-layout:fixed;
+          width:100%;}
+.tabs__item{
+          width:100%;
+          float:left}
+@media screen and (min-width: 40em){
+          .tabs__item{
+                    display:table-cell;
+                    float:none;width:auto}}
 .tabs__link{
     display:block;
     font-family: 'Angkor','Bangers', cursive;
 }
 
-.primary-nav{text-align:center;border-radius:0;overflow:hidden}
+.primary-nav{
+          text-align:center;
+          border-radius:0;
+          overflow:hidden}
 .primary-nav a{padding:.75em 1em;color:white;background:black;text-decoration:none;border-right:1px solid #000;font-weight:400;font-size:1.25em}
 .primary-nav a:hover{color:blue;background:white}
 .project-name{
-    margin-top:0;
-    font-family: 'Angkor', 'Didact Gothic';
-    margin-bottom:0}@media screen and (min-width: 64em){.project-name{font-size:3.25rem}}@media screen and (min-width: 42em) and (max-width: 64em){.project-name{font-size:2.25rem}}@media screen and (max-width: 42em){.project-name{font-size:1.75rem}}
-.project-tagline{margin-top:1rem;margin-bottom:-0.5rem;font-weight:normal;opacity:0.9}@media screen and (min-width: 64em){.project-tagline{font-size:.825rem}}@media screen and (min-width: 42em) and (max-width: 64em){.project-tagline{font-size:.775rem}}@media screen and (max-width: 42em){.project-tagline{font-size:.6rem}}
+          margin-top:0;
+          font-family: 'Angkor', 'Didact Gothic';
+          margin-bottom:0;}
+@media screen and (min-width: 64em){
+          .project-name{
+                    font-size:3.25rem}
+          }
+@media screen and (min-width: 42em) and (max-width: 64em){
+          .project-name{font-size:2.25rem}
+          }
+@media screen and (max-width: 42em){
+          .project-name{font-size:1.75rem}
+          }
+.project-tagline{
+          margin-top:0rem;
+          margin-bottom:-2rem;
+          font-weight:normal;
+          opacity:0.9
+}
+@media screen and (min-width: 64em){
+          .project-tagline{font-size:.825rem}}
+@media screen and (min-width: 42em) and (max-width: 64em){
+          .project-tagline{font-size:.775rem}}
+@media screen and (max-width: 42em){
+          .project-tagline{font-size:.6rem}}
 
 .main-content{
 	word-wrap:break-word;
@@ -840,3 +889,101 @@ Show hide answer in examples
   display: none;
 }
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+.table-header-divider {
+  border-spacing: 0 0;
+  margin: 0 auto;
+}
+
+.top-nav-bar > a, .top-nav-bar > span {
+    padding: 5px 3px 5px 3px;
+  }
+
+  .top-nav-bar-fixed {
+    padding: 12px 0 12px 0;
+  }
+
+.top-menu-nav-title {
+  background-color: rgb(188,43,43);
+  color: #ffffff;
+  border: 2px solid rgb(188,43,43);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  margin: 3px 0 3px 0 !important;
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.8);
+}
+
+.top-menu-nav-link {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.top-menu-prev {
+  color: rgb(188,43,43) !important;
+}
+
+.top-menu-prev-hidden {
+  visibility: hidden;
+}
+
+.top-menu-next {
+  color: rgb(188,43,43) !important;
+}
+
+.top-menu-item-text {
+  font-weight: normal !important;
+  white-space: normal !important;
+}
+.top-nav-bar-fixed {
+    position: fixed;
+    top: 50px;
+    padding: 10px 0 10px 0;
+    border-bottom: 2px solid rgb(188,43,43);
+    box-shadow: 0 2px 3px rgba(0,0,0,0.7);
+}
+
+.top-nav-bar-link-spacer {
+    display:inline-block;
+    width:15px;
+}
+
+.top-nav-bar-soln-nav {
+    margin-top: 15px;
+}
+
+.nav_desktop_extra {
+    display: inline;
+}
+
+.nav_desktop_extra_pn {
+    display: inline;
+}
+
+.top-nav-bar {
+    text-align: center;
+    font-size: 16px;
+    width: 100%;
+    background: white;
+    padding: 15px 0 0 0;
+    z-index: 1 /* make sure math goes under... */;
+}
+
+@media (max-width: 600px) {
+
+    .top-menu-breadcrumb {
+        display: inline-block;
+        max-width: 500px;
+        margin: 0 10px;
+    }
+
+    .nav_desktop_extra {
+        display: none;
+    }
+
+    .top-nav-bar-link-spacer {
+        display: none;
+    }
+}
