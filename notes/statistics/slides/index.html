@@ -315,14 +315,14 @@ $$
             <h3 class="frame-sect"><strong>សម្គាល់</strong></h3>
    វ៉ារ្យ៉ង់ (ឬ គម្លាតស្តង់ដា) គឺជារង្វាស់តម្លៃរប៉ាយ ឬ រាយប៉ាយ របស់តម្លៃនៃអថេរចៃដន្យនៅជុំវិញតម្លៃមធ្យម \(\mu\) ។ បើតម្លៃអថេរទំាងនេះ កើតឡើងផ្ដុំគ្នា នៅក្បែរៗតម្លៃមធ្យម នោះមានន័យថា វ៉ារ្យ៉ង់ មានតម្លៃតូច ហើយបើតម្លៃរបស់អថេរចៃដន្យនៅរាយប៉ាយ ឆ្ងាយពិតម្លៃមធ្យម នោះវ៉ារ្យ៉ង់មានតម្លៃធំ។ ពិនិត្យរូបខាងក្រោម សម្រាប់ករណីរបស់របាយនៃអថេរជាប់ ដែលមានមធ្យម \(\mu\) ស្មើគ្នា។ 
     </div>
-    
 <figure>
     <img alt="Small and large variance" src="./img/variance.png">
     </figure>
-    
+    <div class="wrap size-60">
     <h3 class="frame-sect"><strong>ឧទាហរណ៍</strong></h3>
-    <p>ចូររកវ៉ារ្យ៉ង់ និង គម្លាតស្ត់ដារបស់អថេរចៃដន្យ ក្នុងឧទាហរណ៍ (2)
+    <p>(3) ចូររកវ៉ារ្យ៉ង់ និង គម្លាតស្តង់ដា របស់អថេរចៃដន្យ ក្នុងឧទាហរណ៍ (2)
     </p>
+</div>
 </section>
 
 <section>
@@ -356,11 +356,100 @@ $$
 <section>
   <!--.wrap = container (width: 90%) -->
 <div class="wrap size-60">
-<h2 class="frame-sect">អនុគមន៍អថេរចៃដន្យ</h2>
+<h2 class="frame-sect">Standardized Random Variables</h2>
 <!--.wrap = container (width: 90%) -->
-		  
+
+    <p>
+        <ul>
+            <li>
+    យក \(X\) ជា r.v ដែលមានមធ្យម \(\mu\) និង គម្លាតស្តង់ដា \( \sigma>0\)។ ដូច្នេះ គេអាចកំណត់អថេរចៃដន្យថ្មីមួយ ដែលមានលក្ខណៈស្តង់ដាជាង បានដូចខាងក្រោម៖ 
+$$
+X^{*}=\frac{X-\mu}{\sigma}
+$$
+    </li>		 
+    <li>លក្ខណៈសំខាន់របស់អថេរស្តង់ដា \(X^{*}\) គឺ៖ 
+$$
+E\left(X^{*}\right)=0, \quad \operatorname{Var}\left(X^{*}\right)=1
+$$</li>
+            <li>គេហៅ អថេរស្តង់ដា $X^*$ ថា <a href="#">ពិន្ទុស្តង់ដា</a> (standard scores)។ ក្នុងករណីនេះ អថេរ \(X\) ត្រូវបានគេសរសេរក្នុងទម្រង់ ឯកតាស្តង់ដា (i.e., \(\sigma\) មានតម្លៃជាឯកតា ក្នុងការវាស់តម្លៃ \(X-\mu\) )។
+    </li>
 </div>
 </section>
+    
+    <section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap size-60">
+            <h3 class="frame-sect"><strong>ឧទាហរណ៍</strong></h3>
+            <div class="bg-white shadow">
+<p>
+<ol>
+    <li>ក្នុងការលេងល្បែងបោះគ្រាប់ឡុកឡាក់ស្មើសាច់មួយគ្រាប់ គេកំណត់ថា៖ អ្នកលេងណាម្នាក់ឈ្នះលុយ \(\$ 20\) បើសិនឡុកឡាក់ចេញលេខ $2$ - ឈ្នះ \(\$ 40\) បើចេញលេខ $4$ ហើយចាញ់ \(\$ 30\) បើចេញលេខ $6$។ ក្នុងករណីចេញលេខផ្សេងទៀត អ្នកលេងម្នាក់នោះ នឹងរួចខ្លួន។ ចូររកសង្ឃឹមគណិតនៃទឹកប្រាក់ ដែលអ្នកលេងម្នាក់នោះអាចនឹងឈ្នះបាន។ 
+    
+</li>
+                </ol> 
+                </p>
+              </div>
+              
+<div class="bg-white shadow">
+<p>
+<ol start="2">
+    <li>គេមានអនុគមន៍ដង់ស៊ីតេរបស់អថេរចៃដន្យ \(X\) កំណត់ដោយ 
+\[
+f(x)=\begin{cases}
+        \frac{1}{2} x, & 0 &lt; x &lt; 2 \\
+        0, & \text{ otherwise }
+        \end{cases}
+\]
+  </li>
+            </ol>
+   </p>
+
+            </div> <!-- .end .bg-white shadow -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+
+    
+<section>
+    <div class="wrap size-60">
+    <h3>Basic Excercises</h3>
+    <ol>
+    <li>A continuous random variable \(X\) has a uniform distribution on the interval \([5,12]\). Sketch the graph of its density function. </li>
+    <li>A continuous random variable \(X\) has a uniform distribution on the interval \([-3,3]\). Sketch the graph of its density function. </li>
+    <li>A continuous random variable \(X\) has a normal distribution with mean \(100\) and standard deviation \(10\). Sketch a qualitatively accurate graph of its density function.</li>
+    <li>A continuous random variable \(X\) has a normal distribution with mean \(73\) and standard deviation \(2.5\). Sketch a qualitatively accurate graph of its density function.</li>
+    <li>A continuous random variable \(X\) has a normal distribution with mean \(73\). The probability that \(X\) takes a value greater than \(80\) is \(0.212\). Use this information and the symmetry of the density function to find the probability that \(X\) takes a value less than \(66\). Sketch the density curve with relevant regions shaded to illustrate the computation.</li>
+    <li>A continuous random variable \(X\) has a normal distribution with mean \(169\). The probability that \(X\) takes a value greater than \(180\) is \(0.17\). Use this information and the symmetry of the density function to find the probability that \(X\) takes a value less than \(158\). Sketch the density curve with relevant regions shaded to illustrate the computation.</li>
+    <li>A continuous random variable \(X\) has a normal distribution with mean \(50.5\). The probability that \(X\) takes a value less than \(54\) is \(0.76\). Use this information and the symmetry of the density function to find the probability that \(X\) takes a value greater than \(47\). Sketch the density curve with relevant regions shaded to illustrate the computation.</li>
+    <li>A continuous random variable \(X\) has a normal distribution with mean \(12.25\). The probability that \(X\) takes a value less than \(13\) is \(0.82\). Use this information and the symmetry of the density function to find the probability that \(X\) takes a value greater than \(11.50\). Sketch the density curve with relevant regions shaded to illustrate the computation.</li>
+    <li>The figure provided shows the density curves of three normally distributed random variables \(X_A,\; X_B\; \text{and}\; X_C\). Their standard deviations (in no particular order) are \(15\), \(7\), and \(20\). Use the figure to identify the values of the means \(\mu _A,\: \mu _B,\; \text{and}\; \mu _C\) and standard deviations \(\sigma _A,\: \sigma _B,\; \text{and}\; \sigma _C\) of the three random variables.  
+        <figure>
+        <img alt="Indentify the variance and expectation" src="img/Ex.Var.jpg" width="350px">
+        </figure>
+        </li>
+</ol>
+<h3>Applications</h3>
+    <ol start="10">
+    <li>Dogberry's alarm clock is battery operated. The battery could fail with equal probability at any time of the day or night. Every day Dogberry sets his alarm for \(6:30\; a.m.\) and goes to bed at \(10:00\; p.m.\). Find the probability that when the clock battery finally dies, it will do so at the most inconvenient time, between \(10:00\; p.m.\) and \(6:30\; a.m.\).</li>
+    <li>Buses running a bus line near Desdemona's house run every \(15\) minutes. Without paying attention to the schedule she walks to the nearest stop to take the bus to town. Find the probability that she waits more than \(10\) minutes.</li>
+    <li>The amount \(X\) of orange juice in a randomly selected half-gallon container varies according to a normal distribution with mean \(64\) ounces and standard deviation \(0.25\) ounce.
+    <ol start="1" style="list-style-type: lower-alpha;">
+        <li>Sketch the graph of the density function for \(X\).</li>
+        <li>What proportion of all containers contain less than a half gallon (\(64\) ounces)? Explain.</li>
+        <li>What is the median amount of orange juice in such containers? Explain.</li>
+    </ol>
+    </li>
+    <li>The weight \(X\) of grass seed in bags marked \(50\) lb varies according to a normal distribution with mean \(50\) lb and standard deviation \(1\) ounce (\(0.0625\) lb).
+    <ol start="1" style="list-style-type: lower-alpha;">
+        <li>Sketch the graph of the density function for \(X\).</li>
+        <li>What proportion of all bags weigh less than \(50\) pounds? Explain.</li>
+        <li>What is the median weight of such bags? Explain.</li>
+    </ol>
+    </li>
+</ol>
+    </div>
+</section>    
     
 <section>
   <!--.wrap = container (width: 90%) -->
