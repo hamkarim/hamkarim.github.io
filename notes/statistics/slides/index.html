@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
+</script>
+
+    <link rel="stylesheet" href="https://hamkarim.github.io/assets/css/style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245">
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+<!-- Script to show and hide proof -->
+<script type="text/javascript" src="https://hamkarim.github.io/assets/js/showhide.js"></script>
+<!-- Other style of showing and hiding proof -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
+ <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>
+<!-- end -->
+
+<script> document.createElement("example, defn"); </script>
+
+
+    <!-- SEO -->
+    <title>Mathematical Expectation</title>
+    <meta name="description" content="Mathematical Expectation">
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <!-- CSS Base -->
+    <link rel="stylesheet" type="text/css" media="all" href="./css/base.css">
+
+    <!-- CSS Colors -->
+    <link rel="stylesheet" type="text/css" media="all" href="./css/colors.css">
+
+    <!-- Optional - CSS SVG Icons (Font Awesome) -->
+    <link rel="stylesheet" type="text/css" media="all" href="./css/svg-icons.css">
+
+    <!-- SOCIAL CARDS (ADD YOUR INFO) -->
+
+    <!-- FACEBOOK -->
+    <meta property="og:url" content="http://your-url.com/permalink"> <!-- EDIT -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="SlideShow"> <!-- EDIT -->
+    <meta property="og:description" content="Mathematical Expectation"> <!-- EDIT -->
+    <meta property="og:updated_time" content="2020-01-04T16:54:27"> <!-- EDIT --
+    <meta property="og:image" content="./img/share-webslides.jpg" > <!-- EDIT -->
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@webslides"> <!-- EDIT -->
+    <meta name="twitter:creator" content="@jlantunez"> <!-- EDIT -->
+    <meta name="twitter:title" content="Ham Karim"> <!-- EDIT -->
+    <meta name="twitter:description" content="Mathematical Expectation"> <!-- EDIT -->
+    <meta name="twitter:image" content="./img/share-webslides.jpg"> <!-- EDIT -->
+
+    <!-- FAVICONS --
+    <link rel="shortcut icon" href="./img/favicons/favicon.png">
+
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
+  </head>
+
+  <body>
+
+    <!--header role="banner">
+      <!-- nav role="navigation">
+        <p class="logo"><a href="./index.html" title="WebSlides">Mathematical Expectation</a></p>
+        <ul>
+          <li class="github">
+            <a rel="external" href="https://github.com/webslides/webslides" title="Github">
+              <svg class="fa-github">
+                <use xlink:href="#fa-github"></use>
+              </svg>
+              <em>WebSlides</em>
+            </a>
+          </li>
+          <li class="twitter">
+            <a rel="external" href="https://twitter.com/webslides" title="Twitter">
+              <svg class="fa-twitter">
+                <use xlink:href="#fa-twitter"></use>
+              </svg>
+              <em>@WebSlides</em>
+            </a>
+          </li>
+          <!--  <li class="dribbble"><a rel="external" href="http://dribbble.com/webslides" title="Dribbble"><svg class="fa-dribbble"><use xlink:href="#fa-dribbble"></use></svg> <em>webslides</em></a></li> --
+        </ul>
+      </nav>
+    </header-->
+    <main role="main">
+      <article id="webslides">
+
+        <!-- Quick Guide
+          - Each parent <section> in the <article id="webslides"> element is an individual slide.
+          - Vertical sliding = <article id="webslides" class="vertical">
+          - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+
+        <section style="background-color:cornflowerblue" class="aligncenter">
+         <!--span class="background dark" style="background-image:url(' ')"></span-->
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <h1 style="font-size: 55px" class="project-name">សង្ឃឹមគណិត<br> <span style="font-size:35px">(Mathematical Expectation)</span></h1>
+            <p class="text-symbols" style="text-indent: 0">***** </p>
+
+              <h1 class="project-name" style="font-size: 32px">ហាំ ការីម</h1>
+          <h2 class="project-name" style="font-size: 20px">សាកលវិទ្យាល័យអង្គរខេមរា</h2>
+
+              <br><br><br>
+
+            <div><a style="color:red" class="ghost" href="#slide=2" title="Go to course contents">
+                👉 Go to contents</a>
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="wrap size-60">
+          <!--.wrap = container (width: 90%) -->
+        <h2 class="aligncenter">មាតិកា</h2><br>
+          <div class="aligncenter">
+        <ul style="color:darkblue">
+            <li>Definition of Mathematical Expectation</li>
+            <li>Functions of Random Variables</li>
+            <li>Some Theorems on Expectation</li>
+            <li>The Variance and Standard Deviation</li>
+            <li>Standardized Random Variables</li>
+            <li>Moment Generating Functions</li>
+            <li>Characteristic Functions</li>
+            <li>Variance for Joint Distributions. Covariance</li>
+            <li>Correlation Coefficient</li>
+            <li>Conditional Expectation, Variance, and Moments</li>
+            <li>Chebyshev’s Inequality</li>
+            <li>Law of Large Numbers</li>
+            <li>Skewness and Kurtosis</li>
+            </ul>
+        </div>
+
+          <!-- .end .wrap -->
+        </section>
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">និយមន័យសង្ឃឹមគណិត (Expectation)</h2><br>
+<p>A very important concept in probability and statistics is that of the mathematical expectation, expected value, or briefly the expectation, of a random variable.
+</p>
+
+ <div class="definitionb">
+ <p>
+     <ol>
+         <li>
+យក $X$ អថេរចៃដន្យដាច់ ដែលមានតម្លៃអាចកើតឡើង $x_1,\ldots, x_n$។ តម្លៃសង្ឃឹមគណិតរបស់អថេរ $X$ កំណត់ដោយ
+     $$
+E(X)=x_{1} P\left(X=x_{1}\right)+\cdots+x_{n} P\left(X=x_{n}\right)=\sum_{j=1}^{n} x_{j} P\left(X=x_{j}\right)
+$$
+ឬ ក្នុងន័យសមមូលគ្នា បើ \(P\left(X=x_{j}\right)=f(x)\) នោះគេបាន
+$$
+E(X)=x_{1} f\left(x_{1}\right)+\cdots+x_{n} f\left(x_{n}\right)=\sum_{j=1}^{n} x_{j} f\left(x_{j}\right)=\sum x f(x)
+$$
+</li>
+<li> ក្នុងករណី \(X\) ជាអថេរចៃដន្យជាប់ ដែលមានអនុគមន៍ដង់ស៊ីតេ \(f(x)\) នោះសង្ឃឹមគណិតរបស់អថេរ \(X\) កំណត់ដោយ
+$$
+E(X)=\int_{-\infty}^{\infty} x f(x) d x
+$$
+         </li>
+     </ol>
+</p>
+</div>
+
+ </div>
+ <!-- .end .wrap -->
+</section>
+
+        <section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap size-60">
+            <h3 class="frame-sect"><strong>ឧទាហរណ៍</strong></h3>
+            <div class="bg-white shadow">
+<p>
+<ol>
+    <li>ក្នុងការលេងល្បែងបោះគ្រាប់ឡុកឡាក់ស្មើសាច់មួយគ្រាប់ គេកំណត់ថា៖ អ្នកលេងណាម្នាក់ឈ្នះលុយ \(\$ 20\) បើសិនឡុកឡាក់ចេញលេខ $2$ - ឈ្នះ \(\$ 40\) បើចេញលេខ $4$ ហើយចាញ់ \(\$ 30\) បើចេញលេខ $6$។ ក្នុងករណីចេញលេខផ្សេងទៀត អ្នកលេងម្នាក់នោះ នឹងរួចខ្លួន។ ចូររកសង្ឃឹមគណិតនៃទឹកប្រាក់ ដែលអ្នកលេងម្នាក់នោះអាចនឹងឈ្នះបាន។ <br>
+       <b>Hint:</b> យក \(X\) ជាអថេរចៃដន្យ តាងអោយបរិមាណលុយឈ្នះក្នុងការបោះគ្រាប់ឡុកឡាក់។ 
+        
+       \[
+        \begin{array}{|c|c|c|c|c|c|c|}
+        \hline 
+        x_{j} & 0 & +20 & 0 & +40 & 0 & -30 \\ 
+        \hline 
+        f\left(x_{j}\right) & 1 / 6 & 1 / 6 & 1 / 6 & 1 / 6 & 1 / 6 & 1 / 6 \\ \hline\end{array}
+        \]
+        
+<!--Let \(X\) be the random variable giving the amount of money won on any toss. The possible amounts won when the die
+turns up \(1,2, \ldots, 6\) are \(x_{1}, x_{2}, \ldots, x_{6},\) respectively, while the probabilities of these are \(f\left(x_{1}\right), f\left(x_{2}\right), \ldots, f\left(x_{6}\right)\). The probability function for \(X\) is displayed in Table \(3-1 .\) Therefore, the expected value or expectation is -->
+</li>
+                </ol> 
+                </p>
+              </div>
+              
+<div class="bg-white shadow">
+<p>
+<ol start="2">
+    <li>គេមានអនុគមន៍ដង់ស៊ីតេរបស់អថេរចៃដន្យ \(X\) កំណត់ដោយ 
+\[
+f(x)=\begin{cases}
+        \frac{1}{2} x, & 0 &lt; x &lt; 2 \\
+        0, & \text{ otherwise }
+        \end{cases}
+\]
+  </li>
+            </ol>
+   </p>
+
+            </div> <!-- .end .bg-white shadow -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">អនុគមន៍អថេរចៃដន្យ</h2>
+<!--.wrap = container (width: 90%) -->
+    <br>
+<p>
+<ul>
+    <li>
+    យក \(X\) ជា d.r.v មានអនុគមន៍ប្រូបាប៊ីលីតេ \(f(x)\)។ ដូច្នេះ បើគេកំណត់ \(Y=g(X)\) នោះវាក៏ជា d.r.v ដែរ ហើយអនុគមន៍ប្រូបាប៊ីលីតេរបស់ \(Y\) កំណត់ដោយ 
+$$
+h(y)=P(Y=y)=\sum_{\{x \mid g(x)=y\}} P(X=x) = \sum_{\{x \mid g(x)=y\}} f(x)
+$$
+ដូច្នេះ គេបាន
+\begin{aligned} 
+    E\big[Y=g(X)\big] &= g(x_{1})f(x_{1})+g(x_{2}) f(x_{2})+\cdots+g(x_{n}) f(x_{n}) \\ 
+    &= \sum_{j=1}^{n} g(x_{j}) f(x_{j}) = \sum g(x) f(x) 
+    \end{aligned}
+    </li>
+    <li>
+    ដូចគ្នាដែរ បើ \(X\) ជា c.r.v ដែលមានអនុគមន៍ដង់ស៊ីតេប្រូបាប៊ីលីតេ \(f(x)\) នោះគេកំណត់បាន 
+$$
+E\big[Y=g(X)\big]=\int_{-\infty}^{\infty} g(x) f(x) d x
+$$
+    </li>
+    </ul>
+    </p>
+<p>
+    ជាទូទៅ បើ \(X\) និង \(Y\) ជា c.r.v ពីរ ដែលមានអនុគមន៍ដង់ស៊ីតេរួម (j.d.f) គឺ \(f(x, y)\) នោះសង្ឃឹមគណិតរបស់អនុគមន៍ \(g(X, Y)\) កំណត់ដោយ 
+$$
+E\big[g(X, Y)\big] = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} g(x, y) f(x, y) d x d y
+$$
+    </p>
+</div>
+</section>
+    
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h3 class="frame-sect">លក្ខណៈរបស់សង្ឃឹមគណិត</h3>
+<!--.wrap = container (width: 90%) -->
+    <br>
+<ol>
+    <li>If \(c\) is any constant, then
+$$
+E(c X)=c E(X)
+$$</li>
+    <li>If \(X\) and \(Y\) any random variables, then
+$$
+E(X+Y)=E(X)+E(Y)
+$$</li>
+    <li>If \(X\) and \(Y\) are independent random variables, then
+$$
+E(X Y)=E(X) E(Y)
+$$</li>
+    
+    </ol>
+		  
+</div>
+</section>
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">វ៉ារ្យ៉ង់ និង គម្លាតស្ដង់ដា</h2>
+<!--.wrap = container (width: 90%) -->
+<br>
+    <p><a href="#">វ៉ារ្យ៉ង់</a> និង <a href="#">គម្លាតស្តង់ដា</a> របស់អថេរចៃដន្យ $X$ កំណត់ដូចខាងក្រោម៖  
+\begin{aligned}
+\operatorname{Var}(X) &= E\left[(X-\mu)^{2}\right] \\
+\sigma_{X} &=\sqrt{\operatorname{Var}(X)}=\sqrt{E\left[(X-\mu)^{2}\right]}
+\end{aligned}
+    </p>
+<ul>
+    <li>បើ \(X\) ជា d.r.v ដែលកំណត់យកតម្លៃ \(x_{1}, x_{2}, \ldots, x_{n}\) និងមានអនុគមន៍ប្រូបាប៊ីលីតេ \(f(x)\) នោះវ៉ារ្យ៉ង់កំណត់ដោយ 
+$$
+\sigma_{X}^{2}=E\left[(X-\mu)^{2}\right]=\sum_{j=1}^{n}\left(x_{j}-\mu\right)^{2} f\left(x_{j}\right)=\sum(x-\mu)^{2} f(x)
+$$
+    </li>
+<li>បើ \(X\) ជា c.r.v ដែលមានអនុគមន៍ដង់ស៊ីតេ \(f(x)\) នោះវ៉ារ្យ៉ង់កំណត់ដោយ 
+$$
+\sigma_{X}^{2}=E\left[(X-\mu)^{2}\right]=\int_{-\infty}^{\infty}(x-\mu)^{2} f(x) d x
+$$
+    </li>
+    </ul>
+</div>
+</section>
+    
+<section>
+    <div class="wrap size-60 bg-white shadow">
+            <h3 class="frame-sect"><strong>សម្គាល់</strong></h3>
+   The variance (or the standard deviation) is a measure of the dispersion, or scatter, of the values of the ran-
+dom variable about the mean \(\mu\). If the values tend to be concentrated near the mean, the variance is small; while
+if the values tend to be distributed far from the mean, the variance is large. The situation is indicated graphically
+in Fig. \(3-1\) for the case of two continuous distributions having the same mean \(\mu .\)
+    </div>
+    
+<figure>
+    <img alt="Small and large variance" src="./img/variance.png">
+    </figure>
+    
+</section>
+
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">អនុគមន៍អថេរចៃដន្យ</h2>
+<!--.wrap = container (width: 90%) -->
+		  
+</div>
+</section>
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">អនុគមន៍អថេរចៃដន្យ</h2>
+<!--.wrap = container (width: 90%) -->
+		  
+</div>
+</section>
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">អនុគមន៍អថេរចៃដន្យ</h2>
+<!--.wrap = container (width: 90%) -->
+		  
+</div>
+</section>
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">អនុគមន៍អថេរចៃដន្យ</h2>
+<!--.wrap = container (width: 90%) -->
+		  
+</div>
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+
+		<section>
+		  <div class="wrap">
+		    <div class="grid vertical-align">
+		      <div class="column">
+		        <figure>
+		          <img src="./img/malaysia-flag.png" alt="Malaysian Flag">
+		        </figure>
+		      </div>
+		      <!-- end column-->
+		      <div class="column">
+		        <!-- <h5></h5> -->
+		        <p class="text-intro">Kepentingan menggunakan Bahasa Melayu dengan baik dan fungsi-fungsinya.</p>
+
+		        <p>Bahasa Melayu adalah salah satu bahasa yang sangat berpengaruh di Asia Tenggara dan satu daripada lima bahasa di dunia yang mempunyai jumlah penutur yang terbesar.</p>
+		      </div>
+		      <!-- end .column-->
+		    </div>
+		    <!-- end .grid-->
+		  </div>
+		  <!-- end .wrap-->
+		</section>
+
+		<section class="aligncenter">
+		  <!--.wrap = container (width: 90%) -->
+		  <div class="wrap size-50">
+		    <!-- <h2 class="text-landing">Welcomes</h2> -->
+		    <p class="text-intro">“<strong>Sungguh luas</strong> tersebarnya Bahasa Melayu itu sehingga kalau kita memahaminya tidaklah mungkin kita kehilangan jejak, kerana Bahasa itu bukan sahaja dimengerti di Paris bahkan lebih jauh lagi daripada negeri itu, dan di sebelah timurnya sehingga ke Kepulauan Filipina.”</p>
+		     <nav class="aligncenter">
+		       <ul>
+		         <li>(Tatabahasa  Dewan  Edisi  Baharu,  2002:  14)</li>
+		       </ul>
+		     </nav>
+		  </div>
+		</section>
+
+        <section>
+          <div class="wrap size-50">
+            <h3>Fungsi-Fungsi Bahasa Melayu:</h3>
+            <p>Beberapa fungsi Bahasa Melayu dalam penggunaannya  sehari-hari:</p>
+            <hr>
+            <ol class="text-cols">
+              <li>Sebagai Bahasa Kebangsaan</li>
+              <li>Sebagai Bahasa Ilmu atau Bahasa Akademik</li>
+              <li>Sebagai Bahasa Pengantar</li>
+              <li>Sebagai Bahasa Perpaduan</li>
+              <li>Sebagai Bahasa Komunikasi</li>
+              <li>Sebagai Bahasa Urusan Perniagaan</li>
+            </ol>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <div class="wrap size-50">
+            <h4><strong>Kesalahan umum penggunaan Bahasa Melayu</strong></h4>
+            <br>
+            <!-- <p class="text-intro"></p> -->
+            <p><strong>Coder (1981)</strong> mendefinisikan kesalahan bahasa sebagai bentuk-bentuk peraturan yang menyimpang atau menyalahi bentuk-bentuk pertuturan penutur jati.</p>
+            <p class="text-symbols">* * *</p>
+            <!-- <p class="aligncenter">Best,<br>
+              <a href="https://twitter.com/jlantunez">@jlantunez</a>.
+            </p> -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <div class="wrap">
+            <h2>Kesalahan Umum Tatabahasa</h2>
+            <ul class="flexblock features">
+              <li>
+                <div>
+                  <h2>
+                    <!-- <span></span> -->
+                    Penggunaan Kata Ganti Diri
+                  </h2>
+                  <i>Contoh:</i>
+                  <br>
+                  <span style="color: red;font-size: initial;line-height: 2;">✘ </span>Nadia  masuk  kelas  setiap  hari  kerana  <b>beliau</b>  adalah  murid  teladan (salah)
+                  <br>
+                  <span style="color:green;font-size: initial;line-height: 2;">✔ </span>Nadia  masuk  kelas  setiap  hari  kerana  <b>dia</b>  adalah  murid  teladan. (betul)
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h2>
+                    <!-- <svg class="fa-link">
+                      <use xlink:href="#fa-link"></use>
+                    </svg> -->
+                    Segi Perbendaharaan Kata
+                  </h2>
+                  <i>Contoh:</i>
+                  <br>
+                  Walaupun  adik  saya  sudah  <b>dapat  memandu</b>  kereta,  tetapi  ia  <b>belum  boleh</b>  memandu  kereta  di  jalan  raya.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h2>
+                    <!-- <svg class="fa-clock-o">
+                      <use xlink:href="#fa-clock-o"></use>
+                    </svg> -->
+                    Segi Penggunaan Hukum D-M
+                  </h2>
+                  <i>Contoh:</i>
+                  <br>
+                  <span style="color: red;font-size: initial;line-height: 2;">✘ </span>Mini bas (salah)
+                  <br>
+                  <span style="color:green;font-size: initial;line-height: 2;">✔ </span>Bas mini (betul)
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+		<section>
+		  <div class="wrap aligncenter">
+		    <h4><strong>Analisis  Kesalahan-kesalahan  Bahasa<br>dalam  Papan  Tanda</strong></h4>
+		    <p class="text-intro">
+		   	<i>Faktor-faktor  yang  mendasari  terjadinya  kesalahan  penggunaan bahasa  adalah  kelemahan  dalam penguasaan  Bahasa  Melayu  dan  tidak  meletakkan  kepentingan  untuk  memartabatkan Bahasa  Melayu.</i>
+		    </p>
+		  </div>
+		  <!-- .end .wrap -->
+		</section>
+
+		<section class="bg-brown">
+		  <div class="wrap">
+		    <div class="grid">
+		      <div class="column">
+		        <!-- <svg class="fa-line-bolt large">
+		          <use xlink:href="#fa-bolt"></use>
+		        </svg> -->
+		        <h3><strong>Kesalahan  Ejaan</strong></h3>
+		        <p>
+		        <i>Contoh:</i>
+                <br>
+                <span style="color: red;font-size: initial;">✘ </span>Kedai Serbaneka Jas (salah)
+                <br>
+                <span style="color:green;font-size: initial;">✔ </span>Kedai Jas Serbanika (betul)
+		        </p>
+		      </div>
+		      <div class="column">
+		          <!-- <svg class="fa-heartbeat large">
+		            <use xlink:href="#fa-heartbeat"></use>
+		          </svg> -->
+		        <h3><strong>Kesalahan Morfologi</strong></h3>
+  		        <p>
+  		        <i>Contoh:</i>
+                  <br>
+                  <span style="color: red;font-size: initial;">✘ </span>Kedai Jahitan Lim (salah)
+                  <br>
+                  <span style="color:green;font-size: initial;">✔ </span>Kedai Jahit  Lim (betul)
+  		        </p>
+		      </div>
+		      <div class="column">
+		        <!-- <span>
+		          <svg class="fa-line-chart large">
+		            <use xlink:href="#fa-line-chart"></use>
+		          </svg>
+		        </span> -->
+		        <h3><strong>Kesalahan  Frasa</strong></h3>
+		        <p>
+		        <i>Contoh:</i>
+                <br>
+                <span style="color: red;font-size: initial;">✘ </span>Noor  Nasi  Kandar  Restoran (salah)
+                <br>
+                <span style="color:green;font-size: initial;">✔ </span>Restoran  Nasi  Kandar  Noor (betul)
+		        </p>
+		      </div>
+		    </div>
+		    <!-- end .grid-->
+		  </div>
+		  <!-- end .wrap-->
+		</section>
+
+		<section>
+		  <div class="wrap">
+		    <h3>Contoh-contoh kesalahan dalam papan tanda:</h3>
+		    <ul class="flexblock gallery">
+		      <li style="background-color: white;">
+		        <a href="#">
+		          <figure>
+		            <img alt="Thumbnail " src="./img/malam-anugerah-keterampilan.jpg" width="800" height="600">
+		            <figcaption>
+		              <!-- <h2>Alicia Jiménez</h2> -->
+		              <p>Sesuai  dengan  kamus  rasmi  Bahasa  Melayu,  ejaan  yang  rasmi  pada  <b>“ketrampilan”</b>  adalah   <b>“keterampilan”</b>.</p>
+		            </figcaption>
+		          </figure>
+		        </a>
+		      </li>
+		      <li style="background-color: white;">
+		        <a href="#">
+		          <figure>
+		            <img alt="Thumbnail" src="./img/tempat-larangan.jpg" width="800" height="600">
+		            <figcaption>
+		              <!-- <h2>Sam Trololovitz</h2> -->
+		              <p><b>“Di larang masuk”</b> adalah tergolong di dalam kesalahan penggunaan “di” yang sepatutnya dirapatkan dengan kata kerja larang <b>“Dilarang masuk”.</b></p>
+		            </figcaption>
+		          </figure>
+		        </a>
+		      </li>
+		      <li style="background-color: white;">
+		        <a href="#">
+		          <figure>
+		            <img alt="Thumbnail" src="./img/rumahapi.jpg" width="800" height="600">
+		            <figcaption>
+		              <!-- <h2>Erin Gustafson</h2> -->
+		              <p><b>“Rumahapi”</b> sepatutnya rumah perlu dijarakkan dengan api iaitu <b>“Rumah api”</b></p>
+		            </figcaption>
+		          </figure>
+		        </a>
+		      </li>
+		    </ul>
+		  </div>
+		  <!-- .end .wrap -->
+		</section>
+
+		<section class="bg-black aligncenter">
+		  <span class="background" style="background-image:url('https://source.unsplash.com/mGYxAWITqMg/')"></span>
+		  <div class="wrap">
+		    <!-- <p class="text-subtitle">Plan your next trip</p> -->
+		    <h1 class="text-landing text-shadow">PENUTUP</h1>
+		    <p class="text-intro"><i>"Orang  pertama  yang  harus  melakukan  perubahan  dalam  meningkatkan  maruah  bahasa  Melayu  itu  ialah  bangsa  Melayu  itu  sendiri.  Dengan  demikian,  bahasa  Melayu  akan  Berjaya  dan   akan  menjadi  bahasa  yang  sangat  diminati." – Kumpulan 4, 2017</i></p>
+		  </div>
+		  <!-- .end .wrap -->
+		</section>
+
+      </article>
+    </main>
+    <!--main-->
+
+    <!-- Required -->
+    <script src="./js/webslides.js"></script>
+
+    <script>
+      window.ws = new WebSlides();
+    </script>
+
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+    <!-- <script defer src="static/js/svg-icons.js"></script> -->
+  </body>
+</html>
