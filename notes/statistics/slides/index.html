@@ -558,7 +558,7 @@ $$
 \mu_{r}=\sum(x-\mu)^{r} f(x) \qquad \text { (discrete variable) }
 $$
 $$
-\mu_{r}=\int_{-\infty}^{\infty}(x-\mu)^{r} f(x) d x \qquad(\text { continuous variable })
+\mu_{r}=\int_{-\infty}^{\infty}(x-\mu)^{r} f(x) d x \qquad(\text{(continuous variable })
 $$
 </li>
 <li>ម៉ូម៉ង់ទី $r$ របស់អថេរ \(X\) ធៀបនឹងគល់អ័ក្ស ហៅថា ម៉ូម៉ង់រាយទី $r$ (rth raw moment) កំណត់ដោយរូបមន្ត 
@@ -576,7 +576,7 @@ $$
 M_{X}(t)=\sum e^{t x} f(x) \qquad \text { (discrete variable) }
 $$
 $$
-M_{X}(t)=\int_{-\infty}^{\infty} e^{t x} f(x) d x \qquad(\text { continuous variable })
+M_{X}(t)=\int_{-\infty}^{\infty} e^{t x} f(x) d x \qquad(\text{(continuous variable })
 $$
 <!--We can show that the Taylor series expansion is 
 $$
@@ -587,6 +587,143 @@ $$ -->
 </p>
 </div>
 </section>
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h3 class="frame-sect">លក្ខណៈរបស់ម៉ូម៉ង់នៃអនុគមន៍បង្ក</h3>
+<!--.wrap = container (width: 90%) -->
+    <br>
+<ol>
+    <li>បើ \(M_{X}(t)\) ជា m.g.f របស់អថេរចៃដន្យ \(X\) ហើយយក \(a\) និង \( b \neq 0\) ជាចំនួនថេរ នោះគេបាន m.g.f របស់អថេរ \(Y=(X+a)/b\) កំណត់ដោយ 
+$$
+M_{(X+a)/b} (t) = e^{a t/b} M_{X}\left(\frac{t}{b}\right)
+$$
+    
+    </li>
+    <li>បើ \(X\) និង \(Y\) ជា r.v មិនអាស្រ័យគ្នា ដែលមានម៉ូម៉ង់អនុគមន៍បង្ករៀងគ្នា \(M_{X}(t)\) និង 
+\(M_{Y}(t)\) នោះគេបាន 
+$$
+M_{X+Y}(t)=M_{X}(t) M_{Y}(t)
+$$
+        
+</li>
+    <li>(Uniqueness Theorem) ឧបមាថា \(X\) និង \(Y\) ជា r.v ពីរ ដែលមានម៉ូម៉ង់អនុគមន៍បង្ករៀងគ្នា \(M_{X}(t)\) and \(M_{Y}(t)\)។ ដូច្នេះ អថេរចៃដន្យ \(X\) និង \(Y\) មានរបាយប្រូបាប៊ីលីតេដូចគ្នា លុះត្រាតែ \(M_{X}(t) = M_{Y}(t)\)</li>
+    
+    </ol>
+		  
+</div>
+</section>
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">អនុគមន៍សម្គាល់ (Characteristic Functions)</h2>
+<!--.wrap = container (width: 90%) --><br>
+    <p>
+        If we let \(t=i \omega\), where \(i\) is the imaginary unit, in the moment generating function we obtain an important function called the characteristic function. We denote this by
+$$
+     \phi_{X}(\omega) = M_{X}(i \omega) = E\left(e^{i \omega X}\right)
+$$ 
+It follows that 
+$$
+\phi_{X}(\omega) = \sum e^{i \omega x} f(x) \qquad \text { (discrete variable) }
+$$ 
+$$\phi_{X}(\omega) = \int_{-\infty}^{\infty} e^{i \omega x} f(x) d x \qquad \text { (continuous variable) }
+$$
+Since \(\left|e^{i \omega x}\right|=1\), the series and the integral always converge absolutely.
+    
+    </p>
+		  
+</div>
+</section>
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h3 class="frame-sect">លក្ខណៈរបស់អនុគមន៍សម្គាល់</h3>
+<!--.wrap = container (width: 90%) -->
+    <br>
+<ol>
+    <li>If \(\phi_{X}(\omega)\) is the characteristic function of the random variable \(X\) and \(a\) and \(b \neq 0\) are con-
+stants, then the characteristic function of \((X+a) / b\) is
+$$
+\phi_{(X+a) / b}(\omega)=e^{a i \omega / b} \phi_{X}\left(\frac{\omega}{b}\right)
+$$
+    
+    </li>
+    <li>If \(X\) and \(Y\) are independent random variables having characteristic functions \(\phi_{X}(\omega)\) and \(\phi_{Y}(\omega)\),
+respectively, then
+$$
+\phi_{X+Y}(\omega)=\phi_{X}(\omega) \phi_{Y}(\omega)
+$$
+        
+</li>
+    <li>(Uniqueness Theorem) យក \(X\) និង \(Y\) ជា r.v ពីរ ដែលមានអនុគមន៍សម្គាល់រៀងគ្នា \(\phi_{X}(\omega)\)  និង \(\phi_{Y}(\omega)\) ។ ដូច្នេះ អថេរចៃដន្យ \(X\) និង \(Y\) មានរបាយប្រូបាប៊ីលីតេដូចគ្នា លុះត្រាតែ \(\phi_{X}(\omega) = \phi_{Y}(\omega)\) ។ </li>
+    
+    </ol>
+		  
+</div>
+</section>
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">Variance for Joint Distributions. Covariance</h2><br>
+<!--.wrap = container (width: 90%) -->
+<p>
+    <ul>
+    <li>
+    The results given above for one variable can be extended to two or more variables. For example, if \(X\) and \(Y\) are
+two continuous random variables having joint density function \(f(x, y),\) the means, or expectations, of \(X\) and \(Y\) are
+\begin{eqnarray*}
+\mu_{X} &=& E(X)=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} x f(x, y) d x d y,\\
+\mu_{Y} &= & E(Y)=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} y f(x, y) d x d y
+\end{eqnarray*}
+    
+and the variances are
+$$
+\begin{aligned} 
+    \sigma_{X}^{2} &=E\left[\left(X-\mu_{X}\right)^{2}\right]=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty}\left(x-\mu_{X}\right)^{2} f(x, y) d x d y \\ 
+    \sigma_{Y}^{2} &= E\left[\left(Y-\mu_{Y}\right)^{2}\right]=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty}\left(y-\mu_{Y}\right)^{2} f(x, y) d x d y 
+\end{aligned}
+$$
+    </li>
+    
+    <li>Another quantity that arises in the case of two variables \(X\) and \(Y\) is the covariance defined by
+$$
+\sigma_{X Y}=\operatorname{Cov}(X, Y) = E\left[\left(X-\mu_{X}\right)\left(Y-\mu_{Y}\right)\right] 
+$$ 
+In terms of the joint density function  $f(x, y)$, we have  
+$$\sigma_{X Y}=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty}\left(x-\mu_{X}\right)\left(y-\mu_{Y}\right) f(x, y) d x d y
+$$
+        </li>
+        
+    </ul>
+    
+    </p>
+</div>
+</section>
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">អនុគមន៍អថេរចៃដន្យ</h2>
+<!--.wrap = container (width: 90%) -->
+		  
+</div>
+</section>
+    
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">អនុគមន៍អថេរចៃដន្យ</h2>
+<!--.wrap = container (width: 90%) -->
+		  
+</div>
+</section>
+    
     
 <section>
   <!--.wrap = container (width: 90%) -->
