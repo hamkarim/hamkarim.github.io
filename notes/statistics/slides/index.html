@@ -545,9 +545,46 @@ $$
 <section>
   <!--.wrap = container (width: 90%) -->
 <div class="wrap size-60">
-<h2 class="frame-sect">អនុគមន៍អថេរចៃដន្យ</h2>
+<h2 class="frame-sect">Moment Generating Functions</h2>
 <!--.wrap = container (width: 90%) -->
-		  
+<p>
+<ul>
+    <li>ម៉ូម៉ង់ទី $r$ របស់អថេរចៃដន្យ \(X\) ធៀបនឹងផ្ចិត \(\mu\) ឬ ហៅថា ម៉ូម៉ង់សង់ត្រាល់ទី $r$ កំណត់ដោយរូបមន្ត 
+$$
+\mu_{r}=E\left[(X-\mu)^{r}\right]
+$$
+ដែល \(r=0,1,2, \ldots\) ។ ដូច្នេះ គេបាន \(\mu_{0}=1, \mu_{1}=0\) ហើយ \(\mu_{2}=\sigma^{2}\), i.e., ម៉ូម៉ង់សង់ត្រាល់ទី២ ឬហៅ ម៉ូម៉ង់ទី២ ធៀបនឹងមធ្យមស្មើនឹង វ៉ារ្យ៉ង់។ ដោយសន្មត់តាមភាពរួមដាច់ខាត គេបាន 
+$$
+\mu_{r}=\sum(x-\mu)^{r} f(x) \qquad \text { (discrete variable) }
+$$
+$$
+\mu_{r}=\int_{-\infty}^{\infty}(x-\mu)^{r} f(x) d x \qquad(\text { continuous variable })
+$$
+</li>
+<li>ម៉ូម៉ង់ទី $r$ របស់អថេរ \(X\) ធៀបនឹងគល់អ័ក្ស ហៅថា ម៉ូម៉ង់រាយទី $r$ (rth raw moment) កំណត់ដោយរូបមន្ត 
+$$
+\mu_{r}^{\prime}=E\left(X^{r}\right)
+$$ 
+    </li>
+<li>
+    ម៉ូម៉ង់នៃអនុគមន៍បង្ករបស់អថេរចៃដន្យ \(X\) កំណត់ដោយ 
+$$
+M_{X}(t)=E\left(e^{t X}\right)
+$$
+ដោយសន្មតតាមភាពរួម គេបាន 
+$$
+M_{X}(t)=\sum e^{t x} f(x) \qquad \text { (discrete variable) }
+$$
+$$
+M_{X}(t)=\int_{-\infty}^{\infty} e^{t x} f(x) d x \qquad(\text { continuous variable })
+$$
+<!--We can show that the Taylor series expansion is 
+$$
+M_{X}(t)=1+\mu t+\mu_{2}^{\prime} \frac{t^{2}}{2 !}+\cdots+\mu_{r}^{\prime} \frac{t^{r}}{r !}+\cdots
+$$ -->
+    </li>
+    </ul>
+</p>
 </div>
 </section>
     
