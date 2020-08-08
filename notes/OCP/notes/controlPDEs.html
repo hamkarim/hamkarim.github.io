@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+    <!-- Begin Jekyll SEO tag v2.3.0 -->
+<meta property="og:title" content="Ham Karim">
+<meta name="author" content="Ham Karim">
+<meta name="author" content="ហាំ ការីម">
+<meta property="og:locale" content="en_US">
+<meta http-equiv="keywords" name="keywords" content="Euclidean spaces, Espaces euclidiens, លំហអឺគ្លីដ">
+<meta http-equiv="description" name="description" content="ក្នុងគណិតវិទ្យា ......... ">
+<meta name="description" content="Euclidean spaces, Espaces euclidiens, លំហអឺគ្លីដ">
+<meta property="og:description" content="Math, Programmer, Music">
+<link rel="canonical" href="../../index.html">
+<meta property="og:url" content="https://hamkarim.github.io/">
+<meta property="og:site_name" content="Euclidean spaces">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@pkarim">
+<meta name="twitter:creator" content="@pkarim">
+<meta name="google-site-verification" content="b9bg3P9zc8qbL4szvVYaf551jD9x017IyGBVSaQZDDY" />
+
+<script type="application/ld+json">
+{
+    "name":"Ham Karim",
+    "description":"I am a faculty member at the Royal Univeristy of Phnom Penh (RUPP). This is my blog of lectures at universities. ",
+    "author":{"@type":"Person","name":"Ham Karim"},
+    "@type":"WebSite",
+    "url":"https://hamkarim.github.io/",
+    "image":null,
+    "publisher":null,
+    "headline":"Ham Karim",
+    "dateModified":null,
+    "datePublished": "2020-06-01",
+    "sameAs":null,
+    "mainEntityOfPage":null,
+    "@context":"http://schema.org"}
+</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta property="og:image" content="http://www.cliparts101.com/files/376/298FE3955707B1DE458221E4BFABFBBE/Greek_Gamma_4.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../algebra/topology/2019/favicon.ico">
+    <meta charset="UTF-8">
+    <title>Optimal Control of PDEs</title>
+    <meta name="description" content="Optimal control of PDEs constraints">
+
+<style>
+.deffont {
+        font-family: 'Noto Serif Khmer', 'CMU Serif';
+        font-size: 16px;
+        }
+ul.liststyle1 {
+        list-style-type: square;
+      }
+ul.liststyle2 {
+        list-style-type: hebrew;
+      }
+a.onmenu {
+          font-family:'Noto Serif Khmer','CMU Serif';
+          font-weight:bold;
+ }
+      </style>
+
+
+<script async="" src="//cse.google.com/adsense/search/async-ads.js"></script>
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script type="text/javascript" async="" src="https://cse.google.com/cse.js?cx=001004262401526223570:11yv6vpcqvy"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-331594-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+
+
+    <link rel="stylesheet" href="../../../assets/css/style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245">
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+<!-- Script to show and hide proof -->
+<script type="text/javascript" src="https://hamkarim.github.io/assets/js/showhide.js"></script>
+<!-- Other style of showing and hiding proof -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
+ <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>
+<!-- end -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+//Another method to toggle the button
+          $(document).ready(function(){
+                    $('.showanswer').click(function(){
+                              $('.block_proof').show();
+                              $('.showanswer').hide();
+                              $('.hideanswer').show();
+                    }
+          );
+                    $('.hideanswer').click(function(){
+                              $('.block_proof').hide();
+                              $('.showanswer').show();
+                              $('.hideanswer').hide();
+                    }
+          );
+ });
+</script>
+
+<!-- For local function, define to exchange text -->
+<script>
+function showhideFunction() {
+          document.getElementById('idClick').innerHTML === '[Hide proof]' ? document.getElementById('idClick').innerHTML = '[Show proof]' : document.getElementById('idClick').innerHTML = '[Hide proof]';
+}
+</script>
+
+<!-- script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,https://hamkarim.github.io/MathJax/config/local/local.js"></script  -->
+
+<!-- script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script -->
+
+<script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
+</script>
+
+<!-- script type="text/javascript" config=TeX-MML-AM_CHTML
+src="">
+</script -->
+
+<!-- To get it to work in old versions of Internet Explorer, you need to append this script to the head (Important if you need it to work in older versions of IE!): -->
+ <!--[if lt IE 9] -->
+ <script> document.createElement("example, defn"); </script>
+ <!-- [endif]-->
+
+  </head>
+
+  <body>
+
+<section class="page-header">
+          <h1 class="project-name">ហាំ ការីម</h1>
+          <h2 class="project-tagline">Maths, Program, Music</h2>
+</section>
+
+<section class="main-content">
+
+  <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">Control of Partial Differential Equations</h1>
+<span style="font-style: italic; font-weight:bold; font-family: Arial; opacity: 0.5;">
+July 17th, 2020
+</span>
+<hr>
+
+<h2>មាតិកា</h2>
+<p> </p>
+
+<ol>
+          <li><a href="#genaral">
+                    Produit scalaire</a>
+          </li>
+
+
+</ol>
+
+
+<h3 class="frame-sect sectcounter">The framework</h3>
+<p>
+          Let \( H_1 \) and \( H_2 \) be two normed linear spaces and we denote by \(\mathcal{L}(H_1,H_2)\) the set of continuous linear maps from \(H_1\) into \(H_2\) and denote by \(\|\cdot\|_{\mathcal{L}(H_1,H_2)}\) the usual norm in this space.<br>
+
+          Let \(\mathcal H\) and \(\mathcal U\) be two real Hilbert spaces. (the case of complex Hilbert spaces follows directly from the case of real Hilbert spaces). Now, we assume the space \(\mathcal H\) is the <a>state space</a> and the space \(\mathcal U\) is the <a>control space</a>. We denote by \(\langle\cdot, \cdot\rangle_{\mathcal H}\) the scalar product in \(\mathcal H\), by \(\langle\cdot, \cdot\rangle_{\mathcal U}\) the scalar product in \(\mathcal U\), by \(\|\cdot\|_{\mathcal H}\) the norm in \(\mathcal H\) and by\(\|\cdot\|_{\mathcal U}\) the norm in \(\mathcal U\) . <br>
+
+          Let \(S(t),\, t\in[0,+\infty)\ ,\) be a strongly continuous semigroup of continuous linear operators on \(\mathcal H\). Let \(A\) be the infinitesimal generator of the semigroup \(S(t), \, t\in[0,+\infty)\ .\) As usual, we denote by \(S(t)^*\) the adjoint of \(S(t)\ .\) Then \( S(t)^*, \ t\in[0,+\infty),\) is a strongly continuous semigroup of continuous linear operators and the infinitesimal generator of this semigroup is the adjoint \(A^*\) of \(A\ .\) The domain \(D(A^*)\) is equipped with the usual graph norm \(\|\cdot\|_{D(A^*)}\) of the unbounded operator \(A^*\ :\)
+
+          \(\|z\|_{D(A^*)}:=\|z\|_{H}+\|A^*z\|_{H}, \, \forall z\in D(A^*).\)
+
+          This norm is associated to the scalar product in \(D(A^*)\) defined by
+
+          \((z_1,z_2)_{D(A^*)}:=(z_1,z_2)_{H}+(A^*z_1,A^*z_2)_H, \, \forall (z_1,z_2) \in D(A^*)^2.\)
+
+          With this scalar product, \(D(A^*)\) is a Hilbert space. Let \(D(A^*)'\) be the dual of \(D(A^*)\) with respect to the pivot space \(H\ .\) In particular,
+
+          \(D(A^*)\subset H\subset D(A^*)'.\)
+
+          Let
+
+          \[\tag{2} B\in \mathcal{L}(U,D(A^*)'). \]
+
+
+          In other words, \(B\) is a linear map from \(U\) into the set of linear functions from \(D(A^*) \) into \( \mathbb{R}\) such that, for some \(C>0\ ,\)
+
+          \( |(Bu)z|\leqslant C \|u\|_{U}\|z\|_{D(A^*)},\, \forall u \in U, \, \forall z\in D(A^*). \)
+
+          We also assume the following regularity property (also called admissibility condition):
+
+          \[\tag{3} \forall T>0, \exists C_T>0 \text{ such that } \int_0^T\|B^*S(t)^* z\|_{U}^2dt \leqslant C_T \|z\|^2_H, \, \forall z\in D(A^*). \]
+
+
+          In (3) and in the following, \(B^*\in \mathcal{L}(D(A^*);U)\) is the adjoint of \(B\ .\) It follows from (3) that the operators
+
+          \( (z\in D(A^*)) \mapsto ((t\mapsto B^*S(t)^* z)\in C^0([0,T];U)), \)
+
+          \( (z\in D(A^*)) \mapsto ((t\mapsto B^*S(T-t)^* z)\in C^0([0,T];U)) \)
+
+          can be extended in a unique way as continuous linear maps from \(H\) into \(L^2((0,T);U)\ .\) We use the same symbols to denote these extensions.
+
+          Note that, using the fact that \(S(t)^*\ ,\) \(t\in[0,+\infty)\ ,\) is a strongly continuous semigroup of continuous linear operators on\(H\ ,\) it is not hard to check that (3) is equivalent to
+
+          \( \exists T>0, \exists C_T>0 \text{ such that } \int_0^T\|B^*S(t)^* z\|_{U}^2dt \leqslant C_T \|z\|^2_H, \, \forall z\in D(A^*). \)
+
+          The control system we consider here is
+
+          \[\tag{4} \dot y =Ay +Bu, \, t\in(0,T), \]
+
+
+          where, at time \(t\ ,\) the control is \(u(t)\in U\) and the state is\(y(t)\in H\ .\)
+
+          Let \(T>0\ ,\) \(y^0\in H\) and \(u\in L^2((0,T);U)\ .\) We are interested in the Cauchy problem
+
+          \[\tag{5} \dot y =Ay +Bu(t) , \, t\in (0,T), \]
+
+
+          \[\tag{6} y(0)=y^0. \]
+
+
+          We first give the definition of a solution to (5)-(6). Let us first motivate our definition. Let \(\tau \in [0,T]\) and \(\varphi :[0,\tau]\rightarrow H\ .\) We take the scalar product in \(H\) of (5) with \(\varphi\) and integrate on\([0,\tau]\ .\) At least formally, we get, using an integration by parts together with (6),
+
+          \( (y(\tau),\varphi(\tau))_{H}-(y^0,\varphi(0))_{H}-\int_0^\tau (y(t),\dot \varphi (t) +A^*\varphi (t))_{H}dt=\int_0^\tau (u(t),B^*\varphi (t))_U dt. \)
+
+          Taking \(\varphi(t)=S(\tau-t)^*z^\tau\ ,\) for every given \(z^\tau \in H\ ,\) we have formally \(\dot \varphi (t) +A^*\varphi (t)=0\ ,\) which leads to the following definition.
+
+
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="site-footer">
+  <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+</footer>
+
+</section>
+</body>
+
+
+  <!--script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-102852226-1', 'auto');
+    ga('send', 'pageview');
+  </script-->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171606319-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-171606319-1');
+</script>
+
+</html>
