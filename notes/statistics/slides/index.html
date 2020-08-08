@@ -576,7 +576,7 @@ $$
 M_{X}(t)=\sum e^{t x} f(x) \qquad \text { (discrete variable) }
 $$
 $$
-M_{X}(t)=\int_{-\infty}^{\infty} e^{t x} f(x) d x \qquad(\text{(continuous variable })
+M_{X}(t)=\int_{-\infty}^{\infty} e^{t x} f(x) d x \qquad \text{(continuous variable })
 $$
 <!--We can show that the Taylor series expansion is 
 $$
@@ -608,7 +608,7 @@ M_{X+Y}(t)=M_{X}(t) M_{Y}(t)
 $$
         
 </li>
-    <li>(Uniqueness Theorem) ឧបមាថា \(X\) និង \(Y\) ជា r.v ពីរ ដែលមានម៉ូម៉ង់អនុគមន៍បង្ករៀងគ្នា \(M_{X}(t)\) and \(M_{Y}(t)\)។ ដូច្នេះ អថេរចៃដន្យ \(X\) និង \(Y\) មានរបាយប្រូបាប៊ីលីតេដូចគ្នា លុះត្រាតែ \(M_{X}(t) = M_{Y}(t)\)</li>
+    <li>(Uniqueness Theorem). ឧបមាថា \(X\) និង \(Y\) ជា r.v ពីរ ដែលមានម៉ូម៉ង់អនុគមន៍បង្ករៀងគ្នា \(M_{X}(t)\) and \(M_{Y}(t)\)។ ដូច្នេះ អថេរចៃដន្យ \(X\) និង \(Y\) មានរបាយប្រូបាប៊ីលីតេដូចគ្នា លុះត្រាតែ \(M_{X}(t) = M_{Y}(t)\)</li>
     
     </ol>
 		  
@@ -621,7 +621,7 @@ $$
 <h2 class="frame-sect">អនុគមន៍សម្គាល់ (Characteristic Functions)</h2>
 <!--.wrap = container (width: 90%) --><br>
     <p>
-        If we let \(t=i \omega\), where \(i\) is the imaginary unit, in the moment generating function we obtain an important function called the characteristic function. We denote this by
+        If we let \(t=i \omega\), where \(i\) is the imaginary unit, in the moment generating function we obtain an important function called the <a href="#">characteristic function</a>. We denote this by
 $$
      \phi_{X}(\omega) = M_{X}(i \omega) = E\left(e^{i \omega X}\right)
 $$ 
@@ -705,6 +705,38 @@ $$
 </div>
 </section>
     
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h3 class="frame-sect">លក្ខណៈរបស់កូវ៉ារ្យ៉ង់ និងវ៉ារ្យ៉ង់របស់របាយទ្វេ </h3>
+<!--.wrap = container (width: 90%) -->
+    <br>
+<ol>
+    <li>If \(\phi_{X}(\omega)\) is the characteristic function of the random variable \(X\) and \(a\) and \(b \neq 0\) are con-
+stants, then the characteristic function of \((X+a) / b\) is
+$$
+\phi_{(X+a) / b}(\omega)=e^{a i \omega / b} \phi_{X}\left(\frac{\omega}{b}\right)
+$$
+    
+    </li>
+    <li>If \(X\) and \(Y\) are independent random variables having characteristic functions \(\phi_{X}(\omega)\) and \(\phi_{Y}(\omega)\),
+respectively, then
+$$
+\phi_{X+Y}(\omega)=\phi_{X}(\omega) \phi_{Y}(\omega)
+$$
+        
+</li>
+    <li>(Uniqueness Theorem) យក \(X\) និង \(Y\) ជា r.v ពីរ ដែលមានអនុគមន៍សម្គាល់រៀងគ្នា \(\phi_{X}(\omega)\)  និង \(\phi_{Y}(\omega)\) ។ ដូច្នេះ អថេរចៃដន្យ \(X\) និង \(Y\) មានរបាយប្រូបាប៊ីលីតេដូចគ្នា លុះត្រាតែ \(\phi_{X}(\omega) = \phi_{Y}(\omega)\) ។ </li>
+    
+    </ol>
+		  
+</div>
+</section>
+
+
+
+
 <section>
   <!--.wrap = container (width: 90%) -->
 <div class="wrap size-60">
