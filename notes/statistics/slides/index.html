@@ -621,17 +621,17 @@ $$
 <h2 class="frame-sect">អនុគមន៍សម្គាល់ (Characteristic Functions)</h2>
 <!--.wrap = container (width: 90%) --><br>
     <p>
-        If we let \(t=i \omega\), where \(i\) is the imaginary unit, in the moment generating function we obtain an important function called the <a href="#">characteristic function</a>. We denote this by
+        បើតាង \(t=i \omega\) ដែល \(i\) គឺជាផ្នែកនិមិត្តឯកតា នោះការគណនា m.g.f នឹងទទួលបានអនុគមន៍សំខាន់មួយ ហៅថា <a href="#">អនុគមន៍សម្គាល់</a> (characteristic function)។ យើងតាងដោយ 
 $$
      \phi_{X}(\omega) = M_{X}(i \omega) = E\left(e^{i \omega X}\right)
 $$ 
-It follows that 
+ដូច្នេះ 
 $$
 \phi_{X}(\omega) = \sum e^{i \omega x} f(x) \qquad \text { (discrete variable) }
 $$ 
 $$\phi_{X}(\omega) = \int_{-\infty}^{\infty} e^{i \omega x} f(x) d x \qquad \text { (continuous variable) }
 $$
-Since \(\left|e^{i \omega x}\right|=1\), the series and the integral always converge absolutely.
+ដោយ \(\left|e^{i \omega x}\right|=1\) នោះកន្សោមស៊េរី និង អាំងតេក្រាល មានភាពរួមដាច់ខាត។ 
     
     </p>
 		  
@@ -645,21 +645,19 @@ Since \(\left|e^{i \omega x}\right|=1\), the series and the integral always conv
 <!--.wrap = container (width: 90%) -->
     <br>
 <ol>
-    <li>If \(\phi_{X}(\omega)\) is the characteristic function of the random variable \(X\) and \(a\) and \(b \neq 0\) are con-
-stants, then the characteristic function of \((X+a) / b\) is
+    <li>បើ \(\phi_{X}(\omega)\) ជាអនុគមន៍សម្គាល់របស់អថេរចៃដន្យ \(X\) ហើយ \(a\) និង \(b \neq 0\) ជាចំនួនថេរ នោះគេបានអនុគមន៍សម្គាល់របស់អថេរ \((X+a) / b\) កំណត់ដោយ 
 $$
 \phi_{(X+a) / b}(\omega)=e^{a i \omega / b} \phi_{X}\left(\frac{\omega}{b}\right)
 $$
     
     </li>
-    <li>If \(X\) and \(Y\) are independent random variables having characteristic functions \(\phi_{X}(\omega)\) and \(\phi_{Y}(\omega)\),
-respectively, then
+    <li>បើ \(X\) និង \(Y\) ជាអថេរចៃដន្យមិនអាស្រ័យគ្នា ដែលមានអនុគមន៍សម្គាល់រៀងគ្នា \(\phi_{X}(\omega)\) និង \(\phi_{Y}(\omega)\) នោះគេបាន 
 $$
 \phi_{X+Y}(\omega)=\phi_{X}(\omega) \phi_{Y}(\omega)
 $$
         
 </li>
-    <li>(Uniqueness Theorem) យក \(X\) និង \(Y\) ជា r.v ពីរ ដែលមានអនុគមន៍សម្គាល់រៀងគ្នា \(\phi_{X}(\omega)\)  និង \(\phi_{Y}(\omega)\) ។ ដូច្នេះ អថេរចៃដន្យ \(X\) និង \(Y\) មានរបាយប្រូបាប៊ីលីតេដូចគ្នា លុះត្រាតែ \(\phi_{X}(\omega) = \phi_{Y}(\omega)\) ។ </li>
+    <li><strong> (Uniqueness Theorem).</strong> យក \(X\) និង \(Y\) ជា r.v ពីរ ដែលមានអនុគមន៍សម្គាល់រៀងគ្នា \(\phi_{X}(\omega)\)  និង \(\phi_{Y}(\omega)\) ។ ដូច្នេះ អថេរចៃដន្យ \(X\) និង \(Y\) មានរបាយប្រូបាប៊ីលីតេដូចគ្នា លុះត្រាតែ \(\phi_{X}(\omega) = \phi_{Y}(\omega)\) ។ </li>
     
     </ol>
 		  
@@ -674,14 +672,13 @@ $$
 <p>
     <ul>
     <li>
-    The results given above for one variable can be extended to two or more variables. For example, if \(X\) and \(Y\) are
-two continuous random variables having joint density function \(f(x, y),\) the means, or expectations, of \(X\) and \(Y\) are
+    តាមរយៈលទ្ធផលខាងលើ យើងក៏អាចអនុវត្តបានចំពោះអថេរពីរ ឬច្រើន។ បើ \(X\) និង  \(Y\) ជា c.r.v ដែលមានអនុគមន៍ដង់ស៊ីតេរួម (jdf) \(f(x, y)\) នោះគេអាចគណនាតម្លៃមធ្យម ឬសង្ឃឹមគណិតរបស់អថេរ \(X\) និង \(Y\) ដោយ 
 \begin{eqnarray*}
 \mu_{X} &=& E(X)=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} x f(x, y) d x d y,\\
 \mu_{Y} &= & E(Y)=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} y f(x, y) d x d y
 \end{eqnarray*}
     
-and the variances are
+ហើយវ៉ារ្យ៉ង់កំណត់ដោយ 
 $$
 \begin{aligned} 
     \sigma_{X}^{2} &=E\left[\left(X-\mu_{X}\right)^{2}\right]=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty}\left(x-\mu_{X}\right)^{2} f(x, y) d x d y \\ 
@@ -690,11 +687,11 @@ $$
 $$
     </li>
     
-    <li>Another quantity that arises in the case of two variables \(X\) and \(Y\) is the covariance defined by
+    <li>បរិមាណមួយផ្សេងទៀត ដែលកើតឡើងក្នុងករណីមានពីរអថេរចៃដន្យចូលរួម \(X\) និង \(Y\) គឺជាតម្លៃ កូវ៉ារ្យ៉ង់ (covariance) ដែលកំណត់ដោយ
 $$
 \sigma_{X Y}=\operatorname{Cov}(X, Y) = E\left[\left(X-\mu_{X}\right)\left(Y-\mu_{Y}\right)\right] 
 $$ 
-In terms of the joint density function  $f(x, y)$, we have  
+ដោយប្រើអនុគមន៍ដង់ស៊ីតេរួម $f(x, y)$ នោះគេកំណត់បានកូវ៉ារ្យ៉ង់ដូចតទៅ   
 $$\sigma_{X Y}=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty}\left(x-\mu_{X}\right)\left(y-\mu_{Y}\right) f(x, y) d x d y
 $$
         </li>
@@ -709,21 +706,330 @@ $$
 <section>
   <!--.wrap = container (width: 90%) -->
 <div class="wrap size-60">
-<h3 class="frame-sect">លក្ខណៈរបស់កូវ៉ារ្យ៉ង់ និងវ៉ារ្យ៉ង់របស់របាយទ្វេ </h3>
+<h3 class="frame-sect">លក្ខណៈរបស់កូវ៉ារ្យ៉ង់ និងវ៉ារ្យ៉ង់របស់របាយរួម </h3>
 <!--.wrap = container (width: 90%) -->
     <br>
 <ol>
     <li>\(\sigma_{X Y}=E(X Y)-E(X) E(Y)=E(X Y)-\mu_{X} \mu_{Y}\)
     
     </li>
-    <li>If \(X\) and \(Y\) are independent random variables, then
+    <li>បើ \(X\) និង \(Y\) ជាអថេរចៃដន្យមិនអាស្រ័យគ្នា នោះគេបាន 
 $$
 \sigma_{X Y}=\operatorname{Cov}(X, Y)=0
 $$
         
 </li>
-    <li>\(\operatorname{Var}(X \pm Y) =\operatorname{Var}(X)+\operatorname{Var}(Y) \pm 2 \operatorname{Cov}(X, Y)\quad\) or $\sigma_{X \pm Y}^{2}=\sigma_{X}^{2}+\sigma_{Y}^{2} \pm 2 \sigma_{X Y}$</li>
+    <li>\(\operatorname{Var}(X \pm Y) =\operatorname{Var}(X)+\operatorname{Var}(Y) \pm 2 \operatorname{Cov}(X, Y)\quad\) ឬ  $\quad \sigma_{X \pm Y}^{2}=\sigma_{X}^{2}+\sigma_{Y}^{2} \pm 2 \sigma_{X Y}$</li>
     <li>\(\left|\sigma_{X Y}\right| \leq \sigma_{X} \sigma_{Y}\)</li>
+    </ol>
+		  
+</div>
+</section>
+
+
+
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">មេគុណតម្រែតម្រង់ (Correlation Coefficient)</h2>
+<!--.wrap = container (width: 90%) --><br>
+<p>
+    If \(X\) and \(Y\) are independent, then \(\operatorname{Cov}(X, Y)=\sigma_{X Y}=0 .\) On the other hand, if \(X\) and \(Y\) are completely dependent, for example, when \(X=Y\), then \(\operatorname{Cov}(X, Y)=\sigma_{X Y}=\sigma_{X} \sigma_{Y}\). From this we are led to a measure of the dependence of the variables \(X\) and \(Y\) given by
+$$
+\rho=\frac{\sigma_{X Y}}{\sigma_{X} \sigma_{Y}}
+$$
+    គេហៅតម្លៃ \(\rho\) ថា <a href="#">មេគុណតម្រែតម្រង់ (correlation coefficient)</a> ហើយមានតម្លៃក្នុងចន្លោះ \([-1, 1]\)។ ក្នុងករណី \(\rho=0\) (i.e., $\operatorname{Cov}(X, Y)=0$) នោះគេថា អថេរ \(X\) និង \(Y\) មិនទាក់ទងគ្នា (uncorrelated)។ ក្នុងករណីនេះ គេអាចនិយាយបានថា អថេរទាំងពីរ អាចអាស្រ័យ ឬមិនអាស្រ័យគ្នា។ 
+    </p>
+		  
+</div>
+</section>
+    
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">សង្ឃឹមគណិត - វ៉ារ្យ៉ង់ និង ម៉ូម៉ង់មានលក្ខខណ្ឌ</h2>
+<!--.wrap = container (width: 90%) -->
+<p>
+    <ul>
+    <li> If \(X\) and \(Y\) have joint density function \(f(x, y)\), then the conditional density function of \(Y\) given \(X\) is \(f(y \mid x)=f(x, y) / f_{1}(x)\), where \(f_{1}(x)\) is the marginal density function of \(X \). We can define the conditional expectation, or conditional mean, of \(Y\) given \(X\) by 
+$$
+E(Y \mid X=x)=\int_{-\infty}^{\infty} y f(y \mid x) d y
+$$
+where $X = x$ is to be interpreted as $x &lt; X &le; x +dx$ in the continuous case. We note the following properties:
+<ol style="padding-left: 50px;">
+    <li>
+    \(E(Y \mid X=x)=E(Y)\) when \(X\) and \(Y\) are independent.
+    </li>
+    <li>\(\displaystyle E(Y)=\int_{-\infty}^{\infty} E(Y \mid X=x) f_{1}(x) d x\)</li>
+    </ol>
+    </li>
+    <li>In a similar manner we can define the conditional variance of \(Y\) given \(X\) as
+$$
+E\big[\left(Y-\mu_{2}\right)^{2} \mid X=x\big]=\int_{-\infty}^{\infty}\left(y-\mu_{2}\right)^{2} f(y \mid x) dy
+$$
+where \(\mu_{2}=E(Y \mid X=x)\)
+    </li>
+    <li>Also we can define the \(r\)th conditional moment of \(Y\) about any value $a$ given \(X\) as
+$$
+E\big[(Y-a)^{r} \mid X=x\big]=\int_{-\infty}^{\infty}(y-a)^{r} f(y \mid x) d y
+$$
+        </li>
+    </ul>
+    </p>
+</div>
+</section>
+    
+<section>
+          <!--.wrap = container (width: 90%) -->
+ <div class="wrap size-60">
+    <h3 class="frame-sect"><strong>ឧទាហរណ៍.</strong></h3>
+    <div class="bg-white shadow">
+<p style="font-size: 18px;line-height: 2;">រយៈពេលធ្វើដំណើរជាមធ្យមទៅកាន់ខេត្តព្រះសីហនុតាមរថយន្តតូចមានចំនួន $m$ ម៉ោង ឬតាមរថយន្តក្រុងមានចំនួន $n$ ម៉ោង។ មីងសំមានបេសកកម្មមួយទៅខេត្តព្រះសីហនុ ហើយគាត់មានចិត្តរារែក មិនដឹងថាត្រូវជិះរថយន្តផ្ទាល់ខ្លួន ឬក៏ត្រូវជិះរថយន្តក្រុង។ ដូច្នេះ ប្ដីរបស់គាត់ក៏បានផ្ដល់យោបល់ថា គាត់គួរបោះកាក់មួយដើម្បីធ្វើការសម្រេចចិត្ត។ តើរយៈពេលធ្វើដំណើរដែលសង្ឃឹមទុករបស់មីងសំស្មើប៉ុន្មាន? 
+<!--The average travel time to a distant city is $c$ hours by car or $b$ hours by bus. A woman cannot decide whether to drive or take the bus, so she tosses a coin. What is her expected travel time?-->
+   </p>
+
+            </div> <!-- .end .bg-white shadow -->
+          </div>
+          <!-- .end .wrap -->
+</section>
+
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">Chebyshev’s Inequality</h2>
+<!--.wrap = container (width: 90%) --><br>
+<p>
+    An important theorem in probability and statistics that reveals a general property of discrete or continuous random variables having finite mean and variance is known under the name of <a href="#">Chebyshev’s inequality</a>.
+<div style="border: 2px solid darkblue; padding: 10px;
+  box-shadow: 5px 10px #888888;">
+    <b>Theorem </b>(Chebyshev's Inequality). Suppose that \(X\) is a random variable (discrete or continuous) having
+mean \(\mu\) and variance \(\sigma^{2},\) which are finite. Then if \(\epsilon\) is any positive number,
+$$
+P\big(|X-\mu| \geq \epsilon\big) \leq \frac{\sigma^{2}}{\epsilon^{2}}
+$$
+</div>
+<br>
+or, with \(\epsilon=k \sigma\)
+$$
+P\big(|X-\mu| \geq k \sigma\big) \leq \frac{1}{k^{2}}
+$$
+    </p>
+</div>
+</section>
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">Law of Large Numbers</h2>
+<!--.wrap = container (width: 90%) --><br>
+<p>
+    The following theorem, called the <a href="#">law of large numbers</a>, is an interesting consequence of Chebyshev’s inequality. 
+<div style="border: 2px solid darkblue; padding: 10px;
+  box-shadow: 5px 10px #888888;">
+    <b>Theorem </b>(Law of Large Numbers). Let \(X_{1}, X_{2}, \ldots, X_{n}\) be mutually independent random variables (discrete or continuous), each having finite mean \(\mu\) and variance \(\sigma^{2}\). Then if \(S_{n}=X_{1}+X_{2}+\cdots+X_{n}\), \((n=1,2, \ldots)\)
+$$
+\lim _{n \rightarrow \infty} P\left(\left|\frac{S_{n}}{n}-\mu\right| \geq \epsilon\right)=0
+$$
+</div>
+<br>
+Since \(S_{n} / n\) is the arithmetic mean of \(X_{1}, \ldots, X_{n}\), this theorem states that the probability of the arithmetic
+mean \(S_{n} / n\) differing from its expected value \(\mu\) by more than \(\epsilon\) approaches zero as \(n \rightarrow \infty \). 
+    </p>
+</div>
+</section>
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">Skewness and Kurtosis</h2>
+<!--.wrap = container (width: 90%) -->
+		  <br>
+<p>
+<ul>
+    <li><b>SKEWNESS.</b> Often a distribution is not symmetric about any value but instead has one of its tails longer than the other. If the longer tail occurs to the right, the distribution is said to be skewed to the right, while if the longer tail occurs to the left, it is said to be skewed to the left. Measures describing this asymmetry are called <a href="#">coefficients of skewness</a>, or briefly <a href="#">skewness</a>. One such measure is given by
+$$
+\alpha_{3}=\frac{E\left[(X-\mu)^{3}\right]}{\sigma^{3}}=\frac{\mu_{3}}{\sigma^{3}}
+$$
+The measure $\sigma_3$ will be positive or negative according to whether the distribution is skewed to the right or left,
+respectively. For a symmetric distribution, $\sigma_3 = 0$.
+    </li>
+    <li><b>KURTOSIS.</b> In some cases a distribution may have its values concentrated near the mean so that the distribution has a large peak. In other cases the distribution may be relatively flat. Measures of the degree of peakedness of a distribution are called <a href="#">coefficients of kurtosis</a>, or briefly <a href="#">kurtosis</a>, given by
+$$
+\alpha_{4}=\frac{E\left[(X-\mu)^{4}\right]}{\sigma^{4}}=\frac{\mu_{4}}{\sigma^{4}}
+$$
+    </li>
+    
+    </ul>
+    
+    </p>
+</div>
+</section>
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">លំហាត់អនុវត្តន៍</h2>
+<!--.wrap = container (width: 90%) -->
+    <br>
+    <p>
+    <ol>
+    <li>អថេរចៃដន្យ $X$ មួយមាន df ដូចខាងក្រោម
+$$
+f(x)=\begin{cases}
+        2 e^{-2 x}, & x \geq 0 \\ 
+        0, & x &lt; 0
+        \end{cases}
+$$
+<ol style="list-style-type:lower-alpha;padding-left: 16px;">
+    <li>ចូររក (a) mgf និង (b) ម៉ូម៉ង់ចំនួនបួនដំបូង ធៀបនឹងគល់អ័ក្ស។ </li>
+    <li>តាមម៉ូម៉ង់ខាងលើ ចូរគណនា \(P(|X-\mu|>1)\)។ </li>
+    <li>ដោយប្រើវិសមភាព Chebyshev ចូររកគោលលើរបស់ \(P(|X-\mu|>1)\)</li>
+        </ol>
+
+        </li>
+<li>Find the characteristic function of the random variable $X$ having density function given by
+$$
+f(x)=\begin{cases}
+        1/2a , & |x| &lt; a \\ 
+        0, & \text{otherwise}
+        \end{cases}
+$$
+        </li>
+<li>The joint probability function of two discrete random variables \(X\) and \(Y\) is given by \(f(x, y)=c(2 x+y),\) where
+\(x\) and \(y\) can assume all integers such that \(0 \leq x \leq 2,0 \leq y \leq 3,\) and \(f(x, y)=0\) otherwise.
+
+<ol style="list-style-type:lower-alpha;padding-left: 16px;">
+    <li>Find the value of the constant $c$ </li>
+    <li>Find \(P(X \geq 1, Y \leq 2)\)</li>
+    <li>Find \(P(X=2, Y=1)\)</li>
+    <li>Find $E(X)$, $E(Y)$, $E(XY)$, $E(X^2)$, $E(Y^2)$,  $\operatorname{Var}(X)$, $\operatorname{Var}(Y)$, $\operatorname{Cov}(X, Y)$ និង $\rho$</li>
+        </ol>
+        </li>
+    <li>The density function of a continuous random variable $X$ is
+$$f(x)=\begin{cases}
+        4x(9-x^2)/81 , & 0\leq x \leq 3\\ 
+        0, & \text{otherwise}
+        \end{cases}
+$$
+(a) Find the mode. (b) Find the median. (c) Compare mode, median, and mean.
+        
+        </li>
+    </ol>
+    
+    </p>
+		  
+</div>
+</section>
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">Special Probability
+Distributions</h2>
+<!--.wrap = container (width: 90%) --><br>
+<ol>
+    <li>The Binomial Distribution: the probability function is 
+$$
+f(x)=P(X=x)=\left(\begin{array}{l}n \\ x\end{array}\right) p^{x} q^{n-x}=\frac{n !}{x !(n-x) !} p^{x} q^{n-x}
+$$
+where the random variable \(X\) denotes the number of successes in \(n\) trials and \(x=0,1, \ldots, n\). Note: if $n=1$, it is also called the Bernoulli distribution.
+\[
+\begin{array}{|c|c|}
+        \hline \text { Mean } & \mu=n p \\ 
+        \hline \text { Variance } & \sigma^{2}=n p q \\ 
+        \hline \text { Standard deviation } & \sigma=\sqrt{n p q} \\ 
+        \hline \text { Coefficient of skewness } & \alpha_{3}=\frac{q-p}{\sqrt{n p q}} \\ 
+        \hline \text { Coefficient of kurtosis } & \alpha_{4}=3+\frac{1-6 p q}{n p q} \\ 
+        \hline \text { Moment generating function } & M(t)=\left(q+p e^{t}\right)^{n} \\ 
+        \hline \text { Characteristic function } & \phi(\omega)=\left(q+p e^{i \omega}\right)^{n} \\ 
+        \hline\end{array}
+\]
+    
+    
+    </li>
+    </ol>
+		  
+</div>
+</section>
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">Special Probability
+Distributions</h2>
+<!--.wrap = container (width: 90%) --><br>
+<ol start="2">
+    <li>The Normal Distribution:  The density function for this distribution is given by 
+$$
+f(x)=\frac{1}{\sigma \sqrt{2 \pi}} e^{-(x-\mu)^{2} / 2 \sigma^{2}} \quad -\infty &lt; x &lt; +\infty
+$$
+where \(\mu\) and \(\sigma\) are the mean and standard deviation, respectively. The corresponding distribution function is
+given by
+$$
+F(x)=P(X \leq x)=\frac{1}{\sigma \sqrt{2 \pi}} \int_{-\infty}^{x} e^{-(v-\mu)^{2} / 2 \sigma^{2}} d v
+$$
+Then, we say that the random variable $X$ is normally distributed with mean $\mu$ and variance $\sigma$.
+\[
+  \begin{array}{|c|c|}\hline \text { Mean } & \mu \\ \hline \text { Variance } & \sigma^{2} \\ \hline \text { Standard deviation } & \sigma \\ \hline \text { Coefficient of skewness } & \alpha_{3}=0 \\ \hline \text { Coefficient of kurtosis } & \alpha_{4}=3 \\ \hline \text { Moment generating function } & M(t)=e^{u+\left(\sigma^{2} / 2\right)} \\ \hline \text { Characteristic function } & \phi(\omega)=e^{i \mu \omega-\left(\sigma^{\prime} \omega^{2} / 2\right)} \\ \hline\end{array}      
+\]
+    
+    </li>
+    </ol>
+		  
+</div>
+</section>
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">Special Probability
+Distributions</h2>
+<!--.wrap = container (width: 90%) --><br>
+<ol start="3">
+    <li>The Poisson Distribution:  Let $X$ be a discrete random variable that can take on the values $0, 1, 2, \ldots$ such that the probability function of $X$ is given by
+$$
+f(x)=P(X=x)=\frac{\lambda^{x} e^{-\lambda}}{x!},  \quad x=0,1,2, \ldots
+$$
+where $\lambda$ is a given positive constant. 
+\[
+        \begin{array}{|c|c|}\hline \text { Mean } & \mu=\lambda \\ \hline \text { Variance } & \sigma^{2}=\lambda \\ \hline \text { Standard deviation } & \sigma=\sqrt{\lambda} \\ \hline \text { Coefficient of skewness } & \alpha_{3}=1 / \sqrt{\lambda} \\ \hline \text { Coefficient of kurtosis } & \alpha_{4}=3+(1 / \lambda) \\ \hline \text { Moment generating function } & M(t)=e^{\lambda (e^t -1)} \\ \hline \text { Characteristic function } & \phi(\omega)=e^{\lambda(e^{i\omega}-1)} \\ \hline\end{array}
+\]
+        
+    </li>
+    </ol>
+		  
+</div>
+</section>
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">Special Probability
+Distributions</h2>
+<!--.wrap = container (width: 90%) --><br>
+<ol start="4">
+    <li>The Uniform Distribution:  A random variable \(X\) is said to be uniformly distributed in \(a \leq x \leq b\) if its density function is
+$$
+f(x)=\left\{
+        \begin{array}{ll}
+        1/(b-a), & a \leq x \leq b \\ 
+        0, & \text { otherwise }
+        \end{array}\right.
+$$
+and the distribution is called a uniform distribution. The distribution function is given by
+$$
+F(x)=P(X \leq x)=\left\{
+        \begin{array}{ll}
+        0, & x &lt; a\\
+        (x-a) /(b-a), & a\leq x &lt; b \\ 
+        1, & x \leq b
+        \end{array}\right.
+$$
+        
+    </li>
     </ol>
 		  
 </div>
@@ -741,7 +1047,6 @@ $$
 </div>
 </section>
     
-    
 <section>
   <!--.wrap = container (width: 90%) -->
 <div class="wrap size-60">
@@ -750,27 +1055,6 @@ $$
 		  
 </div>
 </section>
-    
-    
-<section>
-  <!--.wrap = container (width: 90%) -->
-<div class="wrap size-60">
-<h2 class="frame-sect">អនុគមន៍អថេរចៃដន្យ</h2>
-<!--.wrap = container (width: 90%) -->
-		  
-</div>
-</section>
-    
-<section>
-  <!--.wrap = container (width: 90%) -->
-<div class="wrap size-60">
-<h2 class="frame-sect">អនុគមន៍អថេរចៃដន្យ</h2>
-<!--.wrap = container (width: 90%) -->
-		  
-</div>
-</section>
-    
-    
     
 		
 
