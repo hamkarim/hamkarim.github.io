@@ -111,11 +111,24 @@
                     <section>
 					<h2>១.&nbsp; ចន្លោះជឿជាក់  (Confidence Intervals)</h2>
                     <p>
-                    It is noted that we cannot be certain that an interval contains the true but unknown population parameter since only a sample from the full population is used to compute both the point estimate and, the interval estimate! A confidence interval is constructed so that there is high confidence that it does contain the true but unknown population parameter. Generally, a $100(1 - \alpha)\%$ confidence interval equals
+                    It is noted that we cannot be certain that an interval contains the true but unknown population parameter since only a sample from the full population is used to compute both the point estimate and, the interval estimate! A confidence interval is constructed so that there is high confidence that it does contain the true but unknown population parameter. Generally, a <a href="#" style="font-size: 24px">$100(1 - \alpha)\%$ confidence interval (CI)</a> equals
+                        <div class="aligncenter" style="font-size: 26px;border-style: 5px solid; background-color: white; color: darkred;width: 75%; border-radius:6px;">
                         \[                        
                             \text{point estimate }\pm \text{ reliability coefficient } \times \text{ s.e.parameter }
-                        \]        
-                    
+                        \]</div>
+                    where 
+                    <ul style="padding-left: 80px">
+                        <li>$\alpha$ is the <a href="#">level of significance</a> between zero and one;</li>
+                        <li>$1-\alpha$ is a value called
+                                    the <a href="#">"confidence coefficient"</a>; </li>
+                       <li>$100(1 - \alpha)\%$ is the <a href="#">confidence level</a>;</li>
+                        <li><a href="#">parameter estimate</a> is a value for the point estimate such as for the sample mean, $\overline{x}$, or for the population proportion, $\widehat{p}$; </li>
+                        <li>reliability coefficient is a probability point obtained from an appropriate table as dictated by, for example, $z_{\alpha}$ or $t_{\frac{\alpha}{2},n-1}$; </li>
+                        
+                        <li>and s.e.(parameter) read
+standard error of the parameter, measures the closeness of the point estimate to the true population parameter i.e. it measures the precision of an estimate in getting the
+parameter.</li>
+                        </ul>
                     </p>
                     <br>
                     <div class="aligncenter">
@@ -126,26 +139,44 @@
 
 				    <section data-auto-animate>
 					<h2 class="frame-sect">Confidence Interval for the Population Mean</h2>
-					<p>The overall assumption made is that the sample comes from a normal population.
+					<p>យើងសន្មតជាទូទៅថា ទិន្នន័យជាសំណាក គឺបានមកពីប៉ូពុយឡាយស្យុងធម្មតាមួយ។<!--The overall assumption made is that the sample comes from a normal population.-->
                         </p>
-					<ul>
-                        <li><span style="font-family:'Angkor', cursive; color: red">ករណីទី១. (Known Population Variance)</span>
-                        <p>Suppose that, in addition to the overall assumption, the variance of the population, $\sigma^2$, is known. Then a random variable called the sample mean, $\overline{X}$, is defined such that
+                    <p>
+					<dl style="padding-left:0">
+                        <dt><span style="font-family:'Angkor', cursive; color: red">ករណីទី១. (Known Population Variance)</span>
+                        <ul>
+                            <li>ឧបមាថា $\sigma^2$ ជា វ៉ារ្យ៉ង់របស់ប៉ូពុយឡាស្យុង។ ដូច្នេះ អថេរចៃដន្យមួយ មានឈ្មោះថា មធ្យមសំណាក (sample mean) តាងដោយ  $\overline{X}$ ត្រូវបានកំណត់ដោយ៖ 
 \[
 \overline{X} \sim  N\left(\mu, \frac{\sigma^{2}}{n}\right)
 \]
-whose standardised result is
+ដែលក្រោយពីបម្លែងទៅជាអថេរស្តង់ដា គេបាន 
 \[
 Z=\frac{\sqrt{n}\left(\overline{X}-\mu\right)}{\sigma} \sim  N(0,1)
 \]
-                        </p></li>
+                            </li>
+                            <li>
+The $100(1-\alpha)\%$ confidence interval estimate for the population mean may also
+take the form $\ell_1 \leq \mu \leq \ell_2$ where the end points $\ell_1$ and $\ell_2$ are called lower- and upper-confidence limits respectively and are computed from the sample data.
+Different samples will produce different values for the end points.
+\[
+\ell_{1}=\overline{x}-z_{\frac{\alpha}{2}} \times \frac{\sigma}{\sqrt{n}}
+\qquad\text{ and } \qquad
+\ell_{2}=\overline{x}+z_{\frac{\alpha}{2}} \times \frac{\sigma}{\sqrt{n}}
+\]
+                            </li>
+                            </dt>
+                        </p>
                         
-                        </ul>
+                        </dl>
 				    </section>
 
 				    <section data-auto-animate>
-					<h2 data-id="code-title">With animations</h2>
-					<pre data-id="code-animation"></pre>
+					<h4 class="frame-sect">ឧទាហរណ៍.</h4>
+				    <p>Consider the following data: $$64.3, 64.6, 64.8, 64.2, 64.5, 64.3, 64.6, 64.8, 64.2, 64.3$$
+                        
+                        Assume that it is normally distributed with unit population variance. For these data, construct a $95\%$ confidence interval for the population mean.
+
+                        </p>
                         
                         
 				    </section>
