@@ -22,7 +22,7 @@
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
         
         <script type="text/javascript"
-   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
         </script>
         
 	</head>
@@ -52,7 +52,7 @@
 					<p>
 						នៅចុងបញ្ចប់នៃមេរៀននេះ អ្នកសិក្សាអាចយល់ និងអនុវត្តបាននូវគោលគំនិតគន្លឹះមួយចំនួន ដូចខាងក្រោម៖
                         
-                    <ol>
+                    <ol style="padding-left: 60px">
                         <li>ចន្លោះជឿជាក់បាន (Confidence Interval)</li>
                         <li>កម្រិតនៃភាពជឿជាក់ (Confidence Level)</li>
                         <li>អត្ថិភាពនៃតម្លៃប៉ាន់ស្មាន (Consistent Estimator)</li>
@@ -109,13 +109,13 @@
 
 				<section>
                     <section>
-					<h2>១.&nbsp; ចន្លោះជឿជាក់  (Confidence Intervals)</h2>
+					<h2 class="frame-sect">១.&nbsp; ចន្លោះជឿជាក់  (Confidence Intervals)</h2>
                     <p>
                     It is noted that we cannot be certain that an interval contains the true but unknown population parameter since only a sample from the full population is used to compute both the point estimate and, the interval estimate! A confidence interval is constructed so that there is high confidence that it does contain the true but unknown population parameter. Generally, a <a href="#" style="font-size: 24px">$100(1 - \alpha)\%$ confidence interval (CI)</a> equals
-                        <div class="aligncenter" style="font-size: 26px;border-style: 5px solid; background-color: white; color: darkred;width: 75%; border-radius:6px;">
-                        \[                        
-                            \text{point estimate }\pm \text{ reliability coefficient } \times \text{ s.e.parameter }
-                        \]</div>
+                        <div class="aligncenter blockeqn">
+                        $                       
+                            \text{point estimate }\pm \text{ reliability coefficient } \times \text{ s.e.(parameter)}
+                        $</div>
                     where 
                     <ul style="padding-left: 80px">
                         <li>$\alpha$ is the <a href="#">level of significance</a> between zero and one;</li>
@@ -123,9 +123,9 @@
                                     the <a href="#">"confidence coefficient"</a>; </li>
                        <li>$100(1 - \alpha)\%$ is the <a href="#">confidence level</a>;</li>
                         <li><a href="#">parameter estimate</a> is a value for the point estimate such as for the sample mean, $\overline{x}$, or for the population proportion, $\widehat{p}$; </li>
-                        <li>reliability coefficient is a probability point obtained from an appropriate table as dictated by, for example, $z_{\alpha}$ or $t_{\frac{\alpha}{2},n-1}$; </li>
+                        <li><a href="#">reliability coefficient</a> is a probability point obtained from an appropriate table as dictated by, for example, $z_{\alpha}$ or $t_{\frac{\alpha}{2},n-1}$; </li>
                         
-                        <li>and s.e.(parameter) read
+                        <li>and <a href="#">s.e.(parameter)</a> read
 standard error of the parameter, measures the closeness of the point estimate to the true population parameter i.e. it measures the precision of an estimate in getting the
 parameter.</li>
                         </ul>
@@ -145,7 +145,7 @@ parameter.</li>
 					<dl style="padding-left:0">
                         <dt><span style="font-family:'Angkor', cursive; color: red">ករណីទី១. (Known Population Variance)</span>
                         <ul>
-                            <li>ឧបមាថា $\sigma^2$ ជា វ៉ារ្យ៉ង់របស់ប៉ូពុយឡាស្យុង។ ដូច្នេះ អថេរចៃដន្យមួយ មានឈ្មោះថា មធ្យមសំណាក (sample mean) តាងដោយ  $\overline{X}$ ត្រូវបានកំណត់ដោយ៖ 
+                            <li>ឧបមាថា $\sigma^2$ ជា វ៉ារ្យ៉ង់របស់ប៉ូពុយឡាស្យុង។ ដូច្នេះ អថេរចៃដន្យមួយ មានឈ្មោះថា <a href="#">មធ្យមសំណាក</a> (sample mean) តាងដោយ  $\overline{X}$ ត្រូវបានកំណត់ដោយ៖ 
 \[
 \overline{X} \sim  N\left(\mu, \frac{\sigma^{2}}{n}\right)
 \]
@@ -172,26 +172,38 @@ Different samples will produce different values for the end points.
 
 				    <section data-auto-animate>
 					<h4 class="frame-sect">ឧទាហរណ៍.</h4>
-				    <p>Consider the following data: $$64.3, 64.6, 64.8, 64.2, 64.5, 64.3, 64.6, 64.8, 64.2, 64.3$$
+				    
+                    <div style="border: 2px solid darkblue; padding: 10px;
+  box-shadow: 5px 10px #888888;margin-top: 10px;margin-bottom: 30px;background-color:lightyellow;color: darkblue">
+    <p>Consider the following data: $$64.3, 64.6, 64.8, 64.2, 64.5, 64.3, 64.6, 64.8, 64.2, 64.3$$
                         
                         Assume that it is normally distributed with unit population variance. For these data, construct a $95\%$ confidence interval for the population mean.
 
                         </p>
+</div>
+                        
+                        <strong>ចម្លើយ.</strong>
+Using the data, $n=10, \bar{x}=64.46,$ the level of significance, $\alpha=5 \%=0.05,$ and from the given assumption, $\sigma^{2}=1 .$ Now, the resulting $95 \%$ confidence interval (CI) for the population mean is
+\[
+\bar{x}-z_{0.025} \times \frac{\sigma}{\sqrt{n}} \leq \mu \leq \bar{x}+z_{0.025} \times \frac{\sigma}{\sqrt{n}}
+\]
                         
                         
 				    </section>
 
 				    <section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down the <strong>alt</strong> key (<strong>ctrl</strong> in Linux) and click on any element to zoom towards it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Click again to zoom back out.
-					</p>
-					<p>
-						(NOTE: Use ctrl + click in Linux.)
-					</p>
+					
+					<div class="note"> 
+                        <p> <a href="#" style="font-family:Angkor;">ចំណាំ : </a>
+                        <ul style="padding-left:40px">
+                            <li>If a very large number of random samples are collected and a $100(1 - \alpha)\%$ confidence interval for the population parameter is computed from each sample, then $100(1-\alpha)$ percent of these intervals will contain the true value of the population parameter with confidence $100(1-\alpha)$.</li>
+                            <li>We don’t know if the statement $63.84 \leq \mu \leq 65.08$ is true for this specific sample, but that, in repeated sampling, the method used to obtain the confidence interval for $\mu$ yields correct statements $95\%$ of the times with a $0.95$ confidence.</li>
+                            <li>The precision of a confidence interval is inversely proportional to the confidence level. It is desirable to obtain a confidence interval that is short enough for purposes of decision making and that also has adequate confidence. This is easily the reason why the $95\%$ confidence level is the default confidence level chosen by researchers and practitioners.
+</li>
+                        </ul>
+				        </p>
+
+					</div>
 				    </section>
                     <section>
 						<h2>Basement Level 2</h2>
