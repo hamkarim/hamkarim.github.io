@@ -6,17 +6,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Koulen&family=Angkor&family=Bangers&family=Kaushan+Script&family=Modak&family=Ultra&family=Fjalla+One&family=Oswald:wght@400&family=Noto+Serif:wght@400&family=Noto+Sans:wght@700&family=Lalezar&display=swap');
 
 @import url("https://fonts.googleapis.com/css?family=Open Sans|Didact Gothic|Siemreap|Bayon|Battambang|");
-html, body {  /*for html, body fonts*/
+/* html, body {  /*for html, body fonts*
           font-family: 'Ang DaunKeo','Siemreap', 'Century Gothic', 'Didact Gothic';
           -ms-text-size-adjust:100%;
           -webkit-text-size-adjust:100%;
           padding:0;
           margin:0;
     /*font-family: 'Khmer OS Battambang', 'sans-serif';/*"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
-        /*  font-size:18px; */
+        /*  font-size:18px; *
           line-height:2.0;
           color:#606c71;
-}
+}*/
 
 
 
@@ -41,7 +41,7 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  vertical-align: baseline;
+  vertical-align:baseline;
   font-family: inherit;
 }
 
@@ -66,16 +66,18 @@ footer, header, hgroup, main, menu, nav, section {
 }
 
 .frame-sect{
-border-bottom: 2px solid red;
+border-bottom: 3px solid darkblue;
 /*-border-top: 2px solid black;
 /*- border-radius: 2px;
 background-color: royalblue;
 padding-left: 15px;
 padding-right: 15px;
 padding-top: 8px;-*/
-padding-bottom: 2px;
+padding-bottom: 3px;
+margin-bottom: 20px !important;;
 /*-text-align: center;-*/
 }
+
 
 h1 {
   font-size: 3rem;

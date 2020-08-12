@@ -16,13 +16,13 @@ html * {
  * GLOBAL STYLES
  *********************************************/
 :root {
-  --background-color: #002b36;
-  --main-font: Lato, sans-serif;
+  --background-color: white; /*#002b36;*/
+  --main-font: 'Siemreap',Lato, sans-serif;
   --main-font-size: 20px;/*40px*/
   --main-color: white;/*#93a1a1*/
   --block-margin: 20px;
   --heading-margin: 0 0 20px 0;
-  --heading-font: League Gothic, Impact, sans-serif;
+  --heading-font: 'Siemreap',League Gothic, Impact, sans-serif;
   --heading-color: #eee8d5;
   --heading-line-height: 1.2;
   --heading-letter-spacing: normal;
@@ -41,22 +41,22 @@ html * {
   --selection-color: #fff; }
 
 .reveal-viewport {
-  background: #002b36;
-  background-color: #002b36; }
+  background: white;/*#002b36;*/
+  background-color: white;/*#002b36; */}
 
 .reveal {
   font-family: 'Ang DaunKeo','Siemreap', 'Century Gothic', 'Didact Gothic';
-  font-size: 20px;/*40px*/
+  font-size: 22px;/*40px*/
   font-weight: normal;
-  color: white; }/*#93a1a1*/
+  color: inherit; }/*#93a1a1*/
 
 .reveal ::selection {
-  color: #fff;
+  color: inherit;/*#fff;*/
   background: #d33682;
   text-shadow: none; }
 
 .reveal ::-moz-selection {
-  color: #fff;
+  color: inherit;/*#fff;*/
   background: #d33682;
   text-shadow: none; }
 
@@ -75,7 +75,7 @@ html * {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #eee8d5;
+  color: darkred;/*#eee8d5;*/
   /*font-family: "League Gothic", Impact, sans-serif;*/
   font-weight: normal;
   line-height: 1.5;
@@ -111,7 +111,7 @@ html * {
   margin:0;
   font-size: 100%;
   /*font-family: 'Khmer OS Battambang', 'sans-serif';/*"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
-  color:white;
+  color:inherit;
   /*font-size:100%;*/
   text-align: inherit;
   padding: 0px;
@@ -140,7 +140,45 @@ html * {
   margin:0.8em 0 0 0px;
   padding:0px;
   line-height: 1.5;
-  color:white;
+  color:inherit;
+}
+
+.reveal .blockeqn {
+    font-size: 26px;
+    border-style: 2px solid red; 
+    background-color: darkblue; 
+    color: white;    
+    border-radius:0px;
+    padding:10px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.reveal p.remark {
+     -moz-border-radius: 6px;
+     -webkit-border-radius: 6px;
+     background-color:  #f0f7fb;
+     border: solid 2px #3498db;
+     border-radius: 6px;
+     line-height: 18px;
+     font-weight: bold;
+     padding: 12px;
+    display: block;
+    mc-auto-number-format: '{b}Note{/b}: ';
+}
+
+.reveal div.note{
+     background-color: #f0f7fb;
+     background-image: url(https://wiki.zeroy.com/images/9/90/Document_pencil_48.png);
+     background-position: 15px 3px;
+     background-size: 4%;
+     background-repeat: no-repeat;
+     border-left: solid 5px #3498db;
+     line-height: 1.2;
+     font-weight: normal;
+     overflow: hidden;
+     padding: 15px 60px;     
+    color: darkblue;
 }
 
 .reveal ol {
@@ -312,4 +350,5 @@ html * {
  *********************************************/
 @media print {
   .backgrounds {
-    background-color: #002b36; } }
+    background-color: #002b36;
+    } }
