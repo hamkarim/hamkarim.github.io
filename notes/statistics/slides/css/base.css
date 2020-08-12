@@ -1,3 +1,4 @@
+@charset "utf-8";
 /*---------------------------------------------------------------------------------
 
 	App: WebSlides
@@ -56,15 +57,31 @@
 /*=========================================
 0. CSS Reset & Normalize
 =========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Koulen&family=Angkor&family=Bangers&family=Kaushan+Script&family=Modak&family=Ultra&family=Fjalla+One&family=Oswald:wght@400&family=Noto+Serif:wght@400&family=Noto+Sans:wght@700&family=Lalezar&display=swap');
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { border: 0; font-size: 100%; font: inherit; vertical-align: baseline; margin: 0; padding: 0 }
+@import url("https://fonts.googleapis.com/css?family=Open Sans|Didact Gothic|Siemreap|Bayon|Battambang|");
+html, body {  /*for html, body fonts*/
+          font-family: 'Ang DaunKeo','Siemreap', 'Century Gothic', 'Didact Gothic';
+          -ms-text-size-adjust:100%;
+          -webkit-text-size-adjust:100%;
+          padding:0;
+          margin:0;
+    /*font-family: 'Khmer OS Battambang', 'sans-serif';/*"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
+          font-size:18px;
+}
+
+div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { 
+    border: 0; 
+    font-size: 100%; 
+    font: inherit; 
+    vertical-align: baseline; 
+    margin: 0; 
+    padding: 0 }
 
 article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
   display: block;
 }
-body {
-  line-height: 2;
-}
+
 
 blockquote,
 q {
@@ -866,15 +883,15 @@ Auto-fill & Equal height === */
 2. TYPOGRAPHY & LISTS
 ============================== */
 
-html,
+/*html,
 body {
-  line-height: 2;
+  line-height: 1;
   /*Sometimes fonts don't display optimally on all devices*/
   /*-moz-osx-font-smoothing: grayscale;*/
-  /*-webkit-font-smoothing: antialiased;*/
+  /*-webkit-font-smoothing: antialiased;*
   text-rendering: optimizeLegibility;
-  font-weight: 300;
-}
+  /*font-weight: 300;*
+}*/
 
 html,
 body,
@@ -882,14 +899,16 @@ input,
 select,
 textarea {
   font-family: 'Ang DaunKeo','Siemreap', 'Century Gothic', 'Didact Gothic', "Roboto", "San Francisco", helvetica, arial, sans-serif;
-  font-size: 57.5%;
+  font-size: 58.5%;
+  /*line-height: 2;*/
   -ms-text-size-adjust:100%;
   -webkit-text-size-adjust:100% 
 }
 
 body,
 textarea {
-  font-size: 1.8rem;
+  font-size: 18px;
+  line-height:1.5;
 }
 
 p,
@@ -901,9 +920,21 @@ table,
 big,
 textarea,
 label {
-  line-height: 3.2rem;
   margin-bottom: 3.2rem;
 }
+
+.frame-sect{
+border-bottom: 1px solid green;
+/*-border-top: 2px solid black;
+/*- border-radius: 2px;
+background-color: royalblue;
+padding-left: 15px;
+padding-right: 15px;
+padding-top: 8px;-*/
+padding-bottom: 2px;
+/*-text-align: center;-*/
+}
+
 
 li,p:last-child {
   margin-bottom: 0;
@@ -953,10 +984,15 @@ h2 svg, h3 svg, h4 svg {
 h1 {
   font-size: 4rem;
   line-height: 5.6rem;
+  font-family:'Angkor','Bangers', cursive; /*'Didact Gothic'; /*'Century Gothic','Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang'; */
+   color:#000;
+	/* font-weight:bold; */
 }
 
 h1 span {
-  font-style: italic;
+  font-style:italic;
+  font-family:'Didact Gothic',cursive; /*'Didact Gothic'; /*'Century Gothic','Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang'; */
+   color:#000;
 }
 
 h2 {
