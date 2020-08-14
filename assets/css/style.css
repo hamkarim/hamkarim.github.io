@@ -22,6 +22,8 @@ p{
 	/*font-family:"Noto Sans Khmer","Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
 	/*font-size:16px; /*,"Noto Serif Khmer","Khmer OS Content"*/
 	font-weight:normal;
+    padding:0;
+    margin:0;
 	/*line-height:200%; *
 	margin:0 0 14px */
 }

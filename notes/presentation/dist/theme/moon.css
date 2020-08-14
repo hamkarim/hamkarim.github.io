@@ -114,7 +114,10 @@ html * {
   color:inherit;
   /*font-size:100%;*/
   text-align: inherit;
-  padding: 0px;
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
 }
 
 /* Ensure certain elements are never larger than the slide itself */
