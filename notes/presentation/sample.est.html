@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introduction to Estimation</title>
+
+		<meta name="description" content="Statistical inference | Classical Methods">
+		<meta name="author" content="Ham Karim">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/moon.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+        
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
+        </script>
+        
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+                    <div class="aligncenter">
+					<a href="">
+						<img src="./img/esti_face.png" alt=" " style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo" width="60%">
+					</a>
+					<h1>One- and Two-Sample Estimation Problems<br>
+                        <span style="font-size: 30px;color: darkblue;">
+                              (Statistical Inference)</span></h1><br>
+                    
+					<p>
+                        by <br> <a href="hamkarim.github.io"><h4 style="font-size:40px">ហាំ ការីម</h4></a>
+					</p>
+                    <h3>សាកលវិទ្យាល័យអង្គរខេមរា</h3>
+                    </div>
+				</section>
+
+				<section>
+					<h3>លទ្ធផលរំពឹងទុក៖</h3>
+					<p>
+						នៅចុងបញ្ចប់នៃមេរៀននេះ អ្នកសិក្សាអាចយល់ និងអនុវត្តបាននូវគោលគំនិតគន្លឹះមួយចំនួន ដូចខាងក្រោម៖
+                        
+                    <ol style="padding-left: 60px">
+                        <li>ស្ថិតិ</li>                    
+                    </ol>
+					</p>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2 class="frame-sect">សេចក្ដីផ្ដើម</h2>
+						<p>In real life, we work with data that are affected by randomness, and we need to extract information and draw conclusions from the data. The randomness might come from a variety of sources. Here are two examples of such situations: </p>
+						<ul style="padding-left: 30px">
+                            <li>Suppose we have a population with some unknown parameter(s). For example:  $N(\mu,\sigma^2)$, where $\mu$ and $\sigma$ are parameters. </li>
+                            <li>We need to draw conclusions (make inferences) about the unknown parameters. </li>
+                            <li>We select samples, compute some statistics, and make inferences about the unknown parameters based on the sampling distributions of the statistics. </li>
+                        </ul>
+                        </p>
+						<div class="aligncenter">
+						<a href="#/2" class="navigate-down">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="20" height="26" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow">
+						</a>
+                        </div>
+					</section>
+					<section>
+						<h2>Classical Methods of Estimation (និយមន័យ)</h2>
+                        <div style="border: 2px solid darkblue; padding-left: 20px;
+  box-shadow: 5px 10px #888888;">
+    <p>
+    <ol style="padding-left: 30px">
+        <li><a>Point Estimation.</a>
+        A point estimate of some population parameter \(\theta\) is a single
+value \(\hat{\theta}\) of a statistic \(\hat{\Theta}\). For example, the value \(\bar{x}\) of the statistic \(\overline{X}\) computed from a sample of size $n$ is a point estimate of the
+population mean \(\mu\).
+        </li>
+        <li><a>Interval Estimation (Confidence Interval = C.I).</a> An interval estimate of some population parameter \(\theta\) is an interval of the form \(\left(\hat{\theta}_{L}, \hat{\theta}_{U}\right),\) i.e, \(\hat{\theta}_{L}\lt\theta\lt\hat{\theta}_{U}\). This interval contains the true value of \(\theta\) with probability \(\mathrm{P}\left(\hat{\theta}_{L}\lt\theta\lt\hat{\theta}_{U}\right)=1-\alpha\). We call
+            <ul>
+            <li>$\hat{\theta}_{L}\lt\theta\lt\hat{\theta}_{U}$ is called a $(1-\alpha)100\%$ confidence interval (C.I.) for $\theta$. </li>            
+            <li>$\theta_{L}$ is  lower confidence limit, and $\theta_{U}$ is  upper confidence limit</li>
+            <li>$1-\alpha$ is called the confidence coefficient </li>
+            <li>$\alpha= 0.1, 0.05, 0.025, 0.01$, $(0\lt \alpha\lt 1)$, i.e. ($\alpha = 1-\text{ level of confidence}$)</li>
+            </ul>
+        
+        </li>
+                            
+                            
+        </ol>                          
+    </p>
+</div>
+                        <br>
+                    <p>
+                        For example, you might have seen a problem like this:
+
+Let $X$ be a normal random variable with mean $\mu =100$ and variance $\sigma^2=15$. Find the probability that $X \gt 110$.
+                        
+                        </p>
+                    <p>In real life, we might not know the distribution of $X$, so we need to collect data, and from the data we should conclude whether $X$ has a normal distribution or not.</p>
+                        
+                        <div class="aligncenter">
+						<a href="#/3" class="navigate-up">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1); transform: rotate(180deg);" width="24" height="26" data-src="https://static.slid.es/reveal/arrow.png" alt="Up arrow">
+						</a>
+                        </div>
+						
+					</section>
+					<!--section>
+						<h2>Basement Level 2</h2>
+						<p>That's it, time to go back up.</p>
+						<br>
+						<a href="#/2">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1); transform: rotate(180deg);" width="178" height="238" data-src="https://static.slid.es/reveal/arrow.png" alt="Up arrow">
+						</a>
+					</section-->
+                    	<!--section>
+						<h2>Basement Level 1</h2>
+						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+					</section>
+					<section>
+						<h2>Basement Level 2</h2>
+						<p>That's it, time to go back up.</p>
+						<br>
+						<a href="#/2">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1); transform: rotate(180deg);" width="178" height="238" data-src="https://static.slid.es/reveal/arrow.png" alt="Up arrow">
+						</a>
+					</section -->
+</section>
+
+				<section>
+                    <section>
+					<h2 class="frame-sect">១.&nbsp; ចន្លោះជឿជាក់  (Confidence Intervals)</h2>
+                    <p>
+                    It is noted that we cannot be certain that an interval contains the true but unknown population parameter since only a sample from the full population is used to compute both the point estimate and, the interval estimate! A confidence interval is constructed so that there is high confidence that it does contain the true but unknown population parameter. Generally, a <a href="#" style="font-size: 24px">$100(1 - \alpha)\%$ confidence interval (CI)</a> equals
+                        <div class="aligncenter blockeqn">
+                        $                       
+                            \text{point estimate }\pm \text{ reliability coefficient } \times \text{ s.e.(parameter)}
+                        $</div>
+                    where 
+                    <ul style="padding-left: 80px">
+                        <li>$\alpha$ is the <a href="#">level of significance</a> between zero and one;</li>
+                        <li>$1-\alpha$ is a value called
+                                    the <a href="#">"confidence coefficient"</a>; </li>
+                       <li>$100(1 - \alpha)\%$ is the <a href="#">confidence level</a>;</li>
+                        <li><a href="#">parameter estimate</a> is a value for the point estimate such as for the sample mean, $\overline{x}$, or for the population proportion, $\widehat{p}$; </li>
+                        <li><a href="#">reliability coefficient</a> is a probability point obtained from an appropriate table as dictated by, for example, $z_{\alpha}$ or $t_{\frac{\alpha}{2},n-1}$; </li>
+                        
+                        <li>and <a href="#">s.e.(parameter)</a> read
+standard error of the parameter, measures the closeness of the point estimate to the true population parameter i.e. it measures the precision of an estimate in getting the
+parameter.</li>
+                        </ul>
+                    </p>
+                    <br>
+                    <div class="aligncenter">
+						<a href="#" class="navigate-down">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="30" height="40" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow">
+						</a></div>
+				    </section>
+    </section>
+
+    <section>
+				    <section data-auto-animate>
+					<h2 class="frame-sect">2. Single Sample - Estimation of the Mean ($\mu$)</h2>
+					<p>យើងសន្មតជាទូទៅថា ទិន្នន័យជាសំណាក គឺបានមកពីប៉ូពុយឡាយស្យុងធម្មតាមួយ។<!--The overall assumption made is that the sample comes from a normal population.-->
+                        </p>
+                    <p>
+				    <span style="font-family:'Angkor', cursive; color: red">Recall: </span>
+$$
+\begin{array}{l}
+        E(\overline{X})=\mu_{\overline{X}}=\mu; \quad \operatorname{Var}\big(\overline{X}\big)=\sigma_{\overline{X}}^{2}=\frac{\sigma^{2}}{n}; \quad \overline{X} \sim N\left(\mu, \frac{\sigma}{\sqrt{n}}\right) \\  
+        Z=\frac{\overline{X}-\mu}{\sigma / \sqrt{n}} \sim \mathrm{N}(0,1) \text{ for } \left(\sigma^{2} \text { is known }\right); \quad  T=\frac{\overline{X}-\mu}{S / \sqrt{n}} \sim \mathrm{t}(n-1) \text{ for } \left(\sigma^{2} \text { is unknown }\right) 
+\end{array}
+$$
+ក្នុងករណីនេះ យើងកំណត់តម្លៃសំណាករបាយអថេរចៃដន្យ $\overline{X}$ ដើម្បីធ្វើសេចក្ដីសន្និដ្ឋានរកតម្លៃប៉ារ៉ាម៉ែត្រ $\mu$ ។ 
+                        </p>
+                <ul style="padding-left: 20px">
+                    <li><a>Point Estimation of $\mu$.</a>The sample mean \(\overline{X}=\sum_{i=1}^{n} X_{i} / n\) is a "good" point estimate for \(\mu\).</li>
+                    <li><a>Interval Estimation (Confidence Interval) of $\mu$.</a></li>                  
+                        </ul>
+                <ol style="padding-left:50px">
+                <li><b style="color: red;font-size: 22px;">First Case: $\sigma^2$ is known.</b>     
+                    If \(\overline{X}=\sum_{i=1}^{n} X_{i} / n\) is the sample mean of a random sample of size \(n\) from a population with mean \(\mu\) and known variance \(\sigma^{2}\), then a \((1-\alpha) 100 \%\) confidence interval for \(\mu\) is
+\begin{eqnarray*}
+\left(\bar{X} - z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}, \bar{X} + z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}\right) &\Longleftrightarrow &\bar{X} \pm z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}} \\ 
+&\Longleftrightarrow &\bar{X}-z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}} \lt \mu \lt \bar{X}+z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}
+\end{eqnarray*}             
+                    </li>
+                </ol>
+                        
+				    </section>
+    <section>                       
+        <ol style="padding-left:50px" start="2">
+         where \(z_{\frac{\alpha}{2}}\) is the \(\mathrm{z}\) -value leaving an area
+of \(\alpha / 2\) to the right; i.e., \(\mathrm{P}\big(\mathrm{Z}\gt z_{\frac{\alpha}{2}}\big)=\alpha / 2,\) or equivalently, \(\mathrm{P}\big(\mathrm{Z}\lt z_{\frac{\alpha}{2}}\big)=1-\alpha / 2\)           
+                </ol>
+    <br><br>
+        
+    <h4 class="frame-sect">ឧទាហរណ៍.</h4>
+        មធ្យមរបស់កំហាប់ស័ង្កសី ត្រូវបានកត់ត្រាយកចេញពីសំណាកមួយនៃការវាស់កម្រិតស័ង្កសី នៅ $36$ ទីតាំងផ្សេងគ្នា ដែលមានកម្រិត $2.6$ ក្រាម/មីលីលីត្រ។ ចូររកចន្លោះពេលជឿជាក់ (C.I. ) \(95 \%\) និង \(99 \%\) សម្រាប់មធ្យមនៃកំហាប់ស័ង្កសី នៅក្នុងទឹកទន្លេ។ សន្មតថា គម្លាតស្តង់ដារបស់ប៉ូពុយឡាស្យុង \(0.3\) ។
+        
+        <!-- The average zinc concentration recorded from a sample of zinc
+measurements in 36 different locations is found to be 2.6
+gram/milliliter. Find a \(95 \%\) and \(99 \%\) confidence interval (C.I.)
+for the mean zinc concentration in the river. Assume that the
+population standard deviation is \(0.3\).-->
+    </section>    
+    
+    <section>   
+        <p>
+        <a> Theorem.</a> If \(\bar{X}\) is used as an estimate of \(\mu,\) we can then be \((1-\alpha) 100 \%\) confident that the error (in estimation) will not exceed max error of estimation $E=z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}$.
+        </p>
+        
+        <p><a>Remark.</a> 
+            <ul style="padding-left: 60px">
+                <li>If the maximum amount of the error \(E=z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}\), then we can find the sample size $n$ by 
+$$
+E=z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}} \Longleftrightarrow \sqrt{n}=z_{\frac{\alpha}{2}} \frac{\sigma}{E} \Longleftrightarrow n=\left(z_{\frac{\alpha}{2}} \frac{\sigma}{E}\right)^{2}
+                    $$ </li>
+                <li>If \(\sigma\) is unknown, we could take a preliminary sample of size \(n \geq 30\) to provide an estimate of \(\sigma\). Then using \(S=\sqrt{\sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{2} /(n-1)}\) as an approximation for \(\sigma\), we could determine approximately how many observations are needed to provide the desired degree of accuracy.</li>
+        </ul>
+                
+                </p>
+    </section>
+
+
+<section>
+        <ol style="padding-left:50px" start="2">  
+            <li><b style="color: red;font-size: 22px;">Second Case: $\sigma^2$ is unknown.</b>                  
+                    </li>
+            If \(\bar{X}=\sum_{i=1}^{n} X_{i} / n\) and \(S=\sqrt{\sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{2} /(n-1)}\) are the sample mean and the sample standard deviation of a random sample of size \(n\) from a normal population (distribution) with unknown variance \(\sigma^{2}\), then \(a(1-\alpha) 100 \%\) confidence interval for \(\mu\) is :
+ $$
+\left(\bar{X}-t_{\frac{\alpha}{2}} \frac{S}{\sqrt{n}}, \bar{X}+t_{\frac{\alpha}{2}} \frac{S}{\sqrt{n}}\right)  \Longleftrightarrow \bar{X} \pm t_{\frac{\alpha}{2}} \frac{S}{\sqrt{n}}
+\Longleftrightarrow 
+\bar{X} - t_{\frac{\alpha}{2}} \frac{S}{\sqrt{n}} \lt \mu \lt \bar{X}+t_{\frac{\alpha}{2}} \frac{S}{\sqrt{n}}
+$$
+    where \(t_{\frac{\alpha}{2}}\) is the $t$-value with \(df=n-1\)  leaving an area of \(\alpha / 2\) to the right; i.e., \(\mathrm{P}\big(\mathrm{T} \gt t_{\frac{\alpha}{2}}\big)=\alpha / 2,\) or equivalently, \(\mathrm{P}\big(\mathrm{T} \lt t_{\frac{\alpha}{2}}\big)=1-\alpha / 2\). 
+                </ol>
+    
+    <h4 class="frame-sect">ឧទាហរណ៍.</h4>
+    <p>
+    The contents of $7$ similar containers of sulfuric acid are $9.8, 10.2, 10.4, 9.8, 10.0, 10.2$ and $9.6$ liters. Find a $95\%$ C.I. for the mean of all such containers, assuming an approximate normal distribution.
+    
+    </p>
+    </section>    
+        
+
+				    <section data-auto-animate>
+					<h4 class="frame-sect">ឧទាហរណ៍.</h4>
+				    
+                    <div style="border: 2px solid darkblue; padding: 10px;
+  box-shadow: 5px 10px #888888;margin-top: 10px;margin-bottom: 30px;background-color:lightyellow;color: darkblue">
+    <p>Consider the following data: $$64.3, 64.6, 64.8, 64.2, 64.5, 64.3, 64.6, 64.8, 64.2, 64.3$$
+                        
+                        Assume that it is normally distributed with unit population variance. For these data, construct a $95\%$ confidence interval for the population mean.
+
+                        </p>
+</div>
+                        
+                        <strong>ចម្លើយ.</strong>
+Using the data, $n=10, \bar{x}=64.46,$ the level of significance, $\alpha=5 \%=0.05,$ and from the given assumption, $\sigma^{2}=1 .$ Now, the resulting $95 \%$ confidence interval (CI) for the population mean is
+\[
+\bar{x}-z_{0.025} \times \frac{\sigma}{\sqrt{n}} \leq \mu \leq \bar{x}+z_{0.025} \times \frac{\sigma}{\sqrt{n}}
+\]
+                        
+                        
+				    </section>
+
+				    <!--section>
+					
+					<div class="note"> 
+                        <p> <a href="#" style="font-family:Angkor;">ចំណាំ : </a>
+                        <ul style="padding-left:40px">
+                            <li>If a very large number of random samples are collected and a $100(1 - \alpha)\%$ confidence interval for the population parameter is computed from each sample, then $100(1-\alpha)$ percent of these intervals will contain the true value of the population parameter with confidence $100(1-\alpha)$.</li>
+                            <li>We don’t know if the statement $63.84 \leq \mu \leq 65.08$ is true for this specific sample, but that, in repeated sampling, the method used to obtain the confidence interval for $\mu$ yields correct statements $95\%$ of the times with a $0.95$ confidence.</li>
+                            <li>The precision of a confidence interval is inversely proportional to the confidence level. It is desirable to obtain a confidence interval that is short enough for purposes of decision making and that also has adequate confidence. This is easily the reason why the $95\%$ confidence level is the default confidence level chosen by researchers and practitioners.
+</li>
+                        </ul>
+				        </p>
+
+					</div>
+						<a href="#/2">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1); transform: rotate(180deg);" width="30" height="40" data-src="https://static.slid.es/reveal/arrow.png" alt="Up arrow">
+						</a>
+					</section -->
+				</section>
+
+				<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+					<h2 class="frame-sect">Standard Error of a Point Estimate</h2>
+					<p>
+                    <ul style="padding-left: 40px">
+                    <li>The standard error of an estimator is its standard deviation. </li>
+                    <li>We use \(\bar{X}=\sum_{i=1}^{n} X_{i} / n\) as a point estimator of \(\mu,\) and we used the sampling distribution of \(\bar{X}\) to make a \((1-\alpha) 100 \%\) C.I. for \(\mu\).</li>
+                    <li>The standard deviation of \(\bar{X},\) which is \(\sigma_{\bar{X}}=\sigma / \sqrt{n},\) is called the standard error of \(\bar{X} .\) We write \(s.e (\bar{X})=\sigma / \sqrt{n}\)</li>
+                    <li>\((1-\alpha) 100 \%\) C.I. for \(\mu,\) when \(\sigma^{2}\) is known, is
+$$
+\bar{X} \pm Z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}=\bar{X} \pm Z_{\frac{\alpha}{2}}\times s .e (\bar{X})
+$$</li>
+                    <li>\((1-\alpha) 100 \%\) C.I. for \(\mu,\) when \(\sigma^{2}\) is unknown, and
+the distribution is normal, is 
+$$
+\bar{X} \pm t_{\frac{\alpha}{2}} \frac{S}{\sqrt{n}}=\bar{X} \pm t_{\frac{\alpha}{2}}\times s .e (\bar{X}) \quad \text{ with } df = n-1
+$$</li>
+                    </ul>
+					</p>
+				</section>
+
+<section data-auto-animate>
+    <section>
+					<h2 class="frame-sect">3. Two Samples: Estimate the Difference between Two Means ($\mu_1 - \mu_2$)</h2>
+					<p>Recall: For two independent samples: 
+\begin{eqnarray*}
+    \mu_{\bar{X}_{1}-\bar{X}_{2}} &=&\mu_{1}-\mu_{2}=E\left(\bar{X}_{1}-\bar{X}_{2}\right); \qquad \sigma_{\bar{X}_{1}-\bar{X}_{2}}^{2} = \frac{\sigma_{1}^{2}}{n_{1}}+\frac{\sigma_{2}^{2}}{n_{2}}=\operatorname{Var}\left(\bar{X}_{1}-\bar{X}_{2}\right)\\  
+    \sigma_{\bar{X}_{1}-\bar{X}_{2}} &=& \sqrt{\sigma_{\bar{X}_{1}-\bar{X}_{2}}^{2}}=\sqrt{\frac{\sigma_{1}^{2}}{n_{1}}+\frac{\sigma_{2}^{2}}{n_{2}}};\qquad  Z = \frac{\left(\bar{X}_{1}-\bar{X}_{2}\right)-\left(\mu_{1}-\mu_{2}\right)}{\sqrt{\frac{\sigma_{1}^{2}}{n_{1}}+\frac{\sigma_{2}^{2}}{n_{2}}}} \sim N(0,1)
+\end{eqnarray*}
+                        
+                        </p>
+  <ul style="padding-left: 20px">
+                    <li><a>Point Estimation of $\mu_1 - \mu_2$.</a> The difference $\overline{X_1} - \overline{X_2}$ is a "good" point estimate for \(\mu_1 - \mu_2\).</li>
+                    <li><a>Interval Estimation (Confidence Interval) of $\mu_1 - \mu_2$.</a></li>                  
+                        </ul>
+                <ol style="padding-left:50px">
+                <li><b style="color: red;font-size: 22px;">First Case: $\sigma_1^2$ and $\sigma_2^2$ are known.</b> </li>
+                   <ul>
+                    <li>
+                    Let \(Z = \frac{\left(\bar{X}_{1}-\bar{X}_{2}\right)-\left(\mu_{1}-\mu_{2}\right)}{\sqrt{\frac{\sigma_{1}^{2}}{n_{1}}+\frac{\sigma_{2}^{2}}{n_{2}}}} \sim N(0,1)\)</li>
+                    <li>Then a $(1-\alpha)100\%$ confidence interval for $\mu_1 - \mu_2$ is 
+ $$
+\left(\bar{X}_{1}-\bar{X}_{2}\right)-Z_{\frac{\alpha}{2}} \sqrt{\frac{\sigma_{1}^{2}}{n_{1}}+\frac{\sigma_{2}^{2}}{n_{2}}} \lt \mu_{1}-\mu_{2} \lt \left(\bar{X}_{1} - \bar{X}_{2}\right)+Z_{\frac{\alpha}{2}} \sqrt{\frac{\sigma_{1}^{2}}{n_{1}}+\frac{\sigma_{2}^{2}}{n_{2}}}
+$$
+                       
+                       </li>
+     
+                    </ul>
+                </ol>
+                    
+</section>
+    
+<section>
+<ol style="padding-left:50px" start="2">
+                <li><b style="color: red;font-size: 22px;">Second Case: $\sigma_1^2=\sigma_2^2=\sigma^2$ is unknown.</b> </li>
+                   <ul>
+                    <li>
+                    If \(\sigma_{1}^{2}\) and \(\sigma_{2}^{2}\) are unknown but \(\sigma_{1}^{2}=\sigma_{2}^{2}=\sigma^{2},\) then the pooled estimate of \(\sigma^{2}\) is 
+$$
+S_{p}^{2}=\frac{\left(n_{1}-1\right) S_{1}^{2}+\left(n_{2}-1\right) S_{2}^{2}}{n_{1}+n_{2}-2}
+$$
+where \(S_{1}^{2}\) is the variance of the 1-st sample and \(S_{2}^{2}\) is the
+variance of the 2-nd sample. The degrees of freedom of \(S_{p}^{2}\)
+is \(df=n_{1}+n_{2}-2\).                      
+                       </li>
+                    <li>Then a $(1-\alpha)100\%$ confidence interval for $\mu_1 - \mu_2$ is 
+ $$
+\left(\bar{X}_{1}-\bar{X}_{2}\right)-t_{\frac{\alpha}{2}} \sqrt{\frac{S_{p}^{2}}{n_{1}}+\frac{S_{p}^{2}}{n_{2}}} \lt \mu_{1}-\mu_{2} \lt \left(\bar{X}_{1}-\bar{X}_{2}\right)+t_{\frac{\alpha}{2}} \sqrt{\frac{S_{p}^{2}}{n_{1}}+\frac{S_{p}^{2}}{n_{2}}}
+$$
+where \(t_{\frac{\alpha}{2}}\) is the $t$-value with \(df=n_{1}+n_{2}-2\) degrees of freedom. 
+                       </li>
+     
+                    </ul>
+                </ol>
+</section>
+
+<section>
+    <h4 class="frame-sect">ឧទាហរណ៍.</h4>
+    <p>គេធ្វើតេស្តលើម៉ាស៊ីនពីរប្រភេទ A និង B ដើម្បីប្រៀបធៀបគ្នារវាងចំងាយប្រេងដែលប្រើ។ ចំងាយប្រេងគិតជាម៉ាយល៍ក្នុងមួយហ្គាឡុង (mpg) ត្រូវបានគេវាស់។ ពិសោធន៍ចំនួន ៥០ដង ត្រូវបានធ្វើឡើងដោយប្រើម៉ាស៊ីនប្រភេទ A និងចំនួន ៧៥ដង់ ត្រូវបានធ្វើឡើងសម្រាប់ប្រភេទម៉ាស៊ីន B។ ប្រេងសាំងដែលបានប្រើ និងលក្ខខណ្ឌផ្សេងទៀតត្រូវបានរក្សាអោយនៅថេរ។ ចំងាយប្រេងជាមធ្យមសម្រាប់ម៉ាស៊ីនប្រភេទ A គឺ ៣៦ ម៉ាយល៍ក្នុងមួយហ្គាឡុង ហើយចំងាយប្រេងជាមធ្យមសម្រាប់ម៉ាស៊ីន B គឺ ៤២ ម៉ាយល៍ក្នុងមួយហ្គាឡុង។ រកចន្លោះជឿជាក់ ៩៦% សម្រាប់ $\mu_B  - \mu_A $ ដែល $\mu_A $ និង $\mu_B$ ជាមធ្យមប៉ូពុយឡាស្យុងនៃចំងាយប្រេង សំរាប់ម៉ាស៊ីន A និង B រៀងគ្នា។ សន្មតថា គម្លាតស្តង់ដារបស់ប៉ូពុយឡាស្យុង ស្មើ 6 និង 8 សម្រាប់ម៉ាស៊ីន A និង B រៀងគ្នា។
+        
+        
+        <!-- Gas mileage in miles per gallon was measured. 50 experiments were conducted using engine type A and 75 experiments were done for engine type B. The gasoline used and other conditions were held constant. The average gas mileage for engine A was 36 miles per gallon and the average for engine B was 42 miles per gallon. Find 96% confidence interval for $\mu_B - \mu_A$, where $\mu_A$ and $\mu_B$ are population mean gas mileage for engines A and B, respectively. Assume that the population standard deviations are 6 and 8 for engines A and B, respectively. </p -->
+    
+    </section>
+    
+    <section>
+    <h4 class="frame-sect">ឧទាហរណ៍.</h4>
+    <p>ដើម្បីប្រៀបធៀបរ៉េស៊ីស្តង់រវាងខ្សែលួសប្រភេទ A និង B គេធ្វើពិសោធន៍មួយ ដែលបង្ហាញលទ្ធផលដោយពឹងផ្អែកលើសំណាកចំនួនពីរមិនអាស្រ័យគ្នា (យកទិន្នន័យដើមគុណនឹង 1000) :
+    <ul style="padding-left: 70px">
+    <li>ខ្សែលួស A: 140, 138, 143, 142, 144, 137 </li>
+    <li>ខ្សែលួស B: 135, 140, 136, 142, 138, 140</li>
+    </ul>
+    <br>
+    ដោយសន្មតថា វ៉ារ្យ៉ង់ទាំងពីរស្មើគ្នា ចូរគណនាចន្លោះជឿជាក់ $95\%$ សម្រាប់ផលសង $\mu_A - \mu_B$ ដែល $\mu_A$ និង $\mu_B$ ជាមធ្យមរ៉េស៊ីស្តង់របស់ខ្សែលួស A និង B រៀងគ្នា។  
+    </p>
+    
+    </section>
+    
+</section>
+
+
+<section data-auto-animate>
+				<section>
+					<h2 class="frame-sect">Single Sample: Estimating of a Proportion</h2>
+					<p>
+						<figure class="aligncenter">
+                            <img src="img/proportion_dist.png" width="45%">
+                        </figure>
+					</p>
+                <ul style="padding-left:70px">
+                    <li>$p =$ Population proportion of successes (elements of Type A) in the population. 
+                        $$=\frac{A}{A+B} = \frac{\text { no. of elements of type } A \text { in the population }}{\text { Total no. of elements }} $$</li>
+                    <li>$n =$ sample size </li>
+                    <li>$X =$ no. of elements of type $A$ in the sample of size $n$. </li>
+                    <li>$\hat{p} =$ Sample proportion of successes (elements of Type A) in the sample $=\frac{X}{n}$</li>
+                    
+                    </ul>
+                    
+                    <div class="aligncenter">
+						<a href="#/3" class="navigate-down">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="24" height="26" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow">
+						</a>
+                        </div>
+                    
+				</section>
+    
+    <section>
+					
+					<div class="note"> 
+                        <p> <a href="#" style="font-family:Angkor;">រំលឹក : </a>
+                        <ul style="padding-left:40px">
+                            <li>$X \sim \operatorname{Binomial}(n, p)$</li>
+                            <li>$\mathrm{E}(\hat{p})=\mathrm{E}\left(\frac{X}{n}\right)=p$ </li>
+                            <li>$\operatorname{Var}(\hat{p})=\operatorname{Var}\left(\frac{X}{n}\right)=\frac{p q}{n};  \quad  q=1-p$</li>
+                            <li>For large $n$, we have 
+        $$ \begin{aligned} 
+        \hat{p} &\sim \mathrm{N}\left(p, \sqrt{\frac{p q}{n}}\right) &\text { (Approximately) } \\ Z&=\frac{\hat{p}-p}{\sqrt{\frac{p q}{n}}} \sim \mathrm{N}(0,1) &\text { (Approximately) } 
+                                \end{aligned}$$</li>
+                        </ul>
+				        </p>     
+        </div>
+		</section>
+
+    <section>
+        <ul style="padding-left: 40px">
+        <li><a>Point Estimation for $p$: </a>
+            A good point estimator for the population proportion $p$ is given by the statistic (sample proportion): $\hat{p} = \frac{X}{n}$            
+            </li>
+            <li><a>Confidence Interval for $p$: </a> For large $n$, an approximate $(1-\alpha)100\%$ confidence interval for $p$ is : 
+                
+$$
+\hat{p}-z_{\frac{\alpha}{2}} \sqrt{\frac{\hat{p} \hat{q}}{n}} \lt p \lt \hat{p}+z_{\frac{\alpha}{2}} \sqrt{\frac{\hat{p} \hat{q}}{n}}; \quad \hat{q} = 1 - \hat{p}
+$$            
+            </li>
+        </ul>
+        
+        <h4 class="frame-sect">ឧទាហរណ៍.</h4> 
+    <p>In a random sample of $n=500$ families owing television sets in the city of Hamilton, Canada, it was found that $x=340$ subscribed to HBO. Find $95\%$ confidence interval for the actual proportion of families in this city who subscribe to HBO. </p>
+        
+        
+         <div class="aligncenter">
+						<a href="#/3" class="navigate-up">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1); transform: rotate(180deg);" width="24" height="26" data-src="https://static.slid.es/reveal/arrow.png" alt="Up arrow">
+						</a>
+                </div>
+    </section>
+
+</section>
+
+
+<section data-auto-animate>
+				<section>
+					<h2 class="frame-sect">Two Samples: Estimating the Difference between Two Proportions:</h2>
+					<p>
+						<figure class="aligncenter">
+                            <img src="img/2proportion_dist.png" width="40%" align="right">
+                        </figure>
+                    Suppose that we have two populations: 
+					
+                <ul style="padding-left:70px">
+                    <li>$p_1 =$ proportion of the 1-st population.</li>
+                    <li>$p_2 =$ proportion of the 2-nd population. </li>
+                    <li>We are interested in comparing $p_1$ and $p_2$, or equivalently, making inferences about $p_1- p_2$. </li>
+                    <li>We independently select a random sample of size $n_1$ from the 1-st population and another random sample of size $n_2$ from the 2-nd population: </li>
+                    <li>Let $X_1 =$ no. of elements of type A in the 1-st sample: $X_1\sim \operatorname{Binomial}(n_1, p_1)$ </li>
+                    <li>Let $X_2 =$ no. of elements of type A in the 2-nd sample: $X_2\sim \operatorname{Binomial}(n_2, p_2)$ </li>
+                    <li>$\hat{p}_{1}=\frac{X_{1}}{n_{1}}=$ proportion of the 1-st sample</li>
+                    <li>$\hat{p}_{2}=\frac{X_{2}}{n_{2}}=$ proportion of the 2-st sample</li>
+                    </ul>
+                    </p>
+    
+    </section>
+   <section>
+       <p>តាមសម្មតិកម្មខាងលើ គេបានកំណត់បានលទ្ធផល ដូចតទៅ៖
+<ol style="padding-left: 50px">
+    <li>$E\left(\hat{p}_{1}-\hat{p}_{2}\right)=p_{1}-p_{2}$</li>
+    <li>$\operatorname{Var}\left(\hat{p}_{1}-\hat{p}_{2}\right)=\frac{p_{1} q_{1}}{n_{1}}+\frac{p_{2} q_{2}}{n_{2}} ;\quad  q_{1}=1-p_{1}, q_{2}=1-p_{2}$</li>
+    <li>For large $n_{1}$ and $n_{2}$, we have  
+    \begin{eqnarray*}
+        \hat{p}_{1}-\hat{p}_{2} &\sim & N\left(p_{1}-p_{2}, \sqrt{\frac{p_{1} q_{1}}{n_{1}}+\frac{p_{2} q_{2}}{n_{2}}}\right); \quad \text{ (Approximately) } \\
+        Z &=&\frac{\left(\hat{p}_{1}-\hat{p}_{2}\right)-\left(p_{1}-p_{2}\right)}{\sqrt{\frac{p_{1} q_{1}}{n_{1}}+\frac{p_{2} q_{2}}{n_{2}}}} \sim \mathrm{N}(0,1); \quad \text { (Approximately) }
+    \end{eqnarray*}
+    </li>
+    
+       </ol>
+       
+       
+       
+       </p>
+                    <div class="aligncenter">
+						<a href="#/3" class="navigate-down">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="24" height="26" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow">
+						</a>
+                        </div>                    
+				</section>
+    
+    <section>
+	<ul style="padding-left: 20px">
+                    <li><a>Point Estimation of $p_1 - p_2$.</a> A good point estimator for the difference between the two proportions, $p_1- p_2$, is given by the statistic: 
+$$
+\hat{p}_{1}-\hat{p}_{2}=\frac{X_{1}}{n_{1}}-\frac{X_{2}}{n_{2}}
+$$
+                    </li>
+        
+                    <li><a>Confidence Interval for $p_1 - p_2$.</a> For large \(n_{1}\) and \(n_{2},\) an approximate \((1-\alpha) 100 \%\) confidence interval for \(p_{1}-p_{2}\) is :
+        
+$$
+\left(\hat{p}_{1}-\hat{p}_{2}\right)-z_{\frac{\alpha}{2}} \sqrt{\frac{\hat{p}_{1} \hat{q}_{1}}{n_{1}}+\frac{\hat{p}_{2} \hat{q}_{2}}{n_{2}}} \lt p_{1}-p_{2} \lt \left(\hat{p}_{1}-\hat{p}_{2}\right)+z_{\frac{\alpha}{2}} \sqrt{\frac{\hat{p}_{1} \hat{q}_{1}}{n_{1}}+\frac{\hat{p}_{2} \hat{q}_{2}}{n_{2}}}
+$$
+        </li>                  
+                        </ul>
+        
+    <h4 class="frame-sect">ឧទាហរណ៍.</h4>
+        <p>A certain change in a process for manufacture of component parts is being considered. Samples are taken using both existing and the new procedure to determine if the new process results in an improvement. If $75$ of $1500$ items from the existing procedure were found to be defective and $80$ of $2000$ items from the new procedure were found to be defective, find $90\%$ confidence interval for the true difference in the fraction of defectives between the existing and the new process. </p>
+        
+         <div class="aligncenter">
+						<a href="#/3" class="navigate-up">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1); transform: rotate(180deg);" width="24" height="26" data-src="https://static.slid.es/reveal/arrow.png" alt="Up arrow">
+						</a>
+                </div>
+	</section>
+
+  
+
+</section>
+
+
+
+<section data-auto-animate>
+				<section>
+					<h2 class="frame-sect">Single Sample: Estimating of a Proportion</h2>
+					<p>
+						<figure class="aligncenter">
+                            <img src="img/proportion_dist.png" width="45%">
+                        </figure>
+					</p>
+                <ul style="padding-left:70px">
+                    <li>$p =$ Population proportion of successes (elements of Type A) in the population. 
+                        $$=\frac{A}{A+B} = \frac{\text { no. of elements of type } A \text { in the population }}{\text { Total no. of elements }} $$</li>
+                    <li>$n =$ sample size </li>
+                    <li>$X =$ no. of elements of type $A$ in the sample of size $n$. </li>
+                    <li>$\hat{p} =$ Sample proportion of successes (elements of Type A) in the sample $=\frac{X}{n}$</li>
+                    
+                    </ul>
+                    
+                    <div class="aligncenter">
+						<a href="#/3" class="navigate-down">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="24" height="26" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow">
+						</a>
+                        </div>
+                    
+				</section>
+    
+    <section>
+					
+					<div class="note"> 
+                        <p> <a href="#" style="font-family:Angkor;">រំលឹក : </a>
+                        <ul style="padding-left:40px">
+                            <li>$X \sim \operatorname{Binomial}(n, p)$</li>
+                            <li>$\mathrm{E}(\hat{p})=\mathrm{E}\left(\frac{X}{n}\right)=p$ </li>
+                            <li>$\operatorname{Var}(\hat{p})=\operatorname{Var}\left(\frac{X}{n}\right)=\frac{p q}{n};  \quad  q=1-p$</li>
+                            <li>For large $n$, we have 
+        $$ \begin{aligned} 
+        \hat{p} &\sim \mathrm{N}\left(p, \sqrt{\frac{p q}{n}}\right) &\text { (Approximately) } \\ Z&=\frac{\hat{p}-p}{\sqrt{\frac{p q}{n}}} \sim \mathrm{N}(0,1) &\text { (Approximately) } 
+                                \end{aligned}$$</li>
+                        </ul>
+				        </p>     
+        </div>
+		</section>
+
+    <section>
+        <ul style="padding-left: 40px">
+        <li><a>Point Estimation for $p$: </a>
+            A good point estimator for the population proportion $p$ is given by the statistic (sample proportion): $\hat{p} = \frac{X}{n}$            
+            </li>
+            <li><a>Confidence Interval for $p$: </a> For large $n$, an approximate $(1-\alpha)100\%$ confidence interval for $p$ is : 
+                
+$$
+\hat{p}-z_{\frac{\alpha}{2}} \sqrt{\frac{\hat{p} \hat{q}}{n}} \lt p \lt \hat{p}+z_{\frac{\alpha}{2}} \sqrt{\frac{\hat{p} \hat{q}}{n}}; \quad \hat{q} = 1 - \hat{p}
+$$            
+            </li>
+        </ul>
+        
+        <h4 class="frame-sect">ឧទាហរណ៍.</h4> 
+    <p>In a random sample of $n=500$ families owing television sets in the city of Hamilton, Canada, it was found that $x=340$ subscribed to HBO. Find $95\%$ confidence interval for the actual proportion of families in this city who subscribe to HBO. </p>
+        
+        
+         <div class="aligncenter">
+						<a href="#/3" class="navigate-up">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1); transform: rotate(180deg);" width="24" height="26" data-src="https://static.slid.es/reveal/arrow.png" alt="Up arrow">
+						</a>
+                </div>
+    </section>
+
+</section>
+
+
+
+
+</div>
+
+</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+	</body>
+</html>

@@ -111,13 +111,14 @@ html * {
   margin:0;
   font-size: 100%;
   /*font-family: 'Khmer OS Battambang', 'sans-serif';/*"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
-  color:inherit;
+  color: inherit;
   /*font-size:100%;*/
   text-align: inherit;
-  padding-top: 10px;
+  padding-top: 0px;
   padding-left: 0px;
   padding-right: 0px;
   padding-bottom: 0px;
+  display: block;
 }
 
 /* Ensure certain elements are never larger than the slide itself */
@@ -138,7 +139,7 @@ html * {
 .reveal ol,
 .reveal dl,
 .reveal ul {
-  display: inline-block;
+  display: block;
   text-align: left;
   margin:0.8em 0 0 0px;
   padding:0px;
@@ -173,7 +174,7 @@ html * {
 .reveal div.note{
      background-color: #f0f7fb;
      background-image: url(/notes/presentation/icons/pencil_48.svg);
-     background-position: 22px 9px;
+     background-position: 18px 18px;
      background-size: 3%;     
      background-repeat: no-repeat;
      border-left: solid 5px #3498db;
