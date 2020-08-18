@@ -38,7 +38,7 @@
 					<a href="">
 						<img src="./img/esti_face.png" alt=" " style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo" width="60%">
 					</a>
-					<h1>One- and Two-Sample Estimation Problems<br>
+					<h1>One- and Two-Sample Tests of Hypotheses<br>
                         <span style="font-size: 30px;color: darkblue;">
                               (Statistical Inference)</span></h1><br>
 
@@ -55,36 +55,71 @@
 						នៅចុងបញ្ចប់នៃមេរៀននេះ អ្នកអាចយល់ និងអនុវត្តបាននូវគោលគំនិតគន្លឹះមួយចំនួន ដូចខាងក្រោម៖
 
                     <ol style="padding-left: 60px">
-                        <li>Estimate a population parameter (means, proportion, or variance) based on a large sample selected from the population</li>
-                        <li>Use the sampling distribution of a statistic to form a confidence interval for the population parameter</li>
-                        <li>Show how to select the proper sample size for estimating a population parameter</li>
+                        <li>Perform hypothesis testing</li>
+                        <li>Provide a measure of reliability for the hypothesis test, called the significance level of the test</li>
+                        <li>Identify Type I and Type II errors and interpret them</li>
+                        <li>Interpret the confidence level, and the significance level</li>
+                        <li>Compute and interpret $p$-values</li>
                     </ol>
 					</p>
+
 				</section>
 
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
 						<h2 class="frame-sect">សេចក្ដីផ្ដើម</h2>
-						<p>In real life, we work with data that are affected by randomness, and we need to extract information and draw conclusions from the data. The randomness might come from a variety of sources. Here are two examples of such situations: </p>
+						<p>Consider a population with some unknown parameter $\theta$. We are interested in testing (confirming or denying) some conjectures about $\theta$. For example, we might be interested in testing the conjecture that $\theta = \theta_0$ where $\theta_0$ is a given value. </p>
 						<ul style="padding-left: 60px">
-                            <li>Suppose we have a population with some unknown parameter(s). For example:  $N(\mu,\sigma^2)$, where $\mu$ and $\sigma$ are parameters. </li>
-                            <li>We need to draw conclusions (make inferences) about the unknown parameters. </li>
-                            <li>We select samples, compute some statistics, and make inferences about the unknown parameters based on the sampling distributions of the statistics. </li>
+                            <li>A statistical hypothesis is a conjecture concerning (or a statement about) the population.</li>
+                            <li>For example, if \(\theta\) is an unknown parameter of the population, we may be interested in testing the conjecture that \(\theta>\theta_{\mathrm{o}}\) for some specific value \(\theta_{\mathrm{o}}\).</li>
+                            <li></li>
                         </ul>
                         </p>
-            <p><a>Goal:</a> Use the sampling distribution of a statistic to estimate the value of a population parameter with a known degree of certainty.</p>
-                    $$
-\begin{array}{lcc} 
-    & \text{ Parameter } & \text { Estimator } \\ \text { Proportion } & p & \hat{p} \\ \text { Mean } & \mu & \bar{x} \\ \text { Variance } & \sigma^{2} & s^{2}\end{array}
-$$
+            <p><a>Goal:</a> We usually test the null hypothesis:
+                    $$\mathrm{H}_{\mathrm{o}}: \theta=\theta_{\mathrm{o}} \quad \text { (Null Hypothesis) }$$
+                    We have one of the following alternative hypotheses:
+                $$\mathrm{H}_{1}: 
+                \begin{array}{ll} 
+                \left\{
+                \begin{array}{l}
+                    \theta \neq \theta_{\mathrm{o}} \\ 
+                    \theta \gt \theta_{\mathrm{o}} \\                            
+                    \theta \lt \theta_{\mathrm{o}}
+                \end{array}\right. & 
+                \begin{array}{l}
+                    \text { (Alternative Hypothesis }\\
+                    \text { or Research Hypothesis }) 
+                \end{array}
+                \end{array}$$
+                    
+                    </p>
 						<!--div class="aligncenter">
 						<a href="#/2" class="navigate-down">
 							<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="20" height="26" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow">
 						</a>
                         </div-->
 					</section>
-            
+            <section>
+            <p>
+            <h5>Possible situations in testing a statistical hypothesis</h5>
+$$
+\begin{array}{|l|c|c|}
+        \hline & \mathrm{H}_{0} \text { is true } & \mathrm{H}_{0} \text { is false } \\ 
+        \hline \text { Accepting } \mathrm{H}_{0} & \text { Correct Decision } & 
+                \begin{array}{c}
+                    \text { Type II error } \\ 
+                    (\beta)\end{array} \\ 
+        \hline \text { Rejecting } \mathrm{H}_{0} &
+                \begin{array}{c}
+                    \text { Type I error } \\ 
+                    (\alpha)\end{array} & \text { Correct Decision } \\ 
+        \hline\end{array}
+$$
+                
+                
+                </p>
+            </section>
 					
 					
                     <!--section>
