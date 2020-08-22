@@ -425,7 +425,7 @@ $$      </p>
         </section>
     <section>
 			<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
-					<h3 class="frame-sect">4. Two Samples: Tests on Two Means:</h3>
+					<h2 class="frame-sect">4. Two Samples: Tests on Two Means:</h2>
                 <p>For two independent samples, we have:
                 <ul>
                     <li>If \(\sigma_{1}^{2}\) and \(\sigma_{2}^{2}\) are known, then we get:
@@ -576,37 +576,29 @@ $$
 				</section>
 
     <section>
-
-					<div class="note">
-                        <p> <a href="#" style="font-family:Angkor;">រំលឹក : </a>
-                        <ul style="padding-left:40px">
-                            <li>$X \sim \operatorname{Binomial}(n, p)$</li>
-                            <li>$\mathrm{E}(\hat{p})=\mathrm{E}\left(\frac{X}{n}\right)=p$ </li>
-                            <li>$\operatorname{Var}(\hat{p})=\operatorname{Var}\left(\frac{X}{n}\right)=\frac{p q}{n};  \quad  q=1-p$</li>
-                            <li>For large $n$, we have
-        $$ \begin{aligned}
-        \hat{p} &\sim \mathrm{N}\left(p, \sqrt{\frac{p q}{n}}\right) &\text { (Approximately) } \\ Z&=\frac{\hat{p}-p}{\sqrt{\frac{p q}{n}}} \sim \mathrm{N}(0,1) &\text { (Approximately) }
-                                \end{aligned}$$</li>
-                        </ul>
-				        </p>
-        </div>
+      <p>
+$$
+\begin{array}{r | c c c}
+    \hline 
+    \text { Hypotheses } & \mathrm{H}_{0}: p_1-p_2=0  & \mathrm{H}_{0}: p_1-p_2= 0& \mathrm{H}_{0}: p_1-p_2=0 \\ 
+            & \mathrm{H}_{0}: p_1-p_2\neq 0  & \mathrm{H}_{0}: p_1-p_2\gt 0 & \mathrm{H}_{0}: \mu_1-\mu_2\lt d \\  
+        \hline \text{ Test Statistic (T.S.) } & Z=\frac{\left(\hat{p}_{1}-\hat{p}_{2}\right)}{\sqrt{\hat{p} \hat{q}\left(\frac{1}{n_{1}}+\frac{1}{n_{2}}\right)}} \sim \mathrm{N}(0,1) & \text{(for large } n_1 \text{ and } n_2) & \\
+       \hline \text{ R.R. and A.R. of $H_0$ }  & & & \\
+                           &&& \\
+                           &&&\\ &&&\\
+                          &&&\\
+        \hline \text{ Decision: } &\text{ Reject } H_0 \text{ (and accept} & H_1) \text{ at the signification} & \text{level } \alpha \text{ if:} \\                           
+         \hline   & Z \gt z_{\frac{\alpha}{2}} \text{ or } Z \lt -z_{\frac{\alpha}{2}} & Z \gt z_{\alpha} & Z \lt -z_{\alpha}\\
+                      & \text{ Two-Sided Test } & \text{ One-Sided Test } & \text{ One-Sided Test } \\
+        \hline                 
+\end{array}
+$$      </p>
+				
 		</section>
 
     <section>
-        <ul style="padding-left: 40px">
-        <li><a>Point Estimation for $p$: </a>
-            A good point estimator for the population proportion $p$ is given by the statistic (sample proportion): $\hat{p} = \frac{X}{n}$
-            </li>
-            <li><a>Confidence Interval for $p$: </a> For large $n$, an approximate $(1-\alpha)100\%$ confidence interval for $p$ is :
-
-$$
-\hat{p}-z_{\frac{\alpha}{2}} \sqrt{\frac{\hat{p} \hat{q}}{n}} \lt p \lt \hat{p}+z_{\frac{\alpha}{2}} \sqrt{\frac{\hat{p} \hat{q}}{n}}; \quad \hat{q} = 1 - \hat{p}
-$$
-            </li>
-        </ul>
-
         <h4 class="frame-sect">ឧទាហរណ៍.</h4>
-    <p>In a random sample of $n=500$ families owing television sets in the city of Hamilton, Canada, it was found that $x=340$ subscribed to HBO. Find $95\%$ confidence interval for the actual proportion of families in this city who subscribe to HBO. </p>
+    <p>A vote is to be taken among the residents of a town and the surrounding county to determine whether a proposed chemical plant should be constructed. The construction site is within the town limits and for this reason many voters in the county feel that the proposal will pass because of the large proportion of town voters who favor the construction. To determine if there is a significant difference in the proportion of town voters and county voters favoring the proposal, a poll is taken. If 120 of 200 town voters favor the proposal and 240 of 500 county voters favor it, would you agree that the proportion of town voters favoring the proposal is higher than the proportion of county voters? Use a 0.025 level of significance.</p>
 
 
          <div class="aligncenter">
@@ -615,83 +607,6 @@ $$
 						</a>
                 </div>
     </section>
-
-</section>
-
-
-<section data-auto-animate>
-				<section>
-					<h2 class="frame-sect">5. Two Samples: Estimating the Difference between Two Proportions</h2>
-					<p>
-						<figure class="aligncenter">
-                            <img src="img/2proportion_dist.png" width="40%" align="right">
-                        </figure>
-                    Suppose that we have two populations:
-
-                <ul style="padding-left:70px">
-                    <li>$p_1 =$ proportion of the 1-st population.</li>
-                    <li>$p_2 =$ proportion of the 2-nd population. </li>
-                    <li>We are interested in comparing $p_1$ and $p_2$, or equivalently, making inferences about $p_1- p_2$. </li>
-                    <li>We independently select a random sample of size $n_1$ from the 1-st population and another random sample of size $n_2$ from the 2-nd population: </li>
-                    <li>Let $X_1 =$ no. of elements of type A in the 1-st sample: $X_1\sim \operatorname{Binomial}(n_1, p_1)$ </li>
-                    <li>Let $X_2 =$ no. of elements of type A in the 2-nd sample: $X_2\sim \operatorname{Binomial}(n_2, p_2)$ </li>
-                    <li>$\hat{p}_{1}=\frac{X_{1}}{n_{1}}=$ proportion of the 1-st sample</li>
-                    <li>$\hat{p}_{2}=\frac{X_{2}}{n_{2}}=$ proportion of the 2-st sample</li>
-                    </ul>
-                    </p>
-
-    </section>
-   <section>
-       <p>តាមសម្មតិកម្មខាងលើ គេបានកំណត់បានលទ្ធផល ដូចតទៅ៖
-<ol style="padding-left: 50px">
-    <li>$E\left(\hat{p}_{1}-\hat{p}_{2}\right)=p_{1}-p_{2}$</li>
-    <li>$\operatorname{Var}\left(\hat{p}_{1}-\hat{p}_{2}\right)=\frac{p_{1} q_{1}}{n_{1}}+\frac{p_{2} q_{2}}{n_{2}} ;\quad  q_{1}=1-p_{1}, q_{2}=1-p_{2}$</li>
-    <li>For large $n_{1}$ and $n_{2}$, we have
-    \begin{eqnarray*}
-        \hat{p}_{1}-\hat{p}_{2} &\sim & N\left(p_{1}-p_{2}, \sqrt{\frac{p_{1} q_{1}}{n_{1}}+\frac{p_{2} q_{2}}{n_{2}}}\right); \quad \text{ (Approximately) } \\
-        Z &=&\frac{\left(\hat{p}_{1}-\hat{p}_{2}\right)-\left(p_{1}-p_{2}\right)}{\sqrt{\frac{p_{1} q_{1}}{n_{1}}+\frac{p_{2} q_{2}}{n_{2}}}} \sim \mathrm{N}(0,1); \quad \text { (Approximately) }
-    \end{eqnarray*}
-    </li>
-
-       </ol>
-
-
-
-       </p>
-                    <div class="aligncenter">
-						<a href="#/3" class="navigate-down">
-							<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="24" height="26" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow">
-						</a>
-                        </div>
-				</section>
-
-    <section>
-	<ul style="padding-left: 20px">
-                    <li><a>Point Estimation of $p_1 - p_2$.</a> A good point estimator for the difference between the two proportions, $p_1- p_2$, is given by the statistic:
-$$
-\hat{p}_{1}-\hat{p}_{2}=\frac{X_{1}}{n_{1}}-\frac{X_{2}}{n_{2}}
-$$
-                    </li>
-
-                    <li><a>Confidence Interval for $p_1 - p_2$.</a> For large \(n_{1}\) and \(n_{2},\) an approximate \((1-\alpha) 100 \%\) confidence interval for \(p_{1}-p_{2}\) is :
-
-$$
-\left(\hat{p}_{1}-\hat{p}_{2}\right)-z_{\frac{\alpha}{2}} \sqrt{\frac{\hat{p}_{1} \hat{q}_{1}}{n_{1}}+\frac{\hat{p}_{2} \hat{q}_{2}}{n_{2}}} \lt p_{1}-p_{2} \lt \left(\hat{p}_{1}-\hat{p}_{2}\right)+z_{\frac{\alpha}{2}} \sqrt{\frac{\hat{p}_{1} \hat{q}_{1}}{n_{1}}+\frac{\hat{p}_{2} \hat{q}_{2}}{n_{2}}}
-$$
-        </li>
-                        </ul>
-
-    <h4 class="frame-sect">ឧទាហរណ៍.</h4>
-        <p>A certain change in a process for manufacture of component parts is being considered. Samples are taken using both existing and the new procedure to determine if the new process results in an improvement. If $75$ of $1500$ items from the existing procedure were found to be defective and $80$ of $2000$ items from the new procedure were found to be defective, find $90\%$ confidence interval for the true difference in the fraction of defectives between the existing and the new process. </p>
-
-         <div class="aligncenter">
-						<a href="#/3" class="navigate-up">
-							<img class="r-frame" style="background: rgba(255,255,255,0.1); transform: rotate(180deg);" width="24" height="26" data-src="https://static.slid.es/reveal/arrow.png" alt="Up arrow">
-						</a>
-                </div>
-	</section>
-
-
 
 </section>
 
