@@ -332,12 +332,12 @@ $$
     \hline 
     \text { Hypotheses } & \mathrm{H}_{0}: \mu=\mu_{0}  & \mathrm{H}_{0}: \mu=\mu_{0} & \mathrm{H}_{0}: \mu=\mu_{0} \\ 
             & \mathrm{H}_{1}: \mu \neq \mu_{0} & \mathrm{H}_{1}: \mu \gt \mu_{0} & \mathrm{H}_{1}: \mu \lt \mu_{0} \\ 
-        \hline \text{ Test Statistic (T.S.) } & & Z=\frac{\overline{X}-\mu}{\sigma / \sqrt{n}} \sim \mathrm{N}(0,1)  & \\
+        \hline \text{ Test Statistic (T.S.) } & & Z=\frac{\overline{X}-\mu_0}{\sigma / \sqrt{n}} \sim \mathrm{N}(0,1)  & \\
         \hline \text{ R.R. and A.R. of $H_0$ }  & & & \\
                            &&& \\
                            &&&\\
         \hline \text{ Decision: } & & & \\                           
-         \hline   & Z \gt z_{\frac{\alpha}{2}} \text{ or } Z \lt -z_{\frac{\alpha}{2}} & Z \gt z_{\alpha/2} & Z \lt -z_{\alpha/2}\\
+         \hline   & Z \gt z_{\frac{\alpha}{2}} \text{ or } Z \lt -z_{\frac{\alpha}{2}} & Z \gt z_{\alpha} & Z \lt -z_{\alpha}\\
                       & \text{ Two-Sided Test } & \text{ Two-Sided Test } & \text{ Two-Sided Test } \\
         \hline                
 \end{array}
@@ -377,7 +377,7 @@ $$      </p>
                     We know that:
                        <ul>
                         
-                        <li>$T=\frac{\overline{X}-\mu}{S / \sqrt{n}} \sim \mathrm{t}(\frac{\alpha}{2}, df)$ ; $\quad df=n-1$ ; $\quad S=\sqrt{\sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{2} /(n-1)}$ </li>
+                        <li>$T=\frac{\overline{X}-\mu}{S / \sqrt{n}} \sim \mathrm{t}(\text{df})$ ; $\quad \text{df}=n-1$ ; $\quad S=\sqrt{\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)^{2} /(n-1)}$ </li>
                         <li>Let $\mu_0$ be a given known value.</li>
                         <li>Test Procedure:</li>
              <p style="font-size: 20px">
@@ -386,12 +386,12 @@ $$
     \hline 
     \text { Hypotheses } & \mathrm{H}_{0}: \mu=\mu_{0}  & \mathrm{H}_{0}: \mu=\mu_{0} & \mathrm{H}_{0}: \mu=\mu_{0} \\ 
             & \mathrm{H}_{1}: \mu \neq \mu_{0} & \mathrm{H}_{1}: \mu \gt \mu_{0} & \mathrm{H}_{1}: \mu \lt \mu_{0} \\ 
-        \hline \text{ Test Statistic (T.S.) } & & Z=\frac{\overline{X}-\mu}{\sigma / \sqrt{n}} \sim \mathrm{N}(0,1)  & \\
+        \hline \text{ Test Statistic (T.S.) } & & T=\frac{\overline{X}-\mu_0}{S / \sqrt{n}} \sim \mathrm{t}(\text{n-1})  & \\
         \hline \text{ R.R. and A.R. of $H_0$ }  & & & \\
                            &&& \\
                            &&&\\
         \hline \text{ Decision: } & & & \\                           
-         \hline   & Z \gt z_{\frac{\alpha}{2}} \text{ or } Z \lt -z_{\frac{\alpha}{2}} & Z \gt z_{\alpha/2} & Z \lt -z_{\alpha/2}\\
+         \hline   & T \gt t_{(\frac{\alpha}{2},n-1)} \text{ or } T \lt -t_{(\frac{\alpha}{2},n-1)} & Z \gt t_{(\alpha,n-1)} & Z \lt -t_{(\alpha,n-1)}\\
                       & \text{ Two-Sided Test } & \text{ Two-Sided Test } & \text{ Two-Sided Test } \\
         \hline                
 \end{array}
