@@ -74,7 +74,7 @@ html * {
 .reveal h4,
 .reveal h5,
 .reveal h6 {
-  margin: 0 0 20px 0;
+  margin: 0 0 0px 0;
   color: darkred;/*#eee8d5;*/
   /*font-family: "League Gothic", Impact, sans-serif;*/
   font-weight: normal;
@@ -83,7 +83,9 @@ html * {
   text-transform: uppercase;
   text-shadow: none;
   text-align: inherit;
-  word-wrap: break-word; }
+  word-wrap: break-word; 
+  display: block;
+}
 
 /*.reveal h1 {
   font-size: 3.77em; }
