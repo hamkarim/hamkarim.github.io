@@ -328,7 +328,7 @@ $$
                         <li>Test Procedure:</li>
 <p style="font-size: 20px">
 $$
-\begin{array}{r | c c l}
+\begin{array}{r | c c c}
     \hline 
     \text { Hypotheses } & \mathrm{H}_{0}: \mu=\mu_{0}  & \mathrm{H}_{0}: \mu=\mu_{0} & \mathrm{H}_{0}: \mu=\mu_{0} \\ 
             & \mathrm{H}_{1}: \mu \neq \mu_{0} & \mathrm{H}_{1}: \mu \gt \mu_{0} & \mathrm{H}_{1}: \mu \lt \mu_{0} \\ 
@@ -336,9 +336,9 @@ $$
         \hline \text{ R.R. and A.R. of $H_0$ }  & & & \\
                            &&& \\
                            &&&\\
-        \hline \text{ Decision: } & & & \\                           
+        \hline \text{ Decision: } &\text{ Reject } H_0 \text{ (and accept} & H_1) \text{ at the signification} & \text{level } \alpha \text{ if:} \\                           
          \hline   & Z \gt z_{\frac{\alpha}{2}} \text{ or } Z \lt -z_{\frac{\alpha}{2}} & Z \gt z_{\alpha} & Z \lt -z_{\alpha}\\
-                      & \text{ Two-Sided Test } & \text{ Two-Sided Test } & \text{ Two-Sided Test } \\
+                      & \text{ Two-Sided Test } & \text{ One-Sided Test } & \text{ One-Sided Test } \\
         \hline                
 \end{array}
 $$      </p>
@@ -377,12 +377,12 @@ $$      </p>
                     We know that:
                        <ul>
                         
-                        <li>$T=\frac{\overline{X}-\mu}{S / \sqrt{n}} \sim \mathrm{t}(\text{df})$ ; $\quad \text{df}=n-1$ ; $\quad S=\sqrt{\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)^{2} /(n-1)}$ </li>
+                        <li>$T=\frac{\overline{X}-\mu}{S / \sqrt{n}} \sim \mathrm{t}(\text{df})$ ; $\quad \text{df}=n-1$ ; $\quad S=\sqrt{\sum_{i=1}^{n}\big(X_{i}-\overline{X}\big)^{2} /(n-1)}$ </li>
                         <li>Let $\mu_0$ be a given known value.</li>
                         <li>Test Procedure:</li>
              <p style="font-size: 20px">
 $$
-\begin{array}{r | c c l}
+\begin{array}{r | c c c}
     \hline 
     \text { Hypotheses } & \mathrm{H}_{0}: \mu=\mu_{0}  & \mathrm{H}_{0}: \mu=\mu_{0} & \mathrm{H}_{0}: \mu=\mu_{0} \\ 
             & \mathrm{H}_{1}: \mu \neq \mu_{0} & \mathrm{H}_{1}: \mu \gt \mu_{0} & \mathrm{H}_{1}: \mu \lt \mu_{0} \\ 
@@ -390,9 +390,9 @@ $$
         \hline \text{ R.R. and A.R. of $H_0$ }  & & & \\
                            &&& \\
                            &&&\\
-        \hline \text{ Decision: } & & & \\                           
+        \hline \text{ Decision: } &\text{ Reject } H_0 \text{ (and accept } H_1) & \text{ at the signification} & \text{level } \alpha \text{ if:} \\                           
          \hline   & T \gt t_{(\frac{\alpha}{2},n-1)} \text{ or } T \lt -t_{(\frac{\alpha}{2},n-1)} & Z \gt t_{(\alpha,n-1)} & Z \lt -t_{(\alpha,n-1)}\\
-                      & \text{ Two-Sided Test } & \text{ Two-Sided Test } & \text{ Two-Sided Test } \\
+                      & \text{ Two-Sided Test } & \text{ One-Sided Test } & \text{ One-Sided Test } \\
         \hline                
 \end{array}
 $$      </p>
@@ -407,223 +407,130 @@ $$      </p>
     </section>
 
     <section>
-                <ul style="padding-left: 20px">
-                    <li><a>Point Estimation of $\mu$.</a> The sample mean \(\overline{X}=\sum_{i=1}^{n} X_{i} / n\) is a "good" point estimate for \(\mu\).</li>
-                    <li><a>Interval Estimation (Confidence Interval) of $\mu$.</a></li>
-                 </ul>
-                <ol style="color: red;padding-left:50px">
-                <li><b style="font-size: 22px;">First Case: $\sigma^2$ is known.</b>
-                    <p style="color: black;">If \(\overline{X}=\sum_{i=1}^{n} X_{i} / n\) is the sample mean of a random sample of size \(n\) from a population with mean \(\mu\) and known variance \(\sigma^{2}\), then a \((1-\alpha) 100 \%\) confidence interval for \(\mu\) is
-\begin{eqnarray*}
-\left(\overline{X} - z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}, \overline{X} + z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}\right) &\Longleftrightarrow &\overline{X} \pm z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}} \\
-&\Longleftrightarrow &\overline{X}-z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}} \lt \mu \lt \overline{X}+z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}
-\end{eqnarray*}</p>
-                    </li>
-where \(z_{\frac{\alpha}{2}}\) is the \(\mathrm{z}\) -value leaving an area
-of \(\alpha / 2\) to the right; i.e., \(\mathrm{P}\big(\mathrm{Z}\gt z_{\frac{\alpha}{2}}\big)=\alpha / 2,\) or equivalently, \(\mathrm{P}\big(\mathrm{Z}\lt z_{\frac{\alpha}{2}}\big)=1-\alpha / 2\)
-                    
-                </ol>
- </section>
-
-<section>
-    <h4 class="frame-sect">ឧទាហរណ៍.</h4>
-        មធ្យមរបស់កំហាប់ស័ង្កសី ត្រូវបានកត់ត្រាយកចេញពីសំណាកមួយនៃការវាស់កម្រិតស័ង្កសី នៅ $36$ ទីតាំងផ្សេងគ្នា ដែលមានកម្រិត $2.6$ ក្រាម/មីលីលីត្រ។ ចូររកចន្លោះពេលជឿជាក់ (C.I. ) \(95 \%\) និង \(99 \%\) សម្រាប់មធ្យមនៃកំហាប់ស័ង្កសី នៅក្នុងទឹកទន្លេ។ សន្មតថា គម្លាតស្តង់ដារបស់ប៉ូពុយឡាស្យុង \(0.3\) ។
-
-        <!-- The average zinc concentration recorded from a sample of zinc
-measurements in 36 different locations is found to be 2.6
-gram/milliliter. Find a \(95 \%\) and \(99 \%\) confidence interval (C.I.)
-for the mean zinc concentration in the river. Assume that the
-population standard deviation is \(0.3\).-->
-    </section>
-
-    <section>
-        <h4 class="frame-sect">Determining the Sample Size</h4>
-        <p>
-        <a> Theorem.</a> If \(\overline{X}\) is used as an estimate of \(\mu,\) we can then be \((1-\alpha) 100 \%\) confident that the error (in estimation) will not exceed max error of estimation $z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}$, called Margin of Error (MOE) or Sampling Error (SE). 
-        
-        
-        <figure class="aligncenter">
-            <img src="img/sampling_error.png" width="60%">
-        </figure>
+        <h4 class="frame-sect">Example:</h4>
+        <p>ប្រសិនបើសំណាកចៃដន្យមួយ អង្កេតលើខ្នងផ្ទះចំនួន $12$ បានបង្ហាញថា ម៉ាស៊ីនបូមធូលីរបស់ពួកគេប្រើភ្លើងអស់ជាមធ្យមចំនួន $42$ គីឡូវ៉ាត់ម៉ោងក្នុងមួយឆ្នាំ ដោយមានគម្លាតស្តង់ដា $11.9$ គីឡូវ៉ាត់ម៉ោង នោះតើសម្មតិកម្មនេះ បង្ហាញនូវកម្រិតសារៈសំខាន់ (level of significance) ចំនួន $0.05$ ដែលម៉ាស៊ីនបូមធូលីប្រើភ្លើងជាមធ្យម តិចជាង $46$ គីឡូវ៉ាត់ម៉ោងក្នុងមួយឆ្នាំ ដែរឬទេ? សន្មតថាប៉ូពុយឡាស្យុងនៃគីឡូវ៉ាត់ម៉ោង ជារបាយន័រម៉ាល់។
             
+        <!--If a random sample of $12$ homes included in a planned study indicates that vacuum cleaners expend an average of $42$ kilowatt-hours per year with a standard deviation of $11.9$ kilowatt-hours, does this suggest at the $0.05$ level of significance that the vacuum cleaners expend, on the average, less than $46$ kilowatt-hours annually? Assume the population of kilowatt-hours to be normal.-->
+        
         </p>
+        <br>
 
-        <p><a>Remark.</a>
-            <ul style="padding-left: 60px">
-                <li>If the MOE, \(E=z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}\), for $\mu$, then we can find the sample size $n$ by $n=\big(z_{\frac{\alpha}{2}} \frac{\sigma}{E}\big)^{2}$ </li>
-                <li>Sample size for $100(1 – \alpha)\%$ Confidence Interval for $p$ with MOE,   $E=z_{\frac{\alpha}{2}} \sqrt{\frac{pq}{n}}$, is $n=\frac{z_{\alpha / 2}^{2} \widehat{p} \widehat{q}}{E^{2}}$ </li>
-                <li>If \(\sigma\) is unknown, we could take a preliminary sample of size \(n \geq 30\) to provide an estimate of \(\sigma\). Then using \(S=\sqrt{\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)^{2} /(n-1)}\) as an approximation for \(\sigma\), we could determine approximately how many observations are needed to provide the desired degree of accuracy.</li>
-        </ul>
-                </p>
-</section>
-<section> 
-        <h4 class="frame-sect">ឧទាហរណ៍.</h4>
-        <p>Suppose a candidate wants to estimate voter support $p$ within $3\%$ with $95\%$ confidence. How large sample does she need</p>
-       <ol type="a">
-        <li>if she knows from pilot study that $\widehat{p}$ is about $0.6$? </li>
-        <li>if she has no idea about $p$?</li>        
-        </ol>
-    </section>
-
-
-<section>
-        <ol style="color: red;padding-left:50px" start="2">
-            <li><b style="color: red;font-size: 22px;">Second Case: $\sigma^2$ is unknown.</b>
-                    </li>
-            <p style="color: black;">
-            If \(\overline{X}=\sum_{i=1}^{n} X_{i} / n\) and \(S=\sqrt{\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)^{2} /(n-1)}\) are the sample mean and the sample standard deviation of a random sample of size \(n\) from a normal population (distribution) with unknown variance \(\sigma^{2}\), then \(a(1-\alpha) 100 \%\) confidence interval for \(\mu\) is :
- $$
-\left(\overline{X}-t_{\frac{\alpha}{2}} \frac{S}{\sqrt{n}}, \overline{X}+t_{\frac{\alpha}{2}} \frac{S}{\sqrt{n}}\right)  \Longleftrightarrow \overline{X} \pm t_{\frac{\alpha}{2}} \frac{S}{\sqrt{n}}
-\Longleftrightarrow
-\overline{X} - t_{\frac{\alpha}{2}} \frac{S}{\sqrt{n}} \lt \mu \lt \overline{X}+t_{\frac{\alpha}{2}} \frac{S}{\sqrt{n}}
-$$
-    where \(t_{\frac{\alpha}{2}}\) is the $t$-value with \(df=n-1\)  leaving an area of \(\alpha / 2\) to the right; i.e., \(\mathrm{P}\big(\mathrm{T} \gt t_{\frac{\alpha}{2}}\big)=\alpha / 2,\) or equivalently, \(\mathrm{P}\big(\mathrm{T} \lt t_{\frac{\alpha}{2}}\big)=1-\alpha / 2\).</p>
-                </ol>
-    <br>
-
-    <h4 class="frame-sect">ឧទាហរណ៍.</h4>
-    <p>
-    The contents of $7$ similar containers of sulfuric acid are $9.8, 10.2, 10.4, 9.8, 10.0, 10.2$ and $9.6$ liters. Find a $95\%$ C.I. for the mean of all such containers, assuming an approximate normal distribution.
-
-    </p>
-    </section>
-
-
-				    <section data-auto-animate>
-					<h4 class="frame-sect">ឧទាហរណ៍.</h4>
-
-                    <div style="border: 2px solid darkblue; padding: 10px;
-  box-shadow: 5px 10px #888888;margin-top: 10px;margin-bottom: 30px;background-color:lightyellow;color: darkblue">
-    <p>Consider the following data: $$64.3, 64.6, 64.8, 64.2, 64.5, 64.3, 64.6, 64.8, 64.2, 64.3$$
-
-                        Assume that it is normally distributed with unit population variance. For these data, construct a $95\%$ confidence interval for the population mean.
-
-                        </p>
-</div>
-
-                        <strong>ចម្លើយ.</strong>
-Using the data, $n=10, \overline{x}=64.46,$ the level of significance, $\alpha=5 \%=0.05,$ and from the given assumption, $\sigma^{2}=1 .$ Now, the resulting $95 \%$ confidence interval (CI) for the population mean is
-\[
-\overline{x}-z_{0.025} \times \frac{\sigma}{\sqrt{n}} \leq \mu \leq \overline{x}+z_{0.025} \times \frac{\sigma}{\sqrt{n}}
-\]
-
-
-				    </section>
-
-				    <!--section>
-
-					<div class="note">
-                        <p> <a href="#" style="font-family:Angkor;">ចំណាំ : </a>
-                        <ul style="padding-left:40px">
-                            <li>If a very large number of random samples are collected and a $100(1 - \alpha)\%$ confidence interval for the population parameter is computed from each sample, then $100(1-\alpha)$ percent of these intervals will contain the true value of the population parameter with confidence $100(1-\alpha)$.</li>
-                            <li>We don’t know if the statement $63.84 \leq \mu \leq 65.08$ is true for this specific sample, but that, in repeated sampling, the method used to obtain the confidence interval for $\mu$ yields correct statements $95\%$ of the times with a $0.95$ confidence.</li>
-                            <li>The precision of a confidence interval is inversely proportional to the confidence level. It is desirable to obtain a confidence interval that is short enough for purposes of decision making and that also has adequate confidence. This is easily the reason why the $95\%$ confidence level is the default confidence level chosen by researchers and practitioners.
-</li>
-                        </ul>
-				        </p>
-
-					</div>
+					<div class="aligncenter">
 						<a href="#/2">
 							<img class="r-frame" style="background: rgba(255,255,255,0.1); transform: rotate(180deg);" width="30" height="40" data-src="https://static.slid.es/reveal/arrow.png" alt="Up arrow">
 						</a>
-					</section -->
-				</section>
-
-				<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
-					<h2 class="frame-sect">Standard Error of a Point Estimate</h2>
-					<p>
-                    <ul style="padding-left: 40px">
-                    <li>The standard error of an estimator is its standard deviation. </li>
-                    <li>We use \(\overline{X}=\sum_{i=1}^{n} X_{i} / n\) as a point estimator of \(\mu,\) and we used the sampling distribution of \(\overline{X}\) to make a \((1-\alpha) 100 \%\) C.I. for \(\mu\).</li>
-                    <li>The standard deviation of \(\overline{X},\) which is \(\sigma_{\overline{X}}=\sigma / \sqrt{n},\) is called the standard error of \(\overline{X} .\) We write \(s.e (\overline{X})=\sigma / \sqrt{n}\)</li>
-                    <li>\((1-\alpha) 100 \%\) C.I. for \(\mu,\) when \(\sigma^{2}\) is known, is
-$$
-\overline{X} \pm Z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}=\overline{X} \pm Z_{\frac{\alpha}{2}}\times s .e (\overline{X})
-$$</li>
-                    <li>\((1-\alpha) 100 \%\) C.I. for \(\mu,\) when \(\sigma^{2}\) is unknown, and
-the distribution is normal, is
-$$
-\overline{X} \pm t_{\frac{\alpha}{2}} \frac{S}{\sqrt{n}}=\overline{X} \pm t_{\frac{\alpha}{2}}\times s .e (\overline{X}) \quad \text{ with } df = n-1
-$$</li>
-                    </ul>
-					</p>
-				</section>
-
-<section data-auto-animate>
+                    </div>
+			</section>
+        
+        </section>
     <section>
-					<h2 class="frame-sect">3. Two Samples: Estimate the Difference between Two Means ($\mu_1 - \mu_2$)</h2>
-					<p>Recall: For two independent samples:
-\begin{eqnarray*}
-    \mu_{\overline{X}_{1}-\overline{X}_{2}} &=&\mu_{1}-\mu_{2}=E\left(\overline{X}_{1}-\overline{X}_{2}\right); \qquad \sigma_{\overline{X}_{1}-\overline{X}_{2}}^{2} = \frac{\sigma_{1}^{2}}{n_{1}}+\frac{\sigma_{2}^{2}}{n_{2}}=\operatorname{Var}\left(\overline{X}_{1}-\overline{X}_{2}\right)\\
-    \sigma_{\overline{X}_{1}-\overline{X}_{2}} &=& \sqrt{\sigma_{\overline{X}_{1}-\overline{X}_{2}}^{2}}=\sqrt{\frac{\sigma_{1}^{2}}{n_{1}}+\frac{\sigma_{2}^{2}}{n_{2}}};\qquad  Z = \frac{\left(\overline{X}_{1}-\overline{X}_{2}\right)-\left(\mu_{1}-\mu_{2}\right)}{\sqrt{\frac{\sigma_{1}^{2}}{n_{1}}+\frac{\sigma_{2}^{2}}{n_{2}}}} \sim N(0,1)
-\end{eqnarray*}
-
-                        </p>
-  <ul style="padding-left: 20px">
-                    <li><a>Point Estimation of $\mu_1 - \mu_2$.</a> The difference $\overline{X_1} - \overline{X_2}$ is a "good" point estimate for \(\mu_1 - \mu_2\).</li>
-                    <li><a>Interval Estimation (Confidence Interval) of $\mu_1 - \mu_2$.</a></li>
-                        </ul>
-                <ol style="padding-left:50px;color: red;">
-                <li><b style="font-size: 22px;">ករណីទី១ : ស្គាល់តម្លៃ $\sigma_1^2$ និង  $\sigma_2^2$</b> </li>
-                   <ul style="color: black;">
-                    <li>
-                    Let \(Z = \frac{\left(\overline{X}_{1}-\overline{X}_{2}\right)-\left(\mu_{1}-\mu_{2}\right)}{\sqrt{\frac{\sigma_{1}^{2}}{n_{1}}+\frac{\sigma_{2}^{2}}{n_{2}}}} \sim N(0,1)\)</li>
-                    <li>Then a $(1-\alpha)100\%$ confidence interval for $\mu_1 - \mu_2$ is
- $$
-\left(\overline{X}_{1}-\overline{X}_{2}\right)-Z_{\frac{\alpha}{2}} \sqrt{\frac{\sigma_{1}^{2}}{n_{1}}+\frac{\sigma_{2}^{2}}{n_{2}}} \lt \mu_{1}-\mu_{2} \lt \left(\overline{X}_{1} - \overline{X}_{2}\right)+Z_{\frac{\alpha}{2}} \sqrt{\frac{\sigma_{1}^{2}}{n_{1}}+\frac{\sigma_{2}^{2}}{n_{2}}}
+			<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+					<h3 class="frame-sect">4. Two Samples: Tests on Two Means:</h3>
+                <p>For two independent samples, we have:
+                <ul>
+                    <li>If \(\sigma_{1}^{2}\) and \(\sigma_{2}^{2}\) are known, then we get:
 $$
-
-                       </li>
-
-                    </ul>
-                </ol>
-
-</section>
-
-<section>
-<ol style="padding-left:50px;color: red;" start="2">
-                <li><b style="color: red;font-size: 22px;">ករណីទី២ : $\sigma_1^2=\sigma_2^2=\sigma^2$ មិនស្គាល់តម្លៃ</b> </li>
-                   <ul style="color: black;">
-                    <li>
-                    If \(\sigma_{1}^{2}\) and \(\sigma_{2}^{2}\) are unknown but \(\sigma_{1}^{2}=\sigma_{2}^{2}=\sigma^{2},\) then the pooled estimate of \(\sigma^{2}\) is
+Z=\frac{\left(\bar{X}_{1}-\bar{X}_{2}\right)-\left(\mu_{1}-\mu_{2}\right)}{\sqrt{\frac{\sigma_{1}^{2}}{n_{1}}+\frac{\sigma_{2}^{2}}{n_{2}}}} \sim \mathrm{N}(0,1)
+$$</li>
+                    <li>If \(\sigma_{1}^{2}\) and \(\sigma_{2}^{2}\) are unknown but \(\sigma_{1}^{2}=\sigma_{2}^{2}=\sigma^{2},\) then we have:
+$$
+T=\frac{\left(\bar{X}_{1}-\bar{X}_{2}\right)-\left(\mu_{1}-\mu_{2}\right)}{S_{p} \sqrt{\frac{1}{n_{1}}+\frac{1}{n_{2}}}} \sim \mathrm{t}\left(n_{1}+n_{2}-2\right)
+$$</li>
+                    Where the pooled estimate of \(\sigma^{2}\) is 
 $$
 S_{p}^{2}=\frac{\left(n_{1}-1\right) S_{1}^{2}+\left(n_{2}-1\right) S_{2}^{2}}{n_{1}+n_{2}-2}
 $$
-where \(S_{1}^{2}\) is the variance of the 1-st sample and \(S_{2}^{2}\) is the
-variance of the 2-nd sample. The degrees of freedom of \(S_{p}^{2}\)
-is \(df=n_{1}+n_{2}-2\).
-                       </li>
-                    <li>Then a $(1-\alpha)100\%$ confidence interval for $\mu_1 - \mu_2$ is
- $$
-\left(\overline{X}_{1}-\overline{X}_{2}\right)-t_{\frac{\alpha}{2}} \sqrt{\frac{S_{p}^{2}}{n_{1}}+\frac{S_{p}^{2}}{n_{2}}} \lt \mu_{1}-\mu_{2} \lt \left(\overline{X}_{1}-\overline{X}_{2}\right)+t_{\frac{\alpha}{2}} \sqrt{\frac{S_{p}^{2}}{n_{1}}+\frac{S_{p}^{2}}{n_{2}}}
+                    The degrees of freedom of $S^2_p$ is df$=n_1+n_2-2$.
+                    
+                    <li>Now, suppose we need to test the null hypothesis $H_0 : \mu_1 - \mu_2 = 0$</li>
+                </ul>
+                </p>
+				
+				</section>
+            <section>
+            <p>Generally, suppose we need to test $$H_0 : \mu_1 - \mu_2 = d, \quad \text{ (for some specific value } d)$$
+                Against one of the following alternative hypothesis
 $$
-where \(t_{\frac{\alpha}{2}}\) is the $t$-value with \(df=n_{1}+n_{2}-2\) degrees of freedom.
-                       </li>
+\mathrm{H}_{1}: \left\{
+        \begin{array}{l}
+            \mu_{1}-\mu_{2} \neq d \\ 
+            \mu_{1}-\mu_{2} \gt d \\ 
+            \mu_{1}-\mu_{2} \lt d
+        \end{array}\right.
+$$
+                </p>
+        
+             <p style="font-size: 20px">
+$$
+\begin{array}{r | c c c}
+    \hline 
+    \text { Hypotheses } & \mathrm{H}_{0}: \mu_1-\mu_2=d  & \mathrm{H}_{0}: \mu_1-\mu_2= d& \mathrm{H}_{0}: \mu_1-\mu_2=d \\ 
+            & \mathrm{H}_{0}: \mu_1-\mu_2\neq d  & \mathrm{H}_{0}: \mu_1-\mu_2\gt d & \mathrm{H}_{0}: \mu_1-\mu_2\lt d \\  
+        \hline \text{ Test Statistic (T.S.) } & Z=\frac{\left(\bar{X}_{1}-\bar{X}_{2}\right)-d}{\sqrt{\frac{\sigma_{1}^{2}}{n_{1}}+\frac{\sigma_{2}^{2}}{n_{2}}}} \sim \mathrm{N}(0,1)  & \{\text{if }  \sigma^2_1 \text{ and } \sigma^2_2 \text{ are known }\}& \\
+                 &\text{ or } T=\frac{\left(\bar{X}_{1}-\bar{X}_{2}\right)-d}{S_p\sqrt{\frac{1}{n_{1}}+\frac{1}{n_{2}}}} \sim \mathrm{t}(n_1+n_2-2)  & \{\text{if }  \sigma^2_1 = \sigma^2_2 = \sigma^2 \text{ is unknown }\}& \\
+        \hline \text{ R.R. and A.R. of $H_0$ }  & & & \\
+                           &&& \\
+                           &&&\\
+                           &&&\\
+        \hline \text{ Decision: } &\text{ Reject } H_0 \text{ (and accept } H_1) & \text{ at the signification} & \text{level } \alpha \text{ if:} \\                           
+         \hline   & \text{ T.S. } \in \text{ R.R. } & \text{ T.S. } \in \text{ R.R. } & \text{ T.S. } \in \text{ R.R. }\\
+                      & \text{ Two-Sided Test } & \text{ One-Sided Test } & \text{ One-Sided Test } \\
+        \hline                
+\end{array}
+$$      </p>
+        
+            </section>
+<section> 
+<h4 class="frame-sect">Example:</h4>
+An experiment was performed to compare the abrasive wear of were tested by exposing each piece to a machine measuring wear. Ten pieces of material 2 were similarly tested. In each case, the depth of wear was observed. The samples of material 1 gave an average wear of 85 units with a sample standard deviation of 4, while the samples of materials 2 gave an average wear of 81 and a sample standard deviation of 5. Can we conclude at the 0.05 level of significance that the mean abrasive wear of material 1 exceeds that of material 2 by more than 2 units? Assume populations to be approximately normal with equal variances.
 
-                    </ul>
-                </ol>
 </section>
-
-<section>
-    <h4 class="frame-sect">ឧទាហរណ៍.</h4>
-    <p>គេធ្វើតេស្តលើម៉ាស៊ីនពីរប្រភេទ A និង B ដើម្បីប្រៀបធៀបគ្នារវាងចំងាយប្រេងដែលប្រើ។ ចំងាយប្រេងគិតជាម៉ាយល៍ក្នុងមួយហ្គាឡុង (mpg) ត្រូវបានគេវាស់។ ពិសោធន៍ចំនួន ៥០ដង ត្រូវបានធ្វើឡើងដោយប្រើម៉ាស៊ីនប្រភេទ A និងចំនួន ៧៥ដង់ ត្រូវបានធ្វើឡើងសម្រាប់ប្រភេទម៉ាស៊ីន B។ ប្រេងសាំងដែលបានប្រើ និងលក្ខខណ្ឌផ្សេងទៀតត្រូវបានរក្សាអោយនៅថេរ។ ចំងាយប្រេងជាមធ្យមសម្រាប់ម៉ាស៊ីនប្រភេទ A គឺ ៣៦ ម៉ាយល៍ក្នុងមួយហ្គាឡុង ហើយចំងាយប្រេងជាមធ្យមសម្រាប់ម៉ាស៊ីន B គឺ ៤២ ម៉ាយល៍ក្នុងមួយហ្គាឡុង។ រកចន្លោះជឿជាក់ ៩៦% សម្រាប់ $\mu_B  - \mu_A $ ដែល $\mu_A $ និង $\mu_B$ ជាមធ្យមប៉ូពុយឡាស្យុងនៃចំងាយប្រេង សំរាប់ម៉ាស៊ីន A និង B រៀងគ្នា។ សន្មតថា គម្លាតស្តង់ដារបស់ប៉ូពុយឡាស្យុង ស្មើ 6 និង 8 សម្រាប់ម៉ាស៊ីន A និង B រៀងគ្នា។
-
-
-        <!-- Gas mileage in miles per gallon was measured. 50 experiments were conducted using engine type A and 75 experiments were done for engine type B. The gasoline used and other conditions were held constant. The average gas mileage for engine A was 36 miles per gallon and the average for engine B was 42 miles per gallon. Find 96% confidence interval for $\mu_B - \mu_A$, where $\mu_A$ and $\mu_B$ are population mean gas mileage for engines A and B, respectively. Assume that the population standard deviations are 6 and 8 for engines A and B, respectively. </p -->
 
     </section>
 
+<section data-auto-animate>
     <section>
-    <h4 class="frame-sect">ឧទាហរណ៍.</h4>
-    <p>ដើម្បីប្រៀបធៀបរ៉េស៊ីស្តង់រវាងខ្សែលួសប្រភេទ A និង B គេធ្វើពិសោធន៍មួយ ដែលបង្ហាញលទ្ធផលដោយពឹងផ្អែកលើសំណាកចំនួនពីរមិនអាស្រ័យគ្នា (យកទិន្នន័យដើមគុណនឹង 1000) :
-    <ul style="padding-left: 70px">
-    <li>ខ្សែលួស A: 140, 138, 143, 142, 144, 137 </li>
-    <li>ខ្សែលួស B: 135, 140, 136, 142, 138, 140</li>
-    </ul>
-    <br>
-    ដោយសន្មតថា វ៉ារ្យ៉ង់ទាំងពីរស្មើគ្នា ចូរគណនាចន្លោះជឿជាក់ $95\%$ សម្រាប់ផលសង $\mu_A - \mu_B$ ដែល $\mu_A$ និង $\mu_B$ ជាមធ្យមរ៉េស៊ីស្តង់របស់ខ្សែលួស A និង B រៀងគ្នា។
-    </p>
+					<h2 class="frame-sect">4. One Sample: Tests on a Single Proportion:</h2>
+					<p>Recall: For one samples proportion:
+                <ul>
+                    <li>$p =$ Population proportion of elements of Type $A$ in the population $= \frac{A}{A+B}$</li>
+                    
+                    <li>$X=$ no.of elements of type A in the sample of size $n$.</li>                    
+                    
+                    <li>$\widehat{p} = $ Sample proportion elements of Type $A$ in the sample $=\frac{X}{n}$</li>
+                    <li>For large $n$, we have</li>
+$$
+Z=\frac{\widehat{p}-p}{\sqrt{\frac{p q}{n}}}=\frac{X-n p}{\sqrt{n p q}} \sim \mathrm{N}(0,1) ;  \quad \text{(Approximately, } q=1−p)
+$$
+        </ul>
+    </section>
+    
+    <section>
+        <ul>
+               <li>Test Procedure:</li>
+        </ul>
+<p>
+$$
+\begin{array}{r | c c c}
+    \hline 
+    \text { Hypotheses } & \mathrm{H}_{0}: p=p_{0}  & \mathrm{H}_{0}: p=p_{0} & \mathrm{H}_{0}: p=p_{0} \\ 
+            & \mathrm{H}_{1}: p \neq p_{0} & \mathrm{H}_{1}: p \gt p_{0} & \mathrm{H}_{1}: p \lt p_{0} \\ 
+        \hline \text{ Test Statistic (T.S.) } & Z=\frac{\widehat{p}-p_0}{\sqrt{\frac{p_0 q_0}{n}}} & =\frac{X - n p_0}{\sqrt{n p_0 q_0}} \sim \mathrm{N}(0,1)  & (q_0 = 1- p_0)\\
+        \hline \text{ R.R. and A.R. of $H_0$ }  & & & \\
+                           &&& \\
+                           &&&\\ &&&\\
+        \hline \text{ Decision: } &\text{ Reject } H_0 \text{ (and accept} & H_1) \text{ at the signification} & \text{level } \alpha \text{ if:} \\                           
+         \hline   & Z \gt z_{\frac{\alpha}{2}} \text{ or } Z \lt -z_{\frac{\alpha}{2}} & Z \gt z_{\alpha} & Z \lt -z_{\alpha}\\
+                      & \text{ Two-Sided Test } & \text{ One-Sided Test } & \text{ One-Sided Test } \\
+        \hline                
+\end{array}
+$$      </p>
 
+</section>
+
+<section>
+ <h4 class="frame-sect">Example:</h4>
+    <p>A builder claims that heat pumps are installed in 70% of all homes being constructed today in the city. Would you agree with this claim if a random survey of new homes in the city shows that 8 out of 15 homes had heat pumps installed? Use a 0.10 level of significance.</p>
     </section>
 
 </section>
@@ -631,20 +538,34 @@ where \(t_{\frac{\alpha}{2}}\) is the $t$-value with \(df=n_{1}+n_{2}-2\) degree
 
 <section data-auto-animate>
 				<section>
-					<h2 class="frame-sect">4. Single Sample: Estimating of a Proportion</h2>
+					<h2 class="frame-sect">5. Two Samples: Tests on Two Proportions</h2>
 					<p>
-						<figure class="aligncenter">
-                            <img src="img/proportion_dist.png" width="45%">
-                        </figure>
-					</p>
-                <ul style="padding-left:70px">
-                    <li>$p =$ Population proportion of successes (elements of Type A) in the population.
-                        $$=\frac{A}{A+B} = \frac{\text { no. of elements of type } A \text { in the population }}{\text { Total no. of elements }} $$</li>
-                    <li>$n =$ sample size </li>
-                    <li>$X =$ no. of elements of type $A$ in the sample of size $n$. </li>
-                    <li>$\hat{p} =$ Sample proportion of successes (elements of Type A) in the sample $=\frac{X}{n}$</li>
-
+						Suppose that we have two populations: $p_1 =$ proportion of the 1-st population and $p_2 =$ proportion of the 2-st population. We are interested in comparing $p_1$ and $p_2$, or equivalently, making inferences about $p_1- p_2$.
+                        
+                        <ul>
+                            <li>Test procedure: Suppose we need to test:</li>
+ $$
+\begin{array}{l}
+        \mathrm{H}_{0}: p_{1}-p_{2}=0 \\ 
+        \text{ Against }\mathrm{H}_{1}:
+            \left\{\begin{array}{l}
+                p_{1}-p_{2} \neq 0 \\ 
+                p_{1}-p_{2} \gt 0 \\ 
+                p_{1}-p_{2} \lt 0\end{array}\right.
+\end{array}
+$$
+        Note, under $H_0: p_1= p_2= p$, the pooled estimate of the proportion $p$ is: 
+$$
+\widehat{p}=\frac{X_{1}+X_{2}}{n_{1}+n_{2}} ;  \quad(\hat{q}=1-\hat{p})
+$$          
+    The test statistic (T.S.) is
+$$
+Z=\frac{\left(\hat{p}_{1}-\hat{p}_{2}\right)}{\sqrt{\hat{p} \hat{q}\left(\frac{1}{n_{1}}+\frac{1}{n_{2}}\right)}} \sim \mathrm{N}(0,1)
+$$                      
+                    
                     </ul>
+					</p>
+      
 
                     <div class="aligncenter">
 						<a href="#/3" class="navigate-down">
