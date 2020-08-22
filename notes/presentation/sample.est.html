@@ -273,9 +273,9 @@ population standard deviation is \(0.3\).-->
             <li><b style="color: red;font-size: 22px;">Second Case: $\sigma^2$ is unknown.</b>
                     </li>
             <p style="color: black;">
-            If \(\overline{X}=\sum_{i=1}^{n} X_{i} / n\) and \(S=\sqrt{\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)^{2} /(n-1)}\) are the sample mean and the sample standard deviation of a random sample of size \(n\) from a normal population (distribution) with unknown variance \(\sigma^{2}\), then \(a(1-\alpha) 100 \%\) confidence interval for \(\mu\) is :
+            If \(\overline{X}=\sum_{i=1}^{n} X_{i} / n\) and \(S=\sqrt{\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)^{2} /(n-1)}\) are the sample mean and the sample standard deviation of a random sample of size \(n\) from a normal population (distribution)  with unknown variance \(\sigma^{2}\), then a \((1-\alpha) 100 \%\) confidence interval for \(\mu\) is :
  $$
-\left(\overline{X}-t_{\frac{\alpha}{2}} \frac{S}{\sqrt{n}}, \overline{X}+t_{\frac{\alpha}{2}} \frac{S}{\sqrt{n}}\right)  \Longleftrightarrow \overline{X} \pm t_{\frac{\alpha}{2}} \frac{S}{\sqrt{n}}
+\left(\overline{X}-t_{(\frac{\alpha}{2},n-1)} \frac{S}{\sqrt{n}}, \overline{X}+t_{(\frac{\alpha}{2},n-1)} \frac{S}{\sqrt{n}}\right)  \Longleftrightarrow \overline{X} \pm t_{\frac{\alpha}{2}} \frac{S}{\sqrt{n}}
 \Longleftrightarrow
 \overline{X} - t_{\frac{\alpha}{2}} \frac{S}{\sqrt{n}} \lt \mu \lt \overline{X}+t_{\frac{\alpha}{2}} \frac{S}{\sqrt{n}}
 $$
@@ -285,7 +285,9 @@ $$
 
     <h4 class="frame-sect">ឧទាហរណ៍.</h4>
     <p>
-    The contents of $7$ similar containers of sulfuric acid are $9.8, 10.2, 10.4, 9.8, 10.0, 10.2$ and $9.6$ liters. Find a $95\%$ C.I. for the mean of all such containers, assuming an approximate normal distribution.
+    ដបផ្ទុកអាស៊ីតស៊ុលផួរិកចំនួន $7$ ស្រដៀងគ្នា ត្រូវបានគេវាស់ចំណុះឃើញ ដូចតទៅ $9.8, 10.2, 10.4, 9.8, 10.0, 10.2$ និង $9.6$ លីត្រ។ ចូររក C.I. ចំនួន $95\%$ សម្រាប់មធ្យម $\mu$ របស់ដបផ្ទុកអាស៊ីតស៊ុលផួរិកទាំងអស់ ដោយសន្មតថាវាជារបាយន័រម៉ាល់។ 
+        
+       <!-- similar containers of sulfuric acid are $9.8, 10.2, 10.4, 9.8, 10.0, 10.2$ and $9.6$ liters. Find a $95\%$ C.I. for the mean of all such containers, assuming an approximate normal distribution. -->
 
     </p>
     </section>
@@ -332,15 +334,15 @@ Using the data, $n=10, \overline{x}=64.46,$ the level of significance, $\alpha=5
 				</section>
 
 				<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
-					<h2 class="frame-sect">Standard Error of a Point Estimate</h2>
+					<h2 class="frame-sect">ល្អៀងស្តង់ដារបស់ចំណុចប៉ាន់ស្មាន (Standard Error of a Point Estimate)</h2>
 					<p>
                     <ul style="padding-left: 40px">
-                    <li>The standard error of an estimator is its standard deviation. </li>
+                    <li><a>ល្អៀងស្តង់ដារបស់ estimator</a> គឺជា គម្លាតស្តង់ដា (standard deviation) </li>
                     <li>We use \(\overline{X}=\sum_{i=1}^{n} X_{i} / n\) as a point estimator of \(\mu,\) and we used the sampling distribution of \(\overline{X}\) to make a \((1-\alpha) 100 \%\) C.I. for \(\mu\).</li>
-                    <li>The standard deviation of \(\overline{X},\) which is \(\sigma_{\overline{X}}=\sigma / \sqrt{n},\) is called the standard error of \(\overline{X} .\) We write \(s.e (\overline{X})=\sigma / \sqrt{n}\)</li>
+                    <li>The standard deviation of \(\overline{X},\) which is \(\sigma_{\overline{X}}=\sigma / \sqrt{n},\) is called the <a>standard error</a> of \(\overline{X}\). We write \(s.e (\overline{X})=\sigma / \sqrt{n}\)</li>
                     <li>\((1-\alpha) 100 \%\) C.I. for \(\mu,\) when \(\sigma^{2}\) is known, is
 $$
-\overline{X} \pm Z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}=\overline{X} \pm Z_{\frac{\alpha}{2}}\times s .e (\overline{X})
+\overline{X} \pm z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}=\overline{X} \pm z_{\frac{\alpha}{2}}\times s .e (\overline{X})
 $$</li>
                     <li>\((1-\alpha) 100 \%\) C.I. for \(\mu,\) when \(\sigma^{2}\) is unknown, and
 the distribution is normal, is
@@ -408,7 +410,7 @@ where \(t_{\frac{\alpha}{2}}\) is the $t$-value with \(df=n_{1}+n_{2}-2\) degree
 
 <section>
     <h4 class="frame-sect">ឧទាហរណ៍.</h4>
-    <p>គេធ្វើតេស្តលើម៉ាស៊ីនពីរប្រភេទ A និង B ដើម្បីប្រៀបធៀបគ្នារវាងចំងាយប្រេងដែលប្រើ។ ចំងាយប្រេងគិតជាម៉ាយល៍ក្នុងមួយហ្គាឡុង (mpg) ត្រូវបានគេវាស់។ ពិសោធន៍ចំនួន ៥០ដង ត្រូវបានធ្វើឡើងដោយប្រើម៉ាស៊ីនប្រភេទ A និងចំនួន ៧៥ដង់ ត្រូវបានធ្វើឡើងសម្រាប់ប្រភេទម៉ាស៊ីន B។ ប្រេងសាំងដែលបានប្រើ និងលក្ខខណ្ឌផ្សេងទៀតត្រូវបានរក្សាអោយនៅថេរ។ ចំងាយប្រេងជាមធ្យមសម្រាប់ម៉ាស៊ីនប្រភេទ A គឺ ៣៦ ម៉ាយល៍ក្នុងមួយហ្គាឡុង ហើយចំងាយប្រេងជាមធ្យមសម្រាប់ម៉ាស៊ីន B គឺ ៤២ ម៉ាយល៍ក្នុងមួយហ្គាឡុង។ រកចន្លោះជឿជាក់ ៩៦% សម្រាប់ $\mu_B  - \mu_A $ ដែល $\mu_A $ និង $\mu_B$ ជាមធ្យមប៉ូពុយឡាស្យុងនៃចំងាយប្រេង សំរាប់ម៉ាស៊ីន A និង B រៀងគ្នា។ សន្មតថា គម្លាតស្តង់ដារបស់ប៉ូពុយឡាស្យុង ស្មើ 6 និង 8 សម្រាប់ម៉ាស៊ីន A និង B រៀងគ្នា។
+    <p>គេធ្វើតេស្តលើម៉ាស៊ីនពីរប្រភេទ A និង B ដើម្បីប្រៀបធៀបគ្នារវាងចំងាយប្រេងដែលប្រើ។ ចំងាយប្រេងគិតជាម៉ាយល៍ក្នុងមួយហ្គាឡុង (mpg) ត្រូវបានគេវាស់។ ពិសោធន៍ចំនួន ៥០ដង ត្រូវបានធ្វើឡើងដោយប្រើម៉ាស៊ីនប្រភេទ A និងចំនួន ៧៥ដង ត្រូវបានធ្វើឡើងសម្រាប់ប្រភេទម៉ាស៊ីន B។ ប្រេងសាំងដែលបានប្រើ និងលក្ខខណ្ឌផ្សេងទៀតត្រូវបានរក្សាអោយនៅថេរ។ ចំងាយប្រេងជាមធ្យមសម្រាប់ម៉ាស៊ីនប្រភេទ A គឺ ៣៦ ម៉ាយល៍ក្នុងមួយហ្គាឡុង ហើយចំងាយប្រេងជាមធ្យមសម្រាប់ម៉ាស៊ីន B គឺ ៤២ ម៉ាយល៍ក្នុងមួយហ្គាឡុង។ រកចន្លោះជឿជាក់ ៩៦% សម្រាប់ $\mu_B  - \mu_A $ ដែល $\mu_A $ និង $\mu_B$ ជាមធ្យមប៉ូពុយឡាស្យុងនៃចំងាយប្រេង សំរាប់ម៉ាស៊ីន A និង B រៀងគ្នា។ សន្មតថា គម្លាតស្តង់ដារបស់ប៉ូពុយឡាស្យុង ស្មើ 6 និង 8 សម្រាប់ម៉ាស៊ីន A និង B រៀងគ្នា។
 
 
         <!-- Gas mileage in miles per gallon was measured. 50 experiments were conducted using engine type A and 75 experiments were done for engine type B. The gasoline used and other conditions were held constant. The average gas mileage for engine A was 36 miles per gallon and the average for engine B was 42 miles per gallon. Find 96% confidence interval for $\mu_B - \mu_A$, where $\mu_A$ and $\mu_B$ are population mean gas mileage for engines A and B, respectively. Assume that the population standard deviations are 6 and 8 for engines A and B, respectively. </p -->
@@ -433,7 +435,7 @@ where \(t_{\frac{\alpha}{2}}\) is the $t$-value with \(df=n_{1}+n_{2}-2\) degree
 
 <section data-auto-animate>
 				<section>
-					<h2 class="frame-sect">4. Single Sample: Estimating of a Proportion</h2>
+					<h2 class="frame-sect">៤. សំណាកទោល : ការប៉ាន់ស្មានតម្លៃសមាមាត្ររបស់ប៉ូពុយឡាស្យុង</h2><!--Single Sample: Estimating of a Proportion-->
 					<p>
 						<figure class="aligncenter">
                             <img src="img/proportion_dist.png" width="45%">

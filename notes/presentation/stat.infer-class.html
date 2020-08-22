@@ -6,7 +6,7 @@
 
 		<title>Introduction to Estimation</title>
 
-		<meta name="description" content="Statistical inference | Classical Methods">
+		<meta name="description" content="Statistical​  inference | Classical Methods">
 		<meta name="author" content="Ham Karim">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -20,11 +20,11 @@
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
-        
+
         <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
         </script>
-        
+
 	</head>
 
 	<body>
@@ -41,7 +41,7 @@
 					<h1>ការសន្និដ្ឋានតម្លៃស្ថិតិ <br>
                         <span style="font-size: 30px;color: darkblue;">
                               (Statistical Inference)</span></h1><br>
-                    
+
 					<p>
                         by <br> <a href="hamkarim.github.io"><h4 style="font-size:40px">ហាំ ការីម</h4></a>
 					</p>
@@ -53,9 +53,11 @@
 					<h3>លទ្ធផលរំពឹងទុក៖</h3>
 					<p>
 						នៅចុងបញ្ចប់នៃមេរៀននេះ អ្នកសិក្សាអាចយល់ និងអនុវត្តបាននូវគោលគំនិតគន្លឹះមួយចំនួន ដូចខាងក្រោម៖
-                        
+
                     <ol style="padding-left: 60px">
-                        <li>ស្ថិតិ</li>                    
+                        <li>Estimate a population parameter (means, proportion, or variance) based on a large sample selected from the population</li>
+                        <li>Use the sampling distribution of a statistic to form a confidence interval for the population parameter</li>
+                        <li>Show how to select the proper sample size for estimating a population parameter</li>
                     </ol>
 					</p>
 				</section>
@@ -87,16 +89,16 @@
                         For example, you might have seen a problem like this:
 
 Let $X$ be a normal random variable with mean $\mu =100$ and variance $\sigma^2=15$. Find the probability that $X \gt 110$.
-                        
+
                         </p>
                     <p>In real life, we might not know the distribution of $X$, so we need to collect data, and from the data we should conclude whether $X$ has a normal distribution or not. Now, suppose that we can use the central limit theorem to argue that $X$ is normally distributed. Even in that case, we need to collect data to be able estimate $\mu$ and $\sigma$.</p>
-                        
+
                         <div class="aligncenter">
 						<a href="#/2" class="navigate-up">
 							<img class="r-frame" style="background: rgba(255,255,255,0.1); transform: rotate(180deg);" width="24" height="26" data-src="https://static.slid.es/reveal/arrow.png" alt="Up arrow">
 						</a>
                         </div>
-						
+
 					</section>
 					<!--section>
 						<h2>Basement Level 2</h2>
@@ -126,10 +128,10 @@ Let $X$ be a normal random variable with mean $\mu =100$ and variance $\sigma^2=
                     <p>
                     It is noted that we cannot be certain that an interval contains the true but unknown population parameter since only a sample from the full population is used to compute both the point estimate and, the interval estimate! A confidence interval is constructed so that there is high confidence that it does contain the true but unknown population parameter. Generally, a <a href="#" style="font-size: 24px">$100(1 - \alpha)\%$ confidence interval (CI)</a> equals
                         <div class="aligncenter blockeqn">
-                        $                       
+                        $
                             \text{point estimate }\pm \text{ reliability coefficient } \times \text{ s.e.(parameter)}
                         $</div>
-                    where 
+                    where
                     <ul style="padding-left: 80px">
                         <li>$\alpha$ is the <a href="#">level of significance</a> between zero and one;</li>
                         <li>$1-\alpha$ is a value called
@@ -137,7 +139,7 @@ Let $X$ be a normal random variable with mean $\mu =100$ and variance $\sigma^2=
                        <li>$100(1 - \alpha)\%$ is the <a href="#">confidence level</a>;</li>
                         <li><a href="#">parameter estimate</a> is a value for the point estimate such as for the sample mean, $\overline{x}$, or for the population proportion, $\widehat{p}$; </li>
                         <li><a href="#">reliability coefficient</a> is a probability point obtained from an appropriate table as dictated by, for example, $z_{\alpha}$ or $t_{\frac{\alpha}{2},n-1}$; </li>
-                        
+
                         <li>and <a href="#">s.e.(parameter)</a> read
 standard error of the parameter, measures the closeness of the point estimate to the true population parameter i.e. it measures the precision of an estimate in getting the
 parameter.</li>
@@ -158,11 +160,11 @@ parameter.</li>
 					<dl style="padding-left:0">
                         <dt><span style="font-family:'Angkor', cursive; color: red">ករណីទី១. (Known Population Variance)</span>
                         <ul>
-                            <li>ឧបមាថា $\sigma^2$ ជា វ៉ារ្យ៉ង់របស់ប៉ូពុយឡាស្យុង។ ដូច្នេះ អថេរចៃដន្យមួយ មានឈ្មោះថា <a href="#">មធ្យមសំណាក</a> (sample mean) តាងដោយ  $\overline{X}$ ត្រូវបានកំណត់ដោយ៖ 
+                            <li>ឧបមាថា $\sigma^2$ ជា វ៉ារ្យ៉ង់របស់ប៉ូពុយឡាស្យុង។ ដូច្នេះ អថេរចៃដន្យមួយ មានឈ្មោះថា <a href="#">មធ្យមសំណាក</a> (sample mean) តាងដោយ  $\overline{X}$ ត្រូវបានកំណត់ដោយ៖
 \[
 \overline{X} \sim  N\left(\mu, \frac{\sigma^{2}}{n}\right)
 \]
-ដែលក្រោយពីបម្លែងទៅជាអថេរស្តង់ដា គេបាន 
+ដែលក្រោយពីបម្លែងទៅជាអថេរស្តង់ដា គេបាន
 \[
 Z=\frac{\sqrt{n}\left(\overline{X}-\mu\right)}{\sigma} \sim  N(0,1)
 \]
@@ -179,34 +181,34 @@ Different samples will produce different values for the end points.
                             </li>
                             </dt>
                         </p>
-                        
+
                         </dl>
 				    </section>
 
 				    <section data-auto-animate>
 					<h4 class="frame-sect">ឧទាហរណ៍.</h4>
-				    
+
                     <div style="border: 2px solid darkblue; padding: 10px;
   box-shadow: 5px 10px #888888;margin-top: 10px;margin-bottom: 30px;background-color:lightyellow;color: darkblue">
     <p>Consider the following data: $$64.3, 64.6, 64.8, 64.2, 64.5, 64.3, 64.6, 64.8, 64.2, 64.3$$
-                        
+
                         Assume that it is normally distributed with unit population variance. For these data, construct a $95\%$ confidence interval for the population mean.
 
                         </p>
 </div>
-                        
+
                         <strong>ចម្លើយ.</strong>
 Using the data, $n=10, \bar{x}=64.46,$ the level of significance, $\alpha=5 \%=0.05,$ and from the given assumption, $\sigma^{2}=1 .$ Now, the resulting $95 \%$ confidence interval (CI) for the population mean is
 \[
 \bar{x}-z_{0.025} \times \frac{\sigma}{\sqrt{n}} \leq \mu \leq \bar{x}+z_{0.025} \times \frac{\sigma}{\sqrt{n}}
 \]
-                        
-                        
+
+
 				    </section>
 
 				    <section>
-					
-					<div class="note"> 
+
+					<div class="note">
                         <p> <a href="#" style="font-family:Angkor;">ចំណាំ : </a>
                         <ul style="padding-left:40px">
                             <li>If a very large number of random samples are collected and a $100(1 - \alpha)\%$ confidence interval for the population parameter is computed from each sample, then $100(1-\alpha)$ percent of these intervals will contain the true value of the population parameter with confidence $100(1-\alpha)$.</li>
