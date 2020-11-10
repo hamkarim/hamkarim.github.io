@@ -990,6 +990,11 @@ Show hide answer in examples
     }
 }
 
+.box-definition, .box-lemma, .box-notation, .box-proposition, .box-theorem {
+    background-color: #fdf7e8;
+    border-left: 2px solid #a67c11;
+}
+
 .box-definition, .box-example, .box-exercise, .box-interactive, .box-lemma, .box-notation, .box-note, .box-objectives, .box-procedure, .box-proposition, .box-query, .box-theorem, .box-warning {
     display: block;
     border-radius: 1px;
