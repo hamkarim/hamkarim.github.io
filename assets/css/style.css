@@ -989,3 +989,24 @@ Show hide answer in examples
         display: none;
     }
 }
+
+.box-definition, .box-example, .box-exercise, .box-interactive, .box-lemma, .box-notation, .box-note, .box-objectives, .box-procedure, .box-proposition, .box-query, .box-theorem, .box-warning {
+    display: block;
+    border-radius: 1px;
+    -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    padding: 0 13px 1px 10px;
+    margin-bottom: 1.2em!important;
+    margin-top: 1.2em!important;
+    orphans: 3;
+}
+
+.box-legend {
+    margin: 0 0 3px;
+    transform: translate(-11px,0);
+    break-inside: avoid-page!important;
+    page-break-inside: avoid!important;
+}

@@ -270,18 +270,36 @@ We emphasize that the definition (<a href="def:equiv_set"> 1.1</a>) applies to f
                     <div class="block_proof" style="display:none">
           <b>ចម្លើយ. </b>
           To see why this is true, notice that the following table describes a bijection \(f : \mathbb{N} \rightarrow \mathbb{Z}\).
-<figure>
-  <IMG SRC="https://math.libretexts.org/@api/deki/files/44857/Screen_Shot_2020-06-29_at_2.10.38_PM.png?revision=1" style="margin: 0px 0px 0px 10px;" ALIGN="center" width="95%"/>
-<figcaption>Figure 3: អនុគមន៍ \(f : \mathbb{N} \rightarrow \mathbb{Z}\)
-</figcaption>
-</figure>
-Notice that $f$ is described in such a way that it is both injective and surjective. Every integer appears exactly once on the infinitely long second row. Thus, according to the table, given any \(x \in \mathbb{Z}\) there is some natural number n with \(f(n) = x\), so $f$ is surjective. It is injective because the way the table is constructed forces \(f(m) \ne f(n)\) whenever \(m \ne n\). Because of this bijection \(f : \mathbb{N} \rightarrow \mathbb{Z}\), we must conclude from Definition (<a href="def:equiv_set"> 1.1</a>)  that \(|\mathbb{N}| = |\mathbb{Z}|\).
+          $$
+\begin{array}{c|cccccccccccccccc}
+n & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & \cdots \\
+\hline
+f(n) & 0 & 1 & -1 & 2 & -2 & 3 & -3 & 4 & -4 & 5 & -5 & 6 & -6 & 7 & -7 & \cdots
+\end{array}
+$$
 
+Notice that $f$ is described in such a way that it is both injective and surjective. Every integer appears exactly once on the infinitely long second row. Thus, according to the table, given any \(x \in \mathbb{Z}\) there is some natural number n with \(f(n) = x\), so $f$ is surjective. It is injective because the way the table is constructed forces \(f(m) \ne f(n)\) whenever \(m \ne n\). Because of this bijection \(f : \mathbb{N} \rightarrow \mathbb{Z}\), we must conclude from Definition (<a href="def:equiv_set"> 1.1</a>)  that \(|\mathbb{N}| = |\mathbb{Z}|\).<br>
 </div></p>
-
 </example>
+<p>
+Example (2) may seem slightly unsettling. On one hand it makes sense that \(|\mathbb{N}| = |\mathbb{Z}|\) because \(\mathbb{N}\) and \(\mathbb{Z}\) are both infinite, so their cardinalities are both “infinity.” On the other hand, \(\mathbb{Z}\) may seem twice as large as \(\mathbb{N}\) because \(\mathbb{Z}\) has all the negative integers as well as the positive ones. Definition 14.1 settles the issue. Because the bijection \(f : \mathbb{N} \rightarrow \mathbb{Z}\) matches up \(\mathbb{N}\) with \(\mathbb{Z}\), it follows that \(|\mathbb{N}| = |\mathbb{Z}|\). We summarize this with a theorem.
+</p>
+
+<div class="box-theorem">
+<p class="box-legend"><span>Theorem 14.1</span></p>
+
+<p>There exists a bijection \(f : \mathbb{N} \rightarrow \mathbb{Z}\). Therefore \(|\mathbb{N}| = |\mathbb{Z}|\).</p>
+</div>
+
+<p style="text-indent: 0px"><b>
+	ទ្រឹស្ដីបទ ១.១.
+</b>​There exists a bijection \(f : \mathbb{N} \rightarrow \mathbb{Z}\). Therefore \(|\mathbb{N}| = |\mathbb{Z}|\).
+	</p>
 
 
+The fact that \(\mathbb{N}\) and \(\mathbb{Z}\) have the same cardinality might prompt us to compare the cardinalities of other infinite sets. How, for example, do \(\mathbb{N}\) and \(\mathbb{R}\) compare? Let’s turn our attention to this.
+
+In fact, \(|\mathbb{N}| \ne |\mathbb{R}|\). This was first recognized by Georg Cantor (1845–1918), who devised an ingenious argument to show that there are no surjective functions \(f : \mathbb{N} \rightarrow \mathbb{R}\). (This in turn implies that there can be no bijections \(f : \mathbb{N} \rightarrow \mathbb{R}\), so \(|\mathbb{N}| \ne |\mathbb{R}|\) by Definition 14.1.)
 
 
 
