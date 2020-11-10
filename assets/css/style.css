@@ -1015,3 +1015,21 @@ Show hide answer in examples
     break-inside: avoid-page!important;
     page-break-inside: avoid!important;
 }
+
+.box-legend p,.box-legend>span{
+          font-family: Battambang;
+          font-weight:400!important;
+          color:#fff;
+          padding:7px 12px!important;
+          margin:0 0 3px;
+          border-radius:1px}
+.box-legend>span{font-size:1rem!important}
+.box-legend p{font-size:16px!important}
+.box-example .box-legend>span,.box-exercise .box-legend>span,.box-objectives .box-legend>span,.box-query .box-legend>span{
+          background-color:#1c72d4}
+.box-interactive .box-legend>span{background-color:#000}
+.box-note .box-legend>span{background-color:#127abf}
+.box-warning .box-legend>span{background-color:#d10000}
+.box-procedure .box-legend>span{background-color:#ffb429}
+.box-definition .box-legend>span,.box-lemma .box-legend>span,.box-notation .box-legend>span,.box-proposition .box-legend>span,.box-theorem .box-legend>span{
+    background-color:#a67c11}

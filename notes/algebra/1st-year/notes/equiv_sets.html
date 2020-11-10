@@ -286,20 +286,52 @@ Example (2) may seem slightly unsettling. On one hand it makes sense that \(|\ma
 </p>
 
 <div class="box-theorem">
-<p class="box-legend"><span>Theorem 14.1</span></p>
-
-<p>There exists a bijection \(f : \mathbb{N} \rightarrow \mathbb{Z}\). Therefore \(|\mathbb{N}| = |\mathbb{Z}|\).</p>
+<p style="text-indent: 0px" class="box-legend"><span>ទ្រឹស្ដីបទ ១.១</span></p>
+<p>មានអនុគមន៍មួយទល់មួយ \(f : \mathbb{N} \rightarrow \mathbb{Z}\) ។ ដូច្នេះ  \(|\mathbb{N}| = |\mathbb{Z}|\) ។ </p>
 </div>
 
-<p style="text-indent: 0px"><b>
-	ទ្រឹស្ដីបទ ១.១.
-</b>​There exists a bijection \(f : \mathbb{N} \rightarrow \mathbb{Z}\). Therefore \(|\mathbb{N}| = |\mathbb{Z}|\).
-	</p>
+The fact that \(\mathbb{N}\) and \(\mathbb{Z}\) have the same cardinality might prompt us to compare the cardinalities of other infinite sets. How, for example, do \(\mathbb{N}\) and \(\mathbb{R}\) compare? Let’s turn our attention to this.<br>
+
+In fact, \(|\mathbb{N}| \ne |\mathbb{R}|\). This was first recognized by Georg Cantor (1845–1918), who devised an ingenious argument to show that there are no surjective functions \(f : \mathbb{N} \rightarrow \mathbb{R}\). (This in turn implies that there can be no bijections \(f : \mathbb{N} \rightarrow \mathbb{R}\), so \(|\mathbb{N}| \ne |\mathbb{R}|\) by Definition 14.1.) <br>
+
+We now describe Cantor’s argument for why there are no surjections \(f : \mathbb{N} \rightarrow \mathbb{R}\). We will reason informally, rather than writing out an exact proof. Take any arbitrary function \(f : \mathbb{N} \rightarrow \mathbb{R}\). Here’s why f can’t be surjective: <br>
+
+<p>
+Imagine making a table for $f$ , where values of $n$ in \(\mathbb{N}\) are in the left-hand column and the corresponding values \(f(n)\) are on the right. The first few entries might look something as follows. In this table, the real numbers \(f(n)\) are written with all their decimal places trailing off to the right. Thus, even though \(f(1)\) happens to be the real number 0.4, we write it as 0.40000000...., etc.
+</p>
+<center>
+<img alt="" width="55%" src="https://math.libretexts.org/@api/deki/files/44858/Screen_Shot_2020-06-29_at_2.17.38_PM.png?revision=1"/>
+</center>
+
+There is a diagonal shaded band in the table. For each \(n \in \mathbb{N}\), this band covers the nth decimal place of \(f(n)\):
+<ul>
+<li>The 1st decimal place of \(f(1)\) is the 1st entry on the diagonal.</li>
+
+<li>The 2nd decimal place of \(f(2)\) is the 2nd entry on the diagonal.</li>
+
+<li>The 3rd decimal place of \(f(3)\) is the 3rd entry on the diagonal.</li>
+
+<li>The 4th decimal place of \(f(4)\) is the 4th entry on the diagonal, etc.</li>
+</ul>
+The diagonal helps us construct a number \(b \in \mathbb{R}\) that is unequal to any \(f(n)\). Just let the nth decimal place of b differ from the nth entry of the diagonal. Then the nth decimal place of b differs from the nth decimal place of \(f(n)\). In order to be definite, define b to be the positive number less than 1 whose nth decimal place is 0 if the nth decimal place of f (n) does not equal 0, and whose nth decimal place is 1 if the nth decimal place of f (n) equals 0. Thus, for the function f illustrated in the above table, we have
+
+\(b = 0.01010001001000...\)
+
+and b has been defined so that, for any \(n \in \mathbb{N}\), its nth decimal place is unequal to the nth decimal place of \(f(n)\). Therefore \(f(n) \ne b\) for every natural number n, meaning f is not surjective.
+
+Since this argument applies to any function \(f : \mathbb{N} \rightarrow \mathbb{R}\) (not just the one in the above example) we conclude that there exist no bijections \(f : N \rightarrow R\), so \(|\mathbb{N}| \ne |\mathbb{R}|\) by Definition 14.1. We summarize this as a theorem.
 
 
-The fact that \(\mathbb{N}\) and \(\mathbb{Z}\) have the same cardinality might prompt us to compare the cardinalities of other infinite sets. How, for example, do \(\mathbb{N}\) and \(\mathbb{R}\) compare? Let’s turn our attention to this.
+<div class="box-theorem">
+<p style="text-indent: 0px" class="box-legend"><span>ទ្រឹស្ដីបទ ១.១</span></p>
+<p>There exists no bijection \(f : \mathbb{N} \rightarrow \mathbb{R}\). Therefore \(|\mathbb{N}| \ne |\mathbb{R}|\).</p>
+</div>
 
-In fact, \(|\mathbb{N}| \ne |\mathbb{R}|\). This was first recognized by Georg Cantor (1845–1918), who devised an ingenious argument to show that there are no surjective functions \(f : \mathbb{N} \rightarrow \mathbb{R}\). (This in turn implies that there can be no bijections \(f : \mathbb{N} \rightarrow \mathbb{R}\), so \(|\mathbb{N}| \ne |\mathbb{R}|\) by Definition 14.1.)
+This is our first indication of how there are different kinds of infinities. Both \(\mathbb{N}\) and \(\mathbb{R}\) are infinite sets, yet \(|\mathbb{N}| \ne |\mathbb{R}|\). We will continue to develop this theme throughout this chapter. The next example shows that the intervals \((0, \infty)\) and \((0,1)\) on \(\mathbb{R}\) have the same cardinality.
+
+
+
+
 
 
 
