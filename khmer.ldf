@@ -1,0 +1,355 @@
+﻿%%
+%% This is file `khmer.ldf',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% khmer.dtx  (with options: `code')
+%% This is a generated file.
+%% 
+%% Copyright 2018, modified by Ham Karim, 
+%% All rights reserved.
+%% 
+%% This file was generated from file(s) of the Babel system.
+%% ---------------------------------------------------------
+%% 
+\ProvidesLanguage{khmer}
+        [2019/05/13 v1.0 Khmer support from the babel system]
+%% File `khmer.dtx'
+%% Please report errors to: hamkarim at gmail dot com
+%%
+\LdfInit{khmer}{captionskhmer}
+\ifx\l@khmer\@undefined
+    \@nopatterns{khmer}
+    %\adddialect\l@khmer0%\
+	\adddialect\l@khmer\l@nohyphenation%
+%\ifx\l@khmer\@undefined
+%   \ant@nopatterns{Khmer}
+%   \adddialect\l@khmer0%
+\else
+   \let\l@khmer\l@american%
+\fi
+
+\addto\captionskhmer{%
+   \def\refname{\bfseries ឯកសារយោង}%
+   \def\abstractname{\bfseries សេចក្ដីសង្ខេប}%
+   \def\bibname{\bfseries គន្ថនិទ្ទេស}%
+   \def\prefacename{\bfseries អារម្ភកថា}%
+   \def\chaptername{ជំពូក}%
+   \def\appendixname{\bfseries ឧបសម្ព័ន្ធ}%
+   \def\contentsname{មាតិកា}%
+   \def\listfigurename{\bfseries បញ្ជីរូបភាព}%
+   \def\listtablename{\bfseries បញ្ជីតារាង}%
+   \def\indexname{\bfseries បញ្ជីលិបិក្រម}%
+   \def\figurename{\bfseries រូប}%
+   \def\tablename{\bfseries តារាង}%
+   \def\examplename{\bfseries ឧទាហរណ៍}%
+   %\def\thepart{}%
+   \def\partname{\bfseries ផ្នែក}%
+   \def\pagename{ទំព័រ}%
+   \def\headtoname{\bfseries ចំពោះ}%
+   \def\seename{\bfseries សូមមើល}%
+   \def\alsoname{\bfseries មើលបន្ថែម}%{សូមមើលផងដែរ}}%
+   \def\proofname{\it សម្រាយបញ្ជាក់}%
+   \def\glossaryname{\bfseries សទ្ទានុក្រម}%
+   \def\enclname{\bfseries ឯកសារភ្ជាប់}%
+   \def\ccname{CC}%
+   %\def\...name{...}
+   %\def\appendixname{សេចក្ដីបន្ថែម}%
+   %\def\indexname{សន្ទស្សន៍}%
+   %\def\ccname{ចម្លងជួន}%
+   \def\headtoname{\bfseries ផ្ញើរទៅ}%
+   \def\glossaryname{\bfseries សន្ទានុក្រម}%
+  }%
+
+\addto\datekhmer{%
+  \def\today{\@khmernum\day~\ifcase\month\or
+  	មករា \or
+	កុម្ភៈ \or
+	មីនា \or
+	មេសា \or
+	ឧសភា \or
+	មិថុនា \or
+	កក្កដា \or
+	សីហា \or
+	កញ្ញា \or
+	តុលា \or
+	វិច្ឆិកា \or
+	ធ្នូ \fi
+    \@khmernum\year}}%\number
+
+\addto\extraskhmer{%
+\lccode\string`'=`' \unless\ifcsname pdfmatch\endcsname
+\lccode\string"2019=\string"2019\fi}
+\addto\noextraskhmer{%
+\lccode\string`'=0 \unless\ifcsname pdfmatch\endcsname
+\lccode\string"2019=0\fi}
+
+
+\ifcase\bbl@engine\or\or
+  \bbl@tentative{khmer}%
+  \bbl@add\extraskhmer{%
+     \XeTeXlinebreaklocale "kh" % uses ICU to find line breaks on the basis of a dictionary lookup-- make this optional? (in case a user might prefer a preprocessor % allow linebreaks
+     \XeTeXlinebreakskip = 0pt plus 1pt minus 0.5pt % for line breakskip
+     \let\orig@baselinestrech\baselinestretch%
+     \renewcommand{\baselinestretch}{1.2}%
+%    \bbl@xeisp@Khmr
+%    \bbl@xeipn@Khmr
+  }
+  \bbl@add\noextraskhmer{% 
+   \XeTeXlinebreaklocale "en"%
+   \let\baselinestrech\orig@baselinestretch%
+  }
+\fi
+
+%%%%%% This macro is to produce khmer numbering by adopting the thai numbering method
+%\makeatletter  
+\def\@khmernum#1{\expandafter\@@khmernum\number#1\@nil}  
+\def\@@khmernum#1{%  
+  \ifx#1\@nil  
+  \else  
+  \char\numexpr#1+"17E0\relax  
+  \expandafter\@@khmernum\fi  
+}  
+%\def\khmercounter#1{\expandafter\@khmernum\csname c@#1\endcsname}  
+%\def\khmernumeral#1{\@@khmernum#1\@nil}
+\renewcommand\@arabic{\@khmernum} % to reset number in \arabic to \khmernum  
+%\renewcommand\@alph{\@khmeralph}% \@khmeralph
+%\renewcommand\@Alph{\@khmerAlph}
+%\makeatother 
+
+%\newcount\km@lettering \km@lettering=\@ne
+%\newcommand*\XXIletters{\km@lettering=\z@}
+%\newcommand*\XXVIletters{\km@lettering=\@ne}
+%\let\bbl@alph\@alph 
+%\let\bbl@Alph\@Alph
+%\addto\extraskhmer{\babel@savevariable\km@lettering
+%  \let\@alph\km@alph 
+%  \let\@Alph\km@Alph}
+%\addto\noextraskhmer{
+%  \let\@alph\bbl@alph\let\@Alph\bbl@Alph}
+
+%\def\km@alph#1{\expandafter\@khmeralph\csname c@#1\endcsname}%
+%\ifcase\km@lettering
+%\def\khmerAlph#1{\expandafter\@khmeralph\csname c@#1\endcsname}
+\def\kh@alph#1{%
+  \ifcase#1\or
+   ក\or ខ\or គ\or ឃ\or ង\or ច\or ឆ\or ជ\or ឈ\or ញ\or \or
+    ដ\or ឋ\or ឌ\or ឍ\or ណ\or ត\or ថ\or ទ\or ធ\or ន\or ប\or ផ\or ព\or ភ\or
+    ម\or \or យ\or រ\or ល\or វ\or ស\or ហ\or ឡ\or អ
+  %\else
+  %  \xpg@ill@value{#1}{\km@alph}%@khmeralph
+  %\fi 
+\else\@ctrerr\fi
+}
+
+%\def\km@Alph#1{%
+%\ifcase\km@lettering
+%\def\khmerAlph#1{\expandafter\@khmerAlph\csname c@#1\endcsname}
+\def\kh@Alph#1{%
+  \ifcase#1\or
+   ក\or ខ\or គ\or ឃ\or ង\or ច\or ឆ\or ជ\or ឈ\or ញ\or \or
+   ដ\or ឋ\or ឌ\or ឍ\or ណ\or ត\or ថ\or ទ\or ធ\or ន\or ប\or ផ\or ព\or ភ\or
+   ម\or \or យ\or រ\or ល\or វ\or ស\or ហ\or ឡ\or អ
+  %\else
+  %  \xpg@ill@value{#1}{\km@Alph}%@khmeralph
+  % \fi
+  \else\@ctrerr\fi
+}
+
+\renewcommand\@alph{\kh@alph}% \@khmeralph
+\renewcommand\@Alph{\kh@Alph} %\@khmerAlph
+
+
+%\def\khmernum#1{\expandafter\khmernumber\csname c@#1\endcsname}
+%\def\khmerbracenum#1{(\expandafter\khmernumber\csname c@#1\endcsname)}
+%\def\khmeralph#1{\expandafter\@khmeralph\csname c@#1\endcsname}
+
+
+\addto\extraskhmer{}
+\addto\noextraskhmer{}
+
+\@ifclassloaded{book}{%
+%%% For chapter page style 
+\def\@makechapterhead#1{%
+  \vspace*{20\p@}%50
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        \Large \bfseries \@chapapp\space \thechapter
+        \par\nobreak
+        \vskip 20\p@
+      \fi
+    \fi
+    \centering \reset@font
+    \interlinepenalty\@M
+    \Huge \headfont #1\par\nobreak
+    \vskip 40\p@
+  }}
+%%%%
+%%% For title page
+\renewcommand\maketitle{
+  \begin{titlepage}%
+  \let\footnotesize\small
+  \let\footnoterule\relax
+  \let \footnote \thanks
+  \null\vfil
+  \vskip 60\p@
+  \begin{center}%
+    {\Huge\headfont \@title \par}%
+    \vskip 3em%
+    {\large
+     \lineskip .75em%
+      \begin{tabular}[t]{c}%
+        \headfont\@author
+      \end{tabular}\par}%
+      \vskip 1.5em%
+    {\normalsize \@date \par}%       % Set date in \large size.
+  \end{center}\par
+  \@thanks
+  \vfil\null
+  \end{titlepage}  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ }
+%              TOC               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+          {-3.5ex \@plus -1ex \@minus -.2ex}%
+          {2.3ex \@plus.2ex}%
+          {\Large\headfont}}%
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+          {-3.25ex\@plus -1ex \@minus -.2ex}%
+          {1.5ex \@plus .2ex}%
+          {\large\headfont}}%
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+          {-3.25ex\@plus -1ex \@minus -.2ex}%
+          {1.5ex \@plus .2ex}%
+          {\normalsize\headfont}}%
+\renewcommand\thesection{\thechapter{.}\@arabic\c@section}
+\renewcommand\thesubsection{\thesection{.}\@arabic\c@subsection}
+\renewcommand\thesubsubsection{\thesubsection{.}\@arabic\c@subsubsection}
+\renewcommand\theparagraph{\thesubsubsection{.}\@arabic\c@paragraph}
+\renewcommand\thesubparagraph{\theparagraph{.}\@arabic\c@subparagraph}
+}{}
+
+\@ifclassloaded{book}{%
+\renewcommand\appendix{\par
+  \setcounter{chapter}{0}%
+  \setcounter{section}{0}%
+  \gdef\@chapapp{\appendixname}%
+  \gdef\thechapter{\kh@alph\c@chapter}}
+}{}
+
+
+\@ifclassloaded{report}{%
+%%% For chapter page style 
+\def\@makechapterhead#1{%
+  \vspace*{20\p@}%50
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        \Large \bfseries \@chapapp\space \thechapter
+        \par\nobreak
+        \vskip 20\p@
+      \fi
+    \fi
+    \centering \reset@font
+    \interlinepenalty\@M
+    \Huge \bfseries #1\par\nobreak
+    \vskip 40\p@
+  }}
+%%%%
+%%% For title page
+\renewcommand\maketitle{
+  \begin{titlepage}%
+  \let\footnotesize\small
+  \let\footnoterule\relax
+  \let \footnote \thanks
+  \null\vfil
+  \vskip 60\p@
+  \begin{center}%
+    {\Huge \sf\@title \par}%
+    \vskip 3em%
+    {\large
+     \lineskip .75em%
+      \begin{tabular}[t]{c}%
+        \sf\@author
+      \end{tabular}\par}%
+      \vskip 1.5em%
+    {\normalsize \@date \par}%       % Set date in \large size.
+  \end{center}\par
+  \@thanks
+  \vfil\null
+  \end{titlepage}  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ }
+%              TOC               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+}{}
+%%%%%%
+
+\@ifclassloaded{report}{%
+\renewcommand\appendix{\par
+  \setcounter{chapter}{0}%
+  \setcounter{section}{0}%
+  \gdef\@chapapp{\appendixname}%
+  \gdef\thechapter{\kh@alph\c@chapter}}
+}{}
+
+
+%%%%%%%
+\@ifclassloaded{article}{%
+\renewcommand\appendix{\par
+  \setcounter{section}{0}%
+  \setcounter{subsection}{0}%
+  \gdef\thesection{\kh@alph\c@section}}
+}{}
+%%%%%%%
+\@ifclassloaded{beamer}{%
+	\usefonttheme{professionalfonts}%
+	\def\factname{ស្វ័យសត្យ}%
+	\def\lemmaname{បទគន្លិះ}%
+	\def\theoremname{ទ្រឹស្ដីបទ}%
+	\def\corollaryname{អនុសាធ្យ}%
+	\def\problemname{ចំណោទ}%
+	\def\solutionname{ដំណោះស្រាយ}%
+	\def\definitionname{និយមន័យ}%
+	\def\examplename{ឧទាហរណ៏}%
+	%\uselanguage{khmer}%
+	%\languagepath{khmer}%
+	\deftranslation[to=khmer]{Fact}{\factname}%
+	\deftranslation[to=khmer]{Lemma}{\lemmaname}%
+	\deftranslation[to=khmer]{Theorem}{\theoremname}%
+	\deftranslation[to=khmer]{Corollary}{\corollaryname}%
+	\deftranslation[to=khmer]{Problem}{\problemname}%
+	\deftranslation[to=khmer]{Solution}{\solutionname}%
+	\deftranslation[to=khmer]{Definition}{\definitionname}%
+	\deftranslation[to=khmer]{Definitions}{\definitionname}%
+	\deftranslation[to=khmer]{Example}{\examplename}%
+	\deftranslation[to=khmer]{Examples}{\examplename}%
+	\AtEndDocument{\immediate\write\@auxout{\string\@writefile{nav}%
+		{\noexpand\headcommand{\noexpand\def\noexpand%
+		\inserttotalframenumber{\khmernumber{\the\c@framenumber}}}}}}%
+}{}
+%%%%%%%%%%%%
+
+
+\ldf@finish{khmer}
+%%
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+%%
+\endinput
+%%
+%% End of file `khmer.ldf'.
