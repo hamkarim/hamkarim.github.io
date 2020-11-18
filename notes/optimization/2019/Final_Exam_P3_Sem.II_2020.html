@@ -138,7 +138,7 @@ src="">
 
 <section class="main-content">
 
-  <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">ប្រលងឆមាសទី២ - ក្រុម P5  ( ១ម៉ោង១៥នាទី)</h1>
+  <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">ប្រលងឆមាសទី២ - ក្រុម P3  ( ១ម៉ោង១៥នាទី)</h1>
 <span style="font-style: italic; font-weight:bold; font-family: Arial; opacity: 0.5;">
 November 16th, 2020
 </span>
@@ -146,12 +146,12 @@ November 16th, 2020
 
 <h3>លំហាត់</h3>
 <ol>
-          <li>(20 pts) គេកំណត់អនុគមន៍ $f$ ពី $\mathbb{R}$ ទៅ $\mathbb{R}$ ដោយ \(f(x) = \frac{1}{x^2-1}\) ។
+          <li>(20 pts) គេកំណត់អនុគមន៍ $f$ ពី $\mathbb{R}$ ទៅ $\mathbb{R}$ ដោយ \(f(x) = \frac{1}{x} + 1\) ។
                     <ol type="a">
                               <li>ចូរសង់ក្រាហ្វរបស់អនុគមន៍ $f$ និងចម្រាសរបស់វា $f^{-1}$ ក្នុងតម្រុយកូអរដោនេតែមួយ។</li>
                                <li>ចូររកដែនកំណត់ និងសំណំុរូបភាពរបស់ $f$ ។</li>
-                               <li>តើ $f^{-1}$ ជាអនុគមន៍ឬទេ? ព្រោះអ្វី?</li>
-                               <li>ចូររកសំណុំរូបភាព $f([-1,1])$ និងរូបភាពច្រាស $f^{-1}(\{0,1,2,3\})$។ </li>
+                               <li>តើ $f$ ជាអនុគមន៍មួយទល់មួយឬទេ?</li>
+                               <li>ចូររកសំណុំរូបភាព $f\big(\{0,1,2,3\}\big)$ និងរូបភាពច្រាស $f^{-1}\big([-1,1]\big)$។ </li>
                     </ol>
                     <div class="showhidebground">
                         <a href="#ExNo.1" class="input_name showanswer">[Show proof]</a>
@@ -170,7 +170,7 @@ November 16th, 2020
 </div>
 </p>
    </li>
-          <li>(20 pts) យកសំណុំ \(A = \{a, b, c, d, e\}\) និងកំណត់ \(\mathcal{R}\) ជាទំនាក់ទំនងលើសំណុំ \(A\) ដែលកំណត់ដូចខាងក្រោម៖ <!-- Let \(A = \{a, b, c, d, e\}\), and let \(\mathcal{R}\) be the relation on the set \(A\) defined as follows:-->
+          <!--li>(20 pts) យកសំណុំ \(A = \{a, b, c, d, e\}\) និងកំណត់ \(\mathcal{R}\) ជាទំនាក់ទំនងលើសំណុំ \(A\) ដែលកំណត់ដូចខាងក្រោម៖ <!-- Let \(A = \{a, b, c, d, e\}\), and let \(\mathcal{R}\) be the relation on the set \(A\) defined as follows:--
 
 \[a\ \mathcal{R}\ a, b\ \mathcal{R}\ b, c\ \mathcal{R}\ c, d\ \mathcal{R}\ d, e\ \mathcal{R}\ e, a\ \mathcal{R}\ b, b\ \mathcal{R}\ a, b\ \mathcal{R}\ e, e\ \mathcal{R}\ b, a\ \mathcal{R}\ e, e\ \mathcal{R}\ a, c\ \mathcal{R}\ d, d\ \mathcal{R}\ c\]
           <ol type="a">
@@ -187,15 +187,30 @@ November 16th, 2020
                     <div class="block_proof" style="display:none">
           <b>ចម្លើយ. </b>
 </div></p>
-</li>
-          <!-- li>(20 pts) Let \(A = \{0, 1, 2, 3, 4, 5, 6, 7, 8\}\). Define the relation \(\sim\) on \(A\) as follows:  \[\forall a, b \in A, \; a \sim b \; \text{ if and only if } \; a^2 \equiv b^2\; (\text{mod}\; 9)\]
-                    Note:  $a^2 \equiv b^2\; (\text{mod}\; 9)$ means $9|(a^2-b^2)$
-                    <ol type="i">
-                              <li>Prove that \(\sim\) is an equivalence relation on \(A\) and determine all of the distinct equivalence classes of this equivalence relation.
-                              </li>
-                              <!--li>Define the relation \(\approx\) on \(\mathbb{Z}_9\) as follows: For all \(a, b \in \mathbb{Z}_9\), \(a \approx b\) if and only if \(a^3 \equiv b^3\) (mod 9). Prove that \(\approx\) is an equivalence relation on \(\mathbb{Z}_9\) and determine all of the distinct equivalence classes of this equivalence relation.</li>
-                    </ol>
 </li-->
+          <li>(20 pts) គេអោយ \(A = \{0, 1, 2, 3, 4, 5, 6, 7, 8\}\) និងកំណត់ទំនាក់ទំនង \(\sim\) លើ \(A\) ដូចខាងក្រោម៖  \[\forall a, b \in A, \; a \sim b \; \Longleftrightarrow \; a^2 \equiv b^2\; (\text{mod}\; 9)\]
+                    សំគាល់:  $a^2 \equiv b^2\; (\text{mod}\; 9)$ មានន័យថា $9|(a^2-b^2)$
+                    <ol type="i">
+                              <li>ចូរបង្ហាញថា $\sim$ ជាទំនាក់ទំនងសមមូលលើសំណុំ $A$ ។</li>
+                              <li>គេកំណត់សំណុំមួយហៅថា  <a> ថ្នាក់របស់ធាតុ $x$</a> ដោយ
+                                        \[
+                                                  [x] = \big\{y\in A \mid x \sim y\big\}
+                                        \]
+                                        ក្នុងនិយមន័យខាងលើនេះ ចូររក ថ្នាក់របស់ធាតុ $0$ និង ថ្នាក់របស់ធាតុ $1$ ។
+                              </li>
+                              <!--li>Prove that \(\sim\) is an equivalence relation on \(A\) and determine all of the distinct equivalence classes of this equivalence relation.
+                              </li-->
+                              <!--li>Define the relation \(\approx\) on \(\mathbb{Z}_9\) as follows: For all \(a, b \in \mathbb{Z}_9\), \(a \approx b\) if and only if \(a^3 \equiv b^3\) (mod 9). Prove that \(\approx\) is an equivalence relation on \(\mathbb{Z}_9\) and determine all of the distinct equivalence classes of this equivalence relation.</li-->
+                    </ol>
+                    <div class="showhidebground">
+                        <a href="#ExamNo.3" class="input_name showanswer">[Show proof]</a>
+                        <a href="#ExamNo.3" class="input_name hideanswer" style="display:none;">[Hide proof]</a>
+                    </div><br>
+                    <p style="text-indent: 0px">
+                              <div class="block_proof" style="display:none">
+                    <b>ចម្លើយ. </b>
+          </div>
+</li>
           <!--li>(20 pts)  Define the relation \(\sim\) on \(\mathbb{Q}\) as follows:
                     \[ \text{ For } \; a, b \in \mathbb{Q} :\, a \sim b \; \text{ if and only if }\; a - b \in \mathbb{Z}\]
                     <ol type="a">
