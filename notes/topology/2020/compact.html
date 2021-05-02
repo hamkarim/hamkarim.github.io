@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+    <!-- Begin Jekyll SEO tag v2.3.0 -->
+<meta property="og:title" content="Ham Karim">
+<meta name="author" content="Ham Karim">
+<meta name="author" content="ហាំ ការីម">
+<meta property="og:locale" content="en_US">
+<meta http-equiv="keywords" name="keywords" content="Compact spaces, compact">
+<meta http-equiv="description" name="description" content="ក្នុងគណិតវិទ្យា ......... ">
+<meta name="description" content="Finite Sets">
+<meta property="og:description" content="Math, Programmer, Music">
+<link rel="canonical" href="../../index.html">
+<meta property="og:url" content="https://hamkarim.github.io/">
+<meta property="og:site_name" content="Compact Spaces">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@pkarim">
+<meta name="twitter:creator" content="@pkarim">
+<meta name="google-site-verification" content="b9bg3P9zc8qbL4szvVYaf551jD9x017IyGBVSaQZDDY" />
+
+<script type="application/ld+json">
+{
+    "name":"Ham Karim",
+    "description":"I am a faculty member at the Royal Univeristy of Phnom Penh (RUPP). This is my blog of lectures at universities. ",
+    "author":{"@type":"Person","name":"Ham Karim"},
+    "@type":"WebSite",
+    "url":"https://hamkarim.github.io/",
+    "image":null,
+    "publisher":null,
+    "headline":"Ham Karim",
+    "dateModified":null,
+    "datePublished": "2020-06-01",
+    "sameAs":null,
+    "mainEntityOfPage":null,
+    "@context":"http://schema.org"}
+</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta property="og:image" content="http://www.cliparts101.com/files/376/298FE3955707B1DE458221E4BFABFBBE/Greek_Gamma_4.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../algebra/topology/2019/favicon.ico">
+    <meta charset="UTF-8">
+    <title> Compact Spaces</title>
+    <meta name="description" content="binary relation">
+
+<style>
+.deffont {
+        font-family: 'Noto Serif Khmer', 'CMU Serif';
+        font-size: 16px;
+        }
+ul.liststyle1 {
+        list-style-type: square;
+      }
+ul.liststyle2 {
+        list-style-type: hebrew;
+      }
+a.onmenu {
+          font-family:'Noto Serif Khmer','CMU Serif';
+          font-weight:bold;
+ }
+      </style>
+
+
+<script async="" src="//cse.google.com/adsense/search/async-ads.js"></script>
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script type="text/javascript" async="" src="https://cse.google.com/cse.js?cx=001004262401526223570:11yv6vpcqvy"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-331594-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+
+
+    <link rel="stylesheet" href="../../../assets/css/style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245">
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+<!-- Script to show and hide proof -->
+<script type="text/javascript" src="https://hamkarim.github.io/assets/js/showhide.js"></script>
+<!-- Other style of showing and hiding proof -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
+ <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>
+<!-- end -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+//Another method to toggle the button
+          $(document).ready(function(){
+                    $('.showanswer').click(function(){
+                              $('.block_proof').show();
+                              $('.showanswer').hide();
+                              $('.hideanswer').show();
+                    }
+          );
+                    $('.hideanswer').click(function(){
+                              $('.block_proof').hide();
+                              $('.showanswer').show();
+                              $('.hideanswer').hide();
+                    }
+          );
+ });
+</script>
+
+<!-- For local function, define to exchange text -->
+<script>
+function showhideFunction() {
+          document.getElementById('idClick').innerHTML === '[Hide proof]' ? document.getElementById('idClick').innerHTML = '[Show proof]' : document.getElementById('idClick').innerHTML = '[Hide proof]';
+}
+</script>
+
+<!-- script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,https://hamkarim.github.io/MathJax/config/local/local.js"></script  -->
+
+<!-- script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script -->
+
+<script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
+</script>
+
+<!-- script type="text/javascript" config=TeX-MML-AM_CHTML
+src="">
+</script -->
+
+<!-- To get it to work in old versions of Internet Explorer, you need to append this script to the head (Important if you need it to work in older versions of IE!): -->
+ <!--[if lt IE 9] -->
+ <script> document.createElement("example, defn"); </script>
+ <!-- [endif]-->
+
+  </head>
+
+  <body>
+
+<section class="page-header">
+          <h1 class="project-name">ហាំ ការីម</h1>
+          <h2 class="project-tagline">Maths, Program, Music</h2>
+</section>
+
+<section class="main-content">
+
+  <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">ជំពូក៥. &nbsp;  លំហកុំប៉ាក់</h1>
+<span style="font-style: italic; font-weight:bold; font-family: Arial; opacity: 0.5;">
+March 1st, 2021
+</span>
+<hr>
+
+<p> In mathematics, more specifically in general topology, compactness is a property that generalizes the notion of a subset of Euclidean space being closed (i.e., containing all its limit points) and bounded (i.e., having all its points lie within some fixed distance of each other).[<a href="https://en.wikipedia.org/wiki/Compact_space#cite_note-1">1</a>][<a href="https://en.wikipedia.org/wiki/Compact_space#cite_note-2">2</a>] Examples include a closed interval, a rectangle, or a finite set of points. This notion is defined for more general topological spaces than Euclidean space in various ways.</p>
+
+<p>The property of being a bounded set in a metric space is not preserved by homeomorphism. For example, the interval $(0, 1)$ and the whole of $\R$ are homeomorphic under the usual topology. So to generalise theorems in Real analysis like "a continuous function on a closed bounded interval is bounded" we need a new concept.
+
+This is the idea of compactness. We will give a definition which applies to metric spaces later, but meanwhile, phrased purely in terms of open sets we have:</p>
+
+<h2>មាតិកា</h2>
+
+
+<ol style="text-indent: 0.1em;
+    margin-left: 3.4em;">
+          <li><a href="#genaral">
+                    ....... </a>
+                    <!--ul>
+                    <li>Fonction (définitions) </li>
+                    <li>Tableau, Diagramme sagittal</li>
+                    <li>Représentation graphique</li>
+                    <li>Fonction définie par des formules</li>
+                    <li>Applications</li>
+                    <li>Restriction d'une fonction</li>
+                    </ul-->
+          </li>
+          <li><a href="#Image"> ...... </a>
+                    <!--ul>
+                              <li>Image d'une fonction</li>
+                              <li>Image réciproque d'un ensemble par une fonction</li>
+                              <li>Composée de fonctions</li>
+                              <li>Exemples graphiques de composition</li>
+                    </ul-->
+          </li>
+
+          <li><a href="#properties">......</a>
+                    <!--ul>
+                              <li>Injection</li>
+                              <li>Injection, exemples, exercices</il>
+                              <li>Surjection
+Bijection
+Exemples graphiques de bijection
+Théorèmes sur la bijection
+Bijection, bijection réciproque</li>
+                    </ul-->
+          </li>
+
+          <li><a href="#proprietiesGraph">........</a>
+                    <!--ul>
+                              <li>Fonctions paires
+Fonctions impaires
+Fonctions périodiques
+Translations
+Transformations opérant sur une représentation graphique</li>
+                    </ul-->
+          </li>
+
+          <li><a href="#Bibliog">.......</a>
+          </li>
+
+</ol>
+
+<h2 class="frame-sect sectcounter">&nbsp; និយមន័យ  </h2> <!-- \section{Sets with Equal Cardinalities}  -->
+
+<defn >
+          <div class="definition"> </div>
+ <div class="definitionb"> <a id="def:equiv_set"></a>
+    <p><!-- a name=""></a-->
+           A topological space is compact if every open covering has a finite sub-covering.
+An open covering of a space $X$ is a collection $\left\{U_{i}\right\}$ of open sets with $\bigcup_{j=I} U_{i}=X$ and this has a finite sub-covering if a finite number of the $U_{i}^{\prime}$ can be chosen which still cover $X$.
+The most important thing is what this means for $\mathbf{R}$ with its usual metric.
+Theorem The interval $[0,1]$ is compact under the usual metric on $\mathbf{R}$.
+Proof Let $\left\{U_{i}\right\}$ be an open covering of $[0,1]$. The trick is to consider the set $A=\left\{x \in[0,1] \mid[0, x]\right.$ can be covered by finitely many of the $\left.U_{i}^{\prime} \mathrm{s}\right\}$. Then use the Completeness property of $\mathbf{R}$ to take $\alpha$ to be the least upper bound of $A$.
+Suppose $\alpha<1$. Then $\alpha$ is contained in some open set $U_{i_{0}}$ and so lies in an $\varepsilon$ -neighbourhood lying in $U_{i_{0}}$. But now $[0, a-\varepsilon / 2]$ is covered by finitely many of the $U_{i}^{\prime} \mathrm{s}$ and so this collection, together with $U_{i_{0}}$ covers $[0, \alpha+\varepsilon / 2]$ which contradicts the definition of $\alpha$.
+A similar proof shows that any closed bounded interval of $\mathbf{R}$ is compact. We will see later that in fact any closed bounded subset of $\mathbf{R}$ (with its usual metric) is compact.
+Theorem A compact subset of $\mathbf{R}$ with its usual metric is closed and bounded.
+</p>
+</div>
+</defn>
+<p>
+We emphasize that the definition (<a href="def:equiv_set"> 1.1</a>) applies to finite as well as infinite sets. If A and B are infinite, then \(|A| = |B|\) provided there exists a bijection \(f : A \rightarrow B\). If no such bijection exists, then \(|A| \ne |B|\).
+</p><br>
+
+
+<div class="divfigure" style="width: 200">
+ <img class="wrap-right" alt="Bijection" src="https://math.libretexts.org/@api/deki/files/44855/Screen_Shot_2020-06-29_at_2.03.51_PM.png?revision=1"/>
+    Figure 1: $f$ is bijective!
+</div>
+<div>
+          The figure (1) illustrates the above definition, means, there is a bijective function \(f : A \rightarrow B\), so \(|A|=|B|\). <!-- The function $f$ matches up $A$ with $B$. Think of $f$ as describing how to overlay $A$ onto $B$ so that they fit together perfectly.-->
+          On the other hand, if $A$ and $B$ are as indicated in either of the following figure (2), then there is no bijection \(f : A \rightarrow B\). (The best we can do is a function that is either injective or surjective, but not both.) Therefore the definition says \(|A| \ne |B|\) in these cases.
+              <figure>
+                <IMG SRC="https://math.libretexts.org/@api/deki/files/44856/Screen_Shot_2020-06-29_at_2.05.49_PM.png?revision=1" style="margin: 0px 0px 0px 10px;" ALIGN="center" width="400"/>
+              <figcaption>Figure 2:  $f$ is not bijective!
+              </figcaption>
+   </figure>
+
+
+</div>
+
+
+
+<example>
+<p>
+          <b>1.</b>
+	សំណុំ  \(A = \big\{n \in \mathbb{Z} : 0 \le n \le 5\big\}\) និង \(B = \big\{n \in \mathbb{Z} : -5 \le n \le 0\big\}\) មានកាឌីណាល់ស្មើគ្នា។
+	 </p>
+    <p align="right"><a class="toggle bground" id="getid" href="#proof" onclick="showhideFunction()"> [Show proof]</a></p>
+<div class="hidepanel" id="proof" style="color:#1860C1">
+<b>ចម្លើយ. </b>
+<p> តាមនិយមន័យ បើ \(|A| = |B|\) នោះមានអនុគមន៍មួយទល់មួយជាច្រើនពីសំណុំ $A$ ទៅ $B$ ។ ក្នុងន័យនេះ គេគ្រាន់តែរកឱ្យបានមួយក្នុងចំណោមអនុគមន៍ទាំងនោះ។ ដូច្នេះ បើកំណត់
+          \[\begin{array}{r c l}
+          f : A & \longrightarrow & B\\
+          n & \longmapsto & f(n) = -n
+          \end{array}
+          \]
+          នោះគេអាចបង្ហាញថា $f$ ជាអនុគមន៍មួយទល់មួយ។
+</p>
+	</div>
+          <p><b>2.</b>
+          We conclude that \(|\mathbb{N}| = |\mathbb{Z}|\).
+          </p>
+          <div class="showhidebground">
+              <a href="#ExamNo.2" class="input_name showanswer">[Show proof]</a>
+              <a href="#ExamNo.2" class="input_name hideanswer" style="display:none;">[Hide proof]</a>
+          </div><br>
+          <p style="text-indent: 0px">
+                    <div class="block_proof" style="display:none">
+          <b>ចម្លើយ. </b>
+          To see why this is true, notice that the following table describes a bijection \(f : \mathbb{N} \rightarrow \mathbb{Z}\).
+          $$
+\begin{array}{c|cccccccccccccccc}
+n & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & \cdots \\
+\hline
+f(n) & 0 & 1 & -1 & 2 & -2 & 3 & -3 & 4 & -4 & 5 & -5 & 6 & -6 & 7 & -7 & \cdots
+\end{array}
+$$
+
+Notice that $f$ is described in such a way that it is both injective and surjective. Every integer appears exactly once on the infinitely long second row. Thus, according to the table, given any \(x \in \mathbb{Z}\) there is some natural number n with \(f(n) = x\), so $f$ is surjective. It is injective because the way the table is constructed forces \(f(m) \ne f(n)\) whenever \(m \ne n\). Because of this bijection \(f : \mathbb{N} \rightarrow \mathbb{Z}\), we must conclude from Definition (<a href="def:equiv_set"> 1.1</a>)  that \(|\mathbb{N}| = |\mathbb{Z}|\).<br>
+</div></p>
+</example>
+<p>
+Example (2) may seem slightly unsettling. On one hand it makes sense that \(|\mathbb{N}| = |\mathbb{Z}|\) because \(\mathbb{N}\) and \(\mathbb{Z}\) are both infinite, so their cardinalities are both “infinity.” On the other hand, \(\mathbb{Z}\) may seem twice as large as \(\mathbb{N}\) because \(\mathbb{Z}\) has all the negative integers as well as the positive ones. Definition 14.1 settles the issue. Because the bijection \(f : \mathbb{N} \rightarrow \mathbb{Z}\) matches up \(\mathbb{N}\) with \(\mathbb{Z}\), it follows that \(|\mathbb{N}| = |\mathbb{Z}|\). We summarize this with a theorem.
+</p>
+
+<div class="box-theorem">
+<p style="text-indent: 0px" class="box-legend"><span>ទ្រឹស្ដីបទ ១.១</span></p>
+<p>មានអនុគមន៍មួយទល់មួយ \(f : \mathbb{N} \rightarrow \mathbb{Z}\) ។ ដូច្នេះ  \(|\mathbb{N}| = |\mathbb{Z}|\) ។ </p>
+</div>
+
+The fact that \(\mathbb{N}\) and \(\mathbb{Z}\) have the same cardinality might prompt us to compare the cardinalities of other infinite sets. How, for example, do \(\mathbb{N}\) and \(\mathbb{R}\) compare? Let’s turn our attention to this.<br>
+
+In fact, \(|\mathbb{N}| \ne |\mathbb{R}|\). This was first recognized by Georg Cantor (1845–1918), who devised an ingenious argument to show that there are no surjective functions \(f : \mathbb{N} \rightarrow \mathbb{R}\). (This in turn implies that there can be no bijections \(f : \mathbb{N} \rightarrow \mathbb{R}\), so \(|\mathbb{N}| \ne |\mathbb{R}|\) by Definition 14.1.) <br>
+
+We now describe Cantor’s argument for why there are no surjections \(f : \mathbb{N} \rightarrow \mathbb{R}\). We will reason informally, rather than writing out an exact proof. Take any arbitrary function \(f : \mathbb{N} \rightarrow \mathbb{R}\). Here’s why f can’t be surjective: <br>
+
+<p>
+Imagine making a table for $f$ , where values of $n$ in \(\mathbb{N}\) are in the left-hand column and the corresponding values \(f(n)\) are on the right. The first few entries might look something as follows. In this table, the real numbers \(f(n)\) are written with all their decimal places trailing off to the right. Thus, even though \(f(1)\) happens to be the real number 0.4, we write it as 0.40000000...., etc.
+</p>
+<center>
+<img alt="" width="50%" src="https://math.libretexts.org/@api/deki/files/44858/Screen_Shot_2020-06-29_at_2.17.38_PM.png?revision=1"/>
+</center>
+
+There is a diagonal shaded band in the table. For each \(n \in \mathbb{N}\), this band covers the nth decimal place of \(f(n)\):
+<ul>
+<li>The 1st decimal place of \(f(1)\) is the 1st entry on the diagonal.</li>
+
+<li>The 2nd decimal place of \(f(2)\) is the 2nd entry on the diagonal.</li>
+
+<li>The 3rd decimal place of \(f(3)\) is the 3rd entry on the diagonal.</li>
+
+<li>The 4th decimal place of \(f(4)\) is the 4th entry on the diagonal, etc.</li>
+</ul>
+The diagonal helps us construct a number \(b \in \mathbb{R}\) that is unequal to any \(f(n)\). Just let the nth decimal place of b differ from the nth entry of the diagonal. Then the nth decimal place of b differs from the nth decimal place of \(f(n)\). In order to be definite, define b to be the positive number less than 1 whose nth decimal place is 0 if the nth decimal place of f (n) does not equal 0, and whose nth decimal place is 1 if the nth decimal place of f (n) equals 0. Thus, for the function f illustrated in the above table, we have
+
+\(b = 0.01010001001000...\)
+
+and b has been defined so that, for any \(n \in \mathbb{N}\), its nth decimal place is unequal to the nth decimal place of \(f(n)\). Therefore \(f(n) \ne b\) for every natural number n, meaning f is not surjective.
+
+Since this argument applies to any function \(f : \mathbb{N} \rightarrow \mathbb{R}\) (not just the one in the above example) we conclude that there exist no bijections \(f : N \rightarrow R\), so \(|\mathbb{N}| \ne |\mathbb{R}|\) by Definition 14.1. We summarize this as a theorem.
+
+
+<div class="box-theorem">
+<p style="text-indent: 0px" class="box-legend"><span>ទ្រឹស្ដីបទ ១.១</span></p>
+<p>There exists no bijection \(f : \mathbb{N} \rightarrow \mathbb{R}\). Therefore \(|\mathbb{N}| \ne |\mathbb{R}|\).</p>
+</div>
+
+This is our first indication of how there are different kinds of infinities. Both \(\mathbb{N}\) and \(\mathbb{R}\) are infinite sets, yet \(|\mathbb{N}| \ne |\mathbb{R}|\). We will continue to develop this theme throughout this chapter. The next example shows that the intervals \((0, \infty)\) and \((0,1)\) on \(\mathbb{R}\) have the same cardinality.
+
+
+
+
+
+
+
+
+
+
+
+<footer class="site-footer">
+  <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+</footer>
+
+</section>
+</body>
+
+
+  <!--script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-102852226-1', 'auto');
+    ga('send', 'pageview');
+  </script-->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171606319-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-171606319-1');
+</script>
+
+</html>
