@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Quiz I - Affine Spaces</title>
+
+		<meta name="description" content="Introduction to Estimation">
+		<meta name="author" content="Ham Karim">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/moon.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+        
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
+        </script>
+        
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+                    <div class="aligncenter">
+					
+					<h1>ប្រលងពាក់កណ្ដាលឆមាស </h1><br>
+                    
+					<h3>ប្រូបាប៊ីលីតេ និង ស្ថិតិ</h3>
+                        <p style="color: green;font-size: 24px">(រយៈពេល 60mn)</p>
+                    </div>
+				</section>
+
+			
+
+				
+                    <section>
+					<h2 class="frame-sect">លំហាត់ទី១</h2>
+                    <p style="font-size: 28px">
+                    ឧបមាថា រថយន្តចំនួន $X$ បានមកដល់កន្លែងលាងសំអាត នៅចន្លោះម៉ោង 4:00 P.M និង 5:00 P.M នៅថ្ងៃរៀងរាល់ថ្ងៃសុក្រ មានរបាយប្រូបាប៊ីលីតេ ដូចខាងក្រោម៖
+$$\begin{array}{c|cccccc}
+X & 4 & 5 & 6 & 7 & 8 & 9 \\
+\hline P(X=x) & \frac{1}{12} & \frac{1}{12} & \frac{1}{4} & \frac{1}{4} & \frac{1}{6} & \frac{1}{6}
+\end{array}$$
+                    តាង $g(X)=2X-1$ ជាបរិមាណលុយគិតជាដុល្លា ដែលត្រូវបង់ឱ្យអ្នកមើលការខុសត្រូវ ដោយអ្នកគ្រប់គ្រង។ 
+                        
+                       <ol style="font-size: 28px;padding-left:50px">
+                        <li>ចូរសង់អនុគមន៍ប្រូបាប.ខាងលើនេះ។</li>
+                        <li>ចូររកប្រាក់ចំណូលដែលរំពឹងទុករបស់អ្នកមើលការខុសត្រូវ សម្រាប់ថ្ងៃពិសេសនេះ។ </li>
+                        <li>ចូរគណនា $E(g(X)^2)$ និង $\operatorname{Var}(g(X))$។</li>
+                        </ol>
+                       
+        </p>
+                    
+				    </section>
+            
+            
+            
+				    <section data-auto-animate>
+					<h2 class="frame-sect">លំហាត់ទី២</h2>
+					<p style="font-size: 28px">
+                        យក $X$ និង $Y$ ជាអថេរចៃដន្យ ដែលមានរបាយប្រូបាប.រួម (jpf) បង្ហាញដូចក្នុងតារាងខាងក្រោម៖ 
+<figure class="aligncenter">
+    <img src="img/joint_prob.png" width="53%">                        
+</figure>
+                    <ol style="font-size: 28px;padding-left:50px">
+                        <li>ចូរគណនាសង្ឃឹមគណិតរបស់អនុគមន៍ $g(X, Y ) = XY$។</li>
+                        <li>ចូរគណនា $E(X^2Y - 2XY )$ ។</li>
+                        <li>ចូរគណនា $\mu_X-\mu_Y$ ។</li>
+                        </ol>
+                        
+
+                        </p>
+               
+				    </section>
+        
+                    <section>
+						<h2 class="frame-sect">លំហាត់ទី៣</h2>
+                        <p style="font-size: 28px"> 
+                        អនុគមន៍ដង់ស៊ីតេរួម (jdf) របស់អថេរចៃដន្យ $(X, Y )$ ដែល $X$ ជាឯកតាប្រែប្រួលនៃសីតុណ្ហភាព និង $Y$ ជាសមាមាត្រនៃផង់ (spectrum) ផ្លាស់ទី ដែលភាគល្អិតអាតូមមួយបង្កើតបាន កំណត់បានគម្រូដូចខាងក្រោម៖
+            $$f(x, y)=\left\{\begin{array}{ll}
+10 x y^{2}, & 0\lt x\lt y\lt 1 \\
+0, & \text { elsewhere }
+\end{array}\right.$$
+                            
+                        </p>
+                        <ol style="padding-left: 40px;font-size: 28px">
+                        <li>ចូរគណនា អនុគមន៍ដង់ស៊ីតេម៉ាជីណល $f_1(x), f_2(y)$ និង អនុគមន៍ដង់ស៊ីតេមានលក្ខខណ្ឌ $f(y\mid x)$.</li>
+    
+                            <li>រកប្រូបាប៊ីលីតេដែលផង់ផ្លាស់ទី បានច្រើនជាងពាក់កណ្តាលនៃបរិមាណអង្កេតសរុប ដោយដឹងថាសីតុណ្ហភាព បានកើនឡើងដល់ $0.25$ ឯកតា។</li>
+                                                
+                        </ol>
+						<br>
+                       
+                        <div class="aligncenter">
+						<a href="#/2">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1); transform: rotate(180deg);" width="30" height="40" data-src="https://static.slid.es/reveal/arrow.png" alt="Up arrow">
+						</a>
+                        </div>
+                 
+					</section>
+				</section>
+
+	
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+	</body>
+</html>
