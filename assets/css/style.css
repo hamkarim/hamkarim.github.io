@@ -339,7 +339,7 @@ body {counter-reset:section;}
           margin-top:0;
           margin-bottom:10px;
           color:#076422;
-          border-left:0.4rem solid #EB0000;
+          border-left:2pt solid #EB0000;
           text-align: left;
           font-size: 16px;
     /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
@@ -356,7 +356,7 @@ body {counter-reset:section;}
         counter-increment:counterex;
         content: "ឧទាហរណ៍ " counter(section,khmer)"." counter(counterex,khmer) "  ";
         font-weight:bold;
-        font-family: Angkor;
+        font-family: Battambang;/*Angkor*/
  }
 
 
@@ -607,21 +607,46 @@ li ol > li {
   margin: 0;
 }
 
-
-ol.parenthalpha li {
-	counter-increment: section;
+ol.parenthroman li {
+	/* counter-increment: section;
 	/*display: table-row;*/
 	display: block;
 	margin-bottom: .5em;
-	margin-left: 2em;
+	margin-left: 3em;
+	/*font-size: 16px;
+	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
+}
+ol.parenthroman li::before {
+	content: "(" counter(item, lower-roman) ") ";
+	/*display: table-cell;*/
+	display: inline-block;
+	text-align: left;
+	padding-right: 0px;
+	width: 2em;
+	margin-left: -4em;
+	padding-left: 2em;
+	/*font-size: 16px;
+	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
+}
+
+ol.parenthalpha li {
+	/* counter-increment: section;
+	/*display: table-row;*/
+	display: block;
+	margin-bottom: .5em;
+	margin-left: 3em;
 	/*font-size: 16px;
 	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
 ol.parenthalpha li::before {
-	content: "(" counter(section, lower-alpha) ") ";
+	content: "(" counter(item, lower-alpha) ") ";
 	/*display: table-cell;*/
 	display: inline-block;
 	text-align: left;
+	padding-right: 0px;
+	width: 2em;
+	margin-left: -4em;
+	padding-left: 2em;
 	/*font-size: 16px;
 	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
@@ -639,7 +664,7 @@ ol.parenthnum li::before {
 	padding-right: 0px;
 	display: inline-block;
 	content: "(" counter(item,khmer) ")";
-	counter-increment: item;
+	/*counter-increment: item;*/
 	width: 2em;
 	margin-left: -4em;
 	padding-left: 2em;
