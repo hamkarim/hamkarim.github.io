@@ -41,8 +41,10 @@
 
     <meta property="og:image" content="http://www.cliparts101.com/files/376/298FE3955707B1DE458221E4BFABFBBE/Greek_Gamma_4.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../topology/2019/favicon.ico">
+
+
     <meta charset="UTF-8">
-    <title>Linear System | ប្រព័ន្ធលីនេអ៊ែរ</title>
+    <title>determinant | ដេទែរមីណង់</title>
     <meta name="description" content="Math, Programmer, Music">
 
     <!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
@@ -63,7 +65,88 @@ a.onmenu {
           font-weight:bold;
  }
       </style>
+<style>
+.box-note {
+  background-color: #eef1f1;
+  border-left: 4px solid #5e6e6e;
+}
+.box-adapt,
+.box-definition,
+.box-emphasis,
+.box-example,
+.box-exercise,
+.box-interactive,
+.box-lemma,
+.box-notation,
+.box-note,
+.box-objectives,
+.box-procedure,
+.box-proposition,
+.box-query,
+.box-structure,
+.box-theorem,
+.box-warning {
+ display:block;
+ border-radius:4px 8px 8px 4px;
+ -moz-border-radius:4px 8px 8px 4px;
+ -webkit-border-radius:4px 8px 8px 4px;
+ border-top:none;
+ border-bottom:none;
+ border-right:none;
+ padding:0 10px 1px;
+ margin-bottom:.8em!important;
+ margin-top:.8em!important;
+ orphans:3
+}
 
+.box-legend {
+ display:block;
+ overflow:hidden;
+ margin:0 0 3px;
+ transform:translate(-11px,0);
+ break-inside:avoid-page!important;
+ page-break-inside:avoid!important;
+ text-align:left!important
+}
+.box-note .box-legend>span {
+ background-color:#5e6e6e
+}
+
+.box-legend {
+  text-align: left !important;
+}
+
+.box-legend > span {
+  font-size: 1.2rem !important;
+}
+.box-legend p, .box-legend > span {
+  float: left;
+  color: #fff;
+  padding: 3px 5px !important;
+  margin: 0 0 3px;
+  border-radius: 0;
+  font-family: Tahoma,Arial,serif !important;
+  font-weight: 400 !important;
+}
+
+.box-note .lt-icon-default::before {
+  content: "\f08d";
+}
+.lt-icon-default::before, .lt-icon-brain::before, .lt-icon-pin::before, .lt-icon-hand::before, .lt-icon-pathway::before, .lt-icon-logic::before, .lt-icon-check::before, .lt-icon-question::before, .lt-icon-exclamation::before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1.5;
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+  margin-right: 0.5rem;
+}
+
+
+</style>
 
 <script async="" src="//cse.google.com/adsense/search/async-ads.js"></script>
 <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
@@ -232,14 +315,23 @@ October
 </p>
 </blockquote>
 
-<p>
-<b>  Outcomes</b>
-  Evaluate the determinant of a square matrix using either Laplace Expansion or row operations.
-  Demonstrate the effects that row operations have on determinants.
-  Verify the following:
-  The determinant of a product of matrices is the product of the determinants.
-  The determinant of a matrix is equal to the determinant of its transpose.
-</p>
+<div class="box-note">
+  <!-- div mt-section-origin="Bookshelves/Linear_Algebra/A_First_Course_in_Linear_Algebra_(Kuttler)/03:_Determinants/3.01:_Basic_Techniques" class="mt-section"-->
+  <span id="Outcomes"></span>
+<h5 class="box-legend editable">
+<span class="lt-icon-default">Outcomes</span></h5>
+
+<ol style="list-style-type: upper-alpha;" start="1">
+    <li class="lt-math-14510" style="background-color: unset;">Evaluate the determinant of a square matrix using either Laplace Expansion or row operations.</li>
+    <li class="lt-math-14510" style="background-color: unset;">Demonstrate the effects that row operations have on determinants.</li>
+    <li class="lt-math-14510" style="background-color: unset;">Verify the following:
+    <ol style="list-style-type: lower-alpha;" start="1">
+        <li class="lt-math-14510" style="background-color: unset;">The determinant of a product of matrices is the product of the determinants.</li>
+        <li class="lt-math-14510" style="background-color: unset;">The determinant of a matrix is equal to the determinant of its transpose.</li>
+    </ol>
+    </li>
+</ol>
+</div></div>
 
 <h2 class="frame-sect sectcounter">&nbsp; Basic Techniques  </h2>
 <!--   \section{Introduction aux systèmes d'équations linéaires} -->
