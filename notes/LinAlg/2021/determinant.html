@@ -49,7 +49,7 @@
 
     <!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
 
-<style>
+<style  type="text/css">
 .deffont {
         font-family: 'Noto Serif Khmer', 'CMU Serif';
         font-size: 16px;
@@ -65,7 +65,7 @@ a.onmenu {
           font-weight:bold;
  }
       </style>
-<style>
+<style type="text/css">
 .box-note {
   background-color: #eef1f1;
   border-left: 4px solid #5e6e6e;
@@ -128,11 +128,387 @@ a.onmenu {
   font-family: Tahoma,Arial,serif !important;
   font-weight: 400 !important;
 }
+</style>
 
-.box-note .lt-icon-default::before {
-  content: "\f08d";
-}
-.lt-icon-default::before, .lt-icon-brain::before, .lt-icon-pin::before, .lt-icon-hand::before, .lt-icon-pathway::before, .lt-icon-logic::before, .lt-icon-check::before, .lt-icon-question::before, .lt-icon-exclamation::before {
+<style type="text/css">
+/**************** Box container styles *******************/
+	.mt-content-container .boxobjectives,
+	.boxexample,
+	.boxexercise,
+	.boxquery,
+	.boxnotewithlegend,
+	.boxnotewithoutlegend,
+	.boxprocedure,
+	.boxdefinition,
+	.boxtheorem,
+	.boxlemma,
+	.boxnotation,
+	.boxproposition {
+		-moz-border-radius: 8px;
+		-webkit-border-radius: 8px;
+		border-radius: 8px;
+		padding-top: 0em;
+		padding-bottom: 0em;
+		padding-left: 1em;
+		padding-right: 1em;
+		margin-bottom: 1em;
+		overflow: visible;
+		border: 0px;
+		orphans: 2;
+	}
+	.mt-content-container .boxnotewithlegend,
+	.boxprocedure,
+	.notation {
+		background-color: hsla(20, 0%, 93%, 1);
+	}
+	.mt-content-container .boxexample,
+	.boxexercise {
+		background-color: hsla(220, 100%, 97%, 1);
+	}
+	.mt-content-container .boxwarning {
+		background-color: hsla(0, 100%, 96%, 1);
+	}
+	.mt-content-container .boxdefinition,
+	.boxtheorem,
+	.boxlemma,
+	.boxnotation,
+	.boxproposition {
+		background-color: hsla(28, 80%, 95%, 1);
+	}
+	.mt-content-container .boxobjectives {
+		background-color: hsla(0, 0%, 90%, 1);
+	}
+	.mt-content-container .boxnotewithoutlegend {
+		background-color: hsla(20, 0%, 93%, 1);
+		padding-right: 1em;
+		padding-left: 1em;
+		padding-top: 0.5em !important;
+		padding-bottom: 0.5em !important;
+		margin-right: 1em;
+		margin-left: 1em;
+	}
+	.mt-content-container .boxquery {
+		border: 2px solid green;
+		page-break-inside: avoid;
+		visibility: hidden !important;
+		display: none !important;
+	}
+	/**************** Box legend container styles *******************/
+	.mt-content-container .boxlegend {
+		font-style: normal !important;
+		font-size: 1.1em !important;
+		font-weight: normal !important;
+		font-family: "Tahoma", Arial, serif !important;
+		padding-top: 0.2em !important;
+		padding-bottom: 0.2em !important;
+		padding-left: 0.3em !important;
+		padding-right: 0.3em !important;
+		margin-left: 0.35em;
+		color: white;
+		border-radius: 3px;
+		overflow: visible;
+		break-inside: avoid !important;
+	}
+	.boxnotewithlegend .boxlegend {
+		background-color: hsla(20, 0%, 45%, 1);
+	}
+	.boxnotewithoutlegend .boxlegend {
+		background-color: hsla(20, 0%, 45%, 1);
+		font-size: 0em !important;
+		visibility: hidden !important;
+	}
+	.boxprocedure .boxlegend {
+		background-color: hsla(20, 0%, 45%, 1);
+	}
+	.boxnotation .boxlegend {
+		background-color: hsla(20, 0%, 45%, 1);
+	}
+	.boxexample .boxlegend {
+		background-color: hsla(220, 100%, 60%, 1);
+	}
+	.boxexercise .boxlegend {
+		background-color: hsla(0, 100%, 56%, 1);
+	}
+	.boxquery .boxlegend {
+		background-color: hsl(120, 100%, 25%, 1);
+	}
+	.boxobjectives .boxlegend {
+		background-color: hsla(0, 0%, 10%, 1);
+	}
+	.boxdefinition .boxlegend {
+		background-color: hsla(28, 80%, 52%, 1);
+	}
+	.boxtheorem .boxlegend {
+		background-color: hsla(28, 80%, 52%, 1);
+	}
+	.boxlemma .boxlegend {
+		background-color: hsla(28, 80%, 52%, 1);
+	}
+	.boxnotation .boxlegend {
+		background-color: hsla(28, 80%, 52%, 1);
+	}
+	.boxproposition .boxlegend {
+		background-color: hsla(28, 80%, 52%, 1);
+	}
+	/****************************************** Current New boxes **********************************************************************/
+	.box-objectives,
+	.box-emphasis,
+	.box-structure,
+	.box-example,
+	.box-exercise,
+	.box-warning,
+	.box-query,
+	.box-note,
+	.box-procedure,
+	.box-definition,
+	.box-theorem,
+	.box-lemma,
+	.box-notation,
+	.box-proposition,
+	.box-interactive {
+		display: block;
+		border-top: none;
+		border-bottom: none;
+		border-right: none;
+		padding: 0px 10px 1px 8px;
+		margin-bottom: 0.8em !important;
+		margin-top: 0.8em !important;
+		orphans: 3;
+		border-radius: 4px 8px 8px 4px;
+		-moz-border-radius: 4px 8px 8px 4px;
+		-webkit-border-radius: 4px 8px 8px 4px;
+	}
+	.box-emphasis {
+		padding: 5px 10px 5px 10px;
+	}
+	/**************** Tuning the box colors ***************/
+	.box-objectives {
+		background-color: hsla(204, 83%, 97%, 1);
+		border-left: 4px solid hsla(204, 83%, 41%, 1);
+	}
+	.box-example {
+		background-color: hsla(204, 83%, 97%, 1);
+		border-left: 4px solid hsla(204, 83%, 41%, 1);
+	}
+	.box-exercise {
+		background-color: hsla(204, 83%, 97%, 1);
+		border-left: 4px solid hsla(204, 83%, 41%, 1);
+	}
+	.box-warning {
+		background-color: hsl(0, 100%, 96%);
+		border-left: 4px solid hsl(0, 100%, 31%);
+	}
+	.box-note {
+		background-color: hsl(180, 8%, 94%);
+		border-left: 4px solid hsl(180, 8%, 40%);
+	}
+	.box-emphasis {
+		background-color: hsl(180, 8%, 94%);
+		border-left: 4px solid hsl(180, 8%, 40%);
+	}
+	.box-structure {
+		background-color: hsl(240, 67%, 97%);
+		border-left: 4px solid hsl(240, 67%, 62%);
+	}
+	.box-query {
+		border: 3px solid hsla(220, 100%, 60%, 1);
+	}
+	.box-interactive {
+		border: 3px solid black;
+	}
+	.box-definition,
+	.box-theorem,
+	.box-lemma,
+	.box-notation,
+	.box-proposition {
+		background-color: hsl(124, 33%, 94%);
+		border-left: 4px solid hsl(132, 36%, 27%);
+	}
+	.boxprocedure,
+	.notation {
+		background-color: hsla(20, 0%, 93%, 1);
+		border-left: 4px solid hsl(43, 81%, 36%, 1)
+	}
+	/************** Defining the Legends ******************/
+	.box-legend {
+		display: block;
+		overflow: hidden;
+		margin: 0 0 5px 0;
+		transform: translate(-11px, 0px);
+		break-inside: avoid-page !important;
+		page-break-inside: avoid !important;
+	}
+	.box-legend>span {
+		float: left;
+		font-family: "Tahoma", Arial, serif !important;
+		font-size: 13px !important;
+		font-weight: normal !important;
+		color: white;
+		padding: 3px 5px 3px 5px !important;
+		margin: 0 0 3px 0;
+		line-height: 0.8em;
+		border-radius: 1px;
+	}
+	.box-legend p {
+		float: left;
+		font-family: "Tahoma", Arial, serif !important;
+		font-size: 14px !important;
+		font-weight: normal !important;
+		color: white;
+		font-size: 14px !important;
+		padding: 4px 5px 4px 5px !important;
+		margin: 0 3px 3px 0;
+		line-height: 0.8em;
+		border-radius: 1px;
+	}
+	/************** Tuning the Legends ******************/
+	.box-objectives .box-legend>span {
+		background-color: hsl(212, 77%, 47%, 1);
+	}
+	.box-example .box-legend>span {
+		background-color: hsl(212, 77%, 47%, 1);
+	}
+	.box-exercise .box-legend>span {
+		background-color: hsl(212, 77%, 47%, 1);
+	}
+	.box-query .box-legend>span {
+		background-color: hsl(212, 77%, 47%, 1);
+	}
+	.box-interactive .box-legend>span {
+		background-color: black;
+	}
+	.box-note .box-legend>span {
+		background-color: hsl(180, 8%, 40%);
+	}
+	.box-warning .box-legend>span {
+		background-color: hsl(0, 100%, 31%);
+	}
+	.box-structure .box-legend>span {
+		background-color: hsl(240, 67%, 62%);
+	}
+	.box-procedure .box-legend>span {
+		background-color: hsla(39, 100%, 58%, 1);
+	}
+	.box-definition .box-legend>span {
+		background-color: hsl(132, 36%, 27%);
+	}
+	.box-theorem .box-legend>span {
+		background-color: hsl(132, 36%, 27%);
+	}
+	.box-lemma .box-legend>span {
+		background-color: hsl(132, 36%, 27%);
+	}
+	.box-notation .box-legend>span {
+		background-color: hsl(132, 36%, 27%);
+	}
+	.box-proposition .box-legend>span {
+		background-color: hsl(132, 36%, 27%);
+	}
+	.box-definition>header,
+	.box-structure>header,
+	.box-note>header,
+	.box-theorem>header,
+	.box-example>header,
+	.box-exercise>header,
+	.box-query>header,
+	.box-adapt>header,
+	.box-objectives>header,
+	.box-warning>header {
+		display: inline-flex;
+		overflow: hidden;
+		break-inside: avoid-page;
+		page-break-inside: avoid;
+		text-align: left;
+		width: auto;
+		margin: 0 0px 2px 0px !important;
+		padding: 2px 6px 2px 4px !important;
+		transform: translate(-11px, 0px) !important;
+		border-radius: 3px 5px 5px 0;
+		-moz-border-radius: 3px 5px 5px 0;
+		-webkit-border-radius: 3px 5px 5px 0;
+	}
+	.box-definition>header *,
+	.box-structure>header *,
+	.box-note>header *,
+	.box-theorem>header *,
+	.box-example>header *,
+	.box-exercise>header *,
+	.box-query>header *,
+	.box-adapt>header *,
+	.box-objectives>header *,
+	.box-warning>header * {
+		font-family: "Tahoma", Arial, serif !important;
+		font-size: 14px !important;
+		font-weight: 400 !important;
+		color: white !important;
+		;
+		width: auto !important;
+		;
+		float: left !important;
+		;
+		line-height: 1 !important;
+		;
+		margin-block-start: 0 !important;
+		margin-block-end: 0 !important;
+	}
+	.box-definition>header,
+	.box-theorem>header {
+		background-color: hsl(132, 36%, 27%);
+	}
+	.box-definition>header * {
+		background-color: hsl(132, 36%, 27%);
+	}
+	.box-example>header,
+	.box-exercise>header,
+	.box-query>header,
+	.box-objectives>header,
+	.box-adapt>header {
+		background-color: hsla(204, 83%, 41%, 1);
+	}
+	.box-note>header {
+		background-color: hsl(180, 8%, 40%);
+	}
+	.box-example>header *,
+	.box-objectives>header *,
+	.box-exercise>header * {
+		background-color: hsla(204, 83%, 41%, 1);
+	}
+	.box-note>header * {
+		background-color: hsl(180, 8%, 40%);
+	}
+	.box-structure>header {
+		background-color: hsl(240, 67%, 62%);
+	}
+	.box-structure>header * {
+		background-color: hsl(240, 67%, 62%);
+	}
+	.box-warning>header {
+		background-color: hsl(0, 100%, 31%);
+	}
+	.box-warning>header * {
+		background-color: hsl(0, 100%, 31%);
+	}
+	.mt-content-container::before {
+		content: none;
+	}
+	section::before {
+		content: "";
+		display: block;
+		height: 4 rem;
+		/* pretend that the header is at least 8rem high so this header cannot fit near the end of page */
+		margin-bottom: -4 rem;
+		/* however, reduce the margin the same amount so that the following content can stay in its usual place */
+		page-break-inside: avoid;
+		break-inside: avoid;
+	}
+</style>
+
+<style type="text/css">/*<![CDATA[*/
+/* CSS pseudo-element styling https://fontawesome.com/how-to-use/on-the-web/advanced/css-pseudo-elements */
+
+/* general reset/setup styling for icons - needed on all */
+
+.lt-icon-default::before, .lt-icon-brain::before, .lt-icon-pin::before , .lt-icon-hand::before, .lt-icon-pathway::before, .lt-icon-logic::before, .lt-icon-check::before, .lt-icon-question::before, .lt-icon-exclamation::before    {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -145,8 +521,76 @@ a.onmenu {
   margin-right: 0.5rem;
 }
 
+/*default */
 
-</style>
+.box-example .lt-icon-default::before {
+  content: "\f00c";
+}
+.box-exercise .lt-icon-default::before {
+  content: "\f128";
+}
+.box-query .lt-icon-default::before {
+  content: "\f126";
+}
+.box-adapt .lt-icon-default::before {
+  content: "\f126";
+}
+.box-interactive .lt-icon-default::before{
+  content: "\f542";
+}
+.box-note .lt-icon-default::before {
+  content: "\f08d";
+}
+.box-objectives .lt-icon-default::before {
+  content: "\f5dc";
+}
+.box-definition .lt-icon-default::before {
+  content: "\f303";
+}
+.box-theorem .lt-icon-default::before {
+  content: "\f1b3";
+}
+.box-warning .lt-icon-default::before {
+  content: "\f256";
+}
+
+
+/*specific icons*/
+.lt-icon-brain::before  {
+  content: "\f5dc";
+}
+
+.lt-icon-pin::before {
+  content: "\f08d";
+}
+
+.lt-icon-pathway::before, {
+  content: "\f126";
+}
+
+.lt-icon-logic::before, {
+  content: "\f1b3";
+}
+
+.lt-icon-hand::before, {
+  content: "\f126";
+}
+
+.lt-icon-pathway::before, {
+  content: "\f256";
+}
+
+.lt-icon-check::before, {
+  content: "\f00c";
+}
+
+.lt-icon-question::before, {
+  content: "\f128";
+}
+
+.lt-icon-exclamation::before, {
+  content: "\f12a";
+}/*]]>*/</style>
 
 <script async="" src="//cse.google.com/adsense/search/async-ads.js"></script>
 <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
@@ -260,35 +704,6 @@ function showhideFunction() {
   </head>
 
   <body>
-<!--
-<nav class="nav-collapse" role="navigation">
-  <ul class="tabs primary-nav">
-      <li class="tabs__item">
-          <a href="../../../index.html" class="tabs__link">ទំព័រដើម</a>
-      </li>
-      <li class="tabs__item">
-          <a href="../../topology/2019/../../../posts_index.html" class="tabs__link">Blog</a>
-      </li>
-      <li class="tabs__item">
-          <a href="../../topology/2019/../../../projects.html" class="tabs__link">Projects</a>
-      </li>
-      <li class="tabs__item">
-          <a href="../../../notes_index.html" class="tabs__link">មេរៀន</a>
-      </li>
-      <li class="tabs__item">
-          <a href="../../topology/2019/../../../about.html" class="tabs__link">អំពីខ្ញុំ</a>
-      </li>
-      <li class="tabs__item">
-          <a href="../../topology/2019/../../../contact.html" class="tabs__link">ទាក់ទងខ្ញុំ</a>
-      </li>
-  </ul>
-</nav>
-
-<section class="page-header">
-<h1 class="project-name">ហាំ ការីម</h1>
-<h2 class="project-tagline">Maths, Program, Music</h2>
-</section>
--->
 
 <section class="main-content">
 
