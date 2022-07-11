@@ -1,0 +1,119 @@
+@font-face {
+   font-family: 'myFonts';
+   src: url("https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.eot"); /* IE9 Compat Modes */
+   src: local('Siemreap'),
+   url("https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+     url("https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.woff2") format('woff2'), /* Super Modern Browsers */
+    url("https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.woff") format('woff'), /* Modern Browsers */
+     url("https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.ttf") format('truetype'), /* Safari, Android, iOS */
+     url("https://hamkarim.github.io/fonts/siemreap-v12-khmer-regular.svg#Siemreap") format('svg'); /* Legacy iOS */
+}
+@font-face {
+      font-family: 'Angkor';
+      src: url("https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.eot"); /* IE9 Compat Modes */
+      src: local('Angkor'), local('Angkor-Regular'),
+      url("https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.woff2") format('woff2'), /* Super Modern Browsers */
+       url("https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.woff") format('woff'), /* Modern Browsers */
+        url("https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.svg#Siemreap") format('svg'); /* Legacy iOS */
+}
+@font-face {
+            font-family: 'Bayon';
+            src: url("https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.eot"); /* IE9 Compat Modes */
+            src: local('bayon'), local('Bayon-Regular'),
+            url("https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+              url("https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.woff2") format('woff2'), /* Super Modern Browsers */
+             url("https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.woff") format('woff'), /* Modern Browsers */
+              url("https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.ttf") format('truetype'), /* Safari, Android, iOS */
+              url("https://hamkarim.github.io/fonts/bayon-v13-khmer-regular.svg#Siemreap") format('svg'); /* Legacy iOS */
+
+
+
+
+
+
+
+              //for math fonts size
+
+              <script type="text/x-mathjax-config">
+                MathJax.Hub.Config({
+                  TeX: {
+                      Macros: {
+                        RR: "{\\bf R}",
+                        E: "{\\bf E}",
+                        F: "{\\bf F}",
+                        G: "{\\bf G}",
+                        H: "{\\bf H}",
+                        calE: "{\\mathcal E}",
+                        calF: "{\\mathcal F}",
+                        calG: "{\\mathcal G}",
+                        calH: "{\\mathcal H}",
+                        R: "{\\mathbb R}",
+                        Cc: "{\\mathbb C}",
+                        bold: ["{\\bf #1}",1],
+                        bfseries: ["{\\bf{\\text{ #1 }}",1],
+                        fontbold: ["{\\bf{\\text{ #1 }}}",1],
+                        Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+                        vect: ["{\\overrightarrow{#1}}",1],
+                      }
+                  },
+                  extensions: ["tex2jax.js"],
+                  jax: ["input/TeX", "output/HTML-CSS"],
+                  tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true
+                  },
+                  "HTML-CSS": { fonts: ["TeX"],
+                    linebreaks: { automatic: true } ,
+                   scale:58},
+                    //CommonHTML: { scale: 20, linebreaks: { automatic: true } },
+                    //CommonHTML: {scale: 20},
+                    SVG: { linebreaks: { automatic:true } },
+                  /*tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    processEscapes: true,
+                    equationNumbers: { autoNumber: "AMS" }
+                  }*/
+                });
+
+              // MathJax.Ajax.loadComplete("https://hamkarim.github.io/MathJax/config/local/local.js"); //
+              </script>
+}
+
+/* angkor-regular - khmer */
+@font-face {
+  font-family: 'Angkor';
+  src: url('https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.eot'); /* IE9 Compat Modes */
+  src: local('Angkor Regular'), local('Angkor-Regular'),
+       url('https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.woff') format('woff'), /* Modern Browsers */
+       url('https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('https://hamkarim.github.io/fonts/angkor-v12-khmer-regular.svg#Angkor') format('svg'); /* Legacy iOS */
+}
+
+/* bayon-regular - khmer */
+@font-face {
+  font-family: 'Bayon';
+  src: url('../../fonts/bayon-v13-khmer-regular.eot'); /* IE9 Compat Modes */
+  src: local('Bayon Regular'), local('Bayon-Regular'),
+       url('../../fonts/bayon-v13-khmer-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../fonts/bayon-v13-khmer-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../../fonts/bayon-v13-khmer-regular.woff') format('woff'), /* Modern Browsers */
+       url('../../fonts/bayon-v13-khmer-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../../fonts/bayon-v13-khmer-regular.svg#Bayon') format('svg'); /* Legacy iOS */
+}
+
+/* siemreap-regular - khmer */
+@font-face {
+  font-family: 'Siemreap';
+  src: url('../../fonts/siemreap-v12-khmer-regular.eot'); /* IE9 Compat Modes */
+  src: local('Siemreap'),
+       url('../../fonts/siemreap-v12-khmer-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../fonts/siemreap-v12-khmer-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../../fonts/siemreap-v12-khmer-regular.woff') format('woff'), /* Modern Browsers */
+       url('../../fonts/siemreap-v12-khmer-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../../fonts/siemreap-v12-khmer-regular.svg#Siemreap') format('svg'); /* Legacy iOS */
+}

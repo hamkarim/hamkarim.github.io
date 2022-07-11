@@ -1,0 +1,128 @@
+@charset "utf-8";
+/* Global Styles */
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize -Share:400,700&subset=latin,latin-ext */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Koulen&family=Angkor&family=Bangers&family=Kaushan+Script&family=Modak&family=Ultra&family=Fjalla+One&family=Oswald:wght@400&family=Noto+Serif:wght@400&family=Noto+Sans:wght@700&family=Lalezar&display=swap');
+
+@import url("https://fonts.googleapis.com/css?family=Open Sans|Didact Gothic|Siemreap|Bayon|Battambang|");
+/* html, body {  /*for html, body fonts*
+          font-family: 'Ang DaunKeo','Siemreap', 'Century Gothic', 'Didact Gothic';
+          -ms-text-size-adjust:100%;
+          -webkit-text-size-adjust:100%;
+          padding:0;
+          margin:0;
+    /*font-family: 'Khmer OS Battambang', 'sans-serif';/*"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
+        /*  font-size:18px; *
+          line-height:2.0;
+          color:#606c71;
+}*/
+
+
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v4.0 | 20180602
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, img, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align:baseline;
+  font-family: inherit;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+.alignright {
+  float: right;
+}
+
+.alignleft {
+  float: left;
+}
+
+.aligncenter {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.frame-sect{
+border-bottom: 3px solid darkblue;
+/*-border-top: 2px solid black;
+/*- border-radius: 2px;
+background-color: royalblue;
+padding-left: 15px;
+padding-right: 15px;
+padding-top: 8px;-*/
+padding-bottom: 3px;
+margin-bottom: 20px !important;;
+/*-text-align: center;-*/
+}
+
+
+h1 {
+  font-size: 3rem;
+  line-height: 5.6rem;
+  font-family:'Angkor','Bangers', cursive; /*'Didact Gothic'; /*'Century Gothic','Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang'; */
+   color:#000;
+	/* font-weight:bold; */
+}
+
+h1 span {
+  font-style:italic;
+  font-family:'Didact Gothic',cursive; /*'Didact Gothic'; /*'Century Gothic','Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang'; */
+   color:#000;
+}
+
+h2 {
+    color:#7A0002;
+    font-family:'Angkor','Oswald', sans-serif; /*'Didact Gothic'; /*'Century Gothic','Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang'; */
+	/*font-weight:bold;*/
+    font-size: 2rem; 
+    line-height: 4.8rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  line-height: 4rem;
+  font-family:'Bayon','Kaushan Script', cursive;
+}
+
+h4 {
+  font-size: 1.6rem;
+  line-height: 4rem;
+  font-family:'Bayon','Kaushan Script', cursive;
+}
+
+h5 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 3.2rem;
+  font-family:'Bayon','Kaushan Script', cursive;
+} 
+
+h6 {
+  font-size: 1.2rem;
+  line-height: 3.2rem;
+  font-weight: 600;
+}
+

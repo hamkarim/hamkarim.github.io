@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Right Triangle|Trigonometry</title>
+<meta property="og:title" content="Ham Karim">
+<meta name="author" content="Ham Karim">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Math, Programmer, Music">
+<meta property="og:description" content="Math, Programmer, Music">
+<link rel="canonical" href="index.htm">
+<meta property="og:url" content="https://hamkarim.github.io/">
+<meta property="og:site_name" content="Right Triangle">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@pkarim">
+<meta name="twitter:creator" content="@pkarim">
+<script type="application/ld+json">
+{"name":"Ham Karim","description":"Math, Programmer, Music","author":{"@type":"Person","name":"Ham Karim"},"@type":"WebSite","url":"https://hamkarim.github.io/","image":null,"publisher":null,"headline":"Ham Karim", "dateModified":null, "datePublished":null, "sameAs":null, "mainEntityOfPage":null, "@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta property="og:image" content="http://www.cliparts101.com/files/376/298FE3955707B1DE458221E4BFABFBBE/Greek_Gamma_4.png">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <title>Ham Karim | Ham Karim</title>
+    <meta name="description" content="Math Student, Programmer, Music Fan">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- link href='https://fonts.googleapis.com/css?family=Noto Serif Khmer|CMU Serif' rel='stylesheet' type='text/css'> -->
+	<style>
+      .def-font {
+        font-family: 'Noto Serif Khmer', 'CMU Serif';
+        font-size: 20px;
+        }
+	  ul.liststyle1 {
+        list-style-type: square;
+      }
+      ul.liststyle2 {
+        list-style-type: hebrew;
+      }
+	  a.on-menu {
+		font-family:'Noto Serif Khmer','CMU Serif';
+		font-weight:bold;	
+	  }
+    </style>
+    <link rel="stylesheet" href="..\..\..\assets\css\style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+	
+	  <!-- script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script-->
+ <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    Macros: {
+      RR: "{\bf R}",
+      bold: ["{\\bf #1}",1],
+      Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""]
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true,
+      equationNumbers: { autoNumber: "AMS" }
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+	  
+<!-- To get it to work in old versions of Internet Explorer, you need to append this script to the head (Important if you need it to work in older versions of IE!): -->
+ <!--[if lt IE 9] --> 
+ <script> document.createElement("example"); </script>
+ <!-- [endif]-->
+	  
+  </head>
+
+  <body class="def-font">
+
+    <nav class="nav-collapse" role="navigation">
+    <ul class="tabs primary-nav">
+        <li class="tabs__item">
+            <a href="..\..\..\index.htm" class="tabs__link">ទំព័រដើម</a>
+        </li>
+        <li class="tabs__item">
+            <a href="..\..\..\posts_index.html" class="tabs__link">Blog</a>
+        </li>
+        <li class="tabs__item">
+            <a href="..\..\..\projects.html" class="tabs__link">Projects</a>
+        </li>
+        <li class="tabs__item">
+            <a href="..\..\..\notes_index.html" class="tabs__link">មេរៀន</a>
+        </li>
+        <li class="tabs__item">
+            <a href="..\..\..\about.html" class="tabs__link">អំពីខ្ញុំ</a>
+        </li>
+        <li class="tabs__item">
+            <a href="..\..\..\contact.html" class="tabs__link">ទាក់ទងខ្ញុំ</a>
+        </li>
+    </ul>
+</nav>
+
+<section class="page-header">
+  <h1 class="project-name">ហាំ ការីម</h1>
+  <h2 class="project-tagline">Maths, Program, Music</h2>
+</section>
+
+
+<section class="main-content">
+
+<h1>ជំពូក: លំហផលគុណរាប់អស់</h1> <!-- Finite Produlcts -->
+
+<p style="font-style: italic; font-weight:bold; font-family: Arial; opacity: 0.5;">
+October
+2nd, 2020
+</p>
+
+<hr>
+ <p>From Wikipedia:</p>
+
+<blockquote>
+	<a href="https://mathstrek.blog/2013/01/27/topology-product-spaces-i/">
+         <img class="wrap-right" alt="Trigonometry" src="https://simomaths.files.wordpress.com/2013/01/basis_of_products.png"
+         width="60%" height="%">
+      </a>	
+  <p>In topology and related areas of mathematics, a product space is the Cartesian product of a family of topological spaces equipped with a natural topology called the product topology. This topology differs from another, perhaps more obvious, topology called the box topology, which can also be given to a product space and which agrees with the product topology when the product is over only finitely many spaces. However, the product topology is "correct" in that it makes the product space a categorical product of its factors, whereas the box topology is too fine; in that sense the product topology is the natural topology on the Cartesian product.</p>
+</blockquote>
+	
+<!-- note on visualizing of spaces 
+Topological Spaces: sets with a notion of what is "open" and "closed".
+Vector Spaces: sets with operations of "addition" and "(scalar) multiplication".
+Topological Vector Spaces: "addition" and "multiplication" are continuous in the topology.
+Metric Spaces: sets that come with a way to measure the "distance" between two points, called a metric; the topology is generated by this metric.
+Locally Convex Spaces: sets where the topology is generated by translations of "balls" (balanced, absorbent, convex sets); do not necessarily have a notion of "distance".
+Normed Vector Spaces: sets where the topology is generated by a norm, which in some sense is the measure of a vector's "length". A norm can always generate a metric (measure the "length" of the difference of two vectors), and every normed space is also locally convex.
+Fréchet Spaces: a set where the topology is generated by a translation-invariant metric; this metric doesn't necessarily have to come from a norm. All Fréchet spaces are complete metric spaces (meaning that if elements of a sequence get arbitrarily "close", then the sequence must converge to an element already in the space.)
+Banach Spaces: a set that is a complete metric space, where the metric is defined in terms of a norm.
+Inner Product Spaces: sets with a way to measure "angles" between vectors, called an inner product. An inner product can always generate a norm, but the space may or may not be complete with respect to this norm.
+Hilbert Spaces: an inner product space that is complete with respect to this induced norm. Any inner product space that is incomplete (called a "pre-Hilbert Space") can be completed to a Hilbert space.
+Manifold: a set with a topology that locally "looks like" Euclidean space. Any manifold can be turned into a metric space.
+-->
+
+<h2 class="frame-sect"> ម៉ាទ្រីស Positive-Negative Definite </h2>
+
+<p> 
+<ol> 
+	<li> 
+ម៉ាទ្រីស $M$ លំដាប់ $n \times n$ ជាម៉ាទ្រីសឆ្លុះ ហៅថា positive-definite បើ $x^{\top} M x &gt; 0$ ចំពោះគ្រប់វ៉ិចទ័រមិនសូន្យ $x \in \mathbb{R}^{n}$ ។ គឺមានន័យថា 
+\[
+M \text { positive-definite } \Longleftrightarrow x^{\top} M x &gt; 0 \text { for all } x \in \mathbb{R}^{n} \backslash \mathbf{\{0\}}
+\]
+</li>
+<li>
+ម៉ាទ្រីស $M$ លំដាប់ $n \times n$ ជាម៉ាទ្រីសឆ្លុះ ហៅថា positive semidefinite ឬ non-negative-definite បើ $x^{\top} M x \geq 0$ ចំពោះគ្រប់វ៉ិចទ័រ $x\in\mathbb{R}^{n}$ ។ គឺមានន័យថា 
+\[
+M \text { non-negative-definite } \Longleftrightarrow x^{\top} M x \geq 0 \text { for all } x \in \mathbb{R}^{n}
+\]
+	</li>
+	
+<li> 
+ម៉ាទ្រីស $M$ លំដាប់ $n \times n$ ជាម៉ាទ្រីសឆ្លុះ ហៅថា negative-definite បើ $x^{\top} M x &lt; 0$ ចំពោះគ្រប់វ៉ិចទ័រមិនសូន្យ $x\in\mathbb{R}^{n}$ ។ គឺមានន័យថា 
+\[
+M \text { negative-definite } \Longleftrightarrow x^{\top} M x &lt; 0 \text { for all } x \in \mathbb{R}^{n} \setminus \mathbf{\{0\}}
+\]
+</li>
+
+<li>
+ម៉ាទ្រីស $M$ លំដាប់ $n \times n$ ជាម៉ាទ្រីសឆ្លុះ ហៅថា negative semidefinite ឬ non-positive-definite បើ $x^{\top} M x \leq 0$ ចំពោះគ្រប់វ៉ិចទ័រ $x\in\mathbb{R}^{n}$ ។ គឺមានន័យថា 
+\[
+M \text { non-positive-definite } \Longleftrightarrow x^{\top} M x \leq 0 \text { for all } x \in \mathbb{R}^{n}
+\]
+	</li>
+<p>An $ n\times n$ symmetric real matrix which is neither positive semidefinite nor negative semidefinite is called <b>indefinite</b>.</p>
+	</ol> </p>	
+
+<example>
+<p> <i> 
+	<b>Example</b> - For what numbers $b$ is the following matrix positive semidefinite?
+\[ M = 
+\left(\begin{array}{ccc}
+2 & -1 & b \\
+-1 & 2 & -1 \\
+b & -1 & 2
+\end{array}\right)
+\]
+	</i> 
+	 </p>
+<p>
+<b>ចម្លើយ -</b> យក $x\in \mathbb{R}^3$ គេបាន៖
+  \begin{eqnarray*}
+	x^T M x &=& (m\;\; n\;\; p)\begin{pmatrix} 2 & -1 & b \\
+-1 & 2 & -1 \\
+b & -1 & 2 \end{pmatrix} \begin{pmatrix} m\\ n\\ p \end{pmatrix} \\
+	&=& \begin{pmatrix} 2m-n+bp & -m+2n-p & bm-n+2p \end{pmatrix}\begin{pmatrix} m\\ n\\ p \end{pmatrix} \\
+	&=& 
+	\end{eqnarray*}
+	
+	
+	
+	
+	
+	</p>
+</example>	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<h2 class="frame-sect">1. Motivation</h2>
+<p>
+This is the last part in our series exploring how to get new topological spaces from old ones. For now, at least. We mentioned the definition of the product topology for a finite product way back in Example 2.3 .6 in the lecture notes concerning bases of topologies, but we did not do anything with it at the time. In that same section we also discussed the following basis on $\mathbb{R}^{2}$
+that we were eventually able to show generates the usual topology on $\mathbb{R}^{2}$ :
+	
+\[
+\mathcal{B} = \left\{(a, b) \times(c, d) \subseteq \mathbb{R}^{2}:\; a &lt; b, c &lt; d\right\}
+\]
+	
+This is, essentially, how (finite) product topologies work in general, as we will see shortly.
+We will also explore a new way of analyzing topological properties themselves. We have
+already seen that all the topological properties we care about are preserved by homeomorphisms,
+and that some are preserved under weaker maps like continuous surjections (recall that the image
+of a dense set under a continuous function is dense in the range of the function). We also saw that some topological properties are hereditary (like Hausdorffness and second countability)
+while some are not (like separability). In this section we will explore another way of analyzing properties, by asking whether they are preserved by finite products.
+
+Also, while reading this section, note that we are specifically talking about finite products
+of topological spaces, and any time we refer to a product of spaces the reader should assume we
+mean a finite product. Infinite products are substantially more complicated, and we will deal
+with them later in the course. Finite products are actually quite straightforward.
+	</p>
+	
+<h2 class="frame-sect">2. Finite product topologies</h2>
+	
+<!--p>រំព្ញកអំពីនិយមន័យមួយចំនួននៅក្នុងធរណីមាត្រកម្រិតបឋមៗ គឺ៖ 
+<ul>
+<li><p><strong>មុំស្រួច</strong> (acute angle) ជាមុំដែលស្ថិតនៅចន្លោះតម្លៃ \(0^{\circ}\) និង \(90^{\circ}\)។</p></li>
+<li><p><strong>មុំកែង</strong> (right angle) ជាមុំដែលមានរង្វាស់ស្មើ <span class="math inline">\(90^{\circ}\)</span> ។</p></li>
+<li><p><strong>មុំទាល</strong> (obtuse angle) ជាមុំដែលមានរង្វាស់នៅចន្លោះ <span class="math inline">\(90^{\circ}\)</span> និង <span class="math inline">\(180^{\circ}\)</span>។</p></li>
+<li><p><strong>មុំត្រង់</strong> (straight angle) ជាមុំដែលមានរង្វាស់ស្មើ <span class="math inline">\(180^{\circ}\)</span>.</p></li>
+</ul>
+</p -->
+
+	
+<p><b>
+	Definition 2.1. 
+	</b> 
+	Let $(X, \mathcal{T}_1)$ and $(Y, \mathcal{T}_2)$ be topological spaces. The product topology on $X \times Y$ is
+the topology generated by the basis
+\[
+\mathcal{B}_{X\times Y} = \big\{U \times V: U \in \mathcal{T}_1, V \in \mathcal{T}_2\big\}
+\]
+More generally if $\left(X_{1}, \mathcal{T}_{1}\right), \ldots,\left(X_{n}, \mathcal{T}_{n}\right)$ are topological spaces, the product topology on
+\[
+\prod_{i=1}^{n} X_{i} = X_{1} \times \cdots \times X_{n}
+\]
+is the topology generated by the basis
+\[
+ \mathcal{B}_{\prod_{i=1}^{n} X_{i}} = \big\{U_{1} \times U_{2} \times \cdots \times U_{n} \mid \; U_{i} \in \mathcal{T}_{i}, \; \text{ for all } i=1, \ldots, n\big\}
+\]
+	</p>
+
+<p>
+	Simple as that. This definition is what you should want it to be, more or less. It is natural
+to expect that products of sets that are open in each coordinate should be open in the product.
+That alone does not give you a topology, it turns out, but it does give you a basis. So you
+generate a topology from it, and the result is the product topology.
+As you would expect, bases play nicely with this definition as well, as shown by the following
+easy proposition.
+
+	</p>	
+
+<p><b>
+	Proposition 2.2. 
+	</b> 
+Let $(X, \mathcal{T}_1)$ and $(Y, \mathcal{T}_2)$ be topological spaces, and let $\mathcal{B}_{X}$ and $\mathcal{B}_{Y}$ be bases on $X$ and $Y$ that generate $\mathcal{T}_1$ and $\mathcal{T}_2$, respectively. Then
+\[
+\mathcal{B}=\left\{U \times V: U \in \mathcal{B}_{X}, V \in \mathcal{B}_{Y}\right\}
+\]
+is a basis for the product topology on $X \times Y$
+	</p>
+
+ 
+<p class="blockproof">
+Proof. $\mathcal{B}_{X} \subseteq \mathcal{T}$ and $\mathcal{B}_{Y} \subseteq \mathcal{U},$ and so every element of $\mathcal{B}$ is open in the product topology. <br>
+	
+Now fix an open set $U$ in the product topology, and some point $(x, y) \in U .$ We need to find
+an element $B \in \mathcal{B}$ such that $x \in B \subseteq U .$ By definition of the product topology, there must be
+some $U_{X} \in \mathcal{T}$ and $U_{Y} \in \mathcal{U}$ such that $(x, y) \in U_{X} \times U_{Y} \subseteq U .$ Using the fact that $\mathcal{B}_{X}$ and $\mathcal{B}_{Y}$ are
+bases, find sets $B_{X} \in \mathcal{B}_{X}$ and $B_{Y} \in \mathcal{B}_{Y}$ such that $x \in B_{X} \subseteq U_{X}$ and $y \in B_{Y} \subseteq U_{Y} .$ But then
+we have:
+\[
+(x, y) \in B_{X} \times B_{Y} \subseteq U_{X} \times U_{Y} \subseteq U
+\]
+so $B=B_{X} \times B_{Y}$ is the set we were looking for.
+Of course, this fact generalizes to larger finite products and the proof is similarly straightforward.
+	
+</p>
+	
+	
+	
+		
+<h2> Barycentre de deux points </h2>		
+		
+<p>
+<strong>Définition 1:</strong> On appelle barycentre des points \(A\) et \(B\) ( ou \(A\) et \(B\) deux points du plan ou de I'espace ) affectés respectivement des coefficients \(\alpha, \beta\) ( ou \(\alpha, \beta\) sont des réels tels que \(\alpha+\beta \neq 0\) l'unique point \(G\) tel que \(\alpha \overrightarrow{G A}+\beta \overrightarrow{G B}=\overrightarrow{0}\) 
+</p>	
+
+
+    
+
+<hr>
+
+<h3> Recent Posts </h3>
+<ul>
+  
+    
+    <li>
+      <i> <a href="post\2017\11\01\varparams.html">A Note on the Variation of Parameters Method </a> | 11/01/17 </i>
+    </li>
+  
+    
+    <li>
+      <i> <a href="notes\2017\10\26\groups3.html">Group Theory, Part 3: Direct and Semidirect Products </a> | 10/26/17 </i>
+    </li>
+  
+    
+    <li>
+      <i> <a href="notes\2017\10\19\galoistheory1.html">Galois Theory, Part 1: The Fundamental Theorem of Galois Theory </a> | 10/19/17 </i>
+    </li>
+  
+    
+    <li>
+      <i> <a href="notes\2017\10\19\fieldtheory2.html">Field Theory, Part 2: Splitting Fields; Algebraic Closure </a> | 10/19/17 </i>
+    </li>
+  
+    
+    <li>
+      <i> <a href="notes\2017\10\18\fieldtheory1.html">Field Theory, Part 1: Basic Theory and Algebraic Extensions </a> | 10/18/17 </i>
+    </li>
+  
+</ul>
+<footer class="site-footer">
+  
+  <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+</footer>
+
+</section>
+</body>
+
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-102852226-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</html>

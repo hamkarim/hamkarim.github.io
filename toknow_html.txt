@@ -1,0 +1,360 @@
+
+1. 	For figure tag
+	https://www.w3.org/Style/Examples/007/figures.en.html
+2.
+
+
+vscode://vscode.github-authentication/did-authenticate?windowId=1&code=8b6993eba789b41b033a&state=e3f34bd5-af6f-4012-b1f9-6ac22782d25b
+
+
+
+
+/* content-regular - khmer  and  open sans*/
+@font-face {
+  font-family: 'Khmer', 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://hamkarim.github.io/fonts/khmer-v12-khmer-regular.eot"),url('https://hamkarim.github.io/fonts/open-sans-v17-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Khmer','Open Sans Regular','OpenSans-Regular'),
+        url('https://hamkarim.github.io/fonts/khmer-v12-khmer-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('https://hamkarim.github.io/fonts/khmer-v12-khmer-regular.woff2') format('woff2'), /* Super Modern Browsers */
+        url('https://hamkarim.github.io/fonts/khmer-v12-khmer-regular.woff') format('woff'), /* Modern Browsers */
+        url('https://hamkarim.github.io/fonts/khmer-v12-khmer-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('https://hamkarim.github.io/fonts/khmer-v12-khmer-regular.svg#Khmer') format('svg'), /* Legacy iOS */
+		url('https://hamkarim.github.io/fonts/open-sans-v17-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		url('https://hamkarim.github.io/fonts/open-sans-v17-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+		url('https://hamkarim.github.io/fonts/open-sans-v17-latin-regular.woff') format('woff'), /* Modern Browsers */
+		url('https://hamkarim.github.io/fonts/open-sans-v17-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('https://hamkarim.github.io/fonts/open-sans-v17-latin-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+html, body{
+    font: normal 16px Khmer, OpenSans, sans-serif;
+}
+
+
+/* angkor-regular - khmer */
+@font-face {
+  font-family: 'Angkor';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/angkor-v12-khmer-regular.eot'); /* IE9 Compat Modes */
+  src: local('Angkor Regular'), local('Angkor-Regular'),
+       url('../fonts/angkor-v12-khmer-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/angkor-v12-khmer-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/angkor-v12-khmer-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/angkor-v12-khmer-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/angkor-v12-khmer-regular.svg#Angkor') format('svg'); /* Legacy iOS */
+}
+
+/* siemreap-regular - khmer */
+@font-face {
+  font-family: 'Siemreap';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/siemreap-v12-khmer-regular.eot'); /* IE9 Compat Modes */
+  src: local('Siemreap'),
+       url('../fonts/siemreap-v12-khmer-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/siemreap-v12-khmer-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/siemreap-v12-khmer-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/siemreap-v12-khmer-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/siemreap-v12-khmer-regular.svg#Siemreap') format('svg'); /* Legacy iOS */
+}
+
+
+/* bayon-regular - khmer */
+@font-face {
+  font-family: 'Bayon';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/bayon-v13-khmer-regular.eot'); /* IE9 Compat Modes */
+  src: local('Bayon Regular'), local('Bayon-Regular'),
+       url('../fonts/bayon-v13-khmer-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/bayon-v13-khmer-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/bayon-v13-khmer-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/bayon-v13-khmer-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/bayon-v13-khmer-regular.svg#Bayon') format('svg'); /* Legacy iOS */
+}
+
+/* didact-gothic-regular - latin */
+@font-face {
+  font-family: 'Didact Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/didact-gothic-v13-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Didact Gothic Regular'), local('DidactGothic-Regular'),
+       url('../fonts/didact-gothic-v13-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/didact-gothic-v13-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/didact-gothic-v13-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/didact-gothic-v13-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/didact-gothic-v13-latin-regular.svg#DidactGothic') format('svg'); /* Legacy iOS */
+}
+
+
+// Environment for definition
+
+<defn>
+ <div class="definition"> </div>
+ <div class="definitionb">
+ <p>
+លំហអាហ្វីន $\mathcal{E}$ ជាលំហមានវិមាត្ររាប់អស់ បើលំហវ៉ិចទ័រ $\vect{\E}$ ជាលំហមានវិមាត្ររាប់អស់។ ក្នុងករណីនេះ វិមាត្ររបស់ $\mathcal{E}$ ស្មើនឹងវិមាត្ររបស់លំហទិសដៅ។  </p>
+</div>
+</defn>
+
+// Another method of block proof
+<div class="showhidebground">
+    <a href="#proofNo.1" class="input_name" id="showanswer">[Show proof]</a>
+    <a href="#proofNo.1" class="input_name" id="hideanswer"  style="display:none;">[Hide proof]</a>
+</div><br>
+<div class="block_proof" style="display:none">
+<div><b><span class="headproof">សម្រាយបញ្ជាក់.</span> </b> </div>
+<p>
+This is the last part in our series exploring how to get new topological spaces from old ones. For now, at least. We mentioned the definition of the product topology for a finite product way back in Example 2.3 .6 in the lecture notes concerning bases of topologies, but we did not do anything with it at the time. In that same section we also discussed the following basis on $\mathbb{R}^{2}$
+that we were eventually able to show generates the usual topology on $\mathbb{R}^{2}$ :
+
+\[
+\mathcal{B} = \left\{(a, b) \times(c, d) \subseteq \mathbb{R}^{2}:\; a &lt; b, c &lt; d\right\}
+\]
+</p>
+</div>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Show hide solutions in example
+
+%%%%%%%%%% style 
+
+.example {
+  border: 2px solid #000000;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  width: 100%;
+  padding: 5px;
+  margin: 0 0 20px 0;
+  box-shadow: 0 0 3px 2px rgba(188,43,43, 0.6);
+}
+
+.example-title {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.example-content {
+  padding: 10px 5px 0 5px;
+}
+
+.example_parts_list, .example_parts_sub_list {
+  margin: 5px 0 10px 0;
+  padding-left: 15px;
+}
+
+  .example_parts_list:first-of-type, .example_parts_sub_list:first-of-type {
+    counter-reset: item;
+  }
+
+  .example_parts_list > li, .example_parts_sub_list > li {
+    display: block;
+    margin-bottom: 12px;
+    margin-left: 5px;
+  }
+
+    .example_parts_list > li:last-child, .example_parts_sub_list > li:last-child {
+      display: block;
+      margin-bottom: unset;
+      margin-left: 5px;
+    }
+
+    .example_parts_list > li::before {
+      counter-increment: item;
+      content: "(" counter(item, lower-alpha) ")";
+      padding-right: 5px;
+      margin-left: -3px;
+      font-weight: bold;
+    }
+
+    .example_parts_sub_list > li::before {
+      counter-increment: item;
+      content: "(" counter(item, lower-roman) ")";
+      padding-right: 5px;
+      margin-left: -3px;
+      font-weight: bold;
+    }
+
+.soln-title {
+  font-weight: bold;
+  font-style: italic;
+  font-size: unset;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+
+.S-Hint {
+  color: rgb(188,43,43);
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.SH-Link {
+  font-size: smaller;
+  font-weight: bold;
+  color: #0000cc;
+}
+
+.SH-Link-Hover {
+  font-size: smaller;
+  font-weight: bold;
+  color: #FF00FF;
+  cursor: pointer;
+}
+
+.SH-padding {
+  padding-right: 10px;
+}
+
+.SH-All::before, .SH-Bracket::before, .practice-soln-link::before {
+  content: "[";
+  color: #000000;
+}
+
+  .SH-All::before:hover, .SH-Bracket::before:hover, .practice-soln-link::before:hover {
+    content: "[";
+    color: #000000;
+  }
+
+.SH-All::after, .SH-Bracket::after, .practice-soln-link::after {
+  content: "]";
+  color: #000000;
+}
+
+  .SH-All::after:hover, .SH-Bracket::after:hover, .practice-soln-link::after:hover {
+    content: "]";
+    color: #000000;
+  }
+
+.SH-Show {
+  display: block !important;
+}
+
+.SH-Hide {
+  display: none;
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%% code in body and header
+<head>
+<script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
+ 
+<script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>  
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+  
+  
+</head>
+
+<div class="example">
+    <span class="example-title">Example 3</span> Evaluate the following integral.
+             
+$$\int{{\left( {3t + 5} \right)\cos \left( {\frac{t}{4}} \right)\,dt}}$$
+<div class="example-content">
+      <span id="SHLink_Soln3" class="soln-title SH-Link">Show Solution</span> 
+	  <span id="SHImg_Soln3" class="fa fa-caret-right" aria-hidden="true"></span>
+ <div id="SHObj_Soln3" class="soln-content" style="display: none;">
+<p>There are two ways to proceed with this example.  For many, the first thing that they try is multiplying the cosine through the parenthesis, splitting up the integral and then doing integration by parts on the first integral.</p>
+          
+ <p>While that is a perfectly acceptable way of doing the problem it’s more work than we really need to do.  Instead of splitting the integral up let’s instead use the following choices for </p>
+            
+ \begin{align*}u & = 3t + 5& \hspace{0.5in}dv & = \cos \left( {\frac{t}{4}} \right)\,dt\\ du & = 3\,dt & \hspace{0.5in}v & = 4\sin \left( {\frac{t}{4}} \right)\end{align*}
+
+ <p>The integral is then,</p>
+      
+\begin{align*}\int{{\left( {3t + 5} \right)\cos \left( {\frac{t}{4}} \right)\,dt}} & = 4\left( {3t + 5} \right)\sin \left( {\frac{t}{4}} \right) - 12\int{{\sin \left( {\frac{t}{4}} \right)\,dt}}\\ &  = 4\left( {3t + 5} \right)\sin \left( {\frac{t}{4}} \right) + 48\cos \left( {\frac{t}{4}} \right) + c\end{align*}
+
+<p>Notice that we pulled any constants out of the integral when we used the integration by parts formula.  We will usually do this in order to simplify the integral a little.</p>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+
+<div class="example">
+    <span class="example-title">Example 5</span> Evaluate the following integral
+              $$\int{{x\sqrt {x + 1} \,dx}}$$
+    <ol class="example_parts_list">
+      <li>Using Integration by Parts.</li>
+      <li>Using a standard Calculus I substitution.</li>
+    </ol>
+    <span id="SHALink_S_Soln5" class="SH-All SH-Link">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln5" class="SH-All SH-Link">Hide All Solutions</span>
+    
+<div class="example-content">
+      <span class="soln-list-item soln-list-subitem">a</span> Using Integration by Parts. <span id="SHLink_Soln5a" class="soln-title SH-Link">Show Solution</span> <span id="SHImg_Soln5a" class="fa fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5a" class="soln-content" style="display: none;">
+        <p>First notice that there are no trig functions or exponentials in this integral.  While a good many integration by parts integrals will involve trig functions and/or exponentials not all of them will so don’t get too locked into the idea of expecting them to show up.</p>
+          
+          <p>In this case we’ll use the following choices for $u$ and $dv$.</p>
+            \begin{align*}u & = x & \hspace{0.5in}dv & = \sqrt {x + 1} \,dx\\ du & = dx & \hspace{0.5in}v & = \frac{2}{3}{\left( {x + 1} \right)^{\frac{3}{2}}}\end{align*}
+
+          <p>The integral is then,</p>
+           \begin{align*}\int{{x\sqrt {x + 1} \,dx}} &= \frac{2}{3}x{\left( {x + 1} \right)^{\frac{3}{2}}} - \frac{2}{3}\int{{{{\left( {x + 1} \right)}^{\frac{3}{2}}}\,dx}}\\ &  = \frac{2}{3}x{\left( {x + 1} \right)^{\frac{3}{2}}} - \frac{4}{{15}}{\left( {x + 1} \right)^{\frac{5}{2}}} + c\end{align*}
+      </div>
+
+      <br>
+      <span class="soln-list-item soln-list-subitem">b</span> Using a standard Calculus I substitution. <span id="SHLink_Soln5b" class="soln-title SH-Link">Show Solution</span> <span id="SHImg_Soln5b" class="fa fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5b" class="soln-content" style="display: none;">
+        <p>Now let’s do the integral with a substitution.  We can use the following substitution.</p>
+
+            $$u = x + 1\hspace{0.5in}x = u - 1\hspace{0.5in}du = dx$$
+          
+          <p>Notice that we’ll actually use the substitution twice, once for the quantity under the square root and once for the  in front of the square root.  The integral is then,</p>
+          
+            \begin{align*}\int{{x\sqrt {x + 1} \,dx}} & = \int{{\left( {u - 1} \right)\sqrt u \,du}}\\ &  = \int{{{u^{\frac{3}{2}}} - {u^{\frac{1}{2}}}\,du}}\\ &  = \frac{2}{5}{u^{\frac{5}{2}}} - \frac{2}{3}{u^{\frac{3}{2}}} + c\\ &  = \frac{2}{5}{\left( {x + 1} \right)^{\frac{5}{2}}} - \frac{2}{3}{\left( {x + 1} \right)^{\frac{3}{2}}} + c\end{align*}
+      </div>
+    </div>
+  </div>
+
+
+
+<h1>fa fa-caret-down</h1>
+
+<i class="fa fa-caret-down"></i>
+<i class="fa fa-caret-down" style="font-size:24px"></i>
+<i class="fa fa-caret-down" style="font-size:36px"></i>
+<i class="fa fa-caret-down" style="font-size:48px;color:red"></i>
+<br>
+
+<p>Used on a button:</p>
+<button style="font-size:24px">Button <i class="fa fa-caret-right"></i></button>
+
+<p>Unicode:</p>
+<i style="font-size:24px" class="fa">&#xf0d7;</i>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Environment for definitions
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+<defn>
+          <div class="definition">[Matrix Transpose] </div>
+ <div class="definitionb">
+ <p>
+
+</p>
+</div>
+ </defn>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%

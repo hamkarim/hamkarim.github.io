@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introduction to Mappings</title>
+
+		<meta name="description" content="Statistical inference | Classical Methods">
+		<meta name="author" content="Ham Karim">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/moon.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
+        </script>
+        
+        <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+}
+th {
+  text-align: left;
+}
+td.noBorder {
+  border: 0;
+}
+</style>
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+                    <div class="aligncenter">
+					<a href="">
+						<img src="./img/esti_face.png" alt=" " style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo" width="60%">
+					</a>
+					<h1>One- and Two-Sample Tests of Hypotheses<br>
+                        <span style="font-size: 30px;color: darkblue;">
+                              (Statistical Inference)</span></h1><br>
+
+					<p>
+                        by <br> <a href="hamkarim.github.io"><h4 style="font-size:40px">ហាំ ការីម</h4></a>
+					</p>
+                    <h3>សាកលវិទ្យាល័យអង្គរខេមរា</h3>
+                    </div>
+				</section>
+
+				<section>
+					<h3>លទ្ធផលរំពឹងទុក៖</h3>
+					<p>
+						នៅចុងបញ្ចប់នៃមេរៀននេះ អ្នកអាចយល់ និងអនុវត្តបាននូវគោលគំនិតគន្លឹះមួយចំនួន ដូចខាងក្រោម៖
+
+                    <ol style="padding-left: 60px">
+                        <li>Perform hypothesis testing</li>
+                        <li>Provide a measure of reliability for the hypothesis test, called the significance level of the test</li>
+                        <li>Identify Type I and Type II errors and interpret them</li>
+                        <li>Interpret the confidence level, and the significance level</li>
+                        <li>Compute and interpret $p$-values</li>
+                    </ol>
+					</p>
+
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2 class="frame-sect">សេចក្ដីផ្ដើម</h2>
+						<p>Consider a population with some unknown parameter $\theta$. We are interested in testing (confirming or denying) some conjectures about $\theta$. For example, we might be interested in testing the conjecture that $\theta = \theta_0$ where $\theta_0$ is a given value. </p>
+						<ul style="padding-left: 60px">
+                            <li><a>A statistical hypothesis</a> is a conjecture concerning (or a statement about) the population.</li>
+                            <p>For example, if \(\theta\) is an unknown parameter of the population, we may be interested in testing the conjecture that \(\theta>\theta_{0}\) for some specific value \(\theta_{0}\).</p><br>
+                            
+                            <li><a>Null hypothesis</a>, $H_0$, is a statistical hypothesis that states that there is no difference between a parameter and a specific value, or that there is no difference between two parameters.</li><br>
+                            <li><a>Alternative hypothesis</a>, $H_1$, is a statistical hypothesis that states the existence of a difference between a parameter and a specific value, or states that there is a difference between two parameters</li>
+                        </ul>
+                        </p>
+                    
+            </section>
+            
+            <section>
+                <h4 class="frame-sect">Hypothesis-Testing Common Phrases</h4>
+                <p>
+$$
+\begin{array}{ll}
+    \qquad \gt  & \qquad \lt \\ 
+    \text { Is greater than } & \text { Is less than } \\ 
+    \text { Is above } & \text { Is below } \\ 
+    \text { Is higher than } & \text { Is lower than } \\ 
+    \text { Is longer than } & \text { Is shorter than } \\ 
+    \text { Is bigger than } & \text { Is smaller than } \\ 
+    \text { Is increased } & \text { Is decreased or reduced from } \\ 
+    \qquad \geq & \qquad\leq \\
+    \text { Is greater than or equal to } & \text { Is less than or equal to } \\ 
+    \text { Is at least } & \text { Is at most } \\ 
+    \text { Is not less than } & \text { Is not more than } \\ 
+    \qquad = & \qquad \neq \\
+    \text { Is equal to } & \text { Is not equal to } \\ 
+    \text { Is exactly the same as } & \text { Is different from } \\ 
+    \text { Has not changed from } & \text { Has changed from } \\ 
+    \text { Is the same as } & \text { Is not the same as }
+\end{array}
+$$
+                
+                
+                </p>
+            </section>
+            
+            <section>
+            <h4 class="frame-sect">Examples: </h4>
+            <ul>
+                <li>A medical researcher is interested in finding out whethera new medication will have any undesirable side effects. The researcher is particularly concerned with the pulserate of the patients who take the medication. Will the pulse rate increase, decrease, or remain unchanged after a patient takes the medication? The researcher knows that the mean pulse rate for the population under study is $82$ beats per minute.</li><br>
+                
+                <li>A chemist invents an additive to increase the life of an automobile battery. The mean lifetime of the automobile battery without the additive is 36 months.</li><br>
+                
+                <li>A contractor wishes to lower heating bills by using aspecial type of insulation in houses. If the average of the monthly heating bills is $\$78$, what is the  hypotheses about heating costs with the use of insulation?</li>
+                </ul>
+            
+            </section>
+                
+            </section>
+                
+        <section>
+            <section>               
+            <h4 class="frame-sect">Goal of Hypothesis Testing</h4>
+            <p><a>Our goal:</a> is to test the null hypothesis:
+                    $$\mathrm{H}_{\mathrm{o}}: \theta=\theta_{\mathrm{o}} \quad \text { (Null Hypothesis) }$$
+                    against one of the following alternative hypotheses:
+                $$\mathrm{H}_{1}: 
+                \begin{array}{ll} 
+                \left\{
+                \begin{array}{l}
+                    \theta \neq \theta_{\mathrm{o}} \\ 
+                    \theta \gt \theta_{\mathrm{o}} \\                            
+                    \theta \lt \theta_{\mathrm{o}}
+                \end{array}\right. & 
+                \begin{array}{l}
+                    \text { (Alternative Hypothesis }\\
+                    \text { or Research Hypothesis }) 
+                \end{array}
+                \end{array}$$
+                    
+                    </p>
+						<!--div class="aligncenter">
+						<a href="#/2" class="navigate-down">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="20" height="26" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow">
+						</a>
+                        </div-->
+					</section>
+            <section>
+            <p>
+            <h5>Possible situations in testing a statistical hypothesis</h5>
+$$
+\begin{array}{|l|c|c|}
+        \hline & \mathrm{H}_{0} \text { is true } & \mathrm{H}_{0} \text { is false } \\ 
+        \hline \text { Accepting } \mathrm{H}_{0} & \text { Correct Decision } & 
+                \begin{array}{c}
+                    \text { Type II error } \\ 
+                    (\beta)\end{array} \\ 
+        \hline \text { Rejecting } \mathrm{H}_{0} &
+                \begin{array}{c}
+                    \text { Type I error } \\ 
+                    (\alpha)\end{array} & \text { Correct Decision } \\ 
+        \hline\end{array}
+$$
+The table tells us that,       
+<ul>
+    <li><a>Type I error</a> $=$ Rejecting  $\mathrm{H}_{0}$  when  $\mathrm{H}_{0}$ is true</li>
+    <li><a>Type II error</a> $=$ Accepting  $\mathrm{H}_{0}$   when  $\mathrm{H}_{0}$ is false </li>
+    <li><a>$\text{ P(Type I error) }$</a>$=\mathrm{P}\left(\text { Rejecting } \mathrm{H}_{0} \mid \mathrm{H}_{0} \text { is true }\right)=\alpha$</li>
+    <li><a>$\text { P(Type II error) }$</a>$=\mathrm{P}\left(\text { Accepting } \mathrm{H}_{0} \mid \mathrm{H}_{0} \text { is false }\right)=\beta$</li>                
+                </ul>               
+                </p>
+            </section>
+        
+    <section>
+        <h5>The level of significance of the test</h5>
+        <ul style="list-style: none;"> <li>
+            $\alpha = \text{ P(Type I error) } =\mathrm{P}\left(\text { Rejecting } \mathrm{H}_{0} \mid \mathrm{H}_{0} \text { is true }\right)$</li>
+        </ul>
+        <h5>One-sided alternative hypothesis:</h5>
+        <ul style="list-style: none;"><li>
+$
+\begin{array}{ll}
+        \mathrm{H}_{0}: \theta=\theta_{\mathrm{o}} \quad\text { or } & \mathrm{H}_{0}: \theta=\theta_{\mathrm{o}} \\ 
+        \mathrm{H}_{1}: \theta \gt \theta_{\mathrm{o}} & \mathrm{H}_{1}: \theta \lt \theta_{\mathrm{o}}
+\end{array}
+            $ </li></ul>
+        
+        <h5>Two-sided alternative hypothesis:</h5>
+        <ul style="list-style: none;">
+        <li>
+            $
+\begin{array}{l}
+        \mathrm{H}_{0}: \theta=\theta_{\mathrm{o}}\\ 
+        \mathrm{H}_{1}: \theta \neq \theta_{\mathrm{o}}
+\end{array}
+            $
+            </li>
+        </ul>
+        
+        <figure class="aligncenter">
+        <img src="img/hypothisis.Test.png" width="90%">
+        
+        </figure>
+        </section>
+        
+         
+        <section>
+        <h4 class="frame-sect">Important remarks</h4>
+        <ul>
+            <li>Calculating the test statistic when standard deviation is known and unknown, and when sample size is large and small. </li>
+        <p style="font-size: 20px">
+ $$
+\begin{array}{l|ccl}
+    \hline 
+    \text{ Test for }  &  H_{0}  & \text { Test statistic }  & \text { Use when } \\ 
+    \hline 
+    \text{ Pop. mean } \mu  & \mu=\mu_{0}  &  z=\frac{\overline{x}-\mu_{0}}{\frac{\sigma}{\sqrt{n}}}  & \text{ Normal dist. or } n \gt 30, \sigma \text{ known } \\ 
+    \text{ Pop. mean } \mu & \mu=\mu_{0} & t=\frac{\overline{x}-\mu_{0}}{\frac{s}{\sqrt{n}}} & n \lt 30 \text { and/or } \sigma \text { unknown } \\ 
+    \text { Pop. prop. } p  &  p=p_{0}  & z=\frac{\hat{p}-p_{0}}{\sqrt{\frac{p_{0}(1-p_{0})}{n}}} & n \hat{p} \geq 10, n(1-\hat{p}) \geq 10\\
+    \hline
+\end{array}
+$$
+            </p>
+            
+        <li>The test statistic used for different hypothesis and its corresponding rejection rule is:</li>
+            <p style="font-size: 20px">
+$$
+\begin{array}{c|c|l}
+    \hline \begin{array}{c}\text { Hypothesis } \\ \text { testing }\end{array} & \text { Test statistic } & \text { Rejection nule } \\ 
+    \hline \text { Z-tests } & \text { Z-value } & 
+                \begin{array}{l}
+                    \text{ If Test statistic } \geq z_{\frac{\alpha}{2}}, \text{ then reject the null hypothesis } H_0\\ 
+                    \text{ If Test statistic } \leq - z_{\frac{\alpha}{2}}, \text{ then reject the null hypothesis } H_0
+                \end{array} \\ 
+    \hline \text { t-tests } & \text { t-value } & 
+                \begin{array}{l}
+                    \text{ If Test statistic } \geq t_{(\frac{\alpha}{2},n-1)}, \text{ then reject the null hypothesis } H_0\\ 
+                    \text{ If Test statistic } \leq - t_{(\frac{\alpha}{2},n-1)}, \text{ then reject the null hypothesis } H_0
+                \end{array} \\ 
+    \hline
+            
+\end{array}
+$$
+            </p>
+            </ul>
+            
+
+        </section>
+        
+        <section>
+
+        <h4 class="frame-sect">The test procedure: </h4>
+        <ul style="list-style: none;">
+        <li>To reject $H_0$ (accepting $H_1$) or to accept $H_0$ (rejecting $H_1$), we need the following steps:
+            <ol>
+            <li>Determining a <a>test statistic (T.S.)</a></li>
+            <li>Determining the <a>significance level $\alpha$</a></li>
+                $\alpha = 0.01, 0.025, 0.05$, or $0.10$
+            <li>Determining the <a>rejection region (R.R.)</a> and the <a>acceptance region (A.R.) of $H_0$</a></li>
+                  R.R. of $H_0$ depends on $H_1$ and $\alpha$
+                <ul>
+                    <li>$H_1$ determines the direction of the R.R. of $H_0$</li>
+                    <li>$\alpha$ determines the size of the R.R. of $H_0$</li>
+                </ul>
+                <img src="img/hypothisis.Test.Alpha.png" width="60%">
+            <li><a>Decision:</a></li>
+                We reject $H_0$ (accept $H_1$) if the value of the T.S. falls in the R.R. of $H_0$, and vice versa.
+            
+            </ol>
+        </li>
+        </ul>
+        </section>
+       
+					
+					
+                    <!--section>
+						<h2>Basement Level 2</h2>
+						<p>That's it, time to go back up.</p>
+						<br>
+						<a href="#/2">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1); transform: rotate(180deg);" width="178" height="238" data-src="https://static.slid.es/reveal/arrow.png" alt="Up arrow">
+						</a>
+					</section-->
+                    	<!--section>
+						<h2>Basement Level 1</h2>
+						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+					</section>
+					<section>
+						<h2>Basement Level 2</h2>
+						<p>That's it, time to go back up.</p>
+						<br>
+						<a href="#/2">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1); transform: rotate(180deg);" width="178" height="238" data-src="https://static.slid.es/reveal/arrow.png" alt="Up arrow">
+						</a>
+					</section -->
+</section>
+
+				<section>
+                    <section>
+					<h2 class="frame-sect">2.&nbsp; Single Sample: Tests Concerning a Single Mean (Variance Known):</h2>
+                   <p>
+                     Suppose that $X_1, X_2, \cdots, X_n$ is a random sample of size $n$ from distribution with mean $\mu$ and known variance $\sigma^2$.
+                    We know that:
+                       <ul>
+                        <li>$E\big(\overline{X}\big)=\mu_{\overline{X}}=\mu $ ; $\quad$ $\operatorname{Var}\big(\overline{X}\big)=\sigma_{\bar{X}}^{2}=\frac{\sigma^{2}}{n}$ ; $\quad$ $\overline{X} \sim N\left(\mu, \frac{\sigma}{\sqrt{n}}\right) \Longleftrightarrow Z=\frac{\overline{X}-\mu}{\sigma / \sqrt{n}} \sim \mathrm{N}(0,1)$</li>
+                        <li>Let $\mu_0$ be a given known value.</li>
+                        <li>Test Procedure:</li>
+<p style="font-size: 20px">
+$$
+\begin{array}{r | c c c}
+    \hline 
+    \text { Hypotheses } & \mathrm{H}_{0}: \mu=\mu_{0}  & \mathrm{H}_{0}: \mu=\mu_{0} & \mathrm{H}_{0}: \mu=\mu_{0} \\ 
+            & \mathrm{H}_{1}: \mu \neq \mu_{0} & \mathrm{H}_{1}: \mu \gt \mu_{0} & \mathrm{H}_{1}: \mu \lt \mu_{0} \\ 
+        \hline \text{ Test Statistic (T.S.) } & & Z=\frac{\overline{X}-\mu_0}{\sigma / \sqrt{n}} \sim \mathrm{N}(0,1)  & \\
+        \hline \text{ R.R. and A.R. of $H_0$ }  & & & \\
+                           &&& \\
+                           &&&\\
+        \hline \text{ Decision: } &\text{ Reject } H_0 \text{ (and accept} & H_1) \text{ at the signification} & \text{level } \alpha \text{ if:} \\                           
+         \hline   & Z \gt z_{\frac{\alpha}{2}} \text{ or } Z \lt -z_{\frac{\alpha}{2}} & Z \gt z_{\alpha} & Z \lt -z_{\alpha}\\
+                      & \text{ Two-Sided Test } & \text{ One-Sided Test } & \text{ One-Sided Test } \\
+        \hline                
+\end{array}
+$$      </p>
+          </ul>
+                        </p>
+                    <div class="aligncenter">
+						<a href="#" class="navigate-down">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="30" height="40" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow">
+						</a></div>                   
+				    </section>
+    
+    
+        <section>
+						<h4 class="frame-sect">Example </h4>
+                      
+      <p>
+          <ol>
+            <li>A random sample of $100$ recorded deaths in the United States during the past year showed an average of $71.8$ years. Assuming a population standard deviation of $8.9$ year, does this seem to indicate that the mean life span today is greater than $70$ years? Use a $0.05$ level of significance.</li><br>
+            <li>A manufacturer of sports equipment has developed a new synthetic fishing line that he claims has a mean breaking strength of $8$ kilograms with a standard deviation of $0.5$ kilograms. Test the hypothesis that $\mu =8$ kg against the alternative that $\mu \neq 8$ kg if a random sample of $50$ lines is tested and found to have a mean breaking strength of $7.8$ kg. Use a $0.01$ level of significance.</li>
+            </ol>
+            </p>
+             <div class="aligncenter">
+						<a href="#/3" class="navigate-up">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1); transform: rotate(180deg);" width="30" height="40" data-src="https://static.slid.es/reveal/arrow.png" alt="Up arrow">
+						</a>
+                        </div>
+    
+        </section>
+    </section>
+
+    <section>
+				    <section data-auto-animate>
+					<h2 class="frame-sect">3. Single Sample: Tests on a Single Mean (Variance Unknown):</h2>
+					<p>
+                        Suppose that $X_1, X_2, \cdots, X_n$ is a random sample of size $n$ from normal distribution with mean $\mu$ and unknown variance $\sigma^2$.
+                    We know that:
+                       <ul>
+                        
+                        <li>$T=\frac{\overline{X}-\mu}{S / \sqrt{n}} \sim \mathrm{t}(\text{df})$ ; $\quad \text{df}=n-1$ ; $\quad S=\sqrt{\sum_{i=1}^{n}\big(X_{i}-\overline{X}\big)^{2} /(n-1)}$ </li>
+                        <li>Let $\mu_0$ be a given known value.</li>
+                        <li>Test Procedure:</li>
+             <p style="font-size: 20px">
+$$
+\begin{array}{r | c c c}
+    \hline 
+    \text { Hypotheses } & \mathrm{H}_{0}: \mu=\mu_{0}  & \mathrm{H}_{0}: \mu=\mu_{0} & \mathrm{H}_{0}: \mu=\mu_{0} \\ 
+            & \mathrm{H}_{1}: \mu \neq \mu_{0} & \mathrm{H}_{1}: \mu \gt \mu_{0} & \mathrm{H}_{1}: \mu \lt \mu_{0} \\ 
+        \hline \text{ Test Statistic (T.S.) } & & T=\frac{\overline{X}-\mu_0}{S / \sqrt{n}} \sim \mathrm{t}(\text{n-1})  & \\
+        \hline \text{ R.R. and A.R. of $H_0$ }  & & & \\
+                           &&& \\
+                           &&&\\
+        \hline \text{ Decision: } &\text{ Reject } H_0 \text{ (and accept } H_1) & \text{ at the signification} & \text{level } \alpha \text{ if:} \\                           
+         \hline   & T \gt t_{(\frac{\alpha}{2},n-1)} \text{ or } T \lt -t_{(\frac{\alpha}{2},n-1)} & Z \gt t_{(\alpha,n-1)} & Z \lt -t_{(\alpha,n-1)}\\
+                      & \text{ Two-Sided Test } & \text{ One-Sided Test } & \text{ One-Sided Test } \\
+        \hline                
+\end{array}
+$$      </p>
+          </ul>
+                        </p>
+                    <div class="aligncenter">
+						<a href="#" class="navigate-down">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="30" height="40" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow">
+						</a></div>                   
+                        
+                        </p>
+    </section>
+
+    <section>
+        <h4 class="frame-sect">Example:</h4>
+        <p>ប្រសិនបើសំណាកចៃដន្យមួយ អង្កេតលើខ្នងផ្ទះចំនួន $12$ បានបង្ហាញថា ម៉ាស៊ីនបូមធូលីរបស់ពួកគេប្រើភ្លើងអស់ជាមធ្យមចំនួន $42$ គីឡូវ៉ាត់ម៉ោងក្នុងមួយឆ្នាំ ដោយមានគម្លាតស្តង់ដា $11.9$ គីឡូវ៉ាត់ម៉ោង នោះតើសម្មតិកម្មនេះ បង្ហាញនូវកម្រិតសារៈសំខាន់ (level of significance) ចំនួន $0.05$ ដែលម៉ាស៊ីនបូមធូលីប្រើភ្លើងជាមធ្យម តិចជាង $46$ គីឡូវ៉ាត់ម៉ោងក្នុងមួយឆ្នាំ ដែរឬទេ? សន្មតថាប៉ូពុយឡាស្យុងនៃគីឡូវ៉ាត់ម៉ោង ជារបាយន័រម៉ាល់។
+            
+        <!--If a random sample of $12$ homes included in a planned study indicates that vacuum cleaners expend an average of $42$ kilowatt-hours per year with a standard deviation of $11.9$ kilowatt-hours, does this suggest at the $0.05$ level of significance that the vacuum cleaners expend, on the average, less than $46$ kilowatt-hours annually? Assume the population of kilowatt-hours to be normal.-->
+        
+        </p>
+        <br>
+
+					<div class="aligncenter">
+						<a href="#/2">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1); transform: rotate(180deg);" width="30" height="40" data-src="https://static.slid.es/reveal/arrow.png" alt="Up arrow">
+						</a>
+                    </div>
+			</section>
+        
+        </section>
+    <section>
+			<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+					<h2 class="frame-sect">4. Two Samples: Tests on Two Means:</h2>
+                <p>For two independent samples, we have:
+                <ul>
+                    <li>If \(\sigma_{1}^{2}\) and \(\sigma_{2}^{2}\) are known, then we get:
+$$
+Z=\frac{\left(\bar{X}_{1}-\bar{X}_{2}\right)-\left(\mu_{1}-\mu_{2}\right)}{\sqrt{\frac{\sigma_{1}^{2}}{n_{1}}+\frac{\sigma_{2}^{2}}{n_{2}}}} \sim \mathrm{N}(0,1)
+$$</li>
+                    <li>If \(\sigma_{1}^{2}\) and \(\sigma_{2}^{2}\) are unknown but \(\sigma_{1}^{2}=\sigma_{2}^{2}=\sigma^{2},\) then we have:
+$$
+T=\frac{\left(\bar{X}_{1}-\bar{X}_{2}\right)-\left(\mu_{1}-\mu_{2}\right)}{S_{p} \sqrt{\frac{1}{n_{1}}+\frac{1}{n_{2}}}} \sim \mathrm{t}\left(n_{1}+n_{2}-2\right)
+$$</li>
+                    Where the pooled estimate of \(\sigma^{2}\) is 
+$$
+S_{p}^{2}=\frac{\left(n_{1}-1\right) S_{1}^{2}+\left(n_{2}-1\right) S_{2}^{2}}{n_{1}+n_{2}-2}
+$$
+                    The degrees of freedom of $S^2_p$ is df$=n_1+n_2-2$.
+                    
+                    <li>Now, suppose we need to test the null hypothesis $H_0 : \mu_1 - \mu_2 = 0$</li>
+                </ul>
+                </p>
+				
+				</section>
+            <section>
+            <p>Generally, suppose we need to test $$H_0 : \mu_1 - \mu_2 = d, \quad \text{ (for some specific value } d)$$
+                Against one of the following alternative hypothesis
+$$
+\mathrm{H}_{1}: \left\{
+        \begin{array}{l}
+            \mu_{1}-\mu_{2} \neq d \\ 
+            \mu_{1}-\mu_{2} \gt d \\ 
+            \mu_{1}-\mu_{2} \lt d
+        \end{array}\right.
+$$
+                </p>
+        
+             <p style="font-size: 20px">
+$$
+\begin{array}{r | c c c}
+    \hline 
+    \text { Hypotheses } & \mathrm{H}_{0}: \mu_1-\mu_2=d  & \mathrm{H}_{0}: \mu_1-\mu_2= d& \mathrm{H}_{0}: \mu_1-\mu_2=d \\ 
+            & \mathrm{H}_{0}: \mu_1-\mu_2\neq d  & \mathrm{H}_{0}: \mu_1-\mu_2\gt d & \mathrm{H}_{0}: \mu_1-\mu_2\lt d \\  
+        \hline \text{ Test Statistic (T.S.) } & Z=\frac{\left(\bar{X}_{1}-\bar{X}_{2}\right)-d}{\sqrt{\frac{\sigma_{1}^{2}}{n_{1}}+\frac{\sigma_{2}^{2}}{n_{2}}}} \sim \mathrm{N}(0,1)  & \{\text{if }  \sigma^2_1 \text{ and } \sigma^2_2 \text{ are known }\}& \\
+                 &\text{ or } T=\frac{\left(\bar{X}_{1}-\bar{X}_{2}\right)-d}{S_p\sqrt{\frac{1}{n_{1}}+\frac{1}{n_{2}}}} \sim \mathrm{t}(n_1+n_2-2)  & \{\text{if }  \sigma^2_1 = \sigma^2_2 = \sigma^2 \text{ is unknown }\}& \\
+        \hline \text{ R.R. and A.R. of $H_0$ }  & & & \\
+                           &&& \\
+                           &&&\\
+                           &&&\\
+        \hline \text{ Decision: } &\text{ Reject } H_0 \text{ (and accept } H_1) & \text{ at the signification} & \text{level } \alpha \text{ if:} \\                           
+         \hline   & \text{ T.S. } \in \text{ R.R. } & \text{ T.S. } \in \text{ R.R. } & \text{ T.S. } \in \text{ R.R. }\\
+                      & \text{ Two-Sided Test } & \text{ One-Sided Test } & \text{ One-Sided Test } \\
+        \hline                
+\end{array}
+$$      </p>
+        
+            </section>
+<section> 
+<h4 class="frame-sect">Example:</h4>
+An experiment was performed to compare the abrasive wear of were tested by exposing each piece to a machine measuring wear. Ten pieces of material 2 were similarly tested. In each case, the depth of wear was observed. The samples of material 1 gave an average wear of 85 units with a sample standard deviation of 4, while the samples of materials 2 gave an average wear of 81 and a sample standard deviation of 5. Can we conclude at the 0.05 level of significance that the mean abrasive wear of material 1 exceeds that of material 2 by more than 2 units? Assume populations to be approximately normal with equal variances.
+
+</section>
+
+    </section>
+
+<section data-auto-animate>
+    <section>
+					<h2 class="frame-sect">4. One Sample: Tests on a Single Proportion:</h2>
+					<p>Recall: For one samples proportion:
+                <ul>
+                    <li>$p =$ Population proportion of elements of Type $A$ in the population $= \frac{A}{A+B}$</li>
+                    
+                    <li>$X=$ no.of elements of type A in the sample of size $n$.</li>                    
+                    
+                    <li>$\widehat{p} = $ Sample proportion elements of Type $A$ in the sample $=\frac{X}{n}$</li>
+                    <li>For large $n$, we have</li>
+$$
+Z=\frac{\widehat{p}-p}{\sqrt{\frac{p q}{n}}}=\frac{X-n p}{\sqrt{n p q}} \sim \mathrm{N}(0,1) ;  \quad \text{(Approximately, } q=1−p)
+$$
+        </ul>
+    </section>
+    
+    <section>
+        <ul>
+               <li>Test Procedure:</li>
+        </ul>
+<p>
+$$
+\begin{array}{r | c c c}
+    \hline 
+    \text { Hypotheses } & \mathrm{H}_{0}: p=p_{0}  & \mathrm{H}_{0}: p=p_{0} & \mathrm{H}_{0}: p=p_{0} \\ 
+            & \mathrm{H}_{1}: p \neq p_{0} & \mathrm{H}_{1}: p \gt p_{0} & \mathrm{H}_{1}: p \lt p_{0} \\ 
+        \hline \text{ Test Statistic (T.S.) } & Z=\frac{\widehat{p}-p_0}{\sqrt{\frac{p_0 q_0}{n}}} & =\frac{X - n p_0}{\sqrt{n p_0 q_0}} \sim \mathrm{N}(0,1)  & (q_0 = 1- p_0)\\
+        \hline \text{ R.R. and A.R. of $H_0$ }  & & & \\
+                           &&& \\
+                           &&&\\ &&&\\
+        \hline \text{ Decision: } &\text{ Reject } H_0 \text{ (and accept} & H_1) \text{ at the signification} & \text{level } \alpha \text{ if:} \\                           
+         \hline   & Z \gt z_{\frac{\alpha}{2}} \text{ or } Z \lt -z_{\frac{\alpha}{2}} & Z \gt z_{\alpha} & Z \lt -z_{\alpha}\\
+                      & \text{ Two-Sided Test } & \text{ One-Sided Test } & \text{ One-Sided Test } \\
+        \hline                
+\end{array}
+$$      </p>
+
+</section>
+
+<section>
+ <h4 class="frame-sect">Example:</h4>
+    <p>A builder claims that heat pumps are installed in 70% of all homes being constructed today in the city. Would you agree with this claim if a random survey of new homes in the city shows that 8 out of 15 homes had heat pumps installed? Use a 0.10 level of significance.</p>
+    </section>
+
+</section>
+
+
+<section data-auto-animate>
+				<section>
+					<h2 class="frame-sect">5. Two Samples: Tests on Two Proportions</h2>
+					<p>
+						Suppose that we have two populations: $p_1 =$ proportion of the 1-st population and $p_2 =$ proportion of the 2-st population. We are interested in comparing $p_1$ and $p_2$, or equivalently, making inferences about $p_1- p_2$.
+                        
+                        <ul>
+                            <li>Test procedure: Suppose we need to test:</li>
+ $$
+\begin{array}{l}
+        \mathrm{H}_{0}: p_{1}-p_{2}=0 \\ 
+        \text{ Against }\mathrm{H}_{1}:
+            \left\{\begin{array}{l}
+                p_{1}-p_{2} \neq 0 \\ 
+                p_{1}-p_{2} \gt 0 \\ 
+                p_{1}-p_{2} \lt 0\end{array}\right.
+\end{array}
+$$
+        Note, under $H_0: p_1= p_2= p$, the pooled estimate of the proportion $p$ is: 
+$$
+\widehat{p}=\frac{X_{1}+X_{2}}{n_{1}+n_{2}} ;  \quad(\hat{q}=1-\hat{p})
+$$          
+    The test statistic (T.S.) is
+$$
+Z=\frac{\left(\hat{p}_{1}-\hat{p}_{2}\right)}{\sqrt{\hat{p} \hat{q}\left(\frac{1}{n_{1}}+\frac{1}{n_{2}}\right)}} \sim \mathrm{N}(0,1)
+$$                      
+                    
+                    </ul>
+					</p>
+      
+
+                    <div class="aligncenter">
+						<a href="#/3" class="navigate-down">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="24" height="26" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow">
+						</a>
+                        </div>
+
+				</section>
+
+    <section>
+      <p>
+$$
+\begin{array}{r | c c c}
+    \hline 
+    \text { Hypotheses } & \mathrm{H}_{0}: p_1-p_2=0  & \mathrm{H}_{0}: p_1-p_2= 0& \mathrm{H}_{0}: p_1-p_2=0 \\ 
+            & \mathrm{H}_{0}: p_1-p_2\neq 0  & \mathrm{H}_{0}: p_1-p_2\gt 0 & \mathrm{H}_{0}: \mu_1-\mu_2\lt d \\  
+        \hline \text{ Test Statistic (T.S.) } & Z=\frac{\left(\hat{p}_{1}-\hat{p}_{2}\right)}{\sqrt{\hat{p} \hat{q}\left(\frac{1}{n_{1}}+\frac{1}{n_{2}}\right)}} \sim \mathrm{N}(0,1) & \text{(for large } n_1 \text{ and } n_2) & \\
+       \hline \text{ R.R. and A.R. of $H_0$ }  & & & \\
+                           &&& \\
+                           &&&\\ &&&\\
+                          &&&\\
+        \hline \text{ Decision: } &\text{ Reject } H_0 \text{ (and accept} & H_1) \text{ at the signification} & \text{level } \alpha \text{ if:} \\                           
+         \hline   & Z \gt z_{\frac{\alpha}{2}} \text{ or } Z \lt -z_{\frac{\alpha}{2}} & Z \gt z_{\alpha} & Z \lt -z_{\alpha}\\
+                      & \text{ Two-Sided Test } & \text{ One-Sided Test } & \text{ One-Sided Test } \\
+        \hline                 
+\end{array}
+$$      </p>
+				
+		</section>
+
+    <section>
+        <h4 class="frame-sect">ឧទាហរណ៍.</h4>
+    <p>A vote is to be taken among the residents of a town and the surrounding county to determine whether a proposed chemical plant should be constructed. The construction site is within the town limits and for this reason many voters in the county feel that the proposal will pass because of the large proportion of town voters who favor the construction. To determine if there is a significant difference in the proportion of town voters and county voters favoring the proposal, a poll is taken. If 120 of 200 town voters favor the proposal and 240 of 500 county voters favor it, would you agree that the proportion of town voters favoring the proposal is higher than the proportion of county voters? Use a 0.025 level of significance.</p>
+
+
+         <div class="aligncenter">
+						<a href="#/3" class="navigate-up">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1); transform: rotate(180deg);" width="24" height="26" data-src="https://static.slid.es/reveal/arrow.png" alt="Up arrow">
+						</a>
+                </div>
+    </section>
+
+</section>
+
+
+
+<section data-auto-animate>
+	<section>
+					<h2 class="frame-sect">លំហាត់អនុវត្តន៍</h2>
+		
+
+	</section>
+    
+    <section>
+    
+    
+    </section>
+    
+    <section>
+    
+    
+    </section>
+    
+    
+
+    
+
+</section>
+
+
+
+
+</div>
+
+</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+    <!-- Begin Jekyll SEO tag v2.3.0 -->
+<meta property="og:title" content="Ham Karim">
+<meta name="author" content="Ham Karim">
+<meta name="author" content="ហាំ ការីម">
+<meta property="og:locale" content="en_US">
+<meta http-equiv="keywords" name="keywords" content="relations, binary relation, relation and function, ទំនាក់ទំនងទ្វេធាតុ, អនុគមន៍ និងទំនាក់ទំនង">
+<meta http-equiv="description" name="description" content="ក្នុងគណិតវិទ្យា ......... ">
+<meta name="description" content="binary relation, ទំនាក់ទំនងទ្វេធាតុ">
+<meta property="og:description" content="Math, Programmer, Music">
+<link rel="canonical" href="../../../index.html">
+<meta property="og:url" content="https://hamkarim.github.io/">
+<meta property="og:site_name" content="Binary Relation">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@pkarim">
+<meta name="twitter:creator" content="@pkarim">
+<meta name="google-site-verification" content="b9bg3P9zc8qbL4szvVYaf551jD9x017IyGBVSaQZDDY" />
+
+<script type="application/ld+json">
+{
+    "name":"Ham Karim",
+    "description":"I am a faculty member at the Royal Univeristy of Phnom Penh (RUPP). This is my blog of lectures at universities. ",
+    "author":{"@type":"Person","name":"Ham Karim"},
+    "@type":"WebSite",
+    "url":"https://hamkarim.github.io/",
+    "image":null,
+    "publisher":null,
+    "headline":"Ham Karim",
+    "dateModified":null,
+    "datePublished": "2020-06-01",
+    "sameAs":null,
+    "mainEntityOfPage":null,
+    "@context":"http://schema.org"}
+</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta property="og:image" content="http://www.cliparts101.com/files/376/298FE3955707B1DE458221E4BFABFBBE/Greek_Gamma_4.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../topology/2019/favicon.ico">
+    <meta charset="UTF-8">
+    <title> Binary relations| ទំនាក់ទំនងទ្វេធាតុ</title>
+    <meta name="description" content="binary relation">
+
+<style>
+.deffont {
+        font-family: 'Noto Serif Khmer', 'CMU Serif';
+        font-size: 16px;
+        }
+ul.liststyle1 {
+        list-style-type: square;
+      }
+ul.liststyle2 {
+        list-style-type: hebrew;
+      }
+a.onmenu {
+          font-family:'Noto Serif Khmer','CMU Serif';
+          font-weight:bold;
+ }
+      </style>
+
+
+<script async="" src="//cse.google.com/adsense/search/async-ads.js"></script>
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script type="text/javascript" async="" src="https://cse.google.com/cse.js?cx=001004262401526223570:11yv6vpcqvy"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-331594-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+
+
+    <link rel="stylesheet" href="../../../../assets/css/style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245">
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+<!-- Script to show and hide proof -->
+<script type="text/javascript" src="https://hamkarim.github.io/assets/js/showhide.js"></script>
+<!-- Other style of showing and hiding proof -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
+ <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>
+<!-- end -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+//Another method to toggle the button
+          $(document).ready(function(){
+                    $('.showanswer').click(function(){
+                              $('.block_proof').show();
+                              $('.showanswer').hide();
+                              $('.hideanswer').show();
+                    }
+          );
+                    $('.hideanswer').click(function(){
+                              $('.block_proof').hide();
+                              $('.showanswer').show();
+                              $('.hideanswer').hide();
+                    }
+          );
+ });
+</script>
+
+<!-- For local function, define to exchange text -->
+<script>
+function showhideFunction() {
+          document.getElementById('idClick').innerHTML === '[Hide proof]' ? document.getElementById('idClick').innerHTML = '[Show proof]' : document.getElementById('idClick').innerHTML = '[Hide proof]';
+}
+</script>
+
+<!-- script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,https://hamkarim.github.io/MathJax/config/local/local.js"></script  -->
+
+<!-- script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script -->
+
+<script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
+</script>
+
+<!-- script type="text/javascript" config=TeX-MML-AM_CHTML
+src="">
+</script -->
+
+<!-- To get it to work in old versions of Internet Explorer, you need to append this script to the head (Important if you need it to work in older versions of IE!): -->
+ <!--[if lt IE 9] -->
+ <script> document.createElement("example, defn"); </script>
+ <!-- [endif]-->
+
+  </head>
+
+  <body>
+  <nav class="nav-collapse" role="navigation">
+    <ul class="tabs primary-nav">
+        <li class="tabs__item">
+            <a href="../../../../index.html" class="tabs__link">ទំព័រដើម</a>
+        </li>
+        <li class="tabs__item">
+            <a href="../../../../posts_index.html" class="tabs__link">Blog</a>
+        </li>
+        <li class="tabs__item">
+            <a href="../../../../projects.html" class="tabs__link">Projects</a>
+        </li>
+        <li class="tabs__item">
+            <a href="../../../../notes_index.html" class="tabs__link">មេរៀន</a>
+        </li>
+        <li class="tabs__item">
+            <a href="../../../../about.html" class="tabs__link">អំពីខ្ញុំ</a>
+        </li>
+        <li class="tabs__item">
+            <a href="../../../../contact.html" class="tabs__link">ទាក់ទងខ្ញុំ</a>
+        </li>
+    </ul>
+</nav>
+
+<section class="page-header">
+  <h1 class="project-name">ហាំ ការីម</h1>
+  <h2 class="project-tagline">Maths, Program, Music</h2>
+</section>
+
+<section class="main-content">
+
+  <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">ជំពូក ៣ :&nbsp; ទំនាក់ទំនងទ្វេធាតុ (Binary relations) </h1>
+<span style="font-style: italic; font-weight:bold; font-family: Arial; opacity: 0.5;">
+July 13th, 2020
+</span>
+
+<hr>
+<p style="text-indent:0px">From Wikipedia:</p>
+<blockquote>
+	<a href="https://en.wikipedia.org/wiki/File:Affine_space_R3.png">
+    <div class="divfigure">
+        <p> <img class="wrap-right" alt=" Four types of binary relations over the real numbers:" src="https://upload.wikimedia.org/wikipedia/commons/b/b6/The_four_types_of_binary_relations.png"></p>
+       Four types of binary relations over the real numbers: one-to-one (in green), one-to-many (in blue), many-to-one (in red), many-to-many (in black).
+    </div>
+  </a>
+  <p>In mathematics, a <a>binary relation</a> over sets $X$ and $Y$ is a subset of the Cartesian product $X \times Y$; that is, it is a set of ordered pairs $(x, y)$ consisting of elements $x$ in $X$ and $y$ in $Y$. It encodes the information of relation: an element $x$ is related to an element $y$, if and only if the pair (x, y) belongs to the set. A binary relation is the most studied special case $n = 2$ of an $n$-ary relation over sets $X_1, \ldots, X_n$, which is a subset of the Cartesian product $X_1 \times \cdots \times X_n$.
+</p>
+<p>The terms <b>correspondence</b>, <b>dyadic relation</b> and <b>two-place relation</b> are synonyms for <b>binary relation</b>, though some authors use the term "<b>binary relation</b>" for any subset of a Cartesian product $X \times Y$ without reference to $X$ and $Y$, and reserve the term "<b>correspondence</b>" for a binary relation with reference to $X$ and $Y$.</p>
+</blockquote>
+
+<h3>Motivation</h3>
+<p>In mathematical terms, we will describe a relation from one set $A$ to another set $B$ by specifying which elements of the first set $A$ are related to which elements of the second set $B$. Thus, a relation from set $A$ to set $B$ is a collection of ordered pairs $(a, b)$ where $a \in A$ and $b \in B$. Recalling that the collection of all ordered pairs $(a, b)$ where $a \in A$ and $b \in B$ is the Cartesian product $A \times B$, we have the following definition.</p>
+<p>Notice that: Binary relations are used in many branches of mathematics to model a wide variety of concepts. These include, among others:
+<ol class="parenthnum">
+<li>the $\mathcal R =$ "is greater than", "is equal to", and "divides" relations in arithmetic;</li>
+<li>the $\mathcal R =$"is congruent to" relation in geometry;</li>
+<li>the $\mathcal R =$ "is adjacent to" relation in graph theory;</li>
+<li>the $\mathcal R =$ "is orthogonal to" relation in linear algebra.</li>
+</ol>
+</p>
+
+
+<h2 class="frame-sect sectcounter">&nbsp; និយមន័យ និងឧទាហរណ៍ </h2> <!-- \section{និយមន័យ និងលក្ខណៈបឋមៗ}  -->
+
+<defn >
+          <div class="definition"> </div>
+ <div class="definitionb">
+    <p>  If $A$ and $B$ are nonempty sets, a <b>relation</b> from $A$ to $B$ is a subset $\mathcal R$ of $A \times B$.
+\[
+          \mathcal R = \big\{(a,b) \mid a\in A \text{ and } b\in B\big\}
+\]
+              If $\mathcal R \subseteq A \times B$ is a relation from $A$ to $B$ and $(a, b) \in \mathcal R$, we may write $a \mathcal R b$ and say $a$ is related to $b$ by the relation $\mathcal R$.
+    </p>
+</div>
+</defn>
+<p>
+In the example above, we have $A=\{\text { honey, bees, fire }\}, B=\{good, bad\}, A \times B=$ $\{\text { (honey, good ), (honey, bad), (bees, good), (bees, bad), (fire, good), (fire, bad) }\},$ and the given relation $R \subseteq A \times B$ is
+</p>
+
+<defn>
+          <div class="definition"> </div>
+ <div class="definitionb">
+ <p>
+A relation $\mathcal R$ from $A$ to $B$ is equal to a relation $\mathcal S$ from $C$ to $D$ if and only if $A=C, B=D,$ and $x \mathcal R y$ if and only if $x\mathcal S y$.
+</p>
+</div>
+ </defn>
+ <p>This definition points out that, technically, we have not defined "a relation," but "a relation from $A$ to $B$." When given a relation from $A$ to $B$, we may casually refer to it simply as a "relation," omitting "from $A$ to $B$," just as we may casually  omit required</p>
+
+
+<p style="text-indent: 0px"><b>ចំណាំ :</b>
+    បើ $\mathcal{E}$ ជាលំហអាហ្វីន តាមទិសដៅ $\vect{\E}$ នោះធាតុរបស់ $\mathcal{E}$ ហៅថា <b>ចំណុច</b> ហើយគេកំណត់សរសេរដោយអក្សរធំ $A,B, C,D,M,N,P$, $\cdots$។ ចំណែកឯធាតុរបស់លំហ $\vect{\E}$ ហៅថា <b> វ៉ិចទ័រ</b> ហើយកំណត់សរសេរដោយអក្សរតូច មានសញ្ញាព្រួញនៅខាងលើ គឺ $\vec{i}, \vec{j}, \vec{k}, \vec{u}, \vec{v}, \cdots $។
+    </p>
+
+<example>
+    ពិនិត្យមើលឧទាហរណ៍ខាងក្រោម៖
+<ol class="parenthnum">
+    <li>បើ $\dim\big(\vect\E\big)=1$ នោះគេនិយាយថា  $\mathcal{E}$ គឺជា <a href="####ssssss">បន្ទាត់អាហ្វីន</a>។ </li>
+    <li>បើ $\dim\big(\vect\E\big)=2$ នោះគេថា $\mathcal{E}$ គឺជា <a href="https://en.wikipedia.org/wiki/Affine_plane_(incidence_geometry)">ប្លង់អាហ្វីន</a>។</li>
+    <li>គ្រប់លំហវ៉ិចទ័រ $\vect{\E}$ កំណត់លើកាយ $\mathbb{R}$ តាមន័យកាណូនិច អាចចាត់ទុកថាជាលំហអាហ្វីនមួយ ដែលភ្ជាប់ទៅនឹងខ្លួនវា នៅពេលណាគេមានអនុវត្តន៍ដូចតទៅ៖ <!-- peut-être considéré, canoniquement, comme un espace affine attaché à lui même, lorsqu' on considère l'application suivante:-->
+    	$$
+    	\begin{array}{ccl}
+            \vect\E\times \vect\E  &\longrightarrow & \vect\E\\
+            (a,b) &\longmapsto & \vect{ab} = b-a
+            \end{array}
+        $$ ដែលផ្ទៀងផ្ទាត់ទៅនឹងលក្ខខណ្ឌនៃនិយមន័យ។ <!--qui vérifie les conditions de la définition. -->
+</li>
+    </ol>
+</example>
+
+
+
+<example>
+
+
+</example>
+
+
+<p style="text-indent: 0px"><b>ចំណាំ: </b> ដោយសារបែបនេះហើយ ទើបធាតុរបស់លំហវ៉ិចទ័រកំណត់លើកាយ $\mathbb{R}$ នៅក្នុងបរិបទខ្លះ ត្រូវបានចាត់ទុកថាជា ចំណុច ឬក៏ជា វ៉ិចទ័រ។
+    </p>
+
+<h3 class="sectcounter">&nbsp;  វិធានគណនា</h3>
+<p>
+    យក $\mathcal{E}$ ជាលំហអាហ្វីនភ្ជាប់ទៅនឹងលំហវ៉ិចទ័រ $\vect{\E}$ ។ ដូច្នេះគេបាន
+<ol class="parenthnum">
+    <li>$\forall M, N \in \mathcal{E},\ \vect{AM}= \vect{AN}\Longrightarrow  M = N$ </li>
+	<li>$\forall A, B \in \mathcal{E},\  \vect{AB}  =\vect{0} \Longleftrightarrow A=B$</li>
+	<li> $\forall A, B \in \mathcal{E},\ \vect{BA} = -\vect{AB}$</li>
+	<li>$\forall A, B, C \in \mathcal{E},\ \vect{BC} = \vect{AC} - \vect{AB}$</li>
+	<li>ចំពោះគ្រប់ចំណុច $A\in \mathcal{E}$ និងគ្រប់វ៉ិចទ័រ $\vect{u} \in \vect\E$ នោះមានចំណុចតែមួយគត់ $M\in \mathcal{E}$ ដែល $\vect{AM} = \vect{u}$</li>
+	<li>បើ $A$ និង $B$ គឺជាចំណុចពីររបស់ $\mathcal{E}$ នោះមានវ៉ិចទ័រតែមួយគត់ $\vect{u}\in \vect\E$ ដែល $\vect{AB} =  \vect{u}$</li>
+    </ol>
+
+    </p>
+
+<p align="right"><a class="toggle bground" id="idClick" href="#proof" onclick="showhideFunction()">[Show proof]</a></p>
+<div class="hidepanel" id="proof" style="color:#1860C1">
+ <div><b><span class="headproof">សម្រាយបញ្ជាក់.</span> </b> </div>
+<div class="blockproof ">
+<ol class="parenthnum">
+<li>តាមលក្ខណៈទី១ នៃនិយមន័យ​គេបានអនុវត្តន៍
+\[\begin{array}{rrll}
+\phi: & \mathcal{E} &\longrightarrow  &\vect\E\\
+& M &\longmapsto &\phi(M) = \vect{AM}
+\end{array}\]
+គឺជាអនុវត្តន៍មួយទល់មួយ។ ដោយ $\varphi$ ជាអនុវត្តន៍ប្រកាន់ ដូច្នេះ គេទាញបានចម្លើយ។ <!-- Donc cette application est injective, par suite, on a le résultat -->
+</li>
+
+<li>$(\Leftarrow)$ តាមទំនាក់ទំនងហ្សាល ចំពោះគ្រប់​  $A\in \mathcal{E}$ គេបាន
+$$\vect{AA}+\vect{AA}=\vect{AA}\quad  \text{ so } \quad \vect{AA}=\vect{0}$$
+
+$(\Rightarrow)$ ដោយ $\vect{AB} = \vect{0} \Longrightarrow  \vect{AB} = \vect{AA}$។ ដូច្នេះ $B=A$។</li>
+
+<li>ចំពោះគ្រប់ $A\in \mathcal{E}$ គេបាន $\vect{AA}= \vect 0$។ តាមទំនាក់ទំនងហ្សាល នោះ $\forall B\in \mathcal{E}$ គេបាន $\vect{AB} + \vect{BA} = \vect 0$។ ដូច្នេះ $\vect{BA} = -\vect{AB}$។</li>
+<li>$\forall A, B, C \in \mathcal{E}$ តាមទំនាក់ទំនងហ្សាល គេបាន
+$$
+\vect{BC} = \vect{BA} + \vect{AC} = -\vect{AB} + \vect{AC}
+$$</li>
+
+<li> នៅពេលណាយើងកំណត់ចំណុច​ $A$ ឱ្យនៅថេរ នោះអនុវត្តន៍
+\[
+\begin{array}{rl}
+\phi: &\mathcal{E} \longrightarrow \vect\E\\
+& M\longmapsto \vect{AM}
+\end{array}
+\]
+គឺជាអនុវត្តន៍មួយទល់មួយ។ ដូច្នេះ ចំពោះគ្រប់ $\vect u \in \vect\E$ នោះមានចំណុចតែមួយគត់ $M\in \mathcal{E}$ ដែល $\vect{AM} = \vect u$។</li>
+    </ol>
+</div>
+</div>
+
+<h3 class="sectcounter">&nbsp; លក្ខណៈរបស់ប្រលេឡូក្រាម</h3>
+<p style="text-indent: 0"> <b>សំណើ. </b>
+	ឧបមា $A, B, C$ និង $D$ គឺជាចំណុចបួននៅក្នុងលំហអាហ្វីន $\mathcal E$។ ដូច្នេះ លក្ខណៈខាងក្រោមសមមូលគ្នា៖
+                    <ol class="parenthnum">
+                              <li>$\vect{AB} = \vect{CD}$</li>
+                              <li>$\vect{AC} = \vect{BD}$</li>
+                              <li>$\vect{AB} + \vect{AC} = \vect{AD}$</li>
+                    </ol>
+
+	បើចំណុចទាំងបួន $A, B, C$ និង $D$ ផ្ទៀងផ្ទាត់លក្ខខណ្ឌណាមួយ ក្នុងចំណោមលក្ខខណ្ឌទាំងបីខាងលើ នោះគេនិយាយថា ចំណុច $A, B, C$ និង $D$ បង្កើតបានជាប្រលេឡូក្រាមមួយ។
+</p>
+
+<div class="showhidebground">
+              <a href="#proofNo.1" class="input_name" id="showanswer">[Show proof]</a>
+              <a href="#proofNo.1" class="input_name" id="hideanswer"  style="display:none;">[Hide proof]</a>
+          </div><br>
+          <div class="block_proof" style="display:none">
+          <div><b><span class="headproof">សម្រាយបញ្ជាក់.</span> </b> </div>
+          <p>
+                    បង្ហាញថា (i) $\Leftrightarrow$ (ii)
+\begin{eqnarray*}
+\vect{AB} =\vect{CD}\ &\Longleftrightarrow &
+\vect{AC} + \vect{CB} = \vect{CB} + \vect{BD}\\
+&\Longleftrightarrow & \vect{AC} = \vect{BD}
+\end{eqnarray*}
+
+ បង្ហាញថា (i) $\Leftrightarrow$ (iii)
+%
+\begin{eqnarray*}
+\vect{AB} = \vect{CD} &\Longleftrightarrow & \vect{AB}=\vect{AD} - \vect{AC}\\
+&\Longleftrightarrow & \vect{AB}+\vect{AC} = \vect{AD}
+\end{eqnarray*}
+
+</p>
+</div>
+
+<div class="showhidebground">
+    <a href="#proofNo.2" class="input_name showanswer">[Show proof]</a>
+    <a href="#proofNo.2" class="input_name hideanswer" style="display:none;">[Hide proof]</a>
+</div><br>
+<div class="block_proof" style="display:none">
+<div><b><span class="headproof">សម្រាយបញ្ជាក់.</span> </b> </div>
+<p>
+\[
+\mathcal{B} = \left\{(a, b) \times(c, d) \subseteq \mathbb{R}^{2}:\; a &lt; b, c &lt; d\right\}
+\]
+</p>
+</div>
+
+<div class="example">
+    <span class="example-title">Example 3</span> Evaluate the following integral.
+
+$$\int{{\left( {3t + 5} \right)\cos \left( {\frac{t}{4}} \right)\,dt}}$$
+<div class="example-content">
+      <span id="SHLink_Soln3" class="soln-title SH-Link">Show Solution</span> <span id="SHImg_Soln3" class="fa fa-caret-right" aria-hidden="true"></span>
+ <div id="SHObj_Soln3" class="soln-content" style="display: none;">
+<p>There are two ways to proceed with this example.  For many, the first thing that they try is multiplying the cosine through the parenthesis, splitting up the integral and then doing integration by parts on the first integral.</p>
+
+ <p>While that is a perfectly acceptable way of doing the problem it’s more work than we really need to do.  Instead of splitting the integral up let’s instead use the following choices for </p>
+
+ \begin{align*}u & = 3t + 5& \hspace{0.5in}dv & = \cos \left( {\frac{t}{4}} \right)\,dt\\ du & = 3\,dt & \hspace{0.5in}v & = 4\sin \left( {\frac{t}{4}} \right)\end{align*}
+
+ <p>The integral is then,</p>
+
+\begin{align*}\int{{\left( {3t + 5} \right)\cos \left( {\frac{t}{4}} \right)\,dt}} & = 4\left( {3t + 5} \right)\sin \left( {\frac{t}{4}} \right) - 12\int{{\sin \left( {\frac{t}{4}} \right)\,dt}}\\ &  = 4\left( {3t + 5} \right)\sin \left( {\frac{t}{4}} \right) + 48\cos \left( {\frac{t}{4}} \right) + c\end{align*}
+
+<p>Notice that we pulled any constants out of the integral when we used the integration by parts formula.  We will usually do this in order to simplify the integral a little.</p>
+      </div>
+    </div>
+  </div>
+
+<div class="example">
+    <span class="example-title">Example 5</span> Evaluate the following integral
+              $$\int{{x\sqrt {x + 1} \,dx}}$$
+    <ol class="example_parts_list">
+      <li>Using Integration by Parts.</li>
+      <li>Using a standard Calculus I substitution.</li>
+    </ol>
+    <span id="SHALink_S_Soln5" class="SH-All SH-Link">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln5" class="SH-All SH-Link">Hide All Solutions</span>
+
+<div class="example-content">
+      <span class="soln-list-item soln-list-subitem">a</span> Using Integration by Parts. <span id="SHLink_Soln5a" class="soln-title SH-Link">Show Solution</span> <span id="SHImg_Soln5a" class="fa fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5a" class="soln-content" style="display: none;">
+        <p>First notice that there are no trig functions or exponentials in this integral.  While a good many integration by parts integrals will involve trig functions and/or exponentials not all of them will so don’t get too locked into the idea of expecting them to show up.</p>
+
+          <p>In this case we’ll use the following choices for $u$ and $dv$.</p>
+            \begin{align*}u & = x & \hspace{0.5in}dv & = \sqrt {x + 1} \,dx\\ du & = dx & \hspace{0.5in}v & = \frac{2}{3}{\left( {x + 1} \right)^{\frac{3}{2}}}\end{align*}
+
+          <p>The integral is then,</p>
+           \begin{align*}\int{{x\sqrt {x + 1} \,dx}} &= \frac{2}{3}x{\left( {x + 1} \right)^{\frac{3}{2}}} - \frac{2}{3}\int{{{{\left( {x + 1} \right)}^{\frac{3}{2}}}\,dx}}\\ &  = \frac{2}{3}x{\left( {x + 1} \right)^{\frac{3}{2}}} - \frac{4}{{15}}{\left( {x + 1} \right)^{\frac{5}{2}}} + c\end{align*}
+      </div>
+
+      <br>
+      <span class="soln-list-item soln-list-subitem">b</span> Using a standard Calculus I substitution. <span id="SHLink_Soln5b" class="soln-title SH-Link">Show Solution</span> <span id="SHImg_Soln5b" class="fa fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5b" class="soln-content" style="display: none;">
+        <p>Now let’s do the integral with a substitution.  We can use the following substitution.</p>
+
+            $$u = x + 1\hspace{0.5in}x = u - 1\hspace{0.5in}du = dx$$
+
+          <p>Notice that we’ll actually use the substitution twice, once for the quantity under the square root and once for the  in front of the square root.  The integral is then,</p>
+
+            \begin{align*}\int{{x\sqrt {x + 1} \,dx}} & = \int{{\left( {u - 1} \right)\sqrt u \,du}}\\ &  = \int{{{u^{\frac{3}{2}}} - {u^{\frac{1}{2}}}\,du}}\\ &  = \frac{2}{5}{u^{\frac{5}{2}}} - \frac{2}{3}{u^{\frac{3}{2}}} + c\\ &  = \frac{2}{5}{\left( {x + 1} \right)^{\frac{5}{2}}} - \frac{2}{3}{\left( {x + 1} \right)^{\frac{3}{2}}} + c\end{align*}
+      </div>
+    </div>
+  </div>
+
+
+
+<h1>fa fa-caret-down</h1>
+
+<i class="fa fa-caret-down"></i>
+<i class="fa fa-caret-down" style="font-size:24px"></i>
+<i class="fa fa-caret-down" style="font-size:36px"></i>
+<i class="fa fa-caret-down" style="font-size:48px;color:red"></i>
+<br>
+
+<p>Used on a button:</p>
+<button style="font-size:24px">Button <i class="fa fa-caret-right"></i></button>
+
+<h2 class="frame-sect sectcounter">Motivation</h2>
+<p>
+This is the last part in our series exploring how to get new topological spaces from old ones. For now, at least. We mentioned the definition of the product topology for a finite product way back in Example 2.3 .6 in the lecture notes concerning bases of topologies, but we did not do anything with it at the time. In that same section we also discussed the following basis on $\mathbb{R}^{2}$
+that we were eventually able to show generates the usual topology on $\mathbb{R}^{2}$ :
+
+\[
+\mathcal{B} = \left\{(a, b) \times(c, d) \subseteq \mathbb{R}^{2}:\; a &lt; b, c &lt; d\right\}
+\]
+
+This is, essentially, how (finite) product topologies work in general, as we will see shortly.
+We will also explore a new way of analyzing topological properties themselves. We have
+already seen that all the topological properties we care about are preserved by homeomorphisms,
+and that some are preserved under weaker maps like continuous surjections (recall that the image
+of a dense set under a continuous function is dense in the range of the function). We also saw that some topological properties are hereditary (like Hausdorffness and second countability)
+while some are not (like separability). In this section we will explore another way of analyzing properties, by asking whether they are preserved by finite products.
+
+Also, while reading this section, note that we are specifically talking about finite products
+of topological spaces, and any time we refer to a product of spaces the reader should assume we
+mean a finite product. Infinite products are substantially more complicated, and we will deal
+with them later in the course. Finite products are actually quite straightforward.
+	</p>
+
+<h2 class="frame-sect">2. Finite product topologies</h2>
+
+<!--p>រំព្ញកអំពីនិយមន័យមួយចំនួននៅក្នុងធរណីមាត្រកម្រិតបឋមៗ គឺ៖
+<ul>
+<li><p><strong>មុំស្រួច</strong> (acute angle) ជាមុំដែលស្ថិតនៅចន្លោះតម្លៃ \(0^{\circ}\) និង \(90^{\circ}\)។</p></li>
+<li><p><strong>មុំកែង</strong> (right angle) ជាមុំដែលមានរង្វាស់ស្មើ <span class="math inline">\(90^{\circ}\)</span> ។</p></li>
+<li><p><strong>មុំទាល</strong> (obtuse angle) ជាមុំដែលមានរង្វាស់នៅចន្លោះ <span class="math inline">\(90^{\circ}\)</span> និង <span class="math inline">\(180^{\circ}\)</span>។</p></li>
+<li><p><strong>មុំត្រង់</strong> (straight angle) ជាមុំដែលមានរង្វាស់ស្មើ <span class="math inline">\(180^{\circ}\)</span>.</p></li>
+</ul>
+</p -->
+
+
+<p><b>
+	Definition 2.1.
+	</b>
+	Let $(X, \mathcal{T}_1)$ and $(Y, \mathcal{T}_2)$ be topological spaces. The product topology on $X \times Y$ is
+the topology generated by the basis
+\[
+\mathcal{B}_{X\times Y} = \big\{U \times V: U \in \mathcal{T}_1, V \in \mathcal{T}_2\big\}
+\]
+More generally if $\left(X_{1}, \mathcal{T}_{1}\right), \ldots,\left(X_{n}, \mathcal{T}_{n}\right)$ are topological spaces, the product topology on
+\[
+\prod_{i=1}^{n} X_{i} = X_{1} \times \cdots \times X_{n}
+\]
+is the topology generated by the basis
+\[
+ \mathcal{B}_{\prod_{i=1}^{n} X_{i}} = \big\{U_{1} \times U_{2} \times \cdots \times U_{n} \mid \; U_{i} \in \mathcal{T}_{i}, \; \text{ for all } i=1, \ldots, n\big\}
+\]
+	</p>
+
+<p>
+	Simple as that. This definition is what you should want it to be, more or less. It is natural
+to expect that products of sets that are open in each coordinate should be open in the product.
+That alone does not give you a topology, it turns out, but it does give you a basis. So you
+generate a topology from it, and the result is the product topology.
+As you would expect, bases play nicely with this definition as well, as shown by the following
+easy proposition.
+
+	</p>
+
+<p><b>
+	Proposition 2.2.
+	</b>
+Let $(X, \mathcal{T}_1)$ and $(Y, \mathcal{T}_2)$ be topological spaces, and let $\mathcal{B}_{X}$ and $\mathcal{B}_{Y}$ be bases on $X$ and $Y$ that generate $\mathcal{T}_1$ and $\mathcal{T}_2$, respectively. Then
+\[
+\mathcal{B}=\left\{U \times V: U \in \mathcal{B}_{X}, V \in \mathcal{B}_{Y}\right\}
+\]
+is a basis for the product topology on $X \times Y$
+	</p>
+
+
+<p class="blockproof">
+Proof. $\mathcal{B}_{X} \subseteq \mathcal{T}$ and $\mathcal{B}_{Y} \subseteq \mathcal{U},$ and so every element of $\mathcal{B}$ is open in the product topology. <br>
+
+Now fix an open set $U$ in the product topology, and some point $(x, y) \in U .$ We need to find
+an element $B \in \mathcal{B}$ such that $x \in B \subseteq U .$ By definition of the product topology, there must be
+some $U_{X} \in \mathcal{T}$ and $U_{Y} \in \mathcal{U}$ such that $(x, y) \in U_{X} \times U_{Y} \subseteq U .$ Using the fact that $\mathcal{B}_{X}$ and $\mathcal{B}_{Y}$ are
+bases, find sets $B_{X} \in \mathcal{B}_{X}$ and $B_{Y} \in \mathcal{B}_{Y}$ such that $x \in B_{X} \subseteq U_{X}$ and $y \in B_{Y} \subseteq U_{Y} .$ But then
+we have:
+\[
+(x, y) \in B_{X} \times B_{Y} \subseteq U_{X} \times U_{Y} \subseteq U
+\]
+so $B=B_{X} \times B_{Y}$ is the set we were looking for.
+Of course, this fact generalizes to larger finite products and the proof is similarly straightforward.
+
+</p>
+
+
+
+
+<h2> Barycentre de deux points </h2>
+
+<p>
+<strong>Définition 1:</strong> On appelle barycentre des points \(A\) et \(B\) ( ou \(A\) et \(B\) deux points du plan ou de I'espace ) affectés respectivement des coefficients \(\alpha, \beta\) ( ou \(\alpha, \beta\) sont des réels tels que \(\alpha+\beta \neq 0\) l'unique point \(G\) tel que \(\alpha \overrightarrow{G A}+\beta \overrightarrow{G B}=\overrightarrow{0}\)
+</p>
+
+
+
+
+<hr>
+
+<h3> Recent Posts </h3>
+<ul>
+
+
+    <li>
+      <i> <a href="../../topology/2019/post/2017/11/01/varparams.html">A Note on the Variation of Parameters Method </a> | 11/01/17 </i>
+    </li>
+
+
+    <li>
+      <i> <a href="../../topology/2019/notes/2017/10/26/groups3.html">Group Theory, Part 3: Direct and Semidirect Products </a> | 10/26/17 </i>
+    </li>
+
+
+    <li>
+      <i> <a href="../../topology/2019/notes/2017/10/19/galoistheory1.html">Galois Theory, Part 1: The Fundamental Theorem of Galois Theory </a> | 10/19/17 </i>
+    </li>
+
+
+    <li>
+      <i> <a href="../../topology/2019/notes/2017/10/19/fieldtheory2.html">Field Theory, Part 2: Splitting Fields; Algebraic Closure </a> | 10/19/17 </i>
+    </li>
+
+
+    <li>
+      <i> <a href="../../topology/2019/notes/2017/10/18/fieldtheory1.html">Field Theory, Part 1: Basic Theory and Algebraic Extensions </a> | 10/18/17 </i>
+    </li>
+
+</ul>
+<footer class="site-footer">
+
+  <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+</footer>
+
+</section>
+</body>
+
+
+  <!--script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-102852226-1', 'auto');
+    ga('send', 'pageview');
+  </script-->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171606319-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-171606319-1');
+</script>
+
+</html>

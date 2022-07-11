@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+    <!-- Begin Jekyll SEO tag v2.3.0 -->
+<meta property="og:title" content="Ham Karim">
+<meta name="author" content="Ham Karim">
+<meta name="author" content="ហាំ ការីម">
+<meta property="og:locale" content="en_US">
+<meta http-equiv="keywords" name="keywords" content="relations, binary relation, relation and function, ទំនាក់ទំនងទ្វេធាតុ, អនុគមន៍ និងទំនាក់ទំនង">
+<meta http-equiv="description" name="description" content="ក្នុងគណិតវិទ្យា ......... ">
+<meta name="description" content="binary relation, ទំនាក់ទំនងទ្វេធាតុ">
+<meta property="og:description" content="Math, Programmer, Music">
+<link rel="canonical" href="../../index.html">
+<meta property="og:url" content="https://hamkarim.github.io/">
+<meta property="og:site_name" content="Binary Relation">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@pkarim">
+<meta name="twitter:creator" content="@pkarim">
+<meta name="google-site-verification" content="b9bg3P9zc8qbL4szvVYaf551jD9x017IyGBVSaQZDDY" />
+
+<script type="application/ld+json">
+{
+    "name":"Ham Karim",
+    "description":"I am a faculty member at the Royal Univeristy of Phnom Penh (RUPP). This is my blog of lectures at universities. ",
+    "author":{"@type":"Person","name":"Ham Karim"},
+    "@type":"WebSite",
+    "url":"https://hamkarim.github.io/",
+    "image":null,
+    "publisher":null,
+    "headline":"Ham Karim",
+    "dateModified":null,
+    "datePublished": "2020-06-01",
+    "sameAs":null,
+    "mainEntityOfPage":null,
+    "@context":"http://schema.org"}
+</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta property="og:image" content="http://www.cliparts101.com/files/376/298FE3955707B1DE458221E4BFABFBBE/Greek_Gamma_4.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../algebra/topology/2019/favicon.ico">
+    <meta charset="UTF-8">
+    <title> Binary relations| ទំនាក់ទំនងទ្វេធាតុ</title>
+    <meta name="description" content="binary relation">
+
+<style>
+.deffont {
+        font-family: 'Noto Serif Khmer', 'CMU Serif';
+        font-size: 16px;
+        }
+ul.liststyle1 {
+        list-style-type: square;
+      }
+ul.liststyle2 {
+        list-style-type: hebrew;
+      }
+a.onmenu {
+          font-family:'Noto Serif Khmer','CMU Serif';
+          font-weight:bold;
+ }
+      </style>
+
+
+<script async="" src="//cse.google.com/adsense/search/async-ads.js"></script>
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script type="text/javascript" async="" src="https://cse.google.com/cse.js?cx=001004262401526223570:11yv6vpcqvy"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-331594-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+
+
+    <link rel="stylesheet" href="../../../assets/css/style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245">
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+<!-- Script to show and hide proof -->
+<script type="text/javascript" src="https://hamkarim.github.io/assets/js/showhide.js"></script>
+<!-- Other style of showing and hiding proof -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
+ <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>
+<!-- end -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+//Another method to toggle the button
+          $(document).ready(function(){
+                    $('.showanswer').click(function(){
+                              $('.block_proof').show();
+                              $('.showanswer').hide();
+                              $('.hideanswer').show();
+                    }
+          );
+                    $('.hideanswer').click(function(){
+                              $('.block_proof').hide();
+                              $('.showanswer').show();
+                              $('.hideanswer').hide();
+                    }
+          );
+ });
+</script>
+
+<!-- For local function, define to exchange text -->
+<script>
+function showhideFunction() {
+          document.getElementById('idClick').innerHTML === '[Hide proof]' ? document.getElementById('idClick').innerHTML = '[Show proof]' : document.getElementById('idClick').innerHTML = '[Hide proof]';
+}
+</script>
+
+<!-- script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,https://hamkarim.github.io/MathJax/config/local/local.js"></script  -->
+
+<!-- script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script -->
+
+<script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
+</script>
+
+<!-- script type="text/javascript" config=TeX-MML-AM_CHTML
+src="">
+</script -->
+
+<!-- To get it to work in old versions of Internet Explorer, you need to append this script to the head (Important if you need it to work in older versions of IE!): -->
+ <!--[if lt IE 9] -->
+ <script> document.createElement("example, defn"); </script>
+ <!-- [endif]-->
+
+  </head>
+
+  <body>
+  <nav class="nav-collapse" role="navigation">
+    <ul class="tabs primary-nav">
+        <li class="tabs__item">
+            <a href="../../../index.html" class="tabs__link">ទំព័រដើម</a>
+        </li>
+        <li class="tabs__item">
+            <a href="../../../posts_index.html" class="tabs__link">Blog</a>
+        </li>
+        <li class="tabs__item">
+            <a href="../../../projects.html" class="tabs__link">Projects</a>
+        </li>
+        <li class="tabs__item">
+            <a href="../../../notes_index.html" class="tabs__link">មេរៀន</a>
+        </li>
+        <li class="tabs__item">
+            <a href="../../../about.html" class="tabs__link">អំពីខ្ញុំ</a>
+        </li>
+        <li class="tabs__item">
+            <a href="../../../contact.html" class="tabs__link">ទាក់ទងខ្ញុំ</a>
+        </li>
+    </ul>
+</nav>
+
+<section class="page-header">
+  <h1 class="project-name">ហាំ ការីម</h1>
+  <h2 class="project-tagline">Maths, Program, Music</h2>
+</section>
+
+<section class="main-content">
+
+  <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">ជំពូក ៣.&nbsp; ម៉ាទ្រីស និង កម្មវិធីលីនេអ៊ែរ (Matrix and Linear Programming)</h1>
+<span style="font-style: italic; font-weight:bold; font-family: Arial; opacity: 0.5;">
+July 13th, 2020
+</span>
+
+<hr>
+<p style="text-indent:0px">From Wikipedia:</p>
+<blockquote>
+	<a href="https://en.wikipedia.org/wiki/File:3dpoly.svg">
+    <div class="divfigure">
+        <p> <img class="wrap-right" alt=" Four types of binary relations over the real numbers:" src="https://upload.wikimedia.org/wikipedia/commons/e/ef/3dpoly.svg"></p>
+       A closed feasible region of a problem with three variables is a convex polyhedron. The objective function is plane (not shown). The linear programming problem is to find a point on the polyhedron that is on the plane with the highest possible value.
+    </div>
+  </a>
+  <p><a href="#linearProg">Linear programming</a> (LP, also called <a>linear optimization</a>) is a method to achieve the best outcome (such as maximum profit or lowest cost) in a mathematical model whose requirements are represented by linear relationships. Linear programming is a special case of mathematical programming (also known as mathematical optimization).
+</p>
+<p>More formally, linear programming is a technique for the optimization of a linear objective function, subject to linear equality and linear inequality constraints. Its feasible region is a convex polytope, which is a set defined as the intersection of finitely many half spaces, each of which is defined by a linear inequality. Its objective function is a real-valued affine (linear) function defined on this polyhedron. A linear programming algorithm finds a point in the polytope where this function has the smallest (or largest) value if such a point exists.
+    </p>
+</blockquote>
+
+<h3>Motivation</h3>
+<p>
+    Linear programming is a widely used field of optimization for several reasons. Many practical problems in operations research can be expressed as linear programming problems.[3] Certain special cases of linear programming, such as network flow problems and multicommodity flow problems are considered important enough to have generated much research on specialized algorithms for their solution. A number of algorithms for other types of optimization problems work by solving LP problems as sub-problems. Historically, ideas from linear programming have inspired many of the central concepts of optimization theory, such as duality, decomposition, and the importance of convexity and its generalizations. Likewise, linear programming was heavily used in the early formation of microeconomics and it is currently utilized in company management, such as planning, production, transportation, technology and other issues. Although the modern management issues are ever-changing, most companies would like to maximize profits and minimize costs with limited resources. Therefore, many issues can be characterized as linear programming problems.
+</p>
+
+    <p>
+    In this section, we will review matrix concepts critical for the general understanding of general linear programming algorithms.
+
+Let $\mathbf{x}$ and $\mathbf{y}$ be two vectors in $\mathbb{R}^n$. Recall we denote the dot product of the two vectors as $\mathbf{x} \cdot \mathbf{y}$.
+    </p>
+
+<h2 class="frame-sect sectcounter">&nbsp; ម៉ាទ្រីស </h2>
+<p>
+    Recall an $m \times n$ matrix is a rectangular array of numbers, usually drawn from a field such as $\mathbb{R}$. We write an $m \times n$ matrix with values in $\mathbb{R}$ as $\mathbf{A} \in \mathbb{R}^{m \times n}$. The matrix consists of $m$ rows and $n$ columns. The element in the $i^\text{th}$ row and $j^\text{th}$ column of $\mathbf{A}$ is written as $\mathbf{A}_{ij}$. The $j^\text{th}$ column of $\mathbf{A}$ can be written as $\mathbf{A}_{\cdot j}$, where the $\cdot$ is interpreted as ranging over every value of $i$ (from $1$ to $m$). Similarly, the $i^{th}$ row of $\mathbf{A}$ can be written as $\mathbf{A}_{i\cdot}$. When $m = n$, then the matrix $\mathbf{A}$ is called <i>square.</i>
+    </p>
+
+<defn >
+          <div class="definition"> </div>
+ <div class="definitionb">
+    <p>
+        If $\mathbf{A}$ and $\mathbf{B}$ are both in $\mathbb{R}^{m \times n}$, then $\mathbf{C} = \mathbf{A} + \mathbf{B}$ is the matrix sum of $\mathbf{A}$ and $\mathbf{B}$ and
+\begin{equation}
+\mathbf{C}_{ij} = \mathbf{A}_{ij} + \mathbf{B}_{ij}\;\; \text{for $i=1,\dots,m$ and $j=1,\dots,n$} \tag{1.1}
+\end{equation}
+    </p>
+</div>
+</defn>
+<example>
+\begin{equation}
+\left[
+\begin{array}{cc}
+1 & 2\\
+3 & 4
+\end{array}
+\right] +
+\left[
+\begin{array}{cc}
+5 & 6\\
+7 & 8
+\end{array}
+\right] =
+\left[
+\begin{array}{cc}
+1 + 5 & 2 + 6\\
+3 + 7 & 4 + 8
+\end{array}
+\right] =
+\left[
+\begin{array}{cc}
+6 & 8\\
+10 & 12
+\end{array}
+\right]
+\end{equation}
+</example>
+
+
+<defn>
+          <div class="definition">[Row/Column Vector] </div>
+ <div class="definitionb">
+ <p>
+A $1 \times n$ matrix is called a <b>row vector</b>, and a $m \times 1$ matrix is called a <i>column vector</i>. For the remainder of these notes, every vector will be thought of <b>column vector</b> unless otherwise noted.
+</p>
+</div>
+ </defn>
+
+  <p>It should be clear that any row of matrix $\mathbf{A}$ could be considered a row vector in $\mathbb{R}^n$ and any column of $\mathbf{A}$ could be considered a column vector in $\mathbb{R}^m$.</p>
+
+<defn>
+          <div class="definition">[Matrix Multiplication] </div>
+ <div class="definitionb">
+ <p>
+If $\mathbf{A} \in \mathbb{R}^{m \times n}$ and $B \in \mathbb{R}^{n \times p}$, then $\mathbf{C} = \mathbf{A}\mathbf{B}$ is the <i>matrix product</i> of $\mathbf{A}$ and $\mathbf{B}$ and
+\begin{equation}
+\mathbf{C}_{ij} = \mathbf{A}_{i\cdot} \cdot \mathbf{B}_{\cdot j}
+\end{equation}
+Note, $\mathbf{A}_{i\cdot} \in \mathbb{R}^{1 \times n}$ (an $n$-dimensional vector) and $\mathbf{B}_{\cdot j} \in \mathbb{R}^{n \times 1}$ (another $n$-dimensional vector), thus making the dot product meaningful.
+</p>
+</div>
+ </defn>
+
+<example>
+\begin{equation}
+\left[
+\begin{array}{cc}
+1 & 2\\
+3 & 4
+\end{array}
+\right]
+\left[
+\begin{array}{cc}
+5 & 6\\
+7 & 8
+\end{array}
+\right] =
+\left[
+\begin{array}{cc}
+1(5) + 2(7) & 1(6) + 2(8)\\
+3(5) + 4(7) & 3(6) + 4(8)
+\end{array}
+\right] =
+\left[
+\begin{array}{cc}
+19 & 22\\
+43 & 50
+\end{array}
+\right]
+\end{equation}
+
+    </example>
+
+
+<defn>
+          <div class="definition">[Matrix Transpose] </div>
+ <div class="definitionb">
+ <p>
+If $\mathbf{A} \in \mathbb{R}^{m \times n}$ is a $m \times n$ matrix, then the <i>transpose</i> of $\mathbf{A}$ dented $\mathbf{A}^T$ is an $m \times n$ matrix defined as:
+\begin{equation}
+\mathbf{A}^T_{ij} = \mathbf{A}_{ji}
+\end{equation}
+</p>
+</div>
+ </defn>
+
+<example>
+    \begin{equation}
+\left[
+\begin{array}{cc}
+1 & 2\\
+3 & 4
+\end{array}
+\right]^T =
+\left[
+\begin{array}{cc}
+1 & 3\\
+2 & 4
+\end{array}
+\right]
+\end{equation}
+    </example>
+
+<p>
+    The matrix transpose is a particularly useful operation and makes it easy to transform column vectors into row vectors, which enables multiplication. For example, suppose $\mathbf{x}$ is an $n \times 1$ column vector (i.e., $\mathbf{x}$ is a vector in $\mathbb{R}^n$) and suppose $\mathbf{y}$ is an $n \times 1$ column vector. Then:
+\begin{equation}
+\mathbf{x} \cdot \mathbf{y} = \mathbf{x}^T\mathbf{y}
+\end{equation}
+
+    </p>
+
+<p>
+ <b>Exercise</b> Let $\mathbf{A}, \mathbf{B} \in \mathbb{R}^{m \times n}$. Use the definitions of matrix addition and transpose to prove that:
+\begin{equation}
+(\mathbf{A} + \mathbf{B})^T = \mathbf{A}^T + \mathbf{B}^T
+\end{equation}
+[Hint: If $\mathbf{C} = \mathbf{A} + \mathbf{B}$, then $\mathbf{C}_{ij} = \mathbf{A}_{ij} + \mathbf{B}_{ij}$, the element in the $(i,j)$ position of matrix $\mathbf{C}$. This element moves to the $(j,i)$ position in the transpose. The $(j,i)$ position of $\mathbf{A}^T + \mathbf{B}^T$ is $\mathbf{A}_{ji}^T + \mathbf{B}^T_{ji}$, but $\mathbf{A}_{ji}^T = \mathbf{A}_{ij}$. Reason from this point.]
+</p>
+
+<p>
+    <b>Exercise</b> Let $\mathbf{A}, \mathbf{B} \in \mathbb{R}^{m \times n}$. Prove by example that $\mathbf{A}\mathbf{B} \neq \mathbf{B}\mathbf{A}$; that is, matrix multiplication is \textit{not commutative}. [Hint: Almost any pair of matrices you pick (that can be multiplied) will not commute.]
+    </p>
+
+<p><b>Exercises</b> Let $\mathbf{A} \in \mathbb{R}^{m \times n}$ and let, $\mathbf{B} \in \mathbb{R}^{n \times p}$. Use the definitions of matrix multiplication and transpose to prove that:
+\begin{equation}
+(\mathbf{A}\mathbf{B})^T = \mathbf{B}^T\mathbf{A}^T
+\end{equation}
+[Hint: Use similar reasoning to the hint in Exercise \ref{exer:AdditionTranspose}. But this time, note that $\mathbf{C}_{ij} = \mathbf{A}_{i\cdot} \cdot \mathbf{B}_{\cdot j}$, which moves to the $(j,i)$ position. Now figure out what is in the $(j,i)$ position of $\mathbf{B}^T\mathbf{A}^T$.]
+</p>
+
+<p>
+Let $\mathbf{A}$ and $\mathbf{B}$ be two matrices with the same number of rows (so $\mathbf{A} \in \mathbb{R}^{m \times n}$ and $\mathbf{B} \in \mathbb{R}^{m \times p}$). Then the augmented matrix $\left[\mathbf{A}|\mathbf{B}\right]$ is:
+\begin{equation}
+\left[
+\begin{array}{cccc|cccc}
+a_{11} & a_{12} & \dots & a_{1n} & b_{11} & b_{12} & \dots & b_{1p}\\
+a_{21} & a_{22} & \dots & a_{2n} & b_{21} & b_{22} & \dots & b_{2p}\\
+\vdots & & \ddots & \vdots & \vdots & & \ddots & \vdots\\
+a_{m1} & a_{m2} & \dots & a_{mn} & b_{m1} & b_{m2} & \dots & b_{mp}\\
+\end{array}
+\right]
+\end{equation}
+Thus, $\left[\mathbf{A}|\mathbf{B}\right]$ is a matrix in $\mathbb{R}^{m \times (n + p)}$.
+    </p>
+
+<example> Consider the following matrices:
+\[
+\mathbf{A} = \left[
+\begin{array}{cc}
+1 & 2\\
+3 & 4
+\end{array}
+\right],\;\;\;\mathbf{b} = \left[
+\begin{array}{c}
+7\\
+8
+\end{array}
+\right]
+\]
+
+Then $\left[\mathbf{A}|\mathbf{B}\right]$ is:
+\[
+\left[\mathbf{A}|\mathbf{B}\right] = \left[
+\begin{array}{cc|c}
+1 & 2 & 7\\
+3 & 4 & 8
+\end{array}
+\right]
+\]
+
+ </example>
+
+<p><b>Exercise</b> By analogy define the augmented matrix $\left[\frac{\mathbf{A}}{\mathbf{B}}\right]$. Note, this is \textbf{not} a fraction. In your definition, identify the appropriate requirements on the relationship between the number of rows and columns that the matrices must have. [Hint: Unlike $\left[\mathbf{A}|\mathbf{B}\right]$, the number of rows don't have to be the same, since your concatenating on the rows, not columns. There should be a relation between the numbers of columns though.]
+
+    </p>
+
+<h2> Special Matrices and Vectors</h2>
+<defn>
+          <div class="definition"> [Identify Matrix] </div>
+ <div class="definitionb">
+ <p>
+The $n \times n$ <b>identify matrix</b> is:
+\begin{equation}
+\mathbf{I}_n =
+\left[
+\begin{array}{cccc}
+1 & 0 & \dots & 0\\
+0 & 1 & \dots & 0\\
+\vdots & & \ddots & \vdots\\
+0 & 0 & \dots & 1
+\end{array}\right]
+\end{equation}
+</p>
+</div>
+ </defn>
+
+<p>
+    When it is clear from context, we may simply write $\mathbf{I}$ and omit the subscript $n$. </p>
+
+<p><b>Exercise</b>Let $\mathbf{A} \in \mathbb{R}^{n \times n}$. Show that $\mathbf{A}\mathbf{I}_n = \mathbf{I}_n\mathbf{A} = \mathbf{A}$. Hence, $\mathbf{I}$ is an identify for the matrix multiplication operation on square matrices. [Hint: Do the multiplication out long hand.] </p>
+
+    <defn>
+          <div class="definition">[Standard Basis Vector] </div>
+ <div class="definitionb">
+ <p>
+The standard basis vector $\mathbf{e}_i \in \mathbb{R}^n$ is:
+\[
+\mathbf{e}_i = \left(\underset{i-1}{\underbrace{0,0,\dots}},1,
+\underset{n-i-1}{\underbrace{0,\dots,0}}\right)
+\]
+</p>
+</div>
+ </defn>
+
+<p>
+Note, this definition is only valid for $n \geq i$. Further the standard basis vector $\mathbf{e}_i$ is also the $i^{\text{th}}$ row or column of $\mathbf{I}_n$.
+    </p>
+
+<defn>
+          <div class="definition">[Unit and Zero Vectors] </div>
+ <div class="definitionb">
+ <p>
+  The vector $\mathbf{e} \in \mathbb{R}^n$ is the <i>one vector</i> $\mathbf{e} = (1,1,\dots,1)$. Similarly, the <i>zero vector</i> $\mathbf{0} = (0,0,\dots,0) \in \mathbb{R}^n$. We assume that the length of $\mathbf{e}$ and $\mathbf{0}$ will be determined from context.
+</p>
+</div>
+ </defn>
+
+
+<p><b>Exercise. </b>
+    Let $\mathbf{x} \in \mathbb{R}^n$, considered as a column vector (our standard assumption). Define:
+\[
+\mathbf{y} = \frac{\mathbf{x}}{\mathbf{e}^T\mathbf{x}}
+\]
+Show that $\mathbf{e}^T\mathbf{y} = \mathbf{y}^T\mathbf{e} = 1$. [Hint: First remember that $\mathbf{e}^T\mathbf{x}$ is a scalar value (it's $\mathbf{e}\cdot\mathbf{x}$. Second, remember that a scalar times a vector is just a new vector with each term multiplied by the scalar. Last, use these two pieces of information to write the product $\mathbf{e}^T\mathbf{y}$ as a sum of fractions.]
+    </p>
+
+<h2>Matrices and Linear Programming Expression</h2>
+
+<p>
+    Recall that matrices can be used as a short hand way to represent linear equations. Consider the following system of equations:
+\begin{equation}
+\left\{
+\begin{array}{rcl}
+a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n & =& b_1\\
+a_{21}x_1 + a_{22}x_2 + \dots + a_{2n}x_n & =& b_2\\
+&\vdots&\\
+a_{m1}x_1 + a_{m2}x_2 + \dots + a_{mn}x_n & =& b_m
+\end{array}\right.
+\label{eqn:LinearEqns}
+\end{equation}
+Then we can write this in matrix notation as:
+\begin{equation}
+\mathbf{A}\mathbf{x} = \mathbf{b}
+\end{equation}
+where $\mathbf{A}_{ij} = a_{ij}$ for $i=1,\dots,m$, $j=1,\dots,n$ and $\mathbf{x}$ is a column vector in $\mathbb{R}^n$ with entries $x_j$ ($j=1,\dots,n$) and $\mathbf{b}$ is a column vector in $\mathbb{R}^m$ with entries $b_i$ ($i=1\dots,m$). Obviously, if we replace the equalities in Expression \ref{eqn:LinearEqns} with inequalities, we can also express systems of inequalities in the form:
+\begin{equation}
+\mathbf{A}\mathbf{x} \leq \mathbf{b}
+\end{equation}
+    </p>
+<p>
+Using this representation, we can write our general linear programming problem using matrix and vector notation. Expression \ref{eqn:GeneralLPMax} can be written as:
+\begin{equation}
+\left\{
+\begin{aligned}
+\max\;\; & z(\mathbf{x}) = \mathbf{c}^T\mathbf{x}\\
+s.t.\;\;&\mathbf{A}\mathbf{x} \leq \mathbf{b}\\
+& \mathbf{H}\mathbf{x} = \mathbf{r}
+\end{aligned}\right.
+\label{eqn:GeneralLPMaxMatrixForm}
+\end{equation}
+</p>
+
+<p>For historical reasons, linear programs are not written in the general form of Expression \ref{eqn:GeneralLPMaxMatrixForm}. </p>
+
+<defn>
+          <div class="definition">[Canonical Form] </div>
+ <div class="definitionb">
+ <p>
+A maximization linear programming problem is in <b>canonical form</b> if it is written as:
+\begin{equation}
+\left\{
+\begin{aligned}
+\max\;\;  &z(\mathbf{x}) = \mathbf{c}^T\mathbf{x}\\
+s.t.\;\;&\mathbf{A}\mathbf{x} \leq \mathbf{b}\\
+& \mathbf{x} \geq \mathbf{0}
+\end{aligned}\right. \tag{1.2}
+\label{eqn:CanonicalFormMax}
+\end{equation}
+
+A minimization linear programming problem is in <b>canonical form</b> if it is written as:
+\begin{equation}
+\left\{
+\begin{aligned}
+\min\;\; & z(\mathbf{x}) = \mathbf{c}^T\mathbf{x}\\
+s.t.\;\;&\mathbf{A}\mathbf{x} \geq \mathbf{b}\\
+& \mathbf{x} \geq \mathbf{0}
+\end{aligned}\right. \tag{1.3}
+\label{eqn:MinCanonicalFormMax}
+\end{equation}
+</p>
+</div>
+ </defn>
+
+
+ <defn>
+          <div class="definition">[Standard Form (Max Problem)] </div>
+ <div class="definitionb">
+ <p>
+A maximization linear programming problem is in <b>standard form</b> if it is written as:
+\begin{equation}
+\left\{
+\begin{aligned}
+\max\;\; & z(\mathbf{x}) = \mathbf{c}^T\mathbf{x}\\
+s.t.\;\;&\mathbf{A}\mathbf{x} = \mathbf{b}\\
+& \mathbf{x} \geq \mathbf{0}
+\end{aligned}\right. \tag{1.4}
+\label{eqn:StandardFormMax}
+\end{equation}
+</p>
+</div>
+ </defn>
+
+
+
+<p><b>Remark. </b>In the previous definition, a problem is in standard form as long as its constraints have form $\mathbf{A}\mathbf{x} = \mathbf{b}$ and $\mathbf{x} \geq \mathbf{0}$. The problem can be either a maximization or minimization problem.
+    </p>
+
+
+
+<p><b>Theorem. </b>
+Every linear programming problem in canonical form can be put into standard form.
+    </p>
+    <p align="right"><a class="toggle bground" id="getid" href="#proofOfstandard" onclick="showhideFunction()"> [Show proof]</a></p>
+<div class="hidepanel block_proof" id="proofOfstandard" style="color:#1860C1">
+<b>សម្រាយបញ្ជាក់. </b>
+<p> Consider the constraint corresponding to the first row of the matrix $\mathbf{A}$:
+\begin{equation}
+a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n \leq b_1
+\end{equation}
+Then we can add a new \textit{slack} variable $s_1$ so that $s_1 \geq 0$ and we have:
+\begin{equation}
+a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n + s_1 = b_1
+\end{equation}
+
+This act can be repeated for each row of $\mathbf{A}$ (constraint) yielding $m$ new variables $s_1,\dots,s_m$, which we can express as a row $\mathbf{s}$. Then the new linear programming problem can be expressed as:
+\[
+ \left\{
+ \begin{aligned}
+ \max\;\; & z(\mathbf{x}) = \mathbf{c}^T\mathbf{x}\\
+s.t.\;\;&\mathbf{A}\mathbf{x} + \mathbf{I}_m\mathbf{s}= \mathbf{b}\\
+ & \mathbf{x},\mathbf{s} \geq \mathbf{0}
+ \end{aligned}\right.
+  \label{eqn:CanFormMax1}
+\]
+
+Using augmented matrices, we can express this as:
+    \[
+    \left\{
+    \begin{aligned}
+    \max\;\; &z(\mathbf{x}) = \left[\frac{\mathbf{c}}{\mathbf{0}}\right]^T\left[\frac{\mathbf{x}}{\mathbf{s}}\right]\\
+    s.t.\;\;&\left[\mathbf{A}|\mathbf{I}_m\right]\left[\frac{\mathbf{x}}{\mathbf{s}}\right]= \mathbf{b}\\
+    & \left[\frac{\mathbf{x}}{\mathbf{s}}\right] \geq \mathbf{0}
+    \end{aligned}\right.
+       \label{eqn:CanFormMax2}
+     \]
+Clearly, this new linear programming problem is in standard form and any solution maximizing the original problem will necessarily maximize this one.
+</p>
+        </div>
+
+
+<example>
+          Consider the Toy Maker problem from Example \ref{ex:ToyMaker}. The problem in canonical form is:
+\[
+\left\{
+\begin{aligned}
+\max\;\;& z(x_1,x_2) = 7x_1 + 6x_2\\
+s.t.\;\;&  3x_1 + x_2 \leq 120\\
+& x_1 + 2x_2 \leq 160\\
+& x_1 \leq 35\\
+& x_1 \geq 0\\
+& x_2 \geq 0
+\end{aligned}
+\right.
+\]
+We can introduce slack variables $s_1$, $s_2$ and $s_3$ into the constraints (one for each constraint) and re-write the problem as:
+\[
+\left\{
+\begin{aligned}
+\max\;\;& z(x_1,x_2) = 7x_1 + 6x_2\\
+s.t.\;\;&  3x_1 + x_2 + s_1 = 120\\
+& x_1 + 2x_2 + s_2 = 160\\
+& x_1 + s_3 = 35\\
+& x_1 \geq 0\\
+& x_2 \geq 0
+\end{aligned}
+\right.
+\label{ex:ToyMakerStandard}
+\]
+</example>
+
+\begin{remark}
+We can deal with constraints of the form:
+\begin{equation}
+a_{i1}x_1 + a_{i2}x_2 + \dots + a_{in}x_n \geq b_i
+\label{eqn:GTConstraint}
+\end{equation}
+in a similar way. In this case we subtract a surplus variable $s_i$ to obtain:
+\[
+a_{i1}x_1 + a_{i2}x_2 + \dots + a_{in}x_n - s_i = b_i
+\]
+Again, we must have $s_i \geq 0$.
+\end{remark}
+
+\begin{theorem} Every linear programming problem in standard form can be put into canonical form.
+\end{theorem}
+\begin{proof} Recall that $\mathbf{A}\mathbf{x} = \mathbf{b}$ if and only if $\mathbf{A}\mathbf{x} \leq \mathbf{b}$ and $\mathbf{A}\mathbf{x} \geq \mathbf{b}$. The second inequality can be written as $-\mathbf{A}\mathbf{x} \leq -\mathbf{b}$. This yields the linear programming problem:
+\begin{equation}
+\left\{
+\begin{aligned}
+\max\;\; z(\mathbf{x}) = &\mathbf{c}^T\mathbf{x}\\
+s.t.\;\;&\mathbf{A}\mathbf{x} \leq \mathbf{b}\\
+& -\mathbf{A}\mathbf{x} \leq -\mathbf{b}\\
+& \mathbf{x} \geq \mathbf{0}
+\end{aligned}\right.
+\label{eqn:StandardConversion}
+\end{equation}
+Defining the appropriate augmented matrices allows us to convert this linear programming problem into canonical form.
+\end{proof}
+\begin{exercise} Complete the ``pedantic'' proof of the preceding theorem by defining the correct augmented matrices to show that the linear program in Expression \ref{eqn:StandardConversion} is in canonical form.
+\end{exercise}
+
+The standard solution method for linear programming models (the Simplex Algorithm) assumes that all variables are non-negative. Though this assumption can be easily relaxed, the first implementation we will study imposes this restriction. The general linear programming problem we posed in Expression \ref{eqn:GeneralLPMaxMatrixForm} does not (necessarily) impose any sign restriction on the variables. We will show that we can transform a problem in which $x_i$ is unrestricted into a new problem in which all variables are positive. Clearly, if $x_i \leq 0$, then we simply replace $x_i$ by $-y_i$ in every expression and then $y_i \geq 0$. On the other hand, if we have the constraint $x_i \geq l_i$, then clearly we can write $y_i = x_i - l_i$ and $y_i \geq 0$. We can then replace $x_i$ by $y_i + l_i$ in every equation or inequality where $x_i$ appears. Finally, if $x_i \leq u_i$, but $x_i$ may be negative, then we may write $y_i = u_i - x_i$. Clearly, $y_i \geq 0$ and we can replace $x_i$ by $u_i - y_i$ in every equation or inequality where $x_i$ appears.
+
+If $x_i$ is unrestricted in sign and has no upper or lower bounds, then let $x_i = y_i - z_i$ where $y_i, z_i \geq 0$ and replace $x_i$ by $(y_i-z_i)$ in the objective, equations and inequalities of a general linear programming problem. Since $y_i, z_i \geq 0$ and may be given any values as a part of the solution, clearly $x_i$ may take any value in $\mathbb{R}$.
+\begin{exercise} Convince yourself that the general linear programming problem shown in Expression \ref{eqn:GeneralLPMaxMatrixForm} can be converted into canonical (or standard) form using the following steps:
+\begin{enumerate*}
+\item Every constraint of the form $x_i \leq u_i$ can be dealt with by substituting $y_i = u_i - x_i$, $y_i \geq 0$.
+\item Every constraint of the form $l_i \leq x_i$ can be dealt with by substituting $y_i = x_i - l_i$, $y_i \geq 0$.
+\item If $x_i$ is unrestricted in any way, then we can variables $y_i$ and $z_i$ so that $x_i = y_i - z_i$ where $y_i, z_i \geq 0$.
+\item Any equality constraints $\mathbf{H}\mathbf{x} = \mathbf{r}$ can be transformed into inequality constraints.
+\end{enumerate*}
+Thus, Expression \ref{eqn:GeneralLPMaxMatrixForm} can be transformed to standard form. [Hint: No hint, the hint is in the problem.]
+\end{exercise}
+
+\section{Gauss-Jordan Elimination and Solution to Linear Equations}
+In this sub-section, we'll review Gauss-Jordan Elimination as a solution method for linear equations. We'll use Gauss-Jordan Elimination \textit{extensively} in the coming chapters.
+
+\begin{definition}[Elementary Row Operation] Let $\mathbf{A} \in \mathbb{R}^{m \times n}$ be a matrix. Recall $\mathbf{A}_{i \cdot}$ is the $i^\text{th}$ row of $\mathbf{A}$. There are three \textit{elementary row operations}:
+\begin{enumerate}
+\item (Scalar Multiplication of a Row) Row $\mathbf{A}_{i \cdot}$ is replaced by $\alpha \mathbf{A}_{i \cdot}$, where $\alpha \in \mathbb{R}$ and $\alpha \neq 0$.
+\item (Row Swap) Row $\mathbf{A}_{i \cdot}$ is swapped with Row $\mathbf{A}_{j \cdot}$ for $i \neq j$.
+\item (Scalar Multiplication and Addition) Row $\mathbf{A}_{j \cdot}$ is replaced by $\alpha \mathbf{A}_{i \cdot} + \mathbf{A}_{j \cdot}$ for $\alpha \in \mathbb{R}$ and $i \neq j$.
+\end{enumerate}
+\end{definition}
+
+\begin{example} Consider the matrix:
+\[
+\mathbf{A} =
+\begin{bmatrix}
+1 & 2\\
+3 & 4
+\end{bmatrix}
+\]
+In an example of scalar multiplication of a row by a constant, we can multiply the second row by $1/3$ to obtain:
+\[
+\mathbf{B} =
+\begin{bmatrix}
+1 & 2\\
+1 & \frac{4}{3}
+\end{bmatrix}
+\]
+As an example of scalar multiplication and addition, we can multiply the second row by $(-1)$ and add the result to the first row to obtain:
+\[
+\mathbf{C} =
+\begin{bmatrix}
+0 & 2-\frac{4}{3}\\
+1 & \frac{4}{3}
+\end{bmatrix} =
+\begin{bmatrix}
+0 & \frac{2}{3}\\
+1 & \frac{4}{3}
+\end{bmatrix}
+\]
+We can then use scalar multiplication and multiply the first row by $(3/2)$ to obtain:
+\[
+\mathbf{D} =
+
+\begin{bmatrix}
+0 & 1\\
+1 & \frac{4}{3}
+\end{bmatrix}
+\]
+
+We can then use scalar multiplication and addition to multiply the first row by $(-4/3)$ add it to the second row to obtain:
+\[
+\mathbf{E} =
+\begin{bmatrix}
+0 & 1\\
+1 & 0
+\end{bmatrix}
+\]
+Finally, we can swap row 2 and row 1 to obtain:
+\[
+\mathbf{I}_2 =
+\begin{bmatrix}
+1 & 0\\
+0 & 1
+\end{bmatrix}
+\]
+Thus using elementary row operations, we have transformed the matrix $\mathbf{A}$ into the matrix $\mathbf{I}_2$.
+\label{ex:ElemRowOps}
+\end{example}
+
+\begin{theorem} Each elementary row operation can be accomplished by a matrix multiplication.
+\label{thm:ElemRowOpsAsMatrixMult}
+\end{theorem}
+\begin{proof} We'll show that scalar multiplication and row addition can be accomplished by a matrix multiplication. In Exercise \ref{exer:ElemRowOpsAsMatrixMult}, you'll be asked to complete the proof for the other two elementary row operations.
+
+Let $\mathbf{A} \in \mathbb{R}^{m \times n}$. Without loss of generality, suppose we wish to multiply row $1$ by $\alpha$ and add it to row $2$, replacing row $2$ with the result. Let:
+\begin{equation}
+\mathbf{E} = \begin{bmatrix}
+1 & 0 & 0 & \dots & 0\\
+\alpha & 1 & 0 & \dots & 0\\
+\vdots & \vdots & & \ddots & 0\\
+0 & 0 & 0 & \dots & 1
+\end{bmatrix}
+\end{equation}
+This is simply the identity $I_m$ with an $\alpha$ in the $(2,1)$ position instead of $0$. Now consider $\mathbf{E}\mathbf{A}$. Let $\mathbf{A}_{\cdot j} = [a_{1j},a_{2j},\dots,a_{mj}]^T$ be the $j^\text{th}$ column of $\mathbf{A}$. Then :
+\begin{equation}
+\begin{bmatrix}
+1 & 0 & 0 & \dots & 0\\
+\alpha & 1 & 0 & \dots & 0\\
+\vdots & \vdots & & \ddots & 0\\
+0 & 0 & 0 & \dots & 1
+\end{bmatrix}
+\begin{bmatrix}
+a_{1j}\\
+a_{2j}\\
+\vdots\\
+a_{mj}
+\end{bmatrix} =
+\begin{bmatrix}
+a_{1j}\\
+\alpha(a_{1j}) + a_{2j}\\
+\vdots\\
+a_{mj}
+\end{bmatrix}
+\end{equation}
+That is, we have taken the first element of $\mathbf{A}_{\cdot j}$ and multiplied it by $\alpha$ and added it to the second element of $\mathbf{A}_{\cdot j}$ to obtain the new second element of the product. All other elements of $\mathbf{A}_{\cdot j}$ are unchanged. Since we chose an arbitrary column of $\mathbf{A}$, it's clear this will occur in each case. Thus $\mathbf{E} \mathbf{A}$ will be the new matrix with rows the same as $\mathbf{A}$ \textit{except} for the second row, which will be replaced by the first row of $\mathbf{A}$ multiplied by the constant $\alpha$ and added to the second row of $\mathbf{A}$. To multiply the $i^\text{th}$ row of $\mathbf{A}$ and add it to the $j^\text{th}$ row, we would simply make a matrix $E$ by starting with $\mathbf{I}_m$ and replacing the $i^\text{th}$ element of row $j$ with $\alpha$.
+\end{proof}
+\begin{exercise} Complete the proof by showing that scalar multiplication and row swapping can be accomplished by a matrix multiplication. [Hint: Scalar multiplication should be easy, given the proof above. For row swap, try multiplying matrix $\mathbf{A}$ from Example \ref{ex:ElemRowOps} by:
+\[
+\begin{bmatrix}
+0 & 1\\
+1 & 0
+\end{bmatrix}
+\]
+and see what comes out. Can you generalize this idea for arbitrary row swaps?]
+\label{exer:ElemRowOpsAsMatrixMult}
+\end{exercise}
+
+Matrices of the kind we've just discussed are called \textit{elementary matrices}. Theorem \ref{thm:ElemRowOpsAsMatrixMult} will be important when we study efficient methods for solving linear programming problems. It tells us that \textit{any} set of elementary row operations can be performed by finding the right matrix. That is, suppose I list 4 elementary row operations to perform on matrix $A$. These elementary row operations correspond to for matrices $\mathbf{E}_1, \dots, \mathbf{E}_4$. Thus the transformation of $\mathbf{A}$ under these row operations can be written using only matrix multiplication as $\mathbf{B} = \mathbf{E}_4\cdots\mathbf{E}_1\mathbf{A}$. This representation is \textit{much} simpler for a computer to keep track of in algorithms that require the transformation of matrices by elementary row operations.
+
+\begin{definition}[Row Equivalence] Let $\mathbf{A} \in \mathbb{R}^{m \times n}$ and let $\mathbf{B} \in \mathbb{R}^{m \times n}$. If there is a sequence of elementary matrices $\mathbf{E}_1,\dots,\mathbf{E}_k$ so that:
+\[
+\mathbf{B} = \mathbf{E}_k\cdots\mathbf{E}_1\mathbf{A}
+\]
+then $\mathbf{A}$ and $\mathbf{B}$ are said to be \textit{row equivalent}.
+\end{definition}
+
+
+\section{Matrix Inverse}
+\begin{definition}[Invertible Matrix] Let $\mathbf{A} \in \mathbb{R}^{n \times n}$ be a square matrix. If there is a matrix $\mathbf{A}^{-1}$ such that
+\begin{equation}
+\mathbf{A} \mathbf{A}^{-1} = \mathbf{A}^{-1} \mathbf{A} = \mathbf{I}_n
+\end{equation}
+then matrix $\mathbf{A}$ is said to be \textit{invertible} (or \textit{nonsingular}) and $\mathbf{A}^{-1}$ is called its \textit{inverse}. If \textbf{A} is not invertible, it is called a \textit{singular} matrix.
+\end{definition}
+
+\begin{exercise} Find the equivalent elementary row operation matrices for Example \ref{ex:ElemRowOps}. There should be five matrices $\mathbf{E}_1, \dots, \mathbf{E}_5$ corresponding to the five steps shown. Show that the product of these matrices (in the correct order) yields the identity matrix. Now compute the product $\mathbf{B} = \mathbf{E}_5\cdots\mathbf{E}_1$. Show that $\mathbf{B} = \mathbf{A}^{-1}$ [Hint: You've done most of the work.]
+\label{exer:MatrixInv1}
+\end{exercise}
+
+The proof of the following theorem is beyond the scope of this class. Proofs can be found in \cite{Str87} (Chapter 2) and \cite{Cull72} (Chapter 1) and should be covered in a Linear Algebra course (Math 436).
+\begin{theorem} If $\mathbf{A} \in \mathbb{R}^{n \times n}$ is a square matrix and $\mathbf{X} \in \mathbb{R}^{n \times n}$ so that $\mathbf{X}\mathbf{A} = \mathbf{I}_n$, then:
+\begin{enumerate}
+\item $\mathbf{A}\mathbf{X} = \mathbf{I}_n$
+\item $\mathbf{X} = \mathbf{A}^{-1}$
+\item $\mathbf{A}$ and $\mathbf{A}^{-1}$ can be written as a product of elementary matrices.
+\end{enumerate}
+\end{theorem}
+
+The process we've illustrated in Example \ref{ex:ElemRowOps} is an instance of Gauss-Jordan elimination and can be used to find the inverse of any matrix (or to solve systems of linear equations). This process is summarized in Algorithm \ref{alg:GaussJordanEliminationInv}.
+\begin{definition}[Pivoting]
+In Algorithm \ref{alg:GaussJordanEliminationInv} when $\mathbf{A}_{ii} \neq 0$, the process performed in Steps 4 and 5 is called \textit{pivoting} on element $(i,i)$.
+\end{definition}
+We illustrate this algorithm in the following example.
+
+
+
+
+
+
+
+
+
+
+
+
+<p style="text-indent: 0px"><b>ចំណាំ :</b>
+    បើ $\mathcal{E}$ ជាលំហអាហ្វីន តាមទិសដៅ $\vect{\E}$ នោះធាតុរបស់ $\mathcal{E}$ ហៅថា <b>ចំណុច</b> ហើយគេកំណត់សរសេរដោយអក្សរធំ $A,B, C,D,M,N,P$, $\cdots$។ ចំណែកឯធាតុរបស់លំហ $\vect{\E}$ ហៅថា <b> វ៉ិចទ័រ</b> ហើយកំណត់សរសេរដោយអក្សរតូច មានសញ្ញាព្រួញនៅខាងលើ គឺ $\vec{i}, \vec{j}, \vec{k}, \vec{u}, \vec{v}, \cdots $។
+    </p>
+
+<example>
+    ពិនិត្យមើលឧទាហរណ៍ខាងក្រោម៖
+<ol class="parenthnum">
+    <li>បើ $\dim\big(\vect\E\big)=1$ នោះគេនិយាយថា  $\mathcal{E}$ គឺជា <a href="####ssssss">បន្ទាត់អាហ្វីន</a>។ </li>
+    <li>បើ $\dim\big(\vect\E\big)=2$ នោះគេថា $\mathcal{E}$ គឺជា <a href="https://en.wikipedia.org/wiki/Affine_plane_(incidence_geometry)">ប្លង់អាហ្វីន</a>។</li>
+    <li>គ្រប់លំហវ៉ិចទ័រ $\vect{\E}$ កំណត់លើកាយ $\mathbb{R}$ តាមន័យកាណូនិច អាចចាត់ទុកថាជាលំហអាហ្វីនមួយ ដែលភ្ជាប់ទៅនឹងខ្លួនវា នៅពេលណាគេមានអនុវត្តន៍ដូចតទៅ៖ <!-- peut-être considéré, canoniquement, comme un espace affine attaché à lui même, lorsqu' on considère l'application suivante:-->
+    	$$
+    	\begin{array}{ccl}
+            \vect\E\times \vect\E  &\longrightarrow & \vect\E\\
+            (a,b) &\longmapsto & \vect{ab} = b-a
+            \end{array}
+        $$ ដែលផ្ទៀងផ្ទាត់ទៅនឹងលក្ខខណ្ឌនៃនិយមន័យ។ <!--qui vérifie les conditions de la définition. -->
+</li>
+    </ol>
+</example>
+
+
+
+<example>
+
+
+</example>
+
+
+<p style="text-indent: 0px"><b>ចំណាំ: </b> ដោយសារបែបនេះហើយ ទើបធាតុរបស់លំហវ៉ិចទ័រកំណត់លើកាយ $\mathbb{R}$ នៅក្នុងបរិបទខ្លះ ត្រូវបានចាត់ទុកថាជា ចំណុច ឬក៏ជា វ៉ិចទ័រ។
+    </p>
+
+<h3 class="sectcounter">&nbsp;  វិធានគណនា</h3>
+<p>
+    យក $\mathcal{E}$ ជាលំហអាហ្វីនភ្ជាប់ទៅនឹងលំហវ៉ិចទ័រ $\vect{\E}$ ។ ដូច្នេះគេបាន
+<ol class="parenthnum">
+    <li>$\forall M, N \in \mathcal{E},\ \vect{AM}= \vect{AN}\Longrightarrow  M = N$ </li>
+	<li>$\forall A, B \in \mathcal{E},\  \vect{AB}  =\vect{0} \Longleftrightarrow A=B$</li>
+	<li> $\forall A, B \in \mathcal{E},\ \vect{BA} = -\vect{AB}$</li>
+	<li>$\forall A, B, C \in \mathcal{E},\ \vect{BC} = \vect{AC} - \vect{AB}$</li>
+	<li>ចំពោះគ្រប់ចំណុច $A\in \mathcal{E}$ និងគ្រប់វ៉ិចទ័រ $\vect{u} \in \vect\E$ នោះមានចំណុចតែមួយគត់ $M\in \mathcal{E}$ ដែល $\vect{AM} = \vect{u}$</li>
+	<li>បើ $A$ និង $B$ គឺជាចំណុចពីររបស់ $\mathcal{E}$ នោះមានវ៉ិចទ័រតែមួយគត់ $\vect{u}\in \vect\E$ ដែល $\vect{AB} =  \vect{u}$</li>
+    </ol>
+
+    </p>
+
+<p align="right"><a class="toggle bground" id="idClick" href="#proof" onclick="showhideFunction()">[Show proof]</a></p>
+<div class="hidepanel" id="proof" style="color:#1860C1">
+ <div><b><span class="headproof">សម្រាយបញ្ជាក់.</span> </b> </div>
+<div class="blockproof ">
+<ol class="parenthnum">
+<li>តាមលក្ខណៈទី១ នៃនិយមន័យ​គេបានអនុវត្តន៍
+\[\begin{array}{rrll}
+\phi: & \mathcal{E} &\longrightarrow  &\vect\E\\
+& M &\longmapsto &\phi(M) = \vect{AM}
+\end{array}\]
+គឺជាអនុវត្តន៍មួយទល់មួយ។ ដោយ $\varphi$ ជាអនុវត្តន៍ប្រកាន់ ដូច្នេះ គេទាញបានចម្លើយ។ <!-- Donc cette application est injective, par suite, on a le résultat -->
+</li>
+
+<li>$(\Leftarrow)$ តាមទំនាក់ទំនងហ្សាល ចំពោះគ្រប់​  $A\in \mathcal{E}$ គេបាន
+$$\vect{AA}+\vect{AA}=\vect{AA}\quad  \text{ so } \quad \vect{AA}=\vect{0}$$
+
+$(\Rightarrow)$ ដោយ $\vect{AB} = \vect{0} \Longrightarrow  \vect{AB} = \vect{AA}$។ ដូច្នេះ $B=A$។</li>
+
+<li>ចំពោះគ្រប់ $A\in \mathcal{E}$ គេបាន $\vect{AA}= \vect 0$។ តាមទំនាក់ទំនងហ្សាល នោះ $\forall B\in \mathcal{E}$ គេបាន $\vect{AB} + \vect{BA} = \vect 0$។ ដូច្នេះ $\vect{BA} = -\vect{AB}$។</li>
+<li>$\forall A, B, C \in \mathcal{E}$ តាមទំនាក់ទំនងហ្សាល គេបាន
+$$
+\vect{BC} = \vect{BA} + \vect{AC} = -\vect{AB} + \vect{AC}
+$$</li>
+
+<li> នៅពេលណាយើងកំណត់ចំណុច​ $A$ ឱ្យនៅថេរ នោះអនុវត្តន៍
+\[
+\begin{array}{rl}
+\phi: &\mathcal{E} \longrightarrow \vect\E\\
+& M\longmapsto \vect{AM}
+\end{array}
+\]
+គឺជាអនុវត្តន៍មួយទល់មួយ។ ដូច្នេះ ចំពោះគ្រប់ $\vect u \in \vect\E$ នោះមានចំណុចតែមួយគត់ $M\in \mathcal{E}$ ដែល $\vect{AM} = \vect u$។</li>
+    </ol>
+</div>
+</div>
+
+<h3 class="sectcounter">&nbsp; លក្ខណៈរបស់ប្រលេឡូក្រាម</h3>
+<p style="text-indent: 0"> <b>សំណើ. </b>
+	ឧបមា $A, B, C$ និង $D$ គឺជាចំណុចបួននៅក្នុងលំហអាហ្វីន $\mathcal E$។ ដូច្នេះ លក្ខណៈខាងក្រោមសមមូលគ្នា៖
+                    <ol class="parenthnum">
+                              <li>$\vect{AB} = \vect{CD}$</li>
+                              <li>$\vect{AC} = \vect{BD}$</li>
+                              <li>$\vect{AB} + \vect{AC} = \vect{AD}$</li>
+                    </ol>
+
+	បើចំណុចទាំងបួន $A, B, C$ និង $D$ ផ្ទៀងផ្ទាត់លក្ខខណ្ឌណាមួយ ក្នុងចំណោមលក្ខខណ្ឌទាំងបីខាងលើ នោះគេនិយាយថា ចំណុច $A, B, C$ និង $D$ បង្កើតបានជាប្រលេឡូក្រាមមួយ។
+</p>
+
+<div class="showhidebground">
+              <a href="#proofNo.1" class="input_name" id="showanswer">[Show proof]</a>
+              <a href="#proofNo.1" class="input_name" id="hideanswer"  style="display:none;">[Hide proof]</a>
+          </div><br>
+          <div class="block_proof" style="display:none">
+          <div><b><span class="headproof">សម្រាយបញ្ជាក់.</span> </b> </div>
+          <p>
+                    បង្ហាញថា (i) $\Leftrightarrow$ (ii)
+\begin{eqnarray*}
+\vect{AB} =\vect{CD}\ &\Longleftrightarrow &
+\vect{AC} + \vect{CB} = \vect{CB} + \vect{BD}\\
+&\Longleftrightarrow & \vect{AC} = \vect{BD}
+\end{eqnarray*}
+
+ បង្ហាញថា (i) $\Leftrightarrow$ (iii)
+%
+\begin{eqnarray*}
+\vect{AB} = \vect{CD} &\Longleftrightarrow & \vect{AB}=\vect{AD} - \vect{AC}\\
+&\Longleftrightarrow & \vect{AB}+\vect{AC} = \vect{AD}
+\end{eqnarray*}
+
+</p>
+</div>
+
+<div class="showhidebground">
+    <a href="#proofNo.2" class="input_name showanswer">[Show proof]</a>
+    <a href="#proofNo.2" class="input_name hideanswer" style="display:none;">[Hide proof]</a>
+</div><br>
+<div class="block_proof" style="display:none">
+<div><b><span class="headproof">សម្រាយបញ្ជាក់.</span> </b> </div>
+<p>
+\[
+\mathcal{B} = \left\{(a, b) \times(c, d) \subseteq \mathbb{R}^{2}:\; a &lt; b, c &lt; d\right\}
+\]
+</p>
+</div>
+
+<div class="example">
+    <span class="example-title">Example 3</span> Evaluate the following integral.
+
+$$\int{{\left( {3t + 5} \right)\cos \left( {\frac{t}{4}} \right)\,dt}}$$
+<div class="example-content">
+      <span id="SHLink_Soln3" class="soln-title SH-Link">Show Solution</span> <span id="SHImg_Soln3" class="fa fa-caret-right" aria-hidden="true"></span>
+ <div id="SHObj_Soln3" class="soln-content" style="display: none;">
+<p>There are two ways to proceed with this example.  For many, the first thing that they try is multiplying the cosine through the parenthesis, splitting up the integral and then doing integration by parts on the first integral.</p>
+
+ <p>While that is a perfectly acceptable way of doing the problem it’s more work than we really need to do.  Instead of splitting the integral up let’s instead use the following choices for </p>
+
+ \begin{align*}u & = 3t + 5& \hspace{0.5in}dv & = \cos \left( {\frac{t}{4}} \right)\,dt\\ du & = 3\,dt & \hspace{0.5in}v & = 4\sin \left( {\frac{t}{4}} \right)\end{align*}
+
+ <p>The integral is then,</p>
+
+\begin{align*}\int{{\left( {3t + 5} \right)\cos \left( {\frac{t}{4}} \right)\,dt}} & = 4\left( {3t + 5} \right)\sin \left( {\frac{t}{4}} \right) - 12\int{{\sin \left( {\frac{t}{4}} \right)\,dt}}\\ &  = 4\left( {3t + 5} \right)\sin \left( {\frac{t}{4}} \right) + 48\cos \left( {\frac{t}{4}} \right) + c\end{align*}
+
+<p>Notice that we pulled any constants out of the integral when we used the integration by parts formula.  We will usually do this in order to simplify the integral a little.</p>
+      </div>
+    </div>
+  </div>
+
+<div class="example">
+    <span class="example-title">Example 5</span> Evaluate the following integral
+              $$\int{{x\sqrt {x + 1} \,dx}}$$
+    <ol class="example_parts_list">
+      <li>Using Integration by Parts.</li>
+      <li>Using a standard Calculus I substitution.</li>
+    </ol>
+    <span id="SHALink_S_Soln5" class="SH-All SH-Link">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln5" class="SH-All SH-Link">Hide All Solutions</span>
+
+<div class="example-content">
+      <span class="soln-list-item soln-list-subitem">a</span> Using Integration by Parts. <span id="SHLink_Soln5a" class="soln-title SH-Link">Show Solution</span> <span id="SHImg_Soln5a" class="fa fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5a" class="soln-content" style="display: none;">
+        <p>First notice that there are no trig functions or exponentials in this integral.  While a good many integration by parts integrals will involve trig functions and/or exponentials not all of them will so don’t get too locked into the idea of expecting them to show up.</p>
+
+          <p>In this case we’ll use the following choices for $u$ and $dv$.</p>
+            \begin{align*}u & = x & \hspace{0.5in}dv & = \sqrt {x + 1} \,dx\\ du & = dx & \hspace{0.5in}v & = \frac{2}{3}{\left( {x + 1} \right)^{\frac{3}{2}}}\end{align*}
+
+          <p>The integral is then,</p>
+           \begin{align*}\int{{x\sqrt {x + 1} \,dx}} &= \frac{2}{3}x{\left( {x + 1} \right)^{\frac{3}{2}}} - \frac{2}{3}\int{{{{\left( {x + 1} \right)}^{\frac{3}{2}}}\,dx}}\\ &  = \frac{2}{3}x{\left( {x + 1} \right)^{\frac{3}{2}}} - \frac{4}{{15}}{\left( {x + 1} \right)^{\frac{5}{2}}} + c\end{align*}
+      </div>
+
+      <br>
+      <span class="soln-list-item soln-list-subitem">b</span> Using a standard Calculus I substitution. <span id="SHLink_Soln5b" class="soln-title SH-Link">Show Solution</span> <span id="SHImg_Soln5b" class="fa fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5b" class="soln-content" style="display: none;">
+        <p>Now let’s do the integral with a substitution.  We can use the following substitution.</p>
+
+            $$u = x + 1\hspace{0.5in}x = u - 1\hspace{0.5in}du = dx$$
+
+          <p>Notice that we’ll actually use the substitution twice, once for the quantity under the square root and once for the  in front of the square root.  The integral is then,</p>
+
+            \begin{align*}\int{{x\sqrt {x + 1} \,dx}} & = \int{{\left( {u - 1} \right)\sqrt u \,du}}\\ &  = \int{{{u^{\frac{3}{2}}} - {u^{\frac{1}{2}}}\,du}}\\ &  = \frac{2}{5}{u^{\frac{5}{2}}} - \frac{2}{3}{u^{\frac{3}{2}}} + c\\ &  = \frac{2}{5}{\left( {x + 1} \right)^{\frac{5}{2}}} - \frac{2}{3}{\left( {x + 1} \right)^{\frac{3}{2}}} + c\end{align*}
+      </div>
+    </div>
+  </div>
+
+
+
+<h1>fa fa-caret-down</h1>
+
+<i class="fa fa-caret-down"></i>
+<i class="fa fa-caret-down" style="font-size:24px"></i>
+<i class="fa fa-caret-down" style="font-size:36px"></i>
+<i class="fa fa-caret-down" style="font-size:48px;color:red"></i>
+<br>
+
+<p>Used on a button:</p>
+<button style="font-size:24px">Button <i class="fa fa-caret-right"></i></button>
+
+<h2 class="frame-sect sectcounter">Motivation</h2>
+<p>
+This is the last part in our series exploring how to get new topological spaces from old ones. For now, at least. We mentioned the definition of the product topology for a finite product way back in Example 2.3 .6 in the lecture notes concerning bases of topologies, but we did not do anything with it at the time. In that same section we also discussed the following basis on $\mathbb{R}^{2}$
+that we were eventually able to show generates the usual topology on $\mathbb{R}^{2}$ :
+
+\[
+\mathcal{B} = \left\{(a, b) \times(c, d) \subseteq \mathbb{R}^{2}:\; a &lt; b, c &lt; d\right\}
+\]
+
+This is, essentially, how (finite) product topologies work in general, as we will see shortly.
+We will also explore a new way of analyzing topological properties themselves. We have
+already seen that all the topological properties we care about are preserved by homeomorphisms,
+and that some are preserved under weaker maps like continuous surjections (recall that the image
+of a dense set under a continuous function is dense in the range of the function). We also saw that some topological properties are hereditary (like Hausdorffness and second countability)
+while some are not (like separability). In this section we will explore another way of analyzing properties, by asking whether they are preserved by finite products.
+
+Also, while reading this section, note that we are specifically talking about finite products
+of topological spaces, and any time we refer to a product of spaces the reader should assume we
+mean a finite product. Infinite products are substantially more complicated, and we will deal
+with them later in the course. Finite products are actually quite straightforward.
+	</p>
+
+<h2 class="frame-sect">2. Finite product topologies</h2>
+
+<!--p>រំព្ញកអំពីនិយមន័យមួយចំនួននៅក្នុងធរណីមាត្រកម្រិតបឋមៗ គឺ៖
+<ul>
+<li><p><strong>មុំស្រួច</strong> (acute angle) ជាមុំដែលស្ថិតនៅចន្លោះតម្លៃ \(0^{\circ}\) និង \(90^{\circ}\)។</p></li>
+<li><p><strong>មុំកែង</strong> (right angle) ជាមុំដែលមានរង្វាស់ស្មើ <span class="math inline">\(90^{\circ}\)</span> ។</p></li>
+<li><p><strong>មុំទាល</strong> (obtuse angle) ជាមុំដែលមានរង្វាស់នៅចន្លោះ <span class="math inline">\(90^{\circ}\)</span> និង <span class="math inline">\(180^{\circ}\)</span>។</p></li>
+<li><p><strong>មុំត្រង់</strong> (straight angle) ជាមុំដែលមានរង្វាស់ស្មើ <span class="math inline">\(180^{\circ}\)</span>.</p></li>
+</ul>
+</p -->
+
+
+<p><b>
+	Definition 2.1.
+	</b>
+	Let $(X, \mathcal{T}_1)$ and $(Y, \mathcal{T}_2)$ be topological spaces. The product topology on $X \times Y$ is
+the topology generated by the basis
+\[
+\mathcal{B}_{X\times Y} = \big\{U \times V: U \in \mathcal{T}_1, V \in \mathcal{T}_2\big\}
+\]
+More generally if $\left(X_{1}, \mathcal{T}_{1}\right), \ldots,\left(X_{n}, \mathcal{T}_{n}\right)$ are topological spaces, the product topology on
+\[
+\prod_{i=1}^{n} X_{i} = X_{1} \times \cdots \times X_{n}
+\]
+is the topology generated by the basis
+\[
+ \mathcal{B}_{\prod_{i=1}^{n} X_{i}} = \big\{U_{1} \times U_{2} \times \cdots \times U_{n} \mid \; U_{i} \in \mathcal{T}_{i}, \; \text{ for all } i=1, \ldots, n\big\}
+\]
+	</p>
+
+<p>
+	Simple as that. This definition is what you should want it to be, more or less. It is natural
+to expect that products of sets that are open in each coordinate should be open in the product.
+That alone does not give you a topology, it turns out, but it does give you a basis. So you
+generate a topology from it, and the result is the product topology.
+As you would expect, bases play nicely with this definition as well, as shown by the following
+easy proposition.
+
+	</p>
+
+<p><b>
+	Proposition 2.2.
+	</b>
+Let $(X, \mathcal{T}_1)$ and $(Y, \mathcal{T}_2)$ be topological spaces, and let $\mathcal{B}_{X}$ and $\mathcal{B}_{Y}$ be bases on $X$ and $Y$ that generate $\mathcal{T}_1$ and $\mathcal{T}_2$, respectively. Then
+\[
+\mathcal{B}=\left\{U \times V: U \in \mathcal{B}_{X}, V \in \mathcal{B}_{Y}\right\}
+\]
+is a basis for the product topology on $X \times Y$
+	</p>
+
+
+<p class="blockproof">
+Proof. $\mathcal{B}_{X} \subseteq \mathcal{T}$ and $\mathcal{B}_{Y} \subseteq \mathcal{U},$ and so every element of $\mathcal{B}$ is open in the product topology. <br>
+
+Now fix an open set $U$ in the product topology, and some point $(x, y) \in U .$ We need to find
+an element $B \in \mathcal{B}$ such that $x \in B \subseteq U .$ By definition of the product topology, there must be
+some $U_{X} \in \mathcal{T}$ and $U_{Y} \in \mathcal{U}$ such that $(x, y) \in U_{X} \times U_{Y} \subseteq U .$ Using the fact that $\mathcal{B}_{X}$ and $\mathcal{B}_{Y}$ are
+bases, find sets $B_{X} \in \mathcal{B}_{X}$ and $B_{Y} \in \mathcal{B}_{Y}$ such that $x \in B_{X} \subseteq U_{X}$ and $y \in B_{Y} \subseteq U_{Y} .$ But then
+we have:
+\[
+(x, y) \in B_{X} \times B_{Y} \subseteq U_{X} \times U_{Y} \subseteq U
+\]
+so $B=B_{X} \times B_{Y}$ is the set we were looking for.
+Of course, this fact generalizes to larger finite products and the proof is similarly straightforward.
+
+</p>
+
+
+
+
+<h2> Barycentre de deux points </h2>
+
+<p>
+<strong>Définition 1:</strong> On appelle barycentre des points \(A\) et \(B\) ( ou \(A\) et \(B\) deux points du plan ou de I'espace ) affectés respectivement des coefficients \(\alpha, \beta\) ( ou \(\alpha, \beta\) sont des réels tels que \(\alpha+\beta \neq 0\) l'unique point \(G\) tel que \(\alpha \overrightarrow{G A}+\beta \overrightarrow{G B}=\overrightarrow{0}\)
+</p>
+
+
+
+
+<hr>
+
+<h3> Recent Posts </h3>
+<ul>
+
+
+    <li>
+      <i> <a href="../../algebra/topology/2019/post/2017/11/01/varparams.html">A Note on the Variation of Parameters Method </a> | 11/01/17 </i>
+    </li>
+
+
+    <li>
+      <i> <a href="../../algebra/topology/2019/notes/2017/10/26/groups3.html">Group Theory, Part 3: Direct and Semidirect Products </a> | 10/26/17 </i>
+    </li>
+
+
+    <li>
+      <i> <a href="../../algebra/topology/2019/notes/2017/10/19/galoistheory1.html">Galois Theory, Part 1: The Fundamental Theorem of Galois Theory </a> | 10/19/17 </i>
+    </li>
+
+
+    <li>
+      <i> <a href="../../algebra/topology/2019/notes/2017/10/19/fieldtheory2.html">Field Theory, Part 2: Splitting Fields; Algebraic Closure </a> | 10/19/17 </i>
+    </li>
+
+
+    <li>
+      <i> <a href="../../algebra/topology/2019/notes/2017/10/18/fieldtheory1.html">Field Theory, Part 1: Basic Theory and Algebraic Extensions </a> | 10/18/17 </i>
+    </li>
+
+</ul>
+<footer class="site-footer">
+
+  <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+</footer>
+
+</section>
+</body>
+
+
+  <!--script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-102852226-1', 'auto');
+    ga('send', 'pageview');
+  </script-->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171606319-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-171606319-1');
+</script>
+
+</html>

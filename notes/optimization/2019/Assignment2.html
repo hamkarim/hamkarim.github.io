@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+    <!-- Begin Jekyll SEO tag v2.3.0 -->
+    <meta property="og:title" content="Ham Karim">
+    <meta name="author" content="Ham Karim">
+    <meta name="author" content="ហាំ ការីម">
+    <meta property="og:locale" content="en_US">
+    <meta http-equiv="keywords" name="keywords" content="Assignment, Geometry">
+    <meta http-equiv="description" name="description" content=" ">
+    <meta name="description" content="Assignment, Geometry">
+    <meta property="og:description" content="Math, Programmer, Music">
+    <link rel="canonical" href="../../index.html">
+    <meta property="og:url" content="https://hamkarim.github.io/">
+    <meta property="og:site_name" content="Assignment, Geometry">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@pkarim">
+    <meta name="twitter:creator" content="@pkarim">
+    <meta name="google-site-verification" content="b9bg3P9zc8qbL4szvVYaf551jD9x017IyGBVSaQZDDY" />
+
+    <script type="application/ld+json">
+        {
+            "name": "Ham Karim",
+            "description": "I am a faculty member at the Royal Univeristy of Phnom Penh (RUPP). This is my blog of lectures at universities. ",
+            "author": {
+                "@type": "Person",
+                "name": "Ham Karim"
+            },
+            "@type": "WebSite",
+            "url": "https://hamkarim.github.io/",
+            "image": null,
+            "publisher": null,
+            "headline": "Ham Karim",
+            "dateModified": null,
+            "datePublished": "2020-06-01",
+            "sameAs": null,
+            "mainEntityOfPage": null,
+            "@context": "http://schema.org"
+        }
+    </script>
+    <!-- End Jekyll SEO tag -->
+
+    <meta property="og:image" content="http://www.cliparts101.com/files/376/298FE3955707B1DE458221E4BFABFBBE/Greek_Gamma_4.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../algebra/topology/2019/favicon.ico">
+    <meta charset="UTF-8">
+    <title> Assignment No.2</title>
+    <meta name="description" content="binary relation">
+
+    <style>
+        .deffont {
+            font-family: 'Noto Serif Khmer', 'CMU Serif';
+            font-size: 16px;
+        }
+
+        ul.liststyle1 {
+            list-style-type: square;
+        }
+
+        ul.liststyle2 {
+            list-style-type: hebrew;
+        }
+
+        a.onmenu {
+            font-family: 'Noto Serif Khmer', 'CMU Serif';
+            font-weight: bold;
+        }
+    </style>
+
+
+    <script async="" src="//cse.google.com/adsense/search/async-ads.js"></script>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async="" src="https://cse.google.com/cse.js?cx=001004262401526223570:11yv6vpcqvy"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-331594-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-331594-1');
+    </script>
+
+
+
+    <link rel="stylesheet" href="../../../assets/css/style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245">
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- Script to show and hide proof -->
+    <script type="text/javascript" src="https://hamkarim.github.io/assets/js/showhide.js"></script>
+    <!-- Other style of showing and hiding proof -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
+    <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>
+    <!-- end -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        //Another method to toggle the button
+        $(document).ready(function() {
+            $('.showanswer').click(function() {
+                $('.block_proof').show();
+                $('.showanswer').hide();
+                $('.hideanswer').show();
+            });
+            $('.hideanswer').click(function() {
+                $('.block_proof').hide();
+                $('.showanswer').show();
+                $('.hideanswer').hide();
+            });
+        });
+    </script>
+
+    <!-- For local function, define to exchange text -->
+    <script>
+        function showhideFunction() {
+            document.getElementById('idClick').innerHTML === '[Hide proof]' ? document.getElementById('idClick').innerHTML = '[Show proof]' : document.getElementById('idClick').innerHTML = '[Hide proof]';
+        }
+    </script>
+
+    <!-- script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,https://hamkarim.github.io/MathJax/config/local/local.js"></script  -->
+
+    <!-- script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script -->
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
+    </script>
+
+    <!-- script type="text/javascript" config=TeX-MML-AM_CHTML
+src="">
+</script -->
+
+    <!-- To get it to work in old versions of Internet Explorer, you need to append this script to the head (Important if you need it to work in older versions of IE!): -->
+    <!--[if lt IE 9] -->
+    <script>
+        document.createElement("example, defn");
+    </script>
+    <!-- [endif]-->
+
+</head>
+
+<body>
+
+    <section class="page-header">
+        <h1 class="project-name">ហាំ ការីម</h1>
+        <h2 class="project-tagline">Maths, Program, Music</h2>
+    </section>
+
+    <section class="main-content">
+
+        <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">Assignment II ( Due date : 31/07/2020 at 12:00PM)</h1>
+        <span style="font-style: italic; font-weight:bold; font-family: Arial; opacity: 0.5;">
+            July 17th, 2020
+        </span>
+        <hr>
+
+        <h2 class="frame-sect sectcounter">លំហាត់ផ្នែកនិយមន័យ</h2>
+        <ol style="list-style-type: khmer">
+            <li><b>(Definition of barycentres).</b> យក $\mathscr{E}$ ជា $\mathbb K-$ a.f តាមទិសដៅនៃលំហវ៉ិចទ័រ $\vect\E$, កំណត់ $I$ ជាសំណុំសន្ទស្សន៍ ហើយយកគ្រួសារ $\big\{A_{i}\big\}_{i \in I} \in \mathscr{E}^{(I)}$ គឺជាផ្នែកមួយរបស់ $\mathscr{E}$ និង $\big\{\lambda_{i}\big\}_{i \in I} \in \mathbb K^{(I)}$ គឺជាគ្រួសារនៃធាតុទាំងឡាយរបស់ $\mathbb K$ ដែលសំណុំនៃធាតុ $i \in I$ ផ្ទៀងផ្ទាត់ $\lambda_{i} \neq 0$ គឺជាសំណុំរាប់អស់។
+                <ol type="a">
+                    <li>ចូរបង្ហាញថា បើ $\displaystyle\sum_{i \in I} \lambda_{i}=0$ នោះគេបានវ៉ិចទ័រ $\displaystyle\vect{u}_{M} = \sum_{i \in I} \lambda_{i} \overrightarrow{MA_{i}}$ មិនអាស្រ័យនឹងចំណុច $M$ ដោយសារតែសំណុំនៃចម្លើយ​របស់​សមីការ $\displaystyle\sum_{i \in I} \lambda_{i} \overrightarrow{GA}_{i} = \vect 0$ ដែលមានអថេរចំណុច $G \in \mathscr{E}$ អាចស្មើ $\varnothing$ ឬស្មើ $\mathscr{E}$ ។
+                        <span id="SHImg_Soln1" class="fa fa-caret-right" aria-hidden="true" style="float: right"> <span id="SHLink_Soln1" class="soln-title SH-Link" style="display: inline-block">Show Solution</span> </span>
+                        <div class="example-content">
+                            <div id="SHObj_Soln1" class="soln-content" style="display: none;"> Sorry..!
+                            </div>
+                        </div>
+                    </li>
+                    <li>បើ $\sum_{i \in \mathrm{I}} \lambda_{i} \neq 0$ នោះ ចូរបង្ហាញថា សមីការ $\sum_{i \in I} \lambda_{i} \overrightarrow{GA}_{i} = \vect 0$ មានចម្លើយតែមួយគត់ ចំពោះអថេរចំណុច $G \in \mathscr{E} $ ។ ហើយ ចម្លើយ $G$ នេះផ្ទៀងផ្ទាត់
+                        \[
+                        \forall M \in \mathscr{E}, \quad\left(\sum_{i \in I} \lambda_{i}\right) \overrightarrow{MG}=\sum_{i \in I} \lambda_{i} \overrightarrow{MA_{i}}
+                        \]
+                        <span id="SHImg_Soln2" class="fa fa-caret-right" aria-hidden="true" style="float: right"> <span id="SHLink_Soln2" class="soln-title SH-Link" style="display: inline-block">Show Solution</span> </span>
+                        <div class="example-content">
+                            <div id="SHObj_Soln2" class="soln-content" style="display: none;"> Sorry..!
+                            </div>
+                        </div>
+                    </li>
+                    <p>គេហៅចំណុច $G$ ថាជា <b>បារីសង់នៃគូធាតុ $\left(A_{i},\lambda_{i}\right)_{i \in I}$ </b> ឬ <b>បារីសង់នៃចំណុច $A_{i}$ មានមេគុណ $\lambda_{i}$</b> ឬក៏ហៅថា <b>បារីសង់​នៃ​ចំណុច​មាន​ម៉ាស $\left(A_{i}, \lambda_{i}\right)_{i \in I}$</b> ។</p>
+                    <!--On dit que G est le barycentre du couple $\left(A_{i},\lambda_{i}\right)_{i \in I}$ ou encore le barycentre des $A_{i}$ affectés des coefficients $\lambda_{i}$ ou encore barycentre des points massiques $\left(A_{i}, \lambda_{i}\right)_{i \in I}$.-->
+
+                    <span id="SHImg_Hint1" class="fa fa-caret-right" aria-hidden="true" style="float: right"> <span id="SHLink_Hint1" class="soln-title SH-Link" style="display: inline-block">Show Hint</span> </span>
+                    <div class="example-content">
+                        <div id="SHObj_Hint1" class="soln-content centerborder" style="display: none;">
+                            <p><b>Hint.</b> ប្រើទំនាក់ទំនងហ្សាល ជាចាំបាច់ ក្នុងការស្រាយបញ្ជាក់ចំណោទខាងលើនេះ។ </p>
+                        </div>
+                    </div>
+                </ol>
+
+            <li>
+                <b>(Definition of barycentres).</b> យក $\mathscr{E}$ ជា $\mathbb K-$ a.s តាមទិសដៅនៃលំហវ៉ិចទ័រ $\vect\E$, កំណត់ $I$ ជាសំណុំសន្ទស្សន៍ ហើយកំណត់គ្រួសារ $\big\{A_{i}\big\}_{i \in I} \in \mathscr{E}^{(I)}$ គឺជាផ្នែកមួយរបស់ $\mathscr{E}$ និង $\big\{\lambda_{i}\big\}_{i \in I} \in \mathbb K^{(I)}$ គឺជាគ្រួសារនៃធាតុទាំងឡាយរបស់ $\mathbb K$ ដែលសំណុំនៃធាតុ $i \in I$ ផ្ទៀងផ្ទាត់បាន $\lambda_{i} \neq 0$ គឺជាសំណុំរាប់អស់។ ឧបមាថា $\displaystyle\sum_{i \in I} \lambda_{i} \neq 0$ ។
+                <p>ដោយយក $\left(I_{j}\right)_{j \in J}$ គឺជាបំណែកមួយរបស់ $I$ ដែលចំពោះគ្រប់ $j \in J$ គេបាន </p>
+                \[
+                \sigma_{j}:=\left(\sum_{i \in I_{j}} \lambda_{i}\right) \neq 0
+                \]
+                <p>គេតាង $G_{j}$ ជាបារីសង់នៃប្រព័ន្ធចំណុច $\left(A_{i}, \lambda_{i}\right)_{i \in I_{j}}$ ។ ចូរបង្ហាញថា បារីសង់នៃប្រព័ន្ធចំណុច $\left(A_{i}, \lambda_{i}\right)_{i \in I}$ និងបារីសង់នៃប្រព័ន្ធចំណុច $\left(G_{j}, \sigma_{j}\right)_{j \in J}$ ត្រួតស៊ីគ្នា។ </p>
+                <span id="SHImg_Soln2" class="fa fa-caret-right" aria-hidden="true" style="float: right"> <span id="SHLink_Soln2" class="soln-title SH-Link" style="display: inline-block">Show Solution</span> </span>
+                <div class="example-content">
+                    <div id="SHObj_Soln2" class="soln-content" style="display: none;"> Sorry..!
+                    </div>
+                </div>
+
+
+            </li>
+            <li><b>(Intersection of affine subspaces).</b> យក $\mathscr{E}$ ជាលំហអាហ្វីនមួយ តាមទិសដៅលំហវ៉ិចទ័រ $\vect E$ និងកំំណត់ $\left(\mathscr{F}_{i}\right)_{i \in \mathrm{I}}$ ជាគ្រួសារ​លំហ​អាហ្វីន​រង​មួយ​របស់ $\mathscr{E}$ ដែលមានទិសដៅ $\vect{F_{i}}$ រៀងគ្នា។ ចូរបង្ហាញថា ប្រសព្វ $\displaystyle\bigcap_{i \in \mathrm{I}} \mathscr{F}_{i}$ គឺជាសំណុំទទេ ឬ ជាលំហអាហ្វីនរងមួយថ្មី តាមទិសដៅនៃលំហវ៉ិចទ័ររង $\displaystyle\bigcap_{i \in I} \vect{F}_{i}$ ។
+                <span id="SHImg_Soln3" class="fa fa-caret-right" aria-hidden="true" style="float: right"> <span id="SHLink_Soln3" class="soln-title SH-Link" style="display: inline-block">Show Solution</span> </span>
+                <div class="example-content">
+                    <div id="SHObj_Soln3" class="soln-content" style="display: none;"> Sorry..!
+                    </div>
+                </div>
+
+            </li>
+
+            <li><b>(Lines and planes in affine spaces).</b> ចូរបង្ហាញសំណើខាងក្រោម៖
+                <!-- montrer les résultats bien connus suivants.-->
+                <ol type="i">
+                    <li>ចូរបង្ហាញថា បន្ទាត់ពីរមិនស្របគ្នា នៅក្នុងប្លង់អាហ្វីនមួយ កាត់គ្នាត្រង់មួយចំណុច? ក្នុងករណីនេះ តើចំណុចប្រសព្វនេះ ស្ថិតក្នុងប្លង់អាហ្វីនឬទេ ចូរពន្យល់។
+                        <!-- Montrer que deux droites non parallèles d'un plan affine se coupent en un seul point. Est-ce le cas dans l'espace?-->
+                    </li>
+                    <li>ចូរបង្ហាញថា នៅក្នុងប្លង់អាហ្វីនមួយ បន្ទាត់ពីរ អាស្របគ្នា ឬក៏ ប្រសព្វគ្នា។
+                        <!--Montrer que dans un plan affine, deux droites sont parallèles ou se rencontrent.-->
+                    </li>
+                    <li>ចូរបង្ហាញថា ប្លង់អាហ្វីនពីរ ក្នុងលំហអាហ្វីនវិមាត្រ $3$ អាចស្របគ្នា ឬក៏ ប្រសព្វគ្នាបានបន្ទាត់អាហ្វីនមួយ (ចូរគូសរូបបញ្ជាក់ពីករណីនីមួយៗផង)។
+                        <!--Montrer que deux plans d'un espace affine de dimension 3 sont parallèles ou se rencontrent suivant une droite (faire un dessin des situations)-->.</li>
+                    <li>ចូរបង្ហាញថា ក្នុងលំហវិមាត្រ $3$ បន្ទាត់មួយ និងប្លង់មួយអាចប្រសព្វគ្នាត្រង់មួយចំណុច ឬក៏ បន្ទាត់ស្របទៅនឹងប្លង់ក្នុងន័យខ្សោយ (ចូរគូសរូបបញ្ជាក់ករណីនីមួយៗ) ។
+                        <!--  Show that in a space of dimension $3$ then a line and a plane meet at a single point or the line is weakly parallel to the plane (draw a picture of the situations).<!--Monter que dans un espace de dimension 3 alors une droite et un plan se rencontrent en un seul point ou alors la droite est faiblement parallèle au plan (faire un dessin des situations).-->
+
+                        <span id="SHImg_Soln4" class="fa fa-caret-right" aria-hidden="true" style="float: right"> <span id="SHLink_Soln4" class="soln-title SH-Link" style="display: inline-block">Show Solution</span> </span>
+                        <div class="example-content">
+                            <div id="SHObj_Soln4" class="soln-content" style="display: none;"> Sorry..!
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+
+            </li>
+
+
+
+
+            <br>
+
+            <h2 class="frame-sect sectcounter">លំហាត់ផ្នែកគណនា</h2>
+            <ol style="list-style-type: khmer">
+                <li>យក $E$ ជាលំហអនុគមន៍កំណត់ពី $\mathbb{R}$ ទៅ $\mathbb{R}$ ដែលជាពហុធាមានដឺក្រេតូចជាងឬស្មើ $n$។ កំណត់ $E_{1}$ ជាសំណុំនៃអនុគមន៍ $f$ របស់ $E$ ដែលកំណត់ដោយ $\int_{0}^{1} f(t) d t=1$ ហើយ $E_{0}$ ជាសំណុំនៃអនុគមន៍ $f$ របស់ $E$ ដែលកំណត់ដោយ $\int_{0}^{1} f(t) d t=0$ ។
+                    <ol type="a">
+                        <li>ចូរបង្ហាញថា លំហ $E$ និង $E_{0}$ គឺជា $\mathbb{R}$-v.s មានវិមាត្ររាប់អស់។ </li>
+                        <li>តើលំហ $E_{1}$ គឺជា $\mathbb{R}$-v.s មានវិមាត្ររាប់អស់ដែរឬទេ?</li>
+                        <li>សន្មត $f, g \in E_{1}$។ តើ ធាតុ $f+g, f-g, \frac{f+g}{2}$ ជាធាតុរបស់លំហ $E_{1}$? របស់លំហ $E_{0}$ ឬទេ? ចូរបង្ហាញថាលំហ $E_{1}$ អាចកំណត់បាននូវទម្រង់មួយរបស់លំហអាហ្វីន ដែលមានលំហទិសដៅ $E_{0}$? </li>
+                    </ol>
+                    <span id="SHImg_Soln5" class="fa fa-caret-right" aria-hidden="true" style="float: right"> <span id="SHLink_Soln5" class="soln-title SH-Link" style="display: inline-block">Show Solution</span> </span>
+                    <div class="example-content">
+                        <div id="SHObj_Soln5" class="soln-content" style="display: none;"> Sorry..!
+                        </div>
+                    </div>
+                    <!--Soient $E$ l'espace des fonctions de $\mathbb{R}$ dans $\mathbb{R}$, polynomiales de degré inférieur ou égal à $n, E_{1}$ l'ensemble des fonctions $f$ de $E$ telles que $\int_{0}^{1} f(t) d t=1$ et $E_{0}$ l'ensemble des fonctions $f$ de $E$ telles que $\int_{0}^{1} f(t) d t=0$.  Montrer que $E$ et $E_{0}$ sont des $\mathbb{R}$ -espaces vectoriels de dimension finie. L'ensemble $E_{1}$ en est-il un? Soient $f, g$ dans $E_{1}$ Les éléments $f+g, f-g, \frac{f+g}{2}$ sont-ils dans $E_{1},$ dans $E_{0} ?$ Montrer que $E_{1}$ peut-être muni d'une structure d'espace affine d'espace vectoriel sousjacent $E_{0}$-->
+                </li>
+
+                <li>យក $g$ ជាអនុវត្តន៍លីនេអ៊ែរ កំណត់ពីលំហវ៉ិចទ័រ $\vect{E}$ ទៅលំហវ៉ិចទ័រ $\vect{F}$ ហើយកំណត់ $\vect{v}$ ជាវ៉ិចទ័រមួយរបស់ $\operatorname{Im} g $ ។ ចូរបង្ហាញថា រូបភាពចា្រសរបស់ $\vec{v}$ តាមអនុវត្តន៍ $g$ គឺជាលំហអាហ្វីនរងរបស់ $\vect{E}$? ចូរបញ្ជាក់អំពីលំហទិសដៅរបស់វា?
+                    <!-- Soit $g$ une application linéaire d'un espace vectoriel $\vec{E}$ dans un espace vectoriel $\vec{F}$ et $\vec{v}$ un vecteur de $\operatorname{Im} g .$ Montrez que l'image réciproque par $g$ de $\vec{v}$ est un sous-espace affine de $\vec{E}$. Précisez sa direction.-->
+                    <span id="SHImg_Soln6" class="fa fa-caret-right" aria-hidden="true" style="float: right"> <span id="SHLink_Soln6" class="soln-title SH-Link" style="display: inline-block">Show Solution</span> </span>
+                    <div class="example-content">
+                        <div id="SHObj_Soln6" class="soln-content" style="display: none;"> Sorry..!
+                        </div>
+                    </div>
+                </li>
+
+                <li>យក $\mathcal S(\mathbb R)$ ជាសំណុំនៃស្វ៊ីតចំនួនពិត ដែលកំណត់បានជា $\mathbb R$-v.s ។ ឧបមា $a\in \mathbb R$ និងកំណត់សំណុំ $\mathcal G(a)$ ជាសំណុំនៃស៊្វីតធរណីមាត្រមាន រេសុង $a$។ ចូរបង្ហាញថា $\mathcal G(a)$ គឺជាលំហអាហ្វីនរងរបស់លំហអាហ្វីន $\mathcal S(\mathbb R)$? ចូររកលំហទិសដៅរបស់វា?
+                    <span id="SHImg_Soln7" class="fa fa-caret-right" aria-hidden="true" style="float: right"> <span id="SHLink_Soln7" class="soln-title SH-Link" style="display: inline-block">Show Solution</span> </span>
+                    <div class="example-content">
+                        <div id="SHObj_Soln7" class="soln-content" style="display: none;"> Sorry..!
+                        </div>
+                    </div>
+                </li>
+
+                <li>ចូរបង្ហាញថា សំណុំ $\mathcal E$ គឺជាលំហអាហ្វីនរងរបស់លំហ $\mathbb{R}^{3}$ ដែលបង្កដោយចំណុច $i=(1,0,0), j=(0,1,0)$ និង $k=(0,0,1)$?
+                    <span id="SHImg_Soln9" class="fa fa-caret-right" aria-hidden="true" style="float: right"> <span id="SHLink_Soln9" class="soln-title SH-Link" style="display: inline-block">Show Solution</span> </span>
+                    <div class="example-content">
+                        <div id="SHObj_Soln9" class="soln-content" style="display: none;"> Sorry..!
+                        </div>
+                    </div>
+                </li>
+
+                <li>បើ $\lambda_{n} = 0$ ចូរបង្ហាញថា បារីសង់នៃគ្រួសារចំណុចមានទម្ងន់ $\left\{\left(a_{1}, \lambda_{1}\right),\left(a_{2}, \lambda_{2}\right), \ldots,\left(a_{n}, \lambda_{n}\right)\right\}$ គឺជា បារីសង់នៃគ្រួសារ $\left\{\left(a_{1}, \lambda_{1}\right),\left(a_{2}, \lambda_{2}\right), \ldots,\left(a_{n-1}, \lambda_{n-1}\right)\right\}$?
+                    <!-- alors le barycentre de la famille $\left\{\left(a_{1}, \lambda_{1}\right),\left(a_{2}, \lambda_{2}\right), \ldots,\left(a_{n}, \lambda_{n}\right)\right\}$ est le barycentre de la famille $\left\{\left(a_{1}, \lambda_{1}\right),\left(a_{2}, \lambda_{2}\right), \ldots,\left(a_{n-1}, \lambda_{n-1}\right)\right\}$-->
+                    <span id="SHImg_Soln8" class="fa fa-caret-right" aria-hidden="true" style="float: right"> <span id="SHLink_Soln8" class="soln-title SH-Link" style="display: inline-block">Show Solution</span> </span>
+                    <div class="example-content">
+                        <div id="SHObj_Soln8" class="soln-content" style="display: none;"> Sorry..!
+                        </div>
+                    </div>
+                </li>
+
+                <li>យក $\left\{\left(P_{1}, \lambda_{1}\right),\left(P_{2}, \lambda_{2}\right), \ldots\left(P_{r}, \lambda_{r}\right)\right\}$ ជាគ្រួសារនៃចំណុចមានម៉ាស $\mathbb{R}^{2}$ ដែល $P_{i}$ គឺជាចំណុច $\left(x_{i}, y_{i}\right)$ ហើយម៉ាសសរុប $\Lambda=\sum_{i=1}^{n} \lambda_{i} \neq 0$ ។ ដូច្នេះ បារីសង់នៃគ្រួសារ $\left\{\left(P_{1}, \lambda_{1}\right),\left(P_{2}, \lambda_{2}\right), \ldots,\left(P_{r}, \lambda_{r}\right)\right\}$ គឺជាចំណុច $(x, y)$ ដែលផ្ទៀងផ្ទាត់ទំនាក់ទំនងខាងក្រោម ៖
+                    <!-- Soit $\left\{\left(a_{1}, \lambda_{1}\right),\left(a_{2}, \lambda_{2}\right), \ldots\left(a_{r}, \lambda_{r}\right)\right\}$ une famille de points pondérés de $\mathbb{R}^{2}$ où $a_{i}$ est le couple $\left(x_{i}, y_{i}\right)$ et où la masse totale $\Lambda=\sum_{i=1}^{n} \lambda_{i}$ n'est pas nulle. Alors le barycentre de la famille $\left\{\left(a_{1}, \lambda_{1}\right),\left(a_{2}, \lambda_{2}\right), \ldots,\left(a_{r}, \lambda_{r}\right)\right\}$ est le point $(x, y)$ tel qu'on ait-->
+                    \[
+                    x=\frac{\sum_{i=1}^{n} \lambda_{i} \cdot x_{i}}{\Lambda} \quad \text { and } \quad y=\frac{\sum_{i=1}^{n} \lambda_{i} \cdot y_{i}}{\Lambda}
+                    \]
+                </li>
+
+                <li>ចូររកកូអរដោនេនៃចំណុចកណ្ដាលរវាងពីរចំណុចក្នុង $\mathbb{R}^{2}$។ រួចហើយរកកូអរដោនេនៃអ៊ីសូបារីសង់របស់ $n$ ចំណុចក្នុង $\mathbb{R}^{2}$ ។ ចូរកំណត់អ៊ីសូបារីសង់របស់ចំណុច $i, j, k$ ក្នុងលំហ $\mathbb{R}^{3}$ ?
+                    <span id="SHImg_Soln11" class="fa fa-caret-right" aria-hidden="true" style="float: right"> <span id="SHLink_Soln11" class="soln-title SH-Link" style="display: inline-block">Show Solution</span> </span>
+                    <div class="example-content">
+                        <div id="SHObj_Soln11" class="soln-content" style="display: none;"> Sorry..!
+                        </div>
+                    </div>
+                </li>
+
+                <li>Centre de gravité d'un triangle. Soient $a, b, c$ (resp. $p, q, r$ ) trois points non alignés d'un plan affine.
+                    <ol type="i">
+                        <li>Montrer que les triangles $a b c$ et $p q r$ ont même isobarycentre si et seulement si on a
+                            \[
+                            \overrightarrow{a p}+\overrightarrow{b q}+\overrightarrow{c r}=\overrightarrow{0}
+                            \]
+                        </li>
+                        <li>Soit $g$ l'isobarycentre de $a, b, c$ et $a^{\prime}, b^{\prime}, c^{\prime}$ les milieux de $[b c],[c a],[a b] .$ Montrer que $g$ est le point d'intersection des médianes $\left[a a^{\prime}\right],\left[b b^{\prime}\right],\left[c c^{\prime}\right]$ et qu'il est situé au tiers de chacune d'elles : par exemple on a $\overrightarrow{a^{\prime} g}=\frac{1}{3} \overrightarrow{a^{\prime} a}$</li>
+
+                        <li>Montrer que les triangles $a b c$ et $a^{\prime} b^{\prime} c^{\prime}$ ont même isobarycentre.</li>
+                    </ol>
+                </li>
+
+            </ol>
+
+
+
+            <h2 class="frame-sect sectcounter">លំហាត់ផ្នែកបារីសង់</h2>
+            <ol style="list-style-type: khmer">
+                <li>យក $(A, B, C)$ ជាតម្រុយមួយក្នុងប្លង់អាហ្វីន។ គេកំណត់ចំណុច $A'$, $B'$ និង $C'$ មានកូអរដោនេបារីសង់រៀងគ្នា៖
+                    <!--Soit $(a, b, c)$ un repère du plan affine. On considère les points $a'$, $b'$ et $c'$ de coordonnées barycentriques respectives:-->
+                    \[
+                    \left(0,-\frac{1}{4}, \frac{5}{4}\right),\left(\frac{3}{8}, 0, \frac{5}{8}\right),\left(\frac{3}{2},-\frac{1}{2}, 0\right)
+                    \]
+                    ចូរផ្ទៀងផ្ទាត់ថា បន្ទាត់ $\left(AA^{\prime}\right),\left(BB^{\prime}\right)$ និង $\left(CC^{\prime}\right)$ ប្រសព្វគ្នាត្រង់មួយចំណុច $m$ រួច donnez ses coordonnées barycentriques $(\alpha, \beta, \gamma)$.
+                    <!--Vérifiez que les droites $\left(a a^{\prime}\right),\left(b b^{\prime}\right)$ et $\left(c c^{\prime}\right)$ sont concourantes en un point $m$ et donnez ses coordonnées barycentriques $(\alpha, \beta, \gamma)$.-->
+
+                </li>
+
+                <li>Soit $(a, b, c)$ un repère du plan affine. On considère les points $a'$ , $b'$ et $c'$ de coordonnées barycentriques respectives:
+
+                    $$\left(0,-\frac{3}{4}, \frac{7}{4}\right),\left(\frac{5}{12}, 0, \frac{7}{12}\right),\left(\frac{5}{2},-\frac{3}{2}, 0\right)$$
+                    Vérifiez que les droites $\left(a a^{\prime}\right),\left(b b^{\prime}\right)$ et $\left(c c^{\prime}\right)$ sont concourantes en un point $m$ et donnez ses coordonnées barycentriques $(\alpha, \beta, \gamma)$.
+                </li>
+
+                <li>Soient $(a, b, c)$ un repère du plan affine. Soit $m$ le point de coordonnées barycentriques $\left(\frac{1}{2}, \frac{1}{2}, 0\right) .$ On appelle $a$ 'le point intersection des droites $(a m)$ et $(b c)$.
+                    1. Vérifiez que $a'$ existe.
+                    2. Déterminez le rapport $k$ des vecteurs colinéaires $\displaystyle\frac{\overrightarrow{b a}}{\overrightarrow{c a}}$</li>
+
+                <li>Soient $(a, b, c)$ un repère du plan affine. Caractérisez sur leurs coordonnées barycentriques $(\alpha, \beta, \gamma)$ les points de la droite parallèle à $(ab)$ passant par $c$. Si une coordonnée est quelconque, entrez le mot tout.</li>
+
+                <li>Soient $(a, b, c)$ un repère du plan affine. Donnez les coordonnées barycentriques $(\alpha, \beta, \gamma)$ du point $m$ vérifiant :
+                    \[
+                    9 \overrightarrow{m a}-2 \overrightarrow{m c}=\overrightarrow{0}\]
+                </li>
+
+                <li>Les droites $d_{1}$ et $d_{2}$ de l'espace sont données par leur représentation paramétrique dans un repère affine de l'espace :
+                    \[
+                    \left\{\begin{array}{cl}
+                    x & = &4 t & \\
+                    y & = &3 t+3 & \\
+                    z & = &3 t+5 \end{array}\right. \quad \text { and } \quad \left\{\begin{array}{cl}
+                    x &=&-20 t-4 \\
+                    y&=&-15 t-7 \\
+                    z & =&-15 t-5
+                    \end{array}\right.
+                    \]
+                    Les deux droites sont-elles confondues, non coplanaires, sécantes, strictement parallèles ou d'autre cas?
+                </li>
+
+                <li>
+                    Dans le $\mathbb{R}$-espace vectoriel des suites à valeurs réelles, muni de sa structure affine canonique, on considère le sous-ensemble $F$ défini par : $F$ est l'ensemble des suites arithmétiques de même raison $a$ donnée non nulle. Que peut-on dire de $F$ ?
+                </li>
+
+                <li>Dans le plan affine $\mathbb{R}^{2}$, on considère les points :
+                    \[
+                    \begin{array}{l|l}
+                    A=(0,0) & E=(-2,-2)\\
+                    B=(-1,-1) & F=(-1,-1) \\
+                    C=(-2,-2) & G=(0,0) \\
+                    D=(-6,-6) & H=(4,4)
+                    \end{array} \]
+                    Prouver que Il existe une et une seule/une affinité d'/aucune application(s) affine(s) de $\mathbb{R}^{2}$ dans lui-même qui envoi(en)t $a$ sur $e$, $b$ sur $f$, $c$ sur $g$ et $d$ sur $h$?
+                </li>
+
+                <li>
+
+                </li>
+
+
+
+            </ol>
+
+            <footer class="site-footer">
+                <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+            </footer>
+
+    </section>
+</body>
+
+
+<!--script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-102852226-1', 'auto');
+    ga('send', 'pageview');
+  </script-->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171606319-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-171606319-1');
+</script></html>

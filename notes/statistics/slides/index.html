@@ -1,0 +1,1079 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
+</script>
+
+    <!--link rel="stylesheet" href="https://hamkarim.github.io/assets/css/style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245"-->
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+<!-- Script to show and hide proof -->
+<script type="text/javascript" src="https://hamkarim.github.io/assets/js/showhide.js"></script>
+<!-- Other style of showing and hiding proof -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
+ <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>
+<!-- end -->
+
+<script> document.createElement("example, defn"); </script>
+
+
+    <!-- SEO -->
+    <title>Mathematical Expectation</title>
+    <meta name="description" content="Mathematical Expectation">
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <!-- CSS Base -->
+    <link rel="stylesheet" type="text/css" media="all" href="./css/base.css">
+
+    <!-- CSS Colors -->
+    <link rel="stylesheet" type="text/css" media="all" href="./css/colors.css">
+
+    <!-- Optional - CSS SVG Icons (Font Awesome) -->
+    <link rel="stylesheet" type="text/css" media="all" href="./css/svg-icons.css">
+
+    <!-- SOCIAL CARDS (ADD YOUR INFO) -->
+
+    <!-- FACEBOOK -->
+    <meta property="og:url" content="http://your-url.com/permalink"> <!-- EDIT -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="SlideShow"> <!-- EDIT -->
+    <meta property="og:description" content="Mathematical Expectation"> <!-- EDIT -->
+    <meta property="og:updated_time" content="2020-01-04T16:54:27"> <!-- EDIT --
+    <meta property="og:image" content="./img/share-webslides.jpg" > <!-- EDIT -->
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@webslides"> <!-- EDIT -->
+    <meta name="twitter:creator" content="@jlantunez"> <!-- EDIT -->
+    <meta name="twitter:title" content="Ham Karim"> <!-- EDIT -->
+    <meta name="twitter:description" content="Mathematical Expectation"> <!-- EDIT -->
+    <meta name="twitter:image" content="./img/share-webslides.jpg"> <!-- EDIT -->
+
+    <!-- FAVICONS --
+    <link rel="shortcut icon" href="./img/favicons/favicon.png">
+
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
+  </head>
+
+  <body>
+
+    <!--header role="banner">
+      <!-- nav role="navigation">
+        <p class="logo"><a href="./index.html" title="WebSlides">Mathematical Expectation</a></p>
+        <ul>
+          <li class="github">
+            <a rel="external" href="https://github.com/webslides/webslides" title="Github">
+              <svg class="fa-github">
+                <use xlink:href="#fa-github"></use>
+              </svg>
+              <em>WebSlides</em>
+            </a>
+          </li>
+          <li class="twitter">
+            <a rel="external" href="https://twitter.com/webslides" title="Twitter">
+              <svg class="fa-twitter">
+                <use xlink:href="#fa-twitter"></use>
+              </svg>
+              <em>@WebSlides</em>
+            </a>
+          </li>
+          <!--  <li class="dribbble"><a rel="external" href="http://dribbble.com/webslides" title="Dribbble"><svg class="fa-dribbble"><use xlink:href="#fa-dribbble"></use></svg> <em>webslides</em></a></li> --
+        </ul>
+      </nav>
+    </header-->
+    <main role="main">
+      <article id="webslides">
+
+        <!-- Quick Guide
+          - Each parent <section> in the <article id="webslides"> element is an individual slide.
+          - Vertical sliding = <article id="webslides" class="vertical">
+          - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+
+        <section style="background-color:cornflowerblue" class="aligncenter">
+         <!--span class="background dark" style="background-image:url(' ')"></span-->
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <h1 style="font-size: 55px">សង្ឃឹមគណិត<br> <span style="font-size:35px">(Mathematical Expectation)</span></h1>
+            <p class="text-symbols" style="text-indent: 0">***** </p>
+
+              <h1 class="project-name" style="font-size: 32px">ហាំ ការីម</h1>
+          <h2 class="project-name" style="font-size: 20px">សាកលវិទ្យាល័យអង្គរខេមរា</h2>
+
+              <br><br><br>
+
+            <div><a style="color:red" class="ghost" href="#slide=2" title="Go to course contents">
+                👉 Go to contents</a>
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="wrap size-60">
+          <!--.wrap = container (width: 90%) -->
+        <h2 class="aligncenter">មាតិកា</h2><br>
+          <div class="aligncenter">
+        <ul style="color:darkblue">
+            <li>Definition of Mathematical Expectation</li>
+            <li>Functions of Random Variables</li>
+            <li>Some Theorems on Expectation</li>
+            <li>The Variance and Standard Deviation</li>
+            <li>Standardized Random Variables</li>
+            <li>Moment Generating Functions</li>
+            <li>Characteristic Functions</li>
+            <li>Variance for Joint Distributions. Covariance</li>
+            <li>Correlation Coefficient</li>
+            <li>Conditional Expectation, Variance, and Moments</li>
+            <li>Chebyshev’s Inequality</li>
+            <li>Law of Large Numbers</li>
+            <li>Skewness and Kurtosis</li>
+            </ul>
+        </div>
+
+          <!-- .end .wrap -->
+        </section>
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">និយមន័យសង្ឃឹមគណិត (Expectation)</h2><br>
+<p>A very important concept in probability and statistics is that of the mathematical expectation, expected value, or briefly the expectation, of a random variable.
+</p>
+
+ <div class="definitionb">
+ <p>
+     <ol>
+         <li>
+យក $X$ អថេរចៃដន្យដាច់ ដែលមានតម្លៃអាចកើតឡើង $x_1,\ldots, x_n$។ តម្លៃសង្ឃឹមគណិតរបស់អថេរ $X$ កំណត់ដោយ
+     $$
+E(X)=x_{1} P\left(X=x_{1}\right)+\cdots+x_{n} P\left(X=x_{n}\right)=\sum_{j=1}^{n} x_{j} P\left(X=x_{j}\right)
+$$
+ឬ ក្នុងន័យសមមូលគ្នា បើ \(P\left(X=x_{j}\right)=f(x)\) នោះគេបាន
+$$
+E(X)=x_{1} f\left(x_{1}\right)+\cdots+x_{n} f\left(x_{n}\right)=\sum_{j=1}^{n} x_{j} f\left(x_{j}\right)=\sum x f(x)
+$$
+</li>
+<li> ក្នុងករណី \(X\) ជាអថេរចៃដន្យជាប់ ដែលមានអនុគមន៍ដង់ស៊ីតេ \(f(x)\) នោះសង្ឃឹមគណិតរបស់អថេរ \(X\) កំណត់ដោយ
+$$
+E(X)=\int_{-\infty}^{\infty} x f(x) d x
+$$
+         </li>
+     </ol>
+</p>
+</div>
+
+ </div>
+ <!-- .end .wrap -->
+</section>
+
+        <section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap size-60">
+            <h3 class="frame-sect"><strong>ឧទាហរណ៍</strong></h3>
+            <div class="bg-white shadow">
+<p>
+<ol>
+    <li>ក្នុងការលេងល្បែងបោះគ្រាប់ឡុកឡាក់ស្មើសាច់មួយគ្រាប់ គេកំណត់ថា៖ អ្នកលេងណាម្នាក់ឈ្នះលុយ \(\$ 20\) បើសិនឡុកឡាក់ចេញលេខ $2$ - ឈ្នះ \(\$ 40\) បើចេញលេខ $4$ ហើយចាញ់ \(\$ 30\) បើចេញលេខ $6$។ ក្នុងករណីចេញលេខផ្សេងទៀត អ្នកលេងម្នាក់នោះ នឹងរួចខ្លួន។ ចូររកសង្ឃឹមគណិតនៃទឹកប្រាក់ ដែលអ្នកលេងម្នាក់នោះអាចនឹងឈ្នះបាន។ <br>
+       <b>Hint:</b> យក \(X\) ជាអថេរចៃដន្យ តាងអោយបរិមាណលុយឈ្នះក្នុងការបោះគ្រាប់ឡុកឡាក់។ 
+        
+       \[
+        \begin{array}{|c|c|c|c|c|c|c|}
+        \hline 
+        x_{j} & 0 & +20 & 0 & +40 & 0 & -30 \\ 
+        \hline 
+        f\left(x_{j}\right) & 1 / 6 & 1 / 6 & 1 / 6 & 1 / 6 & 1 / 6 & 1 / 6 \\ \hline\end{array}
+        \]
+        
+<!--Let \(X\) be the random variable giving the amount of money won on any toss. The possible amounts won when the die
+turns up \(1,2, \ldots, 6\) are \(x_{1}, x_{2}, \ldots, x_{6},\) respectively, while the probabilities of these are \(f\left(x_{1}\right), f\left(x_{2}\right), \ldots, f\left(x_{6}\right)\). The probability function for \(X\) is displayed in Table \(3-1 .\) Therefore, the expected value or expectation is -->
+</li>
+                </ol> 
+                </p>
+              </div>
+              
+<div class="bg-white shadow">
+<p>
+<ol start="2">
+    <li>គេមានអនុគមន៍ដង់ស៊ីតេរបស់អថេរចៃដន្យ \(X\) កំណត់ដោយ 
+\[
+f(x)=\begin{cases}
+        \frac{1}{2} x, & 0 &lt; x &lt; 2 \\
+        0, & \text{ otherwise }
+        \end{cases}
+\]
+  </li>
+            </ol>
+   </p>
+
+            </div> <!-- .end .bg-white shadow -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">អនុគមន៍អថេរចៃដន្យ</h2>
+<!--.wrap = container (width: 90%) -->
+    <br>
+<p>
+<ul>
+    <li>
+    យក \(X\) ជា d.r.v មានអនុគមន៍ប្រូបាប៊ីលីតេ \(f(x)\)។ ដូច្នេះ បើគេកំណត់ \(Y=g(X)\) នោះវាក៏ជា d.r.v ដែរ ហើយអនុគមន៍ប្រូបាប៊ីលីតេរបស់ \(Y\) កំណត់ដោយ 
+$$
+h(y)=P(Y=y)=\sum_{\{x \mid g(x)=y\}} P(X=x) = \sum_{\{x \mid g(x)=y\}} f(x)
+$$
+ដូច្នេះ គេបាន
+\begin{aligned} 
+    E\big[Y=g(X)\big] &= g(x_{1})f(x_{1})+g(x_{2}) f(x_{2})+\cdots+g(x_{n}) f(x_{n}) \\ 
+    &= \sum_{j=1}^{n} g(x_{j}) f(x_{j}) = \sum g(x) f(x) 
+    \end{aligned}
+    </li>
+    <li>
+    ដូចគ្នាដែរ បើ \(X\) ជា c.r.v ដែលមានអនុគមន៍ដង់ស៊ីតេប្រូបាប៊ីលីតេ \(f(x)\) នោះគេកំណត់បាន 
+$$
+E\big[Y=g(X)\big]=\int_{-\infty}^{\infty} g(x) f(x) d x
+$$
+    </li>
+    </ul>
+    </p>
+<p>
+    ជាទូទៅ បើ \(X\) និង \(Y\) ជា c.r.v ពីរ ដែលមានអនុគមន៍ដង់ស៊ីតេរួម (j.d.f) គឺ \(f(x, y)\) នោះសង្ឃឹមគណិតរបស់អនុគមន៍ \(g(X, Y)\) កំណត់ដោយ 
+$$
+E\big[g(X, Y)\big] = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} g(x, y) f(x, y) d x d y
+$$
+    </p>
+</div>
+</section>
+    
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h3 class="frame-sect">លក្ខណៈរបស់សង្ឃឹមគណិត</h3>
+<!--.wrap = container (width: 90%) -->
+    <br>
+<ol>
+    <li>បើ \(c\) ជាចំនួនថេរ នោះគេបាន 
+$$
+E(c X)=c E(X)
+$$</li>
+    <li>បើ \(X\) និង \(Y\) ជាអថេរចៃដន្យ នោះគេបាន
+$$
+E(X+Y)=E(X)+E(Y)
+$$</li>
+    <li>បើ \(X\) និង \(Y\) ជាអថេរចៃដន្យមិនអាស្រ័យគ្នា នោះគេបាន 
+$$
+E(X Y)=E(X) E(Y)
+$$</li>
+    
+    </ol>
+		  
+</div>
+</section>
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">វ៉ារ្យ៉ង់ និង គម្លាតស្ដង់ដា</h2>
+<!--.wrap = container (width: 90%) -->
+<br>
+    <p><a href="#">វ៉ារ្យ៉ង់</a> និង <a href="#">គម្លាតស្តង់ដា</a> របស់អថេរចៃដន្យ $X$ កំណត់ដូចខាងក្រោម៖  
+\begin{aligned}
+\operatorname{Var}(X) &= E\left[(X-\mu)^{2}\right] \\
+\sigma_{X} &=\sqrt{\operatorname{Var}(X)}=\sqrt{E\left[(X-\mu)^{2}\right]}
+\end{aligned}
+    </p>
+<ul>
+    <li>បើ \(X\) ជា d.r.v ដែលកំណត់យកតម្លៃ \(x_{1}, x_{2}, \ldots, x_{n}\) និងមានអនុគមន៍ប្រូបាប៊ីលីតេ \(f(x)\) នោះវ៉ារ្យ៉ង់កំណត់ដោយ 
+$$
+\sigma_{X}^{2}=E\left[(X-\mu)^{2}\right]=\sum_{j=1}^{n}\left(x_{j}-\mu\right)^{2} f\left(x_{j}\right)=\sum(x-\mu)^{2} f(x)
+$$
+    </li>
+<li>បើ \(X\) ជា c.r.v ដែលមានអនុគមន៍ដង់ស៊ីតេ \(f(x)\) នោះវ៉ារ្យ៉ង់កំណត់ដោយ 
+$$
+\sigma_{X}^{2}=E\left[(X-\mu)^{2}\right]=\int_{-\infty}^{\infty}(x-\mu)^{2} f(x) d x
+$$
+    </li>
+    </ul>
+</div>
+</section>
+    
+<section>
+    <div class="wrap size-60 bg-white shadow">
+            <h3 class="frame-sect"><strong>សម្គាល់</strong></h3><br>
+   វ៉ារ្យ៉ង់ (ឬ គម្លាតស្តង់ដា) គឺជារង្វាស់តម្លៃរប៉ាយ ឬ រាយប៉ាយ របស់តម្លៃនៃអថេរចៃដន្យនៅជុំវិញតម្លៃមធ្យម \(\mu\) ។ បើតម្លៃអថេរទំាងនេះ កើតឡើងផ្ដុំគ្នា នៅក្បែរៗតម្លៃមធ្យម នោះមានន័យថា វ៉ារ្យ៉ង់ មានតម្លៃតូច ហើយបើតម្លៃរបស់អថេរចៃដន្យនៅរាយប៉ាយ ឆ្ងាយពិតម្លៃមធ្យម នោះវ៉ារ្យ៉ង់មានតម្លៃធំ។ ពិនិត្យរូបខាងក្រោម សម្រាប់ករណីរបស់របាយនៃអថេរជាប់ ដែលមានមធ្យម \(\mu\) ស្មើគ្នា។ 
+    
+<figure class="">
+    <img alt="Small and large variance" src="./img/variance.png">
+    </figure>
+</div>
+    <div class="wrap size-60">
+    <h3 class="frame-sect"><strong>ឧទាហរណ៍</strong></h3>
+    <p>(3) ចូររកវ៉ារ្យ៉ង់ និង គម្លាតស្តង់ដា របស់អថេរចៃដន្យ ក្នុងឧទាហរណ៍ (2)
+    </p>
+</div>
+</section>
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h3 class="frame-sect">លក្ខណៈរបស់វ៉ារ្យ៉ង់</h3>
+<!--.wrap = container (width: 90%) -->
+    <br>
+<ol>
+    <li>\(\sigma^{2}=E\left[(X-\mu)^{2}\right]=E\left(X^{2}\right)-\mu^{2}=E\left(X^{2}\right)-[E(X)]^{2}\)
+ដែល \(\mu=E(X)\)</li>
+    <li>បើ \(c\) ជាចំនួនថេរ នោះគេបាន
+$$
+\operatorname{Var}(c X)=c^{2} \operatorname{Var}(X)
+$$
+</li>
+    <li>បរិមាណ \(E\left[(X-a)^{2}\right]\) មានតម្លៃអប្បបរមា បើចំនួនថេរ \(a=\mu=E(X)\)</li>
+    <li>បើ $X$ និង $Y$ ជាអថេរចៃដន្យមិនអាស្រ័យគ្នា នោះគេបាន
+    $$
+\begin{array}{c}\operatorname{Var}(X+Y)=\operatorname{Var}(X)+\operatorname{Var}(Y) \quad \text { or } \quad \sigma_{X+Y}^{2}=\sigma_{X}^{2}+\sigma_{Y}^{2} \\ \operatorname{Var}(X-Y)=\operatorname{Var}(X)+\operatorname{Var}(Y) \quad \text { or } \quad \sigma_{X^{-Y}}^{2}=\sigma_{X}^{2}+\sigma_{Y}^{2}\end{array}
+$$
+    
+    </li>
+    
+    </ol>
+		  
+</div>
+</section>
+
+<section>
+          <!--.wrap = container (width: 90%) -->
+ <div class="wrap size-60">
+    <h3 class="frame-sect"><strong>Practice</strong></h3>
+    <div class="bg-white shadow">
+<p>
+<ol>
+    <li>Find the expectation of a discrete random variable $X$ whose probability function is given by
+        $$
+f(x)=\left(\frac{1}{2}\right)^{x} \quad (x=1,2,3, \ldots)
+$$
+    
+</li>
+    
+<li>A continuous random variable $X$ has probability density given by 
+$$
+f(x)=\left\{\begin{array}{ll}2 e^{-2 x} & x &gt; 0 \\ 
+        0 & x &le; 0
+        \end{array}\right.
+$$
+Find (a) \(E(X)\) $\qquad$ (b) \(E\left(X^{2}\right)\)
+  </li>
+
+<li>The joint density function of two random variables \(X\) and \(Y\) is given by
+$$
+f(x, y)=\left\{
+    \begin{array}{ll} 
+    x y/96 & 0 &lt; x &lt;4,\; 1 &lt; y &lt; 5 \\ 
+    0 & \text { otherwise }
+    \end{array}\right.
+$$
+Find (a) \(E(X)\quad\)  (b) \(E(Y)\quad\)  (c) \(E(X Y)\quad\)  (d) \(E(2 X+3 Y)\)
+    
+    </li>
+            </ol>
+   </p>
+
+            </div> <!-- .end .bg-white shadow -->
+          </div>
+          <!-- .end .wrap -->
+</section>
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">Standardized Random Variables</h2>
+<!--.wrap = container (width: 90%) -->
+
+    <p>
+        <ul>
+            <li>
+    យក \(X\) ជា r.v ដែលមានមធ្យម \(\mu\) និង គម្លាតស្តង់ដា \( \sigma>0\)។ ដូច្នេះ គេអាចកំណត់អថេរចៃដន្យថ្មីមួយ ដែលមានលក្ខណៈស្តង់ដាជាង បានដូចខាងក្រោម៖ 
+$$
+X^{*}=\frac{X-\mu}{\sigma}
+$$
+    </li>		 
+    <li>លក្ខណៈសំខាន់របស់អថេរស្តង់ដា \(X^{*}\) គឺ៖ 
+$$
+E\left(X^{*}\right)=0, \quad \operatorname{Var}\left(X^{*}\right)=1
+$$</li>
+            <li>គេហៅ អថេរស្តង់ដា $X^*$ ថា <a href="#">ពិន្ទុស្តង់ដា</a> (standard scores)។ ក្នុងករណីនេះ អថេរ \(X\) ត្រូវបានគេសរសេរក្នុងទម្រង់ ឯកតាស្តង់ដា (i.e., \(\sigma\) មានតម្លៃជាឯកតា ក្នុងការវាស់តម្លៃ \(X-\mu\) )។
+    </li>
+</div>
+</section>
+    
+<section>
+    <div class="wrap size-60">
+    <h3>Basic Excercises</h3>
+    <ol>
+    <li>A continuous random variable \(X\) has a uniform distribution on the interval \([5,12]\). Sketch the graph of its density function. </li>
+    <li>A continuous random variable \(X\) has a uniform distribution on the interval \([-3,3]\). Sketch the graph of its density function. </li>
+    <li>A continuous random variable \(X\) has a normal distribution with mean \(100\) and standard deviation \(10\). Sketch a qualitatively accurate graph of its density function.</li>
+    <li>A continuous random variable \(X\) has a normal distribution with mean \(73\) and standard deviation \(2.5\). Sketch a qualitatively accurate graph of its density function.</li>
+    <li>A continuous random variable \(X\) has a normal distribution with mean \(73\). The probability that \(X\) takes a value greater than \(80\) is \(0.212\). Use this information and the symmetry of the density function to find the probability that \(X\) takes a value less than \(66\). Sketch the density curve with relevant regions shaded to illustrate the computation.</li>
+    <li>A continuous random variable \(X\) has a normal distribution with mean \(169\). The probability that \(X\) takes a value greater than \(180\) is \(0.17\). Use this information and the symmetry of the density function to find the probability that \(X\) takes a value less than \(158\). Sketch the density curve with relevant regions shaded to illustrate the computation.</li>
+    <li>A continuous random variable \(X\) has a normal distribution with mean \(50.5\). The probability that \(X\) takes a value less than \(54\) is \(0.76\). Use this information and the symmetry of the density function to find the probability that \(X\) takes a value greater than \(47\). Sketch the density curve with relevant regions shaded to illustrate the computation.</li>
+    <li>A continuous random variable \(X\) has a normal distribution with mean \(12.25\). The probability that \(X\) takes a value less than \(13\) is \(0.82\). Use this information and the symmetry of the density function to find the probability that \(X\) takes a value greater than \(11.50\). Sketch the density curve with relevant regions shaded to illustrate the computation.</li>
+    <li>The figure provided shows the density curves of three normally distributed random variables \(X_A,\; X_B\; \text{and}\; X_C\). Their standard deviations (in no particular order) are \(15\), \(7\), and \(20\). Use the figure to identify the values of the means \(\mu _A,\: \mu _B,\; \text{and}\; \mu _C\) and standard deviations \(\sigma _A,\: \sigma _B,\; \text{and}\; \sigma _C\) of the three random variables.  
+        <figure>
+        <img alt="Indentify the variance and expectation" src="img/Ex.Var.jpg" width="350px">
+        </figure>
+        </li>
+
+    <li>Classify each random variable as either discrete or continuous.
+    <ol start="1" style="list-style-type: lower-alpha;">
+        <li>The number of arrivals at an emergency room between midnight and \(6:00\; a.m\).</li>
+        <li>The weight of a box of cereal labeled “\(18\) ounces.”</li>
+        <li>The duration of the next outgoing telephone call from a business office.</li>
+        <li>The number of kernels of popcorn in a \(1\)-pound container.</li>
+        <li>The number of applicants for a job.</li>
+    </ol>
+    </li>
+    <li>Classify each random variable as either discrete or continuous.
+    <ol start="1" style="list-style-type: lower-alpha;">
+        <li>The time between customers entering a checkout lane at a retail store.</li>
+        <li>The weight of refuse on a truck arriving at a landfill.</li>
+        <li>The number of passengers in a passenger vehicle on a highway at rush hour.</li>
+        <li>The number of clerical errors on a medical chart.</li>
+        <li>The number of accident-free days in one month at a factory.</li>
+    </ol>
+    </li>
+    <li>Classify each random variable as either discrete or continuous.
+    <ol start="1" style="list-style-type: lower-alpha;">
+        <li>The number of boys in a randomly selected three-child family.</li>
+        <li>The temperature of a cup of coffee served at a restaurant.</li>
+        <li>The number of no-shows for every \(100\) reservations made with a commercial airline.</li>
+        <li>The number of vehicles owned by a randomly selected household.</li>
+        <li>The average amount spent on electricity each July by a randomly selected household in a certain state.</li>
+    </ol>
+    </li>
+    <li>Classify each random variable as either discrete or continuous.
+    <ol start="1" style="list-style-type: lower-alpha;">
+        <li>The number of patrons arriving at a restaurant between \(5:00\; p.m\). and \(6:00\; p.m\).</li>
+        <li>The number of new cases of influenza in a particular county in a coming month.</li>
+        <li>The air pressure of a tire on an automobile.</li>
+        <li>The amount of rain recorded at an airport one day.</li>
+        <li>The number of students who actually register for classes at a university next semester.</li>
+    </ol>
+    </li>
+    <li>Identify the set of possible values for each random variable. (Make a reasonable estimate based on experience, where necessary.)
+    <ol start="1" style="list-style-type: lower-alpha;">
+        <li>The number of heads in two tosses of a coin.</li>
+        <li>The average weight of newborn babies born in a particular county one month.</li>
+        <li>The amount of liquid in a \(12\)-ounce can of soft drink.</li>
+        <li>The number of games in the next World Series (best of up to seven games).</li>
+        <li>The number of coins that match when three coins are tossed at once.</li>
+    </ol>
+    </li>
+    <li>Identify the set of possible values for each random variable. (Make a reasonable estimate based on experience, where necessary.)
+    <ol start="1" style="list-style-type: lower-alpha;">
+        <li>The number of hearts in a five-card hand drawn from a deck of \(52\) cards that contains \(13\) hearts in all.</li>
+        <li>The number of pitches made by a starting pitcher in a major league baseball game.</li>
+        <li>The number of breakdowns of city buses in a large city in one week.</li>
+        <li>The distance a rental car rented on a daily rate is driven each day.</li>
+        <li>The amount of rainfall at an airport next month.</li>
+    </ol>
+    </li>
+    <li>A discrete random variable \(X\) has the following probability distribution:
+        $$
+\begin{array}{c|ccccc}x & 77 & 78 & 79 & 80 & 81 \\ \hline P(x) & 0.15 & 0.15 & 0.20 & 0.40 & 0.10\end{array}
+$$
+Compute each of the following quantities.
+        <ol start="1" style="list-style-type: lower-alpha;">
+        <li>\(P(80)\).</li>
+        <li>\(P(X&gt;80)\).</li>
+        <li>\(P(X\leq 80)\).</li>
+        <li>The mean \(\mu\) of \(X\).</li>
+        <li>The variance \(\sigma ^2\) of \(X\).</li>
+        <li>The standard deviation \(\sigma \) of \(X\).</li>
+    </ol>
+        </li>
+
+</ol>
+
+<h3>Applications</h3>
+    <ol start="17">
+    <li>Dogberry's alarm clock is battery operated. The battery could fail with equal probability at any time of the day or night. Every day Dogberry sets his alarm for \(6:30\; a.m.\) and goes to bed at \(10:00\; p.m.\). Find the probability that when the clock battery finally dies, it will do so at the most inconvenient time, between \(10:00\; p.m.\) and \(6:30\; a.m.\).</li>
+    <li>Buses running a bus line near Desdemona's house run every \(15\) minutes. Without paying attention to the schedule she walks to the nearest stop to take the bus to town. Find the probability that she waits more than \(10\) minutes.</li>
+    <li>The amount \(X\) of orange juice in a randomly selected half-gallon container varies according to a normal distribution with mean \(64\) ounces and standard deviation \(0.25\) ounce.
+    <ol start="1" style="list-style-type: lower-alpha;">
+        <li>Sketch the graph of the density function for \(X\).</li>
+        <li>What proportion of all containers contain less than a half gallon (\(64\) ounces)? Explain.</li>
+        <li>What is the median amount of orange juice in such containers? Explain.</li>
+    </ol>
+    </li>
+    <li>The weight \(X\) of grass seed in bags marked \(50\) lb varies according to a normal distribution with mean \(50\) lb and standard deviation \(1\) ounce (\(0.0625\) lb).
+    <ol start="1" style="list-style-type: lower-alpha;">
+        <li>Sketch the graph of the density function for \(X\).</li>
+        <li>What proportion of all bags weigh less than \(50\) pounds? Explain.</li>
+        <li>What is the median weight of such bags? Explain.</li>
+    </ol>
+    <li>The number \(X\) of days in the summer months that a construction crew cannot work because of the weather has the probability distribution
+        $$
+\begin{array}{c|ccccc}x & 6 & 7 & 8 & 9 & 10 \\ \hline P(x) & 0.03 & 0.08 & 0.15 & 0.20 & 0.19\end{array}
+$$
+        $$
+\begin{array}{c|cccc}x & 11 & 12 & 13 & 14 \\ \hline P(x) & 0.16 & 0.10 & 0.07 & 0.02\end{array}
+$$    
+        <ol start="1" style="list-style-type: lower-alpha;">
+        <li>Find the probability that no more than ten days will be lost next summer.</li>
+        <li>Find the probability that from \(8\) to \(12\) days will be lost next summer.</li>
+        <li>Find the probability that no days at all will be lost next summer.</li>
+        <li>Compute the mean and standard deviation of \(X\). Interpret the mean in the context of the problem.</li>
+    </ol>
+        </li>
+    </li>
+</ol>
+    </div>
+</section>    
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">Moment Generating Functions</h2>
+<!--.wrap = container (width: 90%) -->
+<p>
+<ul>
+    <li>ម៉ូម៉ង់ទី $r$ របស់អថេរចៃដន្យ \(X\) ធៀបនឹងផ្ចិត \(\mu\) ឬ ហៅថា ម៉ូម៉ង់សង់ត្រាល់ទី $r$ កំណត់ដោយរូបមន្ត 
+$$
+\mu_{r}=E\left[(X-\mu)^{r}\right]
+$$
+ដែល \(r=0,1,2, \ldots\) ។ ដូច្នេះ គេបាន \(\mu_{0}=1, \mu_{1}=0\) ហើយ \(\mu_{2}=\sigma^{2}\), i.e., ម៉ូម៉ង់សង់ត្រាល់ទី២ ឬហៅ ម៉ូម៉ង់ទី២ ធៀបនឹងមធ្យមស្មើនឹង វ៉ារ្យ៉ង់។ ដោយសន្មត់តាមភាពរួមដាច់ខាត គេបាន 
+$$
+\mu_{r}=\sum(x-\mu)^{r} f(x) \qquad \text { (discrete variable) }
+$$
+$$
+\mu_{r}=\int_{-\infty}^{\infty}(x-\mu)^{r} f(x) d x \qquad\text{(continuous variable)}
+$$
+</li>
+<li>ម៉ូម៉ង់ទី $r$ របស់អថេរ \(X\) ធៀបនឹងគល់អ័ក្ស ហៅថា ម៉ូម៉ង់រាយទី $r$ (rth raw moment) កំណត់ដោយរូបមន្ត 
+$$
+\mu_{r}^{\prime}=E\left(X^{r}\right)
+$$ 
+    </li>
+<li>
+    ម៉ូម៉ង់នៃអនុគមន៍បង្ករបស់អថេរចៃដន្យ \(X\) កំណត់ដោយ 
+$$
+M_{X}(t)=E\left(e^{t X}\right)
+$$
+ដោយសន្មតតាមភាពរួម គេបាន 
+$$
+M_{X}(t)=\sum e^{t x} f(x) \qquad \text { (discrete variable) }
+$$
+$$
+M_{X}(t)=\int_{-\infty}^{\infty} e^{t x} f(x) d x \qquad \text{(continuous variable)}
+$$
+<!--We can show that the Taylor series expansion is 
+$$
+M_{X}(t)=1+\mu t+\mu_{2}^{\prime} \frac{t^{2}}{2 !}+\cdots+\mu_{r}^{\prime} \frac{t^{r}}{r !}+\cdots
+$$ -->
+    </li>
+    </ul>
+</p>
+</div>
+</section>
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h3 class="frame-sect">លក្ខណៈរបស់ម៉ូម៉ង់នៃអនុគមន៍បង្ក</h3>
+<!--.wrap = container (width: 90%) -->
+    <br>
+<ol>
+    <li>បើ \(M_{X}(t)\) ជា m.g.f របស់អថេរចៃដន្យ \(X\) ហើយយក \(a\) និង \( b \neq 0\) ជាចំនួនថេរ នោះគេបាន m.g.f របស់អថេរ \(Y=(X+a)/b\) កំណត់ដោយ 
+$$
+M_{(X+a)/b} (t) = e^{a t/b} M_{X}\left(\frac{t}{b}\right)
+$$
+    
+    </li>
+    <li>បើ \(X\) និង \(Y\) ជា r.v មិនអាស្រ័យគ្នា ដែលមានម៉ូម៉ង់អនុគមន៍បង្ករៀងគ្នា \(M_{X}(t)\) និង 
+\(M_{Y}(t)\) នោះគេបាន 
+$$
+M_{X+Y}(t)=M_{X}(t) M_{Y}(t)
+$$
+        
+</li>
+    <li>(Uniqueness Theorem). ឧបមាថា \(X\) និង \(Y\) ជា r.v ពីរ ដែលមានម៉ូម៉ង់អនុគមន៍បង្ករៀងគ្នា \(M_{X}(t)\) and \(M_{Y}(t)\)។ ដូច្នេះ អថេរចៃដន្យ \(X\) និង \(Y\) មានរបាយប្រូបាប៊ីលីតេដូចគ្នា លុះត្រាតែ \(M_{X}(t) = M_{Y}(t)\)</li>
+    
+    </ol>
+		  
+</div>
+</section>
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">អនុគមន៍សម្គាល់ (Characteristic Functions)</h2>
+<!--.wrap = container (width: 90%) --><br>
+    <p>
+        បើតាង \(t=i \omega\) ដែល \(i\) គឺជាផ្នែកនិមិត្តឯកតា នោះការគណនា m.g.f នឹងទទួលបានអនុគមន៍សំខាន់មួយ ហៅថា <a href="#">អនុគមន៍សម្គាល់</a> (characteristic function)។ យើងតាងដោយ 
+$$
+     \phi_{X}(\omega) = M_{X}(i \omega) = E\left(e^{i \omega X}\right)
+$$ 
+ដូច្នេះ 
+$$
+\phi_{X}(\omega) = \sum e^{i \omega x} f(x) \qquad \text { (discrete variable) }
+$$ 
+$$\phi_{X}(\omega) = \int_{-\infty}^{\infty} e^{i \omega x} f(x) d x \qquad \text { (continuous variable) }
+$$
+ដោយ \(\left|e^{i \omega x}\right|=1\) នោះកន្សោមស៊េរី និង អាំងតេក្រាល មានភាពរួមដាច់ខាត។ 
+    
+    </p>
+		  
+</div>
+</section>
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h3 class="frame-sect">លក្ខណៈរបស់អនុគមន៍សម្គាល់</h3>
+<!--.wrap = container (width: 90%) -->
+    <br>
+<ol>
+    <li>បើ \(\phi_{X}(\omega)\) ជាអនុគមន៍សម្គាល់របស់អថេរចៃដន្យ \(X\) ហើយ \(a\) និង \(b \neq 0\) ជាចំនួនថេរ នោះគេបានអនុគមន៍សម្គាល់របស់អថេរ \((X+a) / b\) កំណត់ដោយ 
+$$
+\phi_{(X+a) / b}(\omega)=e^{a i \omega / b} \phi_{X}\left(\frac{\omega}{b}\right)
+$$
+    
+    </li>
+    <li>បើ \(X\) និង \(Y\) ជាអថេរចៃដន្យមិនអាស្រ័យគ្នា ដែលមានអនុគមន៍សម្គាល់រៀងគ្នា \(\phi_{X}(\omega)\) និង \(\phi_{Y}(\omega)\) នោះគេបាន 
+$$
+\phi_{X+Y}(\omega)=\phi_{X}(\omega) \phi_{Y}(\omega)
+$$
+        
+</li>
+    <li><strong> (Uniqueness Theorem).</strong> យក \(X\) និង \(Y\) ជា r.v ពីរ ដែលមានអនុគមន៍សម្គាល់រៀងគ្នា \(\phi_{X}(\omega)\)  និង \(\phi_{Y}(\omega)\) ។ ដូច្នេះ អថេរចៃដន្យ \(X\) និង \(Y\) មានរបាយប្រូបាប៊ីលីតេដូចគ្នា លុះត្រាតែ \(\phi_{X}(\omega) = \phi_{Y}(\omega)\) ។ </li>
+    
+    </ol>
+		  
+</div>
+</section>
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">Variance for Joint Distributions. Covariance</h2><br>
+<!--.wrap = container (width: 90%) -->
+<p>
+    <ul>
+    <li>
+    តាមរយៈលទ្ធផលខាងលើ យើងក៏អាចអនុវត្តបានចំពោះអថេរពីរ ឬច្រើន។ បើ \(X\) និង  \(Y\) ជា c.r.v ដែលមានអនុគមន៍ដង់ស៊ីតេរួម (jdf) \(f(x, y)\) នោះគេអាចគណនាតម្លៃមធ្យម ឬសង្ឃឹមគណិតរបស់អថេរ \(X\) និង \(Y\) ដោយ 
+\begin{eqnarray*}
+\mu_{X} &=& E(X)=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} x f(x, y) d x d y,\\
+\mu_{Y} &= & E(Y)=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} y f(x, y) d x d y
+\end{eqnarray*}
+    
+ហើយវ៉ារ្យ៉ង់កំណត់ដោយ 
+$$
+\begin{aligned} 
+    \sigma_{X}^{2} &=E\left[\left(X-\mu_{X}\right)^{2}\right]=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty}\left(x-\mu_{X}\right)^{2} f(x, y) d x d y \\ 
+    \sigma_{Y}^{2} &= E\left[\left(Y-\mu_{Y}\right)^{2}\right]=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty}\left(y-\mu_{Y}\right)^{2} f(x, y) d x d y 
+\end{aligned}
+$$
+    </li>
+    
+    <li>បរិមាណមួយផ្សេងទៀត ដែលកើតឡើងក្នុងករណីមានពីរអថេរចៃដន្យចូលរួម \(X\) និង \(Y\) គឺជាតម្លៃ កូវ៉ារ្យ៉ង់ (covariance) ដែលកំណត់ដោយ
+$$
+\sigma_{X Y}=\operatorname{Cov}(X, Y) = E\left[\left(X-\mu_{X}\right)\left(Y-\mu_{Y}\right)\right] 
+$$ 
+ដោយប្រើអនុគមន៍ដង់ស៊ីតេរួម $f(x, y)$ នោះគេកំណត់បានកូវ៉ារ្យ៉ង់ដូចតទៅ   
+$$\sigma_{X Y}=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty}\left(x-\mu_{X}\right)\left(y-\mu_{Y}\right) f(x, y) d x d y
+$$
+        </li>
+        
+    </ul>
+    
+    </p>
+</div>
+</section>
+    
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h3 class="frame-sect">លក្ខណៈរបស់កូវ៉ារ្យ៉ង់ និងវ៉ារ្យ៉ង់របស់របាយរួម </h3>
+<!--.wrap = container (width: 90%) -->
+    <br>
+<ol>
+    <li>\(\sigma_{X Y}=E(X Y)-E(X) E(Y)=E(X Y)-\mu_{X} \mu_{Y}\)
+    
+    </li>
+    <li>បើ \(X\) និង \(Y\) ជាអថេរចៃដន្យមិនអាស្រ័យគ្នា នោះគេបាន 
+$$
+\sigma_{X Y}=\operatorname{Cov}(X, Y)=0
+$$
+        
+</li>
+    <li>\(\operatorname{Var}(X \pm Y) =\operatorname{Var}(X)+\operatorname{Var}(Y) \pm 2 \operatorname{Cov}(X, Y)\quad\) ឬ  $\quad \sigma_{X \pm Y}^{2}=\sigma_{X}^{2}+\sigma_{Y}^{2} \pm 2 \sigma_{X Y}$</li>
+    <li>\(\left|\sigma_{X Y}\right| \leq \sigma_{X} \sigma_{Y}\)</li>
+    </ol>
+		  
+</div>
+</section>
+
+
+
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">មេគុណតម្រែតម្រង់ (Correlation Coefficient)</h2>
+<!--.wrap = container (width: 90%) --><br>
+<p>
+    បើ \(X\) និង \(Y\) ជាអថេរមិនអាស្រ័យគ្នា នោះ \(\operatorname{Cov}(X, Y)=\sigma_{X Y}=0\)។ ម្យ៉ាងទៀត បើ \(X\) និង \(Y\) អាស្រ័យគ្នាទាំងស្រុង ដូចជា ពេល \(X=Y\) នោះគេបាន \(\operatorname{Cov}(X, Y)=\sigma_{X Y}=\sigma_{X} \sigma_{Y}\)។  From this we are led to a measure of the dependence of the variables \(X\) and \(Y\) given by
+$$
+\rho=\frac{\sigma_{X Y}}{\sigma_{X} \sigma_{Y}}
+$$
+    គេហៅតម្លៃ \(\rho\) ថា <a href="#">មេគុណតម្រែតម្រង់ (correlation coefficient)</a> ហើយមានតម្លៃក្នុងចន្លោះ \([-1, 1]\)។ ក្នុងករណី \(\rho=0\) (i.e., $\operatorname{Cov}(X, Y)=0$) នោះគេថា អថេរ \(X\) និង \(Y\) មិនទាក់ទងគ្នា (uncorrelated)។ ក្នុងករណីនេះ គេអាចនិយាយបានថា អថេរទាំងពីរ អាចអាស្រ័យ ឬមិនអាស្រ័យគ្នា។ 
+    </p>
+		  
+</div>
+</section>
+    
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">សង្ឃឹមគណិត - វ៉ារ្យ៉ង់ និង ម៉ូម៉ង់មានលក្ខខណ្ឌ</h2>
+<!--.wrap = container (width: 90%) -->
+<p>
+    <ul>
+    <li> បើ \(X\) និង \(Y\) មានអនុគមន៍ដង់ស៊ីតេរួម \(f(x, y)\) នោះអនុគមន៍ដង់ស៊ីតមានលក្ខខណ្ឌរបស់អថេរចៃដន្យ \(Y\) ដោយដឹងអថេរ \(X\) កើតឡើងមុន កំណត់ដោយ \(f(y \mid x)=f(x, y) / f_{1}(x)\) ដែល \(f_{1}(x)\) គឺជា អនុគមន៍ដង់ស៊ីតេម៉ាជីណល របស់អថេរ \(X \)។ ដូច្នេះ គេអាចកំណត់សង្ឃឹមគណិតមានលក្ខខណ្ឌ ឬមធ្យមមានលក្ខខណ្ឌ របស់អថេរ \(Y\) ដោយដឹង \(X\) តាមរូបមន្តខាងក្រោម
+$$
+E(Y \mid X=x)=\int_{-\infty}^{\infty} y f(y \mid x) d y
+$$
+ដែល $X = x$ ត្រូវបានបកស្រាយថា $x &lt; X &le; x +dx$ នៅក្នុងករណីអថេរចៃដន្យជាប់។ គេបានលក្ខណៈខាងក្រោម :
+<ol style="padding-left: 50px;">
+    <li>
+    \(E(Y \mid X=x)=E(Y)\) បើ \(X\) និង \(Y\) មិនអាស្រ័យគ្នា ។ 
+    </li>
+    <li>\(\displaystyle E(Y)=\int_{-\infty}^{\infty} E(Y \mid X=x) f_{1}(x) d x\)</li>
+    </ol>
+    </li>
+    <li>In a similar manner we can define the conditional variance of \(Y\) given \(X\) as
+$$
+E\big[\left(Y-\mu_{2}\right)^{2} \mid X=x\big]=\int_{-\infty}^{\infty}\left(y-\mu_{2}\right)^{2} f(y \mid x) dy
+$$
+where \(\mu_{2}=E(Y \mid X=x)\)
+    </li>
+    <li>Also we can define the \(r\)th conditional moment of \(Y\) about any value $a$ given \(X\) as
+$$
+E\big[(Y-a)^{r} \mid X=x\big]=\int_{-\infty}^{\infty}(y-a)^{r} f(y \mid x) d y
+$$
+        </li>
+    </ul>
+    </p>
+</div>
+</section>
+    
+<section>
+          <!--.wrap = container (width: 90%) -->
+ <div class="wrap size-60">
+    <h3 class="frame-sect"><strong>ឧទាហរណ៍.</strong></h3>
+    <div class="bg-white shadow">
+<p style="font-size: 18px;line-height: 2;">រយៈពេលធ្វើដំណើរជាមធ្យមទៅកាន់ខេត្តព្រះសីហនុតាមរថយន្តតូចមានចំនួន $m$ ម៉ោង ឬតាមរថយន្តក្រុងមានចំនួន $n$ ម៉ោង។ មីងសំមានបេសកកម្មមួយទៅខេត្តព្រះសីហនុ ហើយគាត់មានចិត្តរារែក មិនដឹងថាត្រូវជិះរថយន្តផ្ទាល់ខ្លួន ឬក៏ត្រូវជិះរថយន្តក្រុង។ ដូច្នេះ ប្ដីរបស់គាត់ក៏បានផ្ដល់យោបល់ថា គាត់គួរបោះកាក់មួយដើម្បីធ្វើការសម្រេចចិត្ត។ តើរយៈពេលធ្វើដំណើរដែលសង្ឃឹមទុករបស់មីងសំស្មើប៉ុន្មាន? 
+<!--The average travel time to a distant city is $c$ hours by car or $b$ hours by bus. A woman cannot decide whether to drive or take the bus, so she tosses a coin. What is her expected travel time?-->
+   </p>
+
+            </div> <!-- .end .bg-white shadow -->
+          </div>
+          <!-- .end .wrap -->
+</section>
+
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">Chebyshev’s Inequality</h2>
+<!--.wrap = container (width: 90%) --><br>
+<p>
+    An important theorem in probability and statistics that reveals a general property of discrete or continuous random variables having finite mean and variance is known under the name of <a href="#">Chebyshev’s inequality</a>.
+<div style="border: 2px solid darkblue; padding: 10px;
+  box-shadow: 5px 10px #888888;">
+    <b>Theorem </b>(វិសមភាព Chebyshev's). ឧបមាថា \(X\) ជាអថេរចៃដន្យមួយ (អាច ដាច់ ឬ ជាប់) ដែលមានមធ្យម \(\mu\) និង វ៉ារ្យ៉ង់  \(\sigma^{2}\) កំណត់ (finite)។ ដូច្នេះ បើ \(\epsilon\) ជាចំនួនវិជ្ជមាន 
+$$
+P\big(|X-\mu| \geq \epsilon\big) \leq \frac{\sigma^{2}}{\epsilon^{2}}
+$$
+</div>
+<br>
+or, with \(\epsilon=k \sigma\)
+$$
+P\big(|X-\mu| \geq k \sigma\big) \leq \frac{1}{k^{2}}
+$$
+    </p>
+</div>
+</section>
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">Law of Large Numbers</h2>
+<!--.wrap = container (width: 90%) --><br>
+<p>
+    The following theorem, called the <a href="#">law of large numbers</a>, is an interesting consequence of Chebyshev’s inequality. 
+<div style="border: 2px solid darkblue; padding: 10px;
+  box-shadow: 5px 10px #888888;">
+    <b>Theorem </b>(Law of Large Numbers). យក \(X_{1}, X_{2}, \ldots, X_{n}\) ជាអថេរចៃដន្យមិនអាស្រ័យគ្នាពីរៗ (discrete or continuous) ដែលអថេរនីមួយៗមានមធ្យម \(\mu\) និង variance \(\sigma^{2}\) កំណត់។ បើយក  \(S_{n}=X_{1}+X_{2}+\cdots+X_{n}\), \((n=1,2, \ldots)\) នោះគេបាន 
+$$
+\lim _{n \rightarrow \infty} P\left(\left|\frac{S_{n}}{n}-\mu\right| \geq \epsilon\right)=0
+$$
+</div>
+<br>
+Since \(S_{n} / n\) is the arithmetic mean of \(X_{1}, \ldots, X_{n}\), this theorem states that the probability of the arithmetic
+mean \(S_{n} / n\) differing from its expected value \(\mu\) by more than \(\epsilon\) approaches zero as \(n \rightarrow \infty \). 
+    </p>
+</div>
+</section>
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">Skewness and Kurtosis</h2>
+<!--.wrap = container (width: 90%) -->
+		  <br>
+<p>
+<ul>
+    <li><b>SKEWNESS.</b> Often a distribution is not symmetric about any value but instead has one of its tails longer than the other. If the longer tail occurs to the right, the distribution is said to be skewed to the right, while if the longer tail occurs to the left, it is said to be skewed to the left. Measures describing this asymmetry are called <a href="#">coefficients of skewness</a>, or briefly <a href="#">skewness</a>. One such measure is given by
+$$
+\alpha_{3}=\frac{E\left[(X-\mu)^{3}\right]}{\sigma^{3}}=\frac{\mu_{3}}{\sigma^{3}}
+$$
+The measure $\alpha_3$ will be positive or negative according to whether the distribution is skewed to the right or left,
+respectively. For a symmetric distribution, $\alpha_3 = 0$.
+    </li>
+    <li><b>KURTOSIS.</b> In some cases a distribution may have its values concentrated near the mean so that the distribution has a large peak. In other cases the distribution may be relatively flat. Measures of the degree of peakedness of a distribution are called <a href="#">coefficients of kurtosis</a>, or briefly <a href="#">kurtosis</a>, given by
+$$
+\alpha_{4}=\frac{E\left[(X-\mu)^{4}\right]}{\sigma^{4}}=\frac{\mu_{4}}{\sigma^{4}}
+$$
+    </li>
+    
+    </ul>
+    
+    </p>
+</div>
+</section>
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">លំហាត់អនុវត្តន៍</h2>
+<!--.wrap = container (width: 90%) -->
+    <br>
+    <p>
+    <ol>
+    <li>អថេរចៃដន្យ $X$ មួយមាន df ដូចខាងក្រោម
+$$
+f(x)=\begin{cases}
+        2 e^{-2 x}, & x \geq 0 \\ 
+        0, & x &lt; 0
+        \end{cases}
+$$
+<ol style="list-style-type:lower-alpha;padding-left: 16px;">
+    <li>ចូររក (a) mgf និង (b) ម៉ូម៉ង់ចំនួនបួនដំបូង ធៀបនឹងគល់អ័ក្ស។ </li>
+    <li>តាមម៉ូម៉ង់ខាងលើ ចូរគណនា \(P(|X-\mu|>1)\)។ </li>
+    <li>ដោយប្រើវិសមភាព Chebyshev ចូររកគោលលើរបស់ \(P(|X-\mu|>1)\)</li>
+        </ol>
+
+        </li>
+<li>ចូររកអនុគមន៍សម្គាល់របស់អថេរចៃដន្យ $X$ ដោយស្គាល់អនុគមន៍ដង់ស៊ីតេ 
+$$
+f(x)=\begin{cases}
+        1/2a , & |x| &lt; a \\ 
+        0, & \text{otherwise}
+        \end{cases}
+$$
+        </li>
+<li>អនុគមន៍ប្រូបាប៊ីលីតេរួមរបស់អថេរចៃដន្យដាច់ពីរ \(X\) និង \(Y\) គឺកំណត់ដោយ \(f(x, y)=c(2 x+y)\) ដែលតម្លៃ \(x\) និង \(y\) ជាចំនួនគត់ \(0 \leq x \leq 2,0 \leq y \leq 3\) ហើយ \(f(x, y)=0\) ក្នុងករណីផ្សេង។ 
+
+<ol style="list-style-type:lower-alpha;padding-left: 16px;">
+    <li>ចូររកតម្លៃនៃចំនួនថេរ $c$ </li>
+    <li>ចូរគណនា \(P(X \geq 1, Y \leq 2)\)</li>
+    <li>ចូរគណនា \(P(X=2, Y=1)\)</li>
+    <li>ចូរគណនា $E(X)$, $E(Y)$, $E(XY)$, $E(X^2)$, $E(Y^2)$,  $\operatorname{Var}(X)$, $\operatorname{Var}(Y)$, $\operatorname{Cov}(X, Y)$ និង $\rho$</li>
+        </ol>
+        </li>
+    <li>អនុគមន៍ដង់ស៊ីតេរបស់ c.r.v $X$ កំណត់ដោយ 
+$$f(x)=\begin{cases}
+        4x(9-x^2)/81 , & 0\leq x \leq 3\\ 
+        0, & \text{otherwise}
+        \end{cases}
+$$
+(a) ចូររកម៉ូដ (mode), (b) ចូររកមេដ្យាន (median) និង (c) ប្រៀបធៀបតម្លៃ mode, median និង mean?
+        
+<figure>
+    <img src="img/pract-ex.3.png" width="60%">
+</figure>
+        
+        </li>
+        
+    </ol>
+    
+    </p>
+		  
+</div>
+</section>
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">Special Probability
+Distributions</h2>
+<!--.wrap = container (width: 90%) --><br>
+<ol>
+    <li>The Binomial Distribution: the probability function is 
+$$
+f(x)=P(X=x)=\left(\begin{array}{l}n \\ x\end{array}\right) p^{x} q^{n-x}=\frac{n !}{x !(n-x) !} p^{x} q^{n-x}
+$$
+where the random variable \(X\) denotes the number of successes in \(n\) trials and \(x=0,1, \ldots, n\). Note: if $n=1$, it is also called the Bernoulli distribution.
+\[
+\begin{array}{|c|c|}
+        \hline \text { Mean } & \mu=n p \\ 
+        \hline \text { Variance } & \sigma^{2}=n p q \\ 
+        \hline \text { Standard deviation } & \sigma=\sqrt{n p q} \\ 
+        \hline \text { Coefficient of skewness } & \alpha_{3}=\frac{q-p}{\sqrt{n p q}} \\ 
+        \hline \text { Coefficient of kurtosis } & \alpha_{4}=3+\frac{1-6 p q}{n p q} \\ 
+        \hline \text { Moment generating function } & M(t)=\left(q+p e^{t}\right)^{n} \\ 
+        \hline \text { Characteristic function } & \phi(\omega)=\left(q+p e^{i \omega}\right)^{n} \\ 
+        \hline\end{array}
+\]
+    
+    
+    </li>
+    </ol>
+		  
+</div>
+</section>
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">Special Probability
+Distributions</h2>
+<!--.wrap = container (width: 90%) --><br>
+<ol start="2">
+    <li>The Normal Distribution:  The density function for this distribution is given by 
+$$
+f(x)=\frac{1}{\sigma \sqrt{2 \pi}} e^{-(x-\mu)^{2} / 2 \sigma^{2}} \quad -\infty &lt; x &lt; +\infty
+$$
+where \(\mu\) and \(\sigma\) are the mean and standard deviation, respectively. The corresponding distribution function is
+given by
+$$
+F(x)=P(X \leq x)=\frac{1}{\sigma \sqrt{2 \pi}} \int_{-\infty}^{x} e^{-(v-\mu)^{2} / 2 \sigma^{2}} d v
+$$
+Then, we say that the random variable $X$ is normally distributed with mean $\mu$ and variance $\sigma$.
+\[
+  \begin{array}{|c|c|}\hline \text { Mean } & \mu \\ \hline \text { Variance } & \sigma^{2} \\ \hline \text { Standard deviation } & \sigma \\ \hline \text { Coefficient of skewness } & \alpha_{3}=0 \\ \hline \text { Coefficient of kurtosis } & \alpha_{4}=3 \\ \hline \text { Moment generating function } & M(t)=e^{u+\left(\sigma^{2} / 2\right)} \\ \hline \text { Characteristic function } & \phi(\omega)=e^{i \mu \omega-\left(\sigma^{\prime} \omega^{2} / 2\right)} \\ \hline\end{array}      
+\]
+    
+    </li>
+    </ol>
+		  
+</div>
+</section>
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">Special Probability
+Distributions</h2>
+<!--.wrap = container (width: 90%) --><br>
+<ol start="3">
+    <li>The Poisson Distribution:  Let $X$ be a discrete random variable that can take on the values $0, 1, 2, \ldots$ such that the probability function of $X$ is given by
+$$
+f(x)=P(X=x)=\frac{\lambda^{x} e^{-\lambda}}{x!},  \quad x=0,1,2, \ldots
+$$
+where $\lambda$ is a given positive constant. 
+\[
+        \begin{array}{|c|c|}\hline \text { Mean } & \mu=\lambda \\ \hline \text { Variance } & \sigma^{2}=\lambda \\ \hline \text { Standard deviation } & \sigma=\sqrt{\lambda} \\ \hline \text { Coefficient of skewness } & \alpha_{3}=1 / \sqrt{\lambda} \\ \hline \text { Coefficient of kurtosis } & \alpha_{4}=3+(1 / \lambda) \\ \hline \text { Moment generating function } & M(t)=e^{\lambda (e^t -1)} \\ \hline \text { Characteristic function } & \phi(\omega)=e^{\lambda(e^{i\omega}-1)} \\ \hline\end{array}
+\]
+        
+    </li>
+    </ol>
+		  
+</div>
+</section>
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">Special Probability
+Distributions</h2>
+<!--.wrap = container (width: 90%) --><br>
+<ol start="4">
+    <li>The Uniform Distribution:  A random variable \(X\) is said to be uniformly distributed in \(a \leq x \leq b\) if its density function is
+$$
+f(x)=\left\{
+        \begin{array}{ll}
+        1/(b-a), & a \leq x \leq b \\ 
+        0, & \text { otherwise }
+        \end{array}\right.
+$$
+and the distribution is called a uniform distribution. The distribution function is given by
+$$
+F(x)=P(X \leq x)=\left\{
+        \begin{array}{ll}
+        0, & x &lt; a\\
+        (x-a) /(b-a), & a\leq x &lt; b \\ 
+        1, & x \geq b
+        \end{array}\right.
+$$
+        
+    </li>
+    </ol>
+		  
+</div>
+</section>
+
+
+
+
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">អនុគមន៍អថេរចៃដន្យ</h2>
+<!--.wrap = container (width: 90%) -->
+		  
+</div>
+</section>
+    
+<section>
+  <!--.wrap = container (width: 90%) -->
+<div class="wrap size-60">
+<h2 class="frame-sect">អនុគមន៍អថេរចៃដន្យ</h2>
+<!--.wrap = container (width: 90%) -->
+		  
+</div>
+</section>
+    
+		
+
+      </article>
+    </main>
+    <!--main-->
+
+    <!-- Required -->
+    <script src="./js/webslides.js"></script>
+
+    <script>
+      window.ws = new WebSlides();
+    </script>
+
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+    <!-- <script defer src="static/js/svg-icons.js"></script> -->
+  </body>
+</html>
