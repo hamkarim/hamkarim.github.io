@@ -66,6 +66,8 @@ a.onmenu {
  }
       </style>
 <style type="text/css">
+
+
 .box-note {
   background-color: #eef1f1;
   border-left: 4px solid #5e6e6e;
@@ -504,6 +506,11 @@ a.onmenu {
 </style>
 
 <style type="text/css">/*<![CDATA[*/
+.Headertext{
+display:none;
+}/*]]>*/</style>
+
+<style type="text/css">/*<![CDATA[*/
 /* CSS pseudo-element styling https://fontawesome.com/how-to-use/on-the-web/advanced/css-pseudo-elements */
 
 /* general reset/setup styling for icons - needed on all */
@@ -701,6 +708,31 @@ function showhideFunction() {
  <script> document.createElement("example, defn"); </script>
  <!-- [endif]-->
 
+ <div class="Headertext">
+   \( \newcommand{\vecs}[1]{\overset { \scriptstyle \rightharpoonup} {\mathbf{#1}}&nbsp;}&nbsp;\)
+   \( \newcommand{\vecd}[1]{\overset{-\!-\!\rightharpoonup}{\vphantom{a}\smash&nbsp;{#1}}} \)
+   \(\newcommand{\id}{\mathrm{id}}\)
+   \( \newcommand{\Span}{\mathrm{span}}\)
+   \( \newcommand{\kernel}{\mathrm{null}\,}\)
+   \( \newcommand{\range}{\mathrm{range}\,}\)
+   \( \newcommand{\RealPart}{\mathrm{Re}}\)
+   \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+   \( \newcommand{\Argument}{\mathrm{Arg}}\)
+  \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \(\newcommand{\id}{\mathrm{id}}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \( \newcommand{\kernel}{\mathrm{null}\,}\)
+  \( \newcommand{\range}{\mathrm{range}\,}\)
+  \( \newcommand{\RealPart}{\mathrm{Re}}\)
+  \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+  \( \newcommand{\Argument}{\mathrm{Arg}}\)
+  \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)</div>
+
+
   </head>
 
   <body>
@@ -747,40 +779,27 @@ October
 </ol>
 </div></div>
 
+
 <h2 class="frame-sect sectcounter">&nbsp; Basic Techniques  </h2>
 <!--   \section{Introduction aux systèmes d'équations linéaires} -->
 <p>Let $A$ be an $n\times n$ matrix, that is, a square matrix. The determinant of $A$, denoted by $\det(A)$ or $|A|$ is a very important number which we will explore throughout this section.</p>
 
-<p>
 
+<p>
+  If \(A\) is a 2\(\times 2\) matrix, the determinant is given by the following formula.
 
 </p>
 
-<h2 class="frame-sect sectcounter">&nbsp; និយមន័យ និងលក្ខណៈបឋមៗ  </h2> <!-- \section{និយមន័យ និងលក្ខណៈបឋមៗ}  -->
+<!--h2 class="frame-sect sectcounter">&nbsp; និយមន័យ និងលក្ខណៈបឋមៗ  </h2> <!-- \section{និយមន័យ និងលក្ខណៈបឋមៗ}  -->
 
 <defn >
           <div class="definition"> </div>
  <div class="definitionb">
-    <p> យក $\vect{\E}$ ជាលំហវ៉ិចទ័រកំណត់លើកាយ $\mathbb{R}$ និងកំណត់ $\mathcal{E}$ ជាសំណុំទូទៅមួយ មិនទទេ។ គេថា $\mathcal{E}$ ជា <b>លំហអាហ្វីន</b>  ភ្ជាប់ទៅនឹង​លំហ​វ៉ិចទ័រ  $\vect{\E}$ (ឬ តាមទិសដៅ $\vect{\E}$) បើមានអនុវត្តន៍មួយ
-\[
-\begin{array}{rcl}
-\varphi:\; \mathcal{E}\times \mathcal{E} &\longrightarrow & \vect\E\\
-(A,B) &\longmapsto & \overrightarrow{AB}
-\end{array}
-\]
-ផ្ទៀងផ្ទាត់ស្វ័យសត្យ ដូចខាងក្រោម៖
-<ol  class="parenthnum">
-    <li>យកចំណុចទូទៅ $A\in \mathcal{E}$ នោះ អនុវត្តន៍មួយ
-            $\varphi_A:\; \mathcal{E} \longrightarrow  \vect\E$ ដែល $\forall M\in \mathcal E:  M \longmapsto \vect{AM}$
-        ជាអនុវត្តន៍មួយទល់មួយ។
-    </li>
-    <li>ទំនាក់ទំនងហ្សាល (Relation de Chasles)
-           $$\forall M, N, P\in \mathcal{E},\ \varphi(M,P) = \varphi(M,N) + \varphi(N,P)$$
-    </li>
-</ol>
+    <p>
+      យកម៉ាទ្រីសការេលំដាប់ $2\times 2$ ៖ \(A=\left[ \begin{array}{rr} a & b \\ c & d \end{array} \right] \)។ គេបាន \[\det \left( A\right) = ad-cb\nonumber \]
      </p>
 <p>
-លំហអាហ្វីន $\mathcal{E}$ ជាលំហមានវិមាត្ររាប់អស់ បើលំហវ៉ិចទ័រ $\vect{\E}$ ជាលំហមានវិមាត្ររាប់អស់។ ក្នុងករណីនេះ វិមាត្ររបស់ $\mathcal{E}$ ស្មើនឹងវិមាត្ររបស់លំហទិសដៅ។ <!--est égale à celle de sa direction. -->
+
 </p>
 </div>
 </defn>
