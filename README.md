@@ -1,1 +1,0 @@
-# hamkarim.github.io
