@@ -65,9 +65,8 @@ a.onmenu {
           font-weight:bold;
  }
       </style>
+
 <style type="text/css">
-
-
 .box-note {
   background-color: #eef1f1;
   border-left: 4px solid #5e6e6e;
@@ -492,16 +491,6 @@ a.onmenu {
 	}
 	.mt-content-container::before {
 		content: none;
-	}
-	section::before {
-		content: "";
-		display: block;
-		height: 4 rem;
-		/* pretend that the header is at least 8rem high so this header cannot fit near the end of page */
-		margin-bottom: -4 rem;
-		/* however, reduce the margin the same amount so that the following content can stay in its usual place */
-		page-break-inside: avoid;
-		break-inside: avoid;
 	}
 </style>
 
