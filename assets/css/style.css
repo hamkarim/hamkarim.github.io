@@ -22,7 +22,7 @@ html, body {  /*for html, body fonts*/
 } */
 
 .MathJax {
-    font-size: 1em !important;
+    font-size: 1.2em !important;
 }
 
 p{
@@ -648,7 +648,7 @@ ol.parenthalpha li {
 	/*display: table-row;*/
 	display: block;
 	margin-bottom: .5em;
-	margin-left: 3em;
+	margin-left: 2em;
 	/*font-size: 16px;
 	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
@@ -659,15 +659,15 @@ ol.parenthalpha li::before {
 	text-align: left;
 	padding-right: 0px;
 	width: 2em;
-	margin-left: -4em;
-	padding-left: 2em;
+	margin-left: -2em;
+	padding-left: 0em;
 	/*font-size: 16px;
 	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
 ol.parenthnum li {
 	display: block;
 	margin-bottom: .5em;
-	margin-left: 0em;
+	margin-left: 2em;
 	/*counter-increment: section;*/
 	/*display: table-row;
 	font-size: 16px; */
@@ -680,8 +680,8 @@ ol.parenthnum li::before {
 	content: "(" counter(item,khmer) ")";
 	/*counter-increment: item;*/
 	width:2em; /*
-	margin-left: -4em;
-	padding-left: 2em;
+	margin-left: -4em;  */
+	padding-left: 0em;
 	/*text-align: left;
 	font-size: 16px;
 	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
@@ -694,7 +694,7 @@ ol.parenthnum li::before {
 	content: "(" counter(item,khmer) ")";
 	/*counter-increment: item;*/
 	margin-left:-2em;
-	padding-left:1em;
+	padding-left:0em;
 	/*text-align: left;
 	font-size: 16px;
 	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */

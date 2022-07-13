@@ -24,6 +24,10 @@ window.MathJax = {
   svg: {
   fontCache: 'global'
     },
+  CommonHTML : {
+        /*scale: 90,*/
+        linebreaks: { automatic: true },
+  },
   startup: {
     ready: function () {
       MathJax.startup.defaultReady();
