@@ -1048,6 +1048,9 @@ Show hide answer in examples
 }
 
 .box-legend {
+  text-align: left !important;
+}
+.box-legend {
     margin: 0 0 3px;
     transform: translate(-11px,0);
     break-inside: avoid-page!important;
@@ -1061,6 +1064,55 @@ Show hide answer in examples
           padding:5px 12px!important;
           margin:0 0 3px;
           border-radius:1px}
+
+          .box-note {
+            background-color: #eef1f1;
+            border-left: 4px solid #5e6e6e;
+          }
+          .box-adapt,
+          .box-definition,
+          .box-emphasis,
+          .box-example,
+          .box-exercise,
+          .box-interactive,
+          .box-lemma,
+          .box-notation,
+          .box-note,
+          .box-objectives,
+          .box-procedure,
+          .box-proposition,
+          .box-query,
+          .box-structure,
+          .box-theorem,
+          .box-warning {
+           display:block;
+           border-radius:4px 8px 8px 4px;
+           -moz-border-radius:4px 8px 8px 4px;
+           -webkit-border-radius:4px 8px 8px 4px;
+           border-top:none;
+           border-bottom:none;
+           border-right:none;
+           padding:0 10px 1px;
+           margin-bottom:.8em!important;
+           margin-top:.8em!important;
+           orphans:3
+          }
+
+          .box-legend {
+           display:block;
+           overflow:hidden;
+           margin:0 0 3px;
+           transform:translate(-11px,0);
+           break-inside:avoid-page!important;
+           page-break-inside:avoid!important;
+           text-align:left!important
+          }
+          .box-note .box-legend>span {
+           background-color:#5e6e6e
+          }
+
+
+
 .box-legend>span{font-size:1rem!important}
 .box-legend p{font-size:16px!important}
 .box-example .box-legend>span,.box-exercise .box-legend>span,.box-objectives .box-legend>span,.box-query .box-legend>span{
