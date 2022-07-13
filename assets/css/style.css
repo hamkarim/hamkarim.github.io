@@ -653,7 +653,7 @@ ol.parenthalpha li::before {
 ol.parenthnum li {
 	display: block;
 	margin-bottom: .5em;
-	margin-left: 4em;
+	margin-left: 0em;
 	/*counter-increment: section;*/
 	/*display: table-row;
 	font-size: 16px; */
@@ -665,9 +665,22 @@ ol.parenthnum li::before {
 	display: inline-block;
 	content: "(" counter(item,khmer) ")";
 	/*counter-increment: item;*/
-	width: 2em;
+	width:2em; /*
 	margin-left: -4em;
 	padding-left: 2em;
+	/*text-align: left;
+	font-size: 16px;
+	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
+}
+.indentli li::before {
+	/*content: "(" counter(section) ") ";
+	display: table-cell;*
+	padding-right: 0px;
+	display: inline-block;
+	content: "(" counter(item,khmer) ")";
+	/*counter-increment: item;*/
+	margin-left:-2em;
+	padding-left:1em;
 	/*text-align: left;
 	font-size: 16px;
 	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
@@ -1058,3 +1071,16 @@ Show hide answer in examples
 .box-procedure .box-legend>span{background-color:#ffb429}
 .box-definition .box-legend>span,.box-lemma .box-legend>span,.box-notation .box-legend>span,.box-proposition .box-legend>span,.box-theorem .box-legend>span{
     background-color:#a67c11}
+
+a.fnote {
+        vertical-align: super;
+        font-size: smaller;
+        color: red;
+    }
+
+.center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      /*width: 50%; */
+    }
