@@ -65,6 +65,7 @@ a.onmenu {
           font-weight:bold;
  }
       </style>
+
 <style type="text/css">
 .box-note {
   background-color: #eef1f1;
@@ -326,6 +327,11 @@ a.onmenu {
 </style>
 
 <style type="text/css">/*<![CDATA[*/
+.Headertext{
+display:none;
+}/*]]>*/</style>
+
+<style type="text/css">/*<![CDATA[*/
 /* CSS pseudo-element styling https://fontawesome.com/how-to-use/on-the-web/advanced/css-pseudo-elements */
 
 /* general reset/setup styling for icons - needed on all */
@@ -523,6 +529,31 @@ function showhideFunction() {
  <script> document.createElement("example, defn"); </script>
  <!-- [endif]-->
 
+ <div class="Headertext">
+   \( \newcommand{\vecs}[1]{\overset { \scriptstyle \rightharpoonup} {\mathbf{#1}}&nbsp;}&nbsp;\)
+   \( \newcommand{\vecd}[1]{\overset{-\!-\!\rightharpoonup}{\vphantom{a}\smash&nbsp;{#1}}} \)
+   \(\newcommand{\id}{\mathrm{id}}\)
+   \( \newcommand{\Span}{\mathrm{span}}\)
+   \( \newcommand{\kernel}{\mathrm{null}\,}\)
+   \( \newcommand{\range}{\mathrm{range}\,}\)
+   \( \newcommand{\RealPart}{\mathrm{Re}}\)
+   \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+   \( \newcommand{\Argument}{\mathrm{Arg}}\)
+  \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \(\newcommand{\id}{\mathrm{id}}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \( \newcommand{\kernel}{\mathrm{null}\,}\)
+  \( \newcommand{\range}{\mathrm{range}\,}\)
+  \( \newcommand{\RealPart}{\mathrm{Re}}\)
+  \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+  \( \newcommand{\Argument}{\mathrm{Arg}}\)
+  \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)</div>
+
+
   </head>
 
   <body>
@@ -569,12 +600,14 @@ October
 </ol>
 </div></div>
 
+
 <h2 class="frame-sect sectcounter">&nbsp; Basic Techniques  </h2>
 <!--   \section{Introduction aux systèmes d'équations linéaires} -->
 <p>Let $A$ be an $n\times n$ matrix, that is, a square matrix. The determinant of $A$, denoted by $\det(A)$ or $|A|$ is a very important number which we will explore throughout this section.</p>
 
-<p>
 
+<p>
+  If \(A\) is a 2\(\times 2\) matrix, the determinant is given by the following formula.
 
 </p>
 
@@ -583,6 +616,7 @@ October
 <defn>
           <div class="definition"><span>(Sarrus's Rule for $2\times 2$ and $3\times 3$-Matrices)</span> </div>
  <div class="definitionb">
+<<<<<<< HEAD
    <p><!--style="text-indent: 0px"-->
      By <a href="https://planetmath.org/ruleofsarrus">Sarrus' rule</a><a class="fnote"  href="#fn1" id="ref1">(1)</a>, the determinant of $2\times 2$ and $3\times 3$ matrices are defined as following:
    <ol  class="parenthnum indentli">
@@ -602,6 +636,10 @@ can be computed by the following scheme
 \end{eqnarray*}
     </li>
 </ol>
+=======
+    <p>
+      យកម៉ាទ្រីសការេលំដាប់ $2\times 2$ ៖ \(A=\left[ \begin{array}{rr} a & b \\ c & d \end{array} \right] \)។ គេបាន \[\det \left( A\right) = ad-cb\nonumber \]
+>>>>>>> 994c0b0f6280dbd68429f616d184bd38c8235647
      </p>
 <p>
 
