@@ -8,20 +8,20 @@
 @import url("https://fonts.googleapis.com/css?family=Open Sans|Didact Gothic|Siemreap|Bayon|Battambang|");
 html, body {  /*for html, body fonts*/
           font-family: 'Ang DaunKeo','Siemreap', 'Century Gothic', 'Didact Gothic';
-          -ms-text-size-adjust:100%;
-          -webkit-text-size-adjust:100%;
+          -ms-text-size-adjust:120%;
+          -webkit-text-size-adjust:120%;
           padding:0;
           margin:0;
     /*font-family: 'Khmer OS Battambang', 'sans-serif';/*"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
-          font-size:16px;
-          line-height:2.0;
-          color:#606c71
+          /*font-size:17px;
+          line-height:1.6;
+        /*  color:darkblue/*#606c71 */
 }
 p{
 	text-indent:30px;
 	/*font-family:"Noto Sans Khmer","Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
 	/*font-size:16px; /*,"Noto Serif Khmer","Khmer OS Content"*/
-	font-weight:normal;
+	  font-weight:normal;
     padding:0;
     margin:0;
 	/*line-height:200%; *
@@ -293,7 +293,13 @@ body {counter-reset:section;}
 .main-content pre code,.main-content pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}
 .main-content pre code:before,.main-content pre code:after,.main-content pre tt:before,.main-content pre tt:after{content:normal}
 .main-content ul,.main-content ol{margin-top:0;margin:auto;width:100%}
-.main-content blockquote{padding:0 1rem;margin-left:0;margin-top:10px;margin-bottom:10px;color:#819198;border-left:0.3rem solid #dce6f0}
+.main-content blockquote{
+          font-size: 15px;
+          padding:0 1rem;
+          margin-left:0;margin-top:10px;
+          margin-bottom:10px;
+          color:#819198;
+          border-left:0.3rem solid #dce6f0}
 .main-content blockquote>:first-child{margin-top:0}
 .main-content blockquote>:last-child{margin-bottom:0}
 .main-content thead{text-align:left; align-content:left}
@@ -444,8 +450,8 @@ div.definitionb{ /* To define border and style around text*/
    border-top: 0.1rem solid #0E81C1;
    border-bottom: 0.2rem solid #0E81C1;
    border-style: dotted;
-   /* text-align: left; * border-left-width:;*/
-   font-size: 16px;
+   /* text-align: left; * border-left-width:;*
+   font-size: 16px;*/
    /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
    /*text-indent: 10px; */
 }
@@ -455,7 +461,7 @@ div.definitionb{ /* To define border and style around text*/
           margin-left:0;
           margin-top:0;
           margin-bottom:0px;
-          font-size: 16px;
+/*          font-size: 17px;*/
 }
 .main-content defn>:first-child{margin-top:0}
 .main-content defn>:last-child{margin-bottom:0}
@@ -464,7 +470,7 @@ div.definitionb{ /* To define border and style around text*/
 section{
   counter-reset: counterdef;
 }
-defn .definition{
+div.definition{
    display:inline-block;
    width:100%;
    background:linear-gradient(to right, red 1%, red 0%, white 90%, white 100%);
@@ -476,7 +482,7 @@ defn .definition{
    /* font-family: 'Bangers', cursive; */
    font-family: 'Kaushan Script', serif;
  }
-defn .definition:before
+div.definition:before
      {
          counter-increment:counterdef;
          content: "និយមន័យ " counter(section,khmer)"." counter(counterdef,khmer) "  ";
@@ -496,10 +502,10 @@ ul{
 
 ul li{
     /* margin-bottom:1em;*/
-    font-size:16px;
+    font-size:17px;
     /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
-center{font-size:15px}
+center{font-size:17px}
 
 ul.leftborder{
    color: darkred;
@@ -518,7 +524,7 @@ ul.leftborder{
     border-bottom:0;
     border-style: dotted;
     /* text-align: left; * border-left-width:;*/
-    font-size: 16px;
+    font-size: 17px;
    /*  font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
     /*text-indent: 10px; */
 }
@@ -536,7 +542,7 @@ ul.leftborder{
     border:  0.1rem solid #0E81C1;
     border-style: dotted;
     /* text-align: left; * border-left-width:;*/
-    font-size: 16px;
+    font-size: 17px;
    /*  font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
     /*text-indent: 10px; */
 }
@@ -556,7 +562,7 @@ ul.leftborder{
     border:  0.1rem solid #0E81C1;
     border-style: dotted;
     /* text-align: left; * border-left-width:;*/
-    font-size: 16px;
+    font-size: 17px;
    /*  font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
     /*text-indent: 10px; */
 }
@@ -578,7 +584,7 @@ ul.leftborder{
     border-bottom:0;
     border-style: dotted;
     /* text-align: left; * border-left-width:;*/
-    font-size: 16px;
+    font-size: 17px;
    /*  font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
     /*text-indent: 10px; */
 }
@@ -590,12 +596,12 @@ ol{
 	padding-left: 1em;
 	margin: 0;
 	text-align: left;
-                          width:100%;
+  width:100%;
 	/* font-size: 16px; */
 }
 ol > li{
     /* margin-bottom:1em;*/
-    font-size:16px;
+    font-size:17px;
     padding-left:0.4em;
     margin: 0;
     counter-increment: item;
@@ -774,7 +780,7 @@ div.divfigure {
     border-bottom:0;
     border-style: dotted;
     text-align: left;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 /*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
