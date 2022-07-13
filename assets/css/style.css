@@ -17,6 +17,14 @@ html, body {  /*for html, body fonts*/
           line-height:1.6;
         /*  color:darkblue/*#606c71 */
 }
+/*.MathJax_CHTML {
+    font-size: 17px !important;
+} */
+
+.MathJax {
+    font-size: 1.3em !important;
+}
+
 p{
 	text-indent:30px;
 	/*font-family:"Noto Sans Khmer","Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
