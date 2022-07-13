@@ -679,9 +679,9 @@ ol.parenthnum li::before {
 	display: inline-block;
 	content: "(" counter(item,khmer) ")";
 	/*counter-increment: item;*/
-	width:2em; /*
-	margin-left: -4em;  */
-	padding-left: 0em;
+	width:2em; /**/
+	margin-left: -2em;
+	padding-left: -1em;
 	/*text-align: left;
 	font-size: 16px;
 	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
