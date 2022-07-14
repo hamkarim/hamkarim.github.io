@@ -19,7 +19,6 @@ window.MathJax = {
     fontbold: ["{\\bf{\\text{ #1 }}}",1],
     Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
     vect: ["{\\overrightarrow{#1}}",1],
-    cof: ["{\\mathbf{#1}}",1],
     }
   },
   svg: {

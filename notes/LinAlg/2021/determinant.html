@@ -433,6 +433,7 @@ function showhideFunction() {
   \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
   \( \newcommand{\Argument}{\mathrm{Arg}}\)
   \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\cof}[1]{\mathbf{#1}}\)
   \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
   \( \newcommand{\Span}{\mathrm{span}}\)</div>
 
@@ -658,6 +659,37 @@ Suppose \(A\) is an \(n\times n\) matrix. The \(ij^{th}\) cofactor, denoted by \
             </div>
           </div>
     </example>
+
+<p>As mentioned above, we will always come up with the same value for \(\det \left(A\right)\) regardless of the row or column we choose to expand along. You should try to compute the above determinant by expanding along other rows and columns. This is a good way to check your work, because you should come up with the same number each time!
+
+We present this idea formally in the following theorem.</p>
+
+<div class="box-definition"><div mt-section-origin="" class="mt-section"><span id="Theorem_.5C(.5CPageIndex.7B1.7D.5C):_The_Determinant_is_Well_Defined"></span><h5 class="box-legend editable"><span class="lt-icon-default">Theorem : (The Determinant is Well Defined)<a name="thm%3Awelldefineddeterminant"></a></span></h5>
+
+<p class="">Expanding the <span class="math inline">\(n\times n\)</span> matrix along any row or column always gives the same answer, which is the determinant, meaning that </p>
+\begin{eqnarray*}
+|A| &=&
+\begin{vmatrix}a_{11}&a_{12}&\cdots &a_{1n}\\a_{21}&a_{22}&\cdots &a_{2n}\\\vdots &\vdots &\ddots &\vdots \\a_{n1}&a_{n2}&\cdots &a_{nn}\end{vmatrix} \\
+&= &\sum_{k=1}^{n} a_{ik} \cof (A)_{ik}, \quad i=1,\ldots,n\\
+\end{eqnarray*}
+</div></div>
+
+<p>For example, the \(ij^{th}\) minor of a \(4 \times 4\) matrix is the determinant of the \(3 \times 3\) matrix you obtain when you delete the \(i^{th}\) row and the \(j^{th}\) column. Just as with the \(3 \times 3\) determinant, we can compute the determinant of a \(4 \times 4\) matrix by Laplace Expansion, along any row or column
+
+Consider the following example.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
