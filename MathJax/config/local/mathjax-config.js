@@ -39,6 +39,8 @@ window.MathJax = {
 };
 window.MathJaxConfig = {
   TeX: {
+     inlineMath: [['$', '$'], ['\\(', '\\)']],
+     displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
      macros: {
         PageIndex: ["{"+front+" #1}",1],
         test: ["{"+front+" #1}",1]
