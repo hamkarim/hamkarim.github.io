@@ -41,3 +41,18 @@ window.MathJax = {
     }
   }
 };
+window.MathJaxConfig = {
+  TeX: {
+     macros: {
+        PageIndex: ["{"+front+" #1}",1],
+        test: ["{"+front+" #1}",1]
+     },
+     Macros: {
+        PageIndex: ["{"+front+" #1}",1],
+        test: ["{"+front+" #1}",1]
+     },
+     SVG: {
+        linebreaks: { automatic: true }
+     }
+  }
+};
