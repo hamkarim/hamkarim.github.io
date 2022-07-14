@@ -22,10 +22,6 @@ window.MathJax = {
     PageIndex: ["{"+front+" #1}",1],
     test: ["{"+front+" #1}",1]
     },
-    Macros: {
-       PageIndex: ["{"+front+" #1}",1],
-       test: ["{"+front+" #1}",1]
-    },
   },
   svg: {
   fontCache: 'global'
