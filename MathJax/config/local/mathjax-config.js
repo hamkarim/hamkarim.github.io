@@ -19,8 +19,6 @@ window.MathJax = {
     fontbold: ["{\\bf{\\text{ #1 }}}",1],
     Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
     vect: ["{\\overrightarrow{#1}}",1],
-    PageIndex: ["{"+front+" #1}",1],
-    test: ["{"+front+" #1}",1]
     },
   },
   svg: {
@@ -37,7 +35,7 @@ window.MathJax = {
     }
   }
 };
-window.MathJaxConfig = {
+/* MathJaxConfig = {
   TeX: {
      macros: {
         PageIndex: ["{"+front+" #1}",1],
@@ -51,4 +49,4 @@ window.MathJaxConfig = {
         linebreaks: { automatic: true }
      }
   }
-};
+}; */
