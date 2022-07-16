@@ -1,7 +1,10 @@
 window.MathJax = {
+  loader: {load: ['[tex]/textmacros']},
   tex: {
     inlineMath: [['$', '$'], ['\\(', '\\)']],
     displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    packages: {'[+]': ['textmacros']},
+    extensions: ["AMSmath.js", "AMSsymbols.js"],
     macros : {
     RR: "{\\bf R}",
     E: "{\\bf E}",
@@ -28,12 +31,12 @@ window.MathJax = {
         /*scale: 90,*/
         linebreaks: { automatic: true },
   },
-  startup: {
+  /*startup: {
     ready: function () {
       MathJax.startup.defaultReady();
       document.getElementById('render').disabled = false;
     }
-  }
+  }*/
 };
 /* MathJaxConfig = {
   TeX: {

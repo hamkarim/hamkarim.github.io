@@ -25,15 +25,25 @@ html, body {  /*for html, body fonts*/
     font-size: 1.1em !important;
 }
 
-p{
+/*p{
 	text-indent:30px;
 	/*font-family:"Noto Sans Khmer","Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
-	/*font-size:16px; /*,"Noto Serif Khmer","Khmer OS Content"*/
+	/*font-size:16px; /*,"Noto Serif Khmer","Khmer OS Content"*
 	  font-weight:normal;
     padding:0;
     margin:0;
 	/*line-height:200%; *
-	margin:0 0 14px */
+	margin:0 0 14px *
+}*/
+
+p {
+  /*text-align: justify;*/
+  orphans: 2;
+  widows: 2;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
 article,aside,details,footer,header,hgroup,main,menu,section,summary{display:block}
@@ -608,8 +618,9 @@ ul.leftborder{
 ol{
 	/*table-cell;*/
 	counter-reset: item;
-	padding-left: 1em;
-	margin: 0;
+	padding-left: 32px;
+	/*margin: 0;*/
+  margin-left: 0;
 	text-align: left;
   width:100%;
 	/* font-size: 16px; */
@@ -617,7 +628,7 @@ ol{
 ol > li{
     /* margin-bottom:1em;*/
     font-size:17px;
-    padding-left:0.4em;
+    padding-left:10px;
     margin: 0;
     counter-increment: item;
     margin-bottom: 0.6em;
@@ -674,7 +685,7 @@ ol.parenthalpha li::before {
 ol.parenthnum li {
 	display: block;
 	margin-bottom: .5em;
-	margin-left: 2em;
+	margin-left: 20px;
 	/*counter-increment: section;*/
 	/*display: table-row;
 	font-size: 16px; */
@@ -682,16 +693,26 @@ ol.parenthnum li {
 ol.parenthnum li::before {
 	/*content: "(" counter(section) ") ";
 	display: table-cell;*/
+  list-style-position: inside;
 	padding-right: 0px;
 	display: inline-block;
 	content: "(" counter(item,khmer) ")";
 	/*counter-increment: item;*/
 	width:2em; /**/
-	margin-left: -2em;
-	padding-left: -1em;
+  margin-left: -37px;
+	padding-left: 0px;
 	/*text-align: left;
 	font-size: 16px;
 	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
+}
+.indentli li {
+  padding-left: 10px;
+	/*display: block;*/
+	margin-bottom: .5em;
+	margin-left: 5px;
+	/*counter-increment: section;*/
+	/*display: table-row;
+	font-size: 16px; */
 }
 .indentli li::before {
 	/*content: "(" counter(section) ") ";
@@ -700,7 +721,7 @@ ol.parenthnum li::before {
 	display: inline-block;
 	content: "(" counter(item,khmer) ")";
 	/*counter-increment: item;*/
-	margin-left:-2em;
+	margin-left:0em;
 	padding-left:0em;
 	/*text-align: left;
 	font-size: 16px;

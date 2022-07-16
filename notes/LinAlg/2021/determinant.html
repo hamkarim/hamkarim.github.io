@@ -60,6 +60,9 @@ ul.liststyle1 {
 ul.liststyle2 {
         list-style-type: hebrew;
       }
+ol.liststyle1 {
+        list-style-type: lower-latin;
+}
 a.onmenu {
           font-family:'Noto Serif Khmer','CMU Serif';
           font-weight:bold;
@@ -370,50 +373,13 @@ function showhideFunction() {
    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
 </script-->
 
-<script src="https://hamkarim.github.io/MathJax/config/local/mathjax-config.js" defer></script>
+<!--script src="https://hamkarim.github.io/MathJax/config/local/mathjax-config.js" defer></script-->
+<script type="text/javascript" src="../../../MathJax/config/local/mathjax-config.js" defer></script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script type="text/javascript" id="MathJax-script" defer
           src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml-full.min.js">
   </script>
-
-    <!--script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js,https://hamkarim.github.io/MathJax/config/local/local.js"></script-->
-
-
-<!--script type="text/javascript" config=TeX-MML-AM_CHTML
-   src="">
-</script-->
-
-<!--
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">  -->
-
-<!-- The loading of KaTeX is deferred to speed up page rendering
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>  -->
-
-    <!-- To automatically render math in text elements, include the auto-render extension:
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
-        onload="renderMathInElement(document.body);">
-</script>
-<script >
-  document.addEventListener("DOMContentLoaded", function()
-      {
-        renderMathInElement(document.body,
-            {
-                delimiters: [
-                    { left: "\\begin{equation}", right: "\\end{equation}", display: true },
-                    { left: "$$", right: "$$", display: true },
-                    { left: "\\[", right: "\\]", display: true },
-                    { left: "\\(", right: "\\)", display: false },
-                    { left: "$", right: "$", display: false }
-                ]
-            });
-        });
-</script> -->
-
-<!-- To get it to work in old versions of Internet Explorer, you need to append this script to the head (Important if you need it to work in older versions of IE!): -->
- <!--[if lt IE 9] -->
- <script> document.createElement("example, defn"); </script>
- <!-- [endif]-->
 
  <div class="Headertext">
    \( \newcommand{\vecs}[1]{\overset { \scriptstyle \rightharpoonup} {\mathbf{#1}}&nbsp;}&nbsp;\)
@@ -437,6 +403,7 @@ function showhideFunction() {
   \( \newcommand{\Argument}{\mathrm{Arg}}\)
   \( \newcommand{\norm}[1]{\| #1 \|}\)
   \( \newcommand{\cof}{\mathbf{cof}}\)
+    \( \newcommand{\minor}{\mathbf{minor}}\)
   \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
   \( \newcommand{\Span}{\mathrm{span}}\)</div>
 
@@ -557,7 +524,7 @@ can be computed by the following scheme
 <p class="">We begin with the following definition.</p>
 
 <defn>
-          <div class="definition"><span>The <span class="math inline">\(ij^{th}\)</span> Minor of a </span>Matrix <a name="def%3Aijthminor"></a></span> </div>
+          <div class="definition">(The \(ij^{th}\) Minor of a Matrix)</div>
  <div class="definitionb">
    <p>
     Let \(A\) be a \(3\times 3\) matrix. The \(ij^{th}\) minor of \(A\), denoted as \(minor\left( A\right) _{ij},\) is the determinant of the \(2\times 2\) matrix which results from deleting the \(i^{th}\) row and the \(j^{th}\) column of \(A\).
@@ -595,7 +562,7 @@ Let \[A = \left[ \begin{array}{rrr} 1 & 2 & 3 \\ 4 & 3 & 2 \\ 3 & 2 & 1 \end{arr
 <div class="definition">(The \(ij^{th}\) Cofactor of a Matrix) </div>
  <div class="definitionb">
 <p>
-Suppose \(A\) is an \(n\times n\) matrix. The \(ij^{th}\) cofactor, denoted by \(\mathrm{cof}\left( A\right) _{ij}\) is defined to be \[\mathrm{cof}\left( A\right) _{ij} = \left( -1\right) ^{i+j} minor\left(A\right)_{ij}\nonumber \] </p>
+Suppose \(A\) is an \(n\times n\) matrix. The \(ij^{th}\) cofactor, denoted by \(\mathrm{cof}\left( A\right) _{ij}\) is defined to be \[\cof\left( A\right) _{ij} = \left( -1\right) ^{i+j} \minor\left(A\right)_{ij}\nonumber \] </p>
 </div>
  </defn>
 
@@ -607,7 +574,7 @@ Suppose \(A\) is an \(n\times n\) matrix. The \(ij^{th}\) cofactor, denoted by \
     <example>
     (Finding Cofactors of a Matrix)
 
-      <p class="">Find <span class="math inline">
+      <p class="">
     Consider the matrix \[A=\left[ \begin{array}{rrr} 1 & 2 & 3 \\ 4 & 3 & 2 \\ 3 & 2 & 1 \end{array} \right]\nonumber \] Find \(\mathrm{cof}\left( A\right) _{12}\) and \(\mathrm{cof}\left( A\right) _{23}\).
       </p>
       <div class="example-content">
@@ -625,7 +592,7 @@ Suppose \(A\) is an \(n\times n\) matrix. The \(ij^{th}\) cofactor, denoted by \
     </example>
 
     <defn>
-              <div class="definition"><span>(The Determinant of a Three By Three Matrix)</span> </div>
+              <div class="definition">(The Determinant of a Three By Three Matrix) </div>
      <div class="definitionb">
        <p>
     Let \(A\) be a \(3\times 3\) matrix. Then, \(\det \left(A\right)\) is calculated by picking a row (or column) and taking the product of each entry in that row (column) with its cofactor and adding these products together.
@@ -644,7 +611,7 @@ Suppose \(A\) is an \(n\times n\) matrix. The \(ij^{th}\) cofactor, denoted by \
     <example>
     (Finding the Determinant of a Three by Three Matrix )
 
-      <p class="">Find <span class="math inline">
+      <p class="">
     Let \[A=\left[ \begin{array}{rrr} 1 & 2 & 3 \\ 4 & 3 & 2 \\ 3 & 2 & 1 \end{array} \right]\nonumber \] Find \(\det\left(A\right)\) using the method of Laplace Expansion.
       </p>
       <div class="example-content">
@@ -667,7 +634,9 @@ Suppose \(A\) is an \(n\times n\) matrix. The \(ij^{th}\) cofactor, denoted by \
 
 We present this idea formally in the following theorem.</p>
 
-<div class="box-definition"><div mt-section-origin="" class="mt-section"><span id="Theorem_.5C(.5CPageIndex.7B1.7D.5C):_The_Determinant_is_Well_Defined"></span><h5 class="box-legend editable"><span class="lt-icon-default">Theorem : (The Determinant is Well Defined)<a name="thm%3Awelldefineddeterminant"></a></span></h5>
+<div class="box-definition">
+  <div mt-section-origin="" class="mt-section"><span id=""></span>
+    <h5 class="box-legend editable"><span class="lt-icon-default">Theorem : (The Determinant is Well Defined)<a name=""></a></span></h5>
 
 <p class="">Expanding the <span class="math inline">\(n\times n\)</span> matrix along any row or column always gives the same answer, which is the determinant, meaning that </p>
 \begin{eqnarray*}
@@ -775,14 +744,131 @@ Without using Theorem \(\PageIndex{2}\), you could use Laplace Expansion. We wil
 </example>
 
 
+<h2 class="frame-sect sectcounter">&nbsp; Properties of Determinants </h2>
+<!--   \section{Introduction aux systèmes d'équations linéaires} -->
+<p>There are many important properties of determinants. Since many of these properties involve the row operations discussed in Chapter 1, we recall that definition now.</p>
+
+<defn >
+          <div class="definition">(Row Operations)</div>
+ <div class="definitionb">
+   <p>
+     The row operations consist of the following
+     <ol>
+     <li>Switch two rows \((R_i \longleftrightarrow R_j)\)
+     </li>
+     <li>Multiply a row by a nonzero number \((\lambda\cdot R_i^{\text{old}} \longrightarrow R_i^{\text{new}})\)
+    </li>
+     <li>
+     Replace a row by a multiple of another row added to itself \((R_i^{\text{old}}+\lambda\cdot R_j^{\text{old}} \longrightarrow R_i^{\text{new}})\)
+   </li>
+     </ol>
+   </p>
+
+ </div>
+</defn>
+
+<p>
+  We will now consider the effect of row operations on the determinant of a matrix. In future sections, we will see that using the following properties can greatly assist in finding determinants. This section will use the theorems as motivation to provide various examples of the usefulness of the properties.
+</p>
 
 
 
+<div class="box-definition">
+  <div mt-section-origin="" class="mt-section"><span id=""></span>
+    <h5 class="box-legend editable"><span class="lt-icon-default">Properties I: (the effect of row operations) </span></h5>
+
+<p class="">
+  <ol class="parenthnum">
+<li><b>Switching Rows:</b> Let  $A$  be an  $n\times n$  matrix and let  $B$  be a matrix which results from switching two rows of $ A$.  Then $\det(B)=−det(A)$.</li>
+
+<li><b>Multiplying a Row by a Scalar:</b>
+Let  $A$  be an  $n\times n$  matrix and let  $B$  be a matrix which results from multiplying some row of  $A$  by a scalar $k$. Then  $\det(B)=k\cdot\det(A)$.</li>
+
+<li><b>Scalar Multiplication:</b>
+Let \(A\) and \(B\) be \(n \times n\) matrices and \(k\) a scalar, such that \(B = kA\). Then \(\det(B) = k^n \det(A)\).</li>
+
+<li><b>Adding a Multiple of a Row to Another Row:</b>
+Let \(A\) be an \(n\times n\) matrix and let \(B\) be a matrix which results from adding a multiple of a row to another row. Then \(\det \left( A\right) =\det \left( B \right)\).</li>
+
+  </ol>
+
+</p>
+
+</div></div>
+
+<p>Until now, our focus has primarily been on row operations. However, we can carry out the same operations with columns, rather than rows. The three operations outlined in Definition \(\PageIndex{1}\) can be done with columns instead of rows. In this case, in Theorems \(\PageIndex{1}\), \(\PageIndex{2}\), and \(\PageIndex{4}\) you can replace the word, "row" with the word "column".
+
+</p>
+
+<p>There are several other major properties of determinants which do not involve row (or column) operations. The first is the determinant of a product of matrices.</p>
 
 
+<div class="box-definition">
+  <div mt-section-origin="" class="mt-section"><span id=""></span>
+    <h5 class="box-legend editable"><span class="lt-icon-default">Properties II: (major properties of determinants) </span></h5>
+
+<p class="">
+<ol class="parenthnum">
+<li><b>Determinant of a Product:</b>
+Let \(A\) and \(B\) be two \(n\times n\) matrices. Then \[\det \left( AB\right) =\det \left( A\right) \det \left( B\right)\nonumber \]</li>
+
+<li>
+  <b>Determinant of the Transpose:</b>
+Let \(A\) be a matrix where \(A^T\) is the transpose of \(A\). Then, \[\det\left(A^T\right) = \det \left( A \right)\nonumber \]
+</li>
+
+  <li>
+    <b>Determinant of the Inverse:</b>
+Let \(A\) be an \(n \times n\) matrix. Then \(A\) is invertible if and only if \(\det(A) \neq 0\). If this is true, it follows that \[\det(A^{-1}) = \frac{1}{\det(A)}\nonumber \]
+  </li>
+
+  <li></li>
+</ol>
+</p>
+
+</div></div>
+
+<h3 class="frame-sect sectcounter">&nbsp; Properties of Determinants: Some Important Proofs </h3>
+<!--   \section{Introduction aux systèmes d'équations linéaires} -->
+
+<p>This section includes some important proofs on determinants and cofactors.</p>
+
+<p>First we recall the definition of a determinant. If \(A=\left[ a_{ij} \right]\) is an \(n\times n\) matrix, then \(\det A\) is defined by computing the expansion along the first row:
+  \[\label{E1} \det A=\sum_{i=1}^n a_{1,i} \cof(A)_{1,i}.\]
+  If \(n=1\) then \(\det A=a_{1,1}\).</p>
+
+<p>The following example is straightforward and strongly recommended as a means for getting used to definitions.</p>
 
 
+<div class="box-theorem">
+  <div mt-section-origin="" class="mt-section"><span id=""></span>
+    <h5 class="box-legend editable"><span class="lt-icon-default">Lemma: (major properties of determinants) </span></h5>
 
+<p class="">
+<ol class="indentli">
+<li>If \(A\) is an \(n\times n\) matrix such that one of its rows consists of zeros, then \(\det A=0\).</li>
+
+<li>
+  Assume \(A\), \(B\) and \(C\) are \(n\times n\) matrices that for some \(1\leq i\leq n\) satisfy the following.
+  <ol style="list-style-type:lower-roman" class="indentli">
+    <li>  \(j\)th rows of all three matrices are identical, for \(j\neq i\).
+      </li>
+      <li>Each entry in the \(j\)th row of \(A\) is the sum of the corresponding entries in \(j\)th rows of \(B\) and \(C\).
+    </li>
+      Then \(\det A=\det B+\det C\).
+  </ol>
+
+</li>
+
+  <li>
+
+  </li>
+
+  <li></li>
+</ol>
+</p>
+
+</div></div>
 
 
 
@@ -834,52 +920,6 @@ Without using Theorem \(\PageIndex{2}\), you could use Laplace Expansion. We wil
   <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
 </footer>
 
-
-<script type="text/x-mathjax-config">/*<![CDATA[*/
-var front = "auto";
-if(front=="auto"){
-    front = "3.1: Basic Techniques";
-     if(front.includes(":")){
-         front = front.split(":")[0];
-         if(front.includes(".")){
-             front = front.split(".");
-             front = front.map((int)=>int.includes("0")?parseInt(int,10):int).join(".");
-         }
-         front+=".";
-     }
-     else {
-     front = "";
-     }
-}
-front = front.replace(/_/g," ");
-MathJaxConfig = {
-  TeX: {
-     equationNumbers: {
-        autoNumber: "all",
-        formatNumber: function (n) {
-            if(false){
-                return front + (Number(n)+false);
-            }
-            else{return front + n;
-            }
-        }
-     },
-     macros: {
-        PageIndex: ["{"+front+" #1}",1],
-        test: ["{"+front+" #1}",1]
-     },
-     Macros: {
-        PageIndex: ["{"+front+" #1}",1],
-        test: ["{"+front+" #1}",1]
-     },
-     SVG: {
-        linebreaks: { automatic: true }
-     }
-  }
-};
-MathJax.Hub.Config(MathJaxConfig);
-MathJax.Hub.Register.StartupHook("End", ()=>{if(activateBeeLine)activateBeeLine()});
-/*]]>*/</script>
 
 
 </section>
