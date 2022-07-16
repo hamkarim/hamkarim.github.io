@@ -44,7 +44,7 @@
 
 
     <meta charset="UTF-8">
-    <title>determinant | ដេទែរមីណង់</title>
+    <title>Functions | អនុគមន៍</title>
     <meta name="description" content="Math, Programmer, Music">
 
     <!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
@@ -447,7 +447,7 @@ function showhideFunction() {
 
 <section class="main-content">
 
-  <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">ជំពូក៥ :&nbsp; ដេទែរមីណង់ </h1>
+  <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">ជំពូក១ :&nbsp; អនុគមន៍ </h1>
 <p style="font-style: italic; font-weight:bold; font-family: Arial; opacity: 0.5;">
 October
 2nd, 2020
@@ -515,12 +515,12 @@ There are various equivalent ways to define the determinant of a square matrix A
 
 <h3>Functions</h3>
 
-<p>
+<p class="parindent">
   Given two sets \(A\) and \(B\) a set with elements that are ordered pairs \((x,y)\) where \(x\) is an element of \(A\) and \(y\) is an element of \(B,\) is a relation from \(A\) to \(B\). A relation from \(A\) to \(B\) defines a relationship between those two sets. A function is a special type of relation in which each element of the first set is related to exactly one element of the second set. The element of the first set is called the input; the element of the second set is called the output. Functions are used all the time in mathematics to describe relationships between two sets. For any function, when we know the input, the output is determined, so we say that the output is a function of the input. For example, the area of a square is determined by its side length, so we say that the area (the output) is a function of its side length (the input). The velocity of a ball thrown in the air can be described as a function of the amount of time the ball is in the air. The cost of mailing a package is a function of the weight of the package. Since functions have so many uses, it is important to have precise definitions and terminology to study them.
 </p>
 
 <figure>
-  <p> <img class="" width="30%" alt="Function" src="https://math.libretexts.org/@api/deki/files/1655/CNX_Calc_Figure_01_01_001.jpeg?revision=1&size=bestfit&width=325&height=110">
+  <p> <img class="" width="35%" alt="Function" src="https://math.libretexts.org/@api/deki/files/1655/CNX_Calc_Figure_01_01_001.jpeg">
   </p>
   <p>Figure \(\PageIndex{1}\): A function can be visualized as an input/output device</p>
 </figure>
@@ -533,13 +533,186 @@ There are various equivalent ways to define the determinant of a square matrix A
  </div>
 </defn>
 
+<figure>
+  <img class="" width="30%" alt="Function" src="#picture">
+
+  <p>Figure \(\PageIndex{2}\): A function maps every element in the domain to exactly one element in the range. Although each input can be sent to only one output, two different inputs can be sent to the same output.</p>
+</figure>
+
+<p>
+  For example, consider the function \(f: \mathbb R\to \mathbb R\), where $f(x)=x^2$. Then, the input \(x=3\) is assigned to the output \(3^2=9\).
+</p>
+
+<p>
+  Since every nonnegative real number has a real-value square root, every nonnegative number is an element of the range of this function. Since there is no real number with a square that is negative, the negative real numbers are not elements of the range. We conclude that the range is the set of nonnegative real numbers.
+</p>
+
+
+<p>
+  For a general function \(f\) with domain \(D\), we often use \(x\) to denote the input and \(y\) to denote the output associated with \(x\). When doing so, we refer to \(x\) as the independent variable and \(y\) as the dependent variable, because it depends on \(x\). Using function notation, we write \(y=f(x)\), and we read this equation as “\(y\) equals \(f\) of \(x.”\) For the squaring function described earlier, we write \(f(x)=x^2\).
+</p>
+
+<p>
+The concept of a function can be visualized using Figures \(\PageIndex{1}\) - \(\PageIndex{3}\).
+</p>
+
+<figure>
+  <img class="" width="35%" alt="Function" src="https://math.libretexts.org/@api/deki/files/1657/CNX_Calc_Figure_01_01_003.jpeg?revision=1&size=bestfit&width=322&height=252">
+
+  <p> <b>Figure:</b>
+    \(\PageIndex{3}\): In this case, a graph of a function \(f\) has a domain of \(\{1,2,3\}\) and a range of \(\{1,2\}\). The independent variable is \(x\) and the dependent variable is \(y\).
+  </p>
+</figure>
+
+<p>
+  We can also visualize a function by plotting points \((x,y)\) in the coordinate plane where \(y=f(x)\). The graph of a function is the set of all these points. For example, consider the function \(f\), where the domain is the set \(D=\{1,2,3\}\) and the rule is \(f(x)=3−x\). In Figure \(\PageIndex{4}\), we plot a graph of this function.
+</p>
+
+  <!--An image of a graph. The y axis runs from 0 to 5. The x axis runs from 0 to 5. There are three points on the graph at (1, 2), (2, 1), and (3, 0). There is text along the y axis that reads “range = {0,1,2}” and text along the x axis that reads “domain = {1,2,3}”.-->
+
+  <figure>
+    <img class="" width="30%" alt="Function" src="#picture">
+
+    <p> <b>Figure:</b>
+      \(\PageIndex{4}\): Here we see a graph of the function \(f\) with domain \(\{1,2,3\}\) and rule \(f(x)=3−x\). The graph consists of the points \((x,f(x))\) for all \(x\) in the domain.
+    </p>
+  </figure>
+
+  <p>
+    Every function has a domain. However, sometimes a function is described by an equation, as in \(f(x)=x^2\), with no specific domain given. In this case, the domain is taken to be the set of all real numbers \(x\) for which \(f(x)\) is a real number. For example, since any real number can be squared, if no other domain is specified, we consider the domain of \(f(x)=x^2\) to be the set of all real numbers. On the other hand, the square root function \(f(x)=\sqrt{x}\) only gives a real output if \(x\) is nonnegative. Therefore, the domain of the function \(f(x)=\sqrt{x}\) is the set of nonnegative real numbers, sometimes called the natural domain.
+  </p>
+
+<p>
+  For the functions \(f(x)=x^2\) and \(f(x)=\sqrt{x}\), the domains are sets with an infinite number of elements. Clearly we cannot list all these elements. When describing a set with an infinite number of elements, it is often helpful to use set-builder or interval notation. When using set-builder notation to describe a subset of all real numbers, denoted \(R\), we write
+
+  \[\{x\,|\,\; x \text{ has some property}\}\]
+
+  We read this as the set of real numbers \(x\) such that \(x\) has some property. For example, if we were interested in the set of real numbers that are greater than one but less than five, we could denote this set using set-builder notation by writing
+
+  \[\{x\,|\,\; 1\lt x \lt 5\} \]
+
+  A set such as this, which contains all numbers greater than \(a\) and less than \(b\) can also be denoted using the interval notation \((a,b)\). Therefore,
+
+  \[(1,5)=\{x\,|\,1 \lt x \lt 5\}\]
+
+  The numbers \(1\) and \(5\) are called the endpoints of this set. If we want to consider the set that includes the endpoints, we would denote this set by writing
+
+  \[[1,5]=\{x\,|\,1 \le x \le 5\}\]
+
+  We can use similar notation if we want to include one of the endpoints, but not the other. To denote the set of nonnegative real numbers, we would use the set-builder notation
+
+  \[\{x\,|\,\; x\ge 0\}\]
+
+  The smallest number in this set is zero, but this set does not have a largest number. Using interval notation, we would use the symbol \(\infty\) which refers to positive infinity, and we would write the set as
+
+  \[[0,\infty)=\{x\,|\,\; x\ge 0\}\]
+
+  It is important to note that \(\infty\) is not a real number. It is used symbolically here to indicate that this set includes all real numbers greater than or equal to zero. Similarly, if we wanted to describe the set of all nonpositive numbers, we could write
+
+  \[(-\infty,0\,]=\{x\,|\,\; x \leq 0\}\]
+
+  Here, the notation \(-\infty\) refers to negative infinity, and it indicates that we are including all numbers less than or equal to zero, no matter how small. The set
+
+  \[(-\infty, \infty)=\{x \,|\,\; x \text{ is any real number}\} \]
+
+  refers to the set of all real numbers. Some functions are defined using different equations for different parts of their domain. These types of functions are known as piecewise-defined functions. For example, suppose we want to define a function \(f\) with a domain that is the set of all real numbers such that \(f(x)=3x+1\) for \(x \geq 2\) and \(f(x)=x^2\) for \( x\lt 2\). We denote this function by writing
+
+  \[f(x)=\begin{cases} 3x+1, & \text{if } x\geq 2 \\ x^2, & \text{\; if\; } x\lt 2 \end{cases}\]
+
+  When evaluating this function for an input \(x\), the equation to use depends on whether \(x\geq 2\) or \(x\lt 2\). For example, since \(5\gt 2\), we use the fact that \(f(x)=3x+1\) for \(x\geq 2\) and see that \(f(5)=3(5)+1=16\). On the other hand, for \(x=-1\), we use the fact that \(f(x)=x^2\) for \(x \lt 2\) and see that \(f(-1)=1\).
+</p>
+
+<example>
+( )
+
+  <p class="">
+    For the function \(f(x)=3x^2+2x−1\), evaluate:
+    <ol>
+      <li>
+        \(f(−2)\)
+      </li>
+      <li>
+        \(f(\sqrt{2})\)
+      </li>
+      <li>
+        \(f(a+h)\)
+      </li>
+    </ol>
 
 
 
+  </p>
+  <div class="example-content">
+        <span id="SHLink_Soln1" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln1" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_Soln1" class="soln-content" style="display: none;">
+  <p>
+    Substitute the given value for \(x\) in the formula for \(f(x)\).
+    <ol>
+<li>  \(f(−2)=3(−2)^2+2(−2)−1=12−4−1=7\)
+  </li>
+<li>
+  \(f(\sqrt{2})=3(\sqrt{2})^2+2\sqrt{2}−1=6+2\sqrt{2}−1=5+2\sqrt{2}\)
+</li>
+<li>
+
+  \(f(a+h)=3(a+h)^2+2(a+h)−1=3(a^2+2ah+h^2)+2a+2h−1=3a^2+6ah+3h^2+2a+2h−1\)
+
+</li>
+
+    </ol>
+  </p>
+        </div>
+      </div>
+</example>
+
+<example>
+( )
+
+  <p class="">
+For each of the following functions, determine the (i). domain and (ii). range.
+<ol>
+  <li>
+    \(f(x)=(x−4)^2+5\)
 
 
+  </li>
+  <li>
+    \(f(x)=\sqrt{3x+2}−1\)
+  </li>
+  <li>
+    \(f(x)=\dfrac{3}{x−2}\)
+  </li>
+</ol>
+  </p>
+  <div class="example-content">
+        <span id="SHLink_Soln2" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln2" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_Soln2" class="soln-content" style="display: none;">
+  <p>
+<ol>
+  <li>
+    Consider \(f(x)=(x−4)^2+5.\)
+    <ul>
+      <li>
+        Since \(f(x)=(x−4)^2+5\) is a real number for any real number \(x\), the domain of \(f\) is the interval \((-\infty ,\infty )\).
+      </li>
+      <li>
+        Since \((x−4)^2≥0\), we know \(f(x)=(x−4)^2+5≥5\). Therefore, the range must be a subset of \(\{y\,|\,y≥5\}.\) To show that every element in this set is in the range, we need to show that for a given \(y\) in that set, there is a real number \(x\) such that \(f(x)=(x−4)^2+5=y\). Solving this equation for \(x,\) we see that we need \(x\) such that
 
+\[(x−4)^2=y−5\]
 
+This equation is satisfied as long as there exists a real number \(x\) such that
+
+\[x−4=±\sqrt{y−5}\]
+
+Since \(y\geq 5\), the square root is well-defined. We conclude that for \(x=4±\sqrt{y−5},\) \(f(x)=y,\) and therefore the range is \(\{y\,|\,y \geq 5 \}\)
+      </li>
+    </ul>
+  </li>
+</ol>
+  </p>
+        </div>
+      </div>
+</example>
 
 
 

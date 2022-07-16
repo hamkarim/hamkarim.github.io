@@ -13,8 +13,8 @@ html, body {  /*for html, body fonts*/
           padding:0;
           margin:0;
     /*font-family: 'Khmer OS Battambang', 'sans-serif';/*"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
-          /*font-size:17px;
-          line-height:1.6;
+          /*font-size:17px;*/
+          line-height:1.4;
         /*  color:darkblue/*#606c71 */
 }
 /*.MathJax_CHTML {
@@ -38,12 +38,16 @@ html, body {  /*for html, body fonts*/
 
 p {
   /*text-align: justify;*/
+  font-size: 18px;
   orphans: 2;
   widows: 2;
   margin-block-start: 0.5em;
   margin-block-end: 0.5em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
+}
+p.parindent {
+  text-indent: 40px;
 }
 
 article,aside,details,footer,header,hgroup,main,menu,section,summary{display:block}
@@ -321,6 +325,7 @@ body {counter-reset:section;}
 .main-content blockquote>:first-child{margin-top:0}
 .main-content blockquote>:last-child{margin-bottom:0}
 .main-content blockquote p {
+          text-indent: 25px;
           font-size: 14px;
           padding:0px;
           margin-left:-0.5em;
@@ -372,7 +377,7 @@ body {counter-reset:section;}
           color:#076422;
           border-left:2pt solid #EB0000;
           text-align: left;
-          font-size: 16px;
+          font-size: 18px;
     /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
 .main-content example>:first-child{margin-top:0}
@@ -490,6 +495,10 @@ div.definitionb{ /* To define border and style around text*/
 }
 .main-content defn>:first-child{margin-top:0}
 .main-content defn>:last-child{margin-bottom:0}
+
+defn p{
+  text-indent: 32px;
+}
 
 /*example counter*/
 section{
