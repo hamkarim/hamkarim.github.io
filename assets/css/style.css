@@ -526,19 +526,30 @@ div.definition:before
   }
 
 
-ul{
-  padding-left:3em;
+ul  {
+  padding-left:20px;
   display: table-cell;
   padding-right: 0;
   text-align: left;
   /*font-size: 16px; */
 }
 
-ul li{
+ul > li{
     /* margin-bottom:1em;*/
     font-size:17px;
     /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
+
+li ul > li{
+    /* margin-bottom:1em;*/
+    font-size:17px;
+    padding-left:6px;
+    margin-left: 0;
+    /*counter-increment: item;*/
+    margin-bottom: 0.6em;
+    /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
+}
+
 center{font-size:17px}
 
 ul.leftborder{
@@ -624,7 +635,7 @@ ul.leftborder{
 }
 
 /*style for ol and ul*/
-ol{
+ol {
 	/*table-cell;*/
 	counter-reset: item;
 	padding-left: 32px;
@@ -896,6 +907,7 @@ Show hide answer in examples
 
 .soln-content {
   display: none;
+  color: grey;
 }
 
 .soln-title {
@@ -903,7 +915,7 @@ Show hide answer in examples
   font-style: italic;
   font-size: unset;
   display: inline-block;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
 
 /* These are for solution sub-items a, b, c, etc. that aren't in an ol environment.. */

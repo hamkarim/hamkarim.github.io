@@ -644,7 +644,7 @@ The concept of a function can be visualized using Figures \(\PageIndex{1}\) - \(
   </p>
   <div class="example-content">
         <span id="SHLink_Soln1" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln1" class="fa fa-caret-right" aria-hidden="true"></span>
-   <div id="SHObj_Soln1" class="soln-content" style="display: none;">
+   <div id="SHObj_Soln1" class="soln-content">
   <p>
     Substitute the given value for \(x\) in the formula for \(f(x)\).
     <ol>
@@ -686,12 +686,12 @@ For each of the following functions, determine the (i). domain and (ii). range.
   </p>
   <div class="example-content">
         <span id="SHLink_Soln2" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln2" class="fa fa-caret-right" aria-hidden="true"></span>
-   <div id="SHObj_Soln2" class="soln-content" style="display: none;">
+   <div id="SHObj_Soln2" class="soln-content">
   <p>
 <ol>
   <li>
     Consider \(f(x)=(x−4)^2+5.\)
-    <ul>
+    <ul class="liststyle1">
       <li>
         Since \(f(x)=(x−4)^2+5\) is a real number for any real number \(x\), the domain of \(f\) is the interval \((-\infty ,\infty )\).
       </li>
@@ -708,6 +708,59 @@ Since \(y\geq 5\), the square root is well-defined. We conclude that for \(x=4±
       </li>
     </ul>
   </li>
+  <li>
+    Consider \(f(x)=\sqrt{3x+2}−1\)
+
+  <ul class="liststyle1">
+    <li>
+      To find the domain of \(f\), we need the expression \(3x+2≥0\). Solving this inequality, we conclude that the domain is \(\{x\,|\,x≥−2/3\}.\)
+    </li>
+    <li>
+      To find the range of \(f\), we note that since \(\sqrt{3x+2}≥0,\) \(f(x)=\sqrt{3x+2}−1≥−1\). Therefore, the range of \(f\) must be a subset of the set \(\{y\,|\,y≥−1\}\). To show that every element in this set is in the range of \(f\), we need to show that for all \(y\) in this set, there exists a real number \(x\) in the domain such that \(f(x)=y.\) Let \(y≥−1.\) Then, \(f(x)=y\) if and only if
+      \[
+          \sqrt{3x+2}−1=y
+      \]
+      Solving this equation for \(x,\) we see that \(x\) must solve the equation
+
+\[\sqrt{3x+2}=y+1\]
+
+Since \(y≥−1\), such an \(x\) could exist. Squaring both sides of this equation, we have \(3x+2=(y+1)^2.\)
+
+Therefore, we need
+
+\[3x=(y+1)^2−2\]
+
+which implies
+
+\[x=\frac{1}{3}(y+1)^2−\frac{2}{3}\]
+
+We just need to verify that \(x\) is in the domain of \(f\). Since the domain of \(f\) consists of all real numbers greater than or equal to \(\frac{−2}{3}\), and
+
+\[\frac{1}{3}(y+1)^2-\frac{2}{3}≥−\frac{2}{3}\]
+
+there does exist an \(x\) in the domain of \(f\). We conclude that the range of \(f\) is \(\{y\,|\,y≥−1\}\)
+    </li>
+  </ul>
+</li>
+<li> Consider \(f(x)=\dfrac{3}{x−2}.\)
+  <ul class="liststyle1">
+    <li>
+      Since \(3/(x−2)\) is defined when the denominator is nonzero, the domain is \(\{x\,|\,x≠2\}.\)
+    </li>
+
+    <li>
+      To find the range of \(f,\) we need to find the values of \(y\) such that there exists a real number \(x\) in the domain with the property that
+
+\[\dfrac{3}{x−2}=y\]
+
+Solving this equation for \(x,\) we find that
+
+\[x=\dfrac{3}{y}+2\]
+
+Therefore, as long as \(y≠0\), there exists a real number \(x\) in the domain such that \(f(x)=y\). Thus, the range is \(\{y\,|\,y≠0\}.\)
+    </li>
+  </ul>
+</li>
 </ol>
   </p>
         </div>
