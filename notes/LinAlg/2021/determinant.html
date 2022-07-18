@@ -169,7 +169,7 @@ a.onmenu {
 		text-align: left;
 		width: auto;
 		margin: 0 0px 2px 0px !important;
-		padding: 2px 6px 2px 4px !important;
+		padding: 4px 6px 4px 4px !important;
 		transform: translate(-11px, 0px) !important;
 		border-radius: 3px 5px 5px 0;
 		-moz-border-radius: 3px 5px 5px 0;
@@ -185,8 +185,8 @@ a.onmenu {
 	.box-adapt>header *,
 	.box-objectives>header *,
 	.box-warning>header * {
-		font-family: "Tahoma", Arial, serif !important;
-		font-size: 14px !important;
+		font-family: "Battambang", "Tahoma", Arial, serif !important;
+		font-size: 17px !important;
 		font-weight: 400 !important;
 		color: white !important;
 		;
@@ -382,6 +382,7 @@ function showhideFunction() {
   </script>
 
  <div class="Headertext">
+
    \( \newcommand{\vecs}[1]{\overset { \scriptstyle \rightharpoonup} {\mathbf{#1}}&nbsp;}&nbsp;\)
    \( \newcommand{\vecd}[1]{\overset{-\!-\!\rightharpoonup}{\vphantom{a}\smash&nbsp;{#1}}} \)
    \(\newcommand{\id}{\mathrm{id}}\)
@@ -634,7 +635,7 @@ Suppose \(A\) is an \(n\times n\) matrix. The \(ij^{th}\) cofactor, denoted by \
 
 We present this idea formally in the following theorem.</p>
 
-<div class="box-definition">
+<div class="box-theorem">
   <div mt-section-origin="" class="mt-section"><span id=""></span>
     <h5 class="box-legend editable"><span class="lt-icon-default">Theorem : (The Determinant is Well Defined)<a name=""></a></span></h5>
 
@@ -744,7 +745,7 @@ Without using Theorem \(\PageIndex{2}\), you could use Laplace Expansion. We wil
 </example>
 
 
-<h2 class="frame-sect sectcounter">&nbsp; Properties of Determinants </h2>
+<h2 class="frame-sect sectcounter">&nbsp; លក្ខណៈរបស់ដេទែរមីណង់</h2>
 <!--   \section{Introduction aux systèmes d'équations linéaires} -->
 <p>There are many important properties of determinants. Since many of these properties involve the row operations discussed in Chapter 1, we recall that definition now.</p>
 
@@ -752,14 +753,14 @@ Without using Theorem \(\PageIndex{2}\), you could use Laplace Expansion. We wil
           <div class="definition">(Row Operations)</div>
  <div class="definitionb">
    <p>
-     The row operations consist of the following
+     ប្រមាណវិធីជួរដេក (row operations) អនុវត្តទៅលើម៉ាទ្រីសមួយ ត្រូវបានកំណត់ដូចខាងក្រោម៖ <!-- consist of the following-->
      <ol>
-     <li>Switch two rows \((R_i \longleftrightarrow R_j)\)
+     <li>Switch two rows <span class="tab">\((R_i \longleftrightarrow R_j)\)</span>
      </li>
-     <li>Multiply a row by a nonzero number \((\lambda\cdot R_i^{\text{old}} \longrightarrow R_i^{\text{new}})\)
+     <li>Multiply a row by a nonzero number <span class="tab">\((\lambda\cdot R_i^{\text{old}} \longrightarrow R_i^{\text{new}})\)</span>
     </li>
      <li>
-     Replace a row by a multiple of another row added to itself \((R_i^{\text{old}}+\lambda\cdot R_j^{\text{old}} \longrightarrow R_i^{\text{new}})\)
+     Replace a row by a multiple of another row added to itself <span class="tab">\((R_i^{\text{old}}+\lambda\cdot R_j^{\text{old}} \longrightarrow R_i^{\text{new}})\)</span>
    </li>
      </ol>
    </p>
@@ -831,13 +832,65 @@ Let \(A\) be an \(n \times n\) matrix. Then \(A\) is invertible if and only if \
 <h3 class="frame-sect sectcounter">&nbsp; Properties of Determinants: Some Important Proofs </h3>
 <!--   \section{Introduction aux systèmes d'équations linéaires} -->
 
-<p>This section includes some important proofs on determinants and cofactors.</p>
+<p>We will see some important proofs on determinants and cofactors. First we recall the definition of a determinant.</p>
 
-<p>First we recall the definition of a determinant. If \(A=\left[ a_{ij} \right]\) is an \(n\times n\) matrix, then \(\det A\) is defined by computing the expansion along the first row:
+<p> If \(A=\left[ a_{ij} \right]\) is an \(n\times n\) matrix, then \(\det A\) is defined by computing the expansion along the first row:
   \[\label{E1} \det A=\sum_{i=1}^n a_{1,i} \cof(A)_{1,i}.\]
   If \(n=1\) then \(\det A=a_{1,1}\).</p>
 
 <p>The following example is straightforward and strongly recommended as a means for getting used to definitions.</p>
+
+<example>
+( )
+
+  <p class="">
+<ol>
+<li>
+  Let \(E_{ij}\) be the elementary matrix obtained by interchanging \(i\)th and \(j\)th rows of \(I\). Then \(\det E_{ij}=-1\).
+</li>
+
+<li>
+  Let \(E_{ik}\) be the elementary matrix obtained by multiplying the \(i\)th row of \(I\) by \(k\). Then \(\det E_{ik}=k\).
+</li>
+
+<li>
+  Let \(E_{ijk}\) be the elementary matrix obtained by multiplying \(i\)th row of \(I\) by \(k\) and adding it to its \(j\)th row. Then \(\det E_{ijk}=1\).
+</li>
+
+<li>
+  If \(C\) and \(B\) are such that \(CB\) is defined and the \(i\)th row of \(C\) consists of zeros, then the \(i\)th row of \(CB\) consists of zeros.
+</li>
+
+<li>
+  If \(E\) is an elementary matrix, then \(\det E=\det E^T\).
+</li>
+</ol>
+  </p>
+  <div class="example-content">
+        <span id="SHLink_Soln1" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln1" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_Soln1" class="soln-content" style="display: none;">
+  <p>
+
+  </p>
+        </div>
+      </div>
+</example>
+
+<p>
+  Many of the proofs in section use the Principle of Mathematical Induction. This concept is discussed in Appendix A.2 and is reviewed here for convenience. First we check that the assertion is true for \(n=2\) (the case \(n=1\) is either completely trivial or meaningless).
+
+
+</p>
+
+<p>
+  Next, we assume that the assertion is true for \(n-1\) (where \(n\geq 3\)) and prove it for \(n\). Once this is accomplished, by the Principle of Mathematical Induction we can conclude that the statement is true for all \(n\times n\) matrices for every \(n\geq 2\).
+
+
+</p>
+
+<p>
+    If \(A\) is an \(n\times n\) matrix and \(1\leq j \leq n\), then the matrix obtained by removing \(1\)st column and \(j\)th row from \(A\) is an \(n-1\times n-1\) matrix (we shall denote this matrix by \(A(j)\) below). Since these matrices are used in computation of cofactors \(\mathrm{cof}(A)_{1,i}\), for \(1\leq i\neq n\), the inductive assumption applies to these matrices.
+</p>
 
 
 <div class="box-theorem">
@@ -850,7 +903,7 @@ Let \(A\) be an \(n \times n\) matrix. Then \(A\) is invertible if and only if \
 
 <li>
   Assume \(A\), \(B\) and \(C\) are \(n\times n\) matrices that for some \(1\leq i\leq n\) satisfy the following.
-  <ol style="list-style-type:lower-roman" class="indentli">
+  <ol style="list-style-type:lower-roman">
     <li>  \(j\)th rows of all three matrices are identical, for \(j\neq i\).
       </li>
       <li>Each entry in the \(j\)th row of \(A\) is the sum of the corresponding entries in \(j\)th rows of \(B\) and \(C\).
@@ -861,12 +914,35 @@ Let \(A\) be an \(n \times n\) matrix. Then \(A\) is invertible if and only if \
 </li>
 
   <li>
-
+If two rows of \(A\) are identical then \(\det A=0\).
   </li>
 
-  <li></li>
+  <li>
+    Let \(A\) and \(B\) be two \(n\times n\) matrices. Then \[\det \left( AB\right) =\det \left( A\right) \det \left( B\right)\nonumber \]
+  </li>
 </ol>
 </p>
+
+<div class="example-content">
+      <span id="SHLink_Lem1" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Lem1" class="fa fa-caret-right" aria-hidden="true"></span>
+ <div id="SHObj_Lem1" class="soln-content" style="display: none;">
+<p>
+<ol>
+<li>
+  We will prove this lemma using Mathematical Induction.
+
+If  $n=2$  this is easy (check!).
+
+Let  $n\geq 3$  be such that every matrix of size  $n-1\times n-1$  with a row consisting of zeros has determinant equal to zero. Let  $i$  be such that the  $i$th row of  $A$  consists of zeros. Then we have  $a_{ij}=0$  for  $1\leq j \leq n$.
+
+Fix  $j\in \{1,2,\ldots, n\}$  such that $ j\neq i$ . Then matrix  $A(j)$  used in computation of $ \cof(A)_{1j}$  has a row consisting of zeros, and by our inductive assumption $\cof(A)_{1,j}=0$.
+
+</li>
+
+</ol>
+</p>
+      </div>
+    </div>
 
 </div></div>
 

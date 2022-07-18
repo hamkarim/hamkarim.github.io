@@ -487,16 +487,17 @@ div.definitionb{ /* To define border and style around text*/
 }
 .main-content defn{
           display:block;
-          padding:0 0 0 0rem;
+          padding:10px 0 10px 0;
           margin-left:0;
-          margin-top:0;
-          margin-bottom:0px;
+          margin-top:10px;
+          margin-bottom:10px;
 /*          font-size: 17px;*/
 }
 .main-content defn>:first-child{margin-top:0}
 .main-content defn>:last-child{margin-bottom:0}
 
-defn p{
+defn p {
+  padding-top:10px;
   text-indent: 32px;
 }
 
@@ -511,7 +512,7 @@ div.definition{
    border-radius: 15px 1px;
    border: #CC0F12;
    color: white;
-   padding: 0 10px 0 20px;
+   padding: 4px 10px 4px 20px;
    font-size: 100%;
    /* font-family: 'Bangers', cursive; */
    font-family: 'Kaushan Script', serif;
@@ -522,7 +523,6 @@ div.definition:before
          content: "និយមន័យ " counter(section,khmer)"." counter(counterdef,khmer) "  ";
          /*font-weight:bold; */
          font-family: 'Koulen', cursive;
-
   }
 
 
@@ -1198,4 +1198,8 @@ a.fnote {
       margin-left: auto;
       margin-right: auto;
       /*width: 50%; */
+    }
+
+    span.tab {
+     margin-left: 5em
     }
