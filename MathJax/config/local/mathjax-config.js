@@ -8,6 +8,7 @@ window.MathJax = {
         load: ['[tex]/textmacros', '[tex]/require'],
 },
   tex: {
+    tags: 'ams',
     inlineMath: [['$', '$'], ['\\(', '\\)']],
     displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
     packages: {'[+]': ['textmacros']},

@@ -502,7 +502,11 @@ defn p {
 }
 
 /*example counter*/
-section{
+body {
+  /* Set "section" to 0 */
+  counter-reset: section;
+}
+defn {
   counter-reset: counterdef;
 }
 div.definition{
