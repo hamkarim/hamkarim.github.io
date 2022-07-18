@@ -32,13 +32,20 @@ window.MathJax = {
     vect: ["{\\overrightarrow{#1}}",1],
     },
   },
-  svg: {
+  chtml: {
+      scale: 0.9
+        },
+  /*svg: {
   fontCache: 'global'
-    },
-  CommonHTML : {
-        /*scale: 90,*/
+},*/
+svg: {
+      scale: 1,
+      linebreaks: { automatic: true },
+        },
+  /*CommonHTML : {
+        scale: 60,
         linebreaks: { automatic: true },
-  },
+  },*/
   /*startup: {
     ready: function () {
       MathJax.startup.defaultReady();
@@ -61,3 +68,5 @@ window.MathJax = {
      }
   }
 }; */
+
+/* MathJax.Ajax.loadComplete("https://hamkarim.github.io/MathJax/config/local/mathjax-config.js"); */
