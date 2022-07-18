@@ -384,8 +384,9 @@ body {counter-reset:section;}
 .main-content example>:last-child{margin-bottom:0}
 
 /*example counter*/
- .main-content{
+ .main-content {
   counter-reset: counterex;
+  /*counter-reset: counterdef;*/
 }
 .main-content example::before
     {
@@ -496,20 +497,20 @@ div.definitionb{ /* To define border and style around text*/
 .main-content defn>:first-child{margin-top:0}
 .main-content defn>:last-child{margin-bottom:0}
 
-defn p {
+.main-content defn p {
   padding-top:10px;
   text-indent: 32px;
 }
 
-/*example counter*/
-body {
-  /* Set "section" to 0 */
-  counter-reset: section;
-}
-defn {
+/* definition counter*/
+.main-content section {
   counter-reset: counterdef;
 }
-div.definition{
+h1 {
+  /* Set "subsection" to 0 */
+  counter-reset: mysubsection;
+}
+.main-content div.definition{
    display:inline-block;
    width:100%;
    background:linear-gradient(to right, red 1%, red 0%, white 90%, white 100%);
@@ -521,10 +522,10 @@ div.definition{
    /* font-family: 'Bangers', cursive; */
    font-family: 'Kaushan Script', serif;
  }
-div.definition:before
+.main-content  div.definition::before
      {
-         counter-increment:counterdef;
-         content: "និយមន័យ " counter(section,khmer)"." counter(counterdef,khmer) "  ";
+         counter-increment: subsection;
+         content: "និយមន័យ " counter(section,khmer)"."  counter(subsection,khmer) "  ";
          /*font-weight:bold; */
          font-family: 'Koulen', cursive;
   }

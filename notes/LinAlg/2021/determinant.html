@@ -746,6 +746,9 @@ Without using Theorem \(\PageIndex{2}\), you could use Laplace Expansion. We wil
       </div>
 </example>
 
+</section>
+
+<section class="main-content">
 
 <h2 class="frame-sect sectcounter">&nbsp; លក្ខណៈរបស់ដេទែរមីណង់</h2>
 <!--   \section{Introduction aux systèmes d'équations linéaires} -->
@@ -902,7 +905,38 @@ Let \(A\) be an \(n \times n\) matrix. Then \(A\) is invertible if and only if \
 
 <p class="">
 <ol class="indentli">
-<li>If \(A\) is an \(n\times n\) matrix such that one of its rows consists of zeros, then \(\det A=0\).</li>
+<li>If \(A\) is an \(n\times n\) matrix such that one of its rows consists of zeros, then \(\det A=0\).
+
+  <div class="example-content">
+        <span id="SHLink_Soln1lem" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln1lem" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_Soln1lem" class="soln-content" style="display: none;">
+
+  <ol>
+  <li>
+  <p>
+    We will prove this lemma using Mathematical Induction.
+
+  If  $n=2$  this is easy (check!).
+  </p>
+
+  <p>
+    Let  $n\geq 3$  be such that every matrix of size  $n-1\times n-1$  with a row consisting of zeros has determinant equal to zero. Let  $i$  be such that the  $i$th row of  $A$  consists of zeros. Then we have  $a_{ij}=0$  for  $1\leq j \leq n$.
+  </p>
+
+  <p>
+    Fix  $j\in \{1,2,\ldots, n\}$  such that $ j\neq i$ . Then matrix  $A(j)$  used in computation of $ \cof(A)_{1j}$  has a row consisting of zeros, and by our inductive assumption $\cof(A)_{1,j}=0$.
+  </p>
+
+  <p>
+    On the other hand, if \(j=i\) then \(a_{1,j}=0\). Therefore \(a_{1,j}\mathrm{cof}(A)_{1,j}=0\) for all \(j\) and by \(\eqref{E1}\) we have \[\det A=\sum_{j=1}^n a_{1,j} \cdot \cof(A)_{1,j}=0\nonumber \] as each of the summands is equal to $0$.
+  </p>
+  </li>
+
+  </ol>
+
+        </div>
+      </div>
+</li>
 
 <li>
   Assume \(A\), \(B\) and \(C\) are \(n\times n\) matrices that for some \(1\leq i\leq n\) satisfy the following.
@@ -913,6 +947,23 @@ Let \(A\) be an \(n \times n\) matrix. Then \(A\) is invertible if and only if \
     </li>
       Then \(\det A=\det B+\det C\).
   </ol>
+
+  <div class="example-content">
+        <span id="SHLink_Soln2lem" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln2lem" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_Soln2lem" class="soln-content" style="display: none;">
+  <p>
+This is not difficult to check for \(n=2\) (do check it!).
+  </p>
+
+  <p>
+Now assume that the statement of Lemma is true for \(n-1\times n-1\) matrices and fix \(A,B\) and \(C\) as in the statement. The assumptions state that we have \(a_{l,j}=b_{l,j}=c_{l,j}\) for \(j\neq i\) and for \(1\leq l\leq n\) and \(a_{l,i}=b_{l,i}+c_{l,i}\) for all \(1\leq l\leq n\). Therefore \(A(i)=B(i)=C(i)\), and \(A(j)\) has the property that its \(i\)th row is the sum of \(i\)th rows of \(B(j)\) and \(C(j)\) for \(j\neq i\) while the other rows of all three matrices are identical. Therefore by our inductive assumption we have \(\mathrm{cof}(A)_{1j}=\mathrm{cof}(B)_{1j}+\mathrm{cof}(C)_{1j}\) for \(j\neq i\).
+  </p>
+
+  <p>
+By \(\eqref{E1}\) we have (using all equalities established above) \[\begin{aligned} \det A&=\sum_{l=1}^n a_{1,l} \mathrm{cof}(A)_{1,l}\\ &=\sum_{l\neq i} a_{1,l}(\mathrm{cof}(B)_{1,l}+\mathrm{cof}(C)_{1,l})+ (b_{1,i}+c_{1,i})\mathrm{cof}(A)_{1,i}\\ &= \det B+\det C\end{aligned}\] This proves that the assertion is true for all \(n\) and completes the proof.
+  </p>
+        </div>
+      </div>
 
 </li>
 
@@ -925,36 +976,6 @@ If two rows of \(A\) are identical then \(\det A=0\).
   </li>
 </ol>
 </p>
-
-<div class="example-content">
-      <span id="SHLink_Soln1lem" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln1lem" class="fa fa-caret-right" aria-hidden="true"></span>
- <div id="SHObj_Soln1lem" class="soln-content" style="display: none;">
-<p>
-<ol>
-<li>
-<p>
-  We will prove this lemma using Mathematical Induction.
-
-If  $n=2$  this is easy (check!).
-</p>
-
-<p>
-  Let  $n\geq 3$  be such that every matrix of size  $n-1\times n-1$  with a row consisting of zeros has determinant equal to zero. Let  $i$  be such that the  $i$th row of  $A$  consists of zeros. Then we have  $a_{ij}=0$  for  $1\leq j \leq n$.
-</p>
-
-<p>
-  Fix  $j\in \{1,2,\ldots, n\}$  such that $ j\neq i$ . Then matrix  $A(j)$  used in computation of $ \cof(A)_{1j}$  has a row consisting of zeros, and by our inductive assumption $\cof(A)_{1,j}=0$.
-</p>
-
-<p>
-  On the other hand, if \(j=i\) then \(a_{1,j}=0\). Therefore \(a_{1,j}\mathrm{cof}(A)_{1,j}=0\) for all \(j\) and by \(\eqref{E1}\) we have \[\det A=\sum_{j=1}^n a_{1,j} \cdot \cof(A)_{1,j}=0\nonumber \] as each of the summands is equal to $0$.
-</p>
-</li>
-
-</ol>
-</p>
-      </div>
-    </div>
 
 </div></div>
 
