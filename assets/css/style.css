@@ -704,28 +704,41 @@ ol.parenthalpha li::before {
 	/*font-size: 16px;
 	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
-ol.parenthnum li {
+
+ol.parenthnum {
+  counter-reset: parenthlist;
+  margin: auto;
+  width:98%;
+}
+ol.parenthnum > li {
 	display: block;
 	margin-bottom: .5em;
-	margin-left: 20px;
+  list-style: none;
+  position: relative;
+  margin-left: auto;
 	/*counter-increment: section;*/
 	/*display: table-row;
 	font-size: 16px; */
 }
-ol.parenthnum li::before {
+ol.parenthnum > li::before {
+  counter-increment: parenthlist;
 	/*content: "(" counter(section) ") ";
-	display: table-cell;*/
+	display: table-cell;*
   list-style-position: inside;
 	padding-right: 0px;
-	display: inline-block;
-	content: "(" counter(item,khmer) ")";
-	/*counter-increment: item;*/
-	width:2em; /**/
+	display: inline-block;*/
+	content: "("counter(parenthlist,khmer)")";
+	/*counter-increment: item;*
+	width:2em; /**
   margin-left: -37px;
 	padding-left: 0px;
 	/*text-align: left;
 	font-size: 16px;
 	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
+  position: absolute;
+  left: -2.1em;
+  padding-left:8px;
+  padding-right:5px;
 }
 
 ol.romanlist {
