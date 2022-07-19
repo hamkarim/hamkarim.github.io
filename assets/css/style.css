@@ -1136,10 +1136,10 @@ Show hide answer in examples
 		float: left !important;
 		margin-block-start: 0 !important;
 		margin-block-end: 0 !important;
-    font-family: "Ang DaunKeo", "Tahoma", Arial, serif !important;
+    /*font-family: "Ang DaunKeo", "Tahoma", Arial, serif !important;
     font-size: 17px!important;
     font-weight: 400 !important;
-    line-height: 1.5 !important;
+    line-height: 1.5 !important;*/
 }
 
 .main-content .box-definition p, .main-content .box-lemma p, .main-content .box-notation p, .main-content .box-proposition p, .main-content .box-theorem p{
@@ -1148,7 +1148,7 @@ Show hide answer in examples
 }
 
 /**/
-.box-definition, .box-example, .box-exercise, .box-interactive, .box-lemma, .box-notation, .box-note, .box-objectives, .box-procedure, .box-proposition, .box-query, .box-theorem, .box-warning {
+.main-content .box-definition, .main-content .box-example, .main-content .box-exercise, .main-content .box-interactive, .main-content .box-lemma, .box-notation, .main-content .box-note, .main-content .box-objectives, .main-content .box-procedure, .main-content .box-proposition, .main-content .box-query, .main-content .box-theorem, .main-content .box-warning {
     display: block;
     border-radius: 1px;
     -moz-border-radius: 1px;
