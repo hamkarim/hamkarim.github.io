@@ -498,7 +498,7 @@ div.definitionb{ /* To define border and style around text*/
 .main-content defn>:first-child{margin-top:0}
 .main-content defn>:last-child{margin-bottom:0}
 
-defn p {
+.main-content defn p {
   padding-top:10px;
   text-indent: 32px;
 }
@@ -507,7 +507,7 @@ defn p {
 .main-content{
   counter-reset: counterdef;
 }
-div.definition{
+.main-content div.definition{
    display:inline-block;
    width:100%;
    background:linear-gradient(to right, red 1%, red 0%, white 90%, white 100%);
@@ -519,7 +519,7 @@ div.definition{
    /* font-family: 'Bangers', cursive; */
    font-family: 'Kaushan Script', serif;
  }
-div.definition:before
+.main-content div.definition:before
      {
          counter-increment: counterdef;
          content: "និយមន័យ " counter(section,khmer)"." counter(counterdef,khmer) "  ";
@@ -1128,7 +1128,7 @@ Show hide answer in examples
     }
 }
 
-.box-definition, .box-lemma, .box-notation, .box-proposition, .box-theorem {
+.main-content .box-definition, .main-content .box-lemma, .main-content .box-notation, .main-content .box-proposition, .main-content .box-theorem {
     background-color: #fdf7e8;
     border-left: 2px solid #a67c11;
 		/*color: white !important;*/
@@ -1142,10 +1142,9 @@ Show hide answer in examples
     line-height: 1.5 !important;
 }
 
-.box-definition p, .box-lemma p, .box-notation p, .box-proposition p, .box-theorem p{
+.main-content .box-definition p, .main-content .box-lemma p, .main-content .box-notation p, .main-content .box-proposition p, .main-content .box-theorem p{
   padding-top:4px;
   text-indent: 32px;
-
 }
 
 /**/
