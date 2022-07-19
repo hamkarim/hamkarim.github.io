@@ -21,9 +21,9 @@ html, body {  /*for html, body fonts*/
     font-size: 17px !important;
 } */
 
-/*.MathJax {
-    font-size: 0.98em !important;
-}*/
+.MathJax {
+    font-size: 1.1em !important;
+}
 
 /*p{
 	text-indent:30px;
@@ -50,7 +50,9 @@ p.parindent {
   text-indent: 40px;
 }
 
-article,aside,details,footer,header,hgroup,main,menu,section,summary{display:block}
+article,aside,details,footer,header,hgroup,main,menu,section,summary{
+  display:block
+}
 audio,canvas,progress,video{display:inline-block;vertical-align:baseline}
 audio:not([controls]){display:none;height:0}[hidden],template{display:none}
 a{background-color:transparent}
@@ -384,9 +386,8 @@ body {counter-reset:section;}
 .main-content example>:last-child{margin-bottom:0}
 
 /*example counter*/
- .main-content {
+ .main-content{
   counter-reset: counterex;
-  /*counter-reset: counterdef;*/
 }
 .main-content example::before
     {
@@ -497,20 +498,16 @@ div.definitionb{ /* To define border and style around text*/
 .main-content defn>:first-child{margin-top:0}
 .main-content defn>:last-child{margin-bottom:0}
 
-.main-content defn p {
+defn p {
   padding-top:10px;
   text-indent: 32px;
 }
 
-/* definition counter*/
-.main-content section {
+/*definition counter*/
+.main-content{
   counter-reset: counterdef;
 }
-h1 {
-  /* Set "subsection" to 0 */
-  counter-reset: mysubsection;
-}
-.main-content div.definition{
+div.definition{
    display:inline-block;
    width:100%;
    background:linear-gradient(to right, red 1%, red 0%, white 90%, white 100%);
@@ -522,10 +519,10 @@ h1 {
    /* font-family: 'Bangers', cursive; */
    font-family: 'Kaushan Script', serif;
  }
-.main-content  div.definition::before
+div.definition:before
      {
-         counter-increment: subsection;
-         content: "និយមន័យ " counter(section,khmer)"."  counter(subsection,khmer) "  ";
+         counter-increment: counterdef;
+         content: "និយមន័យ " counter(section,khmer)"." counter(counterdef,khmer) "  ";
          /*font-weight:bold; */
          font-family: 'Koulen', cursive;
   }
@@ -730,6 +727,41 @@ ol.parenthnum li::before {
 	font-size: 16px;
 	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
+
+ol.romanlist {
+  counter-reset: list;
+  margin: auto;
+  width:98%;
+}
+
+ol.romanlist > li {
+  list-style: none;
+  position: relative;
+  margin-left: auto;
+  line-height: 1.5 !important;
+}
+
+ol.romanlist > li::before {
+  counter-increment: list;
+  content: " (" counter(list, lower-roman) ") ";
+  position: absolute;
+  left: -2.1em;
+  padding-left:8px;
+  padding-right:5px;
+}
+
+ol.threeem{
+  margin-left:3em;
+}
+ol.twoem{
+  margin-left:2em;
+}
+
+ol.oneem{
+  margin-left:1em;
+}
+
+
 .indentli li {
   padding-left: 10px;
 	/*display: block;*/
@@ -1099,8 +1131,24 @@ Show hide answer in examples
 .box-definition, .box-lemma, .box-notation, .box-proposition, .box-theorem {
     background-color: #fdf7e8;
     border-left: 2px solid #a67c11;
+		/*color: white !important;*/
+		width: auto !important;
+		float: left !important;
+		margin-block-start: 0 !important;
+		margin-block-end: 0 !important;
+    font-family: "Ang DaunKeo", "Tahoma", Arial, serif !important;
+    font-size: 17px!important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
 }
 
+.box-definition p, .box-lemma p, .box-notation p, .box-proposition p, .box-theorem p{
+  padding-top:4px;
+  text-indent: 32px;
+
+}
+
+/**/
 .box-definition, .box-example, .box-exercise, .box-interactive, .box-lemma, .box-notation, .box-note, .box-objectives, .box-procedure, .box-proposition, .box-query, .box-theorem, .box-warning {
     display: block;
     border-radius: 1px;
@@ -1114,83 +1162,99 @@ Show hide answer in examples
     margin-top: 1.2em!important;
     orphans: 3;
 }
+/**/
 
 .box-legend {
   text-align: left !important;
 }
 .box-legend {
-    margin: 0 0 3px;
+    margin: 0  0 3px !important;;
     transform: translate(-11px,0);
     break-inside: avoid-page!important;
     page-break-inside: avoid!important;
 }
 
-.box-legend p,.box-legend>span{
-          font-family: Battambang;
+.box-definition .box-legend>span,.box-lemma .box-legend>span,.box-notation .box-legend>span,.box-proposition .box-legend>span,.box-theorem
+.box-legend>span{
+    background-color:#a67c11}
+
+.box-legend p, .box-legend>span{
+          font-family: "Book Antiqua", "Battambang";
+          font-size: 18px !important;
+          /*font-weight: 400 !important;
+          line-height: 1 !important;*/
           font-weight:400!important;
           color:#fff;
-          padding:5px 12px!important;
+          padding:4px 24px 4px 12px!important;
           margin:0 0 3px;
-          border-radius:1px}
+          border-radius:3px;
+}
 
           .box-note {
             background-color: #eef1f1;
             border-left: 4px solid #5e6e6e;
           }
-          .box-adapt,
-          .box-definition,
-          .box-emphasis,
-          .box-example,
-          .box-exercise,
-          .box-interactive,
-          .box-lemma,
-          .box-notation,
-          .box-note,
-          .box-objectives,
-          .box-procedure,
-          .box-proposition,
-          .box-query,
-          .box-structure,
-          .box-theorem,
-          .box-warning {
-           display:block;
-           border-radius:4px 8px 8px 4px;
-           -moz-border-radius:4px 8px 8px 4px;
-           -webkit-border-radius:4px 8px 8px 4px;
-           border-top:none;
-           border-bottom:none;
-           border-right:none;
-           padding:0 10px 1px;
-           margin-bottom:.8em!important;
-           margin-top:.8em!important;
-           orphans:3
-          }
 
-          .box-legend {
-           display:block;
-           overflow:hidden;
-           margin:0 0 3px;
-           transform:translate(-11px,0);
-           break-inside:avoid-page!important;
-           page-break-inside:avoid!important;
-           text-align:left!important
-          }
-          .box-note .box-legend>span {
-           background-color:#5e6e6e
-          }
+      /*
+      .box-adapt,
+      .box-definition,
+      .box-emphasis,
+      .box-example,
+      .box-exercise,
+      .box-interactive,
+      .box-lemma,
+      .box-notation,
+      .box-note,
+      .box-objectives,
+      .box-procedure,
+      .box-proposition,
+      .box-query,
+      .box-structure,
+      .box-theorem,
+      .box-warning {
+       display:block;
+       border-radius:4px 8px 8px 4px;
+       -moz-border-radius:4px 8px 8px 4px;
+       -webkit-border-radius:4px 8px 8px 4px;
+       border-top:none;
+       border-bottom:none;
+       border-right:none;
+       padding:0 10px 1px;
+       margin-bottom:.8em!important;
+       margin-top:.8em!important;
+       orphans:3
+      }
+      */
 
 
+    /*  .box-legend {
+       display:block;
+       overflow:hidden;
+       margin:0 0 3px;
+       transform:translate(-11px,0);
+       break-inside:avoid-page!important;
+       page-break-inside:avoid!important;
+       text-align:left!important
+      }*/
 
+
+      .box-note .box-legend>span {
+       background-color:#5e6e6e
+      }
+
+
+/*
 .box-legend>span{font-size:1rem!important}
-.box-legend p{font-size:16px!important}
+.box-legend p{font-size:17px!important}
+*/
+
+
 .box-example .box-legend>span,.box-exercise .box-legend>span,.box-objectives .box-legend>span,.box-query .box-legend>span{
           background-color:#1c72d4}
 .box-interactive .box-legend>span{background-color:#000}
 .box-note .box-legend>span{background-color:#127abf}
 .box-warning .box-legend>span{background-color:#d10000}
 .box-procedure .box-legend>span{background-color:#ffb429}
-.box-definition .box-legend>span,.box-lemma .box-legend>span,.box-notation .box-legend>span,.box-proposition .box-legend>span,.box-theorem .box-legend>span{
-    background-color:#a67c11}
 
 a.fnote {
         vertical-align: super;

@@ -33,7 +33,7 @@ window.MathJax = {
     },
   },
   chtml: {
-      scale: 0.9
+      scale: 0.85
         },
   /*svg: {
   fontCache: 'global'

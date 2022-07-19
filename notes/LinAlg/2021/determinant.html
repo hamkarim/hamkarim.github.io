@@ -132,7 +132,7 @@ a.onmenu {
 		visibility: hidden !important;
 		display: none !important;
 	}
-	/**************** Box legend container styles *******************/
+	/**************** Box legend container styles *******************
 	.mt-content-container .boxlegend {
 		font-style: normal !important;
 		font-size: 1.1em !important;
@@ -149,7 +149,7 @@ a.onmenu {
 		break-inside: avoid !important;
 	}
 
-	/************** Defining the Legends ******************/
+	/************** Defining the Legends ******************
 
 
 	.box-definition>header,
@@ -199,7 +199,7 @@ a.onmenu {
 		margin-block-start: 0 !important;
 		margin-block-end: 0 !important;
 	}
-
+*/
 </style>
 
 <style type="text/css">/*<![CDATA[*/
@@ -404,6 +404,7 @@ function showhideFunction() {
   \( \newcommand{\Argument}{\mathrm{Arg}}\)
   \( \newcommand{\norm}[1]{\| #1 \|}\)
   \( \newcommand{\cof}{\mathbf{cof}}\)
+  \( \renewcommand{\det}{\mathbf{det\,\!}}\)
     \( \newcommand{\minor}{\mathbf{minor}}\)
   \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
   \( \newcommand{\Span}{\mathrm{span}}\)</div>
@@ -452,8 +453,8 @@ There are various equivalent ways to define the determinant of a square matrix A
 <ol style="list-style-type: upper-alpha;" start="1" class="parenthalpha">
     <li class="" style="background-color: unset;">គណនាដេទែរមីណង់របស់ម៉ាទ្រីសការេ ដោយប្រើ <b>ពន្លាតឡាផ្លាស់</b> (Laplace Expansion) ឬ <b>ពន្លាតកូហ្វាក់ទើរ</b> (Cofactor Expansion) ឬប្រើ <b>ប្រមាណវិធីជួរដេក</b> (row operations)។ <!-- Evaluate the determinant of a square matrix using either Laplace Expansion or row operations.-->
     </li>
-    <li class="lt-math-14510" style="background-color: unset;">Demonstrate the effects that row operations have on determinants.</li>
-    <li class="lt-math-14510" style="background-color: unset;">Verify the following:
+    <li class="" style="background-color: unset;">Demonstrate the effects that row operations have on determinants.</li>
+    <li class="" style="background-color: unset;">Verify the following:
     <ol style="list-style-type: lower-roman;" start="1">
         <li class="" style="background-color: unset;">The determinant of a product of matrices is the product of the determinants.</li>
         <li class="" style="background-color: unset;">The determinant of a matrix is equal to the determinant of its transpose.</li>
@@ -543,18 +544,32 @@ In general, if \(A\) is an \(n\times n\) matrix, then the \(ij^{th}\) minor of \
 <example>
 (Finding Minors of a Matrix )
 
-  <p class="">Find <span class="math inline">
-Let \[A = \left[ \begin{array}{rrr} 1 & 2 & 3 \\ 4 & 3 & 2 \\ 3 & 2 & 1 \end{array} \right]\nonumber \] Find \(minor\left( A\right) _{12}\) and \(minor\left( A\right) _{23}\).
+  <p class="">
+Let
+
+\[A = \left[ \begin{array}{rrr} 1 & 2 & 3 \\ 4 & 3 & 2 \\ 3 & 2 & 1 \end{array} \right] \]
+
+Find \(\minor\left( A\right) _{12}\) and \(\minor\left( A\right) _{23}\).
   </p>
   <div class="example-content">
         <span id="SHLink_Soln2" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln2" class="fa fa-caret-right" aria-hidden="true"></span>
    <div id="SHObj_Soln2" class="soln-content" style="display: none;">
   <p>
-    First we will find \(minor\left( A\right) _{12}\). By Definition \(\PageIndex{2}\), this is the determinant of the \(2\times 2\) matrix which results when you delete the first row and the second column. This minor is given by \[minor \left(A\right)_{12} = \det \left[ \begin{array}{rr} 4 & 2 \\ 3 & 1 \end{array} \right]\nonumber \] Using Definition \(\PageIndex{1}\), we see that \[\det \left[ \begin{array}{rr} 4 & 2 \\ 3 & 1 \end{array} \right] = \left(4\right)\left(1\right) - \left(3\right)\left(2\right) = 4 - 6 = -2\nonumber\]
+    First we will find \(\minor\left( A\right) _{12}\). By Definition \(\PageIndex{2}\), this is the determinant of the \(2\times 2\) matrix which results when you delete the first row and the second column. This minor is given by
 
-  Therefore \(minor \left(A\right)_{12} = -2\).
+    \[\minor \left(A\right)_{12} = \det \left[ \begin{array}{rr} 4 & 2 \\ 3 & 1 \end{array} \right] \]
 
-  Similarly, \(minor\left(A\right)_{23}\) is the determinant of the \(2\times 2\) matrix which results when you delete the second row and the third column. This minor is therefore \[minor \left(A\right)_{23} = \det \left[ \begin{array}{rr} 1 & 2 \\ 3 & 2 \end{array} \right] = -4\nonumber \] Finding the other minors of \(A\) is left as an exercise.
+    Using Definition \(\PageIndex{1}\), we see that
+
+    \[\det \left[ \begin{array}{rr} 4 & 2 \\ 3 & 1 \end{array} \right] = \left(4\right)\left(1\right) - \left(3\right)\left(2\right) = 4 - 6 = -2\]
+
+  Therefore \(\minor \left(A\right)_{12} = -2\).
+
+  Similarly, \(\minor\left(A\right)_{23}\) is the determinant of the \(2\times 2\) matrix which results when you delete the second row and the third column. This minor is therefore
+
+  \[\minor \left(A\right)_{23} = \det \left[ \begin{array}{rr} 1 & 2 \\ 3 & 2 \end{array} \right] = -4 \]
+
+  Finding the other minors of \(A\) is left as an exercise.
   </p>
         </div>
       </div>
@@ -564,20 +579,23 @@ Let \[A = \left[ \begin{array}{rrr} 1 & 2 & 3 \\ 4 & 3 & 2 \\ 3 & 2 & 1 \end{arr
 <div class="definition">(The \(ij^{th}\) Cofactor of a Matrix) </div>
  <div class="definitionb">
 <p>
-Suppose \(A\) is an \(n\times n\) matrix. The \(ij^{th}\) cofactor, denoted by \(\mathrm{cof}\left( A\right) _{ij}\) is defined to be \[\cof\left( A\right) _{ij} = \left( -1\right) ^{i+j} \minor\left(A\right)_{ij}\nonumber \] </p>
+Suppose \(A\) is an \(n\times n\) matrix. The \(ij^{th}\) cofactor, denoted by \(\mathrm{cof}\left( A\right) _{ij}\) is defined to be
+
+\[\cof\left( A\right) _{ij} = \left( -1\right) ^{i+j} \cdot  \minor\left(A\right)_{ij} \]
+</p>
 </div>
  </defn>
 
 
 <p style="text-indent: 0px"><b>ចំណាំ :</b>
-  It is also convenient to refer to the cofactor of an entry of a matrix as follows. If \(a_{ij}\) is the \(ij^{th}\) entry of the matrix, then its cofactor is just \(\mathrm{cof}\left( A\right) _{ij}.\)
+  It is also convenient to refer to the cofactor of an entry of a matrix as follows. If \(a_{ij}\) is the \(ij^{th}\) entry of the matrix, then its cofactor is just \(\cof\left( A\right) _{ij}\), or simply $A_{ij}$ or $c_{ij}$.
     </p>
 
     <example>
     (Finding Cofactors of a Matrix)
 
       <p class="">
-    Consider the matrix \[A=\left[ \begin{array}{rrr} 1 & 2 & 3 \\ 4 & 3 & 2 \\ 3 & 2 & 1 \end{array} \right]\nonumber \] Find \(\mathrm{cof}\left( A\right) _{12}\) and \(\mathrm{cof}\left( A\right) _{23}\).
+    Consider the matrix \[A=\left[ \begin{array}{rrr} 1 & 2 & 3 \\ 4 & 3 & 2 \\ 3 & 2 & 1 \end{array} \right]\nonumber \] Find \(\cof\left( A\right) _{12}\) and \(\cof\left( A\right) _{23}\).
       </p>
       <div class="example-content">
             <span id="SHLink_Soln3" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln3" class="fa fa-caret-right" aria-hidden="true"></span>
@@ -585,9 +603,23 @@ Suppose \(A\) is an \(n\times n\) matrix. The \(ij^{th}\) cofactor, denoted by \
       <p>
         We will use Definition \(\PageIndex{3}\) to compute these cofactors.
 
-  First, we will compute \(\mathrm{cof}\left( A\right) _{12}\). Therefore, we need to find \(minor\left(A\right)_{12}\). This is the determinant of the \(2\times 2\) matrix which results when you delete the first row and the second column. Thus \(minor\left(A\right)_{12}\) is given by \[\det \left[ \begin{array}{rr} 4 & 2 \\ 3 & 1 \end{array} \right] = -2\nonumber \] Then, \[\mathrm{cof}\left( A\right) _{12}=\left( -1\right) ^{1+2} minor\left(A\right)_{12} =\left( -1\right) ^{1+2}\left( -2\right) =2\nonumber \] Hence, \(\mathrm{cof}\left( A\right) _{12}=2\).
+  First, we will compute \(\cof\left( A\right) _{12}\). Therefore, we need to find \(\minor\left(A\right)_{12}\). This is the determinant of the \(2\times 2\) matrix which results when you delete the first row and the second column. Thus \(\minor\left(A\right)_{12}\) is given by
 
-  Similarly, we can find \(\mathrm{cof}\left( A\right) _{23}\). First, find \(minor\left(A\right)_{23}\), which is the determinant of the \(2\times 2\) matrix which results when you delete the second row and the third column. This minor is therefore \[\det \left[ \begin{array}{rr} 1 & 2 \\ 3 & 2 \end{array} \right] = -4\nonumber \] Hence, \[\mathrm{cof}\left( A\right) _{23}=\left( -1\right) ^{2+3} minor\left(A\right)_{23} =\left( -1\right) ^{2+3}\left( -4\right) =4\nonumber \]
+  \[\det \left[ \begin{array}{rr} 4 & 2 \\ 3 & 1 \end{array} \right] = -2 \]
+
+  Then,
+
+  \[\cof\left( A\right) _{12}=\left( -1\right) ^{1+2} \cdot \minor\left(A\right)_{12} =\left( -1\right) ^{1+2}\left( -2\right) =2 \]
+
+  Hence, \(\cof\left( A\right) _{12}=2\).
+
+  Similarly, we can find \(\cof\left( A\right) _{23}\). First, find \(\minor\left(A\right)_{23}\), which is the determinant of the \(2\times 2\) matrix which results when you delete the second row and the third column. This minor is therefore
+
+  \[\det \left[ \begin{array}{rr} 1 & 2 \\ 3 & 2 \end{array} \right] = -4 \]
+
+  Hence,
+
+  \[\cof\left( A\right) _{23}=\left( -1\right) ^{2+3} \cdot \minor\left(A\right)_{23} =\left( -1\right) ^{2+3}\left( -4\right) =4 \]
       </p>
             </div>
           </div>
@@ -614,17 +646,36 @@ Suppose \(A\) is an \(n\times n\) matrix. The \(ij^{th}\) cofactor, denoted by \
     (Finding the Determinant of a Three by Three Matrix )
 
       <p class="">
-    Let \[A=\left[ \begin{array}{rrr} 1 & 2 & 3 \\ 4 & 3 & 2 \\ 3 & 2 & 1 \end{array} \right]\nonumber \] Find \(\det\left(A\right)\) using the method of Laplace Expansion.
+    Let
+
+    \[A=\left[ \begin{array}{rrr} 1 & 2 & 3 \\ 4 & 3 & 2 \\ 3 & 2 & 1 \end{array} \right]\nonumber \]
+
+    Find \(\det\left(A\right)\) using the method of Laplace Expansion.
       </p>
       <div class="example-content">
             <span id="SHLink_Soln4" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln4" class="fa fa-caret-right" aria-hidden="true"></span>
        <div id="SHObj_Soln4" class="soln-content" style="display: none;">
       <p>
-        First, we will calculate \(\det \left(A\right)\) by expanding along the first column. Using Definition \(\PageIndex{4}\), we take the \(1\) in the first column and multiply it by its cofactor, \[1 \left( -1\right) ^{1+1}\left| \begin{array}{rr} 3 & 2 \\ 2 & 1 \end{array} \right| = (1)(1)(-1) = -1\nonumber \] Similarly, we take the \(4\) in the first column and multiply it by its cofactor, as well as with the \(3\) in the first column. Finally, we add these numbers together, as given in the following equation. \[\det \left(A\right) = 1 \overset{ \mathrm{cof}\left( A\right) _{11}}{\overbrace{\left( -1\right) ^{1+1}\left| \begin{array}{rr} 3 & 2 \\ 2 & 1 \end{array} \right| }}+4 \overset{\mathrm{cof}\left( A\right) _{21}}{\overbrace{\left( -1\right) ^{2+1}\left| \begin{array}{rr} 2 & 3 \\ 2 & 1 \end{array} \right| }}+3 \overset{\mathrm{cof}\left( A\right) _{31}}{\overbrace{\left( -1\right) ^{3+1}\left| \begin{array}{rr} 2 & 3 \\ 3 & 2 \end{array} \right| }}\nonumber \] Calculating each of these, we obtain \[\det \left(A\right) = 1 \left(1\right)\left(-1\right) + 4 \left(-1\right)\left(-4\right) + 3 \left(1\right)\left(-5\right) = -1 + 16 + -15 = 0\nonumber \] Hence, \(\det\left(A\right) = 0\).
+        First, we will calculate \(\det \left(A\right)\) by expanding along the first column. Using Definition \(\PageIndex{4}\), we take the \(1\) in the first column and multiply it by its cofactor, \[1 \left( -1\right) ^{1+1}\left| \begin{array}{rr} 3 & 2 \\ 2 & 1 \end{array} \right| = (1)(1)(-1) = -1\nonumber \] Similarly, we take the \(4\) in the first column and multiply it by its cofactor, as well as with the \(3\) in the first column. Finally, we add these numbers together, as given in the following equation.
 
-  As mentioned in Definition \(\PageIndex{4}\), we can choose to expand along any row or column. Let’s try now by expanding along the second row. Here, we take the \(4\) in the second row and multiply it to its cofactor, then add this to the \(3\) in the second row multiplied by its cofactor, and the \(2\) in the second row multiplied by its cofactor. The calculation is as follows. \[\det \left(A\right) = 4 \overset{\mathrm{cof}\left( A\right) _{21}}{\overbrace{\left( -1\right) ^{2+1}\left| \begin{array}{rr} 2 & 3 \\ 2 & 1 \end{array} \right| }}+3 \overset{\mathrm{cof}\left( A\right) _{22}}{\overbrace{\left( -1\right) ^{2+2}\left| \begin{array}{rr} 1 & 3 \\ 3 & 1 \end{array} \right| }}+2 \overset{\mathrm{cof}\left( A\right) _{23}}{\overbrace{\left( -1\right) ^{2+3}\left| \begin{array}{rr} 1 & 2 \\ 3 & 2 \end{array} \right| }}\nonumber \]
+        \[\det \left(A\right) = 1 \overset{ \cof\left( A\right) _{11}}{\overbrace{\left( -1\right) ^{1+1}\left| \begin{array}{rr} 3 & 2 \\ 2 & 1 \end{array} \right| }}+4 \overset{\cof\left( A\right) _{21}}{\overbrace{\left( -1\right) ^{2+1}\left| \begin{array}{rr} 2 & 3 \\ 2 & 1 \end{array} \right| }}+3 \overset{\cof\left( A\right) _{31}}{\overbrace{\left( -1\right) ^{3+1}\left| \begin{array}{rr} 2 & 3 \\ 3 & 2 \end{array} \right| }} \]
 
-  Calculating each of these products, we obtain \[\det \left(A\right) = 4\left(-1\right)\left(-2\right) + 3\left(1\right)\left(-8\right) + 2 \left(-1\right)\left(-4\right) = 0\nonumber \]
+        Calculating each of these, we obtain
+
+        \[\det \left(A\right) = 1 \left(1\right)\left(-1\right) + 4 \left(-1\right)\left(-4\right) + 3 \left(1\right)\left(-5\right) = -1 + 16 + -15 = 0 \]
+
+        Hence, \(\det\left(A\right) = 0\).
+
+<br><br>
+  As mentioned in Definition \(\PageIndex{4}\), we can choose to expand along any row or column. Let’s try now by expanding along the second row. Here, we take the \(4\) in the second row and multiply it to its cofactor, then add this to the \(3\) in the second row multiplied by its cofactor, and the \(2\) in the second row multiplied by its cofactor. The calculation is as follows.
+
+
+   \[
+   \det \left(A\right) = 4 \overset{\cof\left( A\right) _{21}}{\overbrace{\left( -1\right) ^{2+1}\left| \begin{array}{rr} 2 & 3 \\ 2 & 1 \end{array} \right| }}+3 \overset{\cof\left( A\right) _{22}}{\overbrace{\left( -1\right) ^{2+2}\left| \begin{array}{rr} 1 & 3 \\ 3 & 1 \end{array} \right| }}+2 \overset{\cof\left( A\right) _{23}}{\overbrace{\left( -1\right) ^{2+3}\left| \begin{array}{rr} 1 & 2 \\ 3 & 2 \end{array} \right| }} \]
+
+  Calculating each of these products, we obtain
+
+  \[\det \left(A\right) = 4\left(-1\right)\left(-2\right) + 3\left(1\right)\left(-8\right) + 2 \left(-1\right)\left(-4\right) = 0 \]
 
   You can see that for both methods, we obtained \(\det \left(A\right) = 0\).
       </p>
@@ -637,16 +688,20 @@ Suppose \(A\) is an \(n\times n\) matrix. The \(ij^{th}\) cofactor, denoted by \
 We present this idea formally in the following theorem.</p>
 
 <div class="box-theorem">
-  <div mt-section-origin="" class="mt-section"><span id=""></span>
-    <h5 class="box-legend editable"><span class="lt-icon-default">Theorem : (The Determinant is Well Defined)<a name=""></a></span></h5>
+    <div class="box-legend editable"><span class="lt-icon-default">Theorem :  (The Determinant is Well Defined)</span></div>
 
-<p class="">Expanding the <span class="math inline">\(n\times n\)</span> matrix along any row or column always gives the same answer, which is the determinant, meaning that </p>
+<p>Expanding the \(n\times n\) matrix along any row or column always gives the same answer, which is the determinant, meaning that </p>
 \begin{eqnarray*}
-\begin{vmatrix}a_{11}&a_{12}&\cdots &a_{1n}\\a_{21}&a_{22}&\cdots &a_{2n}\\\vdots &\vdots &\ddots &\vdots \\a_{n1}&a_{n2}&\cdots &a_{nn}\end{vmatrix}
+\begin{vmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n}\\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots &a_{nn}
+\end{vmatrix}
 &= &\sum_{k=1}^{n} a_{ik} \cdot \cof(A)_{ik}, \quad (\text{by row } i\text{-th},  i=1,\ldots,n) \\
 &= &\sum_{k=1}^{n} a_{kj} \cdot \cof(A)_{kj}, \quad (\text{by column } j\text{-th},  j=1,\ldots,n)
 \end{eqnarray*}
-</div></div>
+</div>
 
 <p>For example, the \(ij^{th}\) minor of a \(4 \times 4\) matrix is the determinant of the \(3 \times 3\) matrix you obtain when you delete the \(i^{th}\) row and the \(j^{th}\) column. Just as with the \(3 \times 3\) determinant, we can compute the determinant of a \(4 \times 4\) matrix by Laplace Expansion, along any row or column
 
@@ -658,13 +713,14 @@ Consider the following example.</p>
 
   <p class="">
 Find \(\det \left( A\right)\) where
-\[A=\left[ \begin{array}{rrrr} 1 & 2 & 3 & 4 \\ 5 & 4 & 2 & 3 \\ 1 & 3 & 4 & 5 \\ 3 & 4 & 3 & 2 \end{array} \right]\nonumber \]
+\[A=\left[ \begin{array}{rrrr} 1 & 2 & 3 & 4 \\ 5 & 4 & 2 & 3 \\ 1 & 3 & 4 & 5 \\ 3 & 4 & 3 & 2 \end{array} \right] \]
   </p>
   <div class="example-content">
         <span id="SHLink_Soln5" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln5" class="fa fa-caret-right" aria-hidden="true"></span>
    <div id="SHObj_Soln5" class="soln-content" style="display: none;">
   <p>
   As in the case of a \(3\times 3\) matrix, you can expand this along any row or column. Lets pick the third column. Then, using Laplace Expansion,
+
   \[\det \left( A\right) = 3\left( -1\right) ^{1+3}\left\vert \begin{array}{rrr} 5 & 4 & 3 \\ 1 & 3 & 5 \\ 3 & 4 & 2 \end{array} \right\vert +2\left( -1\right) ^{2+3}\left\vert \begin{array}{rrr} 1 & 2 & 4 \\ 1 & 3 & 5 \\ 3 & 4 & 2 \end{array} \right\vert +\nonumber \] \[4\left( -1\right) ^{3+3}\left\vert \begin{array}{rrr} 1 & 2 & 4 \\ 5 & 4 & 3 \\ 3 & 4 & 2 \end{array} \right\vert +3\left( -1\right) ^{4+3}\left\vert \begin{array}{rrr} 1 & 2 & 4 \\ 5 & 4 & 3 \\ 1 & 3 & 5 \end{array} \right\vert\nonumber \]
   </p>
   <p>
@@ -716,13 +772,15 @@ There is a certain type of matrix for which finding the determinant is a very si
     </div>
     </defn>
 
-<div class="box-definition"><div mt-section-origin="" class="mt-section"><span id="Theorem_."></span><h5 class="box-legend editable"><span class="lt-icon-default">Theorem : (Determinant of a Triangular Matrix)<a name="thm%"></a></span></h5>
+<div class="box-theorem">
+  <div class="box-legend editable"><span class="lt-icon-default">Theorem :  (Determinant of a Triangular Matrix)</span>
+</div>
 
-    <p class="">
+    <p>
     Let \(A\) be an upper or lower triangular matrix. Then \(\det \left( A\right)\) is obtained by taking the product of the entries on the main diagonal.
      </p>
 
-    </div></div>
+    </div>
 
 <p>The verification of this Theorem can be done by computing the determinant using Laplace Expansion along the first row or column.</p>
 
@@ -780,29 +838,30 @@ Without using Theorem \(\PageIndex{2}\), you could use Laplace Expansion. We wil
 
 
 <div class="box-definition">
-  <div mt-section-origin="" class="mt-section"><span id=""></span>
-    <h5 class="box-legend editable"><span class="lt-icon-default">Properties I: (the effect of row operations) </span></h5>
-
-<p class="">
-  <ol class="parenthnum">
-<li><b>Switching Rows:</b> Let  $A$  be an  $n\times n$  matrix and let  $B$  be a matrix which results from switching two rows of $ A$.  Then $\det(B)=−det(A)$.</li>
+  <div class="mt-section box-legend editable"><span class="lt-icon-default">Properties I: (the effect of row operations) </span></div>
+<p>
+  <ol class="romanlist oneem">
+<li><b>Switching Rows:</b> យកម៉ាទ្រីស $A$ មានលំដាប់  $n\times n$  និងយក  $B$ ជាម៉ាទ្រីសដែលបានមកពីការប្ដូរជួរដេកពីររបស់ម៉ាទ្រីស $ A$ ។ ដូច្នេះ គេបាន $$\det(B)=-\det(A)$$</li>
 
 <li><b>Multiplying a Row by a Scalar:</b>
-Let  $A$  be an  $n\times n$  matrix and let  $B$  be a matrix which results from multiplying some row of  $A$  by a scalar $k$. Then  $\det(B)=k\cdot\det(A)$.</li>
+បើម៉ាទ្រីស $A$ មានលំដាប់ $n\times n$  និង  $B$ ជាម៉ាទ្រីសដែលបានមក ដោយគុណជួរដេកណាមួយរបស់់ម៉ាទ្រីស $A$ ជាមួយនឹង
+ស្កាលែរ  $k\neq 0$ ។ ដូច្នេះ គេបាន $$\det(B)=k\cdot\det(A)$$</li>
 
 <li><b>Scalar Multiplication:</b>
-Let \(A\) and \(B\) be \(n \times n\) matrices and \(k\) a scalar, such that \(B = kA\). Then \(\det(B) = k^n \det(A)\).</li>
+យក \(A\) និង \(B\) ជាម៉ាទ្រីសលំដាប់ \(n \times n\) និងកំណត់ \(k\) ជាស្កាលែរមួយ ដែល \(B = k\cdot A\) ។ ដូច្នេះ គេបាន \[\det(B) = k^n\cdot \det(A)\]</li>
 
 <li><b>Adding a Multiple of a Row to Another Row:</b>
-Let \(A\) be an \(n\times n\) matrix and let \(B\) be a matrix which results from adding a multiple of a row to another row. Then \(\det \left( A\right) =\det \left( B \right)\).</li>
+Let \(A\) be an \(n\times n\) matrix and let \(B\) be a matrix which results from adding a multiple of a row to another row. Then
+
+\[\det \left( A\right) =\det \left( B \right)\]</li>
 
   </ol>
 
 </p>
 
-</div></div>
+</div>
 
-<p>Until now, our focus has primarily been on row operations. However, we can carry out the same operations with columns, rather than rows. The three operations outlined in Definition \(\PageIndex{1}\) can be done with columns instead of rows. In this case, in Theorems \(\PageIndex{1}\), \(\PageIndex{2}\), and \(\PageIndex{4}\) you can replace the word, "row" with the word "column".
+<p style="text-indent: 0px"><b>សម្គាល់:</b> We can carry out the same operations with columns, rather than rows. The three operations outlined in Definition \(\PageIndex{1}\) can be done with columns instead of rows. In this case, in Theorems \(\PageIndex{1}\), \(\PageIndex{2}\), and \(\PageIndex{4}\) you can replace the word, "row" with the word "column".
 
 </p>
 
@@ -810,7 +869,7 @@ Let \(A\) be an \(n\times n\) matrix and let \(B\) be a matrix which results fro
 
 
 <div class="box-definition">
-  <div mt-section-origin="" class="mt-section"><span id=""></span>
+  <div mt-section-origin="" class="mt-section">
     <h5 class="box-legend editable"><span class="lt-icon-default">Properties II: (major properties of determinants) </span></h5>
 
 <p class="">
@@ -900,10 +959,10 @@ Let \(A\) be an \(n \times n\) matrix. Then \(A\) is invertible if and only if \
 
 
 <div class="box-theorem">
-  <div mt-section-origin="" class="mt-section"><span id=""></span>
+  <div mt-section-origin="" class="mt-section">
     <h5 class="box-legend editable"><span class="lt-icon-default">Lemma: (major properties of determinants) </span></h5>
 
-<p class="">
+<p>
 <ol class="indentli">
 <li>If \(A\) is an \(n\times n\) matrix such that one of its rows consists of zeros, then \(\det A=0\).
 
