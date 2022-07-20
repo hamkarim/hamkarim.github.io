@@ -7,14 +7,14 @@
 
 @import url("https://fonts.googleapis.com/css?family=Open Sans|Didact Gothic|Siemreap|Bayon|Battambang|");
 html, body {  /*for html, body fonts*/
-          font-family: 'Ang DaunKeo','Siemreap', 'Century Gothic', 'Didact Gothic';
+          font-family: 'Noto Serif Khmer','Siemreap', 'Century Gothic', 'Didact Gothic';
           -ms-text-size-adjust:120%;
           -webkit-text-size-adjust:120%;
           padding:0;
           margin:0;
+          line-height: 1.5 !important;
     /*font-family: 'Khmer OS Battambang', 'sans-serif';/*"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
           /*font-size:18px;*
-          line-height:1.4;
         /*  color:darkblue/*#606c71 */
 }
 /*.MathJax_CHTML {
