@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+    <!-- Begin Jekyll SEO tag v2.3.0 -->
+<meta property="og:title" content="Ham Karim">
+<meta name="author" content="Ham Karim">
+<meta name="author" content="determinants">
+<meta property="og:locale" content="en_US">
+<meta http-equiv="keywords" name="keywords" content="Functional Anaysis, TD & TP">
+<meta http-equiv="description" name="description" content="Functional Anaysis,  TD & TP">
+<meta name="description" content="Functional Anaysis: TD & TP">
+<meta property="og:description" content="Math, Programmer, Music">
+<link rel="canonical" href="../../../index.html">
+<meta property="og:url" content="https://hamkarim.github.io/">
+<meta property="og:site_name" content="Right Triangle">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@pkarim">
+<meta name="twitter:creator" content="@pkarim">
+<meta name="google-site-verification" content="b9bg3P9zc8qbL4szvVYaf551jD9x017IyGBVSaQZDDY" />
+
+<script type="application/ld+json">
+{
+    "name":"Ham Karim",
+    "description":"I am a faculty member at the Royal Univeristy of Phnom Penh (RUPP). This is my blog of lectures at universities. ",
+    "author":{"@type":"Person","name":"Ham Karim"},
+    "@type":"WebSite",
+    "url":"https://hamkarim.github.io/",
+    "image":null,
+    "publisher":null,
+    "headline":"Ham Karim",
+    "dateModified":null,
+    "datePublished": "2020-06-01",
+    "sameAs":null,
+    "mainEntityOfPage":null,
+    "@context":"http://schema.org"}
+</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta property="og:image" content="http://www.cliparts101.com/files/376/298FE3955707B1DE458221E4BFABFBBE/Greek_Gamma_4.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../topology/2019/favicon.ico">
+
+
+    <meta charset="UTF-8">
+    <title>Functional Anaysis: TD & TP</title>
+    <meta name="description" content="Math, Programmer, Music">
+
+    <!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
+
+<style  type="text/css">
+.deffont {
+        font-family: 'Noto Serif Khmer', 'CMU Serif';
+        font-size: 17px;
+        }
+ul.liststyle1 {
+        list-style-type: square;
+      }
+ul.liststyle2 {
+        list-style-type: hebrew;
+      }
+ol.liststyle1 {
+        list-style-type: lower-latin;
+}
+a.onmenu {
+          font-family:'Noto Serif Khmer','CMU Serif';
+          font-weight:bold;
+ }
+      </style>
+
+<style type="text/css">
+/**************** Box container styles *******************/
+	.mt-content-container .boxobjectives,
+	.boxexample,
+	.boxexercise,
+	.boxquery,
+	.boxnotewithlegend,
+	.boxnotewithoutlegend,
+	.boxprocedure,
+	.boxdefinition,
+	.boxtheorem,
+	.boxlemma,
+	.boxnotation,
+	.boxproposition {
+		-moz-border-radius: 8px;
+		-webkit-border-radius: 8px;
+		border-radius: 8px;
+		padding-top: 0em;
+		padding-bottom: 0em;
+		padding-left: 1em;
+		padding-right: 1em;
+		margin-bottom: 1em;
+		overflow: visible;
+		border: 0px;
+		orphans: 2;
+	}
+	.mt-content-container .boxnotewithlegend,
+	.boxprocedure,
+	.notation {
+		background-color: hsla(20, 0%, 93%, 1);
+	}
+	.mt-content-container .boxexample,
+	.boxexercise {
+		background-color: hsla(220, 100%, 97%, 1);
+	}
+	.mt-content-container .boxwarning {
+		background-color: hsla(0, 100%, 96%, 1);
+	}
+	.mt-content-container .boxdefinition,
+	.boxtheorem,
+	.boxlemma,
+	.boxnotation,
+	.boxproposition {
+		background-color: hsla(28, 80%, 95%, 1);
+	}
+	.mt-content-container .boxobjectives {
+		background-color: hsla(0, 0%, 90%, 1);
+	}
+	.mt-content-container .boxnotewithoutlegend {
+		background-color: hsla(20, 0%, 93%, 1);
+		padding-right: 1em;
+		padding-left: 1em;
+		padding-top: 0.5em !important;
+		padding-bottom: 0.5em !important;
+		margin-right: 1em;
+		margin-left: 1em;
+	}
+	.mt-content-container .boxquery {
+		border: 2px solid green;
+		page-break-inside: avoid;
+		visibility: hidden !important;
+		display: none !important;
+	}
+	/**************** Box legend container styles *******************
+	.mt-content-container .boxlegend {
+		font-style: normal !important;
+		font-size: 1.1em !important;
+		font-weight: normal !important;
+		font-family: "Tahoma", Arial, serif !important;
+		padding-top: 0.2em !important;
+		padding-bottom: 0.2em !important;
+		padding-left: 0.3em !important;
+		padding-right: 0.3em !important;
+		margin-left: 0.35em;
+		color: white;
+		border-radius: 3px;
+		overflow: visible;
+		break-inside: avoid !important;
+	}
+
+	/************** Defining the Legends ******************
+
+
+	.box-definition>header,
+	.box-structure>header,
+	.box-note>header,
+	.box-theorem>header,
+	.box-example>header,
+	.box-exercise>header,
+	.box-query>header,
+	.box-adapt>header,
+	.box-objectives>header,
+	.box-warning>header {
+		display: inline-flex;
+		overflow: hidden;
+		break-inside: avoid-page;
+		page-break-inside: avoid;
+		text-align: left;
+		width: auto;
+		margin: 0 0px 2px 0px !important;
+		padding: 4px 6px 4px 4px !important;
+		transform: translate(-11px, 0px) !important;
+		border-radius: 3px 5px 5px 0;
+		-moz-border-radius: 3px 5px 5px 0;
+		-webkit-border-radius: 3px 5px 5px 0;
+	}
+	.box-definition>header *,
+	.box-structure>header *,
+	.box-note>header *,
+	.box-theorem>header *,
+	.box-example>header *,
+	.box-exercise>header *,
+	.box-query>header *,
+	.box-adapt>header *,
+	.box-objectives>header *,
+	.box-warning>header * {
+		font-family: "Battambang", "Tahoma", Arial, serif !important;
+		font-size: 17px !important;
+		font-weight: 400 !important;
+		color: white !important;
+		;
+		width: auto !important;
+		;
+		float: left !important;
+		;
+		line-height: 1 !important;
+		;
+		margin-block-start: 0 !important;
+		margin-block-end: 0 !important;
+	}
+*/
+</style>
+
+<style type="text/css">/*<![CDATA[*/
+.Headertext{
+display:none;
+}/*]]>*/</style>
+
+<style type="text/css">/*<![CDATA[*/
+/* CSS pseudo-element styling https://fontawesome.com/how-to-use/on-the-web/advanced/css-pseudo-elements */
+
+/* general reset/setup styling for icons - needed on all */
+
+.lt-icon-default::before, .lt-icon-brain::before, .lt-icon-pin::before , .lt-icon-hand::before, .lt-icon-pathway::before, .lt-icon-logic::before, .lt-icon-check::before, .lt-icon-question::before, .lt-icon-exclamation::before    {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1.5;
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+  margin-right: 0.5rem;
+}
+
+/*default */
+
+.box-example .lt-icon-default::before {
+  content: "\f00c";
+}
+.box-exercise .lt-icon-default::before {
+  content: "\f128";
+}
+.box-query .lt-icon-default::before {
+  content: "\f126";
+}
+.box-adapt .lt-icon-default::before {
+  content: "\f126";
+}
+.box-interactive .lt-icon-default::before{
+  content: "\f542";
+}
+.box-note .lt-icon-default::before {
+  content: "\f08d";
+}
+.box-objectives .lt-icon-default::before {
+  content: "\f5dc";
+}
+.box-definition .lt-icon-default::before {
+  content: "\f303";
+}
+.box-theorem .lt-icon-default::before {
+  content: "\f1b3";
+}
+.box-warning .lt-icon-default::before {
+  content: "\f256";
+}
+
+
+/*specific icons*/
+.lt-icon-brain::before  {
+  content: "\f5dc";
+}
+
+.lt-icon-pin::before {
+  content: "\f08d";
+}
+
+.lt-icon-pathway::before, {
+  content: "\f126";
+}
+
+.lt-icon-logic::before, {
+  content: "\f1b3";
+}
+
+.lt-icon-hand::before, {
+  content: "\f126";
+}
+
+.lt-icon-pathway::before, {
+  content: "\f256";
+}
+
+.lt-icon-check::before, {
+  content: "\f00c";
+}
+
+.lt-icon-question::before, {
+  content: "\f128";
+}
+
+.lt-icon-exclamation::before, {
+  content: "\f12a";
+}/*]]>*/</style>
+
+<script async="" src="//cse.google.com/adsense/search/async-ads.js"></script>
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script type="text/javascript" async="" src="https://cse.google.com/cse.js?cx=001004262401526223570:11yv6vpcqvy"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-331594-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+    <link rel="stylesheet" href="../../../assets/css/style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245">
+    <link rel="stylesheet" href="../../../assets/css/all.css">
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+<!-- Script to show and hide proof -->
+<script type="text/javascript" src="https://hamkarim.github.io/assets/js/showhide.js"></script>
+<!-- Other style of showing and hiding proof -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
+ <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>
+<!-- end -->
+
+<script type="text/javascript" src="../../../assets/sidebar/sidebar.min.js"></script>
+<link rel="stylesheet" href="../../../assets/sidebar/Sidebar.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+//Another method to toggle the button
+          $(document).ready(function(){
+                    $('.showanswer').click(function(){
+                              $('.block_proof').show();
+                              $('.showanswer').hide();
+                              $('.hideanswer').show();
+                    }
+          );
+                    $('.hideanswer').click(function(){
+                              $('.block_proof').hide();
+                              $('.showanswer').show();
+                              $('.hideanswer').hide();
+                    }
+          );
+ });
+</script>
+
+<!-- For local function, define to exchange text -->
+<script>
+function showhideFunction() {
+          document.getElementById('idClick').innerHTML === '[Hide proof]' ? document.getElementById('idClick').innerHTML = '[Show proof]' : document.getElementById('idClick').innerHTML = '[Hide proof]';
+}
+</script>
+
+<!-- script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,https://hamkarim.github.io/MathJax/config/local/local.js"></script -->
+
+<!--script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { fonts: ["TeX"] }
+  });
+</script-->
+
+<!-- script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
+</script-->
+
+<!--script src="https://hamkarim.github.io/MathJax/config/local/mathjax-config.js" defer></script-->
+<script type="text/javascript" src="../../../MathJax/config/local/mathjax-config.js" defer></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" defer
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml-full.min.js">
+  </script>
+
+ <div class="Headertext">
+
+   \( \newcommand{\vecs}[1]{\overset { \scriptstyle \rightharpoonup} {\mathbf{#1}}&nbsp;}&nbsp;\)
+   \( \newcommand{\vecd}[1]{\overset{-\!-\!\rightharpoonup}{\vphantom{a}\smash&nbsp;{#1}}} \)
+   \(\newcommand{\id}{\mathrm{id}}\)
+   \( \newcommand{\Span}{\mathrm{span}}\)
+   \( \newcommand{\kernel}{\mathrm{null}\,}\)
+   \( \newcommand{\range}{\mathrm{range}\,}\)
+   \( \newcommand{\RealPart}{\mathrm{Re}}\)
+   \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+   \( \newcommand{\Argument}{\mathrm{Arg}}\)
+  \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \(\newcommand{\id}{\mathrm{id}}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \( \newcommand{\kernel}{\mathrm{null}\,}\)
+  \( \newcommand{\range}{\mathrm{range}\,}\)
+  \( \newcommand{\RealPart}{\mathrm{Re}}\)
+  \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+  \( \newcommand{\Argument}{\mathrm{Arg}}\)
+  \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\cof}{\mathbf{cof}}\)
+  \( \renewcommand{\det}{\mathbf{det\,\!}}\)
+    \( \newcommand{\minor}{\mathbf{minor}}\)
+  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+\(\def\d{\;\mathrm d}\)
+\(\def\K{\mathbb K}\)
+\[ \newcommand{R}{\mathbb{R}}
+\newcommand{C}{\mathbb{C}}
+\newcommand{N}{\mathbb{N}}
+\newcommand{defarrow}{\quad \stackrel{\text{def}}{\Longleftrightarrow} \quad} \]
+</div>
+
+
+  </head>
+
+  <body>
+
+<section class="main-content">
+
+  <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">Functional Anaysis: TD & TP (I)</h1>
+<p style="font-style: italic; font-weight:bold; font-family: Arial; opacity: 0.5;">
+October
+2nd, 2020
+</p>
+
+<hr>
+<!--
+<p style="text-indent:0px">From Wikipedia:</p>
+<blockquote>
+	<a href=" ">
+    <div class="divfigure">
+        <p> <img class="wrap-right" alt="The volume of parallelepiped" src=" ">
+
+        </p>
+    </div>
+  </a>
+  <p>
+
+</p>
+
+
+<p>
+
+</p>
+</blockquote>
+
+<div class="box-note">
+
+  <span id="Outcomes"></span>
+<h5 class="box-legend editable">
+<span class="lt-icon-default">Outcomes</span></h5>
+
+<ol style="list-style-type: upper-alpha;" start="1" class="parenthalpha">
+    <li class="" style="background-color: unset;">
+
+    </li>
+    <li class="" style="background-color: unset;">
+
+      </li>
+
+      <li class="" style="background-color: unset;">
+
+        </li>
+
+</ol>
+</div></div>
+-->
+
+<h2 class="frame-sect sectcounter">&nbsp; Function spaces</h2>
+
+<h3>Continuous maps</h3>
+
+<p>
+A map $f: X \rightarrow Y$ from one metric space to another is continuous at $x \in X$ if, for every $\varepsilon>0$, there is $\delta>0$ such that $\d_{X}\left(x, x^{\prime}\right)<\delta$ implies $\d_{Y}\left(f(x), f\left(x^{\prime}\right)\right)<\varepsilon$.
+</p>
+
+<p>
+  The map $f: X \rightarrow Y$ is continuous if it is continuous at every point of $X$.
+</p>
+
+<b>Proposition:</b> A map $f: X \rightarrow Y$ continuous if and only if, for every Cauchy sequence $\left\{x_{i}\right\}$ in $X$ converging to $x \in X$,
+$$
+\lim _{i} f\left(x_{i}\right)=f\left(\lim _{i} x_{i}\right)
+$$
+
+
+<div class="example-content">
+      <span id="SHLink_Soln1pro" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln1pro" class="fa fa-caret-right" aria-hidden="true"></span>
+ <div id="SHObj_Soln1pro" class="soln-content" style="display: none;">
+   <!--
+<p>On one hand, for continuous $f$ and $x_{i} \rightarrow x$, given any ball at $x$, from some point onward all the $x_{i}$ are inside that ball. Thus, eventually, $f\left(x_{i}\right)$ is close to $f(x)$, so $\lim _{i} f\left(x_{i}\right)=f(x)$.
+</p>
+<p>
+  On the other hand, if $f$ were not continuous at $x$, then for some $\varepsilon>0$, for every $\delta>0$ there is some $x^{\prime}$ inside corresponding bad $x^{\prime}$. Then $x_{n} \rightarrow x$ but $f\left(x_{n}\right) \not f(x)$, so $f$ is not continuous at $x$.
+</p>
+-->
+
+      </div>
+    </div>
+
+<h3>Function spaces $C^{0}[a, b]$: Read now!</h3>
+<p>
+
+  Denote $C^{0}[a, b]$ as the space of continuous real-valued functions on a finite interval $[a, b] \subset \mathbb{R}$. It has a <a>natural </a>metric
+  $$
+  \d(f, g)=\sup _{x \in[a, b]}|f(x)-g(x)| \quad \text { (sup-norm metric) }
+  $$
+
+  Surely, $C^{0}[a, b]$ is complete in the sense that any <a href="">Cauchy sequence</a> converges to another function in this space.
+</p>
+
+<p>
+  This is the idea! For a sequence $\left\{f_{i}\right\}$ such that, for every $\varepsilon>0$, there is $i_{o}$ such that $\d\left(f_{i}, f_{j}\right)<\varepsilon$ for all $i, j \geq i_{o}$, then $\lim _{i} f_{i}$ is an element of $C^{0}[a, b]$. Where the limit is a function evaluated pointwise by
+$$
+\left(\lim _{i} f_{i}\right)(x)=\lim _{i} f_{i}(x) \quad \text { (for } x \in[a, b])
+$$
+</p>
+
+<p>
+  Indeed, the pointwise limits $f(x)=\lim _{i} f_{i}(x)$ exist, since $$\left|f_{i}(x)-f_{j}(x)\right| \leq \sup _{y}\left|f_{i}(y)-f_{j}(y)\right|$$
+  shows that <a href="">the pointwise values are Cauchy sequences of real numbers</a>. This is to see that the pointwise-limit function $f$ is continuous.
+</p>
+
+<p>
+  Continuity is a <!--natural, archetypical --> three-epsilon argument, once uniform continuity on $[a, b]$ is observed.
+</p>
+
+<div class="box-definition">
+<p class="">
+  Given $\varepsilon>0$, take $i_{o}$ such that $\d\left(f_{i}, f_{j}\right)<\varepsilon$ for all $i, j \geq i_{o}$. Just take $i=i_{o}$. Since $f_{i}$ is uniformly continuous on $[a, b]$, take $\delta>0$ such that $|x-y|<\delta$ implies $\left|f_{i}(x)-f_{i}(y)\right|<\varepsilon$. The triangle inequality for the usual absolute value on real numbers gives
+
+  \begin{eqnarray*}
+  |f(x)-f(y)| & \leq& \left|f(x)-f_{i}(x)\right|+\left|f_{i}(x)-f_{i}(y)\right|+
+  \left|f_{i}(y)-f(y)\right| \\
+  &< & \varepsilon+\varepsilon+\varepsilon
+\end{eqnarray*}
+
+  This proves that the pointwise limit function $f$ is continuous.
+</p>
+
+</div>
+
+<p>
+Like the standard metric on $\mathbb{R}^{n}$, another reasonable metric on $C^{0}[a, b]$ is
+$$
+\d_{2}(f, g)=\left(\int_{a}^{b}|f(x)-g(x)|^{2} d x\right)^{\!\frac{1}{2}} \qquad\left(L^{2} \text {-norm metric }\right)
+$$
+</p>
+
+<div class="box-lemma">
+  <div class="box-legend editable"><span class="lt-icon-default">Problem 1 :  (not a complete space)</span>
+</div>
+
+    <p>
+      With the $L^{2}$-norm metric above, show that $C^{0}[a, b]$ is not complete.
+     </p>
+    </div>
+<p>
+<b>HINT: </b>
+Take a piecewise linear continuous functions <!--approaching the discontinuous function that is 0 on $\left[a, \frac{a+b}{2}\right]$ and 1 on $\left[\frac{a+b}{2}, b\right]$, -->by
+$$
+f_{n}(x)=\left\{
+  \begin{array}{lcl}
+0 & , & \left(\text { for } a \leq x \leq \frac{a+b}{2}-\frac{1}{n}\right) \\
+\frac{n}{2} \cdot\left[x-\left(\frac{a+b}{2}-\frac{1}{n}\right)\right] & , &  \left(\text { for } \frac{a+b}{2}-\frac{1}{n} \leq x \leq \frac{a+b}{2}+\frac{1}{n}\right) \\
+1 & , & \left(\text { for } \frac{a+b}{2}+\frac{1}{n} \leq x \leq b\right)
+\end{array}\right.
+$$
+Then show the discountinuity! Draw it if possible!
+</p>
+<!--Hint: consider the sequence
+$$
+f_{n}(t):= \begin{cases}-1, & \text { if }-1 \leq t \leq-\frac{1}{n} \\ n t, & \text { if }-\frac{1}{n} \leq t \leq \frac{1}{n} \\ 1, & \text { if } \frac{1}{n} \leq t \leq 1\end{cases}
+$$
+-->
+  <div class="example-content">
+        <span id="SHLink_Soln1theo" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln1theo" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_Soln1theo" class="soln-content" style="display: none;">
+  <p>
+<!--(Draw a picture.) The pointwise limit is 0 to the left of the midpoint, and 1 to the right. Despite the fact that the pointwise limit does not exist at the midpoint,
+$$
+\d_{2}\left(f_{i}, f_{j}\right)^{2} \leq \int_{\frac{a+b}{2}-\frac{1}{n}}^{\frac{a+b}{2}+\frac{1}{n}} 1 d x \leq \frac{2}{n} \quad(\text { for } i, j \geq n \text { ) }
+$$
+which goes to 0 as $n \rightarrow \infty$.-->
+
+  </p>
+
+        </div>
+      </div>
+
+      <h3> Sequence spaces $\ell^{p}$</h3>
+
+  <p>
+    An infinite-dimensional which is analogue of the standard metric on $\mathbb{R}^{n}$ is the set
+    $$
+    \ell^{2}=\Big\{x=\left(x_{1}, x_{2}, \ldots\right): \sum_{i=1}^{\infty}\left|x_{i}\right|^{2}<\infty\Big\}
+    $$
+    with metric
+    $$
+    \d_{2}(x, y)=\sqrt{\sum_{i=1}^{\infty}\left|x_{i}-y_{i}\right|^{2}}
+    $$
+  </p>
+
+    <p>
+    If replacing $2$ by any $1 \leq p<\infty$, it works as well:
+$$
+\ell^{p}=\Big\{x=\left(x_{1}, x_{2}, \ldots\right): \sum_{i=1}^{\infty}\left|x_{i}\right|^{p}<\infty\Big\}
+$$
+with metric
+$$
+\d_{p}(x, y)=\left(\sum_{i=1}^{\infty}\left|x_{i}-y_{i}\right|^{p}\right)^{1 / p}
+$$
+Slightly unlike the case of varying metrics on $\mathbb{R}^{n}$, the underlying sets $\ell^{p}$ are not the same. For example, $\ell^{2}$ is strictly larger than $\ell^{1}$.
+    </p>
+
+
+      <div class="box-lemma">
+        <div class="box-legend editable"><span class="lt-icon-default">Problem 2 :  (Convergence sequence)</span>
+      </div>
+      <p>
+      Are they convergent or not?
+
+      <ol class="romanlist twoem">
+
+        <li> For $ X=\ell^{1}$ and $x_{n}:=\Big(\underbrace{\frac{1}{n}, \ldots, \frac{1}{n}}_{n \text { times }}, 0,0, \ldots\Big)$
+        </li>
+        <li>
+          For $X=\ell^{2}$ and $x_{n}:=\Big(\underbrace{\frac{1}{n}, \ldots, \frac{1}{n}}_{n^{2} \text { times }}, 0,0, \ldots\Big)$
+        </li>
+        <li>For $X=\ell^{3}$ and $x_{n}:=\Big(1, \frac{1}{2}, \ldots, \frac{1}{n}, 0,0, \ldots\Big)$
+        </li>
+        <li>
+          Given the sequence $$f_n(t) := t^n - t^{2n}\quad, t \in [0, 1]$$ is it convergent in $\mathcal C[0, 1]$? <b>HINT: </b> Prove by a contradiction!
+          <!--We prove that the sequence $\bar{f}=\left(f_{n}(t)\right)_{n}$, defined by $f_{n}(t)=t^{n}-t^{2 n}$ is not convergent in $C[0,1]$. We will do so by contradiction. Assume that $\bar{f}$ has a limit $f$ in $C[0,1]$. Then, for each $\epsilon>0$, there exists $N_{\epsilon} \in \mathbb{N}$ such that, for all $n>N_{\epsilon}$, one has $\left\|f-f_{n}\right\|<\epsilon$. Let now $\epsilon=\frac{1}{32}$ and choose $n>N_{\epsilon}$. Then one has
+
+$$
+\left\|f_{n}-f_{2 n}\right\|=\max _{t \in[0,1]}\left|\left(t^{n}-t^{2 n}\right)-\left(t^{2 n}-t^{4 n}\right)\right|=\max _{t \in[0,1]}\left|t^{n}-2 t^{2 n}+t^{4 n}\right|
+$$
+and so, since $0 \leq \frac{1}{\sqrt[n]{2}} \leq 1$, we get
+$$
+\left\|f_{n}-f_{2 n}\right\| \geq\left|\left(\frac{1}{\sqrt[n]{2}}\right)^{n}-2\left(\frac{1}{\sqrt[n]{2}}\right)^{2 n}+\left(\frac{1}{\sqrt[n]{2}}\right)^{4 n}\right|=\left(\frac{1}{2}-2 \frac{1}{4}+\frac{1}{16}\right)=\frac{1}{16} .
+$$
+Then, as a consequence of the triangle inequality, one gets
+$$
+\frac{1}{32}=\frac{1}{16}-\epsilon \leq\left\|f_{2 n}-f_{n}\right\|-\left\|f-f_{2 n}\right\| \leq\left\|f-f_{n}\right\|<\epsilon=\frac{1}{32} .
+$$
+Contradiction.-->
+        </li>
+      </ol>
+
+      </p>
+    </div>
+
+      <div class="example-content">
+            <span id="SHLink_Soln2ex" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln2ex" class="fa fa-caret-right" aria-hidden="true"></span>
+       <div id="SHObj_Soln2ex" class="soln-content" style="display: none;">
+      <p>
+
+
+      </p>
+
+            </div>
+          </div>
+
+
+          <div class="box-lemma">
+            <div class="box-legend editable"><span class="lt-icon-default">Problem 3 :  (Compactness)</span>
+          </div>
+
+          <p>
+            Let $X=\ell^2$. Show that the unit ball
+$$
+\overline{B}(0,1)= \Big\{\left(x_{1}, x_{2}, \ldots\right) \in \ell^{2}: \sum_{n}\left|x_{n}\right|^{2} \leq 1\Big\}
+$$
+is not compact, while the Hilbert cube
+$$
+\mathcal H = \left\{\left(x_{1}, x_{2}, \ldots\right) \in \ell^{2}:\left|x_{n}\right| \leq \frac{1}{n}\right\}
+$$
+is compact, and generally, for a sequence $\varepsilon_{n}>0$, the cube
+$$
+\left\{\left(x_{1}, x_{2}, \ldots\right) \in \ell^{2}:\left|x_{n}\right| \leq \varepsilon_{n}\right\}
+$$
+is compact if and only if $\sum_{n} \varepsilon_{n}^{2}<\infty$.
+          </p>
+</div>
+<div class="example-content">
+      <span id="SHLink_Soln3ex" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln3ex" class="fa fa-caret-right" aria-hidden="true"></span>
+ <div id="SHObj_Soln3ex" class="soln-content" style="display: none;">
+<p>
+
+
+</p>
+
+      </div>
+    </div>
+
+<h2 class="frame-sect sectcounter">&nbsp; Inner Product Spaces and Norm Spaces</h2>
+<!--   \section{Introduction aux systèmes d'équations linéaires} -->
+<p>
+  Let \(X\) be a vector space over \(\K \in \{\R,\C\}\).
+</p>
+
+<defn >
+          <div class="definition"><span>(Inner-product spaces)</span>  </div>
+ <div class="definitionb">
+<p>
+An inner product \(\langle \cdot, \cdot \rangle\) on \(X\) is a map
+\[\begin{array}{ccl}
+\langle \cdot, \cdot \rangle: & X \times X & \longrightarrow & \mathbb K\\
+ & (x,y) & \longmapsto & \langle x,y \rangle
+ \end{array}
+ \]
+ defined with the axioms as follows: for \(x,y,z \in X\) and \(\lambda \in \K\) arbitrary,
+<ol class="romanlist threeem">
+<li>
+  <b>Conjugate symmetric:</b>
+  \[ \langle x,y \rangle = \overline{\langle y,x \rangle}\]
+</li>
+<li>
+ <b>Linear in its first argument:</b>
+ \[ \begin{align*}
+ \langle \lambda x,y \rangle &= \lambda \langle x,y \rangle,\\
+ \langle x + y, z \rangle &= \langle x , z \rangle + \langle y, z \rangle, \end{align*}
+ \]
+  <li>
+    and <b>non-degenerate (positive definite):</b>
+    \[ \langle x, x \rangle > 0 \quad \text{ for }\quad x \neq 0, \]
+  </li>
+</ol>
+  The pair \(\big(X,\langle \cdot, \cdot \rangle\big)\) is called an <b> inner-product space</b>.
+</p>
+ </div>
+</defn>
+
+
+
+
+<p>
+
+  Any inner product space is a normed linear space.  But, a normed linear space is not necessarily an inner product space. For example, for $x\in \mathbb C^n$,
+  \[
+      \| x \|_{\infty} = \max_{1 \leq  i \leq n} |x_i|
+  \]
+  The max norm cannot be given by an inner product.
+
+  </p>
+
+
+<p>
+
+
+</p>
+
+
+
+<div class="box-lemma">
+  <div class="box-legend editable"><span class="lt-icon-default">Problem 4 :  (no inner product on a set)</span>
+</div>
+
+    <p>
+      Given the <b>linear space</b> $X=C[0,1]$ equipped with the norm
+  $$
+  \|f\|_{1}=\int_{0}^{1}|f(x)| \d x
+  $$
+  With such norm, show that there is no inner product on $X$ ?
+     </p>
+    </div>
+<p>
+<b>HINT: </b> It is required to show that $\|\cdot\|_1$ does not satisfy the parallelogram law, with known countinuous functions on $[0,1]$.
+</p>
+  <div class="example-content">
+        <span id="SHLink_Soln4ex" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln4ex" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_Soln4ex" class="soln-content" style="display: none;">
+  <p>
+
+
+  </p>
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+
+<h3> Recent Posts </h3>
+<ul>
+
+
+    <li>
+      <i> <a href="../../topology/2019/post/2017/11/01/varparams.html">A Note on the Variation of Parameters Method </a> | 11/01/17 </i>
+    </li>
+
+
+    <li>
+      <i> <a href="../../topology/2019/notes/2017/10/26/groups3.html">Group Theory, Part 3: Direct and Semidirect Products </a> | 10/26/17 </i>
+    </li>
+
+
+    <li>
+      <i> <a href="../../topology/2019/notes/2017/10/19/galoistheory1.html">Galois Theory, Part 1: The Fundamental Theorem of Galois Theory </a> | 10/19/17 </i>
+    </li>
+
+
+    <li>
+      <i> <a href="../../topology/2019/notes/2017/10/19/fieldtheory2.html">Field Theory, Part 2: Splitting Fields; Algebraic Closure </a> | 10/19/17 </i>
+    </li>
+
+
+    <li>
+      <i> <a href="../../topology/2019/notes/2017/10/18/fieldtheory1.html">Field Theory, Part 1: Basic Theory and Algebraic Extensions </a> | 10/18/17 </i>
+    </li>
+
+</ul>
+<footer class="site-footer">
+
+  <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+</footer>
+
+
+
+</section>
+</body>
+
+
+  <!-- script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-102852226-1', 'auto');
+    ga('send', 'pageview');
+  </script -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171606319-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-171606319-1');
+</script>
+
+
+</html>
