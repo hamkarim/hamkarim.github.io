@@ -6,8 +6,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Koulen&family=Angkor&family=Bangers&family=Kaushan+Script&family=Modak&family=Ultra&family=Fjalla+One&family=Oswald:wght@400&family=Noto+Serif:wght@400&family=Noto+Sans:wght@700&family=Lalezar&display=swap');
 
 @import url("https://fonts.googleapis.com/css?family=Open Sans|Didact Gothic|Siemreap|Bayon|Battambang|");
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@300;400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@300;400;500;600;700&display=swap');
+
 html, body {  /*for html, body fonts*/
-          font-family: 'Noto Serif Khmer','Siemreap', 'Century Gothic', 'Didact Gothic';
+          font-family: 'Noto Serif Khmer', 'Century Gothic', 'Ang DaunKeo', 'Siemreap', 'Didact Gothic'; /*serif*/
           -ms-text-size-adjust:120%;
           -webkit-text-size-adjust:120%;
           padding:0;
@@ -242,6 +247,8 @@ a:hover{text-decoration:underline}
 
 .main-content{
 	word-wrap:break-word;
+  font-size: 18px;
+  line-height:1.5!important;
 	/*font-size:16px;
 	font-family: 'Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang   */
 }
@@ -1148,9 +1155,10 @@ Show hide answer in examples
     border-left: 2px solid #a67c11;
 		/*color: white !important;*/
 		width: auto !important;
-		float: left !important;
+		/*float: left !important;*/
 		margin-block-start: 0 !important;
 		margin-block-end: 0 !important;
+    display:block;
     /*font-family: "Ang DaunKeo", "Tahoma", Arial, serif !important;
     font-size: 17px!important;
     font-weight: 400 !important;

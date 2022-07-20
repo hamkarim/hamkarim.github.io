@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+    <!-- Begin Jekyll SEO tag v2.3.0 -->
+<meta property="og:title" content="Ham Karim">
+<meta name="author" content="Ham Karim">
+<meta name="author" content="determinants">
+<meta property="og:locale" content="en_US">
+<meta http-equiv="keywords" name="keywords" content="Compact spaces, Compact">
+<meta http-equiv="description" name="description" content="Compact spaces">
+<meta name="description" content="determinants">
+<meta property="og:description" content="Math, Programmer, Music">
+<link rel="canonical" href="../../../index.html">
+<meta property="og:url" content="https://hamkarim.github.io/">
+<meta property="og:site_name" content="Right Triangle">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@pkarim">
+<meta name="twitter:creator" content="@pkarim">
+<meta name="google-site-verification" content="b9bg3P9zc8qbL4szvVYaf551jD9x017IyGBVSaQZDDY" />
+
+<script type="application/ld+json">
+{
+    "name":"Ham Karim",
+    "description":"I am a faculty member at the Royal Univeristy of Phnom Penh (RUPP). This is my blog of lectures at universities. ",
+    "author":{"@type":"Person","name":"Ham Karim"},
+    "@type":"WebSite",
+    "url":"https://hamkarim.github.io/",
+    "image":null,
+    "publisher":null,
+    "headline":"Ham Karim",
+    "dateModified":null,
+    "datePublished": "2020-06-01",
+    "sameAs":null,
+    "mainEntityOfPage":null,
+    "@context":"http://schema.org"}
+</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta property="og:image" content="http://www.cliparts101.com/files/376/298FE3955707B1DE458221E4BFABFBBE/Greek_Gamma_4.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../topology/2019/favicon.ico">
+
+
+    <meta charset="UTF-8">
+    <title>Compact spaces | លំហកុំប៉ាក់</title>
+    <meta name="description" content="Math, Programmer, Music">
+
+    <!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
+
+<style  type="text/css">
+.deffont {
+        font-family: 'Noto Serif Khmer', 'CMU Serif';
+        font-size: 17px;
+        }
+ul.liststyle1 {
+        list-style-type: square;
+      }
+ul.liststyle2 {
+        list-style-type: hebrew;
+      }
+ol.liststyle1 {
+        list-style-type: lower-latin;
+}
+a.onmenu {
+          font-family:'Noto Serif Khmer','CMU Serif';
+          font-weight:bold;
+ }
+      </style>
+
+<style type="text/css">
+/**************** Box container styles *******************/
+	.mt-content-container .boxobjectives,
+	.boxexample,
+	.boxexercise,
+	.boxquery,
+	.boxnotewithlegend,
+	.boxnotewithoutlegend,
+	.boxprocedure,
+	.boxdefinition,
+	.boxtheorem,
+	.boxlemma,
+	.boxnotation,
+	.boxproposition {
+		-moz-border-radius: 8px;
+		-webkit-border-radius: 8px;
+		border-radius: 8px;
+		padding-top: 0em;
+		padding-bottom: 0em;
+		padding-left: 1em;
+		padding-right: 1em;
+		margin-bottom: 1em;
+		overflow: visible;
+		border: 0px;
+		orphans: 2;
+	}
+	.mt-content-container .boxnotewithlegend,
+	.boxprocedure,
+	.notation {
+		background-color: hsla(20, 0%, 93%, 1);
+	}
+	.mt-content-container .boxexample,
+	.boxexercise {
+		background-color: hsla(220, 100%, 97%, 1);
+	}
+	.mt-content-container .boxwarning {
+		background-color: hsla(0, 100%, 96%, 1);
+	}
+	.mt-content-container .boxdefinition,
+	.boxtheorem,
+	.boxlemma,
+	.boxnotation,
+	.boxproposition {
+		background-color: hsla(28, 80%, 95%, 1);
+	}
+	.mt-content-container .boxobjectives {
+		background-color: hsla(0, 0%, 90%, 1);
+	}
+	.mt-content-container .boxnotewithoutlegend {
+		background-color: hsla(20, 0%, 93%, 1);
+		padding-right: 1em;
+		padding-left: 1em;
+		padding-top: 0.5em !important;
+		padding-bottom: 0.5em !important;
+		margin-right: 1em;
+		margin-left: 1em;
+	}
+	.mt-content-container .boxquery {
+		border: 2px solid green;
+		page-break-inside: avoid;
+		visibility: hidden !important;
+		display: none !important;
+	}
+	/**************** Box legend container styles *******************
+	.mt-content-container .boxlegend {
+		font-style: normal !important;
+		font-size: 1.1em !important;
+		font-weight: normal !important;
+		font-family: "Tahoma", Arial, serif !important;
+		padding-top: 0.2em !important;
+		padding-bottom: 0.2em !important;
+		padding-left: 0.3em !important;
+		padding-right: 0.3em !important;
+		margin-left: 0.35em;
+		color: white;
+		border-radius: 3px;
+		overflow: visible;
+		break-inside: avoid !important;
+	}
+
+	/************** Defining the Legends ******************
+
+
+	.box-definition>header,
+	.box-structure>header,
+	.box-note>header,
+	.box-theorem>header,
+	.box-example>header,
+	.box-exercise>header,
+	.box-query>header,
+	.box-adapt>header,
+	.box-objectives>header,
+	.box-warning>header {
+		display: inline-flex;
+		overflow: hidden;
+		break-inside: avoid-page;
+		page-break-inside: avoid;
+		text-align: left;
+		width: auto;
+		margin: 0 0px 2px 0px !important;
+		padding: 4px 6px 4px 4px !important;
+		transform: translate(-11px, 0px) !important;
+		border-radius: 3px 5px 5px 0;
+		-moz-border-radius: 3px 5px 5px 0;
+		-webkit-border-radius: 3px 5px 5px 0;
+	}
+	.box-definition>header *,
+	.box-structure>header *,
+	.box-note>header *,
+	.box-theorem>header *,
+	.box-example>header *,
+	.box-exercise>header *,
+	.box-query>header *,
+	.box-adapt>header *,
+	.box-objectives>header *,
+	.box-warning>header * {
+		font-family: "Battambang", "Tahoma", Arial, serif !important;
+		font-size: 17px !important;
+		font-weight: 400 !important;
+		color: white !important;
+		;
+		width: auto !important;
+		;
+		float: left !important;
+		;
+		line-height: 1 !important;
+		;
+		margin-block-start: 0 !important;
+		margin-block-end: 0 !important;
+	}
+*/
+</style>
+
+<style type="text/css">/*<![CDATA[*/
+.Headertext{
+display:none;
+}/*]]>*/</style>
+
+<style type="text/css">/*<![CDATA[*/
+/* CSS pseudo-element styling https://fontawesome.com/how-to-use/on-the-web/advanced/css-pseudo-elements */
+
+/* general reset/setup styling for icons - needed on all */
+
+.lt-icon-default::before, .lt-icon-brain::before, .lt-icon-pin::before , .lt-icon-hand::before, .lt-icon-pathway::before, .lt-icon-logic::before, .lt-icon-check::before, .lt-icon-question::before, .lt-icon-exclamation::before    {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1.5;
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+  margin-right: 0.5rem;
+}
+
+/*default */
+
+.box-example .lt-icon-default::before {
+  content: "\f00c";
+}
+.box-exercise .lt-icon-default::before {
+  content: "\f128";
+}
+.box-query .lt-icon-default::before {
+  content: "\f126";
+}
+.box-adapt .lt-icon-default::before {
+  content: "\f126";
+}
+.box-interactive .lt-icon-default::before{
+  content: "\f542";
+}
+.box-note .lt-icon-default::before {
+  content: "\f08d";
+}
+.box-objectives .lt-icon-default::before {
+  content: "\f5dc";
+}
+.box-definition .lt-icon-default::before {
+  content: "\f303";
+}
+.box-theorem .lt-icon-default::before {
+  content: "\f1b3";
+}
+.box-warning .lt-icon-default::before {
+  content: "\f256";
+}
+
+
+/*specific icons*/
+.lt-icon-brain::before  {
+  content: "\f5dc";
+}
+
+.lt-icon-pin::before {
+  content: "\f08d";
+}
+
+.lt-icon-pathway::before, {
+  content: "\f126";
+}
+
+.lt-icon-logic::before, {
+  content: "\f1b3";
+}
+
+.lt-icon-hand::before, {
+  content: "\f126";
+}
+
+.lt-icon-pathway::before, {
+  content: "\f256";
+}
+
+.lt-icon-check::before, {
+  content: "\f00c";
+}
+
+.lt-icon-question::before, {
+  content: "\f128";
+}
+
+.lt-icon-exclamation::before, {
+  content: "\f12a";
+}/*]]>*/</style>
+
+<script async="" src="//cse.google.com/adsense/search/async-ads.js"></script>
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script type="text/javascript" async="" src="https://cse.google.com/cse.js?cx=001004262401526223570:11yv6vpcqvy"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-331594-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+    <link rel="stylesheet" href="../../../assets/css/style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245">
+    <link rel="stylesheet" href="../../../assets/css/all.css">
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+<!-- Script to show and hide proof -->
+<script type="text/javascript" src="https://hamkarim.github.io/assets/js/showhide.js"></script>
+<!-- Other style of showing and hiding proof -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
+ <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>
+<!-- end -->
+
+<script type="text/javascript" src="../../../assets/sidebar/sidebar.min.js"></script>
+<link rel="stylesheet" href="../../../assets/sidebar/Sidebar.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+//Another method to toggle the button
+          $(document).ready(function(){
+                    $('.showanswer').click(function(){
+                              $('.block_proof').show();
+                              $('.showanswer').hide();
+                              $('.hideanswer').show();
+                    }
+          );
+                    $('.hideanswer').click(function(){
+                              $('.block_proof').hide();
+                              $('.showanswer').show();
+                              $('.hideanswer').hide();
+                    }
+          );
+ });
+</script>
+
+<!-- For local function, define to exchange text -->
+<script>
+function showhideFunction() {
+          document.getElementById('idClick').innerHTML === '[Hide proof]' ? document.getElementById('idClick').innerHTML = '[Show proof]' : document.getElementById('idClick').innerHTML = '[Hide proof]';
+}
+</script>
+
+<!-- script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,https://hamkarim.github.io/MathJax/config/local/local.js"></script -->
+
+<!--script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { fonts: ["TeX"] }
+  });
+</script-->
+
+<!-- script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
+</script-->
+
+<!--script src="https://hamkarim.github.io/MathJax/config/local/mathjax-config.js" defer></script-->
+<script type="text/javascript" src="../../../MathJax/config/local/mathjax-config.js" defer></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" defer
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml-full.min.js">
+  </script>
+
+ <div class="Headertext">
+
+   \( \newcommand{\vecs}[1]{\overset { \scriptstyle \rightharpoonup} {\mathbf{#1}}&nbsp;}&nbsp;\)
+   \( \newcommand{\vecd}[1]{\overset{-\!-\!\rightharpoonup}{\vphantom{a}\smash&nbsp;{#1}}} \)
+   \(\newcommand{\id}{\mathrm{id}}\)
+   \( \newcommand{\Span}{\mathrm{span}}\)
+   \( \newcommand{\kernel}{\mathrm{null}\,}\)
+   \( \newcommand{\range}{\mathrm{range}\,}\)
+   \( \newcommand{\RealPart}{\mathrm{Re}}\)
+   \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+   \( \newcommand{\Argument}{\mathrm{Arg}}\)
+  \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \(\newcommand{\id}{\mathrm{id}}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \( \newcommand{\kernel}{\mathrm{null}\,}\)
+  \( \newcommand{\range}{\mathrm{range}\,}\)
+  \( \newcommand{\RealPart}{\mathrm{Re}}\)
+  \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+  \( \newcommand{\Argument}{\mathrm{Arg}}\)
+  \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\cof}{\mathbf{cof}}\)
+  \( \renewcommand{\det}{\mathbf{det\,\!}}\)
+    \( \newcommand{\minor}{\mathbf{minor}}\)
+  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)</div>
+
+
+  </head>
+
+  <body>
+
+<section class="main-content">
+
+  <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">ជំពូក៥ :&nbsp; លំហកុំប៉ាក់ </h1>
+<p style="font-style: italic; font-weight:bold; font-family: Arial; opacity: 0.5;">
+October
+2nd, 2020
+</p>
+
+<hr>
+<p style="text-indent:0px">From Wikipedia:</p>
+<blockquote>
+	<a href="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Compact.svg/2880px-Compact.svg.png">
+    <div class="divfigure">
+        <p> <img class="wrap-right" alt="The volume of parallelepiped" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Compact.svg/2880px-Compact.svg.png">
+            Per the compactness criteria for Euclidean space as stated in the Heine–Borel theorem, the interval $A = (-\infty, -2]$ is not compact because it is not bounded. The interval $C = (2, 4)$ is not compact because it is not closed. The interval $B = [0, 1]$ is compact because it is both closed and bounded.
+        </p>
+    </div>
+  </a>
+  <p>
+    In mathematics, specifically general topology, compactness is a property that seeks to generalize the notion of a closed and bounded subset of Euclidean space[1] by making precise the idea of a space having no "holes" or "missing endpoints", i.e. that the space not exclude any "limiting values" of points. For example, the "unclosed" interval $(0,1)$ would not be compact because it excludes the "limiting values" of $0$ and $1$, whereas the closed interval $[0,1]$ would be compact.
+</p>
+
+
+<p>
+Similarly, the space of rational numbers $\mathbb {Q}$  is not compact because it has infinitely many "holes" corresponding to the irrational numbers, and the space of real numbers $\mathbb {R}$  is not compact either because it excludes the limiting values $\infty$  and $-\infty$ . However, the extended real number line would be compact, since it contains both infinities. There are many ways to make this heuristic notion precise. These ways usually agree in Euclidean space, but may be inequivalent in other topological spaces.
+</p>
+</blockquote>
+
+<div class="box-note">
+  <!-- div mt-section-origin="Bookshelves/Linear_Algebra/A_First_Course_in_Linear_Algebra_(Kuttler)/03:_Determinants/3.01:_Basic_Techniques" class="mt-section"-->
+  <span id="Outcomes"></span>
+<h5 class="box-legend editable">
+<span class="lt-icon-default">Outcomes</span></h5>
+
+<ol style="list-style-type: upper-alpha;" start="1" class="parenthalpha">
+    <li class="" style="background-color: unset;">
+
+    </li>
+    <li class="" style="background-color: unset;">
+
+      </li>
+
+      <li class="" style="background-color: unset;">
+
+        </li>
+
+</ol>
+</div></div>
+
+
+<h2 class="frame-sect sectcounter">&nbsp; Covers of Sets in a Topological Space</h2>
+<!--   \section{Introduction aux systèmes d'équations linéaires} -->
+<p>
+The term “cover” is used here to denote an <b>“open cover”</b> when the context is clear and no ambiguity can arise.
+
+  </p>
+
+
+<p>
+
+
+</p>
+
+
+<defn>
+          <div class="definition"><span>(Covers of Sets)</span> </div>
+ <div class="definitionb">
+   <p>
+     Let $X$ be a topological space and let $A \subseteq X$. Then a Cover/Covering of $A$ is a collection of subsets $\mathcal{F}=\{U_i: i\in I\}$ of $X$ such that
+     $$A \subseteq \bigcup_{i\in I} U_i$$
+    <ol class="romanlist twoem">
+      <li>
+             If $\mathcal{F}$ is a collection of open sets that satisfies the above inclusion then $\mathcal{F}$ is called an <b>Open Cover/Covering </b> of $A$.
+      </li>
+      <li>
+        Similarly, if $\mathcal{F}$ is a collection of closed sets that satisfies the above inclusion then $\mathcal{F}$ is called a <b>Closed Cover/Covering </b> of $A$.
+      </li>
+      <li>
+        If $\mathcal{F}^{*} \subseteq \mathcal{F}$ also covers $A$ then we said that $\mathcal{F}^{*} = \{U_{\lambda} : \lambda \in J\subset I\}$ is a <b>Subcover</b> of $A$ from $\mathcal{F}$.
+      </li>
+    </ol>
+
+</p>
+</div>
+</defn>
+
+<example>
+  (Cover in the topological space $\mathbb{R}$)
+
+    <p class="">
+      <ol class="romanlist twoem">
+        <li>
+          Consider the topological space $\mathbb{R}$ with the usual topology. Let the set $A=\mathbb{N} \subset \mathbb{R}$. Every singleton set in $\mathbb{R}$ is closed and so the collection $\mathcal F = \{\{n\}: n \in \mathbb{N}\}$ is a closed covering of $\mathbb{N}$ since (<b>WHY?</b>):
+          <!--$$
+          \mathbb{N}=\bigcup_{n \in \mathbb{N}}\{n\}
+          $$-->
+        </li>
+        <li>
+          Let see the collection $\mathcal F=\left\{\left(n-\frac{1}{2}, n+\frac{1}{2}\right): n \in \mathbb{N}\right\}$ is an open covering of $\mathbb{N}$. <b>(WHY?)</b>
+          <!-- as every set in this collection is an open interval centered at $n$ with radius $\frac{1}{2}$, and:
+          $$
+          \mathbb{N} \subset \bigcup_{n \in \mathbb{N}}\left(n-\frac{1}{2}, n+\frac{1}{2}\right)
+          $$ -->
+        </li>
+        <li>
+          For another example, consider the set $A=[0,1) \subset \mathbb{R}$. Then the collection $\mathcal{F}=\left\{\left(-1, \frac{2}{3}\right),\left(\frac{1}{2}, 2\right)\right\}$ is an open cover of $[0,1)$. In general, many open covers for subsets of a topological space may exist.
+        </li>
+      </ol>
+    </p>
+
+    <div class="example-content">
+          <span id="SHLink_Soln1" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln1" class="fa fa-caret-right" aria-hidden="true"></span>
+     <div id="SHObj_Soln1" class="soln-content" style="display: none;">
+    <p>
+
+    </p>
+          </div>
+        </div>
+</example>
+
+
+<p><b>RECALL: </b>
+  (Topological Subspaces).
+  Given the Topological Subspaces $(X, \tau)$ and $A \subseteq X$ then the subspace topology on $A$ is defined to be:
+  $$
+  \tau_{A}=\{A \cap U: U \in \tau\}
+  $$
+  We verified that $\tau_{A}$ is indeed a topology for any subset $A$ of $X$.
+  <b>(Can you proof this?)</b>
+
+</p>
+
+
+<example>
+  (topological subspace)
+
+    <p class="">
+Consider the topological space $(\mathbb{R}, \tau)$ where $\tau$ is the usual topology of open intervals in $\mathbb{R}$. Verify that the subspace topology on $\mathbb{Z} \subseteq \mathbb{R}$ is the discrete topology on $\mathbb{Z}$. <b>(WHY?)</b>
+
+    </p>
+
+    <div class="example-content">
+          <span id="SHLink_Soln2" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln2" class="fa fa-caret-right" aria-hidden="true"></span>
+     <div id="SHObj_Soln2" class="soln-content" style="display: none;">
+    <p>
+<!--Let $x \in \mathbb{Z}$. Then the open interval $\left(x-\frac{1}{2}, x+\frac{1}{2}\right) \cap \mathbb{Z}=\{x\}$. Hence every singleton set $\{x\}$ is contained in the subspace topology on $\mathbb{Z}$. But this implies that that $\tau_{\mathbb{Z}}$ is the discrete topology on $\mathbb{Z}$.-->
+    </p>
+          </div>
+        </div>
+</example>
+
+
+<defn >
+          <div class="definition"><span>(Compactness of Sets)</span>  </div>
+ <div class="definitionb">
+<p>
+Let $X$ be a topological space and let $A \subseteq X$. Then $A$ is said to be <b>Compact</b> in $X$ if every open covering of $A$ (from $X$ ) has a <b>finite open subcover</b>.
+
+</p>
+ </div>
+</defn>
+<p>  <b>READ!..</b>
+  Please always remember that every closed and bounded interval $[a, b] \subset \mathbb{R}$ (where $\mathbb{R}$ has the usual topology) is compact. In fact, a set $A \subset \mathbb{R}$ is compact if and only if $A$ is both closed and bounded.
+</p>
+
+<p>
+  More generally, if $\mathbb{R}^{n}$ has the usual topology then $A \subseteq \mathbb{R}^{n}$ is compact if and only if $A$ is both closed and bounded.
+
+</p>
+
+<p>
+
+  In general, it's rather difficult to show that a set is compact and it is usually easier to show that a set is not compact.
+</p>
+
+
+<example>
+(To prove a set is not compact)
+
+  <p class="">
+    consider the set of natural numbers $\mathbb{N} \subset \mathbb{R}$. We claim that $\mathbb{N}$ is not compact in $\mathbb{R}$.
+
+
+    To show this, consider the following open cover of $\mathbb{N}$ :
+    $$
+    \mathcal{F}=\left\{\left(n-\frac{1}{2}, n+\frac{1}{2}\right): n \in \mathbb{N}\right\}
+    $$
+<b>(PLEASE EXPAIN IT!)</b>
+  </p>
+  <div class="example-content">
+        <span id="SHLink_Soln3" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln3" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_Soln3" class="soln-content" style="display: none;">
+  <p>
+    <!--Then each element in $\mathcal{F}$ contains exactly one natural number and the collection $\mathcal{F}$ contains a countably infinite collection of elements. If $\mathcal{F}^{*} \subset \mathcal{F}$ then:
+    $$
+    \mathbb{N} \nsubseteq \bigcup_{n \in \mathbb{N}}\left(n-\frac{1}{2}, n+\frac{1}{2}\right)
+    $$
+    This is because if $\mathcal{F}^{*} \subset \mathcal{F}$ then there exists an $n \in \mathbb{N}$ that is not contained in any of the open sets in $\mathcal{F}^{*}$ so $\mathcal{F}^{*}$ cannot cover $\mathbb{N}$. So, we have found an open cover $\mathcal{F}$ of $\mathbb{N}$ that has no finite subcover. Hence $\mathbb{N}$ is not compact in $\mathbb{R}$.-->
+  </p>
+        </div>
+      </div>
+</example>
+
+
+
+<!--h3 class="sectcounter">&nbsp;  The Determinant of a Triangular Matrix</h3-->
+<p>
+
+
+    </p>
+
+
+<div class="box-theorem">
+  <div class="box-legend editable"><span class="lt-icon-default">Theorem 1. :  (Compactness of Finite Sets)</span>
+</div>
+
+    <p>
+    Let $X$ be any topological space. If $A \subseteq X$ is a finite set then $A$ is compact in $X$.
+     </p>
+    </div>
+<p>
+  <div class="example-content">
+        <span id="SHLink_Soln1theo" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln1theo" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_Soln1theo" class="soln-content" style="display: none;">
+  <p>
+    Let $A \subseteq X$ be a finite set, say:
+  $$
+  A=\left\{x_{1}, x_{2}, \ldots, x_{n}\right\}
+  $$
+  Now, consider the family $\mathcal{F}=\left\{A_{i}: i \in I\right\}$ be an open cover of $A$. Then:
+  $$
+  A \subseteq \bigcup_{i \in I} A_{i}
+  $$
+  Since $\mathcal{F}$ covers $A$, the set $A$ can be partitioned into at most $n$ groups of elements from $A$ where all elements in these groups are contained in an open set in the collection $\mathcal{F}$. So there exists an subcollection $I^{*} \subseteq I$ where:
+  $$
+  A \subseteq \bigcup_{i \in I^{*}} A_{i}
+  $$
+
+  Moreover, $\left|I^{*}\right| \leq n$. So $I^{*}$ is a finite subcover of $A$. Therefore $A$ is compact in $X$.
+
+  </p>
+
+        </div>
+      </div>
+</p>
+
+
+
+<div class="box-lemma">
+  <div class="box-legend editable"><span class="lt-icon-default">Lemma :  (Compactness of Finite Subsets)</span>
+</div>
+
+    <p>
+      If $X$ is a finite topological space then every subset $A \subseteq X$ is compact in $X$.
+     </p>
+    </div>
+
+
+<p><b>Proof:</b> Every subset $A$ of a finite set $X$ is finite. So by Theorem (1) $A$ is compact in $X$.
+</p>
+
+
+
+<defn>
+          <div class="definition"><span>(Finite Intersection Property)</span> </div>
+ <div class="definitionb">
+   <p>
+Let $\mathcal{F}$ be a collection of sets. Then $\mathcal{F}$ is said to have the <b>Finite Intersection Property (FIP)</b> if for every finite collection of sets from $\mathcal{F}$, which is $\left\{F_{1}, F_{2}, \ldots, F_{n}\right\} \subseteq \mathcal{F}$, we have that
+$$\bigcap_{i=1}^{n} F_{i} \neq \varnothing$$
+
+   </p>
+
+
+<p>
+
+</p>
+</div>
+</defn>
+
+<div class="box-theorem">
+  <div class="box-legend editable"><span class="lt-icon-default">Theorem 2. :  (Finite Intersection Property Criterion for Compactness)</span>
+</div>
+
+    <p>
+    Let $X$ be a topological space. Then $X$ is compact if and only if for every collection of closed sets $\mathcal{F}$ from $X$, we have that
+    \[
+    \text{ If \;} \mathcal{F} \text{\; has the finite intersection property, then \;\;}
+\bigcap_{F \in \mathcal{F}} F \neq \varnothing\]
+     </p>
+    </div>
+
+
+    <p>
+      <div class="example-content">
+            <span id="SHLink_Soln2theo" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln2theo" class="fa fa-caret-right" aria-hidden="true"></span>
+       <div id="SHObj_Soln2theo" class="soln-content" style="display: none;">
+      <p>
+        $\Rightarrow$ Suppose that $X$ is compact. Let $\mathcal{F}$ be a collection of closed sets from $X$. Suppose that $\mathcal{F}$ has the finite intersection property. Then for every finite subcollection $\left\{F_{1}, F_{2}, \ldots, F_{n}\right\} \subseteq \mathcal{F}$ we have that:
+    $$
+    \bigcap_{i=1}^{n} F_{i} \neq \emptyset
+    $$
+    - We want to show that $\bigcap_{F \in \mathcal{F}} F \neq \emptyset$. Suppose not, i.e., suppose that:
+    $$
+    \bigcap_{F \in \mathcal{F}} F=\emptyset
+    $$
+    - Then taking the complement of both sides above and using De Morgan's laws and we see that:
+    $$
+    \begin{gathered}
+    \left(\bigcap_{F \in \mathcal{F}} F\right)^{c}=\emptyset^{c} \\
+    \bigcup_{F \in \mathcal{F}} F^{c}=X
+    \end{gathered}
+    $$
+    - Since $F$ is closed for all $F \in \mathcal{F}$ we have that $F^{c}$ is open for all $F \in \mathcal{F}$. So $\left\{F^{c}: F \in \mathcal{F}\right\}$ is an open cover of $X$. Since $X$ is compact, there exists a finite subcover, say $\left\{F_{1}^{c}, F_{2}^{c}, \ldots, F_{n}^{c}\right\} \subseteq\left\{F^{c}: F \in \mathcal{F}\right\}$ such that:
+    $$
+    \bigcup_{i=1}^{n} F_{i}^{c}=X
+    $$
+    - Taking the complement of both sides again and using De Morgan's laws and we have that:
+    $$
+    \begin{array}{r}
+    \left(\bigcup_{i=1}^{n} F_{i}^{c}\right)^{c}=X^{c} \\
+    \bigcap_{i=1}^{n} F_{i}=\emptyset
+    \end{array}
+    $$
+    - But then $\left\{F_{1}, F_{2}, \ldots, F_{n}\right\}$ is a finite collection of sets from $\mathcal{F}$ that does not have the finite intersection property which is a contradiction. Hence the assumption that $\bigcap_{F \in \mathcal{F}} F=\emptyset$ was false. So $\bigcap_{F \in \mathcal{F}} F \neq \emptyset$.
+      </p>
+
+            </div>
+          </div>
+    </p>
+
+
+<!--
+<example>
+()
+
+  <p class="">
+
+  </p>
+  <div class="example-content">
+        <span id="SHLink_Soln6" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln6" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_Soln6" class="soln-content" style="display: none;">
+  <p>
+
+
+</p>
+<p>
+
+  </p>
+        </div>
+      </div>
+</example>
+
+</section>
+
+<section class="main-content">
+
+<h2 class="frame-sect sectcounter">&nbsp; លក្ខណៈរបស់ដេទែរមីណង់</h2>
+
+<p>
+
+</p>
+
+<defn >
+          <div class="definition">(Row Operations)</div>
+ <div class="definitionb">
+   <p>
+
+   </p>
+
+ </div>
+</defn>
+
+
+
+
+
+<defn>
+  <div class="definition"><span>(Sarrus's Rule for $2\times 2$ and $3\times 3$-Matrices)</span> </div>
+  <div class="definitionb">
+  <p>We wil</p>
+</div></div>
+</defn>
+
+
+
+-->
+
+
+
+
+
+
+
+<hr>
+
+<h3> Recent Posts </h3>
+<ul>
+
+
+    <li>
+      <i> <a href="../../topology/2019/post/2017/11/01/varparams.html">A Note on the Variation of Parameters Method </a> | 11/01/17 </i>
+    </li>
+
+
+    <li>
+      <i> <a href="../../topology/2019/notes/2017/10/26/groups3.html">Group Theory, Part 3: Direct and Semidirect Products </a> | 10/26/17 </i>
+    </li>
+
+
+    <li>
+      <i> <a href="../../topology/2019/notes/2017/10/19/galoistheory1.html">Galois Theory, Part 1: The Fundamental Theorem of Galois Theory </a> | 10/19/17 </i>
+    </li>
+
+
+    <li>
+      <i> <a href="../../topology/2019/notes/2017/10/19/fieldtheory2.html">Field Theory, Part 2: Splitting Fields; Algebraic Closure </a> | 10/19/17 </i>
+    </li>
+
+
+    <li>
+      <i> <a href="../../topology/2019/notes/2017/10/18/fieldtheory1.html">Field Theory, Part 1: Basic Theory and Algebraic Extensions </a> | 10/18/17 </i>
+    </li>
+
+</ul>
+<footer class="site-footer">
+
+  <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+</footer>
+
+
+
+</section>
+</body>
+
+
+  <!-- script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-102852226-1', 'auto');
+    ga('send', 'pageview');
+  </script -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171606319-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-171606319-1');
+</script>
+
+
+</html>
