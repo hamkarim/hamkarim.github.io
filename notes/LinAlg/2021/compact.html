@@ -318,7 +318,8 @@ display:none;
 <!-- Other style of showing and hiding proof -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
- <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>
+ <script type="text/javascript" src="../../../assets/js/others/notes-all.js"></script>
+ <!-- <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>-->
 <!-- end -->
 
 <script type="text/javascript" src="../../../assets/sidebar/sidebar.min.js"></script>
@@ -575,6 +576,14 @@ Let $X$ be a topological space and let $A \subseteq X$. Then $A$ is said to be <
 </p>
  </div>
 </defn>
+
+<div class="">
+    <p> <img class="center" width="50%" alt="Compactness" src="./fig/compact_spaces.png">
+
+    </p>
+</div>
+
+
 <p>  <b>READ!..</b>
   Please always remember that every closed and bounded interval $[a, b] \subset \mathbb{R}$ (where $\mathbb{R}$ has the usual topology) is compact. In fact, a set $A \subset \mathbb{R}$ is compact if and only if $A$ is both closed and bounded.
 </p>
@@ -694,7 +703,7 @@ $$\bigcap_{i=1}^{n} F_{i} \neq \varnothing$$
 </defn>
 
 <div class="box-theorem">
-  <div class="box-legend editable"><span class="lt-icon-default">Theorem 2. :  (Finite Intersection Property Criterion for Compactness)</span>
+  <div class="box-legend editable"><span class="lt-icon-default">Theorem 2. :  (FIP Criterion for Compactness)</span>
 </div>
 
     <p>
@@ -708,8 +717,8 @@ $$\bigcap_{i=1}^{n} F_{i} \neq \varnothing$$
 
     <p>
       <div class="example-content">
-            <span id="SHLink_Soln2theo" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln2theo" class="fa fa-caret-right" aria-hidden="true"></span>
-       <div id="SHObj_Soln2theo" class="soln-content" style="display: none;">
+        <span id="SHLink_Proof1" class="soln-title SH-Link">Show proof</span> <span id="SHImg_Proof1" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_Proof1" class="soln-content" style="display: none;">
       <p>
         $\Rightarrow$ Suppose that $X$ is compact. Let $\mathcal{F}$ be a collection of closed sets from $X$. Suppose that $\mathcal{F}$ has the finite intersection property. Then for every finite subcollection $\left\{F_{1}, F_{2}, \ldots, F_{n}\right\} \subseteq \mathcal{F}$ we have that:
     $$
@@ -740,9 +749,105 @@ $$\bigcap_{i=1}^{n} F_{i} \neq \varnothing$$
     - But then $\left\{F_{1}, F_{2}, \ldots, F_{n}\right\}$ is a finite collection of sets from $\mathcal{F}$ that does not have the finite intersection property which is a contradiction. Hence the assumption that $\bigcap_{F \in \mathcal{F}} F=\emptyset$ was false. So $\bigcap_{F \in \mathcal{F}} F \neq \emptyset$.
       </p>
 
+      <p>
+        $\Leftarrow$ Suppose that if for every collection $\mathcal{F}$ of closed sets from $X$ we have that if $\mathcal{F}$ has the finite intersection property then $\bigcap_{F \in \mathcal{F}} F \neq \emptyset .$
+- Let $\left\{A_{i}: i \in I\right\}$ be an open cover of $X$. Then:
+$$
+\bigcup_{i \in I} A_{i}=X
+$$
+- Suppose $X$ is not compact. Then for all finite subsets $J \subseteq I$ we have that:
+$$
+\bigcup_{i \in J} A_{i} \neq X
+$$
+- Taking the complement of both sides of the equation above and using De Morgan's laws shows us that:
+$$
+\begin{array}{r}
+\left(\bigcup_{i \in J} A_{i}\right)^{c} \neq X^{c} \\
+\bigcap_{i \in J} A_{i}^{c} \neq \emptyset
+\end{array}
+$$
+- So $\left\{A_{i}^{c}: i \in I\right\}$ has the finite intersection property. Therefore:
+$$
+\bigcap_{i \in I} A_{i}^{c} \neq \emptyset
+$$
+- Taking the complement of both sides of the equation above and using De Morgan's laws gives:
+$$
+\begin{array}{r}
+\left(\bigcap_{i \in I} A_{i}^{c}\right)^{c} \neq \emptyset^{c} \\
+\bigcup_{i \in I} A_{i} \neq X
+\end{array}
+$$
+- But this contradicts $\left\{A_{i}: i \in I\right\}$ being an open cover of $X$. Hence the assumption that $X$ is not compact was false. Therefore $X$ is compact.
+      </p>
+
             </div>
           </div>
     </p>
+
+
+<h3>Preservation of Compactness under Continuous Maps</h3>
+
+<p>
+
+We will see in the following theorem, compactness is preserved under continuous maps, i.e., if $X$ and $Y$ are topological spaces, and $A \subseteq X$ is compact in $X$, and $f: A \rightarrow Y$ is a continuous map, then the image $f(A)$ will also be compact in $Y$.
+</p>
+
+    <div class="box-theorem">
+      <div class="box-legend editable"><span class="lt-icon-default">Theorem 3. :  (Preservation of Compactness)</span>
+    </div>
+
+    <p class="">
+Let $X$ and $Y$ be topological spaces, $A \subseteq X$, and $f: A \rightarrow Y$ be a continuous map. If $A$ is compact in $X$ then $f(A)$ is compact in $Y$.
+    </p>
+
+    </div>
+
+
+
+    <div class="box-theorem">
+      <div class="box-legend editable"><span class="lt-icon-default">Theorem 1. :  (Compactness of Finite Sets)</span>
+    </div>
+
+    <p class="">
+
+    </p>
+
+    </div>
+
+
+
+    <div class="box-theorem">
+      <div class="box-legend editable"><span class="lt-icon-default">Theorem 1. :  (Compactness of Finite Sets)</span>
+    </div>
+
+    <p class="">
+
+    </p>
+
+    </div>
+
+
+
+    <example>
+    ()
+
+      <p class="">
+
+      </p>
+      <div class="example-content">
+            <span id="SHLink_Theo1" class="soln-title SH-Link">Show proof</span> <span id="SHImg_Theo1" class="fa fa-caret-right" aria-hidden="true"></span>
+       <div id="SHObj_Theo1" class="soln-content" style="display: none;">
+      <p>
+
+
+    </p>
+    <p>
+
+      </p>
+            </div>
+          </div>
+    </example>
+
 
 
 <!--

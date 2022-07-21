@@ -753,6 +753,7 @@ ol.parenthnum > li::before {
 ol.romanlist {
   counter-reset: list;
   margin: auto;
+  padding-top: 10px;
   width:98%;
 }
 
@@ -1202,14 +1203,14 @@ Show hide answer in examples
 
 .box-legend p, .box-legend>span{
           font-family: "Book Antiqua", "Battambang";
-          font-size: 16px; !important;
+          font-size: 18px; !important;
           /*font-weight: 400 !important;
           line-height: 1 !important;*/
           font-weight:400!important;
           color:#fff;
-          padding:2px 24px 3px 12px!important;
+          padding:2px 24px 4px 12px!important;
           margin:0 0 3px;
-          border-radius:3px;
+          border-radius:1px;
 }
 
           .box-note {

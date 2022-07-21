@@ -450,7 +450,7 @@ There are various equivalent ways to define the determinant of a square matrix A
 <h5 class="box-legend editable">
 <span class="lt-icon-default">Outcomes</span></h5>
 
-<ol style="list-style-type: upper-alpha;" start="1" class="parenthalpha">
+<ol style="list-style-type: upper-alpha;" start="1" class="romanlist oneem">
     <li class="" style="background-color: unset;">គណនាដេទែរមីណង់របស់ម៉ាទ្រីសការេ ដោយប្រើ <b>ពន្លាតឡាផ្លាស់</b> (Laplace Expansion) ឬ <b>ពន្លាតកូហ្វាក់ទើរ</b> (Cofactor Expansion) ឬប្រើ <b>ប្រមាណវិធីជួរដេក</b> (row operations)។ <!-- Evaluate the determinant of a square matrix using either Laplace Expansion or row operations.-->
     </li>
     <li class="" style="background-color: unset;">Demonstrate the effects that row operations have on determinants.</li>
@@ -900,27 +900,27 @@ Let \(A\) be an \(n \times n\) matrix. Then \(A\) is invertible if and only if \
 
 <p> If \(A=\left[ a_{ij} \right]\) is an \(n\times n\) matrix, then \(\det A\) is defined by computing the expansion along the first row:
   \begin{equation}
-  \label{E1} \det A=\sum_{i=1}^n a_{1,i} \cdot \cof(A)_{1,i}
+  \label{E1} \det(A) =\sum_{i=1}^n a_{1,i} \cdot \cof(A)_{1,i}
   \end{equation}
-  If \(n=1\) then \(\det A=a_{1,1}\).</p>
+  If \(n=1\) then \(\det(A) =a_{1,1}\).</p>
 
 <p>The following example is straightforward and strongly recommended as a means for getting used to definitions.</p>
 
 <example>
-( )
+(Elementary Matrices)
 
   <p class="">
 <ol>
 <li>
-  Let \(E_{ij}\) be the elementary matrix obtained by interchanging \(i\)th and \(j\)th rows of \(I\). Then \(\det E_{ij}=-1\).
+  Let \(E_{ij}\) be the elementary matrix obtained by interchanging \(i\)th and \(j\)th rows of \(I\). Then \(\det(E_{ij})=-1\).
 </li>
 
 <li>
-  Let \(E_{ik}\) be the elementary matrix obtained by multiplying the \(i\)th row of \(I\) by \(k\). Then \(\det E_{ik}=k\).
+  Let \(E_{ik}\) be the elementary matrix obtained by multiplying the \(i\)th row of \(I\) by \(k\). Then \(\det(E_{ik})=k\).
 </li>
 
 <li>
-  Let \(E_{ijk}\) be the elementary matrix obtained by multiplying \(i\)th row of \(I\) by \(k\) and adding it to its \(j\)th row. Then \(\det E_{ijk}=1\).
+  Let \(E_{ijk}\) be the elementary matrix obtained by multiplying \(i\)th row of \(I\) by \(k\) and adding it to its \(j\)th row. Then \(\det(E_{ijk})=1\).
 </li>
 
 <li>
@@ -928,7 +928,7 @@ Let \(A\) be an \(n \times n\) matrix. Then \(A\) is invertible if and only if \
 </li>
 
 <li>
-  If \(E\) is an elementary matrix, then \(\det E=\det E^T\).
+  If \(E\) is an elementary matrix, then \(\det(E)=\det(E^T)\).
 </li>
 </ol>
   </p>
@@ -954,17 +954,17 @@ Let \(A\) be an \(n \times n\) matrix. Then \(A\) is invertible if and only if \
 </p>
 
 <p>
-    If \(A\) is an \(n\times n\) matrix and \(1\leq j \leq n\), then the matrix obtained by removing \(1\)st column and \(j\)th row from \(A\) is an \(n-1\times n-1\) matrix (we shall denote this matrix by \(A(j)\) below). Since these matrices are used in computation of cofactors \(\mathrm{cof}(A)_{1,i}\), for \(1\leq i\neq n\), the inductive assumption applies to these matrices.
+    If \(A\) is an \(n\times n\) matrix and \(1\leq j \leq n\), then the matrix obtained by removing \(1\)st column and \(j\)th row from \(A\) is an \(n-1\times n-1\) matrix (we shall denote this matrix by \(A(j)\) below). Since these matrices are used in computation of cofactors \(\cof(A)_{1,i}\), for \(1\leq i\neq n\), the inductive assumption applies to these matrices.
 </p>
 
 
 <div class="box-theorem">
   <div mt-section-origin="" class="mt-section">
-    <h5 class="box-legend editable"><span class="lt-icon-default">Lemma: (major properties of determinants) </span></h5>
+    <h5 class="box-legend editable"><span class="lt-icon-default">Lemma : (Proof of properties of determinants) </span></h5>
 
 <p>
 <ol class="indentli">
-<li>If \(A\) is an \(n\times n\) matrix such that one of its rows consists of zeros, then \(\det A=0\).
+<li>If \(A\) is an \(n\times n\) matrix such that one of its rows consists of zeros, then \(\det(A)=0\).
 
   <div class="example-content">
         <span id="SHLink_Soln1lem" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln1lem" class="fa fa-caret-right" aria-hidden="true"></span>
@@ -987,7 +987,7 @@ Let \(A\) be an \(n \times n\) matrix. Then \(A\) is invertible if and only if \
   </p>
 
   <p>
-    On the other hand, if \(j=i\) then \(a_{1,j}=0\). Therefore \(a_{1,j}\mathrm{cof}(A)_{1,j}=0\) for all \(j\) and by \(\eqref{E1}\) we have \[\det A=\sum_{j=1}^n a_{1,j} \cdot \cof(A)_{1,j}=0\nonumber \] as each of the summands is equal to $0$.
+    On the other hand, if \(j=i\) then \(a_{1,j}=0\). Therefore \(a_{1,j}\cof(A)_{1,j}=0\) for all \(j\) and by \(\eqref{E1}\) we have \[\det(A)=\sum_{j=1}^n a_{1,j} \cdot \cof(A)_{1,j}=0\nonumber \] as each of the summands is equal to $0$.
   </p>
   </li>
 
@@ -1004,7 +1004,7 @@ Let \(A\) be an \(n \times n\) matrix. Then \(A\) is invertible if and only if \
       </li>
       <li>Each entry in the \(j\)th row of \(A\) is the sum of the corresponding entries in \(j\)th rows of \(B\) and \(C\).
     </li>
-      Then \(\det A=\det B+\det C\).
+      Then \(\det(A) = \det(B) +\det(C)\).
   </ol>
 
   <div class="example-content">
@@ -1015,11 +1015,11 @@ This is not difficult to check for \(n=2\) (do check it!).
   </p>
 
   <p>
-Now assume that the statement of Lemma is true for \(n-1\times n-1\) matrices and fix \(A,B\) and \(C\) as in the statement. The assumptions state that we have \(a_{l,j}=b_{l,j}=c_{l,j}\) for \(j\neq i\) and for \(1\leq l\leq n\) and \(a_{l,i}=b_{l,i}+c_{l,i}\) for all \(1\leq l\leq n\). Therefore \(A(i)=B(i)=C(i)\), and \(A(j)\) has the property that its \(i\)th row is the sum of \(i\)th rows of \(B(j)\) and \(C(j)\) for \(j\neq i\) while the other rows of all three matrices are identical. Therefore by our inductive assumption we have \(\mathrm{cof}(A)_{1j}=\mathrm{cof}(B)_{1j}+\mathrm{cof}(C)_{1j}\) for \(j\neq i\).
+Now assume that the statement of Lemma is true for \(n-1\times n-1\) matrices and fix \(A,B\) and \(C\) as in the statement. The assumptions state that we have \(a_{l,j}=b_{l,j}=c_{l,j}\) for \(j\neq i\) and for \(1\leq l\leq n\) and \(a_{l,i}=b_{l,i}+c_{l,i}\) for all \(1\leq l\leq n\). Therefore \(A(i)=B(i)=C(i)\), and \(A(j)\) has the property that its \(i\)th row is the sum of \(i\)th rows of \(B(j)\) and \(C(j)\) for \(j\neq i\) while the other rows of all three matrices are identical. Therefore by our inductive assumption we have \(\cof(A)_{1j}=\cof(B)_{1j}+\cof(C)_{1j}\) for \(j\neq i\).
   </p>
 
   <p>
-By \(\eqref{E1}\) we have (using all equalities established above) \[\begin{aligned} \det A&=\sum_{l=1}^n a_{1,l} \mathrm{cof}(A)_{1,l}\\ &=\sum_{l\neq i} a_{1,l}(\mathrm{cof}(B)_{1,l}+\mathrm{cof}(C)_{1,l})+ (b_{1,i}+c_{1,i})\mathrm{cof}(A)_{1,i}\\ &= \det B+\det C\end{aligned}\] This proves that the assertion is true for all \(n\) and completes the proof.
+By \(\eqref{E1}\) we have (using all equalities established above) \[\begin{aligned} \det A&=\sum_{l=1}^n a_{1,l} \cof(A)_{1,l}\\ &=\sum_{l\neq i} a_{1,l}(\cof(B)_{1,l}+\cof(C)_{1,l})+ (b_{1,i}+c_{1,i})\cof(A)_{1,i}\\ &= \det B+\det C\end{aligned}\] This proves that the assertion is true for all \(n\) and completes the proof.
   </p>
         </div>
       </div>
@@ -1027,11 +1027,11 @@ By \(\eqref{E1}\) we have (using all equalities established above) \[\begin{alig
 </li>
 
   <li>
-If two rows of \(A\) are identical then \(\det A=0\).
+If two rows of \(A\) are identical then \(\det(A)=0\).
   </li>
 
   <li>
-    Let \(A\) and \(B\) be two \(n\times n\) matrices. Then \[\det \left( AB\right) =\det \left( A\right) \det \left( B\right)\nonumber \]
+    Let \(A\) and \(B\) be two \(n\times n\) matrices. Then \[\det\left( A\cdot B\right) =\det\left( A\right) \cdot \det \left( B\right)\nonumber \]
   </li>
 </ol>
 </p>
@@ -1039,7 +1039,7 @@ If two rows of \(A\) are identical then \(\det A=0\).
 </div></div>
 
 
-
+<!--
 <defn>
   <div class="definition"><span>(Sarrus's Rule for $2\times 2$ and $3\times 3$-Matrices)</span> </div>
   <div class="definitionb">
@@ -1047,12 +1047,31 @@ If two rows of \(A\) are identical then \(\det A=0\).
 </div></div>
 </defn>
 
+-->
+
+
+<!--
+<defn>
+  <div class="definition"><span>(Sarrus's Rule for $2\times 2$ and $3\times 3$-Matrices)</span> </div>
+  <div class="definitionb">
+  <p>We wil</p>
+</div></div>
+</defn>
+
+-->
 
 
 
 
+<!--
+<defn>
+  <div class="definition"><span>(Sarrus's Rule for $2\times 2$ and $3\times 3$-Matrices)</span> </div>
+  <div class="definitionb">
+  <p>We wil</p>
+</div></div>
+</defn>
 
-
+-->
 
 
 

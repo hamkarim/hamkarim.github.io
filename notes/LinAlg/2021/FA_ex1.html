@@ -583,11 +583,11 @@ $$
         <span id="SHLink_Soln1theo" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln1theo" class="fa fa-caret-right" aria-hidden="true"></span>
    <div id="SHObj_Soln1theo" class="soln-content" style="display: none;">
   <p>
-<!--(Draw a picture.) The pointwise limit is 0 to the left of the midpoint, and 1 to the right. Despite the fact that the pointwise limit does not exist at the midpoint,
+(Draw a picture.) The pointwise limit is 0 to the left of the midpoint, and 1 to the right. Despite the fact that the pointwise limit does not exist at the midpoint,
 $$
 \d_{2}\left(f_{i}, f_{j}\right)^{2} \leq \int_{\frac{a+b}{2}-\frac{1}{n}}^{\frac{a+b}{2}+\frac{1}{n}} 1 d x \leq \frac{2}{n} \quad(\text { for } i, j \geq n \text { ) }
 $$
-which goes to 0 as $n \rightarrow \infty$.-->
+which goes to 0 as $n \rightarrow \infty$.
 
   </p>
 
@@ -636,21 +636,8 @@ Slightly unlike the case of varying metrics on $\mathbb{R}^{n}$, the underlying 
         <li>For $X=\ell^{3}$ and $x_{n}:=\Big(1, \frac{1}{2}, \ldots, \frac{1}{n}, 0,0, \ldots\Big)$
         </li>
         <li>
-          Given the sequence $$f_n(t) := t^n - t^{2n}\quad, t \in [0, 1]$$ is it convergent in $\mathcal C[0, 1]$? <b>HINT: </b> Prove by a contradiction!
-          <!--We prove that the sequence $\bar{f}=\left(f_{n}(t)\right)_{n}$, defined by $f_{n}(t)=t^{n}-t^{2 n}$ is not convergent in $C[0,1]$. We will do so by contradiction. Assume that $\bar{f}$ has a limit $f$ in $C[0,1]$. Then, for each $\epsilon>0$, there exists $N_{\epsilon} \in \mathbb{N}$ such that, for all $n>N_{\epsilon}$, one has $\left\|f-f_{n}\right\|<\epsilon$. Let now $\epsilon=\frac{1}{32}$ and choose $n>N_{\epsilon}$. Then one has
-
-$$
-\left\|f_{n}-f_{2 n}\right\|=\max _{t \in[0,1]}\left|\left(t^{n}-t^{2 n}\right)-\left(t^{2 n}-t^{4 n}\right)\right|=\max _{t \in[0,1]}\left|t^{n}-2 t^{2 n}+t^{4 n}\right|
-$$
-and so, since $0 \leq \frac{1}{\sqrt[n]{2}} \leq 1$, we get
-$$
-\left\|f_{n}-f_{2 n}\right\| \geq\left|\left(\frac{1}{\sqrt[n]{2}}\right)^{n}-2\left(\frac{1}{\sqrt[n]{2}}\right)^{2 n}+\left(\frac{1}{\sqrt[n]{2}}\right)^{4 n}\right|=\left(\frac{1}{2}-2 \frac{1}{4}+\frac{1}{16}\right)=\frac{1}{16} .
-$$
-Then, as a consequence of the triangle inequality, one gets
-$$
-\frac{1}{32}=\frac{1}{16}-\epsilon \leq\left\|f_{2 n}-f_{n}\right\|-\left\|f-f_{2 n}\right\| \leq\left\|f-f_{n}\right\|<\epsilon=\frac{1}{32} .
-$$
-Contradiction.-->
+          Given the sequence $$f_n(t) := t^n - t^{2n}\quad, t \in [0, 1]$$
+          Prove that it is not convergent in $\mathcal C[0, 1]$? <b>HINT: </b> Prove by a contradiction!
         </li>
       </ol>
 
@@ -660,10 +647,22 @@ Contradiction.-->
       <div class="example-content">
             <span id="SHLink_Soln2ex" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln2ex" class="fa fa-caret-right" aria-hidden="true"></span>
        <div id="SHObj_Soln2ex" class="soln-content" style="display: none;">
-      <p>
+         <p>
+           We prove that the sequence $\bar{f}=\left(f_{n}(t)\right)_{n}$, defined by $f_{n}(t)=t^{n}-t^{2 n}$ is not convergent in $C[0,1]$. We will do so by contradiction. Assume that $\bar{f}$ has a limit $f$ in $C[0,1]$. Then, for each $\epsilon>0$, there exists $N_{\epsilon} \in \mathbb{N}$ such that, for all $n>N_{\epsilon}$, one has $\left\|f-f_{n}\right\|<\epsilon$. Let now $\epsilon=\frac{1}{32}$ and choose $n>N_{\epsilon}$. Then one has
 
-
-      </p>
+       $$
+       \left\|f_{n}-f_{2 n}\right\|=\max _{t \in[0,1]}\left|\left(t^{n}-t^{2 n}\right)-\left(t^{2 n}-t^{4 n}\right)\right|=\max _{t \in[0,1]}\left|t^{n}-2 t^{2 n}+t^{4 n}\right|
+       $$
+       and so, since $0 \leq \frac{1}{\sqrt[n]{2}} \leq 1$, we get
+       $$
+       \left\|f_{n}-f_{2 n}\right\| \geq\left|\left(\frac{1}{\sqrt[n]{2}}\right)^{n}-2\left(\frac{1}{\sqrt[n]{2}}\right)^{2 n}+\left(\frac{1}{\sqrt[n]{2}}\right)^{4 n}\right|=\left(\frac{1}{2}-2 \frac{1}{4}+\frac{1}{16}\right)=\frac{1}{16} .
+       $$
+       Then, as a consequence of the triangle inequality, one gets
+       $$
+       \frac{1}{32}=\frac{1}{16}-\epsilon \leq\left\|f_{2 n}-f_{n}\right\|-\left\|f-f_{2 n}\right\| \leq\left\|f-f_{n}\right\|<\epsilon=\frac{1}{32} .
+       $$
+       Contradiction.
+         </p>
 
             </div>
           </div>
@@ -752,8 +751,14 @@ An inner product \(\langle \cdot, \cdot \rangle\) on \(X\) is a map
   </p>
 
 
-<p>
+<h3>Norms Induced by Inner Products: Parallelogram Law</h3>
+<p>Let $(X,\Vert \cdot \Vert)$ be linear space. Then, the norm $\|\cdot\|$ satisfies the parallelogram law
 
+  $$2 \Vert x \Vert^2 + 2\Vert y \Vert^2 = \Vert x + y \Vert^2 + \Vert x - y \Vert^2$$ for all $x,y \in X$
+
+  and the inducing inner production is
+
+  $$\langle x, y \rangle = \frac{1}{4} \left( \Vert x + y \Vert^2 - \Vert x - y \Vert^2\right).$$
 
 </p>
 
