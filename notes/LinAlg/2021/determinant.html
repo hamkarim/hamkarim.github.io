@@ -404,6 +404,7 @@ function showhideFunction() {
   \( \newcommand{\Argument}{\mathrm{Arg}}\)
   \( \newcommand{\norm}[1]{\| #1 \|}\)
   \( \newcommand{\cof}{\mathbf{cof}}\)
+  \( \newcommand{\adj}{\mathbf{adj}}\)
   \( \renewcommand{\det}{\mathbf{det\,\!}}\)
     \( \newcommand{\minor}{\mathbf{minor}}\)
   \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
@@ -1036,6 +1037,114 @@ If two rows of \(A\) are identical then \(\det(A)=0\).
 </p>
 
 </div></div>
+
+
+
+<h2 class="frame-sect sectcounter">&nbsp; Applications</h2>
+
+<div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">Find the Inverse Matrix</span>
+</div>
+Let \(A\) be an \(n\times n\) matrix. Then
+
+\[A \cdot \adj(A) = \adj(A)\cdot A = {\det \left(A\right)} \cdot I_n \nonumber \]
+
+Moreover \(A\) is invertible if and only if \(\det\left(A\right) \neq 0\). In this case we have:
+\[A^{-1} = \frac{1}{\det\left(A\right)} {\adj}\left(A\right)\nonumber \]
+<p class="">
+
+</p>
+
+</div>
+<div class="box-definition">
+  <div class="box-legend editable"><span class="lt-icon-default">អនុវត្តន៍ ១.  :  (ម៉ាទ្រីសច្រាស)</span>
+</div>
+
+<p class="">
+Given
+\[A\left( t\right) =\left[ \begin{array}{ccc} e^{t} & 0 & 0 \\ 0 & \cos t & \sin t \\ 0 & -\sin t & \cos t \end{array} \right]\nonumber \]
+
+Show that \(A\left( t\right) ^{-1}\) exists and then find it.
+</p>
+
+</div>
+
+
+<div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">Using Cramer’s Rule</span>
+</div>
+
+<p class="">
+Suppose \(A\) is an \(n\times n\) invertible matrix and we wish to solve the system \[AX=B \text{\;\;for\;\;} X =\left[ x_{1},\cdots ,x_{n}\right] ^{T}\]
+
+Then Cramer’s rule says \[x_{i}= \frac{\det \left(A_{i}\right)}{\det \left(A\right)}\nonumber \] where \(A_{i}\) is the matrix obtained by replacing the \(i^{th}\) column of \(A\) with the column matrix \[B = \left[ \begin{array}{c} b_1 \\ \vdots \\ b_n \end{array} \right]\nonumber \]
+</p>
+
+</div>
+
+
+<div class="box-definition">
+  <div class="box-legend editable"><span class="lt-icon-default">អនុវត្តន៍ ២.  :  (ដោះស្រាយប្រព័ន្ធសមីការ)</span>
+</div>
+
+<p class="">
+Find \(x,y,z\) if \[\left[ \begin{array}{rrr} 1 & 2 & 1 \\ 3 & 2 & 1 \\ 2 & -3 & 2 \end{array} \right] \left[ \begin{array}{c} x \\ y \\ z \end{array} \right] =\left[ \begin{array}{r} 1 \\ 2 \\ 3 \end{array} \right]\nonumber \]
+</p>
+
+</div>
+
+<div class="box-definition">
+  <div class="box-legend editable"><span class="lt-icon-default">អនុវត្តន៍ ៣.  :  (ដោះស្រាយប្រព័ន្ធសមីការ)</span>
+</div>
+
+<p class="">
+Solve for \(z\) if \[\left[ \begin{array}{ccc} 1 & 0 & 0 \\ 0 & e^{t}\cos t & e^{t}\sin t \\ 0 & -e^{t}\sin t & e^{t}\cos t \end{array} \right] \left[ \begin{array}{c} x \\ y \\ z \end{array} \right] =\left[ \begin{array}{c} 1 \\ t \\ {0.05in} t^{2} \end{array} \right]\nonumber \]
+</p>
+
+</div>
+
+
+<div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">Finding an Interpolation Polynomial</span>
+</div>
+
+<p class="">
+  Suppose that values of \(x\) and corresponding values of \(y\) are given, such that the actual relationship between \(x\) and \(y\) is unknown. Then, values of \(y\) can be estimated using an interpolating polynomial \(p(x)\). If given \(x_1, ..., x_n\) and the corresponding \(y_1, ..., y_n\), the procedure to find \(p(x)\) is as follows:
+  <ol class="romanlist twoem">
+    <li>
+      The desired polynomial \(p(x)\) is given by \[p(x) = r_0 + r_1 x + r_2 x^2 + ... + r_{n-1}x^{n-1}\nonumber \]
+    </li>
+    <li>
+      \(p(x_i) = y_i\) for all \(i = 1, 2, ...,n\) so that \[\begin{array}{c} r_0 + r_1x_1 + r_2 x_1^2 + ... + r_{n-1}x_1^{n-1} = y_1 \\ r_0 + r_1x_2 + r_2 x_2^2 + ... + r_{n-1}x_2^{n-1} = y_2 \\ \vdots \\ r_0 + r_1x_n + r_2 x_n^2 + ... + r_{n-1}x_n^{n-1} = y_n \end{array}\nonumber \]
+    </li>
+    <li>
+      Set up the augmented matrix of this system of equations \[\left[ \begin{array}{rrrrr|r} 1 & x_1 & x_1^2 & \cdots & x_1^{n-1} & y_1 \\ 1 & x_2 & x_2^2 & \cdots & x_2^{n-1} & y_2 \\ \vdots & \vdots & \vdots & &\vdots & \vdots \\ 1 & x_n & x_n^2 & \cdots & x_n^{n-1} & y_n \\ \end{array} \right]\nonumber \]
+    </li>
+    <li>
+      Solving this system will result in a unique solution \(r_0, r_1, \cdots, r_{n-1}\). Use these values to construct \(p(x)\), and estimate the value of \(p(a)\) for any \(x=a\).
+    </li>
+  </ol>
+
+</p>
+
+</div>
+
+<p><b>REMARK: </b>
+  Given \(n\) data points \((x_1, y_1), (x_2, y_2), \cdots, (x_n, y_n)\) with the \(x_i\) distinct, there is a unique polynomial \(p(x) = r_0 + r_1x + r_2x^2 + \cdots + r_{n-1}x^{n-1}\) such that \(p(x_i) = y_i\) for \(i=1,2,\cdots, n\). The resulting polynomial \(p(x)\) is called the interpolating polynomial for the data points.
+</p>
+
+<div class="box-definition">
+  <div class="box-legend editable"><span class="lt-icon-default">អនុវត្តន៍ ៤.  :  (Polynomial Interpolation)</span>
+</div>
+
+<p class="">
+Consider the data points \((0,1), (1,2), (3,22), (5,66)\). Find an interpolating polynomial \(p(x)\) of degree at most three, and estimate the value of \(p(2)\).
+</p>
+
+</div>
+
+
+
 
 
 <!--
