@@ -1257,8 +1257,8 @@ div.definitionb {
 }
 
 /*definition counter*/
-.main-content {
-    counter-reset: counterdef;
+.main-content defn {
+    counter-reset: counterdef!important;
 }
 
 .main-content div.definition {
@@ -1275,8 +1275,8 @@ div.definitionb {
 }
 
 .main-content div.definition:before {
-    counter-increment: counterdef;
-    content: "និយមន័យ "counter(section, khmer)"."counter(counterdef, khmer) "  ";
+    counter-increment: subsection;
+    content: "និយមន័យ "counter(section, khmer)"."counter(subsection, khmer) "  ";
     /*font-weight:bold; */
     font-family: 'Koulen', cursive;
 }
