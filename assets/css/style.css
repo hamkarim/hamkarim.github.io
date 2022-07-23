@@ -1125,14 +1125,15 @@ h3.sectcounter:before {
 }
 
 /*example counter*/
-.main-content {
-    counter-reset: counterex;
+.main-content  {
+    counter-reset: counterex!important;
 }
 
 .main-content example::before {
     counter-increment: counterex;
     content: "ឧទាហរណ៍ "counter(section, khmer)"."counter(counterex, khmer) "  ";
     font-weight: bold;
+    font-size: 19px;
     font-family: Battambang;
     /*Angkor*/
 }

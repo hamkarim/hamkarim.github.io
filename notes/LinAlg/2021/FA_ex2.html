@@ -423,7 +423,7 @@ function showhideFunction() {
 
 <section class="main-content">
 
-  <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">Functional Anaysis: TD & TP (II)</h1>
+  <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">Functional Anaysis: TD & TP (II : 2h )</h1>
 <p style="font-style: italic; font-weight:bold; font-family: Arial; opacity: 0.5;">
 October
 2nd, 2020
@@ -749,18 +749,16 @@ which does not converge towards the only possible limit value 0 for $n \rightarr
     <p>
        Let $X=\mathcal C([0,1], \mathbb{R})$ and define continuous functions $f:[0,1] \rightarrow \mathbb{R}$ with the norm
 $$
-\|f\|=\sup \{|f(x)| \mid 0 \leq x \leq 1\} .
+\|f\|=\sup \big\{|f(x)| \mid 0 \leq x \leq 1\big\} 
 $$
 
-Let $\Phi :[0,1] \times[0,1] \rightarrow \mathbb{R}$ be a continuous function in two variables defined in the square $[0,1] \times[0,1] \in \mathbb{R}^{2}$. Assume that $\Phi(x, y) \geq 0$ for all $(x, y) \in[0,1] \times[0,1]$.<br><br>
-
-Next, define the function $\varphi=\varphi(x):[0,1] \rightarrow \mathbb{R}$ by
+Let $\Phi :[0,1] \times[0,1] \rightarrow \mathbb{R}$ be a continuous function in two variables defined in the square $[0,1] \times[0,1] \in \mathbb{R}^{2}$. With $\Phi(x, y) \geq 0$ for all $(x, y) \in [0,1] \times[0,1]$, we define the function $\varphi:[0,1] \rightarrow \mathbb{R}$ by
 $$
-\varphi(x)=\sup \{\Phi(x, y) \mid 0 \leq y \leq 1\} .
+    \varphi(x)=\sup \big\{\Phi(x, y) \mid 0 \leq y \leq 1\big\}
 $$
-For $f \in \mathcal C([0,1], \mathbb{R})$, we define the function $f_{\Phi}=f_{\Phi}(y):[0,1] \rightarrow \mathbb{R}$ by
+Furthermore, for $f \in \mathcal C([0,1], \mathbb{R})$, we define the function $f_{\Phi}:[0,1] \rightarrow \mathbb{R}$ by
 $$
-f_{\Phi}(y)=\int_{0}^{1} \Phi(x, y) f(x) d x .
+    f_{\Phi}(y)=\int_{0}^{1} \Phi(x, y) f(x) d x .
 $$
         
     <ol class="romanlist twoem">
@@ -787,14 +785,14 @@ Here, the mapping $\mathcal L$ is called an integral operator with <b>kernel</b>
         <li>
             Show that
 $$
-\|\mathcal L(f)\| \leq\left(\int_{0}^{1} \varphi(x)\d x\right)\|f\|
+    \big\|\mathcal L(f)\big\| \leq\left(\int_{0}^{1} \varphi(x)\d x\right)\|f\|
 $$
 for all $f \in \mathcal C([0,1], \mathbb{R})$.
         </li>
         <li>
             Show that the operator norm for $\mathcal L$ is 
 $$
-\|L\|=\sup \left\{\int_{0}^{1} \Phi(x, y) d x \mid 0 \leq y \leq 1\right\} 
+\|\mathcal L\|=\sup \left\{\int_{0}^{1} \Phi(x, y) d x \mid 0 \leq y \leq 1\right\} 
 $$
         </li>
     </ol>
@@ -811,10 +809,10 @@ $$
     <li>Show that $\mathcal L$ is linear and countinuoous with sub norm as 
     
     $$
-\|\Phi\|_{\infty}=\sup \{|\Phi(x, y)| \mid(x, y) \in[0,1] \times[0,1]\} 
+\big\|\Phi\big\|_{\infty}=\sup \big\{|\Phi(x, y)| \mid(x, y) \in[0,1] \times[0,1]\big\} 
 $$ 
   and show that 
-   $\|L(f)\| \leq \|\Phi\|_{\infty} \cdot\|f\|$ and then study for $\Phi$!
+   $\big\|\mathcal L(f)\big\| \leq \|\Phi\|_{\infty} \cdot\|f\|$ and then study for $\Phi$!
     
     </li>
     
@@ -822,7 +820,7 @@ $$
         Using the estimate in (ii)
     </li>
     <li>
-       From $\Phi(x, y) \geq 0$, let check for $\|L(1)\|$ !
+       From $\Phi(x, y) \geq 0$, let check for $\|\mathcal L(1)\|$ !
         <!--4. From $\Phi(x, y) \geq 0$, and
 $$
 \begin{aligned}
