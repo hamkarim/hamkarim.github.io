@@ -1370,6 +1370,54 @@ To verify your work, make sure that \(Ax=\lambda x\) for each \(\lambda\) and as
             Find its eigenvalues and eigenvectors.
         
     </p>
+<div class="example-content">
+        <span id="SHLink_SolnEx1" class="soln-title SH-Link">Show solution</span> <span id="SHImg_SolnEx1" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_SolnEx1" class="soln-content" style="display: none;">
+  <p>
+  First we find the eigenvalues of \(A\) by solving the equation 
+  
+  \[\det \left( \lambda I - A \right) =0\nonumber \]
+
+This gives 
+\[\begin{aligned} \det \left( \lambda \left[ \begin{array}{rr} 1 & 0 \\ 0 & 1 \end{array} \right] - \left[ \begin{array}{rr} -1 & 1 \\ 2 & -1 \end{array} \right] \right) &= 0 \\ \\ \det \left[ \begin{array}{cc} \lambda +1  & 1 \\ 2 & \lambda +1 \end{array} \right] &= 0 
+\end{aligned}\]
+
+<!--Computing the determinant as usual, the result is \[\lambda ^2 + \lambda - 6 = 0\nonumber\]
+
+Solving this equation, we find that \(\lambda_1 = 2\) and \(\lambda_2 = -3\).
+
+Now we need to find the basic eigenvectors for each \(\lambda\). First we will find the eigenvectors for \(\lambda_1 = 2\). We wish to find all vectors \(X \neq 0\) such that \(AX = 2X\). These are the solutions to \((2I - A)X = 0\). \[\begin{aligned} \left( 2 \left[ \begin{array}{rr} 1 & 0 \\ 0 & 1 \end{array}\right] - \left[ \begin{array}{rr} -5 & 2 \\ -7 & 4 \end{array}\right] \right) \left[ \begin{array}{c} x \\ y \end{array}\right] &= \left[ \begin{array}{r} 0 \\ 0 \end{array} \right] \\ \\ \left[ \begin{array}{rr} 7 & -2 \\ 7 & -2 \end{array}\right] \left[ \begin{array}{c} x \\ y \end{array}\right] &= \left[ \begin{array}{r} 0 \\ 0 \end{array} \right] \end{aligned}\]
+
+The augmented matrix for this system and corresponding reduced row-echelon form are given by \[\left[ \begin{array}{rr|r} 7 & -2 & 0 \\ 7 & -2 & 0 \end{array}\right] \rightarrow \cdots \rightarrow \left[ \begin{array}{rr|r} 1 & -\frac{2}{7} & 0 \\ 0 & 0 & 0 \end{array} \right]\nonumber\]
+
+The solution is any vector of the form \[\left[ \begin{array}{c} \frac{2}{7}s \\ s \end{array} \right] = s \left[ \begin{array}{r} \frac{2}{7} \\ 1 \end{array} \right]\nonumber \]
+
+Multiplying this vector by \(7\) we obtain a simpler description for the solution to this system, given by \[t \left[ \begin{array}{r} 2 \\ 7 \end{array} \right]\nonumber\]
+
+This gives the basic eigenvector for \(\lambda_1 = 2\) as \[\left[ \begin{array}{r} 2\\ 7 \end{array} \right]\nonumber\]
+
+To check, we verify that \(AX = 2X\) for this basic eigenvector.
+
+\[\left[ \begin{array}{rr} -5 & 2 \\ -7 & 4 \end{array}\right] \left[ \begin{array}{r} 2 \\ 7 \end{array} \right] = \left[ \begin{array}{r} 4 \\ 14 \end{array}\right] = 2 \left[ \begin{array}{r} 2\\ 7 \end{array} \right]\nonumber\]
+
+This is what we wanted, so we know this basic eigenvector is correct.
+
+Next we will repeat this process to find the basic eigenvector for \(\lambda_2 = -3\). We wish to find all vectors \(X \neq 0\) such that \(AX = -3X\). These are the solutions to \(((-3)I-A)X = 0\). \[\begin{aligned} \left( (-3) \left[ \begin{array}{rr} 1 & 0 \\ 0 & 1 \end{array}\right] - \left[ \begin{array}{rr} -5 & 2 \\ -7 & 4 \end{array}\right] \right) \left[ \begin{array}{c} x \\ y \end{array}\right] &= \left[ \begin{array}{r} 0 \\ 0 \end{array} \right] \\ \left[ \begin{array}{rr} 2 & -2 \\ 7 & -7 \end{array}\right] \left[ \begin{array}{c} x \\ y \end{array}\right] &= \left[ \begin{array}{r} 0 \\ 0 \end{array} \right] \end{aligned}\]
+
+The augmented matrix for this system and corresponding reduced row-echelon form are given by \[\left[ \begin{array}{rr|r} 2 & -2 & 0 \\ 7 & -7 & 0 \end{array}\right] \rightarrow \cdots \rightarrow \left[ \begin{array}{rr|r} 1 & -1 & 0 \\ 0 & 0 & 0 \end{array} \right]\nonumber \]
+
+The solution is any vector of the form \[\left[ \begin{array}{c} s \\ s \end{array} \right] = s \left[ \begin{array}{r} 1 \\ 1 \end{array} \right]\nonumber\]
+
+This gives the basic eigenvector for \(\lambda_2 = -3\) as \[\left[ \begin{array}{r} 1\\ 1 \end{array} \right]\nonumber\]
+
+To check, we verify that \(AX = -3X\) for this basic eigenvector.
+
+\[\left[ \begin{array}{rr} -5 & 2 \\ -7 & 4 \end{array}\right] \left[ \begin{array}{r} 1 \\ 1 \end{array} \right] = \left[ \begin{array}{r} -3 \\ -3 \end{array}\right] = -3 \left[ \begin{array}{r} 1\\ 1 \end{array} \right]\nonumber\]
+
+This is what we wanted, so we know this basic eigenvector is correct. -->
+  </p>
+        </div>
+      </div>
 </example>
    
    
