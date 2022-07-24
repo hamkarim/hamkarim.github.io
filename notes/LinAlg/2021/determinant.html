@@ -1275,17 +1275,17 @@ There is a certain type of matrix for which finding the determinant is a very si
     <div class="definition"><span>(Eigenvalues and Eigenvectors)</span> </div>
     <div class="definitionb">
         <p>
-            Let \(A\) be an \(n\times n\) matrix and let \(X \in \mathbb{C}^{n}\) be a nonzero vector for which
+            Let \(A\) be an \(n\times n\) matrix and let \(x \in \mathbb{C}^{n}\) be a nonzero vector for which
 
-            \[AX=\lambda X \label{eigen1}\] for some scalar \(\lambda .\) Then
+            \[Ax=\lambda x \label{eigen1}\] for some scalar \(\lambda\). Then
 
         <ol class="romanlist threeem">
             <li>
-                \(\lambda\) is called an eigenvalue of the matrix \(A\) and \(X\) is called an eigenvector of \(A\) associated with \(\lambda\), or a \(\lambda\)-eigenvector of \(A\).
+                \(\lambda\) is called an <b>eigenvalue</b> of the matrix \(A\) and \(x\) is called an <b>eigenvector</b> of \(A\) associated with \(\lambda\), or a \(\lambda\)-eigenvector of \(A\).
             </li>
 
             <li>
-                The set of all eigenvalues of an \(n\times n\) matrix \(A\) is denoted by \(\sigma \left( A\right)\) and is referred to as the spectrum of \(A.\)
+                The set of all eigenvalues of an \(n\times n\) matrix \(A\) is denoted by \(\sigma \left( A\right)\) and is called the <b>spectrum</b> of \(A.\)
             </li>
         </ol>
 
@@ -1297,10 +1297,11 @@ There is a certain type of matrix for which finding the determinant is a very si
    
    <p>
        <b>NOTE: </b>
-       The eigenvectors of a matrix \(A\) are those vectors \(X\) for which multiplication by \(A\) results in a vector in the same direction or opposite direction to \(X\). Since the zero vector \(0\) has no direction this would make no sense for the zero vector. As noted above, \(0\) is never allowed to be an eigenvector.<br><br>
+       The eigenvectors of a matrix \(A\) are those vectors \(X\) for which multiplication by \(A\) results in a vector in the same direction or opposite direction to \(X\). Since the zero vector \(0\) has no direction this would make no sense for the zero vector. As noted above, \(0\) is never allowed to be an eigenvector.<br>
        
-       The expression \(\det \left( \lambda I-A\right)\) is a polynomial (in the variable \(x\)) called the characteristic polynomial of \(A\), and \(\det \left( \lambda I-A\right) =0\) is called the characteristic equation. For this reason we may also refer to the eigenvalues of \(A\) as characteristic values, but the former is often used for historical reasons.
+       The expression \(\det \left( \lambda I-A\right)\) is a polynomial (in the variable \(x\)) called the <b>characteristic polynomial</b> of \(A\), and \(\det \left( \lambda I-A\right) =0\) is called the <b>characteristic equation</b>. For this reason we may also refer to the eigenvalues of \(A\) as characteristic values, but the former is often used for historical reasons.
    </p>
+   <br>
    
    <example>
        (Eigenvectors and Eigenvalues)
@@ -1336,6 +1337,55 @@ Then \(\lambda\) is an eigenvalue of \(A\) and thus there exists a nonzero vecto
    <p>
        For example, suppose the characteristic polynomial of \(A\) is given by \(\left( \lambda - 2 \right)^2\). Solving for the roots of this polynomial, we set \(\left( \lambda - 2 \right)^2 = 0\) and solve for \(\lambda \). We find that \(\lambda = 2\) is a root that occurs twice. Hence, in this case, \(\lambda = 2\) is an eigenvalue of \(A\) of multiplicity equal to \(2\).
    </p>
+   
+   
+   
+     <div class="box-lemma">
+  <div class="box-legend editable"><span> Finding Eigenvalues and Eigenvectors
+</span>
+</div>
+
+<p class="">
+Let \(A\) be an \(n \times n\) matrix.
+<ol class="romanlist twoem">
+    <li>
+        First, find the eigenvalues \(\lambda\) of \(A\) by solving the equation \(\det \left( \lambda I -A \right) = 0\).
+    </li>
+    <li>
+        For each \(\lambda\), find the basic eigenvectors \(x \neq 0\) by finding the basic solutions to \(\left( \lambda I - A \right) x = 0\).
+    </li>
+</ol>
+To verify your work, make sure that \(Ax=\lambda x\) for each \(\lambda\) and associated eigenvector \(x\).
+
+</p>
+
+</div>
+   
+   
+<example>
+(Find the Eigenvalues and Eigenvectors)
+    <p>
+            Let \[A = \left[ \begin{array}{rr} -1 & 1 \\ 2 & -1 \end{array} \right]\]
+            
+            Find its eigenvalues and eigenvectors.
+        
+    </p>
+</example>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
    
     <hr>
 
