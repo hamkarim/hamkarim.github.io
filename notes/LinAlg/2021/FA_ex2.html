@@ -490,11 +490,11 @@ topological space, yet fails in another one.
     </div>
 
     <p>
-        Let $X=\mathcal C^{\infty}\big([0,2 \pi], \mathbb{R}\big)$ be the vector space of differentiable functions $f:[0,2 \pi] \rightarrow \mathbb{R}$ of class $\mathcal C^{\infty}$. For $f \in X$ we set
+        Let $X=\mathcal C^{\infty}\big([0,2 \pi], \mathbb{R}\big)$ be the vector space of differentiable functions $f:[0,2 \pi] \rightarrow \mathbb{R}$ of class $\mathcal C^{\infty}$. For $f \in X$, let define 
         $$
         \begin{aligned}
-        & \|f\|_{0}=\sup \Big\{|f(x)| \mid x \in[0,2 \pi]\Big\} \\
-        & \|f\|_{1}=\sup \Big\{|f(x)|+\left|f^{\prime}(x)\right| \mid x \in[0,2 \pi]\Big\}
+            \|f\|_{0} &=\sup \Big\{|f(x)| \mid x \in[0,2 \pi]\Big\} \\
+            \|f\|_{1} &=\sup \Big\{|f(x)|+\left|f^{\prime}(x)\right| \mid x \in[0,2 \pi]\Big\}
         \end{aligned}
         $$
         Next, we define the linear mapping $\mathcal D: X \rightarrow X$ as follows, <!--by associating to $f \in X$ the derivative $f^{\prime} \in X$ of $f$, i.e.-->
@@ -506,8 +506,8 @@ topological space, yet fails in another one.
                 Show that $\|\cdot\|_{0}$ and $\|\cdot\|_{1}$ are norms in $X$.
             </li>
             <li>
-                Show that for every $n \in \mathbb{N}$ there exists a function $f_{n} \in X$ for which $\left\|f_{n}\right\|_{0}=0$ and $\left\|D\left(f_{n}\right)\right\|_{0}=n$.<br>
-                In such case, show that $\mathcal D: X \rightarrow X$ is not continuous, when in $\big(X, \|\cdot\|_{0}\big)$.
+                Show that for every $n \in \mathbb{N}$ there exists a function $f_{n} \in X$ for which $$\left\|f_{n}\right\|_{0}=0\quad \text{ and } \quad \left\|D\left(f_{n}\right)\right\|_{0}=n$$
+                In such case, show that $\mathcal D: X \rightarrow X$ is not continuous, when in space $\big(X, \|\cdot\|_{0}\big)$.
             </li>
             <li>
                 Show that $\mathcal D: X_{1} \rightarrow X_{0}$ is continuous, where we denote $X_{1}$ as $\big(X, \|\cdot\|_{1}\big)$ and $X_{0}$ as $\big(X, ,\|\cdot\|_{0}\big)$.
@@ -659,7 +659,7 @@ $[0, 1]$. For a continuous function $f:[0,1] \rightarrow \mathbb{R}$, we set
             n-n^{2} x & \text { for } 0 \leq x \leq \frac{1}{n} \\ 
             0 & \text { for } \frac{1}{n} \leq x \leq 1\end{array}\right. $$
             
-            Study the convergence of each of these sequences and determine the limit function.
+            Check the convergence of each of these sequences and determine the limit function.
         </li>
     </ol>
     </p>
@@ -747,56 +747,54 @@ which does not converge towards the only possible limit value 0 for $n \rightarr
     </div>
 
     <p>
-       Let $X=\mathcal C([0,1], \mathbb{R})$ and define continuous functions $f:[0,1] \rightarrow \mathbb{R}$ with the norm
-$$
-\|f\|=\sup \big\{|f(x)| \mid 0 \leq x \leq 1\big\} 
-$$
+        Let $X=\mathcal C([0,1], \mathbb{R})$ and define continuous functions $f:[0,1] \rightarrow \mathbb{R}$ with the norm
+        $$
+        \|f\|=\sup \big\{|f(x)| \mid 0 \leq x \leq 1\big\}
+        $$
 
-Let $\Phi :[0,1] \times[0,1] \rightarrow \mathbb{R}$ be a continuous function in two variables defined in the square $[0,1] \times[0,1] \in \mathbb{R}^{2}$. With $\Phi(x, y) \geq 0$ for all $(x, y) \in [0,1] \times[0,1]$, we define the function $\varphi:[0,1] \rightarrow \mathbb{R}$ by
-$$
-    \varphi(x)=\sup \big\{\Phi(x, y) \mid 0 \leq y \leq 1\big\}
-$$
-Furthermore, for $f \in \mathcal C([0,1], \mathbb{R})$, we define the function $f_{\Phi}:[0,1] \rightarrow \mathbb{R}$ by
-$$
-    f_{\Phi}(y)=\int_{0}^{1} \Phi(x, y) f(x) d x .
-$$
-        
+        Let $K :[0,1] \times[0,1] \rightarrow \mathbb{R}$ be a continuous function in two variables defined in $[0,1] \times[0,1] \in \mathbb{R}^{2}$. With $K(x, y) \geq 0$ for all $(x, y) \in [0,1] \times[0,1]$, we define the function $\varphi:[0,1] \rightarrow \mathbb{R}$ by
+        $$
+        \varphi(x)=\sup \big\{K(x, y) \mid 0 \leq y \leq 1\big\}
+        $$
+        Furthermore, for $f \in X$, we define the function $f_{K}:[0,1] \rightarrow \mathbb{R}$ by
+        $$
+        f_{K}(y)=\int_{0}^{1} K(x, y) f(x) \d x
+        $$
+
     <ol class="romanlist twoem">
         <li>
-            Show that for every $\varepsilon>0$ there exists a $\delta>0$ such that <br><br>
-            
-            <b>(a)&nbsp;</b> $\Phi\left(x_{0}, y\right)-\varepsilon \leq \Phi(x, y) \leq \Phi\left(x_{0}, y\right)+\varepsilon$ &nbsp; &nbsp; for $\left|x-x_{0}\right| \leq \delta$ and all $y \in[0,1]$. <br>
-            
-            <b>(b)&nbsp;</b> $\left|\Phi(x, y)-\Phi\left(x, y_{0}\right)\right| \leq \varepsilon$&nbsp;&nbsp; for $\left|y-y_{0}\right| \leq \delta$ and all $x \in[0,1]$.<br> <br>
-            
-            With (a) and (b) above, show that the functions $\varphi=\varphi(x)$ and $f_{\Phi}=f_{\Phi}(y)$ are continuous.
+            Show that for every $\varepsilon \gt 0$ there exists a $\delta\gt 0$ such that <br><br>
+
+            <b>(a)&nbsp;</b> $\big|K(x, y)-K\left(x_0, y\right)\big| \leq \varepsilon$ &nbsp;&nbsp; for $\left|x-x_{0}\right| \leq \delta$ and all $y \in[0,1]$. <br>
+
+            <b>(b)&nbsp;</b> $\big|K(x, y)-K\left(x, y_{0}\right)\big| \leq \varepsilon$&nbsp;&nbsp; for $\left|y-y_{0}\right| \leq \delta$ and all $x \in[0,1]$.<br> <br>
+
+            With propertie as in (a) and (b) above, show that the functions $\varphi$ and $f_{K}$ are continuous.
 
         </li>
         <li>
-            
-For $f_{\Phi} \in \mathcal C([0,1] \times \mathbb{R})$, we can define the mapping
-$$
-\mathcal L: \mathcal C([0,1], \mathbb{R}) \rightarrow \mathcal C([0,1], \mathbb{R}) \quad \text{ by } \quad \mathcal L(f)=f_{\Phi}
-$$
-Here, the mapping $\mathcal L$ is called an integral operator with <b>kernel</b> $\Phi$.
-        <br>
+
+            For $f_{K} \in X$, we can define the mapping
+            $$
+            \mathcal L: X \rightarrow X \quad \text{ by } \quad \mathcal L(f)=f_{K}
+            $$
+            (Here, the mapping $\mathcal L$ is called an <b>integral operator with <a href="https://encyclopediaofmath.org/wiki/Kernel_of_an_integral_operator">kernel</a> </b>$K$) 
+            <br><br>
             Show that $\mathcal L$ is a continuous linear mapping.
         </li>
         <li>
             Show that
-$$
-    \big\|\mathcal L(f)\big\| \leq\left(\int_{0}^{1} \varphi(x)\d x\right)\|f\|
-$$
-for all $f \in \mathcal C([0,1], \mathbb{R})$.
+            $$
+            \big\|\mathcal L(f)\big\| \leq\left(\int_{0}^{1} \varphi(x)\d x\right)\|f\|\quad \text{ for all } f \in X$$
         </li>
         <li>
-            Show that the operator norm for $\mathcal L$ is 
-$$
-\|\mathcal L\|=\sup \left\{\int_{0}^{1} \Phi(x, y) d x \mid 0 \leq y \leq 1\right\} 
-$$
+            Show that the operator norm for $\mathcal L$ is
+            $$
+            \|\mathcal L\|=\sup \left\{\int_{0}^{1} K(x, y) \d x \mid 0 \leq y \leq 1\right\}
+            $$
         </li>
     </ol>
-</p>
+    </p>
 </div>
 
 <p>
@@ -804,15 +802,15 @@ $$
 
 <ol class="romanlist threeem">
     <li>
-        Using of uniformly continuity from $\Phi$.
+        Using of uniformly continuity from $K$.
     </li>
-    <li>Show that $\mathcal L$ is linear and countinuoous with sub norm as 
+    <li>Show that $\mathcal L$ is linear and countinuous with sub norm as 
     
     $$
-\big\|\Phi\big\|_{\infty}=\sup \big\{|\Phi(x, y)| \mid(x, y) \in[0,1] \times[0,1]\big\} 
+\big\|K\big\|_{\infty}=\sup \big\{|K(x, y)| \mid(x, y) \in[0,1] \times[0,1]\big\} 
 $$ 
   and show that 
-   $\big\|\mathcal L(f)\big\| \leq \|\Phi\|_{\infty} \cdot\|f\|$ and then study for $\Phi$!
+   $\big\|\mathcal L(f)\big\| \leq \|K\|_{\infty} \cdot\|f\|$ and then study for $K$!
     
     </li>
     
@@ -820,18 +818,18 @@ $$
         Using the estimate in (ii)
     </li>
     <li>
-       From $\Phi(x, y) \geq 0$, let check for $\|\mathcal L(1)\|$ !
-        <!--4. From $\Phi(x, y) \geq 0$, and
+       From $K(x, y) \geq 0$, let check for $\|\mathcal L(1)\|$ !
+        <!--4. From $K(x, y) \geq 0$, and
 $$
 \begin{aligned}
-\|L(1)\| &=\sup \left\{\int_{0}^{1} \Phi(x, y) d x \mid 0 \leq y \leq 1\right\} \leq\|L\| \\
-&=\sup _{\|f\|=1} \sup \left\{\int_{0}^{1} \Phi(x, y) f(x) d x \mid 0 \leq y \leq 1\right\} \\
-& \leq \sup \left\{\int_{0}^{1} \Phi(x, y) d x \mid 0 \leq y \leq 1\right\},
+\|L(1)\| &=\sup \left\{\int_{0}^{1} K(x, y) d x \mid 0 \leq y \leq 1\right\} \leq\|L\| \\
+&=\sup _{\|f\|=1} \sup \left\{\int_{0}^{1} K(x, y) f(x) d x \mid 0 \leq y \leq 1\right\} \\
+& \leq \sup \left\{\int_{0}^{1} K(x, y) d x \mid 0 \leq y \leq 1\right\},
 \end{aligned}
 $$
 (because $|f(x)| \leq 1$ ), follows that
 $$
-\|L\|=\sup \left\{\int_{0}^{1} \Phi(x, y) d x \mid 0 \leq y \leq 2\right\} .
+\|L\|=\sup \left\{\int_{0}^{1} K(x, y) d x \mid 0 \leq y \leq 2\right\} .
 $$ -->
     </li>
 </ol>
@@ -861,22 +859,54 @@ $$
         
         
         
-     
-      <h3> Differentiable mappings</h3>
+<h3> Differentiable mappings</h3>
 
-  <p>
+<p>
 </p>
 
 
+<div class="box-lemma">
+    <div class="box-legend editable"><span class="lt-icon-default">Problem 4 : (Compactness of integral operator)</span>
+    </div>
+
+    <p>
+        Suppose $X,Y= L^2(0,1)$ and let a function $K \in \mathcal C^0([0,1]^2)$. We define an  operator 
+        $$A: X\to Y \quad \text{ by }\quad  Af(x):=\int_0^1 K(x,y)f(y)\d y$$ 
+        $\forall\, f\in \mathcal L^2(0,1)$. Show that $A$ is compact.
+    </p>
+
+</div>
+
+<p>
+    <b>HINT: </b> To show that $A$ is compact, you can use elementary arguments or 
+</p>
+
+<div class="example-content">
+    <span id="SHLink_Soln4ex" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln4ex" class="fa fa-caret-right" aria-hidden="true"></span>
+    <div id="SHObj_Soln4ex" class="soln-content" style="display: none;">
+        <p>No way!</p>
+
+<p>
+    To show that $A$ is compact using elementary arguments, let $\{ f_{n} \}_{n=1}^{\infty}$ be a bounded sequence in $L^{2}[0,1]$ with $\|f_{n}\| \le M$. For every $\epsilon \gt  0$, there exists $\delta \gt  0$ such that $|K(x,y)-K(x',y')| \lt \epsilon$ whenever $|x-x'|+|y-y'| \lt \delta$. Therefore, $\big\{ Af_{n}\big\}$ is a sequence of continuous functions for which 
+    
+    $$\begin{aligned} 
+    |Af_{n}(x)-Af_{n}(x')| 
+    & \le \int_{0}^{1}|K(x,y)-K(x',y)||f_{n}(y)|\,\d y \\ 
+    & \le \epsilon \int_{0}^{1}|f_{n}(y)|\,\d  y \\
+    & \le \epsilon\|1\|\|f_{n}\| \le M\epsilon,\;\;\; |x-x'| \lt \delta
+    \end{aligned}$$
+     
+    That shows that $\big\{ Af_{n} \big\}$ is an <a href="https://en.wikipedia.org/wiki/Equicontinuity">equicontinuous</a> family of continuous functions on $[0,1]$. So, there exists a subsequence $\{ Af_{n_{k}}\}$ that converges uniformly to a continuous function $g$. Since uniform convergence implies convergence in $L^{2}[0,1]$, it follows that $\{ A f_{n_{k}}\}$ converges in $L^{2}[0,1]$. Therefore $A$ is compact because the image of a bounded sequence always contains a convergent subsequence.
+</p>
+
+        <p>
+            Actually, if $k\in L^2(0,1)^2$, then you may consider $K$ as a limit of a sequence of finite rank operators. Since $L^2(0,1)$ is a separable Hilbert space, there exists a Hilbert basis denoted by $\{e_i\}_{i=1}^{\infty}$. Define $T_n (n\in\mathbb{N}^{+})$ as $$ T_nf:=\sum\limits_{i=1}^{n}\langle f, e_i \rangle e_i,\quad \forall f\in L^{2}(0,1). $$ Then, $K_n:=T_nKT_n$ is a finite rank operator. And $K_n$ is compact for each $n$. You need to show that $\lim\limits_{n\rightarrow \infty}||K_n-K||=0$. Then, you conclude that $K$ is compact, since the space of compact operators mapping $L^2(0,1)$ into $L^2(0,1)$ is closed.
+
+        </p>
 
 
-
-
-
-
-
-
-
+    </div>
+</div>
 
 
 
