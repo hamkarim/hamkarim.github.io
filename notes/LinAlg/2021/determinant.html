@@ -1315,19 +1315,27 @@ There is a certain type of matrix for which finding the determinant is a very si
 </div>
 
 <p class="">
-Let \(A\) be an \(n\times n\) matrix and suppose \(\det \left( \lambda I - A\right) =0\) for some \(\lambda \in \mathbb{C}\). <br> <br>
-
-Then \(\lambda\) is an eigenvalue of \(A\) and thus there exists a nonzero vector \(X \in \mathbb{C}^{n}\) such that \(AX=\lambda X\).
+Let \(A\) be an \(n\times n\) matrix and suppose \[\det \left( \lambda I - A\right) =0\] for some \(\lambda \in \mathbb{C}\). 
+Then \(\lambda\) is an eigenvalue of \(A\) and thus there exists a nonzero vector \(X \in \mathbb{C}^{n}\) such that \[AX=\lambda X\]
 </p>
 
 </div>
    
+<h3>Finding Eigenvectors and Eigenvalues</h3>
    
+   <defn>
+    <div class="definition"><span>(Multiplicity of an Eigenvalue)</span> </div>
+    <div class="definitionb">
+        <p>
+            Let \(A\) be an \(n \times n\) matrix with characteristic polynomial given by \(\det \left( \lambda I - A\right)\). Then, the multiplicity of an eigenvalue \(\lambda\) of \(A\) is the number of times \(\lambda\) occurs as a root of that characteristic polynomial.
+
+        </p>
+    </div>
+</defn>
    
-   
-   
-   
-   
+   <p>
+       For example, suppose the characteristic polynomial of \(A\) is given by \(\left( \lambda - 2 \right)^2\). Solving for the roots of this polynomial, we set \(\left( \lambda - 2 \right)^2 = 0\) and solve for \(\lambda \). We find that \(\lambda = 2\) is a root that occurs twice. Hence, in this case, \(\lambda = 2\) is an eigenvalue of \(A\) of multiplicity equal to \(2\).
+   </p>
    
     <hr>
 
