@@ -411,8 +411,12 @@ function showhideFunction() {
 \(\def\d{\;\mathrm d}\)
 \(\def\K{\mathbb K}\)
 \[ \newcommand{R}{\mathbb{R}}
-\newcommand{C}{\mathbb{C}}
-\newcommand{N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\def\calC{\mathcal C}
+\def\calD{\mathcal D}
+\def\calF{\mathcal F}
+\def\calI{\mathcal I}
 \newcommand{defarrow}{\quad \stackrel{\text{def}}{\Longleftrightarrow} \quad} \]
 </div>
 
@@ -506,11 +510,11 @@ topological space, yet fails in another one.
                 Show that $\|\cdot\|_{0}$ and $\|\cdot\|_{1}$ are norms in $X$.
             </li>
             <li>
-                Show that for every $n \in \mathbb{N}$ there exists a function $f_{n} \in X$ for which $$\left\|f_{n}\right\|_{0}=0\quad \text{ and } \quad \left\|D\left(f_{n}\right)\right\|_{0}=n$$
+                Show that for every $n \in \mathbb{N}$ there exists a function $f_{n} \in X$ for which $$\left\|f_{n}\right\|_{0}=0\quad \text{ and } \quad \left\|\mathcal D\left(f_{n}\right)\right\|_{0}=n$$
                 In such case, show that $\mathcal D: X \rightarrow X$ is not continuous, when in space $\big(X, \|\cdot\|_{0}\big)$.
             </li>
             <li>
-                Show that $\mathcal D: X_{1} \rightarrow X_{0}$ is continuous, where we denote $X_{1}$ as $\big(X, \|\cdot\|_{1}\big)$ and $X_{0}$ as $\big(X, ,\|\cdot\|_{0}\big)$.
+                Show that $\mathcal D: X_{1} \rightarrow X_{0}$ is continuous, where we denote $X_{1}=\big(X, \|\cdot\|_{1}\big)$ and $X_{0}=\big(X, ,\|\cdot\|_{0}\big)$.
             </li>
         </ol>
     </p>
@@ -626,14 +630,14 @@ To any given $\varepsilon>0$ we choose $\delta=\varepsilon>0$. If $\|f\|_{1}<\de
     </div>
 
     <p>
-        Let $X=C([0,1], \mathbb{R})$ be space of continuous real-valued functions in the unit interval
-$[0, 1]$. For a continuous function $f:[0,1] \rightarrow \mathbb{R}$, we set
+        Let $X=\calC([0,1], \mathbb{R})$ be space of continuous real-valued functions in the unit interval
+$[0, 1]$. For a continuous function $f:[0,1] \longrightarrow \mathbb{R}$, we set
         $$
         \|f\|_{1}=\int_{0}^{1}|f(x)| \d x
         $$
         We consider $X$ as a normed vector space with the norm $\|\cdot\|_{1}$ and define the function
         $$
-        \mathcal I: C([0,1], \mathbb{R}) \rightarrow \mathbb{R} \quad \text { by } \quad \mathcal I(f)=\int_{0}^{1} f(x) \d x
+        \mathcal I: X \longrightarrow \mathbb{R} \quad \text { by } \quad \mathcal I(f)=\int_{0}^{1} f(x) \d x
         $$
     <ol class="romanlist twoem">
         <li>
@@ -648,7 +652,7 @@ $[0, 1]$. For a continuous function $f:[0,1] \rightarrow \mathbb{R}$, we set
             Determine the operator norm of $\mathcal I$.
         </li>
         <li>
-            In $\big(X,\|\cdot\|_{1}\big)$, consider the sequences $\left(f_{n}\right)$ and $\left(g_{n}\right)$ defined by
+            In the space $\big(X,\|\cdot\|_{1}\big)$, consider the sequences $\left(f_{n}\right)$ and $\left(g_{n}\right)$ defined by
             $$
             f_{n}(x)=\left\{\begin{array}{cc}
             1-n x & \text { for } 0 \leq x \leq \frac{1}{n} \\ 

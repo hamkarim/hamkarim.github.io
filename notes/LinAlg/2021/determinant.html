@@ -1420,6 +1420,27 @@ This is what we wanted, so we know this basic eigenvector is correct. -->
       </div>
 </example>
    
+<example>
+(Find the Eigenvalues and Eigenvectors)
+    <p>
+            Find the eigenvalues and eigenvectors for the matrix \[A=\left[ \begin{array}{rrr} 5 & -10 & -5 \\ 2 & 14 & 2 \\ -4 & -8 & 6 \end{array} \right] \]
+        
+    </p>
+<div class="example-content">
+        <span id="SHLink_SolnEx3" class="soln-title SH-Link">Show solution</span> <span id="SHImg_SolnEx3" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_SolnEx3" class="soln-content" style="display: none;">
+  <p>
+  First we find the eigenvalues of \(A\) by solving the equation 
+  
+  \[\det \left( \lambda I - A \right) =0\nonumber \]
+
+
+
+  </p>
+        </div>
+      </div>
+</example>
+   
    
 <example>
 (A Zero Eigenvalue)
@@ -1438,17 +1459,40 @@ This is what we wanted, so we know this basic eigenvector is correct. -->
         </div>
       </div>
 </example>
+  
+  
    
    
+   <h3>Eigenvalues and Eigenvectors for Special Types of Matrices</h3>
    
    
+   <p>There are three special kinds of matrices which we can use to simplify the process of finding eigenvalues and eigenvectors. Throughout this section, we will discuss similar matrices, elementary matrices, as well as triangular matrices.</p>
+   
+   <defn>
+    <div class="definition"><span>(Similar Matrices)</span> </div>
+    <div class="definitionb">
+        <p>
+            Let \(A\) and \(B\) be \(n \times n\) matrices. Suppose there exists an invertible matrix \(P\) such that 
+            \[A = P^{-1}BP\nonumber \] 
+            
+            Then \(A\) and \(B\) are called <b>similar matrices</b>.
+
+        </p>
+    </div>
+</defn>
    
    
-   
-   
-   
-   
-   
+      <div class="box-definition">
+  <div class="box-legend editable"><span class="lt-icon-default"> Lemma: (Similar Matrices and Eigenvalues)
+</span>
+</div>
+
+<p class="">
+Let \(A\) and \(B\) be similar matrices, so that \(A=P^{-1}BP\) where \(A,B\) are \(n\times n\) matrices and \(P\) is invertible. Then \(A,B\) have the same eigenvalues.
+
+</p>
+
+</div>
    
     <hr>
 

@@ -477,7 +477,7 @@ October
 <h3>Continuous maps</h3>
 
 <p>
-A map $f: X \rightarrow Y$ from one metric space to another is continuous at $x \in X$ if, for every $\varepsilon>0$, there is $\delta>0$ such that $\d_{X}\left(x, x^{\prime}\right)<\delta$ implies $\d_{Y}\left(f(x), f\left(x^{\prime}\right)\right)<\varepsilon$.
+A map $f: X \rightarrow Y$ from one metric space to another is continuous at $x \in X$ if, for every $\varepsilon\gt 0$, there is $\delta\gt 0$ such that $\d_{X}\left(x, x^{\prime}\right)\lt \delta$ implies $\d_{Y}\left(f(x), f\left(x^{\prime}\right)\right)\lt \varepsilon$.
 </p>
 
 <p>
@@ -516,7 +516,7 @@ $$
 </p>
 
 <p>
-  This is the idea! For a sequence $\left\{f_{i}\right\}$ such that, for every $\varepsilon>0$, there is $i_{o}$ such that $\d\left(f_{i}, f_{j}\right)<\varepsilon$ for all $i, j \geq i_{o}$, then $\lim _{i} f_{i}$ is an element of $C^{0}[a, b]$. Where the limit is a function evaluated pointwise by
+  This is the idea! For a sequence $\left\{f_{i}\right\}$ such that, for every $\varepsilon\gt 0$, there is $i_{o}$ such that $\d\left(f_{i}, f_{j}\right)\lt \varepsilon$ for all $i, j \geq i_{o}$, then $\lim _{i} f_{i}$ is an element of $C^{0}[a, b]$. Where the limit is a function evaluated pointwise by
 $$
 \left(\lim _{i} f_{i}\right)(x)=\lim _{i} f_{i}(x) \quad \text { (for } x \in[a, b])
 $$
@@ -533,12 +533,12 @@ $$
 
 <div class="box-definition">
 <p class="">
-  Given $\varepsilon>0$, take $i_{o}$ such that $\d\left(f_{i}, f_{j}\right)<\varepsilon$ for all $i, j \geq i_{o}$. Just take $i=i_{o}$. Since $f_{i}$ is uniformly continuous on $[a, b]$, take $\delta>0$ such that $|x-y|<\delta$ implies $\left|f_{i}(x)-f_{i}(y)\right|<\varepsilon$. The triangle inequality for the usual absolute value on real numbers gives
+  Given $\varepsilon\gt 0$, take $i_{o}$ such that $\d\left(f_{i}, f_{j}\right)\lt \varepsilon$ for all $i, j \geq i_{o}$. Just take $i=i_{o}$. Since $f_{i}$ is uniformly continuous on $[a, b]$, take $\delta\gt 0$ such that $|x-y|\lt \delta$ implies $\left|f_{i}(x)-f_{i}(y)\right|\lt \varepsilon$. The triangle inequality for the usual absolute value on real numbers gives
 
   \begin{eqnarray*}
   |f(x)-f(y)| & \leq& \left|f(x)-f_{i}(x)\right|+\left|f_{i}(x)-f_{i}(y)\right|+
   \left|f_{i}(y)-f(y)\right| \\
-  &< & \varepsilon+\varepsilon+\varepsilon
+  & \lt  & \varepsilon+\varepsilon+\varepsilon
 \end{eqnarray*}
 
   This proves that the pointwise limit function $f$ is continuous.
@@ -582,13 +582,14 @@ $$
   <div class="example-content">
         <span id="SHLink_Soln1theo" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln1theo" class="fa fa-caret-right" aria-hidden="true"></span>
    <div id="SHObj_Soln1theo" class="soln-content" style="display: none;">
-  <p>
+  <p> No way!
+  <!--
 (Draw a picture.) The pointwise limit is 0 to the left of the midpoint, and 1 to the right. Despite the fact that the pointwise limit does not exist at the midpoint,
 $$
 \d_{2}\left(f_{i}, f_{j}\right)^{2} \leq \int_{\frac{a+b}{2}-\frac{1}{n}}^{\frac{a+b}{2}+\frac{1}{n}} 1 d x \leq \frac{2}{n} \quad(\text { for } i, j \geq n \text { ) }
 $$
 which goes to 0 as $n \rightarrow \infty$.
-
+-->
   </p>
 
         </div>
@@ -599,7 +600,7 @@ which goes to 0 as $n \rightarrow \infty$.
   <p>
     An infinite-dimensional which is analogue of the standard metric on $\mathbb{R}^{n}$ is the set
     $$
-    \ell^{2}=\Big\{x=\left(x_{1}, x_{2}, \ldots\right): \sum_{i=1}^{\infty}\left|x_{i}\right|^{2}<\infty\Big\}
+    \ell^{2}=\Big\{x=\left(x_{1}, x_{2}, \ldots\right): \sum_{i=1}^{\infty}\left|x_{i}\right|^{2} \lt \infty\Big\}
     $$
     with metric
     $$
@@ -608,15 +609,16 @@ which goes to 0 as $n \rightarrow \infty$.
   </p>
 
     <p>
-    If replacing $2$ by any $1 \leq p<\infty$, it works as well:
+    If replacing $2$ by any $1 \leq p\lt\infty$, it works as well:
 $$
-\ell^{p}=\Big\{x=\left(x_{1}, x_{2}, \ldots\right): \sum_{i=1}^{\infty}\left|x_{i}\right|^{p}<\infty\Big\}
+\ell^{p}=\Big\{x=\left(x_{1}, x_{2}, \ldots\right): \sum_{i=1}^{\infty}\left|x_{i}\right|^{p}\lt \infty\Big\}
 $$
 with metric
 $$
 \d_{p}(x, y)=\left(\sum_{i=1}^{\infty}\left|x_{i}-y_{i}\right|^{p}\right)^{1 / p}
 $$
-Slightly unlike the case of varying metrics on $\mathbb{R}^{n}$, the underlying sets $\ell^{p}$ are not the same. For example, $\ell^{2}$ is strictly larger than $\ell^{1}$.
+Slightly unlike the case of varying metrics on $\mathbb{R}^{n}$, the underlying sets $\ell^{p}$ are not the same. For example, $\ell^{2}$ is strictly larger than $\ell^{1}$. 
+
     </p>
 
 
@@ -647,8 +649,9 @@ Slightly unlike the case of varying metrics on $\mathbb{R}^{n}$, the underlying 
       <div class="example-content">
             <span id="SHLink_Soln2ex" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln2ex" class="fa fa-caret-right" aria-hidden="true"></span>
        <div id="SHObj_Soln2ex" class="soln-content" style="display: none;">
-         <p>
-           We prove that the sequence $\bar{f}=\left(f_{n}(t)\right)_{n}$, defined by $f_{n}(t)=t^{n}-t^{2 n}$ is not convergent in $C[0,1]$. We will do so by contradiction. Assume that $\bar{f}$ has a limit $f$ in $C[0,1]$. Then, for each $\epsilon>0$, there exists $N_{\epsilon} \in \mathbb{N}$ such that, for all $n>N_{\epsilon}$, one has $\left\|f-f_{n}\right\|<\epsilon$. Let now $\epsilon=\frac{1}{32}$ and choose $n>N_{\epsilon}$. Then one has
+         <p>No way!
+           
+           <!-- We prove that the sequence $\bar{f}=\left(f_{n}(t)\right)_{n}$, defined by $f_{n}(t)=t^{n}-t^{2 n}$ is not convergent in $C[0,1]$. We will do so by contradiction. Assume that $\bar{f}$ has a limit $f$ in $C[0,1]$. Then, for each $\epsilon\gt 0$, there exists $N_{\epsilon} \in \mathbb{N}$ such that, for all $n\gt N_{\epsilon}$, one has $\left\|f-f_{n}\right\|\lt \epsilon$. Let now $\epsilon=\frac{1}{32}$ and choose $n\gt N_{\epsilon}$. Then one has
 
        $$
        \left\|f_{n}-f_{2 n}\right\|=\max _{t \in[0,1]}\left|\left(t^{n}-t^{2 n}\right)-\left(t^{2 n}-t^{4 n}\right)\right|=\max _{t \in[0,1]}\left|t^{n}-2 t^{2 n}+t^{4 n}\right|
@@ -659,9 +662,9 @@ Slightly unlike the case of varying metrics on $\mathbb{R}^{n}$, the underlying 
        $$
        Then, as a consequence of the triangle inequality, one gets
        $$
-       \frac{1}{32}=\frac{1}{16}-\epsilon \leq\left\|f_{2 n}-f_{n}\right\|-\left\|f-f_{2 n}\right\| \leq\left\|f-f_{n}\right\|<\epsilon=\frac{1}{32} .
+       \frac{1}{32}=\frac{1}{16}-\epsilon \leq\left\|f_{2 n}-f_{n}\right\|-\left\|f-f_{2 n}\right\| \leq\left\|f-f_{n}\right\|\lt \epsilon=\frac{1}{32} .
        $$
-       Contradiction.
+       Contradiction. -->
          </p>
 
             </div>
@@ -681,17 +684,17 @@ is not compact, while the Hilbert cube
 $$
 \mathcal H = \left\{\left(x_{1}, x_{2}, \ldots\right) \in \ell^{2}:\left|x_{n}\right| \leq \frac{1}{n}\right\}
 $$
-is compact, and generally, for a sequence $\varepsilon_{n}>0$, the cube
+is compact, and generally, for a sequence $\varepsilon_{n}\gt 0$, the cube
 $$
 \left\{\left(x_{1}, x_{2}, \ldots\right) \in \ell^{2}:\left|x_{n}\right| \leq \varepsilon_{n}\right\}
 $$
-is compact if and only if $\sum_{n} \varepsilon_{n}^{2}<\infty$.
+is compact if and only if $\sum_{n} \varepsilon_{n}^{2}\lt \infty$.
           </p>
 </div>
 <div class="example-content">
       <span id="SHLink_Soln3ex" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln3ex" class="fa fa-caret-right" aria-hidden="true"></span>
  <div id="SHObj_Soln3ex" class="soln-content" style="display: none;">
-<p>
+<p>No way!
 
 
 </p>
@@ -727,9 +730,10 @@ An inner product \(\langle \cdot, \cdot \rangle\) on \(X\) is a map
  \langle \lambda x,y \rangle &= \lambda \langle x,y \rangle,\\
  \langle x + y, z \rangle &= \langle x , z \rangle + \langle y, z \rangle, \end{align*}
  \]
+    </li>
   <li>
     and <b>non-degenerate (positive definite):</b>
-    \[ \langle x, x \rangle > 0 \quad \text{ for }\quad x \neq 0, \]
+    \[ \langle x, x \rangle \gt 0 \quad \text{ for }\quad x \neq 0, \]
   </li>
 </ol>
   The pair \(\big(X,\langle \cdot, \cdot \rangle\big)\) is called an <b> inner-product space</b>.
@@ -782,7 +786,7 @@ An inner product \(\langle \cdot, \cdot \rangle\) on \(X\) is a map
   <div class="example-content">
         <span id="SHLink_Soln4ex" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln4ex" class="fa fa-caret-right" aria-hidden="true"></span>
    <div id="SHObj_Soln4ex" class="soln-content" style="display: none;">
-  <p>
+  <p> No way!
 
 
   </p>
