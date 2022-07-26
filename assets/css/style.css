@@ -1078,24 +1078,25 @@ h3.sectcounter:before {
 }
 
 .main-content .blockproof {
-    display: inline-block;
+    display: inline-block; 
     padding: 0 0 0 1em;
     margin-left: 0;
     margin-top: 0;
     margin-bottom: 0px;
-    color: #0037A8;
+    color: dimgray; /*#0037A8;*/
     border-left: 0.15rem solid #960000;
     border-right: 0;
     border-top: 0px;
     border-bottom: 0;
     border-style: dotted;
     text-align: left;
-    font-size: 16px;
+    /*font-size: 18px!important;
     /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
 
 .main-content .blockproof > :first-child {
-    margin-top: 0
+    margin-top: 0;
+    padding-top: 10px;
 }
 
 .main-content .blockproof > :last-child {
@@ -1508,6 +1509,7 @@ ol.parenthnum > li::before {
     left: -2.1em;
     padding-left: 8px;
     padding-right: 5px;
+    padding-top: 6px;
 }
 
 ol.romanlist {
@@ -1531,6 +1533,7 @@ ol.romanlist > li::before {
     left: -2.1em;
     padding-left: 8px;
     padding-right: 5px;
+    /*padding-top: 8px;*/
 }
 
 ol.threeem {
