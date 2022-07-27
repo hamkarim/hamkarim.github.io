@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+    <!-- Begin Jekyll SEO tag v2.3.0 -->
+<meta property="og:title" content="Ham Karim">
+<meta name="author" content="Ham Karim">
+<meta name="author" content="determinants">
+<meta property="og:locale" content="en_US">
+<meta http-equiv="keywords" name="keywords" content="Functional Anaysis, TD & TP">
+<meta http-equiv="description" name="description" content="Functional Anaysis,  TD & TP">
+<meta name="description" content="Functional Anaysis: TD & TP">
+<meta property="og:description" content="Math, Programmer, Music">
+<link rel="canonical" href="../../../index.html">
+<meta property="og:url" content="https://hamkarim.github.io/">
+<meta property="og:site_name" content="Right Triangle">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@pkarim">
+<meta name="twitter:creator" content="@pkarim">
+<meta name="google-site-verification" content="b9bg3P9zc8qbL4szvVYaf551jD9x017IyGBVSaQZDDY" />
+
+<script type="application/ld+json">
+{
+    "name":"Ham Karim",
+    "description":"I am a faculty member at the Royal Univeristy of Phnom Penh (RUPP). This is my blog of lectures at universities. ",
+    "author":{"@type":"Person","name":"Ham Karim"},
+    "@type":"WebSite",
+    "url":"https://hamkarim.github.io/",
+    "image":null,
+    "publisher":null,
+    "headline":"Ham Karim",
+    "dateModified":null,
+    "datePublished": "2020-06-01",
+    "sameAs":null,
+    "mainEntityOfPage":null,
+    "@context":"http://schema.org"}
+</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta property="og:image" content="http://www.cliparts101.com/files/376/298FE3955707B1DE458221E4BFABFBBE/Greek_Gamma_4.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../topology/2019/favicon.ico">
+
+
+    <meta charset="UTF-8">
+    <title>Functional Anaysis: TD & TP (4) </title>
+    <meta name="description" content="Math, Programmer, Music">
+
+    <!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
+
+<style  type="text/css">
+.deffont {
+        font-family: 'Noto Serif Khmer', 'CMU Serif';
+        font-size: 17px;
+        }
+ul.liststyle1 {
+        list-style-type: square;
+      }
+ul.liststyle2 {
+        list-style-type: hebrew;
+      }
+ol.liststyle1 {
+        list-style-type: lower-latin;
+}
+a.onmenu {
+          font-family:'Noto Serif Khmer','CMU Serif';
+          font-weight:bold;
+ }
+      </style>
+
+<style type="text/css">
+/**************** Box container styles *******************/
+	.mt-content-container .boxobjectives,
+	.boxexample,
+	.boxexercise,
+	.boxquery,
+	.boxnotewithlegend,
+	.boxnotewithoutlegend,
+	.boxprocedure,
+	.boxdefinition,
+	.boxtheorem,
+	.boxlemma,
+	.boxnotation,
+	.boxproposition {
+		-moz-border-radius: 8px;
+		-webkit-border-radius: 8px;
+		border-radius: 8px;
+		padding-top: 0em;
+		padding-bottom: 0em;
+		padding-left: 1em;
+		padding-right: 1em;
+		margin-bottom: 1em;
+		overflow: visible;
+		border: 0px;
+		orphans: 2;
+	}
+	.mt-content-container .boxnotewithlegend,
+	.boxprocedure,
+	.notation {
+		background-color: hsla(20, 0%, 93%, 1);
+	}
+	.mt-content-container .boxexample,
+	.boxexercise {
+		background-color: hsla(220, 100%, 97%, 1);
+	}
+	.mt-content-container .boxwarning {
+		background-color: hsla(0, 100%, 96%, 1);
+	}
+	.mt-content-container .boxdefinition,
+	.boxtheorem,
+	.boxlemma,
+	.boxnotation,
+	.boxproposition {
+		background-color: hsla(28, 80%, 95%, 1);
+	}
+	.mt-content-container .boxobjectives {
+		background-color: hsla(0, 0%, 90%, 1);
+	}
+	.mt-content-container .boxnotewithoutlegend {
+		background-color: hsla(20, 0%, 93%, 1);
+		padding-right: 1em;
+		padding-left: 1em;
+		padding-top: 0.5em !important;
+		padding-bottom: 0.5em !important;
+		margin-right: 1em;
+		margin-left: 1em;
+	}
+	.mt-content-container .boxquery {
+		border: 2px solid green;
+		page-break-inside: avoid;
+		visibility: hidden !important;
+		display: none !important;
+	}
+	/**************** Box legend container styles *******************
+	.mt-content-container .boxlegend {
+		font-style: normal !important;
+		font-size: 1.1em !important;
+		font-weight: normal !important;
+		font-family: "Tahoma", Arial, serif !important;
+		padding-top: 0.2em !important;
+		padding-bottom: 0.2em !important;
+		padding-left: 0.3em !important;
+		padding-right: 0.3em !important;
+		margin-left: 0.35em;
+		color: white;
+		border-radius: 3px;
+		overflow: visible;
+		break-inside: avoid !important;
+	}
+
+	/************** Defining the Legends ******************
+
+
+	.box-definition>header,
+	.box-structure>header,
+	.box-note>header,
+	.box-theorem>header,
+	.box-example>header,
+	.box-exercise>header,
+	.box-query>header,
+	.box-adapt>header,
+	.box-objectives>header,
+	.box-warning>header {
+		display: inline-flex;
+		overflow: hidden;
+		break-inside: avoid-page;
+		page-break-inside: avoid;
+		text-align: left;
+		width: auto;
+		margin: 0 0px 2px 0px !important;
+		padding: 4px 6px 4px 4px !important;
+		transform: translate(-11px, 0px) !important;
+		border-radius: 3px 5px 5px 0;
+		-moz-border-radius: 3px 5px 5px 0;
+		-webkit-border-radius: 3px 5px 5px 0;
+	}
+	.box-definition>header *,
+	.box-structure>header *,
+	.box-note>header *,
+	.box-theorem>header *,
+	.box-example>header *,
+	.box-exercise>header *,
+	.box-query>header *,
+	.box-adapt>header *,
+	.box-objectives>header *,
+	.box-warning>header * {
+		font-family: "Battambang", "Tahoma", Arial, serif !important;
+		font-size: 17px !important;
+		font-weight: 400 !important;
+		color: white !important;
+		;
+		width: auto !important;
+		;
+		float: left !important;
+		;
+		line-height: 1 !important;
+		;
+		margin-block-start: 0 !important;
+		margin-block-end: 0 !important;
+	}
+*/
+</style>
+
+<style type="text/css">/*<![CDATA[*/
+.Headertext{
+display:none;
+}/*]]>*/</style>
+
+<style type="text/css">/*<![CDATA[*/
+/* CSS pseudo-element styling https://fontawesome.com/how-to-use/on-the-web/advanced/css-pseudo-elements */
+
+/* general reset/setup styling for icons - needed on all */
+
+.lt-icon-default::before, .lt-icon-brain::before, .lt-icon-pin::before , .lt-icon-hand::before, .lt-icon-pathway::before, .lt-icon-logic::before, .lt-icon-check::before, .lt-icon-question::before, .lt-icon-exclamation::before    {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1.5;
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+  margin-right: 0.5rem;
+}
+
+/*default */
+
+.box-example .lt-icon-default::before {
+  content: "\f00c";
+}
+.box-exercise .lt-icon-default::before {
+  content: "\f128";
+}
+.box-query .lt-icon-default::before {
+  content: "\f126";
+}
+.box-adapt .lt-icon-default::before {
+  content: "\f126";
+}
+.box-interactive .lt-icon-default::before{
+  content: "\f542";
+}
+.box-note .lt-icon-default::before {
+  content: "\f08d";
+}
+.box-objectives .lt-icon-default::before {
+  content: "\f5dc";
+}
+.box-definition .lt-icon-default::before {
+  content: "\f303";
+}
+.box-theorem .lt-icon-default::before {
+  content: "\f1b3";
+}
+.box-warning .lt-icon-default::before {
+  content: "\f256";
+}
+
+
+/*specific icons*/
+.lt-icon-brain::before  {
+  content: "\f5dc";
+}
+
+.lt-icon-pin::before {
+  content: "\f08d";
+}
+
+.lt-icon-pathway::before, {
+  content: "\f126";
+}
+
+.lt-icon-logic::before, {
+  content: "\f1b3";
+}
+
+.lt-icon-hand::before, {
+  content: "\f126";
+}
+
+.lt-icon-pathway::before, {
+  content: "\f256";
+}
+
+.lt-icon-check::before, {
+  content: "\f00c";
+}
+
+.lt-icon-question::before, {
+  content: "\f128";
+}
+
+.lt-icon-exclamation::before, {
+  content: "\f12a";
+}/*]]>*/</style>
+
+<script async="" src="//cse.google.com/adsense/search/async-ads.js"></script>
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script type="text/javascript" async="" src="https://cse.google.com/cse.js?cx=001004262401526223570:11yv6vpcqvy"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-331594-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+    <link rel="stylesheet" href="../../../assets/css/style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245">
+    <link rel="stylesheet" href="../../../assets/css/all.css">
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+<!-- Script to show and hide proof -->
+<script type="text/javascript" src="https://hamkarim.github.io/assets/js/showhide.js"></script>
+<!-- Other style of showing and hiding proof -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
+ <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>
+<!-- end -->
+
+<script type="text/javascript" src="../../../assets/sidebar/sidebar.min.js"></script>
+<link rel="stylesheet" href="../../../assets/sidebar/Sidebar.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+//Another method to toggle the button
+          $(document).ready(function(){
+                    $('.showanswer').click(function(){
+                              $('.block_proof').show();
+                              $('.showanswer').hide();
+                              $('.hideanswer').show();
+                    }
+          );
+                    $('.hideanswer').click(function(){
+                              $('.block_proof').hide();
+                              $('.showanswer').show();
+                              $('.hideanswer').hide();
+                    }
+          );
+ });
+</script>
+
+<!-- For local function, define to exchange text -->
+<script>
+function showhideFunction() {
+          document.getElementById('idClick').innerHTML === '[Hide proof]' ? document.getElementById('idClick').innerHTML = '[Show proof]' : document.getElementById('idClick').innerHTML = '[Hide proof]';
+}
+</script>
+
+<!-- script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,https://hamkarim.github.io/MathJax/config/local/local.js"></script -->
+
+<!--script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { fonts: ["TeX"] }
+  });
+</script-->
+
+<!-- script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
+</script-->
+
+<!--script src="https://hamkarim.github.io/MathJax/config/local/mathjax-config.js" defer></script-->
+<script type="text/javascript" src="../../../MathJax/config/local/mathjax-config.js" defer></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" defer
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml-full.min.js">
+  </script>
+
+ <div class="Headertext">
+
+   \( \newcommand{\vecs}[1]{\overset { \scriptstyle \rightharpoonup} {\mathbf{#1}}&nbsp;}&nbsp;\)
+   \( \newcommand{\vecd}[1]{\overset{-\!-\!\rightharpoonup}{\vphantom{a}\smash&nbsp;{#1}}} \)
+   \(\newcommand{\id}{\mathrm{id}}\)
+   \( \newcommand{\Span}{\mathrm{span}}\)
+   \( \newcommand{\kernel}{\mathrm{null}\,}\)
+   \( \newcommand{\range}{\mathrm{range}\,}\)
+   \( \newcommand{\RealPart}{\mathrm{Re}}\)
+   \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+   \( \newcommand{\Argument}{\mathrm{Arg}}\)
+  \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \(\newcommand{\id}{\mathrm{id}}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \( \newcommand{\kernel}{\mathrm{null}\,}\)
+  \( \newcommand{\range}{\mathrm{range}\,}\)
+  \( \newcommand{\RealPart}{\mathrm{Re}}\)
+  \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+  \( \newcommand{\Argument}{\mathrm{Arg}}\)
+  \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\cof}{\mathbf{cof}}\)
+  \( \renewcommand{\det}{\mathbf{det\,\!}}\)
+    \( \newcommand{\minor}{\mathbf{minor}}\)
+  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+\(\def\d{\;\mathrm d}\)
+\(\def\K{\mathbb K}\)
+\[ \newcommand{R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\def\calC{\mathcal C}
+\def\calD{\mathcal D}
+\def\calF{\mathcal F}
+\def\calI{\mathcal I}
+\newcommand{defarrow}{\quad \stackrel{\text{def}}{\Longleftrightarrow} \quad} \]
+</div>
+
+
+  </head>
+
+  <body>
+
+<section class="main-content">
+
+  <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">Functional Anaysis: TD & TP (IV : 2h )</h1>
+<p style="font-style: italic; font-weight:bold; font-family: Arial; opacity: 0.5;">
+October
+2nd, 2020
+</p>
+
+<hr>
+<!--
+<p style="text-indent:0px">From Wikipedia:</p>
+<blockquote>
+	<a href=" ">
+    <div class="divfigure">
+        <p> <img class="wrap-right" alt="The volume of parallelepiped" src=" ">
+
+        </p>
+    </div>
+  </a>
+  <p>
+
+</p>
+
+
+<p>
+
+</p>
+</blockquote>
+
+<div class="box-note">
+
+  <span id="Outcomes"></span>
+<h5 class="box-legend editable">
+<span class="lt-icon-default">Outcomes</span></h5>
+
+<ol style="list-style-type: upper-alpha;" start="1" class="parenthalpha">
+    <li class="" style="background-color: unset;">
+
+    </li>
+    <li class="" style="background-color: unset;">
+
+      </li>
+
+      <li class="" style="background-color: unset;">
+
+        </li>
+
+</ol>
+</div></div>
+-->
+
+<h2 class="frame-sect sectcounter">Bounded Operator</h2>
+
+
+
+
+<div class="box-lemma">
+    <div class="box-legend editable"><span class="lt-icon-default">Problem1 : (Equivalent Norm)</span>
+    </div>
+
+    <p>
+ Let $X$ be linear space. Suppose $\|\cdot\|_a$ and $\|\cdot\|_b$ are equivalent in $X$. Show that such  property is unchanged on the space $\mathcal{B}(X)$ (space of bounded linear operators on $X$).
+    </p>
+</div>
+
+
+<p><b>HINT: </b> Derive from the two equivalent norms on a normed linear space $X$. 
+
+</p>
+
+
+<div class="example-content">
+      <span id="SHLink_Soln1" class="soln-title SH-Link">Show solution</span> 
+      <span id="SHImg_Soln1" class="fa fa-caret-right" aria-hidden="true"></span>
+ <div id="SHObj_Soln1" class="soln-content" style="display: none;">
+   <p>No way!</p>
+   <!--
+   <b>Solution:</b> Let $\|\cdot\|_{1}$ and $\|\cdot\|_{2}$ be the two equivalent norms on a normed linear space $X$, i.e. there exist constants $c$ and $C$ such that for all $x \in X$
+$$
+c\|x\|_{1} \leq\|x\|_{2} \leq C\|x\|_{1} .
+$$
+7
+Let $T \in \mathcal{B}(X)$. Then
+$$
+\|T\|_{1}=\sup _{x \neq 0} \frac{\|T(x)\|_{1}}{\|x\|_{1}} \leq \sup _{x \neq 0} \frac{c^{-1}\|T x\|_{2}}{C^{-1}\|x\|_{2}}=\frac{C}{c}\|T\|_{2} .
+$$
+Similarly,
+$$
+\|T\|_{2}=\sup _{x \neq 0} \frac{\|T(x)\|_{2}}{\|x\|_{2}} \leq \sup _{x \neq 0} \frac{C\|T x\|_{1}}{c\|x\|_{1}}=\frac{C}{c}\|T\|_{1} .
+$$
+In other words,
+$$
+\frac{c}{C}\|T\|_{1} \leq\|T\|_{2} \leq \frac{C}{c}\|T\|_{1} .
+$$
+     -->
+      </div>
+    </div>
+
+
+
+
+<div class="box-lemma">
+    <div class="box-legend editable"><span class="lt-icon-default">Problem 2 : (Bounded Operator)</span>
+    </div>
+
+    <p>
+        Let $X=\left(C([0,1]),\|\cdot\|_{\infty}\right)$. We define a linear operator on $X$ by
+$$
+(A \phi )(x):=\int_{0}^{1} a(x, y) \phi(y) \d y
+$$
+where the scalare field $a:[0,1] \times[0,1] \rightarrow \mathbb{R}$ is continuous. 
+Can the operator $A$ be bounded?
+    </p>
+</div>
+<p>
+<b>HINT: </b> With $\|a\|_{\infty} \lt +\infty$, can you  approximate $\|A \phi\|_{\infty}$?
+
+</p>
+
+  <div class="example-content">
+      <span id="SHLink_Soln2ex" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln2ex" class="fa fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2ex" class="soln-content" style="display: none;">
+          <p>No way!</p>
+<!--<b>Solution: </b>  Note that $a$ is continuous on the compact set $[0,1] \times[0,1]$, and hence it is bounded, i.e., $\|a\|_{\infty}:=\max _{x, y \in[0,1]}|a(x, y)|\lt +\infty$. Consider
+$$
+\begin{aligned}
+\|A \phi\|_{\infty} &=\sup _{0 \leq x \leq 1}|(A \phi)(x)|=\sup _{0 \leq x \leq 1}\left|\int_{0}^{1} a(x, y) \phi(y) d y\right| \\
+& \leq \sup _{0 \leq x \leq 1} \int_{0}^{1}|a(x, y)||f\phi(y)| \d y \leq\|\phi\|_{\infty}\|a\|_{\infty}
+\end{aligned}
+$$
+
+Therefore $A$ is bounded, and $\|A\| \leq\|a\|_{\infty}$.-->
+
+      </div>
+  </div>
+
+     
+<div class="box-lemma">
+    <div class="box-legend editable"><span class="lt-icon-default">Problem 3 : (Norm on complex polynomial)</span>
+    </div>
+
+    <p>
+       Let $X = P[\mathbb C]$  <!--be the space of all polynomials of one variable and complex coefficients-->, and define the norm $\alpha$ on $X$ by  
+       $$\|p\|_{\alpha}:=\sum_{k=0}^{n}(k+1)\left|a_{k}\right|$$ for every $p \in X$ where $p(x)=\sum_{k=0}^{n} a_{k} x^{k}$.
+       
+       <ol class="romanlist threeem">
+           <li>
+               Show that $\|\cdot \|_{\alpha}$ is a norm on $X$. <!--(Homogeneity, positivity, triangle inequality)-->
+
+           </li>
+           <li> Show that $\left(X,\|\cdot\|_{\alpha}\right)$ is not complete. 
+
+           </li>
+           <li>Given a linear functional $$T: X \rightarrow \mathbb{C}\quad \text{  by } \quad  T(p):= p^{\prime}(1)$$  <!--(i.e., the derivative of $p$ at 1 ),--> When $X$ is equipped with $\|\cdot\|_{\alpha}$, compute the norm of $T$?
+
+           </li>
+           <li> If $X$ is equipped with $\|\cdot\|_{\calC([0,1])}$ where  we define $$\|p\|_{\calC([0,1])} := \sup _{x \in[0,1]}|p(x)|, \quad p \in X$$         
+           then compute the norm of $T$ above?
+               </li>
+           <li> Are $\|\cdot \|_{\alpha}$ and $\|\cdot\|_{\calC([0,1])}$ equivalent norms on $X$?
+           </li>
+       </ol>
+       
+    </p>
+    
+    
+</div>
+
+<p>
+<b>HINT: </b> 
+
+</p>
+
+
+  <div class="example-content">
+      <span id="SHLink_Soln3ex" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln3ex" class="fa fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3ex" class="soln-content" style="display: none;">
+          <p>No way!</p>
+          
+          
+          
+        <p>
+            
+        </p>
+        
+        
+      </div>
+</div>       
+        
+        
+        
+        
+
+<p>
+</p>
+
+
+<div class="box-lemma">
+    <div class="box-legend editable"><span class="lt-icon-default">Problem 4 : (Norm of sequences that converge)</span>
+    </div>
+
+    <p>
+       
+       Consider $c_{0}:=\left\{x \in \mathbb{K}^{\mathbb{N}} : \lim _{n \rightarrow+\infty} x(n)=0\right\}$ (set of sequences that converge to $0$). We define a function  $$T: \ell^{1} \rightarrow c_{0}^{*} \quad \text{ by } \quad \big(T x\big)(y) := \sum_{k=1}^{\infty} x_{k} y_{k}$$
+       
+Show that $T$ is homeomorphic.
+
+
+
+        
+    </p>
+
+</div>
+
+<p>
+    <b>HINT: </b>
+</p>
+
+<div class="example-content">
+    <span id="SHLink_Soln4ex" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln4ex" class="fa fa-caret-right" aria-hidden="true"></span>
+    <div id="SHObj_Soln4ex" class="soln-content" style="display: none;">
+        <p>No way!</p>
+
+<p>
+      
+        </p>
+
+
+    </div>
+</div>
+
+
+
+<hr>
+
+<h3> Recent Posts </h3>
+<ul>
+
+
+    <li>
+      <i> <a href="../../topology/2019/post/2017/11/01/varparams.html">A Note on the Variation of Parameters Method </a> | 11/01/17 </i>
+    </li>
+
+
+    <li>
+      <i> <a href="../../topology/2019/notes/2017/10/26/groups3.html">Group Theory, Part 3: Direct and Semidirect Products </a> | 10/26/17 </i>
+    </li>
+
+
+    <li>
+      <i> <a href="../../topology/2019/notes/2017/10/19/galoistheory1.html">Galois Theory, Part 1: The Fundamental Theorem of Galois Theory </a> | 10/19/17 </i>
+    </li>
+
+
+    <li>
+      <i> <a href="../../topology/2019/notes/2017/10/19/fieldtheory2.html">Field Theory, Part 2: Splitting Fields; Algebraic Closure </a> | 10/19/17 </i>
+    </li>
+
+
+    <li>
+      <i> <a href="../../topology/2019/notes/2017/10/18/fieldtheory1.html">Field Theory, Part 1: Basic Theory and Algebraic Extensions </a> | 10/18/17 </i>
+    </li>
+
+</ul>
+<footer class="site-footer">
+
+  <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+</footer>
+
+
+
+</section>
+</body>
+
+
+  <!-- script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-102852226-1', 'auto');
+    ga('send', 'pageview');
+  </script -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171606319-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-171606319-1');
+</script>
+
+
+</html>

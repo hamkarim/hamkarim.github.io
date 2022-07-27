@@ -881,6 +881,30 @@ There is a certain type of matrix for which finding the determinant is a very si
 
     <h2 class="frame-sect sectcounter">&nbsp; លក្ខណៈរបស់ដេទែរមីណង់</h2>
     <!--   \section{Introduction aux systèmes d'équations linéaires} -->
+    
+     <p>The determinant is an important notion in linear algebra.</p>
+    <defn >
+          <div class="definition"><span>(Basic definition)</span>  </div>
+ <div class="definitionb">
+
+<p>
+  Let $A(n\times n) = (a_{ij})$, the determinant is defined by the sum
+   \begin{align*} \det(A) & = \sum_{\sigma \in S_n} \text{sign} (\sigma) a_{1\sigma(1)} a_{2\sigma(2)} \dotsc a_{n\sigma(n)} \\ & = \sum_{\sigma \in S_n} \text{sign}(\sigma) \prod_{i=1}^n a_{i\sigma(i)} 
+   \end{align*}
+   
+   where $S_n$ is the set of all permutations on the set $\{ 1, \dotsc, n\}$, and $\text{sign}(\sigma)$ is the parity of the permutation $\sigma$.
+    
+</p>
+ </div>
+</defn>
+   
+   <p>
+       <b>Simpler Definition: </b>
+       where $m_i$ is the $(n-1)\times(n-1)$ matrix formed by removing the $1$st row and $i$th column from $a$:\[m_i=\begin{pmatrix} \blacksquare & \blacksquare & ... & \blacksquare & \blacksquare & \blacksquare & ... & \blacksquare & \blacksquare\\ a_{21} & a_{22} & ... & a_{2,i-1} & \blacksquare & a_{2,i+1} & ... & a_{2,n-1} & a_{2n}\\ a_{31} & a_{32} & ... & a_{3,i-1} & \blacksquare & a_{3,i+1} & ... & a_{3,n-1} & a_{3n}\\ &&&&\vdots&&&&\\ a_{n1} & a_{n2} & ... & a_{n,i-1} & \blacksquare & a_{n,i+1} & ... & a_{n,n-1} & a_{nn} \end{pmatrix}=\begin{pmatrix} a_{21} & ... & a_{2,i-1} & a_{2,i+1} & ... & a_{2n}\\ a_{31} & ... & a_{3,i-1} & a_{3,i+1} & ... & a_{3n}\\ &&\vdots&\vdots&&&\\ a_{n1} & ... & a_{n,i-1} & a_{n,i+1} & ... & a_{nn} \end{pmatrix}\]
+
+   </p>
+  
+    
     <p>There are many important properties of determinants. Since many of these properties involve the row operations discussed in Chapter 1, we recall that definition now.</p>
 
     <defn>
@@ -1015,7 +1039,7 @@ There is a certain type of matrix for which finding the determinant is a very si
     </example>
 
     <p>
-        Many of the proofs in section use the Principle of Mathematical Induction.
+        Many of the proofs in section use the <b><a href="links\Principle-of-mathematical-induction.pdf">Principle of Mathematical Induction</a></b>.
 
         First we check that the assertion is true for \(n=2\) (the case \(n=1\) is either completely trivial or meaningless).
 
@@ -1042,28 +1066,25 @@ There is a certain type of matrix for which finding the determinant is a very si
                         <span id="SHLink_Soln1lem" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln1lem" class="fa fa-caret-right" aria-hidden="true"></span>
                         <div id="SHObj_Soln1lem" class="soln-content" style="display: none;">
 
-                            <ol>
-                                <li>
-                                    <p>
-                                        We will prove this lemma using Mathematical Induction.
 
-                                        If $n=2$ this is easy (check!).
-                                    </p>
+                            <p>
+                                We will prove this lemma using Mathematical Induction.
 
-                                    <p>
-                                        Let $n\geq 3$ be such that every matrix of size $n-1\times n-1$ with a row consisting of zeros has determinant equal to zero. Let $i$ be such that the $i$th row of $A$ consists of zeros. Then we have $a_{ij}=0$ for $1\leq j \leq n$.
-                                    </p>
+                                If $n=2$ this is easy (check!).
+                            </p>
 
-                                    <p>
-                                        Fix $j\in \{1,2,\ldots, n\}$ such that $ j\neq i$ . Then matrix $A(j)$ used in computation of $ \cof(A)_{1j}$ has a row consisting of zeros, and by our inductive assumption $\cof(A)_{1,j}=0$.
-                                    </p>
+                            <p>
+                                Let $n\geq 3$ be such that every matrix of size $n-1\times n-1$ with a row consisting of zeros has determinant equal to zero. Let $i$ be such that the $i$th row of $A$ consists of zeros. Then we have $a_{ij}=0$ for $1\leq j \leq n$.
+                            </p>
 
-                                    <p>
-                                        On the other hand, if \(j=i\) then \(a_{1,j}=0\). Therefore \(a_{1,j}\cof(A)_{1,j}=0\) for all \(j\) and by \(\eqref{E1}\) we have \[\det(A)=\sum_{j=1}^n a_{1,j} \cdot \cof(A)_{1,j}=0\nonumber \] as each of the summands is equal to $0$.
-                                    </p>
-                                </li>
+                            <p>
+                                Fix $j\in \{1,2,\ldots, n\}$ such that $ j\neq i$ . Then matrix $A(j)$ used in computation of $ \cof(A)_{1j}$ has a row consisting of zeros, and by our inductive assumption $\cof(A)_{1,j}=0$.
+                            </p>
 
-                            </ol>
+                            <p>
+                                On the other hand, if \(j=i\) then \(a_{1,j}=0\). Therefore \(a_{1,j}\cof(A)_{1,j}=0\) for all \(j\) and by \(\eqref{E1}\) we have \[\det(A)=\sum_{j=1}^n a_{1,j} \cdot \cof(A)_{1,j}=0\nonumber \] as each of the summands is equal to $0$.
+                            </p>
+
 
                         </div>
                     </div>
@@ -1076,8 +1097,10 @@ There is a certain type of matrix for which finding the determinant is a very si
                         </li>
                         <li>Each entry in the \(j\)th row of \(A\) is the sum of the corresponding entries in \(j\)th rows of \(B\) and \(C\).
                         </li>
-                        Then \(\det(A) = \det(B) +\det(C)\).
+                      
                     </ol>
+                    
+                      Then \(\qquad \det(A) = \det(B) +\det(C)\).
 
                     <div class="example-content">
                         <span id="SHLink_Soln2lem" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln2lem" class="fa fa-caret-right" aria-hidden="true"></span>
@@ -1087,7 +1110,17 @@ There is a certain type of matrix for which finding the determinant is a very si
                             </p>
 
                             <p>
-                                Now assume that the statement of Lemma is true for \(n-1\times n-1\) matrices and fix \(A,B\) and \(C\) as in the statement. The assumptions state that we have \(a_{l,j}=b_{l,j}=c_{l,j}\) for \(j\neq i\) and for \(1\leq l\leq n\) and \(a_{l,i}=b_{l,i}+c_{l,i}\) for all \(1\leq l\leq n\). Therefore \(A(i)=B(i)=C(i)\), and \(A(j)\) has the property that its \(i\)th row is the sum of \(i\)th rows of \(B(j)\) and \(C(j)\) for \(j\neq i\) while the other rows of all three matrices are identical. Therefore by our inductive assumption we have \(\cof(A)_{1j}=\cof(B)_{1j}+\cof(C)_{1j}\) for \(j\neq i\).
+                                Now assume that the statement of Lemma is true for \(n-1\times n-1\) matrices and fix \(A,B\) and \(C\) as in the statement. The assumptions state that we have 
+                                \[
+                                a_{l,j}=b_{l,j}=c_{l,j} \quad \text{ for }\quad j \neq i \;\text{ and for }\; 1\leq l\leq n
+                                \]
+                                 and \[
+                                 a_{l,i}=b_{l,i}+c_{l,i} \quad \text{ for all }\quad  1\leq l\leq n
+                                 \]
+                                 Therefore \(A(i)=B(i)=C(i)\), and \(A(j)\) has the property that its \(i\)th row is the sum of \(i\)th rows of \(B(j)\) and \(C(j)\) for \(j\neq i\) while the other rows of all three matrices are identical. Therefore by our inductive assumption we have 
+                                 \[
+                                 \cof(A)_{1j}=\cof(B)_{1j}+\cof(C)_{1j} \quad \text{ for } \;  j\neq i 
+                                 \]
                             </p>
 
                             <p>
