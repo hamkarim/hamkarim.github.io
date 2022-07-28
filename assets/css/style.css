@@ -1134,7 +1134,7 @@ h3.sectcounter:before {
     counter-increment: counterex;
     content: "ឧទាហរណ៍ "counter(section, khmer)"."counter(counterex, khmer) "  ";
     font-weight: bold;
-    font-size: 19px;
+    font-size: 17px;
     font-family: Battambang;
     /*Angkor*/
 }

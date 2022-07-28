@@ -1527,9 +1527,9 @@ This is what we wanted, so we know this basic eigenvector is correct. -->
   
   Let $A$ be a $3 \times 3$ matrix defined as follows
 
-\begin{equation} 
+\begin{equation*} 
       A= \begin{bmatrix} 0 & 1 & 1\\ 1 & 0 & 1\\ 1 & 1 & 0 \end{bmatrix} 
-\end{equation} 
+\end{equation*} 
 Find the eigenvalues and eigenvectors of $A$. 
        
      
@@ -1540,7 +1540,7 @@ Find the eigenvalues and eigenvectors of $A$.
    <div id="SHObj_SolnEx5" class="soln-content" style="display: none;">
   <p>
     The characteristic polynomial is computed as 
-    $$P(\lambda) = det(A - \lambda I ) = - \lambda^3 + 3\lambda + 2 = - (\lambda - 2)(\lambda + 1)^2$$
+    $$P(\lambda) = \det(A - \lambda I ) = - \lambda^3 + 3\lambda + 2 = - (\lambda - 2)(\lambda + 1)^2$$
   </p>
         </div>
       </div>
@@ -1570,17 +1570,92 @@ Find the eigenvalues and eigenvectors of $A$.
 </defn>
    
    
+   
+   
+<example>
+(Similar Matrices)
+    <p>
+  Given \[A = \left[ \begin{array}{rrr} 33 & 105 & 105 \\ 10 & 28 & 30 \\ -20 & -60 & -62 \end{array} \right], \qquad B=\left[ \begin{array}{rrr} 33 & -105 & 105 \\ 10 & -32 & 30 \\ 0 & 0 & -2 \end{array} \right]\]
+      and $$P=\left[ \begin{array}{rrr} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 2 & 1 \end{array} \right] $$
+Show that $A$ and $B$ are similar?
+     
+        
+    </p>
+<div class="example-content">
+        <span id="SHLink_SolnEx6" class="soln-title SH-Link">Show solution</span> <span id="SHImg_SolnEx6" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_SolnEx6" class="soln-content" style="display: none;">
+  <p>
+    
+  </p>
+        </div>
+      </div>
+      
+</example>
+  
+   
       <div class="box-definition">
-  <div class="box-legend editable"><span class="lt-icon-default"> Lemma: (Similar Matrices and Eigenvalues)
+  <div class="box-legend editable"><span class="lt-icon-default"> Lemma 1: (Similar Matrices and Eigenvalues)
 </span>
 </div>
 
 <p class="">
-Let \(A\) and \(B\) be similar matrices, so that \(A=P^{-1}BP\) where \(A,B\) are \(n\times n\) matrices and \(P\) is invertible. Then \(A,B\) have the same eigenvalues.
+Let \(A\) and \(B\) be similar matrices, so that 
+\[
+    A=P^{-1}BP
+\] 
+where \(A,B\) are \(n\times n\) matrices and \(P\) is invertible. Then \(A,B\) have the same eigenvalues.
 
 </p>
 
 </div>
+
+  <p><b>Proof: </b></p>
+   
+
+   
+<example>
+(Simplify Using Elementary Matrices)
+    <p>
+  
+Find the eigenvalues for the matrix 
+      
+      \[A = \left[ \begin{array}{rrr} 33 & 105 & 105 \\ 10 & 28 & 30 \\ -20 & -60 & -62 \end{array} \right]\nonumber \]
+       
+     
+        
+    </p>
+<div class="example-content">
+        <span id="SHLink_SolnEx7" class="soln-title SH-Link">Show solution</span> <span id="SHImg_SolnEx7" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_SolnEx7" class="soln-content" style="display: none;">
+  <p>
+    
+  </p>
+        </div>
+      </div>
+      
+</example>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
    
     <hr>
 
