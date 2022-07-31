@@ -389,7 +389,7 @@
                 \bigl(P, u\bigr) &\longmapsto & (x, 2+x)+u = (x+u, 2+x+u)
                 \end{array}
                 \]
-                For example the point $(-2,0)$ added with the vector $u=(1,1)$ results in the point $(-1,1)$ which belongs to the set $L$, note that for the example above the vector space $V$ has only vectors parallels to $u=(1,1)$
+                For example the point $(-2,0)$ added with the vector $u=(1,1)$ results in the point $(-1,1)$ which belongs to the set $\mathcal L$, note that for the example above the vector space $V$ has only vectors parallels to $u=(1,1)$
             </p>
 
         </example>
@@ -460,16 +460,19 @@
         បើចំណុចទាំងបួន $A, B, C$ និង $D$ ផ្ទៀងផ្ទាត់លក្ខខណ្ឌណាមួយ ក្នុងចំណោមលក្ខខណ្ឌទាំងបីខាងលើ នោះគេនិយាយថា ចំណុច $A, B, C$ និង $D$ បង្កើតបានជាប្រលេឡូក្រាមមួយ។
         </p>
 
-        <div class="showhidebground">
+        <!--div class="showhidebground">
             <a href="#proofNo.1" class="input_name" id="showanswer">[Show proof]</a>
             <a href="#proofNo.1" class="input_name" id="hideanswer" style="display:none;">[Hide proof]</a>
-        </div><br>
-        
-        <!--
+        </div -->
         
         
-        <div class="block_proof" style="display:none">
+        <p align="right"><a class="toggle bground" id="idClick1" href="#proof1" onclick="showhideFunction()">[Show proof]</a></p>
+        <div class="hidepanel" id="proof1" style="color:#1860C1">
             <div><b><span class="headproof">សម្រាយបញ្ជាក់.</span> </b> </div>
+    
+        
+        
+        <div class="blockproof" style="">
             <p>
                 បង្ហាញថា (i) $\Leftrightarrow$ (ii)
                 \begin{eqnarray*}
@@ -487,7 +490,69 @@
 
             </p>
         </div>
+</div>
+      
+<h3 class="sectcounter">&nbsp; លំហអាហ្វីនរង</h3>
+      
 
+        <defn>
+            <div class="definition"> </div>
+            <div class="definitionb">
+                <p>
+                    យក $\mathcal{E}$ ជាលំហអាហ្វីនភ្ជាប់នឹងលំហវ៉ិចទ័រ $\vect{\E}$។ គេថា សំណុំរងមិនទទេ $\mathcal{F}$ របស់ $\mathcal{E}$ គឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$ បើមានចំណុចមួយ $A\in \mathcal{F}$ និងមានលំហវ៉ិចទ័ររងមួយ $\vect\F\subseteq \vect\E$ ដែល
+$$
+\forall M \in \mathcal{E},\ M\in \mathcal{F} \Longleftrightarrow \vect{AM} \in \vect\F
+$$
+ក្នុងករណីនេះ គេហៅ $\mathcal{F}$ គឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$ ដែលកាត់តាមចំណុច $A$ និងតាមទិសដៅនៃលំហវ៉ិចទ័ររង $\vect\F$។
+                    
+                    </p>
+            </div>
+        </defn>    
+      
+<example>
+<p>
+<ol class="romanlist two">
+    <li>
+        ចំពោះគ្រប់ចំណុច $A\in \mathcal{E}$ សំណុំដែលមានតែមួយធាតុ $\{A\}$ គឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$។ វាគឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$ ដែលកាត់តាមចំណុច $A$ និងតាមទិសដៅ $\vect\F=\{\vect 0\}$។
+        
+    </li>
+    
+    <li>
+        យក $\vect{\E}$ ជាលំហវ៉ិចទ័រមួយកំណត់លើកាយ $\mathbb{R}$។ ដូច្នេះ ចំពោះគ្រប់លំហអាហ្វីនរង $\mathcal{F}$ របស់ $\vect{\E}$ មានចំណុចមួយ $\vec a\in \vect\E$ និងមានលំហវ៉ិចទ័ររងមួយ $\vect\F \subseteq \vect\E$ ដែល
+$$
+\mathcal{F} = \vec a + \vect\F
+$$
+ដូច្នេះ គ្រប់លំហវ៉ិចទ័ររងរបស់ $\vect{\E}$ អាចចាត់ទុកដូចជាលំហអាហ្វីនរងរបស់ $\vect{\E}$ ដែរ។ {\color{Green} តែករណីច្រាសមកវិញ មិនពិតជាទូទៅនោះទេ។}
+%
+
+ជាការពិត បើយក $\mathcal{F}$ ជាលំហអាហ្វីនរងរបស់ $\vect{\E}$ នោះតាមនិយមន័យ គេមានចំណុចមួយ $a\in \mathcal{F}$ និងលំហវ៉ិចទ័ររងមួយរបស់ $\vect{\E}$ គឺ $\vect\F \subseteq \vect\E$ ដែល
+\begin{eqnarray*}
+\forall\;  x\in \vect\E,\  x\in \mathcal{F}&\Longleftrightarrow &  x - a\in \vect\F\\ &\Longleftrightarrow & x\in (a + \vect\F)
+\end{eqnarray*}
+ដូច្នេះ $\mathcal{F} = a + \vect\F$។
+    </li>
+</ol>
+   
+    </p>
+    
+</example>   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+       
+       <!--
         <div class="showhidebground">
             <a href="#proofNo.2" class="input_name showanswer">[Show proof]</a>
             <a href="#proofNo.2" class="input_name hideanswer" style="display:none;">[Hide proof]</a>
