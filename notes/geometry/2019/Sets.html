@@ -11,8 +11,8 @@
     <meta name="author" content="លំហអាហ្វីន">
     <meta property="og:locale" content="en_US">
     <meta http-equiv="keywords" name="keywords" content="affine spaces, Euclidean-affine spaces, លំហអាហ្វីន, លំហអាហ្វីន-អឺគ្លីដ">
-    <meta http-equiv="description" name="description" content="ក្នុងគណិតវិទ្យា លំហអាហ្វីន (affine space) គឺជាទម្រង់ធរណីមាត្រមួយ ដែលកំណត់បានភាពទូទៅនៃលក្ខណៈរបស់ លំហអឺគ្លីដ (Euclidean spaces)  តាមវិធីមួយដែលមិនអាស្រ័យទៅនឹងគោលគំនិតទាំងឡាយណាទាក់ទងនឹងចំងាយ និងរង្វាស់មុំ តែវារក្សាបានលក្ខណៈទាំងឡាយណា ដែលទាក់ទងនឹងភាពស្របគ្នា និងសមាមាត្រនៃប្រវែងរបស់អង្កត់ស្របគ្នា។">
-    <meta name="description" content="Affine spaces, លំហអាហ្វីន">
+    <meta http-equiv="description" name="description" content="">
+    <meta name="description" content="Set theory">
     <meta property="og:description" content="Math, Programmer, Music">
     <link rel="canonical" href="../../../index.html">
     <meta property="og:url" content="https://hamkarim.github.io/">
@@ -47,7 +47,7 @@
     <meta property="og:image" content="http://www.cliparts101.com/files/376/298FE3955707B1DE458221E4BFABFBBE/Greek_Gamma_4.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../topology/2019/favicon.ico">
     <meta charset="UTF-8">
-    <title>Affine Spaces | លំហអាហ្វីន</title>
+    <title>Set Theory</title>
     <meta name="description" content="Math, Programmer, Music">
 
     <!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
@@ -72,273 +72,7 @@
         }
     </style>
 
-    <style type="text/css">
-        /**************** Box container styles *******************/
-        .mt-content-container .boxobjectives,
-        .boxexample,
-        .boxexercise,
-        .boxquery,
-        .boxnotewithlegend,
-        .boxnotewithoutlegend,
-        .boxprocedure,
-        .boxdefinition,
-        .boxtheorem,
-        .boxlemma,
-        .boxnotation,
-        .boxproposition {
-            -moz-border-radius: 8px;
-            -webkit-border-radius: 8px;
-            border-radius: 8px;
-            padding-top: 0em;
-            padding-bottom: 0em;
-            padding-left: 1em;
-            padding-right: 1em;
-            margin-bottom: 1em;
-            overflow: visible;
-            border: 0px;
-            orphans: 2;
-        }
 
-        .mt-content-container .boxnotewithlegend,
-        .boxprocedure,
-        .notation {
-            background-color: hsla(20, 0%, 93%, 1);
-        }
-
-        .mt-content-container .boxexample,
-        .boxexercise {
-            background-color: hsla(220, 100%, 97%, 1);
-        }
-
-        .mt-content-container .boxwarning {
-            background-color: hsla(0, 100%, 96%, 1);
-        }
-
-        .mt-content-container .boxdefinition,
-        .boxtheorem,
-        .boxlemma,
-        .boxnotation,
-        .boxproposition {
-            background-color: hsla(28, 80%, 95%, 1);
-        }
-
-        .mt-content-container .boxobjectives {
-            background-color: hsla(0, 0%, 90%, 1);
-        }
-
-        .mt-content-container .boxnotewithoutlegend {
-            background-color: hsla(20, 0%, 93%, 1);
-            padding-right: 1em;
-            padding-left: 1em;
-            padding-top: 0.5em !important;
-            padding-bottom: 0.5em !important;
-            margin-right: 1em;
-            margin-left: 1em;
-        }
-
-        .mt-content-container .boxquery {
-            border: 2px solid green;
-            page-break-inside: avoid;
-            visibility: hidden !important;
-            display: none !important;
-        }
-
-        /**************** Box legend container styles *******************
-	.mt-content-container .boxlegend {
-		font-style: normal !important;
-		font-size: 1.1em !important;
-		font-weight: normal !important;
-		font-family: "Tahoma", Arial, serif !important;
-		padding-top: 0.2em !important;
-		padding-bottom: 0.2em !important;
-		padding-left: 0.3em !important;
-		padding-right: 0.3em !important;
-		margin-left: 0.35em;
-		color: white;
-		border-radius: 3px;
-		overflow: visible;
-		break-inside: avoid !important;
-	}
-
-	/************** Defining the Legends ******************
-
-
-	.box-definition>header,
-	.box-structure>header,
-	.box-note>header,
-	.box-theorem>header,
-	.box-example>header,
-	.box-exercise>header,
-	.box-query>header,
-	.box-adapt>header,
-	.box-objectives>header,
-	.box-warning>header {
-		display: inline-flex;
-		overflow: hidden;
-		break-inside: avoid-page;
-		page-break-inside: avoid;
-		text-align: left;
-		width: auto;
-		margin: 0 0px 2px 0px !important;
-		padding: 4px 6px 4px 4px !important;
-		transform: translate(-11px, 0px) !important;
-		border-radius: 3px 5px 5px 0;
-		-moz-border-radius: 3px 5px 5px 0;
-		-webkit-border-radius: 3px 5px 5px 0;
-	}
-	.box-definition>header *,
-	.box-structure>header *,
-	.box-note>header *,
-	.box-theorem>header *,
-	.box-example>header *,
-	.box-exercise>header *,
-	.box-query>header *,
-	.box-adapt>header *,
-	.box-objectives>header *,
-	.box-warning>header * {
-		font-family: "Battambang", "Tahoma", Arial, serif !important;
-		font-size: 17px !important;
-		font-weight: 400 !important;
-		color: white !important;
-		;
-		width: auto !important;
-		;
-		float: left !important;
-		;
-		line-height: 1 !important;
-		;
-		margin-block-start: 0 !important;
-		margin-block-end: 0 !important;
-	}
-*/
-    </style>
-
-    <style type="text/css">
-        /*<![CDATA[*/
-        .Headertext {
-            display: none;
-        }
-
-        /*]]>*/
-    </style>
-
-    <style type="text/css">
-        /*<![CDATA[*/
-        /* CSS pseudo-element styling https://fontawesome.com/how-to-use/on-the-web/advanced/css-pseudo-elements */
-
-        /* general reset/setup styling for icons - needed on all */
-
-        .lt-icon-default::before,
-        .lt-icon-brain::before,
-        .lt-icon-pin::before,
-        .lt-icon-hand::before,
-        .lt-icon-pathway::before,
-        .lt-icon-logic::before,
-        .lt-icon-check::before,
-        .lt-icon-question::before,
-        .lt-icon-exclamation::before {
-            -moz-osx-font-smoothing: grayscale;
-            -webkit-font-smoothing: antialiased;
-            display: inline-block;
-            font-style: normal;
-            font-variant: normal;
-            text-rendering: auto;
-            line-height: 1.5;
-            font-family: "Font Awesome 5 Pro";
-            font-weight: 900;
-            margin-right: 0.5rem;
-        }
-
-        /*default */
-
-        .box-example .lt-icon-default::before {
-            content: "\f00c";
-        }
-
-        .box-exercise .lt-icon-default::before {
-            content: "\f128";
-        }
-
-        .box-query .lt-icon-default::before {
-            content: "\f126";
-        }
-
-        .box-adapt .lt-icon-default::before {
-            content: "\f126";
-        }
-
-        .box-interactive .lt-icon-default::before {
-            content: "\f542";
-        }
-
-        .box-note .lt-icon-default::before {
-            content: "\f08d";
-        }
-
-        .box-objectives .lt-icon-default::before {
-            content: "\f5dc";
-        }
-
-        .box-definition .lt-icon-default::before {
-            content: "\f303";
-        }
-
-        .box-theorem .lt-icon-default::before {
-            content: "\f1b3";
-        }
-
-        .box-warning .lt-icon-default::before {
-            content: "\f256";
-        }
-
-
-        /*specific icons*/
-        .lt-icon-brain::before {
-            content: "\f5dc";
-        }
-
-        .lt-icon-pin::before {
-            content: "\f08d";
-        }
-
-        .lt-icon-pathway::before,
-            {
-            content: "\f126";
-        }
-
-        .lt-icon-logic::before,
-            {
-            content: "\f1b3";
-        }
-
-        .lt-icon-hand::before,
-            {
-            content: "\f126";
-        }
-
-        .lt-icon-pathway::before,
-            {
-            content: "\f256";
-        }
-
-        .lt-icon-check::before,
-            {
-            content: "\f00c";
-        }
-
-        .lt-icon-question::before,
-            {
-            content: "\f128";
-        }
-
-        .lt-icon-exclamation::before,
-            {
-            content: "\f12a";
-        }
-
-        /*]]>*/
-    </style>
-   
     <script async="" src="//cse.google.com/adsense/search/async-ads.js"></script>
     <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
     <script type="text/javascript" async="" src="https://cse.google.com/cse.js?cx=001004262401526223570:11yv6vpcqvy"></script>
@@ -464,44 +198,6 @@
         document.createElement("example, defn");
     </script>
     <!-- [endif]-->
-    
-    
-
-    <div class="Headertext">
-
-        \( \newcommand{\vecs}[1]{\overset { \scriptstyle \rightharpoonup} {\mathbf{#1}}&nbsp;}&nbsp;\)
-   \( \newcommand{\vecd}[1]{\overset{-\!-\!\rightharpoonup}{\vphantom{a}\smash&nbsp;{#1}}} \)
-   \(\newcommand{\id}{\mathrm{id}}\)
-   \( \newcommand{\Span}{\mathrm{span}}\)
-   \( \newcommand{\kernel}{\mathrm{null}\,}\)
-   \( \newcommand{\range}{\mathrm{range}\,}\)
-   \( \newcommand{\RealPart}{\mathrm{Re}}\)
-   \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
-   \( \newcommand{\Argument}{\mathrm{Arg}}\)
-  \( \newcommand{\norm}[1]{\| #1 \|}\)
-  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
-  \( \newcommand{\Span}{\mathrm{span}}\)
-  \(\newcommand{\id}{\mathrm{id}}\)
-  \( \newcommand{\Span}{\mathrm{span}}\)
-  \( \newcommand{\kernel}{\mathrm{null}\,}\)
-  \( \newcommand{\range}{\mathrm{range}\,}\)
-  \( \newcommand{\RealPart}{\mathrm{Re}}\)
-  \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
-  \( \newcommand{\Argument}{\mathrm{Arg}}\)
-  \( \newcommand{\norm}[1]{\| #1 \|}\)
-  \( \newcommand{\cof}{\mathbf{cof}}\)
-  \( \newcommand{\adj}{\mathbf{adj}}\)
-  \( \renewcommand{\det}{\mathbf{det\,\!}}\)
-    \( \newcommand{\minor}{\mathbf{minor}}\)
-  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
-  \( \newcommand{\Span}{\mathrm{span}}\)
-  \( \newcommand{\bbR}{\mathbb{R}}\)
-  \( \newcommand{\calD}{\mathcal{D}}\)
-  \( \newcommand{\calP}{\mathcal{P}}\)
-  
-  </div>
-  
-  
 
 </head>
 
@@ -536,7 +232,7 @@
 
     <section class="main-content">
 
-        <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">ជំពូក៧ :&nbsp; លំហអាហ្វីន (Affine Spaces) </h1>
+        <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">Lecture 1:&nbsp; ប្រមាណវិធីលើសំណុំ (Operations on Sets) </h1>
         <p style="font-style: italic; font-weight:bold; font-family: Arial; opacity: 0.5;">
             October
             2nd, 2020
@@ -547,21 +243,20 @@
         <blockquote>
             <a href="https://en.wikipedia.org/wiki/File:Affine_space_R3.png">
                 <div class="divfigure">
-                    <p style="font-size: 11px"> <img class="wrap-right" alt="MIT Course on convex analysis" src="https://upload.wikimedia.org/wikipedia/commons/9/95/Affine_space_R3.png">
-                        ក្នុងលំហ $\mathbb {R}^{3}$ ប្លង់ $P_{2}$ ( ព័ណ៌ខៀវខាងលើ ) មិនមែនជាលំហវ៉ិចទ័ររងទេ
-                        <!-- since $ \vec{0} \notin P_{2}$ and $\vec{a}+\vec{b} \notin P_2$; --> តែវាជាលំហអាហ្វីនរង។ ទិសដៅរបស់វា គឺប្លង់ $P_{1}$ ( ព័ណ៌បៃតងនៅខាងក្រោម ) ដែលជាលំហវ៉ិចទ័ររង។ ទោះបី វ៉ិចទ័រ $\vec{a}$ និង $\vec{b}$ ស្ថិតក្នុង $P_{2}$ តែផលសងរបស់វា គឺជា វ៉ិចទ័រប្រាប់ទីតាំង <!--their difference is a displacement vector-->: $\vec{a} - \vec{b} \notin P_{2}$ តែ $\vec{a} - \vec{b} \in P_{1}$ ។
+                    <p> <img class="wrap-right" alt="MIT Course on convex analysis" src="https://upload.wikimedia.org/wikipedia/commons/9/95/Affine_space_R3.png">
+                        
                     </p>
                 </div>
             </a>
-            <p>ក្នុងគណិតវិទ្យា <b><a href="#AffineSpace"> លំហអាហ្វីន </a>(affine space) </b> គឺជាទម្រង់ធរណីមាត្រមួយ ដែលកំណត់បានភាពទូទៅនៃលក្ខណៈរបស់ <b><a href="#EuclideanSpace"> លំហអឺគ្លីដ</a> (Euclidean spaces)</b> តាមវិធីមួយដែលមិនអាស្រ័យទៅនឹងគោលគំនិតទាំងឡាយណាទាក់ទងនឹងចំងាយ និងរង្វាស់មុំ តែវារក្សាបានលក្ខណៈទាំងឡាយណា ដែលទាក់ទងនឹងភាពស្របគ្នា និងសមាមាត្រនៃប្រវែងរបស់អង្កត់ស្របគ្នា។ <br> <!-- in such a way that these are independent of the concepts of distance and measure of angles, keeping only the properties related to parallelism and ratio of lengths for parallel line segments-->
+            <p>
+            
             </p>
-            <p> នៅក្នុងលំហអាហ្វីន គេមិនអាចធ្វើការបែងចែកភាពខុសគ្នានៃចំណុចគល់តម្រុយទាំងឡាយបានទេ។ ដូច្នេះ មិនមានវ៉ិចទ័រណាមួយ ដែលមានចំណុចគល់នៅនឹងថ្កល់នោះទេ ហើយក៏គ្មានវ៉ិចទ័រណាមួយ អាចភ្ជាប់បានតែមួយរបៀបគត់ទៅនឹងចំណុចមួយនោះដែរ។ ជំនួសមកវិញ ក្នុងលំហអាហ្វីន មានការបម្លាស់ទីតាំងនៃវ៉ិចទ័រ ដែលគេហៅថា <a>វ៉ិចទ័របម្លែងកិល</a> ឬត្រឹមតែ <b>បម្លែងកិល</b> រវាងពីរចំណុចក្នុងលំហ។
-               <!-- In an affine space, there is no distinguished point that serves as an origin. Hence, no vector has a fixed origin and no vector can be uniquely associated to a point. In an affine space, there are instead displacement vectors, also called translation vectors or simply translations, between two points of the space.[1] <--> Thus it makes sense to subtract two points of the space, giving a translation vector, but it does not make sense to add two points of the space. Likewise, it makes sense to add a displacement vector to a point of an affine space, resulting in a new point translated from the starting point by that vector. We see that
-            </p>
+       
         </blockquote>
 
         <p>
-            អំណេះតទៅ យើងសន្មតការកំណត់សរសេរអក្សរដិតត្រង់  $\E$ ឬ $\vect{\E}$ តាងអោយលំហវ៉ិចទ័រមួយកំណត់លើកាយ $\mathbb K$ (អាចជា $\R$ ឬ $\Cc$) ហើយបើសរសេរទ្រេត $A$ គឺតាងអោយចំណុចមួយរបស់លំហអាហ្វីន $\calE$ $-$ លើកលែងតែមានការកំណត់ផ្សេងពីនេះ នៅក្រោយទៀត។
+            
+            
         </p>
 
         
@@ -584,80 +279,163 @@
 
 
         </p>
-        <h2 class="frame-sect sectcounter">&nbsp; និយមន័យ និង Notation </h2> <!-- \section{និយមន័យ និងលក្ខណៈបឋមៗ}  -->
+        <h2 class="frame-sect sectcounter">&nbsp; ប្រមាណវិធីលើសំណុំ </h2> 
 
         <defn>
-            <div class="definition"> </div>
+            <div class="definition"> (Union and Intersection)</div>
             <div class="definitionb">
-                <p> យក $\vect{\E}$ ជាលំហវ៉ិចទ័រកំណត់លើកាយ $\mathbb{R}$ និងកំណត់ $\mathcal{E}$ ជាសំណុំចំណុចមិនទទេ។ គេថា $\mathcal{E}$ ជា <b>លំហអាហ្វីន</b> ភ្ជាប់ទៅនឹងលំហវ៉ិចទ័រ $\vect{\E}$ (ឬតាមទិសដៅ $\vect{\E}$) បើមានអនុវត្តន៍មួយ
-                    $$
-                    \begin{array}{rcl}
-                    \varphi:\; \mathcal{E}\times \mathcal{E} &\longrightarrow & \vect\E\\
-                    (A,B) &\longmapsto & \overrightarrow{AB}
-                    \end{array}
-                    $$
-                    ហៅថា <b>difference function</b> ដែលផ្ទៀងផ្ទាត់ស្វ័យសត្យ ដូចខាងក្រោម៖
-                <ol class="parenthroman">
-                    <li>បើ $A\in \mathcal{E}$ ជាចំណុចនឹងមួយ នោះមានអនុវត្តន៍បង្រួមមួយ $\varphi_A = \varphi_{\big| {\{A\}\times \mathcal E}}$ ដែលកំណត់ដោយ៖
-                        <!-- $\varphi\mid_{A\times \mathcal E}:\; A\times \mathcal{E} \longrightarrow  \vect\E$ ដែល $\forall M\in \mathcal E:  M \longmapsto \vect{AM}$ -->
-                        $$\begin{array}{rcl}
-                        \varphi_{\big|{\{A\}\times \mathcal E}}:\; \{A\}\times \mathcal{E} &\longrightarrow & \vect\E\\
-                        (A,M) &\longmapsto & \vect{AM}
-                        \end{array}$$
-                        ជាអនុវត្តន៍មួយទល់មួយ។
-                    </li>
-                    <li>ទំនាក់ទំនងហ្សាល (Relation de Chasles)
+           <p>
+               Let \(A\) and \(B\) be subsets of some universal set \(U\). The intersection of \(A\) and \(B\), written \(A \cap B\) and read “\(A\) intersect \(B\),” is the set of all elements that are in both \(A\) and \(B\). That is,
 
-                    </li>
-                    $$\forall M, N, P\in \mathcal{E},\ \varphi(M,P) = \varphi(M,N) + \varphi(N,P)$$
-                </ol>
-              
-                    <p class="parindent">
-                        លំហអាហ្វីន $\mathcal{E}$ ជា <a href="">លំហមានវិមាត្ររាប់អស់</a> (finite dimensional space) បើលំហវ៉ិចទ័រ $\vect{\E}$ ជាលំហមានវិមាត្ររាប់អស់។ ក្នុងករណីនេះ វិមាត្ររបស់ $\mathcal{E}$ ស្មើនឹងវិមាត្ររបស់លំហទិសដៅ។
-                    </p>
-                    <!--est égale à celle de sa direction. -->
+\[A \cap B = \{x \in U \, | \, x \in A \text{ and } x \in B\}.\]
+
+The union of \(A\) and \(B\), written \(A \cup B\) and read “\(A\) union \(B\),” is the set of all elements that are in \(A\) or in \(B\). That is,
+
+\[A \cup B = \{x \in U \, | \, x \in A \text{ or } x \in B\}.\]
                 </p>
             </div>
         </defn>
 
 
+       
+       
+        <defn>
+            <div class="definition"> (Difference and Complement)</div>
+            <div class="definitionb">
+           <p>
+               Let \(A\) and \(B\) be subsets of some universal set \(U\). The set difference of \(A\) and \(B\), or relative complement of \(B\) with respect to \(A\), written \(A -B\) and read “\(A\) minus \(B\)” or “the complement of \(B\) with respect to \(A\),” is the set of all elements in \(A\) that are not in \(B\). That is,
+
+\[A \setminus B = \{x \in U \, | \, x \in A \text{ and } x \notin B\}.\]
+
+The complement of the set \(A\), written \(A^c\) and read “the complement of \(A\),” is the set of all elements of \(U\) that are not in \(A\). That is,
+
+\[A^c = \{x \in U \, | \, x \notin A\}.\]
+                </p>
+            </div>
+        </defn>
+        
+        <example>
+            <p>
+                For the rest of this preview activity, the universal set is \(U = \{0, 1, 2, 3, ..., 10\}\), and we will use the following subsets of \(U\):
+
+\[A = \{0, 1, 2, 3, 9\} \quad \text{ and } \quad B = \{2, 3, 4, 5, 6\},\]
+
+So in this case, \(A \cap B = \{x \in U \, | \, x \in A \text{ and } x \in B\} = \{2, 3\}.\) Use the roster method to specify each of the following subsets of \(U\).
+
+<ol class="romanlist threeem">
+    <li>
+        \(A \cup B\)
+
+    </li>
+    <li>
+        \(A^c\)
+
+    </li>
+    <li>
+        \(B^c\)
+    </li>
+</ol>
+We can now use these sets to form even more sets. For example,
+
+\[A \cap B^c = \{0, 1, 2, 3, 9\} \cap \{0, 1, 7, 8, 9, 10\} = \{0, 1, 9\}.\]
+
+Use the roster method to specify each of the following subsets of \(U\).
+
+<ol class="romanlist threeem">
+    <li>
+        \(A \cup B^c\)
+    </li>
+    <li>
+        \(A^c \cap B^c\)
+    </li>
+    <li>
+        \(A^c \cup B^c\)
+    </li>
+    <li>
+        \((A \cap B)^c\)
+    </li>
+</ol>
+       
+            </p>
+            
+        </example>
+        
+        
+        
+   <div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default"> Preview Activity: Venn Diagrams for Two Sets
+</span>
+</div>
+
+<p class="">
+Let \(A\) and \(B\) be subsets of a universal set \(U\). For each of the following, draw a Venn diagram for two sets and shade the region that represent the specified set. In addition, describe the set using set builder notation.
+
+
+
+
+\(A^c \cup B^c\)
+\((A \cap B)^c\)
+\((A \cup B) - (A \cap B)\)
+<ol class="romanlist twoem">
+    <li>
+        \(A^c\)
+    </li>
+    <li>
+        \(B^c\)
+    </li>
+    <li>
+        \(A^c \cup B\)
+    </li>
+</ol>
+
+</p>
+
+</div>
+   
+   
+        
+        
+
         <p style="text-indent: 0px"><b>កំណត់សម្គាល់ :</b>
         <ul>
             <li>បើ $\mathcal{E}$ ជាលំហអាហ្វីន តាមទិសដៅ $\vect{\E}$ នោះធាតុរបស់ $\mathcal{E}$ ហៅថា <b>ចំណុច</b> ហើយគេកំណត់សរសេរដោយអក្សរធំ $A,B, C,\ldots $។</li>
             <li>ធាតុរបស់លំហ $\vect{\E}$ ហៅថា <b> វ៉ិចទ័រ</b> ហើយកំណត់សរសេរដោយអក្សរតូច មានសញ្ញាព្រួញនៅខាងលើ គឺ $\vec{i}, \vec{j}, \vec{k}, \vec{u}, \vec{v}, \cdots $។ ក្នុងករណីខ្លះទៀត គេសន្មតសរសេរវ៉ិចទ័រដោយមិនមានសញ្ញាព្រួញទេ!</li>
-            <li>ជួនកាល គេតាងលំហអាហ្វីនដោយ $(\mathcal E, \vect{\E}, +)$ ហើយដើម្បីសម្រួលដល់ការយល់និយមន័យខាងលើ គេកំណត់បម្រែបម្រួលនិយមន័យផ្សេងមួយទៀត ដូចខាងក្រោម៖ <br>
+            <li>ជួនកាល គេតាងលំហអាហ្វីនដោយ $(\mathcal E, \vect{\E}, +)$ ហើយដើម្បីសម្រួលដល់ការយល់និយមន័យខាងលើ គេកំណត់បម្រែបម្រួលនិយមន័យរបស់វា ដូចខាងក្រោម៖ <br>
                 <!-- An affine space is a space where translation is defined, formally an affine space is a set $\mathcal E$ (of points) that admits a free transitive action of a vector space $\vect{E}$ (of translations) whose action results in an element of the set $\mathcal E$, that is there's a map -->
-    
-           
-              <div class="box-note">
-        <!--div class="box-legend editable"><span class="lt-icon-default">()</span>
-        </div-->
-       <p class="parindent">
-        គេហៅ $(\mathcal E, \vect{\E}, +)$ ជាលំហអាហ្វីន បើមានអនុវត្តន៍ : <!--is an affine space if there is a map-->
+                $(\mathcal E, \vect{\E}, +)$ is an affine space if there is a map
                 \[
                 \begin{array}{rcl}
-                + :\; \mathcal E \times \vect{\E} &\longrightarrow & \mathcal E\\
-                (A, \vec v) &\longmapsto & A +\vec{v}
+                + :\; \mathcal E \times \vect{E} &\longrightarrow & \mathcal E\\
+                (A, \mathbf{v}) &\longmapsto & A +\mathbf{v}
                 \end{array}
                 \]
-                ដែលផ្ទៀងផ្ទាត់៖
+                such that
                 <ol class="parenthroman">
-                    <li><b>The zero vector acts as an identity:</b> for all $A \in \mathcal E, A +\vec{0}= A$</li>
-                    <li><b>Addition of vectors correspond to translations:</b>  for all $A \in \mathcal E$ and $\vec{u}, \vec{v} \in \vect{\E}, A +(\vec{u}+\vec{v})=(A+\vec{u})+\vec{v}$</li>
-                    <li>For any $A, B \in \mathcal E$, there's a unique free vector $\vec{u} \in \vect{\E}$ such that $A+\vec{u}=B$</li>
+                    <li>The zero vector acts as an identity i.e. for all $a \in E, A +\mathbf{0}= A$</li>
+                    <li>Addition of vectors correspond to translations i.e. for all $A \in \mathcal E$ and $\mathbf{u}, \mathbf{v} \in \vect{E}, A +(\mathbf{u}+\mathbf{v})=(A+\mathbf{u})+\mathbf{v}$</li>
+                    <li>For any $A, B \in \mathcal E$ there's a unique free vector $\mathbf{u} \in \vect{E}$ such that $A+\mathbf{u}=B$</li>
                 </ol>
-    </p>
-
-    </div>
             </li>
         </ul>
-        </p>
+        </p><br>
+
+        <defn>
+            <div class="definition"> </div>
+            <div class="definitionb">
+                <p>
+                    លំហអាហ្វីន $\mathcal{E}$ ជាលំហមានវិមាត្ររាប់អស់ បើលំហវ៉ិចទ័រ $\vect{\E}$ ជាលំហមានវិមាត្ររាប់អស់។ ក្នុងករណីនេះ វិមាត្ររបស់ $\mathcal{E}$ ស្មើនឹងវិមាត្ររបស់លំហទិសដៅ។ </p>
+            </div>
+        </defn>
 
 
+        <!--<defn>
+            <div class="definition"> </div>
+            <div class="definitionb">
 
-        <p style="text-indent: 0px"><b>ចំណាំ: </b> នៅក្នុងបរិបទខ្លះ ធាតុរបស់លំហវ៉ិចទ័រកំណត់លើកាយ $\mathbb{R}$ ត្រូវបានចាត់ទុកថាជា <a href="">ចំណុច</a> ឬជា <a href="">វ៉ិចទ័រ</a> ក៏បាន។
-        </p>
-  
+            </div>
+        </defn> -->
+
+
         <example>
             ពិនិត្យមើលឧទាហរណ៍ខាងក្រោម៖
             <ol class="parenthnum oneem">
@@ -676,16 +454,18 @@
             </ol>
         </example>
 
+        <p style="text-indent: 0px"><b>ចំណាំ: </b> នៅក្នុងបរិបទខ្លះ ធាតុរបស់លំហវ៉ិចទ័រកំណត់លើកាយ $\mathbb{R}$ ត្រូវបានចាត់ទុកថាជា <b>ចំណុច </b> ឬក៏ជា <b>វ៉ិចទ័រ</b>។
+        </p>
 
         <example>
             <p>ពិនិត្យសំណុំរង $\mathcal L$ របស់ $\mathbb R^2$ ដែលជាសំណុំចំណុចកំណត់ដោយ </p>
-            $$\mathcal L=\bigl\{(x,y)\in \mathbb R^2\mid -x+y-2=0\bigr\}$$
+            $$\mathcal L=\{(x,y)\in \mathbb R^2\mid -x+y-2=0\}$$
             <img class="center" alt="" src="./fig/aff_line1.png" width="330">
             <p>
-                We can see that any point of the form $(x, y)=(x, 2+x)$, the line can be made into an affine space by defining $+: \mathcal L \times \mathbb R\rightarrow \mathcal L$, so that for any $u \in \mathbb R$ and any $P\in \mathcal L$:
+                We can see that any point of the form $(x, y)=(x, 2+x)$, the line can be made into an affine space by defining $+: \mathcal L \times V \rightarrow \mathcal L$ (note that $V$ is a vector space) so that for any $u \in V$ and any $P\in \mathcal L$:
                 \[
                 \begin{array}{rcl}
-                + :\; \mathcal L\times \mathbb R &\longrightarrow & \mathcal L\\
+                + :\; \mathcal L\times V &\longrightarrow & \mathcal L\\
                 \bigl(P, u\bigr) &\longmapsto & (x, 2+x)+u = (x+u, 2+x+u)
                 \end{array}
                 \]
@@ -766,8 +546,8 @@
         </div -->
         
         
-        <p align="right"><a class="toggle bground" id="idClick" href="#proof" onclick="showhideFunction()">[Show proof]</a></p>
-        <div class="hidepanel" id="proof" style="color:#1860C1">
+        <p align="right"><a class="toggle bground" id="idClick1" href="#proof1" onclick="showhideFunction()">[Show proof]</a></p>
+        <div class="hidepanel" id="proof1" style="color:#1860C1">
             <div><b><span class="headproof">សម្រាយបញ្ជាក់.</span> </b> </div>
     
         
@@ -811,15 +591,6 @@ $$
       
 <example>
 <p>
-        ចំពោះគ្រប់ចំណុច $A\in \mathcal{E}$ សំណុំដែលមានតែមួយធាតុ $\{A\}$ គឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$។ វាគឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$ ដែលកាត់តាមចំណុច $A$ និងតាមទិសដៅ $\vect\F=\{\vect 0\}$។ 
-    </p>
-    
-</example>   
-      
-
- 
-<example>
-<p>
 <ol class="romanlist two">
     <li>
         ចំពោះគ្រប់ចំណុច $A\in \mathcal{E}$ សំណុំដែលមានតែមួយធាតុ $\{A\}$ គឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$។ វាគឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$ ដែលកាត់តាមចំណុច $A$ និងតាមទិសដៅ $\vect\F=\{\vect 0\}$។
@@ -831,74 +602,23 @@ $$
 $$
 \mathcal{F} = \vec a + \vect\F
 $$
-ដូច្នេះ គ្រប់លំហវ៉ិចទ័ររងរបស់ $\vect{\E}$ អាចចាត់ទុកដូចជាលំហអាហ្វីនរងរបស់ $\vect{\E}$ ដែរ។ <a href="">តែករណីច្រាសមកវិញ មិនពិតជាទូទៅនោះទេ។</a> <br>
+ដូច្នេះ គ្រប់លំហវ៉ិចទ័ររងរបស់ $\vect{\E}$ អាចចាត់ទុកដូចជាលំហអាហ្វីនរងរបស់ $\vect{\E}$ ដែរ។ {\color{Green} តែករណីច្រាសមកវិញ មិនពិតជាទូទៅនោះទេ។}
+%
 
-
-ជាការពិត បើយក $\mathcal{F}$ ជាលំហអាហ្វីនរងរបស់ $\vect{\E}$ នោះតាមនិយមន័យ គេមានចំណុចមួយ $a\in \mathcal{F}$ និងលំហវ៉ិចទ័ររងមួយរបស់ $\vect{\E}$ (គឺ $\vect\F \subseteq \vect\E$) ដែល
+ជាការពិត បើយក $\mathcal{F}$ ជាលំហអាហ្វីនរងរបស់ $\vect{\E}$ នោះតាមនិយមន័យ គេមានចំណុចមួយ $a\in \mathcal{F}$ និងលំហវ៉ិចទ័ររងមួយរបស់ $\vect{\E}$ គឺ $\vect\F \subseteq \vect\E$ ដែល
 \begin{eqnarray*}
 \forall\;  x\in \vect\E,\  x\in \mathcal{F}&\Longleftrightarrow &  x - a\in \vect\F\\ &\Longleftrightarrow & x\in (a + \vect\F)
 \end{eqnarray*}
-ដូច្នេះ $\mathcal{F} = a + \vect\F$ 
+ដូច្នេះ $\mathcal{F} = a + \vect\F$។
     </li>
 </ol>
    
     </p>
     
 </example>   
-     
- 
-<example>
-<p>
-
-យក $\mathcal{F}$ គឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$ ដែលកាត់តាមចំណុច $A$ និងតាមទិសដៅ $\vect\F$។
-
-
-<ol class="romanlist two">
-    <li>
-    បើ $\dim\big(\vect\F\big)=1$ ដែល  $\vect\F = \text{\bf Vect}(\vec{u})$
-    
-  <!--  \footnote{គេតាង ${\bf Vect}(\vect{ e_1}, \ldots ,\vect{e_n})$ ជាសំណុំនៃបន្សំលីនេអ៊ែររបស់ប្រព័ន្ធវ៉ិចទ័រ $\{\vect{e_1}, \ldots ,\vect{e_n}\}$ ដែល 
-    
-    $${\bf Vect}\left(\vect{e_1}, \ldots, \vect{e_n}\right) = \big\{\lambda_1\vect{e_1}+ \cdots + \lambda_n\vect{e_n}: \lambda_1,\ldots, \lambda_n \in \bbR\big\}$$ 
-    
-    ឬហៅថា លំហរងបង្កដោយ $\big\{\vect{ e_1}, \ldots ,\vect{e_n}\big\}$។ } -->
-    
-    គេបាន $\mathcal{F}$ គឺជា <b>បន្ទាត់អាហ្វីន</b> របស់លំហ $\mathcal{E}$ ដែលកាត់តាមចំណុច $A$ និងតាមទិសដៅវ៉ិចទ័រ $\vec{u}$ ។ គេតាងវាដោយ $\calD\big(A,\vec{u}\big)$។ ដូច្នេះ ចំពោះគ្រប់ $M\in \mathcal{F}$ គេបាន
-\begin{eqnarray*}
-M\in \calD\bigl(A,\vec{u}\bigr)  &\Longleftrightarrow & \Big\{\vect{AM},\vec{u}\Big\} {\text{ l.d }}\\
-&\Longleftrightarrow &  \exists \alpha\in \mathbb{R}:\ \vect{AM}=\alpha\vec{u}
-\end{eqnarray*}
-    </li>
-    
-    <li>
-        បើ $\dim\big(\vect\F\big)=2$ ដែល $\vect\F = \text{\bf Vect}\left(\vec{u}, \vec{v}\right)$ នោះគេថា $\mathcal{F}$ គឺជា <b>ប្លង់អាហ្វីន</b> ដែលកាត់តាមចំណុច $A$ និងតាមវ៉ិចទ័រប្រាប់ទិសដៅ $\vec{u}$ និង $\vec{v}$ ។ គេតាងវាដោយ $\calP\left(A,\vec{u},\vec{v}\right)$។ ដូច្នេះ ចំពោះ $M\in \mathcal{F} $ គេបាន
-\begin{eqnarray*}
-M\in \calP\left(A,\vec{u}, \vec{v}\right) &\Longleftrightarrow & \bigl\{\vect{AM},\vec{u},\vec{v}\bigr\} {\text{ l.d }}\\
-&\Longleftrightarrow & \exists(\alpha,\beta) \in \mathbb{R}^{2}:\ \vect{AM}= \alpha\vec{u} + \beta\vec{v}
-\end{eqnarray*}
-        
-    </li>
-    
-    <li>
-        បើលំហវ៉ិចទ័ររង $\vect\F$ គឺជាអ៊ីពែរប្លង់ (hyperplan) របស់ $\vect{\E}$ នោះគេថា $\mathcal{F}$ គឺជា <b>អ៊ីពែរប្លង់អាហ្វីន</b> មួយរបស់ $\mathcal{E}$ ។<br>
-
-<!--%Comme F est un hyperplan de E, alors il existe une forme linéaire non nulle de E, telle que pour $\vect u \in \vect\E$, on a-->
-ដោយ $\vect\F$ គឺជាអ៊ីពែរប្លង់មួយរបស់ $\vect{\E}$ នោះគេរកបានទម្រង់លីនេអ៊ែរមួយ មិនទទេ $\varphi$ កំណត់លើ $\vect\E$ ដែលគ្រប់ $\vec u \in \vect\E$ គេបាន ៖
-\[
-	\vec u \in \vect\F \Longleftrightarrow \varphi\bigl(\vec u\bigr) = 0
-\]
-<!--%Ainsi, l’hyperplan affine F sera aussi défini par-->
-ដូច្នេះ អ៊ីពែរប្លង់អាហ្វីន $\calF$ នឹងកំណត់ដោយ គ្រប់ $M\in\calE$ គេបាន ៖
-\[\fcolorbox{red}{white}{\quad \color{Green}$
-	M \in \calF \Longleftrightarrow \varphi\biggl(\vect{AM}\biggr) = 0$ \quad}
-\]
-\end{enumerate}
-    </li>
-</ol>
-   
-    </p>
-    
-</example>   
+      
+      
+      
       
       
       
