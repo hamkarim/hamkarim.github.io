@@ -248,15 +248,19 @@
                     </p>
                 </div>
             </a>
-            <p>
+            <p style="font-size: 13px">
             Set theory is the branch of mathematical logic that studies sets, which can be informally described as collections of objects. Although objects of any kind can be collected into a set, set theory, as a branch of mathematics, is mostly concerned with those that are relevant to mathematics as a whole.
 
 
             </p>
             
-            <p>
+            <p style="font-size: 13px">
                 The modern study of set theory was initiated by the German mathematicians Richard Dedekind and Georg Cantor in the 1870s. In particular, Georg Cantor is commonly considered the founder of set theory. The non-formalized systems investigated during this early stage go under the name of naive set theory. After the discovery of paradoxes within naive set theory (such as Russell's paradox, Cantor's paradox and Burali-Forti paradox) various axiomatic systems were proposed in the early twentieth century, of which Zermelo–Fraenkel set theory (with or without the axiom of choice) is still the best-known and most studied.
             </p>
+            
+            <p style="font-size: 13px">Mathematical topics typically emerge and evolve through interactions among many researchers. Set theory, however, was founded by a single paper in 1874 by Georg Cantor: "On a Property of the Collection of All Real Algebraic Numbers". 
+
+Since the 5th century BC, beginning with Greek mathematician Zeno of Elea in the West and early Indian mathematicians in the East, mathematicians had struggled with the concept of infinity. Especially notable is the work of Bernard Bolzano in the first half of the 19th century. Modern understanding of infinity began in 1870–1874, and was motivated by Cantor's work in real analysis. An 1872 meeting between Cantor and Richard Dedekind influenced Cantor's thinking, and culminated in Cantor's 1874 paper.</p>
        
         </blockquote>
 
@@ -285,6 +289,53 @@
 
 
         </p>
+        
+        <h2 class="frame-sect sectcounter">&nbsp;  Basic Concepts </h2>
+       
+       <p>
+           A set is a collection of elements. A set is defined entirely by the elements that it contains. An element can be anything, including another set. You will notice that this is not a precise mathematical definition. Instead, it is an intuitive description of what the word ‘set’ is supposed to mean: any time you have a bunch of entities and you consider them as a unit, you have a set. Mathematically, sets are really defined by the operations that can be performed on them. These operations model things that can be done with collections of objects in the real world. These operations are the subject of the branch of mathematics known as set theory.</p>
+           
+           <p>
+
+The most basic operation in set theory is forming a set from a given list of specific entities. The set that is formed in this way is denoted by enclosing the list of entities between a left brace, ‘$\big\{$’, and a right brace, ‘$\big\}$’. The entities in the list are separated by commas. For example, the set denoted by
+
+$$\big\{ 17,  \pi , \text{ Phnom Penh City}, \text{ King Willem-Alexander }, \text{ Euromast} \}$$
+
+is the set that contains the entities $17,  \pi$ , Phnom Penh City, King Willem-Alexander, and Euromast. These entities are the elements of the set. Since we assume that a set is completely defined by the elements that it contains, the set is well-defined. Of course, we still haven’t said what it means to be an ‘<b>entity</b>’. Something as definite as ‘Phnom Penh City’ should qualify, except that it doesn’t seem like Phnom Penh City really belongs in the world of mathematics. The problem is that mathematics is supposed to be its own self-contained world, but it is supposed to model the real world. When we use mathematics to model the real world, we admit entities such as Phnom Penh City and even Euromast. But when we are doing mathematics per se, we’ll generally stick to obviously mathematical entities such as the integer $17$ or the real number  $\pi$ . We will also use letters such as a and b to refer to entities. For example, when saying something like “Let $A$ be the set $\{a, b, c\}$”, it means $a, b$, and $c$ to be particular, but unspecified, entities.
+           
+       </p>
+       
+       
+       
+  
+   <div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default"> Note: 
+</span>
+</div>
+
+<p class="">
+<uo class="twoem">
+    
+    <li>
+        It’s important to understand that a set is defined by the elements that it contains, and not by the order in which those elements might be listed. 
+    </li>
+    
+    <li>
+        A set can only contain one copy of a given element, even if the notation that specifies the set lists the element twice. Note in particular that it’s incorrect to say that the set $\{a, b, a, a, b, c, a\}$ contains seven elements, since some of the elements in the list are identical. 
+    </li>
+    
+    <li>
+        The notation $\{a, b, c\}$ can lead to some confusion, since it might not be clear whether the letters $a, b$, and $c$ are assumed to refer to three different entities. So, a mathematician generally makes assumption that the set denoted by $\{a, b, c\}$ meaning that different letters refer to different entities.
+    </li>
+</uo>
+
+</p>
+
+</div>
+   
+   
+        
+        
         <h2 class="frame-sect sectcounter">&nbsp; ប្រមាណវិធីលើសំណុំ </h2> 
 
         <defn>
@@ -367,7 +418,33 @@ Use the roster method to specify each of the following subsets of \(U\).
         </example>
         
         
+
+<example>
+    
+    Let $L(x)$ be the predicate ‘$x$ is lucky’, and let $W(x)$ be the predicate ‘$x$ is wise’, where the domain of discourse for each predicate is the set of people. We define the sets $X$ and $Y$ as follows: 
+    $$X = \bigl\{x|\, L(x)\bigr\}, \qquad Y = \bigl\{x|\, W(x)\bigr\}$$ Then
+
+<ol class="romanlist oneem">
+    <li>
+        $X \cup Y = \big\{x |\, L(x) \lor W(x)\big\} = \big\{$people who are lucky or wise$\big\}$
+    </li>
+    
+    <li>
+        $X \cap Y = \big\{x |\, L(x) \land W(x)\big\} = \big\{$people who are lucky and wise$\big\}$
+    </li>
+    <li>
+        $X \setminus Y = \big\{x |\, L(x) \land \lnot W(x)\big\} = \big\{$people who are lucky but not wise$\big\}$
+    </li>
+    <li>
         
+$Y \setminus X = \bigl\{x |\, W(x) \land \lnot L(x)\bigr\} = \big\{$people who are wise but not lucky$\big\}$
+    </li>
+</ol>
+    
+</example>
+  
+  
+  
    <div class="box-note">
   <div class="box-legend editable"><span class="lt-icon-default"> Preview Activity: Venn Diagrams for Two Sets
 </span>
@@ -402,8 +479,26 @@ Let \(A\) and \(B\) be subsets of a universal set \(U\). For each of the followi
         
         
 
-        <p style="text-indent: 0px"><b>កំណត់សម្គាល់ :</b>
-       
+        <p style="text-indent: 0px"><b>កំណត់ចំណាំ :</b> សូមចងចាំនិម្មិតសញ្ញាមួយចំនួន ដែលប្រើក្នុងទ្រឹស្ដីសំណុំ៖
+        
+\[        
+        \begin{array}{c|l}
+\hline \text { Notation } & \text { Meaning } \\
+\hline a \in A & a \text { is a member (or element) of } A \\
+a \notin A & \neg(a \in A), a \text { is not a member of } A \\
+\varnothing & \text { the empty set, which contains no elements } \\
+A \subseteq B & A \text { is a subset of } B, \bigl\{\forall x:\; x \in A \rightarrow x \in B) \bigr\}\\
+A \varsubsetneqq B & A \text { is a proper subset of } B, A \subseteq B \wedge A \neq B \\
+A \supseteq B & A \text { is a superset of } B, \text { same as } B \subseteq A \\
+A \supseteq B & A \text { is a proper superset of } B, \text { same as } B \varsubsetneqq A \\
+A=B & A \text { and } B \text { have the same members, } A \subseteq B \wedge B \subseteq A \\
+A \cup B & \text { union of } A \text { and } B,\{x \mid x \in A \vee x \in B\} \\
+A \cap B & \text { intersection of } A \text { and } B,\{x \mid x \in A \wedge x \in B\} \\
+A \backslash B & \text { set difference of } A \text { and } B,\{x \mid x \in A \wedge x \notin B\} \\
+\mathcal{P}(A) & \text { power set of } A,\{X \mid X \subseteq A\} \\
+\hline
+\end{array}
+\]       
         </p><br>
 
         <defn>
