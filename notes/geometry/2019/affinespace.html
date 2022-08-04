@@ -397,7 +397,7 @@
     <!-- For local function, define to exchange text -->
     <script>
         function showhideFunction() {
-            document.getElementById('idClick').innerHTML =   '[Hide proof]' ? document.getElementById('idClick').innerHTML = '[Show proof]' : document.getElementById('idClick').innerHTML = '[Hide proof]';
+            document.getElementById('idClick').innerHTML === '[Hide proof]' ? document.getElementById('idClick').innerHTML = '[Show proof]' : document.getElementById('idClick').innerHTML = '[Hide proof]';
         }
     </script>
 
@@ -625,39 +625,48 @@
             </div>
         </defn>
 
+                  
+                  <a>
+                  <div style="float: right; width: 35%;padding-top: 30px">
+                      <p style="font-size: 11px"> 
+                         <img alt="View of Affine Space" src="fig/aff_def1.png">
+                          <img alt="View of Affine Space" src="fig/aff_def2.png">
+                      </p>
+                      
+                      </div></a>
+                  <p style="text-indent: 0px"><b>កំណត់សម្គាល់ :</b>
+                  <ul>
+                      <li>បើ $\mathcal{E}$ ជាលំហអាហ្វីន តាមទិសដៅ $\vect{\E}$ នោះធាតុរបស់ $\mathcal{E}$ ហៅថា <b>ចំណុច</b> ហើយគេកំណត់សរសេរដោយអក្សរធំ $A,B, C,\ldots $។</li>
+                      <li>ធាតុរបស់លំហ $\vect{\E}$ ហៅថា <b> វ៉ិចទ័រ</b> ហើយកំណត់សរសេរដោយអក្សរតូច មានសញ្ញាព្រួញនៅខាងលើ គឺ $\vec{i}, \vec{j}, \vec{k}, \vec{u}, \vec{v}, \cdots $។ ក្នុងករណីខ្លះទៀត គេសន្មតសរសេរវ៉ិចទ័រដោយមិនមានសញ្ញាព្រួញទេ!</li>
+                      <li>ជួនកាល គេតាងលំហអាហ្វីនដោយ $(\mathcal E, \vect{\E}, +)$ ហើយដើម្បីសម្រួលដល់ការយល់និយមន័យខាងលើ គេកំណត់បម្រែបម្រួលនិយមន័យផ្សេងមួយទៀត ដូចខាងក្រោម៖ <br>
+                          <!-- An affine space is a space where translation is defined, formally an affine space is a set $\mathcal E$ (of points) that admits a free transitive action of a vector space $\vect{E}$ (of translations) whose action results in an element of the set $\mathcal E$, that is there's a map -->
 
-        <p style="text-indent: 0px"><b>កំណត់សម្គាល់ :</b>
-        <ul>
-            <li>បើ $\mathcal{E}$ ជាលំហអាហ្វីន តាមទិសដៅ $\vect{\E}$ នោះធាតុរបស់ $\mathcal{E}$ ហៅថា <b>ចំណុច</b> ហើយគេកំណត់សរសេរដោយអក្សរធំ $A,B, C,\ldots $។</li>
-            <li>ធាតុរបស់លំហ $\vect{\E}$ ហៅថា <b> វ៉ិចទ័រ</b> ហើយកំណត់សរសេរដោយអក្សរតូច មានសញ្ញាព្រួញនៅខាងលើ គឺ $\vec{i}, \vec{j}, \vec{k}, \vec{u}, \vec{v}, \cdots $។ ក្នុងករណីខ្លះទៀត គេសន្មតសរសេរវ៉ិចទ័រដោយមិនមានសញ្ញាព្រួញទេ!</li>
-            <li>ជួនកាល គេតាងលំហអាហ្វីនដោយ $(\mathcal E, \vect{\E}, +)$ ហើយដើម្បីសម្រួលដល់ការយល់និយមន័យខាងលើ គេកំណត់បម្រែបម្រួលនិយមន័យផ្សេងមួយទៀត ដូចខាងក្រោម៖ <br>
-                <!-- An affine space is a space where translation is defined, formally an affine space is a set $\mathcal E$ (of points) that admits a free transitive action of a vector space $\vect{E}$ (of translations) whose action results in an element of the set $\mathcal E$, that is there's a map -->
-    
-           
-              <div class="box-note">
-        <!--div class="box-legend editable"><span class="lt-icon-default">()</span>
+
+                      </li>
+                  </ul>
+                  </p>
+
+                          <div class="box-note">
+                              <!--div class="box-legend editable"><span class="lt-icon-default">()</span>
         </div-->
-       <p class="parindent">
-        គេហៅ $(\mathcal E, \vect{\E}, +)$ ជាលំហអាហ្វីន បើមានអនុវត្តន៍ : <!--is an affine space if there is a map-->
-                \[
-                \begin{array}{rcl}
-                + :\; \mathcal E \times \vect{\E} &\longrightarrow & \mathcal E\\
-                (A, \vec v) &\longmapsto & A +\vec{v}
-                \end{array}
-                \]
-                ដែលផ្ទៀងផ្ទាត់៖
-                <ol class="parenthroman">
-                    <li><b>The zero vector acts as an identity:</b> for all $A \in \mathcal E, A +\vec{0}= A$</li>
-                    <li><b>Addition of vectors correspond to translations:</b>  for all $A \in \mathcal E$ and $\vec{u}, \vec{v} \in \vect{\E}, A +(\vec{u}+\vec{v})=(A+\vec{u})+\vec{v}$</li>
-                    <li>For any $A, B \in \mathcal E$, there's a unique free vector $\vec{u} \in \vect{\E}$ such that $A+\vec{u}=B$</li>
-                </ol>
-    </p>
+                              <p class="parindent">
+                                  គេហៅ $(\mathcal E, \vect{\E}, +)$ ជាលំហអាហ្វីន បើមានអនុវត្តន៍ :
+                                  <!--is an affine space if there is a map-->
+                                  \[
+                                  \begin{array}{rcl}
+                                  + :\; \mathcal E \times \vect{\E} &\longrightarrow & \mathcal E\\
+                                  (A, \vec v) &\longmapsto & A +\vec{v}
+                                  \end{array}
+                                  \]
+                                  ដែលផ្ទៀងផ្ទាត់៖
+                              <ol class="parenthroman">
+                                  <li><b>The zero vector acts as an identity:</b> for all $A \in \mathcal E, A +\vec{0}= A$</li>
+                                  <li><b>Addition of vectors correspond to translations:</b> for all $A \in \mathcal E$ and $\vec{u}, \vec{v} \in \vect{\E}, A +(\vec{u}+\vec{v})=(A+\vec{u})+\vec{v}$</li>
+                                  <li>For any $A, B \in \mathcal E$, there's a unique free vector $\vec{u} \in \vect{\E}$ such that $A+\vec{u}=B$</li>
+                              </ol>
+                              </p>
 
-    </div>
-            </li>
-        </ul>
-        </p>
-
+                          </div>
 
 
         <p style="text-indent: 0px"><b>ចំណាំ: </b> នៅក្នុងបរិបទខ្លះ ធាតុរបស់លំហវ៉ិចទ័រកំណត់លើកាយ $\mathbb{R}$ ត្រូវបានចាត់ទុកថាជា <a href="">ចំណុច</a> ឬជា <a href="">វ៉ិចទ័រ</a> ក៏បាន។
@@ -715,8 +724,8 @@
 
         </p>
 
-        <p align="right"><a class="toggle bground" id="getID" href="#proof1" onclick="showhideFunction()">[Show proof]</a></p>
-        <div class="hidepanel" id="proof1" style="color:#1860C1">
+        <p align="right"><a class="toggle bground" id="onClick" href="#proof" onclick="showhideFunction(proof)">[Show proof]</a></p>
+        <div class="hidepanel" id="proof" style="color:#1860C1">
             <div><b><span class="headproof">សម្រាយបញ្ជាក់.</span> </b> </div>
             
             <div class="blockproof ">
@@ -771,7 +780,7 @@
         </div -->
         
         
-        <p align="right"><a class="toggle bground" id="idClick" href="#proof2" onclick="showhideFunction()">[Show proof]</a></p>
+        <p align="right"><a class="toggle bground" id="idGet1" href="#proof2" onclick="showhideFunction()">[Show proof]</a></p>
         <div class="hidepanel" id="proof2" style="color:#1860C1">
             <div><b><span class="headproof">សម្រាយបញ្ជាក់.</span> </b> </div>
     
@@ -787,7 +796,7 @@
                 \end{eqnarray*}
 
                 បង្ហាញថា (i) $\Leftrightarrow$ (iii)
-                %
+                
                 \begin{eqnarray*}
                 \vect{AB} = \vect{CD} &\Longleftrightarrow & \vect{AB}=\vect{AD} - \vect{AC}\\
                 &\Longleftrightarrow & \vect{AB}+\vect{AC} = \vect{AD}
@@ -808,11 +817,21 @@
 $$
 \forall M \in \mathcal{E},\ M\in \mathcal{F} \Longleftrightarrow \vect{AM} \in \vect\F
 $$
-ក្នុងករណីនេះ គេហៅ $\mathcal{F}$ គឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$ ដែលកាត់តាមចំណុច $A$ និងតាមទិសដៅនៃលំហវ៉ិចទ័ររង $\vect\F$។
+ក្នុងករណីនេះ គេហៅ <a href="#No" style="color: red">$\mathcal{F}$ គឺជាលំហអាហ្វីនរង ដែលកាត់តាមចំណុច $A$ និងតាមទិសដៅ $\vect\F$</a> ។
                     
                     </p>
             </div>
         </defn>    
+        
+<p>
+    <b>REMARK: </b> It is said that a subset $\mathcal F$ of $\mathcal E$ is an <a href="#affinesubspace">affine subspace</a> if $\mathcal F=\varnothing$ or $\mathcal F\ni A $ (a fixed point $A$) such that $\varphi_A\big(\mathcal F\big) = \vect\F$ is a <a href="#vectorsubspace">vector subspace</a> of $\vect\E$. It is easily proved that this vector subspace does not depend on the choice of the point $A$. <br>
+    
+    More precisely: If $\mathcal{F}$ is an affine subspace through $A$ directed by $\vect\F$, then 
+    $$\varphi_{A}(\mathcal{F})=\vect\F \qquad\text{ and }\qquad 
+\mathcal{F}=\bigl\{M \in \mathcal{E} \mid\, \overrightarrow{A M} \in \vect\F\bigr\} 
+$$
+
+</p>
       
 <example>
 <p>
@@ -906,10 +925,106 @@ M\in \calP\left(A,\vec{u}, \vec{v}\right) &\Longleftrightarrow & \bigl\{\vect{AM
       
       
       
+<h3>ប្រសព្វនៃពីរលំហអាហ្វីនរង</h3>
       
-      
-      
-      
+  <div class="box-definition">
+        <div class="box-legend editable"><span class="lt-icon-default">Proposition  1: (ប្រសព្វនៃពីរលំហអាហ្វីនរង)</span>
+        </div>
+
+        <p class="">
+យក $\mathcal{E}$ ជាលំហអាហ្វីន តាមទិសដៅ $\vect{\E}$។ កំណត់ $\mathcal{F}$ និង $\mathcal{G}$ ជាលំហអាហ្វីនរងពីររបស់ $\mathcal{E}$ តាមទិសដៅផ្សេងគ្នា $\vect\F$ និង $\vect\G$។ ដូច្នេះ ប្រសព្វរវាងលំហ $\mathcal{F}$ និង $\mathcal{G}$  (បើសិនជាមិនទទេ) គឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$ តាមទិសដៅ $\vect\F\cap \vect\G$។
+      </p>
+</div>
+
+    <p align="right"><a class="toggle bground" id="idGet2" href="#proof3" onclick="showhideFunction()">[Show proof]</a></p>
+        <div class="hidepanel" id="proof3" style="color:#1860C1">
+            <div><b><!--span class="headproof">សម្រាយបញ្ជាក់.</span--> </b> </div>
+    
+        
+        
+        <div class="blockproof">
+           <p>
+<b>Proof: </b>
+ឧបមាថា $\mathcal{F}\cap \mathcal{G}\neq\varnothing$ និងយក $A\in \mathcal{F}\cap \mathcal{G}$។ គេបាន
+\begin{eqnarray*}
+M\in \mathcal{F}\cap \mathcal{G} &\Longleftrightarrow & M \in \mathcal{F}\ \text{ and }\ M\in\mathcal{G}\\
+&\Longleftrightarrow & \vect{AM}\in \vect\F \ \text{ and }\ \vect{AM}\in \vect\G\\
+&\Longleftrightarrow & \vect{AM} \in {\vect\F} \cap {\vect\G}
+\end{eqnarray*}
+
+ដូច្នេះ $\mathcal{F}\cap \mathcal{G}$ គឺជាលំហអាហ្វីនរង តាមទិសដៅ $\vect\F\cap \vect\G$។
+</p>
+        </div>
+</div>
+<br>
+
+
+
+<example>
+        យក $\mathcal{E}$ ជាលំហអាហ្វីនមានវិមាត្រ $3$ និងតាមទិសដៅនៃវ៉ិចទ័រ $\vect{\E}$។
+   <ol class="twoem">
+       <li>
+      បើ $\mathcal{D}$ និង $\mathcal{D}'$ ជាបន្ទាត់អាហ្វីនពីររបស់ $\mathcal{E}$ នោះគេបានលក្ខខណ្ឌមួយក្នុងចំណោមលក្ខខណ្ឌខាងក្រោមផ្ទៀងផ្ទាត់៖
+<ul class="threeem">
+    <li> $\mathcal{D}\cap \mathcal{D}'=\varnothing$
+	
+    </li>
+    <li>
+        $\mathcal{D}\cap \mathcal{D}'$ បង្រួមមកនៅមួយចំណុចរបស់ $\mathcal{E}$ %{\it est réduite à un seul point}.
+
+    </li>
+    <li>
+        	$\mathcal{D}=\mathcal{D}'$
+
+    </li>
+</ul> 
+	
+       </li>
+       
+       <li>
+           បើ  $\mathcal{P}$ និង $\mathcal{P}'$ ជាប្លង់អាហ្វីនពីររបស់ $\mathcal{E}$ នោះគេបានលក្ខខណ្ឌមួយក្នុងចំណោមលក្ខខណ្ឌខាងក្រោមផ្ទៀងផ្ទាត់៖
+    <ul class="threeem">
+        <li>
+            $\mathcal{P}\cap \mathcal{P}'=\varnothing$
+        </li>
+        <li>
+             $\mathcal{P}\cap \mathcal{P}'$ បង្រួមមកនៅបន្ទាត់អាហ្វីនមួយ 
+        </li>
+        <li>
+            $\mathcal{P}=\mathcal{P}'$
+        </li>
+    </ul>
+       </li>
+       
+       <li>
+           បើ $\mathcal{D}$ ជាបន្ទាត់អាហ្វីនមួយលើ $\mathcal{E}$ និង $\mathcal{P}$ ជាប្លង់អាហ្វីនមួយលើ $\mathcal{E}$ នោះគេបានលក្ខខណ្ឌមួយក្នុងចំណោមលក្ខខណ្ឌខាងក្រោមផ្ទៀងផ្ទាត់៖
+           
+           <ul class="threeem">
+               <li>
+                   	$\mathcal{D}\cap \mathcal{P} = \varnothing$
+               </li>
+               <li>
+                    $\mathcal{D}\cap \mathcal{P}$ បង្រួមមកនៅចំណុចមួយរបស់ $\mathcal{E}$ 
+               </li>
+               <li>
+                    $\mathcal{D} \subseteq \mathcal{P}$
+
+               </li>
+           </ul>
+
+
+	
+	
+
+       </li>
+   </ol>
+   
+   
+    
+</example>
+
+
+
       
       
       
