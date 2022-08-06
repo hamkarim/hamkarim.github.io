@@ -636,6 +636,7 @@
                       </div></a>
                   <p style="text-indent: 0px"><b>កំណត់សម្គាល់ :</b>
                   <ul>
+                     <li>An affine space is basically a vector space without an origin.</li>
                       <li>បើ $\mathcal{E}$ ជាលំហអាហ្វីន តាមទិសដៅ $\vect{\E}$ នោះធាតុរបស់ $\mathcal{E}$ ហៅថា <b>ចំណុច</b> ហើយគេកំណត់សរសេរដោយអក្សរធំ $A,B, C,\ldots $។</li>
                       <li>ធាតុរបស់លំហ $\vect{\E}$ ហៅថា <b> វ៉ិចទ័រ</b> ហើយកំណត់សរសេរដោយអក្សរតូច មានសញ្ញាព្រួញនៅខាងលើ គឺ $\vec{i}, \vec{j}, \vec{k}, \vec{u}, \vec{v}, \cdots $។ ក្នុងករណីខ្លះទៀត គេសន្មតសរសេរវ៉ិចទ័រដោយមិនមានសញ្ញាព្រួញទេ!</li>
                       <li>ជួនកាល គេតាងលំហអាហ្វីនដោយ $(\mathcal E, \vect{\E}, +)$ ហើយដើម្បីសម្រួលដល់ការយល់និយមន័យខាងលើ គេកំណត់បម្រែបម្រួលនិយមន័យផ្សេងមួយទៀត ដូចខាងក្រោម៖ <br>
@@ -692,7 +693,7 @@
 
 
         <example>
-            <p>ពិនិត្យសំណុំរង $\mathcal L$ របស់ $\mathbb R^2$ ដែលជាសំណុំចំណុចកំណត់ដោយ </p>
+            <p class="parindent">ពិនិត្យសំណុំរង $\mathcal L$ របស់ $\mathbb R^2$ ដែលជាសំណុំចំណុចកំណត់ដោយ </p>
             $$\mathcal L=\bigl\{(x,y)\in \mathbb R^2\mid -x+y-2=0\bigr\}$$
             <img class="center" alt="" src="./fig/aff_line1.png" width="330">
             <p>
@@ -703,11 +704,26 @@
                 \bigl(P, u\bigr) &\longmapsto & (x, 2+x)+u = (x+u, 2+x+u)
                 \end{array}
                 \]
-                For example the point $(-2,0)$ added with the vector $u=(1,1)$ results in the point $(-1,1)$ which belongs to the set $\mathcal L$, note that for the example above the vector space $V$ has only vectors parallels to $u=(1,1)$
+                For example the point $(-2,0)$ added with the vector $u=(1,1)$ results in the point $(-1,1)$ which belongs to the set $\mathcal L$.<br><br>
+                Note that the vector space $\bbR$ is the  line of equation $-x+y=0$, meaning that all vectors are parallel to $\vec u=(1,1)$.
             </p>
 
         </example>
 
+
+<!--example>
+   <p>
+        Consider the subset $\mathcal L$ of $A^2$       consisting of all points $(x, y)$ satisfying the equation:
+\[
+x+y - 1=0
+\]
+$\mathcal L$ is the line having slope $-1$ passing through the point $(1,0)$ and $(0,1)$. The line $\mathcal L$ can be an affine space by defining the action $+: \mathcal L \times \bbR \longrightarrow \mathcal L$ such that every point $(x, 1-x)$ on $\mathcal L$ and any $u \in\mathbb R$
+\[
+(x, 1-x) + u = (x+u, 1-x-u)
+\]
+Now, for any two points $A =(a_1, 1- a_1)$ and $B = (b_1, 1-b_1)$ on $\mathcal L$, the unique vector $u \in\bbR$ such that $B = A+u$ is $u = b_1 – a_1$. Note that vector space $\bbR$ isomorphic to the line of equation $x + y = 0 $  passing through the origin. 
+   </p>
+</example-->
 
 
         <h3 class="sectcounter">&nbsp; វិធានគណនា</h3>
@@ -834,23 +850,42 @@ $$
 </p>
       
 <example>
-<p>
+<p class="parindent">
         ចំពោះគ្រប់ចំណុច $A\in \mathcal{E}$ សំណុំដែលមានតែមួយធាតុ $\{A\}$ គឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$។ វាគឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$ ដែលកាត់តាមចំណុច $A$ និងតាមទិសដៅ $\vect\F=\{\vect 0\}$។ 
     </p>
     
 </example>   
       
+<br>
 
- 
+
 <example>
+<p class="parindent">
+        យក $\vect{\E}$ ជាលំហវ៉ិចទ័រមួយកំណត់លើកាយ $\mathbb{R}$។ ដូច្នេះ ចំពោះគ្រប់លំហអាហ្វីនរង $\mathcal{F}$ របស់ $\vect{\E}$ មានចំណុចមួយ $\vec a\in \vect\E$ និងមានលំហវ៉ិចទ័ររងមួយ $\vect\F \subseteq \vect\E$ ដែល
+$$
+\mathcal{F} = \vec a + \vect\F
+$$
+ដូច្នេះ គ្រប់លំហវ៉ិចទ័ររងរបស់ $\vect{\E}$ អាចចាត់ទុកដូចជាលំហអាហ្វីនរងរបស់ $\vect{\E}$ ដែរ។ <a href="">តែករណីច្រាសមកវិញ មិនពិតជាទូទៅនោះទេ។</a> <br>
+
+
+ជាការពិត បើយក $\mathcal{F}$ ជាលំហអាហ្វីនរងរបស់ $\vect{\E}$ នោះតាមនិយមន័យ គេមានចំណុចមួយ $a\in \mathcal{F}$ និងលំហវ៉ិចទ័ររងមួយរបស់ $\vect{\E}$ (គឺ $\vect\F \subseteq \vect\E$) ដែល
+\begin{eqnarray*}
+\forall\;  x\in \vect\E,\  x\in \mathcal{F}&\Longleftrightarrow &  x - a\in \vect\F\\ &\Longleftrightarrow & x\in (a + \vect\F)
+\end{eqnarray*}
+ដូច្នេះ $\mathcal{F} = a + \vect\F$ 
+    </p>
+    
+</example>   
+ 
+<!--example>
 <p>
 <ol class="romanlist two">
-    <li>
+    <!--li>
         ចំពោះគ្រប់ចំណុច $A\in \mathcal{E}$ សំណុំដែលមានតែមួយធាតុ $\{A\}$ គឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$។ វាគឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$ ដែលកាត់តាមចំណុច $A$ និងតាមទិសដៅ $\vect\F=\{\vect 0\}$។
         
-    </li>
+    </li-->
     
-    <li>
+    <!--li>
         យក $\vect{\E}$ ជាលំហវ៉ិចទ័រមួយកំណត់លើកាយ $\mathbb{R}$។ ដូច្នេះ ចំពោះគ្រប់លំហអាហ្វីនរង $\mathcal{F}$ របស់ $\vect{\E}$ មានចំណុចមួយ $\vec a\in \vect\E$ និងមានលំហវ៉ិចទ័ររងមួយ $\vect\F \subseteq \vect\E$ ដែល
 $$
 \mathcal{F} = \vec a + \vect\F
@@ -865,11 +900,14 @@ $$
 ដូច្នេះ $\mathcal{F} = a + \vect\F$ 
     </li>
 </ol>
+  
+  
    
     </p>
     
-</example>   
+</example-->   
      
+     <br>
  
 <example>
 <p>
@@ -924,6 +962,29 @@ M\in \calP\left(A,\vec{u}, \vec{v}\right) &\Longleftrightarrow & \bigl\{\vect{AM
 </example>   
       
       
+      <p><b>NOTE: </b> យក $\mathcal{F}$ គឺជាលំហអាហ្វីនរងរបស់  $\mathcal{E}$ ដែលកាត់តាមចំណុច $A$ និងតាមទិសដៅ $\vect\F$។ ដូច្នេះ ចំពោះគ្រប់ចំណុច $B\in \mathcal{F}$ គេបាន
+$$
+\forall\; M\in \mathcal{E},\ M\in \mathcal{F}\Longleftrightarrow \vect{BM}\in \vect\F
+$$
+          
+      </p>
+      
+      
+ <defn> 
+     <div class="definition"> <p>(កូលីនេអ៊ែរ និង កូប្លានែរ)</p> </div>
+            <div class="definitionb">
+     <p>
+      យក $\mathcal{E}$ ជាលំហអាហ្វីន តាមទិសដៅនៃលំហវ៉ិចទ័រ $\vec{E}$។
+	<ol class="romanlist threeem">
+		<li>គេថា ចំណុចទាំងឡាយរបស់លំហអាហ្វីន $\mathcal{E}$ <a href="#colinear">កូលីនេអ៊ែរគ្នា</a> (រត់ត្រង់គ្នា) បើចំណុចទាំងនោះស្ថិតនៅលើបន្ទាត់អាហ្វីនតែមួយ។ <!--On dit que des points de E sont align´es s’ils appartiennent `a une mˆeme droite affine.-->
+        </li>
+		<li>គេថា ចំណុចទាំងឡាយរបស់លំហអាហ្វីន $\mathcal{E}$ <a href="coplanar">កូប្លានែរគ្នា</a> (នៅលើប្លង់តែមួយ) បើចំណុចទាំងនោះស្ថិតនៅលើប្លង់អាហ្វីនតែមួយ។<!---
+		%On dit qu’ils sont coplanaires s’ils appartiennent `a un mˆeme plan affine.	-->
+        </li>
+     </ol>
+     </p>
+     </div>
+</defn>
       
 <h3>ប្រសព្វនៃពីរលំហអាហ្វីនរង</h3>
       
