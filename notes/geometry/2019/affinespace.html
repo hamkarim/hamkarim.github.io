@@ -971,7 +971,7 @@ $$
       
       
  <defn> 
-     <div class="definition"> <p>(កូលីនេអ៊ែរ និង កូប្លានែរ)</p> </div>
+     <div class="definition"> (កូលីនេអ៊ែរ និង កូប្លានែរ) </div>
             <div class="definitionb">
      <p>
       យក $\mathcal{E}$ ជាលំហអាហ្វីន តាមទិសដៅនៃលំហវ៉ិចទ័រ $\vec{E}$។
@@ -1017,6 +1017,8 @@ M\in \mathcal{F}\cap \mathcal{G} &\Longleftrightarrow & M \in \mathcal{F}\ \text
 </p>
         </div>
 </div>
+
+
 <br>
 
 
@@ -1085,9 +1087,50 @@ M\in \mathcal{F}\cap \mathcal{G} &\Longleftrightarrow & M \in \mathcal{F}\ \text
 </example>
 
 
+<div class="box-theorem">
+        <div class="box-legend editable"><span class="lt-icon-default">Lemma  1: (លំហអាហ្វីនរងពីររងគ្នា ឬស្មើគ្នា)</span>
+        </div>
 
+        <p class="">
+
+	យក $\calE$ ជាលំហអាហ្វីនតាមទិសដៅ  $\vect\E$ ហើយ $\calF$ និង $\calG$ ជាលំហអាហ្វីនរងពីររបស់ $\calE$ តាមទិសដៅ $\vect\F$ និង $\vect\G$ រៀងគ្នា ដែល $\calF \cap \calG \neq \varnothing$។
+	<ol class="romanlist twoem">
+	    <li>
+	        បើ $\vect\F \subseteq \vect\G$ នោះគេបាន $\calF \subseteq \calG$
+	    </li>
+	    <li>
+	        បើ $\vect\F = \vect\G$ នោះគេបាន $\calF = \calG$
+	    </li>
+	</ol>
+		
+	<!--%Soient \calE un espace affine de direction E, F et G deux sous-espaces affines de E de directions respectives F et G, tels que F \cap G \neq \varnothing.
+	%i) Si \F \subseteq \G alors \calF \subseteq \calG
+	%ii) Si \F = \G alors \calF = \calG. -->
+    </p>
+      
+</div>
       
       
+       <p align="right"><a class="toggle bground" id="idGet4" href="#proof4" onclick="showhideFunction()">[Show proof]</a></p>
+        <div class="hidepanel" id="proof4" style="color:#1860C1">
+            <div><b><!--span class="headproof">សម្រាយបញ្ជាក់.</span--> </b> </div>
+            
+        <div class="blockproof">
+           <p>
+<b>Proof: </b>
+<ol class="romanlist threeem">
+    <li>
+     ឧបមាថាថា $\vect\F \subseteq \vect\G$ នោះយើងនឹងបង្ហាញថា $\calF\subseteq \calG$? %{\bf (i)} Supposons que $\F \subseteq \G$ et montrons que $\calF\subseteq \calG$?
+		<!--%Soit $A \in \calF \cap \calG$ et soit $M \in \calF$, alors on a $\vect{AM}\in \F$, et comme $\F \subseteq \G$, alors $\vect{AM}\in\G$, donc $M \in\calG$.-->
+		យក $A \in \calF \cap \calG$ និងកំណត់ $M \in \calF$ ។ គេបាន $\vect{AM}\in \vect\F$ ហើយដោយ $\vect\F \subseteq \vect\G$ នោះគេបាន $\vect{AM}\in\vect\G$ ។ ដូច្នេះ $M \in\calG$ ។  
+    </li>
+    <li>
+        បើ $\vect\F = \vect\G$ នោះគេបាន $\vect\F\subseteq \vect\G$ និង $\vect\G\subseteq \vect\F$ ។ តាមលក្ខណៈ (១.) ខាងលើ គេបាន $\calF \subseteq \calG$ និង $\calG\subseteq \calF$ ។ ដូច្នេះ $\calF = \calG$ ។ %Si $\F = \G$, alors on a $\F\subseteq \G$ et $\G\subseteq \F$, donc d’après (i), on aura $\calF \subseteq \calG$ et $\calG\subseteq \calF$ et par suite, on a $\calF = \calG$.    
+    </li>
+</ol>
+</p>
+        </div>
+</div>
       
       
       
