@@ -672,9 +672,9 @@ A \backslash B & \text { set difference of } A \text { and } B,\{x \mid x \in A 
         </p><br>
 
        
-<h3 class="sectcounter">&nbsp; The Power Set of a Set</h3>
+<h3 class="sectcounter">&nbsp; The Power Set of a Set (សំណុំរងដោយផ្នែកៗ)</h3>
         <defn>
-            <div class="definition"> (power set) </div>
+            <div class="definition"> (power set=សំណុំស្វ័យគុណ) </div>
             <div class="definitionb">
                 <p>
                    If \(A\) is a subset of a universal set \(U\), then the set whose members are all the subsets of \(A\) is called the <b>power set</b> of \(A\). We denote the power set of \(A\) by \(\mathcal{P}(A)\). Symbolically, we write
@@ -724,7 +724,31 @@ How about \(B = \{a, b, c\}\). Find $\mathcal P(B)$?
         </p>
 
     </div>
-
+    
+    <p>
+        <b>NOTE:</b>
+        Note that the power set $\mathbb{P}(A)$ of any set $A$ is always nonempty, since the empty set $\varnothing$ is a subset of every set $A$. In fact, if $A$ is the empty set $\varnothing$, then
+$$
+\mathbb{P}(\varnothing)=\{\varnothing\},
+$$
+a set consisting of only one element. It can be easily proved that, for any nonnegative integer $n$, a set $A$ has exactly $n$ elements if and only if the power set $\mathbb{P}(A)$ has exactly $2^{n}$ elements.
+    </p>
+    
+    <defn>
+        <div class="definition"> (Equality and subset)</div>
+            <div class="definitionb">
+            <p>
+        A set whose element are sets is called a class of sets or family of sets.
+                </p>
+        </div>
+    </defn>
+<p>
+    Class of sets will be usually denoted by script letters, such as $\mathscr{A}, \mathscr{B}, \mathscr{C}$, etc. For any set $S$, the power set $\mathbb{P}(S)$ is a class of sets. A class $\mathscr{C}$ of sets is called an indexed class if there exists a set $I$ such that, for each $i \in I$, there is a unique member $A_{i}$ in $\mathscr{C}$ associated with $i$ and the class $\mathscr{C}$ is equal to the class of all $A_{i}$, $i \in I$; in this case, we write
+$$
+\mathscr{C}=\left\{A_{i}: i \in I\right\} \quad \text { or } \quad \mathscr{C}=\left\{A_{i}\right\}_{i \in I}
+$$
+and $I$ is called the index set.
+</p>
     <h3>The Cardinality of a Finite Set</h3>
     <p>
         In our discussion of the power set, we were concerned with the number of elements in a set. In fact, the number of elements in a finite set is a distinguishing characteristic of the set, so we give it the following name.
