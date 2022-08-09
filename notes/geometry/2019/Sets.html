@@ -52,10 +52,19 @@
 
     <!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
 
+   
     <style>
+        #myDIV {
+        padding: 5px 0;
+        text-align: center;
+        margin-top: 5px;
+        border-width:3px;
+        border-style:solid;
+        border-color:#287EC7;
+        }
         .deffont {
-            font-family: 'Noto Serif Khmer', 'CMU Serif';
-            font-size: 16px;
+        font-family: 'Noto Serif Khmer', 'CMU Serif';
+        font-size: 16px;
         }
 
         ul.liststyle1 {
@@ -77,7 +86,9 @@
     <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
     <script type="text/javascript" async="" src="https://cse.google.com/cse.js?cx=001004262401526223570:11yv6vpcqvy"></script>
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-331594-1"></script>
-    <script>
+   
+       
+       <script>
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
@@ -198,6 +209,44 @@
         document.createElement("example, defn");
     </script>
     <!-- [endif]-->
+    
+     
+
+    <div class="Headertext">
+
+        \( \newcommand{\vecs}[1]{\overset { \scriptstyle \rightharpoonup} {\mathbf{#1}}&nbsp;}&nbsp;\)
+   \( \newcommand{\vecd}[1]{\overset{-\!-\!\rightharpoonup}{\vphantom{a}\smash&nbsp;{#1}}} \)
+   \(\newcommand{\id}{\mathrm{id}}\)
+   \( \newcommand{\Span}{\mathrm{span}}\)
+   \( \newcommand{\kernel}{\mathrm{null}\,}\)
+   \( \newcommand{\range}{\mathrm{range}\,}\)
+   \( \newcommand{\RealPart}{\mathrm{Re}}\)
+   \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+   \( \newcommand{\Argument}{\mathrm{Arg}}\)
+  \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \(\newcommand{\id}{\mathrm{id}}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \( \newcommand{\kernel}{\mathrm{null}\,}\)
+  \( \newcommand{\range}{\mathrm{range}\,}\)
+  \( \newcommand{\RealPart}{\mathrm{Re}}\)
+  \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+  \( \newcommand{\Argument}{\mathrm{Arg}}\)
+  \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\cof}{\mathbf{cof}}\)
+  \( \newcommand{\adj}{\mathbf{adj}}\)
+  \( \renewcommand{\det}{\mathbf{det\,\!}}\)
+    \( \newcommand{\minor}{\mathbf{minor}}\)
+  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \( \newcommand{\bbR}{\mathbb{R}}\)
+  \( \newcommand{\calD}{\mathcal{D}}\)
+  \( \newcommand{\calP}{\mathcal{P}}\)
+    \( \newcommand{\card}{\mathbf{card}}\)
+  
+  </div>
+  
 
 </head>
 
@@ -432,6 +481,34 @@ $$
 
 Sometimes, we say that a set $A$ is smaller than $B$ (or $B$ is larger than $A$ ) if $A$ is a subset of $B . A$ is said to be a proper subset of $B$ and write $A \subset B$ if $A \subseteq B$ and $A \neq B$. Also, instead of writing $A \subseteq B$ or $\mathrm{A} \subset B$, some times we write $B \supseteq A$ or $B \supset A$ and say that $B$ contains $A$ (or $B$ is a superset of $A$ ) or $B$ properly contains $A$, respectively. We write $A \nsubseteq B$ if $A$ is not a subset of $B$.
        </p>
+       
+
+       
+<div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default"> Progress Check</span>
+</div>
+
+<p class="">
+Let the universal set be \(U = \{1, 2, 3, 4, 5, 6\}\), and let
+
+\[A = \{1, 2, 4\},\quad B = \{1, 2, 3, 5\}, \quad C = \{x \in U \, | \, x^2 \le 2\}\]
+
+In each of the following, fill in the blank with one or more of the symbols \(\subset\), \(\subseteq\), =, \(\ne\), \(\in\) or \(\notin\) so that the resulting statement is true. For each blank, include all symbols that result in a true statement. If none of these symbols makes a true statement, write nothing in the blank.
+
+\[
+\begin{array} {rclrcl} 
+A &\text{----------------------} & B\quad \quad &  \varnothing & \text{----------------------}  & A \\
+5 &\text{----------------------}  & B &  \{5\} &\text{----------------------}  & B \\ 
+A &\text{----------------------}  & C & \{1, 2\} &\text{----------------------}  & C \\ 
+\{1, 2\} &\text{----------------------}  & A & \{4, 2, 1\} &\text{----------------------} & A \\ 
+6 &\text{----------------------} & A& B &\text{----------------------}  & \varnothing
+\end{array} 
+\]
+
+</p>
+
+</div>
+
         
         <h2 class="frame-sect sectcounter">&nbsp; ប្រមាណវិធីលើសំណុំ </h2> 
 
@@ -523,7 +600,7 @@ Use the roster method to specify each of the following subsets of \(U\).
 
 <ol class="romanlist oneem">
     <li>
-        $X \cup Y = \big\{x |\, L(x) \lor W(x)\big\} = \big\{$people who are lucky or wise$\big\}$
+        $X \cup Y = \big\{x |\, L(x) \lor W(x)\big\} = \big\{$ people who are lucky or wise $\big\}$
     </li>
     
     <li>
@@ -550,13 +627,18 @@ $Y \setminus X = \bigl\{x |\, W(x) \land \lnot L(x)\bigr\} = \big\{$people who a
 <p class="">
 Let \(A\) and \(B\) be subsets of a universal set \(U\). For each of the following, draw a Venn diagram for two sets and shade the region that represent the specified set. In addition, describe the set using set builder notation.
 
-
-
-
-\(A^c \cup B^c\), 
+<ol class="romanlist twoem">
+    <li>\(A^c \cup B^c\), 
 \((A \cap B)^c\), 
         \(A^c\), 
         \(B^c\),  \(A^c \cup B\), and \((A \cup B) - (A \cap B)\), 
+    </li>
+    
+    <li>
+        Draw the most general Venn diagram showing  $A\subseteq (B^c\cup C)$.
+    </li>
+</ol>
+
 
 
 </p>
@@ -589,15 +671,87 @@ A \backslash B & \text { set difference of } A \text { and } B,\{x \mid x \in A 
 \]       
         </p><br>
 
+       
+<h3 class="sectcounter">&nbsp; The Power Set of a Set</h3>
         <defn>
-            <div class="definition"> </div>
+            <div class="definition"> (power set) </div>
             <div class="definitionb">
                 <p>
-                   
+                   If \(A\) is a subset of a universal set \(U\), then the set whose members are all the subsets of \(A\) is called the <b>power set</b> of \(A\). We denote the power set of \(A\) by \(\mathcal{P}(A)\). Symbolically, we write
+
+\[\mathcal{P}(A) = \bigl\{X \subseteq U \, | \, X \subseteq A\bigr\}\]
+
+That is, \(X \in \mathcal{P}(A)\) if and only if \(X \subseteq A\).
                    </p>
             </div>
         </defn>
 
+    <example>
+        <p>
+        When dealing with the power set of \(A\), we must always remember that \(\varnothing \subseteq A\) and \(A \subseteq A\). Now, let \(A = \{a, b\}\), then the subsets of \(A\) are
+
+\[\emptyset, \{a\}, \{b\}, \{a,b\}\]
+
+We can write the powerset of $A$ as
+
+\[\mathcal{P}(A) = \bigg\{\emptyset, \{a\}, \{b\}, \{a,b\}\bigg\}\]
+
+</p>
+    </example>
+
+
+<p>
+How about \(B = \{a, b, c\}\). Find $\mathcal P(B)$? 
+
+</p>
+        
+<p align="right"><a href="#ans1" onclick="toggleanswer('answer1');"> <i>Show it!</i></a></p>
+<div class="hidepanel" id="answer1">
+<p id="myDIV">
+    \[
+    \mathcal{P}(B) = \bigg\{\varnothing, \{a\}, \{b\}, \{a,b\}, \{c\}, \{a, c\}, \{b, c\}, \{a, b, c\}\bigg\}
+\]
+</p>
+</div>
+
+
+              
+ 
+    <div class="box-theorem">
+        <div class="mt-section box-legend editable"><span class="lt-icon-default">Theorem 1: (total elements of powerset) </span></div>
+        <p>
+            Let \(n\) be a nonnegative integer and let \(A\) be a subset of some universal set. If the set \(A\) has \(n\) elements, then the set \(A\) has \(2^n\) subsets. That is, \(\mathcal{P}(A)\) has \(2^n\) elements.
+        </p>
+
+    </div>
+
+    <h3>The Cardinality of a Finite Set</h3>
+    <p>
+        In our discussion of the power set, we were concerned with the number of elements in a set. In fact, the number of elements in a finite set is a distinguishing characteristic of the set, so we give it the following name.
+    </p>
+
+    <defn>
+        <div class="definition"> (cardinality) </div>
+        <div class="definitionb">
+            <p>
+                The number of elements in a finite set \(A\) is called the cardinality of \(A\) and is denoted by card(\(A\))
+            </p>
+        </div>
+    </defn>
+        
+<example>
+  <ol class="romanlist oneem">
+      <li>
+            $\card(\varnothing) = 0$     
+            </li>
+      <li>          
+$\card({a, b}) = 2$
+      </li>
+      <li>
+      $\card(\mathcal{P}(\{a, b\})) = 4$
+      </li>
+  </ol>
+</example>
 
         <!--<defn>
             <div class="definition"> </div>
@@ -682,6 +836,17 @@ A \backslash B & \text { set difference of } A \text { and } B,\{x \mid x \in A 
     gtag('js', new Date());
 
     gtag('config', 'UA-171606319-1');
+</script>
+
+<!--- To show/hide answer -->
+<script type="text/javascript">
+    function toggleanswer(id) {
+       var x = document.getElementById(id);
+       if(x.style.display == 'block')
+          x.style.display = 'none';
+       else
+          x.style.display = 'block';
+    }
 </script>
 
 </html>
