@@ -454,14 +454,14 @@ Let $A$ and $B$ be two sets. Then, we say that
 
 <ol class="romanlist oneem">
     <li>
-        $A$ is equal to $B$ and express this by $A=B$ if, for any object $x$,
+        <b>$A$ is equal to $B$</b> and express this by $A=B$ if, for any object $x$,
 $$
 x \in A \Longleftrightarrow x \in B 
 $$
     </li>
     
     <li>
-        $A$ is a subset of $B$ (or $A$ is contained in $B$ ) and express this by $A \subseteq B$ if, for any object $x$,
+       <b> $A$ is a subset of $B$</b> (or $A$ is contained in $B$ ) and express this by $A \subseteq B$ if, for any object $x$,
 $$
 x \in A \Longrightarrow x \in B 
 $$
@@ -727,28 +727,40 @@ How about \(B = \{a, b, c\}\). Find $\mathcal P(B)$?
     
     <p>
         <b>NOTE:</b>
-        Note that the power set $\mathbb{P}(A)$ of any set $A$ is always nonempty, since the empty set $\varnothing$ is a subset of every set $A$. In fact, if $A$ is the empty set $\varnothing$, then
+        Note that the power set $\mathcal{P}(A)$ of any set $A$ is always nonempty, since the empty set $\varnothing$ is a subset of every set $A$. In fact, if $A$ is the empty set $\varnothing$, then
 $$
-\mathbb{P}(\varnothing)=\{\varnothing\},
+\mathcal{P}(\varnothing)=\{\varnothing\},
 $$
-a set consisting of only one element. It can be easily proved that, for any nonnegative integer $n$, a set $A$ has exactly $n$ elements if and only if the power set $\mathbb{P}(A)$ has exactly $2^{n}$ elements.
+a set consisting of only one element. It can be easily proved that, for any nonnegative integer $n$, a set $A$ has exactly $n$ elements if and only if the power set $\mathcal{P}(A)$ has exactly $2^{n}$ elements.
     </p>
     
     <defn>
-        <div class="definition"> (Equality and subset)</div>
+        <div class="definition"> (Class/family of set)</div>
             <div class="definitionb">
             <p>
-        A set whose element are sets is called a class of sets or family of sets.
+        A set whose element are sets is called a <b>class of sets (ថ្នាក់នៃសំណុ) </b> or <b>family of sets</b>.
                 </p>
         </div>
     </defn>
 <p>
-    Class of sets will be usually denoted by script letters, such as $\mathscr{A}, \mathscr{B}, \mathscr{C}$, etc. For any set $S$, the power set $\mathbb{P}(S)$ is a class of sets. A class $\mathscr{C}$ of sets is called an indexed class if there exists a set $I$ such that, for each $i \in I$, there is a unique member $A_{i}$ in $\mathscr{C}$ associated with $i$ and the class $\mathscr{C}$ is equal to the class of all $A_{i}$, $i \in I$; in this case, we write
+    Class of sets will be usually denoted by script letters, such as $\mathscr{A}, \mathscr{B}, \mathscr{C}$, etc. For any set $A$, the power set $\mathcal{P}(A)$ is a class of sets. A class $\mathscr{C}$ of sets is called an indexed class if there exists a set $I$ such that, for each $i \in I$, there is a unique member $A_{i}$ in $\mathscr{C}$ associated with $i$ and the class $\mathscr{C}$ is equal to the class of all $A_{i}$, $i \in I$; in this case, we write
 $$
 \mathscr{C}=\left\{A_{i}: i \in I\right\} \quad \text { or } \quad \mathscr{C}=\left\{A_{i}\right\}_{i \in I}
 $$
 and $I$ is called the index set.
 </p>
+   
+   
+   <example>
+       <p>
+For any positive integer $n$, let
+$$
+A_{n}=\left\{x\mid\; x \text { is a real number and } 0 \leq x \leq \frac{1}{n}\right\}
+$$
+Then, $\left\{A_{n}\right\}_{n \in \mathbb{Z}^{+}}$ is an <b>indexed class of sets </b> and the set $\mathbb{Z}^{+}$ of positive integers is the <b>index set</b>.
+       </p>
+   </example>
+   
     <h3>The Cardinality of a Finite Set</h3>
     <p>
         In our discussion of the power set, we were concerned with the number of elements in a set. In fact, the number of elements in a finite set is a distinguishing characteristic of the set, so we give it the following name.
