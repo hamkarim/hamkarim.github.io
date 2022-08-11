@@ -470,6 +470,8 @@
     <div class="Headertext">
 
         \( \newcommand{\vecs}[1]{\overset { \scriptstyle \rightharpoonup} {\mathbf{#1}}&nbsp;}&nbsp;\)
+        
+    \( \newcommand{\Vect}[1]{\mathbf{Vect}\!\left(#1\right)}\)
    \( \newcommand{\vecd}[1]{\overset{-\!-\!\rightharpoonup}{\vphantom{a}\smash&nbsp;{#1}}} \)
    \(\newcommand{\id}{\mathrm{id}}\)
    \( \newcommand{\Span}{\mathrm{span}}\)
@@ -1034,7 +1036,7 @@ M\in \mathcal{F}\cap \mathcal{G} &\Longleftrightarrow & M \in \mathcal{F}\ \text
 	
     </li>
     <li>
-        $\mathcal{D}\cap \mathcal{D}'$ បង្រួមមកនៅមួយចំណុចរបស់ $\mathcal{E}$ %{\it est réduite à un seul point}.
+        $\mathcal{D}\cap \mathcal{D}'$ បង្រួមមកនៅមួយចំណុចរបស់ $\mathcal{E}$ <!--%{\it est réduite à un seul point}.-->
 
     </li>
     <li>
@@ -1121,19 +1123,119 @@ M\in \mathcal{F}\cap \mathcal{G} &\Longleftrightarrow & M \in \mathcal{F}\ \text
 <b>Proof: </b>
 <ol class="romanlist threeem">
     <li>
-     ឧបមាថាថា $\vect\F \subseteq \vect\G$ នោះយើងនឹងបង្ហាញថា $\calF\subseteq \calG$? %{\bf (i)} Supposons que $\F \subseteq \G$ et montrons que $\calF\subseteq \calG$?
+     ឧបមាថាថា $\vect\F \subseteq \vect\G$ នោះយើងនឹងបង្ហាញថា $\calF\subseteq \calG$? <!--%{\bf (i)} Supposons que $\F \subseteq \G$ et montrons que $\calF\subseteq \calG$?--->
 		<!--%Soit $A \in \calF \cap \calG$ et soit $M \in \calF$, alors on a $\vect{AM}\in \F$, et comme $\F \subseteq \G$, alors $\vect{AM}\in\G$, donc $M \in\calG$.-->
-		យក $A \in \calF \cap \calG$ និងកំណត់ $M \in \calF$ ។ គេបាន $\vect{AM}\in \vect\F$ ហើយដោយ $\vect\F \subseteq \vect\G$ នោះគេបាន $\vect{AM}\in\vect\G$ ។ ដូច្នេះ $M \in\calG$ ។  
+		<br> យក $A \in \calF \cap \calG$ និងកំណត់ $M \in \calF$ ។ គេបាន $\vect{AM}\in \vect\F$ ហើយដោយ $\vect\F \subseteq \vect\G$ នោះគេបាន $\vect{AM}\in\vect\G$ ។ ដូច្នេះ $M \in\calG$ ។  
     </li>
     <li>
-        បើ $\vect\F = \vect\G$ នោះគេបាន $\vect\F\subseteq \vect\G$ និង $\vect\G\subseteq \vect\F$ ។ តាមលក្ខណៈ (១.) ខាងលើ គេបាន $\calF \subseteq \calG$ និង $\calG\subseteq \calF$ ។ ដូច្នេះ $\calF = \calG$ ។ %Si $\F = \G$, alors on a $\F\subseteq \G$ et $\G\subseteq \F$, donc d’après (i), on aura $\calF \subseteq \calG$ et $\calG\subseteq \calF$ et par suite, on a $\calF = \calG$.    
+        បើ $\vect\F = \vect\G$ នោះគេបាន $\vect\F\subseteq \vect\G$ និង $\vect\G\subseteq \vect\F$ ។ <br> តាមលក្ខណៈ (១.) ខាងលើ គេបាន $\calF \subseteq \calG$ និង $\calG\subseteq \calF$ ។ ដូច្នេះ $\calF = \calG$ ។ <!--%Si $\F = \G$, alors on a $\F\subseteq \G$ et $\G\subseteq \F$, donc d’après (i), on aura $\calF \subseteq \calG$ et $\calG\subseteq \calF$ et par suite, on a $\calF = \calG$.    -->
     </li>
 </ol>
 </p>
         </div>
 </div>
       
-      
+      <div class="box-theorem">
+        <div class="box-legend editable"><span class="lt-icon-default">Proposition  2: (ប្រសព្វនៃពីរលំហអាហ្វីនរង)</span>
+        </div>
+<p>
+    គេបានលក្ខខណ្ឌដូចខាងក្រោម៖
+<ol class="romanlist oneem">
+    <li>
+        យក $\mathcal{E}$ ជាលំហអាហ្វីនទូទៅ និងកំណត់ $\mathcal{F}$ និង $\mathcal{G}$ ជាលំហអាហ្វីនរងពីររបស់ $\mathcal{E}$ តាមទិសដៅផ្សេងគ្នា $\vect \F$ និង $\vect \G$។ គេបាន
+$$\fbox{$
+\mathcal{F}\cap\mathcal{G} \neq \varnothing\quad \Longleftrightarrow \quad \exists(A,B) \in \mathcal{F}\times \mathcal{G}:\ \vect{AB}\in \vect{\F} + \vect{\G}$ }
+$$
+    </li>
+    <li>
+        ឧបមា $\mathcal{E}$ ជាលំហអាហ្វីនមានវិមាត្រ $3$ និងកំណត់ $\mathcal{D}$ ជាបន្ទាត់អាហ្វីនមួយលើ $\mathcal{E}$ តាមវ៉ិចទ័រទិសដៅ $\vect{u}$ ហើយ $\mathcal{P}$ ជាប្លង់អាហ្វីនមួយលើ $\mathcal{E}$ តាមទិសដៅវ៉ិចទ័រ $\vect{v}$ និង $\vect{w}$។ ដូច្នេះ គេបាន $\mathcal{D}\cap\mathcal{P}$ បង្រួមមកនៅត្រឹមមួយចំណុច លុះត្រាតែប្រព័ន្ធវ៉ិចទ័រ $\left\{\vect{u},\vect v,\vect w\right\}$ មិនអាស្រ័យលីនេអ៊ែរគ្នា។ <!--\it est libre}.-->
+    </li>
+</ol>
+</p>
+</div>
+     
+     
+       <p align="right"><a class="toggle bground" id="idGet5" href="#proof5" onclick="showhideFunction()">[Show proof]</a></p>
+        <div class="hidepanel" id="proof5" style="color:#1860C1">
+            <div><b><!--span class="headproof">សម្រាយបញ្ជាក់.</span--> </b> </div>
+            
+        <div class="blockproof">
+           <p>
+<b>Proof: </b>
+
+ពិនិត្យមើលលក្ខខណ្ឌចាំបាច់ និងគ្រប់គ្រាន់ ដូចខាងក្រោម៖
+
+<ol class="romanlist twoeem">
+    <li>
+        $(\Longrightarrow)$ ឧបមាថា $\mathcal{F}\cap \mathcal{G}\neq\varnothing$ និងយក $\Omega\in\mathcal{F}\cap \mathcal{G}$ គេបាន៖
+$$\forall A\in \mathcal{F}, \forall B\in \mathcal{G}:\ \vect{A\Omega} \in \vect \F \ {\text{ និង } } \ \vect{B\Omega}\in \vect \G$$
+ដូច្នេះ $\vect{A\Omega} - \vect{B\Omega}\in \vect\F+\vect \G$ ដោយ $\vect{A\Omega}-\vect{B\Omega}=\vect{AB}$។ ដូច្នេះ $\vect{AB}\in \vect\F+\vect\G$។<br><br>
+
+$(\Longleftarrow)$ ឧបមាថា គេមាន $(A,B)\in \mathcal{F}\times\mathcal{G}$ ដែល $\vect{AB}\in \vect \F+\vect \G$។ ដូច្នេះ គេមាន $\left(\vect{u}, \vect{v}\right)\in \vect\F\times \vect\G$ ដែល $\vect{AB}=\vect{u} + \vect{v}$។ <br>
+
+យកចំណុច $M\in\mathcal{F}$ ដែល $\vect{AM}=\vect{u}$ និង $N\in\mathcal{G}$ ដែល $\vect{BN}=-\vect{v}$។ គេបាន
+\begin{eqnarray*}
+\vect{AM} = \vect{u}&\Longrightarrow & \vect{AB}+\vect{BM} = \vect{u}\\
+&\Longrightarrow & \vect{BM} = -\vect{v}\\
+&\Longrightarrow & \vect{BM} = \vect{BN}\\
+&\Longrightarrow & M=N
+\end{eqnarray*}
+ដូច្នេះ $M\in \mathcal{F}\cap \mathcal{G}$។ គេទាញបាន $\mathcal{F}\cap \mathcal{G}\neq\varnothing$។
+    </li>
+    
+    <li>
+        $(\Longrightarrow)$ ឧបមាថា $\mathcal{D}\cap \mathcal{P}$ បង្រួមមកនៅត្រឹមចំណុចមួយ $A\in\mathcal{E}$ និងសន្មត់តាមវិធីផ្ទុយពីការពិតថា $\left\{\vect{u},\vect{v},\vect{w}\right\}$ ជាប្រព័ន្ធអាស្រ័យលីនេអ៊ែរគ្នា។ ដោយ $A\in \mathcal{D}$ នោះគេមានចំណុចមួយ $B\in \mathcal{D}$ ដែល $\vect{AB}=\vect{u}$។ ដូច្នេះ $\left\{\vect{AB}, \vect{v},\vect{w}\right\}$ អាស្រ័យលីនេអ៊ែរគ្នា។ ហើយ $A\in \mathcal{P}$ នោះគេបាន  $B\in \mathcal{P}$។ គេបាន $B\in \mathcal{D}\cap \mathcal{P}$។ ដែលនេះផ្ទុយពីការពិត ព្រោះ $A\neq B$។ <br><br>
+
+
+$(\Longleftarrow)$ ឧបមាថា $\left\{\vect{u},\vect{v}, \vect{w}\right\}$ មិនអាស្រ័យលីនេអ៊ែរគ្នា។ ដោយ $\dim(E)=3$ ដែល $\vect{\E}$ ជាទិសដៅរបស់លំហ $\mathcal{E}$ នោះគេបាន $E = \Vect{\vect{u}} + \Vect{\{\vect{v},\vect{w}\}}$។
+
+ដូច្នេះ $\vect{AB}\in \Vect{\vect{u}} + \Vect{\{\vect{v},\vect{w}\}}$ នោះតាមលក្ខខណ្ឌ i) គេបាន៖ $\mathcal{D}\cap \mathcal{P} \neq \varnothing$។<br>
+
+
+ឧបមាថា $\mathcal{D}\cap \mathcal{P}$ ផ្ទុកធាតុច្រើនជាងមួយចំណុច និងយក $A$ និង  $B$ ជាចំណុចពីរផ្សេងគ្នារបស់ $\mathcal{D}\cap \mathcal{P}$ គេបាន ៖
+\[
+\begin{cases}
+\vect{AB} = a\vect{u}  & \ \text{ since }\ a\neq 0\\
+\vect{AB} = b\vect{v} + c \vect{w}&
+\end{cases}
+\]
+
+ដូច្នេះ $a\vect{u} - b\vect{v} - c\vect{w}= \vect{0}$ ដែល $a\neq 0$។ គេបាន $\left\{\vect{u},\vect{v},\vect{w}\right\}$ អាស្រ័យលីនេអ៊ែរគ្នា ដែលផ្ទុយពីការពិត។ ដូច្នេះ $\mathcal{D}\cap \mathcal{P}$ បង្រួមមកនៅត្រឹមតែមួយចំណុច។
+    </li>
+</ol>
+</p>
+        </div>
+</div>
+     
+     
+     
+<h3>ភាពស្របគ្នានៃពីរលំហអាហ្វីនរង</h3>
+
+<defn>
+    <div class="definition"> (ភាពស្របគ្នានៃពីរលំហអាហ្វីនរង) </div>
+            <div class="definitionb">
+    <p>
+
+ឧបមា $\mathcal{E}$ ជាលំហអាហ្វីនមួយតាមទិសដៅ $\vect{\E}$ និងកំណត់ $\mathcal{F}$ និង $\mathcal{G}$ ជាលំហអាហ្វីនរងពីរតាមទិសដៅរៀងគ្នា $\vect\F$ និង $\vect\G$។ គេថា
+\[
+ \mathcal{F} \parallel \mathcal G \quad \text{ if } \quad \vect\F\subseteq \vect\G \quad \text{or }\quad \vect\G\subseteq \vect\F 
+\]
+<ul class="twoem">
+    <li>
+        ក្នុងករណីដែល $\vect\F=\vect\G$ គេថា $\mathcal{F}$ និង $\mathcal{G}$ ជាលំហស្របគ្នាដាច់ខាត។
+    </li>
+    <li>
+        បើ $\mathcal{F}$ និង $\mathcal{G}$ ស្របគ្នា នោះគេតាងដោយ $\mathcal{F}\ \Vert\ \mathcal{G}$។
+    </li>
+</ul>
+    </p>
+    </div>
+</defn>
+	
+     
+     
+     
+     
       
        
        <!--
