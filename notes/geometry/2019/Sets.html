@@ -770,7 +770,7 @@ Then, $\left\{A_{n}\right\}_{n \in \mathbb{Z}^{+}}$ is an <b>indexed class of se
         <div class="definition"> (cardinality) </div>
         <div class="definitionb">
             <p>
-                The number of elements in a finite set \(A\) is called the cardinality of \(A\) and is denoted by card(\(A\))
+                The number of elements in a finite set \(A\) is called the cardinality of \(A\) and is denoted by $\mathbf{card}(A)$ or $n(A)$ or $|A|$ or $\#A$. 
             </p>
         </div>
     </defn>
@@ -788,19 +788,107 @@ $\card\big(\{a, b\}\big) = 2$
       </li>
   </ol>
 </example>
+        
+        
+<h3>Operations on a class of subsets </h3>
 
+        <defn>
+            <div class="definition"> </div>
+            <div class="definitionb">
+                <p>
+                    For any indexed class of sets $\left\{A_{i}\right\}_{i \in I}$, we define the set as
+                    $$
+                    \bigcap_{i \in I} A_{i}=\left\{a \mid\;  a \in A_{i} \;\;\text { for all } i \in I\right\} \text {. }
+                    $$
+                    This set is called the set intersection of $A_{i}$ 's, $i \in I$. In particular, if $A_{1}, A_{2}, \ldots, A_{n}$ are sets, we define
+                    $$
+                    \bigcap_{i=1}^{n} A_{i}=\left\{a\mid\; a \in A_{i} \;\;\text { for } i=1,2, \ldots, n\right\}
+                    $$
+                    and is also denoted by $A_{1} \cap A_{2} \cap \ldots \cap A_{n}$.
+                </p>
+
+            </div>
+        </defn>
+<p>
+   <b>Remind: </b>
+    For any sets $A$ and $B$, we have
+$$
+A \cap B=\{x: x \in A \text { and } x \in B\} .
+$$
+Two sets $A$ and $B$ are said to be disjoint if $A \cap B=\varnothing$, that is, there are no common elements of $A$ and $B$.
+
+</p>
+<defn>
+    <div class="definition"> </div>
+    <div class="definitionb">
+        <p>
+            For any indexed class $\left\{A_{i}\right\}_{i \in I}$ of sets, we define the set as
+            $$
+            \bigcup_{i \in I} A_{i}=\left\{a \mid\, a \in A_{i} \;\;\text { for some } i \in I\right\} \text {. }
+            $$
+            This set is called the set union of $A_{i}$ 's, $i \in I$. In particular, for any sets $A_{1}, A_{2}$, $\ldots, A_{n}$, we define
+            $$
+            \bigcup_{i=1}^{n} A_{i}=\left\{a\mid\, a \in A_{i}\;\;  \text { for some } 1 \leq i \leq n\right\}
+            $$
+            and this is also denoted by $A_{1} \cup A_{2} \cup \ldots \cup A_{n}$. 
+        </p>
+    </div>
+</defn>
+        
+        <p><b>Remind: </b>
+           For any sets $A$ and $B$, we have
+            $$
+            A \cup B=\{x: x \in A \text { or } x \in B\}
+            $$
+        </p>
+
+       
+       <example>
+           <p>
+               For any positive integer $n$, let
+$$
+A_{n}=\left\{x: x \text { is a real number and } 0 \leq x \leq \frac{1}{n}\right\} .
+$$
+Then, we have $A_{n} \supset A_{n+1}$ for any $n$ and therefore
+ $$
+[0,1]=A_{1} \supset A_{2} \supset A_{3} \supset \ldots \supset A_{n} \supset A_{n+1} \supset \ldots
+$$
+So, find $\bigcap_{n \in \mathbb{Z}^{+}} A_{n}=?$ and $\bigcup_{n \in \mathbb{Z}^{+}} A_{n}=?$
+
+<!--$\bigcap_{n \in \mathbb{Z}^{+}} A_{n}=\left\{x: x\right.$ is a real number and $0 \leq x \leq \frac{1}{n}$ for all $\left.n \in \mathbb{Z}^{+}\right\}=\{0\}$ and $\bigcup_{n \in \mathbb{Z}^{+}} A_{n}=A_{1}=[0,1]$.-->
+               
+           </p>
+           
+       </example>
+       
+       
         <!--<defn>
             <div class="definition"> </div>
             <div class="definitionb">
 
             </div>
         </defn> -->
+              
+      
+      
+        <!--<defn>
+            <div class="definition"> </div>
+            <div class="definitionb">
 
+            </div>
+        </defn> -->
+        
+        
+        
+        <!--<defn>
+            <div class="definition"> </div>
+            <div class="definitionb">
 
-      
-      
-      
-      
+            </div>
+        </defn> -->
+        
+        
+        
       
       
       
