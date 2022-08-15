@@ -1379,8 +1379,8 @@ $$
         </div>
       
        <p>
-           យក $\mathcal{E}$ ជាលំហអាហ្វីនតាមទិសដៅ​ $\vect{\E}$ និងយក $\big\{(A_{i}, \alpha_{i})\big\}_{i=1}^{m}$ %$(A_{1},\alpha_{1}), (A_{2},\alpha_{2}), \ldots, (A_{m}, \alpha_{m})$
-	ជាប្រព័ន្ធចំណុចមានទម្ងន់របស់លំហ $\calE$។ គេកំណត់ {\bf អនុគមន៍វ៉ិចទ័រ Leibnitz} ដូចខាងក្រោម​៖
+           យក $\mathcal{E}$ ជាលំហអាហ្វីនតាមទិសដៅ  $\vect{\E}$ និងយក <!--$\big\{(A_{i}, \alpha_{i})\big\}_{i=1}^{m}$ -->$\bigg\{(A_{1},\alpha_{1})$, $(A_{2},\alpha_{2})$, $\ldots$, $(A_{m}, \alpha_{m})\bigg\}$
+	ជាប្រព័ន្ធចំណុចមានទម្ងន់របស់លំហ $\calE$។ គេកំណត់ <b>អនុគមន៍វ៉ិចទ័រ Leibnitz</b> ដូចខាងក្រោម៖
 \[
 \begin{array}{rcl}
 \varphi:\mathcal{E} &\longrightarrow & \vect\E\\
@@ -1401,13 +1401,65 @@ M &\longmapsto & \varphi(M) = \displaystyle\sum_{i=1}^{m}\alpha_{i}\,\vect{MA_{i
 </div>      
        
        
+<h3>និយមន័យ និងលក្ខណៈរបស់បារីសង់</h3>
        
+<defn>
+    <div class="definition"> </div>
+            <div class="definitionb">
+     <p>
+គេកំណត់ $\big\{(A_{i}, \alpha_{i})\big\}_{i=1}^{m}$
+	ជាចំណុចមានទម្ងន់របស់លំហអាហ្វីន $\mathcal{E}$ តាមទិសដៅនៃវ៉ិចទ័រ  $\vect{\E}$ ដែល
+$
+	\sum_{i=1}^{m}\alpha_{i}\neq 0
+$ ។
+គេហៅ <b>បារីសង់នៃប្រព័ន្ធចំណុច $\big\{(A_{i}, \alpha_{i})\big\}_{i=1}^{m}$</b> 	គឺជាចំណុច $G$ តែមួយគត់នៃលំហ $\mathcal{E}$ ដែលកំណត់ដោយ 
+$$
+	\sum_{i=1}^{m} \alpha_{i}\vect{GA_{i}} = \vect{0}
+$$
+        </p>
+    </div>
+
+</defn>       
+      
+      
+      <p>
+          តាមនិយមន័យខាងលើ គេកំណត់សរសេរ
+\[
+	\fcolorbox{Red}{blue!5}{\quad $\displaystyle\operatorname{Bar}\big\{(A_{i}, \alpha_{i})\big\} = G\in\calE \Longleftrightarrow \sum_{i=1}^{m} \alpha_{i}\,\vect{GA_{i}} = \vect{0} $\quad  }
+\]
+      </p>
+      
+      
+<p style="font-size: 11px"> <img class="" alt="Barycenter" src="fig/center_gravity_hum_ed.png" width="60%">
+                    ទីប្រជុំទំងន់របស់មនុស្សប្រុស និងស្រី ។
+                    </p>      
+    
+    <p> គេបានលក្ខណៈសំខាន់ៗរបស់បារីសង់ដូចខាងក្រោម៖
+    <ol class="romanlist twoem">
+        <li>
+            យក $G$ ជាបារីសង់នៃប្រព័ន្ធចំណុចមានទម្ងន់ $\big\{(A_{i}, \alpha_{i})\big\}_{i=1}^{m}$
+	។ ដូច្នេះ ចំពោះគ្រប់ចំណុច $A\in \mathcal{E}$ គេបាន
+$$
+	\vect{AG} = \frac{1}{\alpha} \sum_{i=1}^{m} \alpha_{i}\vect{AA_{i}}\quad \text{ where } \ \ \alpha = \sum_{i=1}^{m}\alpha_{i}
+$$
+        </li>
+        
+        <li>
+            បើ $\alpha_{1}=\alpha_{2}=\cdots=\alpha_{m}=1$ នោះគេថា  $G$ គឺជា <b>អ៊ីសូបារីសង់</b> នៃចំណុច  $A_{1},A_{2}, \ldots, A_{m}$។ ក្នុងករណីនេះ គេបាន
+$$
+	\vect{AG} = \frac{1}{m}\sum_{i=1}^{m} \vect{AA_{i}}
+$$
+        </li>
+        
+        <li>
+            ចំពោះគ្រប់ $\lambda\in \mathbb{R}^{*}$ នោះគេបាន ប្រព័ន្ធចំណុចមានទម្ងន់ $\big\{(A_{i}, \alpha_{i})\big\}_{i=1}^{m}$
+	និង $\big\{(A_{i}, \lambda\;\alpha_{i})\big\}_{i=1}^{m}$
+	មានបារីសង់ដូចគ្នា។
+            
+        </li>
+    </ol>
        
-       
-       
-       
-       
-       
+</p>
        
        
        
