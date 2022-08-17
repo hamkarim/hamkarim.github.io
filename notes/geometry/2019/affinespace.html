@@ -1592,6 +1592,85 @@ $$
 
 
 
+    
+      <div class="box-theorem">
+        <div class="box-legend editable"><span class="lt-icon-default">កិច្ចការទី3: (បារីសង់ - កូអរដោនេបារីសង់ - តម្រុយ)</span>
+        </div>
+<p>
+    
+<ol class="romanlist oneem">
+    <li>
+       Let points $M, N$ and $P$ in a plane $\mathcal P$ with a frame (តម្រុយ) $(O, \vec{\imath}, \vec{\jmath})$. The coordinates of $M, N$ and $P$ are $(2,3),(6,4)$ and $\left(-6,-\frac{1}{2}\right)$ respectively. Show that
+$$
+\left|\begin{array}{ccc}
+2 & 6 & -6 \\
+3 & 4 & -\frac{1}{2} \\
+1 & 1 & 1
+\end{array}\right|=0, \qquad \tag{1}
+$$
+How can you say from relation $(1)$ that the three points are colinear? <br><br>
+
+Now, let $\left(x_{A}, y_{A}\right)$ and $\left(x_{B}, y_{B}\right)$ be the coordinates of $A$ and $B$. Show that the equation of the line $(AB)$ is givent by
+$$
+\left|\begin{array}{ccc}
+x & x_{A} & x_{B} \\
+y & y_{A} & y_{B} \\
+1 & 1 & 1
+\end{array}\right|=0
+$$
+    </li>
+    <li>
+        Let $\mathcal E = \mathbb R^3$ be an affine space with a frame $(O, \vec{\imath}, \vec{\jmath}, \vec{k})$ which is not orthonormal.
+        <ol class="romanlist oneem">
+            <li>
+                Let $M, N$ and $P$ be points in $\mathcal P$ with coordinates $(4,0,0),(0,5,0)$ and $(0,0,6)$ respectively. Find the equation of the plane $\mathcal P = \mathbf{Aff}\Big(\{A, B, C\}\Big)$.
+            </li>
+            <li>
+                Find the coordinates of the barycentre $G$ of the triangle $MNP$. Verify that $G$ belongs to the plane $\mathcal P$.
+            </li>
+        </ol>
+    </li>
+    <li>
+        Let $A, B$ and $C$ be three points in a plane $\mathcal P$ and let $\gamma \in[0,1]$. Let 
+        <ul class="threeem">
+            <li>
+                $D(\gamma)$ be the barycenter of $A$ and $B$  with the masses $(1-\gamma)$ and $\gamma$; 
+            </li>
+            <li>
+                $E(\gamma)$ be the barycenter of $B$ and $C$  with the masses $(1-\gamma)$ and $\gamma$ and 
+            </li>
+            <li>
+                 $F(\gamma)$ be the barycenter of $D(\gamma)$ and $E(\gamma)$ with the masses $(1-\gamma)$ and $\gamma$.
+            </li>
+        </ul>
+          Can you explain the curve $[0,1] \rightarrow \mathcal P,\quad \gamma \mapsto F(\gamma)$.
+    </li>
+    <li>
+        Let $E$ be the <b>ordinary space of geometry</b> with $(O, \vec{\imath}, \vec{\jmath}, \vec{k})$ be a frame $E$. We suppose that $E$ is euclidean and that the frame $(O, \vec{\imath}, \vec{\jmath}, \vec{k})$ is orthonormal.
+        <ol class="romanlist oneem">
+            <li>
+                Let $X$ be a point with coordinates $(2,-10,3)$ and let $\vec{u}$ be the vector $\vec{u}=3 \vec{\imath}+\frac{12}{5} \vec{\jmath}+2 \vec{k}$.
+Write the equation of the plane $\mathcal P$ which contains $X$ and is orthogonal to $\vec{u}$.
+            </li>
+            <li>
+                Let $A, B$ and $C$ be the points of intersection of $\mathcal P$ with the axis $O x, O y$ and $O z$. Find the coordinates of the points $A, B$ and $C$.
+            </li>
+            <li>
+                Compute the coordinates of the barycentre of the triangle $A B C$ <!--(point common to the three medians).-->
+            </li>
+            <li>
+                Draw a picture showing the points $X, A, B$ and $C$ and the vector $\vec{u}$.
+            </li>
+            <li>
+                Check that the vectors $\overrightarrow{X A}, \overrightarrow{X B}$ and $\overrightarrow{X C}$ are orthogonal to $\vec{u}$.
+            </li>
+        </ol>
+
+    </li>
+</ol>
+</p>
+</div>
+
 
 <!--%%%1.4 Espaces affines de dimension finie -->
 
@@ -1810,7 +1889,8 @@ $$
             
         <div class="blockproof">
      <p>
-        <b><i>Proof: </i></b> 
+        <b><i>Proof: </i></b> <br>
+        
          <b>ករណីចាំបាច់៖ </b>ដោយ  $\alpha+\beta+\gamma = \alpha'+\beta'+\gamma' = \alpha''+\beta''+\gamma''=1$ នោះគេបាន
 \begin{eqnarray*}
 \begin{vmatrix}
@@ -1834,7 +1914,7 @@ $$
 \end{vmatrix}
 \end{eqnarray*}
 
-<b>ករណីគ្រប់គ្រាន់៖ </b>ម្យ៉ាងទៀត គេបាន
+ម្យ៉ាងទៀត គេបាន
 \begin{eqnarray*}
 \vect{AM} &=& \beta\vect{AB}+\gamma \vect{AC}\\ 
 \vect{AN} &=& \beta'\vect{AB}+\gamma'\vect{AC}\\ 
@@ -1847,7 +1927,9 @@ $$
 \end{eqnarray*}
 
 
-<b>ចំណាំ :</b> គេដឹងថា $M, N$ និង $P$  ជាបីចំណុចរត់ត្រង់គ្នា លុះត្រាតែ  $\left\{\vect{MN},\vect{MP}\right\}$ អាស្រ័យលីនេអ៊ែរគ្នា។ ដោយ $\Big\{\vect{AB},\vect{AC}\Big\}$ គឺជាគោលមួយរបស់ $\vect{\E}$ ។ ដូច្នេះគេបាន៖
+<b>ករណីគ្រប់គ្រាន់៖ </b> គេដឹងថា $M, N$ និង $P$  ជាបីចំណុចរត់ត្រង់គ្នា លុះត្រាតែ  $\left\{\vect{MN},\vect{MP}\right\}$ អាស្រ័យលីនេអ៊ែរគ្នា។ <br>
+<p class="parindent">
+    ដោយ $\Big\{\vect{AB},\vect{AC}\Big\}$ គឺជាគោលមួយរបស់ $\vect{\E}$ ។ ដូច្នេះគេបាន៖
 \begin{eqnarray*}
   \Big\{\vect{MN},\vect{MP}\Big\}\  \text{ l.d } &\Longleftrightarrow &  \det\Big(\vect{MN},\vect{MP}\Big) = 0\\
    &\Longleftrightarrow& \begin{vmatrix}
@@ -1855,6 +1937,8 @@ $$
        \gamma'-\gamma & \gamma''-\gamma
    \end{vmatrix}=0
 \end{eqnarray*}
+</p>
+
 ដូច្នេះ គេទទួលបានចម្លើយ។ <!--%{\it d}'{\it où le résultat}.-->
      </p>
         </div>
