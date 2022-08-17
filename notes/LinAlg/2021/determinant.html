@@ -902,7 +902,11 @@ There is a certain type of matrix for which finding the determinant is a very si
    
    <p>
        <b>Simpler Definition: </b>
-       where $m_i$ is the $(n-1)\times(n-1)$ matrix formed by removing the $1$st row and $i$th column from $a$:\[m_i=\begin{pmatrix} \blacksquare & \blacksquare & ... & \blacksquare & \blacksquare & \blacksquare & ... & \blacksquare & \blacksquare\\ a_{21} & a_{22} & ... & a_{2,i-1} & \blacksquare & a_{2,i+1} & ... & a_{2,n-1} & a_{2n}\\ a_{31} & a_{32} & ... & a_{3,i-1} & \blacksquare & a_{3,i+1} & ... & a_{3,n-1} & a_{3n}\\ &&&&\vdots&&&&\\ a_{n1} & a_{n2} & ... & a_{n,i-1} & \blacksquare & a_{n,i+1} & ... & a_{n,n-1} & a_{nn} \end{pmatrix}=\begin{pmatrix} a_{21} & ... & a_{2,i-1} & a_{2,i+1} & ... & a_{2n}\\ a_{31} & ... & a_{3,i-1} & a_{3,i+1} & ... & a_{3n}\\ &&\vdots&\vdots&&&\\ a_{n1} & ... & a_{n,i-1} & a_{n,i+1} & ... & a_{nn} \end{pmatrix}\]
+       where $m_i$ is the $(n-1)\times(n-1)$ matrix formed by removing the $1$st row and $i$th column from $a$:
+       \begin{eqnarray*}
+       m_i &=& \begin{pmatrix} \blacksquare & \blacksquare & ... & \blacksquare & \blacksquare & \blacksquare & ... & \blacksquare & \blacksquare\\ a_{21} & a_{22} & ... & a_{2,i-1} & \blacksquare & a_{2,i+1} & ... & a_{2,n-1} & a_{2n}\\ a_{31} & a_{32} & ... & a_{3,i-1} & \blacksquare & a_{3,i+1} & ... & a_{3,n-1} & a_{3n}\\ &&&&\vdots&&&&\\ a_{n1} & a_{n2} & ... & a_{n,i-1} & \blacksquare & a_{n,i+1} & ... & a_{n,n-1} & a_{nn} \end{pmatrix}\\
+      & =& \begin{pmatrix} a_{21} & ... & a_{2,i-1} & a_{2,i+1} & ... & a_{2n}\\ a_{31} & ... & a_{3,i-1} & a_{3,i+1} & ... & a_{3n}\\ &&\vdots&\vdots&&&\\ a_{n1} & ... & a_{n,i-1} & a_{n,i+1} & ... & a_{nn} \end{pmatrix}
+       \end{eqnarray*}
 
    </p>
   
