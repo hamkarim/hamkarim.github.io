@@ -51,7 +51,6 @@ body {
 p {
     /*text-align: justify;*/
     font-size: 16px;
-    ;
     orphans: 2;
     widows: 2;
     line-height: 1.5 !important;
@@ -60,9 +59,13 @@ p {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
-
+ 
 p.parindent {
-    text-indent: 40px;
+    text-indent: 40px!important;
+}
+
+.indent {
+    text-indent: 40px!important;
 }
 
 article,
@@ -773,7 +776,6 @@ a:hover {
 .main-content {
     word-wrap: break-word;
     font-size: 16px;
-    ;
     line-height: 1.5 !important;
     /*font-size:16px;
 	font-family: 'Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang   */
@@ -965,6 +967,7 @@ h3.sectcounter:before {
 .main-content ol {
     margin-top: 0;
     margin: auto;
+    line-height: 1.5;
     width: 100%
 }
 
