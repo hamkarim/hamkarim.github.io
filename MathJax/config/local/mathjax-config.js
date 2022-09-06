@@ -1,9 +1,4 @@
 window.MathJax = {
-  loader: {load: ['[tex]/require']},
-  tex: {packages: {'[+]': ['require']}}
-};
-
-window.MathJax = {
   loader: {
         load: ['[tex]/textmacros', '[tex]/require'],
 },
