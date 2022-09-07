@@ -986,23 +986,97 @@ We may write \(\overline{\displaystyle\bigcup_i A_{i}}\) for \(\displaystyle U \
         <div class="mt-section box-legend editable"><span class="lt-icon-default">LEMMA: (Union Lemma). </span></div>
         <p>
         
-        Let $X$ be a set and $\mathcal{C}$ be a collection of subsets of $X$. Assume that for each $x \in X$, there is a set $A_x$ in $\mathcal{C}$ such that $x \in A_x$. Then $\displaystyle\bigcup_{x \in X} A_x=X$. 
+        Let $X$ be a set and $\mathscr{C}$ be a collection of subsets of $X$. Assume that for each $x \in X$, there is a set $A_x$ in $\mathscr{C}$ such that $x \in A_x$. Then $\displaystyle\bigcup_{x \in X} A_x=X$. 
      </p>
 
-    </div>        
+    </div>      
+      
      <center>
           <div class="center">
-                    <p style="font-size: 11px"> <img class="center" alt="Wiki page" src="fig/setA_x.png" width="50%">
+                    <p style="font-size: 11px"> <img class="center" alt="Wiki page" src="fig/setA_x.png" width="45%">
                         <b>Fig.2. </b>The set $X$ is the union of subsets $A_x$
                     </p>
                 </div>
      </center>
     
+    <example>
+        <p>
+            Consider the collection of intervals in $\mathbb{R}$ given by $\mathscr{C}=\Big\{[\alpha, \alpha+1]\Big\}_{\alpha \in \mathbb{Z}}$. Every $x \in \mathbb{R}$ is an element of $[\alpha, \alpha+1]$ for some $\alpha \in \mathbb{Z}$, and therefore the <b> Union Lemma</b> implies that $$\mathbb{R} = \bigcup_{\alpha\in\mathbb{Z}} [\alpha,\alpha +1]$$ 
+        </p>
+    </example>
       
       
+       <div class="box-theorem">
+        <div class="mt-section box-legend editable"><span class="lt-icon-default">Theorem 4: (Properties). </span></div>
+        <p> The following holds good for any sets $A, B$ and $C$.
+        <table style="width:100%">
+  <tr>
+    <td>(1). $A \cup B \subseteq C \Leftrightarrow A \subseteq C$ and $B \subseteq C$</td>
+    <td>(2). $A \subseteq B \cap C \Leftrightarrow A \subseteq B$ and $A \subseteq C$</td>
+  </tr>
+  <tr>
+    <td>(3). $A \cap B \subseteq A \subseteq A \cup B$</td>
+    <td>(4). $A \cup A=A=A \cap A$</td>
+  
+  </tr>
+  <tr>
+    <td>(5). $A=A \cap B \Leftrightarrow A \subseteq B \Leftrightarrow A \cup B=B$</td>
+    <td>(6). $A \cap(A \cup B)=A=A \cup(A \cap B)$</td>
+
+  </tr>
+   <tr>
+    <td>(7). $A \cap\Big(\bigcup_{i \in I} A_i\Big)=\bigcup_{i \in I}\big(A \cap A_i\big)$ for any indexed class $\big\{A_i\big\}_{i \in I}$ of sets.</td>
+    <td>(8). $A \cup\Big(\bigcap_{i \in I} A_i\Big) = \bigcap_{i \in I}\big(A \cup A_i\big)$ for any indexed class $\big\{A_i\big\}_{i \in I}$ of sets.</td>
+
+  </tr>
+   <tr>
+    <td>(9). $A \subseteq B \Rightarrow A \cap C \subseteq B \cap C$ and $A \cup C \subseteq B \cup C$</td>
+    <td>(10). $A \cap B \subseteq A \cap C$ and $A \cup B \subseteq A \cup C \Leftrightarrow B \subseteq C$</td>
+
+  </tr>
+
+</table>
+        
+     </p>
+
+    </div>    
       
-      
-      
+       <div class="box-theorem">
+        <div class="mt-section box-legend editable"><span class="lt-icon-default">Theorem 5: (Properties). </span></div>
+        <p> For any indexed class $\left\{B_i\right\}_{i \in I}$ of sets and for any sets $A, B$ and $C$, the following holds good.
+        <table style="width:100%">
+  <tr>
+    <td>(1). $A\setminus\Big(\bigcup_{i \in I} B_i\Big)=\bigcap_{i \in I}\big(A\setminus  B_i\big)$</td>
+    <td>(2). $A\setminus\Big(\bigcap_{i \in I} B_i\Big)=\bigcup_{i \in I}\big(A\setminus B_i\big)$</td>
+  </tr>
+<tr>
+    <td>(3). $B \subseteq C \Rightarrow A\setminus C \subseteq A\setminus  B$ and $B\setminus A \subseteq C\setminus A$
+</td>
+    <td>(4). $\Big(\bigcup_{i \in I} B_i\Big)\setminus A=\bigcup_{i \in I}\big(B_i\setminus A\big)$</td>
+  </tr>
+<tr>
+    <td>(5). $\Big(\bigcap_{i \in I} B_i\Big)\setminus A=\bigcap_{i \in I}\big(B_i\setminus A\big)$</td>
+    <td>(6). $(A \cup B)\setminus C=(A\setminus C) \cup(B\setminus C)$</td>
+  </tr>
+<tr>
+    <td></td>
+    <td></td>
+  </tr>
+<tr>
+    <td></td>
+    <td></td>
+  </tr>
+<tr>
+    <td></td>
+    <td></td>
+  </tr>
+<tr>
+    <td></td>
+    <td></td>
+  </tr>
+           </table>
+           </p>
+</div>
       
       
       
