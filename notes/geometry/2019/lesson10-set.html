@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+    <!-- Begin Jekyll SEO tag v2.3.0 -->
+    <meta property="og:title" content="Ham Karim">
+    <meta name="author" content="Ham Karim">
+    <meta name="author" content="លំហអាហ្វីន">
+    <meta property="og:locale" content="en_US">
+    <meta http-equiv="keywords" name="keywords" content="affine spaces, Euclidean-affine spaces, លំហអាហ្វីន, លំហអាហ្វីន-អឺគ្លីដ">
+    <meta http-equiv="description" name="description" content="">
+    <meta name="description" content="Set theory">
+    <meta property="og:description" content="Math, Programmer, Music">
+    <link rel="canonical" href="../../../index.html">
+    <meta property="og:url" content="https://hamkarim.github.io/">
+    <meta property="og:site_name" content="Right Triangle">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@pkarim">
+    <meta name="twitter:creator" content="@pkarim">
+    <meta name="google-site-verification" content="b9bg3P9zc8qbL4szvVYaf551jD9x017IyGBVSaQZDDY" />
+
+    <script type="application/ld+json">
+        {
+            "name": "Ham Karim",
+            "description": "I am a faculty member at the Royal Univeristy of Phnom Penh (RUPP). This is my blog of lectures at universities. ",
+            "author": {
+                "@type": "Person",
+                "name": "Ham Karim"
+            },
+            "@type": "WebSite",
+            "url": "https://hamkarim.github.io/",
+            "image": null,
+            "publisher": null,
+            "headline": "Ham Karim",
+            "dateModified": null,
+            "datePublished": "2020-06-01",
+            "sameAs": null,
+            "mainEntityOfPage": null,
+            "@context": "http://schema.org"
+        }
+    </script>
+    <!-- End Jekyll SEO tag -->
+
+    <meta property="og:image" content="http://www.cliparts101.com/files/376/298FE3955707B1DE458221E4BFABFBBE/Greek_Gamma_4.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../topology/2019/favicon.ico">
+    <meta charset="UTF-8">
+    <title>Product of sets</title>
+    <meta name="description" content="Math, Programmer, Music">
+
+    <!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
+
+   
+    <style>
+        #myDIV {
+        padding: 5px 0;
+        text-align: center;
+        margin-top: 5px;
+        border-width:3px;
+        border-style:solid;
+        border-color:#287EC7;
+        }
+        .deffont {
+        font-family: 'Noto Serif Khmer', 'CMU Serif';
+        font-size: 16px;
+        }
+
+        ul.liststyle1 {
+            list-style-type: square;
+        }
+
+        ul.liststyle2 {
+            list-style-type: hebrew;
+        }
+
+        a.onmenu {
+            font-family: 'Noto Serif Khmer', 'CMU Serif';
+            font-weight: bold;
+        }
+    </style>
+
+
+    <script async="" src="//cse.google.com/adsense/search/async-ads.js"></script>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async="" src="https://cse.google.com/cse.js?cx=001004262401526223570:11yv6vpcqvy"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-331594-1"></script>
+   
+       
+       <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-331594-1');
+    </script>
+
+
+
+    <link rel="stylesheet" href="../../../assets/css/style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245">
+    
+        <link rel="stylesheet" href="../../../assets/css/all.css">
+        
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- Script to show and hide proof -->
+    <script type="text/javascript" src="https://hamkarim.github.io/assets/js/showhide.js"></script>
+    <!-- Other style of showing and hiding proof -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
+    <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>
+    <!-- end -->
+
+   
+       <script type="text/javascript" src="../../../assets/sidebar/sidebar.min.js"></script>
+    <link rel="stylesheet" href="../../../assets/sidebar/Sidebar.css">
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        //Another method to toggle the button
+        $(document).ready(function() {
+            $('.showanswer').click(function() {
+                $('.block_proof').show();
+                $('.showanswer').hide();
+                $('.hideanswer').show();
+            });
+            $('.hideanswer').click(function() {
+                $('.block_proof').hide();
+                $('.showanswer').show();
+                $('.hideanswer').hide();
+            });
+        });
+    </script>
+
+    <!-- For local function, define to exchange text -->
+    <script>
+        function showhideFunction() {
+            document.getElementById('idClick').innerHTML === '[Hide proof]' ? document.getElementById('idClick').innerHTML = '[Show proof]' : document.getElementById('idClick').innerHTML = '[Hide proof]';
+        }
+    </script>
+
+    <!-- script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,https://hamkarim.github.io/MathJax/config/local/local.js"></script -->
+    
+    <script type="text/javascript" src="../../../MathJax/config/local/mathjax-config.js" defer></script>
+
+    <!--script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script-->
+    <script type="text/javascript" id="MathJax-script" defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml-full.min.js">
+    </script>
+
+    <!--script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { fonts: ["TeX"] }
+  });
+</script-->
+
+    <!-- script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script--
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
+    </script -->
+
+    <!--script type="text/javascript" config=TeX-MML-AM_CHTML
+   src="">
+</script-->
+
+    <!--
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">  -->
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>  -->
+
+    <!-- To automatically render math in text elements, include the auto-render extension:
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);">
+</script>
+<script >
+  document.addEventListener("DOMContentLoaded", function()
+      {
+        renderMathInElement(document.body,
+            {
+                delimiters: [
+                    { left: "\\begin{equation}", right: "\\end{equation}", display: true },
+                    { left: "$$", right: "$$", display: true },
+                    { left: "\\[", right: "\\]", display: true },
+                    { left: "\\(", right: "\\)", display: false },
+                    { left: "$", right: "$", display: false }
+                ]
+            });
+        });
+</script> -->
+
+    <!-- To get it to work in old versions of Internet Explorer, you need to append this script to the head (Important if you need it to work in older versions of IE!): -->
+    <!--[if lt IE 9] -->
+    <script>
+        document.createElement("example, defn");
+    </script>
+    <!-- [endif]-->
+    
+     
+
+    <div class="Headertext">
+
+        \( \newcommand{\vecs}[1]{\overset { \scriptstyle \rightharpoonup} {\mathbf{#1}}&nbsp;}&nbsp;\)
+   \( \newcommand{\vecd}[1]{\overset{-\!-\!\rightharpoonup}{\vphantom{a}\smash&nbsp;{#1}}} \)
+   \(\newcommand{\id}{\mathrm{id}}\)
+   \( \newcommand{\Span}{\mathrm{span}}\)
+   \( \newcommand{\kernel}{\mathrm{null}\,}\)
+   \( \newcommand{\range}{\mathrm{range}\,}\)
+   \( \newcommand{\RealPart}{\mathrm{Re}}\)
+   \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+   \( \newcommand{\Argument}{\mathrm{Arg}}\)
+  \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \(\newcommand{\id}{\mathrm{id}}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \( \newcommand{\kernel}{\mathrm{null}\,}\)
+  \( \newcommand{\range}{\mathrm{range}\,}\)
+  \( \newcommand{\RealPart}{\mathrm{Re}}\)
+  \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+  \( \newcommand{\Argument}{\mathrm{Arg}}\)
+  \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\cof}{\mathbf{cof}}\)
+  \( \newcommand{\adj}{\mathbf{adj}}\)
+  \( \renewcommand{\det}{\mathbf{det\,\!}}\)
+    \( \newcommand{\minor}{\mathbf{minor}}\)
+  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \( \newcommand{\bbR}{\mathbb{R}}\)
+  \( \newcommand{\calD}{\mathcal{D}}\)
+  \( \newcommand{\calP}{\mathcal{P}}\)
+    \( \newcommand{\card}{\mathbf{card}}\)
+  
+  </div>
+  
+
+</head>
+
+<body>
+    <!--nav class="nav-collapse" role="navigation">
+        <ul class="tabs primary-nav">
+            <li class="tabs__item">
+                <a href="../../../index.html" class="tabs__link">ទំព័រដើម</a>
+            </li>
+            <li class="tabs__item">
+                <a href="../../topology/2019/../../../posts_index.html" class="tabs__link">Blog</a>
+            </li>
+            <li class="tabs__item">
+                <a href="../../topology/2019/../../../projects.html" class="tabs__link">Projects</a>
+            </li>
+            <li class="tabs__item">
+                <a href="../../../notes_index.html" class="tabs__link">មេរៀន</a>
+            </li>
+            <li class="tabs__item">
+                <a href="../../topology/2019/../../../about.html" class="tabs__link">អំពីខ្ញុំ</a>
+            </li>
+            <li class="tabs__item">
+                <a href="../../topology/2019/../../../contact.html" class="tabs__link">ទាក់ទងខ្ញុំ</a>
+            </li>
+        </ul>
+    </nav-->
+
+    <section class="page-header">
+        <h1 class="project-name">ហាំ ការីម</h1>
+        <h2 class="project-tagline">Maths, Program, Music</h2>
+    </section>
+
+    <section class="main-content">
+
+        <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">Lecture 10:&nbsp; ផលគុណរវាងសំណុំ (Product of Sets) </h1>
+        <p style="font-style: italic; font-weight:bold; font-family: Arial; opacity: 0.5;">
+            October
+            2nd, 2020
+        </p>
+
+        <hr>
+        <p style="text-indent:0px">From Wikipedia:</p>
+        <blockquote>
+            <a href="https://en.wikipedia.org/wiki/File:Affine_space_R3.png">
+                <div class="divfigure">
+                    <p style="font-size: 11px"> <img class="wrap-right" alt="Wiki page" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Venn_A_intersect_B.svg/1920px-Venn_A_intersect_B.svg.png">
+                        A Venn diagram illustrating the intersection of two sets
+                    </p>
+                </div>
+            </a>
+            <p style="font-size: 13px">
+            
+
+            </p>
+            
+            <p style="font-size: 13px">
+                
+            </p>
+            
+            <p style="font-size: 13px">
+            
+            
+            </p>
+       
+        </blockquote>
+
+        <p>
+            
+            
+        </p>
+
+        
+        <div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">គោលបំណងនៅក្នុងជំពូកនេះគឺ៖ </span>
+</div>
+
+<p class="">
+<ol class="romanlist twoem">
+    <li>
+        
+    </li>
+
+</ol>
+</p>
+
+</div>
+
+ <p>
+
+Another way to obtain a new set from two given sets \(A\) and \(B\) is to form ordered pairs. An ordered pair \((x,y)\) consists of two values \(x\) and \(y\). Their order of appearance is important, so we call them first and second elements respectively. Consequently, \((a,b)\neq (b,a)\) unless \(a=b\). In general, \((a,b)=(c,d)\) if and only if \(a=c\) and \(b=d\).
+        </p>
+        
+        <h2 class="frame-sect sectcounter">&nbsp;  និយមន័យ </h2>
+       
+           
+           <p>
+
+
+           
+       </p>
+       
+       
+       
+  
+   <div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default"> Note: 
+</span>
+</div>
+
+<p class="">
+<uo class="twoem">
+    
+    <li>
+        It’s important to understand that a set is defined by the elements that it contains, and not by the order in which those elements might be listed. 
+    </li>
+    
+    <li>
+        A set can only contain one copy of a given element, even if the notation that specifies the set lists the element twice. Note in particular that it’s incorrect to say that the set $\{a, b, a, a, b, c, a\}$ contains seven elements, since some of the elements in the list are identical. 
+    </li>
+    
+    <li>
+        The notation $\{a, b, c\}$ can lead to some confusion, since it might not be clear whether the letters $a, b$, and $c$ are assumed to refer to three different entities. So, a mathematician generally makes assumption that the set denoted by $\{a, b, c\}$ meaning that different letters refer to different entities.
+    </li>
+</uo>
+
+</p>
+
+</div>
+  
+  <h3>ផលគុណដេកាត</h3>
+   
+   <defn>
+                 <div class="definition"> (Cartesian Product) </div>
+            <div class="definitionb">
+      <p>
+         The Cartesian product of \(A\) and \(B\) is the set
+
+\[
+                A \times B = \Big\{ (a,b) \mid a \in A \wedge b \in B \Big\}
+\]
+
+                </p></div>
+   </defn>
+        <p>
+           
+            </p>
+        
+        <br>
+        
+<example>
+   Notation in mathematics is often developed for good reason. In this case, a few examples will make clear why the symbol \(\times\) is used for Cartesian products.
+
+
+
+    <ol class="romanlist oneem">
+        
+        <li>
+            Let \(A = \{1, 2, 3\}\) and \(B = \{4, 5\}\text{.}\) Then \(A \times B = \{(1, 4), (1, 5), (2, 4), (2, 5), (3, 4), (3, 5)\}\text{.}\) Note that \(|A \times B| = 6 = \lvert A \rvert \times \lvert B \rvert \text{.}\)
+        </li>
+        <li>
+            \(A \times A = \{(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3)\}\text{.}\) Note that \(|A \times A| = 9 = {\lvert A \rvert}^2\text{.}\)
+        </li>
+      
+    </ol>
+</example>
+<p>
+    These two examples illustrate the general rule that if \(A\) and \(B\) are finite sets, then \(\lvert A \times B \rvert = \lvert A \rvert \times \lvert B \rvert \text{.}\) <br>
+    
+
+We can define the Cartesian product of three (or more) sets similarly. For example, 
+\[A \times B \times C = \Big\{(a, b, c):a \in A, b \in B, c \in C\Big\}\]
+</p>
+<defn>
+            <div class="definition"> (Empty set)</div>
+            <div class="definitionb">
+           <p>
+       A collection having no objects is clearly a set and is called
+the <b>empty set</b> or <b>null set</b> (សំណុំទទេ) and is denoted by the symbol $\varnothing$ or $\{ \}$.
+       
+                </p>
+    </div>
+    </defn>
+       
+       
+<example>
+    Consider the following sets:
+    <ul class="parindent">
+        <li>
+            $A =\{x \mid\, x \text{ is an even integer and } 2 \lt x \lt 4\}$ 
+        </li>
+        
+        <li>
+            $B = \{x :\, x \text{ is an integer and } x^2 + 2 = 0\}$
+        </li>
+    </ul>
+</example>
+       
+       
+       <defn>
+           <div class="definition"> (Equality and subset)</div>
+            <div class="definitionb">
+           <p>
+Let $A$ and $B$ be two sets. Then, we say that
+
+<ol class="romanlist oneem">
+    <li>
+        <b>$A$ is equal to $B$</b> and express this by $A=B$ if, for any object $x$,
+$$
+x \in A \Longleftrightarrow x \in B 
+$$
+    </li>
+    
+    <li>
+       <b> $A$ is a subset of $B$</b> (or $A$ is contained in $B$ ) and express this by $A \subseteq B$ if, for any object $x$,
+$$
+x \in A \Longrightarrow x \in B 
+$$
+    </li>
+</ol>
+           </p>
+           </div>
+       </defn>
+       
+       
+       <p>
+           For any two sets $A$ and $B$, clearly $A=B$ if and only if $A \subseteq B$ and $B \subseteq A$. Whenever we are required to prove that two given sets $A$ and $B$ are equal, we usually prove that $A \subseteq B$ and $B \subseteq A$, that is, for any object $x$,
+$$
+x \in A \Rightarrow x \in B \quad \text { and } \quad x \in B \Rightarrow x \in A .
+$$
+
+
+Sometimes, we say that a set $A$ is smaller than $B$ (or $B$ is larger than $A$ ) if $A$ is a subset of $B . A$ is said to be a proper subset of $B$ and write $A \subset B$ if $A \subseteq B$ and $A \neq B$. Also, instead of writing $A \subseteq B$ or $\mathrm{A} \subset B$, some times we write $B \supseteq A$ or $B \supset A$ and say that $B$ contains $A$ (or $B$ is a superset of $A$ ) or $B$ properly contains $A$, respectively. We write $A \nsubseteq B$ if $A$ is not a subset of $B$.
+       </p>
+       
+
+       
+<div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default"> Progress Check</span>
+</div>
+
+<p class="">
+Let the universal set be \(U = \{1, 2, 3, 4, 5, 6\}\), and let
+
+\[A = \{1, 2, 4\},\quad B = \{1, 2, 3, 5\}, \quad C = \{x \in U \, | \, x^2 \le 2\}\]
+
+In each of the following, fill in the blank with one or more of the symbols \(\subset\), \(\subseteq\), =, \(\ne\), \(\in\) or \(\notin\) so that the resulting statement is true. For each blank, include all symbols that result in a true statement. If none of these symbols makes a true statement, write nothing in the blank.
+
+\[
+\begin{array} {rclrcl} 
+A &\text{----------------------} & B\quad \quad &  \varnothing & \text{----------------------}  & A \\
+5 &\text{----------------------}  & B &  \{5\} &\text{----------------------}  & B \\ 
+A &\text{----------------------}  & C & \{1, 2\} &\text{----------------------}  & C \\ 
+\{1, 2\} &\text{----------------------}  & A & \{4, 2, 1\} &\text{----------------------} & A \\ 
+6 &\text{----------------------} & A& B &\text{----------------------}  & \varnothing
+\end{array} 
+\]
+
+</p>
+
+</div>
+
+        
+        <h2 class="frame-sect sectcounter">&nbsp; ប្រមាណវិធីលើសំណុំ </h2> 
+
+</div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <!--<defn>
+            <div class="definition"> </div>
+            <div class="definitionb">
+
+            </div>
+        </defn> -->
+        
+        
+        
+        <!--<defn>
+            <div class="definition"> </div>
+            <div class="definitionb">
+
+            </div>
+        </defn> -->
+        
+        
+        
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+        <hr>
+
+        <h3> Recent Posts </h3>
+        <ul>
+
+
+            <li>
+                <i> <a href="../../topology/2019/post/2017/11/01/varparams.html">A Note on the Variation of Parameters Method </a> | 11/01/17 </i>
+            </li>
+
+
+            <li>
+                <i> <a href="../../topology/2019/notes/2017/10/26/groups3.html">Group Theory, Part 3: Direct and Semidirect Products </a> | 10/26/17 </i>
+            </li>
+
+
+            <li>
+                <i> <a href="../../topology/2019/notes/2017/10/19/galoistheory1.html">Galois Theory, Part 1: The Fundamental Theorem of Galois Theory </a> | 10/19/17 </i>
+            </li>
+
+
+            <li>
+                <i> <a href="../../topology/2019/notes/2017/10/19/fieldtheory2.html">Field Theory, Part 2: Splitting Fields; Algebraic Closure </a> | 10/19/17 </i>
+            </li>
+
+
+            <li>
+                <i> <a href="../../topology/2019/notes/2017/10/18/fieldtheory1.html">Field Theory, Part 1: Basic Theory and Algebraic Extensions </a> | 10/18/17 </i>
+            </li>
+
+        </ul>
+        <footer class="site-footer">
+
+            <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+        </footer>
+
+    </section>
+</body>
+
+
+<!-- script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-102852226-1', 'auto');
+    ga('send', 'pageview');
+  </script -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171606319-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-171606319-1');
+</script>
+
+<!--- To show/hide answer -->
+<script type="text/javascript">
+    function toggleanswer(id) {
+       var x = document.getElementById(id);
+       if(x.style.display == 'block')
+          x.style.display = 'none';
+       else
+          x.style.display = 'block';
+    }
+</script>
+
+</html>

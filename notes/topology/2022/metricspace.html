@@ -1,0 +1,2439 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+    <!-- Begin Jekyll SEO tag v2.3.0 -->
+    <meta property="og:title" content="Ham Karim">
+    <meta name="author" content="Ham Karim">
+    <meta name="author" content="លំហអាហ្វីន">
+    <meta property="og:locale" content="en_US">
+    <meta http-equiv="keywords" name="keywords" content="affine spaces, Euclidean-affine spaces, លំហអាហ្វីន, លំហអាហ្វីន-អឺគ្លីដ">
+    <meta http-equiv="description" name="description" content="ក្នុងគណិតវិទ្យា លំហអាហ្វីន (affine space) គឺជាទម្រង់ធរណីមាត្រមួយ ដែលកំណត់បានភាពទូទៅនៃលក្ខណៈរបស់ លំហអឺគ្លីដ (Euclidean spaces)  តាមវិធីមួយដែលមិនអាស្រ័យទៅនឹងគោលគំនិតទាំងឡាយណាទាក់ទងនឹងចំងាយ និងរង្វាស់មុំ តែវារក្សាបានលក្ខណៈទាំងឡាយណា ដែលទាក់ទងនឹងភាពស្របគ្នា និងសមាមាត្រនៃប្រវែងរបស់អង្កត់ស្របគ្នា។">
+    <meta name="description" content="Affine spaces, លំហអាហ្វីន">
+    <meta property="og:description" content="Math, Programmer, Music">
+    <link rel="canonical" href="../../../index.html">
+    <meta property="og:url" content="https://hamkarim.github.io/">
+    <meta property="og:site_name" content="Right Triangle">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@pkarim">
+    <meta name="twitter:creator" content="@pkarim">
+    <meta name="google-site-verification" content="b9bg3P9zc8qbL4szvVYaf551jD9x017IyGBVSaQZDDY" />
+
+    <script type="application/ld+json">
+        {
+            "name": "Ham Karim",
+            "description": "I am a faculty member at the Royal Univeristy of Phnom Penh (RUPP). This is my blog of lectures at universities. ",
+            "author": {
+                "@type": "Person",
+                "name": "Ham Karim"
+            },
+            "@type": "WebSite",
+            "url": "https://hamkarim.github.io/",
+            "image": null,
+            "publisher": null,
+            "headline": "Ham Karim",
+            "dateModified": null,
+            "datePublished": "2020-06-01",
+            "sameAs": null,
+            "mainEntityOfPage": null,
+            "@context": "http://schema.org"
+        }
+    </script>
+    <!-- End Jekyll SEO tag -->
+
+    <meta property="og:image" content="http://www.cliparts101.com/files/376/298FE3955707B1DE458221E4BFABFBBE/Greek_Gamma_4.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../topology/2019/favicon.ico">
+    <meta charset="UTF-8">
+    <title>Affine Spaces | លំហអាហ្វីន</title>
+    <meta name="description" content="Math, Programmer, Music">
+
+    <!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
+
+    <style>
+        .deffont {
+            font-family: 'Noto Serif Khmer', 'CMU Serif';
+            font-size: 16px;
+        }
+
+        ul.liststyle1 {
+            list-style-type: square;
+        }
+
+        ul.liststyle2 {
+            list-style-type: hebrew;
+        }
+
+        a.onmenu {
+            font-family: 'Noto Serif Khmer', 'CMU Serif';
+            font-weight: bold;
+        }
+    </style>
+
+    <style type="text/css">
+        /**************** Box container styles *******************/
+        .mt-content-container .boxobjectives,
+        .boxexample,
+        .boxexercise,
+        .boxquery,
+        .boxnotewithlegend,
+        .boxnotewithoutlegend,
+        .boxprocedure,
+        .boxdefinition,
+        .boxtheorem,
+        .boxlemma,
+        .boxnotation,
+        .boxproposition {
+            -moz-border-radius: 8px;
+            -webkit-border-radius: 8px;
+            border-radius: 8px;
+            padding-top: 0em;
+            padding-bottom: 0em;
+            padding-left: 1em;
+            padding-right: 1em;
+            margin-bottom: 1em;
+            overflow: visible;
+            border: 0px;
+            orphans: 2;
+        }
+
+        .mt-content-container .boxnotewithlegend,
+        .boxprocedure,
+        .notation {
+            background-color: hsla(20, 0%, 93%, 1);
+        }
+
+        .mt-content-container .boxexample,
+        .boxexercise {
+            background-color: hsla(220, 100%, 97%, 1);
+        }
+
+        .mt-content-container .boxwarning {
+            background-color: hsla(0, 100%, 96%, 1);
+        }
+
+        .mt-content-container .boxdefinition,
+        .boxtheorem,
+        .boxlemma,
+        .boxnotation,
+        .boxproposition {
+            background-color: hsla(28, 80%, 95%, 1);
+        }
+
+        .mt-content-container .boxobjectives {
+            background-color: hsla(0, 0%, 90%, 1);
+        }
+
+        .mt-content-container .boxnotewithoutlegend {
+            background-color: hsla(20, 0%, 93%, 1);
+            padding-right: 1em;
+            padding-left: 1em;
+            padding-top: 0.5em !important;
+            padding-bottom: 0.5em !important;
+            margin-right: 1em;
+            margin-left: 1em;
+        }
+
+        .mt-content-container .boxquery {
+            border: 2px solid green;
+            page-break-inside: avoid;
+            visibility: hidden !important;
+            display: none !important;
+        }
+
+        /**************** Box legend container styles *******************
+	.mt-content-container .boxlegend {
+		font-style: normal !important;
+		font-size: 1.1em !important;
+		font-weight: normal !important;
+		font-family: "Tahoma", Arial, serif !important;
+		padding-top: 0.2em !important;
+		padding-bottom: 0.2em !important;
+		padding-left: 0.3em !important;
+		padding-right: 0.3em !important;
+		margin-left: 0.35em;
+		color: white;
+		border-radius: 3px;
+		overflow: visible;
+		break-inside: avoid !important;
+	}
+
+	/************** Defining the Legends ******************
+
+
+	.box-definition>header,
+	.box-structure>header,
+	.box-note>header,
+	.box-theorem>header,
+	.box-example>header,
+	.box-exercise>header,
+	.box-query>header,
+	.box-adapt>header,
+	.box-objectives>header,
+	.box-warning>header {
+		display: inline-flex;
+		overflow: hidden;
+		break-inside: avoid-page;
+		page-break-inside: avoid;
+		text-align: left;
+		width: auto;
+		margin: 0 0px 2px 0px !important;
+		padding: 4px 6px 4px 4px !important;
+		transform: translate(-11px, 0px) !important;
+		border-radius: 3px 5px 5px 0;
+		-moz-border-radius: 3px 5px 5px 0;
+		-webkit-border-radius: 3px 5px 5px 0;
+	}
+	.box-definition>header *,
+	.box-structure>header *,
+	.box-note>header *,
+	.box-theorem>header *,
+	.box-example>header *,
+	.box-exercise>header *,
+	.box-query>header *,
+	.box-adapt>header *,
+	.box-objectives>header *,
+	.box-warning>header * {
+		font-family: "Battambang", "Tahoma", Arial, serif !important;
+		font-size: 17px !important;
+		font-weight: 400 !important;
+		color: white !important;
+		;
+		width: auto !important;
+		;
+		float: left !important;
+		;
+		line-height: 1 !important;
+		;
+		margin-block-start: 0 !important;
+		margin-block-end: 0 !important;
+	}
+*/
+    </style>
+
+    <style type="text/css">
+        /*<![CDATA[*/
+        .Headertext {
+            display: none;
+        }
+
+        /*]]>*/
+    </style>
+
+    <style type="text/css">
+        /*<![CDATA[*/
+        /* CSS pseudo-element styling https://fontawesome.com/how-to-use/on-the-web/advanced/css-pseudo-elements */
+
+        /* general reset/setup styling for icons - needed on all */
+
+        .lt-icon-default::before,
+        .lt-icon-brain::before,
+        .lt-icon-pin::before,
+        .lt-icon-hand::before,
+        .lt-icon-pathway::before,
+        .lt-icon-logic::before,
+        .lt-icon-check::before,
+        .lt-icon-question::before,
+        .lt-icon-exclamation::before {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1.5;
+            font-family: "Font Awesome 5 Pro";
+            font-weight: 900;
+            margin-right: 0.5rem;
+        }
+
+        /*default */
+
+        .box-example .lt-icon-default::before {
+            content: "\f00c";
+        }
+
+        .box-exercise .lt-icon-default::before {
+            content: "\f128";
+        }
+
+        .box-query .lt-icon-default::before {
+            content: "\f126";
+        }
+
+        .box-adapt .lt-icon-default::before {
+            content: "\f126";
+        }
+
+        .box-interactive .lt-icon-default::before {
+            content: "\f542";
+        }
+
+        .box-note .lt-icon-default::before {
+            content: "\f08d";
+        }
+
+        .box-objectives .lt-icon-default::before {
+            content: "\f5dc";
+        }
+
+        .box-definition .lt-icon-default::before {
+            content: "\f303";
+        }
+
+        .box-theorem .lt-icon-default::before {
+            content: "\f1b3";
+        }
+
+        .box-warning .lt-icon-default::before {
+            content: "\f256";
+        }
+
+
+        /*specific icons*/
+        .lt-icon-brain::before {
+            content: "\f5dc";
+        }
+
+        .lt-icon-pin::before {
+            content: "\f08d";
+        }
+
+        .lt-icon-pathway::before,
+            {
+            content: "\f126";
+        }
+
+        .lt-icon-logic::before,
+            {
+            content: "\f1b3";
+        }
+
+        .lt-icon-hand::before,
+            {
+            content: "\f126";
+        }
+
+        .lt-icon-pathway::before,
+            {
+            content: "\f256";
+        }
+
+        .lt-icon-check::before,
+            {
+            content: "\f00c";
+        }
+
+        .lt-icon-question::before,
+            {
+            content: "\f128";
+        }
+
+        .lt-icon-exclamation::before,
+            {
+            content: "\f12a";
+        }
+
+        /*]]>*/
+    </style>
+   
+    <script async="" src="//cse.google.com/adsense/search/async-ads.js"></script>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async="" src="https://cse.google.com/cse.js?cx=001004262401526223570:11yv6vpcqvy"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-331594-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-331594-1');
+    </script>
+
+
+
+    <link rel="stylesheet" href="../../../assets/css/style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245">
+    
+        <link rel="stylesheet" href="../../../assets/css/all.css">
+        
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- Script to show and hide proof -->
+    <script type="text/javascript" src="https://hamkarim.github.io/assets/js/showhide.js"></script>
+    <!-- Other style of showing and hiding proof -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
+    <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>
+    <!-- end -->
+
+   
+       <script type="text/javascript" src="../../../assets/sidebar/sidebar.min.js"></script>
+    <link rel="stylesheet" href="../../../assets/sidebar/Sidebar.css">
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        //Another method to toggle the button
+        $(document).ready(function() {
+            $('.showanswer').click(function() {
+                $('.block_proof').show();
+                $('.showanswer').hide();
+                $('.hideanswer').show();
+            });
+            $('.hideanswer').click(function() {
+                $('.block_proof').hide();
+                $('.showanswer').show();
+                $('.hideanswer').hide();
+            });
+        });
+    </script>
+
+    <!-- For local function, define to exchange text -->
+    <script>
+        function showhideFunction() {
+            document.getElementById('idClick').innerHTML === '[Hide proof]' ? document.getElementById('idClick').innerHTML = '[Show proof]' : document.getElementById('idClick').innerHTML = '[Hide proof]';
+        }
+    </script>
+
+    <!-- script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,https://hamkarim.github.io/MathJax/config/local/local.js"></script -->
+    
+    <script type="text/javascript" src="../../../MathJax/config/local/mathjax-config.js" defer></script>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml-full.min.js">
+    </script>
+
+    <!--script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { fonts: ["TeX"] }
+  });
+</script-->
+
+    <!-- script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script--
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
+    </script -->
+
+    <!--script type="text/javascript" config=TeX-MML-AM_CHTML
+   src="">
+</script-->
+
+    <!--
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">  -->
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>  -->
+
+    <!-- To automatically render math in text elements, include the auto-render extension:
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);">
+</script>
+<script >
+  document.addEventListener("DOMContentLoaded", function()
+      {
+        renderMathInElement(document.body,
+            {
+                delimiters: [
+                    { left: "\\begin{equation}", right: "\\end{equation}", display: true },
+                    { left: "$$", right: "$$", display: true },
+                    { left: "\\[", right: "\\]", display: true },
+                    { left: "\\(", right: "\\)", display: false },
+                    { left: "$", right: "$", display: false }
+                ]
+            });
+        });
+</script> -->
+
+    <!-- To get it to work in old versions of Internet Explorer, you need to append this script to the head (Important if you need it to work in older versions of IE!): -->
+    <!--[if lt IE 9] -->
+    <script>
+        document.createElement("example, defn");
+    </script>
+    <!-- [endif]-->
+    
+    
+
+    <div class="Headertext">
+
+        \( \newcommand{\vecs}[1]{\overset { \scriptstyle \rightharpoonup} {\mathbf{#1}}&nbsp;}&nbsp;\)
+        
+    \( \newcommand{\Vect}[1]{\mathbf{Vect}\!\left(#1\right)}\)
+   \( \newcommand{\vecd}[1]{\overset{-\!-\!\rightharpoonup}{\vphantom{a}\smash&nbsp;{#1}}} \)
+   \(\newcommand{\id}{\mathrm{id}}\)
+   \( \newcommand{\Span}{\mathrm{span}}\)
+   \( \newcommand{\kernel}{\mathrm{null}\,}\)
+   \( \newcommand{\range}{\mathrm{range}\,}\)
+   \( \newcommand{\RealPart}{\mathrm{Re}}\)
+   \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+   \( \newcommand{\Argument}{\mathrm{Arg}}\)
+  \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \(\newcommand{\id}{\mathrm{id}}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \( \newcommand{\kernel}{\mathrm{null}\,}\)
+  \( \newcommand{\range}{\mathrm{range}\,}\)
+  \( \newcommand{\RealPart}{\mathrm{Re}}\)
+  \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+  \( \newcommand{\Argument}{\mathrm{Arg}}\)
+  \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\cof}{\mathbf{cof}}\)
+  \( \newcommand{\adj}{\mathbf{adj}}\)
+  \( \renewcommand{\det}{\mathbf{det\,\!}}\)
+    \( \newcommand{\minor}{\mathbf{minor}}\)
+  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \( \newcommand{\bbR}{\mathbb{R}}\)
+  \( \newcommand{\calD}{\mathcal{D}}\)
+  \( \newcommand{\calP}{\mathcal{P}}\)
+\( \newcommand{\calA}{\mathcal{A}}\) 
+\( \newcommand{\Aff}[1]{\mathbf{Aff}{\left(#1\right)}}\)
+\( \newcommand{\card}{\mathbf{card}}\)
+ \( \newcommand{\d}{\mathbf{d}}\)
+  
+  </div>
+  
+  
+
+</head>
+
+<body>
+    <!--nav class="nav-collapse" role="navigation">
+        <ul class="tabs primary-nav">
+            <li class="tabs__item">
+                <a href="../../../index.html" class="tabs__link">ទំព័រដើម</a>
+            </li>
+            <li class="tabs__item">
+                <a href="../../topology/2019/../../../posts_index.html" class="tabs__link">Blog</a>
+            </li>
+            <li class="tabs__item">
+                <a href="../../topology/2019/../../../projects.html" class="tabs__link">Projects</a>
+            </li>
+            <li class="tabs__item">
+                <a href="../../../notes_index.html" class="tabs__link">មេរៀន</a>
+            </li>
+            <li class="tabs__item">
+                <a href="../../topology/2019/../../../about.html" class="tabs__link">អំពីខ្ញុំ</a>
+            </li>
+            <li class="tabs__item">
+                <a href="../../topology/2019/../../../contact.html" class="tabs__link">ទាក់ទងខ្ញុំ</a>
+            </li>
+        </ul>
+    </nav-->
+
+    <section class="page-header">
+        <h1 class="project-name">ហាំ ការីម</h1>
+        <h2 class="project-tagline">Maths, Program, Music</h2>
+    </section>
+
+    <section class="main-content">
+
+        <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">ជំពូក ២ :&nbsp; លំហមេទ្រីក  (Metric Spaces) </h1>
+        <p style="font-style: italic; font-weight:bold; font-family: Arial; opacity: 0.5;">
+            October
+            2nd, 2020
+        </p>
+
+        <hr>
+        <p style="text-indent:0px">From Wikipedia:</p>
+        <blockquote>
+            <a href="https://en.wikipedia.org/wiki/File:Affine_space_R3.png">
+                <div class="divfigure">
+                    <p style="font-size: 11px"> <img class="wrap-right" alt="Manhattan distance" src="fig/Manhattan_distance.png">
+                        The plane (a set of points) can be equipped with different metrics. In the taxicab metric the red, yellow, blue, and green paths have the same length ($12$), and are all shortest paths. In the Euclidean metric, the green path has length $\sqrt {2}\approx 8.49$, and is the unique shortest path, whereas the red, yellow, and blue paths still have length $12$.
+                    </p>
+                </div>
+            </a>
+            <p>
+                In 1906 Maurice Fréchet introduced metric spaces in his work <b>Sur quelques points du calcul fonctionnel</b> in the context of functional analysis: his main interest was in studying the real-valued functions from a metric space, generalizing the theory of functions of several or even infinitely many variables, as pioneered by mathematicians such as Cesare Arzelà. The idea was further developed and placed in its proper context by Felix Hausdorff in his magnum opus Principles of Set Theory, which also introduced the notion of a (Hausdorff) topological space.[7]
+            </p>
+            <p>
+                General metric spaces have become a foundational part of the mathematical curriculum.[8] Prominent examples of metric spaces in mathematical research include Riemannian manifolds and normed vector spaces, which are the domain of differential geometry and functional analysis, respectively.[9] Fractal geometry is a source of some exotic metric spaces. Others have arisen as limits through the study of discrete or smooth objects, including scale-invariant limits in statistical physics, Alexandrov spaces arising as Gromov–Hausdorff limits of sequences of Riemannian manifolds, and boundaries and asymptotic cones in geometric group theory. Finally, many new applications of finite and discrete metric spaces have arisen in computer science.
+            </p>
+            <p>
+            In mathematics, a metric space is a set together with a notion of distance between its elements, usually called points. The distance is measured by a function called a metric or distance function.[1] Metric spaces are the most general setting for studying many of the concepts of mathematical analysis and geometry.
+            </p>
+            <p> Since they are very general, metric spaces are a tool used in many different branches of mathematics. Many types of mathematical objects have a natural notion of distance and therefore admit the structure of a metric space, including Riemannian manifolds, normed vector spaces, and graphs. In abstract algebra, the p-adic numbers arise as elements of the completion of a metric structure on the rational numbers. Metric spaces are also studied in their own right in metric geometry[2] and analysis on metric spaces.[3]
+            </p>
+            <p>
+                Many of the basic notions of mathematical analysis, including balls, completeness, as well as uniform, Lipschitz, and Hölder continuity, can be defined in the setting of metric spaces. Other notions, such as continuity, compactness, and open and closed sets, can be defined for metric spaces, but also in the even more general setting of topological spaces.
+            </p>
+        </blockquote>
+
+       <p>
+           The concept of a metric space is an elementary yet powerful tool in analysis. And while it is not sufficient to describe every type of limit we can find in modern analysis, it gets us very far indeed.
+       </p>
+        <p>
+            អំណេះតទៅ យើងសន្មតការកំណត់សរសេរអក្សរដិតត្រង់  $\E$ ឬ $\vect{\E}$ តាងអោយលំហវ៉ិចទ័រមួយកំណត់លើកាយ $\mathbb K$ (អាចជា $\R$ ឬ $\Cc$) ហើយបើសរសេរទ្រេត $A$ គឺតាងអោយចំណុចមួយរបស់លំហអាហ្វីន $\calE$ $-$ លើកលែងតែមានការកំណត់ផ្សេងពីនេះ នៅក្រោយទៀត។
+        </p>
+
+        
+        <div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">គោលបំណងនៅក្នុងជំពូកនេះគឺ៖ </span>
+</div>
+
+<p class="">
+<ol class="romanlist twoem">
+    <li>
+        A
+    </li>
+    
+    <li>
+        B
+        
+    </li>
+
+</ol>
+</p>
+
+</div>
+
+        <p>
+
+
+        </p>
+        <h2 class="frame-sect sectcounter">&nbsp; និយមន័យ និង Notation </h2> <!-- \section{និយមន័យ និងលក្ខណៈបឋមៗ}  -->
+
+        <defn>
+            <div class="definition"> (Metric Space) </div>
+            <div class="definitionb">
+                <p> Let \(X\) be a set and let \(\d \colon X \times X \to {\mathbb{R}}\) be a function such that
+
+                <ol class="romanlist oneem">
+                    <li><b>Nonnegativity: </b> &ensp; \(\d(x,y) \geq 0\) for all \(x, y\) in \(X\)
+                    </li>
+                    <li><b>Metric zero: </b> &ensp; \(\d(x,y) = 0\) if and only if \(x = y\) for all \(x, y\) in \(X\)
+                    </li>
+                    <li>
+                        <b>Symmetry: </b> &ensp; \(\d(x,y) = d(y,x)\) for all \(x, y\) in \(X\)
+                    </li>
+                   <li>
+                       <b>Triangle inequality: </b> &ensp; \(d(x,z) = d(x,y)+ d(y,z)\) for all \(x, y, z\) in \(X\)
+                   </li>
+                </ol>              
+                       Then the pair \((X,d)\) is called a <b>metric space</b>. The function \(\d\) is called the <b>metric</b> or sometimes the <b>distance function</b>. Sometimes we just say \(X\) is a metric space if the metric is clear from context. 
+                </p>
+            </div>
+        </defn>
+
+                  
+                  <a>
+                  <div style="float: right; width: 35%;padding-top: 30px">
+                      <p style="font-size: 11px"> 
+                         <img alt="View of Affine Space" src="fig/aff_def1.png">
+                          <img alt="View of Affine Space" src="fig/aff_def2.png">
+                      </p>
+                      
+                      </div></a>
+                  <p style="text-indent: 0px"><b>កំណត់សម្គាល់ :</b>
+                  <ul>
+                     <li>An affine space is basically a vector space without an origin.</li>
+                      <li>បើ $\mathcal{E}$ ជាលំហអាហ្វីន តាមទិសដៅ $\vect{\E}$ នោះធាតុរបស់ $\mathcal{E}$ ហៅថា <b>ចំណុច</b> ហើយគេកំណត់សរសេរដោយអក្សរធំ $A,B, C,\ldots $។</li>
+                      <li>ធាតុរបស់លំហ $\vect{\E}$ ហៅថា <b> វ៉ិចទ័រ</b> ហើយកំណត់សរសេរដោយអក្សរតូច មានសញ្ញាព្រួញនៅខាងលើ គឺ $\vec{i}, \vec{j}, \vec{k}, \vec{u}, \vec{v}, \cdots $។ ក្នុងករណីខ្លះទៀត គេសន្មតសរសេរវ៉ិចទ័រដោយមិនមានសញ្ញាព្រួញទេ!</li>
+                      <li>ជួនកាល គេតាងលំហអាហ្វីនដោយ $(\mathcal E, \vect{\E}, +)$ ហើយដើម្បីសម្រួលដល់ការយល់និយមន័យខាងលើ គេកំណត់បម្រែបម្រួលនិយមន័យផ្សេងមួយទៀត ដូចខាងក្រោម៖ <br>
+                          <!-- An affine space is a space where translation is defined, formally an affine space is a set $\mathcal E$ (of points) that admits a free transitive action of a vector space $\vect{E}$ (of translations) whose action results in an element of the set $\mathcal E$, that is there's a map -->
+
+
+                      </li>
+                  </ul>
+                  </p>
+
+                          <div class="box-note">
+                              <!--div class="box-legend editable"><span class="lt-icon-default">()</span>
+        </div-->
+                              <p class="parindent">
+                                  គេហៅ $(\mathcal E, \vect{\E}, +)$ ជាលំហអាហ្វីន បើមានអនុវត្តន៍ :
+                                  <!--is an affine space if there is a map-->
+                                  \[
+                                  \begin{array}{rcl}
+                                  + :\; \mathcal E \times \vect{\E} &\longrightarrow & \mathcal E\\
+                                  (A, \vec v) &\longmapsto & A +\vec{v}
+                                  \end{array}
+                                  \]
+                                  ដែលផ្ទៀងផ្ទាត់៖
+                              <ol class="parenthroman">
+                                  <li><b>The zero vector acts as an identity:</b> for all $A \in \mathcal E, A +\vec{0}= A$</li>
+                                  <li><b>Addition of vectors correspond to translations:</b> for all $A \in \mathcal E$ and $\vec{u}, \vec{v} \in \vect{\E}, A +(\vec{u}+\vec{v})=(A+\vec{u})+\vec{v}$</li>
+                                  <li>For any $A, B \in \mathcal E$, there's a unique free vector $\vec{u} \in \vect{\E}$ such that $A+\vec{u}=B$</li>
+                              </ol>
+                              </p>
+
+                          </div>
+
+
+        <p style="text-indent: 0px"><b>ចំណាំ: </b> នៅក្នុងបរិបទខ្លះ ធាតុរបស់លំហវ៉ិចទ័រកំណត់លើកាយ $\mathbb{R}$ ត្រូវបានចាត់ទុកថាជា <a href="">ចំណុច</a> ឬជា <a href="">វ៉ិចទ័រ</a> ក៏បាន។
+        </p>
+  
+        <example>
+            ពិនិត្យមើលឧទាហរណ៍ខាងក្រោម៖
+            <ol class="parenthnum oneem">
+                <li>បើ $\dim\big(\vect\E\big)=1$ នោះគេនិយាយថា $\mathcal{E}$ គឺជា <a href="####ssssss">បន្ទាត់អាហ្វីន</a>។ </li>
+                <li>បើ $\dim\big(\vect\E\big)=2$ នោះគេថា $\mathcal{E}$ គឺជា <a href="https://en.wikipedia.org/wiki/Affine_plane_(incidence_geometry)">ប្លង់អាហ្វីន</a>។</li>
+                <li>គ្រប់លំហវ៉ិចទ័រ $\vect{\E}$ កំណត់លើកាយ $\mathbb{R}$ តាមន័យកាណូនិច អាចចាត់ទុកថាជាលំហអាហ្វីនមួយ ដែលភ្ជាប់ទៅនឹងខ្លួនវា នៅពេលណាគេមានអនុវត្តន៍ដូចតទៅ៖
+                    <!-- peut-être considéré, canoniquement, comme un espace affine attaché à lui même, lorsqu' on considère l'application suivante:-->
+                    $$
+                    \begin{array}{ccl}
+                    \vect\E\times \vect\E &\longrightarrow & \vect\E\\
+                    (a,b) &\longmapsto & \vect{ab} = b-a
+                    \end{array}
+                    $$ ដែលផ្ទៀងផ្ទាត់ទៅនឹងលក្ខខណ្ឌនៃនិយមន័យខាងលើ។
+                    <!--qui vérifie les conditions de la définition. -->
+                </li>
+            </ol>
+        </example>
+
+
+        <example>
+            <p class="parindent">ពិនិត្យសំណុំរង $\mathcal L$ របស់ $\mathbb R^2$ ដែលជាសំណុំចំណុចកំណត់ដោយ </p>
+            $$\mathcal L=\bigl\{(x,y)\in \mathbb R^2\mid -x+y-2=0\bigr\}$$
+            <img class="center" alt="" src="./fig/aff_line1.png" width="330">
+            <p>
+                We can see that any point of the form $(x, y)=(x, 2+x)$, the line can be made into an affine space by defining $+: \mathcal L \times \mathbb R\rightarrow \mathcal L$, so that for any $u \in \mathbb R$ and any $P\in \mathcal L$:
+                \[
+                \begin{array}{rcl}
+                + :\; \mathcal L\times \mathbb R &\longrightarrow & \mathcal L\\
+                \bigl(P, u\bigr) &\longmapsto & (x, 2+x)+u = (x+u, 2+x+u)
+                \end{array}
+                \]
+                For example the point $(-2,0)$ added with the vector $u=(1,1)$ results in the point $(-1,1)$ which belongs to the set $\mathcal L$.<br><br>
+                Note that the vector space $\bbR$ is the  line of equation $-x+y=0$, meaning that all vectors are parallel to $\vec u=(1,1)$.
+            </p>
+
+        </example>
+
+
+<!--example>
+   <p>
+        Consider the subset $\mathcal L$ of $A^2$       consisting of all points $(x, y)$ satisfying the equation:
+\[
+x+y - 1=0
+\]
+$\mathcal L$ is the line having slope $-1$ passing through the point $(1,0)$ and $(0,1)$. The line $\mathcal L$ can be an affine space by defining the action $+: \mathcal L \times \bbR \longrightarrow \mathcal L$ such that every point $(x, 1-x)$ on $\mathcal L$ and any $u \in\mathbb R$
+\[
+(x, 1-x) + u = (x+u, 1-x-u)
+\]
+Now, for any two points $A =(a_1, 1- a_1)$ and $B = (b_1, 1-b_1)$ on $\mathcal L$, the unique vector $u \in\bbR$ such that $B = A+u$ is $u = b_1 – a_1$. Note that vector space $\bbR$ isomorphic to the line of equation $x + y = 0 $  passing through the origin. 
+   </p>
+</example-->
+
+
+        <h3 class="sectcounter">&nbsp; វិធានគណនា</h3>
+        <p>
+            យក $\mathcal{E}$ ជាលំហអាហ្វីនភ្ជាប់ទៅនឹងលំហវ៉ិចទ័រ $\vect{\E}$ ។ ដូច្នេះគេបាន
+        <ol class="romanlist twoem">
+            <li>$\forall M, N \in \mathcal{E},\ \vect{AM}= \vect{AN}\Longrightarrow M = N$ </li>
+            <li>$\forall A, B \in \mathcal{E},\ \vect{AB} =\vect{0} \Longleftrightarrow A=B$</li>
+            <li> $\forall A, B \in \mathcal{E},\ \vect{BA} = -\vect{AB}$</li>
+            <li>$\forall A, B, C \in \mathcal{E},\ \vect{BC} = \vect{AC} - \vect{AB}$</li>
+            <li>ចំពោះគ្រប់ចំណុច $A\in \mathcal{E}$ និងគ្រប់វ៉ិចទ័រ $\vect{u} \in \vect\E$ នោះមានចំណុចតែមួយគត់ $M\in \mathcal{E}$ ដែល $\vect{AM} = \vect{u}$</li>
+            <li>បើ $A$ និង $B$ គឺជាចំណុចពីររបស់ $\mathcal{E}$ នោះមានវ៉ិចទ័រតែមួយគត់ $\vect{u}\in \vect\E$ ដែល $\vect{AB} = \vect{u}$</li>
+        </ol>
+
+        </p>
+
+        <p align="right"><a class="toggle bground" id="onClick" href="#proof" onclick="showhideFunction(proof)">[Show proof]</a></p>
+        <div class="hidepanel" id="proof" style="color:#1860C1">
+            <div><b><span class="headproof">សម្រាយបញ្ជាក់.</span> </b> </div>
+            
+            <div class="blockproof ">
+                <ol class="romanlist oneem">
+                    <li>តាមលក្ខណៈទី១ នៃនិយមន័យ​គេបានអនុវត្តន៍
+                        \[\begin{array}{rrll}
+                        \phi: & \mathcal{E} &\longrightarrow &\vect\E\\
+                        & M &\longmapsto &\phi(M) = \vect{AM}
+                        \end{array}\]
+                        គឺជាអនុវត្តន៍មួយទល់មួយ។ ដោយ $\varphi$ ជាអនុវត្តន៍ប្រកាន់ ដូច្នេះ គេទាញបានចម្លើយ។
+                        <!-- Donc cette application est injective, par suite, on a le résultat -->
+                    </li>
+
+                    <li>$(\Leftarrow)$ តាមទំនាក់ទំនងហ្សាល ចំពោះគ្រប់​ $A\in \mathcal{E}$ គេបាន
+                        $$\vect{AA}+\vect{AA}=\vect{AA}\quad \text{ so } \quad \vect{AA}=\vect{0}$$
+
+                        $(\Rightarrow)$ ដោយ $\vect{AB} = \vect{0} \Longrightarrow \vect{AB} = \vect{AA}$។ ដូច្នេះ $B=A$។</li>
+
+                    <li>ចំពោះគ្រប់ $A\in \mathcal{E}$ គេបាន $\vect{AA}= \vect 0$។ តាមទំនាក់ទំនងហ្សាល នោះ $\forall B\in \mathcal{E}$ គេបាន $\vect{AB} + \vect{BA} = \vect 0$។ ដូច្នេះ $\vect{BA} = -\vect{AB}$។</li>
+                    <li>$\forall A, B, C \in \mathcal{E}$ តាមទំនាក់ទំនងហ្សាល គេបាន
+                        $$
+                        \vect{BC} = \vect{BA} + \vect{AC} = -\vect{AB} + \vect{AC}
+                        $$</li>
+
+                    <li> នៅពេលណាយើងកំណត់ចំណុច​ $A$ ឱ្យនៅថេរ នោះអនុវត្តន៍
+                        \[
+                        \begin{array}{rl}
+                        \phi: &\mathcal{E} \longrightarrow \vect\E\\
+                        & M\longmapsto \vect{AM}
+                        \end{array}
+                        \]
+                        គឺជាអនុវត្តន៍មួយទល់មួយ។ ដូច្នេះ ចំពោះគ្រប់ $\vect u \in \vect\E$ នោះមានចំណុចតែមួយគត់ $M\in \mathcal{E}$ ដែល $\vect{AM} = \vect u$។</li>
+                </ol>
+            </div>
+        </div>
+
+        <h3 class="sectcounter">&nbsp; លក្ខណៈរបស់ប្រលេឡូក្រាម</h3>
+        <p style="text-indent: 0"> <b>សំណើ. </b>
+            ឧបមា $A, B, C$ និង $D$ គឺជាចំណុចបួននៅក្នុងលំហអាហ្វីន $\mathcal E$។ ដូច្នេះ លក្ខណៈខាងក្រោមសមមូលគ្នា៖
+        <ol class="parenthnum twoem">
+            <li>$\vect{AB} = \vect{CD}$</li>
+            <li>$\vect{AC} = \vect{BD}$</li>
+            <li>$\vect{AB} + \vect{AC} = \vect{AD}$</li>
+        </ol>
+
+        បើចំណុចទាំងបួន $A, B, C$ និង $D$ ផ្ទៀងផ្ទាត់លក្ខខណ្ឌណាមួយ ក្នុងចំណោមលក្ខខណ្ឌទាំងបីខាងលើ នោះគេនិយាយថា ចំណុច $A, B, C$ និង $D$ បង្កើតបានជាប្រលេឡូក្រាមមួយ។
+        </p>
+
+        <!--div class="showhidebground">
+            <a href="#proofNo.1" class="input_name" id="showanswer">[Show proof]</a>
+            <a href="#proofNo.1" class="input_name" id="hideanswer" style="display:none;">[Hide proof]</a>
+        </div -->
+        
+        
+        <p align="right"><a class="toggle bground" id="idGet1" href="#proof2" onclick="showhideFunction()">[Show proof]</a></p>
+        <div class="hidepanel" id="proof2" style="color:#1860C1">
+            <div><b><span class="headproof">សម្រាយបញ្ជាក់.</span> </b> </div>
+    
+        
+        
+        <div class="blockproof" style="">
+            <p>
+                បង្ហាញថា (i) $\Leftrightarrow$ (ii)
+                \begin{eqnarray*}
+                \vect{AB} =\vect{CD}\ &\Longleftrightarrow &
+                \vect{AC} + \vect{CB} = \vect{CB} + \vect{BD}\\
+                &\Longleftrightarrow & \vect{AC} = \vect{BD}
+                \end{eqnarray*}
+
+                បង្ហាញថា (i) $\Leftrightarrow$ (iii)
+                
+                \begin{eqnarray*}
+                \vect{AB} = \vect{CD} &\Longleftrightarrow & \vect{AB}=\vect{AD} - \vect{AC}\\
+                &\Longleftrightarrow & \vect{AB}+\vect{AC} = \vect{AD}
+                \end{eqnarray*}
+
+            </p>
+        </div>
+</div>
+      
+<h3 class="sectcounter">&nbsp; លំហអាហ្វីនរង</h3>
+      
+
+        <defn>
+            <div class="definition"> </div>
+            <div class="definitionb">
+                <p>
+                    យក $\mathcal{E}$ ជាលំហអាហ្វីនភ្ជាប់នឹងលំហវ៉ិចទ័រ $\vect{\E}$។ គេថា សំណុំរងមិនទទេ $\mathcal{F}$ របស់ $\mathcal{E}$ គឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$ បើមានចំណុចមួយ $A\in \mathcal{F}$ និងមានលំហវ៉ិចទ័ររងមួយ $\vect\F\subseteq \vect\E$ ដែល
+$$
+\forall M \in \mathcal{E},\ M\in \mathcal{F} \Longleftrightarrow \vect{AM} \in \vect\F
+$$
+ក្នុងករណីនេះ គេហៅ <a href="#No" style="color: red">$\mathcal{F}$ គឺជាលំហអាហ្វីនរង ដែលកាត់តាមចំណុច $A$ និងតាមទិសដៅ $\vect\F$</a> ។
+                    
+                    </p>
+            </div>
+        </defn>    
+        
+<p>
+    <b>REMARK: </b> It is said that a subset $\mathcal F$ of $\mathcal E$ is an <a href="#affinesubspace">affine subspace</a> if $\mathcal F=\varnothing$ or $\mathcal F\ni A $ (a fixed point $A$) such that $\varphi_A\big(\mathcal F\big) = \vect\F$ is a <a href="#vectorsubspace">vector subspace</a> of $\vect\E$. It is easily proved that this vector subspace does not depend on the choice of the point $A$. <br>
+    
+    <span class="indent">
+        <b>More precisely: </b> If $\mathcal{F}$ is an affine subspace through $A$ directed by $\vect\F$, then 
+    </span>
+    $$\varphi_{A}(\mathcal{F})=\vect\F \qquad\text{ and }\qquad 
+\mathcal{F}=\bigl\{M \in \mathcal{E} \mid\, \overrightarrow{A M} \in \vect\F\bigr\} 
+$$
+
+</p>
+      
+<example>
+<p class="parindent">
+        ចំពោះគ្រប់ចំណុច $A\in \mathcal{E}$ សំណុំដែលមានតែមួយធាតុ $\{A\}$ គឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$។ វាគឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$ ដែលកាត់តាមចំណុច $A$ និងតាមទិសដៅ $\vect\F=\{\vect 0\}$។ 
+    </p>
+    
+</example>   
+      
+<br>
+
+
+<example>
+<p class="parindent">
+        យក $\vect{\E}$ ជាលំហវ៉ិចទ័រមួយកំណត់លើកាយ $\mathbb{R}$។ ដូច្នេះ ចំពោះគ្រប់លំហអាហ្វីនរង $\mathcal{F}$ របស់ $\vect{\E}$ មានចំណុចមួយ $\vec a\in \vect\E$ និងមានលំហវ៉ិចទ័ររងមួយ $\vect\F \subseteq \vect\E$ ដែល
+$$
+\mathcal{F} = \vec a + \vect\F
+$$
+ដូច្នេះ គ្រប់លំហវ៉ិចទ័ររងរបស់ $\vect{\E}$ អាចចាត់ទុកដូចជាលំហអាហ្វីនរងរបស់ $\vect{\E}$ ដែរ។ <a href="">តែករណីច្រាសមកវិញ មិនពិតជាទូទៅនោះទេ។</a> <br>
+    </p>
+<p class="parindent">
+    ជាការពិត បើយក $\mathcal{F}$ ជាលំហអាហ្វីនរងរបស់ $\vect{\E}$ នោះតាមនិយមន័យ គេមានចំណុចមួយ $a\in \mathcal{F}$ និងលំហវ៉ិចទ័ររងមួយរបស់ $\vect{\E}$ (គឺ $\vect\F \subseteq \vect\E$) ដែល
+
+\begin{eqnarray*}
+\forall\;  x\in \vect\E,\  x\in \mathcal{F}&\Longleftrightarrow &  x - a\in \vect\F\\ &\Longleftrightarrow & x\in (a + \vect\F)
+\end{eqnarray*}
+ដូច្នេះ $\mathcal{F} = a + \vect\F$ 
+    </p>
+    
+</example>   
+ 
+<!--example>
+<p>
+<ol class="romanlist two">
+    <!--li>
+        ចំពោះគ្រប់ចំណុច $A\in \mathcal{E}$ សំណុំដែលមានតែមួយធាតុ $\{A\}$ គឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$។ វាគឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$ ដែលកាត់តាមចំណុច $A$ និងតាមទិសដៅ $\vect\F=\{\vect 0\}$។
+        
+    </li-->
+    
+    <!--li>
+        យក $\vect{\E}$ ជាលំហវ៉ិចទ័រមួយកំណត់លើកាយ $\mathbb{R}$។ ដូច្នេះ ចំពោះគ្រប់លំហអាហ្វីនរង $\mathcal{F}$ របស់ $\vect{\E}$ មានចំណុចមួយ $\vec a\in \vect\E$ និងមានលំហវ៉ិចទ័ររងមួយ $\vect\F \subseteq \vect\E$ ដែល
+$$
+\mathcal{F} = \vec a + \vect\F
+$$
+ដូច្នេះ គ្រប់លំហវ៉ិចទ័ររងរបស់ $\vect{\E}$ អាចចាត់ទុកដូចជាលំហអាហ្វីនរងរបស់ $\vect{\E}$ ដែរ។ <a href="">តែករណីច្រាសមកវិញ មិនពិតជាទូទៅនោះទេ។</a> <br>
+
+
+ជាការពិត បើយក $\mathcal{F}$ ជាលំហអាហ្វីនរងរបស់ $\vect{\E}$ នោះតាមនិយមន័យ គេមានចំណុចមួយ $a\in \mathcal{F}$ និងលំហវ៉ិចទ័ររងមួយរបស់ $\vect{\E}$ (គឺ $\vect\F \subseteq \vect\E$) ដែល
+\begin{eqnarray*}
+\forall\;  x\in \vect\E,\  x\in \mathcal{F}&\Longleftrightarrow &  x - a\in \vect\F\\ &\Longleftrightarrow & x\in (a + \vect\F)
+\end{eqnarray*}
+ដូច្នេះ $\mathcal{F} = a + \vect\F$ 
+    </li>
+</ol>
+  
+  
+   
+    </p>
+    
+</example-->   
+     
+     <br>
+ 
+<example>
+<p>
+
+យក $\mathcal{F}$ គឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$ ដែលកាត់តាមចំណុច $A$ និងតាមទិសដៅ $\vect\F$។
+
+
+<ol class="romanlist two">
+    <li>
+    បើ $\dim\big(\vect\F\big)=1$ ដែល  $\vect\F = \text{\bf Vect}(\vec{u})$
+    
+  <!--  \footnote{គេតាង ${\bf Vect}(\vect{ e_1}, \ldots ,\vect{e_n})$ ជាសំណុំនៃបន្សំលីនេអ៊ែររបស់ប្រព័ន្ធវ៉ិចទ័រ $\{\vect{e_1}, \ldots ,\vect{e_n}\}$ ដែល 
+    
+    $${\bf Vect}\left(\vect{e_1}, \ldots, \vect{e_n}\right) = \big\{\lambda_1\vect{e_1}+ \cdots + \lambda_n\vect{e_n}: \lambda_1,\ldots, \lambda_n \in \bbR\big\}$$ 
+    
+    ឬហៅថា លំហរងបង្កដោយ $\big\{\vect{ e_1}, \ldots ,\vect{e_n}\big\}$។ } -->
+    
+    គេបាន $\mathcal{F}$ គឺជា <b>បន្ទាត់អាហ្វីន</b> របស់លំហ $\mathcal{E}$ ដែលកាត់តាមចំណុច $A$ និងតាមទិសដៅវ៉ិចទ័រ $\vec{u}$ ។ គេតាងវាដោយ $\calD\big(A,\vec{u}\big)$។ ដូច្នេះ ចំពោះគ្រប់ $M\in \mathcal{F}$ គេបាន
+\begin{eqnarray*}
+M\in \calD\bigl(A,\vec{u}\bigr)  &\Longleftrightarrow & \Big\{\vect{AM},\vec{u}\Big\} {\text{ l.d }}\\
+&\Longleftrightarrow &  \exists \alpha\in \mathbb{R}:\ \vect{AM}=\alpha\vec{u}
+\end{eqnarray*}
+    </li>
+    
+    <li>
+        បើ $\dim\big(\vect\F\big)=2$ ដែល $\vect\F = \text{\bf Vect}\left(\vec{u}, \vec{v}\right)$ នោះគេថា $\mathcal{F}$ គឺជា <b>ប្លង់អាហ្វីន</b> ដែលកាត់តាមចំណុច $A$ និងតាមវ៉ិចទ័រប្រាប់ទិសដៅ $\vec{u}$ និង $\vec{v}$ ។ គេតាងវាដោយ $\calP\left(A,\vec{u},\vec{v}\right)$។ ដូច្នេះ ចំពោះ $M\in \mathcal{F} $ គេបាន
+\begin{eqnarray*}
+M\in \calP\left(A,\vec{u}, \vec{v}\right) &\Longleftrightarrow & \bigl\{\vect{AM},\vec{u},\vec{v}\bigr\} {\text{ l.d }}\\
+&\Longleftrightarrow & \exists(\alpha,\beta) \in \mathbb{R}^{2}:\ \vect{AM}= \alpha\vec{u} + \beta\vec{v}
+\end{eqnarray*}
+        
+    </li>
+    
+    <li>
+        បើលំហវ៉ិចទ័ររង $\vect\F$ គឺជាអ៊ីពែរប្លង់ (hyperplan) របស់ $\vect{\E}$ នោះគេថា $\mathcal{F}$ គឺជា <b>អ៊ីពែរប្លង់អាហ្វីន</b> មួយរបស់ $\mathcal{E}$ ។<br>
+
+<!--%Comme F est un hyperplan de E, alors il existe une forme linéaire non nulle de E, telle que pour $\vect u \in \vect\E$, on a-->
+ដោយ $\vect\F$ គឺជាអ៊ីពែរប្លង់មួយរបស់ $\vect{\E}$ នោះគេរកបានទម្រង់លីនេអ៊ែរមួយ មិនទទេ $\varphi$ កំណត់លើ $\vect\E$ ដែលគ្រប់ $\vec u \in \vect\E$ គេបាន ៖
+\[
+	\vec u \in \vect\F \Longleftrightarrow \varphi\bigl(\vec u\bigr) = 0
+\]
+<!--%Ainsi, l’hyperplan affine F sera aussi défini par-->
+ដូច្នេះ អ៊ីពែរប្លង់អាហ្វីន $\calF$ នឹងកំណត់ដោយ គ្រប់ $M\in\calE$ គេបាន ៖
+\[\fcolorbox{red}{yellow}{\quad \color{Green}$
+	M \in \calF \Longleftrightarrow \varphi\Big(\vect{AM}\Big) = 0$ \quad}
+\]
+    </li>
+</ol>
+   
+    </p>
+    
+</example>   
+      
+      
+      <p><b>NOTE: </b> យក $\mathcal{F}$ គឺជាលំហអាហ្វីនរងរបស់  $\mathcal{E}$ ដែលកាត់តាមចំណុច $A$ និងតាមទិសដៅ $\vect\F$។ ដូច្នេះ ចំពោះគ្រប់ចំណុច $B\in \mathcal{F}$ គេបាន
+$$
+\forall\; M\in \mathcal{E},\ M\in \mathcal{F}\Longleftrightarrow \vect{BM}\in \vect\F
+$$
+          
+      </p>
+      
+      
+ <defn> 
+     <div class="definition"> (កូលីនេអ៊ែរ និង កូប្លានែរ) </div>
+            <div class="definitionb">
+     <p>
+      យក $\mathcal{E}$ ជាលំហអាហ្វីន តាមទិសដៅនៃលំហវ៉ិចទ័រ $\vec{E}$។
+	<ol class="romanlist threeem">
+		<li>គេថា ចំណុចទាំងឡាយរបស់លំហអាហ្វីន $\mathcal{E}$ <a href="#colinear">កូលីនេអ៊ែរគ្នា</a> (រត់ត្រង់គ្នា) បើចំណុចទាំងនោះស្ថិតនៅលើបន្ទាត់អាហ្វីនតែមួយ។ <!--On dit que des points de E sont align´es s’ils appartiennent `a une mˆeme droite affine.-->
+        </li>
+		<li>គេថា ចំណុចទាំងឡាយរបស់លំហអាហ្វីន $\mathcal{E}$ <a href="coplanar">កូប្លានែរគ្នា</a> (នៅលើប្លង់តែមួយ) បើចំណុចទាំងនោះស្ថិតនៅលើប្លង់អាហ្វីនតែមួយ។<!---
+		%On dit qu’ils sont coplanaires s’ils appartiennent `a un mˆeme plan affine.	-->
+        </li>
+     </ol>
+     </p>
+     </div>
+</defn>
+      
+<h3>ប្រសព្វនៃពីរលំហអាហ្វីនរង</h3>
+      
+  <div class="box-definition">
+        <div class="box-legend editable"><span class="lt-icon-default">Proposition  1: (ប្រសព្វនៃពីរលំហអាហ្វីនរង)</span>
+        </div>
+
+        <p class="">
+យក $\mathcal{E}$ ជាលំហអាហ្វីន តាមទិសដៅ $\vect{\E}$។ កំណត់ $\mathcal{F}$ និង $\mathcal{G}$ ជាលំហអាហ្វីនរងពីររបស់ $\mathcal{E}$ តាមទិសដៅផ្សេងគ្នា $\vect\F$ និង $\vect\G$។ ដូច្នេះ ប្រសព្វរវាងលំហ $\mathcal{F}$ និង $\mathcal{G}$  (បើសិនជាមិនទទេ) គឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$ តាមទិសដៅ $\vect\F\cap \vect\G$។
+      </p>
+</div>
+
+    <p align="right"><a class="toggle bground" id="idGet2" href="#proof3" onclick="showhideFunction()">[Show proof]</a></p>
+        <div class="hidepanel" id="proof3" style="color:#1860C1">
+            <div><b><!--span class="headproof">សម្រាយបញ្ជាក់.</span--> </b> </div>
+    
+        
+        
+        <div class="blockproof">
+           <p>
+<b>Proof: </b>
+ឧបមាថា $\mathcal{F}\cap \mathcal{G}\neq\varnothing$ និងយក $A\in \mathcal{F}\cap \mathcal{G}$។ គេបាន
+\begin{eqnarray*}
+M\in \mathcal{F}\cap \mathcal{G} &\Longleftrightarrow & M \in \mathcal{F}\ \text{ and }\ M\in\mathcal{G}\\
+&\Longleftrightarrow & \vect{AM}\in \vect\F \ \text{ and }\ \vect{AM}\in \vect\G\\
+&\Longleftrightarrow & \vect{AM} \in {\vect\F} \cap {\vect\G}
+\end{eqnarray*}
+
+ដូច្នេះ $\mathcal{F}\cap \mathcal{G}$ គឺជាលំហអាហ្វីនរង តាមទិសដៅ $\vect\F\cap \vect\G$។
+</p>
+        </div>
+</div>
+
+
+<br>
+
+
+
+<example>
+        យក $\mathcal{E}$ ជាលំហអាហ្វីនមានវិមាត្រ $3$ និងតាមទិសដៅនៃវ៉ិចទ័រ $\vect{\E}$។
+   <ol class="twoem">
+       <li>
+      បើ $\mathcal{D}$ និង $\mathcal{D}'$ ជាបន្ទាត់អាហ្វីនពីររបស់ $\mathcal{E}$ នោះគេបានលក្ខខណ្ឌមួយក្នុងចំណោមលក្ខខណ្ឌខាងក្រោមផ្ទៀងផ្ទាត់៖
+<ul class="threeem">
+    <li> $\mathcal{D}\cap \mathcal{D}'=\varnothing$
+	
+    </li>
+    <li>
+        $\mathcal{D}\cap \mathcal{D}'$ បង្រួមមកនៅមួយចំណុចរបស់ $\mathcal{E}$ <!--%{\it est réduite à un seul point}.-->
+
+    </li>
+    <li>
+        	$\mathcal{D}=\mathcal{D}'$
+
+    </li>
+</ul> 
+	
+       </li>
+       
+       <li>
+           បើ  $\mathcal{P}$ និង $\mathcal{P}'$ ជាប្លង់អាហ្វីនពីររបស់ $\mathcal{E}$ នោះគេបានលក្ខខណ្ឌមួយក្នុងចំណោមលក្ខខណ្ឌខាងក្រោមផ្ទៀងផ្ទាត់៖
+    <ul class="threeem">
+        <li>
+            $\mathcal{P}\cap \mathcal{P}'=\varnothing$
+        </li>
+        <li>
+             $\mathcal{P}\cap \mathcal{P}'$ បង្រួមមកនៅបន្ទាត់អាហ្វីនមួយ 
+        </li>
+        <li>
+            $\mathcal{P}=\mathcal{P}'$
+        </li>
+    </ul>
+       </li>
+       
+       <li>
+           បើ $\mathcal{D}$ ជាបន្ទាត់អាហ្វីនមួយលើ $\mathcal{E}$ និង $\mathcal{P}$ ជាប្លង់អាហ្វីនមួយលើ $\mathcal{E}$ នោះគេបានលក្ខខណ្ឌមួយក្នុងចំណោមលក្ខខណ្ឌខាងក្រោមផ្ទៀងផ្ទាត់៖
+           
+           <ul class="threeem">
+               <li>
+                   	$\mathcal{D}\cap \mathcal{P} = \varnothing$
+               </li>
+               <li>
+                    $\mathcal{D}\cap \mathcal{P}$ បង្រួមមកនៅចំណុចមួយរបស់ $\mathcal{E}$ 
+               </li>
+               <li>
+                    $\mathcal{D} \subseteq \mathcal{P}$
+
+               </li>
+           </ul>
+
+
+	
+	
+
+       </li>
+   </ol>
+   
+   
+    
+</example>
+
+
+<div class="box-theorem">
+        <div class="box-legend editable"><span class="lt-icon-default">Lemma  1: (លំហអាហ្វីនរងពីររងគ្នា ឬស្មើគ្នា)</span>
+        </div>
+
+        <p class="">
+
+	យក $\calE$ ជាលំហអាហ្វីនតាមទិសដៅ  $\vect\E$ ហើយ $\calF$ និង $\calG$ ជាលំហអាហ្វីនរងពីររបស់ $\calE$ តាមទិសដៅ $\vect\F$ និង $\vect\G$ រៀងគ្នា ដែល $\calF \cap \calG \neq \varnothing$។
+	<ol class="romanlist twoem">
+	    <li>
+	        បើ $\vect\F \subseteq \vect\G$ នោះគេបាន $\calF \subseteq \calG$
+	    </li>
+	    <li>
+	        បើ $\vect\F = \vect\G$ នោះគេបាន $\calF = \calG$
+	    </li>
+	</ol>
+		
+	<!--%Soient \calE un espace affine de direction E, F et G deux sous-espaces affines de E de directions respectives F et G, tels que F \cap G \neq \varnothing.
+	%i) Si \F \subseteq \G alors \calF \subseteq \calG
+	%ii) Si \F = \G alors \calF = \calG. -->
+    </p>
+      
+</div>
+      
+      
+       <p align="right"><a class="toggle bground" id="idGet4" href="#proof4" onclick="showhideFunction()">[Show proof]</a></p>
+        <div class="hidepanel" id="proof4" style="color:#1860C1">
+            <div><b><!--span class="headproof">សម្រាយបញ្ជាក់.</span--> </b> </div>
+            
+        <div class="blockproof">
+           <p>
+<b>Proof: </b>
+<ol class="romanlist threeem">
+    <li>
+     ឧបមាថាថា $\vect\F \subseteq \vect\G$ នោះយើងនឹងបង្ហាញថា $\calF\subseteq \calG$? <!--%{\bf (i)} Supposons que $\F \subseteq \G$ et montrons que $\calF\subseteq \calG$?--->
+		<!--%Soit $A \in \calF \cap \calG$ et soit $M \in \calF$, alors on a $\vect{AM}\in \F$, et comme $\F \subseteq \G$, alors $\vect{AM}\in\G$, donc $M \in\calG$.-->
+		<br> យក $A \in \calF \cap \calG$ និងកំណត់ $M \in \calF$ ។ គេបាន $\vect{AM}\in \vect\F$ ហើយដោយ $\vect\F \subseteq \vect\G$ នោះគេបាន $\vect{AM}\in\vect\G$ ។ ដូច្នេះ $M \in\calG$ ។  
+    </li>
+    <li>
+        បើ $\vect\F = \vect\G$ នោះគេបាន $\vect\F\subseteq \vect\G$ និង $\vect\G\subseteq \vect\F$ ។ <br> តាមលក្ខណៈ (១.) ខាងលើ គេបាន $\calF \subseteq \calG$ និង $\calG\subseteq \calF$ ។ ដូច្នេះ $\calF = \calG$ ។ <!--%Si $\F = \G$, alors on a $\F\subseteq \G$ et $\G\subseteq \F$, donc d’après (i), on aura $\calF \subseteq \calG$ et $\calG\subseteq \calF$ et par suite, on a $\calF = \calG$.    -->
+    </li>
+</ol>
+</p>
+        </div>
+</div>
+      
+      <div class="box-theorem">
+        <div class="box-legend editable"><span class="lt-icon-default">Proposition  2: (ប្រសព្វនៃពីរលំហអាហ្វីនរង)</span>
+        </div>
+<p>
+    គេបានលក្ខខណ្ឌដូចខាងក្រោម៖
+<ol class="romanlist oneem">
+    <li>
+        យក $\mathcal{E}$ ជាលំហអាហ្វីនទូទៅ និងកំណត់ $\mathcal{F}$ និង $\mathcal{G}$ ជាលំហអាហ្វីនរងពីររបស់ $\mathcal{E}$ តាមទិសដៅផ្សេងគ្នា $\vect \F$ និង $\vect \G$។ គេបាន
+$$\fbox{$
+\mathcal{F}\cap\mathcal{G} \neq \varnothing\quad \Longleftrightarrow \quad \exists(A,B) \in \mathcal{F}\times \mathcal{G}:\ \vect{AB}\in \vect{\F} + \vect{\G}$ }
+$$
+    </li>
+    <li>
+        ឧបមា $\mathcal{E}$ ជាលំហអាហ្វីនមានវិមាត្រ $3$ និងកំណត់ $\mathcal{D}$ ជាបន្ទាត់អាហ្វីនមួយលើ $\mathcal{E}$ តាមវ៉ិចទ័រទិសដៅ $\vect{u}$ ហើយ $\mathcal{P}$ ជាប្លង់អាហ្វីនមួយលើ $\mathcal{E}$ តាមទិសដៅវ៉ិចទ័រ $\vect{v}$ និង $\vect{w}$។ ដូច្នេះ គេបាន $\mathcal{D}\cap\mathcal{P}$ បង្រួមមកនៅត្រឹមមួយចំណុច លុះត្រាតែប្រព័ន្ធវ៉ិចទ័រ $\left\{\vect{u},\vect v,\vect w\right\}$ មិនអាស្រ័យលីនេអ៊ែរគ្នា។ <!--\it est libre}.-->
+    </li>
+</ol>
+</p>
+</div>
+     
+     
+       <p align="right"><a class="toggle bground" id="idGet5" href="#proof5" onclick="showhideFunction()">[Show proof]</a></p>
+        <div class="hidepanel" id="proof5" style="color:#1860C1">
+            <div><b><!--span class="headproof">សម្រាយបញ្ជាក់.</span--> </b> </div>
+            
+        <div class="blockproof">
+           <p>
+<b>Proof: </b>
+
+ពិនិត្យមើលលក្ខខណ្ឌចាំបាច់ និងគ្រប់គ្រាន់ ដូចខាងក្រោម៖
+
+<ol class="romanlist twoeem">
+    <li>
+        $(\Longrightarrow)$ ឧបមាថា $\mathcal{F}\cap \mathcal{G}\neq\varnothing$ និងយក $\Omega\in\mathcal{F}\cap \mathcal{G}$ គេបាន៖
+$$\forall A\in \mathcal{F}, \forall B\in \mathcal{G}:\ \vect{A\Omega} \in \vect \F \ {\text{ និង } } \ \vect{B\Omega}\in \vect \G$$
+ដូច្នេះ $\vect{A\Omega} - \vect{B\Omega}\in \vect\F+\vect \G$ ដោយ $\vect{A\Omega}-\vect{B\Omega}=\vect{AB}$។ ដូច្នេះ $\vect{AB}\in \vect\F+\vect\G$។<br><br>
+
+$(\Longleftarrow)$ ឧបមាថា គេមាន $(A,B)\in \mathcal{F}\times\mathcal{G}$ ដែល $\vect{AB}\in \vect \F+\vect \G$។ ដូច្នេះ គេមាន $\left(\vect{u}, \vect{v}\right)\in \vect\F\times \vect\G$ ដែល $\vect{AB}=\vect{u} + \vect{v}$។ <br>
+
+យកចំណុច $M\in\mathcal{F}$ ដែល $\vect{AM}=\vect{u}$ និង $N\in\mathcal{G}$ ដែល $\vect{BN}=-\vect{v}$។ គេបាន
+\begin{eqnarray*}
+\vect{AM} = \vect{u}&\Longrightarrow & \vect{AB}+\vect{BM} = \vect{u}\\
+&\Longrightarrow & \vect{BM} = -\vect{v}\\
+&\Longrightarrow & \vect{BM} = \vect{BN}\\
+&\Longrightarrow & M=N
+\end{eqnarray*}
+ដូច្នេះ $M\in \mathcal{F}\cap \mathcal{G}$។ គេទាញបាន $\mathcal{F}\cap \mathcal{G}\neq\varnothing$។
+    </li>
+    
+    <li>
+        $(\Longrightarrow)$ ឧបមាថា $\mathcal{D}\cap \mathcal{P}$ បង្រួមមកនៅត្រឹមចំណុចមួយ $A\in\mathcal{E}$ និងសន្មត់តាមវិធីផ្ទុយពីការពិតថា $\left\{\vect{u},\vect{v},\vect{w}\right\}$ ជាប្រព័ន្ធអាស្រ័យលីនេអ៊ែរគ្នា។ ដោយ $A\in \mathcal{D}$ នោះគេមានចំណុចមួយ $B\in \mathcal{D}$ ដែល $\vect{AB}=\vect{u}$។ ដូច្នេះ $\left\{\vect{AB}, \vect{v},\vect{w}\right\}$ អាស្រ័យលីនេអ៊ែរគ្នា។ ហើយ $A\in \mathcal{P}$ នោះគេបាន  $B\in \mathcal{P}$។ គេបាន $B\in \mathcal{D}\cap \mathcal{P}$។ ដែលនេះផ្ទុយពីការពិត ព្រោះ $A\neq B$។ <br><br>
+
+
+$(\Longleftarrow)$ ឧបមាថា $\left\{\vect{u},\vect{v}, \vect{w}\right\}$ មិនអាស្រ័យលីនេអ៊ែរគ្នា។ ដោយ $\dim(E)=3$ ដែល $\vect{\E}$ ជាទិសដៅរបស់លំហ $\mathcal{E}$ នោះគេបាន $E = \Vect{\vect{u}} + \Vect{\{\vect{v},\vect{w}\}}$។
+
+ដូច្នេះ $\vect{AB}\in \Vect{\vect{u}} + \Vect{\{\vect{v},\vect{w}\}}$ នោះតាមលក្ខខណ្ឌ i) គេបាន៖ $\mathcal{D}\cap \mathcal{P} \neq \varnothing$។<br>
+
+
+ឧបមាថា $\mathcal{D}\cap \mathcal{P}$ ផ្ទុកធាតុច្រើនជាងមួយចំណុច និងយក $A$ និង  $B$ ជាចំណុចពីរផ្សេងគ្នារបស់ $\mathcal{D}\cap \mathcal{P}$ គេបាន ៖
+\[
+\begin{cases}
+\vect{AB} = a\vect{u}  & \ \text{ since }\ a\neq 0\\
+\vect{AB} = b\vect{v} + c \vect{w}&
+\end{cases}
+\]
+
+ដូច្នេះ $a\vect{u} - b\vect{v} - c\vect{w}= \vect{0}$ ដែល $a\neq 0$។ គេបាន $\left\{\vect{u},\vect{v},\vect{w}\right\}$ អាស្រ័យលីនេអ៊ែរគ្នា ដែលផ្ទុយពីការពិត។ ដូច្នេះ $\mathcal{D}\cap \mathcal{P}$ បង្រួមមកនៅត្រឹមតែមួយចំណុច។
+    </li>
+</ol>
+</p>
+        </div>
+</div>
+     
+     
+     
+<h3>ភាពស្របគ្នានៃពីរលំហអាហ្វីនរង</h3>
+
+<defn>
+    <div class="definition"> (ភាពស្របគ្នានៃពីរលំហអាហ្វីនរង) </div>
+            <div class="definitionb">
+    <p>
+
+ឧបមា $\mathcal{E}$ ជាលំហអាហ្វីនមួយតាមទិសដៅ $\vect{\E}$ និងកំណត់ $\mathcal{F}$ និង $\mathcal{G}$ ជាលំហអាហ្វីនរងពីរតាមទិសដៅរៀងគ្នា $\vect\F$ និង $\vect\G$។ គេថា
+\[
+ \mathcal{F} \text{ is parallel to } \mathcal G \quad \text{ if } \quad \vect\F\subseteq \vect\G \quad \text{or }\quad \vect\G\subseteq \vect\F 
+\]
+<ul class="threeem">
+    <li>
+        ក្នុងករណីដែល $\vect\F=\vect\G$ គេថា $\mathcal{F}$ និង $\mathcal{G}$ ជាលំហស្របគ្នាដាច់ខាត។
+    </li>
+    <li>
+        បើ $\mathcal{F}$ និង $\mathcal{G}$ ស្របគ្នា នោះគេតាងដោយ $\mathcal{F}\ \Vert\ \mathcal{G}$។
+    </li>
+</ul>
+    </p>
+    </div>
+</defn>
+	
+<example> យក $\mathcal{E}$ ជាលំហអាហ្វីន តាមទិសដៅនៃលំហវ៉ិចទ័រ $\vect{\E}$។
+    <ol class="romanlist oneem">
+        <li>
+          យក $\mathcal{D} = D\left(A,\vect{u}\right)$ និង $\mathcal{D}' = D\left(B, \vect{v}\right)$ ជាបន្ទាត់អាហ្វីនពីររបស់ $\mathcal{E}$។ ដូច្នេះ
+$$\fcolorbox{Red}{blue!5}{$\mathcal{D}\ \Vert\ \mathcal{D}' \Longleftrightarrow \left\{\vect{u}, \vect{v}\right\}\ \  \text{ l.d } $} 
+$$
+        </li>
+        <li>
+            $\mathcal{P} = P\left(A, \vect v,\vect w\right)$ និង  $\mathcal{P}' = P\left(B,\vect v',\vect w'\right)$ ជាប្លង់អាហ្វីនពីររបស់ $\mathcal{E}$។ គេបាន
+$$\fcolorbox{Red}{blue!5}{$\mathcal{P}\ \Vert\ \mathcal{P}' \Longleftrightarrow \left\{\vect{v}, \vect{v}', \vect w'\right\} { \text{ and } }\left\{\vect{w}, \vect{v}', \vect w'\right\}\ \   \text{ l.d }$}
+$$
+        </li>
+    </ol>
+</example>
+    
+    
+    
+    <h3>លំហអាហ្វីនរងបង្កដោយសំណុំចំណុច</h3>
+    
+    <defn>
+        <div class="definition"> </div>
+            <div class="definitionb">
+        <p>
+            យក $\mathcal{E}$ ជាលំហអាហ្វីនភ្ជាប់ទៅនឹងលំហវ៉ិចទ័រ $\vect{\E}$ និង $\mathcal{A}$ គឺជាផ្នែកមួយមិនទទេរបស់ $\mathcal{E}$ និងកំណត់ $A\in\mathcal{A}$។ គេហៅ <b>លំហអាហ្វីនរងបង្កដោយ $\mathcal{A}$</b> ដែលតាងដោយ $\mathbf{Aff}\big(\calA\big)$ គឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$ ដែលកាត់តាមចំណុច $A$ និងតាមទិសដៅ 
+            $$\fbox{\color{blue}$\quad \vect\F = \Vect{\vect{AB}\;\mid \ B\in\mathcal{A}}\quad$}$$
+        </p>
+        </div>
+    </defn>
+    
+    <p><b>NOTE: </b> 
+        $\Aff{\calA}$ គឺជាលំហអាហ្វីនរងតូចបំផុតរបស់ $\mathcal{E}$ ដែលផ្ទុក $\mathcal{A}$។ មានន័យថា បើ $\mathcal{F}$ គឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$ ដែលផ្ទុក $\mathcal{A}$ នោះ $\mathcal{F}$ ផ្ទុក $\Aff{\calA}$។<br><br>
+
+ជាការពិត គេកំណត់យកចំណុចមួយ $A\in\mathcal{A}$ និងតាង $\vect\F$ គឺជាទិសដៅរបស់ $\mathcal{F}$។ ដូច្នេះ ដោយ $M\in \Aff{\calA}$ នោះតាមនិយមន័យ គេមាន $(A_{1},A_{2}, \ldots,A_{m})\in \mathcal{A}^{m}$ និងមាន $(\alpha_{1}, \alpha_{2},\ldots, \alpha_{m})\in \mathbb{R}^{m}$ ដែល
+$$
+\vect{AM} = \sum_{i=1}^{m}\alpha_{i}\vect{AA_{i}}
+$$
+ឬម្យ៉ាងទៀត ចំពោះគ្រប់ $i\in\{1, 2, \cdots,  m\}$ គេបាន $A_{i}\in \mathcal{F}$ និង $A\in \mathcal{F}$។ ដូច្នេះ គ្រប់ $i\in\{1, 2, \cdots, m\}$ គេបាន $\vect{AA_{i}} \in \vect\F$។ ដូច្នេះ $\vect{AM}\in \vect\F$។ គេទាញបាន $M\in \mathcal{F}$។
+    </p>
+    
+<defn>
+    <div class="definition"> </div>
+            <div class="definitionb">
+    <p>
+        បីចំណុច $A, B$ និង $C$ របស់លំហអាហ្វីន $\mathcal{E}$ ជាចំណុចរត់មិនត្រង់គ្នា បើប្រព័ន្ធ $\left\{\vect{AB},\vect{AC}\right\}$ មិនអាស្រ័យលីនេអ៊ែរ។ <!--%est libre.-->
+    </p>
+    </div>
+</defn>
+<br>
+    
+      <div class="box-theorem">
+        <div class="box-legend editable"><span class="lt-icon-default">កិច្ចការទី2: (លំហអាហ្វីនរង + ប្រសព្វនៃពីរលំហអាហ្វីនរង)</span>
+        </div>
+<p>
+    
+<ol class="romanlist oneem">
+    <li>
+       Let $T: \mathbf U\longrightarrow \mathbf V$ is a linear map where $\mathbf U$ and $\mathbf V$ are $\mathbb K$-v.s. Show that $T^{-1}(v)$ for any $v\in \mathbf V$ is an affine subspace of the affine space $\mathbf U$ having that $\mathrm{ker}(T)$ is its direction. Moreover, show that $T^{-1}(v)$ is parallel to every other $T^{-1}(v')$ for $v, v' \in \mathbf V$.
+    </li>
+    <li>
+       Let $\mathbf E$ be vector space of polynomial function with degree at most $2$ where its value is $0$ at $1$ 
+$$
+\mathbf E=\bigg\{\, f: \mathbb{R} \rightarrow \mathbb{R} \mid  f(x) = a x^{2}+b x+c \text { for } x \in \mathbb{R}\;\bigg\}
+$$
+and $a+b+c=0$. Then, let $\mathcal{A}$ be the set of polynomial function with degree at most $2$ as follows  
+$$
+\mathcal{A}=\bigg\{\;F: \mathbb{R} \rightarrow \mathbb{R} \mid F(x) = a x^{2}+b x+c \text { for } x \in \mathbb{R}\;\bigg\}
+$$
+and $ a+b+c=3$. Show that $\mathcal A$ is an affine space with $\mathbf E$ is its direction space. 
+    </li>
+    
+    <li>
+        Let consider in $\mathbb{R}^{3}$ with given points
+$$
+A=\left(\begin{array}{l}
+0 \\
+2 \\
+1
+\end{array}\right), B=\left(\begin{array}{l}
+1 \\
+0 \\
+1
+\end{array}\right), C=\left(\begin{array}{c}
+1 \\
+-1 \\
+0
+\end{array}\right), D=\left(\begin{array}{l}
+1 \\
+2 \\
+3
+\end{array}\right), E=\left(\begin{array}{l}
+3 \\
+3 \\
+2
+\end{array}\right)
+$$
+   <ul class="threeem">
+       <li>
+           Show that the points $A, B$ and $C$ are not aligned, we denote by $\mathcal{P}$ the generated affine plane by these three points. Give an  equation of $\mathcal{P}$. &#128519;
+       </li>
+       <li>
+           We denote by $\mathcal{D}$ the line generated by the points $D$ and $E$. Give a system of equations of the line $\mathcal{D}$.
+       </li>
+       <li>
+           Find the point $M$ where $\{M\} = \mathcal{D} \cap \mathcal{P}$. &#128514;
+       </li>
+    
+   </ul>
+    </li>
+</ol>
+</p>
+</div>
+     
+     
+ <h2 class="frame-sect sectcounter">&nbsp; បារីសង់ - Barycentre</h2>
+      
+<h3>អនុគមន៍វ៉ិចទ័រ Leibnitz</h3>   
+       
+ <defn>
+    <div class="definition"> </div>
+            <div class="definitionb">
+     <p>
+         ឧបមាថា $\mathcal{E}$ គឺជាលំហអាហ្វីន តាមទិសដៅនៃលំហវ៉ិចទ័រ $\vect{\E}$។
+
+	<ol class="romanlist twoem">
+    <li>
+        គេហៅ <b>ចំណុចមានទម្ងន់</b> ក្នុងលំហអាហ្វីន 
+    $\mathcal{E}$ គឺគ្រប់គូ $(A,\alpha)$ ដែល $A\in \mathcal{E}$ និង $\alpha\in \mathbb{R}$ ។ ក្នុងករណីនេះ $\alpha$ ហៅថា <b>ទម្ងន់</b> ឬក៏ <b>ម៉ាស</b> របស់ចំណុច  $A\in\calE$។ 
+    </li>
+    
+    <li>
+        បើ $\big\{(A_{i}, \alpha_{i})\big\}_{i=1}^{m}$ <!--%$(A_{1}, \alpha_{1}), (A_{2},  \alpha_{2}), \ldots, (A_{m}, \alpha_{m})$-->
+    	ជាប្រព័ន្ធនៃចំណុចមានទម្ងន់របស់លំហអាហ្វីន $\mathcal{E}$ នោះ  $\alpha = \sum_{i=1}^{m} \alpha_{i}$ ហៅថា <b>ម៉ាសសរុប</b>។ <!--%នៃចំណុចមានទម្ងន់ $\left\{(A_{i}, \alpha_{i})\right\}_{i=1}^{m}$ ។ %(A_{2}, \alpha_{2}),$ $ \ldots,  (A_{m}, \alpha_{m})$ ។-->
+    </li>
+</ol>
+
+
+     </p>
+     </div>
+ </defn>      
+       
+ <div class="box-definition">
+        <div class="box-legend editable"><span class="lt-icon-default">Proposition  3: (ប្រសព្វនៃពីរលំហអាហ្វីនរង)</span>
+        </div>
+      
+       <p>
+           យក $\mathcal{E}$ ជាលំហអាហ្វីនតាមទិសដៅ  $\vect{\E}$ និងយក <!--$\big\{(A_{i}, \alpha_{i})\big\}_{i=1}^{m}$ -->$\bigg\{(A_{1},\alpha_{1})$, $(A_{2},\alpha_{2})$, $\ldots$, $(A_{m}, \alpha_{m})\bigg\}$
+	ជាប្រព័ន្ធចំណុចមានទម្ងន់របស់លំហ $\calE$។ គេកំណត់ <b>អនុគមន៍វ៉ិចទ័រ Leibnitz</b> ដូចខាងក្រោម៖
+\[
+\begin{array}{rcl}
+\varphi:\mathcal{E} &\longrightarrow & \vect\E\\
+M &\longmapsto & \varphi(M) = \displaystyle\sum_{i=1}^{m}\alpha_{i}\,\vect{MA_{i}}
+\end{array}
+\]
+ដូច្នេះ គេបាន
+<ol class="romanlist threeem">
+    <li>
+        បើ $ \sum_{i=1}^{m}\alpha_{i} = 0$ នោះ $\varphi$ ជាអនុគមន៍ថេរ 
+    </li>
+    <li>
+        បើ $ \sum_{i=1}^{m}\alpha_{i}\neq 0$ នោះ $ \varphi$ ជាអនុវត្តន៍មួយទល់មួយ។
+    </li>
+</ol>
+	
+       </p>
+</div>      
+       
+       
+<h3>និយមន័យ និងលក្ខណៈរបស់បារីសង់</h3>
+       
+<defn>
+    <div class="definition"> </div>
+            <div class="definitionb">
+     <p>
+គេកំណត់ $\big\{(A_{i}, \alpha_{i})\big\}_{i=1}^{m}$
+	ជាចំណុចមានទម្ងន់របស់លំហអាហ្វីន $\mathcal{E}$ តាមទិសដៅនៃវ៉ិចទ័រ  $\vect{\E}$ ដែល
+$
+	\sum_{i=1}^{m}\alpha_{i}\neq 0
+$ ។
+គេហៅ <b>បារីសង់នៃប្រព័ន្ធចំណុច $\big\{(A_{i}, \alpha_{i})\big\}_{i=1}^{m}$</b> 	គឺជាចំណុច $G$ តែមួយគត់នៃលំហ $\mathcal{E}$ ដែលកំណត់ដោយ 
+$$
+	\sum_{i=1}^{m} \alpha_{i}\vect{GA_{i}} = \vect{0}
+$$
+        </p>
+    </div>
+
+</defn>       
+      
+      
+      <p>
+          តាមនិយមន័យខាងលើ គេកំណត់សរសេរ
+\[
+	\fcolorbox{Red}{blue!5}{\quad $\displaystyle\operatorname{Bar}\big\{(A_{i}, \alpha_{i})\big\} = G\in\calE \Longleftrightarrow \sum_{i=1}^{m} \alpha_{i}\,\vect{GA_{i}} = \vect{0} $\quad  }
+\]
+      </p>
+      
+<div class="centerDiv">
+<p style="font-size: 12px"> 
+                   <img alt="Barycenter" src="fig/center_gravity_hum_ed.png" width="50%"><br>
+                  <b>Fig.2</b>:  ទីប្រជុំទំងន់របស់មនុស្សប្រុស និងស្រី ។
+                    </p>      
+</div>
+    
+    <p> <b>សំគាល់:</b> គេបានលក្ខណៈសំខាន់ៗរបស់បារីសង់ដូចខាងក្រោម៖
+    <ol class="romanlist twoem">
+        <li>
+            យក $G$ ជាបារីសង់នៃប្រព័ន្ធចំណុចមានទម្ងន់ $\big\{(A_{i}, \alpha_{i})\big\}_{i=1}^{m}$
+	។ ដូច្នេះ ចំពោះគ្រប់ចំណុច $A\in \mathcal{E}$ គេបាន
+$$
+	\vect{AG} = \frac{1}{\alpha} \sum_{i=1}^{m} \alpha_{i}\vect{AA_{i}}\quad \text{ where } \ \ \alpha = \sum_{i=1}^{m}\alpha_{i}
+$$
+        </li>
+        
+        <li>
+            បើ $\alpha_{1}=\alpha_{2}=\cdots=\alpha_{m}=1$ នោះគេថា  $G$ គឺជា <b>អ៊ីសូបារីសង់</b> នៃចំណុច  $A_{1},A_{2}, \ldots, A_{m}$។ ក្នុងករណីនេះ ចំពោះគ្រប់ចំណុច $A\in \mathcal{E}$ គេបាន
+$$
+	\vect{AG} = \frac{1}{m}\sum_{i=1}^{m} \vect{AA_{i}}
+$$
+        </li>
+        
+        <li>
+            ចំពោះគ្រប់ $\lambda\in \mathbb{R}^{*}$ នោះគេបាន ប្រព័ន្ធចំណុចមានទម្ងន់ $\big\{(A_{i}, \alpha_{i})\big\}_{i=1}^{m}$
+	និង $\big\{(A_{i}, \lambda\;\alpha_{i})\big\}_{i=1}^{m}$
+	មានបារីសង់ដូចគ្នា។
+            
+        </li>
+    </ol>
+       
+</p>
+       
+       
+       
+       
+<example>
+    <p>
+        យក $\mathcal{E}$ ជាលំហអាហ្វីនកំណត់តាមទិសដៅនៃលំហ $\vect{\E}$។ កំណត់ $A$ និង $B$ ជាចំណុចពីរផ្សេងគ្នារបស់លំហ $\mathcal{E}$។ <b>សំណុំបារីសង់</b> នៃចំណុចមានទម្ងន់ $(A, \alpha)$ និង $(B,\beta)$ ដែលមាន $\alpha\geq 0$ និង $\beta\geq 0$ មានឈ្មោះថា  <b>អង្កត់</b> ដែលភ្ជាប់ចំណុច $A$ និង $B$ ដែលតាងដោយ $[A,B]$។ ដូច្នេះ គេបាន
+$$\fbox{$
+M \in[A,B] \Longleftrightarrow \exists\ (\alpha,\beta)\in \mathbb{R}_{+}^{2}:\ \alpha +\beta \neq 0\ \text{ and } \ \alpha\cdot\vect{MA} + \beta\cdot\vect{MB} = \vect{0}$}
+$$
+ដោយគ្រប់ $\lambda\in \mathbb{R}^{*}$ គេបានចំណុច $(A,\alpha)$ និង $(B,\beta)$ មានបារីសង់ដូចគ្នានឹងចំណុច $(A,\lambda\alpha)$ និង $(B, \lambda\beta)$ ដែរ។ ដូច្នេះ ដោយសន្មត់យក $\lambda = \dfrac{1}{\alpha+\beta}$ នោះ<!--គេអាចកំណត់បាន  $\alpha+\beta=1$។ ដូច្នេះ -->គេបាន
+\begin{eqnarray*}
+M\in[A,B] &\Longleftrightarrow &  \exists\ (\alpha,\beta)\in \mathbb{R}_{+}^{2}:\ \alpha +\beta = 1\ \text{ and }\  \alpha\vect{MA} + \beta \vect{MB} = \vect{0}\\
+&\Longleftrightarrow & \exists\ \alpha\in[0,1]:\ \alpha\cdot\vect{MA} + (1-\alpha)\vect{MB} = \vect{0}\\
+&\Longleftrightarrow & \exists\ \alpha\in[0,1]:\ \vect{AM}= (1-\alpha)\vect{AB}
+\end{eqnarray*}
+
+ជាពិសេស ចំណុចកណ្ដាល $I$ នៃអង្កត់ $[A,B]$ ត្រូវបានកំណត់ដោយ៖
+\begin{eqnarray*}
+	I \text{ midpoint of } [A,B] &\Longleftrightarrow & \vect{IA} + \vect{IB} = \vect 0\\
+	&\Longleftrightarrow & \forall O \in\mathcal{E}, \ \vect{OI} = \frac{1}{2}\left(\vect{OA} + \vect{OB}\right)\\
+	&\Longleftrightarrow & \vect{AI} = \frac{1}{2} \vect{AB}
+\end{eqnarray*}
+    </p>
+</example>
+    
+    <example>
+<p>
+    ឧបមាយក $A, B$ និង $C$ ជាបីចំណុចរត់មិនត្រង់គ្នារបស់លំហ $\mathcal{E}$។ ដូច្នេះ ចំណុច $A, B$ និង $C$ បង្កើតបានជា <b>ត្រីកោណមួយ</b> ដែលតាងដោយ $\triangle ABC$ ឬ $(ABC)$ ដែលមានអង្កត់ $[A,B], [A,C]$ និង $[B,C]$ ហៅថា <b>ជ្រុង </b> របស់ត្រីកោណនេះ។ អ៊ីសូបារីសង់ $G$ នៃចំណុច $A, B$ និង $C$ ហៅថា <b>ទីប្រជុំទម្ងន់</b> របស់ត្រីកោណ $ABC$  ដែលកំណត់ដោយ 
+$$
+	\vect{GA}+\vect{GB}+\vect{GC} = \vect{0}
+$$
+ដូច្នេះ បើ $G$ ជាបារីសង់របស់ត្រីកោណ $ABC$ នោះគេបាន
+\begin{gather*}
+	\vect{AG} = \frac{1}{3}\left(\vect{AB} + \vect{AC}\right)\\
+	\vect{BG} = \frac{1}{3}\left(\vect{BA}+\vect{BC}\right)\\
+	\vect{CG} = \frac{1}{3}\left(\vect{CA}+\vect{CB}\right)
+\end{gather*}
+</p>
+	
+</example>
+
+<defn>
+    <div class="definition"> </div>
+            <div class="definitionb">
+<p>
+គេហៅ <b>មេដ្យាន</b> ដែលគូសចេញពីចំណុច $A$ នៃត្រីកោណ $ABC$ គឺជាបន្ទាត់ $(AI)$ ដែលកាត់តាមចំណុច $A$ និងចំណុច $I$ កណ្ដាល $[B,C]$។
+                </p>
+    </div>
+    </defn>
+
+<p>
+    <b>Remark:</b> 
+    ត្រីកោណមួយមានមេដ្យានចំនួនបី គឺ៖ $(AI), (BJ)$ និង $(CK)$ ដែល $I, J$ និង $K$ គឺជាចំណុចកណ្ដាលរៀងគ្នានៃអង្កត់ $[B,C], [A,C]$ និង $[A,B]$។
+
+<div class="centerDiv">
+<p style="font-size: 12px"> 
+                   <img alt="Barycenter" src="fig/center_gravity.png" width="50%"><br>
+                  <b>Fig.3</b>:  ទីប្រជុំទម្ងន់របស់ត្រីកោណ $ABC$
+                    </p>      
+</div>
+<!--\begin{figure}[hpt]
+ \centering
+ \includegraphics[scale=0.7]{center_gravity}
+ \caption{ទីប្រជុំទម្ងន់របស់ត្រីកោណ $ABC$}
+\end{figure} -->
+</p>
+
+
+<!--div class="box-theorem">
+    <div class="box-legend editable"><span class="lt-icon-default">Theorem 1. :  (ប្រសព្វរបស់មេដ្យានទាំងបី)</span></div>
+
+<p>
+
+
+</p>
+
+</div-->
+
+
+<div class="box-theorem">
+    <div class="box-legend editable"><span class="lt-icon-default">Theorem 1. :  (ប្រសព្វរបស់មេដ្យានទាំងបី)</span></div>
+
+<p>
+មេដ្យានទាំងបីរបស់ត្រីកោណ $ABC$ ប្រសព្វគ្នាត្រង់ចំណុចកណ្ដាលនៃទីប្រជុំទម្ងន់ $G$ របស់ត្រីកោណនេះ។ គេបាន
+$$
+\vect{AG} = \frac{2}{3}\vect{AI},\quad \vect{BG} = \frac{2}{3}\vect{BJ}\quad \text{ and }\quad \vect{CG} = \frac{2}{3}\vect{CK}
+$$
+ដែល $I, J$ និង $K$ ជាចំណុចកណ្ដាលរៀងគ្នានៃអង្កត់ $[B,C], [A,C]$ និង $[A,B]$។
+
+</p>
+
+</div>
+
+
+
+   <!--p align="right"><a class="toggle bground" id="idGet5" href="#proof4" onclick="showhideFunction()">[Show proof]</a></p>
+        <div class="hidepanel" id="proof5" style="color:#1860C1">
+            <div><b><!--span class="headproof">សម្រាយបញ្ជាក់.</span-> </b> </div>
+            
+        <div class="blockproof">
+           <p>
+<b>Proof: </b>
+
+</p>
+        </div>
+</div-->
+
+   <p align="right"><a class="toggle bground" id="idGet6" href="#proof6" onclick="showhideFunction()">[Show proof]</a></p>
+   <div class="hidepanel" id="proof6" style="color:#1860C1">
+       <div><b>
+               <!--span class="headproof">សម្រាយបញ្ជាក់.</span-->
+           </b> </div>
+
+       <div class="blockproof">
+           <p>
+               <b>Proof: </b>
+               ដោយយក $I, J$ និង $K$ ជាចំណុចកណ្ដាលរៀងគ្នានៃអង្កត់ $[B,C], [A,C]$ និង $[A,B]$ នោះគេបាន
+               $$
+               \vect{AI} = \frac{1}{2}\left(\vect{AB}+\vect{AC}\right), \quad \vect{BJ} = \frac{1}{2}\left(\vect{BA}+\vect{BC}\right), \quad \vect{CK} = \frac{1}{2}\left(\vect{CA}+\vect{CB}\right)
+               $$
+               ដូច្នេះ $\vect{AG} = \dfrac{1}{3}\left(\vect{AB}+\vect{AC}\right) = \dfrac{2}{3}\vect{AI}$ ។ ដូច្នេះ គេបាន $G\in(AI)$។ តាមលក្ខណៈដូចគ្នានេះ គេអាចបង្ហាញថា
+               $\vect{BG} = \frac{2}{3}\vect{BJ} {\text{,  }} \vect{CG} = \frac{2}{3}\vect{CK}
+               $ ។ ដូច្នេះ $G\in(AI)\cap (BJ) \cap (CK)$ ។
+           </p>
+       </div>
+   </div>
+
+
+
+    
+      <div class="box-theorem">
+        <div class="box-legend editable"><span class="lt-icon-default">កិច្ចការទី3: (បារីសង់ - កូអរដោនេបារីសង់ - តម្រុយ)</span>
+        </div>
+<p>
+    
+<ol class="romanlist oneem">
+    <li>
+       Let points $M, N$ and $P$ in a plane $\mathcal P$ with a frame (តម្រុយ) $(O, \vec{\imath}, \vec{\jmath})$. The coordinates of $M, N$ and $P$ are $(2,3),(6,4)$ and $\left(-6,-\frac{1}{2}\right)$ respectively. Show that
+$$
+\left|\begin{array}{ccc}
+2 & 6 & -6 \\
+3 & 4 & -\frac{1}{2} \\
+1 & 1 & 1
+\end{array}\right|\neq 0, \qquad \tag{1}
+$$
+How can you say from relation $(1)$ that the three points are colinear? <br><br>
+
+Now, let $\left(x_{A}, y_{A}\right)$ and $\left(x_{B}, y_{B}\right)$ be the coordinates of $A$ and $B$. Show that the equation of the line $(AB)$ is givent by
+$$
+\left|\begin{array}{ccc}
+x & x_{A} & x_{B} \\
+y & y_{A} & y_{B} \\
+1 & 1 & 1
+\end{array}\right|=0
+$$
+    </li>
+    <li>
+        Let $\mathcal E = \mathbb R^3$ be an affine space with a frame $(O, \vec{\imath}, \vec{\jmath}, \vec{k})$ which is not orthonormal.
+        <ol class="romanlist oneem">
+            <li>
+                Let $M, N$ and $P$ be points in $\mathcal P$ with coordinates $(4,0,0),(0,5,0)$ and $(0,0,6)$ respectively. Find the equation of the plane $\mathcal P = \mathbf{Aff}\Big(\{M, N, P\}\Big)$.
+            </li>
+            <li>
+                Find the coordinates of the barycentre $G$ of the triangle $MNP$. Verify that $G$ belongs to the plane $\mathcal P$.
+            </li>
+        </ol>
+    </li>
+    <li>
+        Let $A, B$ and $C$ be three points in a plane $\mathcal P$ and let $\gamma \in[0,1]$. Let 
+        <ul class="threeem">
+            <li>
+                $D(\gamma)$ be the barycenter of $A$ and $B$  with the masses $(1-\gamma)$ and $\gamma$; 
+            </li>
+            <li>
+                $E(\gamma)$ be the barycenter of $B$ and $C$  with the masses $(1-\gamma)$ and $\gamma$ and 
+            </li>
+            <li>
+                 $F(\gamma)$ be the barycenter of $D(\gamma)$ and $E(\gamma)$ with the masses $(1-\gamma)$ and $\gamma$.
+            </li>
+        </ul>
+          Can you explain the curve $[0,1] \rightarrow \mathcal P,\quad \gamma \mapsto F(\gamma)$.
+    </li>
+    <li>
+        Let $E$ be the <b>ordinary space of geometry</b> with $(O, \vec{\imath}, \vec{\jmath}, \vec{k})$ be a frame $E$. We suppose that $E$ is euclidean and that the frame $(O, \vec{\imath}, \vec{\jmath}, \vec{k})$ is orthonormal.
+        <ol class="romanlist oneem">
+            <li>
+                Let $X$ be a point with coordinates $(2,-10,3)$ and let $\vec{u}$ be the vector $\vec{u}=3 \vec{\imath}+\frac{12}{5} \vec{\jmath}+2 \vec{k}$.
+Write the equation of the plane $\mathcal P$ which contains $X$ and is orthogonal to $\vec{u}$.
+            </li>
+            <li>
+                Let $A, B$ and $C$ be the points of intersection of $\mathcal P$ with the axis $O x, O y$ and $O z$. Find the coordinates of the points $A, B$ and $C$.
+            </li>
+            <li>
+                Compute the coordinates of the barycentre of the triangle $A B C$ <!--(point common to the three medians).-->
+            </li>
+            <li>
+                Draw a picture showing the points $X, A, B$ and $C$ and the vector $\vec{u}$.
+            </li>
+            <li>
+                Check that the vectors $\overrightarrow{X A}, \overrightarrow{X B}$ and $\overrightarrow{X C}$ are orthogonal to $\vec{u}$.
+            </li>
+        </ol>
+
+    </li>
+</ol>
+</p>
+</div>
+
+
+<!--%%%1.4 Espaces affines de dimension finie -->
+
+<h2>លំហអាហ្វីនមានវិមាត្ររាប់អស់</h2>
+<!--%%1.4.1 Repère affine-Coordonnées barycentriques-->
+
+<h3>តម្រុយអាហ្វីន - កូអរដោនេនៃបារីសង់</h3>
+<!--%%Repère affine-->
+
+<!--defn>
+    <div class="definition"> </div>
+            <div class="definitionb">
+<p>
+
+               
+                </p>
+    </div>
+    </defn-->
+
+
+<defn>
+    <div class="definition"> </div>
+            <div class="definitionb">
+<p>
+យក $\mathcal{E}$ គឺជាលំហអាហ្វីនតាមទិសដៅនៃលំហ $\vect{\E}$។ យក $A_{0},A_{1}, \ldots, A_{m}$ ជាចំណុចរបស់លំហ $\mathcal{E}$។ គេថា ប្រព័ន្ធ $\{A_{0},A_{1},\ldots,A_{m}\}$ គឺជាប្រព័ន្ធមិនអាស្រ័យលីនេអ៊ែរតាមលក្ខណៈអាហ្វីន បើប្រព័ន្ធ 
+              $$\bigg\{\vect{A_{0}A_{1}},\vect{A_{0}A_{2}}, \ldots,\vect{A_{0}A_{m}}\bigg\}$$ មិនអាស្រ័យលីនេអ៊ែរ។ <!--%{\it est libre}.-->
+               
+                </p>
+    </div>
+    </defn>
+
+<p>ពិនិត្យឧទាហរណ៍ខាងក្រោម៖</p>
+<example>
+    <p>
+        <ol class="romanlist twoem">
+            <li>
+                បើ $A$ និង $B$ ជាចំណុចពីរផ្សេងគ្នារបស់ $\mathcal{E}$ នោះគេបាន $\{A,B\}$ គឺជាប្រព័ន្ធមិនអាស្រ័យលីនេអ៊ែរតាមន័យអាហ្វីន, i.e. $\bigg\{\vect{AB}\bigg\}$  l.i ។ <!--%{\it est un système affinement libre.-->
+            </li>
+            <li>
+                បើ $A, B$ និង $C$ គឺជាចំណុចបីរត់មិនត្រង់គ្នា នោះប្រព័ន្ធ $\{A,B,C\}$ គឺជាប្រព័ន្ធមិនអាស្រ័យលីនេអ៊ែរតាមន័យអាហ្វីន i.e. $\bigg\{\vect{AB}, \vect{AC}\bigg\}$  l.i ។ 
+            </li>
+            <li>
+                បើគេមានបួនចំណុច $A, B, C$ និង $D$ មិនអាស្រ័យលីនេអ៊ែរគ្នាតាមន័យអាហ្វីន នោះគេបង្កើតបាន <b>តេត្រាអែត</b> មួយ។ <!--%ils forment un thétreidre.-->
+<div class="centerDiv">
+<p style="font-size: 12px"> 
+                   <img alt="Barycenter" src="fig/thetreidre.png" width="35%"><br>
+                  <b>Fig.4</b>:  តេត្រាអែត
+                    </p>      
+</div>
+            </li>
+        </ol>
+    </p>
+</example>
+
+<!--div class="centerDiv">
+<p style="font-size: 12px"> 
+                   <img alt="Barycenter" src="fig/.png" width="50%"><br>
+                  <b>Fig.3</b>:  {តេត្រាអែត}
+                    </p>      
+</div-->
+
+<defn>
+    <div class="definition"> </div>
+    <div class="definitionb">
+        <p>
+            យក $\mathcal{E}$ ជាលំហអាហ្វីនតាមទិសដៅនៃវ៉ិចទ័រ $\vect{\E}$។ គេហៅ <b> តម្រុយអាហ្វីន</b> (affine frame) របស់លំហ $\mathcal{E}$ គឺជាប្រព័ន្ធចំណុច $\Big\{A_{0}, A_{1},\ldots, A_{m}\Big\}$ របស់ $\mathcal{E}$ ដែលផ្ទៀងផ្ទាត់លក្ខខណ្ឌដូចតទៅ៖
+           <ol class="romanlist threeem">
+               <li>
+                   $\mathcal{E} = {\bf Aff}\Big(\big\{A_{0},A_{1}, \cdots, A_{m}\big\}\Big)$
+            
+               </li>
+               <li>
+                   $\big\{A_{0},A_{1}, \ldots, A_{m}\big\}$ មិនអាស្រ័យលីនេអ៊ែរតាមន័យអាហ្វីន។ <!--% {\it est affinement libre}.-->
+               </li>
+           </ol>
+ក្នុងករណីនេះ គេតាងតម្រុយអាហ្វីននៃប្រព័ន្ធមាន $n+1$ ចំណុចដោយ $\Big(A_{0}, A_{1},\ldots, A_{m}\Big)$ ដែល $A_0$ ហៅថា <b>គល់តម្រុយ</b> (origin) ។
+        </p>
+    </div>
+</defn>
+
+
+<example>
+<ol class="romanlist oneem">
+    <li>
+         បើ $A$ និង $B$ ជាចំណុចពីរផ្សេងគ្នា នោះគេបាន  $\big(A,B\big)$ គឺជាតម្រុយអាហ្វីនរបស់បន្ទាត់អាហ្វីន $(AB)$ ដែលកាត់តាមចំណុច $A$ និង $B$។
+    </li>
+    <li>
+        បើ $A, B$ និង $C$ ជាចំណុចបីរត់មិនត្រង់គ្នា គេបាន $\big(A,B,C\big)$ គឺជាតម្រុយអាហ្វីនរបស់ប្លង់អាហ្វីន $(ABC)$ ដែលកាត់តាមចំណុច $A, B$ និង $C$។
+    </li>
+</ol>
+
+</example>
+
+<div class="box-theorem">
+    <div class="box-legend editable"><span class="lt-icon-default">Theorem 2.  (ចំនួនតម្រុយអាហ្វីន)</span></div>
+
+<p>
+យក $\mathcal{E}$ គឺជាប្លង់អាហ្វីនតាមទិសដៅនៃលំហ $\vect{\E}$ និងមានវិមាត្រស្មើ $n$។ គេបាន $\vect{\E}$ មានតម្រុយអាហ្វីនយ៉ាងតិចមួយ។ <!--%{\it possède au moins un repère affine}.-->
+
+</p>
+
+</div>
+
+<p align="right"><a class="toggle bground" id="idGet7" href="#proof7" onclick="showhideFunction()">[Show proof]</a></p>
+        <div class="hidepanel" id="proof7" style="color:#1860C1">
+            <!--div><b><!--span class="headproof">សម្រាយបញ្ជាក់.</span-> </b> </div-->
+            
+        <div class="blockproof">
+           <p>
+<b><i>Proof: </i></b>
+យក $\Big\{\vect{e_{1}}, \vect{e_{2}},\ldots,\vect{e_{n}}\Big\}$ គឺជាគោលមួយរបស់លំហ $\vect{\E}$។ ដោយកំណត់ចំណុចមួយ $A_{0}\in \mathcal{E}$ នោះចំពោះគ្រប់  $i\in\{1,2, \ldots ,n\}$ មានចំណុចតែមួយគត់ $A_{i}\in \mathcal{E}$ ដែល $\vect{A_{0}A_{i}} = \vect{e_{i}}$។ 
+</p>
+       <p class="parindent">
+           ជាការពិត គេបង្ហាញបានយ៉ាងងាយថា $$\mathcal{E} = {\bf Aff}\Big(\big\{A_{0},A_{1}, \ldots, A_{n}\big\}\Big) \quad\text{and}\quad \Big\{A_{0},A_{1}, \ldots,A_{n}\Big\} - \text{ l.i}$$  តាមន័យអាហ្វីន។ <!--%{\it est affinement libre}.-->
+       </p>
+        </div>
+</div>
+
+
+
+
+
+<!--%%Coordonnées barycentriques -->
+
+<h4>កូអរដោនេបារីសង់</h4>
+
+
+
+<div class="box-theorem">
+    <div class="box-legend editable"><span class="lt-icon-default">Theorem 3. (កូអរដោនេបារីសង់) </span></div>
+
+<p>
+យក $\mathcal{E}$ ជាលំហអាហ្វីនមានវិមាត្រស្មើ $n$ និងកំណត់ $\Big\{A_{0},A_{1}, \ldots,A_{n}\Big\}$ ជាតម្រុយអាហ្វីនរបស់លំហ $\mathcal{E}$។ ដូច្នេះ ចំពោះគ្រប់ $M\in \mathcal{E}$ គេកំណត់បាន $n+1$-ធាតុ $(\alpha_{0},\alpha_{1},\ldots,\alpha_{n})\in \mathbb{R}^{n+1}$ តែមួយគត់ ដែល $
+\alpha_{0}+\alpha_{1}+\cdots+\alpha_{n}=1 $ និង 
+
+\[   
+\sum_{i=0}^{n}\alpha_{i}\vect{MA_{i}}=\vect{0} 
+\]
+ក្នុងករណីនេះ $\alpha_{0}, \alpha_{1}, \ldots, \alpha_{n}$ ហៅថា <b>កូអរដោនេបារីសង់</b> របស់ចំណុច $M$ នៅក្នុងតម្រុយអាហ្វីន  $\Big(A_{0},A_{1},\ \ldots,A_{n}\Big)$ ។
+
+
+</p>
+
+</div>
+
+<p align="right"><a class="toggle bground" id="idGet8" href="#proof8" onclick="showhideFunction()">[Show proof]</a></p>
+        <div class="hidepanel" id="proof8" style="color:#1860C1">
+            <!--div><b><!--span class="headproof">សម្រាយបញ្ជាក់.</span-> </b> </div-->
+            
+        <div class="blockproof">
+           <p>
+<b><i>Proof: </i></b>
+
+គេកំណត់ $\Big\{A_{0},A_{1},\ldots,A_{n}\Big\}$ មិនអាស្រ័យលីនេអ៊ែរតាមន័យអាហ្វីន។ តាមនិយមន័យ គេបាន  $\Big\{\vect{A_{0}A_{1}},\vect{A_{0}A_{2}},\ldots,\vect{A_{0}A_{n}}\Big\}$ មិនអាស្រ័យលីនេអ៊ែរនៅក្នុងលំហ $\vect{\E}$ ឬបើ $\dim(E)=n$ នោះគេបាន  $\Big\{\vect{A_{0}A_{1}},\vect{A_{0}A_{2}}, \ldots,\vect{A_{0}A_{m}}\Big\}$ គឺជាគោលមួយរបស់ $\vect{\E}$។ <br><br>
+
+ដោយ $M\in \mathcal{E}$ នោះមានធាតុតែមួយគត់ $(\beta_{1},\beta_{2}, \ldots, \beta_{n})\in \mathbb{R}^{n}$ ដែល
+$$
+\vect{A_{0}M}=\sum_{i=1}^{n}\beta_{i}\vect{A_{0}A_{i}}
+$$
+គេបាន
+\begin{eqnarray*}
+\vect{A_{0}M} = \sum_{i=1}^{n}\beta_{i}\vect{A_{0}A_{i}}\ &\Longrightarrow & \vect{A_{0}M} = \sum_{i=1}^{n}\beta_{i}\left(\vect{MA_{i}}-\vect{MA_{0}}\right)\\
+&\Longrightarrow & \vect{MA_{0}}+\sum_{i=1}^{n}\beta_{i}\vect{MA_{i}} - \sum_{i=1}^{n}\beta_{i}\vect{MA_{0}} = \vect{0} \\
+&\Longrightarrow & \left(1-\sum_{i=1}^{n}\beta_{i}\right)\vect{MA_{0}} + \sum_{i=1}^{n}\beta_{i}\vect{MA_{i}} = \vect{0}
+\end{eqnarray*}
+
+ដោយតាង $\displaystyle \alpha_{0} = 1-\sum_{i=1}^{n}\beta_{i}$  និង  $\forall i\in\{1,2,\ldots,n\},\ \alpha_{i}=\beta_{i}$ នោះគេបាន
+$$
+\sum_{i=0}^{n}\alpha_{i}=1\quad \text{ and } \quad \sum_{i=0}^{n}\alpha_{i}\vect{MA_{i}} = \vect{0}
+$$
+ដែលគេកំណត់បានអត្ថិភាពរបស់ $\alpha_{0}, \alpha_{1}, \ldots, \alpha_{n}$។ ចំពោះភាពមានតែមួយគត់ គេត្រូវសន្មត់ថា មានធាតុ  $\lambda_{0}, \lambda_{1}, \ldots, \lambda_{n}$ ដែលផ្ទៀងផ្ទាត់លក្ខណៈដូចគ្នាទៅនឹង $\alpha_{0}, \alpha_{1}, \ldots , \alpha_{n}$ ដែរ។ ដូច្នេះ គេបាន
+$$
+\vect{A_{0}M} = \sum_{i=1}^{n}\alpha_{i}\vect{A_{0}A_{i}}\quad \text{ and } \quad \vect{A_{0}M}=\sum_{i=1}^{n}\lambda_{i}\vect{A_{0}A_{i}}
+$$
+ដូច្នេះ $\forall i\in\{1,2,\ldots,\ n\}, \alpha_{i}=\lambda_{i}$ និងដោយសារតែ
+$$
+\sum_{i=0}^{n}\alpha_{i} = \sum_{i=0}^{n}\lambda_{i}=1
+$$
+នោះគេទទួលបាន $\alpha_{0}=\lambda_{0}$។
+       </p>
+        </div>
+</div>
+
+
+<p>
+    <b>REMARK:</b> 
+    បើ $\Big(A_{0},A_{1},\ldots,A_{n}\Big)$ ជាតម្រុយអាហ្វីនមួយលើ $\mathcal{E}$ នោះចំពោះគ្រប់ចំណុច  $M\in \mathcal{E}$ មានធាតុតែមួយគត់
+$(\alpha_{0},\alpha_{1},\ldots, \alpha_{n})\in \mathbb{R}^{n+1}$ ដែល  $\alpha_{0}+\alpha_{1}+\cdots+\alpha_{n}=1$ ហើយ $M$ គឺជាបារីសង់នៃចំណុចទាំងឡាយមានទម្ងន់ $(A_{0}, \alpha_{0}) , (A_{1}, \alpha_{1}) , \ldots,\ (A_{n},\alpha_{n})$។
+</p>
+
+
+<!--%%
+%%%
+%%%Quelques applications des coordonnées barycentriques -->
+<h3>អនុវត្តន៍មួយចំនួនទាក់ទងនឹងកូអរដោនេបារីសង់</h3>
+
+<div class="box-definition">
+    <div class="box-legend editable"><span class="lt-icon-default">Proposition 1. (ចំណុចរត់ត្រង់គ្នា) </span></div>
+
+<p>
+យក $\mathcal{E}$ គឺជាប្លង់អាហ្វីនកំណត់តាមទិសដៅនៃលំហ $\vect{\E}$ ដែលមានតម្រុយអាហ្វីន $\big\{A,B,C\big\}$ និងកំណត់ $M, N$ និង $P$ គឺជាចំណុចបីរបស់លំហ $\mathcal{E}$ ដែលមានកូអរដោនេបារីសង់ រៀងគ្នាគឺ $(\alpha, \beta,\gamma),\ (\alpha', \beta',\gamma')$ និង  $(\alpha'', \beta'', \gamma'')$ កំណត់ក្នុងតម្រុយ $\big\{A,B,C\big\}$ នេះ។ ដូច្នេះ គេបាន $M, N$ និង $P$ ជាចំណុចបីរត់ត្រង់គ្នា លុះត្រាតែ
+$$
+\left|\begin{array}{lll}
+\alpha & \alpha' & \alpha''\\
+\beta & \beta' & \beta''\\
+\gamma & \gamma' & \gamma''
+\end{array}\right| = 0
+$$
+</p>
+
+</div>
+
+<p align="right"><a class="toggle bground" id="idGe9" href="#proof9" onclick="showhideFunction()">[Show proof]</a></p>
+        <div class="hidepanel" id="proof9" style="color:#1860C1">
+            <!--div><b><!--span class="headproof">សម្រាយបញ្ជាក់.</span-> </b> </div-->
+            
+        <div class="blockproof">
+     <p>
+        <b><i>Proof: </i></b> <br>
+        
+         <b>ករណីចាំបាច់៖ </b>ដោយ  $\alpha+\beta+\gamma = \alpha'+\beta'+\gamma' = \alpha''+\beta''+\gamma''=1$ នោះគេបាន
+\begin{eqnarray*}
+\begin{vmatrix}
+    \alpha & \alpha' & \alpha''\\
+    \beta & \beta' & \beta''\\
+    \gamma & \gamma' & \gamma''
+\end{vmatrix} = \begin{vmatrix}
+1& 1 & 1\\
+\beta & \beta' & \beta''\\
+\gamma & \gamma' & \gamma''
+\end{vmatrix} 
+ &=& \begin{vmatrix}
+1 & 0 & 0\\
+\beta & \beta'-\beta & \beta''-\beta\\
+\gamma & \gamma'-\gamma & \gamma''-\gamma
+\end{vmatrix} \\
+&=& 
+\begin{vmatrix}
+\beta'-\beta & \beta''-\beta\\
+\gamma'-\gamma & \gamma''-\gamma
+\end{vmatrix}
+\end{eqnarray*}
+
+ម្យ៉ាងទៀត គេបាន
+\begin{eqnarray*}
+\vect{AM} &=& \beta\vect{AB}+\gamma \vect{AC}\\ 
+\vect{AN} &=& \beta'\vect{AB}+\gamma'\vect{AC}\\ 
+\vect{AP} &=& \beta''\vect{AB}+\gamma''\vect{AC}
+\end{eqnarray*}
+ដូច្នេះ
+\begin{eqnarray*}
+\vect{MN} &=& (\beta'-\beta)\vect{AB} + (\gamma' -\gamma)\vect{AC}\\
+\vect{MP} &=& (\beta''-\beta)\vect{AB} + (\gamma''-\gamma)\vect{AC}
+\end{eqnarray*}
+
+
+<b>ករណីគ្រប់គ្រាន់៖ </b> គេដឹងថា $M, N$ និង $P$  ជាបីចំណុចរត់ត្រង់គ្នា លុះត្រាតែ  $\left\{\vect{MN},\vect{MP}\right\}$ អាស្រ័យលីនេអ៊ែរគ្នា។ <br>
+<p class="parindent">
+    ដោយ $\Big\{\vect{AB},\vect{AC}\Big\}$ គឺជាគោលមួយរបស់ $\vect{\E}$ ។ ដូច្នេះគេបាន៖
+\begin{eqnarray*}
+  \Big\{\vect{MN},\vect{MP}\Big\}\  \text{ l.d } &\Longleftrightarrow &  \det\Big(\vect{MN},\vect{MP}\Big) = 0\\
+   &\Longleftrightarrow& \begin{vmatrix}
+       \beta'-\beta & \beta''-\beta\\
+       \gamma'-\gamma & \gamma''-\gamma
+   \end{vmatrix}=0
+\end{eqnarray*}
+</p>
+
+ដូច្នេះ គេទទួលបានចម្លើយ។ <!--%{\it d}'{\it où le résultat}.-->
+     </p>
+        </div>
+</div>
+
+
+
+
+
+<div class="box-theorem">
+    <div class="box-legend editable"><span class="lt-icon-default">Theorem 4. (Menelaus) </span></div>
+
+<p>
+  ឧបមាថា $\mathcal{E}$ ជាប្លង់អាហ្វីន។ គេកំណត់ $ABC$ ជាត្រីកោណមួយ និងយកបីចំណុច  $P, Q$ និង $R$ របស់ប្លង់អាហ្វីន  $\mathcal{E}$ ដែលផ្ទៀងផ្ទាត់  $P\in(AB), Q\in(BC)$ និង $R\in(AC)$ ដោយគេដឹងថា $P\not\in\{A,B\}, Q\not\in\{B,C\}$ និង  $R\not\in\{A,C\}$។ ហើយគេសន្មត់  $\vect{PA} = \alpha\ \vect{PB},\ \vect{QB} = \beta\ \vect{QC}$ និង  $\vect{RC} = \gamma\ \vect{RA}$។ ដូច្នេះ បីចំណុច $P, Q$ និង $R$ រត់ត្រង់គ្នា លុះត្រាតែ  $\alpha\beta\gamma=1$។
+   
+  
+</p>
+
+</div>
+
+ <div class="centerDiv">
+<p style="font-size: 12px"> 
+                   <img alt="Barycenter" src="fig/menelaus.png" width="55%"><br>
+                  <b>Fig.5</b>:  ទ្រឹស្ដីបទ Menelaus: $P, Q$ និង $R$ ជាបីចំណុចរត់ត្រង់គ្នា
+                    </p>      
+</div>
+
+<p align="right"><a class="toggle bground" id="idGet10" href="#proof10" onclick="showhideFunction()">[Show proof]</a></p>
+        <div class="hidepanel" id="proof10" style="color:#1860C1">
+            <!--div><b><!--span class="headproof">សម្រាយបញ្ជាក់.</span-> </b> </div-->
+            
+        <div class="blockproof">
+           <p>
+<b><i>Proof: </i></b>
+
+ដោយ $\mathcal{E}$ គឺជាប្លង់អាហ្វីន ហើយ $A, B, C$ គឺជាបីចំណុចរត់មិនត្រង់គ្នា នោះគេបាន $(A,B,C)$ គឺជាតម្រុយអាហ្វីនមួយលើ $\mathcal{E}$។ ដូច្នេះ
+\begin{eqnarray*}
+P \text{ with }:\quad &&\left(\displaystyle \frac{1}{1-\alpha}, \frac{-\alpha}{1-\alpha},0\right)\\
+Q \text{ with }:\quad &&\left(0,\displaystyle \ \frac{1}{1-\beta},\frac{-\beta}{1-\beta}\right) \quad \\
+R \text{ with }:\quad &&\left(\displaystyle \frac{-\gamma}{1-\gamma},0,\ \frac{1}{1-\gamma}\right)
+\end{eqnarray*}
+ដូច្នេះ តាមសំណើខាងលើ គេបាន
+\begin{eqnarray*}
+    P, Q, R \ {\text{ aligned }} &\Longleftrightarrow &
+    \begin{vmatrix}
+    1 & 0 & -\gamma\\
+    -\alpha & 1 & 0\\
+    0 & -\beta & 1
+    \end{vmatrix} = 0 \\
+    &\Longleftrightarrow & 1-\gamma\alpha\beta = 0\\
+    &\Longleftrightarrow & \alpha\beta\gamma = 1
+\end{eqnarray*}
+       </p>
+        </div>
+</div>
+
+
+<h3>តម្រុយដេកាត $-$ កូអរដោនេដេកាត</h3>
+
+
+
+<defn>
+    <div class="definition"> </div>
+    <div class="definitionb">
+        <p>
+            យក $\mathcal{E}$ ជាលំហអាហ្វីនកំណត់តាមទិសដៅនៃលំហ $\vect{\E}$ និងមានវិមាត្រ $n$។  គេហៅ <b>តម្រុយដេកាត</b> (Cartesian frame) របស់លំហ $\mathcal{E}$ គឺជាប្រព័ន្ធ $\big(\Omega, \vect{e_{1}}, \vect{e_{2}}, \ldots, \vect{e_{n}}\big)$ ដែល $\Omega$ ហៅថា <b>គល់តម្រុយ</b> គឺជាចំណុចទូទៅរបស់លំហ $\mathcal{E}$ ហើយ  $\big\{\vect{e_{1}}, \vect{e_{2}}, \ldots, \vect{e_{n}}\big\}$ គឺជាគោលទូទៅមួយរបស់លំហ $\vect{\E}$។
+          
+        </p>
+    </div>
+</defn>
+
+<p>
+    <b> REMEMBER: </b>
+បើប្រព័ន្ធ $\Big(A_{0},A_{1},A_{2},\ldots,A_{n}\Big)$ គឺជាតម្រុយអាហ្វីនរបស់លំហ $\mathcal{E}$ នោះគេបាន  $$\Big(A_{0},\vect{A_{0}A_{1}},\vect{A_{0}A_{2}},\ldots,\vect{A_{0}A_{n}}\Big)$$ គឺជាតម្រុយដេកាតរបស់លំហ $\mathcal{E}$។
+</p>
+<example>
+<ol class="romanlist oneem">
+    <li>
+         បើ $A$ និង $B$ គឺជាចំណុចពីរផ្សេងគ្នារបស់លំហ $\mathcal{E}$ នោះគេបាន $\Big(A,\vect{AB}\Big)$ គឺជាតម្រុយដេកាតរបស់បន្ទាត់អាហ្វីន ដែលកាត់តាមចំណុច $A$ និង $B$។
+    </li>
+    <li>
+        បើ $A, B$ និង $C$ គឺជាចំណុចបីរត់មិនត្រង់គ្នារបស់លំហ $\mathcal{E}$ នោះគេបាន $\Big(A,\vect{AB},\vect{AC}\Big)$ គឺជាតម្រុយដេកាតរបស់ប្លង់អាហ្វីន ដែលកាត់តាមចំណុច $A, B$ និង $C$។
+    </li>
+</ol>
+
+</example>
+
+
+<defn>
+    <div class="definition"> </div>
+    <div class="definitionb">
+        <p>
+              យក $\mathcal{E}$ គឺជាលំហអាហ្វីនមានវិមាត្រ $n$ មានតម្រុយដេកាត $\Big(\Omega,\vect{e_{1}}, \vect{e_{2}}, \ldots,\vect{e_{n}}\Big)$។ ដូច្នេះ ចំពោះគ្រប់ចំណុច $M\in \mathcal{E}$ នោះមានធាតុតែមួយគត់ $\big(x_{1},x_{2},\ldots,x_{n}\big)\in \mathbb{R}^{n}$ ដែល
+    $$
+    \vect{\Omega M}=\sum_{i=1}^{n}x_{i}\vect{e_{i}}
+    $$
+   ក្នុងករណីនេះ $x_{1},x_{2}, \ldots, x_{n}$ ហៅថា <b>កូអរដោនេដេកាត</b> របស់ចំណុច $M$ ធៀបទៅនឹងតម្រុយដេកាត 
+   $\Big(\Omega, \vect{e_{1}}, \vect{e_{2}}, \ldots, \vect{e_{n}}\Big)$។         
+        </p>
+    </div>
+</defn>
+
+<h3>សមីការទម្រង់ប៉ារ៉ាម៉ែត្រតាងលំហអាហ្វីនរង</h3>
+
+<p class="parindent">
+    យក $\mathcal{E}$ ជាលំហអាហ្វីនមានវិមាត្រ $n$ ដែលប្រដាប់ដោយតម្រុយដេកាត $\Big(O,\vect{e_{1}},\vect{e_{2}}, \ldots, \vect{e_{n}}\Big)$។ កំណត់ $\mathcal{F}$ ជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$ ដែលកាត់តាមចំណុច $A$ មានកូអរដោនេ $(a_{1},a_{2},\ldots,a_{n})$ តាមទិសដៅ $\vect\F$ ដែល $\dim(\vect\F)=p$។  យក $\Big\{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_p\Big\}$ ជាគោលមួយរបស់លំហរង $F$ ដូច្នេះ គេបាន ៖
+$$
+\forall j\in\{1, 2, \cdots,p\},\quad \vect{v_{j}}=\sum_{i=1}^{n}\alpha_{ij}\vect{e_{i}}
+$$
+</p>
+<p class="parindent">
+    ដោយយក $M$ ជាចំណុចមួយទូទៅរបស់ $\mathcal{E}$ មានកូអរដោនេ $\big(x_{1},x_{2}, \ldots,x_{n}\big)$ នោះគេបាន
+\begin{eqnarray*}
+    M\in \mathcal{F} &\Longleftrightarrow & \vect{AM}\in \vect\F\\
+    &\Longleftrightarrow & \exists\ (\lambda_{1},\lambda_{2}, \ldots,\lambda_{p})\in \mathbb{R}^{p}:\ \vect{AM}=\sum_{j=1}^{p}\lambda_{j}\vect{v_{j}}\\
+    &\Longleftrightarrow & \exists\ (\lambda_{1},\lambda_{2},\ \ldots,\lambda_{p})\in \mathbb{R}^{p}:\ \vect{AM}=\sum_{i=1}^{n}\left(\sum_{j=1}^{p}\lambda_{j}\alpha_{ij}\right)\vect{e_{i}}\\
+    &\Longleftrightarrow & \exists\ (\lambda_{1},\lambda_{2},\ \ldots,\lambda_{p})\in \mathbb{R}^{p}:\ \fbox{$\displaystyle\vect{OM}=\sum_{i=1}^{n}\left(\sum_{j=1}^{p}\lambda_{j}\alpha_{ij}\right)\vect{e_{i}}+\vect{OA}$}
+\end{eqnarray*}
+ដូច្នេះ គេទទួលបានប្រព័ន្ធមួយខាងក្រោម ហៅថា <b> សមីការប៉ារ៉ាម៉ែត្រ</b> របស់លំហអាហ្វីនរង $\mathcal{F}$ ៖
+$$\fbox{$\begin{gather*}
+    M\in \mathcal{F} \Longleftrightarrow \exists\ (\lambda_{1},\lambda_{2},\ \ldots,\lambda_{p})\in \mathbb{R}^{p}\ \text{ s.t } \\
+    %\left\{
+      \begin{array}{lcl}
+         x_{i} &=&\displaystyle\sum_{j=1}^{p}\lambda_{j}\alpha_{ij}+a_{i},\quad i=1, \cdots, n
+         %x_{2}&=&\displaystyle\sum_{j=1}^{p}\lambda_{j}\alpha_{2j}+a_{2}\\
+         %&\vdots&\\
+         %x_{n} &=&\displaystyle\sum_{j=1}^{p}\lambda_{j}\alpha_{nj}+a_{n}
+     \end{array}%\right.
+  \end{gather*}$}$$
+</p>
+
+
+
+<h3>សមីការទម្រង់ដេកាតរបស់លំហអាហ្វីនរង</h3>
+
+
+
+
+<div class="box-theorem">
+    <div class="box-legend editable"><span class="lt-icon-default">Theorem 5. (ទម្រង់លីនេអ៊ែរ) </span></div>
+
+<p>
+  យក $\vect{\E}$ ជាលំហវ៉ិចទ័កំណត់លើកាយ $\mathbb{K}$ មានវិមាត្រស្មើ $n$ និងកំណត់ $\vect\F$ គឺជាលំហវ៉ិចទ័ររងរបស់ $\vect{\E}$ មានវិមាត្រស្មើ $p$។ ដូច្នេះ មាន $n-p$ ទម្រង់លីនេអ៊ែរ មិនអាស្រ័យលីនេអ៊ែរគ្នា តាងដោយ $\big\{\varphi_{i}\big\}_{i=1}^{n-p}$ ដែលផ្ទៀងផ្ទាត់៖
+    $$
+    \forall\ x\in \vect\E,\ x\in \vect\F\quad \Longleftrightarrow \quad \forall\  i,\  \varphi_{i}(x) = 0
+    $$
+   
+  
+</p>
+
+</div>
+
+ <!--div class="centerDiv">
+<p style="font-size: 12px"> 
+                   <img alt="Barycenter" src="fig/menelaus.png" width="55%"><br>
+                  <b>Fig.5</b>:  ទ្រឹស្ដីបទ Menelaus: $P, Q$ និង $R$ ជាបីចំណុចរត់ត្រង់គ្នា
+                    </p>      
+</div-->
+
+<p align="right"><a class="toggle bground" id="idGet11" href="#proof11" onclick="showhideFunction()">[Show proof]</a></p>
+        <div class="hidepanel" id="proof11" style="color:#1860C1">
+            <!--div><b><!--span class="headproof">សម្រាយបញ្ជាក់.</span-> </b> </div-->
+            
+        <div class="blockproof">
+           <!--p>
+<b><i>Proof: </i></b>
+
+យើងសន្មត $\vect\F^{\perp}$ អរតូកូណាល់ទៅនឹង $\vect\F$ នៅក្នុងលំហ $\vect\E^{*}$។ ដោយ $\dim(\vect\F)=p$ នោះគេបាន $\dim(\vect\F^{\perp}) = n-p$។ <br>
+
+    ដោយយក $(\varphi_{1},\varphi_{2},\ldots,\varphi_{n-p})$ ជាគោលមួយរបស់ $\vect\F^{\perp}$ នោះគេបាន
+    $$\forall x\in \vect\E, x\in \vect\F \Longrightarrow \forall i\in\{1,2,\ \cdots,\ n-p\},\quad  \varphi_{i}(x)=0
+    $$
+    ច្រាសមកវិញ ឧបមាថា $\forall i\in\{1, 2, \cdots, n-p\},\ \varphi_{i}(x)=0$ ហើយតាមវិធីផ្ទុយពីការពិត គេយក $x\not\in \vect\F$។ ឧបមា $\vect\G $ គឺជាបំពេញរបស់  ${\bf Vect}(\vect x)+\vect\F$ រងលំហ  $\vect{\E}$ និងយក $\vect{\mathbf H} =\vect\F+\vect\G$។ <br>
+    
+    ដូច្នេះ $\vect\E = {\bf Vect}(\vect x)\oplus \vect{\mathbf H}$  ហើយ  $\vect\F\subseteq \vect{\mathbf H}$។ ដោយយក $\varphi$ ជាទម្រង់លីនេអ៊ែរមួយក្នុងលំហ $\vect{\E}$ ដែលកំណត់ដោយ
+    $$\forall \vect y\in \vect\E,\  \vect y=\alpha \vect x+\vect z\ \Longrightarrow\ \varphi(\vect y)=\alpha\ {\text{ with } } \ \vect z\in \vect{\mathbf H}
+    $$
+    ដូច្នេះ គេបាន $\varphi(x)=1$ និង $\forall y\in \F,\  \varphi(y)=0$។ គេទាញបាន $\varphi\in F^{\perp}$។ តែដោយ $(\varphi_{1},\ \varphi_{2},\ \ldots,\ \varphi_{n-p})$ គឺជាគោលមួយរបស់ $F^{\perp}$ ហើយ $\forall i\in\{1,2,\ldots, n-p\},\ \varphi_{i}(x)=0$។ ដូច្នេះ គេបាន $\varphi(x)=0$ ដែលបែបនេះ គឺផ្ទុយពីការពិត។
+       </p-->
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!--
+
+
+
+
+\noindent{\bf វិបាក ៖ }
+គេយក $\mathcal{E}$ គឺជាលំហអាហ្វីនមានវិមាត្រ $n$ មានតម្រុយដេកាត $(O,\vect{e_{1}}, \vect{e_{2}},\ldots,\vect{e_{n}})$ និងយក $\mathcal{F}$ គឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$ ដែលមានវិមាត្រស្មើ $p$។ សន្មត់លំហវ៉ិចទ័ររង $\vect\F$ គឺជាទិសដៅរបស់ $\mathcal{F}$ ហើយកំណត់ចំណុច $A$ ទូទៅមួយរបស់ $\mathcal{F}$ ដែលមានកូអរដោនេ $(a_{1},a_{2},\ldots, a_{n})$។ តាមទ្រឹស្ដីបទខាងលើ គេរកបានទម្រង់លីនេអ៊ែរចំនួន $n-p$ ដែលមិនអាស្រ័យលីនេអ៊ែរគ្នា គឺជាអនុវត្តន៍៖ $\varphi_{1},\varphi_{2},\cdots,\varphi_{n-p}$ ដែលត្រូវបានកំណត់ដូចខាងក្រោម៖
+    $$
+    \forall \vect{u}\in \vect E,\ \vect{u}\in \vect F \Longleftrightarrow \forall\ i\in\{1, 2, \cdots, n-p\},\  \varphi_{i}(\vect{u}) = 0
+    $$
+ដោយយក $M$ ជាចំណុចទូទៅមួយរបស់លំហ $\mathcal{E}$ ដែលមានកូអរដោនេ $(x_{1},x_{2},\ldots,x_{n})$។  ដូច្នេះ បើគេតាង
+    $$
+    \left\{
+    \begin{array}{l}
+    \forall\ i\in\{1,\ 2, \cdots, n-p\},\ \forall\ j\in\{1,2, \cdots,n\},\ \ \alpha_{ij} = \varphi_{i}(\vect{e_{j}})\\
+    \forall\ i\in\{1,2, \cdots, n-p\},\ \ \beta_{i} = \varphi_{i}\left(\vect{OA}\right)
+    \end{array}\right.
+    $$
+    នោះគេបាន
+    \begin{eqnarray*}
+    M\in \mathcal{F} &\Longleftrightarrow &\vect{AM}\in \vect\F\\
+    &\Longleftrightarrow& \forall i\in\{1,2, \cdots, n-p\},\ \varphi_{i}(\vect{AM})=0\\
+    &\Longleftrightarrow & \forall i\in\{1,2,\cdots,n-p\},\ \varphi_{i}\left(\vect{OM}\right) = \varphi_i\left(\vect{OA}\right)\\
+    &\Longleftrightarrow& \forall i\in\{1,2, \cdots, n-p\},\ \varphi_{i}\left(\sum_{j=1}^{n}x_{j}\vect{e_{j}}\right)=\beta_{i}\\
+    &\Longleftrightarrow& \forall i\in\{1,2, \cdots, n-p\},\ \sum_{j=1}^{n} \varphi_{i}(\vect{e_{j}})x_{j} = \beta_{i}\\
+    &\Longleftrightarrow & \forall i\in\{1,2,\cdots,n-p\},\ \fbox{$\displaystyle\sum_{j=1}^{n}\alpha_{ij}x_{j}=\beta_{i}$}
+\end{eqnarray*}
+
+ដូច្នេះ គេកំណត់បានប្រព័ន្ធមួយខាងក្រោម មានរ៉ង់ស្មើ $n-p$ ដែលមានឈ្មោះថា សមីការដេកាត របស់លំហរង $\mathcal{F}$ :\medskip %appelé représentation cartésienne de $\mathcal{F}$
+%\begin{mymathbox}
+$$M\in \mathcal{F} \Longleftrightarrow \left\{
+\begin{array}{l}
+\alpha_{11}x_{1}+\alpha_{12}x_{2}+\cdots+\alpha_{1n}x_{n}=\beta_{1}\\
+\alpha_{21}x_{2}+\alpha_{22}x_{2}+\cdots+\alpha_{2n}x_{n}=\beta_{2}\\
+\vdots\\
+\alpha_{n-1,1}x_{1}+\alpha_{n-p,2}x_{2}+\cdots+\alpha_{n-p,n}x_{n}=\beta_{n-p}
+\end{array}\right.$$
+%\end{mymathbox}
+%
+%
+%%Remarque 11
+\begin{rem}
+    គេបាន៖​
+    \begin{enumerate}[(i)]
+        \item {\color{red} គ្រប់លំហអាហ្វីនរង មានវិមាត្រ $p$ គេរកបានសមីការដេកាត ក្រោមទម្រង់ប្រព័ន្ធសមីការមួយ ដែលមានរ៉ង់ស្មើ $n-p$ និងមានចំនួន $n-p$ សមីការ។}%équations. possède une représentation cartésienne sous forme d'un système de rang $n-p$ et de $n-p$ équations.
+        \item យក $\mathcal{F}$ ជាអ៊ីពែរប្លង់អាហ្វីនរបស់លំហអាហ្វីន $\mathcal{E}$ គេបាន  $\dim(\mathcal{F})=n-1$។  ដូច្នេះ $\mathcal{F}$ សរសេរបានក្រោមទម្រង់ដេកាត ដែលមានសមីការតែមួយគត់ គឺ៖%Soit $\mathcal{F}$ un hyperplan affine de $\mathcal{E}$, donc  $\dim(\mathcal{F})=n-1$, par suite, $\mathcal{F}$ possède une représentation cartésienne sous forme d'une seul equation,
+        $$
+         \fbox{$M \in \mathcal{F} \Longleftrightarrow \alpha_{1}x_{1}+\alpha_{2}x_{2}+\cdots+\alpha_{n}x_{n} = \beta$}
+        $$
+    \end{enumerate}
+\end{rem}
+       
+  -->     
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       <!--
+        <div class="showhidebground">
+            <a href="#proofNo.2" class="input_name showanswer">[Show proof]</a>
+            <a href="#proofNo.2" class="input_name hideanswer" style="display:none;">[Hide proof]</a>
+        </div><br>
+        <div class="block_proof" style="display:none">
+            <div><b><span class="headproof">សម្រាយបញ្ជាក់.</span> </b> </div>
+            <p>
+                \[
+                \mathcal{B} = \left\{(a, b) \times(c, d) \subseteq \mathbb{R}^{2}:\; a &lt; b, c &lt; d\right\}
+                \]
+            </p>
+        </div>
+
+        <div class="example">
+            <span class="example-title">Example 3</span> Evaluate the following integral.
+            $$\int{{\left( {3t + 5} \right)\cos \left( {\frac{t}{4}} \right)\,dt}}$$
+            <div class="example-content">
+                <span id="SHLink_Soln3" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln3" class="fa fa-caret-right" aria-hidden="true"></span>
+                <div id="SHObj_Soln3" class="soln-content" style="display: none;">
+                    <p>There are two ways to proceed with this example. For many, the first thing that they try is multiplying the cosine through the parenthesis, splitting up the integral and then doing integration by parts on the first integral.</p>
+
+                    <p>While that is a perfectly acceptable way of doing the problem it’s more work than we really need to do. Instead of splitting the integral up let’s instead use the following choices for </p>
+
+                    \begin{align*}u & = 3t + 5& \hspace{0.5in}dv & = \cos \left( {\frac{t}{4}} \right)\,dt\\ du & = 3\,dt & \hspace{0.5in}v & = 4\sin \left( {\frac{t}{4}} \right)\end{align*}
+
+                    <p>The integral is then,</p>
+
+                    \begin{align*}\int{{\left( {3t + 5} \right)\cos \left( {\frac{t}{4}} \right)\,dt}} & = 4\left( {3t + 5} \right)\sin \left( {\frac{t}{4}} \right) - 12\int{{\sin \left( {\frac{t}{4}} \right)\,dt}}\\ & = 4\left( {3t + 5} \right)\sin \left( {\frac{t}{4}} \right) + 48\cos \left( {\frac{t}{4}} \right) + c\end{align*}
+
+                    <p>Notice that we pulled any constants out of the integral when we used the integration by parts formula. We will usually do this in order to simplify the integral a little.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="example">
+            <span class="example-title">Example 5</span> Evaluate the following integral
+            $$\int{{x\sqrt {x + 1} \,dx}}$$
+            <ol class="example_parts_list">
+                <li>Using Integration by Parts.</li>
+                <li>Using a standard Calculus I substitution.</li>
+            </ol>
+            <span id="SHALink_S_Soln5" class="SH-All SH-Link">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln5" class="SH-All SH-Link">Hide All Solutions</span>
+
+            <div class="example-content">
+                <span class="soln-list-item soln-list-subitem">a</span> Using Integration by Parts. <span id="SHLink_Soln5a" class="soln-title SH-Link">Show Solution</span> <span id="SHImg_Soln5a" class="fa fa-caret-right" aria-hidden="true"></span>
+                <div id="SHObj_Soln5a" class="soln-content" style="display: none;">
+                    <p>First notice that there are no trig functions or exponentials in this integral. While a good many integration by parts integrals will involve trig functions and/or exponentials not all of them will so don’t get too locked into the idea of expecting them to show up.</p>
+
+                    <p>In this case we’ll use the following choices for $u$ and $dv$.</p>
+                    \begin{align*}u & = x & \hspace{0.5in}dv & = \sqrt {x + 1} \,dx\\ du & = dx & \hspace{0.5in}v & = \frac{2}{3}{\left( {x + 1} \right)^{\frac{3}{2}}}\end{align*}
+
+                    <p>The integral is then,</p>
+                    \begin{align*}\int{{x\sqrt {x + 1} \,dx}} &= \frac{2}{3}x{\left( {x + 1} \right)^{\frac{3}{2}}} - \frac{2}{3}\int{{{{\left( {x + 1} \right)}^{\frac{3}{2}}}\,dx}}\\ & = \frac{2}{3}x{\left( {x + 1} \right)^{\frac{3}{2}}} - \frac{4}{{15}}{\left( {x + 1} \right)^{\frac{5}{2}}} + c\end{align*}
+                </div>
+
+                <br>
+                <span class="soln-list-item soln-list-subitem">b</span> Using a standard Calculus I substitution. <span id="SHLink_Soln5b" class="soln-title SH-Link">Show Solution</span> <span id="SHImg_Soln5b" class="fa fa-caret-right" aria-hidden="true"></span>
+                <div id="SHObj_Soln5b" class="soln-content" style="display: none;">
+                    <p>Now let’s do the integral with a substitution. We can use the following substitution.</p>
+
+                    $$u = x + 1\hspace{0.5in}x = u - 1\hspace{0.5in}du = dx$$
+
+                    <p>Notice that we’ll actually use the substitution twice, once for the quantity under the square root and once for the in front of the square root. The integral is then,</p>
+
+                    \begin{align*}\int{{x\sqrt {x + 1} \,dx}} & = \int{{\left( {u - 1} \right)\sqrt u \,du}}\\ & = \int{{{u^{\frac{3}{2}}} - {u^{\frac{1}{2}}}\,du}}\\ & = \frac{2}{5}{u^{\frac{5}{2}}} - \frac{2}{3}{u^{\frac{3}{2}}} + c\\ & = \frac{2}{5}{\left( {x + 1} \right)^{\frac{5}{2}}} - \frac{2}{3}{\left( {x + 1} \right)^{\frac{3}{2}}} + c\end{align*}
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <h1>fa fa-caret-down</h1>
+
+        <i class="fa fa-caret-down"></i>
+        <i class="fa fa-caret-down" style="font-size:24px"></i>
+        <i class="fa fa-caret-down" style="font-size:36px"></i>
+        <i class="fa fa-caret-down" style="font-size:48px;color:red"></i>
+        <br>
+
+        <p>Used on a button:</p>
+        <button style="font-size:24px">Button <i class="fa fa-caret-right"></i></button>
+
+        <h2 class="frame-sect sectcounter">Motivation</h2>
+        <p>
+            This is the last part in our series exploring how to get new topological spaces from old ones. For now, at least. We mentioned the definition of the product topology for a finite product way back in Example 2.3 .6 in the lecture notes concerning bases of topologies, but we did not do anything with it at the time. In that same section we also discussed the following basis on $\mathbb{R}^{2}$
+            that we were eventually able to show generates the usual topology on $\mathbb{R}^{2}$ :
+
+            \[
+            \mathcal{B} = \left\{(a, b) \times(c, d) \subseteq \mathbb{R}^{2}:\; a &lt; b, c &lt; d\right\}
+            \]
+
+            This is, essentially, how (finite) product topologies work in general, as we will see shortly.
+            We will also explore a new way of analyzing topological properties themselves. We have
+            already seen that all the topological properties we care about are preserved by homeomorphisms,
+            and that some are preserved under weaker maps like continuous surjections (recall that the image
+            of a dense set under a continuous function is dense in the range of the function). We also saw that some topological properties are hereditary (like Hausdorffness and second countability)
+            while some are not (like separability). In this section we will explore another way of analyzing properties, by asking whether they are preserved by finite products.
+
+            Also, while reading this section, note that we are specifically talking about finite products
+            of topological spaces, and any time we refer to a product of spaces the reader should assume we
+            mean a finite product. Infinite products are substantially more complicated, and we will deal
+            with them later in the course. Finite products are actually quite straightforward.
+        </p>
+
+        <h2 class="frame-sect">2. Finite product topologies</h2>
+
+
+
+        <p><b>
+                Definition 2.1.
+            </b>
+            Let $(X, \mathcal{T}_1)$ and $(Y, \mathcal{T}_2)$ be topological spaces. The product topology on $X \times Y$ is
+            the topology generated by the basis
+            \[
+            \mathcal{B}_{X\times Y} = \big\{U \times V: U \in \mathcal{T}_1, V \in \mathcal{T}_2\big\}
+            \]
+            More generally if $\left(X_{1}, \mathcal{T}_{1}\right), \ldots,\left(X_{n}, \mathcal{T}_{n}\right)$ are topological spaces, the product topology on
+            \[
+            \prod_{i=1}^{n} X_{i} = X_{1} \times \cdots \times X_{n}
+            \]
+            is the topology generated by the basis
+            \[
+            \mathcal{B}_{\prod_{i=1}^{n} X_{i}} = \big\{U_{1} \times U_{2} \times \cdots \times U_{n} \mid \; U_{i} \in \mathcal{T}_{i}, \; \text{ for all } i=1, \ldots, n\big\}
+            \]
+        </p>
+
+        <p>
+            Simple as that. This definition is what you should want it to be, more or less. It is natural
+            to expect that products of sets that are open in each coordinate should be open in the product.
+            That alone does not give you a topology, it turns out, but it does give you a basis. So you
+            generate a topology from it, and the result is the product topology.
+            As you would expect, bases play nicely with this definition as well, as shown by the following
+            easy proposition.
+
+        </p>
+
+        <p><b>
+                Proposition 2.2.
+            </b>
+            Let $(X, \mathcal{T}_1)$ and $(Y, \mathcal{T}_2)$ be topological spaces, and let $\mathcal{B}_{X}$ and $\mathcal{B}_{Y}$ be bases on $X$ and $Y$ that generate $\mathcal{T}_1$ and $\mathcal{T}_2$, respectively. Then
+            \[
+            \mathcal{B}=\left\{U \times V: U \in \mathcal{B}_{X}, V \in \mathcal{B}_{Y}\right\}
+            \]
+            is a basis for the product topology on $X \times Y$
+        </p>
+
+
+        <p class="blockproof">
+            Proof. $\mathcal{B}_{X} \subseteq \mathcal{T}$ and $\mathcal{B}_{Y} \subseteq \mathcal{U},$ and so every element of $\mathcal{B}$ is open in the product topology. <br>
+
+            Now fix an open set $U$ in the product topology, and some point $(x, y) \in U .$ We need to find
+            an element $B \in \mathcal{B}$ such that $x \in B \subseteq U .$ By definition of the product topology, there must be
+            some $U_{X} \in \mathcal{T}$ and $U_{Y} \in \mathcal{U}$ such that $(x, y) \in U_{X} \times U_{Y} \subseteq U .$ Using the fact that $\mathcal{B}_{X}$ and $\mathcal{B}_{Y}$ are
+            bases, find sets $B_{X} \in \mathcal{B}_{X}$ and $B_{Y} \in \mathcal{B}_{Y}$ such that $x \in B_{X} \subseteq U_{X}$ and $y \in B_{Y} \subseteq U_{Y} .$ But then
+            we have:
+            \[
+            (x, y) \in B_{X} \times B_{Y} \subseteq U_{X} \times U_{Y} \subseteq U
+            \]
+            so $B=B_{X} \times B_{Y}$ is the set we were looking for.
+            Of course, this fact generalizes to larger finite products and the proof is similarly straightforward.
+
+        </p>
+
+
+
+
+        <h2> Barycentre de deux points </h2>
+
+        <p>
+            <strong>Définition 1:</strong> On appelle barycentre des points \(A\) et \(B\) ( ou \(A\) et \(B\) deux points du plan ou de I'espace ) affectés respectivement des coefficients \(\alpha, \beta\) ( ou \(\alpha, \beta\) sont des réels tels que \(\alpha+\beta \neq 0\) l'unique point \(G\) tel que \(\alpha \overrightarrow{G A}+\beta \overrightarrow{G B}=\overrightarrow{0}\)
+        </p>
+
+
+--->
+
+        <hr>
+
+        <h3> Recent Posts </h3>
+        <ul>
+
+
+            <li>
+                <i> <a href="../../topology/2019/post/2017/11/01/varparams.html">A Note on the Variation of Parameters Method </a> | 11/01/17 </i>
+            </li>
+
+
+            <li>
+                <i> <a href="../../topology/2019/notes/2017/10/26/groups3.html">Group Theory, Part 3: Direct and Semidirect Products </a> | 10/26/17 </i>
+            </li>
+
+
+            <li>
+                <i> <a href="../../topology/2019/notes/2017/10/19/galoistheory1.html">Galois Theory, Part 1: The Fundamental Theorem of Galois Theory </a> | 10/19/17 </i>
+            </li>
+
+
+            <li>
+                <i> <a href="../../topology/2019/notes/2017/10/19/fieldtheory2.html">Field Theory, Part 2: Splitting Fields; Algebraic Closure </a> | 10/19/17 </i>
+            </li>
+
+
+            <li>
+                <i> <a href="../../topology/2019/notes/2017/10/18/fieldtheory1.html">Field Theory, Part 1: Basic Theory and Algebraic Extensions </a> | 10/18/17 </i>
+            </li>
+
+        </ul>
+        <footer class="site-footer">
+
+            <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+        </footer>
+
+    </section>
+</body>
+
+
+<!-- script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-102852226-1', 'auto');
+    ga('send', 'pageview');
+  </script -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171606319-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-171606319-1');
+</script>
+
+</html>
