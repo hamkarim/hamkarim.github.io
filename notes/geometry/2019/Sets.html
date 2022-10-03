@@ -1153,11 +1153,67 @@ We may write \(\overline{\displaystyle\bigcup_i A_{i}}\) for \(\displaystyle U \
             </div>
         </defn>       
       
+      <example>
+          <p>
+              The \(n\)-dimensional space is denoted \(\mathbb{R}^n\). It is the \(n\)-fold Cartesian product of \(\mathbb{R}\). In special cases, \(\mathbb{R}^2\) is the \(xy\)-plane, and \(\mathbb{R}^3\) is the \(xyz\)-space.
+          </p>
+      </example>
+      
+      
+      <example>
+         <p>
+              Let \(A=\{1,2\}\), \(B=\{a,b\}\), and \(C=\{r,s,t\}\). Find \(A\times B\times C\).
+         </p>
+      </example>
+      
+      
+      <example>
+          <p>
+              From a technical standpoint, \((A \times B) \times C\) is different from \(A \times B \times C\). Can you explain why? Can you discuss the difference, if any, between \((A \times B) \times C\) and \(A \times (B \times C)\)? <!--For instance, give some specific examples of the elements in \((A \times B)\times C\) and \(A \times (B \times C)\) to illustrate their differences.-->
+          </p>
+      </example>
+      
+         <p align="right"><a class="toggle bground" id="idGet1" href="#proof1" onclick="showhideFunction()">[Show proof]</a></p>
+        <div class="hidepanel" id="proof1" style="color:#1860C1">
+            <div><b><!--span class="headproof">សម្រាយបញ្ជាក់.</span--> </b> </div>
+            
+        <div class="blockproof">
+           <p>
+<b>ចម្លើយ. </b>
+
+The elements of $(A \times B) \times C$ are ordered pairs in which the first coordinates are themselves ordered pairs. A typical element in $(A \times B) \times C$ takes the form of
+$$
+((a, b), c)
+$$
+The elements in $A \times B \times C$ are ordered triples of the form
+$$
+(a, b, c) \text {. }
+$$
+Since their elements look different, it is clear that $(A \times B) \times C \neq A \times B \times C$. Likewise, a typical element in $A \times(B \times C)$ looks like
+$$
+(a,(b, c))
+$$
+Therefore, $(A \times B) \times C \neq A \times(B \times C)$, and $A \times(B \times C) \neq A \times B \times C$.
+
+</p>
+        </div>
+</div>
       
       
       
       
       
+ <div class="box-theorem">
+        <div class="box-legend editable"><span class="lt-icon-default"><b>ទ្រឹស្ដីបទ. </b></span>
+        </div>
+      
+       <p>
+           For any sets \(A\), \(B\), and \(C\), we have 
+           
+           \[\begin{array}{r c l} A \times (B \cup C) &=& (A \times B) \cup (A \times C), \\ A \times (B \cap C) &=& (A \times B) \cap (A \times C), \\ A \times (B - C) &=& (A \times B) - (A \times C).\end{array} \nonumber\]
+	
+       </p>
+</div>      
       
       
       
