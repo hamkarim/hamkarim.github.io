@@ -1216,6 +1216,33 @@ Therefore, $(A \times B) \times C \neq A \times(B \times C)$, and $A \times(B \t
 </div>      
       
       
+      <p>
+         <b>Hint.</b> We need to show that \[(u,v)\in A \times (B \cup C) \Leftrightarrow (u,v)\in (A \times B) \cup (A \times C). \nonumber\] We prove this in two steps: first showing \(\Rightarrow\), then \(\Leftarrow\), which is equivalent to first showing \(\subseteq\), then \(\supseteq\). Alternatively, we can use \(\Leftrightarrow\) throughout the argument.
+      </p>
+      
+            <p align="right"><a class="toggle bground" id="idGet2" href="#proof2" onclick="showhideFunction()">[Show proof]</a></p>
+        <div class="hidepanel" id="proof2" style="color:#1860C1">
+            <div><b><!--span class="headproof">សម្រាយបញ្ជាក់.</span--> </b> </div>
+            
+        <div class="blockproof">
+           <p>
+<b>Proof. </b>
+
+We shall only prove the first equality. Since
+$$
+\begin{aligned}
+(u, v) \in A \times(B \cup C) & \Leftrightarrow u \in A \wedge v \in(B \cup C) & & \text { (defn. of Cartesian product) } \\
+& \Leftrightarrow u \in A \wedge(v \in B \vee v \in C) & & \text { (defn. of union) } \\
+& \Leftrightarrow(u \in A \wedge v \in B) \vee(u \in A \wedge v \in C) & \text { (distributive law) } \\
+& \Leftrightarrow(u, v) \in A \times B \vee(u, v) \in A \times C & & \text { (defn. of Cartesian product) } \\
+& \Leftrightarrow(u, v) \in(A \times B) \cup(A \times C) & & \text { (defn. of union) }
+\end{aligned}
+$$
+we conclude that $A \times(B \cup C)=(A \times B) \cup(A \times C)$.
+
+</p>
+        </div>
+</div>
       
         <!--<defn>
             <div class="definition"> </div>
