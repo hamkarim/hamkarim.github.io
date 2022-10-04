@@ -1093,14 +1093,27 @@ We may write \(\overline{\displaystyle\bigcup_i A_{i}}\) for \(\displaystyle U \
 <p>
     The Cartesian product of \(A\) and \(B\) is the set
 
-\[A \times B = \{ (a,b) \mid a \in A \wedge b \in B \} \nonumber\]
+\[A \times B = \Big\{ (a,b) \mid a \in A \wedge b \in B \Big\} \nonumber\]
 </p>
             </div>
 </defn>  
     
     <p>
-        Thus, \(A \times B\) (read as “\(A\) cross \(B\)”) contains all the ordered pairs in which the first elements are selected from \(A\), and the second elements are selected from \(B\).
+        Thus, \(A \times B\) (read as “<b>\(A\) cross \(B\)</b>”) contains all the ordered pairs in which the first elements are selected from \(A\), and the second elements are selected from \(B\).
     </p>
+      
+      
+           <center>
+          <div class="center">
+                    <p style="font-size: 11px"> <img class="center" alt="Wiki page" src="https://upload.wikimedia.org/wikipedia/commons/1/1f/CartInts_svg.svg" width="45%">
+                        <b>Fig.3 </b>
+                        Cartesian product of sets $A = \{x \in \mathbb R  : 2 \leq x \leq 5\}$, $B = \{x \in \mathbb R : 3 \leq x \leq 7\}$, $C = \{y \in\mathbb \mathbb R : 1 \leq y \leq 3\}$, and $D = \{y \in\mathbb R : 2 \leq y \leq 4\}$ with  $(A\cap B) \times (C\cap D) = (A\times C) \cap (B\times D)$.
+                    </p>
+                </div>
+     </center>
+      
+      
+      
       
       <example>
           <p>
@@ -1210,14 +1223,22 @@ Therefore, $(A \times B) \times C \neq A \times(B \times C)$, and $A \times(B \t
        <p>
            For any sets \(A\), \(B\), and \(C\), we have 
            
-           \[\begin{array}{r c l} A \times (B \cup C) &=& (A \times B) \cup (A \times C), \\ A \times (B \cap C) &=& (A \times B) \cap (A \times C), \\ A \times (B - C) &=& (A \times B) - (A \times C).\end{array} \nonumber\]
+           \[
+           \begin{array}{r c l} A \times (B \cup C) &=& (A \times B) \cup (A \times C)\\ 
+           A \times (B \cap C) &=& (A \times B) \cap (A \times C) \\ 
+           A \times (B - C) &=& (A \times B) - (A \times C)
+           \end{array} \nonumber\]
 	
        </p>
 </div>      
       
       
       <p>
-         <b>Hint.</b> We need to show that \[(u,v)\in A \times (B \cup C) \Leftrightarrow (u,v)\in (A \times B) \cup (A \times C). \nonumber\] We prove this in two steps: first showing \(\Rightarrow\), then \(\Leftarrow\), which is equivalent to first showing \(\subseteq\), then \(\supseteq\). Alternatively, we can use \(\Leftrightarrow\) throughout the argument.
+         <b>Hint.</b> We need to show that 
+         
+         \[(x,y)\in A \times (B \cup C) \Leftrightarrow (x,y)\in (A \times B) \cup (A \times C). \nonumber\] 
+         
+         We prove this in two steps: first showing \(\Rightarrow\), then \(\Leftarrow\), which is equivalent to first showing \(\subseteq\), then \(\supseteq\). Alternatively, we can use \(\Leftrightarrow\) throughout the argument.
       </p>
       
             <p align="right"><a class="toggle bground" id="idGet2" href="#proof2" onclick="showhideFunction()">[Show proof]</a></p>
@@ -1231,11 +1252,11 @@ Therefore, $(A \times B) \times C \neq A \times(B \times C)$, and $A \times(B \t
 We shall only prove the first equality. Since
 $$
 \begin{aligned}
-(u, v) \in A \times(B \cup C) & \Leftrightarrow u \in A \wedge v \in(B \cup C) & & \text { (defn. of Cartesian product) } \\
+(x, y) \in A \times(B \cup C) & \Leftrightarrow u \in A \wedge v \in(B \cup C) & & \text { (defn. of Cartesian product) } \\
 & \Leftrightarrow u \in A \wedge(v \in B \vee v \in C) & & \text { (defn. of union) } \\
 & \Leftrightarrow(u \in A \wedge v \in B) \vee(u \in A \wedge v \in C) & \text { (distributive law) } \\
-& \Leftrightarrow(u, v) \in A \times B \vee(u, v) \in A \times C & & \text { (defn. of Cartesian product) } \\
-& \Leftrightarrow(u, v) \in(A \times B) \cup(A \times C) & & \text { (defn. of union) }
+& \Leftrightarrow(x, y) \in A \times B \vee(x, y) \in A \times C & & \text { (defn. of Cartesian product) } \\
+& \Leftrightarrow(x, y) \in(A \times B) \cup(A \times C) & & \text { (defn. of union) }
 \end{aligned}
 $$
 we conclude that $A \times(B \cup C)=(A \times B) \cup(A \times C)$.
