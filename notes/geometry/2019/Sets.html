@@ -1105,9 +1105,10 @@ We may write \(\overline{\displaystyle\bigcup_i A_{i}}\) for \(\displaystyle U \
       
            <center>
           <div class="center">
-                    <p style="font-size: 11px"> <img class="center" alt="Wiki page" src="https://upload.wikimedia.org/wikipedia/commons/1/1f/CartInts_svg.svg" width="55%">
+                    <p style="font-size: 11px"> <img class="center" alt="Wiki page" src="https://upload.wikimedia.org/wikipedia/commons/1/1f/CartInts_svg.svg" width="100%">
                         <b>Fig.3 </b>
-                        Cartesian product of sets $A = \{x \in \mathbb R  : 2 \leq x \leq 5\}$, <br> $B = \{x \in \mathbb R : 3 \leq x \leq 7\}$, $C = \{y \in\mathbb R : 1 \leq y \leq 3\}$, <br> and $D = \{y \in\mathbb R : 2 \leq y \leq 4\}$ with  $(A\cap B) \times (C\cap D) = (A\times C) \cap (B\times D)$.
+                        Cartesian product of sets $(A\cap B) \times (C\cap D) = (A\times C) \cap (B\times D)$ <br>
+                        where $A = \{x \in \mathbb R  : 2 \leq x \leq 5\}$, $B = \{x \in \mathbb R : 3 \leq x \leq 7\}$,<br> $C = \{y \in\mathbb R : 1 \leq y \leq 3\}$, and $D = \{y \in\mathbb R : 2 \leq y \leq 4\}$.
                     </p>
                 </div>
      </center>
@@ -1247,23 +1248,56 @@ Therefore, $(A \times B) \times C \neq A \times(B \times C)$, and $A \times(B \t
             
         <div class="blockproof">
            <p>
-<b>Proof. </b>
+<b>Proof. </b> We introduce only the proof of $A \times (B \cup C) = (A \times B) \cup (A \times C)$. For others equalities are kept as homework. <br> <br>
 
-We shall only prove the first equality. Since
-$$
+Now, let 
+
 \begin{aligned}
-(x, y) \in A \times(B \cup C) & \Leftrightarrow u \in A \wedge v \in(B \cup C) & & \text { (defn. of Cartesian product) } \\
-& \Leftrightarrow u \in A \wedge(v \in B \vee v \in C) & & \text { (defn. of union) } \\
-& \Leftrightarrow(u \in A \wedge v \in B) \vee(u \in A \wedge v \in C) & \text { (distributive law) } \\
+(x, y) \in A \times(B \cup C) & \Leftrightarrow x \in A \wedge y \in(B \cup C) & & \text { (defn. of Cartesian product) } \\
+& \Leftrightarrow x \in A \wedge(y \in B \vee y \in C) & & \text { (defn. of union) } \\
+& \Leftrightarrow(x \in A \wedge y \in B) \vee(x \in A \wedge y \in C) & & \text { (distributive law) } \\
 & \Leftrightarrow(x, y) \in A \times B \vee(x, y) \in A \times C & & \text { (defn. of Cartesian product) } \\
 & \Leftrightarrow(x, y) \in(A \times B) \cup(A \times C) & & \text { (defn. of union) }
 \end{aligned}
-$$
-we conclude that $A \times(B \cup C)=(A \times B) \cup(A \times C)$.
+
+We conclude that $A \times(B \cup C)=(A \times B) \cup(A \times C)$.
 
 </p>
         </div>
 </div>
+      
+      
+      
+      
+ <div class="box-theorem">
+        <div class="box-legend editable"><span class="lt-icon-default"><b>ទ្រឹស្ដីបទ. </b></span>
+        </div>
+      
+       <p>
+           If \(A\) and \(B\) are finite sets, with \(|A|=m\) and \(|B|=n\), then $$|A\times B| = mn$$
+	       </p>
+</div>      
+      
+      
+      <p>
+         <b>Hint.</b> 
+         In this condition, we used in the proof is called <b>multiplication principle</b>. It says that if a job can be completed in <b>several steps</b>, then the number of ways to finish the job is <b>the product of the number of ways</b> to finish each step.
+      </p>
+      
+            <p align="right"><a class="toggle bground" id="idGet3" href="#proof3" onclick="showhideFunction()">[Show proof]</a></p>
+        <div class="hidepanel" id="proof3" style="color:#1860C1">
+            <div><b><!--span class="headproof">សម្រាយបញ្ជាក់.</span--> </b> </div>
+            
+            
+        <div class="blockproof">
+           <p>
+<b>Proof. </b> 
+The elements of $A \times B$ are ordered pairs of the form $(a, b)$, where $a \in A$, and $b \in B$. There are $m$ choices of $a$. For each fixed $a$, we can form the ordered pair $(a, b)$ in $n$ ways, because there are $n$ choices for $b$. Together, the ordered pairs $(a, b)$ can be formed in $m n$ ways.
+</p>
+        </div>
+</div>     
+      
+      
       
         <!--<defn>
             <div class="definition"> </div>
