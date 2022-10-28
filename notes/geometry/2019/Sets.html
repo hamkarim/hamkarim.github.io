@@ -247,6 +247,35 @@
   
   </div>
   
+<!-- 
+For popup text
+-->
+<style>
+.mycenter {
+    margin: auto;
+    width: 60%;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.hideform {
+    display: none;
+}
+</style>
+<script type="text/javascript">
+$('#show').on('click', function () {
+    $('.mycenter').show();
+    $(this).hide();
+})
+
+$('#close').on('click', function () {
+    $('.mycenter').hide();
+    $('#show').show();
+})
+</script>
+
+ <!---End-->  
+
 
 </head>
 
@@ -1178,16 +1207,70 @@ We may write \(\overline{\displaystyle\bigcup_i A_{i}}\) for \(\displaystyle U \
          <p>
               Let \(A=\{1,2\}\), \(B=\{a,b\}\), and \(C=\{r,s,t\}\). Find \(A\times B\times C\).
          </p>
+         
+         <p align="right"><a class="toggle bground" id="idGet0" href="#proof0" onclick="showhideFunction()">[Show answer]</a></p>
+         
       </example>
       
+                 <div class="hidepanel" id="proof0" style="color:#1860C1">
+            <div><b><!--span class="headproof">សម្រាយបញ្ជាក់.</span--> </b> </div>
+            
+        <div class="blockproof">
+           <p>
+<b>ចម្លើយ. </b>
+
+</p>
+        </div>
+</div>
       
       <example>
           <p>
               From a technical standpoint, \((A \times B) \times C\) is different from \(A \times B \times C\). Can you explain why? Can you discuss the difference, if any, between \((A \times B) \times C\) and \(A \times (B \times C)\)? <!--For instance, give some specific examples of the elements in \((A \times B)\times C\) and \(A \times (B \times C)\) to illustrate their differences.-->
           </p>
+          
+          
+             <p align="right"><a class="toggle bground" id="idGet1" href="#proof1" onclick="showhideFunction()">[Show answer]</a></p>
+             
+             
       </example>
       
-         <p align="right"><a class="toggle bground" id="idGet1" href="#proof1" onclick="showhideFunction()">[Show proof]</a></p>
+<div class="mycenter hideform">
+    <button id="close" style="float: right;">X</button>
+    <form action="/action_page.php">
+       <p>
+<b>ចម្លើយ. </b>
+
+The elements of $(A \times B) \times C$ are ordered pairs in which the first coordinates are themselves ordered pairs. A typical element in $(A \times B) \times C$ takes the form of
+$$
+((a, b), c)
+$$
+The elements in $A \times B \times C$ are ordered triples of the form
+$$
+(a, b, c) \text {. }
+$$
+Since their elements look different, it is clear that $(A \times B) \times C \neq A \times B \times C$. Likewise, a typical element in $A \times(B \times C)$ looks like
+$$
+(a,(b, c))
+$$
+Therefore, $(A \times B) \times C \neq A \times(B \times C)$, and $A \times(B \times C) \neq A \times B \times C$.
+
+</p>
+    </form>
+</div>
+<button id="show">Show form</button>
+     <script>
+$('#show').on('click', function () {
+    $('.mycenter').show();
+    $(this).hide();
+})
+
+$('#close').on('click', function () {
+    $('.mycenter').hide();
+    $('#show').show();
+})
+</script>
+     
+      
         <div class="hidepanel" id="proof1" style="color:#1860C1">
             <div><b><!--span class="headproof">សម្រាយបញ្ជាក់.</span--> </b> </div>
             
@@ -1296,6 +1379,25 @@ The elements of $A \times B$ are ordered pairs of the form $(a, b)$, where $a \i
 </p>
         </div>
 </div>     
+      
+    
+         
+ <div class="box-propostion">
+        <div class="box-legend editable"><span class="lt-icon-default"><b>Corollary. </b></span>
+        </div>
+      
+       <p>
+          <ol class="romanlist">
+              <li>
+                  If \(A_1,A_2,\ldots,A_n\) are finite sets, then \(|A_1\times A_2\times \cdots\times A_n| = |A_1| \cdot |A_2|\,\cdots\, |A_n|\).
+              </li>
+              <li>
+                  If \(A\) is a finite set with \(|A|=n\), then \(|\mathcal P(A)|=2^n\).
+              </li>
+          </ol>
+	       </p>
+</div>      
+      
       
       
       

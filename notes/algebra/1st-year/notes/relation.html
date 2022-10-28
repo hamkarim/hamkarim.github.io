@@ -21,6 +21,15 @@
 <meta name="twitter:creator" content="@pkarim">
 <meta name="google-site-verification" content="b9bg3P9zc8qbL4szvVYaf551jD9x017IyGBVSaQZDDY" />
 
+<style>
+      html * {
+        font-size: 16px;/* !important;
+        /*line-height: 1.5 !important;*/
+        color: #2020131 !important;
+       /* font-family: Nunito, sans-serif !important;*/
+      }
+    </style>
+
 <script type="application/ld+json">
 {
     "name":"Ham Karim",
@@ -187,8 +196,9 @@ July 13th, 2020
 </blockquote>
 
 <h3>Motivation</h3>
-<p>In mathematical terms, we will describe a relation from one set $A$ to another set $B$ by specifying which elements of the first set $A$ are related to which elements of the second set $B$. Thus, a relation from set $A$ to set $B$ is a collection of ordered pairs $(a, b)$ where $a \in A$ and $b \in B$. Recalling that the collection of all ordered pairs $(a, b)$ where $a \in A$ and $b \in B$ is the Cartesian product $A \times B$, we have the following definition.</p>
-<p>Notice that: Binary relations are used in many branches of mathematics to model a wide variety of concepts. These include, among others:
+<p>In mathematical terms, we will describe a relation from one set $A$ to another set $B$ by specifying which elements of the first set $A$ are related to which elements of the second set $B$. Thus, a relation from set $A$ to set $B$ is a collection of ordered pairs $(a, b)$ where $a \in A$ and $b \in B$. Recalling that the collection of all ordered pairs $(a, b)$ where $a \in A$ and $b \in B$ is the Cartesian product $A \times B$.</p>
+
+    <p>Notice that, <b>Binary relations</b> are used in many branches of mathematics to model a wide variety of concepts. These include, among others:
 <ol class="parenthnum">
 <li>the $\mathcal R =$ "is greater than", "is equal to", and "divides" relations in arithmetic;</li>
 <li>the $\mathcal R =$"is congruent to" relation in geometry;</li>
@@ -203,16 +213,25 @@ July 13th, 2020
 <defn >
           <div class="definition"> </div>
  <div class="definitionb">
-    <p>  If $A$ and $B$ are nonempty sets, a <b>relation</b> from $A$ to $B$ is a subset $\mathcal R$ of $A \times B$.
+    <p>  If $A$ and $B$ are nonempty sets, a <b>(binary) relation</b> from $A$ to $B$ is a subset $\mathcal R$ of $A \times B$.
 \[
           \mathcal R = \big\{(a,b) \mid a\in A \text{ and } b\in B\big\}
 \]
-              If $\mathcal R \subseteq A \times B$ is a relation from $A$ to $B$ and $(a, b) \in \mathcal R$, we may write $a \mathcal R b$ and say $a$ is related to $b$ by the relation $\mathcal R$.
+        If $\mathcal R \subseteq A \times B$ is a relation from $A$ to $B$ and $(a, b) \in \mathcal R$, we may write $a\; \mathcal R\; b$ and say $a$ is related to $b$ by the relation $\mathcal R$. If $\mathcal R\subseteq A\times A$ we say that $\mathcal R$ is a relation on $A$.
     </p>
 </div>
 </defn>
+
 <p>
-In the example above, we have $A=\{\text { honey, bees, fire }\}, B=\{good, bad\}, A \times B=$ $\{\text { (honey, good ), (honey, bad), (bees, good), (bees, bad), (fire, good), (fire, bad) }\},$ and the given relation $R \subseteq A \times B$ is
+    If  $\mathcal R$ is a binary relation over sets $X$ and $Y$, then the set $X$ is called the <b>domain</b> or <b>set of departure</b> (សំណុំដើម) of $\mathcal R$, and the set $Y$ the <b>codomain</b> or <b>set of destination</b> (សំណុំចុង) of $\mathcal R$. In order to specify the choices of the sets $X$ and $Y$, some authors define a binary relation or correspondence as an ordered triple $(X, Y, \mathcal G)$, where $\mathcal G$ is a subset of ${\displaystyle X\times Y}$ called the <b>graph</b> of the binary relation. The statement ${\displaystyle (x,y)\in R}$ reads "<b>$x$ is $\mathcal R$-related to $y$</b>" ($x$ ទាក់ទង $y$ តាមទំនាក់ទំនង $\mathcal R$) and is denoted by $x\;\mathcal R\;y$. <!--The domain of definition or active domain of R is the set of all x such that xRy for at least one y. The codomain of definition, active codomain, image or range of R is the set of all y such that xRy for at least one x. The field of R is the union of its domain of definition and its codomain of definition.-->
+</p>
+<p>
+In the example above, we have $A=\{$honey, bees, fire$\}$, $B=\{$ good, bad$\}$. Thus, 
+\begin{gather*}
+A \times B=\Big\{\text{(honey, good), (honey, bad), (bees, good), (bees, bad),} \\ 
+ \text{(fire, good), (fire, bad)}\Big\}
+\end{gather*}
+and the given relation $R \subseteq A \times B$ is
 </p>
 
 <defn>
@@ -223,7 +242,243 @@ A relation $\mathcal R$ from $A$ to $B$ is equal to a relation $\mathcal S$ from
 </p>
 </div>
  </defn>
- <p>This definition points out that, technically, we have not defined "a relation," but "a relation from $A$ to $B$." When given a relation from $A$ to $B$, we may casually refer to it simply as a "relation," omitting "from $A$ to $B$," just as we may casually  omit required</p>
+ <p>This definition points out that, technically, we have not defined "a relation," but "a relation from $A$ to $B$." When given a relation from $A$ to $B$, we may casually refer to it simply as a "relation," omitting "from $A$ to $B$," just as we may casually  omit required.</p>
+ 
+ 
+ <p>
+     Relations
+
+Definition: Binary Relation
+
+Let $A$ and $B$ be sets. We say that $R$ is a (binary) relation from $A$ to $B$ if $R \subseteq A \times B$.
+Notes:
+If $R \subseteq A \times A$, we say that $R$ is a relation on $A$.
+If $(a, b) \in R$, we will frequently write $a R b$ and say that " $a$ is in the relation $R$ to $b$ ".
+* Every relation is a subset of a Cartesian product
+Examples:
+- Let $A$ be the set of all male human beings and let $B$ be the set of all human beings. The relation $T$ from $A$ to $B$ is given by $T=\{(x, y): x$ is the father of $y\}$.
+- $\quad W=\{(1,2),(2,1),(5, \pi)\}$.
+Note: $W$ cannot be defined by a "rule". Sometimes relations are simply defined by a listing of elements.
+ </p>
+
+
+
+<h2>Properties of Relation</h2>
+
+<defn>
+   <div class="definition"> </div>
+ <div class="definitionb">
+    <p>
+        Let $\mathcal R$ be a relation on a set $X$. It is called
+        <ol class="romanlist">
+            <li>
+                <b>Reflexive (លក្ខណៈខ្លួនឯង) :</b> $(a, a) \in \mathcal R$ for every element $a \in X$
+            </li>
+            <li>
+                <b>Symmetric (លក្ខណៈឆ្លុះ) :</b> If $(a, b) \in \mathcal R$, then $(b, a) \in \mathcal R$  for every element $a, b \in X$
+            </li>
+            <li>
+                <b>Antisymmetric (លក្ខណៈឆ្លុះស្មើ) :</b>  If $(a, b) \in \mathcal R$ and $(b, a) \in \mathcal R$, then $a=b$  for every element $a, b \in X$
+            </li>
+            <li>
+                <b>Transitive (លក្ខណៈឆ្លង) :</b> If $(a, b) \in \mathcal R$ and $(b, c) \in \mathcal R$, then $(a, c) \in \mathcal R$  for every element $a, b, c\in X$
+            </li>
+        </ol>
+    </p>
+    </div>
+</defn>
+
+
+<h3>Problems.</h3>
+<ol>
+    <li>
+        Let $\mathcal T$ be a relation defined on the set $X=\{-2,-1,0,1,2,3,4\}$ such that 
+$$\forall\; a, b \in X, \quad a \mathcal R b \Leftrightarrow a=b^2$$
+
+<ol class="romanlist">
+    <li>
+        What are the ordered pairs in the relation $\mathcal T$ ?
+    </li>
+    <li>
+        Find the domain and the image of $\mathcal T$ ?
+    </li>
+    <li>
+        Represent $\mathcal T$ by the directed graph ?
+    </li>
+</ol>
+ 
+    </li>
+    
+    <li>
+        A relation $\mathcal R$ is defined on a set $A$ by its matrix $M_\mathcal R$ as following,
+        
+        $$M_\mathcal R = \begin{pmatrix}
+1 & 1 & 1 & 0 \\
+0 & 1 & 0 & 1 \\
+0 & 0 & 1 & 0 \\
+1 & 0 & 1 & 0
+\end{pmatrix}
+       $$
+        
+        Determine the properties (ចូររកលក្ខណៈ) of the relation.
+    </li>
+    <li>
+        The relation $\mathcal M=\Big\{(b, d),(c, a),(c, b),(c, d),(d, a)\Big\}$ is defined on the set $A=\{a, b, c, d\}$. Determine whether $\mathcal M$ is reflexive, symmetric, antisymmetric, transitive?
+    </li>
+    
+
+</ol>
+
+
+<h3>Quiz 1. (20mn)</h3>
+<ol class="romanlist">
+    <li>
+        Consider the ordinary order $\leq$ on the set of real numbers $\mathbb{R}$, and let $A=[a, b)$ where $a\lt b$. Find each of the following that exist:
+        <ol>
+            <li>
+                The set of minimal elements of $A$
+            </li>
+            <li>
+                The set of maximal elements of $A$
+            </li>
+            <li>
+            $\min (A)$
+                </li>
+                <li>
+                    $\max (A)$
+                </li>
+                <li>
+                    The set of lower bounds of $A$
+
+                </li>
+                <li>
+                    The set of upper bounds of $A$
+
+                </li>
+                <li>
+                    $\inf (A)$
+                </li>
+                <li>
+                    $\sup(A)$
+                </li>
+            
+        </ol>
+
+    </li>
+    <li>
+        Let $S$ be a set and consider the subset partial order $\subseteq$ on $\mathscr{P}(S)$, the power set of $S$. Let $\mathcal{A}$ be a non-empty subset of $\mathscr{P}(S)$, that is, a non-empty collection of subsets of $S$. Show that
+<ol>
+    <li>$\inf (\mathcal{A})=\bigcap \mathcal{A}$
+</li>
+<li>
+    $\sup (\mathcal{A})=\bigcup \mathcal{A}$
+</li>
+</ol>
+    </li>
+</ol>
+
+
+
+<h3>The Supremum and Infimum of a Function</h3>
+
+<p>
+    We will look at some applications of the definition of a supremum and infimum with regards to functions.
+</p>
+
+<div class="definition"> </div>
+ <div class="definitionb">
+    <p>
+Let $f: A \rightarrow \mathbb{R}$ be a function. Then define the supremum and infimum of $f$ to be \begin{eqnarray*}
+    \sup _A f &:=& \sup \Big\{f(x): x \in A\Big\}=\sup \mathcal R(f)\\
+    \inf _A f &:=&\inf \Big\{f(x): x \in A\Big\}=\inf \mathcal R(f)
+    \end{eqnarray*}
+    where $\mathcal R(f)$ is the range of $f$.
+     </p>
+    </div>
+</defn>
+
+<a href=" ">
+    <center>
+        <p class=""> <img class=" " alt=" " src="http://mathonline.wdfiles.com/local--files/the-supremum-and-infimum-of-a-function/Screen%20Shot%202014-10-12%20at%205.43.16%20PM.png" width="62%"><br>
+       Supremum and infimum of a function $f$</p>
+    </center>
+  </a>
+<p>
+    From the definition above, we acknowledge that the supremum and infimum of a function $f$ pertain to the set $\mathcal R(f)$ that is the range of $f$. 
+</p>
+
+
+
+   <div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default"> Theorem. 
+</span>
+</div>
+
+<p class="">
+<uo class="twoem">
+    
+    <li>
+       <b>Theorem 1.</b> Let $f: A \rightarrow \mathbb{R}$ and $g: A \rightarrow \mathbb{R}$ be functions such that $g$ is bounded above. If $f(x) \leq g(x)$ for all $x \in A$, then $\sup _A f \leq \sup _A g$.
+<!-- Proof: Let $f: A \rightarrow \mathbb{R}$. Let $g: A \rightarrow \mathbb{R}$ be a function that is bounded above. Since the range of $g$ is nonempty we have that for all $x \in A$, $g(x) \leq \sup _A g$. Now since $f(x) \leq g(x)$ for all $x \in A$, we have that $f(x) \leq g(x) \leq \sup _A G$.
+- Furthermore we note that since $f(x) \leq g(x)$ for all $x \in A$, then $g$ is bounded below by $f$, and so $\sup _A f \leq g(x) \leq \sup _A G$ and thus $\sup _A f \leq \sup _A g$-->
+    </li>
+    
+    <li>
+        <b>Theorem 2.</b> Let $f: A \rightarrow \mathbb{R}$ and $g: A \rightarrow \mathbb{R}$ be functions such that $f$ is bounded below. If $f(x) \leq g(x)$ for all $x \in A$, then inf in $_A f \leq \inf _A g$.
+<!-- Proof: Let $f: A \rightarrow \mathbb{R}$ be a function that is bounded below. Let $g: A \rightarrow \mathbb{R}$. Since the range of $f$ is nonempty we have that for all $x \in A$, $\inf _A f \leq f(x)$. Now since $f(x) \leq g(x)$ for all $x \in A$ we have that $\inf _A f \leq f(x) \leq g(x)$.
+- Furthermore we note that since $f(x) \leq g(x)$ for all $x \in A$, then $f$ is bounded above by $g$, and so $\inf _A f \leq f(x) \leq \inf _A g$ and thus $\inf _A f \leq \inf _A g$.-->
+   
+    </li>
+    
+    <li>
+        <b>Theorem 3.</b> Let $f: A \rightarrow \mathbb{R}$ be a bounded function and let $a \in \mathbb{R}$. If $a>0$ then $\sup _A(a f)=a \cdot \sup _A f$, and $\inf _A(a f)=a \cdot \inf _A f$. If $a\lt 0$ then $\sup _A(a f)=a \cdot \inf _A f$, and $\inf _A(a f)=a \cdot \sup _A f$
+    </li>
+</uo>
+
+</p>
+
+</div>
+  
+  
+  <example>
+      Define $f, g:[0,1] \rightarrow \mathbb{R}$ by $f(x)=2 x, g(x)=2 x+1$. Then $f\lt g$ and
+$\begin{aligned} & \sup _{[0,1]} f=2, \quad \inf _{[0,1]} f=0, \quad \sup _{[0,1]} g=3, \quad \inf _{[0,1]} g=1 \\ \text { Thus, } \sup _{[0,1]} f\gt \inf _{[0,1]} g \end{aligned}$
+  </example>
+
+
+<example>
+    Define $f:[0,1] \rightarrow \mathbb{R}$ by
+$$
+f(x)= \begin{cases}x & \text { if } 0 \leq x\lt 1 \\ 0 & \text { if } x=1\end{cases}
+$$
+Then $f\lt 1$ on $[0,1]$ but $\sup _{[0,1]} f=1$
+</example>
+
+<example>
+    Define $f, g:[0,1] \rightarrow \mathbb{R}$ by $f(x)=x, g(x)=1-x$. Then
+$$
+\sup _{[0,1]} f=\sup _{[0,1]} g=\sup _{[0,1]}(f+g)=1 \text {, }
+$$
+</example>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <p style="text-indent: 0px"><b>ចំណាំ :</b>
@@ -518,13 +773,67 @@ Of course, this fact generalizes to larger finite products and the proof is simi
 
 
 
-<h2> Barycentre de deux points </h2>
+<h2>Group Discussion and Presentation: No. 3. </h2>
 
 <p>
-<strong>Définition 1:</strong> On appelle barycentre des points \(A\) et \(B\) ( ou \(A\) et \(B\) deux points du plan ou de I'espace ) affectés respectivement des coefficients \(\alpha, \beta\) ( ou \(\alpha, \beta\) sont des réels tels que \(\alpha+\beta \neq 0\) l'unique point \(G\) tel que \(\alpha \overrightarrow{G A}+\beta \overrightarrow{G B}=\overrightarrow{0}\)
+<strong>Problem 1. </strong> 
+(Determining maximal/maximum/minimal/minimum/sup/inf elements).
+ You are given a partially ordered set \(A\text{.}\) Determine any and all maximal, maximum, minimal, minimum,  sub and inf elements.
+
+<ol class="romanlist">
+    <li>
+\(A = \mathbb N\) under the usual \(\mathord{\le}\)
+
+<li>
+\(A = \mathbb Q\) under the usual \(\mathord{\le}\)</li>
+
+<li>
+    \(A = \mathbb N \setminus \{0,1\}\) under the “divides” relation \(\mathord{\mid}\)
+</li>
+
+<li>
+    \(A = \{2,5,11,13,22,65,110,143,496\}\) under the “divides” relation \(\mathord{\mid}\)
+</li>
+
+<li>
+\(A\) is the set of the first ten prime numbers under the “divides” relation \(\mathord{\mid}\)
+</li>
+    </li>
+</ol>
 </p>
 
+<p>
 
+<strong>
+    Problem 2. 
+</strong>
+Recall that \((a,b)\subseteq \R\) means an open interval on the real number line:
+\begin{equation*} 
+(a,b) = \Big\{x \in \R:\; a \lt x \lt b\Big\}\end{equation*}
+Let \(\mathord{\le}\) be the usual “<b>less than or equal to</b>” total order on the set
+\begin{equation*} 
+A = (-2,0)\cup (0,2) \end{equation*}
+Consider the subset
+\begin{equation*} 
+B = \Big\{-\frac{1}{n}\mid\; n \in \mathbb N, \, n \ge 1\Big\} \subseteq A \end{equation*}
+Determine an upper bound for \(B\) in \(A\text{.}\) Then formally prove that \(B\) has no least upper bound in \(A\) by arguing that every element of \(A\) fails the criteria in the definition of <b>least upper bound</b>.
+</p>
+
+<p>
+    <strong>Problem 3. </strong> (Infinite Cartesian products)
+    It is possible to define the Cartesian product of an arbitrary (possibly infinite) indexed family of sets. If $\Lambda$ is any index set (infinite), and $\Big\{X_\lambda\Big\}_{\lambda \in \Lambda}$ is a family of sets indexed by $\Lambda$, then the Cartesian product of the sets in $\Big\{X_\lambda\Big\}_{\lambda \in \Lambda}$ is defined to be
+$$
+\prod_{\lambda \in \Lambda} X_\lambda = \Big\{x: \Lambda \rightarrow \bigcup_{\lambda \in \Lambda} X_\lambda \mid\; \forall \lambda \in \Lambda, x(\lambda) \in X_\lambda\Big\}
+$$
+that is, the set of all functions defined on the index set such that the value of the function at a particular index $\lambda$ is an element of $X_\lambda$.
+
+For each $\alpha$ in $\Lambda$, the function
+$$
+\pi_\alpha: \prod_{i \in \Lambda} X_i \longrightarrow X_\alpha,
+$$
+defined by $\pi_\alpha (x) = x(\alpha)$ is called the $\alpha$th projection map. <b>Is $\pi_\alpha $ bijective, $\forall \alpha \in \Lambda$</b>
+    
+</p>
 
 
 <hr>
