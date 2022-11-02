@@ -543,181 +543,91 @@
     <section class="main-content">
 
         <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">ជំពូក ១ :&nbsp; លំហមេទ្រីក  (Metric Spaces) </h1>
-        <p style="font-style: italic; font-weight:bold; font-family: Arial; opacity: 0.5;">
-            October
-            2nd, 2020
-        </p>
-
-        <hr>
-        <p style="text-indent:0px">From Wikipedia:</p>
-        <blockquote>
-            <a href="https://en.wikipedia.org/wiki/File:Affine_space_R3.png">
-                <div class="divfigure">
-                    <p style="font-size: 11px"> <img class="wrap-right" alt="Manhattan distance" src="fig/Manhattan_distance.png">
-                        The plane (a set of points) can be equipped with different metrics. In the taxicab metric the red, yellow, blue, and green paths have the same length ($12$), and are all shortest paths. In the Euclidean metric, the green path has length $\sqrt {2}\approx 8.49$, and is the unique shortest path, whereas the red, yellow, and blue paths still have length $12$.
-                    </p>
-                </div>
-            </a>
-            <p>
-                In 1906 Maurice Fréchet introduced metric spaces in his work <b>Sur quelques points du calcul fonctionnel</b> in the context of functional analysis: his main interest was in studying the real-valued functions from a metric space, generalizing the theory of functions of several or even infinitely many variables, as pioneered by mathematicians such as Cesare Arzelà. The idea was further developed and placed in its proper context by Felix Hausdorff in his magnum opus Principles of Set Theory, which also introduced the notion of a (Hausdorff) topological space.[7]
-            </p>
-            <p>
-                General metric spaces have become a foundational part of the mathematical curriculum.[8] Prominent examples of metric spaces in mathematical research include Riemannian manifolds and normed vector spaces, which are the domain of differential geometry and functional analysis, respectively.[9] Fractal geometry is a source of some exotic metric spaces. Others have arisen as limits through the study of discrete or smooth objects, including scale-invariant limits in statistical physics, Alexandrov spaces arising as Gromov–Hausdorff limits of sequences of Riemannian manifolds, and boundaries and asymptotic cones in geometric group theory. Finally, many new applications of finite and discrete metric spaces have arisen in computer science.
-            </p>
-            <p>
-            In mathematics, a metric space is a set together with a notion of distance between its elements, usually called points. The distance is measured by a function called a metric or distance function.[1] Metric spaces are the most general setting for studying many of the concepts of mathematical analysis and geometry.
-            </p>
-            <p> Since they are very general, metric spaces are a tool used in many different branches of mathematics. Many types of mathematical objects have a natural notion of distance and therefore admit the structure of a metric space, including Riemannian manifolds, normed vector spaces, and graphs. In abstract algebra, the p-adic numbers arise as elements of the completion of a metric structure on the rational numbers. Metric spaces are also studied in their own right in metric geometry[2] and analysis on metric spaces.[3]
-            </p>
-            <p>
-                Many of the basic notions of mathematical analysis, including balls, completeness, as well as uniform, Lipschitz, and Hölder continuity, can be defined in the setting of metric spaces. Other notions, such as continuity, compactness, and open and closed sets, can be defined for metric spaces, but also in the even more general setting of topological spaces.
-            </p>
-        </blockquote>
-
-      <p class="parindent">
-          នៅក្នុងផ្នែកជាច្រើននៃគណិតវិទ្យា -- ទាំងធរណីមាត្រ ក៏ដូចជាគណិតវិភាគដែរ -- គេសង្កេតឃើញថា ការមានសញ្ញាណយល់ដឹងអំពី ``ចម្ងាយ" ពិតជាមានភាពងាយស្រួលក្នុងការសិក្សា ដែលគេអាចអនុវត្តបានទៅចំពោះធាតុនៃសំណុំអរូបីទាំងឡាយ។ <b>លំហមេទ្រីក</b> គឺគ្មានអ្វីឡើយ ក្រៅពីសំណុំមិនទទេមួយ ដែលភ្ជាប់ដោយគោលគំនិតនៃចម្ងាយ ដែលងាយស្រួលអោយគេកំណត់បាននូវស៊្វីតរួមទាំងឡាយនៅក្នុងសំណុំនោះ និងកំណត់បាននូវបណ្ដាអនុគមន៍ជាប់ដែលកំណត់នៅលើសំណុំនោះ។
-<!-- Dans de nombreuses branches des mathématiques - en géométrie comme en analyse - il s'est avéré extrêmement commode de disposer d'une notion de distance applicable aux éléments d'ensembles abstraits. Un espace métrique n'est rien de plus qu'un ensemble non vide doté d'une notion de distance qui convient au traitement des suites convergentes dans l'ensemble et des fonctions continues définies sur l'ensemble.
-%In many branches of mathematics -- in geometry as well as analysis -- it has been found extremely convenient to have available a notion of distance which is applicable to the elements of abstract sets. A metric space is nothing more than a non-empty set equipped with a concept of distance which is suitable for the treatment of convergent sequences in the set and continuous functions defined on the set.-->
-      </p>
-      
-      <p class="parindent">សញ្ញាណនៃភាពជាប់ និង ភាពរួមរបស់ស៊្វីត គឺជាគោលគំនិតពីរជាមូលដ្ឋានបំផុតក្នុងគណិតវិភាគ។ គោលគំនិតទាំងពីរនេះ គឺពឹងផ្អែកលើភាពអរូបីនៃវិចារណញាណរបស់យើងទាក់ទងនឹងភាពនៅក្បែរៗគ្នាបំផុតនៃចំណុចទាំងឡាយរបស់សំណុំមួយ។ <b>"ភាពនៅកៀកៗគ្នា"</b> របស់ធាតុនៃសំណុំមួយ អាចវាស់បានយ៉ាងជាក់លាក់បំផុត ដែលកំណត់បានជា ចម្ងាយរវាងធាតុទាំងនោះ។ នៅក្នុងសំណុំណាដែលមានសញ្ញាណជាក់លាក់អំពីចម្ងាយ គេពិតជាអាចកំណត់បាននូវភាពរួមរបស់ស៊្វីតនានានៅក្នុងសំណុំនោះ ហើយក៏អាចនិយាយបានអំពីភាពជាប់របស់អនុគមន៍រវាងសំណុំទាំងនោះដែរ ។ នៅឆ្នាំ ១៩០៦ លោក Maurice Fréchet ប្រហែលជាបានយល់នូវការសង្កេតនេះ ទើបគាត់បង្កើតបាននូវនិយមន័យ  ``លំហមេទ្រីក" នេះឡើង។</p>
-       <p class="parindent">
-           The concept of a metric space is an elementary yet powerful tool in analysis. And while it is not sufficient to describe every type of limit we can find in modern analysis, it gets us very far indeed.
-       </p>
+ 
 
 
-        
-        <div class="box-note">
-  <div class="box-legend editable"><span class="lt-icon-default">គោលបំណងនៅក្នុងជំពូកនេះគឺ៖ </span>
-</div>
-
-<p class="">
-<ol class="romanlist twoem">
-    <li>
-        To be continued...
-    </li>
-    
-
-</ol>
-</p>
-
-</div>
-
-
-         <h2 class="frame-sect sectcounter">&nbsp; មេរៀនទី១. </h2> <!-- \section{និយមន័យ និងលក្ខណៈបឋមៗ}  -->
+         <h2 class="frame-sect sectcounter">&nbsp; មេរៀនទី១.</h2> <!-- \section{និយមន័យ និងលក្ខណៈបឋមៗ}  -->
         <!--h2 class="frame-sect sectcounter">&nbsp; និយមន័យ និង Notation </h2> <!-- \section{និយមន័យ និងលក្ខណៈបឋមៗ}  -->
         
-        <h3>តើមេទ្រីកជាអ្វី ?</h3>
-        <p class="parindent">
-If I wish to travel from Phnom Penh to Siem Reap, then I may be interested in one or more of the following numbers.
-<ol class="romanlist">
-    <li>
-        ចំងាយគិតជាគីឡូម៉ែត្រ ពីក្រុងភ្នំពេញទៅខេត្តសៀមរាប តាមរយៈសត្វក្រៀលហើរ។
-    </li>
-    <li>
-        ចំងាយគិតជាគីឡូម៉ែត្រ ពីរាជធានីភ្នំពេញទៅខេត្តសៀមរាបតាមផ្លូវគោក។ 
-    </li>
-    <li>
-        រយៈពេលគិតជាម៉ោងនៃចំងាយផ្លូវខ្លីបំផុតតាមផ្លូវគោក ពីរាជធានីភ្នំពេញទៅខេត្តសៀមរាប។
-    </li>
-    <li>
-        តម្លៃធ្វើដំណើរថោកបំផុតគិតជារៀលតាមផ្លូវគោក ពីរាជធានីភ្នំពេញទៅខេត្តសៀមរាប។
-    </li>
-</ol>
-         </p>
-
-       <h3>និយមន័យ និងលក្ខណៈបឋមៗ</h3>
-        <defn>
-            <div class="definition"> (Metric Space) </div>
-            <div class="definitionb">
-                <p> Let \(X\) be a set and let \(\d \colon X \times X \to {\mathbb{R}}\) be a function such that
-
-                <ol class="romanlist oneem">
-                    <li><b>Nonnegativity: </b> &ensp; \(\d(x,y) \geq 0\) for all \(x, y\) in \(X\)
-                    </li>
-                    <li><b>Metric zero: </b> &ensp; \(\d(x,y) = 0\) if and only if \(x = y\) for all \(x, y\) in \(X\)
-                    </li>
-                    <li>
-                        <b>Symmetry: </b> &ensp; \(\d(x,y) = d(y,x)\) for all \(x, y\) in \(X\)
-                    </li>
-                   <li>
-                       <b>Triangle inequality: </b> &ensp; \(d(x,z) = d(x,y)+ d(y,z)\) for all \(x, y, z\) in \(X\)
-                   </li>
-                </ol>              
-                       Then the pair \((X,d)\) is called a <b>metric space</b>. The function \(\d\) is called the <b>metric</b> or sometimes the <b>distance function</b>. Sometimes we just say \(X\) is a metric space if the metric is clear from context. 
-                </p>
-            </div>
-        </defn>
-<p class="parindent">
-       ក្នុងន័យធរណីមាត្រ អនុគមន៍ $\d$ គឺជាចម្ងាយរវាងពីរចំណុច តែក្នុងបរិបទផ្សេងទៀត អនុគមន៍ $\d$ នេះ ពិតជាមិនបានបញ្ជាក់នូវអត្ថន័យថា «<i>ចំងាយរវាងពីរចំណុច</i>» នៅក្នុងសំណុំ $X$ នោះឡើយ (សូមពិនិត្យសំណួរបំផុសខាងលើ) ។
-</p>
-                  
-                  <!--a>
-                  <div style="float: right; width: 35%;padding-top: 30px">
-                      <p style="font-size: 11px"> 
-                         <img alt="View of Affine Space" src="fig/aff_def1.png">
-                          <img alt="View of Affine Space" src="fig/aff_def2.png">
-                      </p>
-                      
-                      </div></a-->
-                      
-                      
-                  <p style="text-indent: 0px"><b>កំណត់សម្គាល់ :</b>
-               កំណត់ចំណាំមួយចំនួនដែលអ្នកត្រូវតែចងចាំនោះគឺ៖ 
-                  <ol>
-                     <li>
-                     We allow $X=\emptyset$. But, sometimes the statement of the theorem must include the condition $X\neq\emptyset$. If not so, the result may be false for $X=\emptyset$.
- <!-- %This is purely a question of taste. If we did not allow this possibility, then, every time we defined a metric space $(X,d)$, we would need to prove that $X$ was non-empty. If we do allow this possibility, and we prefer to reason about non-empty spaces, then we can begin our proof with the words `If $X$ is empty, then the result is vacuously true, so we may assume that $X$ is non-empty.'(Of course, the result may be false for $X=\emptyset$, in which case the statement of the theorem must include the condition $X\neq\emptyset$.)-->
-                      </li>
-                      <li>
-                          Distances are always positive.
-                      </li>
-                      <li>
-                          Two points are zero distance apart if and only if they are the same point.
-                      </li>
-                      <li>
-                          The distance from $A$ to $B$ and from $B$ to $A$ are the same.
-                      </li>
-                  
-                  <li>
-                      The distance from $A$ to $B$ via $C$ is at least as great as the distance from $A$ to $B$ directly.
-                  </li>
-                  </ol>
-                  </p>
-
-              
-<example> Show the matrix axioms. 
-    <ol class="romanlist">
-        <li>
-            Let $X=\mathbb{R}$ then $\d(x, y)=|x-y|$.
-            <br>
-            <i>solution. </i>
-        </li>
-        <li>
-             For $(x_1, x_2), (y_1,y_2) \in \mathbb R^2 $, we define  
-             \[
-             \d\Big(\left(x_1, x_2\right),\left(y_1, y_2\right)\Big) =\left|x_1-y_1\right|+\left|x_2-y_2\right|
-             \]
-             <i>solution. </i>
-        </li>
-        <li>
-            Let $\left(X, \d_1\right)$ and $\left(X, \d_2\right)$ be two metric spaces defined on $X$. We define $\d'$ as follows: 
-$$
-\d'\Big(\left(x_1, x_2\right),\left(y_1, y_2\right)\Big) = \sum_{i=1}^2 \d_i\left(x_i y_i\right)
-$$
-Is $\d'$ metric on $X$ ?
-        </li>
-    </ol>
-    
-</example>
+     
 
 
     <div class="box-theorem">
-  <div class="box-legend editable"><span class="lt-icon-default">Homework - Group discussion.</span>
+  <div class="box-legend editable"><span class="lt-icon-default">Homework 4 - Group discussion.</span>
 </div>
 
 <p>
-Click on the link to view <a href="https://hamkarim.github.io/notes/topology/2022/metricspace%20copy%201.html">homework 4.</a>!
+<ol>
+    <li>
+        We introduce three different metrics defined on the plane $\R^2$:
+        <ol class="romanlist">
+            <li>
+                We call $\d$ the Euclidean metric or standard metric on $\R^2$
+ 	  \[
+ 	    \d(x,y) = \sqrt{(x_1-y_1)^2 + (x_2-y_2)^2}
+ 	  \]
+ 	  Where $x=(x_1,x_2)$ and $y=(y_1,y_2)$
+            </li>
+            <li>
+                We call the <b>taxicab metric</b> or the <b>Manhattan metric</b> the function $\d_T$ defined by
+ 	  \[
+ 	    \d_T(x,y) = |x_1-y_1|+|x_2-y_2|
+ 	  \]
+ 	  since it measures the total distance traveled vertically together with the total distance traveled horizontally. <!-- (Note: As if you were restricted to travel on a city grid of parallel and perpendicular streets running North-South and East-West).-->
+            </li>
+            <li>
+                We call the <b>max metric</b> the function $d_M$ defined by
+ 	  \[
+ 	    \d_M(x,y) = \max\bigl(|x_1-y_1|, |x_2-y_2|\bigr)
+ 	  \]
+ 	  i.e., the distance between two points is the maximum of the differences between their coordinates.
+            </li>
+        </ol>
+    </li>
+    <li>
+        ចំពោះសំណុំ $X$ ទូទៅ គេកំណត់ $\d(x,y)$ ដោយ៖ <!--For an arbitrary set $X$, define $d(x,y)$ as following:-->
+ 	\[
+ 	  \d(x,y) = \begin{cases}
+ 	  	0 & \text{ if }\; x=y\\
+ 	  	1 & \text{ if }\; x\neq y
+ 	  \end{cases}
+ 	\]
+ 	
+ 	Then, $\d$ is a metric and is called the <b>discrete metric</b>.
+    </li>
+    <li>
+        ទូទៅកម្មនៃមេទ្រីកអឺគ្លីដក្នុង $\R^n$ ៖ យក $\mathbf x = (x_1, \cdots, x_n)$ និង $\mathbf y = (y_1,\cdots, y_n)\in\R^n$ ហើយកំណត់អនុគមន៍ $\d$ ដោយ៖ 
+
+ 	\[
+ 		\d(\mathbf x,\mathbf y) = \norm{\mathbf x-\mathbf y}
+ 	\]
+ 	ជាមេទ្រីកអឺគ្លីដកំណត់លើ $\R^n$ ។ (សូមមើលណមក្នុងកំណត់សម្គាល់ ឬក្នុងនិយមន័យខាងក្រោម)
+    </li>
+    <li>
+        យក $\mathcal C[a, b]$ ជាសំណុំនៃគ្រប់អនុគមន៍យកតម្លៃពិត ដែលកំណត់និងជាប់លើចន្លោះបិទ $[a, b]$ ។ បើយក $f, g \in \mathcal C[a, b]$ នោះគេកំណត់៖ 	<!--Consider the set $C[a, b]$ of all continuous real-valued functions defined on a given closed interval $[a, b]$. For $f, g \in C[a, b]$, one defines-->
+ 	\[
+ 	  \rho(f,g) = \int_a^b\bigl| f(x)-g(x)\bigr|\; \mathrm dx
+ 	\]
+ 	ដូច្នេះ $\rho$ គឺជាមេទ្រីកំណត់លើសំណុំ $C[a, b]$. 
+   <p>
+       (Note. មេទ្រីកនេះកំណត់បានផលបូកនៃរង្វាស់ចម្ងាយរវាងអនុគមន៍ជាប់ពីរនៅចន្លោះចំណុច $a$ និង $b$ ដែលយើងហៅជាទូទៅថា ``ផ្ទៃដែលខ័ណ្ឌដោយអនុគមន៍ពីរ $f$ និង $g$ កំណត់ពីបន្ទាត់ $x=a$ ដល់ $x=b$"។)
+   </p>
+    </li>
+    <li>
+        ចំពោះសំណុំ $C[a,b]$ ដូចក្នុងលំហាត់ខាងលើ គេកំណត់យកអនុគមន៍ $\rho'$ ដោយ៖
+ 	\[
+ 	  \rho'(f,g) = \sup\Bigl\{\big|f(x) - g(x)\big|:\; x\in [a, b]\Bigr\}
+ 	\]
+ 	ចូរបង្ហាញថា $\rho'$ ក៏ជាមេទ្រីកមួយកំណត់លើ $C[a,b]$?
+ 	
+ 	<p>
+ 	    <b>Note.</b> គេហៅ $\rho'$ ថាជា <b>supremum metric</b>{It is the ``distance'' from $f$ to $g$ as the supremum (which, in this case, is the same as the maximum) of vertical distances from points $(x, f(x))$ to $(x, g(x))$ on the graphs of $f$ and $g$.} ឬក៏ <b>uniform metric</b> កំណត់លើ $C[a, b]$។
+ 	</p>
+    </li>
+    <li>
+        If $(X,\d)$ is a metric space and $Y\subseteq X$, then the restriction of $\d$ to $Y\times Y$ determines a metric on $Y$ which we shall also designate by $\d$. The metric space $(Y,\d)$ is said to be a {subspace} of $(X,\d)$.
+    </li>
+</ol>
 
 </p>
 
