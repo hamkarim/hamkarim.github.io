@@ -2144,6 +2144,9 @@ a.fnote {
     /*width: 50%; */
 }
 
+.toright {
+    text-align: right;
+}
 span.tab {
     margin-left: 5em
 }
