@@ -715,6 +715,103 @@ Is $\d'$ metric on $X^2$ ?
     
 </example>
 
+Let see some spacial spaces in each metric as follows:
+
+<example>
+    <ol>
+        <li>
+            <b>The space of all bounded sequences. </b>
+<p>
+Let $X$ be the set of all bounded sequences of numbers, i.e., all infinite sequences
+$$
+x=\left(x_1, x_2, \ldots\right)=\left\{x_i\right\}_{i \geq 1}
+\quad \text{s.t }\quad 
+\sup _i\left|x_i\right|\lt \infty
+$$
+If $x=\left\{x_i\right\}_{i \geq 1}$ and $y=\left\{y_i\right\}_{i \geq 1}$ belong to $X$, we introduce the distance
+$$
+\d(x, y) = \sup _i\left|x_i-y_i\right| .
+$$
+It is clear that $\d$ is a metric on $X$. 
+        </p>
+<p>
+    Indeed, if $z=\left\{z_i\right\}_{i \geq 1}$ is in $X$, then
+    $$
+\begin{aligned}
+\left|x_i-y_i\right| & \leq\left|x_i-z_i\right|+\left|z_i-y_i\right| \\
+& \leq \sup _i\left|x_i-z_i\right|+\sup _i\left|z_i-y_i\right| \\
+&=d(x, z)+d(z, y) .
+\end{aligned}
+$$
+Therefore,
+$$
+d(x, y)=\sup _i\left|x_i-y_i\right| \leq d(x, z)+d(z, y) .
+$$
+
+</p>   
+
+        </li>
+        
+        <li><b>
+            The space $\ell_p$ </b>
+            
+            <p>
+                Let $X$ be the set of all sequences $x=\left\{x_i\right\}_{i \geq 1}$ such that
+$$
+\left(\sum_{i=1}^{\infty}\left|x_i\right|^p\right)^{\!\!1 / p} \lt \infty, \quad p \geq 1 .
+$$
+If $x=\left\{x_i\right\}_{i \geq 1}$ and $y=\left\{y_i\right\}_{i \geq 1}$ belong to $X$, we introduce the distance
+$$
+\d(x, y)=\left(\sum_{i=1}^{\infty}\left|x_i-y_i\right|^p\right)^{\!\!1 / p} .
+$$
+It is a consequence of the Minkowski inequality for infinite sums.
+           
+            <!-- We have $d(x, y) \in \mathbf{R}$. Evidently, $d(x, y) \geq 0, d(x, y)=0$ if and only if $x=y$, and $d(x, y)=d(y, x)$. The triangle inequality follows from the Minkowski inequality for infinite sums. -->
+            </p>
+    <b>Note. </b> In case when $p=2$, the space $\ell_p$ is called the space of square summable sequences.
+        </li>
+        
+        <li><b>The space of bounded functions. </b>
+        <p>
+            Let $S$ be any nonempty set and $\mathcal{B}(S)$ denote the set of all real- or complex-valued functions on $S$, each of which is bounded, i.e.,
+$$
+\sup _{x \in S}|f(x)|\lt \infty .
+$$
+If $f$ and $g$ belong to $\mathcal{B}(S)$, there exist $M>0$ and $N>0$ such that
+$$
+\sup _{x \in S}|f(x)| \leq M, \quad \sup _{x \in S}|g(x)| \leq N .
+$$
+<!--It follows that $\sup _{x \in S}|f(x)-g(x)|\lt \infty$. Indeed,
+$$
+|f(x)-g(x)| \leq|f(x)|+|g(x)| \leq \sup _{x \in S}|f(x)|+\sup _{x \in S}|g(x)|,
+$$
+and so
+$$
+0 \leq \sup _{x \in S}|f(x)-g(x)| \leq M+N .
+$$ -->
+We define
+$$
+\d(f, g)=\sup _{x \in S}|f(x)-g(x)|, \quad f, g \in \mathcal{B}(S) 
+$$
+This metric $\d$ is called the <b>uniform metric</b> (or <b>supremum
+metric</b>).
+        </p>    
+            
+        </li>
+        
+        <li>
+            <b>The space of continuous functions</b>
+            <p>
+                Let $X$ be the set of all continuous functions defined on $[a, b]$, an interval in R. For $f, g \in X$, define
+$$
+d(f, g)=\sup _{x \in[a, b]}|f(x)-g(x)| .
+$$
+The measure of distance between the functions $f$ and $g$ is the largest vertical distance between their graphs (see Figure 1.1). Since the difference of two continuous functions is continuous, the composition of two continuous functions is continuous, and a continuous function defined on the closed and bounded interval $[a, b]$ is bounded, it follows that $d(f, g) \in \mathbf{R}$ for all $f, g \in X$. It may be verified as in Example (viii) that $d$ is a metric on $X$. The space $X$ with metric $d$ defined as above is denoted by $C[a, b]$. All that we have said is valid whether all complex-valued continuous functions are taken into consideration or only real-valued ones are. When it is necessary to specify which, we write $C_{\mathrm{C}}[a, b]$ or $C_{\mathrm{R}}[a, b]$. Note that $C[a, b] \subseteq$ $\mathcal{B}[a, b]$ and the metric described here is the one induced by the metric in Example (viii) and is also called the uniform metric (or supremum metric).
+            </p>
+        </li>
+    </ol>
+</example>
+
 
     <div class="box-theorem">
   <div class="box-legend editable"><span class="lt-icon-default">Homework - Group discussion.</span>
