@@ -2162,3 +2162,21 @@ span.tab {
   clear: both;
   display: table;
 }
+
+/* Side by side picture*/
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 40%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}

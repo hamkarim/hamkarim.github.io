@@ -10,8 +10,8 @@
     <meta name="author" content="Ham Karim">
     <meta name="author" content="លំហអាហ្វីន">
     <meta property="og:locale" content="en_US">
-    <meta http-equiv="keywords" name="keywords" content="affine spaces, Euclidean-affine spaces, លំហអាហ្វីន, លំហអាហ្វីន-អឺគ្លីដ">
-    <meta http-equiv="description" name="description" content="ក្នុងគណិតវិទ្យា លំហអាហ្វីន (affine space) គឺជាទម្រង់ធរណីមាត្រមួយ ដែលកំណត់បានភាពទូទៅនៃលក្ខណៈរបស់ លំហអឺគ្លីដ (Euclidean spaces)  តាមវិធីមួយដែលមិនអាស្រ័យទៅនឹងគោលគំនិតទាំងឡាយណាទាក់ទងនឹងចំងាយ និងរង្វាស់មុំ តែវារក្សាបានលក្ខណៈទាំងឡាយណា ដែលទាក់ទងនឹងភាពស្របគ្នា និងសមាមាត្រនៃប្រវែងរបស់អង្កត់ស្របគ្នា។">
+    <meta http-equiv="keywords" name="keywords" content="Metric spaces, Metric spaces">
+    <meta http-equiv="description" name="description" content="ក្នុងគណិតវិទ្យា លំហមេទ្រីក">
     <meta name="description" content="Affine spaces, លំហអាហ្វីន">
     <meta property="og:description" content="Math, Programmer, Music">
     <link rel="canonical" href="../../../index.html">
@@ -47,7 +47,7 @@
     <meta property="og:image" content="http://www.cliparts101.com/files/376/298FE3955707B1DE458221E4BFABFBBE/Greek_Gamma_4.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../topology/2019/favicon.ico">
     <meta charset="UTF-8">
-    <title>Affine Spaces | លំហអាហ្វីន</title>
+    <title>Metric Spaces | លំហមេទ្រីក | អនុគមន៍ចម្ងាយ</title>
     <meta name="description" content="Math, Programmer, Music">
 
     <!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
@@ -503,7 +503,7 @@
 \( \newcommand{\calA}{\mathcal{A}}\) 
 \( \newcommand{\Aff}[1]{\mathbf{Aff}{\left(#1\right)}}\)
 \( \newcommand{\card}{\mathbf{card}}\)
- \( \newcommand{\d}{\mathbf{d}}\)
+ \( \newcommand{\d}{\mathrm{d}}\)
  \( \newcommand{\bx}{\mathbf{x}}\)
   \( \newcommand{\by}{\mathbf{y}}\)
   </div>
@@ -636,16 +636,16 @@ If I wish to travel from Phnom Penh to Siem Reap, then I may be interested in on
             <div class="definitionb">
                 <p> Let \(X\) be a set and let \(\d \colon X \times X \to {\mathbb{R}}\) be a function such that
 
-                <ol class="romanlist oneem">
-                    <li><b>Nonnegativity: </b> &ensp; \(\d(x,y) \geq 0\) for all \(x, y\) in \(X\)
+                <ol style="list-style: none;">
+                    <li>(M1)$\quad$<b>Nonnegativity: </b> &ensp; \(\d(x,y) \geq 0\) for all \(x, y\) in \(X\)
                     </li>
-                    <li><b>Metric zero: </b> &ensp; \(\d(x,y) = 0\) if and only if \(x = y\) for all \(x, y\) in \(X\)
+                    <li>(M2)$\quad$<b>Metric zero: </b> &ensp; \(\d(x,y) = 0\) if and only if \(x = y\) for all \(x, y\) in \(X\)
                     </li>
                     <li>
-                        <b>Symmetry: </b> &ensp; \(\d(x,y) = d(y,x)\) for all \(x, y\) in \(X\)
+                        (M3)$\quad$<b>Symmetry: </b> &ensp; \(\d(x,y) = d(y,x)\) for all \(x, y\) in \(X\)
                     </li>
                    <li>
-                       <b>Triangle inequality: </b> &ensp; \(d(x,z) \leq d(x,y)+ d(y,z)\) for all \(x, y, z\) in \(X\)
+                       (M4)$\quad$<b>Triangle inequality: </b> &ensp; \(d(x,z) \leq d(x,y)+ d(y,z)\) for all \(x, y, z\) in \(X\)
                    </li>
                 </ol>              
                        Then the pair \((X,d)\) is called a <b>metric space</b>. The function \(\d\) is called the <b>metric</b> or sometimes the <b>distance function</b>. Sometimes we just say \(X\) is a metric space if the metric is clear from context. 
@@ -715,7 +715,7 @@ Is $\d'$ metric on $X^2$ ?
     
 </example>
 
-Let see some spacial spaces in each metric as follows:
+<p>Let see some spacial spaces in each metric as follows:</p>
 
 <example>
     <ol>
@@ -734,7 +734,7 @@ $$
 $$
 It is clear that $\d$ is a metric on $X$. 
         </p>
-<p>
+<!--p>
     Indeed, if $z=\left\{z_i\right\}_{i \geq 1}$ is in $X$, then
     $$
 \begin{aligned}
@@ -748,7 +748,7 @@ $$
 d(x, y)=\sup _i\left|x_i-y_i\right| \leq d(x, z)+d(z, y) .
 $$
 
-</p>   
+</p-->   
 
         </li>
         
@@ -760,15 +760,15 @@ $$
 $$
 \left(\sum_{i=1}^{\infty}\left|x_i\right|^p\right)^{\!\!1 / p} \lt \infty, \quad p \geq 1 .
 $$
-If $x=\left\{x_i\right\}_{i \geq 1}$ and $y=\left\{y_i\right\}_{i \geq 1}$ belong to $X$, we introduce the distance
+For all $x=\left\{x_i\right\}_{i \geq 1}$ and $y=\left\{y_i\right\}_{i \geq 1}\in X$, we define the function 
 $$
 \d(x, y)=\left(\sum_{i=1}^{\infty}\left|x_i-y_i\right|^p\right)^{\!\!1 / p} .
 $$
-It is a consequence of the Minkowski inequality for infinite sums.
+It is a consequence of the <a href="https://proofwiki.org/wiki/Minkowski%27s_Inequality_for_Sums">Minkowski inequality</a> for infinite sums.
            
             <!-- We have $d(x, y) \in \mathbf{R}$. Evidently, $d(x, y) \geq 0, d(x, y)=0$ if and only if $x=y$, and $d(x, y)=d(y, x)$. The triangle inequality follows from the Minkowski inequality for infinite sums. -->
             </p>
-    <b>Note. </b> In case when $p=2$, the space $\ell_p$ is called the space of square summable sequences.
+<p>    <b>Note. </b> The space $\ell_2$ is called the <a href="https://ncatlab.org/nlab/show/sequence+space">space of square summable sequences</a>.</p>
         </li>
         
         <li><b>The space of bounded functions. </b>
@@ -802,18 +802,127 @@ metric</b>).
         <li>
             <b>The space of continuous functions</b>
             <p>
-                Let $X$ be the set of all continuous functions defined on $[a, b]$, an interval in R. For $f, g \in X$, define
+                Let $X$ be the set of all continuous functions defined on $[a, b]$, an interval in $\mathbb R$. For $f, g \in X$, define
 $$
-d(f, g)=\sup _{x \in[a, b]}|f(x)-g(x)| .
+\d(f, g)=\sup _{x \in[a, b]}|f(x)-g(x)|
 $$
-The measure of distance between the functions $f$ and $g$ is the largest vertical distance between their graphs (see Figure 1.1). Since the difference of two continuous functions is continuous, the composition of two continuous functions is continuous, and a continuous function defined on the closed and bounded interval $[a, b]$ is bounded, it follows that $d(f, g) \in \mathbf{R}$ for all $f, g \in X$. It may be verified as in Example (viii) that $d$ is a metric on $X$. The space $X$ with metric $d$ defined as above is denoted by $C[a, b]$. All that we have said is valid whether all complex-valued continuous functions are taken into consideration or only real-valued ones are. When it is necessary to specify which, we write $C_{\mathrm{C}}[a, b]$ or $C_{\mathrm{R}}[a, b]$. Note that $C[a, b] \subseteq$ $\mathcal{B}[a, b]$ and the metric described here is the one induced by the metric in Example (viii) and is also called the uniform metric (or supremum metric).
+i.e. <i>the measure of distance between the functions $f$ and $g$ is the largest vertical distance between their graphs</i> (see Figure below). In this case, the space $X$ is denoted by $\mathcal C[a, b]$.<br>
+
+
+
+           
+           <b>Note.</b> We write $C_{\mathbb{C}}[a, b]$ for space of all complex-valued continuous functions, and $C_{\mathbb{R}}[a, b]$ for all real-valued continuous functions. We see that $\mathcal C[a, b] \subseteq$ $\mathcal{B}[a, b]$ and the metric described here is the one induced by the metric in Example (3) above, since a <a href="#1">continuous function defined on the closed and bounded interval $[a, b]$ is bounded</a>. It is also called <b>the uniform metric</b> (or <b>supremum metric</b>). 
+           
+          <!-- Since the difference of two continuous functions is continuous, the composition of two continuous functions is continuous, and a continuous function defined on the closed and bounded interval $[a, b]$ is bounded, it follows that $d(f, g) \in \mathbf{R}$ for all $f, g \in X$. It may be verified as in Example (viii) that $d$ is a metric on $X$. -->
             </p>
+        </li>
+        <center>
+             <a href="#1">
+                <div class="">
+                    <p style="font-size: 14px"> 
+                    <img class="" alt="Manhattan distance" src="fig/sup_metric.png" width="55%"><br>
+                    <b>Fig.1.</b> Supremum metric
+                    </p>
+                </div>
+            </a>
+          <a href="#1">
+                <div class="">
+                    <p style="font-size: 14px"> 
+                    <img class="" alt="Manhattan distance" src="fig/surface_metric.png" width="55%"><br>
+                                       <b>Fig.1.</b> $\d(f,g) is the area between curves.
+                                        </p>
+                </div>
+            </a>
+<!--div class="row">
+  <div class="column">
+    <img class="" alt="Manhattan distance" src="fig/sup_metric.png" width="80%">
+  </div>
+  <div class="column">
+     <img class="" alt="Manhattan distance" src="fig/surface_metric.png" width="90%">
+  </div>
+</div-->
+        </center>
+            
+        <li>
+            The set $\mathcal C[a,b]$ can also be equipped with the metric
+            $$\d(f,g) = \int_a^b \Big|f(x)-g(x)\Big| dx $$
+            means that the measure of distance between the functions $f$ and $g$ is the area between their graphs, indicated by shading in Figure.
+            
+               
+           <p><b>Note. </b> If $f, g \in \mathcal C[a, b]$, then $|f-g| \in \mathcal C[a, b]$, and the integral defining $\d(f, g)$ is finite. It may be easily verified that $\d$ is a metric on $\mathcal C[a, b]$. <!-- We note that the continuity of the functions enters into the verification of the "only if" part of (MS2).-->
+           </p>
         </li>
     </ol>
 </example>
 
+   <example>
+       
+<ol>
+    <li>
+            Let $X=\mathbb{R} \cup\{\infty\} \cup\{-\infty\}$. Define $f: X \rightarrow \mathbb{R}$ by the rule
+$$
+f(x)=\left\{\begin{array}{cl}
+\frac{x}{1+|x|} & \text { if }-\infty \lt x\lt \infty \\
+1 & \text { if } x=\infty \\
+-1 & \text { if } x=-\infty
+\end{array}\right.
+$$
+<!--Evidently, $f$ is one-to-one and $-1 \leq f(x) \leq 1$. -->
+We define a function $\d$ on $X$ as follows:
+$$
+\d(x, y)=\Big|f(x)-f(y)\Big|,\quad  x, y \in X 
+$$
+      <!-- If $x=y$ then $f(x)=f(y)$ and so $d(x, y)=0$. On the other hand, if $d(x, y)=0$, then $|f(x)-f(y)|=0$, i.e., $f(x)=f(y)$. Since $f$ is one-to-one, it follows that $x=y$. That $d$ satisfies (MS3) and (MS4) is a consequence of the properties of the modulus of real numbers.-->
+        </li>
+        <li>
+            On $X=\mathbb{R} \cup\{\infty\} \cup\{-\infty\}$, define
+$$
+\d(x, y)=\left|\tan ^{-1} x-\tan ^{-1} y\right|, x, y \in X 
+$$
+<!-- (Note that $\tan ^{-1}(\infty)=\pi / 2, \tan ^{-1}(-\infty)=-\pi / 2$ and that the function $\tan ^{-1}$ is one-to-one.) It may now be verified that $X$ is a metric space with metric $\d$ defined as above. -->
+        </li>
+</ol>
+   </example>
+    
 
-    <div class="box-theorem">
+<div class="box-theorem">
+  <div class="box-legend editable"><span class="lt-icon-default">Proposition.</span>
+</div>
+
+<p>
+Let $(X, \d)$ be a metric space. Define $\d': X \times X \rightarrow \mathbb{R}$ by
+$$
+\d'(x, y)=\frac{\d(x, y)}{1+\d(x, y)} .
+$$
+Then $\d' $ is a metric on $X$. Besides, $\d' (x, y)\lt 1$ for all $x, y \in X$.
+</p>
+
+</div>
+<div class="">
+    <div class="toright">
+        <span id="SHLink_Soln01" class="soln-title SH-Link">Show Solution</span> <span id="SHImg_Soln01" class="fa fa-caret-right" aria-hidden="true"></span></div>
+ <div id="SHObj_Soln01" class="soln-content" style="display: none;">
+<p>
+    <i>Proof.</i> We need prove only (MS4). Suppose $x, y, z \in X$. Then $d(x, y) \geq 0, d(x, z) \geq$ $0, d(z, y) \geq 0$ and $d(x, y) \leq d(x, z)+d(z, y)$ because $d$ is a metric on $X$. Now,
+$$
+\begin{aligned}
+d^{\prime}(x, z)+d^{\prime}(z, y) &=\frac{d(x, z)}{1+d(x, z)}+\frac{d(z, y)}{1+d(z, y)} \\
+& \geq \frac{d(x, z)+d(z, y)}{1+d(x, z)+d(z, y)} \quad \text { by Theorem 1.1.2 } \\
+&=\frac{1}{1+\frac{1}{d(x, z)+d(z, y)}} \\
+& \geq \frac{1}{1+\frac{1}{d(x, y)}}=\frac{d(x, y)}{1+d(x, y)} .
+\end{aligned}
+$$
+    
+     </p>
+      </div>
+    </div>
+
+    
+    
+    
+    
+
+    <div class="box-note">
   <div class="box-legend editable"><span class="lt-icon-default">Homework - Group discussion.</span>
 </div>
 
@@ -825,6 +934,41 @@ Click on the link to view <a href="https://hamkarim.github.io/notes/topology/202
 </div>
 
 
+       <defn>
+            <div class="definition"> (Pseudo metric) </div>
+            <div class="definitionb">
+                <p> 
+                Let $X$ be a nonempty set. A <b>pseudometric</b> on $X$ is a mapping of $X \times X$ into $\mathbb{R}$ that satisfies the conditions:
+<ol style="list-style: none;">
+    <li>
+        (PM1) $\quad \d(x, y) \geq 0, \quad x, y \in X$
+    </li>
+    <li>
+        (PM2) $\quad \d(x, y)=0, \quad$ if $x=y$
+    </li>
+    <li>
+        (PM3) $\quad \d(x, y)=\d(y, x), \quad x, y \in X$;
+    </li>
+    <li>
+        (PM4) $\quad \d(x, y) \leq \d(x, z)+\d(z, y), \quad x, y, z \in X$.
+    </li>
+</ol>
+                </p>
+            </div>
+        </defn>
+
+<example>
+    Let $X$ denote the set of all <a href="">Riemann integrable functions</a> on $[a, b]$.
+For $f, g \in X$, define
+$$
+\d(f, g)=\int_a^b|f(x)-g(x)| d x
+$$
+It is easily verified that $\d$ is a pseudometric on $X$, but it is not a metric on $X$. Indeed, if
+$$
+f(x)= \begin{cases}0 & \text { if } x=a \\ 1 & \text { if } a \lt x \leq b\end{cases}
+$$
+and $g(x)=1$ for all $x \in[a, b]$, then $\d(f, g)=0$. However, $f \neq g$.
+</example>
 
         <hr>
 
