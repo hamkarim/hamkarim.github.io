@@ -571,20 +571,43 @@ Show that $(X, \d)$ is a metric space.
     </li>
     <li>
         <b>Recall (Open Set)</b> <a href="">សូមអានដោយយកចិត្តទុកដាក់!</a>
-        A set in $A \subset X$ is open if and only if $\forall x \in A$, there exists an $\epsilon\gt 0$ such that
+       Let $(X,\d)$ be metric space. For all $ x \in X$, there exists an $\epsilon\gt 0$ such that
 $$
-B(x, \epsilon):=\{y \in X \mid \d(x, y)\lt\epsilon\} \subset A .
+B(x, \epsilon):=\{y \in X \mid \d(x, y)\lt\epsilon\} 
 $$
-We say that $B(x, \epsilon)$ is a <b>ball of radius epsilon centered at $x$ (ប៊ូលបើក ផ្ចិត $x$ កាំ $\epsilon$)</b>.
+and 
+$$
+C(x, \epsilon):=\{y \in X \mid \d(x, y)\leq\epsilon\} 
+$$
+We call 
+  <ul>
+      <li>
+          $B(x, \epsilon)$ is an <b>open ball of radius epsilon centered at $x$ (ប៊ូលបើក ផ្ចិត $x$ កាំ $\epsilon$)</b> and 
+      </li>
+      <li>
+          $C(x, \epsilon)$ is a <b>closed ball of radius epsilon centered at $x$ (ប៊ូលបិទ ផ្ចិត $x$ កាំ $\epsilon$)</b>.
+      </li>
+  </ul>
    
    <p>
-               Given the <b>taxicab metric</b> or the <b>Manhattan metric</b> the function $\d_T$, for all $x=(x_1,x_2), y=(y_1,y_2)\in \mathbb R^2$ defined by
+              Now,  let see the <b>taxicab metric</b> or the <b>Manhattan metric</b> the function $\d_T$, for all $x=(x_1,x_2), y=(y_1,y_2)\in X=\mathbb R^2$ defined by
  	  \[
  	    \d_T(x,y) = |x_1-y_1|+|x_2-y_2|
  	  \]
    </p>
-   Draw the open ball $B(O, 1)$ for this metric $\d_T$, where $O=(0,0)$ and $\epsilon =1$
+<ol class="romanlist">
+    <li>
+           Draw the open ball $B(O, 1)$ and the closed ball $C(O, 1)$ for this metric $\d_T$, where $O=(0,0)$ and $\epsilon =1$
     </li>
+    <li>
+        For any \(x \in X\) and \(\delta \gt 0\), can you explain that why  \(B(x,\delta) \subset C(x,\delta)\).  Very easy!
+    </li>
+</ol>
+
+        
+
+    </li>
+
 </ol>
 
 </p>
