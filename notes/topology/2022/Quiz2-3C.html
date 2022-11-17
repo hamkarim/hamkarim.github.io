@@ -47,7 +47,7 @@
     <meta property="og:image" content="http://www.cliparts101.com/files/376/298FE3955707B1DE458221E4BFABFBBE/Greek_Gamma_4.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../topology/2019/favicon.ico">
     <meta charset="UTF-8">
-    <title>Affine Spaces | លំហអាហ្វីន</title>
+    <title>Metric Spaces | Quiz 2</title>
     <meta name="description" content="Math, Programmer, Music">
 
     <!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
@@ -553,80 +553,68 @@
 
 
     <div class="box-theorem">
-  <div class="box-legend editable"><span class="lt-icon-default">Homework 4 - Group discussion.</span>
+  <div class="box-legend editable"><span class="lt-icon-default">Quiz 2 (Metric space) - សម្រាប់ក្រុម</span>
 </div>
 
 <p>
 <ol>
+
+    <!--li>
+       Let $X=\mathbb{R}^2$ and for $\mathbf{p}, \mathbf{q} \in X$ define $\d(\mathbf{p}, \mathbf{q})$ by
+$$
+\d(\mathbf{p}, \mathbf{q})=\d\left(\left(x_1, x_2\right),\left(y_1, y_2\right)\right)=\left\{\begin{array}{l}
+\left|x_1-y_1\right|, \quad \text { if } x_2=y_2 \\
+\left|x_1\right|+\left|x_2-y_2\right|+\left|y_1\right|, \quad \text { if } x_2 \neq y_2 .
+\end{array}\right.
+$$
+Show that $(X, \d)$ is a metric space. 
+    </li-->
     <li>
-        We introduce three different metrics defined on the plane $\R^2$:
-        <ol class="romanlist">
-            <li>
-                We call $\d$ the Euclidean metric or standard metric on $\R^2$
- 	  \[
- 	    \d(x,y) = \sqrt{(x_1-y_1)^2 + (x_2-y_2)^2}
- 	  \]
- 	  Where $x=(x_1,x_2)$ and $y=(y_1,y_2)$
-            </li>
-            <li>
-                We call the <b>taxicab metric</b> or the <b>Manhattan metric</b> the function $\d_T$ defined by
+        Let $X$ be the set of continuous functions from $[a, b]$ to $\mathbb{R}$, and for $x, y \in X$ we define $\d(x, y)$ by
+$$
+\d(x, y) = \max \Big\{|x(t)-y(t)|: t \in[a, b]\Big\} 
+$$
+Show that $(X, \d)$ is a metric space. 
+    </li>
+    <li>
+        <b>Recall (Open Set)</b> <a href="">សូមអានដោយយកចិត្តទុកដាក់!</a>
+       Let $(X,\d)$ be metric space. For all $ x \in X$, there exists an $\epsilon\gt 0$ such that
+$$
+B(x, \epsilon):=\{y \in X \mid \d(x, y)\lt\epsilon\} 
+$$
+and 
+$$
+C(x, \epsilon):=\{y \in X \mid \d(x, y)\leq\epsilon\} 
+$$
+We call 
+  <ul>
+      <li>
+          $B(x, \epsilon)$ is an <b>open ball of radius epsilon centered at $x$ (ប៊ូលបើក ផ្ចិត $x$ កាំ $\epsilon$)</b> and 
+      </li>
+      <li>
+          $C(x, \epsilon)$ is a <b>closed ball of radius epsilon centered at $x$ (ប៊ូលបិទ ផ្ចិត $x$ កាំ $\epsilon$)</b>.
+      </li>
+  </ul>
+   
+   <p>
+              Now,  let see the <b>taxicab metric</b> or the <b>Manhattan metric</b> the function $\d_T$, for all $x=(x_1,x_2), y=(y_1,y_2)\in X=\mathbb R^2$ defined by
  	  \[
  	    \d_T(x,y) = |x_1-y_1|+|x_2-y_2|
  	  \]
- 	  since it measures the total distance traveled vertically together with the total distance traveled horizontally. <!-- (Note: As if you were restricted to travel on a city grid of parallel and perpendicular streets running North-South and East-West).-->
-            </li>
-            <li>
-                We call the <b>max metric</b> the function $d_M$ defined by
- 	  \[
- 	    \d_M(x,y) = \max\bigl(|x_1-y_1|, |x_2-y_2|\bigr)
- 	  \]
- 	  i.e., the distance between two points is the maximum of the differences between their coordinates.
-            </li>
-        </ol>
-    </li>
-    <li>
-        ចំពោះសំណុំ $X$ ទូទៅ គេកំណត់ $\d(x,y)$ ដោយ៖ <!--For an arbitrary set $X$, define $d(x,y)$ as following:-->
- 	\[
- 	  \d(x,y) = \begin{cases}
- 	  	0 & \text{ if }\; x=y\\
- 	  	1 & \text{ if }\; x\neq y
- 	  \end{cases}
- 	\]
- 	
- 	Then, $\d$ is a metric and is called the <b>discrete metric</b>.
-    </li>
-    <li>
-        ទូទៅកម្មនៃមេទ្រីកអឺគ្លីដក្នុង $\R^n$ ៖ យក $\mathbf x = (x_1, \cdots, x_n)$ និង $\mathbf y = (y_1,\cdots, y_n)\in\R^n$ ហើយកំណត់អនុគមន៍ $\d$ ដោយ៖ 
-
- 	\[
- 		\d(\mathbf x,\mathbf y) = \norm{\mathbf x-\mathbf y}
- 	\]
- 	ជាមេទ្រីកអឺគ្លីដកំណត់លើ $\R^n$ ។ (សូមមើល <a href="https://hamkarim.github.io/notes/topology/2022/norm.html">និយមន័យណម</a>ក្នុងកំណត់សម្គាល់ ឬក្នុងនិយមន័យខាងក្រោម)
-    </li>
-    <li>
-        យក $\mathcal C[a, b]$ ជាសំណុំនៃគ្រប់អនុគមន៍យកតម្លៃពិត ដែលកំណត់និងជាប់លើចន្លោះបិទ $[a, b]$ ។ បើយក $f, g \in \mathcal C[a, b]$ នោះគេកំណត់៖ 	<!--Consider the set $C[a, b]$ of all continuous real-valued functions defined on a given closed interval $[a, b]$. For $f, g \in C[a, b]$, one defines-->
- 	\[
- 	  \rho(f,g) = \int_a^b\bigl| f(x)-g(x)\bigr|\; \mathrm dx
- 	\]
- 	ដូច្នេះ $\rho$ គឺជាមេទ្រីកំណត់លើសំណុំ $C[a, b]$. 
-   <p>
-       (Note. មេទ្រីកនេះកំណត់បានផលបូកនៃរង្វាស់ចម្ងាយរវាងអនុគមន៍ជាប់ពីរនៅចន្លោះចំណុច $a$ និង $b$ ដែលយើងហៅជាទូទៅថា ``ផ្ទៃដែលខ័ណ្ឌដោយអនុគមន៍ពីរ $f$ និង $g$ កំណត់ពីបន្ទាត់ $x=a$ ដល់ $x=b$"។)
    </p>
+<ol class="romanlist">
+    <li>
+           Draw the open ball $B(O, 1)$ and the closed ball $C(O, 1)$ for this metric $\d_T$, where $O=(0,0)$ and $\epsilon =1$
     </li>
     <li>
-        ចំពោះសំណុំ $C[a,b]$ ដូចក្នុងលំហាត់ខាងលើ គេកំណត់យកអនុគមន៍ $\rho'$ ដោយ៖
- 	\[
- 	  \rho'(f,g) = \sup\Bigl\{\big|f(x) - g(x)\big|:\; x\in [a, b]\Bigr\}
- 	\]
- 	ចូរបង្ហាញថា $\rho'$ ក៏ជាមេទ្រីកមួយកំណត់លើ $C[a,b]$?
- 	
- 	<p>
- 	    <b>Note.</b> គេហៅ $\rho'$ ថាជា <b>supremum metric</b>{It is the ``distance'' from $f$ to $g$ as the supremum (which, in this case, is the same as the maximum) of vertical distances from points $(x, f(x))$ to $(x, g(x))$ on the graphs of $f$ and $g$.} ឬក៏ <b>uniform metric</b> កំណត់លើ $C[a, b]$។
- 	</p>
+        For any \(x \in X\) and \(\delta \gt 0\), can you explain that why  \(B(x,\delta) \subset C(x,\delta)\).  Very easy!
     </li>
-    <li>
-        If $(X,\d)$ is a metric space and $Y\subseteq X$, then the restriction of $\d$ to $Y\times Y$ determines a metric on $Y$ which we shall also designate by $\d$. The metric space $(Y,\d)$ is said to be a <b>subspace</b> of $(X,\d)$.
+</ol>
+
+        
+
     </li>
+
 </ol>
 
 </p>
