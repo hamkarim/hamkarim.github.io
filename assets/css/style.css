@@ -1541,6 +1541,30 @@ ol.romanlist > li::before {
     /*padding-top: 8px;*/
 }
 
+ol.alplist {
+    counter-reset: list;
+    margin: auto;
+    padding-top: 10px;
+    width: 96%;
+}
+
+ol.alplist > li {
+    list-style: none;
+    position: relative;
+    margin-left: auto;
+    line-height: 1.5!important;
+}
+
+ol.alplist > li::before {
+    counter-increment: list;
+    content: " ("counter(list, lower-alpha) ") ";
+    position: absolute;
+    left: -2.1em;
+    padding-left: 8px;
+    padding-right: 5px;
+    /*padding-top: 8px;*/
+}
+
 ol.threeem {
     margin-left: 3em;
 }
