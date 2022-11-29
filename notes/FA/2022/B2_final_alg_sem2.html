@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+	<!-- Begin Jekyll SEO tag v2.3.0 -->
+	<meta property="og:title" content="Ham Karim">
+	<meta name="author" content="Ham Karim">
+	<meta name="author" content="លំហអាហ្វីន">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:description" content="Math, Programmer, Music">
+	<link rel="canonical" href="../../../index.html">
+	<meta property="og:url" content="https://hamkarim.github.io/">
+	<meta property="og:site_name" content="Right Triangle">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@pkarim">
+	<meta name="twitter:creator" content="@pkarim">
+	<meta name="google-site-verification" content="b9bg3P9zc8qbL4szvVYaf551jD9x017IyGBVSaQZDDY" />
+
+	<script type="application/ld+json">
+		{
+			"name": "Ham Karim",
+			"description": "I am a faculty member at the Royal Univeristy of Phnom Penh (RUPP). This is my blog of lectures at universities. ",
+			"author": {
+				"@type": "Person",
+				"name": "Ham Karim"
+			},
+			"@type": "WebSite",
+			"url": "https://hamkarim.github.io/",
+			"image": null,
+			"publisher": null,
+			"headline": "Ham Karim",
+			"dateModified": null,
+			"datePublished": "2020-06-01",
+			"sameAs": null,
+			"mainEntityOfPage": null,
+			"@context": "http://schema.org"
+		}
+	</script>
+	<!-- End Jekyll SEO tag -->
+
+	<meta property="og:image" content="http://www.cliparts101.com/files/376/298FE3955707B1DE458221E4BFABFBBE/Greek_Gamma_4.png">
+	<link rel="shortcut icon" type="image/x-icon" href="../../topology/2019/favicon.ico">
+	<meta charset="UTF-8">
+	<title>Final Task - B2</title>
+	<meta name="description" content="Math, Programmer, Music">
+
+	<!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
+
+	<style>
+		.deffont {
+			font-family: 'Noto Serif Khmer', 'CMU Serif';
+			font-size: 16px;
+		}
+
+		ul.liststyle1 {
+			list-style-type: square;
+		}
+
+		ul.liststyle2 {
+			list-style-type: hebrew;
+		}
+
+		a.onmenu {
+			font-family: 'Noto Serif Khmer', 'CMU Serif';
+			font-weight: bold;
+		}
+	</style>
+
+	<style type="text/css">
+		/**************** Box container styles *******************/
+		.mt-content-container .boxobjectives,
+		.boxexample,
+		.boxexercise,
+		.boxquery,
+		.boxnotewithlegend,
+		.boxnotewithoutlegend,
+		.boxprocedure,
+		.boxdefinition,
+		.boxtheorem,
+		.boxlemma,
+		.boxnotation,
+		.boxproposition {
+			-moz-border-radius: 8px;
+			-webkit-border-radius: 8px;
+			border-radius: 8px;
+			padding-top: 0em;
+			padding-bottom: 0em;
+			padding-left: 1em;
+			padding-right: 1em;
+			margin-bottom: 1em;
+			overflow: visible;
+			border: 0px;
+			orphans: 2;
+		}
+
+		.mt-content-container .boxnotewithlegend,
+		.boxprocedure,
+		.notation {
+			background-color: hsla(20, 0%, 93%, 1);
+		}
+
+		.mt-content-container .boxexample,
+		.boxexercise {
+			background-color: hsla(220, 100%, 97%, 1);
+		}
+
+		.mt-content-container .boxwarning {
+			background-color: hsla(0, 100%, 96%, 1);
+		}
+
+		.mt-content-container .boxdefinition,
+		.boxtheorem,
+		.boxlemma,
+		.boxnotation,
+		.boxproposition {
+			background-color: hsla(28, 80%, 95%, 1);
+		}
+
+		.mt-content-container .boxobjectives {
+			background-color: hsla(0, 0%, 90%, 1);
+		}
+
+		.mt-content-container .boxnotewithoutlegend {
+			background-color: hsla(20, 0%, 93%, 1);
+			padding-right: 1em;
+			padding-left: 1em;
+			padding-top: 0.5em !important;
+			padding-bottom: 0.5em !important;
+			margin-right: 1em;
+			margin-left: 1em;
+		}
+
+		.mt-content-container .boxquery {
+			border: 2px solid green;
+			page-break-inside: avoid;
+			visibility: hidden !important;
+			display: none !important;
+		}
+
+		/**************** Box legend container styles *******************
+	.mt-content-container .boxlegend {
+		font-style: normal !important;
+		font-size: 1.1em !important;
+		font-weight: normal !important;
+		font-family: "Tahoma", Arial, serif !important;
+		padding-top: 0.2em !important;
+		padding-bottom: 0.2em !important;
+		padding-left: 0.3em !important;
+		padding-right: 0.3em !important;
+		margin-left: 0.35em;
+		color: white;
+		border-radius: 3px;
+		overflow: visible;
+		break-inside: avoid !important;
+	}
+
+	/************** Defining the Legends ******************
+
+
+	.box-definition>header,
+	.box-structure>header,
+	.box-note>header,
+	.box-theorem>header,
+	.box-example>header,
+	.box-exercise>header,
+	.box-query>header,
+	.box-adapt>header,
+	.box-objectives>header,
+	.box-warning>header {
+		display: inline-flex;
+		overflow: hidden;
+		break-inside: avoid-page;
+		page-break-inside: avoid;
+		text-align: left;
+		width: auto;
+		margin: 0 0px 2px 0px !important;
+		padding: 4px 6px 4px 4px !important;
+		transform: translate(-11px, 0px) !important;
+		border-radius: 3px 5px 5px 0;
+		-moz-border-radius: 3px 5px 5px 0;
+		-webkit-border-radius: 3px 5px 5px 0;
+	}
+	.box-definition>header *,
+	.box-structure>header *,
+	.box-note>header *,
+	.box-theorem>header *,
+	.box-example>header *,
+	.box-exercise>header *,
+	.box-query>header *,
+	.box-adapt>header *,
+	.box-objectives>header *,
+	.box-warning>header * {
+		font-family: "Battambang", "Tahoma", Arial, serif !important;
+		font-size: 17px !important;
+		font-weight: 400 !important;
+		color: white !important;
+		;
+		width: auto !important;
+		;
+		float: left !important;
+		;
+		line-height: 1 !important;
+		;
+		margin-block-start: 0 !important;
+		margin-block-end: 0 !important;
+	}
+*/
+	</style>
+
+	<style type="text/css">
+		/*<![CDATA[*/
+		.Headertext {
+			display: none;
+		}
+
+		/*]]>*/
+	</style>
+
+	<style type="text/css">
+		/*<![CDATA[*/
+		/* CSS pseudo-element styling https://fontawesome.com/how-to-use/on-the-web/advanced/css-pseudo-elements */
+
+		/* general reset/setup styling for icons - needed on all */
+
+		.lt-icon-default::before,
+		.lt-icon-brain::before,
+		.lt-icon-pin::before,
+		.lt-icon-hand::before,
+		.lt-icon-pathway::before,
+		.lt-icon-logic::before,
+		.lt-icon-check::before,
+		.lt-icon-question::before,
+		.lt-icon-exclamation::before {
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			display: inline-block;
+			font-style: normal;
+			font-variant: normal;
+			text-rendering: auto;
+			line-height: 1.5;
+			font-family: "Font Awesome 5 Pro";
+			font-weight: 900;
+			margin-right: 0.5rem;
+		}
+
+		/*default */
+
+		.box-example .lt-icon-default::before {
+			content: "\f00c";
+		}
+
+		.box-exercise .lt-icon-default::before {
+			content: "\f128";
+		}
+
+		.box-query .lt-icon-default::before {
+			content: "\f126";
+		}
+
+		.box-adapt .lt-icon-default::before {
+			content: "\f126";
+		}
+
+		.box-interactive .lt-icon-default::before {
+			content: "\f542";
+		}
+
+		.box-note .lt-icon-default::before {
+			content: "\f08d";
+		}
+
+		.box-objectives .lt-icon-default::before {
+			content: "\f5dc";
+		}
+
+		.box-definition .lt-icon-default::before {
+			content: "\f303";
+		}
+
+		.box-theorem .lt-icon-default::before {
+			content: "\f1b3";
+		}
+
+		.box-warning .lt-icon-default::before {
+			content: "\f256";
+		}
+
+
+		/*specific icons*/
+		.lt-icon-brain::before {
+			content: "\f5dc";
+		}
+
+		.lt-icon-pin::before {
+			content: "\f08d";
+		}
+
+		.lt-icon-pathway::before,
+			{
+			content: "\f126";
+		}
+
+		.lt-icon-logic::before,
+			{
+			content: "\f1b3";
+		}
+
+		.lt-icon-hand::before,
+			{
+			content: "\f126";
+		}
+
+		.lt-icon-pathway::before,
+			{
+			content: "\f256";
+		}
+
+		.lt-icon-check::before,
+			{
+			content: "\f00c";
+		}
+
+		.lt-icon-question::before,
+			{
+			content: "\f128";
+		}
+
+		.lt-icon-exclamation::before,
+			{
+			content: "\f12a";
+		}
+
+		/*]]>*/
+	</style>
+
+	<script async="" src="//cse.google.com/adsense/search/async-ads.js"></script>
+	<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+	<script type="text/javascript" async="" src="https://cse.google.com/cse.js?cx=001004262401526223570:11yv6vpcqvy"></script>
+	<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-331594-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-331594-1');
+	</script>
+
+
+
+	<link rel="stylesheet" href="../../../assets/css/style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245">
+
+	<link rel="stylesheet" href="../../../assets/css/all.css">
+
+
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+
+	<!-- Script to show and hide proof -->
+	<script type="text/javascript" src="https://hamkarim.github.io/assets/js/showhide.js"></script>
+	<!-- Other style of showing and hiding proof -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
+	<script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>
+	<!-- end -->
+
+
+	<script type="text/javascript" src="../../../assets/sidebar/sidebar.min.js"></script>
+	<link rel="stylesheet" href="../../../assets/sidebar/Sidebar.css">
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		//Another method to toggle the button
+		$(document).ready(function() {
+			$('.showanswer').click(function() {
+				$('.block_proof').show();
+				$('.showanswer').hide();
+				$('.hideanswer').show();
+			});
+			$('.hideanswer').click(function() {
+				$('.block_proof').hide();
+				$('.showanswer').show();
+				$('.hideanswer').hide();
+			});
+		});
+	</script>
+
+	<!-- For local function, define to exchange text -->
+	<script>
+		function showhideFunction() {
+			document.getElementById('idClick').innerHTML === '[Hide proof]' ? document.getElementById('idClick').innerHTML = '[Show proof]' : document.getElementById('idClick').innerHTML = '[Hide proof]';
+		}
+	</script>
+
+	<!-- script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,https://hamkarim.github.io/MathJax/config/local/local.js"></script -->
+
+	<script type="text/javascript" src="../../../MathJax/config/local/mathjax-config.js" defer></script>
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script type="text/javascript" id="MathJax-script" defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml-full.min.js">
+	</script>
+
+	<!--script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { fonts: ["TeX"] }
+  });
+</script-->
+
+	<!-- script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script--
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
+    </script -->
+
+	<!--script type="text/javascript" config=TeX-MML-AM_CHTML
+   src="">
+</script-->
+
+	<!--
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">  -->
+
+	<!-- The loading of KaTeX is deferred to speed up page rendering
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>  -->
+
+	<!-- To automatically render math in text elements, include the auto-render extension:
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);">
+</script>
+<script >
+  document.addEventListener("DOMContentLoaded", function()
+      {
+        renderMathInElement(document.body,
+            {
+                delimiters: [
+                    { left: "\\begin{equation}", right: "\\end{equation}", display: true },
+                    { left: "$$", right: "$$", display: true },
+                    { left: "\\[", right: "\\]", display: true },
+                    { left: "\\(", right: "\\)", display: false },
+                    { left: "$", right: "$", display: false }
+                ]
+            });
+        });
+</script> -->
+
+	<!-- To get it to work in old versions of Internet Explorer, you need to append this script to the head (Important if you need it to work in older versions of IE!): -->
+	<!--[if lt IE 9] -->
+	<script>
+		document.createElement("example, defn");
+	</script>
+	<!-- [endif]-->
+
+
+
+	<div class="Headertext">
+
+		\( \newcommand{\vecs}[1]{\overset { \scriptstyle \rightharpoonup} {\mathbf{#1}}&nbsp;}&nbsp;\)
+        
+    \( \newcommand{\Vect}[1]{\mathbf{Vect}\!\left(#1\right)}\)
+   \( \newcommand{\vecd}[1]{\overset{-\!-\!\rightharpoonup}{\vphantom{a}\smash&nbsp;{#1}}} \)
+   \(\newcommand{\id}{\mathrm{id}}\)
+   \( \newcommand{\Span}{\mathrm{span}}\)
+   \( \newcommand{\kernel}{\mathrm{null}\,}\)
+   \( \newcommand{\range}{\mathrm{range}\,}\)
+   \( \newcommand{\RealPart}{\mathrm{Re}}\)
+   \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+   \( \newcommand{\Argument}{\mathrm{Arg}}\)
+  \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \(\newcommand{\id}{\mathrm{id}}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \( \newcommand{\kernel}{\mathrm{null}\,}\)
+  \( \newcommand{\range}{\mathrm{range}\,}\)
+  \( \newcommand{\RealPart}{\mathrm{Re}}\)
+  \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+  \( \newcommand{\Argument}{\mathrm{Arg}}\)
+  \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\cof}{\mathbf{cof}}\)
+  \( \newcommand{\adj}{\mathbf{adj}}\)
+  \( \renewcommand{\det}{\mathbf{det\,\!}}\)
+    \( \newcommand{\minor}{\mathbf{minor}}\)
+  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \( \newcommand{\bbR}{\mathbb{R}}\)
+  \( \newcommand{\calD}{\mathcal{D}}\)
+  \( \newcommand{\calP}{\mathcal{P}}\)
+\( \newcommand{\calA}{\mathcal{A}}\) 
+\( \newcommand{\Aff}[1]{\mathbf{Aff}{\left(#1\right)}}\)
+\( \newcommand{\card}{\mathbf{card}}\)
+ \( \newcommand{\d}{\mathbf{d}}\)
+  
+  </div>
+  
+  
+
+</head>
+
+<body>
+    <!--nav class="nav-collapse" role="navigation">
+        <ul class="tabs primary-nav">
+            <li class="tabs__item">
+                <a href="../../../index.html" class="tabs__link">ទំព័រដើម</a>
+            </li>
+            <li class="tabs__item">
+                <a href="../../topology/2019/../../../posts_index.html" class="tabs__link">Blog</a>
+            </li>
+            <li class="tabs__item">
+                <a href="../../topology/2019/../../../projects.html" class="tabs__link">Projects</a>
+            </li>
+            <li class="tabs__item">
+                <a href="../../../notes_index.html" class="tabs__link">មេរៀន</a>
+            </li>
+            <li class="tabs__item">
+                <a href="../../topology/2019/../../../about.html" class="tabs__link">អំពីខ្ញុំ</a>
+            </li>
+            <li class="tabs__item">
+                <a href="../../topology/2019/../../../contact.html" class="tabs__link">ទាក់ទងខ្ញុំ</a>
+            </li>
+        </ul>
+    </nav-->
+
+    <!--section class="page-header">
+        <h1 class="project-name">ហាំ ការីម</h1>
+        <h2 class="project-tagline">Maths, Program, Music</h2>
+    </section-->
+
+    <section class="main-content">
+
+        <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">Group B2 - Final Task</h1>
+        <p style="font-style: italic; font-weight:bold; font-family: Arial; opacity: 0.5;">
+            Nov.
+            24th, 2022
+        </p>
+
+        <hr>
+     
+ 
+
+
+<h3>ក្រុមទី ១ ថ្នាក់ B2 </h3>
+		<center>
+			<a href="#1">
+				<div class="">
+					<p style="font-size: 14px"> 
+						<img class="" alt="Group 1" src="fig/Group1-B2.jpg" width="70%"><br>
+					</p>
+				</div>
+			</a>
+		</center>
+
+ <div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">លំហាត់ 1. </span>
+</div>
+
+<p class="">
+	Let \(n\geq2\) be a positive integer (ចំនួនគត់វិជ្ជមាន). Define a relation \(\sim\) on \(\mathbb{Z}\) by
+<center>
+	$a\; \sim\; b\;  \Longleftrightarrow \; a\equiv b\;\; (\text{mod \;} n)$
+</center>
+
+	Verify that \(\sim\) is an equivalence relation.
+<ol class="romanlist twoem">
+    <li>
+       Find $\overline{1}, \overline{-5}, \overline{20}$ and $\overline{0}$.
+    </li>
+    
+    <li>
+		Show that $\overline{1}=\overline{5}$.
+        
+    </li>
+    <li>
+        Write the quotient set, possible
+    </li>
+    <li>
+       សង់តារាងផលបូក និងផលគុណ បើអាច!
+    </li>
+
+</ol>
+</p>
+
+</div>
+       
+       
+<div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">លំហាត់ 2. </span>
+</div>
+
+<p class="">
+<ol class="alplist">
+    <li>
+        If $\left\{A_i: i \in I\right\}$ is an indexed family of sets and $B$ is any set, then
+<ol class="romanlist twoem">
+    <!--li>
+       $\bigcap_{i \in I} A_i \subseteq A_j$, for each $j \in I$,
+    </li-->
+    
+    <li>
+       $\displaystyle A_j \subseteq \bigcup_{i \in I} A_i$, for each $j \in I$.
+        
+    </li>
+    <li>
+        if $B \subseteq A_i$, for all $i \in I$, then $\displaystyle B \subseteq \bigcap_{i \in I} A_i$,
+    </li>
+    <!--li>
+        if $A_i \subseteq B$, for all $i \in I$, then $\bigcup_{i \in I} A_i \subseteq B$.
+    </li-->
+
+</ol>
+    </li>
+    <li>
+        យក $I=[0,1] \subseteq \mathbb{R}$ និងគ្រប់ $i \in I$ គេតាង $A_i=(i-1, i+1) \subseteq \mathbb{R}$ ។ ចូរគណនា  $$\displaystyle\bigcap_{i \in I} A_i\quad \text{and} \quad\displaystyle \bigcup_{i \in I} A_i$$
+    </li>
+    <li>
+        Let $I=\{1,2,3\}, A_1=\{1,3,4,6,7\} A_2=\{1,4,5,7,8,9\}, A_3=\{2,4,7,10\}$. Find $\bigcap_{i \in I} A_i$ and $\bigcup_{i \in I} A_i$.
+    </li>
+</ol>
+
+</p>
+
+</div>
+       
+           
+<div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">លំហាត់ 3. </span>
+</div>
+
+<p class="">
+Let $A = \mathbb Z+$ be a set of positive integers (សំណុំចំនួនគត់វិជ្ជមាន) and define a relation $\mathcal R$ on $A$ as follows: 
+<center>
+	$\forall a, b \in A:\;  a\;\mathcal R\; b \Longleftrightarrow a \leq b $ ហើយ 
+$a$ និង  $b$ មានចំនួនតួចែករួមស្មើគ្នា<!--have the same number of positive divisors.-->
+</center>
+
+<ol class="alplist">
+   <li>
+   	Prove that $(A,\mathcal R)$ is a POSET.
+   </li>
+    <li>
+        Let $S = \{1,2,3,4,5,6,7,8\}$. Draw an arrow diagram of $\mathcal R$ និងសិក្សាធាតុទាំង $8$ របស់វា បើអាចមាន!
+    </li>
+</ol>
+
+</p>
+
+</div>
+                 
+                 
+<div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">លំហាត់ 4. </span>
+</div>
+
+<p class="">
+<ol class="alplist">
+    <li>
+        យក $f: A \rightarrow B$ កំណត់ដោយ $f(x)=x^2+14 x-51$។ ចូរពន្យល់ តើ  $f$ ប្រកាន់ និង ពេញ ឬទេ? ក្នុងករណីគេយកសំណុំទាំងពីរ
+ខាងក្រោម៖
+$$A=\mathbb R,\quad B=\{b \in \mathbb R \mid b \geq -100\}$$
+    </li>
+    <li>
+        ចូររកឧទាហរណ៍បញ្ជាក់ថា៖ $f: \mathbb N \rightarrow \mathbb N$ ជាអនុគមន៍
+(i) onto but not one-to-one
+(ii) neither one-to-one nor onto;
+(iii) both one-to-one and onto.
+    </li>
+</ol>
+
+</p>
+
+</div>
+      
+
+<h3>ក្រុមទី ២ ថ្នាក់ B2 </h3>
+<center>
+	<a href="#1">
+		<div class="">
+			<p style="font-size: 14px"> 
+				<img class="" alt="Group 1" src="fig/Group2-B2.jpg" width="70%"><br>
+			</p>
+		</div>
+	</a>
+</center>
+                  
+<div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">លំហាត់ 5. </span>
+</div>
+
+<p class="">
+ If $A$ is a set, $B_i \subset A$ for each $i \in I$ and $B \subset A$, then
+<ol class="romanlist twoem">
+    <li>
+       $\displaystyle A-\left(\bigcup_{i \in I} B_i\right)=\bigcap_{i \in I}\left(A-B_i\right)$
+    </li>
+    
+    <li>
+       $\displaystyle  A-\left(\bigcap_{i \in I} B_i\right)=\bigcup_{i \in I}\left(A-B_i\right)$
+    </li>
+    <li>
+        $\displaystyle B \cap\left(\bigcup_{i \in I} B_i\right)=\bigcup_{i \in I}\left(B \cap B_i\right)$
+    </li>
+    <li>
+        $\displaystyle B \cup\left(\bigcap_{i \in I} B_i\right)=\bigcap_{i \in I}\left(B \cup B_i\right)$
+    </li>
+
+</ol>
+</p>
+
+</div>
+                  
+                         <div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">លំហាត់ 6. </span>
+</div>
+
+<p class="">
+គេអោយអនុគមន៍ $f:\mathbb R\longrightarrow \mathbb R$ កំណត់ដោយ $x\longmapsto f(x)=1-\frac{1}{x}$ ។
+
+<ol class="alplist twoem">
+    <li>
+       ចូរសរសេរសំណុំ $\mathcal D(f)$ និង $\mathcal R(f)$
+    </li>
+    
+    <li>
+      ចូរសិក្សាលក្ខណៈរបស់ $f$
+        
+    </li>
+    <li>
+        យក $X=\{0,-1,1,3,4\}$ ។ ចូរសរសេរសំណុំ $f(X)$ ដែល 
+        $$f(X) = \Big\{f(x) \mid x\in X\Big\}$$
+    </li>
+    <li>
+         យក $Y=\{-1,2,-2,1,3,2\}$ ។ ចូរសរសេរសំណុំ $f^{-1}(X)$ ដែល 
+        $$f^{-1}(Y) = \Big\{x\in \mathbb R^*\mid f(x)\in Y\Big\}$$
+    </li>
+
+</ol>
+</p>
+
+</div>
+                   <div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">លំហាត់ 7. </span>
+</div>
+
+<p class="">
+Let $\mathcal R$ be a relation defined on the set $A=\{1,2,3,4,5,6,7,8,9,10\}$ such that
+$$
+\forall a, b \in A , \quad a\; \mathcal R\; b \Leftrightarrow a \mid b
+$$
+<ol class="romanlist twoem">
+    <li>
+       Show that $(A,\mathcal R)$ is a POSET.
+    </li>
+    
+    <li>
+       Decide whether $\mathcal R$ is totally ordering relation (ទំនាក់ទំនងលំដាប់គ្រប់) on $A$, why?
+        
+    </li>
+    <li>
+        Draw the Hasse diagram representing the relation $\mathcal R$ on the set $A$
+    </li>
+    <li>
+        សិក្សាធាតុទាំង $8$ របស់ $A$ បើអាចមាន!
+    </li>
+
+</ol>
+</p>
+
+</div>
+      
+             <div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">លំហាត់ 8. </span>
+</div>
+
+<p class="">
+ចូរសង់តាងផលបូក និងផលគុណរបស់សំណុំ $\mathbb Z_{15}$ រួចបញ្ជាក់ $\mathbb Z^*_{15}$ ។
+</p>
+
+</div>
+       
+       <h3>ក្រុមទី ៣ ថ្នាក់ B2 </h3>
+<center>
+	<a href="#1">
+		<div class="">
+			<p style="font-size: 14px"> 
+				<img class="" alt="Group 1" src="fig/Group3-B2.jpg" width="70%"><br>
+			</p>
+		</div>
+	</a>
+</center>
+                                      <div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">លំហាត់ 9. </span>
+</div>
+
+<p class="">
+                       <center>
+             <a href="#1">
+                <div class="">
+                    <p style="font-size: 14px"> 
+                    <img class="" alt="Manhattan distance" src="fig/say_relation1.jpg" width="90%"><br>
+                                      </p>
+                </div>
+            </a>
+        </center>
+        ចូរសរសេរពន្យល់៖
+<ol class="romanlist twoem">
+    <li>
+       $\text{ Mithuna } \;\mathcal R\circ \mathcal S\; \text{ Vicheka } $
+    </li>
+    
+    <li>
+      $\text{ Tola } \;\mathcal T\circ \mathcal S\; \text{ Sophy } $
+    </li>
+    <li>
+        $\text{ Sothy } \;\mathcal T\circ (\mathcal R\circ \mathcal S)\; \text{ Kupheak } $
+    </li>
+    <li>
+         $\text{ Makara } \;\Big(\mathcal R\circ \mathcal S\Big)^{-1}\; \text{ Kakda } $
+    </li>
+
+</ol>
+</p>
+
+</div>
+                       
+<div class="box-note">
+                        <div class="box-legend editable"><span class="lt-icon-default">លំហាត់ 10. </span>
+</div>
+
+<p class="">
+                       <center>
+             <a href="#1">
+                <div class="">
+                    <p style="font-size: 14px"> 
+                    <img class="" alt="Manhattan distance" src="fig/say_function1.jpg" width="90%"><br>
+                                      </p>
+                </div>
+            </a>
+        </center>
+        ចូរសរសេរពន្យល់ចំណុចនីមួយៗអោយបានច្បាស់លាស់!
+
+</p>
+
+</div>
+        
+<div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">លំហាត់ 11. </span>
+</div>
+
+<p class="">
+យក $\mathcal R$ ជាទំនាក់ទំនងលើសំណុំ $\mathbb R$ ដែលកំណត់ដោយ 
+<center>
+	$x\;\mathcal R\; y$ លុះត្រាតែ $x-y\in \mathbb Z$  
+</center>
+
+<ol class="alplist twoem">
+    <li>
+       Prove that $\mathcal R$ is an equivalence relation on $\mathcal R$.
+    </li>
+    
+    <li>
+      គណនា $\overline{0},\;$ $\overline{-2}\;$ and $\;\overline{\frac{1}{2}}$
+        
+    </li>
+    <li>
+    	Show that $\overline{2}\neq \overline{\frac{1}{2}}$
+    </li>
+    <li>
+    	ចូរសរសេរ $\mathbb R{\mid_{\mathcal R}}$
+    </li>
+
+</ol>
+</p>
+
+</div>
+         
+                       <div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">លំហាត់ 12. </span>
+</div>
+<ol class="romanlist">
+	<li>
+		<p class="">
+គេអោយអនុគមន៍ $f:\mathbb R\longrightarrow \mathbb R$ កំណត់ដោយ $x\longmapsto f(x)=1-\frac{1}{x}$ ។
+
+<ol class="alplist twoem">
+    <li>
+       ចូរសរសេរសំណុំ $\mathcal D(f)$ និង $\mathcal R(f)$
+    </li>
+    
+    <li>
+      ចូរសិក្សាលក្ខណៈរបស់ $f$
+        
+    </li>
+
+</ol>
+</p>
+	</li>
+	<li>
+		<p class="">
+ If $A$ is a set, $B_i \subset A$ for each $i \in I$ and $B \subset A$, then
+<center>
+	$\displaystyle B \cup\left(\bigcap_{i \in I} B_i\right)=\bigcap_{i \in I}\left(B \cup B_i\right)$
+</center>
+        
+</p>
+	</li>
+</ol>
+
+
+</div>
+          
+       
+       
+       
+           <h3>ក្រុមទី ៤ ថ្នាក់ B2 </h3>
+<center>
+	<a href="#1">
+		<div class="">
+			<p style="font-size: 14px"> 
+				<img class="" alt="Group 1" src="fig/Group4-B2.jpg" width="70%"><br>
+			</p>
+		</div>
+	</a>
+</center>
+                                    <div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">លំហាត់ 13. </span>
+</div>
+
+<p class="">
+ Given a relation $\sim$ on $\mathbb{Z}$ defined by
+$$
+a \sim b\quad \Longleftrightarrow\quad a^2=b^2
+$$
+<ol class="romanlist twoem">
+    <li>
+      Is $\sim$ an equivalence relation? <!-- Justify your answer.--> 
+    </li>
+    <li>
+    	If (i) is true, describe the equivalence classes. 
+    </li>
+    <li>
+    	Find $\overline {-2}$ and $\overline{2}$
+    </li>
+    
+
+</ol>
+</p>
+
+</div>
+                            
+                            
+                                          <div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">លំហាត់ 14. </span>
+</div>
+
+<p class="">
+                       <center>
+                       	<a href="#1">
+                       		<div class="">
+                       			<p style="font-size: 14px">
+                       				<img class="" alt="Manhattan distance" src="fig/say_relation1.jpg" width="90%"><br>
+                       			</p>
+                       		</div>
+                       	</a>
+                       </center>
+        ចូរសរសេរពន្យល់៖
+<ol class="romanlist twoem">
+    <li>
+       $\text{ Mithuna } \;\mathcal S\circ \mathcal T\; \text{ Vicheka } $
+    </li>
+    
+    <li>
+      $\text{ Tola } \;\mathcal T\circ \mathcal R\; \text{ Sophy } $
+    </li>
+    <li>
+        $\text{ Sothy } \;\Big(\mathcal T\circ \mathcal R\Big)\circ \mathcal S\; \text{ Kupheak } $
+    </li>
+    <li>
+         $\text{ Makara } \;\Big(\mathcal S\circ \mathcal T\Big)^{-1}\; \text{ Kakda } $
+    </li>
+
+</ol>
+</p>
+
+</div>
+          
+          
+                  <div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">លំហាត់ 15. </span>
+</div>
+
+<p class="">
+ If $A$ is a set, $B_i \subset A$ for each $i \in I$ and $B \subset A$, then
+<ol class="romanlist twoem">
+    <li>
+       $\displaystyle A-\left(\bigcup_{i \in I} B_i\right)=\bigcap_{i \in I}\left(A-B_i\right)$
+    </li>
+    
+    <li>
+       $\displaystyle  A-\left(\bigcap_{i \in I} B_i\right)=\bigcup_{i \in I}\left(A-B_i\right)$
+    </li>
+    <li>
+        $\displaystyle B \cap\left(\bigcup_{i \in I} B_i\right)=\bigcup_{i \in I}\left(B \cap B_i\right)$
+    </li>
+    <li>
+        $\displaystyle B \cup\left(\bigcap_{i \in I} B_i\right)=\bigcap_{i \in I}\left(B \cup B_i\right)$
+    </li>
+
+</ol>
+</p>
+
+</div>
+          
+            <div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">លំហាត់ 16. </span>
+</div>
+
+<p class="">
+
+<ol class="romanlist twoem">
+    <li>
+       Prove that the function $f:\mathbb N\longrightarrow \mathbb N$ defined by $f(n) = n+ 1$ is surjective. 
+    </li>
+    
+    <li>
+       ចូរសង់តាងផលបូក និងផលគុណរបស់សំណុំ $\mathbb Z_{14}$ រួចបញ្ជាក់ $\mathbb Z^*_{14}$ ។
+    </li>
+
+</ol>
+</p>
+
+</div>
+          
+           
+               <h3>ក្រុមទី ៥ ថ្នាក់ B2 </h3>
+<center>
+	<a href="#1">
+		<div class="">
+			<p style="font-size: 14px"> 
+				<img class="" alt="Group 1" src="fig/Group5-B2.jpg" width="70%"><br>
+			</p>
+		</div>
+	</a>
+</center>
+                 <div class="box-note">
+               <div class="box-legend editable"><span class="lt-icon-default">លំហាត់ 17. </span>
+</div>
+
+<p class="">
+ Given a relation $\mathcal R$ on $\mathbb{Z}$ defined by
+	
+	<center>$\mathcal R=\Big\{(x, y) \mid x-y\;\;$ is an integer (ចំនួនគត់) $\Big\}$</center>
+	
+<ol class="romanlist twoem">
+    <li>
+      Is $\mathcal R$ an equivalence relation? <!-- Justify your answer.--> 
+    </li>
+    <li>
+    	If (i) is true, describe (សរសេរ) the equivalence classes. 
+    </li>
+    <li>
+    	Find $\overline {1}$ and $\overline{0.3}$
+    </li>
+    <li>
+    	សរសេរសំណុំ $\mathbb Z\mid_{\mathcal R}$ បើអាច!
+    </li>
+    
+
+</ol>
+</p>
+
+</div>
+                            
+                            
+                                          <div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">លំហាត់ 18. </span>
+</div>
+
+<p class="">
+                       <center>
+             <a href="#1">
+                <div class="">
+                    <p style="font-size: 14px"> 
+                    <img class="" alt="Manhattan distance" src="fig/say_relation1.jpg" width="90%"><br>
+                                      </p>
+                </div>
+            </a>
+        </center>
+        ចូរសរសេរពន្យល់៖
+<ol class="romanlist twoem">
+    <li>
+       $\text{ Mithuna } \;\mathcal R\circ \mathcal S\; \text{ Vicheka } $
+    </li>
+    
+    <li>
+      $\text{ Tola } \;\mathcal T\circ \mathcal S\; \text{ Sophy } $
+    </li>
+    <li>
+        $\text{ Sothy } \;\Big(\mathcal T\circ \mathcal R\Big)\circ \mathcal S\; \text{ Kupheak } $
+    </li>
+    <li>
+         $\text{ Makara } \;\Big(\mathcal R\circ \mathcal T\Big)^{-1}\; \text{ Kakda } $
+    </li>
+
+</ol>
+</p>
+
+</div>
+          
+          
+                  <div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">លំហាត់ 19. </span>
+</div>
+
+<p class="">
+ If $A$ is a set, $B_i \subset A$ for each $i \in I$ and $B \subset A$, then
+<ol class="romanlist twoem">
+    <li>
+       $\displaystyle A-\left(\bigcup_{i \in I} B_i\right)=\bigcap_{i \in I}\left(A-B_i\right)$
+    </li>
+    
+    <li>
+       $\displaystyle  A-\left(\bigcap_{i \in I} B_i\right)=\bigcup_{i \in I}\left(A-B_i\right)$
+    </li>
+    <li>
+        $\displaystyle B \cap\left(\bigcup_{i \in I} B_i\right)=\bigcup_{i \in I}\left(B \cap B_i\right)$
+    </li>
+    <li>
+        $\displaystyle B \cup\left(\bigcap_{i \in I} B_i\right)=\bigcap_{i \in I}\left(B \cup B_i\right)$
+    </li>
+
+</ol>
+</p>
+
+</div>
+          
+            <div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">លំហាត់ 20. </span>
+</div>
+
+<p class="">
+
+<ol class="romanlist twoem">
+    <li>
+       Prove that the function $f:\mathbb N\longrightarrow \mathbb N$ defined by $f(n) = 2n$ is surjective. 
+    </li>
+    
+    <li>
+       ចូរសង់តាងផលបូក និងផលគុណរបស់សំណុំ $\mathbb Z_{13}$ រួចបញ្ជាក់ $\mathbb Z^*_{13}$ ។
+    </li>
+
+</ol>
+</p>
+
+</div>
+        <p>
+
+
+        </p>
+     
+
+ <!--div class="centerDiv">
+<p style="font-size: 12px"> 
+                   <img alt="Barycenter" src="fig/menelaus.png" width="55%"><br>
+                  <b>Fig.5</b>:  ទ្រឹស្ដីបទ Menelaus: $P, Q$ និង $R$ ជាបីចំណុចរត់ត្រង់គ្នា
+                    </p>      
+</div-->
+
+<p align="right"><a class="toggle bground" id="idGet11" href="#proof11" onclick="showhideFunction()">[Show proof]</a></p>
+        <div class="hidepanel" id="proof11" style="color:#1860C1">
+            <!--div><b><!--span class="headproof">សម្រាយបញ្ជាក់.</span-> </b> </div-->
+            
+        <div class="blockproof">
+           <!--p>
+<b><i>Proof: </i></b>
+
+យើងសន្មត $\vect\F^{\perp}$ អរតូកូណាល់ទៅនឹង $\vect\F$ នៅក្នុងលំហ $\vect\E^{*}$។ ដោយ $\dim(\vect\F)=p$ នោះគេបាន $\dim(\vect\F^{\perp}) = n-p$។ <br>
+
+    ដោយយក $(\varphi_{1},\varphi_{2},\ldots,\varphi_{n-p})$ ជាគោលមួយរបស់ $\vect\F^{\perp}$ នោះគេបាន
+    $$\forall x\in \vect\E, x\in \vect\F \Longrightarrow \forall i\in\{1,2,\ \cdots,\ n-p\},\quad  \varphi_{i}(x)=0
+    $$
+    ច្រាសមកវិញ ឧបមាថា $\forall i\in\{1, 2, \cdots, n-p\},\ \varphi_{i}(x)=0$ ហើយតាមវិធីផ្ទុយពីការពិត គេយក $x\not\in \vect\F$។ ឧបមា $\vect\G $ គឺជាបំពេញរបស់  ${\bf Vect}(\vect x)+\vect\F$ រងលំហ  $\vect{\E}$ និងយក $\vect{\mathbf H} =\vect\F+\vect\G$។ <br>
+    
+    ដូច្នេះ $\vect\E = {\bf Vect}(\vect x)\oplus \vect{\mathbf H}$  ហើយ  $\vect\F\subseteq \vect{\mathbf H}$។ ដោយយក $\varphi$ ជាទម្រង់លីនេអ៊ែរមួយក្នុងលំហ $\vect{\E}$ ដែលកំណត់ដោយ
+    $$\forall \vect y\in \vect\E,\  \vect y=\alpha \vect x+\vect z\ \Longrightarrow\ \varphi(\vect y)=\alpha\ {\text{ with } } \ \vect z\in \vect{\mathbf H}
+    $$
+    ដូច្នេះ គេបាន $\varphi(x)=1$ និង $\forall y\in \F,\  \varphi(y)=0$។ គេទាញបាន $\varphi\in F^{\perp}$។ តែដោយ $(\varphi_{1},\ \varphi_{2},\ \ldots,\ \varphi_{n-p})$ គឺជាគោលមួយរបស់ $F^{\perp}$ ហើយ $\forall i\in\{1,2,\ldots, n-p\},\ \varphi_{i}(x)=0$។ ដូច្នេះ គេបាន $\varphi(x)=0$ ដែលបែបនេះ គឺផ្ទុយពីការពិត។
+       </p-->
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!--
+
+
+
+
+\noindent{\bf វិបាក ៖ }
+គេយក $\mathcal{E}$ គឺជាលំហអាហ្វីនមានវិមាត្រ $n$ មានតម្រុយដេកាត $(O,\vect{e_{1}}, \vect{e_{2}},\ldots,\vect{e_{n}})$ និងយក $\mathcal{F}$ គឺជាលំហអាហ្វីនរងរបស់ $\mathcal{E}$ ដែលមានវិមាត្រស្មើ $p$។ សន្មត់លំហវ៉ិចទ័ររង $\vect\F$ គឺជាទិសដៅរបស់ $\mathcal{F}$ ហើយកំណត់ចំណុច $A$ ទូទៅមួយរបស់ $\mathcal{F}$ ដែលមានកូអរដោនេ $(a_{1},a_{2},\ldots, a_{n})$។ តាមទ្រឹស្ដីបទខាងលើ គេរកបានទម្រង់លីនេអ៊ែរចំនួន $n-p$ ដែលមិនអាស្រ័យលីនេអ៊ែរគ្នា គឺជាអនុវត្តន៍៖ $\varphi_{1},\varphi_{2},\cdots,\varphi_{n-p}$ ដែលត្រូវបានកំណត់ដូចខាងក្រោម៖
+    $$
+    \forall \vect{u}\in \vect E,\ \vect{u}\in \vect F \Longleftrightarrow \forall\ i\in\{1, 2, \cdots, n-p\},\  \varphi_{i}(\vect{u}) = 0
+    $$
+ដោយយក $M$ ជាចំណុចទូទៅមួយរបស់លំហ $\mathcal{E}$ ដែលមានកូអរដោនេ $(x_{1},x_{2},\ldots,x_{n})$។  ដូច្នេះ បើគេតាង
+    $$
+    \left\{
+    \begin{array}{l}
+    \forall\ i\in\{1,\ 2, \cdots, n-p\},\ \forall\ j\in\{1,2, \cdots,n\},\ \ \alpha_{ij} = \varphi_{i}(\vect{e_{j}})\\
+    \forall\ i\in\{1,2, \cdots, n-p\},\ \ \beta_{i} = \varphi_{i}\left(\vect{OA}\right)
+    \end{array}\right.
+    $$
+    នោះគេបាន
+    \begin{eqnarray*}
+    M\in \mathcal{F} &\Longleftrightarrow &\vect{AM}\in \vect\F\\
+    &\Longleftrightarrow& \forall i\in\{1,2, \cdots, n-p\},\ \varphi_{i}(\vect{AM})=0\\
+    &\Longleftrightarrow & \forall i\in\{1,2,\cdots,n-p\},\ \varphi_{i}\left(\vect{OM}\right) = \varphi_i\left(\vect{OA}\right)\\
+    &\Longleftrightarrow& \forall i\in\{1,2, \cdots, n-p\},\ \varphi_{i}\left(\sum_{j=1}^{n}x_{j}\vect{e_{j}}\right)=\beta_{i}\\
+    &\Longleftrightarrow& \forall i\in\{1,2, \cdots, n-p\},\ \sum_{j=1}^{n} \varphi_{i}(\vect{e_{j}})x_{j} = \beta_{i}\\
+    &\Longleftrightarrow & \forall i\in\{1,2,\cdots,n-p\},\ \fbox{$\displaystyle\sum_{j=1}^{n}\alpha_{ij}x_{j}=\beta_{i}$}
+\end{eqnarray*}
+
+ដូច្នេះ គេកំណត់បានប្រព័ន្ធមួយខាងក្រោម មានរ៉ង់ស្មើ $n-p$ ដែលមានឈ្មោះថា សមីការដេកាត របស់លំហរង $\mathcal{F}$ :\medskip %appelé représentation cartésienne de $\mathcal{F}$
+%\begin{mymathbox}
+$$M\in \mathcal{F} \Longleftrightarrow \left\{
+\begin{array}{l}
+\alpha_{11}x_{1}+\alpha_{12}x_{2}+\cdots+\alpha_{1n}x_{n}=\beta_{1}\\
+\alpha_{21}x_{2}+\alpha_{22}x_{2}+\cdots+\alpha_{2n}x_{n}=\beta_{2}\\
+\vdots\\
+\alpha_{n-1,1}x_{1}+\alpha_{n-p,2}x_{2}+\cdots+\alpha_{n-p,n}x_{n}=\beta_{n-p}
+\end{array}\right.$$
+%\end{mymathbox}
+%
+%
+%%Remarque 11
+\begin{rem}
+    គេបាន៖​
+    \begin{enumerate}[(i)]
+        \item {\color{red} គ្រប់លំហអាហ្វីនរង មានវិមាត្រ $p$ គេរកបានសមីការដេកាត ក្រោមទម្រង់ប្រព័ន្ធសមីការមួយ ដែលមានរ៉ង់ស្មើ $n-p$ និងមានចំនួន $n-p$ សមីការ។}%équations. possède une représentation cartésienne sous forme d'un système de rang $n-p$ et de $n-p$ équations.
+        \item យក $\mathcal{F}$ ជាអ៊ីពែរប្លង់អាហ្វីនរបស់លំហអាហ្វីន $\mathcal{E}$ គេបាន  $\dim(\mathcal{F})=n-1$។  ដូច្នេះ $\mathcal{F}$ សរសេរបានក្រោមទម្រង់ដេកាត ដែលមានសមីការតែមួយគត់ គឺ៖%Soit $\mathcal{F}$ un hyperplan affine de $\mathcal{E}$, donc  $\dim(\mathcal{F})=n-1$, par suite, $\mathcal{F}$ possède une représentation cartésienne sous forme d'une seul equation,
+        $$
+         \fbox{$M \in \mathcal{F} \Longleftrightarrow \alpha_{1}x_{1}+\alpha_{2}x_{2}+\cdots+\alpha_{n}x_{n} = \beta$}
+        $$
+    \end{enumerate}
+\end{rem}
+       
+  -->     
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       <!--
+        <div class="showhidebground">
+            <a href="#proofNo.2" class="input_name showanswer">[Show proof]</a>
+            <a href="#proofNo.2" class="input_name hideanswer" style="display:none;">[Hide proof]</a>
+        </div><br>
+        <div class="block_proof" style="display:none">
+            <div><b><span class="headproof">សម្រាយបញ្ជាក់.</span> </b> </div>
+            <p>
+                \[
+                \mathcal{B} = \left\{(a, b) \times(c, d) \subseteq \mathbb{R}^{2}:\; a &lt; b, c &lt; d\right\}
+                \]
+            </p>
+        </div>
+
+        <div class="example">
+            <span class="example-title">Example 3</span> Evaluate the following integral.
+            $$\int{{\left( {3t + 5} \right)\cos \left( {\frac{t}{4}} \right)\,dt}}$$
+            <div class="example-content">
+                <span id="SHLink_Soln3" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln3" class="fa fa-caret-right" aria-hidden="true"></span>
+                <div id="SHObj_Soln3" class="soln-content" style="display: none;">
+                    <p>There are two ways to proceed with this example. For many, the first thing that they try is multiplying the cosine through the parenthesis, splitting up the integral and then doing integration by parts on the first integral.</p>
+
+                    <p>While that is a perfectly acceptable way of doing the problem it’s more work than we really need to do. Instead of splitting the integral up let’s instead use the following choices for </p>
+
+                    \begin{align*}u & = 3t + 5& \hspace{0.5in}dv & = \cos \left( {\frac{t}{4}} \right)\,dt\\ du & = 3\,dt & \hspace{0.5in}v & = 4\sin \left( {\frac{t}{4}} \right)\end{align*}
+
+                    <p>The integral is then,</p>
+
+                    \begin{align*}\int{{\left( {3t + 5} \right)\cos \left( {\frac{t}{4}} \right)\,dt}} & = 4\left( {3t + 5} \right)\sin \left( {\frac{t}{4}} \right) - 12\int{{\sin \left( {\frac{t}{4}} \right)\,dt}}\\ & = 4\left( {3t + 5} \right)\sin \left( {\frac{t}{4}} \right) + 48\cos \left( {\frac{t}{4}} \right) + c\end{align*}
+
+                    <p>Notice that we pulled any constants out of the integral when we used the integration by parts formula. We will usually do this in order to simplify the integral a little.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="example">
+            <span class="example-title">Example 5</span> Evaluate the following integral
+            $$\int{{x\sqrt {x + 1} \,dx}}$$
+            <ol class="example_parts_list">
+                <li>Using Integration by Parts.</li>
+                <li>Using a standard Calculus I substitution.</li>
+            </ol>
+            <span id="SHALink_S_Soln5" class="SH-All SH-Link">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln5" class="SH-All SH-Link">Hide All Solutions</span>
+
+            <div class="example-content">
+                <span class="soln-list-item soln-list-subitem">a</span> Using Integration by Parts. <span id="SHLink_Soln5a" class="soln-title SH-Link">Show Solution</span> <span id="SHImg_Soln5a" class="fa fa-caret-right" aria-hidden="true"></span>
+                <div id="SHObj_Soln5a" class="soln-content" style="display: none;">
+                    <p>First notice that there are no trig functions or exponentials in this integral. While a good many integration by parts integrals will involve trig functions and/or exponentials not all of them will so don’t get too locked into the idea of expecting them to show up.</p>
+
+                    <p>In this case we’ll use the following choices for $u$ and $dv$.</p>
+                    \begin{align*}u & = x & \hspace{0.5in}dv & = \sqrt {x + 1} \,dx\\ du & = dx & \hspace{0.5in}v & = \frac{2}{3}{\left( {x + 1} \right)^{\frac{3}{2}}}\end{align*}
+
+                    <p>The integral is then,</p>
+                    \begin{align*}\int{{x\sqrt {x + 1} \,dx}} &= \frac{2}{3}x{\left( {x + 1} \right)^{\frac{3}{2}}} - \frac{2}{3}\int{{{{\left( {x + 1} \right)}^{\frac{3}{2}}}\,dx}}\\ & = \frac{2}{3}x{\left( {x + 1} \right)^{\frac{3}{2}}} - \frac{4}{{15}}{\left( {x + 1} \right)^{\frac{5}{2}}} + c\end{align*}
+                </div>
+
+                <br>
+                <span class="soln-list-item soln-list-subitem">b</span> Using a standard Calculus I substitution. <span id="SHLink_Soln5b" class="soln-title SH-Link">Show Solution</span> <span id="SHImg_Soln5b" class="fa fa-caret-right" aria-hidden="true"></span>
+                <div id="SHObj_Soln5b" class="soln-content" style="display: none;">
+                    <p>Now let’s do the integral with a substitution. We can use the following substitution.</p>
+
+                    $$u = x + 1\hspace{0.5in}x = u - 1\hspace{0.5in}du = dx$$
+
+                    <p>Notice that we’ll actually use the substitution twice, once for the quantity under the square root and once for the in front of the square root. The integral is then,</p>
+
+                    \begin{align*}\int{{x\sqrt {x + 1} \,dx}} & = \int{{\left( {u - 1} \right)\sqrt u \,du}}\\ & = \int{{{u^{\frac{3}{2}}} - {u^{\frac{1}{2}}}\,du}}\\ & = \frac{2}{5}{u^{\frac{5}{2}}} - \frac{2}{3}{u^{\frac{3}{2}}} + c\\ & = \frac{2}{5}{\left( {x + 1} \right)^{\frac{5}{2}}} - \frac{2}{3}{\left( {x + 1} \right)^{\frac{3}{2}}} + c\end{align*}
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <h1>fa fa-caret-down</h1>
+
+        <i class="fa fa-caret-down"></i>
+        <i class="fa fa-caret-down" style="font-size:24px"></i>
+        <i class="fa fa-caret-down" style="font-size:36px"></i>
+        <i class="fa fa-caret-down" style="font-size:48px;color:red"></i>
+        <br>
+
+        <p>Used on a button:</p>
+        <button style="font-size:24px">Button <i class="fa fa-caret-right"></i></button>
+
+        <h2 class="frame-sect sectcounter">Motivation</h2>
+        <p>
+            This is the last part in our series exploring how to get new topological spaces from old ones. For now, at least. We mentioned the definition of the product topology for a finite product way back in Example 2.3 .6 in the lecture notes concerning bases of topologies, but we did not do anything with it at the time. In that same section we also discussed the following basis on $\mathbb{R}^{2}$
+            that we were eventually able to show generates the usual topology on $\mathbb{R}^{2}$ :
+
+            \[
+            \mathcal{B} = \left\{(a, b) \times(c, d) \subseteq \mathbb{R}^{2}:\; a &lt; b, c &lt; d\right\}
+            \]
+
+            This is, essentially, how (finite) product topologies work in general, as we will see shortly.
+            We will also explore a new way of analyzing topological properties themselves. We have
+            already seen that all the topological properties we care about are preserved by homeomorphisms,
+            and that some are preserved under weaker maps like continuous surjections (recall that the image
+            of a dense set under a continuous function is dense in the range of the function). We also saw that some topological properties are hereditary (like Hausdorffness and second countability)
+            while some are not (like separability). In this section we will explore another way of analyzing properties, by asking whether they are preserved by finite products.
+
+            Also, while reading this section, note that we are specifically talking about finite products
+            of topological spaces, and any time we refer to a product of spaces the reader should assume we
+            mean a finite product. Infinite products are substantially more complicated, and we will deal
+            with them later in the course. Finite products are actually quite straightforward.
+        </p>
+
+        <h2 class="frame-sect">2. Finite product topologies</h2>
+
+
+
+        <p><b>
+                Definition 2.1.
+            </b>
+            Let $(X, \mathcal{T}_1)$ and $(Y, \mathcal{T}_2)$ be topological spaces. The product topology on $X \times Y$ is
+            the topology generated by the basis
+            \[
+            \mathcal{B}_{X\times Y} = \big\{U \times V: U \in \mathcal{T}_1, V \in \mathcal{T}_2\big\}
+            \]
+            More generally if $\left(X_{1}, \mathcal{T}_{1}\right), \ldots,\left(X_{n}, \mathcal{T}_{n}\right)$ are topological spaces, the product topology on
+            \[
+            \prod_{i=1}^{n} X_{i} = X_{1} \times \cdots \times X_{n}
+            \]
+            is the topology generated by the basis
+            \[
+            \mathcal{B}_{\prod_{i=1}^{n} X_{i}} = \big\{U_{1} \times U_{2} \times \cdots \times U_{n} \mid \; U_{i} \in \mathcal{T}_{i}, \; \text{ for all } i=1, \ldots, n\big\}
+            \]
+        </p>
+
+        <p>
+            Simple as that. This definition is what you should want it to be, more or less. It is natural
+            to expect that products of sets that are open in each coordinate should be open in the product.
+            That alone does not give you a topology, it turns out, but it does give you a basis. So you
+            generate a topology from it, and the result is the product topology.
+            As you would expect, bases play nicely with this definition as well, as shown by the following
+            easy proposition.
+
+        </p>
+
+        <p><b>
+                Proposition 2.2.
+            </b>
+            Let $(X, \mathcal{T}_1)$ and $(Y, \mathcal{T}_2)$ be topological spaces, and let $\mathcal{B}_{X}$ and $\mathcal{B}_{Y}$ be bases on $X$ and $Y$ that generate $\mathcal{T}_1$ and $\mathcal{T}_2$, respectively. Then
+            \[
+            \mathcal{B}=\left\{U \times V: U \in \mathcal{B}_{X}, V \in \mathcal{B}_{Y}\right\}
+            \]
+            is a basis for the product topology on $X \times Y$
+        </p>
+
+
+        <p class="blockproof">
+            Proof. $\mathcal{B}_{X} \subseteq \mathcal{T}$ and $\mathcal{B}_{Y} \subseteq \mathcal{U},$ and so every element of $\mathcal{B}$ is open in the product topology. <br>
+
+            Now fix an open set $U$ in the product topology, and some point $(x, y) \in U .$ We need to find
+            an element $B \in \mathcal{B}$ such that $x \in B \subseteq U .$ By definition of the product topology, there must be
+            some $U_{X} \in \mathcal{T}$ and $U_{Y} \in \mathcal{U}$ such that $(x, y) \in U_{X} \times U_{Y} \subseteq U .$ Using the fact that $\mathcal{B}_{X}$ and $\mathcal{B}_{Y}$ are
+            bases, find sets $B_{X} \in \mathcal{B}_{X}$ and $B_{Y} \in \mathcal{B}_{Y}$ such that $x \in B_{X} \subseteq U_{X}$ and $y \in B_{Y} \subseteq U_{Y} .$ But then
+            we have:
+            \[
+            (x, y) \in B_{X} \times B_{Y} \subseteq U_{X} \times U_{Y} \subseteq U
+            \]
+            so $B=B_{X} \times B_{Y}$ is the set we were looking for.
+            Of course, this fact generalizes to larger finite products and the proof is similarly straightforward.
+
+        </p>
+
+
+
+
+        <h2> Barycentre de deux points </h2>
+
+        <p>
+            <strong>Définition 1:</strong> On appelle barycentre des points \(A\) et \(B\) ( ou \(A\) et \(B\) deux points du plan ou de I'espace ) affectés respectivement des coefficients \(\alpha, \beta\) ( ou \(\alpha, \beta\) sont des réels tels que \(\alpha+\beta \neq 0\) l'unique point \(G\) tel que \(\alpha \overrightarrow{G A}+\beta \overrightarrow{G B}=\overrightarrow{0}\)
+        </p>
+
+
+--->
+
+        <hr>
+
+        <h3> Recent Posts </h3>
+        <ul>
+
+
+            <li>
+                <i> <a href="../../topology/2019/post/2017/11/01/varparams.html">A Note on the Variation of Parameters Method </a> | 11/01/17 </i>
+            </li>
+
+
+            <li>
+                <i> <a href="../../topology/2019/notes/2017/10/26/groups3.html">Group Theory, Part 3: Direct and Semidirect Products </a> | 10/26/17 </i>
+            </li>
+
+
+            <li>
+                <i> <a href="../../topology/2019/notes/2017/10/19/galoistheory1.html">Galois Theory, Part 1: The Fundamental Theorem of Galois Theory </a> | 10/19/17 </i>
+            </li>
+
+
+            <li>
+                <i> <a href="../../topology/2019/notes/2017/10/19/fieldtheory2.html">Field Theory, Part 2: Splitting Fields; Algebraic Closure </a> | 10/19/17 </i>
+            </li>
+
+
+            <li>
+                <i> <a href="../../topology/2019/notes/2017/10/18/fieldtheory1.html">Field Theory, Part 1: Basic Theory and Algebraic Extensions </a> | 10/18/17 </i>
+            </li>
+
+        </ul>
+        <footer class="site-footer">
+
+            <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+        </footer>
+
+    </section>
+</body>
+
+
+<!-- script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-102852226-1', 'auto');
+    ga('send', 'pageview');
+  </script -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171606319-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-171606319-1');
+</script></html>

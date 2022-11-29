@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+    <!-- Begin Jekyll SEO tag v2.3.0 -->
+    <meta property="og:title" content="Ham Karim">
+    <meta name="author" content="Ham Karim">
+	<meta name="author" content="Linear Operators">
+    <meta property="og:locale" content="en_US">
+    <meta http-equiv="keywords" name="keywords" content="Functional Analysis, Linear Operators">
+    <meta http-equiv="description" name="description" content="ការីលីនេអ៊ែរ...">
+	<meta name="description" content="Linear Operators, ការីលីនេអ៊ែរ">
+    <meta property="og:description" content="Math, Programmer, Music">
+    <link rel="canonical" href="../../../index.html">
+    <meta property="og:url" content="https://hamkarim.github.io/">
+    <meta property="og:site_name" content="Right Triangle">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@pkarim">
+    <meta name="twitter:creator" content="@pkarim">
+    <meta name="google-site-verification" content="b9bg3P9zc8qbL4szvVYaf551jD9x017IyGBVSaQZDDY" />
+
+    <script type="application/ld+json">
+        {
+            "name": "Ham Karim",
+            "description": "I am a faculty member at the Royal Univeristy of Phnom Penh (RUPP). This is my blog of lectures at universities. ",
+            "author": {
+                "@type": "Person",
+                "name": "Ham Karim"
+            },
+            "@type": "WebSite",
+            "url": "https://hamkarim.github.io/",
+            "image": null,
+            "publisher": null,
+            "headline": "Ham Karim",
+            "dateModified": null,
+            "datePublished": "2020-06-01",
+            "sameAs": null,
+            "mainEntityOfPage": null,
+            "@context": "http://schema.org"
+        }
+    </script>
+    <!-- End Jekyll SEO tag -->
+
+    <meta property="og:image" content="http://www.cliparts101.com/files/376/298FE3955707B1DE458221E4BFABFBBE/Greek_Gamma_4.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../topology/2019/favicon.ico">
+    <meta charset="UTF-8">
+    <title>Linear Operator</title>
+    <meta name="description" content="Math, Programmer, Music">
+
+    <!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
+
+    <style>
+        .deffont {
+            font-family: 'Noto Serif Khmer', 'CMU Serif';
+            font-size: 16px;
+        }
+
+        ul.liststyle1 {
+            list-style-type: square;
+        }
+
+        ul.liststyle2 {
+            list-style-type: hebrew;
+        }
+
+        a.onmenu {
+            font-family: 'Noto Serif Khmer', 'CMU Serif';
+            font-weight: bold;
+        }
+    </style>
+
+    <style type="text/css">
+        /**************** Box container styles *******************/
+        .mt-content-container .boxobjectives,
+        .boxexample,
+        .boxexercise,
+        .boxquery,
+        .boxnotewithlegend,
+        .boxnotewithoutlegend,
+        .boxprocedure,
+        .boxdefinition,
+        .boxtheorem,
+        .boxlemma,
+        .boxnotation,
+        .boxproposition {
+            -moz-border-radius: 8px;
+            -webkit-border-radius: 8px;
+            border-radius: 8px;
+            padding-top: 0em;
+            padding-bottom: 0em;
+            padding-left: 1em;
+            padding-right: 1em;
+            margin-bottom: 1em;
+            overflow: visible;
+            border: 0px;
+            orphans: 2;
+        }
+
+        .mt-content-container .boxnotewithlegend,
+        .boxprocedure,
+        .notation {
+            background-color: hsla(20, 0%, 93%, 1);
+        }
+
+        .mt-content-container .boxexample,
+        .boxexercise {
+            background-color: hsla(220, 100%, 97%, 1);
+        }
+
+        .mt-content-container .boxwarning {
+            background-color: hsla(0, 100%, 96%, 1);
+        }
+
+        .mt-content-container .boxdefinition,
+        .boxtheorem,
+        .boxlemma,
+        .boxnotation,
+        .boxproposition {
+            background-color: hsla(28, 80%, 95%, 1);
+        }
+
+        .mt-content-container .boxobjectives {
+            background-color: hsla(0, 0%, 90%, 1);
+        }
+
+        .mt-content-container .boxnotewithoutlegend {
+            background-color: hsla(20, 0%, 93%, 1);
+            padding-right: 1em;
+            padding-left: 1em;
+            padding-top: 0.5em !important;
+            padding-bottom: 0.5em !important;
+            margin-right: 1em;
+            margin-left: 1em;
+        }
+
+        .mt-content-container .boxquery {
+            border: 2px solid green;
+            page-break-inside: avoid;
+            visibility: hidden !important;
+            display: none !important;
+        }
+
+        /**************** Box legend container styles *******************
+	.mt-content-container .boxlegend {
+		font-style: normal !important;
+		font-size: 1.1em !important;
+		font-weight: normal !important;
+		font-family: "Tahoma", Arial, serif !important;
+		padding-top: 0.2em !important;
+		padding-bottom: 0.2em !important;
+		padding-left: 0.3em !important;
+		padding-right: 0.3em !important;
+		margin-left: 0.35em;
+		color: white;
+		border-radius: 3px;
+		overflow: visible;
+		break-inside: avoid !important;
+	}
+
+	/************** Defining the Legends ******************
+
+
+	.box-definition>header,
+	.box-structure>header,
+	.box-note>header,
+	.box-theorem>header,
+	.box-example>header,
+	.box-exercise>header,
+	.box-query>header,
+	.box-adapt>header,
+	.box-objectives>header,
+	.box-warning>header {
+		display: inline-flex;
+		overflow: hidden;
+		break-inside: avoid-page;
+		page-break-inside: avoid;
+		text-align: left;
+		width: auto;
+		margin: 0 0px 2px 0px !important;
+		padding: 4px 6px 4px 4px !important;
+		transform: translate(-11px, 0px) !important;
+		border-radius: 3px 5px 5px 0;
+		-moz-border-radius: 3px 5px 5px 0;
+		-webkit-border-radius: 3px 5px 5px 0;
+	}
+	.box-definition>header *,
+	.box-structure>header *,
+	.box-note>header *,
+	.box-theorem>header *,
+	.box-example>header *,
+	.box-exercise>header *,
+	.box-query>header *,
+	.box-adapt>header *,
+	.box-objectives>header *,
+	.box-warning>header * {
+		font-family: "Battambang", "Tahoma", Arial, serif !important;
+		font-size: 17px !important;
+		font-weight: 400 !important;
+		color: white !important;
+		;
+		width: auto !important;
+		;
+		float: left !important;
+		;
+		line-height: 1 !important;
+		;
+		margin-block-start: 0 !important;
+		margin-block-end: 0 !important;
+	}
+*/
+    </style>
+
+    <style type="text/css">
+        /*<![CDATA[*/
+        .Headertext {
+            display: none;
+        }
+
+        /*]]>*/
+    </style>
+
+    <style type="text/css">
+        /*<![CDATA[*/
+        /* CSS pseudo-element styling https://fontawesome.com/how-to-use/on-the-web/advanced/css-pseudo-elements */
+
+        /* general reset/setup styling for icons - needed on all */
+
+        .lt-icon-default::before,
+        .lt-icon-brain::before,
+        .lt-icon-pin::before,
+        .lt-icon-hand::before,
+        .lt-icon-pathway::before,
+        .lt-icon-logic::before,
+        .lt-icon-check::before,
+        .lt-icon-question::before,
+        .lt-icon-exclamation::before {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1.5;
+            font-family: "Font Awesome 5 Pro";
+            font-weight: 900;
+            margin-right: 0.5rem;
+        }
+
+        /*default */
+
+        .box-example .lt-icon-default::before {
+            content: "\f00c";
+        }
+
+        .box-exercise .lt-icon-default::before {
+            content: "\f128";
+        }
+
+        .box-query .lt-icon-default::before {
+            content: "\f126";
+        }
+
+        .box-adapt .lt-icon-default::before {
+            content: "\f126";
+        }
+
+        .box-interactive .lt-icon-default::before {
+            content: "\f542";
+        }
+
+        .box-note .lt-icon-default::before {
+            content: "\f08d";
+        }
+
+        .box-objectives .lt-icon-default::before {
+            content: "\f5dc";
+        }
+
+        .box-definition .lt-icon-default::before {
+            content: "\f303";
+        }
+
+        .box-theorem .lt-icon-default::before {
+            content: "\f1b3";
+        }
+
+        .box-warning .lt-icon-default::before {
+            content: "\f256";
+        }
+
+
+        /*specific icons*/
+        .lt-icon-brain::before {
+            content: "\f5dc";
+        }
+
+        .lt-icon-pin::before {
+            content: "\f08d";
+        }
+/*
+        .lt-icon-pathway::before,
+            {
+            content: "\f126";
+        }
+
+        .lt-icon-logic::before,
+            {
+            content: "\f1b3";
+        }
+
+        .lt-icon-hand::before,
+            {
+            content: "\f126";
+        }
+
+        .lt-icon-pathway::before,
+            {
+            content: "\f256";
+        }
+
+        .lt-icon-check::before,
+            {
+            content: "\f00c";
+        }
+
+        .lt-icon-question::before,
+            {
+            content: "\f128";
+        }
+
+        .lt-icon-exclamation::before,
+            {
+            content: "\f12a";
+        } */
+
+        /*]]>*/
+    </style>
+   
+    <script async="" src="//cse.google.com/adsense/search/async-ads.js"></script>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async="" src="https://cse.google.com/cse.js?cx=001004262401526223570:11yv6vpcqvy"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-331594-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-331594-1');
+    </script>
+
+
+
+    <link rel="stylesheet" href="../../../assets/css/style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245">
+    
+        <link rel="stylesheet" href="../../../assets/css/all.css">
+        
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- Script to show and hide proof -->
+    <script type="text/javascript" src="https://hamkarim.github.io/assets/js/showhide.js"></script>
+    <!-- Other style of showing and hiding proof -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
+    <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>
+    <!-- end -->
+
+   
+       <script type="text/javascript" src="../../../assets/sidebar/sidebar.min.js"></script>
+    <link rel="stylesheet" href="../../../assets/sidebar/Sidebar.css">
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        //Another method to toggle the button
+        $(document).ready(function() {
+            $('.showanswer').click(function() {
+                $('.block_proof').show();
+                $('.showanswer').hide();
+                $('.hideanswer').show();
+            });
+            $('.hideanswer').click(function() {
+                $('.block_proof').hide();
+                $('.showanswer').show();
+                $('.hideanswer').hide();
+            });
+        });
+    </script>
+
+    <!-- For local function, define to exchange text -->
+    <script>
+        function showhideFunction() {
+            document.getElementById('idClick').innerHTML === '[Hide proof]' ? document.getElementById('idClick').innerHTML = '[Show proof]' : document.getElementById('idClick').innerHTML = '[Hide proof]';
+        }
+    </script>
+
+    <!-- script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,https://hamkarim.github.io/MathJax/config/local/local.js"></script -->
+    
+    <script type="text/javascript" src="../../../MathJax/config/local/mathjax-config.js" defer></script>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml-full.min.js">
+    </script>
+
+    <!--script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { fonts: ["TeX"] }
+  });
+</script-->
+
+    <!-- script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script--
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
+    </script -->
+
+    <!--script type="text/javascript" config=TeX-MML-AM_CHTML
+   src="">
+</script-->
+
+    <!--
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">  -->
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>  -->
+
+    <!-- To automatically render math in text elements, include the auto-render extension:
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);">
+</script>
+<script >
+  document.addEventListener("DOMContentLoaded", function()
+      {
+        renderMathInElement(document.body,
+            {
+                delimiters: [
+                    { left: "\\begin{equation}", right: "\\end{equation}", display: true },
+                    { left: "$$", right: "$$", display: true },
+                    { left: "\\[", right: "\\]", display: true },
+                    { left: "\\(", right: "\\)", display: false },
+                    { left: "$", right: "$", display: false }
+                ]
+            });
+        });
+</script> -->
+
+    <!-- To get it to work in old versions of Internet Explorer, you need to append this script to the head (Important if you need it to work in older versions of IE!): -->
+    <!--[if lt IE 9] -->
+    <script>
+        document.createElement("example, defn");
+    </script>
+    <!-- [endif]-->
+    
+    
+
+    <div class="Headertext">
+
+    	\( \newcommand{\vecs}[1]{\overset { \scriptstyle \rightharpoonup} {\mathbf{#1}}&nbsp;}&nbsp;\)
+        
+    \( \newcommand{\Vect}[1]{\mathbf{Vect}\!\left(#1\right)}\)
+   \( \newcommand{\vecd}[1]{\overset{-\!-\!\rightharpoonup}{\vphantom{a}\smash&nbsp;{#1}}} \)
+   \(\newcommand{\id}{\mathrm{id}}\)
+   \( \newcommand{\Span}{\mathrm{span}}\)
+   \( \newcommand{\kernel}{\mathrm{null}\,}\)
+   \( \newcommand{\range}{\mathrm{range}\,}\)
+   \( \newcommand{\RealPart}{\mathrm{Re}}\)
+   \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+   \( \newcommand{\Argument}{\mathrm{Arg}}\)
+  \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \(\newcommand{\id}{\mathrm{id}}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \( \newcommand{\kernel}{\mathrm{null}\,}\)
+  \( \newcommand{\range}{\mathrm{range}\,}\)
+  \( \newcommand{\RealPart}{\mathrm{Re}}\)
+  \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+  \( \newcommand{\Argument}{\mathrm{Arg}}\)
+  \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\cof}{\mathbf{cof}}\)
+  \( \newcommand{\adj}{\mathbf{adj}}\)
+  \( \renewcommand{\det}{\mathbf{det\,\!}}\)
+    \( \newcommand{\minor}{\mathbf{minor}}\)
+  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \( \newcommand{\bbR}{\mathbb{R}}\)
+  \( \newcommand{\calD}{\mathcal{D}}\)
+  \( \newcommand{\calP}{\mathcal{P}}\)
+\( \newcommand{\calA}{\mathcal{A}}\) 
+\( \newcommand{\Aff}[1]{\mathbf{Aff}{\left(#1\right)}}\)
+\( \newcommand{\card}{\mathbf{card}}\)
+ \( \newcommand{\d}{\mathrm{d}}\)
+ \( \newcommand{\bx}{\mathbf{x}}\)
+  \( \newcommand{\by}{\mathbf{y}}\)
+\( \newcommand{\D}{\mathcal{D}}\)
+\( \newcommand{\A}{\mathbf{A}}\)
+  </div>
+  
+  
+
+</head>
+
+<body>
+    <!--nav class="nav-collapse" role="navigation">
+        <ul class="tabs primary-nav">
+            <li class="tabs__item">
+                <a href="../../../index.html" class="tabs__link">ទំព័រដើម</a>
+            </li>
+            <li class="tabs__item">
+                <a href="../../topology/2019/../../../posts_index.html" class="tabs__link">Blog</a>
+            </li>
+            <li class="tabs__item">
+                <a href="../../topology/2019/../../../projects.html" class="tabs__link">Projects</a>
+            </li>
+            <li class="tabs__item">
+                <a href="../../../notes_index.html" class="tabs__link">មេរៀន</a>
+            </li>
+            <li class="tabs__item">
+                <a href="../../topology/2019/../../../about.html" class="tabs__link">អំពីខ្ញុំ</a>
+            </li>
+            <li class="tabs__item">
+                <a href="../../topology/2019/../../../contact.html" class="tabs__link">ទាក់ទងខ្ញុំ</a>
+            </li>
+        </ul>
+    </nav-->
+
+    <section class="page-header">
+        <h1 class="project-name">ហាំ ការីម</h1>
+        <h2 class="project-tagline">Maths, Program, Music</h2>
+    </section>
+
+    <section class="main-content">
+
+		<h1 style="text-shadow: 4px 4px 4px #c0c0c0;">ជំពូក ១ :&nbsp; ការីលីនេអ៊ែរ  (Linear Operators) </h1>
+        <p style="font-style: italic; font-weight:bold; font-family: Arial; opacity: 0.5;">
+            November
+            29nd, 2022
+        </p>
+
+        <hr>
+        <p style="text-indent:0px">From Wikipedia:</p>
+        <blockquote>
+			<a href="https://www.youtube.com/watch?v=12d15vI52b8&ab_channel=NathanKutz">
+                <div class="divfigure">
+					<p style="font-size: 11px"> <img class="wrap-right" alt="https://encyclopediaofmath.org/wiki/Linear_operator" src="fig/LOp.png">
+						The Sturm-Liouville operator for solving $\mathcal Lu=f$ problems where $\mathcal L$ is a second-order, self-adjoint differential operator.
+					</p>
+                </div>
+            </a>
+            <p>
+				In mathematics, <a href="#1">operator theory</a> is the study of linear operators on function spaces, beginning with differential operators and integral operators. The operators may be presented abstractly by their characteristics, such as bounded linear operators or closed operators, and consideration may be given to nonlinear operators. The study, which depends heavily on the topology of function spaces, is a branch of functional analysis.
+            </p>
+            <p>
+				An operator is generally a mapping or function that acts on elements of a space to produce elements of another space (possibly the same space, sometimes required to be the same space). There is no general definition of an operator, but the term is often used in place of function when the domain is a set of functions or other structured objects. Also, the domain of an operator is often difficult to be explicitly characterized (for example in the case of an <a href="#2">integral operator</a>), and may be extended to related objects (an operator that acts on functions may act also on differential equations whose solutions are functions that satisfy the equation). See Operator (physics) for other examples.
+            </p>
+        
+            <p>
+				The most basic operators (in some sense) are <a href="#3">linear maps</a>, which act on vector spaces. Linear operators refer to linear maps whose domain and image are the same space, for example $\mathbb {R}^{n}$ to $\mathbb{R}^{n}$. Such operators often preserve properties, such as continuity. For example, differentiation and indefinite integration are linear operators; operators that are built from them are called <a href="#4">differential operators</a>, <a href="#5">integral operators</a> or <a href="#6">integro-differential operators</a>.
+            </p>
+        </blockquote>
+
+      <p class="parindent">
+          
+          
+          </p>
+       
+
+
+        
+        <div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">គោលបំណងនៅក្នុងជំពូកនេះគឺ៖ </span>
+</div>
+
+<p class="">
+<ol class="romanlist twoem">
+    <li>
+        To be continued...
+    </li>
+    
+
+</ol>
+</p>
+
+</div>
+
+
+         <h2 class="frame-sect sectcounter">&nbsp; មេរៀនទី១. </h2> <!-- \section{និយមន័យ និងលក្ខណៈបឋមៗ}  -->
+        <!--h2 class="frame-sect sectcounter">&nbsp; និយមន័យ និង Notation </h2> <!-- \section{និយមន័យ និងលក្ខណៈបឋមៗ}  -->
+        
+        <h3>តើ LO ជាអ្វី ?</h3>
+        <p class="parindent">
+If 
+         </p>
+         
+         
+         <p class="parindent">
+           
+       </p>
+
+	<h3>Basic properties</h3>
+       
+               
+<defn>
+<div class="definition"> (Linear Operator) </div>
+<div class="definitionb">
+	<p>
+		Let $X, Y$ be normed vector spaces. A mapping $\A$ which assigns to each element $x$ of a set $\D(\A) \subset X$ a unique element $y \in Y$ is called an <b>operator </b>(or <b>transformation</b>). The set $\D(\A)$ on which $\A$ acts is called the <b>domain of $\A$</b>. The operator $\A$ is called linear if
+	<ol style="list-style: lower-alpha;" class="twoem">
+		<li>
+			$\D(\A)$ is a subspace of $X$
+		</li>
+		<li>
+			$\A\left(\alpha_1 x_1+\alpha_2 x_2\right)=\alpha_1 \A x_1+\alpha_2 \A x_2$, for all scalars $\alpha_1, \alpha_2$ and all elements $x_1, x_2 \in \D(\A)$
+		</li>
+	</ol>
+	Until further notice we shall only consider operators $\A$ with $\D(\A)=X$.
+	An operator $\A$ is called bounded if there is a constant $M$ such that
+	\begin{equation}
+	\|\A x\| \leqslant M\|x\|, \quad x \in X \tag{1.1}
+	\end{equation}
+	</p>
+</div>
+</defn>
+
+      
+  <p class="parindent">
+		  The norm of such an operator is defined by
+		  $$
+		  \|\A\|=\sup _{x \neq 0} \frac{\|\A x\|}{\|x\|} 
+		  $$
+	  Again, it is the smallest $M$ which works in <a href="/notes/FA/2022/LO.html#mjx-eqn-1.1">(1.1)</a>. An operator $A$ is called continuous at a point $x_0 \in X$ if $x_n \rightarrow x$ in $X$ implies $A x_n \rightarrow A x$ in $Y$. A bounded linear operator is continuous at each point. For if $x_n \rightarrow x$ in $X$, then
+		  $$
+		  \left\|A x_n-A x\right\| \leq\|A\| \cdot\left\|x_n-x\right\| \longrightarrow 0 .
+		  $$
+		  We also have
+</p>
+                  
+                  <!--a>
+                  <div style="float: right; width: 35%;padding-top: 30px">
+                      <p style="font-size: 11px"> 
+                         <img alt="View of Affine Space" src="fig/aff_def1.png">
+                          <img alt="View of Affine Space" src="fig/aff_def2.png">
+                      </p>
+                      
+                      </div></a-->
+                      
+                      
+                  <p style="text-indent: 0px"><b>កំណត់សម្គាល់ :</b>
+               កំណត់ចំណាំមួយចំនួនដែលអ្នកត្រូវតែចងចាំនោះគឺ៖ 
+                  <ol>
+                     <li>
+                     We allow $X=\emptyset$. But, sometimes the statement of the theorem must include the condition $X\neq\emptyset$. If not so, the result may be false for $X=\emptyset$.
+ <!-- %This is purely a question of taste. If we did not allow this possibility, then, every time we defined a metric space $(X,d)$, we would need to prove that $X$ was non-empty. If we do allow this possibility, and we prefer to reason about non-empty spaces, then we can begin our proof with the words `If $X$ is empty, then the result is vacuously true, so we may assume that $X$ is non-empty.'(Of course, the result may be false for $X=\emptyset$, in which case the statement of the theorem must include the condition $X\neq\emptyset$.)-->
+                      </li>
+                      <li>
+                          Distances are always positive.
+                      </li>
+                      <li>
+                          Two points are zero distance apart if and only if they are the same point.
+                      </li>
+                      <li>
+                          The distance from $A$ to $B$ and from $B$ to $A$ are the same.
+                      </li>
+                  
+                  <li>
+                      The distance from $A$ to $B$ via $C$ is at least as great as the distance from $A$ to $B$ directly.
+                  </li>
+                  </ol>
+                  </p>
+
+              
+<example> Show the matrix axioms. 
+    <ol class="romanlist">
+        <li>
+            Let $X=\mathbb{R}$ then $\d(x, y)=|x-y|$.
+            <br>
+            <i>solution. </i>
+        </li>
+        <li>
+             For $(x_1, x_2), (y_1,y_2) \in \mathbb R^2 $, we define  
+             \[
+             \d\Big(\left(x_1, x_2\right),\left(y_1, y_2\right)\Big) =\left|x_1-y_1\right|+\left|x_2-y_2\right|
+             \]
+             <i>solution. </i>
+        </li>
+        <li>
+            Let $\left(X, \d_1\right)$ and $\left(X, \d_2\right)$ be two metric spaces defined on $X$. We define $\d'$ as follows: 
+$$
+\d'\Big(\left(x_1, x_2\right),\left(y_1, y_2\right)\Big) = \sum_{i=1}^2 \d_i\!\left(x_i,  y_i\right)
+$$
+Is $\d'$ metric on $X^2$ ?
+        </li>
+    </ol>
+    
+</example>
+
+<p>Let see some spacial spaces in each metric as follows:</p>
+
+<example>
+    <ol>
+        <li>
+            <b>The space of all bounded sequences. </b>
+<p>
+Let $X$ be the set of all bounded sequences of numbers, i.e., all infinite sequences
+$$
+x=\left(x_1, x_2, \ldots\right)=\left\{x_i\right\}_{i \geq 1}
+\quad \text{s.t }\quad 
+\sup _i\left|x_i\right|\lt \infty
+$$
+If $x=\left\{x_i\right\}_{i \geq 1}$ and $y=\left\{y_i\right\}_{i \geq 1}$ belong to $X$, we introduce the distance
+$$
+\d(x, y) = \sup _i\left|x_i-y_i\right| .
+$$
+It is clear that $\d$ is a metric on $X$. 
+        </p>
+<!--p>
+    Indeed, if $z=\left\{z_i\right\}_{i \geq 1}$ is in $X$, then
+    $$
+\begin{aligned}
+\left|x_i-y_i\right| & \leq\left|x_i-z_i\right|+\left|z_i-y_i\right| \\
+& \leq \sup _i\left|x_i-z_i\right|+\sup _i\left|z_i-y_i\right| \\
+&=d(x, z)+d(z, y) .
+\end{aligned}
+$$
+Therefore,
+$$
+d(x, y)=\sup _i\left|x_i-y_i\right| \leq d(x, z)+d(z, y) .
+$$
+
+</p-->   
+
+        </li>
+        
+        <li><b>
+            The space $\ell_p$ </b>
+            
+            <p>
+                Let $X$ be the set of all sequences $x=\left\{x_i\right\}_{i \geq 1}$ such that
+$$
+\left(\sum_{i=1}^{\infty}\left|x_i\right|^p\right)^{\!\!1 / p} \lt \infty, \quad p \geq 1 .
+$$
+For all $x=\left\{x_i\right\}_{i \geq 1}$ and $y=\left\{y_i\right\}_{i \geq 1}\in X$, we define the function 
+$$
+\d(x, y)=\left(\sum_{i=1}^{\infty}\left|x_i-y_i\right|^p\right)^{\!\!1 / p} .
+$$
+It is a consequence of the <a href="https://proofwiki.org/wiki/Minkowski%27s_Inequality_for_Sums">Minkowski inequality</a> for infinite sums.
+           
+            <!-- We have $d(x, y) \in \mathbf{R}$. Evidently, $d(x, y) \geq 0, d(x, y)=0$ if and only if $x=y$, and $d(x, y)=d(y, x)$. The triangle inequality follows from the Minkowski inequality for infinite sums. -->
+            </p>
+<p>    <b>Note. </b> The space $\ell_2$ is called the <a href="https://ncatlab.org/nlab/show/sequence+space">space of square summable sequences</a>.</p>
+        </li>
+        
+        <li><b>The space of bounded functions. </b>
+        <p>
+            Let $S$ be any nonempty set and $\mathcal{B}(S)$ denote the set of all real- or complex-valued functions on $S$, each of which is bounded, i.e.,
+$$
+\sup _{x \in S}|f(x)|\lt \infty .
+$$
+If $f$ and $g$ belong to $\mathcal{B}(S)$, there exist $M>0$ and $N>0$ such that
+$$
+\sup _{x \in S}|f(x)| \leq M, \quad \sup _{x \in S}|g(x)| \leq N .
+$$
+<!--It follows that $\sup _{x \in S}|f(x)-g(x)|\lt \infty$. Indeed,
+$$
+|f(x)-g(x)| \leq|f(x)|+|g(x)| \leq \sup _{x \in S}|f(x)|+\sup _{x \in S}|g(x)|,
+$$
+and so
+$$
+0 \leq \sup _{x \in S}|f(x)-g(x)| \leq M+N .
+$$ -->
+We define
+$$
+\d(f, g)=\sup _{x \in S}|f(x)-g(x)|, \quad f, g \in \mathcal{B}(S) 
+$$
+This metric $\d$ is called the <b>uniform metric</b> (or <b>supremum
+metric</b>).
+        </p>    
+            
+        </li>
+        
+        <li>
+            <b>The space of continuous functions</b>
+            <p>
+                Let $X$ be the set of all continuous functions defined on $[a, b]$, an interval in $\mathbb R$. For $f, g \in X$, define
+$$
+\d(f, g)=\sup _{x \in[a, b]}|f(x)-g(x)|
+$$
+i.e. <i>the measure of distance between the functions $f$ and $g$ is the largest vertical distance between their graphs</i> (see Figure below). In this case, the space $X$ is denoted by $\mathcal C[a, b]$.<br>
+
+
+
+           
+           <b>Note.</b> We write $C_{\mathbb{C}}[a, b]$ for space of all complex-valued continuous functions, and $C_{\mathbb{R}}[a, b]$ for all real-valued continuous functions. We see that $\mathcal C[a, b] \subseteq$ $\mathcal{B}[a, b]$ and the metric described here is the one induced by the metric in Example (3) above, since a <a href="#1">continuous function defined on the closed and bounded interval $[a, b]$ is bounded</a>. It is also called <b>the uniform metric</b> (or <b>supremum metric</b>). 
+           
+          <!-- Since the difference of two continuous functions is continuous, the composition of two continuous functions is continuous, and a continuous function defined on the closed and bounded interval $[a, b]$ is bounded, it follows that $d(f, g) \in \mathbf{R}$ for all $f, g \in X$. It may be verified as in Example (viii) that $d$ is a metric on $X$. -->
+            </p>
+        </li>
+        <center>
+             <a href="#1">
+                <div class="">
+                    <p style="font-size: 14px"> 
+                    <img class="" alt="Manhattan distance" src="fig/sup_metric.png" width="55%"><br>
+                    <b>Fig.1.</b> Supremum metric
+                    </p>
+                </div>
+            </a>
+          <a href="#1">
+                <div class="">
+                    <p style="font-size: 14px"> 
+                    <img class="" alt="Manhattan distance" src="fig/surface_metric.png" width="55%"><br>
+                                       <b>Fig.1.</b> $\d(f,g) is the area between curves.
+                                        </p>
+                </div>
+            </a>
+<!--div class="row">
+  <div class="column">
+    <img class="" alt="Manhattan distance" src="fig/sup_metric.png" width="80%">
+  </div>
+  <div class="column">
+     <img class="" alt="Manhattan distance" src="fig/surface_metric.png" width="90%">
+  </div>
+</div-->
+        </center>
+            
+        <li>
+            The set $\mathcal C[a,b]$ can also be equipped with the metric
+            $$\d(f,g) = \int_a^b \Big|f(x)-g(x)\Big| dx $$
+            means that the measure of distance between the functions $f$ and $g$ is the area between their graphs, indicated by shading in Figure.
+            
+               
+           <p><b>Note. </b> If $f, g \in \mathcal C[a, b]$, then $|f-g| \in \mathcal C[a, b]$, and the integral defining $\d(f, g)$ is finite. It may be easily verified that $\d$ is a metric on $\mathcal C[a, b]$. <!-- We note that the continuity of the functions enters into the verification of the "only if" part of (MS2).-->
+           </p>
+        </li>
+    </ol>
+</example>
+
+   <example>
+       
+<ol>
+    <li>
+            Let $X=\mathbb{R} \cup\{\infty\} \cup\{-\infty\}$. Define $f: X \rightarrow \mathbb{R}$ by the rule
+$$
+f(x)=\left\{\begin{array}{cl}
+\frac{x}{1+|x|} & \text { if }-\infty \lt x\lt \infty \\
+1 & \text { if } x=\infty \\
+-1 & \text { if } x=-\infty
+\end{array}\right.
+$$
+<!--Evidently, $f$ is one-to-one and $-1 \leq f(x) \leq 1$. -->
+We define a function $\d$ on $X$ as follows:
+$$
+\d(x, y)=\Big|f(x)-f(y)\Big|,\quad  x, y \in X 
+$$
+      <!-- If $x=y$ then $f(x)=f(y)$ and so $d(x, y)=0$. On the other hand, if $d(x, y)=0$, then $|f(x)-f(y)|=0$, i.e., $f(x)=f(y)$. Since $f$ is one-to-one, it follows that $x=y$. That $d$ satisfies (MS3) and (MS4) is a consequence of the properties of the modulus of real numbers.-->
+        </li>
+        <li>
+            On $X=\mathbb{R} \cup\{\infty\} \cup\{-\infty\}$, define
+$$
+\d(x, y)=\left|\tan ^{-1} x-\tan ^{-1} y\right|, x, y \in X 
+$$
+<!-- (Note that $\tan ^{-1}(\infty)=\pi / 2, \tan ^{-1}(-\infty)=-\pi / 2$ and that the function $\tan ^{-1}$ is one-to-one.) It may now be verified that $X$ is a metric space with metric $\d$ defined as above. -->
+        </li>
+</ol>
+   </example>
+    
+
+<div class="box-theorem">
+  <div class="box-legend editable"><span class="lt-icon-default">Proposition.</span>
+</div>
+
+<p>
+Let $(X, \d)$ be a metric space. Define $\d': X \times X \rightarrow \mathbb{R}$ by
+$$
+\d'(x, y)=\frac{\d(x, y)}{1+\d(x, y)} .
+$$
+Then $\d' $ is a metric on $X$. Besides, $\d' (x, y)\lt 1$ for all $x, y \in X$.
+</p>
+
+</div>
+<div class="">
+    <div class="toright">
+        <span id="SHLink_Soln01" class="soln-title SH-Link">Show Solution</span> <span id="SHImg_Soln01" class="fa fa-caret-right" aria-hidden="true"></span></div>
+ <div id="SHObj_Soln01" class="soln-content" style="display: none;">
+<p>
+    <i>Proof.</i> We need prove only (MS4). Suppose $x, y, z \in X$. Then $d(x, y) \geq 0, d(x, z) \geq$ $0, d(z, y) \geq 0$ and $d(x, y) \leq d(x, z)+d(z, y)$ because $d$ is a metric on $X$. Now,
+$$
+\begin{aligned}
+d^{\prime}(x, z)+d^{\prime}(z, y) &=\frac{d(x, z)}{1+d(x, z)}+\frac{d(z, y)}{1+d(z, y)} \\
+& \geq \frac{d(x, z)+d(z, y)}{1+d(x, z)+d(z, y)} \quad \text { by Theorem 1.1.2 } \\
+&=\frac{1}{1+\frac{1}{d(x, z)+d(z, y)}} \\
+& \geq \frac{1}{1+\frac{1}{d(x, y)}}=\frac{d(x, y)}{1+d(x, y)} .
+\end{aligned}
+$$
+    
+     </p>
+      </div>
+    </div>
+
+    
+    
+    
+    
+
+    <div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default">Homework - Group discussion.</span>
+</div>
+
+<p>
+Click on the link to view <a href="https://hamkarim.github.io/notes/topology/2022/homework4.html">homework 4.</a>!
+
+</p>
+
+</div>
+
+
+       <defn>
+            <div class="definition"> (Pseudo metric) </div>
+            <div class="definitionb">
+                <p> 
+                Let $X$ be a nonempty set. A <b>pseudometric</b> on $X$ is a mapping of $X \times X$ into $\mathbb{R}$ that satisfies the conditions:
+<ol style="list-style: none;">
+    <li>
+        (PM1) $\quad \d(x, y) \geq 0, \quad x, y \in X$
+    </li>
+    <li>
+        (PM2) $\quad \d(x, y)=0, \quad$ if $x=y$
+    </li>
+    <li>
+        (PM3) $\quad \d(x, y)=\d(y, x), \quad x, y \in X$;
+    </li>
+    <li>
+        (PM4) $\quad \d(x, y) \leq \d(x, z)+\d(z, y), \quad x, y, z \in X$.
+    </li>
+</ol>
+                </p>
+            </div>
+        </defn>
+
+<example>
+    Let $X$ denote the set of all <a href="">Riemann integrable functions</a> on $[a, b]$.
+For $f, g \in X$, define
+$$
+\d(f, g)=\int_a^b|f(x)-g(x)| d x
+$$
+It is easily verified that $\d$ is a pseudometric on $X$, but it is not a metric on $X$. Indeed, if
+$$
+f(x)= \begin{cases}0 & \text { if } x=a \\ 1 & \text { if } a \lt x \leq b\end{cases}
+$$
+and $g(x)=1$ for all $x \in[a, b]$, then $\d(f, g)=0$. However, $f \neq g$.
+</example>
+
+        <hr>
+
+        <h3> Recent Posts </h3>
+        <ul>
+
+
+            <li>
+                <i> <a href="../../topology/2019/post/2017/11/01/varparams.html">A Note on the Variation of Parameters Method </a> | 11/01/17 </i>
+            </li>
+
+
+            <li>
+                <i> <a href="../../topology/2019/notes/2017/10/26/groups3.html">Group Theory, Part 3: Direct and Semidirect Products </a> | 10/26/17 </i>
+            </li>
+
+
+            <li>
+                <i> <a href="../../topology/2019/notes/2017/10/19/galoistheory1.html">Galois Theory, Part 1: The Fundamental Theorem of Galois Theory </a> | 10/19/17 </i>
+            </li>
+
+
+            <li>
+                <i> <a href="../../topology/2019/notes/2017/10/19/fieldtheory2.html">Field Theory, Part 2: Splitting Fields; Algebraic Closure </a> | 10/19/17 </i>
+            </li>
+
+
+            <li>
+                <i> <a href="../../topology/2019/notes/2017/10/18/fieldtheory1.html">Field Theory, Part 1: Basic Theory and Algebraic Extensions </a> | 10/18/17 </i>
+            </li>
+
+        </ul>
+        <footer class="site-footer">
+
+            <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+        </footer>
+
+    </section>
+</body>
+
+
+<!-- script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-102852226-1', 'auto');
+    ga('send', 'pageview');
+  </script -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171606319-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-171606319-1');
+</script>
+
+</html>
