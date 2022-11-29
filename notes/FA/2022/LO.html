@@ -508,6 +508,8 @@
   \( \newcommand{\by}{\mathbf{y}}\)
 \( \newcommand{\D}{\mathcal{D}}\)
 \( \newcommand{\A}{\mathbf{A}}\)
+		\( \newcommand{\beqn}{\begin{equation}}\)
+		\( \newcommand{\eeqn}{\end{equation}}\)
   </div>
   
   
@@ -598,7 +600,7 @@
 </div>
 
 
-         <h2 class="frame-sect sectcounter">&nbsp; មេរៀនទី១. </h2> <!-- \section{និយមន័យ និងលក្ខណៈបឋមៗ}  -->
+	<h2 class="frame-sect sectcounter">&nbsp; Basic properties </h2> <!-- \section{និយមន័យ និងលក្ខណៈបឋមៗ}  -->
         <!--h2 class="frame-sect sectcounter">&nbsp; និយមន័យ និង Notation </h2> <!-- \section{និយមន័យ និងលក្ខណៈបឋមៗ}  -->
         
         <h3>តើ LO ជាអ្វី ?</h3>
@@ -611,7 +613,7 @@ If
            
        </p>
 
-	<h3>Basic properties</h3>
+	<h3></h3>
        
                
 <defn>
@@ -630,7 +632,7 @@ If
 	Until further notice we shall only consider operators $\A$ with $\D(\A)=X$.
 	An operator $\A$ is called bounded if there is a constant $M$ such that
 	\begin{equation}
-	\|\A x\| \leqslant M\|x\|, \quad x \in X \tag{1.1}
+	\|\A x\| \leqslant M\|x\|, \quad x \in X \tag{1.1}\label{eqn:1.1}
 	\end{equation}
 	</p>
 </div>
@@ -639,10 +641,10 @@ If
       
   <p class="parindent">
 		  The norm of such an operator is defined by
-		  $$
-		  \|\A\|=\sup _{x \neq 0} \frac{\|\A x\|}{\|x\|} 
-		  $$
-	  Again, it is the smallest $M$ which works in <a href="/notes/FA/2022/LO.html#mjx-eqn-1.1">(1.1)</a>. An operator $A$ is called continuous at a point $x_0 \in X$ if $x_n \rightarrow x$ in $X$ implies $A x_n \rightarrow A x$ in $Y$. A bounded linear operator is continuous at each point. For if $x_n \rightarrow x$ in $X$, then
+	  \begin{equation}
+	  \|\A\|=\sup _{x \neq 0} \frac{\|\A x\|}{\|x\|} \tag{1.2}\label{eqn:1.2}
+	  \end{equation}
+	  Again, it is the smallest $M$ which works in <a>\eqref{eqn:1.1}</a>. An operator $A$ is called continuous at a point $x_0 \in X$ if $x_n \rightarrow x$ in $X$ implies $A x_n \rightarrow A x$ in $Y$. A bounded linear operator is continuous at each point. For if $x_n \rightarrow x$ in $X$, then
 		  $$
 		  \left\|A x_n-A x\right\| \leq\|A\| \cdot\left\|x_n-x\right\| \longrightarrow 0 .
 		  $$
