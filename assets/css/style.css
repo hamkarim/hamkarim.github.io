@@ -2204,3 +2204,22 @@ span.tab {
   clear: both;
   display: table;
 }
+
+
+/* Watermarks*/
+
+@import url(https://fonts.googleapis.com/css?family=Denk+One);
+@import url(https://fonts.googleapis.com/css?family=Arimo);
+
+.rotingtxt{
+	-webkit-transform: rotate(331deg);
+	-moz-transform: rotate(331deg);
+	-o-transform: rotate(331deg);
+	transform: rotate(331deg);
+	font-size: 4em;
+	color: rgba(255, 5, 5, 0.17);
+	position: absolute;
+	font-family: 'Denk One', sans-serif;
+	text-transform:uppercase;
+	padding-left: 10%;
+}
