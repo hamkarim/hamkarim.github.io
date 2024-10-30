@@ -49,7 +49,7 @@
                               content="http://www.cliparts101.com/files/376/298FE3955707B1DE458221E4BFABFBBE/Greek_Gamma_4.png" />
                     <link rel="shortcut icon" type="image/x-icon" href="../../algebra/1st-year/notes/favicon.ico" />
                     <meta charset="UTF-8" />
-                    <title>POR_TOR</title>
+                    <title>FiniteSets</title>
                     <meta name="description" content="binary relation" />
 
                     <style>
@@ -164,7 +164,7 @@ src="">
                     </section>
 
                     <section class="main-content">
-                              <h1 style="text-shadow: 4px 4px 4px #c0c0c0">Chapter 5:&nbsp; ទំនាក់ទំនងលំដាប់</h1>
+                              <h1 style="text-shadow: 4px 4px 4px #c0c0c0">ជំពូក៦ :&nbsp; សំណុំរាប់អស់ និង អនុគមន៍</h1>
                               <span style="font-style: italic; font-weight: bold; font-family: Arial; opacity: 0.5">
                                         October 28th, 2024
                               </span>
@@ -172,9 +172,30 @@ src="">
 
                               <h2 class="frame-sect sectcounter">សេចក្ដីផ្ដើម</h2>
                               <p>
-                                        A partial order is a type of ordering of the elements of \(A\). Partial orders
-                                        occur naturally in many areas of mathematics, including probability. A partial
-                                        order on a set naturally gives rise to several other relations on the set.
+                                        In this section, we start the conversation by consider the “Hilbert hotel” and
+                                        some of the surprising behavior of infinite sets. We define what it means for
+                                        two sets to be of the same cardinality (though we don’t define a “cardinal
+                                        number”). We show that all intervals of real numbers are of the same
+                                        cardinality, we define finite sets and infinite sets, we prove some unsurprising
+                                        results on the cardinalities of finite sets (including the Pigeonhole
+                                        Principle), and prove several counting principles related to finite sets.
+                              </p>
+
+                              <p class="box-lemma">
+                                        To start the discussion of infinite sets, Gerstein tells a story about a hotel
+                                        that has (countably) infinitely many rooms labeled $1,2, \ldots$, where each
+                                        room is occupied. If another person shows up and wants a room, then the current
+                                        occupants can move to different rooms in such a way as to free up a room. The
+                                        person in room $n$ can simply move to room $n+1$ for each $n \in \mathbb{N}$.
+                                        Then room 1 is available and the new person can stay in that room. If $k$ new
+                                        people show up, then they can be accommodated by moving the person in room $n$
+                                        to room $n+k$. In fact, if a (countably) infinite number of people show up
+                                        looking for a room, then they can also be accommodated. Simply move the person
+                                        in room $n$ to room $2 n$ for $n \in \mathbb{N}$. This frees up all of the odd
+                                        numbered rooms and the infinite number of new people can then occupy those
+                                        rooms. In this story, the hotel is often called the "Hilbert hotel" after the
+                                        famous 19th and 20th century mathematician David Hilbert (January 23,
+                                        182-February 14, 1943).
                               </p>
 
                               <defn>
@@ -182,16 +203,16 @@ src="">
                                         <div class="definitionb">
                                                   <a id="def:por_tor"></a>
                                                   <p>
-                                                            <!-- a name=""></a-->
-                                                            <!--A partial order on a set \(S\) is a relation \(\preceq\) on
-                                                            \(S\) that is reflexive, anti-symmetric, and transitive. The
-                                                            pair \( (S, \preceq) \) is called a partially ordered set.
-                                                            So for all \( x, \ y, \ z \in S \):-->
-                                                            ទំនាក់ទំនងលំដាប់ដោយផ្នែកលើសំណុំ \(A\) គឺជាទំនាក់ទំនង
-                                                            \(\preceq\) កំណត់លើ \(A\) ដែលមានលក្ខណៈខ្លួនឯង
-                                                            លក្ខណៈឆ្លុះស្មើ និងលក្ខណៈឆ្លង ។ គូ \((A, \preceq) \) ហៅថា
-                                                            សំណុំលំដាប់ដោយផ្នែក (Poset) ។ ដូច្នេះ គ្រប់ \( x, \ y, \ z
-                                                            \in A \) គេបាន :
+                                                            Sets $A$ and $B$ have the same កាឌីណាល់ (cardinality)<a
+                                                                      id="cardinality-1-ref"
+                                                                      href="#card-1"
+                                                                      >[1]</a
+                                                            >
+                                                            or the same cardinal number if there is a bijection $f: A
+                                                            \rightarrow B$. We then say that $A$ and $B$ are equipotent
+                                                            sets, denoted $A \approx B$. We may also say that sets $A$
+                                                            and $B$ are in one-to-one correspondence. If $A$ and $B$ are
+                                                            not equipotent, then we write $A \not \approx B$.
                                                   </p>
                                                   <ol type="i">
                                                             <li><b>លក្ខណៈខ្លួនឯង:</b> \( x \preceq x \)</li>
@@ -207,46 +228,58 @@ src="">
                                                   </ol>
                                         </div>
                               </defn>
+                              <p id="card-1" style="font-size: 14px; color: darkgoldenrod">
+                                        [1]. Cardinality = កាឌីណាល់ គឺជាចំនួនធាតុរបស់សំណុំមួយ ។
+                                        <a href="#cardinality-1-ref">&#8617;</a>
+                              </p>
+                              <p class="box-lemma">We will use sthe</p>
 
-                              <h3>Extremal Elements</h3>
+                              <ol>
+                                        <li>
+                                                  <a href="#genaral">
+                                                            យក $g$ ជាអនុគមន៍យកតម្លៃពិតកំណត់ដោយ $g(x)=x^2+3$ ។</a
+                                                  >
 
-                              <defn>
-                                        <div class="definition"></div>
-                                        <div class="definitionb">
-                                                  <a id="def:extrema1"></a>
-                                                  <p>
-                                                            <!--Various types of extremal elements play important roles in partially ordered
-                                        sets. Here are the definitions: -->
-
-                                                            Suppose that \((A,\preceq)\) is a Poset and that \(X
-                                                            \subseteq A\).
-                                                  </p>
-
-                                                  <ol>
+                                                  <ul>
                                                             <li>
-                                                                      An element \(a \in A\) is the minimum element of
-                                                                      \(A\) if and only if \(a \preceq x\) for every \(x
-                                                                      \in A\).
+                                                                      បើ $b \in \mathbb{R}$ និង $b&gt;3$ នោះគេបាន
+                                                                      $g^{-1}(b)= \cdots ?$<!-- %\{\sqrt{b-3},-\sqrt{b-3}\}-->
                                                             </li>
-                                                            <li>
-                                                                      An element \(a \in A\) is a minimal element of
-                                                                      \(A\) if and only if no \(x \in A\) satisfies \(x
-                                                                      \prec a\).
-                                                            </li>
+                                                            <li>បើ $b=3$ នោះគេបាន $g^{-1}(3)=\cdots ?$</li>
+                                                            <li>បើ $b&lt;3$ នោះគេបាន $g^{-1}(b) = \cdots ?$</li>
+                                                            <!--is empty.-->
+                                                  </ul>
+                                        </li>
+                                        <li>
+                                                  <a href="#genaral">
+                                                            យក $f$ ជាអនុគមន៍យកតម្លៃពិតកំណត់ដោយ $f(x)=x^2$ ។ គេថា $f$
+                                                            មិនមួយទល់មួយ ដូច្នេះ $f$ មិនមានអនុគមន៍ច្រាសទេ ។
+                                                            តែអនុគមន៍ខាងក្រោម៖
+                                                  </a>
 
-                                                            <li>
-                                                                      An element \(b \in A\) is the maximum element of
-                                                                      \(A\) if and only if \(b\succeq x\) for every \(x
-                                                                      \in A\).
-                                                            </li>
+                                                  $$ \begin{aligned} g:[0, \infty) & \longrightarrow[0, \infty) \\ x &
+                                                  \longmapsto x^2 \end{aligned} $$ មួយទល់មួយ ។ ក្នុងករណីនេះ
+                                                  ចូររកអនុគមន៍ច្រាស $g^{-1}$? $$ g^{-1}(y)= \cdots ? $$<!--\sqrt{y}-->
+                                        </li>
 
-                                                            <li>
-                                                                      An element \(b \in A\) is a maximal element of
-                                                                      \(A\) if and only if no \(x \in A\) satisfies \(x
-                                                                      \succ b\).
-                                                            </li>
+                                        <li>
+                                                  <a href="#genaral">
+                                                            យក $f(x)=(x-2)^4$ ។ គេកំណត់ $W=[2, \infty)$ ។ តើ $$
+                                                            \left.f\right|_W: W \rightarrow[0, \infty) $$ មួយទល់មួយឬទេ?
+                                                  </a>
+                                        </li>
 
-                                                            <!--li>
+                                        <!--li>
+                                                  <a href="#Image"> Image, composition de fonctions</a>
+                                                  <ul>
+                                                            <li>Image d'une fonction</li>
+                                                            <li>Image réciproque d'un ensemble par une fonction</li>
+                                                            <li>Composée de fonctions</li>
+                                                            <li>Exemples graphiques de composition</li>
+                                                  </ul>
+                                        </!--li>
+
+                                        <li>
                                                   <a href="#properties">Injection, surjection, bijection</a>
                                                   <ul>
                                                             <li>Injection</li>
@@ -257,7 +290,7 @@ src="">
                                                                       bijection réciproque
                                                             </li>
                                                   </ul>
-                                        </!--li>
+                                        </li>
 
                                         <li>
                                                   <a href="#proprietiesGraph">Propriétés graphiques</a>
@@ -271,117 +304,7 @@ src="">
                                         </li>
 
                                         <li><a href="#Bibliog">Bibliographie</a></li------>
-                                                  </ol>
-                                        </div>
-                              </defn>
-
-                              <div class="box-note">
-                                        <b>Remarks:</b>
-                              </div>
-                              <ul>
-                                        <li>
-                                                  In general, a set can have several maximal and minimal elements (or
-                                                  none).
-                                        </li>
-                                        <li>
-                                                  On the other hand, The minimum and maximum elements of \(A\), if they
-                                                  exist, are unique. They are denoted \(\min(A)\) and \(\max(A)\),
-                                                  respectively.
-                                        </li>
-                                        <a>Proof</a>
-                                        <p>
-                                                  Suppose that \( a, \ b \) are minimum elements of \( A \). Since \( a,
-                                                  \ b \in A \) we have \( a \preceq b \) and \( b \preceq a \), so \( a
-                                                  = b \) by the antisymmetric property. The proof for the maximum
-                                                  element is analogous.
-                                        </p>
-                                        <li>
-                                                  Minimal, maximal, minimum, and maximum elements of a set must belong
-                                                  to that set. The following definitions relate to upper and lower
-                                                  bounds of a set, which do not have to belong to the set.
-                                        </li>
-                              </ul>
-
-                              <defn>
-                                        <div class="definition"></div>
-                                        <div class="definitionb">
-                                                  <a id="def:extrema2"></a>
-                                                  <p>
-                                                            Suppose that \((A, \preceq )\) is a Poset and that \(X
-                                                            \subseteq A \). Then
-                                                  </p>
-                                                  <ol type="i">
-                                                            <li>
-                                                                      An element \(u \in A\) is a <b>lower bound</b> for
-                                                                      \(X\) if and only if \(u \preceq x\) for every \(x
-                                                                      \in X\).
-                                                            </li>
-                                                            <li>
-                                                                      An element \(v \in A\) is an
-                                                                      <b>upper bound</b> for \(X\) if and only if \(v
-                                                                      \succeq x\) for every \(x \in X\).
-                                                            </li>
-                                                            <li>
-                                                                      The <b>greatest lower bound</b> or
-                                                                      <b>infimum</b> of \(X\), if it exists, is the
-                                                                      maximum of the set of lower bounds of \(X\).
-                                                            </li>
-                                                            <li>
-                                                                      The <b>least upper bound</b> or <b>supremum</b> of
-                                                                      \(X\), if it exists, is the minimum of the set of
-                                                                      upper bounds of \(X\).
-                                                            </li>
-                                                  </ol>
-                                        </div>
-                              </defn>
-                              <p class="box-definition">Remarks:</p>
-                              <ul>
-                                        <li>
-                                                  The greatest lower bound of \(X\) is unique, if it exists. It is
-                                                  denoted \(\text{glb}(X)\) or \(\inf(X)\). Similarly, the least upper
-                                                  bound of \(X\) is unique, if it exists, and is denoted
-                                                  \(\text{lub}(X)\) or \(\sup(X)\).
-                                        </li>
-                                        <li>
-                                                  Note that every element of \(X\) is a lower bound and an upper bound
-                                                  for \(\varnothing\), since the conditions in the definition hold
-                                                  vacuously.
-                                        </li>
-                                        <li>
-                                                  The symbols \( \wedge \) and \( \vee \) are also used for infimum and
-                                                  supremum, respectively, so \[ \bigwedge X = \inf(X) \text{ , } \quad
-                                                  \bigvee X = \sup(X) \] if they exist.
-                                        </li>
-                                        <li>
-                                                  In particular, for \( x, \ y \in A \), operator notation is more
-                                                  commonly used, so \[ x \wedge y = \inf\{x, y\} \text{ , } \quad x \vee
-                                                  y = \sup\{x, y\} \] Partially ordered sets for which these elements
-                                                  always exist are important, and have a special name.
-                                        </li>
-                                        <li>
-                                                  A Poset \((A, \preceq)\) is called a <b>lattice</b> if \( x \wedge y
-                                                  \) and \( x \vee y \) exist for every \( x, \ y \in A \).
-                                        </li>
-                              </ul>
-
-                              <p>
-                                        For the subset partial order, the $\inf$ and $\sup$ operators correspond to
-                                        intersection and union, respectively:
-                              </p>
-                              <div class="box-lemma">
-                                        <b>Proposition.</b>
-
-                                        Let \(X\) be a set and consider the POR \(\subseteq\) on \(A=\mathscr{P}(X)\),
-                                        the power set of \(X\). Let \(\mathcal{F}\) be a nonempty subset of
-                                        \(\mathscr{P}(X)\), that is, a nonempty collection of subsets of \(X\). Then
-                                        <ol type="i">
-                                                  <li>\(\inf(\mathcal{F}) = \bigcap \mathcal{F}\)</li>
-
-                                                  <li>\(\sup(\mathcal{F}) = \bigcup \mathcal{F}\)</li>
-                                        </ol>
-                              </div>
-
-                              <p class="box-exercise">Solution.</p>
+                              </ol>
 
                               <footer class="site-footer">
                                         <span class="site-footer-credits"
