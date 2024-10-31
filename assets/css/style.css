@@ -978,6 +978,9 @@ h3.sectcounter:before {
     width: 100%;
 }
 
+.main-content em, i {
+    color: darkturquoise;
+}
 .main-content blockquote {
     font-size: 14px;
     padding: 0 1rem;
