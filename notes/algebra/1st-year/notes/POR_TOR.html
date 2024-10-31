@@ -183,12 +183,12 @@ src="">
                                                   <a id="def:por_tor"></a>
                                                   <p>
                                                             <!-- a name=""></a-->
-                                                            <!--A partial order on a set \(S\) is a relation \(\preceq\) on
+                              <!--A partial order on a set \(S\) is a relation \(\preceq\) on
                                                             \(S\) that is reflexive, anti-symmetric, and transitive. The
                                                             pair \( (S, \preceq) \) is called a partially ordered set.
                                                             So for all \( x, \ y, \ z \in S \):-->
-                                                            
-                                                          <!--  ទំនាក់ទំនងលំដាប់ដោយផ្នែកលើសំណុំ \(A\) គឺជាទំនាក់ទំនង
+
+                              <!--  ទំនាក់ទំនងលំដាប់ដោយផ្នែកលើសំណុំ \(A\) គឺជាទំនាក់ទំនង
                                                             \(\preceq\) កំណត់លើ \(A\) ដែលមានលក្ខណៈខ្លួនឯង
                                                             លក្ខណៈឆ្លុះស្មើ និងលក្ខណៈឆ្លង ។ គូ \((A, \preceq) \) ហៅថា
                                                             សំណុំលំដាប់ដោយផ្នែក (Poset) ។ ដូច្នេះ គ្រប់ \( x, \ y, \ z
@@ -410,6 +410,50 @@ src="">
                               </div>
 
                               <p class="box-exercise">Solution.</p>
+
+                              <div class="example-content">
+                                        <p>
+                                                  <a class="example-title">Example. </a> យក $A=\mathbb{Q}$ មាន POR
+                                                  កំណត់ដោយ : $$\frac{p}{q} \leq \frac{p^{\prime}}{q^{\prime}}
+                                                  \Longleftrightarrow p . q^{\prime} \leq p^{\prime} . q$$ គេកំណត់ $
+                                                  X=\Bigl\{1-\frac{1}{n} \mid n \in \mathbb{N} \backslash\{0\}\Bigr\}
+                                                  \subset \mathbb{Q}$ ។ <br />
+                                        </p>
+                                        <ol>
+                                                  <li>ចូរសិក្សាធាតុ extremal ទាំងឡាយរបស់សំណុំ $X$ ។</li>
+                                                  <li>ចូរបង្ហាញថា $X$ ជាសំណុំទាល់របស់ $\mathbb{Q}$.</li>
+                                        </ol>
+<p>
+                                        En effet, on a : $$ 0 \leq 1-\frac{1}{n} \leq 1, \forall n \in \mathbb{N}
+                                        \backslash\{0\} $$ Donc, 1 majore $A$ et 0 minore $A$. Le plus petit élément de
+                                        $A$ est $0=1-\frac{1}{1}$. Par contre, $A$ n'admet pas de plus grand élément!
+                                        Supposons que la valeur maximale de $A$ : $$ \max A=1-\frac{1}{n_0} \text { avec
+                                        } n_0 \in \mathbb{N} \backslash\{0\} $$ Or, $1-\frac{1}{2
+                                                                                     n_0}>1-\frac{1}{n_0}=\max A$. D'où la contradiction. </p>
+                              </div>
+
+                              <div class="example-content">
+                                        <p>
+                                                  <a class="example-title">Exercise 2. </a>
+                                                  ចំពោះលំហាត់ខាងក្រោម យក $A, B, C, D \subset \mathbb{R}$ និងកំណត់ POR លើ
+                                                  $\mathbb{R}$ ដោយ $\leq$ ។
+                                                  <!--Pour chacun des exercices suivants,-->
+                                                  ចូរកំណត់ déterminer s'il y a une borne inférieure, une borne
+                                                  supérieure, si oui, les déterminer.
+                                        </p>
+                                        <ol>
+                                                  <li>$A=\left\{\frac{2^n}{2^n-1} \mid n \in \mathbb{N}^*\right\}$</li>
+                                                  <li>$B=\left\{\frac{1}{1-2^{-n}} \mid n \in \mathbb{N}^*\right\}$</li>
+                                                  <li>
+                                                            $C=\left\{\frac{x^3}{\left|x^3-1\right|}\mid x \in ]
+                                                            0,1[\cup] 1,+\infty[ \right\}$
+                                                  </li>
+                                                  <li>
+                                                            $D=\left\{\frac{x^n}{\left|x^n-1\right|} \mid x \in ]
+                                                            0,1[\cup] 1,+\infty[, n \in \mathbb{N}^*\right\}$
+                                                  </li>
+                                        </ol>
+                              </div>
 
                               <footer class="site-footer">
                                         <span class="site-footer-credits"
