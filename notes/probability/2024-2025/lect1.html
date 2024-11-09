@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en-US">
+          <head>
+                    <meta charset="utf-8" />
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                    <meta
+                              name="viewport"
+                              content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" />
+                    <!-- Begin Jekyll SEO tag v2.3.0 -->
+                    <meta property="og:title" content="Ham Karim" />
+                    <meta name="author" content="Ham Karim" />
+                    <meta name="author" content="ហាំ ការីម" />
+                    <meta property="og:locale" content="en_US" />
+                    <!--meta http-equiv="keywords"
+                        name="keywords"
+                        content="relations, binary relation, relation and function, ទំនាក់ទំនងទ្វេធាតុ, អនុគមន៍ និងទំនាក់ទំនង" /-->
+                    <!--meta http-equiv="description" name="description" content="ក្នុងគណិតវិទ្យា ......... ">
+<meta name="description" content="binary relation, ទំនាក់ទំនងទ្វេធាតុ">
+<meta property="og:description" content="Math, Programmer, Music">
+<link rel="canonical" href="../../index.html">
+<meta property="og:url" content="https://hamkarim.github.io/">
+<meta property="og:site_name" content="Binary Relation">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@pkarim">
+<meta name="twitter:creator" content="@pkarim">
+<meta name="google-site-verification" content="b9bg3P9zc8qbL4szvVYaf551jD9x017IyGBVSaQZDDY" /-->
+
+                    <script type="application/ld+json">
+                              {
+                                        "name": "Ham Karim",
+                                        "description": "I am a faculty member at the Royal Univeristy of Phnom Penh (RUPP). This is my blog of lectures at universities. ",
+                                        "author": { "@type": "Person", "name": "Ham Karim" },
+                                        "@type": "WebSite",
+                                        "url": "https://hamkarim.github.io/",
+                                        "image": null,
+                                        "publisher": null,
+                                        "headline": "Ham Karim",
+                                        "dateModified": null,
+                                        "datePublished": "2020-06-01",
+                                        "sameAs": null,
+                                        "mainEntityOfPage": null,
+                                        "@context": "http://schema.org"
+                              }
+                    </script>
+                    <!-- End Jekyll SEO tag -->
+
+                    <meta
+                              property="og:image"
+                              content="http://www.cliparts101.com/files/376/298FE3955707B1DE458221E4BFABFBBE/Greek_Gamma_4.png" />
+                    <link rel="shortcut icon" type="image/x-icon" href="../../algebra/1st-year/notes/favicon.ico" />
+                    <meta charset="UTF-8" />
+                    <title>Intrduction</title>
+                    <meta name="description" content="binary relation" />
+
+                    <style>
+                              .deffont {
+                                        font-family: "Noto Serif Khmer", "CMU Serif";
+                                        font-size: 16px;
+                              }
+                              ul.liststyle1 {
+                                        list-style-type: square;
+                              }
+                              ul.liststyle2 {
+                                        list-style-type: hebrew;
+                              }
+                              a.onmenu {
+                                        font-family: "Noto Serif Khmer", "CMU Serif";
+                                        font-weight: bold;
+                              }
+                    </style>
+
+                    <script async="" src="//cse.google.com/adsense/search/async-ads.js"></script>
+                    <script
+                              type="text/javascript"
+                              async=""
+                              src="https://www.google-analytics.com/analytics.js"></script>
+                    <script
+                              type="text/javascript"
+                              async=""
+                              src="https://cse.google.com/cse.js?cx=001004262401526223570:11yv6vpcqvy"></script>
+                    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-331594-1"></script>
+                    <script>
+                              window.dataLayer = window.dataLayer || [];
+                              function gtag() {
+                                        dataLayer.push(arguments);
+                              }
+                              gtag("js", new Date());
+
+                              gtag("config", "UA-331594-1");
+                    </script>
+
+                    <link
+                              rel="stylesheet"
+                              href="../../../../assets/css/style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245" />
+
+                    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+                    <!-- Script to show and hide proof -->
+                    <script type="text/javascript" src="https://hamkarim.github.io/assets/js/showhide.js"></script>
+                    <!-- Other style of showing and hiding proof -->
+                    <link
+                              rel="stylesheet"
+                              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+                    <script
+                              type="text/javascript"
+                              src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
+                    <script
+                              type="text/javascript"
+                              src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>
+                    <!-- end -->
+
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                    <script type="text/javascript">
+                              //Another method to toggle the button
+                              $(document).ready(function () {
+                                        $(".showanswer").click(function () {
+                                                  $(".block_proof").show();
+                                                  $(".showanswer").hide();
+                                                  $(".hideanswer").show();
+                                        });
+                                        $(".hideanswer").click(function () {
+                                                  $(".block_proof").hide();
+                                                  $(".showanswer").show();
+                                                  $(".hideanswer").hide();
+                                        });
+                              });
+                    </script>
+
+                    <!-- For local function, define to exchange text -->
+                    <script>
+                              function showhideFunction() {
+                                        document.getElementById("idClick").innerHTML === "[Hide proof]"
+                                                  ? (document.getElementById("idClick").innerHTML = "[Show proof]")
+                                                  : (document.getElementById("idClick").innerHTML = "[Hide proof]");
+                              }
+                    </script>
+
+                    <!-- script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,https://hamkarim.github.io/MathJax/config/local/local.js"></script  -->
+
+                    <!-- script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script -->
+
+                    <script
+                              type="text/javascript"
+                              src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js"></script>
+
+                    <!-- script type="text/javascript" config=TeX-MML-AM_CHTML
+src="">
+</script -->
+
+                    <!-- To get it to work in old versions of Internet Explorer, you need to append this script to the head (Important if you need it to work in older versions of IE!): -->
+                    <!--[if lt IE 9] -->
+                    <script>
+                              document.createElement("example, defn");
+                    </script>
+                    <!-- [endif]-->
+          </head>
+
+          <body>
+                    <section class="page-header">
+                              <h1 class="project-name">ហាំ ការីម</h1>
+                              <h2 class="project-tagline">Maths, Program, Music</h2>
+                    </section>
+
+                    <section class="main-content">
+                              <h1 style="text-shadow: 4px 4px 4px #c0c0c0">ជំពូក ១:&nbsp; សេចក្ដីផ្ដើម</h1>
+                              <span style="font-style: italic; font-weight: bold; font-family: Arial; opacity: 0.5">
+                                        October 1st, 2024
+                              </span>
+                              <hr />
+
+                              <h2 class="frame-sect sectcounter">Introduction to Probability Theory</h2>
+                              
+                              <h3>Reasoning under uncertainty</h3>
+                              
+                              <ul>
+                                  <li><b>Real-World Complexity: </b>The world is filled with uncertainty. From predicting the weather to making decisions based on incomplete data, uncertainty is inherent in most real-life situations.</li>
+                                  <li><b>ភាពស្មុគស្មាញរបស់ពិភពពិត៖</b> ពិភពលោកពោរពេញទៅដោយភាពមិនប្រាកដប្រជា។ ឧ. ចេញពីការទស្សន៍ទាយអាកាសធាតុ រហូតដល់ការសម្រេចចិត្តដោយផ្អែកលើទិន្នន័យមិនពេញលេញ ភាពមិនប្រាកដប្រជា មាននៅក្នុងស្ថានភាពជីវិតពិតភាគច្រើន។</li>
+                                  <li><b>Decision-Making:</b> Probabilistic reasoning helps in making informed decisions when outcomes are not certain. It allows for evaluating risks and benefits, leading to more rational choices.</li>
+                                  <li>ការ​សម្រេច​ចិត្ត**៖ ហេតុផល​ដែល​ទំនង​ជា​ជួយ​ក្នុង​ការ​ធ្វើ​ការ​សម្រេច​ចិត្ត​ដែល​មាន​ព័ត៌មាន​នៅ​ពេល​លទ្ធផល​មិន​ប្រាកដ​ប្រជា។ វាអនុញ្ញាតឱ្យវាយតម្លៃហានិភ័យ និងអត្ថប្រយោជន៍ ដែលនាំឱ្យមានជម្រើសសមហេតុផលបន្ថែមទៀត។</li>
+                                  <li><b>Statistical Inference:</b> Much of statistical analysis revolves around drawing conclusions from data that are inherently uncertain. Probability theory provides the tools to make these inferences in a principled way.</li>
+                                  <li><b>Modeling and Simulation:</b> Probabilistic models can simulate complex systems and processes where certainty is impossible. This is essential in fields like finance, engineering, and science.</li>
+                                  <li><b>Learning and Adaptation:</b> In areas like machine learning and artificial intelligence, probabilistic reasoning allows systems to learn from data, adapt to new information, and improve over time.</li>
+                                  
+                              </ul>
+                              Reasoning under uncertainty enables us to navigate and make sense of a world that is often unpredictable and incomplete. 
+                              <br>
+                              
+                              <ul>
+                                  <li>In many settings, we must try to understand what is going on in a system when we have imperfect or incomplete information.</li>
+                                  
+                                  <li>Two reasons why we might reason under uncertainty:
+                                  <ul>
+                                      <li>
+                                                <b>laziness</b> (modeling every detail of a complex system is costly)</li>
+                                                <li><b>ignorance</b> (we may not completely understand the system)</li>
+                                            </ul>
+                                            
+                                            
+                                            
+                                            
+                                      </li>
+                                      
+                                 
+                                 
+                                  
+                              </ul>
+                              
+                              <h3>Using Probability Theory to reason under uncertainty</h3>
+
+                            
+                              <ul style="margin-left: 20pt" >
+                                  <li>Probabilities quantify uncertainty regarding the occurrence of events.</li>
+                                  
+                                  <li>Are there alternatives? Yes, e.g., Dempster-Shafer Theory, disjunctive uncertainty, etc. (Fuzzy Logic is about imprecision, not uncertainty.)</li>
+                                  <li>Why is Probability Theory better? Because if you do not reason according to Probability Theory, you can be made to act irrationally (de Finetti)</li>
+                                  <li>Probability Theory is key to the study of action and communication:
+                                  <ul>
+                                      <li><b>Decision Theory:</b> combines Probability Theory with Utility Theory.</li>
+                                      <li><b>Information Theory:</b> is "the logarithm of Probability Theory".</li>
+                                      
+                                  </ul>
+</li>
+                                  <li>Probability Theory gives rise to many interesting and important philosophical questions (which we will not cover).</li>
+
+                                  
+                                  
+                              </ul>
+               
+<h3>Prerequisite: Set Theory</h3>
+                              <defn>
+                                        <div class="definition"></div>
+                                        <div class="definitionb">
+                                                  <a id="def:por_tor"></a>
+                                                  <p> A binary operation (ប្រមាណវិធីទ្វេធាតុ)
+                                                                     <a id="binaryop-1-ref" href="#bop-1">[1]</a> $\ast$ on a set $A$ is a function 
+$$
+\begin{array}{rccl}
+\ast :  & A \times A & \longrightarrow & A\\
+& (a,b) & \longmapsto & \ast(a,b)
+\end{array}
+$$
+For convenience we write $a * b$ instead of $*(a, b)$.
+                                                  </p>
+                                        </div>
+                              </defn>
+                              <p id="bop-1" style="font-size: 14px; color: darkgoldenrod">
+                                        [1]. Binary operation =  ប្រមាណវិធីទ្វេធាតុ។
+                                        <a href="#binaryop-1-ref">&#8617;</a>
+                              </p>
+                              
+                              <div class="box-lemma"> 
+                              <b>Example.</b>
+                              <ol type="i">
+                                        <li>Let $A=\mathbb{R}$ and $*$ be + . For $a, b \in \mathbb{R}, a * b=a+b$, addition (note that $a+b \in \mathbb{R}$ ). This is a binary operation.</li>
+                                        <li>Let $A=\mathbb{Z}$ and $*$ be $\times$. For $a, b \in \mathbb{Z}, a * b=a b$, multiplication (note that $a b \in \mathbb{Z})$. This is a binary operation.</li>
+                                  <li>Let $A=\mathbb{Z}$ and $a * b=\max \{a, b\}$, the largest of $a$ and $b$. This is a binary operation.</li>
+                                        <li>Let $A=\mathbb{Q}$ and define $*$ by $a * b=a$. This is a binary operation.</li>
+                                        <li>Let $A=\mathbb{Z}$ and $a * b=\frac{a}{b}$. This is not a binary operation, as it's not defined when $b=0$, and also $\frac{a}{b}$ need not be in $\mathbb{Z}$.</li>
+                                        <li>Let $A=\Bigl\{f: \mathbb{Z} \rightarrow \mathbb{Z}\Bigr\}$, with $*$ composition of functions. This is a binary operation.</li>
+                                        <li>
+Let $A=\mathbb{N}$, with $*$ defined by $a * b=a^b$ (e.g., $2 * 3=2^3=8$ ). This is a binary operation.</li>
+                              </ol>
+                              </div>
+
+                             <h3>Multiplication tables</h3>
+                             <p>
+For small sets, we may record a binary operation using a table, called the multiplication table (whether or not the binary operation is multiplication).
+
+For example, let $A=\{\alpha, \beta, \gamma\}$. We may define a binary operation $*$ as follows:
+$$
+\begin{array}{l|lll}
+\ast & \alpha & \beta & \gamma \\
+\hline\alpha & \alpha & \gamma & \beta \\
+\beta & \alpha & \beta & \beta \\
+\gamma & \beta & \alpha & \gamma
+\end{array}
+$$
+where we take the row first and then the column. So, for example, $$\alpha * \beta=\gamma, \beta * \alpha=\alpha$$, etc.
+                             </p>
+                    <p>In general, if $S=\left\{a_1, \ldots, a_n\right\}$, then the entry in the row labeled by $a_j$ and column labeled by $a_i$ is $a_j * a_i$.</p>
+          <div class="box-lemma">
+              
+                    <b>Example.</b>
+Take  $A=\mathbb{Z}_4$ and $\ast=\oplus$. This has multiplication table
+$$
+\begin{array}{c|llll}
+\oplus & 0 & 1 & 2 & 3 \\
+\hline 0 & 0 & 1 & 2 & 3 \\
+1 & 1 & 2 & 3 & 0 \\
+2 & 2 & 3 & 0 & 1 \\
+3 & 3 & 0 & 1 & 2
+\end{array}
+$$            
+              
+          </div>
+                             <h2 class="frame-sect sectcounter">លក្ខណៈរបស់ប្រមាណវិធី</h2>
+                             <p>Let $\ast$ be a binary operation on a set $A$. There are a number of interesting properties that a binary operation may or may not have. Specifying a list of properties that a binary operation must satisfy will allow us to define deep mathematical objects such as groups.</p>
+                             
+                             <!--h3>Commutative and associative binary operations</!--h3-->
+                              <ol type="i">
+                                        <li>
+                                                  <a href="#genaral">
+                                                            $\ast$ is commutative if </a>
+
+$$
+\forall a, b \in A : a * b=b * a .
+$$ 
+                                       </li>
+                                        <li>
+                                                  <a href="#genaral">
+                                                           $\ast$ is associative if
+                                                  </a>
+$$
+\forall a, b, c \in A : a *(b * c)=(a * b) * c .
+$$
+                                                 <div class="box-lemma">
+<b>                                                     Examples.</b>
+<ul>
+    <li>Let $A=\mathbb{R}, a * b=a+b$. Let $a, b, c \in A$. Then $a * b=a+b=b+a=b * a$, so $*$ is commutative. Also $a *(b * c)=a+(b+c)=(a+b)+c=(a * b) * c$, so $*$ is associative.</li>
+
+<li>Let $A=\mathbb{R}, a * b=a$. Then $2 * 1=2 \neq 1=1 * 2$, so $*$ is not commutative. However, if $a, b, c \in A$, then 
+ $$a *(b * c)=a=a * b=(a * b) * c$$
+ so $*$ is associative.</li>
+
+ <li>$A=\mathbb{Q} \backslash\{0\}, a * b=\frac{a}{b}$. Then $1 * 2=\frac{1}{2} \neq 2=2 * 1$, so $*$ is not commutative. Also
+$$
+1 *(2 * 3)=1 *\left(\frac{2}{3}\right)=\frac{3}{2} \neq \frac{1}{6}=\left(\frac{1}{2}\right) * 3=(1 * 2) * 3
+$$
+so $*$ is not associative. </li>
+
+<li> Let $X$ be a set and let $A=\Bigl\{f: X \rightarrow X\Bigr\}$ be the set of functions $X \rightarrow X$. Let $*$ be composition of functions. Then * is associative.</li>
+</ul>
+                                                     
+                                                 </div>
+                                                 
+          <p><b>Remark.</b>
+              If $*$ is associative, then we can write $a * b * c$, meaning $(a * b) * c$ and $a *(b * c)$. More generally, we may define longer expressions $a_1 * \cdots * a_n$. Hence for $n \in \mathbb{N}$ and $a \in A$, we may define
+$$
+a^n=\underbrace{a * \cdots * a}_n .
+$$
+              
+          </p>
+<div class="box-lemma">
+    <b>Example.</b>
+    <ul>
+        <li>
+            Let $S=\mathbb{Z}_8$ and take $*=\odot$. Then, 
+
+$$
+\begin{aligned}
+1^3 &= 1 \odot 1 \odot 1=1 \\
+3^2 &= 3 \odot 3=1 \\
+3^3 &=3 \odot 3 \odot 3=1 \odot 3=3 \\
+2^3 &= 2 \odot 2 \odot 2=4 \odot 2=0 
+\end{aligned}
+$$
+        </li>
+        <li> 
+        Let $A=\mathbb{Z}_8$ and take $\ast =\oplus$. Then
+
+$$
+\begin{aligned}
+1^3 &=1 \oplus 1 \oplus 1=3 \\
+1^8 &=\underbrace{1 \oplus \cdots \oplus 1}_8=0 \\
+4^2 &=4 \oplus 4=0 \\
+4^3 &=0 \oplus 4=4 .
+\end{aligned}
+$$
+        </li>
+    </ul>
+</div>
+                                                  
+                                        </li>
+
+                                        <li>
+                                                  <a href="#genaral">
+                                                           Identity element: we say that $e \in A$ is an identity element for $A$ (with respect to *) if
+                                                           $$\forall a \in A : e * a=a * e=a$$
+                                                  </a>
+                                                  If there is an identity element, then it's unique. 
+                                                  <div class="box-lemma">
+                                                      <b>Examples.</b>
+<ol type="i">
+          <li> $0$ is the identity element for $A=\mathbb{R}$ when $*=+$.</li>
+          <li>$1$ is the identity element for $A=\mathbb{R}$ when $*=\times$.</li>
+          <li>Let $A=\mathbb{Q} \backslash\{0\}$ and $a * b=\frac{a}{b}$. Then there is no identity element.
+
+                    Suppose that $e \in \mathbb{Q} \backslash\{0\}$ is an identity element. Then $e * 1=1 * e=1$. Now $e * 1=\frac{e}{1}=e$, so $e=1$. But $1 * 2=\frac{1}{2} \neq 2$, so $1$ cannot be an identity element. </li>
+
+<li>$A=\{a, b, c, d\}$, and define a binary operation $*$ on $A$ by the multiplication table
+$$
+ \begin{array}{c|llll} 
+\ast & a & b & c & d \\
+\hline a & c & a & a & d \\
+b & d & c & b & a \\
+c & a & b & c & d \\
+d & d & b & d & a
+\end{array}
+$$
+                                                      In this case $c$ is an (the) identity element. </li></ol>
+                                                      
+                                                  </div>
+                                        </li>
+                                        
+                                        
+
+                                        <li>
+                                                  <a href="#Image"> Inverse element: for all $a\in A$, denote $a^{-1}$, called the inverse of $a$ if 
+
+$$
+a^{-1} * a = a * a^{-1}=e
+$$
+</a>
+                                                  
+                                        </li>
+
+                                        <!--li>
+                                                  <a href="#properties">Injection, surjection, bijection</a>
+                                                  <ul>
+                                                            <li>Injection</li>
+                                                            <li>Injection, exemples, exercices</li>
+                                                            <li>
+                                                                      Surjection Bijection Exemples graphiques de
+                                                                      bijection Théorèmes sur la bijection Bijection,
+                                                                      bijection réciproque
+                                                            </li>
+                                                  </ul>
+                                        </!--li>
+
+                                        <li>
+                                                  <a href="#proprietiesGraph">Propriétés graphiques</a>
+                                                  <ul>
+                                                            <li>
+                                                                      Fonctions paires Fonctions impaires Fonctions
+                                                                      périodiques Translations Transformations opérant
+                                                                      sur une représentation graphique
+                                                            </li>
+                                                  </ul>
+                                        </li>
+
+                                        <li><a href="#Bibliog">Bibliographie</a></li------>
+                              </ol>
+
+                              <footer class="site-footer">
+                                        <span class="site-footer-credits"
+                                                  >This page was generated by
+                                                  <a href="https://pages.github.com">GitHub Pages</a>.</span
+                                        >
+                              </footer>
+                    </section>
+          </body>
+
+          <!--script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-102852226-1', 'auto');
+    ga('send', 'pageview');
+  </script-->
+
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171606319-1"></script>
+          <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                              dataLayer.push(arguments);
+                    }
+                    gtag("js", new Date());
+
+                    gtag("config", "UA-171606319-1");
+          </script>
+</html>
+         <!--           function gtag() {
+                              dataLayer.push(arguments);
+                    }
+                    gtag("js", new Date());
+
+                    gtag("config", "UA-171606319-1");
+          </script>
+</html-->
