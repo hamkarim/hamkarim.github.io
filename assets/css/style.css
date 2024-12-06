@@ -1513,7 +1513,7 @@ ol.parenthnum > li::before {
     left: -2.1em;
     padding-left: 8px;
     padding-right: 5px;
-    padding-top: 6px;
+    /*padding-top: 6px;*/
 }
 
 ol.romanlist {

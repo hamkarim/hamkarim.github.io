@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+    <!-- Begin Jekyll SEO tag v2.3.0 -->
+    <meta property="og:title" content="Ham Karim">
+    <meta name="author" content="Ham Karim">
+    <meta name="author" content="determinants">
+    <meta property="og:locale" content="en_US">
+    <!--meta http-equiv="keywords" name="keywords" content="vector spaces">
+    <meta http-equiv="description" name="description" content="Vector spaces, vectors"-->
+    <meta name="description" content="determinants">
+    <meta property="og:description" content="Math, Programmer, Music">
+    <link rel="canonical" href="../../../index.html">
+    <meta property="og:url" content="https://hamkarim.github.io/">
+    <meta property="og:site_name" content="Right Triangle">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@pkarim">
+    <meta name="twitter:creator" content="@pkarim">
+    <meta name="google-site-verification" content="b9bg3P9zc8qbL4szvVYaf551jD9x017IyGBVSaQZDDY" />
+
+    <script type="application/ld+json">
+        {
+            "name": "Ham Karim",
+            "description": "I am a faculty member at the Royal Univeristy of Phnom Penh (RUPP). This is my blog of lectures at universities. ",
+            "author": {
+                "@type": "Person",
+                "name": "Ham Karim"
+            },
+            "@type": "WebSite",
+            "url": "https://hamkarim.github.io/",
+            "image": null,
+            "publisher": null,
+            "headline": "Ham Karim",
+            "dateModified": null,
+            "datePublished": "2020-06-01",
+            "sameAs": null,
+            "mainEntityOfPage": null,
+            "@context": "http://schema.org"
+        }
+    </script>
+    <!-- End Jekyll SEO tag -->
+
+    <!--meta property="og:image" content="http://www.cliparts101.com/files/376/298FE3955707B1DE458221E4BFABFBBE/Greek_Gamma_4.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../topology/2019/favicon.ico"-->
+
+
+    <meta charset="UTF-8">
+    <title>Vector Spaces | លំហវ៉ិចទ័រ </title>
+    <meta name="description" content="Math, Programmer, Music">
+
+    <!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
+
+    <style type="text/css">
+        .deffont {
+            font-family: 'Noto Serif Khmer', 'CMU Serif';
+            font-size: 17px;
+        }
+
+        ul.liststyle1 {
+            list-style-type: square;
+        }
+
+        ul.liststyle2 {
+            list-style-type: hebrew;
+        }
+
+        ol.liststyle1 {
+            list-style-type: lower-latin;
+        }
+
+        a.onmenu {
+            font-family: 'Noto Serif Khmer', 'CMU Serif';
+            font-weight: bold;
+        }
+    </style>
+
+    <style type="text/css">
+        /**************** Box container styles *******************/
+        .mt-content-container .boxobjectives,
+        .boxexample,
+        .boxexercise,
+        .boxquery,
+        .boxnotewithlegend,
+        .boxnotewithoutlegend,
+        .boxprocedure,
+        .boxdefinition,
+        .boxtheorem,
+        .boxlemma,
+        .boxnotation,
+        .boxproposition {
+            -moz-border-radius: 8px;
+            -webkit-border-radius: 8px;
+            border-radius: 8px;
+            padding-top: 0em;
+            padding-bottom: 0em;
+            padding-left: 1em;
+            padding-right: 1em;
+            margin-bottom: 1em;
+            overflow: visible;
+            border: 0px;
+            orphans: 2;
+        }
+
+        .mt-content-container .boxnotewithlegend,
+        .boxprocedure,
+        .notation {
+            background-color: hsla(20, 0%, 93%, 1);
+        }
+
+        .mt-content-container .boxexample,
+        .boxexercise {
+            background-color: hsla(220, 100%, 97%, 1);
+        }
+
+        .mt-content-container .boxwarning {
+            background-color: hsla(0, 100%, 96%, 1);
+        }
+
+        .mt-content-container .boxdefinition,
+        .boxtheorem,
+        .boxlemma,
+        .boxnotation,
+        .boxproposition {
+            background-color: hsla(28, 80%, 95%, 1);
+        }
+
+        .mt-content-container .boxobjectives {
+            background-color: hsla(0, 0%, 90%, 1);
+        }
+
+        .mt-content-container .boxnotewithoutlegend {
+            background-color: hsla(20, 0%, 93%, 1);
+            padding-right: 1em;
+            padding-left: 1em;
+            padding-top: 0.5em !important;
+            padding-bottom: 0.5em !important;
+            margin-right: 1em;
+            margin-left: 1em;
+        }
+
+        .mt-content-container .boxquery {
+            border: 2px solid green;
+            page-break-inside: avoid;
+            visibility: hidden !important;
+            display: none !important;
+        }
+
+        /**************** Box legend container styles *******************
+	.mt-content-container .boxlegend {
+		font-style: normal !important;
+		font-size: 1.1em !important;
+		font-weight: normal !important;
+		font-family: "Tahoma", Arial, serif !important;
+		padding-top: 0.2em !important;
+		padding-bottom: 0.2em !important;
+		padding-left: 0.3em !important;
+		padding-right: 0.3em !important;
+		margin-left: 0.35em;
+		color: white;
+		border-radius: 3px;
+		overflow: visible;
+		break-inside: avoid !important;
+	}
+
+	/************** Defining the Legends ******************
+
+
+	.box-definition>header,
+	.box-structure>header,
+	.box-note>header,
+	.box-theorem>header,
+	.box-example>header,
+	.box-exercise>header,
+	.box-query>header,
+	.box-adapt>header,
+	.box-objectives>header,
+	.box-warning>header {
+		display: inline-flex;
+		overflow: hidden;
+		break-inside: avoid-page;
+		page-break-inside: avoid;
+		text-align: left;
+		width: auto;
+		margin: 0 0px 2px 0px !important;
+		padding: 4px 6px 4px 4px !important;
+		transform: translate(-11px, 0px) !important;
+		border-radius: 3px 5px 5px 0;
+		-moz-border-radius: 3px 5px 5px 0;
+		-webkit-border-radius: 3px 5px 5px 0;
+	}
+	.box-definition>header *,
+	.box-structure>header *,
+	.box-note>header *,
+	.box-theorem>header *,
+	.box-example>header *,
+	.box-exercise>header *,
+	.box-query>header *,
+	.box-adapt>header *,
+	.box-objectives>header *,
+	.box-warning>header * {
+		font-family: "Battambang", "Tahoma", Arial, serif !important;
+		font-size: 17px !important;
+		font-weight: 400 !important;
+		color: white !important;
+		;
+		width: auto !important;
+		;
+		float: left !important;
+		;
+		line-height: 1 !important;
+		;
+		margin-block-start: 0 !important;
+		margin-block-end: 0 !important;
+	}
+*/
+    </style>
+
+    <style type="text/css">
+        /*<![CDATA[*/
+        .Headertext {
+            display: none;
+        }
+
+        /*]]>*/
+    </style>
+
+    <style type="text/css">
+        /*<![CDATA[*/
+        /* CSS pseudo-element styling https://fontawesome.com/how-to-use/on-the-web/advanced/css-pseudo-elements */
+
+        /* general reset/setup styling for icons - needed on all */
+
+        .lt-icon-default::before,
+        .lt-icon-brain::before,
+        .lt-icon-pin::before,
+        .lt-icon-hand::before,
+        .lt-icon-pathway::before,
+        .lt-icon-logic::before,
+        .lt-icon-check::before,
+        .lt-icon-question::before,
+        .lt-icon-exclamation::before {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1.5;
+            font-family: "Font Awesome 5 Pro";
+            font-weight: 900;
+            margin-right: 0.5rem;
+        }
+
+        /*default */
+
+        .box-example .lt-icon-default::before {
+            content: "\f00c";
+        }
+
+        .box-exercise .lt-icon-default::before {
+            content: "\f128";
+        }
+
+        .box-query .lt-icon-default::before {
+            content: "\f126";
+        }
+
+        .box-adapt .lt-icon-default::before {
+            content: "\f126";
+        }
+
+        .box-interactive .lt-icon-default::before {
+            content: "\f542";
+        }
+
+        .box-note .lt-icon-default::before {
+            content: "\f08d";
+        }
+
+        .box-objectives .lt-icon-default::before {
+            content: "\f5dc";
+        }
+
+        .box-definition .lt-icon-default::before {
+            content: "\f303";
+        }
+
+        .box-theorem .lt-icon-default::before {
+            content: "\f1b3";
+        }
+
+        .box-warning .lt-icon-default::before {
+            content: "\f256";
+        }
+
+
+        /*specific icons*/
+        .lt-icon-brain::before {
+            content: "\f5dc";
+        }
+
+        .lt-icon-pin::before {
+            content: "\f08d";
+        }
+
+        .lt-icon-pathway::before,
+            {
+            content: "\f126";
+        }
+
+        .lt-icon-logic::before,
+            {
+            content: "\f1b3";
+        }
+
+        .lt-icon-hand::before,
+            {
+            content: "\f126";
+        }
+
+        .lt-icon-pathway::before,
+            {
+            content: "\f256";
+        }
+
+        .lt-icon-check::before,
+            {
+            content: "\f00c";
+        }
+
+        .lt-icon-question::before,
+            {
+            content: "\f128";
+        }
+
+        .lt-icon-exclamation::before,
+            {
+            content: "\f12a";
+        }
+
+        /*]]>*/
+    </style>
+
+    <script async="" src="//cse.google.com/adsense/search/async-ads.js"></script>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async="" src="https://cse.google.com/cse.js?cx=001004262401526223570:11yv6vpcqvy"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-331594-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-331594-1');
+    </script>
+
+    <link rel="stylesheet" href="../../../assets/css/style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245">
+    <link rel="stylesheet" href="../../../assets/css/all.css">
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- Script to show and hide proof -->
+    <script type="text/javascript" src="https://hamkarim.github.io/assets/js/showhide.js"></script>
+    <!-- Other style of showing and hiding proof -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
+    <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>
+    <!-- end -->
+
+    <script type="text/javascript" src="../../../assets/sidebar/sidebar.min.js"></script>
+    <link rel="stylesheet" href="../../../assets/sidebar/Sidebar.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        //Another method to toggle the button
+        $(document).ready(function() {
+            $('.showanswer').click(function() {
+                $('.block_proof').show();
+                $('.showanswer').hide();
+                $('.hideanswer').show();
+            });
+            $('.hideanswer').click(function() {
+                $('.block_proof').hide();
+                $('.showanswer').show();
+                $('.hideanswer').hide();
+            });
+        });
+    </script>
+
+    <!-- For local function, define to exchange text -->
+    <script>
+        function showhideFunction() {
+            document.getElementById('idClick').innerHTML === '[Hide proof]' ? document.getElementById('idClick').innerHTML = '[Show proof]' : document.getElementById('idClick').innerHTML = '[Hide proof]';
+        }
+    </script>
+
+    <!-- script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,https://hamkarim.github.io/MathJax/config/local/local.js"></script -->
+
+    <!--script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { fonts: ["TeX"] }
+  });
+</script-->
+
+    <!-- script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
+</script-->
+
+    <!--script src="https://hamkarim.github.io/MathJax/config/local/mathjax-config.js" defer></script-->
+    <script type="text/javascript" src="../../../MathJax/config/local/mathjax-config.js" defer></script>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml-full.min.js">
+    </script>
+
+   
+
+
+  </head>
+
+  <body>
+   <div class="Headertext">
+
+        \( \newcommand{\vecs}[1]{\overset { \scriptstyle \rightharpoonup} {\mathbf{#1}}&nbsp;}&nbsp;\)
+   \( \newcommand{\vecd}[1]{\overset{-\!-\!\rightharpoonup}{\vphantom{a}\smash&nbsp;{#1}}} \)
+   \(\newcommand{\id}{\mathrm{id}}\)
+   \( \newcommand{\Span}{\mathrm{span}}\)
+   \( \newcommand{\kernel}{\mathrm{null}\,}\)
+   \( \newcommand{\range}{\mathrm{range}\,}\)
+   \( \newcommand{\RealPart}{\mathrm{Re}}\)
+   \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+   \( \newcommand{\Argument}{\mathrm{Arg}}\)
+  \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \(\newcommand{\id}{\mathrm{id}}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \( \newcommand{\kernel}{\mathrm{null}\,}\)
+  \( \newcommand{\range}{\mathrm{range}\,}\)
+  \( \newcommand{\RealPart}{\mathrm{Re}}\)
+  \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+  \( \newcommand{\Argument}{\mathrm{Arg}}\)
+  \( \newcommand{\norm}[1]{\| #1 \|}\)
+  \( \newcommand{\cof}{\mathbf{cof}}\)
+  \( \newcommand{\adj}{\mathbf{adj}}\)
+  \( \renewcommand{\det}{\mathbf{det\,\!}}\)
+    \( \newcommand{\minor}{\mathbf{minor}}\)
+  \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+  \( \newcommand{\Span}{\mathrm{span}}\)
+  \(\newcommand{\E}{\mathbf{V}}\)
+  \(\newcommand{\K}{\mathbb{K}}\)
+    \(\newcommand{\F}{\mathbb{F}}\)
+      \(\newcommand{\R}{\mathbb{R}}\)
+  </div>
+
+<section class="main-content">
+
+  <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">ជំពូក២ :&nbsp; លំហវ៉ិចទ័រ </h1>
+<p style="font-style: italic; font-weight:bold; font-family: Arial; opacity: 0.5;">
+December 
+1st, 2024
+</p>
+
+<hr>
+<p style="text-indent:0px">From Wikipedia:</p>
+<blockquote>
+	<a href="https://www.oreilly.com/api/v2/epubs/9781118434413/files/images/Graph.jpg">
+    <div class="divfigure">
+        <p> <img class="wrap-right" alt="Euclidean Vector Spaces" src="fig\E_vs.jpg">
+            Euclidean Vector Space: <mark style="font-size: 10px;">Engineers and physicists distinguish between two types of physical quantities—scalars, which are quantities that can be described by a numerical value alone, and vectors, which are quantities that require both a number and a direction for their complete physical description.</mark>
+        </p>
+    </div>
+  </a>
+  <p>ក្នុងគណិតវិទ្យា និងរូបវិទ្យា In mathematics and physics, a vector space (also called a linear space) is a set whose elements, often called vectors, can be added together and multiplied ("scaled") by numbers called scalars. The operations of vector addition and scalar multiplication must satisfy certain requirements, called vector axioms. Real vector spaces and complex vector spaces are kinds of vector spaces based on different kinds of scalars: real numbers and complex numbers. Scalars can also be, more generally, elements of any field.
+</p>
+<p>Vector spaces are a foundational concept in linear algebra and many other fields, so mastering them will significantly enhance ones mathematical toolkit and problem-solving capabilities.</p>
+
+</blockquote>
+
+<p>
+    
+    
+</p>
+
+<div>
+    
+</div>
+<div class="box-note">
+  <!-- div mt-section-origin="Bookshelves/Linear_Algebra/A_First_Course_in_Linear_Algebra_(Kuttler)/03:_Determinants/3.01:_Basic_Techniques" class="mt-section"-->
+  <span id="Outcomes"></span>
+<h5 class="box-legend editable">
+<span class="lt-icon-default">លទ្ធផលរំពឹងទុក!</span></h5>
+<p>ក្រោយបញ្ចប់មេរៀននេះ អ្នកសិក្សានឹងទទួលបាននូវ៖ </p>
+<ol start="1" class="parenthnum">
+    <li class="" style="background-color: unset;"><b>Understanding key concepts of: </b>
+Definition of vector spaces, subspaces, linear independence, basis and dimension. <!--You'll grasp what vector spaces are, including the basic requirements for a set to be considered a vector space. Subspaces: You'll learn about subspaces and how they relate to the larger vector space. Linear Independence: You'll be able to determine if a set of vectors is linearly independent or dependent. Basis and Dimension: You'll understand the concept of a basis of a vector space and how to find it, along with the dimension of a vector space. -->
+    </li>
+    <li class="" style="background-color: unset;">
+        <b>Mathematical skills: </b>
+To know  operations, span, linear combinations and matrix representation. 
+<!--You'll become proficient in performing vector addition and scalar multiplication.
+
+Span: You'll know how to determine the span of a set of vectors.
+
+Linear Combinations: You'll be able to express vectors as linear combinations of other vectors.
+
+Matrix Representation: You'll learn how to represent linear transformations using matrices. -->
+    </li>
+    <li class="" style="background-color: unset;"><b>Theoretical insights:</b>
+    <ol style="list-style-type: lower-roman;" start="1">
+        <li class="" style="background-color: unset;">Properties and Theorems: to gain insights into fundamental properties and theorems related to vector spaces, such as the <a>Rank-Nullity Theorem</a> and the concept of <a>orthogonality</a>.</li>
+        <li class="" style="background-color: unset;">Abstract Thinking: to develop an ability to think abstractly and generalize ideas beyond specific examples.</li>
+    </ol>
+    </li>
+</ol>
+</div>
+
+
+<h2 class="frame-sect sectcounter">&nbsp; និយមន័យ និងលក្ខណៈគ្រឹះសំខាន់ៗ </h2>
+
+<h3>លំហវ៉ិចទ័រកំណត់លើកាយទូទៅ<!--Espace vectoriel sur un corps quelconque--></h3>
+
+
+
+
+
+<p>
+  អំណេះតទៅ យើងសន្មតតាង <a>កាយ</a> ដោយ $\mathbb F$ ឬ $\mathbb K$ ដែលវាអាចជា $\mathbb R, \mathbb C$ ឬ $\mathbb Z_n$ ដែល $n$ ជាចំនួនបឋម។ល។
+
+</p>
+
+<!--h2 class="frame-sect sectcounter">&nbsp; និយមន័យ និងលក្ខណៈបឋមៗ  </h2> <!-- \section{និយមន័យ និងលក្ខណៈបឋមៗ}  -->
+
+<defn>
+          <div class="definition"><span>(Vector spaces)</span> </div>
+ <div class="definitionb">
+   <p>  <!--style="text-indent: 0px"-->
+     <!--ការកំណត់ footnote By <a href="https://planetmath.org/ruleofsarrus">Sarrus' rule</a><a class="fnote"  href="#fn1" id="ref1">(1)</a> -->
+     យក $(\mathbf V,+)$ ជាក្រុមអាបែល និង $(\mathbb K,+, \times)$ ជាកាយត្រឡប់ ។ គេថា $\mathbf V$ គឺជា $\mathbb K$-vs ឬ <b>លំហវ៉ិចទ័រលើកាយ $\mathbb K$</b> បើមានអនុគមន៍ពី $\cdot: \mathbb K \times \mathbf V \to \mathbf V$ ហៅថា ប្រមាណវិធីក្រៅកំណត់នៅលើ $\mathbf V$ ដែលបំពេញ ស្វ័យសត្ស (axioms) ខាងក្រោម៖
+     
+    <!-- Soient $(E,+)$ un groupe commutatif et $(K,+, \times)$ un corps commutatif. On dit que $E$ est un $K$-espace vectoriel ou un espace vectoriel sur $K$, s'il existe une application de $K \times E$ vers $E$, appelée loi externe sur $E$, qui $\grave{a}(\alpha, x) \in K \times E$ fait correspondre $\alpha \cdot x$, vérifiant les axiomes suivants :-->
+     </p>
+
+   <ol type="i">
+       <li>
+$\forall x \in \E:\;\; 1_\mathbb K \cdot x=x$
+       </li>
+
+    <li> 
+    $\forall \alpha \in \K, \forall \beta \in \K, \forall x \in \E:\;\; (\alpha+\beta) \cdot x=\alpha \cdot x+\beta \cdot x$
+    </li>
+    <li>
+        $\forall \alpha \in \K, \forall \beta \in \K, \forall x \in \E:\;\;(\alpha \beta) \cdot x=\alpha \cdot(\beta \cdot x)$
+    </li>
+    <li>
+        $\forall \alpha \in \K, \forall x \in \E, \forall y \in \E:\;\; \alpha \cdot(x+y)=\alpha \cdot x+\alpha \cdot y$
+    </li>
+</ol>
+</div>
+</defn>
+
+<p><!--Dans ce cas, les éléments de $\E$ sont appelés des vecteurs et se notent $x, y, z, \ldots$ ou $\vec x, \vec y, \vec z, \ldots$, tandis que les éléments de $\K$ sont appelés des scalaires et se notent $\alpha, \beta, \gamma, \lambda, \cdots$.-->
+ ក្នុងករណីខាងលើនេះ ធាតុទាំងឡាយរបស់លំហ $\E$ ហៅថា <b>វ៉ិចទ័រ</b> ហើយគេតាងដោយ $x, y, z, \ldots$ ឬ $\vec x, \vec y, \vec z, \ldots$ ចំណែកធាតុរបស់កាយ $\K$ ហៅថា scalar ហើយតាងដោយ $\alpha, \beta, \gamma, \lambda, \cdots$ ។</p>
+ 
+  <!--Footnote: >
+  <sup id="fn1">1. [The Rule of Sarrus is a mnemonic device for computing the determinant of a $ 3\times 3$ matrix named after the French mathematician Pierre Frédéric Sarrus (invented 1833).]<a href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</a></sup>
+  <p> <img class="center" alt="Sarrush Rule" src="fig/Schema_sarrus-regel.png" width="35%" height="35%"></p>-->
+<h4>វិបាក.</h4>
+យក $\E$ ជា $\K$-vs ។ គេបាន ក្បួនសម្រាប់គណនាដូចខាងក្រោម៖ 
+<ol type="a.">
+    <li>
+        $\forall x \in \E:\;\; 0_\K \cdot x=0_\E$
+    </li>
+    <li>
+$\forall \lambda \in \K:\;\; \lambda \cdot 0_\E=0_\E$
+    </li>
+    <li>$\forall \lambda \in \K:\;\; \forall x \in \E, \quad \lambda \cdot x=0_\E \Longleftrightarrow \lambda=0_\K$ ឬ $x=0_\E$</li>
+</ol>
+
+
+<example>
+(Example <span>A Two by Two </span>Determinant <a name="exa%3Atwobytwodeterminant"></a>)
+
+  <p class="">Find <span class="math inline">\(\det\left(A\right)\)</span> for the matrix <span class="math inline">\(A = \left[ \begin{array}{rr} 2 &amp; 4 \\ -1 &amp; 6 \end{array} \right] .\)</span></p>
+  <div class="example-content">
+        <span id="SHLink_Soln1" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln1" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_Soln1" class="soln-content" style="display: none;">
+  <p>
+    \[\det \left( A\right) = \left( 2\right) \left( 6\right) -\left( -1\right) \left( 4\right) = 12 + 4 = 16\nonumber \]
+  </p>
+        </div>
+      </div>
+</example>
+
+<p class="">The \(2 \times 2\) determinant can be used to find the determinant of larger matrices. We will now explore how to find the determinant of a \(3 \times 3\) matrix, using several tools including the \(2 \times 2\) determinant.</p>
+
+<p class="">We begin with the following definition.</p>
+
+<defn>
+          <div class="definition">(The \(ij^{th}\) Minor of a Matrix)</div>
+ <div class="definitionb">
+   <p>
+    Let \(A\) be a \(3\times 3\) matrix. The \(ij^{th}\) minor of \(A\), denoted as \(\minor\left( A\right) _{ij},\) is the determinant of the \(2\times 2\) matrix which results from deleting the \(i^{th}\) row and the \(j^{th}\) column of \(A\).
+   </p>
+
+
+<p>
+In general, if \(A\) is an \(n\times n\) matrix, then the \(ij^{th}\) minor of \(A\) is the determinant of the \(n-1 \times n-1\) matrix which results from deleting the \(i^{th}\) row and the \(j^{th}\) column of \(A\).
+</p>
+</div>
+</defn>
+<p>Hence, there is a minor associated with each entry of \(A\). Consider the following example which demonstrates this definition.</p>
+
+<example>
+(Finding Minors of a Matrix )
+
+  <p class="">
+Let
+
+\[A = \left[ \begin{array}{rrr} 1 & 2 & 3 \\ 4 & 3 & 2 \\ 3 & 2 & 1 \end{array} \right] \]
+
+Find \(\minor\left( A\right) _{12}\) and \(\minor\left( A\right) _{23}\).
+  </p>
+  <div class="example-content">
+        <p align="right">
+            <span id="SHLink_Soln2" class="soln-title SH-Link">Show solution</span>         
+        <span id="SHImg_Soln2" class="fa fa-caret-right" aria-hidden="true"></span></p>
+   <div id="SHObj_Soln2" class="soln-content" style="display: none;">
+  <p>
+    First we will find \(\minor\left( A\right) _{12}\). By Definition \(\PageIndex{2}\), this is the determinant of the \(2\times 2\) matrix which results when you delete the first row and the second column. This minor is given by
+
+    \[\minor \left(A\right)_{12} = \det \left[ \begin{array}{rr} 4 & 2 \\ 3 & 1 \end{array} \right] \]
+
+    Using Definition \(\PageIndex{1}\), we see that
+
+    \[\det \left[ \begin{array}{rr} 4 & 2 \\ 3 & 1 \end{array} \right] = \left(4\right)\left(1\right) - \left(3\right)\left(2\right) = 4 - 6 = -2\]
+
+  Therefore \(\minor \left(A\right)_{12} = -2\).
+
+  Similarly, \(\minor\left(A\right)_{23}\) is the determinant of the \(2\times 2\) matrix which results when you delete the second row and the third column. This minor is therefore
+
+  \[\minor \left(A\right)_{23} = \det \left[ \begin{array}{rr} 1 & 2 \\ 3 & 2 \end{array} \right] = -4 \]
+
+  Finding the other minors of \(A\) is left as an exercise.
+  </p>
+        </div>
+      </div>
+</example>
+
+<defn>
+<div class="definition">(The \(ij^{th}\) Cofactor of a Matrix) </div>
+ <div class="definitionb">
+<p>
+Suppose \(A\) is an \(n\times n\) matrix. The \(ij^{th}\) cofactor, denoted by \(\mathrm{cof}\left( A\right) _{ij}\) is defined to be
+
+\[\cof\left( A\right) _{ij} = \left( -1\right) ^{i+j} \cdot  \minor\left(A\right)_{ij} \]
+
+We denote as following:
+	<ol class="romanlist threeem">
+<li>
+$\cof (A) = \Big( \cof(A)_{ij} \Big)_{n\times n}$ ហៅថា <b>ម៉ាទ្រីសកូហ្វាក់ទ័រ</b>
+		</li>
+		
+		<li>
+            $\mathbf{adj}(A) = \Big( \cof(A)_{ij} \Big)_{n\times n}^T$ ហៅថា <b>ម៉ាទ្រីស adjoint </b> បានមកពីត្រង់ស្ប៉ូ របស់ម៉ាទ្រីសកូហ្វាក់ទ័រ។
+		</li>
+	 </ol>
+	 
+	 </p>
+</div>
+ </defn>
+
+
+<p style="text-indent: 0px"><b>ចំណាំ :</b>
+  It is also convenient to refer to the cofactor of an entry of a matrix as follows. If \(a_{ij}\) is the \(ij^{th}\) entry of the matrix, then its cofactor is just \(\cof\left( A\right) _{ij}\), or simply $A_{ij}$ or $c_{ij}$.
+    </p>
+
+    <example>
+    (Finding Cofactors of a Matrix)
+
+      <p class="">
+    Consider the matrix \[A=\left[ \begin{array}{rrr} 1 & 2 & 3 \\ 4 & 3 & 2 \\ 3 & 2 & 1 \end{array} \right]\nonumber \] Find \(\cof\left( A\right) _{12}\) and \(\cof\left( A\right) _{23}\).
+      </p>
+      <div class="example-content">
+            <span id="SHLink_Soln3" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln3" class="fa fa-caret-right" aria-hidden="true"></span>
+       <div id="SHObj_Soln3" class="soln-content" style="display: none;">
+      <p>
+        We will use Definition \(\PageIndex{3}\) to compute these cofactors.
+
+  First, we will compute \(\cof\left( A\right) _{12}\). Therefore, we need to find \(\minor\left(A\right)_{12}\). This is the determinant of the \(2\times 2\) matrix which results when you delete the first row and the second column. Thus \(\minor\left(A\right)_{12}\) is given by
+
+  \[\det \left[ \begin{array}{rr} 4 & 2 \\ 3 & 1 \end{array} \right] = -2 \]
+
+  Then,
+
+  \[\cof\left( A\right) _{12}=\left( -1\right) ^{1+2} \cdot \minor\left(A\right)_{12} =\left( -1\right) ^{1+2}\left( -2\right) =2 \]
+
+  Hence, \(\cof\left( A\right) _{12}=2\).
+
+  Similarly, we can find \(\cof\left( A\right) _{23}\). First, find \(\minor\left(A\right)_{23}\), which is the determinant of the \(2\times 2\) matrix which results when you delete the second row and the third column. This minor is therefore
+
+  \[\det \left[ \begin{array}{rr} 1 & 2 \\ 3 & 2 \end{array} \right] = -4 \]
+
+  Hence,
+
+  \[\cof\left( A\right) _{23}=\left( -1\right) ^{2+3} \cdot \minor\left(A\right)_{23} =\left( -1\right) ^{2+3}\left( -4\right) =4 \]
+      </p>
+            </div>
+          </div>
+    </example>
+
+    <defn>
+              <div class="definition">(The Determinant of a Three By Three Matrix) </div>
+     <div class="definitionb">
+       <p>
+    Let \(A\) be a \(3\times 3\) matrix. Then, \(\det \left(A\right)\) is calculated by picking a row (or column) and taking the product of each entry in that row (column) with its cofactor and adding these products together.
+       </p>
+
+
+    <p>
+    This process when applied to the \(i^{th}\) row (column) is known as expanding along the \(i^{th}\) row (column) as is given by \[\det \left(A\right) = a_{i1}\cdot\cof(A)_{i1} + a_{i2}\cdot\cof(A)_{i2} + a_{i3}\cdot\cof(A)_{i3}\nonumber \]
+    </p>
+    </div>
+    </defn>
+
+<p style="text-indent: 0px"><b>NOTE:</b> When calculating the determinant, you can choose to expand any row or any column. Regardless of your choice, you will always get the same number which is the determinant of the matrix \(A.\) This method of evaluating a determinant by expanding along a row or a column is called Laplace Expansion or Cofactor Expansion.</p>
+
+
+    <example>
+    (Finding the Determinant of a Three by Three Matrix )
+
+      <p class="">
+    Let
+
+    \[A=\left[ \begin{array}{rrr} 1 & 2 & 3 \\ 4 & 3 & 2 \\ 3 & 2 & 1 \end{array} \right]\nonumber \]
+
+    Find \(\det\left(A\right)\) using the method of Laplace Expansion.
+      </p>
+      <div class="example-content">
+            <span id="SHLink_Soln4" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln4" class="fa fa-caret-right" aria-hidden="true"></span>
+       <div id="SHObj_Soln4" class="soln-content" style="display: none;">
+      <p>
+        First, we will calculate \(\det \left(A\right)\) by expanding along the first column. Using Definition \(\PageIndex{4}\), we take the \(1\) in the first column and multiply it by its cofactor, \[1 \left( -1\right) ^{1+1}\left| \begin{array}{rr} 3 & 2 \\ 2 & 1 \end{array} \right| = (1)(1)(-1) = -1\nonumber \] Similarly, we take the \(4\) in the first column and multiply it by its cofactor, as well as with the \(3\) in the first column. Finally, we add these numbers together, as given in the following equation.
+
+        \[\det \left(A\right) = 1 \overset{ \cof\left( A\right) _{11}}{\overbrace{\left( -1\right) ^{1+1}\left| \begin{array}{rr} 3 & 2 \\ 2 & 1 \end{array} \right| }}+4 \overset{\cof\left( A\right) _{21}}{\overbrace{\left( -1\right) ^{2+1}\left| \begin{array}{rr} 2 & 3 \\ 2 & 1 \end{array} \right| }}+3 \overset{\cof\left( A\right) _{31}}{\overbrace{\left( -1\right) ^{3+1}\left| \begin{array}{rr} 2 & 3 \\ 3 & 2 \end{array} \right| }} \]
+
+        Calculating each of these, we obtain
+
+        \[\det \left(A\right) = 1 \left(1\right)\left(-1\right) + 4 \left(-1\right)\left(-4\right) + 3 \left(1\right)\left(-5\right) = -1 + 16 + -15 = 0 \]
+
+        Hence, \(\det\left(A\right) = 0\).
+
+<br><br>
+  As mentioned in Definition \(\PageIndex{4}\), we can choose to expand along any row or column. Let’s try now by expanding along the second row. Here, we take the \(4\) in the second row and multiply it to its cofactor, then add this to the \(3\) in the second row multiplied by its cofactor, and the \(2\) in the second row multiplied by its cofactor. The calculation is as follows.
+
+
+   \[
+   \det \left(A\right) = 4 \overset{\cof\left( A\right) _{21}}{\overbrace{\left( -1\right) ^{2+1}\left| \begin{array}{rr} 2 & 3 \\ 2 & 1 \end{array} \right| }}+3 \overset{\cof\left( A\right) _{22}}{\overbrace{\left( -1\right) ^{2+2}\left| \begin{array}{rr} 1 & 3 \\ 3 & 1 \end{array} \right| }}+2 \overset{\cof\left( A\right) _{23}}{\overbrace{\left( -1\right) ^{2+3}\left| \begin{array}{rr} 1 & 2 \\ 3 & 2 \end{array} \right| }} \]
+
+  Calculating each of these products, we obtain
+
+  \[\det \left(A\right) = 4\left(-1\right)\left(-2\right) + 3\left(1\right)\left(-8\right) + 2 \left(-1\right)\left(-4\right) = 0 \]
+
+  You can see that for both methods, we obtained \(\det \left(A\right) = 0\).
+      </p>
+            </div>
+          </div>
+    </example>
+
+<p>As mentioned above, we will always come up with the same value for \(\det \left(A\right)\) regardless of the row or column we choose to expand along. You should try to compute the above determinant by expanding along other rows and columns. This is a good way to check your work, because you should come up with the same number each time!
+
+We present this idea formally in the following theorem.</p>
+
+<div class="box-theorem">
+    <div class="box-legend editable"><span class="lt-icon-default">Theorem 1. :  (The Determinant is Well Defined)</span></div>
+
+<p>Expanding the \(n\times n\) matrix along any row or column always gives the same answer, which is the determinant, meaning that </p>
+\begin{eqnarray*}
+\begin{vmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n}\\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots &a_{nn}
+\end{vmatrix}
+&= &\sum_{k=1}^{n} a_{ik} \cdot \cof(A)_{ik}, \quad (\text{by row } i\text{-th},  i=1,\ldots,n) \\
+&= &\sum_{k=1}^{n} a_{kj} \cdot \cof(A)_{kj}, \quad (\text{by column } j\text{-th},  j=1,\ldots,n)
+\end{eqnarray*}
+</div>
+
+<p>For example, the \(ij^{th}\) minor of a \(4 \times 4\) matrix is the determinant of the \(3 \times 3\) matrix you obtain when you delete the \(i^{th}\) row and the \(j^{th}\) column. Just as with the \(3 \times 3\) determinant, we can compute the determinant of a \(4 \times 4\) matrix by Laplace Expansion, along any row or column
+
+Consider the following example.</p>
+
+
+<example>
+(Determinant of a Four by Four Matrix)
+
+  <p class="">
+Find \(\det \left( A\right)\) where
+\[A=\left[ \begin{array}{rrrr} 1 & 2 & 3 & 4 \\ 5 & 4 & 2 & 3 \\ 1 & 3 & 4 & 5 \\ 3 & 4 & 3 & 2 \end{array} \right] \]
+  </p>
+  <div class="example-content">
+        <span id="SHLink_Soln5" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln5" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_Soln5" class="soln-content" style="display: none;">
+  <p>
+  As in the case of a \(3\times 3\) matrix, you can expand this along any row or column. Lets pick the third column. Then, using Laplace Expansion,
+
+  \[\det \left( A\right) = 3\left( -1\right) ^{1+3}\left\vert \begin{array}{rrr} 5 & 4 & 3 \\ 1 & 3 & 5 \\ 3 & 4 & 2 \end{array} \right\vert +2\left( -1\right) ^{2+3}\left\vert \begin{array}{rrr} 1 & 2 & 4 \\ 1 & 3 & 5 \\ 3 & 4 & 2 \end{array} \right\vert +\nonumber \] \[4\left( -1\right) ^{3+3}\left\vert \begin{array}{rrr} 1 & 2 & 4 \\ 5 & 4 & 3 \\ 3 & 4 & 2 \end{array} \right\vert +3\left( -1\right) ^{4+3}\left\vert \begin{array}{rrr} 1 & 2 & 4 \\ 5 & 4 & 3 \\ 1 & 3 & 5 \end{array} \right\vert\nonumber \]
+  </p>
+  <p>
+    Now, you can calculate each \(3 \times 3\) determinant using Laplace Expansion, as we did above. You should complete these as an exercise and verify that \(\det \left( A \right)= -12\).
+  </p>
+        </div>
+      </div>
+</example>
+
+<p>
+  The following provides a formal definition for the determinant of an \(n \times n\) matrix. You may wish to take a moment and consider the above definitions for \(2 \times 2\) and \(3 \times 3\) determinants in context of this definition.
+</p>
+
+<defn>
+          <div class="definition"><span>(The Determinant of an \(n\times n\) Matrix)</span> </div>
+ <div class="definitionb">
+   <p>
+Let \(A\) be an \(n\times n\) matrix where \(n\geq 2\) and suppose the determinant of an \(\left( n-1\right) \times \left( n-1\right)\) has been defined. Then
+\[\det \left( A\right) =\sum_{j=1}^{n}a_{ij}\cdot\cof\left( A\right) _{ij}=\sum_{i=1}^{n}a_{ij}\cdot\cof\left( A\right) _{ij}\nonumber \] The first formula consists of expanding the determinant along the \(i^{th}\) row and the second expands the determinant along the \(j^{th}\) column.
+   </p>
+
+
+<p>
+
+</p>
+</div>
+</defn>
+
+
+
+
+<h3 class="sectcounter">&nbsp;  The Determinant of a Triangular Matrix</h3>
+<p>
+There is a certain type of matrix for which finding the determinant is a very simple procedure. Consider the following definition.
+    </p>
+
+
+    <defn>
+              <div class="definition"><span>(Triangular Matrices)</span> </div>
+     <div class="definitionb">
+       <p>
+    A matrix \(A\) is upper triangular if \(a_{ij}=0\) whenever \(i\gt j\). Thus the entries of such a matrix below the main diagonal equal \(0\), as shown. Here, \(\ast\) refers to any nonzero number. 
+      \[ \left[ \begin{array}{cccc} 
+          \ast & \ast & \cdots & \ast \\ 
+          0 & \ast & \cdots & \vdots \\ 
+          \vdots & \vdots & \ddots & \ast \\ 
+          0 & \cdots & 0 & \ast 
+          \end{array} 
+    \right]\nonumber \] 
+      A lower triangular matrix is defined similarly as a matrix for which all entries above the main diagonal are equal to zero.
+       </p>
+
+
+    <p>
+
+    </p>
+    </div>
+    </defn>
+
+<div class="box-theorem">
+    <div class="box-legend editable"><span class="lt-icon-default">Theorem 2: (Determinant of a Triangular Matrix)</span>
+    </div>
+
+    <p>
+        Let \(A\) be an upper or lower triangular matrix. Then \(\det \left( A\right)\) is obtained by taking the product of the entries on the main diagonal.
+    </p>
+
+</div>
+
+<p>The verification of this Theorem can be done by computing the determinant using Laplace Expansion along the first row or column.</p>
+
+
+<example>
+(Determinant of a Triangular Matrix)
+
+<p class="">
+    Let \[A=\left[ \begin{array}{rrrr} 1 & 2 & 3 & 77 \\ 0 & 2 & 6 & 7 \\ 0 & 0 & 3 & 33.7 \\ 0 & 0 & 0 & -1 \end{array} \right]\nonumber \] Find \(\det \left( A\right) .\)
+</p>
+<div class="example-content">
+    <span id="SHLink_Soln6" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln6" class="fa fa-caret-right" aria-hidden="true"></span>
+    <div id="SHObj_Soln6" class="soln-content" style="display: none;">
+        <p>
+            From Theorem \(\PageIndex{2}\), it suffices to take the product of the elements on the main diagonal. Thus \(\det \left( A\right) =1\times 2\times 3\times \left( -1\right) =-6.\)
+        </p>
+        <p>
+            Without using Theorem \(\PageIndex{2}\), you could use Laplace Expansion. We will expand along the first column. This gives \[\begin{aligned} \det \left(A\right) = &1\left| \begin{array}{rrr} 2 & 6 & 7 \\ 0 & 3 & 33.7 \\ 0 & 0 & -1 \end{array} \right| +0\left( -1\right) ^{2+1}\left| \begin{array}{rrr} 2 & 3 & 77 \\ 0 & 3 & 33.7 \\ 0 & 0 & -1 \end{array} \right| + \\ &0\left( -1\right) ^{3+1}\left| \begin{array}{rrr} 2 & 3 & 77 \\ 2 & 6 & 7 \\ 0 & 0 & -1 \end{array} \right| +0\left( -1\right) ^{4+1}\left| \begin{array}{rrr} 2 & 3 & 77 \\ 2 & 6 & 7 \\ 0 & 3 & 33.7 \end{array} \right|\end{aligned}\] and the only nonzero term in the expansion is \[1\left| \begin{array}{rrr} 2 & 6 & 7 \\ 0 & 3 & 33.7 \\ 0 & 0 & -1 \end{array} \right|\nonumber \] Now find the determinant of this \(3 \times 3\) matrix, by expanding along the first column to obtain \[\det \left(A\right) = 1\times \left( 2\times \left| \begin{array}{rr} 3 & 33.7 \\ 0 & -1 \end{array} \right| +0\left( -1\right) ^{2+1}\left| \begin{array}{rr} 6 & 7 \\ 0 & -1 \end{array} \right| +0\left( -1\right) ^{3+1}\left| \begin{array}{rr} 6 & 7 \\ 3 & 33.7 \end{array} \right| \right)\nonumber \] \[=1\times 2\times \left| \begin{array}{rr} 3 & 33.7 \\ 0 & -1 \end{array} \right|\nonumber \] Next use Definition \(\PageIndex{1}\) to find the determinant of this \(2 \times 2\) matrix, which is just \(3 \times -1 - 0 \times 33.7 = -3\). Putting all these steps together, we have \[\det \left(A\right) = 1\times 2\times 3\times \left( -1\right) =-6\nonumber \] which is just the product of the entries down the main diagonal of the original matrix!
+        </p>
+    </div>
+</div>
+</example>
+
+
+
+    <h2 class="frame-sect sectcounter">&nbsp; លក្ខណៈរបស់ដេទែរមីណង់</h2>
+    <!--   \section{Introduction aux systèmes d'équations linéaires} -->
+    
+     <p>The determinant is an important notion in linear algebra.</p>
+    <defn >
+          <div class="definition"><span>(Basic definition)</span>  </div>
+ <div class="definitionb">
+
+<p>
+  Let $A(n\times n) = (a_{ij})$, the determinant is defined by the sum
+   \begin{align*} \det(A) & = \sum_{\sigma \in S_n} \text{sign} (\sigma) a_{1\sigma(1)} a_{2\sigma(2)} \dotsc a_{n\sigma(n)} \\ & = \sum_{\sigma \in S_n} \text{sign}(\sigma) \prod_{i=1}^n a_{i\sigma(i)} 
+   \end{align*}
+   
+   where $S_n$ is the set of all permutations on the set $\{ 1, \dotsc, n\}$, and $\text{sign}(\sigma)$ is the parity of the permutation $\sigma$.
+    
+</p>
+ </div>
+</defn>
+   
+   <p>
+       <b>Simpler Definition: </b>
+       where $m_i$ is the $(n-1)\times(n-1)$ matrix formed by removing the $1$st row and $i$th column from $a$:
+       \begin{eqnarray*}
+       m_i &=& \begin{pmatrix} \blacksquare & \blacksquare & ... & \blacksquare & \blacksquare & \blacksquare & ... & \blacksquare & \blacksquare\\ a_{21} & a_{22} & ... & a_{2,i-1} & \blacksquare & a_{2,i+1} & ... & a_{2,n-1} & a_{2n}\\ a_{31} & a_{32} & ... & a_{3,i-1} & \blacksquare & a_{3,i+1} & ... & a_{3,n-1} & a_{3n}\\ &&&&\vdots&&&&\\ a_{n1} & a_{n2} & ... & a_{n,i-1} & \blacksquare & a_{n,i+1} & ... & a_{n,n-1} & a_{nn} \end{pmatrix}\\
+      & =& \begin{pmatrix} a_{21} & ... & a_{2,i-1} & a_{2,i+1} & ... & a_{2n}\\ a_{31} & ... & a_{3,i-1} & a_{3,i+1} & ... & a_{3n}\\ &&\vdots&\vdots&&&\\ a_{n1} & ... & a_{n,i-1} & a_{n,i+1} & ... & a_{nn} \end{pmatrix}
+       \end{eqnarray*}
+
+   </p>
+  
+    
+    <p>There are many important properties of determinants. Since many of these properties involve the row operations discussed in Chapter 1, we recall that definition now.</p>
+
+    <defn>
+        <div class="definition">(Row Operations)</div>
+        <div class="definitionb">
+            <p>
+                ប្រមាណវិធីជួរដេក (row operations) អនុវត្តទៅលើម៉ាទ្រីសមួយ ត្រូវបានកំណត់ដូចខាងក្រោម៖
+                <!-- consist of the following-->
+            <ol>
+                <li>Switch two rows <span class="tab">\((R_i \longleftrightarrow R_j)\)</span>
+                </li>
+                <li>Multiply a row by a nonzero number <span class="tab">\((\lambda\cdot R_i^{\text{old}} \longrightarrow R_i^{\text{new}})\)</span>
+                </li>
+                <li>
+                    Replace a row by a multiple of another row added to itself <span class="tab">\((R_i^{\text{old}}+\lambda\cdot R_j^{\text{old}} \longrightarrow R_i^{\text{new}})\)</span>
+                </li>
+            </ol>
+            </p>
+
+        </div>
+    </defn>
+
+    <p>
+        We will now consider the effect of row operations on the determinant of a matrix. In future sections, we will see that using the following properties can greatly assist in finding determinants. This section will use the theorems as motivation to provide various examples of the usefulness of the properties.
+    </p>
+
+
+
+    <div class="box-definition">
+        <div class="mt-section box-legend editable"><span class="lt-icon-default">Properties I: (the effect of row operations) </span></div>
+        <p>
+        <ol class="romanlist oneem">
+            <li><b>Switching Rows:</b> យកម៉ាទ្រីស $A$ មានលំដាប់ $n\times n$ និងយក $B$ ជាម៉ាទ្រីសដែលបានមកពីការប្ដូរជួរដេកពីររបស់ម៉ាទ្រីស $ A$ ។ ដូច្នេះ គេបាន $$\det(B)=-\det(A)$$</li>
+
+            <li><b>Multiplying a Row by a Scalar:</b>
+                បើម៉ាទ្រីស $A$ មានលំដាប់ $n\times n$ និង $B$ ជាម៉ាទ្រីសដែលបានមក ដោយគុណជួរដេកណាមួយរបស់់ម៉ាទ្រីស $A$ ជាមួយនឹង
+                ស្កាលែរ $k\neq 0$ ។ ដូច្នេះ គេបាន $$\det(B)=k\cdot\det(A)$$</li>
+
+            <li><b>Scalar Multiplication:</b>
+                យក \(A\) និង \(B\) ជាម៉ាទ្រីសលំដាប់ \(n \times n\) និងកំណត់ \(k\) ជាស្កាលែរមួយ ដែល \(B = k\cdot A\) ។ ដូច្នេះ គេបាន \[\det(B) = k^n\cdot \det(A)\]</li>
+
+            <li><b>Adding a Multiple of a Row to Another Row:</b>
+                Let \(A\) be an \(n\times n\) matrix and let \(B\) be a matrix which results from adding a multiple of a row to another row. Then
+
+                \[\det \left( A\right) =\det \left( B \right)\]</li>
+
+        </ol>
+
+        </p>
+
+    </div>
+
+    <p style="text-indent: 0px"><b>សម្គាល់:</b> We can carry out the same operations with columns, rather than rows. The three operations outlined in Definition \(\PageIndex{1}\) can be done with columns instead of rows. In this case, in Theorems \(\PageIndex{1}\), \(\PageIndex{2}\), and \(\PageIndex{4}\) you can replace the word, "row" with the word "column".
+
+    </p>
+
+    <p>There are several other major properties of determinants which do not involve row (or column) operations. The first is the determinant of a product of matrices.</p>
+
+
+    <div class="box-definition">
+        <div mt-section-origin="" class="mt-section">
+            <h5 class="box-legend editable"><span class="lt-icon-default">Properties II: (major properties of determinants) </span></h5>
+
+            <p class="">
+            <ol class="parenthnum">
+                <li><b>Determinant of a Product:</b>
+                    Let \(A\) and \(B\) be two \(n\times n\) matrices. Then \[\det \left( AB\right) =\det \left( A\right) \det \left( B\right)\nonumber \]</li>
+
+                <li>
+                    <b>Determinant of the Transpose:</b>
+                    Let \(A\) be a matrix where \(A^T\) is the transpose of \(A\). Then, \[\det\left(A^T\right) = \det \left( A \right)\nonumber \]
+                </li>
+
+                <li>
+                    <b>Determinant of the Inverse:</b>
+                    Let \(A\) be an \(n \times n\) matrix. Then \(A\) is invertible if and only if \(\det(A) \neq 0\). If this is true, it follows that \[\det(A^{-1}) = \frac{1}{\det(A)}\nonumber \]
+                </li>
+
+            </ol>
+            </p>
+
+        </div>
+    </div>
+
+    <h3 class="frame-sect sectcounter">&nbsp; Properties of Determinants: Some Important Proofs </h3>
+    <!--   \section{Introduction aux systèmes d'équations linéaires} -->
+
+    <p>We will see some important proofs on determinants and cofactors. First we recall the definition of a determinant.</p>
+
+    <p> If \(A=\left[ a_{ij} \right]\) is an \(n\times n\) matrix, then \(\det A\) is defined by computing the expansion along the first row:
+        \begin{equation}
+        \label{E1} \det(A) =\sum_{i=1}^n a_{1,i} \cdot \cof(A)_{1,i}
+        \end{equation}
+        If \(n=1\) then \(\det(A) =a_{1,1}\).</p>
+
+    <p>The following example is straightforward and strongly recommended as a means for getting used to definitions.</p>
+
+    <example>
+        (Elementary Matrices - ម៉ាទ្រីសបឋម)
+
+        <p class="">
+        <ol>
+            <li>
+                Let \(E_{ij}\) be the elementary matrix obtained by interchanging \(i\)th and \(j\)th rows of \(I\). Then \(\det(E_{ij})=-1\).
+            </li>
+
+            <li>
+                Let \(E_{ik}\) be the elementary matrix obtained by multiplying the \(i\)th row of \(I\) by \(k\). Then \(\det(E_{ik})=k\).
+            </li>
+
+            <li>
+                Let \(E_{ijk}\) be the elementary matrix obtained by multiplying \(i\)th row of \(I\) by \(k\) and adding it to its \(j\)th row. Then \(\det(E_{ijk})=1\).
+            </li>
+
+            <li>
+                If \(C\) and \(B\) are such that \(CB\) is defined and the \(i\)th row of \(C\) consists of zeros, then the \(i\)th row of \(CB\) consists of zeros.
+            </li>
+
+            <li>
+                If \(E\) is an elementary matrix, then \(\det(E)=\det(E^T)\).
+            </li>
+        </ol>
+        </p>
+        <div class="example-content">
+            <span id="SHLink_SolnEx2.1" class="soln-title SH-Link">Show solution</span> <span id="SHImg_SolnEx2.1" class="fa fa-caret-right" aria-hidden="true"></span>
+            <div id="SHObj_SolnEx2.1" class="soln-content" style="display: none;">
+                <p>
+
+                </p>
+            </div>
+        </div>
+    </example>
+
+    <p>
+        Many of the proofs in section use the <b><a href="links\Principle-of-mathematical-induction.pdf">Principle of Mathematical Induction</a></b>.
+
+        First we check that the assertion is true for \(n=2\) (the case \(n=1\) is either completely trivial or meaningless).
+
+    </p>
+
+    <p>
+        Next, we assume that the assertion is true for \(n-1\) (where \(n\geq 3\)) and prove it for \(n\). Once this is accomplished, by the Principle of Mathematical Induction we can conclude that the statement is true for all \(n\times n\) matrices for every \(n\geq 2\).
+    </p>
+
+    <p>
+        If \(A\) is an \(n\times n\) matrix and \(1\leq j \leq n\), then the matrix obtained by removing \(1\)st column and \(j\)th row from \(A\) is an \(n-1\times n-1\) matrix (we shall denote this matrix by \(A(j)\) below). Since these matrices are used in computation of cofactors \(\cof(A)_{1,i}\), for \(1\leq i\neq n\), the inductive assumption applies to these matrices.
+    </p>
+
+
+    <div class="box-theorem">
+        <div mt-section-origin="" class="mt-section">
+            <h5 class="box-legend editable"><span class="lt-icon-default">Lemma : (Proof of properties of determinants) </span></h5>
+
+            <p>
+            <ol class="indentli">
+                <li>If \(A\) is an \(n\times n\) matrix such that one of its rows consists of zeros, then \(\det(A)=0\).
+
+                    <div class="example-content">
+                        <span id="SHLink_Soln1lem" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln1lem" class="fa fa-caret-right" aria-hidden="true"></span>
+                        <div id="SHObj_Soln1lem" class="soln-content" style="display: none;">
+
+
+                            <p>
+                                We will prove this lemma using Mathematical Induction.
+
+                                If $n=2$ this is easy (check!).
+                            </p>
+
+                            <p>
+                                Let $n\geq 3$ be such that every matrix of size $n-1\times n-1$ with a row consisting of zeros has determinant equal to zero. Let $i$ be such that the $i$th row of $A$ consists of zeros. Then we have $a_{ij}=0$ for $1\leq j \leq n$.
+                            </p>
+
+                            <p>
+                                Fix $j\in \{1,2,\ldots, n\}$ such that $ j\neq i$ . Then matrix $A(j)$ used in computation of $ \cof(A)_{1j}$ has a row consisting of zeros, and by our inductive assumption $\cof(A)_{1,j}=0$.
+                            </p>
+
+                            <p>
+                                On the other hand, if \(j=i\) then \(a_{1,j}=0\). Therefore \(a_{1,j}\cof(A)_{1,j}=0\) for all \(j\) and by \(\eqref{E1}\) we have \[\det(A)=\sum_{j=1}^n a_{1,j} \cdot \cof(A)_{1,j}=0\nonumber \] as each of the summands is equal to $0$.
+                            </p>
+
+
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    Assume \(A\), \(B\) and \(C\) are \(n\times n\) matrices that for some \(1\leq i\leq n\) satisfy the following.
+                    <ol style="list-style-type:lower-roman">
+                        <li> \(j\)th rows of all three matrices are identical, for \(j\neq i\).
+                        </li>
+                        <li>Each entry in the \(j\)th row of \(A\) is the sum of the corresponding entries in \(j\)th rows of \(B\) and \(C\).
+                        </li>
+                      
+                    </ol>
+                    
+                      Then \(\qquad \det(A) = \det(B) +\det(C)\).
+
+                    <div class="example-content">
+                        <span id="SHLink_Soln2lem" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln2lem" class="fa fa-caret-right" aria-hidden="true"></span>
+                        <div id="SHObj_Soln2lem" class="soln-content" style="display: none;">
+                            <p>
+                                This is not difficult to check for \(n=2\) (do check it!).
+                            </p>
+
+                            <p>
+                                Now assume that the statement of Lemma is true for \(n-1\times n-1\) matrices and fix \(A,B\) and \(C\) as in the statement. The assumptions state that we have 
+                                \[
+                                a_{l,j}=b_{l,j}=c_{l,j} \quad \text{ for }\quad j \neq i \;\text{ and for }\; 1\leq l\leq n
+                                \]
+                                 and \[
+                                 a_{l,i}=b_{l,i}+c_{l,i} \quad \text{ for all }\quad  1\leq l\leq n
+                                 \]
+                                 Therefore \(A(i)=B(i)=C(i)\), and \(A(j)\) has the property that its \(i\)th row is the sum of \(i\)th rows of \(B(j)\) and \(C(j)\) for \(j\neq i\) while the other rows of all three matrices are identical. Therefore by our inductive assumption we have 
+                                 \[
+                                 \cof(A)_{1j}=\cof(B)_{1j}+\cof(C)_{1j} \quad \text{ for } \;  j\neq i 
+                                 \]
+                            </p>
+
+                            <p>
+                                By \(\eqref{E1}\) we have (using all equalities established above) \[\begin{aligned} \det A&=\sum_{l=1}^n a_{1,l} \cof(A)_{1,l}\\ &=\sum_{l\neq i} a_{1,l}(\cof(B)_{1,l}+\cof(C)_{1,l})+ (b_{1,i}+c_{1,i})\cof(A)_{1,i}\\ &= \det B+\det C\end{aligned}\] This proves that the assertion is true for all \(n\) and completes the proof.
+                            </p>
+                        </div>
+                    </div>
+
+                </li>
+
+                <li>
+                    If two rows of \(A\) are identical then \(\det(A)=0\).
+                             
+                             <div class="example-content">
+                        <span id="SHLink_Soln3lem" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln3lem" class="fa fa-caret-right" aria-hidden="true"></span>
+                        <div id="SHObj_Soln3lem" class="soln-content" style="display: none;">
+                            <p>
+                            ប្រើ ERO (3) លើជួរដេកទាំងពីរដែលដូចគ្នា រួចប្រើពន្លាតកូហ្វាក់ទ័រ តាមជួរដេកដែលសូន្យ។ 
+                                
+                            </p>
+
+                      
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    Let \(A\) and \(B\) be two \(n\times n\) matrices. Then \[\det\left( AB\right) =\det\left( A\right) \cdot \det \left( B\right)\nonumber \]
+                </li>
+            </ol>
+            </p>
+
+        </div>
+    </div>
+
+
+
+    <h3 class="frame-sect sectcounter">&nbsp; Applications</h3>
+
+    <div class="box-note">
+        <div class="box-legend editable"><span class="lt-icon-default">Find the Inverse Matrix</span>
+        </div>
+        Let \(A\) be an \(n\times n\) matrix. Then
+
+        \[A \cdot \adj(A) = \adj(A)\cdot A = {\det \left(A\right)} \cdot I_n \nonumber \]
+
+        Moreover \(A\) is invertible if and only if \(\det\left(A\right) \neq 0\). In this case we have:
+        \[A^{-1} = \frac{1}{\det\left(A\right)} {\adj}\left(A\right)\nonumber \]
+        <p class="">
+
+        </p>
+
+    </div>
+    <div class="box-definition">
+        <div class="box-legend editable"><span class="lt-icon-default">អនុវត្តន៍ ១. : (ម៉ាទ្រីសច្រាស)</span>
+        </div>
+
+        <p class="">
+            Given
+            \[A\left( t\right) =\left[ \begin{array}{ccc} e^{t} & 0 & 0 \\ 0 & \cos t & \sin t \\ 0 & -\sin t & \cos t \end{array} \right]\nonumber \]
+
+            Show that \(A\left( t\right) ^{-1}\) exists and then find it.
+        </p>
+
+    </div>
+
+
+    <div class="box-note">
+        <div class="box-legend editable"><span class="lt-icon-default">Using Cramer’s Rule</span>
+        </div>
+
+        <p class="">
+            Suppose \(A\) is an \(n\times n\) invertible matrix and we wish to solve the system \[Ax=b \text{\;\;for\;\;} X =\left[ x_{1},\cdots ,x_{n}\right] ^{T}\]
+
+            Then Cramer’s rule says \[x_{i}= \frac{\det \left(A_{i}\right)}{\det \left(A\right)}\nonumber \] where \(A_{i}\) is the matrix obtained by replacing the \(i^{th}\) column of \(A\) with the column matrix \[b = \left[ \begin{array}{c} b_1 \\ \vdots \\ b_n \end{array} \right]\nonumber \]
+        </p>
+
+    </div>
+
+
+    <div class="box-definition">
+        <div class="box-legend editable"><span class="lt-icon-default">អនុវត្តន៍ ២. : (ដោះស្រាយប្រព័ន្ធសមីការ)</span>
+        </div>
+
+        <p class="">
+            Find \(x,y,z\) if \[\left[ \begin{array}{rrr} 1 & 2 & 1 \\ 3 & 2 & 1 \\ 2 & -3 & 2 \end{array} \right] \left[ \begin{array}{c} x \\ y \\ z \end{array} \right] =\left[ \begin{array}{r} 1 \\ 2 \\ 3 \end{array} \right]\nonumber \]
+        </p>
+
+    </div>
+
+    <div class="box-definition">
+        <div class="box-legend editable"><span class="lt-icon-default">អនុវត្តន៍ ៣. (ដោះស្រាយប្រព័ន្ធសមីការ)</span>
+        </div>
+
+        <p class="">
+            Solve for \(z\) if \[\left[ \begin{array}{ccc} 1 & 0 & 0 \\ 0 & e^{t}\cos t & e^{t}\sin t \\ 0 & -e^{t}\sin t & e^{t}\cos t \end{array} \right] \left[ \begin{array}{c} x \\ y \\ z \end{array} \right] =\left[ \begin{array}{c} 1 \\ t \\ {0.05} t^{2} \end{array} \right]\nonumber \]
+        </p>
+
+    </div>
+
+
+    <div class="box-note">
+        <div class="box-legend editable"><span class="lt-icon-default">Finding an Interpolation Polynomial</span>
+        </div>
+
+        <p class="">
+            Suppose that values of \(x\) and corresponding values of \(y\) are given, such that the actual relationship between \(x\) and \(y\) is unknown. Then, values of \(y\) can be estimated using an interpolating polynomial \(p(x)\). If given \(x_1, ..., x_n\) and the corresponding \(y_1, ..., y_n\), the procedure to find \(p(x)\) is as follows:
+        <ol class="romanlist twoem">
+            <li>
+                The desired polynomial \(p(x)\) is given by \[p(x) = r_0 + r_1 x + r_2 x^2 + ... + r_{n-1}x^{n-1}\nonumber \]
+            </li>
+            <li>
+                \(p(x_i) = y_i\) for all \(i = 1, 2, ...,n\) so that \[\begin{array}{c} r_0 + r_1x_1 + r_2 x_1^2 + ... + r_{n-1}x_1^{n-1} = y_1 \\ r_0 + r_1x_2 + r_2 x_2^2 + ... + r_{n-1}x_2^{n-1} = y_2 \\ \vdots \\ r_0 + r_1x_n + r_2 x_n^2 + ... + r_{n-1}x_n^{n-1} = y_n \end{array}\nonumber \]
+            </li>
+            <li>
+                Set up the augmented matrix of this system of equations \[\left[ \begin{array}{rrrrr|r} 1 & x_1 & x_1^2 & \cdots & x_1^{n-1} & y_1 \\ 1 & x_2 & x_2^2 & \cdots & x_2^{n-1} & y_2 \\ \vdots & \vdots & \vdots & &\vdots & \vdots \\ 1 & x_n & x_n^2 & \cdots & x_n^{n-1} & y_n \\ \end{array} \right]\nonumber \]
+            </li>
+            <li>
+                Solving this system will result in a unique solution \(r_0, r_1, \cdots, r_{n-1}\). Use these values to construct \(p(x)\), and estimate the value of \(p(a)\) for any \(x=a\).
+            </li>
+        </ol>
+
+        </p>
+
+    </div>
+
+    <p><b>REMARK: </b>
+        Given \(n\) data points \((x_1, y_1), (x_2, y_2), \cdots, (x_n, y_n)\) with the \(x_i\) distinct, there is a unique polynomial \(p(x) = r_0 + r_1x + r_2x^2 + \cdots + r_{n-1}x^{n-1}\) such that \(p(x_i) = y_i\) for \(i=1,2,\cdots, n\). The resulting polynomial \(p(x)\) is called the interpolating polynomial for the data points.
+    </p>
+
+    <div class="box-definition">
+        <div class="box-legend editable"><span class="lt-icon-default">អនុវត្តន៍ ៤. : (Polynomial Interpolation)</span>
+        </div>
+
+        <p class="">
+            Consider the data points \((0,1), (1,2), (3,22), (5,66)\). Find an interpolating polynomial \(p(x)\) of degree at most three, and estimate the value of \(p(2)\).
+        </p>
+
+    </div>
+
+
+
+
+
+    <!--
+<defn>
+  <div class="definition"><span>(Sarrus's Rule for $2\times 2$ and $3\times 3$-Matrices)</span> </div>
+  <div class="definitionb">
+  <p>We wil</p>
+</div></div>
+</defn>
+
+-->
+
+
+    <!--
+<defn>
+  <div class="definition"><span>(Sarrus's Rule for $2\times 2$ and $3\times 3$-Matrices)</span> </div>
+  <div class="definitionb">
+  <p>We wil</p>
+</div></div>
+</defn>
+
+-->
+
+
+
+
+
+
+
+</section>
+
+<section class="main-content">
+
+      <h2 class="frame-sect sectcounter">&nbsp;
+       Eigenvalues and Eigenvectors of a Matrix
+   </h2>
+
+   <div class="box-note">
+  <div class="box-legend editable"><span class="lt-icon-default"> Outcomes
+</span>
+</div>
+
+<p class="">
+<ol class="romanlist twoem">
+    <li>
+        Describe eigenvalues geometrically and algebraically.
+    </li>
+    <li>
+        Find eigenvalues and eigenvectors for a square matrix.
+    </li>
+</ol>
+
+</p>
+
+</div>
+   
+   
+   <p>
+       In this section, we will work with the entire set of complex numbers, denoted by \(\mathbb{C}\). Recall that the real numbers, \(\mathbb{R}\) are contained in the complex numbers, so the discussions in this section apply to both real and complex numbers.
+       
+   </p>
+   
+   
+   
+
+<defn>
+    <div class="definition"><span>(Eigenvalues and Eigenvectors)</span> </div>
+    <div class="definitionb">
+        <p>
+            Let \(A\) be an \(n\times n\) matrix and let \(x \in \mathbb{C}^{n}\) be a nonzero vector for which
+
+            \[Ax=\lambda x \label{eigen1}\] for some scalar \(\lambda\). Then
+
+        <ol class="romanlist threeem">
+            <li>
+                \(\lambda\) is called an <b>eigenvalue</b> of the matrix \(A\) and \(x\) is called an <b>eigenvector</b> of \(A\) associated with \(\lambda\), or a \(\lambda\)-eigenvector of \(A\).
+            </li>
+
+            <li>
+                The set of all eigenvalues of an \(n\times n\) matrix \(A\) is denoted by \(\sigma \left( A\right)\) and is called the <b>spectrum</b> of \(A.\)
+            </li>
+        </ol>
+
+        </p>
+    </div>
+</defn>
+
+
+   
+   <p>
+       <b>NOTE: </b>
+       The eigenvectors of a matrix \(A\) are those vectors \(X\) for which multiplication by \(A\) results in a vector in the same direction or opposite direction to \(X\). Since the zero vector \(0\) has no direction this would make no sense for the zero vector. As noted above, \(0\) is never allowed to be an eigenvector.<br>
+       
+       The expression \(\det \left( \lambda I-A\right)\) is a polynomial (in the variable \(x\)) called the <b>characteristic polynomial</b> of \(A\), and \(\det \left( \lambda I-A\right) =0\) is called the <b>characteristic equation</b>. For this reason we may also refer to the eigenvalues of \(A\) as characteristic values, but the former is often used for historical reasons.
+   </p>
+   <br>
+   
+   <example>
+       (Eigenvectors and Eigenvalues)
+       <p>
+           Let 
+           
+           \[A = \left[ \begin{array}{rrr} 0 & 5 & -10 \\ 0 & 22 & 16 \\ 0 & -9 & -2 \end{array} \right]\nonumber\] Compute the product \(AX\) for \[X = \left[ \begin{array}{r} 5 \\ -4 \\ 3 \end{array} \right], X = \left[ \begin{array}{r} 1 \\ 0 \\ 0 \end{array} \right]
+           \] 
+           
+           What do you notice about \(Ax\) in each of these products?
+       </p>
+   </example>
+   
+   
+   <div class="box-theorem">
+  <div class="box-legend editable"><span class="lt-icon-default">Theorem 1. :  (The Existence of an Eigenvector)</span>
+</div>
+
+<p class="">
+Let \(A\) be an \(n\times n\) matrix and suppose \[\det \left( \lambda I - A\right) =0\] for some \(\lambda \in \mathbb{C}\). 
+Then \(\lambda\) is an eigenvalue of \(A\) and thus there exists a nonzero vector \(x \in \mathbb{C}^{n}\) such that \[Ax=\lambda x\]
+</p>
+
+</div>
+   
+<h3>Finding Eigenvectors and Eigenvalues</h3>
+   
+   <defn>
+    <div class="definition"><span>(Multiplicity of an Eigenvalue)</span> </div>
+    <div class="definitionb">
+        <p>
+            Let \(A\) be an \(n \times n\) matrix with characteristic polynomial given by \(\det \left( \lambda I - A\right)\). Then, the multiplicity of an eigenvalue \(\lambda\) of \(A\) is the number of times \(\lambda\) occurs as a root of that characteristic polynomial.
+
+        </p>
+    </div>
+</defn>
+   
+   <p>
+       For example, suppose the characteristic polynomial of \(A\) is given by \(\left( \lambda - 2 \right)^2\). Solving for the roots of this polynomial, we set \(\left( \lambda - 2 \right)^2 = 0\) and solve for \(\lambda \). We find that \(\lambda = 2\) is a root that occurs twice. Hence, in this case, \(\lambda = 2\) is an eigenvalue of \(A\) of multiplicity equal to \(2\).
+   </p>
+   
+   
+   
+     <div class="box-lemma">
+  <div class="box-legend editable"><span> Finding Eigenvalues and Eigenvectors
+</span>
+</div>
+
+<p class="">
+Let \(A\) be an \(n \times n\) matrix.
+<ol class="romanlist twoem">
+    <li>
+        First, find the eigenvalues \(\lambda\) of \(A\) by solving the equation \(\det \left( \lambda I -A \right) = 0\).
+    </li>
+    <li>
+        For each \(\lambda\), find the basic eigenvectors \(x \neq 0\) by finding the basic solutions to \(\left( \lambda I - A \right) x = 0\).
+    </li>
+</ol>
+To verify your work, make sure that \(Ax=\lambda x\) for each \(\lambda\) and associated eigenvector \(x\).
+
+</p>
+
+</div>
+   
+   
+<example>
+(Find the Eigenvalues and Eigenvectors)
+    <p>
+            Let \[A = \left[ \begin{array}{rr} -1 & 1 \\ 2 & -1 \end{array} \right]\]
+            
+            Find its eigenvalues and eigenvectors.
+        
+    </p>
+<div class="example-content">
+        <span id="SHLink_SolnEx1" class="soln-title SH-Link">Show solution</span> <span id="SHImg_SolnEx1" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_SolnEx1" class="soln-content" style="display: none;">
+  <p>
+  First we find the eigenvalues of \(A\) by solving the equation 
+  
+  \[\det \left( \lambda I - A \right) =0\nonumber \]
+
+This gives 
+\[\begin{aligned} \det \left( \lambda \left[ \begin{array}{rr} 1 & 0 \\ 0 & 1 \end{array} \right] - \left[ \begin{array}{rr} -1 & 1 \\ 2 & -1 \end{array} \right] \right) &= 0 \\ \\ \det \left[ \begin{array}{cc} \lambda +1  & 1 \\ 2 & \lambda +1 \end{array} \right] &= 0 
+\end{aligned}\]
+
+<!--Computing the determinant as usual, the result is \[\lambda ^2 + \lambda - 6 = 0\nonumber\]
+
+Solving this equation, we find that \(\lambda_1 = 2\) and \(\lambda_2 = -3\).
+
+Now we need to find the basic eigenvectors for each \(\lambda\). First we will find the eigenvectors for \(\lambda_1 = 2\). We wish to find all vectors \(X \neq 0\) such that \(AX = 2X\). These are the solutions to \((2I - A)X = 0\). \[\begin{aligned} \left( 2 \left[ \begin{array}{rr} 1 & 0 \\ 0 & 1 \end{array}\right] - \left[ \begin{array}{rr} -5 & 2 \\ -7 & 4 \end{array}\right] \right) \left[ \begin{array}{c} x \\ y \end{array}\right] &= \left[ \begin{array}{r} 0 \\ 0 \end{array} \right] \\ \\ \left[ \begin{array}{rr} 7 & -2 \\ 7 & -2 \end{array}\right] \left[ \begin{array}{c} x \\ y \end{array}\right] &= \left[ \begin{array}{r} 0 \\ 0 \end{array} \right] \end{aligned}\]
+
+The augmented matrix for this system and corresponding reduced row-echelon form are given by \[\left[ \begin{array}{rr|r} 7 & -2 & 0 \\ 7 & -2 & 0 \end{array}\right] \rightarrow \cdots \rightarrow \left[ \begin{array}{rr|r} 1 & -\frac{2}{7} & 0 \\ 0 & 0 & 0 \end{array} \right]\nonumber\]
+
+The solution is any vector of the form \[\left[ \begin{array}{c} \frac{2}{7}s \\ s \end{array} \right] = s \left[ \begin{array}{r} \frac{2}{7} \\ 1 \end{array} \right]\nonumber \]
+
+Multiplying this vector by \(7\) we obtain a simpler description for the solution to this system, given by \[t \left[ \begin{array}{r} 2 \\ 7 \end{array} \right]\nonumber\]
+
+This gives the basic eigenvector for \(\lambda_1 = 2\) as \[\left[ \begin{array}{r} 2\\ 7 \end{array} \right]\nonumber\]
+
+To check, we verify that \(AX = 2X\) for this basic eigenvector.
+
+\[\left[ \begin{array}{rr} -5 & 2 \\ -7 & 4 \end{array}\right] \left[ \begin{array}{r} 2 \\ 7 \end{array} \right] = \left[ \begin{array}{r} 4 \\ 14 \end{array}\right] = 2 \left[ \begin{array}{r} 2\\ 7 \end{array} \right]\nonumber\]
+
+This is what we wanted, so we know this basic eigenvector is correct.
+
+Next we will repeat this process to find the basic eigenvector for \(\lambda_2 = -3\). We wish to find all vectors \(X \neq 0\) such that \(AX = -3X\). These are the solutions to \(((-3)I-A)X = 0\). \[\begin{aligned} \left( (-3) \left[ \begin{array}{rr} 1 & 0 \\ 0 & 1 \end{array}\right] - \left[ \begin{array}{rr} -5 & 2 \\ -7 & 4 \end{array}\right] \right) \left[ \begin{array}{c} x \\ y \end{array}\right] &= \left[ \begin{array}{r} 0 \\ 0 \end{array} \right] \\ \left[ \begin{array}{rr} 2 & -2 \\ 7 & -7 \end{array}\right] \left[ \begin{array}{c} x \\ y \end{array}\right] &= \left[ \begin{array}{r} 0 \\ 0 \end{array} \right] \end{aligned}\]
+
+The augmented matrix for this system and corresponding reduced row-echelon form are given by \[\left[ \begin{array}{rr|r} 2 & -2 & 0 \\ 7 & -7 & 0 \end{array}\right] \rightarrow \cdots \rightarrow \left[ \begin{array}{rr|r} 1 & -1 & 0 \\ 0 & 0 & 0 \end{array} \right]\nonumber \]
+
+The solution is any vector of the form \[\left[ \begin{array}{c} s \\ s \end{array} \right] = s \left[ \begin{array}{r} 1 \\ 1 \end{array} \right]\nonumber\]
+
+This gives the basic eigenvector for \(\lambda_2 = -3\) as \[\left[ \begin{array}{r} 1\\ 1 \end{array} \right]\nonumber\]
+
+To check, we verify that \(AX = -3X\) for this basic eigenvector.
+
+\[\left[ \begin{array}{rr} -5 & 2 \\ -7 & 4 \end{array}\right] \left[ \begin{array}{r} 1 \\ 1 \end{array} \right] = \left[ \begin{array}{r} -3 \\ -3 \end{array}\right] = -3 \left[ \begin{array}{r} 1\\ 1 \end{array} \right]\nonumber\]
+
+This is what we wanted, so we know this basic eigenvector is correct. -->
+  </p>
+        </div>
+      </div>
+</example>
+   
+<example>
+(Multiplicity of eigenvalues)
+    <p>
+            Find the eigenvalues and eigenvectors for the matrix \[A=\left[ \begin{array}{rrr} 5 & -10 & -5 \\ 2 & 14 & 2 \\ -4 & -8 & 6 \end{array} \right] \]
+        
+    </p>
+<div class="example-content">
+        <span id="SHLink_SolnEx3" class="soln-title SH-Link">Show solution</span> <span id="SHImg_SolnEx3" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_SolnEx3" class="soln-content" style="display: none;">
+  <p>
+  First we find the eigenvalues of \(A\) by solving the equation 
+  
+  \[\det \left( \lambda I - A \right) =0\nonumber \]
+
+
+
+  </p>
+        </div>
+      </div>
+</example>
+   
+   
+<example>
+(A Zero Eigenvalue)
+    <p>
+            Let \[A=\left[ \begin{array}{rrr} 2 & 2 & -2 \\ 1 & 3 & -1 \\ -1 & 1 & 1 \end{array} \right]\nonumber \] Find the eigenvalues and eigenvectors of \(A\).
+        
+    </p>
+<div class="example-content">
+        <span id="SHLink_SolnEx2" class="soln-title SH-Link">Show solution</span> <span id="SHImg_SolnEx2" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_SolnEx2" class="soln-content" style="display: none;">
+  <p>
+  First we find the eigenvalues of \(A\) by solving the equation 
+  
+  
+  </p>
+        </div>
+      </div>
+      
+</example>
+  
+  
+  
+   
+<example>
+(Multiplicity of eigenvalues)
+    <p>
+  
+  Let $A$ be a $3 \times 3$ matrix defined as follows
+
+\begin{equation*} 
+      A= \begin{bmatrix} 0 & 1 & 1\\ 1 & 0 & 1\\ 1 & 1 & 0 \end{bmatrix} 
+\end{equation*} 
+Find the eigenvalues and eigenvectors of $A$. 
+       
+     
+        
+    </p>
+<div class="example-content">
+        <span id="SHLink_SolnEx5" class="soln-title SH-Link">Show solution</span> <span id="SHImg_SolnEx5" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_SolnEx5" class="soln-content" style="display: none;">
+  <p>
+    The characteristic polynomial is computed as 
+    $$P(\lambda) = \det(A - \lambda I ) = - \lambda^3 + 3\lambda + 2 = - (\lambda - 2)(\lambda + 1)^2$$
+  </p>
+        </div>
+      </div>
+      
+</example>
+  
+  
+  
+   
+   
+   <h3>Eigenvalues and Eigenvectors for Special Types of Matrices</h3>
+   
+   
+   <p>There are three special kinds of matrices which we can use to simplify the process of finding eigenvalues and eigenvectors. Throughout this section, we will discuss similar matrices, elementary matrices, as well as triangular matrices.</p>
+   
+   <defn>
+    <div class="definition"><span>(Similar Matrices)</span> </div>
+    <div class="definitionb">
+        <p>
+            Let \(A\) and \(B\) be \(n \times n\) matrices. Suppose there exists an invertible matrix \(P\) such that 
+            \[A = P^{-1}BP\nonumber \] 
+            
+            Then \(A\) and \(B\) are called <b>similar matrices</b>.
+
+        </p>
+    </div>
+</defn>
+   
+   
+   
+   
+<example>
+(Similar Matrices)
+    <p>
+  Given \[A = \left[ \begin{array}{rrr} 33 & 105 & 105 \\ 10 & 28 & 30 \\ -20 & -60 & -62 \end{array} \right], \qquad B=\left[ \begin{array}{rrr} 33 & -105 & 105 \\ 10 & -32 & 30 \\ 0 & 0 & -2 \end{array} \right]\]
+      and $$P=\left[ \begin{array}{rrr} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 2 & 1 \end{array} \right] $$
+Show that $A$ and $B$ are similar?
+     
+        
+    </p>
+<div class="example-content">
+        <span id="SHLink_SolnEx6" class="soln-title SH-Link">Show solution</span> <span id="SHImg_SolnEx6" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_SolnEx6" class="soln-content" style="display: none;">
+  <p>
+    
+  </p>
+        </div>
+      </div>
+      
+</example>
+  
+   
+      <div class="box-definition">
+  <div class="box-legend editable"><span class="lt-icon-default"> Lemma 1: (Similar Matrices and Eigenvalues)
+</span>
+</div>
+
+<p class="">
+Let \(A\) and \(B\) be similar matrices, so that 
+\[
+    A=P^{-1}BP
+\] 
+where \(A,B\) are \(n\times n\) matrices and \(P\) is invertible. Then \(A,B\) have the same eigenvalues.
+
+</p>
+
+</div>
+
+  <p><b>Proof: </b> We need to show two things. First, we need to show that if  $A=P^{-1} B P$ , then  $A$  and  $B$  have the same eigenvalues. Secondly, we show that if  $A$  and  $B$  have the same eigenvalues, then  $A=P^{-1} B P$.
+  
+  
+  </p> 
+   
+
+   
+<example>
+(Simplify Using Elementary Matrices)
+    <p>
+  
+Find the eigenvalues for the matrix 
+      
+      \[A = \left[ \begin{array}{rrr} 33 & 105 & 105 \\ 10 & 28 & 30 \\ -20 & -60 & -62 \end{array} \right]\nonumber \]
+       
+     
+        
+    </p>
+<div class="example-content">
+        <span id="SHLink_SolnEx7" class="soln-title SH-Link">Show solution</span> <span id="SHImg_SolnEx7" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_SolnEx7" class="soln-content" style="display: none;">
+  <p>
+    
+  </p>
+        </div>
+      </div>
+      
+</example>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    <hr>
+
+    <h3> Recent Posts </h3>
+    <ul>
+
+
+        <li>
+            <i> <a href="../../topology/2019/post/2017/11/01/varparams.html">A Note on the Variation of Parameters Method </a> | 11/01/17 </i>
+        </li>
+
+
+        <li>
+            <i> <a href="../../topology/2019/notes/2017/10/26/groups3.html">Group Theory, Part 3: Direct and Semidirect Products </a> | 10/26/17 </i>
+        </li>
+
+
+        <li>
+            <i> <a href="../../topology/2019/notes/2017/10/19/galoistheory1.html">Galois Theory, Part 1: The Fundamental Theorem of Galois Theory </a> | 10/19/17 </i>
+        </li>
+
+
+        <li>
+            <i> <a href="../../topology/2019/notes/2017/10/19/fieldtheory2.html">Field Theory, Part 2: Splitting Fields; Algebraic Closure </a> | 10/19/17 </i>
+        </li>
+
+
+        <li>
+            <i> <a href="../../topology/2019/notes/2017/10/18/fieldtheory1.html">Field Theory, Part 1: Basic Theory and Algebraic Extensions </a> | 10/18/17 </i>
+        </li>
+
+    </ul>
+    <footer class="site-footer">
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+    </footer>
+
+
+
+</section>
+</body>
+
+
+  <!-- script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-102852226-1', 'auto');
+    ga('send', 'pageview');
+  </script -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171606319-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-171606319-1');
+</script>
+
+
+</html>
