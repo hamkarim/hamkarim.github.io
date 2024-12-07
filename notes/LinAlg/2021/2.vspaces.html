@@ -430,6 +430,14 @@
     <script type="text/javascript" id="MathJax-script" defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml-full.min.js">
     </script>
 
+  
+  <script>
+$(document).ready(function(){
+  $("sh").click(function(){
+    $(".foote").toggle();
+  });
+});
+</script>
    
 
 
@@ -509,11 +517,11 @@ December
 <span class="lt-icon-default">លទ្ធផលរំពឹងទុក!</span></h5>
 <p>ក្រោយបញ្ចប់មេរៀននេះ អ្នកសិក្សានឹងទទួលបាននូវ៖ </p>
 <ol start="1" class="parenthnum">
-    <li class="" style="background-color: unset;"><b>Understanding key concepts of: </b>
+    <li class="" style="background-color: unset;"><b>យល់បាននូវគោលគំនិតជាគន្លឹះទាក់ទងនឹង៖</b><!--b--Understanding key concepts of: -->
 Definition of vector spaces, subspaces, linear independence, basis and dimension. <!--You'll grasp what vector spaces are, including the basic requirements for a set to be considered a vector space. Subspaces: You'll learn about subspaces and how they relate to the larger vector space. Linear Independence: You'll be able to determine if a set of vectors is linearly independent or dependent. Basis and Dimension: You'll understand the concept of a basis of a vector space and how to find it, along with the dimension of a vector space. -->
     </li>
-    <li class="" style="background-color: unset;">
-        <b>Mathematical skills: </b>
+    <li class="" style="background-color: unset;"><b>មានជំនាញគណិតវិទ្យាទាក់ទងនឹង៖</b>
+        <!--bMathematical skills: </b-->
 To know  operations, span, linear combinations and matrix representation. 
 <!--You'll become proficient in performing vector addition and scalar multiplication.
 
@@ -523,7 +531,7 @@ Linear Combinations: You'll be able to express vectors as linear combinations of
 
 Matrix Representation: You'll learn how to represent linear transformations using matrices. -->
     </li>
-    <li class="" style="background-color: unset;"><b>Theoretical insights:</b>
+    <li class="" style="background-color: unset;"><b>ចេះទ្រឹស្ដីបទទាំងឡាយទាក់ទងនឹង៖</b><!--b.Theoretical insights:</b-->
     <ol style="list-style-type: lower-roman;" start="1">
         <li class="" style="background-color: unset;">Properties and Theorems: to gain insights into fundamental properties and theorems related to vector spaces, such as the <a>Rank-Nullity Theorem</a> and the concept of <a>orthogonality</a>.</li>
         <li class="" style="background-color: unset;">Abstract Thinking: to develop an ability to think abstractly and generalize ideas beyond specific examples.</li>
@@ -552,8 +560,8 @@ Matrix Representation: You'll learn how to represent linear transformations usin
           <div class="definition"><span>(Vector spaces)</span> </div>
  <div class="definitionb">
    <p>  <!--style="text-indent: 0px"-->
-     <!--ការកំណត់ footnote By <a href="https://planetmath.org/ruleofsarrus">Sarrus' rule</a><a class="fnote"  href="#fn1" id="ref1">(1)</a> -->
-     យក $(\mathbf V,+)$ ជាក្រុមអាបែល និង $(\mathbb K,+, \times)$ ជាកាយត្រឡប់ ។ គេថា $\mathbf V$ គឺជា $\mathbb K$-vs ឬ <b>លំហវ៉ិចទ័រលើកាយ $\mathbb K$</b> បើមានអនុគមន៍ពី $\cdot: \mathbb K \times \mathbf V \to \mathbf V$ ហៅថា ប្រមាណវិធីក្រៅកំណត់នៅលើ $\mathbf V$ ដែលបំពេញ ស្វ័យសត្ស (axioms) ខាងក្រោម៖
+     
+     យក $(\mathbf V,+)$ ជាក្រុមអាបែល និង $(\mathbb K,+, \times)$ ជាកាយត្រឡប់ ។ គេថា $\mathbf V$ គឺជា  <a href="https://planetmath.org/ruleofsarrus">$\mathbb K$-vs</a><a class="fnote"  href="#fn1" id="ref1">(1)</a>  ឬ <b>លំហវ៉ិចទ័រលើកាយ $\mathbb K$</b> បើមានអនុគមន៍ពី $\cdot: \mathbb K \times \mathbf V \to \mathbf V$ ហៅថា ប្រមាណវិធីក្រៅកំណត់នៅលើ $\mathbf V$ ដែលបំពេញ ស្វ័យសត្ស (axioms) ខាងក្រោម៖
      
     <!-- Soient $(E,+)$ un groupe commutatif et $(K,+, \times)$ un corps commutatif. On dit que $E$ est un $K$-espace vectoriel ou un espace vectoriel sur $K$, s'il existe une application de $K \times E$ vers $E$, appelée loi externe sur $E$, qui $\grave{a}(\alpha, x) \in K \times E$ fait correspondre $\alpha \cdot x$, vérifiant les axiomes suivants :-->
      </p>
@@ -575,16 +583,84 @@ $\forall x \in \E:\;\; 1_\mathbb K \cdot x=x$
 </ol>
 </div>
 </defn>
+ <!--Footnote: -->
+    <sup id="fn1">1. ការកំណត់សរសេរបែបនេះ $\mathbb K$-vs គឺមកពីនិយមន័យ (left) $\mathbb K$-module 
+    <sh><a>(អានបន្ត...)</a>
+    <div class="foote box-lemma" style="display: none; size: 85%">
+    <p>
+    <b>និយមន័យ .</b> យក $\mathbf R$ ជាកង ។ គេហៅសំណុំ $M$ ថាជា $\mathbf R$-module (ខាងឆ្វេង) ឬ <a>(ម៉ូឌុលខាងឆ្វេងលើកង $\mathbf R$)</a> បើ $M$ មានប្រមាណវិធីពីរគឺ៖ ប្រមាណវិធីក្នុង $(+)$ និងប្រមាណវិធីក្រៅ $(\cdot)$ 
+$$
+\begin{gathered}
+\begin{array}{rccl}
+ +: & M \times M & \longrightarrow&  M \\
+ & (x, y) &\longmapsto & x+y 
+ \end{array}
+ \quad \text { and } \quad 
+ \begin{array}{rccl}
+ \times: & \mathbf R \times M &\longrightarrow & M \\
+& (a, x) &\longmapsto & a\cdot x
+\end{array}
+\end{gathered}
+$$
+ ដែលផ្ទៀងផ្ទាត់លក្ខណៈខាងក្រោម៖ 
+ </p>
+<ol class="parenthnum">
+    <li>
+        <ol type="a">
+            <li>
+                 $\forall x, y, z \in M: \quad(x+y)+z=x+(y+z)$,
+            </li>
+            <li>
+                $\exists 0 \in M, \forall x \in M: \quad 0+x=x$,
+            </li>
+            <li>
+                $\forall x \in M, \exists-x \in M: \quad x+(-x)=0$,
+            </li>
+            <li>
+                $\forall x, y \in M: \quad x+y=y+x$,
+            </li>
+        </ol>
+    </li>
+    
+    <li>
+        <ol type="a">
+            <li>
+                $\forall a, b \in A, \forall x \in M: \quad(a b) x=a(b x)$,
+            </li>
+            <li>
+                $\forall x \in M: \quad 1 x=x$,
+            </li>
+            <li>
+                $\forall a \in A, \forall x, y \in M: \quad a(x+y)=a x+a y$,
+            </li>
+            <li>
+                $\forall a, b \in A, \forall x \in M: \quad(a+b) x=a x+b x$.
+            </li>
+        </ol>
+        
+    </li>
+</ol>
+  </div>
+   <div class="foote" style="display: none; size: 85%">
+       <p><b>Exemples.</b></p>
+       <ol type="1">
+           <li> បើ $\mathbb K$ ជាកាយត្រឡប់ នោះ $\mathbb K$-module គឺជា $\mathbb K$-vs <a>(ឬ លំហវ៉ិចទ័រលើកាយ $\mathbb K$)</a> ។ <!--Si $A$ est un corps commutatif, un $A$-module est un $A$-espace vectoriel.--></li>
+           <li>Si $A=\mathbb{Z}$, un $A$-module est un groupe abélien.</li>
+           <li>Pour tout anneau $A, A$ est un $A$-module, la loi externe étant la multiplication de $A$.</li>
+       </ol>
+   </div>
+    </sh> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span>
+  
+  </sup>
+  <!--p> <img class="center" alt="Sarrush Rule" src="fig/Schema_sarrus-regel.png" width="35%" height="35%"></!--p>-->
 
 <p><!--Dans ce cas, les éléments de $\E$ sont appelés des vecteurs et se notent $x, y, z, \ldots$ ou $\vec x, \vec y, \vec z, \ldots$, tandis que les éléments de $\K$ sont appelés des scalaires et se notent $\alpha, \beta, \gamma, \lambda, \cdots$.-->
  ក្នុងករណីខាងលើនេះ ធាតុទាំងឡាយរបស់លំហ $\E$ ហៅថា <b>វ៉ិចទ័រ</b> ហើយគេតាងដោយ $x, y, z, \ldots$ ឬ $\vec x, \vec y, \vec z, \ldots$ ចំណែកធាតុរបស់កាយ $\K$ ហៅថា scalar ហើយតាងដោយ $\alpha, \beta, \gamma, \lambda, \cdots$ ។</p>
  
-  <!--Footnote: >
-  <sup id="fn1">1. [The Rule of Sarrus is a mnemonic device for computing the determinant of a $ 3\times 3$ matrix named after the French mathematician Pierre Frédéric Sarrus (invented 1833).]<a href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</a></sup>
-  <p> <img class="center" alt="Sarrush Rule" src="fig/Schema_sarrus-regel.png" width="35%" height="35%"></p>-->
+ 
 <h4>វិបាក.</h4>
 យក $\E$ ជា $\K$-vs ។ គេបាន ក្បួនសម្រាប់គណនាដូចខាងក្រោម៖ 
-<ol type="a.">
+<ol type="a">
     <li>
         $\forall x \in \E:\;\; 0_\K \cdot x=0_\E$
     </li>
