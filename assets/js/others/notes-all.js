@@ -645,6 +645,16 @@ function SHPrintPage(sh, prt) {
 
       ShowHide(objSubID, isShowing, false);
     });
+    
+    $("div[id*='Ans'], div[id*='Step']").each(function () {
+      obj = this;
+      divID = obj.id;
+      objSubID = divID.substring(6, divID.length);
+
+      isShowing = sh === 0;
+
+      ShowHide(objSubID, isShowing, false);
+    });  
 
     if (prt == 1) {
       window.print();

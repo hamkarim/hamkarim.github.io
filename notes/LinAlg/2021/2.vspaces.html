@@ -436,11 +436,22 @@ $(document).ready(function(){
   $("sh").click(function(){
     $(".foote").toggle();
   });
+    $("#ansSH").click(function(){
+    $(".ansToggle").toggle();
+  });
 });
 </script>
    
-
-
+<!--script>
+  window.customElements.define("defn", class extends HTMLElement {})
+    </!--script-->
+    
+<script>
+// Create element:
+const para = document.createElement("mydef");
+</script>
+ 
+ 
   </head>
 
   <body>
@@ -520,7 +531,7 @@ December
     <li class="" style="background-color: unset;"><b>យល់បាននូវគោលគំនិតជាគន្លឹះទាក់ទងនឹង៖</b><!--b--Understanding key concepts of: -->
 Definition of vector spaces, subspaces, linear independence, basis and dimension. <!--You'll grasp what vector spaces are, including the basic requirements for a set to be considered a vector space. Subspaces: You'll learn about subspaces and how they relate to the larger vector space. Linear Independence: You'll be able to determine if a set of vectors is linearly independent or dependent. Basis and Dimension: You'll understand the concept of a basis of a vector space and how to find it, along with the dimension of a vector space. -->
     </li>
-    <li class="" style="background-color: unset;"><b>មានជំនាញគណិតវិទ្យាទាក់ទងនឹង៖</b>
+    <li class="" style="background-color: unset;"><b>មានជំនាញគណិតវិទ្យា៖</b>
         <!--bMathematical skills: </b-->
 To know  operations, span, linear combinations and matrix representation. 
 <!--You'll become proficient in performing vector addition and scalar multiplication.
@@ -559,8 +570,7 @@ Matrix Representation: You'll learn how to represent linear transformations usin
 <defn>
           <div class="definition"><span>(Vector spaces)</span> </div>
  <div class="definitionb">
-   <p>  <!--style="text-indent: 0px"-->
-     
+   <p>  <!--style="text-indent: 0px"-->     
      យក $(\mathbf V,+)$ ជាក្រុមអាបែល និង $(\mathbb K,+, \times)$ ជាកាយត្រឡប់ ។ គេថា $\mathbf V$ គឺជា  <a href="https://planetmath.org/ruleofsarrus">$\mathbb K$-vs</a><a class="fnote"  href="#fn1" id="ref1">(1)</a>  ឬ <b>លំហវ៉ិចទ័រលើកាយ $\mathbb K$</b> បើមានអនុគមន៍ពី $\cdot: \mathbb K \times \mathbf V \to \mathbf V$ ហៅថា ប្រមាណវិធីក្រៅកំណត់នៅលើ $\mathbf V$ ដែលបំពេញ ស្វ័យសត្ស (axioms) ខាងក្រោម៖
      
     <!-- Soient $(E,+)$ un groupe commutatif et $(K,+, \times)$ un corps commutatif. On dit que $E$ est un $K$-espace vectoriel ou un espace vectoriel sur $K$, s'il existe une application de $K \times E$ vers $E$, appelée loi externe sur $E$, qui $\grave{a}(\alpha, x) \in K \times E$ fait correspondre $\alpha \cdot x$, vérifiant les axiomes suivants :-->
@@ -582,11 +592,11 @@ $\forall x \in \E:\;\; 1_\mathbb K \cdot x=x$
     </li>
 </ol>
 </div>
-</defn>
+    </defn>
  <!--Footnote: -->
     <sup id="fn1">1. ការកំណត់សរសេរបែបនេះ $\mathbb K$-vs គឺមកពីនិយមន័យ (left) $\mathbb K$-module 
     <sh><a>(អានបន្ត...)</a>
-    <div class="foote box-lemma" style="display: none; size: 85%">
+    <div class="foote box-lemma" style="display: none; font-size: 10px !important">
     <p>
     <b>និយមន័យ .</b> យក $\mathbf R$ ជាកង ។ គេហៅសំណុំ $M$ ថាជា $\mathbf R$-module (ខាងឆ្វេង) ឬ <a>(ម៉ូឌុលខាងឆ្វេងលើកង $\mathbf R$)</a> បើ $M$ មានប្រមាណវិធីពីរគឺ៖ ប្រមាណវិធីក្នុង $(+)$ និងប្រមាណវិធីក្រៅ $(\cdot)$ 
 $$
@@ -662,7 +672,7 @@ $$
      ក្នុងករណីខាងលើនេះ ធាតុទាំងឡាយរបស់លំហ $\E$ ហៅថា <b>វ៉ិចទ័រ</b> ហើយគេតាងដោយ $x, y, z, \ldots$ ឬ $\vec x, \vec y, \vec z, \ldots$ ចំណែកធាតុរបស់កាយ $\K$ ហៅថា <b>ស្កាលែរ</b> (scalar) ហើយតាងដោយ $\alpha, \beta, \gamma, \lambda, \cdots$ ។
  </li>
  <li>
-     ប្រមាណវិធីក្នុង $(+)$ ក្នុង $\mathbf V$ និងក្នុង $\K$ គឺខុសគ្នា ហើយ $(\times)$ ជាប្រមាណវិធីក្នុង  កំណត់លើ $\K$ តែ $(\cdot)$ ជាប្រមាណវិធីក្រៅ  កំណត់លើ $\mathbf V$ ។
+     ប្រមាណវិធីក្នុង $(+)$ លើ $\mathbf V$ និងលើ $\K$ គឺខុសគ្នា ហើយ $(\times)$ ជាប្រមាណវិធីក្នុង  កំណត់លើ $\K$ តែ $(\cdot)$ ជាប្រមាណវិធីក្រៅ  កំណត់លើ $\mathbf V$ ។
  </li>
  </ol>
  
@@ -679,23 +689,100 @@ $\forall \lambda \in \K:\;\; \lambda \cdot 0_\E=0_\E$
     <li>$\forall \lambda \in \K:\;\; \forall x \in \E, \quad \lambda \cdot x=0_\E \Longleftrightarrow \lambda=0_\K$ ឬ $x=0_\E$</li>
 </ol>
 
+<div>
+    <p style="text-align: right;"><span id="SHLink_Help1" class="soln-title SH-Link">Show Answer</span> <span id="SHImg_Help1" class="fa fa-caret-right" aria-hidden="true"></span></p>
+   <div id="SHObj_Help1" class="soln-content" style="display: none;">
 
-<example>
-(Example <span>A Two by Two </span>Determinant <a name="exa%3Atwobytwodeterminant"></a>)
+<answer>
+<ol>
+    <li> តាមស្វ័យសត្យ ii) គេបាន
+$$
+0_\K \cdot x=\left(0_\K+0_K\right) \cdot x=0_\K \cdot x+0_\K \cdot x
+$$
 
-  <p class="">Find <span class="math inline">\(\det\left(A\right)\)</span> for the matrix <span class="math inline">\(A = \left[ \begin{array}{rr} 2 &amp; 4 \\ -1 &amp; 6 \end{array} \right] .\)</span></p>
-  <div class="example-content">
-        <span id="SHLink_Soln1" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln1" class="fa fa-caret-right" aria-hidden="true"></span>
-   <div id="SHObj_Soln1" class="soln-content" style="display: none;">
-  <p>
-    \[\det \left( A\right) = \left( 2\right) \left( 6\right) -\left( -1\right) \left( 4\right) = 12 + 4 = 16\nonumber \]
-  </p>
+    ដូច្នេះ $0_\K \cdot x=0_\E$</li>
+       
+        <li>តាមស្វ័យសត្យ iv) គេបាន
+
+$$
+\lambda \cdot 0_\E=\lambda \cdot\left(0_\E+0_\E\right)=\lambda \cdot 0_{\E^{\prime}}+\lambda \cdot 0_\E
+$$
+
+            ដូច្នេះ  $\lambda \cdot 0_\E=0_\E$ </li>
+            
+<li> $(\Rightarrow)$  ឧបមា $\lambda \cdot x=0_\E$ និង $\lambda \neq 0_\K$ យើងនឹងបង្ហាញថា $x=0_\E$ ។ ដោយសារតែ $\lambda \cdot x=0_\E$ នោះគេបាន $\lambda^{-1} \cdot(\lambda \cdot x)=\lambda^{-1} \cdot 0_\E=0_\E$ តាមស្វ័យសត្យ iii) ក្នុងនិយមន័យ ។ ដូច្នេះ គេបាន 
+$$
+\lambda^{-1} \cdot(\lambda \cdot x)=\left(\lambda^{-1} \lambda\right) \cdot x=1_\K \cdot x
+$$
+ដូច្នេះ តាមស្វ័យសត្យ i) គេបាន $x=0_\E$ ។  <br> 
+   
+   $(\Leftarrow)$ ពិតជានិច្ច!
+    </li>
+</ol>
+</answer>
+    
         </div>
       </div>
-</example>
+      
 
-<p class="">The \(2 \times 2\) determinant can be used to find the determinant of larger matrices. We will now explore how to find the determinant of a \(3 \times 3\) matrix, using several tools including the \(2 \times 2\) determinant.</p>
 
+<example>
+            <!--Soient $(\E,+, \times)$ un corps commutatif et $\K$ un sous-corps de $\E$, alors $\E$ peut-être considéré comme un $\K$-espace vectoriel pour la loi externe définie comme suit,
+$$
+\begin{array}{c c l}
+\K \times \E &\longrightarrow &\E \\
+(\lambda, x) &\longmapsto& \lambda \cdot x=\lambda x
+\end{array}
+$$
+Par exemple, $\E=\mathbb{C}$ et $\K=\mathbb{R}, \E=\mathbb{R}$ et $\K=\mathbb{Q}$ ou $\E=\mathbb{C}$ et $\K=\mathbb{Q}$. En particulier, tout corps $\K$ peut-être considéré comme un espace vectoriel sur lui-même.-->
+       Let $(\E,+, \times)$ be a commutative field and $\K$ be a subfield of $\E$, then $\E$ can be considered as a $\K$-vector space for the external law defined as follows,
+$$
+\begin{array}{r c c l}
+\cdot :&\K \times \E &\longrightarrow &\E \\
+&(\lambda, x) &\longmapsto& \lambda \cdot x=\lambda x
+\end{array}
+$$
+For example, $\E=\mathbb{C}$ and $\K=\mathbb{R}, \E=\mathbb{R}$ and $\K=\mathbb{Q}$ or $\E=\mathbb{C}$ and $\K=\mathbb{Q}$. In particular, any field $\K$ can be considered as a vector space on itself.
+    </example>
+<div id="ansSH"><a>Answer</a>
+    <div class="ansToggle box-lemma" style="display: none; font-size: 10px !important">
+    <p> Left as exercise (1).
+ </p>
+
+  </div>
+ <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span>
+  
+  </div>
+
+<example>
+            <!--Soit $\K$ un corps commutatif, alors pour tout entier $n \geq 1, \K^n$ est un $\K$-espace vectoriel pour la loi externe,
+$$
+\begin{array}{r cc l}
+\cdot:\; &\K \times K^n & \longrightarrow & \K^n \\
+&(\lambda, x) & \longmapsto &\lambda \cdot x=\left(\lambda x_1, \lambda x_2, \ldots, \lambda x_n\right)
+\end{array}
+$$
+où $x=\left(x_1, x_2, \ldots, x_n\right)$.-->
+       Let $\K$ be a commutative field, then for any integer $n \geq 1, \K^n$ is a $\K$-vector space for the external law,
+$$
+\begin{array}{r cc l}
+\cdot:&\K \times \K^n & \longrightarrow & \K^n \\
+&(\lambda, x) & \longmapsto &\lambda \cdot x=\left(\lambda x_1, \lambda x_2, \ldots, \lambda x_n\right)
+\end{array}
+$$
+where $x=\left(x_1, x_2, \ldots, x_n\right)$.    
+    </example>
+<div id="ansSH"><a>Answer</a>
+    <div class="ansToggle box-lemma" style="display: none; font-size: 10px !important">
+    <p> Left as exercise (1).
+ </p>
+
+  </div>
+ <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span>
+  
+  </div>
+
+  
 <p class="">We begin with the following definition.</p>
 
 <defn>
@@ -725,7 +812,7 @@ Find \(\minor\left( A\right) _{12}\) and \(\minor\left( A\right) _{23}\).
   </p>
   <div class="example-content">
         <p align="right">
-            <span id="SHLink_Soln2" class="soln-title SH-Link">Show solution</span>         
+            <span id="SHLink_Soln2" class="soln-title SH-Link">Show Solution</span>         
         <span id="SHImg_Soln2" class="fa fa-caret-right" aria-hidden="true"></span></p>
    <div id="SHObj_Soln2" class="soln-content" style="display: none;">
   <p>
@@ -757,7 +844,7 @@ Suppose \(A\) is an \(n\times n\) matrix. The \(ij^{th}\) cofactor, denoted by \
 
 \[\cof\left( A\right) _{ij} = \left( -1\right) ^{i+j} \cdot  \minor\left(A\right)_{ij} \]
 
-We denote as following:
+    We denote as following: </p>
 	<ol class="romanlist threeem">
 <li>
 $\cof (A) = \Big( \cof(A)_{ij} \Big)_{n\times n}$ ហៅថា <b>ម៉ាទ្រីសកូហ្វាក់ទ័រ</b>
@@ -768,7 +855,6 @@ $\cof (A) = \Big( \cof(A)_{ij} \Big)_{n\times n}$ ហៅថា <b>ម៉ាទ�
 		</li>
 	 </ol>
 	 
-	 </p>
 </div>
  </defn>
 

@@ -1119,6 +1119,41 @@ h3.sectcounter:before {
     margin-bottom: 0;
 }
 
+/*Block answer*/
+.main-content answer {
+    display: block;
+    padding: 0 0 0 1rem;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #0e81c1;
+    border: 2pt solid #0067eb;
+    border-radius: 15px;
+    background-color: #ffdcfa;
+    text-align: left;
+    font-size: 14px!important ;
+    /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
+}
+
+.main-content answer > :first-child {
+    margin-top: 0;
+}
+
+.main-content answer > :last-child {
+    margin-bottom: 0;
+}
+
+.main-content answer::before {
+    counter-increment: counteran;
+    content: "ចម្លើយ" "."; /*counter(section, khmer) "." counter(counteran, khmer) ". ";*/
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Battambang;
+    /*Angkor*/
+}
+
+/*End*/
+
 .main-content example {
     display: block;
     padding: 0 0 0 1rem;
@@ -1140,6 +1175,7 @@ h3.sectcounter:before {
     margin-bottom: 0;
 }
 
+
 /*example counter*/
 .main-content {
     counter-reset: counterex !important;
@@ -1147,7 +1183,7 @@ h3.sectcounter:before {
 
 .main-content example::before {
     counter-increment: counterex;
-    content: "ឧទាហរណ៍ " counter(section, khmer) "." counter(counterex, khmer) "  ";
+    content: "ឧទាហរណ៍ " /*counter(section, khmer) ".";*/ counter(counterex, khmer) ".";
     font-weight: bold;
     font-size: 17px;
     font-family: Battambang;
