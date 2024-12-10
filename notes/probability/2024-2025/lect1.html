@@ -157,7 +157,7 @@ src="">
                     <!-- [endif]-->
           </head>
 
-          <body>
+          <ol>
                     <section class="page-header">
                               <h1 class="project-name">ហាំ ការីម</h1>
                               <h2 class="project-tagline">Maths, Program, Music</h2>
@@ -228,7 +228,227 @@ src="">
                                   
                               </ul>
                
-<h3>Prerequisite: Set Theory</h3>
+<h2>1.1 Elementary probability</h2>
+                             
+    <p>Many essential concepts in probability can be understood through simple scenarios, which is why starting with elementary probability theory is beneficial.</p>                         
+<p>
+    Probability problems can indeed be tricky, and having a clear method for setting up solutions is crucial. Here's an example to illustrate this:
+<br><br>
+          <b>Scenario:</b> Remove all cards except aces and kings from a deck, so that only eight cards remain: <a>four aces and four kings</a>. From this abbreviated deck, deal two cards to a friend. <i>If your friend looks at his cards and announces (truthfully) that his hand contains an ace, what is the probability that both his cards are aces? If he announces instead that one of his cards is the ace of spades, what is the probability then that both his cards are aces? Are these two probabilities the same?</i>
+<br>
+<br>
+Probability theory helps us structure our approach to problems like these by distinguishing between two essential components:
+</p>   
+    <ol type="i">
+        <li>
+            <b>Events:</b> Collections of possible outcomes.
+        </li>
+        
+        <li>
+            <b>Probabilities:</b> Numbers assigned to these events.
+        </li>
+    </ol>               
+   <h3>Example Analysis in Detail</h3> 
+   <b>Case 1: Announcement of an Ace: </b>
+If your friend announces he has an ace, what is the probability that both his cards are aces? 
+   <ol>
+       <li><b>Total Possible Hands:</b>
+       To determine the total number of possible hands (combinations of two cards from eight), we use the combination formula:
+       $$\binom{8}{2} = \frac{8!}{2!(8-2)!} = \frac{8 \times 7}{2 \times 1} = 28$$
+       So, there are $28$ possible hands.
+       </li>
+       
+       <li><b>Hands with No Aces:</b>
+       To find the number of hands with no aces, we look at the combinations of two cards chosen from the four kings:
+       
+$$\binom{4}{2} = \frac{4!}{2!(4-2)!} = \frac{4 \times 3}{2 \times 1} = 6$$
+  
+  So, there are 6 hands with no aces.
+       </li>
+       
+  
+  <li><b>Hands with At Least One Ace:</b>
+  Subtract the number of hands with no aces from the total number of hands:
+  $$28 - 6 = 22$$
+  So, there are $22$ hands with at least one ace. Since your friend has an ace, his hand is one of these $22$.
+  </li>
+  
+  
+  <li><b>Hands with Two Aces:</b>
+   To find the number of hands with two aces, we look at the combinations of two cards chosen from the four aces:
+  $$
+  \binom{4}{2} = 6
+  $$
+  Therefore, there are 6 hands containing two aces. 
+  </li>
+ 
+<br>
+
+Now, the probability that your friend has two aces, given that he has at least one ace, is: 
+  $$\frac{6}{22} = \frac{3}{11}$$
+  
+   </ol>                          
+<br><br>
+
+
+<p>
+     <b>Case 2: Announcement of Ace of Spades: </b> If your friend announces that one of his cards is the ace of spades, what is the probability that both his cards are aces?        
+</p>                                                                                                     <ol>
+    <li>
+        <b>Total Possibilities for the Second Card:</b> If one card is the ace of spades, there are 7 remaining cards from which to choose the second card.
+    </li>
+    
+    <li>
+        <b>Hands with Two Aces: </b> Out of the 7 remaining cards, the other aces are the ace of hearts, ace of diamonds, and ace of clubs. So there are 3 cards that will result in having two aces. Therefore, the probability is: $\frac{3}{7}$. 
+    </li>
+</ol>
+ 
+ <h4>Implicit Assumptions: </h4>               
+    <p>
+        In both scenarios, an implicit assumption is that all hands are equally likely. This means each combination of two cards has an equal probability of being dealt.
+<br><br>
+By breaking down the problem into smaller parts and using probability theory, we can systematically organize our thinking and calculations. This helps us better understand the complexities involved, even in seemingly simple scenarios.
+    </p>                                                                                             
+                                                                                                                                                                                                                                                                                                                                                                                                                       
+ <h2>a) Sample Space</h2>
+
+<p>
+    The basic setting for a probability model is the <a>random experiment</a> or <a>random trial</a>. This serves as your mental model of what is happening in the scenario. For example, in the previous card example, the random experiment is the dealer passing two cards to your friend.
+</p>
+
+<b>Definition.</b> (Sample Space - S): The set of all possible outcomes of a random experiment.
+
+Depending on the nature of the random experiment, the sample space \(S\) can be:
+<ol type="i">
+          <li><b>Finite:</b> A limited number of outcomes.</li>
+<li><b>Countably Infinite:</b> An infinite set of outcomes that can be listed.</li>
+    
+ <li>
+     <b>Uncountably Infinite:</b> An infinite set of outcomes that cannot be listed.
+ </li>   
+</ol>
+<br>
+
+Here are some examples to illustrate these concepts:
+
+<ol type="1">
+    <li> <b>Random Coin Toss:</b> The sample space is the set of all possible outcomes, which are heads (H) and tails (T). Thus:
+   \[
+   S = \{H, T\}
+   \]
+   The size of the sample space is \(|S| = 2\).
+                              </li>
+                    <li> <b>Card Example:</b> In the card example, where only aces and kings remain in the deck, the sample space consists of all possible unordered pairs of cards. If you only consider the combinations without regard to order:
+   \[
+   |S| = 28
+   \]
+   This represents choosing 2 cards from 8 without considering the order. However, if you decide to include the order in which the two cards are dealt, the sample space doubles. For instance, it would include both (Ace of Hearts, King of Spades) and (King of Spades, Ace of Hearts). So, the size of the sample space would be:
+   \[
+   |S| = 56
+   \]
+                    </li>
+          </ol>
+<p>
+    This shows that there is some degree of artistry in probability theory, especially in how to choose the most appropriate sample space.
+</p>
+
+                              <b>More Examples.</b>
+
+<ol type="i">
+    <li>Roll a Die:
+   <ul>
+       <li>Experiment: Rolling a single six-sided die.
+   </li>
+   <li>Sample Space: The outcome is the number on the upturned face.
+   \[
+   S = \{1, 2, 3, 4, 5, 6\}
+   \]
+   The size of the sample space is \(|S| = 6\).</li>
+   </ul>
+   </li>
+    
+    <li>
+        Toss a Coin Until Heads Appears:
+        <ul>
+            <li>
+                Experiment: Tossing a coin until the first head appears.
+            </li>
+            
+            <li>
+                Sample Space: The outcome is the number of tosses required.
+   \[
+   S = \{1, 2, 3, \ldots\}
+   \]
+   The size of the sample space is countably infinite (\(|S| = \infty\)).
+            </li>
+        </ul>
+    </li>
+    
+    <li>
+        Choose a Random Number Between 0 and 1:
+        
+        <ul>
+            <li>
+                Experiment: Selecting a random number from the interval [0, 1].
+            </li>
+            
+            <li>
+                Sample Space:
+   \[
+   S = [0, 1]
+   \]
+   This is an example of an uncountable sample space.
+            </li>
+        </ul>
+    </li>
+    
+    <li>Throw a Dart at a Circular Dartboard:
+        <ul>
+            <li>
+                Experiment: Throwing a dart at a circular dartboard of radius 1.
+            </li>
+            <li>
+                Sample Space: The coordinates (x, y) where the dart lands within the circle.
+   \[
+   S = \{(x, y) \in \mathbb{R}^2 \mid x^2 + y^2 \leq 1\}
+   \]
+            </li>
+        </ul>
+    </li>
+</ol>
+<p>
+    For this review of elementary probability, we will focus on finite and countably infinite sample spaces. This simplification makes it easier to understand and calculate probabilities.
+
+<br><br>
+By clearly defining the sample space, we lay the groundwork for more advanced probability calculations. It helps us to precisely understand and structure the possible outcomes of any random experiment.           
+</p>
+
+<h2>b) Events</h2>
+ 
+ <p>
+     An <b>event </b> is a collection of possible outcomes from a random experiment. These outcomes are usually denoted by letters such as \(A\), \(B\), etc. 
+     
+     <br><br>Formally, an event \(A\) is a subset of the sample space \(S\), so \(A \subseteq S\). An event typically includes the set of outcomes that make the answer to a particular question 'Yes'. Saying 'the outcome is in \(A\)' is equivalent to saying 'the event \(A\) is true'.
+
+<br><br>
+
+
+For instance, in our card example, one event of interest is having both cards as aces. This event includes all outcomes that fulfill this condition, specifically the 6 hands that consist of two aces.
+
+
+There are two special events: </p>
+ <ul>
+     <li>
+         The <a>certain event</a> or <a>sure event</a>: This is the entire sample space \(S\).
+     </li>
+     
+     <li>
+         The <a>null event</a>: This is the empty set \(\emptyset\), which contains no outcomes.
+     </li>
+ </ul>
+
+  <!--
+                                                                                                                                                
                               <defn>
                                         <div class="definition"></div>
                                         <div class="definitionb">
@@ -298,7 +518,9 @@ $$
                              <h2 class="frame-sect sectcounter">លក្ខណៈរបស់ប្រមាណវិធី</h2>
                              <p>Let $\ast$ be a binary operation on a set $A$. There are a number of interesting properties that a binary operation may or may not have. Specifying a list of properties that a binary operation must satisfy will allow us to define deep mathematical objects such as groups.</p>
                              
-                             <!--h3>Commutative and associative binary operations</!--h3-->
+                             <!--h3>Commutative and associative binary operations</!--h3 -->
+                             
+                            <!--
                               <ol type="i">
                                         <li>
                                                   <a href="#genaral">
@@ -441,8 +663,9 @@ $$
                                         </li>
 
                                         <li><a href="#Bibliog">Bibliographie</a></li------>
+                       <!--       
                               </ol>
-
+-->
                               <footer class="site-footer">
                                         <span class="site-footer-credits"
                                                   >This page was generated by

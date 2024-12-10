@@ -782,6 +782,63 @@ where $x=\left(x_1, x_2, \ldots, x_n\right)$.
   
   </div>
 
+<example>
+    Let $\K$ be a field and $\K[x]$ be the ring of polynomials with coefficients in $\K$. Then $\K[x]$ is a $\K$-vs for the external law,
+$$
+\begin{array}{rccl}
+\cdot: & \K \times \K[x] & \longrightarrow & \K[x] \\
+&(\lambda, P) & \longmapsto &\lambda \cdot P=\sum_{i=1}^n\left(\lambda a_i\right) x^i
+\end{array}
+$$
+where $P=\sum_{i=1}^n a_i x^i$.
+</example>
+ <div id="ansSH"><a>Answer</a>
+    <div class="ansToggle box-lemma" style="display: none; font-size: 10px !important">
+    <p> Left as exercise (1).
+ </p>
+
+  </div>
+ <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span>
+  
+  </div>
+  
+ 
+ <example>
+     Let $\E$ be a $\K$-vs, $A$ be any non-empty set and $\E^A$ be the set of all maps from $A$ to $\E$. Then $\E^A$ is a $\K$-vs for the external law,
+
+$$
+\begin{array}{rccl}
+\cdot: &\K \times \E^A & \longrightarrow & \E^A \\
+&(\lambda, f) &\longmapsto &\lambda \cdot f
+\end{array}
+$$
+where 
+<ol type="i">
+    <li>
+        $\lambda \cdot f$ is the map from $A$ to $\E$ defined by: 
+$$
+\forall x \in A: (\lambda \cdot f)(x)=\lambda \cdot f(x)
+$$
+    </li>
+    <li>If $f$ and $g$ are two maps from $A$ to $\E$, then $f+g$ is the map from $A$ to $\E$ defined by:
+$$
+\forall x \in A: (f+g)(x)=f(x)+g(x)
+$$
+    </li>
+</ol>
+     
+ </example>
+ <div id="ansSH"><a>Answer</a>
+    <div class="ansToggle box-lemma" style="display: none; font-size: 10px !important">
+    <p> Left as exercise (1).
+ </p>
+
+  </div>
+ <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span>
+  
+  </div>
+ 
+ 
   
 <p class="">We begin with the following definition.</p>
 
@@ -836,39 +893,48 @@ Find \(\minor\left( A\right) _{12}\) and \(\minor\left( A\right) _{23}\).
       </div>
 </example>
 
+<h3>លំហវ៉ិចទ័ររង (subspaces)</h3>
 <defn>
-<div class="definition">(The \(ij^{th}\) Cofactor of a Matrix) </div>
+<div class="definition">(Subspaces) </div>
  <div class="definitionb">
-<p>
-Suppose \(A\) is an \(n\times n\) matrix. The \(ij^{th}\) cofactor, denoted by \(\mathrm{cof}\left( A\right) _{ij}\) is defined to be
-
-\[\cof\left( A\right) _{ij} = \left( -1\right) ^{i+j} \cdot  \minor\left(A\right)_{ij} \]
-
-    We denote as following: </p>
-	<ol class="romanlist threeem">
-<li>
-$\cof (A) = \Big( \cof(A)_{ij} \Big)_{n\times n}$ ហៅថា <b>ម៉ាទ្រីសកូហ្វាក់ទ័រ</b>
-		</li>
-		
-		<li>
-            $\mathbf{adj}(A) = \Big( \cof(A)_{ij} \Big)_{n\times n}^T$ ហៅថា <b>ម៉ាទ្រីស adjoint </b> បានមកពីត្រង់ស្ប៉ូ របស់ម៉ាទ្រីសកូហ្វាក់ទ័រ។
-		</li>
-	 </ol>
+Let $\E$ be a $\K$-vector space and $\mathbf W$ be a part of $\E$. We say that $\mathbf W$ is a vector subspace of $\E$, if
+<ol type="i">
+    <li>
+$(\mathbf W,+)$ is a subgroup of $(\E,+)$.
+    </li>
+    <li>
+        $\forall \lambda \in \K, \forall x \in \mathbf W: \lambda \cdot x \in \mathbf W$.
+    </li>
+</ol>
 	 
 </div>
  </defn>
 
 
 <p style="text-indent: 0px"><b>ចំណាំ :</b>
-  It is also convenient to refer to the cofactor of an entry of a matrix as follows. If \(a_{ij}\) is the \(ij^{th}\) entry of the matrix, then its cofactor is just \(\cof\left( A\right) _{ij}\), or simply $A_{ij}$ or $c_{ij}$.
+If $\mathbf W$ is a vector subspace of $\E$, then $\mathbf W$ is a vector space for the external law induced by that of $\E$:
+$$
+\begin{aligned}
+\K \times \mathbf W & \longrightarrow \mathbf W \\
+(\alpha, x) & \longmapsto \alpha \cdot x
+\end{aligned}
+$$
     </p>
 
     <example>
-    (Finding Cofactors of a Matrix)
+    (Verify a subspace)
 
-      <p class="">
-    Consider the matrix \[A=\left[ \begin{array}{rrr} 1 & 2 & 3 \\ 4 & 3 & 2 \\ 3 & 2 & 1 \end{array} \right]\nonumber \] Find \(\cof\left( A\right) _{12}\) and \(\cof\left( A\right) _{23}\).
-      </p>
+      <ol class="">
+    <li>The set $\mathbf W$ of real sequences which tend to zero at infinity, is a $\mathbb{R}$-vs,
+$$
+\mathbf W=\left\{\left(x_n\right)_{n \geq 0} \in \mathbb{R}^{\mathbb{N}}: \lim _{n \rightarrow \infty} x_n=0\right\}
+$$
+         It suffices to show that $\mathbf W$ is a vector subspace of $\E=\mathbb{R}^{\mathbb{N}}$
+          </li>
+          <li>
+              
+          </li>
+      </ol>
       <div class="example-content">
             <span id="SHLink_Soln3" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln3" class="fa fa-caret-right" aria-hidden="true"></span>
        <div id="SHObj_Soln3" class="soln-content" style="display: none;">
