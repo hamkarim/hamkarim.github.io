@@ -513,10 +513,7 @@ December
 
 </blockquote>
 
-<p>
-    
-    
-</p>
+
 
 <div>
     
@@ -550,6 +547,7 @@ Matrix Representation: You'll learn how to represent linear transformations usin
     </li>
 </ol>
 </div>
+
 
 
 <h2 class="frame-sect sectcounter">&nbsp; និយមន័យ និងលក្ខណៈគ្រឹះសំខាន់ៗ </h2>
@@ -792,7 +790,7 @@ $$
 $$
 where $P=\sum_{i=1}^n a_i x^i$.
 </example>
- <div id="ansSH"><a>Answer</a>
+ <div id="ansSH1"><a>Answer</a>
     <div class="ansToggle box-lemma" style="display: none; font-size: 10px !important">
     <p> Left as exercise (1).
  </p>
@@ -828,7 +826,7 @@ $$
 </ol>
      
  </example>
- <div id="ansSH"><a>Answer</a>
+ <div id="ansSH2"><a>Answer</a>
     <div class="ansToggle box-lemma" style="display: none; font-size: 10px !important">
     <p> Left as exercise (1).
  </p>
@@ -837,61 +835,6 @@ $$
  <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span>
   
   </div>
- 
- 
-  
-<p class="">We begin with the following definition.</p>
-
-<defn>
-          <div class="definition">(The \(ij^{th}\) Minor of a Matrix)</div>
- <div class="definitionb">
-   <p>
-    Let \(A\) be a \(3\times 3\) matrix. The \(ij^{th}\) minor of \(A\), denoted as \(\minor\left( A\right) _{ij},\) is the determinant of the \(2\times 2\) matrix which results from deleting the \(i^{th}\) row and the \(j^{th}\) column of \(A\).
-   </p>
-
-
-<p>
-In general, if \(A\) is an \(n\times n\) matrix, then the \(ij^{th}\) minor of \(A\) is the determinant of the \(n-1 \times n-1\) matrix which results from deleting the \(i^{th}\) row and the \(j^{th}\) column of \(A\).
-</p>
-</div>
-</defn>
-<p>Hence, there is a minor associated with each entry of \(A\). Consider the following example which demonstrates this definition.</p>
-
-<example>
-(Finding Minors of a Matrix )
-
-  <p class="">
-Let
-
-\[A = \left[ \begin{array}{rrr} 1 & 2 & 3 \\ 4 & 3 & 2 \\ 3 & 2 & 1 \end{array} \right] \]
-
-Find \(\minor\left( A\right) _{12}\) and \(\minor\left( A\right) _{23}\).
-  </p>
-  <div class="example-content">
-        <p align="right">
-            <span id="SHLink_Soln2" class="soln-title SH-Link">Show Solution</span>         
-        <span id="SHImg_Soln2" class="fa fa-caret-right" aria-hidden="true"></span></p>
-   <div id="SHObj_Soln2" class="soln-content" style="display: none;">
-  <p>
-    First we will find \(\minor\left( A\right) _{12}\). By Definition \(\PageIndex{2}\), this is the determinant of the \(2\times 2\) matrix which results when you delete the first row and the second column. This minor is given by
-
-    \[\minor \left(A\right)_{12} = \det \left[ \begin{array}{rr} 4 & 2 \\ 3 & 1 \end{array} \right] \]
-
-    Using Definition \(\PageIndex{1}\), we see that
-
-    \[\det \left[ \begin{array}{rr} 4 & 2 \\ 3 & 1 \end{array} \right] = \left(4\right)\left(1\right) - \left(3\right)\left(2\right) = 4 - 6 = -2\]
-
-  Therefore \(\minor \left(A\right)_{12} = -2\).
-
-  Similarly, \(\minor\left(A\right)_{23}\) is the determinant of the \(2\times 2\) matrix which results when you delete the second row and the third column. This minor is therefore
-
-  \[\minor \left(A\right)_{23} = \det \left[ \begin{array}{rr} 1 & 2 \\ 3 & 2 \end{array} \right] = -4 \]
-
-  Finding the other minors of \(A\) is left as an exercise.
-  </p>
-        </div>
-      </div>
-</example>
 
 <h3>លំហវ៉ិចទ័ររង (subspaces)</h3>
 <defn>
@@ -963,6 +906,65 @@ $$
           </div>
     </example>
 
+   
+   <!-------------------------------------------------------------------->
+   
+   <p class="">We begin with the following definition.</p>
+
+<defn>
+          <div class="definition">(The \(ij^{th}\) Minor of a Matrix)</div>
+ <div class="definitionb">
+   <p>
+    Let \(A\) be a \(3\times 3\) matrix. The \(ij^{th}\) minor of \(A\), denoted as \(\minor\left( A\right) _{ij},\) is the determinant of the \(2\times 2\) matrix which results from deleting the \(i^{th}\) row and the \(j^{th}\) column of \(A\).
+   </p>
+
+
+<p>
+In general, if \(A\) is an \(n\times n\) matrix, then the \(ij^{th}\) minor of \(A\) is the determinant of the \(n-1 \times n-1\) matrix which results from deleting the \(i^{th}\) row and the \(j^{th}\) column of \(A\).
+</p>
+</div>
+</defn>
+<p>Hence, there is a minor associated with each entry of \(A\). Consider the following example which demonstrates this definition.</p>
+
+<example>
+(Finding Minors of a Matrix )
+
+  <p class="">
+Let
+
+\[A = \left[ \begin{array}{rrr} 1 & 2 & 3 \\ 4 & 3 & 2 \\ 3 & 2 & 1 \end{array} \right] \]
+
+Find \(\minor\left( A\right) _{12}\) and \(\minor\left( A\right) _{23}\).
+  </p>
+  <div class="example-content">
+        <p style="align: right;">
+            <span id="SHLink_Soln2" class="soln-title SH-Link">Show Solution</span>         
+        <span id="SHImg_Soln2" class="fa fa-caret-right" aria-hidden="true"></span></p>
+   <div id="SHObj_Soln2" class="soln-content" style="display: none;">
+  <p>
+    First we will find \(\minor\left( A\right) _{12}\). By Definition \(\PageIndex{2}\), this is the determinant of the \(2\times 2\) matrix which results when you delete the first row and the second column. This minor is given by
+
+    \[\minor \left(A\right)_{12} = \det \left[ \begin{array}{rr} 4 & 2 \\ 3 & 1 \end{array} \right] \]
+
+    Using Definition \(\PageIndex{1}\), we see that
+
+    \[\det \left[ \begin{array}{rr} 4 & 2 \\ 3 & 1 \end{array} \right] = \left(4\right)\left(1\right) - \left(3\right)\left(2\right) = 4 - 6 = -2\]
+
+  Therefore \(\minor \left(A\right)_{12} = -2\).
+
+  Similarly, \(\minor\left(A\right)_{23}\) is the determinant of the \(2\times 2\) matrix which results when you delete the second row and the third column. This minor is therefore
+
+  \[\minor \left(A\right)_{23} = \det \left[ \begin{array}{rr} 1 & 2 \\ 3 & 2 \end{array} \right] = -4 \]
+
+  Finding the other minors of \(A\) is left as an exercise.
+  </p>
+        </div>
+      </div>
+</example>
+   
+   
+   
+   
     <defn>
               <div class="definition">(The Determinant of a Three By Three Matrix) </div>
      <div class="definitionb">
@@ -1034,7 +1036,7 @@ We present this idea formally in the following theorem.</p>
 a_{11} & a_{12} & \cdots & a_{1n} \\
 a_{21} & a_{22} & \cdots & a_{2n}\\
 \vdots & \vdots & \ddots & \vdots \\
-a_{n1} & a_{n2} & \cdots &a_{nn}
+a_{n1} & a_{n2} & \cdots & a_{nn}
 \end{vmatrix}
 &= &\sum_{k=1}^{n} a_{ik} \cdot \cof(A)_{ik}, \quad (\text{by row } i\text{-th},  i=1,\ldots,n) \\
 &= &\sum_{k=1}^{n} a_{kj} \cdot \cof(A)_{kj}, \quad (\text{by column } j\text{-th},  j=1,\ldots,n)
@@ -1144,7 +1146,7 @@ There is a certain type of matrix for which finding the determinant is a very si
             From Theorem \(\PageIndex{2}\), it suffices to take the product of the elements on the main diagonal. Thus \(\det \left( A\right) =1\times 2\times 3\times \left( -1\right) =-6.\)
         </p>
         <p>
-            Without using Theorem \(\PageIndex{2}\), you could use Laplace Expansion. We will expand along the first column. This gives \[\begin{aligned} \det \left(A\right) = &1\left| \begin{array}{rrr} 2 & 6 & 7 \\ 0 & 3 & 33.7 \\ 0 & 0 & -1 \end{array} \right| +0\left( -1\right) ^{2+1}\left| \begin{array}{rrr} 2 & 3 & 77 \\ 0 & 3 & 33.7 \\ 0 & 0 & -1 \end{array} \right| + \\ &0\left( -1\right) ^{3+1}\left| \begin{array}{rrr} 2 & 3 & 77 \\ 2 & 6 & 7 \\ 0 & 0 & -1 \end{array} \right| +0\left( -1\right) ^{4+1}\left| \begin{array}{rrr} 2 & 3 & 77 \\ 2 & 6 & 7 \\ 0 & 3 & 33.7 \end{array} \right|\end{aligned}\] and the only nonzero term in the expansion is \[1\left| \begin{array}{rrr} 2 & 6 & 7 \\ 0 & 3 & 33.7 \\ 0 & 0 & -1 \end{array} \right|\nonumber \] Now find the determinant of this \(3 \times 3\) matrix, by expanding along the first column to obtain \[\det \left(A\right) = 1\times \left( 2\times \left| \begin{array}{rr} 3 & 33.7 \\ 0 & -1 \end{array} \right| +0\left( -1\right) ^{2+1}\left| \begin{array}{rr} 6 & 7 \\ 0 & -1 \end{array} \right| +0\left( -1\right) ^{3+1}\left| \begin{array}{rr} 6 & 7 \\ 3 & 33.7 \end{array} \right| \right)\nonumber \] \[=1\times 2\times \left| \begin{array}{rr} 3 & 33.7 \\ 0 & -1 \end{array} \right|\nonumber \] Next use Definition \(\PageIndex{1}\) to find the determinant of this \(2 \times 2\) matrix, which is just \(3 \times -1 - 0 \times 33.7 = -3\). Putting all these steps together, we have \[\det \left(A\right) = 1\times 2\times 3\times \left( -1\right) =-6\nonumber \] which is just the product of the entries down the main diagonal of the original matrix!
+            Without using Theorem \({2}\), you could use Laplace Expansion. We will expand along the first column. This gives \[\begin{aligned} \det \left(A\right) = & 1\left| \begin{array}{rrr} 2 & 6 & 7 \\ 0 & 3 & 33.7 \\ 0 & 0 & -1 \end{array} \right| +0\left( -1\right) ^{2+1}\left| \begin{array}{rrr} 2 & 3 & 77 \\ 0 & 3 & 33.7 \\ 0 & 0 & -1 \end{array} \right| + \\ & 0\left( -1\right) ^{3+1}\left| \begin{array}{rrr} 2 & 3 & 77 \\ 2 & 6 & 7 \\ 0 & 0 & -1 \end{array} \right| +0\left( -1\right) ^{4+1}\left| \begin{array}{rrr} 2 & 3 & 77 \\ 2 & 6 & 7 \\ 0 & 3 & 33.7 \end{array} \right|\end{aligned}\] and the only nonzero term in the expansion is \[1\left| \begin{array}{rrr} 2 & 6 & 7 \\ 0 & 3 & 33.7 \\ 0 & 0 & -1 \end{array} \right|\nonumber \] Now find the determinant of this \(3 \times 3\) matrix, by expanding along the first column to obtain \[\det \left(A\right) = 1\times \left( 2\times \left| \begin{array}{rr} 3 & 33.7 \\ 0 & -1 \end{array} \right| +0\left( -1\right) ^{2+1}\left| \begin{array}{rr} 6 & 7 \\ 0 & -1 \end{array} \right| +0\left( -1\right) ^{3+1}\left| \begin{array}{rr} 6 & 7 \\ 3 & 33.7 \end{array} \right| \right)\nonumber \] \[=1\times 2\times \left| \begin{array}{rr} 3 & 33.7 \\ 0 & -1 \end{array} \right|\nonumber \] Next use Definition \(\PageIndex{1}\) to find the determinant of this \(2 \times 2\) matrix, which is just \(3 \times -1 - 0 \times 33.7 = -3\). Putting all these steps together, we have \[\det \left(A\right) = 1\times 2\times 3\times \left( -1\right) =-6\nonumber \] which is just the product of the entries down the main diagonal of the original matrix!
         </p>
     </div>
 </div>
@@ -1188,7 +1190,7 @@ There is a certain type of matrix for which finding the determinant is a very si
         <div class="definition">(Row Operations)</div>
         <div class="definitionb">
             <p>
-                ប្រមាណវិធីជួរដេក (row operations) អនុវត្តទៅលើម៉ាទ្រីសមួយ ត្រូវបានកំណត់ដូចខាងក្រោម៖
+                ប្រមាណវិធីជួរដេក (row operations) អនុវត្តទៅលើម៉ាទ្រីសមួយ ត្រូវបានកំណត់ដូចខាងក្រោម៖</p>
                 <!-- consist of the following-->
             <ol>
                 <li>Switch two rows <span class="tab">\((R_i \longleftrightarrow R_j)\)</span>
@@ -1199,7 +1201,6 @@ There is a certain type of matrix for which finding the determinant is a very si
                     Replace a row by a multiple of another row added to itself <span class="tab">\((R_i^{\text{old}}+\lambda\cdot R_j^{\text{old}} \longrightarrow R_i^{\text{new}})\)</span>
                 </li>
             </ol>
-            </p>
 
         </div>
     </defn>
@@ -1212,7 +1213,7 @@ There is a certain type of matrix for which finding the determinant is a very si
 
     <div class="box-definition">
         <div class="mt-section box-legend editable"><span class="lt-icon-default">Properties I: (the effect of row operations) </span></div>
-        <p>
+        <div>
         <ol class="romanlist oneem">
             <li><b>Switching Rows:</b> យកម៉ាទ្រីស $A$ មានលំដាប់ $n\times n$ និងយក $B$ ជាម៉ាទ្រីសដែលបានមកពីការប្ដូរជួរដេកពីររបស់ម៉ាទ្រីស $ A$ ។ ដូច្នេះ គេបាន $$\det(B)=-\det(A)$$</li>
 
@@ -1230,7 +1231,7 @@ There is a certain type of matrix for which finding the determinant is a very si
 
         </ol>
 
-        </p>
+        </div>
 
     </div>
 
@@ -1245,7 +1246,7 @@ There is a certain type of matrix for which finding the determinant is a very si
         <div mt-section-origin="" class="mt-section">
             <h5 class="box-legend editable"><span class="lt-icon-default">Properties II: (major properties of determinants) </span></h5>
 
-            <p class="">
+            <div class="">
             <ol class="parenthnum">
                 <li><b>Determinant of a Product:</b>
                     Let \(A\) and \(B\) be two \(n\times n\) matrices. Then \[\det \left( AB\right) =\det \left( A\right) \det \left( B\right)\nonumber \]</li>
@@ -1261,9 +1262,9 @@ There is a certain type of matrix for which finding the determinant is a very si
                 </li>
 
             </ol>
-            </p>
 
         </div>
+    </div>
     </div>
 
     <h3 class="frame-sect sectcounter">&nbsp; Properties of Determinants: Some Important Proofs </h3>
@@ -1282,7 +1283,6 @@ There is a certain type of matrix for which finding the determinant is a very si
     <example>
         (Elementary Matrices - ម៉ាទ្រីសបឋម)
 
-        <p class="">
         <ol>
             <li>
                 Let \(E_{ij}\) be the elementary matrix obtained by interchanging \(i\)th and \(j\)th rows of \(I\). Then \(\det(E_{ij})=-1\).
@@ -1304,7 +1304,8 @@ There is a certain type of matrix for which finding the determinant is a very si
                 If \(E\) is an elementary matrix, then \(\det(E)=\det(E^T)\).
             </li>
         </ol>
-        </p>
+
+       
         <div class="example-content">
             <span id="SHLink_SolnEx2.1" class="soln-title SH-Link">Show solution</span> <span id="SHImg_SolnEx2.1" class="fa fa-caret-right" aria-hidden="true"></span>
             <div id="SHObj_SolnEx2.1" class="soln-content" style="display: none;">
@@ -1335,7 +1336,7 @@ There is a certain type of matrix for which finding the determinant is a very si
         <div mt-section-origin="" class="mt-section">
             <h5 class="box-legend editable"><span class="lt-icon-default">Lemma : (Proof of properties of determinants) </span></h5>
 
-            <p>
+            <div>
             <ol class="indentli">
                 <li>If \(A\) is an \(n\times n\) matrix such that one of its rows consists of zeros, then \(\det(A)=0\).
 
@@ -1428,7 +1429,7 @@ There is a certain type of matrix for which finding the determinant is a very si
                     Let \(A\) and \(B\) be two \(n\times n\) matrices. Then \[\det\left( AB\right) =\det\left( A\right) \cdot \det \left( B\right)\nonumber \]
                 </li>
             </ol>
-            </p>
+            </div>
 
         </div>
     </div>
@@ -1503,7 +1504,7 @@ There is a certain type of matrix for which finding the determinant is a very si
         <div class="box-legend editable"><span class="lt-icon-default">Finding an Interpolation Polynomial</span>
         </div>
 
-        <p class="">
+        <div class="">
             Suppose that values of \(x\) and corresponding values of \(y\) are given, such that the actual relationship between \(x\) and \(y\) is unknown. Then, values of \(y\) can be estimated using an interpolating polynomial \(p(x)\). If given \(x_1, ..., x_n\) and the corresponding \(y_1, ..., y_n\), the procedure to find \(p(x)\) is as follows:
         <ol class="romanlist twoem">
             <li>
@@ -1520,7 +1521,7 @@ There is a certain type of matrix for which finding the determinant is a very si
             </li>
         </ol>
 
-        </p>
+        </div>
 
     </div>
 
@@ -1564,11 +1565,6 @@ There is a certain type of matrix for which finding the determinant is a very si
 -->
 
 
-
-
-
-
-
 </section>
 
 <section class="main-content">
@@ -1582,7 +1578,7 @@ There is a certain type of matrix for which finding the determinant is a very si
 </span>
 </div>
 
-<p class="">
+<div class="">
 <ol class="romanlist twoem">
     <li>
         Describe eigenvalues geometrically and algebraically.
@@ -1592,7 +1588,7 @@ There is a certain type of matrix for which finding the determinant is a very si
     </li>
 </ol>
 
-</p>
+</div>
 
 </div>
    
@@ -1608,7 +1604,7 @@ There is a certain type of matrix for which finding the determinant is a very si
 <defn>
     <div class="definition"><span>(Eigenvalues and Eigenvectors)</span> </div>
     <div class="definitionb">
-        <p>
+        <div>
             Let \(A\) be an \(n\times n\) matrix and let \(x \in \mathbb{C}^{n}\) be a nonzero vector for which
 
             \[Ax=\lambda x \label{eigen1}\] for some scalar \(\lambda\). Then
@@ -1623,7 +1619,7 @@ There is a certain type of matrix for which finding the determinant is a very si
             </li>
         </ol>
 
-        </p>
+        </div>
     </div>
 </defn>
 
@@ -1684,8 +1680,8 @@ Then \(\lambda\) is an eigenvalue of \(A\) and thus there exists a nonzero vecto
 </span>
 </div>
 
-<p class="">
-Let \(A\) be an \(n \times n\) matrix.
+<p>
+    Let \(A\) be an \(n \times n\) matrix.</p>
 <ol class="romanlist twoem">
     <li>
         First, find the eigenvalues \(\lambda\) of \(A\) by solving the equation \(\det \left( \lambda I -A \right) = 0\).
@@ -1696,7 +1692,6 @@ Let \(A\) be an \(n \times n\) matrix.
 </ol>
 To verify your work, make sure that \(Ax=\lambda x\) for each \(\lambda\) and associated eigenvector \(x\).
 
-</p>
 
 </div>
    
@@ -1920,25 +1915,7 @@ Find the eigenvalues for the matrix
       
 </example>
    
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
+
    
    
    
