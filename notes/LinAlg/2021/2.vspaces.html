@@ -430,7 +430,35 @@
     <script type="text/javascript" id="MathJax-script" defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml-full.min.js">
     </script>
 
-  
+  <!--Show/Hide Answer with: toggleAnswer(exampleId)-->
+  <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function toggleAnswer(exampleId) {
+            // Create the dynamic id
+            let dynamicId = `answer_${exampleId}`;
+
+            // Get the element by the dynamic id
+            let element = document.getElementById(dynamicId);
+            
+            // Toggle the 'hidden' class to show/hide the answer block
+           if (element) {
+                // Toggle visibility based on the current display style
+                if (element.style.display === 'none') {
+                    element.style.display = 'block';  // Show the element
+                } else {
+                    element.style.display = 'none';  // Hide the element
+                }
+            } else {
+                console.error(`Element with id "${answerId}" not found.`);
+            }
+        }
+    </script>
+    
+    <!--End-->
   <script>
 $(document).ready(function(){
   $("sh").click(function(){
@@ -742,15 +770,81 @@ $$
 $$
 For example, $\E=\mathbb{C}$ and $\K=\mathbb{R}, \E=\mathbb{R}$ and $\K=\mathbb{Q}$ or $\E=\mathbb{C}$ and $\K=\mathbb{Q}$. In particular, any field $\K$ can be considered as a vector space on itself.
     </example>
-<div id="ansSH"><a>Answer</a>
-    <div class="ansToggle box-lemma" style="display: none; font-size: 10px !important">
-    <p> Left as exercise (1).
- </p>
+    
+    <p onclick="toggleAnswer('ex1')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
+    <div id="answer_ex1" class="box-lemma" style="display: none">
+   <p> <!--Left as exercise (1).-->
+   ឧបមា $\E=\mathbb{C}$ and $\K=\mathbb{R}$ ។ យើងនឹងបង្ហាញថា $(\E, +)$ ជាក្រុមអាបែល ហើយផ្ទៀងផ្ទាត់បន្ថែមលក្ខណៈ (i.) ដល់ (iv.) ។</p>
+   <ol type="a">
+       <li> <a>បង្ហាញថា $(\E, +)$ ជាក្រុមអាបែល:</a>
+       <ul>
+           <li>លក្ខណៈផ្ដុំ៖ យក $a,b,c \in \E$ គេបាន
+           \begin{eqnarray*}
+           a+(b+c) &=& x_a+i y_a + \bigl(x_b+i y_b + x_c + i y_c\bigr)\\
+           &=& x_a+i y_a + \Bigl((x_b+x_c) + i (y_b + y_c)\Bigr)\\
+           &=& \bigl(x_a+(x_b+x_c)\bigr) + i \bigl(y_a+(y_b + y_c)\bigr)\\
+           &=& \bigl((x_a+x_b)+x_c\bigr) + i \bigl((y_a+y_b) + y_c\bigr)\\
+            &=& \Bigl((x_a+x_b) + i (y_a + y_b)\Bigr) + x_c+i y_c \\
+            &=& \bigl(x_a+i y_a + x_b + i y_b\bigr) + x_c+i y_c \\
+            &=& (a+b) +c
+           \end{eqnarray*}
+           </li>
+           <li> លក្ខណៈត្រឡប់៖ យក $a,b \in \E$ គេបាន
+               \begin{eqnarray*}
+           a+b &=& x_a+i y_a + x_b+i y_b\\
+            &=& (x_a+x_b) + i (y_a + y_b)\\
+            &=& (x_b+x_a) + i (y_b + y_a)\\
+            &=& x_b + i y_b + x_a +i y_a\\
+            &=& b+a
+           \end{eqnarray*}
+           </li>
+           
+           <li>ធាតុណឺត៖ មាន $e\in \E$ ជាធាតុណឺត ។ គេបាន គ្រប់ $a\in \E$:
+               \begin{eqnarray*}
+               e+a &=& a \\
+             \Leftrightarrow\quad  (x_e+iy_e) + (x_a+i y_a) &=& x_a+iy_a\\
+             \Leftrightarrow\quad  (x_e+x_a) + i (y_e+y_a) &=& x_a + i y_a
+               \end{eqnarray*}
+           ដូច្នេះ \[
+           \begin{cases}
+           x_e+x_a = x_a & \\
+           y_e+y_a = y_a
+           \end{cases} \quad \Longleftrightarrow \quad \begin{cases}
+           x_e+x_a = 0+x_a & \\
+           y_e+y_a = 0+y_a
+           \end{cases} 
+           \]
+           ដូច្នេះ $x_e = 0, y_e=0$ ។
+                   
+           </li>
+           
+           <li>ធាតុច្រាស៖ យក $a\in \E$ និងតាង $a^{-1} = \alpha +i\beta$ ជាធាតុច្រាសរបស់ $a$ ។ គេបាន
+               \begin{eqnarray*}
+               a+a^{-1} &=& e \\
+             \Leftrightarrow\quad  (x_a+iy_a) + (\alpha+i \beta) &=& 0+i 0\\
+             \Leftrightarrow\quad  (x_a+\alpha) + i (y_a+\beta) &=& 0 + i 0
+               \end{eqnarray*}
+           ដូច្នេះ \[
+           \begin{cases}
+           x_a+\alpha = 0 & \\
+           y_a+\beta = 0&
+           \end{cases} \quad \Longleftrightarrow \quad \begin{cases}
+          x_a+\alpha = x_a + (-x_a) & \\
+           y_a+\beta = y_a + (-y_a) &
+           \end{cases} 
+           \]
+           ដូច្នេះ $\alpha = -x_a, \beta = -y_a$ ។
+           </li>
+       </ul>
+       ដូច្នេះ $(\E, +)$ ជាក្រុមអាបែល ។
+       </li>
+       
+       <li>បង្ហាញលក្ខណៈចំពោះប្រមាណវិធីក្រៅ $\cdot$ ?
+           
+       </li>
+   </ol>
+ </div>
 
-  </div>
- <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span>
-  
-  </div>
 
 <example>
             <!--Soit $\K$ un corps commutatif, alors pour tout entier $n \geq 1, \K^n$ est un $\K$-espace vectoriel pour la loi externe,
@@ -1971,7 +2065,7 @@ Find the eigenvalues for the matrix
     ga('send', 'pageview');
   </script -->
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics >
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171606319-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -1980,6 +2074,8 @@ Find the eigenvalues for the matrix
 
   gtag('config', 'UA-171606319-1');
 </script>
+
+-->
 
 
 </html>
