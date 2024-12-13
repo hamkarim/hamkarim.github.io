@@ -55,8 +55,8 @@ p {
     line-height: 1.5 !important;
     margin-block-start: 0.5em;
     margin-block-end: 0.5em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
 }
 
 p.parindent {
@@ -752,7 +752,7 @@ a:hover {
 }
 
 .project-tagline {
-    margin-top: 0rem;
+    margin-top: 0;
     margin-bottom: -2rem;
     font-weight: normal;
     opacity: 0.9;
@@ -1003,11 +1003,10 @@ h3.sectcounter:before {
 .main-content blockquote p {
     text-indent: 25px;
     font-size: 14px;
-    padding: 0px;
+    padding: 0;
     margin-left: -0.5em;
-    margin-top: 0px;
-    margin-bottom: 10px;
     margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .main-content thead {
@@ -1021,7 +1020,7 @@ h3.sectcounter:before {
     overflow: auto;
     font-size: 15px;
     word-break: normal;
-    word-break: keep-all;
+    /*word-break: keep-all;*/
     -webkit-overflow-scrolling: touch;
 }
 
@@ -1032,8 +1031,8 @@ h3.sectcounter:before {
 
 .main-content table td {
     width: 25%;
-    padding: 0.5rem 0rem;
-    border: 0px solid #e9ebec;
+    padding: 0.5rem 0;
+    border: 0 solid #e9ebec;
 }
 
 .main-content dl {
@@ -1102,7 +1101,7 @@ h3.sectcounter:before {
     color: dimgray; /*#0037A8;*/
     border-left: 0.15rem solid #960000;
     border-right: 0;
-    border-top: 0px;
+    border-top: 0;
     border-bottom: 0;
     border-style: dotted;
     text-align: left;
@@ -1128,10 +1127,10 @@ h3.sectcounter:before {
     margin-bottom: 10px;
     color: #0e81c1;
     border: 2pt solid #0067eb;
-    border-radius: 15px;
+    border-radius: 10px;
     background-color: #d5dfe5;
     text-align: left;
-    font-size: 14px!important ;
+    font-size: 16px!important ;
     /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
 
@@ -1147,8 +1146,9 @@ h3.sectcounter:before {
     counter-increment: counteran;
     content: "ចម្លើយ" "."; /*counter(section, khmer) "." counter(counteran, khmer) ". ";*/
     font-weight: bold;
-    font-size: 14px;
+    font-size: 20px;
     font-family: Battambang;
+    color: darkred;
     /*Angkor*/
 }
 
@@ -1396,9 +1396,9 @@ ul.leftborder {
     display: inline-block;
     width: 100%;
     /*padding:0 0 0 0; */
-    margin-right: 0px;
+    margin-right: 0;
     margin-left: 10px;
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 10px;
     padding-left: 30px;
     /*color:#076422;*/
@@ -1437,10 +1437,10 @@ ul.leftborder {
     background-color: lightblue;
     width: 80%;
     /*padding:0 0 0 0; */
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
     padding-left: 10px;
     padding-bottom: 5px;
     /*color:#076422;*/
@@ -1457,9 +1457,9 @@ ul.leftborder {
     display: inline-block;
     width: 100%;
     /*padding:0 0 0 0; */
-    margin-right: 0px;
+    margin-right: 0;
     margin-left: 10px;
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 10px;
     padding-left: 30px;
     /*color:#076422;*/
@@ -1515,7 +1515,7 @@ ol.parenthroman li::before {
     /*display: table-cell;*/
     display: inline-block;
     text-align: left;
-    padding-right: 0px;
+    padding-right: 0;
     width: 2em;
     margin-left: -4em;
     padding-left: 2em;
@@ -1538,10 +1538,10 @@ ol.parenthalpha li::before {
     /*display: table-cell;*/
     display: inline-block;
     text-align: left;
-    padding-right: 0px;
+    padding-right: 0;
     width: 2em;
     margin-left: -2em;
-    padding-left: 0em;
+    padding-left: 0;
     /*font-size: 16px;
 	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
@@ -1662,8 +1662,8 @@ ol.oneem {
 	display: inline-block;
 	content: "(" counter(item,khmer) ")";
 	/*counter-increment: item;*/
-    margin-left: 0em;
-    padding-left: 0em;
+    margin-left: 0;
+    padding-left: 0;
     /*text-align: left;
 	font-size: 16px;
 	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
@@ -1739,7 +1739,7 @@ div.divfigure {
 .toggle.bground {
     background-color: #1860c1;
     color: white;
-    padding: 0px 10px 0px 10px;
+    padding: 0 10px 0 10px;
     text-align: right;
     font-style: italic;
     font-size: 85%;
@@ -1747,13 +1747,13 @@ div.divfigure {
 
 /* Show and hide bacground and block proof display*/
 .showhidebground {
-    margin: 0px auto;
+    margin: 0 auto;
     text-align: right;
 }
 
 .showhidebground .input_name {
     border: 0;
-    padding: 0px 10px;
+    padding: 0 10px;
     font-size: 85%;
     background-color: #1860c1;
     color: white;
@@ -1765,11 +1765,11 @@ div.divfigure {
     padding: 0 0 0 1em;
     margin-left: 0;
     margin-top: 0;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     color: #0037a8;
     border-left: 0.15rem solid #960000;
     border-right: 0;
-    border-top: 0px;
+    border-top: 0;
     border-bottom: 0;
     border-style: dotted;
     text-align: left;
