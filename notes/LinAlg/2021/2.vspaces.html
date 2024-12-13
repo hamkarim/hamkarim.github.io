@@ -772,12 +772,14 @@ For example, $\E=\mathbb{C}$ and $\K=\mathbb{R}, \E=\mathbb{R}$ and $\K=\mathbb{
     </example>
     
     <p onclick="toggleAnswer('ex1')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
-    <div id="answer_ex1" class="box-lemma" style="display: none">
-   <p> <!--Left as exercise (1).-->
-   ឧបមា $\E=\mathbb{C}$ and $\K=\mathbb{R}$ ។ យើងនឹងបង្ហាញថា $(\E, +)$ ជាក្រុមអាបែល ហើយផ្ទៀងផ្ទាត់បន្ថែមលក្ខណៈ (i.) ដល់ (iv.) ។</p>
+    <div id="answer_ex1" style="display: none">
+    <!--Left as exercise (1).-->
+   <div class="answer">Solution.</div> 
+   <div class="answer-upper-left"> 
+   <p>ឧបមា $\E=\mathbb{C}$ និង $\K=\mathbb{R}$ ។ យើងនឹងបង្ហាញថា $(\E, +)$ ជាក្រុមអាបែល ហើយផ្ទៀងផ្ទាត់បន្ថែមលក្ខណៈ (i.) ដល់ (iv.) ។</p>
    <ol type="a">
        <li> <a>បង្ហាញថា $(\E, +)$ ជាក្រុមអាបែល:</a>
-       <ul>
+       <ul style="list-style-type: disc;">
            <li>លក្ខណៈផ្ដុំ៖ យក $a,b,c \in \E$ គេបាន
            \begin{eqnarray*}
            a+(b+c) &=& x_a+i y_a + \bigl(x_b+i y_b + x_c + i y_c\bigr)\\
@@ -839,12 +841,62 @@ For example, $\E=\mathbb{C}$ and $\K=\mathbb{R}, \E=\mathbb{R}$ and $\K=\mathbb{
        ដូច្នេះ $(\E, +)$ ជាក្រុមអាបែល ។
        </li>
        
-       <li>បង្ហាញលក្ខណៈចំពោះប្រមាណវិធីក្រៅ $\cdot$ ?
-           
+       <li><a>លក្ខណៈចំពោះប្រមាណវិធីគុណក្រៅ $(\cdot)$ ?</a>
+           <ul style="list-style-type: disc;">
+       <li>
+$\forall z \in \E:\;\; 1_\mathbb K \cdot z=z$ ?
+      \begin{eqnarray*}
+      1_{\mathbb K} \cdot z &=& 1_{\mathbb K} \cdot (x+iy) \\
+      &=& (1_{\mathbb K} x)  + i (1_{\mathbb K}  y )\\
+      &=& x+iy = z
+      \end{eqnarray*}
+       </li>
+
+    <li> 
+    $\forall \alpha \in \K, \forall \beta \in \K, \forall z \in \E:\;\; (\alpha+\beta) \cdot z=\alpha \cdot z+\beta \cdot z$?
+    
+    \begin{eqnarray*}
+      (\alpha+\beta) \cdot z &=& (\alpha+\beta)   \cdot (x+iy) \\
+      &=& (\alpha+\beta)   x+ (\alpha+\beta)  iy\\
+      &=& (\alpha x + \beta  x) + (i\alpha y + i\beta y)\\
+       &=& \alpha (x + iy) + \beta  (x + i y)\\
+       &=& \alpha\cdot z + \beta \cdot z
+      \end{eqnarray*}
+    
+    </li>
+    <li>
+        $\forall \alpha \in \K, \forall \beta \in \K, \forall z\in \E:\;\;(\alpha \beta) \cdot z=\alpha \cdot(\beta \cdot z)$ ?
+        
+        \begin{eqnarray*}
+      (\alpha\beta) \cdot z &=& (\alpha\beta)   \cdot (x+iy) \\
+      &=& (\alpha\beta)  x+ (\alpha\beta)  iy\\
+      &=& \alpha(\beta  x)+ i\alpha (\beta y)\\
+      &=& \alpha (\beta  x+ i\beta y)\\
+      &=& \alpha\Bigl(\beta  ( x + iy)\Bigr)\\
+       &=& \alpha\cdot (\beta\cdot z)
+      \end{eqnarray*}
+      
+      
+    </li>
+    <li>
+        $\forall \alpha \in \K, \forall z_1 \in \E, \forall z_2 \in \E:\;\; \alpha \cdot(z_1+z_2)=\alpha \cdot z_1+\alpha \cdot z_2$ ?
+        
+        \begin{eqnarray*}
+     \alpha \cdot (z_1+z_2)  &=& \alpha \Bigl((x_1+iy_1) + (x_2+iy_2)\Bigr) \\
+     &=& \alpha \Bigl((x_1+x_2) + i(y_1+y_2)\Bigr) \\
+     &=& \alpha (x_1+x_2) + i \alpha(y_1+y_2) \\
+     &=& \alpha x_1 + \alpha x_2 + i \alpha y_1 + i \alpha y_2 \\
+      &=& \alpha (x_1+i y_1)  + \alpha (x_2 + i y_2)\\
+      &=& \alpha\cdot z_1 + \alpha \cdot z_2
+      \end{eqnarray*}
+      
+      
+    </li>
+           </ul>
        </li>
    </ol>
  </div>
-
+    </div>
 
 <example>
             <!--Soit $\K$ un corps commutatif, alors pour tout entier $n \geq 1, \K^n$ est un $\K$-espace vectoriel pour la loi externe,
@@ -864,15 +916,12 @@ $$
 $$
 where $x=\left(x_1, x_2, \ldots, x_n\right)$.    
     </example>
-<div id="ansSH"><a>Answer</a>
-    <div class="ansToggle box-lemma" style="display: none; font-size: 10px !important">
-    <p> Left as exercise (1).
- </p>
-
-  </div>
- <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span>
-  
-  </div>
+<p onclick="toggleAnswer('ex2')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
+    <div id="answer_ex2" class="box-lemma" style="display: none">
+   <p> Left as exercise (1) </p>
+   
+    </div>
+    
 
 <example>
     Let $\K$ be a field and $\K[x]$ be the ring of polynomials with coefficients in $\K$. Then $\K[x]$ is a $\K$-vs for the external law,
@@ -884,15 +933,11 @@ $$
 $$
 where $P=\sum_{i=1}^n a_i x^i$.
 </example>
- <div id="ansSH1"><a>Answer</a>
-    <div class="ansToggle box-lemma" style="display: none; font-size: 10px !important">
-    <p> Left as exercise (1).
- </p>
-
-  </div>
- <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span>
-  
-  </div>
+<p onclick="toggleAnswer('ex3')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
+    <div id="answer_ex3" class="box-lemma" style="display: none">
+   <p> Left as exercise (2) </p>
+   
+    </div>
   
  
  <example>
@@ -920,15 +965,11 @@ $$
 </ol>
      
  </example>
- <div id="ansSH2"><a>Answer</a>
-    <div class="ansToggle box-lemma" style="display: none; font-size: 10px !important">
-    <p> Left as exercise (1).
- </p>
-
-  </div>
- <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span>
-  
-  </div>
+<p onclick="toggleAnswer('ex4')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
+    <div id="answer_ex4" class="box-lemma" style="display: none">
+   <p> Left as exercise (3) </p>
+   
+    </div>
 
 <h3>លំហវ៉ិចទ័ររង (subspaces)</h3>
 <defn>
@@ -961,46 +1002,64 @@ $$
     <example>
     (Verify a subspace)
 
-      <ol class="">
+      <ol>
     <li>The set $\mathbf W$ of real sequences which tend to zero at infinity, is a $\mathbb{R}$-vs,
 $$
 \mathbf W=\left\{\left(x_n\right)_{n \geq 0} \in \mathbb{R}^{\mathbb{N}}: \lim _{n \rightarrow \infty} x_n=0\right\}
 $$
          It suffices to show that $\mathbf W$ is a vector subspace of $\E=\mathbb{R}^{\mathbb{N}}$
+        
+               <div class="example-content">
+            <span id="SHLink_Soln1" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln1" class="fa fa-caret-right" aria-hidden="true"></span>
+       <div id="SHObj_Soln1" class="soln-content" style="display: none;">
+                   Solution is for group discussion.
+      </div>
+         
+          </div>
           </li>
+          
+          
           <li>
-              
+              Let $I = (a,b)$ or $[a,b]$ be an interval of $\mathbb{R}$, then let $\mathbf W = \mathcal{C}(I, \mathbb{R})$, the set continuous functions from $I$ to $\mathbb{R}$, is a $\mathbb{R}$-vector space. 
+<br>
+
+It suffices to verify that $\mathbf W = \mathcal{C}(I, \mathbb{R})$ is a vector subspace of $\E=\mathbb{R}^I$, the vector space of all maps of $I$ to $\mathbb{R}$.
+         
+         <div class="example-content">
+            <span id="SHLink_Soln2" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln2" class="fa fa-caret-right" aria-hidden="true"></span>
+       <div id="SHObj_Soln2" class="soln-content" style="display: none;">
+                   Solution is for group discussion.
+      </div>
+         
+          </div>
+          
+          
           </li>
-      </ol>
-      <div class="example-content">
+          
+          <li>
+              Let $\K$ be a commutative field. For any integer $n \geq 0$, we denote by $\mathbf W = \K_n[x]$ the part of $\E=\K[x]$ defined by,
+$$
+\K_n[x]=\Bigl\{P \in \K[x]: \operatorname{deg}(P) \leq n\Bigr\}
+$$
+
+<br>
+
+Then $\K_n[x]$ is a subspace of $\K[x]$. 
+              
+              <div class="example-content">
             <span id="SHLink_Soln3" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln3" class="fa fa-caret-right" aria-hidden="true"></span>
        <div id="SHObj_Soln3" class="soln-content" style="display: none;">
-      <p>
-        We will use Definition \(\PageIndex{3}\) to compute these cofactors.
-
-  First, we will compute \(\cof\left( A\right) _{12}\). Therefore, we need to find \(\minor\left(A\right)_{12}\). This is the determinant of the \(2\times 2\) matrix which results when you delete the first row and the second column. Thus \(\minor\left(A\right)_{12}\) is given by
-
-  \[\det \left[ \begin{array}{rr} 4 & 2 \\ 3 & 1 \end{array} \right] = -2 \]
-
-  Then,
-
-  \[\cof\left( A\right) _{12}=\left( -1\right) ^{1+2} \cdot \minor\left(A\right)_{12} =\left( -1\right) ^{1+2}\left( -2\right) =2 \]
-
-  Hence, \(\cof\left( A\right) _{12}=2\).
-
-  Similarly, we can find \(\cof\left( A\right) _{23}\). First, find \(\minor\left(A\right)_{23}\), which is the determinant of the \(2\times 2\) matrix which results when you delete the second row and the third column. This minor is therefore
-
-  \[\det \left[ \begin{array}{rr} 1 & 2 \\ 3 & 2 \end{array} \right] = -4 \]
-
-  Hence,
-
-  \[\cof\left( A\right) _{23}=\left( -1\right) ^{2+3} \cdot \minor\left(A\right)_{23} =\left( -1\right) ^{2+3}\left( -4\right) =4 \]
-      </p>
-            </div>
+                   Solution is for group discussion.
+      </div>
+         
           </div>
+          
+          </li>
+      </ol>
     </example>
 
-   
+    <p>
+        We will use Definition \(\PageIndex{3}\) to compute these cofactors.</p>   
    <!-------------------------------------------------------------------->
    
    <p class="">We begin with the following definition.</p>
@@ -1032,9 +1091,9 @@ Find \(\minor\left( A\right) _{12}\) and \(\minor\left( A\right) _{23}\).
   </p>
   <div class="example-content">
         <p style="align: right;">
-            <span id="SHLink_Soln2" class="soln-title SH-Link">Show Solution</span>         
-        <span id="SHImg_Soln2" class="fa fa-caret-right" aria-hidden="true"></span></p>
-   <div id="SHObj_Soln2" class="soln-content" style="display: none;">
+            <span id="SHLink_Soln12" class="soln-title SH-Link">Show Solution</span>         
+        <span id="SHImg_Soln12" class="fa fa-caret-right" aria-hidden="true"></span></p>
+   <div id="SHObj_Soln12" class="soln-content" style="display: none;">
   <p>
     First we will find \(\minor\left( A\right) _{12}\). By Definition \(\PageIndex{2}\), this is the determinant of the \(2\times 2\) matrix which results when you delete the first row and the second column. This minor is given by
 

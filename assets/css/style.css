@@ -1129,7 +1129,7 @@ h3.sectcounter:before {
     color: #0e81c1;
     border: 2pt solid #0067eb;
     border-radius: 15px;
-    background-color: #ffdcfa;
+    background-color: #d5dfe5;
     text-align: left;
     font-size: 14px!important ;
     /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
@@ -1261,16 +1261,16 @@ div.definitionb {
     color: darkblue;
     display: inline-block;
     background-color: lightyellow;
-    border-radius: 0px 0px 20px 20px;
+    border-radius: 0 0 20px 20px;
     width: 100%;
     /*padding:0 0 0 0; */
-    margin-right: 0px;
+    margin-right: 0;
     margin-left: 5px;
     margin-top: -0.14em;
     margin-bottom: 20px !important;
     padding-left: 15px;
     padding-right: 10px;
-    padding-top: 0px;
+    padding-top: 0;
     padding-bottom: 2px;
     /*color:#076422;*/
     border-left: 0.2rem solid #0e81c1;
@@ -1330,6 +1330,38 @@ div.definitionb {
     /*font-weight:bold; */
     font-family: "Koulen", cursive;
 }
+
+
+.main-content div.answer {
+    display: inline-block;
+    width: 100%;
+    background: linear-gradient(to right, blue 1%, blue 1%, white 70%, white 100%);
+    border-radius: 15px 0;
+    border: #009999;
+    color: white;
+    padding: 4px 10px 4px 20px;
+    font-size: 100%;
+    /* font-family: 'Bangers', cursive; */
+    font-family: "Battambang", "Kaushan Script", serif;
+}
+
+.main-content .answer-upper-left {
+    border-top: solid linear-gradient(to right, blue 1%, blue 60%, white 90%, white 95%); /* Upper border */
+    border-left: solid rgba(128, 128, 128, 0.95); /* Left border */
+    border-right: none; /* No right border */
+    border-bottom: none; /* No bottom border */
+    display: block;
+    /*padding: 0 0 0 1rem;*/
+    padding: 4px 10px 4px 20px;
+    margin-left: -5px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: dimgrey;
+    background: rgba(208, 211, 244, 0.67);
+    text-align: left;
+    /*
+}
+
 
 ul {
     padding-left: 20px;
