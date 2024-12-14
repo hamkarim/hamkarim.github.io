@@ -49,7 +49,7 @@
 
 
     <meta charset="UTF-8">
-    <title>Vector Spaces | លំហវ៉ិចទ័រ </title>
+    <title>Revision | សេចក្ដីផ្ដើម </title>
     <meta name="description" content="Math, Programmer, Music">
 
     <!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
@@ -81,7 +81,7 @@
     <style type="text/css">
         /**************** Box container styles *******************/
         .mt-content-container .boxobjectives,
-        .boxmy-example,
+        .boxexample,
         .boxexercise,
         .boxquery,
         .boxnotewithlegend,
@@ -111,7 +111,7 @@
             background-color: hsla(20, 0%, 93%, 1);
         }
 
-        .mt-content-container .boxmy-example,
+        .mt-content-container .boxexample,
         .boxexercise {
             background-color: hsla(220, 100%, 97%, 1);
         }
@@ -173,7 +173,7 @@
 	.box-structure>header,
 	.box-note>header,
 	.box-theorem>header,
-	.box-my-example>header,
+	.box-example>header,
 	.box-exercise>header,
 	.box-query>header,
 	.box-adapt>header,
@@ -196,7 +196,7 @@
 	.box-structure>header *,
 	.box-note>header *,
 	.box-theorem>header *,
-	.box-my-example>header *,
+	.box-example>header *,
 	.box-exercise>header *,
 	.box-query>header *,
 	.box-adapt>header *,
@@ -257,7 +257,7 @@
 
         /*default */
 
-        .box-my-example .lt-icon-default::before {
+        .box-example .lt-icon-default::before {
             content: "\f00c";
         }
 
@@ -381,15 +381,15 @@
     <script type="text/javascript">
         //Another method to toggle the button
         $(document).ready(function() {
-            $('.showmy-answer').click(function() {
+            $('.showanswer').click(function() {
                 $('.block_proof').show();
-                $('.showmy-answer').hide();
-                $('.hidemy-answer').show();
+                $('.showanswer').hide();
+                $('.hideanswer').show();
             });
-            $('.hidemy-answer').click(function() {
+            $('.hideanswer').click(function() {
                 $('.block_proof').hide();
-                $('.showmy-answer').show();
-                $('.hidemy-answer').hide();
+                $('.showanswer').show();
+                $('.hideanswer').hide();
             });
         });
     </script>
@@ -430,21 +430,21 @@
     <script type="text/javascript" id="MathJax-script" defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml-full.min.js">
     </script>
 
-  <!--Show/Hide my-answer with: togglemy-answer(my-exampleId)-->
+  <!--Show/Hide Answer with: toggleAnswer(exampleId)-->
   <style>
         .hidden {
             display: none;
         }
     </style>
     <script>
-        function togglemy-answer(my-exampleId) {
+        function toggleAnswer(exampleId) {
             // Create the dynamic id
-            let dynamicId = `my-answer_${my-exampleId}`;
+            let dynamicId = `answer_${exampleId}`;
 
             // Get the element by the dynamic id
             let element = document.getElementById(dynamicId);
             
-            // Toggle the 'hidden' class to show/hide the my-answer block
+            // Toggle the 'hidden' class to show/hide the answer block
            if (element) {
                 // Toggle visibility based on the current display style
                 if (element.style.display === 'none') {
@@ -453,7 +453,7 @@
                     element.style.display = 'none';  // Hide the element
                 }
             } else {
-                console.error(`Element with id "${my-answerId}" not found.`);
+                console.error(`Element with id "${answerId}" not found.`);
             }
         }
     </script>
@@ -461,7 +461,7 @@
     <!--End-->
   <script>
 $(document).ready(function(){
-  $("sh").click(function(){
+  $("my-sh").click(function(){
     $(".foote").toggle();
   });
     $("#ansSH").click(function(){
@@ -471,7 +471,7 @@ $(document).ready(function(){
 </script>
    
 <!--script>
-  window.customElements.define("my-defn", class extends HTMLElement {})
+  window.customElements.define("defn", class extends HTMLElement {})
     </!--script-->
     
 <script>
@@ -519,7 +519,7 @@ const para = document.createElement("mydef");
 
 <section class="main-content">
 
-  <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">ជំពូក២ :&nbsp; លំហវ៉ិចទ័រ </h1>
+  <h1 style="text-shadow: 4px 4px 4px #c0c0c0;">ជំពូក១ :&nbsp; រំលឹកចំណុចសំខាន់ៗក្នុងពិជគណិត </h1>
 <p style="font-style: italic; font-weight:bold; font-family: Arial; opacity: 0.5;">
 December 
 1st, 2024
@@ -553,34 +553,129 @@ December
 <span class="lt-icon-default">លទ្ធផលរំពឹងទុក!</span></h5>
 <p>ក្រោយបញ្ចប់មេរៀននេះ អ្នកសិក្សានឹងទទួលបាននូវ៖ </p>
 <ol start="1" class="parenthnum">
-    <li class="" style="background-color: unset;"><b>យល់បាននូវគោលគំនិតជាគន្លឹះទាក់ទងនឹង៖</b><!--b--Understanding key concepts of: -->
-Definition of vector spaces, subspaces, linear independence, basis and dimension. <!--You'll grasp what vector spaces are, including the basic requirements for a set to be considered a vector space. Subspaces: You'll learn about subspaces and how they relate to the larger vector space. Linear Independence: You'll be able to determine if a set of vectors is linearly independent or dependent. Basis and Dimension: You'll understand the concept of a basis of a vector space and how to find it, along with the dimension of a vector space. -->
+    <li class="" style="background-color: unset;"><b>យល់បាននូវគោលគំនិតជាគន្លឹះទាក់ទងនឹង៖</b>
     </li>
     <li class="" style="background-color: unset;"><b>មានជំនាញគណិតវិទ្យា៖</b>
-        <!--bMathematical skills: </b-->
-To know  operations, span, linear combinations and matrix representation. 
-<!--You'll become proficient in performing vector addition and scalar multiplication.
-
-Span: You'll know how to determine the span of a set of vectors.
-
-Linear Combinations: You'll be able to express vectors as linear combinations of other vectors.
-
-Matrix Representation: You'll learn how to represent linear transformations using matrices. -->
+   
     </li>
-    <li class="" style="background-color: unset;"><b>ចេះទ្រឹស្ដីបទទាំងឡាយទាក់ទងនឹង៖</b><!--b.Theoretical insights:</b-->
-    <ol style="list-style-type: lower-roman;" start="1">
-        <li class="" style="background-color: unset;">Properties and Theorems: to gain insights into fundamental properties and theorems related to vector spaces, such as the <a>Rank-Nullity Theorem</a> and the concept of <a>orthogonality</a>.</li>
-        <li class="" style="background-color: unset;">Abstract Thinking: to develop an ability to think abstractly and generalize ideas beyond specific my-examples.</li>
+    <li class="" style="background-color: unset;"><b>ចេះទ្រឹស្ដីបទទាំងឡាយទាក់ទងនឹង៖</b>
+</li>
+        <li class="" style="background-color: unset;"></li>
     </ol>
-    </li>
-</ol>
 </div>
 
 
 
-<h2 class="frame-sect sectcounter">&nbsp; និយមន័យ និងលក្ខណៈគ្រឹះសំខាន់ៗ </h2>
+<h2 class="frame-sect sectcounter">&nbsp; សំណុំ </h2>
 
-<h3>លំហវ៉ិចទ័រកំណត់លើកាយទូទៅ<!--Espace vectoriel sur un corps quelconque--></h3>
+We will only touch upon Set Theory and recommend interested readers to refer to the eponymous work by Jean-Louis Krivine ([Kri07]), for example. Here, we primarily aim to recall the vocabulary and establish the notation.
+
+<h3>Set, element  </h3>
+
+<my-defn>
+   <div class="definition"><span>(Vector spaces)</span> </div>
+ <div class="definitionb">
+    A set is a "collection" $X$ of objects $x$, called the elements of $X$, which all satisfy the same property $\mathscr{P}$ (for example, the property of belonging to $X$). It is a new object.
+    </div>
+    
+</my-defn>
+
+We then say that $x$ belongs to $X$, and we write $x \in X$, or that $x$ satisfies the property $\mathscr{P}$, and we write $\mathscr{P}(x)$.
+
+<my-example>
+    The natural number is defined recursively as $n:=\{0,1,\ldots,n-1\}$ (it is also a set), and the set of natural numbers is defined as $\mathbb{N}:=\{0,1,2,\ldots\}$ (it is also an object).
+</my-example>
+
+Set theory helps to concretize logic (mathematics):  
+$$
+\begin{array}{|ccc|}  
+\hline \text{Mathematics} & \longleftrightarrow  & \text{Logic} \\  
+\hline \text{Object} & \longleftrightarrow & \text{Concept} \\  
+\hline \text{Set} & \longleftrightarrow & \text{Property} \\  
+\hline \Bigl\{x / \mathscr{P}(x)\Bigr\} & \longleftrightarrow & x \in X \\  
+\hline \text{Equality} & \longleftrightarrow & \text{Equivalence} \\  
+\hline \text{Inclusion} & \longleftrightarrow & \text{Implication} \\  
+\hline \text{Complementary} & \longleftrightarrow & \text{Negation} \\  
+\hline \text{Intersection} & \longleftrightarrow & \text{Conjunction} \\  
+\hline \text{Union} & \longleftrightarrow & \text{Disjunction} \\  
+\hline \text{Empty} & \longleftrightarrow & \text{Impossible} \\  
+\hline \text{Disjoint} & \longleftrightarrow & \text{Incompatible} \\  
+\hline  
+\end{array}
+$$
+
+A set \( X \) can be described either by listing its elements (an extension or <a>Roster method</a>) or by providing a property that characterizes it (<a>set-builder method</a>).
+
+<my-example>
+    <ol type="i">
+        <li>
+            \( \{1,-1\} \) (Roster method) \( = \Bigl\{x \in \mathbb{Z} \mid x^2=1\Bigr\} \) (set-builder method).    
+    </li>
+    
+    <li>អង្កត់ទ្រូងរបស់ប្លង់មួយ កំណត់ដោយ៖ <!--The diagonal of the plane:-->
+$$\begin{array}{ccc}
+\Delta := \Bigl\{(t, t) \mid t \in \mathbb{R}\Bigr\}  & = & \Bigl\{(x, y) \in \mathbb{R}^2 \mid y = x\Bigr\} \\
+\text{ (Roster method) } & &\text{ (set-builder method) }
+\end{array}
+$$
+        
+    </li>
+    </ol>
+</my-example>
+
+
+<h3>ផលគុណដេកាត (Product) និង គ្រួសារ (Family)</h3>
+<my-defn>
+    <div class="definition"><span>(ផលគុណសំណុំ)</span> </div>
+ <div class="definitionb">
+    <!--Let \( \Lambda \) be a set (aka. index set). For each \( k \in \Lambda \), let \( X_k \) be a set. If for every \( k \in \Lambda \), we have an element \( x_k \in X_k \), we say that \( \Bigl(x_k\Bigr)_{k \in \Lambda} \) is a family indexed by \( \Lambda \). The product of the sets \( X_k \) is the set-->
+    យក \(\Lambda \) ជាសំណុំមួយ (aka. សំណុំសន្ទស្សន៍/index set)។ ចំពោះគ្រប់ \( k \in \Lambda \) គេកំណត់ \( X_k \) ជាសំណុំមួយ។ ប្រសិនបើ គ្រប់ \( k \in \Lambda \) យើងមានធាតុ \( x_k \in X_k \) នោះគេហៅ \( \Bigl(x_k\Bigr)_{k \in \Lambda} \) ថាជា <a>គ្រួសារដែលកំណត់ដោយសំណុំសន្ទស្សន៍ \(\Lambda \)</a> ។ ផលគុណសំណុំ \(X_k \) គឺជាសំណុំមួយ កំណត់ដោយ៖ 
+$$
+\prod_{k \in \Lambda} X_k := \Bigl\{(x_k)_{k \in \Lambda} \Bigl |\;\Bigr. x_k \in X_k\Bigr\}
+$$
+នៃគ្រប់គ្រួសារទាំងអស់។ <!--of all such families. -->
+    </div>
+</my-defn>
+
+ជាទូទៅ បើគ្រប់សំណុំ \( X_k \) ស្មើនឹងសំណុំ \( X \) នោះគេសរសេរ ៖
+$$
+X^\Lambda := \Bigl\{\Bigl(x_k\Bigr)_{k \in \Lambda} \mid x_k \in X\Bigr\}
+$$
+
+We then refer to this as a power (instead of a product) and say that \( (x_k)_{k \in \Lambda } \) is a family of elements of \( X \). Instead of family, we use \( n\)-tuple (singleton, pair, triplet) if \( \Lambda = n \), sequence if \( \Lambda = \mathbb{N} \), and matrix if \( \Lambda = m \times n \) (recall that a natural number can be viewed as a set).
+
+<my-example>
+    <ol type="i">
+        <li>As counting traditionally starts from 1, it is common to write \( n = \{1, \ldots, n\} \) (instead of \( n = \{0, \ldots, n-1\} \)). For example, for \( n \)-tuples, we will write \( (x_1, \ldots, x_n) \) and denote their set as \[ X_1 \times \cdots \times X_n \]
+        </li>
+        
+        <li>
+            Likewise, a matrix is a family indexed by \( n \times m \): thus (numbering from 1), it takes the form
+
+$$
+\begin{pmatrix}
+x_{1,1} & \cdots & x_{1,m} \\
+\vdots & \ddots & \vdots \\
+x_{n,1} & \cdots & x_{n,m}
+\end{pmatrix}
+$$
+
+Their set is also denoted \( \mathcal{M}_{n \times m}(X) \) (or \( \mathcal{M}_n(X) \) when \( m = n \)).
+        </li>
+    </ol>
+
+</my-example>
+
+Note: Do not confuse a set with a family. We have
+
+$$
+\{a, a\ldots\} = \{a\} \qquad \text{ and }\qquad \{a, b\} = \{b,a\}
+$$
+
+
+
+
+
 
 
 
@@ -685,7 +780,7 @@ $$
     </my-sh> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span>
   
   </sup>
-  <!--p> <img class="center" alt="Sarrush Rule" src="fig/Schema_sarrus-regel.png" width="35%" height="35%"></!--p>-->
+  <!--p> <img class="center" alt="Sarrush Rule" src="fig/Schema_karrus-regel.png" width="35%" height="35%"></!--p>-->
 
 <p>
 <b>សម្គាល់៖ </b>
@@ -713,7 +808,7 @@ $\forall \lambda \in \K:\;\; \lambda \cdot 0_\E=0_\E$
 </ol>
 
 <div>
-    <p style="text-align: right;"><span id="SHLink_Help1" class="soln-title SH-Link">Show my-answer</span> <span id="SHImg_Help1" class="fa fa-caret-right" aria-hidden="true"></span></p>
+    <p style="text-align: right;"><span id="SHLink_Help1" class="soln-title SH-Link">Show Answer</span> <span id="SHImg_Help1" class="fa fa-caret-right" aria-hidden="true"></span></p>
    <div id="SHObj_Help1" class="soln-content" style="display: none;">
 
 <my-answer>
@@ -765,14 +860,14 @@ $$
 &(\lambda, x) &\longmapsto& \lambda \cdot x=\lambda x
 \end{array}
 $$
-For my-example, $\E=\mathbb{C}$ and $\K=\mathbb{R}, \E=\mathbb{R}$ and $\K=\mathbb{Q}$ or $\E=\mathbb{C}$ and $\K=\mathbb{Q}$. In particular, any field $\K$ can be considered as a vector space on itself.
+For example, $\E=\mathbb{C}$ and $\K=\mathbb{R}, \E=\mathbb{R}$ and $\K=\mathbb{Q}$ or $\E=\mathbb{C}$ and $\K=\mathbb{Q}$. In particular, any field $\K$ can be considered as a vector space on itself.
     </my-example>
     
-    <p onclick="togglemy-answer('ex1')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
-    <div id="my-answer_ex1" style="display: none">
+    <p onclick="toggleAnswer('ex1')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
+    <div id="answer_ex1" style="display: none">
     <!--Left as exercise (1).-->
-   <div class="my-answer">Solution.</div> 
-   <div class="my-answer-upper-left"> 
+   <div class="answer">Solution.</div> 
+   <div class="answer-upper-left"> 
    <p>ឧបមា $\E=\mathbb{C}$ និង $\K=\mathbb{R}$ ។ យើងនឹងបង្ហាញថា $(\E, +)$ ជាក្រុមអាបែល ហើយផ្ទៀងផ្ទាត់បន្ថែមលក្ខណៈ (i.) ដល់ (iv.) ។</p>
    <ol type="a">
        <li> <a>បង្ហាញថា $(\E, +)$ ជាក្រុមអាបែល:</a>
@@ -913,8 +1008,8 @@ $$
 $$
 where $x=\left(x_1, x_2, \ldots, x_n\right)$.    
     </my-example>
-<p onclick="togglemy-answer('ex2')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
-    <div id="my-answer_ex2" class="box-lemma" style="display: none">
+<p onclick="toggleAnswer('ex2')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
+    <div id="answer_ex2" class="box-lemma" style="display: none">
    <p> Left as exercise (1) </p>
    
     </div>
@@ -930,8 +1025,8 @@ $$
 $$
 where $P=\sum_{i=1}^n a_i x^i$.
 </my-example>
-<p onclick="togglemy-answer('ex3')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
-    <div id="my-answer_ex3" class="box-lemma" style="display: none">
+<p onclick="toggleAnswer('ex3')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
+    <div id="answer_ex3" class="box-lemma" style="display: none">
    <p> Left as exercise (2) </p>
    
     </div>
@@ -962,8 +1057,8 @@ $$
 </ol>
      
  </my-example>
-<p onclick="togglemy-answer('ex4')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
-    <div id="my-answer_ex4" class="box-lemma" style="display: none">
+<p onclick="toggleAnswer('ex4')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
+    <div id="answer_ex4" class="box-lemma" style="display: none">
    <p> Left as exercise (3) </p>
    
     </div>
@@ -1006,9 +1101,9 @@ $$
 $$
          It suffices to show that $\mathbf W$ is a vector subspace of $\E=\mathbb{R}^{\mathbb{N}}$
         
-               <div class="my-example-content">
-            <span id="SHLink_Soln1" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln1" class="fa fa-caret-right" aria-hidden="true"></span>
-       <div id="SHObj_Soln1" class="soln-content" style="display: none;">
+               <div class="example-content">
+            <span id="SHLink_koln1" class="soln-title SH-Link">Show solution</span> <span id="SHImg_koln1" class="fa fa-caret-right" aria-hidden="true"></span>
+       <div id="SHObj_koln1" class="soln-content" style="display: none;">
                    Solution is for group discussion.
       </div>
          
@@ -1022,9 +1117,9 @@ $$
 
 It suffices to verify that $\mathbf W = \mathcal{C}(I, \mathbb{R})$ is a vector subspace of $\E=\mathbb{R}^I$, the vector space of all maps of $I$ to $\mathbb{R}$.
          
-         <div class="my-example-content">
-            <span id="SHLink_Soln2" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln2" class="fa fa-caret-right" aria-hidden="true"></span>
-       <div id="SHObj_Soln2" class="soln-content" style="display: none;">
+         <div class="example-content">
+            <span id="SHLink_koln2" class="soln-title SH-Link">Show solution</span> <span id="SHImg_koln2" class="fa fa-caret-right" aria-hidden="true"></span>
+       <div id="SHObj_koln2" class="soln-content" style="display: none;">
                    Solution is for group discussion.
       </div>
          
@@ -1043,9 +1138,9 @@ $$
 
 Then $\K_n[x]$ is a subspace of $\K[x]$. 
               
-              <div class="my-example-content">
-            <span id="SHLink_Soln3" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln3" class="fa fa-caret-right" aria-hidden="true"></span>
-       <div id="SHObj_Soln3" class="soln-content" style="display: none;">
+              <div class="example-content">
+            <span id="SHLink_koln3" class="soln-title SH-Link">Show solution</span> <span id="SHImg_koln3" class="fa fa-caret-right" aria-hidden="true"></span>
+       <div id="SHObj_koln3" class="soln-content" style="display: none;">
                    Solution is for group discussion.
       </div>
          
@@ -1074,7 +1169,7 @@ In general, if \(A\) is an \(n\times n\) matrix, then the \(ij^{th}\) minor of \
 </p>
 </div>
 </my-defn>
-<p>Hence, there is a minor associated with each entry of \(A\). Consider the following my-example which demonstrates this definition.</p>
+<p>Hence, there is a minor associated with each entry of \(A\). Consider the following example which demonstrates this definition.</p>
 
 <my-example>
 (Finding Minors of a Matrix )
@@ -1086,11 +1181,11 @@ Let
 
 Find \(\minor\left( A\right) _{12}\) and \(\minor\left( A\right) _{23}\).
   </p>
-  <div class="my-example-content">
+  <div class="example-content">
         <p style="align: right;">
-            <span id="SHLink_Soln12" class="soln-title SH-Link">Show Solution</span>         
-        <span id="SHImg_Soln12" class="fa fa-caret-right" aria-hidden="true"></span></p>
-   <div id="SHObj_Soln12" class="soln-content" style="display: none;">
+            <span id="SHLink_koln12" class="soln-title SH-Link">Show Solution</span>         
+        <span id="SHImg_koln12" class="fa fa-caret-right" aria-hidden="true"></span></p>
+   <div id="SHObj_koln12" class="soln-content" style="display: none;">
   <p>
     First we will find \(\minor\left( A\right) _{12}\). By Definition \(\PageIndex{2}\), this is the determinant of the \(2\times 2\) matrix which results when you delete the first row and the second column. This minor is given by
 
@@ -1142,9 +1237,9 @@ Find \(\minor\left( A\right) _{12}\) and \(\minor\left( A\right) _{23}\).
 
     Find \(\det\left(A\right)\) using the method of Laplace Expansion.
       </p>
-      <div class="my-example-content">
-            <span id="SHLink_Soln4" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln4" class="fa fa-caret-right" aria-hidden="true"></span>
-       <div id="SHObj_Soln4" class="soln-content" style="display: none;">
+      <div class="example-content">
+            <span id="SHLink_koln4" class="soln-title SH-Link">Show solution</span> <span id="SHImg_koln4" class="fa fa-caret-right" aria-hidden="true"></span>
+       <div id="SHObj_koln4" class="soln-content" style="display: none;">
       <p>
         First, we will calculate \(\det \left(A\right)\) by expanding along the first column. Using Definition \(\PageIndex{4}\), we take the \(1\) in the first column and multiply it by its cofactor, \[1 \left( -1\right) ^{1+1}\left| \begin{array}{rr} 3 & 2 \\ 2 & 1 \end{array} \right| = (1)(1)(-1) = -1\nonumber \] Similarly, we take the \(4\) in the first column and multiply it by its cofactor, as well as with the \(3\) in the first column. Finally, we add these numbers together, as given in the following equation.
 
@@ -1180,7 +1275,7 @@ We present this idea formally in the following theorem.</p>
 <div class="box-theorem">
     <div class="box-legend editable"><span class="lt-icon-default">Theorem 1. :  (The Determinant is Well Defined)</span></div>
 
-<p>Expanding the \(n\times n\) matrix along any row or column always gives the same my-answer, which is the determinant, meaning that </p>
+<p>Expanding the \(n\times n\) matrix along any row or column always gives the same answer, which is the determinant, meaning that </p>
 \begin{eqnarray*}
 \begin{vmatrix}
 a_{11} & a_{12} & \cdots & a_{1n} \\
@@ -1193,9 +1288,9 @@ a_{n1} & a_{n2} & \cdots & a_{nn}
 \end{eqnarray*}
 </div>
 
-<p>For my-example, the \(ij^{th}\) minor of a \(4 \times 4\) matrix is the determinant of the \(3 \times 3\) matrix you obtain when you delete the \(i^{th}\) row and the \(j^{th}\) column. Just as with the \(3 \times 3\) determinant, we can compute the determinant of a \(4 \times 4\) matrix by Laplace Expansion, along any row or column
+<p>For example, the \(ij^{th}\) minor of a \(4 \times 4\) matrix is the determinant of the \(3 \times 3\) matrix you obtain when you delete the \(i^{th}\) row and the \(j^{th}\) column. Just as with the \(3 \times 3\) determinant, we can compute the determinant of a \(4 \times 4\) matrix by Laplace Expansion, along any row or column
 
-Consider the following my-example.</p>
+Consider the following example.</p>
 
 
 <my-example>
@@ -1205,9 +1300,9 @@ Consider the following my-example.</p>
 Find \(\det \left( A\right)\) where
 \[A=\left[ \begin{array}{rrrr} 1 & 2 & 3 & 4 \\ 5 & 4 & 2 & 3 \\ 1 & 3 & 4 & 5 \\ 3 & 4 & 3 & 2 \end{array} \right] \]
   </p>
-  <div class="my-example-content">
-        <span id="SHLink_Soln5" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln5" class="fa fa-caret-right" aria-hidden="true"></span>
-   <div id="SHObj_Soln5" class="soln-content" style="display: none;">
+  <div class="example-content">
+        <span id="SHLink_koln5" class="soln-title SH-Link">Show solution</span> <span id="SHImg_koln5" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_koln5" class="soln-content" style="display: none;">
   <p>
   As in the case of a \(3\times 3\) matrix, you can expand this along any row or column. Lets pick the third column. Then, using Laplace Expansion,
 
@@ -1289,9 +1384,9 @@ There is a certain type of matrix for which finding the determinant is a very si
 <p class="">
     Let \[A=\left[ \begin{array}{rrrr} 1 & 2 & 3 & 77 \\ 0 & 2 & 6 & 7 \\ 0 & 0 & 3 & 33.7 \\ 0 & 0 & 0 & -1 \end{array} \right]\nonumber \] Find \(\det \left( A\right) .\)
 </p>
-<div class="my-example-content">
-    <span id="SHLink_Soln6" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln6" class="fa fa-caret-right" aria-hidden="true"></span>
-    <div id="SHObj_Soln6" class="soln-content" style="display: none;">
+<div class="example-content">
+    <span id="SHLink_koln6" class="soln-title SH-Link">Show solution</span> <span id="SHImg_koln6" class="fa fa-caret-right" aria-hidden="true"></span>
+    <div id="SHObj_koln6" class="soln-content" style="display: none;">
         <p>
             From Theorem \(\PageIndex{2}\), it suffices to take the product of the elements on the main diagonal. Thus \(\det \left( A\right) =1\times 2\times 3\times \left( -1\right) =-6.\)
         </p>
@@ -1353,10 +1448,9 @@ There is a certain type of matrix for which finding the determinant is a very si
             </ol>
 
         </div>
-    </my-defn>
-
+</my-defn>
     <p>
-        We will now consider the effect of row operations on the determinant of a matrix. In future sections, we will see that using the following properties can greatly assist in finding determinants. This section will use the theorems as motivation to provide various my-examples of the usefulness of the properties.
+        We will now consider the effect of row operations on the determinant of a matrix. In future sections, we will see that using the following properties can greatly assist in finding determinants. This section will use the theorems as motivation to provide various examples of the usefulness of the properties.
     </p>
 
 
@@ -1428,7 +1522,7 @@ There is a certain type of matrix for which finding the determinant is a very si
         \end{equation}
         If \(n=1\) then \(\det(A) =a_{1,1}\).</p>
 
-    <p>The following my-example is straightforward and strongly recommended as a means for getting used to definitions.</p>
+    <p>The following example is straightforward and strongly recommended as a means for getting used to definitions.</p>
 
     <my-example>
         (Elementary Matrices - ម៉ាទ្រីសបឋម)
@@ -1456,9 +1550,9 @@ There is a certain type of matrix for which finding the determinant is a very si
         </ol>
 
        
-        <div class="my-example-content">
-            <span id="SHLink_SolnEx2.1" class="soln-title SH-Link">Show solution</span> <span id="SHImg_SolnEx2.1" class="fa fa-caret-right" aria-hidden="true"></span>
-            <div id="SHObj_SolnEx2.1" class="soln-content" style="display: none;">
+        <div class="example-content">
+            <span id="SHLink_kolnEx2.1" class="soln-title SH-Link">Show solution</span> <span id="SHImg_kolnEx2.1" class="fa fa-caret-right" aria-hidden="true"></span>
+            <div id="SHObj_kolnEx2.1" class="soln-content" style="display: none;">
                 <p>
 
                 </p>
@@ -1490,9 +1584,9 @@ There is a certain type of matrix for which finding the determinant is a very si
             <ol class="indentli">
                 <li>If \(A\) is an \(n\times n\) matrix such that one of its rows consists of zeros, then \(\det(A)=0\).
 
-                    <div class="my-example-content">
-                        <span id="SHLink_Soln1lem" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln1lem" class="fa fa-caret-right" aria-hidden="true"></span>
-                        <div id="SHObj_Soln1lem" class="soln-content" style="display: none;">
+                    <div class="example-content">
+                        <span id="SHLink_koln1lem" class="soln-title SH-Link">Show solution</span> <span id="SHImg_koln1lem" class="fa fa-caret-right" aria-hidden="true"></span>
+                        <div id="SHObj_koln1lem" class="soln-content" style="display: none;">
 
 
                             <p>
@@ -1530,9 +1624,9 @@ There is a certain type of matrix for which finding the determinant is a very si
                     
                       Then \(\qquad \det(A) = \det(B) +\det(C)\).
 
-                    <div class="my-example-content">
-                        <span id="SHLink_Soln2lem" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln2lem" class="fa fa-caret-right" aria-hidden="true"></span>
-                        <div id="SHObj_Soln2lem" class="soln-content" style="display: none;">
+                    <div class="example-content">
+                        <span id="SHLink_koln2lem" class="soln-title SH-Link">Show solution</span> <span id="SHImg_koln2lem" class="fa fa-caret-right" aria-hidden="true"></span>
+                        <div id="SHObj_koln2lem" class="soln-content" style="display: none;">
                             <p>
                                 This is not difficult to check for \(n=2\) (do check it!).
                             </p>
@@ -1562,9 +1656,9 @@ There is a certain type of matrix for which finding the determinant is a very si
                 <li>
                     If two rows of \(A\) are identical then \(\det(A)=0\).
                              
-                             <div class="my-example-content">
-                        <span id="SHLink_Soln3lem" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln3lem" class="fa fa-caret-right" aria-hidden="true"></span>
-                        <div id="SHObj_Soln3lem" class="soln-content" style="display: none;">
+                             <div class="example-content">
+                        <span id="SHLink_koln3lem" class="soln-title SH-Link">Show solution</span> <span id="SHImg_koln3lem" class="fa fa-caret-right" aria-hidden="true"></span>
+                        <div id="SHObj_koln3lem" class="soln-content" style="display: none;">
                             <p>
                             ប្រើ ERO (3) លើជួរដេកទាំងពីរដែលដូចគ្នា រួចប្រើពន្លាតកូហ្វាក់ទ័រ តាមជួរដេកដែលសូន្យ។ 
                                 
@@ -1820,7 +1914,7 @@ Then \(\lambda\) is an eigenvalue of \(A\) and thus there exists a nonzero vecto
 </my-defn>
    
    <p>
-       For my-example, suppose the characteristic polynomial of \(A\) is given by \(\left( \lambda - 2 \right)^2\). Solving for the roots of this polynomial, we set \(\left( \lambda - 2 \right)^2 = 0\) and solve for \(\lambda \). We find that \(\lambda = 2\) is a root that occurs twice. Hence, in this case, \(\lambda = 2\) is an eigenvalue of \(A\) of multiplicity equal to \(2\).
+       For example, suppose the characteristic polynomial of \(A\) is given by \(\left( \lambda - 2 \right)^2\). Solving for the roots of this polynomial, we set \(\left( \lambda - 2 \right)^2 = 0\) and solve for \(\lambda \). We find that \(\lambda = 2\) is a root that occurs twice. Hence, in this case, \(\lambda = 2\) is an eigenvalue of \(A\) of multiplicity equal to \(2\).
    </p>
    
    
@@ -1854,9 +1948,9 @@ To verify your work, make sure that \(Ax=\lambda x\) for each \(\lambda\) and as
             Find its eigenvalues and eigenvectors.
         
     </p>
-<div class="my-example-content">
-        <span id="SHLink_SolnEx1" class="soln-title SH-Link">Show solution</span> <span id="SHImg_SolnEx1" class="fa fa-caret-right" aria-hidden="true"></span>
-   <div id="SHObj_SolnEx1" class="soln-content" style="display: none;">
+<div class="example-content">
+        <span id="SHLink_kolnEx1" class="soln-title SH-Link">Show solution</span> <span id="SHImg_kolnEx1" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_kolnEx1" class="soln-content" style="display: none;">
   <p>
   First we find the eigenvalues of \(A\) by solving the equation 
   
@@ -1910,9 +2004,9 @@ This is what we wanted, so we know this basic eigenvector is correct. -->
             Find the eigenvalues and eigenvectors for the matrix \[A=\left[ \begin{array}{rrr} 5 & -10 & -5 \\ 2 & 14 & 2 \\ -4 & -8 & 6 \end{array} \right] \]
         
     </p>
-<div class="my-example-content">
-        <span id="SHLink_SolnEx3" class="soln-title SH-Link">Show solution</span> <span id="SHImg_SolnEx3" class="fa fa-caret-right" aria-hidden="true"></span>
-   <div id="SHObj_SolnEx3" class="soln-content" style="display: none;">
+<div class="example-content">
+        <span id="SHLink_kolnEx3" class="soln-title SH-Link">Show solution</span> <span id="SHImg_kolnEx3" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_kolnEx3" class="soln-content" style="display: none;">
   <p>
   First we find the eigenvalues of \(A\) by solving the equation 
   
@@ -1932,9 +2026,9 @@ This is what we wanted, so we know this basic eigenvector is correct. -->
             Let \[A=\left[ \begin{array}{rrr} 2 & 2 & -2 \\ 1 & 3 & -1 \\ -1 & 1 & 1 \end{array} \right]\nonumber \] Find the eigenvalues and eigenvectors of \(A\).
         
     </p>
-<div class="my-example-content">
-        <span id="SHLink_SolnEx2" class="soln-title SH-Link">Show solution</span> <span id="SHImg_SolnEx2" class="fa fa-caret-right" aria-hidden="true"></span>
-   <div id="SHObj_SolnEx2" class="soln-content" style="display: none;">
+<div class="example-content">
+        <span id="SHLink_kolnEx2" class="soln-title SH-Link">Show solution</span> <span id="SHImg_kolnEx2" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_kolnEx2" class="soln-content" style="display: none;">
   <p>
   First we find the eigenvalues of \(A\) by solving the equation 
   
@@ -1962,9 +2056,9 @@ Find the eigenvalues and eigenvectors of $A$.
      
         
     </p>
-<div class="my-example-content">
-        <span id="SHLink_SolnEx5" class="soln-title SH-Link">Show solution</span> <span id="SHImg_SolnEx5" class="fa fa-caret-right" aria-hidden="true"></span>
-   <div id="SHObj_SolnEx5" class="soln-content" style="display: none;">
+<div class="example-content">
+        <span id="SHLink_kolnEx5" class="soln-title SH-Link">Show solution</span> <span id="SHImg_kolnEx5" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_kolnEx5" class="soln-content" style="display: none;">
   <p>
     The characteristic polynomial is computed as 
     $$P(\lambda) = \det(A - \lambda I ) = - \lambda^3 + 3\lambda + 2 = - (\lambda - 2)(\lambda + 1)^2$$
@@ -2008,9 +2102,9 @@ Show that $A$ and $B$ are similar?
      
         
     </p>
-<div class="my-example-content">
-        <span id="SHLink_SolnEx6" class="soln-title SH-Link">Show solution</span> <span id="SHImg_SolnEx6" class="fa fa-caret-right" aria-hidden="true"></span>
-   <div id="SHObj_SolnEx6" class="soln-content" style="display: none;">
+<div class="example-content">
+        <span id="SHLink_kolnEx6" class="soln-title SH-Link">Show solution</span> <span id="SHImg_kolnEx6" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_kolnEx6" class="soln-content" style="display: none;">
   <p>
     
   </p>
@@ -2054,9 +2148,9 @@ Find the eigenvalues for the matrix
      
         
     </p>
-<div class="my-example-content">
-        <span id="SHLink_SolnEx7" class="soln-title SH-Link">Show solution</span> <span id="SHImg_SolnEx7" class="fa fa-caret-right" aria-hidden="true"></span>
-   <div id="SHObj_SolnEx7" class="soln-content" style="display: none;">
+<div class="example-content">
+        <span id="SHLink_kolnEx7" class="soln-title SH-Link">Show solution</span> <span id="SHImg_kolnEx7" class="fa fa-caret-right" aria-hidden="true"></span>
+   <div id="SHObj_kolnEx7" class="soln-content" style="display: none;">
   <p>
     
   </p>

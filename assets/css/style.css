@@ -201,8 +201,9 @@ button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    -webkit-appearance: button;
-    cursor: pointer;
+    -webkit-appearance: button; /* Vendor-prefixed for WebKit browsers */
+    appearance: button;         /* Standard property for modern browsers */
+    cursor: pointer;            /* Ensures pointer cursor for better UX */
 }
 
 button[disabled],
@@ -232,8 +233,9 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 input[type="search"] {
-    -webkit-appearance: textfield;
-    box-sizing: content-box;
+    -webkit-appearance: textfield; /* Vendor-prefixed for WebKit browsers */
+    appearance: textfield;         /* Standard property for modern browsers */
+    box-sizing: content-box;       /* Ensures box model behavior */
 }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -1118,8 +1120,8 @@ h3.sectcounter:before {
     margin-bottom: 0;
 }
 
-/*Block answer*/
-.main-content answer {
+/*Begin element my-answer*/
+.main-content my-answer {
     display: block;
     padding: 0 0 0 1rem;
     margin-left: 0;
@@ -1134,15 +1136,15 @@ h3.sectcounter:before {
     /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
 
-.main-content answer > :first-child {
+.main-content my-answer > :first-child {
     margin-top: 0;
 }
 
-.main-content answer > :last-child {
+.main-content my-answer > :last-child {
     margin-bottom: 0;
 }
 
-.main-content answer::before {
+.main-content my-answer::before {
     counter-increment: counteran;
     content: "ចម្លើយ" "."; /*counter(section, khmer) "." counter(counteran, khmer) ". ";*/
     font-weight: bold;
@@ -1189,6 +1191,44 @@ h3.sectcounter:before {
     font-family: Battambang;
     /*Angkor*/
 }
+
+/*Begin my-example element*/
+.main-content my-example {
+    display: block;
+    padding: 0 0 0 1rem;
+    margin-left: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #076422;
+    border-left: 2pt solid #eb0000;
+    text-align: left;
+    font-size: 16px;
+    /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
+}
+
+.main-content my-example > :first-child {
+    margin-top: 0;
+}
+
+.main-content my-example > :last-child {
+    margin-bottom: 0;
+}
+
+
+/*example counter*/
+.main-content {
+    counter-reset: counterex !important;
+}
+
+.main-content my-example::before {
+    counter-increment: counterex;
+    content: "ឧទាហរណ៍ " /*counter(section, khmer) ".";*/ counter(counterex, khmer) ".";
+    font-weight: bold;
+    font-size: 17px;
+    font-family: Battambang;
+    /*Angkor*/
+}
+/*End my-example*/
 
 .line-bottom {
     border-bottom: 5px solid black;
@@ -1284,7 +1324,8 @@ div.definitionb {
     /*text-indent: 10px; */
 }
 
-.main-content defn {
+/*Begin my-defn*/
+.main-content my-defn {
     display: block;
     padding: 10px 0 10px 0;
     margin-left: 0;
@@ -1293,21 +1334,21 @@ div.definitionb {
     /*          font-size: 16px;;*/
 }
 
-.main-content defn > :first-child {
+.main-content my-defn > :first-child {
     margin-top: 0;
 }
 
-.main-content defn > :last-child {
+.main-content my-defn > :last-child {
     margin-bottom: 0;
 }
 
-.main-content defn p {
+.main-content my-defn p {
     padding-top: 2px;
     text-indent: 32px;
 }
 
 /*definition counter*/
-.main-content defn {
+.main-content my-defn {
     counter-reset: counterdef !important;
 }
 
@@ -1330,7 +1371,7 @@ div.definitionb {
     /*font-weight:bold; */
     font-family: "Koulen", cursive;
 }
-
+/*End my-defn*/
 
 .main-content div.answer {
     display: inline-block;
@@ -1782,8 +1823,6 @@ Show hide answer in examples
 
 .example {
     border: 2px solid #000000;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
     border-radius: 10px;
     width: 100%;
     padding: 5px;
@@ -1959,8 +1998,6 @@ Show hide answer in examples
     background-color: rgb(188, 43, 43);
     color: #ffffff;
     border: 2px solid rgb(188, 43, 43);
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
     border-radius: 10px;
     text-align: center;
     font-weight: bold;
@@ -2084,8 +2121,6 @@ Show hide answer in examples
 .main-content .box-warning {
     display: block;
     border-radius: 1px;
-    -moz-border-radius: 1px;
-    -webkit-border-radius: 1px;
     border-top: none;
     border-bottom: none;
     border-right: none;
