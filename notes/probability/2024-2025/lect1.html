@@ -169,7 +169,7 @@ src="">
                               </span>
                               <hr />
 
-                              <h2 class="frame-sect sectcounter">Introduction</h2>
+                              <h2 class="frame-sect sectcounter">សេចក្ដីផ្ដើម</h2>
                               
                               <h3>Reasoning under uncertainty</h3>
                               
@@ -229,11 +229,11 @@ src="">
                                   
                               </ul>
                
-<h2>១.១ Elementary probability</h2>
+<h2>១.១ ប្រូបាប៊ីលីតេបឋមៗ (elementary probability)</h2>
                              
     <p><!--Many essential concepts in probability can be understood through simple scenarios, which is why starting with elementary probability theory is beneficial. Probability problems can indeed be tricky, and having a clear method for setting up solutions is crucial. Here's an example to illustrate this:-->
     
-    គោលគំនិតសំខាន់ៗជាច្រើននៅក្នុងប្រូបាប៊ីលីតេ អាចឱ្យគេយល់បានតាមរយៈសេណារីយ៉ូសាមញ្ញៗ ជាមូលហេតុមួយដែលគេចាប់ផ្តើមដោយសិក្សាទ្រឹស្តីប្រូបាប៊ីលីតេបឋមៗ គឺពិតជាមានប្រយោជន៍ណាស់ ។ ចំណោទប្រូបាប៊ីលីតេ ពិតជាមានល្បិចច្រើន ហើយការមានវិធីសាស្រ្តច្បាស់លាស់ ក្នុងការដោះស្រាយចំណោទ គឺពិតជាចាំបាច់ណាស់ ។ ខាងក្រោម ជាឧទាហរណ៍ងាយមួយ ដើម្បីបញ្ជាក់រឿងនេះ ៖
+    គោលគំនិតសំខាន់ៗជាច្រើននៅក្នុងប្រូបាប៊ីលីតេ អាចឱ្យគេយល់បានតាមរយៈសេណារីយ៉ូសាមញ្ញៗ ជាមូលហេតុមួយ ដែលគេចាប់ផ្តើមដោយសិក្សាទ្រឹស្តីប្រូបាប៊ីលីតេបឋមៗ គឺពិតជាមានប្រយោជន៍ណាស់។ ចំណោទប្រូបាប៊ីលីតេ ពិតជាមានល្បិចច្រើន ហើយការដែលមានវិធីសាស្រ្តច្បាស់លាស់ ក្នុងការដោះស្រាយចំណោទ គឺពិតជាចាំបាច់។ ខាងក្រោម ជាឧទាហរណ៍ងាយមួយ ដើម្បីបញ្ជាក់រឿងនេះ ៖
 <br><br>
           <b>ចំណោទ៖</b> គេដកសន្លឹកបៀទាំងអស់ចេញពីហ៊ូបៀមួយ លើកលែងតែសន្លឹកអាត់ (A) និងសន្លឹកស្តេច (K) ។ ដូច្នេះគេនៅសល់តែប្រាំបីសន្លឹកប៉ុណ្ណោះ <a>អាត់បួនសន្លឹក (4A) និងស្តេចបួនសន្លឹក (4K)</a> ។  នៅក្នុងហ៊ូបៀតូចនេះ អ្នកចែកបៀពីរសន្លឹកទៅឱ្យមិត្តភ័ក្តិ ។  
           
@@ -314,24 +314,57 @@ Now, the probability that your friend has two aces, given that he has at least o
 By breaking down the problem into smaller parts and using probability theory, we can systematically organize our thinking and calculations. This helps us better understand the complexities involved, even in seemingly simple scenarios.
     </p>                                                                                             
                                                                                                                                                                                                                                                                                                                                                                                                                        
- <h2>(a) Sample Space</h2>
+ <h2>(a) លំហសំណាក (sample space)</h2>
 
 <p>
     The basic setting for a probability model is the <a>random experiment</a> or <a>random trial</a>. This serves as your mental model of what is happening in the scenario. For example, in the previous card example, the random experiment is the dealer passing two cards to your friend.
 </p>
+<ol type="i">
+    <li>
+        <b>ពិសោធន៍ចៃដន្យ (random experiment):</b> It is a procedure or process that leads to one or more outcomes that cannot be predicted with certainty. <br>
+              
+              Each time the experiment is conducted, it may produce different results, even under the same conditions. Examples include rolling a die, flipping a coin, or drawing a card from a deck. The key characteristic of a random experiment is the inherent variability in the outcomes.
+</li>
+<li>
+     <b>ពិសោធន៍ (experiment):</b> In probability theory, an experiment refers to <a>any process or activity that generates data</a>. <br>
+              
+              This term is often used interchangeably with "random experiment," but it can also refer to non-randomized studies or controlled experiments in statistics. In probability, however, an experiment typically focuses on the variability and unpredictability of outcomes. 
+</li>
 
-<b>Definition.</b> (Sample Space - S): The set of all possible outcomes of a random experiment.
+          <li><b>Random Trial: </b> is a specific type of random experiment that is characterized by the following features:
+<br><br>
+
+Essentially, a random trial is a single instance of performing a random experiment, and it is used to analyze the probability of different outcomes occurring. For example, tossing a coin once is a random trial, while tossing it multiple times constitutes a series of random trials.
+    <ul>
+        <li>
+                  <a>Repetition:</a> A random trial can be repeated multiple times under the same conditions.
+        </li>
+        <li>
+            <a>Randomness:</a> Each trial produces outcomes that are determined by chance.
+        </li>
+        <li>
+            <a>Well-defined outcomes: </a> The possible outcomes of the trial are known and can be listed, such as the results of flipping a coin (heads or tails) or rolling a die (numbers 1 through 6).
+        </li>
+    </ul>
+</li>
+</ol>
+
+<my-defn>
+    <div class="definition"><span>(Sample Space - $S$ or $\Omega$)</span> </div>
+ <div class="definitionb">
+    The set of all possible outcomes of a random experiment.
 
 Depending on the nature of the random experiment, the sample space \(S\) can be:
 <ol type="i">
-          <li><b>Finite:</b> A limited number of outcomes.</li>
-<li><b>Countably Infinite:</b> An infinite set of outcomes that can be listed.</li>
+          <li><b>រាប់អស់ (Finite):</b> A limited number of outcomes.</li>
+<li><b>រាប់មិនអស់តែរាប់បាន (Countably Infinite):</b> An infinite set of outcomes that can be listed.</li>
     
  <li>
-     <b>Uncountably Infinite:</b> An infinite set of outcomes that cannot be listed.
+     <b>រាប់មិនបាន (Uncountably Infinite):</b> An infinite set of outcomes that cannot be listed.
  </li>   
 </ol>
-<br>
+          </div>
+</my-defn>
 
 Here are some examples to illustrate these concepts:
 
