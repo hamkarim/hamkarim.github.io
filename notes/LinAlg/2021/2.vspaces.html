@@ -479,6 +479,45 @@
         const para = document.createElement("mydef");
     </script>
 
+<!--- Show/Hide Toggle--->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+    <style>  
+        .sols {  
+            display: none; /* Initially hidden */  
+            margin-top: 4px;  
+            margin-bottom: 10px;
+            border: 1px solid #ccc;  
+            padding: 10px;  
+        }  
+        /* Styles for the toggle element */  
+        my-toggle {  
+            cursor: pointer; /* Hand pointer cursor */  
+            color: blue; /* Initial color */  
+           /* font-weight: italic;  */
+            font-style: italic;
+            font-size: 85%;
+            float: right; /* Align to the right */  
+            margin-top: -30px; /* Adjust the height as needed */  
+            margin-right: 20px; /* Space from the right margin */ 
+        }  
+    </style>  
+<script>  
+    $(document).ready(function(){  
+        $("my-toggle").click(function(){  
+            $(".sols").toggle(); // Toggle visibility of the solution  
+            // Change the text of the toggle element based on visibility  
+            // $(this).text($(this).text() === 'Show Solution' ? 'Hide Solution' : 'Show Solution');  
+            // Alternate the text and color based on visibility  
+            if ($(".sols").is(":visible")) {  
+                $(this).text("Hide Solution").css("color", "red");  // Change to red
+            } else {  
+                $(this).text("Show Solution").css("color", "blue");  // Change to blue
+            }  
+        });  
+    });  
+</script>  
+
+
 
 </head>
 
@@ -621,7 +660,7 @@
     </my-defn>
     <!--Footnote: -->
     <sup id="fn1">1. ការកំណត់សរសេរបែបនេះ $\mathbb K$-vs គឺមកពីនិយមន័យ (left) $\mathbb K$-module
-        <my-sh><a>(អានបន្ត...)</a>
+        <my-sh><i>(អានបន្ត...)</i>
             <div class="foote box-lemma" style="display: none; font-size: 16px!important">
                 <p><b>និយមន័យ .</b> យក $\mathbf R$ ជាកង ។ គេហៅសំណុំ $M$ ថាជា $\mathbf R$-module (ខាងឆ្វេង) ឬ <a>(ម៉ូឌុលខាងឆ្វេងលើកង $\mathbf R$)</a> បើ $M$ មានប្រមាណវិធីពីរគឺ៖ ប្រមាណវិធីក្នុង $(+)$ និងប្រមាណវិធីក្រៅ $(\cdot)$
                     $$
@@ -985,7 +1024,14 @@ où $x=\left(x_1, x_2, \ldots, x_n\right)$.-->
         </div>
     </my-defn>
 
-
+    <my-toggle>
+    Show Solution<span href="#ref11" title="Jump to solution.">&#8617;</span>
+    </my-toggle> 
+<div class="sols">  
+    <p>This is the solution text that will be toggled.</p>  
+</div>  
+ 
+   
     <p style="text-indent: 0px"><b>ចំណាំ :</b>
         If $\mathbf W$ is a vector subspace of $\E$, then $\mathbf W$ is a vector space for the external law induced by that of $\E$:
         $$
