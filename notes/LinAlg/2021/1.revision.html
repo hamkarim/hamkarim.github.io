@@ -255,7 +255,7 @@
             margin-right: 0.5rem;
         }
 
-        /*default */
+        /*default /
 
         .box-example .lt-icon-default::before {
             content: "\f00c";
@@ -298,7 +298,7 @@
         }
 
 
-        /*specific icons*/
+        /*specific icons*
         .lt-icon-brain::before {
             content: "\f5dc";
         }
@@ -340,7 +340,7 @@
         .lt-icon-exclamation::before,
             {
             content: "\f12a";
-        }
+        } */
 
         /*]]>*/
     </style>
@@ -646,11 +646,11 @@ We then refer to this as a power (instead of a product) and say that \( (x_k)_{k
 
 <my-example>
     <ol type="i">
-        <li>As counting traditionally starts from 1, it is common to write \( n = \{1, \ldots, n\} \) (instead of \( n = \{0, \ldots, n-1\} \)). For example, for \( n \)-tuples, we will write \( (x_1, \ldots, x_n) \) and denote their set as \[ X_1 \times \cdots \times X_n \]
+        <li>As counting traditionally starts from $1$, it is common to write \( n = \{1, \ldots, n\} \) (instead of \( n = \{0, \ldots, n-1\} \)). For example, for \( n \)-tuples, we will write \( (x_1, \ldots, x_n) \) and denote their set as \[ X_1 \times \cdots \times X_n \]
         </li>
         
         <li>
-            Likewise, a matrix is a family indexed by \( n \times m \): thus (numbering from 1), it takes the form
+            A matrix is a family indexed by \( n \times m \): thus (numbering from 1), it takes the form
 
 $$
 \begin{pmatrix}
@@ -660,19 +660,82 @@ x_{n,1} & \cdots & x_{n,m}
 \end{pmatrix}
 $$
 
-Their set is also denoted \( \mathcal{M}_{n \times m}(X) \) (or \( \mathcal{M}_n(X) \) when \( m = n \)).
+Their set is also denoted \( \mathscr{M}_{n \times m}(X) \) (or \( \mathscr{M}_n(X) \) when \( m = n \)).
         </li>
     </ol>
 
 </my-example>
 
-Note: Do not confuse a set with a family. We have
 
+
+<div class="box-note">
+<b>Note:</b> Before:  Do not confuse a set with a family. We have
 $$
 \{a, a\ldots\} = \{a\} \qquad \text{ and }\qquad \{a, b\} = \{b,a\}
 $$
+but similar equalities are incorrect for families (the order matters and repetition is allowed). 
 
+<br>
+Nevertheless, we can navigate between these two concepts: if we are given a set \(X\), it suffices to take \(\Lambda:=X\) and consider the family \((x)_{x \in X}\); conversely, if we have a family of elements \(\left(x_k\right)_{k \in \Lambda }\) of a set \(X\), we can look at the set \(\left\{x_k, k \in \Lambda\right\} \subset X\).
 
+It is somewhat anecdotal, but we can also define the <a>disjoint union</a> (also called the <a>sum or coproduct</a>) of a family of sets:
+
+$$
+\bigcup_{k \in \Lambda} X_k=\Bigl\{\left(k, x_k\right), \; k \in \Lambda, x_k \in X_k\Bigr\}
+$$
+
+<ol type="i">
+    <li><b>Sets vs. Families:</b>
+     <ul>
+        <li>
+            A <a>set</a> is a collection of distinct elements where the order does not matter and repetition is not allowed. For example, the set 
+            \[\{a, a\ldots\}=\{a\}\], and \[\{a, b\}=\{b, a\}\]
+        </li>
+        <li>
+            A <a>family</a>, however, refers to <a>an indexed collection where order and repetition can play a significant role</a>. For instance, the families 
+            \[
+            \Bigl(x\Bigr)_{x \in X} \quad \neq \quad \Bigl(y\Bigr)_{y \in Y}\] 
+            even if \(X\) and \(Y\) are sets containing the same elements. Additionally, the elements of the family may appear more than once or in a specific order.
+        </li>
+     </ul>
+    </li>
+
+    <li><b>Navigating Between Sets and Families:</b>
+  <ul>
+    <li>
+        If you have a set \(X\), you can create a family by taking each element from \(X\) and indexing it: let \(\Lambda = X\), then the family can be represented as \((x)_{x \in X}\). This means you’re considering the elements of \(X\) as indices for the family.
+    </li>
+    <li>
+        Conversely, if you start with a family \((x_k)_{k \in \Lambda}\) where each \(k\) is indexed by some set \(\Lambda\), you can derive a set that contains all the distinct elements from the family: \(\{x_k : k \in \Lambda\}\). Here, you’re essentially extracting only the unique values from the family, disregarding the indices.
+    </li>
+  </ul>
+    </li>
+</ol>
+
+<b>Explain: </b> This expression 
+<!----\[
+\bigcup_{k \in \Lambda} X_k = \Bigl\{\left(k, x_k\right) \; | \; k \in \Lambda, x_k \in X_k\Bigr\}
+\]-->
+means that taking the union of a collection of sets \( X_k \) indexed by \( k \), where \( k \) belongs to some index set \( \Lambda \) : 
+
+<ol typle="i">
+<li>
+    <a>Union \( \bigcup_{k \in \Lambda} X_k \)</a>: it indicates the combining all the elements from the sets \( X_k \) for each \( k \), that is an element of \( \Lambda \).
+</li>
+
+<li>
+<a>Set Notation \(\Bigl\{\left(k, x_k\right) \; | \; k \in \Lambda, x_k \in X_k\Bigr\}\) :</a>
+This defines a new set containing ordered pairs. Each pair consists of:
+  <ul>
+    <li> \( k \): An index from the set \( \Lambda \).
+    </li>
+    <li>\( x_k \): An element from the set \( X_k \) corresponding to that index. </li>
+  </ul>
+</li>
+</ol>
+
+So, in simpler terms, the entire expression represents a set of all pairs \((k, x_k)\) where \( k \) is an index and \( x_k \) is an element from the set associated with that index \( k \). Each \( X_k \) contains elements, and for each \( k \), one gathers these pairs together in a single set.
+</div>
 
 
 
@@ -686,7 +749,7 @@ $$
 
 </p>
 
-<!--h2 class="frame-sect sectcounter">&nbsp; និយមន័យ និងលក្ខណៈបឋមៗ  </h2> <!-- \section{និយមន័យ និងលក្ខណៈបឋមៗ}  -->
+<!--h2 class="frame-sect sectcounter">&nbsp; និយមន័យ និងលក្ខណៈបឋមៗ  </h2>-- \section{និយមន័យ និងលក្ខណៈបឋមៗ}  -->
 
 <my-defn>
           <div class="definition"><span>(Vector spaces)</span> </div>
@@ -769,7 +832,7 @@ $$
     </li>
 </ol>
   </div>
-   <div class="foote" style="display: none; size: 85%">
+   <div class="foote" style="display: none; font-size: 85%">
        <p><b>Exemples.</b></p>
        <ol type="1">
            <li> បើ $\mathbb K$ ជាកាយត្រឡប់ នោះ $\mathbb K$-module គឺជា $\mathbb K$-vs <a>(ឬ លំហវ៉ិចទ័រលើកាយ $\mathbb K$)</a> ។ <!--Si $A$ est un corps commutatif, un $A$-module est un $A$-espace vectoriel.--></li>
@@ -1181,8 +1244,9 @@ Let
 
 Find \(\minor\left( A\right) _{12}\) and \(\minor\left( A\right) _{23}\).
   </p>
+
   <div class="example-content">
-        <p style="align: right;">
+        <p style="text-align: right;">
             <span id="SHLink_koln12" class="soln-title SH-Link">Show Solution</span>         
         <span id="SHImg_koln12" class="fa fa-caret-right" aria-hidden="true"></span></p>
    <div id="SHObj_koln12" class="soln-content" style="display: none;">
