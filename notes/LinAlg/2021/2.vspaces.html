@@ -430,16 +430,16 @@
     <script type="text/javascript" id="MathJax-script" defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml-full.min.js">
     </script>
 
-  <!--Show/Hide my-answer with: togglemy-answer(my-exampleId)-->
+  <!--Show/Hide my-answer with: toggleAnswer(my-exampleId)-->
   <style>
         .hidden {
             display: none;
         }
     </style>
     <script>
-        function togglemy-answer(my-exampleId) {
+        function toggleAnswer(exampleId) {
             // Create the dynamic id
-            let dynamicId = `my-answer_${my-exampleId}`;
+            let dynamicId = `answer_${exampleId}`;
 
             // Get the element by the dynamic id
             let element = document.getElementById(dynamicId);
@@ -453,7 +453,7 @@
                     element.style.display = 'none';  // Hide the element
                 }
             } else {
-                console.error(`Element with id "${my-answerId}" not found.`);
+                console.error(`Element with id "${answerId}" not found.`);
             }
         }
     </script>
@@ -713,7 +713,7 @@ $\forall \lambda \in \K:\;\; \lambda \cdot 0_\E=0_\E$
 </ol>
 
 <div>
-    <p style="text-align: right;"><span id="SHLink_Help1" class="soln-title SH-Link">Show my-answer</span> <span id="SHImg_Help1" class="fa fa-caret-right" aria-hidden="true"></span></p>
+    <p style="text-align: right;"><span id="SHLink_Help1" class="soln-title SH-Link">Show answer</span> <span id="SHImg_Help1" class="fa fa-caret-right" aria-hidden="true"></span></p>
    <div id="SHObj_Help1" class="soln-content" style="display: none;">
 
 <my-answer>
@@ -768,11 +768,11 @@ $$
 For my-example, $\E=\mathbb{C}$ and $\K=\mathbb{R}, \E=\mathbb{R}$ and $\K=\mathbb{Q}$ or $\E=\mathbb{C}$ and $\K=\mathbb{Q}$. In particular, any field $\K$ can be considered as a vector space on itself.
     </my-example>
     
-    <p onclick="togglemy-answer('ex1')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
-    <div id="my-answer_ex1" style="display: none">
+    <p onclick="toggleAnswer('ex1')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
+    <div id="answer_ex1" style="display: none">
     <!--Left as exercise (1).-->
-   <div class="my-answer">Solution.</div> 
-   <div class="my-answer-upper-left"> 
+   <div class="answer">Solution.</div> 
+   <div class="answer-upper-left"> 
    <p>ឧបមា $\E=\mathbb{C}$ និង $\K=\mathbb{R}$ ។ យើងនឹងបង្ហាញថា $(\E, +)$ ជាក្រុមអាបែល ហើយផ្ទៀងផ្ទាត់បន្ថែមលក្ខណៈ (i.) ដល់ (iv.) ។</p>
    <ol type="a">
        <li> <a>បង្ហាញថា $(\E, +)$ ជាក្រុមអាបែល:</a>
@@ -913,8 +913,8 @@ $$
 $$
 where $x=\left(x_1, x_2, \ldots, x_n\right)$.    
     </my-example>
-<p onclick="togglemy-answer('ex2')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
-    <div id="my-answer_ex2" class="box-lemma" style="display: none">
+<p onclick="toggleAnswer('ex2')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
+    <div id="answer_ex2" class="box-lemma" style="display: none">
    <p> Left as exercise (1) </p>
    
     </div>
@@ -931,7 +931,7 @@ $$
 where $P=\sum_{i=1}^n a_i x^i$.
 </my-example>
 <p onclick="togglemy-answer('ex3')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
-    <div id="my-answer_ex3" class="box-lemma" style="display: none">
+    <div id="answer_ex3" class="box-lemma" style="display: none">
    <p> Left as exercise (2) </p>
    
     </div>
@@ -962,8 +962,8 @@ $$
 </ol>
      
  </my-example>
-<p onclick="togglemy-answer('ex4')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
-    <div id="my-answer_ex4" class="box-lemma" style="display: none">
+<p onclick="toggleAnswer('ex4')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
+    <div id="answer_ex4" class="box-lemma" style="display: none">
    <p> Left as exercise (3) </p>
    
     </div>
