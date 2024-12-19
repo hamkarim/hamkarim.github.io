@@ -484,9 +484,10 @@
     <style>  
         .sols {  
             display: none; /* Initially hidden */  
-            margin-top: 4px;  
-            margin-bottom: 10px;
-            border: 1px solid #ccc;  
+            margin-top: 30px;  
+            margin-bottom: 20px;
+            border: 1px solid #9cbcdf;  
+            background-color: rgba(229, 229, 229, 0.25);
             padding: 10px;  
         }  
         /* Styles for the toggle element */  
@@ -497,8 +498,9 @@
             font-style: italic;
             font-size: 85%;
             float: right; /* Align to the right */  
-            margin-top: -30px; /* Adjust the height as needed */  
+            margin-top: 10px; /* Adjust the height as needed */  
             margin-right: 20px; /* Space from the right margin */ 
+            margin-bottom: 30px; /* Space from the bottom margin */ 
         }  
     </style>  
 <script>  
@@ -509,9 +511,9 @@
             // $(this).text($(this).text() === 'Show Solution' ? 'Hide Solution' : 'Show Solution');  
             // Alternate the text and color based on visibility  
             if ($(".sols").is(":visible")) {  
-                $(this).text("Hide Solution").css("color", "red");  // Change to red
+                $(this).html("Hide Solution"+"&#8617;").css("color", "red");  // Change to red
             } else {  
-                $(this).text("Show Solution").css("color", "blue");  // Change to blue
+                $(this).html("Show Solution"+"&#8617;").css("color", "blue");  // Change to blue
             }  
         });  
     });  
@@ -1024,13 +1026,7 @@ où $x=\left(x_1, x_2, \ldots, x_n\right)$.-->
         </div>
     </my-defn>
 
-    <my-toggle>
-    Show Solution<span href="#ref11" title="Jump to solution.">&#8617;</span>
-    </my-toggle> 
-<div class="sols">  
-    <p>This is the solution text that will be toggled.</p>  
-</div>  
- 
+     
    
     <p style="text-indent: 0px"><b>ចំណាំ :</b>
         If $\mathbf W$ is a vector subspace of $\E$, then $\mathbf W$ is a vector space for the external law induced by that of $\E$:
@@ -1101,12 +1097,314 @@ où $x=\left(x_1, x_2, \ldots, x_n\right)$.-->
         </ol>
     </my-example>
 
-    <p>
-        We will use Definition \(\PageIndex{3}\) to compute these cofactors.</p>
-    <!-------------------------------------------------------------------->
+<h3>Operations on vector subspaces</h3>
+        
+<ol type="i">
+    <li><b>ប្រសព្វរបស់លំហរង៖</b>
+        <!--Soit E un $\K$-espace vectoriel, alors l'intersection d'une famille quelconque de sous-espaces vectoriels de $E$ est un sous-espace vectoriel de $\E$.-->
+        Let $\E$ be a $\K$-vector space, then the intersection of any family of vector subspaces of $\E$ is a vector subspace of $\E$. i.e., $\bigcap_{i \in I} W_i$  is  $\K$-vs . 
+        
+        <br>
+          <p onclick="toggleAnswer('ex5')" style="text-align: right;"><i>Solution.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
+    <div id="answer_ex5" class="box-lemma" style="display: none">
+    <!--Démonstration. Soit $\left(W_i\right)_{i \in I}$ une famille de sous-espaces vectoriels de $E$, où $I$ est un ensemble d'indice quelcomque et non vide. La vérification que $\bigcap_{i \in I} W_i$ est un sous-espace vectoriel de $E$ est laisséc à titre d'exercice. Rappelons que -->
+    <i>សម្រាយបញ្ជាក់.</i> Let $\left(W_i\right)_{i \in I}$ be a family of vector subspaces of $\E$, where $I$ is a set of any and non-empty index. Show that $\bigcap_{i \in I} W_i$ is a vector subspace of $\E$. Remember that 
+    $$
+x \in \bigcap_{i \in I} W_i \Longleftrightarrow \forall i \in I, x \in W_i
+$$
+    </div>
+        <!--my-toggle>
+    Show Solution<span href="#ref11" title="Jump to solution.">&#8617;</span>
+    </!--my-toggle> 
+<div class="sols">  
+   
+</div -->  
 
-    <p class="">We begin with the following definition.</p>
+</li>
+<li><b>ប្រជុំរបស់លំហរង៖</b>
+<!--Soient $\E$ un $\K$-vs quelconque, $F$ et $G$ deux sous-espaces vectoriels de $\E$. Alors $F \cup G$ est un sous-espace vectoriel de $\E$, si et seulement si, $F \subseteq G$ ou $G \subseteq F$.-->
+Let $\E$ be any $\K$-vs, $F$ and $G$ two vector subspaces of $\E$. Then $F \cup G$ is a vector subspace of $\E$, if and only if, $F \subseteq G$ or $G \subseteq F$.
 
+        <br>
+          <p onclick="toggleAnswer('ex6')" style="text-align: right;"><i>Solution.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
+    <div id="answer_ex6" class="box-lemma" style="display: none">
+    
+    <i>សម្រាយបញ្ជាក់.</i> 
+    <ol>
+        <li>
+            <b>$(\Longrightarrow)$:</b> Suppose that $F \cup G$ is a vector subspace of $\E$. Then, show that $F \subseteq G$ or $G \subseteq F$. 
+    
+    <br>
+    To do this, assume, absurdly, that $F \nsubseteq G$ and $G \nsubseteq F$.
+
+$$
+\begin{aligned}
+& F \nsubseteq G \Longrightarrow \exists x: x \in F \text { and } x \notin G \\
+& F \nsubseteq G \Longrightarrow \exists y: y \in G \text { et } y \notin F
+\end{aligned}
+$$
+
+$F \cup G$ being a vector subspace, therefore $x+y \in F \cup G$, consequently, we have
+
+$$
+x+y \in F \text { or } x+y \in G
+$$
+
+<ul>
+    <li>
+        If $x+y \in F$, since $y=(x+y)-x$, then $y \in F$, which is absurd, because $y \notin F$.
+    </li>
+<li>
+    If $x+y \in G$, since $x=(x+y)-y$, then $x \in G$, which is again absurd, because $x \notin G$.
+</li>
+
+So our initial assumption is false, as a result, $F \subseteq G$ or $G \subseteq F$.
+</ul>
+        </li>
+        
+        <li><b>$(\Longleftarrow)$:</b> Trivial.</li>
+    </ol>
+
+</div>  
+
+ <div class="box-theorem">
+        <div class="box-legend editable"><span class="lt-icon-default">សំណើ ១. :  (ទូទៅកម្ម)</span></div>
+<p>
+    Let $\E$ be any $\K$-vs and $n$ be an integer $\geq 2$. We assume that $\K$ is a field with characteristic $\geq n$.
+Let $W_1, W_2, \ldots, W_n$ be vector subspaces of $\E$, then $\bigcup_{k=1}^n W_k $ is a vector subspace of $\E$, if and only if , there exists $i \in\{1,2, \ldots, n\}$, such that for all $j \in\{1,2, \ldots, n\}$, we a $W_j \subseteq W_i$.
+</p>
+       
+    </div>
+          <p onclick="toggleAnswer('ex7')" style="text-align: right;"><i>Solution.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
+    <div id="answer_ex7" class="box-note" style="display: none">
+    
+    <i>សម្រាយបញ្ជាក់.</i> 
+    <ol>
+        <li>
+            <b>$(\Longleftarrow)$:</b> Trivial.
+        </li>
+        
+        <li><b>$(\Longrightarrow)$:</b> 
+        
+On procède par récurrence sur $n \geq 2$.
+Le cas $n=2$ est déjà vu, car tout corps est de caractéristique $\geq 2$.
+<br>
+Supposons, done que $n\gt 2$ et que la proposition est vérifiée pour tout enticr $m\lt n$. Soient $W_1, W_2, \ldots, W_n$ des sous-espaces vectoriels de $E$, tel que $W_1 \cup W_2 \cdots \cup W_n$ soit un sous-espace vectoriel de $E$.
+<br>
+Supposons, par absurde, que pour tout $i \in\{1,2, \ldots, n\}$, on a $\bigcup_{\substack{j=1 \\ j \neq i}}^n W_j \nsubseteq W_i$, done, en particuler, on a $\bigcup_{j=1}^{n-1} W_j \nsubseteq W_n$. D'autre part, d'après l'hypothèse de récurrence, on peut supposer que $W_n \nsubseteq \bigcup_{j=1}^{n-1} W_j$.
+Soient $x \in W_n$ ct $y \in \bigcup_{j=1}^{n-1} W_j$, tels que $x \notin \bigcup_{j=1}^{n-1} W_j$ et $y \notin W_n$.
+
+$$
+\left(x \in W_n \text { et } y \notin W_n\right) \Longrightarrow \forall \lambda \in K, \quad \lambda x+y \notin W_n
+$$
+
+
+Or, $\bigcup_{j=1}^n W_j$ est un sous-espace vectoriel de $E$, donc pour tout $\lambda \in K$, on a $\lambda x+y \in \bigcup_{j=1}^n W_j$. Remarquons que si $\lambda x+y \in W_j$, pour un certain $j \in\{1,2, \ldots, n-1\}$, alors pour tout $\mu \neq \lambda, \mu x+y \notin W_j$, car sinon, on aura $x \in W_j$, ce qui est absurde. $K$ est de caractéristique $\geq n$, done l'ensemble $\left\{1_K, 21_K, \ldots,(n-1) 1_K\right\}$ est de cardinal $n-1$, par suite, d`après la remarque précédente, pour chaque $j \in\{1,2, \ldots, n-1\}$, il existe un unique $\lambda_j$, avec $\lambda_j \in\left\{1_K, 21_K, \ldots,(n-1) 1_K\right\}$, tel que, $\lambda_j x+y \in W_j$. Or $y \in \bigcup_{i=1}^{n-1} W_j$, donc il existe $j \in\{1,2, \ldots, n-1\}$, tel que, $y \in W_j$. donc $x \in W_j$, car $\lambda_j x+y \in W_j$ et $\lambda_j \neq 0$, ce qui est absurde, $\operatorname{car} x \notin W_j$.
+        
+        </li>
+    </ol>
+
+</div>  
+</li>
+
+<li><b>ផលបូករបស់លំហរង៖</b>
+    Let $\E$ be a $\K$-vector space, $W_1, W_2, \ldots, W_n$ vector subspaces of $\E$, with $n \geq 2$. We define the part of $\E$, denoted $W_1+W_2+\cdots+W_n$, by $x \in W_1+W_2+\cdots+W_n$, if and only if, there exists $\left(x_1, x_2, \ldots, x_n\right) \in W_1 \times W_2 \times \cdots \times W_n$, such that $x=x_1+x_2+\cdots+x_n$. 
+<br>
+
+Thus, $W_1+W_2+\cdots+W_n$ is a vector subspace of $\E$, called  subspace sum of vector subspaces $W_1, W_2, \ldots, W_n$.
+</li>
+
+<li>
+    <b>ផលបូកផ្ទាល់របស់លំហរង (Direct sum) ៖</b>
+
+<my-defn>
+   <div class="definition">(ផលបូកផ្ទាល់)</div>
+        <div class="definitionb">
+    Let $\E$ be a $\K$-vs and $W_1, W_2, \ldots, W_n$ be vector subspaces of $\E$. We say that the sum $W_1+W_2+\cdots+W_n$ is direct, if for all $x \in W_1+W_2+\cdots+W_n$, there exists a unique 
+   $$
+    \left(x_1, x_2, \cdots, x_n\right) \in W_1 \times W_2 \times \cdots \times W_n: \;\; x=x_1+x_2+\cdots+x_n
+    $$,
+    </div>
+</my-defn>
+
+<b>Notation: </b>
+ក្នុងករណីដែលផលបូក $W_1+W_2+\cdots+W_n$ គឺជាផលបូកផ្ទាល់ នោះគេតាងវាដោយ៖
+$$
+W_1 \oplus W_2 \oplus \cdots \oplus W_n \quad \text { or } \quad \bigoplus_{i=1}^n W_i
+$$
+
+<div class="box-theorem">
+        <div class="box-legend editable"><span class="lt-icon-default">ឡែម ២. :  (ផលបូកផ្ទាល់)</span></div>
+<p>
+    The sum $\sum_{i=1}^n W_i$ is direct if and only if for all $\left(x_1, x_2, \cdots, x_n\right) $ $ \in W_1 \times W_2 \times \cdots \times W_n$, we has
+
+$$
+x_1+x_2+\cdots+x_n=0 \Longrightarrow x_1=x_2=\cdots=x_n=0
+$$
+</p>
+       
+    </div>
+         
+          <p onclick="toggleAnswer('ex8')" style="text-align: right;"><i>Solution.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
+    <div id="answer_ex8" class="box-note" style="display: none">
+    
+    <i>សម្រាយបញ្ជាក់.</i> 
+    <ol type="i">
+        <li><b>$(\Longrightarrow)$:</b>
+         Let $\left(x_1, x_2, \ldots, x_n\right) \in W_1 \times W_2 \times \cdots \times W_n$, such that $x_1+x_2+\cdots+x_n=0$ . We must check that $x_1=x_2=\cdots=x_n=0$. Since the sum is direct and since we have $0=0+0+\ldots+0$, then according to the uniqueness of the decomposition, we have $x_1=x_2=\cdots=x_n=0$.
+        </li>
+        
+        <li>
+            <b>$(\Longleftarrow)$: </b>
+            Let $x \in W_1+W_2+\cdots+W_n$, such that $x=x_1+x_2+\cdots+x_n$ and $x=y_1+y_2+\cdots+y_n$. we must then show that $x_1=y_1, x_2=y_2, \ldots, x_n=y_n$.
+$x=x_1+x_2+\cdots+x_n$ and $x=y_1+y_2+\cdots+y_n$, so we will have
+
+$$
+\left(x_1-y_1\right)+\left(x_2-y_2\right)+\cdots+\left(x_n-y_n\right)=0
+$$
+Consequently, if we put $z_1=x_1-y_1, z_2=x_2-y_2, \ldots$ and $z_n=x_n-y_n$, then we will have
+$\left(z_1, z_2, \cdots, z_n\right) \in W_1 \times W_2 \times \ldots \times W_n$ and $z_1+z_2+\cdots+z_n=0$, so, by hypothesis, we have $ z_1=z_2=\cdots=z_n=0$.
+        </li>
+    </ol>
+
+</div>  
+
+<div class="box-theorem">
+        <div class="box-legend editable"><span class="lt-icon-default">ទ្រឹស្ដីបទ ៣. :  (ផលបូកផ្ទាល់)</span></div>
+<p>
+The sum $W_1+W_2+\cdots+W_n$ is direct if and only if,
+$$
+\forall i \in\{1,2, \ldots, n-1\}: \quad W_i \bigcap \left(\sum_{k=i+1}^n W_{k}\right)=\Bigl\{0\Bigr\}
+$$
+    </p>
+    </div>
+<p onclick="toggleAnswer('ex9')" style="text-align: right;"><i>Solution.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
+    <div id="answer_ex9" class="box-note" style="display: none">
+    
+    <i>សម្រាយបញ្ជាក់.</i> 
+    <ol type="i">
+        <li><b>$(\Longrightarrow)$:</b>
+         Suppose the sum is direct and let $x_i \in W_i \cap\left(W_{i+1}+\cdots+W_n\right)$, with $i \in\{1,2, \ldots, n- 1\}$.
+We have $x_i \in W_{i+1}+\cdots+W_n$, so there exists $\left(x_{i+1}, \ldots, x_n\right) \in W_{i+1} \times \cdots \times W_n$, such that $x_i=x_{i+1}+\cdots+x_n$, so we will have $x_i+\left(-x_{i+1}\right)+\cdots+\left(-x_n\right)=0$. Now the sum $W_1+W_2+\cdots+W_n$ is direct, so according to the previous lemma, we have $x_i=x_{i+1}=\cdots=x_n=0$, therefore, in particular, we have $x_i=0$.
+        </li>
+        
+        <li>
+            <b>$(\Longleftarrow)$:</b> 
+            
+            Suppose that $\forall i \in\{1,2, \ldots, n-1\}, \quad W_i \cap\left(W_{i+1}+\cdots+W_n\right )=\{0\}$. Let $\left(x_1, x_2, \ldots, x_n\right) \in W_1 \times W_2 \times \ldots \times W_n$, such that $x_1+x_2+\cdots+x_n=0$. Let us show that $x_1=x_2=\cdots=x_n=0$. For this, we have
+$$
+\begin{aligned}
+x_1+x_2+\cdots+x_n=0 & \Longrightarrow x_1=-\left(x_2+\cdots+x_n\right) \\
+& \Longrightarrow x_1 \in W_1 \cap\left(W_2+\cdots+W_n\right) \\
+& \Longrightarrow x_1=0
+\end{aligned}
+$$
+
+So $x_2+\cdots+x_n=0$. In the same way we show that $x_2=0$ and thus, by induction on $i \in\{1,2, \ldots, n-1\}$, we show that
+
+$$
+x_1=x_2=\cdots=x_n=0
+$$
+        </li>
+        </ol>
+    </div>
+</li>
+</ol>
+
+<b>Remember! </b>
+Let $\E$ be any $\K$-vs, then according to the previous theorem: 
+
+    <ol>
+        <li>
+            The sum of two vector subspaces $W_1$ and $W_2$ of $\E$ is direct if and only if,
+
+$$
+W_1 \cap W_2 = \{0\}
+$$
+        </li>
+        <li>
+            The sum of three vector subspaces $W_1, W_2$ and $W_3$ of $\E$ is direct if and only if,
+
+$$
+W_1 \cap (W_2+W_3) = \{0\} \quad \text { and }\quad W_2 \cap W_3=\{0\}
+$$
+        </li>
+    </ol>
+
+   <h3>លំហរងបំពេញ (Additional subspaces)</h3>
+   
+      <my-defn>
+        <div class="definition">(លំហរងបំពេញ)</div>
+        <div class="definitionb">
+            <p>
+                Let $\E$ be a $K$-vector space, $U$ and $W$ two vector subspaces of $\E$. We say that $U$ and $W$ are supplementary in $\E$ if,
+            </p>
+<ol type="i">
+    <li>
+The sum $U+W$ is direct.
+    </li>
+    <li>
+        $\E=U \oplus W$.
+    </li>
+</ol>
+        </div>
+    </my-defn>
+   
+   <b>Remember! </b>
+   $$
+\begin{aligned}
+\E=U \oplus W &\quad \Longleftrightarrow\quad \left\{\begin{array}{l}
+\E=U+W \\
+\forall(x, y) \in U \times W:\; x+y=0 \Longrightarrow x=y=0
+\end{array}\right. \\ & \\
+& \quad \overset{\text{Or}}{\Longleftrightarrow}\quad\left\{\begin{array}{l}
+\E=U+W \\
+U \cap W=\{0\}
+\end{array}\right.
+\end{aligned}
+$$
+   
+
+  
+  <my-example>
+      <ol type="1">
+          <li>
+              Let $\E=\mathbb{R}^{\mathbb{R}}$ be the $\mathbb{R}$-vs of all functions from $\mathbb{R}$ to $\mathbb{R} $, $U$ the set of functions $f \in \E$ which are even and $W$ the set of functions $f \in \E$ which are odd. 
+
+Then show that $U$ and $W$ are two additional subspaces of $\E$.
+
+<!--Indeed, It is clear that $U$ and $W$ are two vector subspaces of $\E$, because the sum of two even (resp. odd) functions is an even (resp. odd) function, as well as the multiplication of an even (resp. odd) function is an even (resp. odd) function.
+If $f \in U \cap W$, then $f$ is a function that is both even and odd, so $f$ is zero, hence, $U \cap W=\{0\}$.
+Let's check that $\E=U+W$. To do this, let $f \in \E$ and let $g$ and $h$ be the functions defined by,
+
+$$
+\forall x \in \E: \quad g(x)=\frac{f(x)+f(-x)}{2} \text { and } h(x)=\frac{f(x)- f(-x)}{2}
+$$
+
+
+Then $g$ and $h$ are even and odd respectively and we have $f=g+h$.
+-->
+          
+    </li>
+         
+    <li>
+        Let $\E=\mathscr{C}^m(\mathbb{R}, \mathbb{R})$ be $\mathbb{R}$-vs of real functions of class $\mathscr{C}^ m$ on $\mathbb{R}$, $F$ and $G$ the subsets of $\E$ defined by,
+
+$$
+F=\left\{f \in E: f(0)=f^{\prime}(0)=\cdots=f^{(m)}(0)=0\right\} \quad \text { and } \quad G=\mathbb{R}_m[x]
+$$
+where $\mathbb{R}_m[x]$ is the set of polynomial functions of degree $\leq m$. 
+
+Recall that $f \in \mathbb{R}_m[x]$, if and only if, there exists $\left(a_0, a_1, \ldots, a_m\right) \in \mathbb{R}^{m+ 1}$, such that for all $x \in \mathbb{R}$, we have $$f(x)=\sum_{i=0}^m a_i x^i$$ 
+
+   Then, show that $F$ and $G$ are two additional subspaces of $\E$.
+    </li>
+          
+      </ol>
+  </my-example>
+   
+   
+   
     <my-defn>
         <div class="definition">(The \(ij^{th}\) Minor of a Matrix)</div>
         <div class="definitionb">
