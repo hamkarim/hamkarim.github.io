@@ -1398,6 +1398,23 @@ where $\mathbb{R}_m[x]$ is the set of polynomial functions of degree $\leq m$.
 Recall that $f \in \mathbb{R}_m[x]$, if and only if, there exists $\left(a_0, a_1, \ldots, a_m\right) \in \mathbb{R}^{m+ 1}$, such that for all $x \in \mathbb{R}$, we have $$f(x)=\sum_{i=0}^m a_i x^i$$ 
 
    Then, show that $F$ and $G$ are two additional subspaces of $\E$.
+   
+   
+   <!---Solution.---->
+   <p onclick="toggleAnswer('ex10')" style="text-align: right;"><i>Solution.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
+    <div id="answer_ex10" class="box-note" style="display: none">
+    
+    <i>សម្រាយបញ្ជាក់.</i> 
+    
+Indeed, let $f \in F \cap G$. Since $f \in \mathbb{R}_m[x]$, then according to Taylor's formula, we have
+
+$$
+\forall x \in \mathbb{R}, f(x)=\sum_{k=0}^m \frac{f^k(0)}{k!} x^k
+$$
+and since $f \in F$, then $\forall k \in\{0,1, \ldots, m\}, f^k(0)=0$, therefore $f$ is zero, hence $F \cap G=\{0\}$.
+
+Now let $f \in \E$. Let's look for $(g, h) \in F \times G$, such that $f=g+h$. To do this, it suffices to consider the functions $g$ and $h$ defined for all $x \in \mathbb{R}, \operatorname{par} h(x)=\sum_{k=0}^m \frac {f^k(0)}{k!} x^k$ and $g(x)=f(x)-h(x)$. Then $g \in F$, $h \in G$ and we have $f=g+h$.
+        </div>
     </li>
           
       </ol>
