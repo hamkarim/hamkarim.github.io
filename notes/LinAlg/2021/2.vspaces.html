@@ -1013,7 +1013,9 @@ où $x=\left(x_1, x_2, \ldots, x_n\right)$.-->
     <my-defn>
         <div class="definition">(Subspaces) </div>
         <div class="definitionb">
-            Let $\E$ be a $\K$-vector space and $\mathbf W$ be a part of $\E$. We say that $\mathbf W$ is a vector subspace of $\E$, if
+            <!--Let $\E$ be a $\K$-vector space and $\mathbf W$ be a part of $\E$. We say that $\mathbf W$ is a vector subspace of $\E$, if-->
+            
+            គេឱ្យ $\E$ ជា $\K$-vs និង $\mathbf W$ ជាផ្នែកមួយ (សំណុំរង) របស់ $\E$ ។  គេថា $\mathbf W$ គឺជាលំហវ៉ិចទ័ររងរបស់ $\E$ ប្រសិនបើ
             <ol type="i">
                 <li>
                     $(\mathbf W,+)$ is a subgroup of $(\E,+)$.
@@ -1101,11 +1103,12 @@ où $x=\left(x_1, x_2, \ldots, x_n\right)$.-->
         
 <ol type="i">
     <li><b>ប្រសព្វរបស់លំហរង៖</b>
-        <!--Soit E un $\K$-espace vectoriel, alors l'intersection d'une famille quelconque de sous-espaces vectoriels de $E$ est un sous-espace vectoriel de $\E$.-->
-        Let $\E$ be a $\K$-vector space, then the intersection of any family of vector subspaces of $\E$ is a vector subspace of $\E$. i.e., $\bigcap_{i \in I} W_i$  is  $\K$-vs . 
+        <!--Soit E un $\K$-espace vectoriel, alors l'intersection d'une famille quelconque de sous-espaces vectoriels de $E$ est un sous-espace vectoriel de $\E$.--
+        Let $\E$ be a $\K$-vector space, then the intersection of any family of vector subspaces of $\E$ is a vector subspace of $\E$. i.e., $\bigcap_{i \in I} W_i$  is  $\K$-vs . -->
+        គេឱ្យ $\E$ ជាលំហវ៉ិចទ័រកំណត់លើកាយ $\K$ ។ ដូច្នេះ ប្រសព្វនៃគ្រួសារលំហវ៉ិចទ័ររង របស់ $\E$ គឺជាលំហវ៉ិចទ័ររងរបស់ $\E$ ។  i.e., $$\bigcap_{i \in I} W_i\quad  \text{is a subspace}  $$
         
         <br>
-          <p onclick="toggleAnswer('ex5')" style="text-align: right;"><i>Solution.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
+          <p onclick="toggleAnswer('ex5')" style="text-align: right; margin-top: -40px;"><i>Solution.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
     <div id="answer_ex5" class="box-lemma" style="display: none">
     <!--Démonstration. Soit $\left(W_i\right)_{i \in I}$ une famille de sous-espaces vectoriels de $E$, où $I$ est un ensemble d'indice quelcomque et non vide. La vérification que $\bigcap_{i \in I} W_i$ est un sous-espace vectoriel de $E$ est laisséc à titre d'exercice. Rappelons que -->
     <i>សម្រាយបញ្ជាក់.</i> Let $\left(W_i\right)_{i \in I}$ be a family of vector subspaces of $\E$, where $I$ is a set of any and non-empty index. Show that $\bigcap_{i \in I} W_i$ is a vector subspace of $\E$. Remember that 
@@ -1122,9 +1125,9 @@ $$
 
 </li>
 <li><b>ប្រជុំរបស់លំហរង៖</b>
-<!--Soient $\E$ un $\K$-vs quelconque, $F$ et $G$ deux sous-espaces vectoriels de $\E$. Alors $F \cup G$ est un sous-espace vectoriel de $\E$, si et seulement si, $F \subseteq G$ ou $G \subseteq F$.-->
-Let $\E$ be any $\K$-vs, $F$ and $G$ two vector subspaces of $\E$. Then $F \cup G$ is a vector subspace of $\E$, if and only if, $F \subseteq G$ or $G \subseteq F$.
-
+<!--Soient $\E$ un $\K$-vs quelconque, $F$ et $G$ deux sous-espaces vectoriels de $\E$. Alors $F \cup G$ est un sous-espace vectoriel de $\E$, si et seulement si, $F \subseteq G$ ou $G \subseteq F$.--
+Let $\E$ be any $\K$-vs, $F$ and $G$ two vector subspaces of $\E$. Then $F \cup G$ is a vector subspace of $\E$, if and only if, $F \subseteq G$ or $G \subseteq F$.-->
+យក $\E$ ជា $\K$-vs និងកំណត់ $U$ និង $W$ ជាពីរលំហវ៉ិចចទ័ររងរបស់ $\E$ ។ ដូច្នេះ $U \cup W$ ជាលំហវ៉ិចទ័ររងរបស់ $\E$ លុះត្រាតែ $U \subseteq W$ ឬក៏ $W \subseteq U$ ។
         <br>
           <p onclick="toggleAnswer('ex6')" style="text-align: right;"><i>Solution.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
     <div id="answer_ex6" class="box-lemma" style="display: none">
@@ -1170,8 +1173,10 @@ So our initial assumption is false, as a result, $F \subseteq G$ or $G \subseteq
  <div class="box-theorem">
         <div class="box-legend editable"><span class="lt-icon-default">សំណើ ១. :  (ទូទៅកម្ម)</span></div>
 <p>
-    Let $\E$ be any $\K$-vs and $n$ be an integer $\geq 2$. We assume that $\K$ is a field with characteristic $\geq n$.
-Let $W_1, W_2, \ldots, W_n$ be vector subspaces of $\E$, then $\bigcup_{k=1}^n W_k $ is a vector subspace of $\E$, if and only if , there exists $i \in\{1,2, \ldots, n\}$, such that for all $j \in\{1,2, \ldots, n\}$, we a $W_j \subseteq W_i$.
+    <!--Let $\E$ be any $\K$-vs and $n$ be an integer $\geq 2$. We assume that $\K$ is a field with characteristic $\geq n$.
+Let $W_1, W_2, \ldots, W_n$ be vector subspaces of $\E$, then $\bigcup_{k=1}^n W_k $ is a vector subspace of $\E$, if and only if , there exists $i \in\{1,2, \ldots, n\}$, such that for all $j \in\{1,2, \ldots, n\}$, we a $W_j \subseteq W_i$.-->
+គេឲ្យ $\E$ ជា $\K$-vs និងយក $n$ ជាចំនួនគត់ $\geq 2$ ។ សន្មត់ $\K$ គឺជាកាយមួយដែលមានការ៉ាក់តេរីស្ទីក $\geq n$ ។
+យក $W_1, W_2, \ldots, W_n$ ជាលំហវ៉ិចទ័ររងរបស់ $\E$ ។ ដូច្នេះ $\bigcup_{k=1}^n W_k$ គឺជាលំហវ៉ិចទ័ររងរបស់ $\E$ លុះត្រាតែ មាន $i \in\{1,2, \ldots, n\}$ ដែល គ្រប់ $j \in\{1,2, \ldots, n\}$ យើងបាន $W_j \subseteq W_i$ ។
 </p>
        
     </div>
