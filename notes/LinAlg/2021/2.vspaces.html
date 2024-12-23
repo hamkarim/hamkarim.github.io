@@ -55,10 +55,10 @@
     <!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
 
     <style type="text/css">
-        .deffont {
+      /*  .deffont {
             font-family: 'Noto Serif Khmer', 'CMU Serif';
             font-size: 17px;
-        }
+        } */
 
         ul.liststyle1 {
             list-style-type: square;
@@ -423,13 +423,45 @@
    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
 </script-->
 
+  <!--Call latex sript from server-->
+  <!--
+  <script>
+window.MathJax = {
+  startup: {
+    ready: () => {
+      MathJax.startup.defaultReady();
+      MathJax.startup.promise.then(() => {
+        console.log('MathJax initial typesetting complete');
+      });
+    }
+  },
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script> -->
+  
+  <!-- End script--->
+  
+  
+  
+   <!---Script for latex called from local--->
     <!--script src="https://hamkarim.github.io/MathJax/config/local/mathjax-config.js" defer></script-->
     <script type="text/javascript" src="../../../MathJax/config/local/mathjax-config.js" defer></script>
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script type="text/javascript" id="MathJax-script" defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml-full.min.js">
     </script>
-
+<!---End code for latex---->
+    
+    
     <!--Show/Hide my-answer with: toggleAnswer(my-exampleId)-->
     <style>
         .hidden {
@@ -519,7 +551,163 @@
     });  
 </script>  
 
+<!--Previous/Next--->
 
+<style>
+    .text-block {
+        display: none;
+        /*padding: 10px;
+            /*border: 2pt solid #0067eb;*/
+        /*border-radius: 10px;*
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background-color: #d5dfe5; */
+    } /* Initially hide all text blocks */
+
+    .text-block.active {
+        display: block; /* Show the active text block */
+    }
+   /* .text-container {
+        position: relative;
+        padding: 20px; /* Add padding around text blocks /
+        padding-bottom: 40px;
+        padding-right: 10px;
+    } */
+   /* .nav-link {  
+            cursor: pointer; /* Change cursor to pointer when hovering */  
+    /*        margin: 0 10px; /* Add some space around the navigation items */  
+    /*        font-size: 16px; /* Increase font size for visibility */  
+    /*        user-select: none; /* Prevent text selection */  
+    /*    }  */
+    .text-container {  
+            position: relative; /* Set position context for absolute positioning of nav signs */  
+            padding: 20px; /* Add padding around text blocks */
+            padding-bottom: 40px;
+            padding-right: 10px;
+            border: 1px solid #ccc; /* Optional: Add border for visibility */
+            border-left: 5px solid darkgray;
+            border-bottom: 5px solid darkgray;
+            border-radius: 20px;
+        } 
+       
+        .nav-sign {  
+            position: static; /* Position absolutely within the container */  
+            font-size: 16px; /* Increase font size for visibility */  
+            cursor: pointer; /* Change cursor to pointer when hovering */  
+            color: darkred;
+            margin: 0 4px; /*Add margin for spacing*/
+        }  
+        .nav-container {  
+            position: absolute; /* Positioning relative to container */  
+            bottom: 5px; /* Position near the bottom */  
+            left: 50%; /* Centering left */  
+            transform: translateX(-50%); /* Adjust for element width to truly center */  
+        }  
+        .prevSign {  
+            left: 10px; /* Position to the bottom left */  
+            bottom: 10px; /* Position near the bottom */  
+            display: none; /* Initially hidden */  
+        }  
+        .nextSign {  
+            right: 10px; /* Position to the bottom right */  
+            bottom: 10px; /* Position near the bottom */  
+            display: inline; /* Initially visible */  
+        }  
+</style>
+<!---End code--->
+
+<!---CSS for parentheses list ----->
+
+<style>
+    .main-content ol,
+    ul {
+        /*list-style-type: decimal; /* or 'upper-alpha' for A, B, C */
+        /*padding-left: 0; /* or any value that looks good */
+        /*font-family: Arial, sans-serif;  */
+        font-size: 16px; /* adjust size as needed */
+        /*color: rgb(0, 0, 0); /* adjust color as needed */
+        /*line-height: 1.6;*/
+        margin-bottom: 20px; /* Adjust spacing below */
+        margin-left: 3em;
+        margin-top: 10px; /* Adjust spacing above */
+    }
+    .main-content ol > li,
+    ul > li {
+        margin-bottom: 10px; /* Add spacing between items */
+        line-height: 1.6; /* Increase line height */
+        /*margin-left: 20px;*/
+        padding-left: 1em;
+    }
+    .main-content ol > li > ol,
+    ul > li > ul {
+        margin-left: 0; /* Reset margins for the ordered list */
+        padding-left: 10px; /* Add some padding to the left */
+    }
+
+    ol.parenthroman {
+        counter-reset: item;
+        font-size: 16px; /* adjust size as needed */
+        /*color: rgb(0, 0, 0); /* adjust color as needed */
+        /*line-height: 1.6;*/
+        margin-bottom: 20px; /* Adjust spacing above */
+        margin-left: -2em;
+	    /*display: table-row;*
+        display: block;
+        /*margin-bottom: 0.5em;*/
+        /*margin-left: 2em;*/
+    /*font-size: 16px;
+	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
+    }
+
+    ol.parenthroman > li::before {
+        counter-increment: item;
+        content: "(" counter(item, lower-roman) ") ";
+        /*display: table-cell;*
+        display: inline-block;
+        text-align: left;
+        /*padding-right: 0;*/
+        width: 2em;
+        margin-left: -1.8em;
+        padding-left: 2em;
+    /*font-size: 16px;
+	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
+    }
+
+    ol.rom-par {
+        list-style: none;
+        counter-reset: tcounter;
+    }
+
+    ol.rom-par > li:before {
+        counter-increment: tcounter;
+        content: "(" counter(tcounter, lower-roman) ") ";
+        margin-right: 0.5em; /* Add margin to the right of the generated content */
+    }
+    ol.ar-par {
+        list-style: none;
+        counter-reset: tcounter;
+    }
+
+    ol.ar-par > li:before {
+        counter-increment: tcounter;
+        content: "(" counter(tcounter) ") ";
+        margin-right: 0.5em; /* Add margin to the right of the generated content */
+    }
+
+    ol.alp-par {
+        list-style: none;
+        counter-reset: tcounter;
+    }
+
+    ol.alph-par > li:before {
+        counter-increment: tcounter;
+        content: "(" counter(tcounter, lower-alpha) ") ";
+        margin-right: 0.5em; /* Add margin to the right of the generated content */
+    }
+</style>
+
+
+<!---End--->
 
 </head>
 
@@ -576,9 +764,12 @@
             </p>
             </div>
         </a>
-        <p>ក្នុងគណិតវិទ្យា និងរូបវិទ្យា In mathematics and physics, a vector space (also called a linear space) is a set whose elements, often called vectors, can be added together and multiplied ("scaled") by numbers called scalars. The operations of vector addition and scalar multiplication must satisfy certain requirements, called vector axioms. Real vector spaces and complex vector spaces are kinds of vector spaces based on different kinds of scalars: real numbers and complex numbers. Scalars can also be, more generally, elements of any field.
+        <p><!--In mathematics and physics, a vector space (also called a linear space) is a set whose elements, often called vectors, can be added together and multiplied ("scaled") by numbers called scalars. The operations of vector addition and scalar multiplication must satisfy certain requirements, called vector axioms. Real vector spaces and complex vector spaces are kinds of vector spaces based on different kinds of scalars: real numbers and complex numbers. Scalars can also be, more generally, elements of any field.-->
+        នៅក្នុងគណិតវិទ្យា និងរូបវិទ្យា លំហវ៉ិចទ័រ (ឬហៅថា <a>លំហលីនេអ៊ែរ</a>) គឺជាសំណុំមួយ ដែលធាតុរបស់វា ហៅថា <a>វ៉ិចទ័រ</a> ដែលគេអាចបូកបញ្ចូលគ្នាបាន និង គុណ ("ពង្រីក ឬបង្រួមទំហំ") នឹងចំនួនណាមួយ ដែលគេហៅថា <a>ស្កាលែរ</a> ។ ប្រមាណវិធីបូកវ៉ិចទ័រ និងគុណវ៉ិចទ័រនឹងស្កាលែរ ត្រូវតែផ្ទៀងផ្ទាត់ លក្ខណ្ឌតម្រូវមួយចំនួន ដែលគេហៅថា <a>ស្វ័យសត្យវ៉ិចទ័រ</a> ។ លំហវ៉ិចទ័រចំនួនពិត និងលំហវ៉ិចទ័រចំនួនកុំផ្លិច គឺជាប្រភេទលំហវ៉ិចទ័រ ដែលពឹងផ្អែកលើប្រភេទផ្សេងៗនៃស្កាលែរ៖ ចំនួនពិត និងចំនួនកុំផ្លិច ។ ជាទូទៅ ស្កាលែរ គឺជាធាតុរបស់កាយ ។
         </p>
-        <p>Vector spaces are a foundational concept in linear algebra and many other fields, so mastering them will significantly enhance ones mathematical toolkit and problem-solving capabilities.</p>
+        <p><!--Vector spaces are a foundational concept in linear algebra and many other fields, so mastering them will significantly enhance ones mathematical toolkit and problem-solving capabilities.-->
+        លំហវ៉ិចទ័រ គឺជាគោលគំនិតជាមូលដ្ឋាន នៅក្នុងមុខវិជ្ជាពិជគណិតលីនេអ៊ែរ និងមុខវិជ្ជាជាច្រើនទៀត ។ ដូច្នេះ ការយល់បានច្បាស់លាស់លើមុខវិជ្ជានេះ នឹងជួយបង្កើនយ៉ាងសំខាន់នូវកញ្ចប់ឧបករណ៍គណិតវិទ្យា និងសមត្ថភាពដោះស្រាយបញ្ហា។
+        </p>
 
     </blockquote>
 
@@ -593,7 +784,7 @@
         <h5 class="box-legend editable">
             <span class="lt-icon-default">លទ្ធផលរំពឹងទុក!</span></h5>
         <p>ក្រោយបញ្ចប់មេរៀននេះ អ្នកសិក្សានឹងទទួលបាននូវ៖ </p>
-        <ol start="1" class="parenthnum">
+        <ol start="1"  class="parenthnum">
             <li class="" style="background-color: unset;"><b>យល់បាននូវគោលគំនិតជាគន្លឹះទាក់ទងនឹង៖</b><!--b--Understanding key concepts of: -->
                 Definition of vector spaces, subspaces, linear independence, basis and dimension. <!--You'll grasp what vector spaces are, including the basic requirements for a set to be considered a vector space. Subspaces: You'll learn about subspaces and how they relate to the larger vector space. Linear Independence: You'll be able to determine if a set of vectors is linearly independent or dependent. Basis and Dimension: You'll understand the concept of a basis of a vector space and how to find it, along with the dimension of a vector space. -->
             </li>
@@ -609,7 +800,7 @@
                 Matrix Representation: You'll learn how to represent linear transformations using matrices. -->
             </li>
             <li class="" style="background-color: unset;"><b>ចេះទ្រឹស្ដីបទទាំងឡាយទាក់ទងនឹង៖</b><!--b.Theoretical insights:</b-->
-                <ol style="list-style-type: lower-roman;" start="1">
+                <ol type="i">
                     <li class="" style="background-color: unset;">Properties and Theorems: to gain insights into fundamental properties and theorems related to vector spaces, such as the <a>Rank-Nullity Theorem</a> and the concept of <a>orthogonality</a>.</li>
                     <li class="" style="background-color: unset;">Abstract Thinking: to develop an ability to think abstractly and generalize ideas beyond specific my-examples.</li>
                 </ol>
@@ -758,7 +949,7 @@
         <div id="SHObj_Help1" class="soln-content" style="display: none;">
 
             <my-answer>
-                <ol>
+                <ol type="a">
                     <li> តាមស្វ័យសត្យ ii) គេបាន
                         $$
                         0_\K \cdot x=\left(0_\K+0_K\right) \cdot x=0_\K \cdot x+0_\K \cdot x
@@ -769,18 +960,18 @@
                     <li>តាមស្វ័យសត្យ iv) គេបាន
 
                         $$
-                        \lambda \cdot 0_\E=\lambda \cdot\left(0_\E+0_\E\right)=\lambda \cdot 0_{\E^{\prime}}+\lambda \cdot 0_\E
+                        \lambda \cdot 0_\E=\lambda \cdot\left(0_\E+0_\E\right)=\lambda \cdot 0_{\E}+\lambda \cdot 0_\E
                         $$
 
                         ដូច្នេះ  $\lambda \cdot 0_\E=0_\E$ </li>
 
-                    <li> $(\Rightarrow)$  ឧបមា $\lambda \cdot x=0_\E$ និង $\lambda \neq 0_\K$ យើងនឹងបង្ហាញថា $x=0_\E$ ។ ដោយសារតែ $\lambda \cdot x=0_\E$ នោះគេបាន $\lambda^{-1} \cdot(\lambda \cdot x)=\lambda^{-1} \cdot 0_\E=0_\E$ តាមស្វ័យសត្យ iii) ក្នុងនិយមន័យ ។ ដូច្នេះ គេបាន
+                    <li> $\Rightarrow)$  ឧបមា $\lambda \cdot x=0_\E$ និង $\lambda \neq 0_\K$ យើងនឹងបង្ហាញថា $x=0_\E$ ។ ដោយសារតែ $\lambda \cdot x=0_\E$ នោះគេបាន $$\lambda^{-1} \cdot(\lambda \cdot x)=\lambda^{-1} \cdot 0_\E=0_\E$$ តាមស្វ័យសត្យ iii) ក្នុងនិយមន័យ ។ ដូច្នេះ គេបាន
                         $$
                         \lambda^{-1} \cdot(\lambda \cdot x)=\left(\lambda^{-1} \lambda\right) \cdot x=1_\K \cdot x
                         $$
                         ដូច្នេះ តាមស្វ័យសត្យ i) គេបាន $x=0_\E$ ។  <br>
 
-                        $(\Leftarrow)$ ពិតជានិច្ច!
+                        $\Leftarrow)$ ពិតជានិច្ច!
                     </li>
                 </ol>
             </my-answer>
@@ -799,14 +990,15 @@ $$
 \end{array}
 $$
 Par exemple, $\E=\mathbb{C}$ et $\K=\mathbb{R}, \E=\mathbb{R}$ et $\K=\mathbb{Q}$ ou $\E=\mathbb{C}$ et $\K=\mathbb{Q}$. En particulier, tout corps $\K$ peut-être considéré comme un espace vectoriel sur lui-même.-->
-        Let $(\E,+, \times)$ be a commutative field and $\K$ be a subfield of $\E$, then $\E$ can be considered as a $\K$-vector space for the external law defined as follows,
+        <!--Let $(\E,+, \times)$ be a commutative field and $\K$ be a subfield of $\E$, then $\E$ can be considered as a $\K$-vector space for the external law defined as follows,-->គេឱ្យ $(\E,+, \times)$ ជាកាយត្រឡប់ និង $\K$ ជាកាយរងរបស់ $\E$ ។ ដូច្នេះ សំណុំ $\E$ អាចចាត់ទុកថាជា $\K$-vs ចំពោះប្រមាណវិធីក្រៅ កំណត់ដូចខាងក្រោម៖
         $$
         \begin{array}{r c c l}
         \cdot :&\K \times \E &\longrightarrow &\E \\
         &(\lambda, x) &\longmapsto& \lambda \cdot x=\lambda x
         \end{array}
         $$
-        For example, $\E=\mathbb{C}$ and $\K=\mathbb{R}, \E=\mathbb{R}$ and $\K=\mathbb{Q}$ or $\E=\mathbb{C}$ and $\K=\mathbb{Q}$. In particular, any field $\K$ can be considered as a vector space on itself.
+        ឧទាហរណ៍ [$\E=\mathbb{C}$ និង $\K=\mathbb{R}$],  [$\E=\mathbb{R}$ និង  $\K=\mathbb{Q}$] ឬ [$\E=\mathbb{C}$ និង $\K=\mathbb{Q}$] ។ ជាងពិសេស គ្រប់កាយ $\K$ អាចចាត់ទុកជាលំហវ៉ិចទ័រកំណត់លើកាយខ្លួនឯងបាន ។ 
+         <!--In particular, any field $\K$ can be considered as a vector space on itself.-->
     </my-example>
 
     <p onclick="toggleAnswer('ex1')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
@@ -979,29 +1171,26 @@ où $x=\left(x_1, x_2, \ldots, x_n\right)$.-->
 
 
     <my-example>
-        Let $\E$ be a $\K$-vs, $A$ be any non-empty set and $\E^A$ be the set of all maps from $A$ to $\E$. Then $\E^A$ is a $\K$-vs for the external law,
-
-        $$
-        \begin{array}{rccl}
-        \cdot: &\K \times \E^A & \longrightarrow & \E^A \\
-        &(\lambda, f) &\longmapsto &\lambda \cdot f
-        \end{array}
-        $$
-        where
+        <!--Let $\E$ be a $\K$-vs, $A$ be any non-empty set and $\E^A$ be the set of all maps from $A$ to $\E$. Then $\E^A$ is a $\K$-vs for the external law,-->
+        យក $\E$ ជា $\K$-vs និងកំណតសំណុំ $A\neq \varnothing$ ។ គេតាង $\E^A$ ជាសំណុំនៃគ្រប់អនុគមន៍ទាំងអស់ កំណត់ពី $A$ ទៅ $\E$ ។
+        ចូរបង្ហាញថាសំណុំ $\E^A$ គឺជា $\K$-vs ដែលមានប្រមាណវិធីក្រៅ ៖
+        $$ \begin{array}{rccl} \cdot: &\K
+        \times \E^A & \longrightarrow & \E^A \\ &(\lambda, f) &\longmapsto &\lambda \cdot f \end{array} $$ ដែលមានលក្ខណៈខាងក្រោម៖ 
         <ol type="i">
             <li>
-                $\lambda \cdot f$ is the map from $A$ to $\E$ defined by:
-                $$
-                \forall x \in A: (\lambda \cdot f)(x)=\lambda \cdot f(x)
+                $\lambda \cdot f$ គឺជាអនុគមន៍ពី $A$ ទៅ $\E$ កំណត់ដោយ៖  
+                $$ 
+                \forall x \in A: (\lambda \cdot
+                f)(x)=\lambda \cdot f(x) 
                 $$
             </li>
-            <li>If $f$ and $g$ are two maps from $A$ to $\E$, then $f+g$ is the map from $A$ to $\E$ defined by:
+            <li>
+                បើ $f$ និង $g$ ជាអនុគមន៍ពី $A$ ទៅ $\E$ នោះគេបាន $f+g$ ក៏ជាអនុគមន៍ពី $A\to\E$ កំណត់ដោយ៖  
                 $$
-                \forall x \in A: (f+g)(x)=f(x)+g(x)
+                \forall x \in A: (f+g)(x)=f(x)+g(x) 
                 $$
             </li>
         </ol>
-
     </my-example>
     <p onclick="toggleAnswer('ex4')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
     <div id="answer_ex4" class="box-lemma" style="display: none">
@@ -1039,13 +1228,49 @@ où $x=\left(x_1, x_2, \ldots, x_n\right)$.-->
         \end{aligned}
         $$
     </p>
+    
+
+<!--div class="text-container">  
+  <div class="text-block active">  
+    Let \( (E,+, \times)\) be a commutative field and $K$ be a subfield of $E$, then $E$ can be considered as a $K$-vector space for the external law defined as follows,
+        $$
+        \begin{array}{r c c l}
+        \cdot :& K \times E &\longrightarrow & E \\
+        &(\lambda, x) &\longmapsto& \lambda \cdot x=\lambda x
+        \end{array}
+        $$
+        For example, $E=\mathbb{C}$ and $K=\mathbb{R}, E=\mathbb{R}$ and $K=\mathbb{Q}$ or $E=\mathbb{C}$ and $K=\mathbb{Q}$. In particular, any field $K$ can be considered as a vector space on itself.  
+  </div>  
+  <div class="text-block">  
+    $\mathbf W = \mathcal{C}(I, \mathbb{R})$, the set continuous functions from $I$ to $\mathbb{R}$, is a
+        $\mathbb{R}$-vector space.
+  </div>  
+  <div class="text-block">  
+    This is the third text block.  
+  </div>  
+  
+  <!--span id="prevBtn" class="nav-link" style="display:none; text-align: left">&#8810;</!--span> <span id="nextBtn" class="nav-link" style="text-align: right">&#8811;</span-->   
+  
+  <!-- <span id="prevSign" class="nav-sign" onclick="prevText()">&#8810;</span>  
+    <span id="nextSign" class="nav-sign" onclick="nextText()">&#8811;</span> 
+    -->
+    
+    <!--div class="nav-container">  
+        <span class="prevSign nav-sign">&#8810;</span>  
+        <span class="nextSign nav-sign"> &#8811;</span>  
+    </div>
+</div>  -->
+
+
+ 
+
 
     <my-example>
         (Verify a subspace)
 
         <ol>
             <li><!--The set $\mathbf W$ of real sequences which tend to zero at infinity, is a $\mathbb{R}$-vs,-->
-               សំណុំ $\mathbf W$ ជាស្វ៊ីតចំនួនពិត ដែលមានតួអនន្តខិតទៅរកសូន្យ  គឺជា $\mathbb{R}$-vs កំណត់ដូចខាងក្រោម៖ 
+               សំណុំ $\mathbf W$ ជាស្វ៊ីតចំនួនពិត ដែលមានតួអនន្តខិតទៅរកសូន្យ កំណត់ដូចខាងក្រោម៖ 
                 $$
                 \mathbf W=\left\{\left(x_n\right)_{n \geq 0} \in \mathbb{R}^{\mathbb{N}}: \lim _{n \rightarrow \infty} x_n=0\right\}
                 $$
@@ -1053,13 +1278,76 @@ où $x=\left(x_1, x_2, \ldots, x_n\right)$.-->
 
                 <div class="my-example-content" style="text-align: right;">
                     <span id="SHLink_Soln1" class="soln-title SH-Link" >Show solution</span> <span id="SHImg_Soln1" class="fa fa-caret-right" aria-hidden="true"></span></div>
-                    <div id="SHObj_Soln1" class="soln-content" style="display: none;">
-                        Solution is for group discussion.
-                    </div>
+                    <div id="SHObj_Soln1" class="soln-content  text-container" style="display: none; ">
+                        <!--Solution is for group discussion.-->
+                       <p> <b>ចម្លើយ.</b></p>
+    <div class="text-block active">                    
+    <ol type="i">
+        <li> <!--$W\neq \varnothing$?-->To show that \( W \neq \varnothing \):
+            <br> 
+Since the sequence \( (0, 0, \ldots) \) converges to \( 0 \), we have:
+\[
+\lim_{n \to \infty} x_n = 0 \quad (\text{true}),
+\]
+which implies \( 0 \in W \). Thus, \( W \neq \varnothing \).
+        </li>
+        </ol>
+                        </div>
+<div class="text-block">
+<ol type="i" start="2">
+<li> Let \( x = (x_0, x_1, \ldots, x_n, \ldots) \) such that \( \lim_{n \to \infty} x_n = 0 \) <br> 
+and \( y = (y_0, y_1, \ldots, y_n, \ldots) \) such that \( \lim_{n \to \infty} y_n = 0 \).
+<br>
+
+Since \( x, y \in W \), we can represent their sum as:
+\[
+x + y = (x_0 + y_0, x_1 + y_1, \ldots, x_n + y_n, \ldots)
+\]
+Now, we have that 
+\[\lim_{n \to \infty} (x_n + y_n) = \lim_{n \to \infty} x_n + \lim_{n \to \infty} y_n = 0 + 0 = 0 \]
+
+This implies: \( x + y \in W \). Thus, \( W \) is closed under addition.
+        </li>
+    </ol>
+                        </div>
+                        
+ <div class="text-block">
+       <ol type="i" start="3">                       
+        <li> To show that \( W \) is closed under scalar multiplication:<br>
+
+Let \( x = (x_0, x_1, \ldots, x_n, \ldots)\) such that \( \lim_{n \to \infty} x_n = 0 \), and let \( \lambda \in \mathbb R\) be any scalar. <br>
+
+<!--We want to show that \( \lambda \cdot x \) also belongs to \( W \). The scalar multiplication is defined as: --> 
+We have then, 
+\[
+\lambda \cdot x = (\lambda x_0, \lambda x_1, \ldots, \lambda x_n, \ldots).
+\]
+<!--To prove closure, we need to show that:
+
+\[
+\lim_{n \to \infty} (\lambda x_n) = \lambda \cdot \lim_{n \to \infty} x_n.
+\]
+-->
+Since \( \lim_{n \to \infty} x_n = 0 \), it follows that:
+
+\[
+\lim_{n \to \infty} (\lambda x_n) = \lambda \cdot \lim_{n \to \infty} x_n = \lambda \cdot 0 = 0.
+\]
+
+Thus, \( \lambda \cdot x \in W \), is closed under scalar multiplication. 
+
+        </li>
+    </ol>
+    <p style="margin-top: 20px" class="indent20">ដូច្នេះ $W$ ជាលំហវ៉ិចទ័ររងរបស់ $(\mathbb R^{\mathbb N}, +, \cdot)$ ។ </p>
+                        </div>
+        <div class="nav-container">  
+        <span class="prevSign nav-sign">&#8810; Previous</span>  
+        <span class="nextSign nav-sign">Next &#8811;</span>  
+    </div>
+        </div>
 
                 
             </li>
-
 
             <li>
                 Let $I = (a,b)$ or $[a,b]$ be an interval of $\mathbb{R}$, then let $\mathbf W = \mathcal{C}(I, \mathbb{R})$, the set continuous functions from $I$ to $\mathbb{R}$, is a $\mathbb{R}$-vector space.
@@ -1098,7 +1386,7 @@ où $x=\left(x_1, x_2, \ldots, x_n\right)$.-->
         </ol>
     </my-example>
 
-<h3>Operations on vector subspaces</h3>
+<h3>ប្រមាណវិធីលើលំហរង (Operations on vector subspaces)</h3>
         
 <ol type="i">
     <li><b>ប្រសព្វរបស់លំហរង៖</b>
@@ -1132,9 +1420,9 @@ Let $\E$ be any $\K$-vs, $F$ and $G$ two vector subspaces of $\E$. Then $F \cup 
     <div id="answer_ex6" class="box-lemma" style="display: none">
     
     <i>សម្រាយបញ្ជាក់.</i> 
-    <ol>
+    <ol type="i">
         <li>
-            <b>$(\Longrightarrow)$:</b> Suppose that $F \cup G$ is a vector subspace of $\E$. Then, show that $F \subseteq G$ or $G \subseteq F$. 
+            <b>NC:</b> Suppose that $F \cup G$ is a vector subspace of $\E$. Then, show that $F \subseteq G$ or $G \subseteq F$. 
     
     <br>
     To do this, assume, absurdly, that $F \nsubseteq G$ and $G \nsubseteq F$.
@@ -1164,7 +1452,7 @@ So our initial assumption is false, as a result, $F \subseteq G$ or $G \subseteq
 </ul>
         </li>
         
-        <li><b>$(\Longleftarrow)$:</b> Trivial.</li>
+        <li><b>SC:</b> Trivial.</li>
     </ol>
 
 </div>  
@@ -2473,6 +2761,126 @@ Now let $f \in \E$. Let's look for $(g, h) \in F \times G$, such that $f=g+h$. T
 
 
 </section>
+
+
+<!---Script for Previous/Next-->
+<!--script>  
+    const textBlocks = document.querySelectorAll('.text-block');  
+    let currentTextBlock = 0;  
+
+    const prevBtn = document.getElementById('prevBtn');  
+    const nextBtn = document.getElementById('nextBtn');  
+    
+    document.getElementById('text-container').style.backgroundColor = 'lightblue'; 
+
+    function showTextBlock(index) {  
+        textBlocks.forEach((block, i) => {  
+            block.classList.toggle('active', i === index);  
+        });  
+        updateButtonVisibility();  
+    }  
+
+    function updateButtonVisibility() {  
+        prevBtn.style.display = currentTextBlock === 0 ? 'none' : 'inline'; // Hide if on first block  
+        nextBtn.style.display = currentTextBlock === textBlocks.length - 1 ? 'none' : 'inline'; // Hide if on last block  
+    }  
+
+    nextBtn.addEventListener('click', () => {  
+        if (currentTextBlock < textBlocks.length - 1) {  
+            currentTextBlock++;  
+            showTextBlock(currentTextBlock);  
+        }  
+    });  
+
+    prevBtn.addEventListener('click', () => {  
+        if (currentTextBlock > 0) {  
+            currentTextBlock--;  
+            showTextBlock(currentTextBlock);  
+        }  
+    });  
+
+    // Initial button visibility update  
+    updateButtonVisibility();  
+</script-->
+<script>
+    //   const textBlocks = document.querySelectorAll('.text-block');
+    //   let currentTextBlock = 0;
+    // document.getElementById('text-container').style.backgroundColor = 'lightblue';
+
+    //    function showTextBlock(index) {
+    //       textBlocks.forEach((block, i) => {
+    //           block.classList.toggle('active', i === index);
+    //       });
+    //       updateNavVisibility();
+    //    }
+
+    //   function updateNavVisibility() {
+    //       document.querySelector('.prevSign').style.display = currentTextBlock === 0 ? 'none' : 'inline'; // Hide if on the first block
+    //        document.querySelector('.nextSign').style.display = currentTextBlock === textBlocks.length - 1 ? 'none' : 'inline'; // Hide if on the last block
+    //   }
+
+    //   function nextText(arg) {
+    //      console.log(arg); // Log the argument to the console
+    //      if (currentTextBlock < textBlocks.length - 1) {
+    //          currentTextBlock++;
+    //          showTextBlock(currentTextBlock);
+    //      }
+    //   }
+
+    //   function prevText(arg) {
+    //       console.log(arg); // Log the argument to the console
+    //       if (currentTextBlock > 0) {
+    //          currentTextBlock--;
+    //         showTextBlock(currentTextBlock);
+    //      }
+    //  }
+
+    // Initial navigation visibility update
+    //   updateNavVisibility();
+
+    // Adding click events for navigation signs
+    //document.querySelector('.prevSign').onclick = prevText;
+    //document.querySelector('.nextSign').onclick = nextText;
+    function initializeNavigation(container) {
+        const textBlocks = container.querySelectorAll(".text-block");
+        let currentTextBlock = 0;
+
+        function showTextBlock(index) {
+            textBlocks.forEach((block, i) => {
+                block.classList.toggle("active", i === index);
+            });
+            updateNavVisibility();
+        }
+
+        function updateNavVisibility() {
+            container.querySelector(".prevSign").style.display = currentTextBlock === 0 ? "none" : "inline";
+            container.querySelector(".nextSign").style.display =
+                currentTextBlock === textBlocks.length - 1 ? "none" : "inline";
+        }
+
+        container.querySelector(".nextSign").addEventListener("click", () => {
+            if (currentTextBlock < textBlocks.length - 1) {
+                currentTextBlock++;
+                showTextBlock(currentTextBlock);
+            }
+        });
+
+        container.querySelector(".prevSign").addEventListener("click", () => {
+            if (currentTextBlock > 0) {
+                currentTextBlock--;
+                showTextBlock(currentTextBlock);
+            }
+        });
+
+        updateNavVisibility();
+    }
+
+    document.querySelectorAll(".text-container").forEach((container) => {
+        initializeNavigation(container);
+    });
+</script>
+
+<!----End--->
 </body>
 
 
@@ -2497,6 +2905,7 @@ Now let $f \in \E$. Let's look for $(g, h) \in F \times G$, such that $f=g+h$. T
 </script>
 
 -->
+
 
 
 </html>

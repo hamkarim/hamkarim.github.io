@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bed891d6-648f-4aac-9ba6-dd4e632894ab" name="Changes" comment="" />
+    <list default="true" id="bed891d6-648f-4aac-9ba6-dd4e632894ab" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/LinAlg/2021/2.vspaces.html" beforeDir="false" afterPath="$PROJECT_DIR$/notes/LinAlg/2021/2.vspaces.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,6 +85,8 @@
       <workItem from="1734448679573" duration="2147000" />
       <workItem from="1734450893173" duration="1001000" />
       <workItem from="1734458375694" duration="277000" />
+      <workItem from="1734687768766" duration="312000" />
+      <workItem from="1734688852219" duration="55000" />
     </task>
     <servers />
   </component>
