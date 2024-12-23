@@ -61,20 +61,28 @@ p {
 
 p.parindent {
     text-indent: 40px !important;
+    margin-top: 10px;
 }
 
 .indent {
     text-indent: 40px !important;
+    margin-top: 10px;
 }
 
 .indent30 {
     text-indent: 30px !important;
+    margin-top: 10px;
 }
 
 .indent20 {
     text-indent: 20px !important;
+    margin-top: 10px;
 }
 
+.dRed{
+    color: darkred;
+    text-emphasis-color: skyblue ;
+}
 article,
 aside,
 details,
