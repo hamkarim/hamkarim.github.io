@@ -554,6 +554,15 @@ window.MathJax = {
 <!--Previous/Next--->
 
 <style>
+    .center-text {
+            text-align: center; /* Center text horizontally */
+            border: 2px solid black; /* Add a border around the text */
+            padding: 10px; /* Add space inside the border */
+            width: 70%; /* Optional: Set a specific width */
+            margin: 20px auto; /* Center the <p> element itself */
+            background-color: cornsilk
+        }
+    
     .text-block {
         display: none;
         /*padding: 10px;
@@ -1621,17 +1630,77 @@ Thus, \( \lambda \cdot x \in W \), is closed under scalar multiplication.
     <li><b>ប្រសព្វរបស់លំហរង៖</b>
         <!--Soit E un $\K$-espace vectoriel, alors l'intersection d'une famille quelconque de sous-espaces vectoriels de $E$ est un sous-espace vectoriel de $\E$.--
         Let $\E$ be a $\K$-vector space, then the intersection of any family of vector subspaces of $\E$ is a vector subspace of $\E$. i.e., $\bigcap_{i \in I} W_i$  is  $\K$-vs . -->
-        គេឱ្យ $\E$ ជាលំហវ៉ិចទ័រកំណត់លើកាយ $\K$ ។ ដូច្នេះ ប្រសព្វនៃគ្រួសារលំហវ៉ិចទ័ររង របស់ $\E$ គឺជាលំហវ៉ិចទ័ររងរបស់ $\E$ ។  i.e., $$\bigcap_{i \in I} W_i\quad  \text{is a subspace}  $$
+        គេឱ្យ $\E$ ជាលំហវ៉ិចទ័រកំណត់លើកាយ $\K$ ។ ដូច្នេះ 
+        <p class="center-text">
+        ប្រសព្វនៃគ្រួសារលំហវ៉ិចទ័ររងរបស់ $\E$ គឺជាលំហវ៉ិចទ័ររងរបស់ $\E$ ។ 
+    </p>
+          (i.e., $\bigcap_{i \in I} W_i$  ជាលំហរង ?)
         
-        <br>
-          <p onclick="toggleAnswer('ex5')" style="text-align: right; margin-top: -40px;"><i>Solution.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
-    <div id="answer_ex5" class="box-lemma" style="display: none">
-    <!--Démonstration. Soit $\left(W_i\right)_{i \in I}$ une famille de sous-espaces vectoriels de $E$, où $I$ est un ensemble d'indice quelcomque et non vide. La vérification que $\bigcap_{i \in I} W_i$ est un sous-espace vectoriel de $E$ est laisséc à titre d'exercice. Rappelons que -->
-    <i>សម្រាយបញ្ជាក់.</i> Let $\left(W_i\right)_{i \in I}$ be a family of vector subspaces of $\E$, where $I$ is a set of any and non-empty index. Show that $\bigcap_{i \in I} W_i$ is a vector subspace of $\E$. Remember that 
-    $$
-x \in \bigcap_{i \in I} W_i \Longleftrightarrow \forall i \in I, x \in W_i
-$$
-    </div>
+          <p onclick="toggleAnswer('ex5')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref5" title="Jump to solution.">&#8617;</span></p>
+   
+   <div id="answer_ex5" class="soln-content text-container" style="display: none">
+       <!--Solution is for group discussion.-->
+       <i>ចម្លើយ. ${}$</i>
+       <!--Démonstration. Soit $\left(W_i\right)_{i \in I}$ une famille de sous-espaces vectoriels de $E$, où $I$ est un ensemble d'indice quelcomque et non vide. La vérification que $\bigcap_{i \in I} W_i$ est un sous-espace vectoriel de $E$ est laisséc à titre d'exercice. Rappelons que -->
+
+       <!--Let $\left(W_i\right)_{i \in I}$ be a family of vector subspaces of $\E$, where $I$ is a set of any and non-empty index. Show that $\bigcap_{i \in I} W_i$ is a vector subspace of $\E$. Remember that 
+       $$
+   x \in \bigcap_{i \in I} W_i \Longleftrightarrow \forall i \in I, x \in W_i
+   $$-->
+
+       <!--To prove that the intersection of any family of vector subspaces of a vector space \(\E\) is itself a vector subspace of \(\E\), we begin by recalling the necessary definitions and properties.-->
+
+       Let \(\{ W_i \}_{i \in I}\) be a family of vector subspaces of \(\E\), indexed by some set \(I\). We define the
+       intersection of these subspaces as follows: \[ W = \bigcap_{i \in I} W_i = \Bigl\{ x \in \E \mid x \in U_i \text{
+       for all } i \in I \Bigr\} \] Then, show that \(W\) is a vector subspace of \(\E\).
+       <!--To do this, we must verify that \(U\) satisfies the three conditions that characterize a vector subspace:-->
+       <div class="text-block active">
+           <ol type="i">
+               <li>
+                   <a>Zero vector is in \(W\):</a> Each \(W_i\) is a vector subspace of \(\E\), and therefore contains
+                   the zero vector \(\mathbf{0_\E} \in \E\). Hence, for all \(i \in I\), \[ \mathbf{0_\E} \in W_i \]
+                   Then,
+                   <!--since the zero vector is in each \(W_i\), it is also in their intersection:-->
+                   \[ \mathbf{0_\E} \in W = \bigcap_{i \in I} W_i \]
+               </li>
+           </ol>
+       </div>
+       <div class="text-block">
+           <ol type="i" start="2">
+               <li>
+                   <a>Closure under addition:</a> Let \(u, v \in W\). By the definition of \(W\), this means that \(u, v
+                   \in W_i\) for all \(i \in I\). Since each \(W_i\) is a vector subspace, then
+                   <!-- it is closed under addition, which implies:-->
+                   \[ u + v \in W_i, \quad \forall i \in I \] Consequently, we have: \[ u + v \in W = \bigcap_{i \in I}
+                   W_i \] Therefore, \(W\) is closed under addition.
+               </li>
+           </ol>
+       </div>
+       <div class="text-block">
+           <ol type="i" start="3">
+               <li>
+                   <a>Closure under scalar multiplication: </a>
+                   <br />
+                   Let \(u \in W\) and let \(\alpha \in \K\) be any scalar. By the definition of \(W\), \(u \in W_i\)
+                   for all \(i \in I\). Then,
+                   <!--Since each \(U_i\) is a vector subspace, it is closed under scalar multiplication, which means:-->
+                   \[ \alpha u \in W_i, \quad \forall i \in I \] Hence, \[ \alpha u \in W = \bigcap_{i \in I} W_i \]
+                   Thus, \(W\) is closed under scalar multiplication.
+               </li>
+           </ol>
+           <p class="indent30">Since \(W\) contains the zero vector, is closed under addition, and closed under scalar multiplication, we
+           conclude that \(W\) is a vector subspace of \(\E\).</p>
+           <!--Therefore, the intersection of any family of vector subspaces of \(\E\) is indeed a vector subspace of \(\E\).-->
+
+           \[ \boxed{\text{The intersection of any family of subspaces of } \E \text{ is a vector subspace of } \E.} \]
+       </div>
+       
+       <div class="nav-container">
+           <span class="prevSign nav-sign">&#8810; Previous</span>
+           <span class="nextSign nav-sign">Next &#8811;</span>
+       </div>
+   </div>
+    
         <!--my-toggle>
     Show Solution<span href="#ref11" title="Jump to solution.">&#8617;</span>
     </!--my-toggle> 
@@ -1642,9 +1711,11 @@ $$
 </li>
 <li><b>ប្រជុំរបស់លំហរង៖</b>
 <!--Soient $\E$ un $\K$-vs quelconque, $F$ et $G$ deux sous-espaces vectoriels de $\E$. Alors $F \cup G$ est un sous-espace vectoriel de $\E$, si et seulement si, $F \subseteq G$ ou $G \subseteq F$.--
-Let $\E$ be any $\K$-vs, $F$ and $G$ two vector subspaces of $\E$. Then $F \cup G$ is a vector subspace of $\E$, if and only if, $F \subseteq G$ or $G \subseteq F$.-->
-យក $\E$ ជា $\K$-vs និងកំណត់ $U$ និង $W$ ជាពីរលំហវ៉ិចចទ័ររងរបស់ $\E$ ។ ដូច្នេះ $U \cup W$ ជាលំហវ៉ិចទ័ររងរបស់ $\E$ លុះត្រាតែ $U \subseteq W$ ឬក៏ $W \subseteq U$ ។
-        <br>
+Let $\E$ be any $\K$-vs, $U$ and $W$ two vector subspaces of $\E$. Then $U \cup W$ is a vector subspace of $\E$ if and only if $U\subseteq W$ or $W \subseteq U$.-->
+យក $\E$ ជា $\K$-vs និងកំណត់ $U$ និង $W$ ជាពីរលំហវ៉ិចចទ័ររងរបស់ $\E$ ។ ដូច្នេះ 
+       <p class="center-text">
+           $U \cup W$ ជាលំហវ៉ិចទ័ររងរបស់ $\E$ លុះត្រាតែ $U \subseteq W$ ឬក៏ $W \subseteq U$ ។
+       </p>
           <p onclick="toggleAnswer('ex6')" style="text-align: right;"><i>Solution.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
     <div id="answer_ex6" class="box-lemma" style="display: none">
     
@@ -1686,6 +1757,104 @@ So our initial assumption is false, as a result, $F \subseteq G$ or $G \subseteq
 
 </div>  
 
+ <p onclick="toggleAnswer('ex6.1')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref5" title="Jump to solution.">&#8617;</span></p>
+   
+   <div id="answer_ex6.1" class="soln-content text-container" style="display: none">
+       <!--Solution is for group discussion.-->
+       <i>ចម្លើយ. ${}$</i>
+       To prove that \(U \cup W\) is a vector subspace of a vector space \(\E\) if and only if \(U \subseteq W\) or \(W \subseteq U\) for two vector subspaces \(U\) and \(W\) of \(\E\), we will proceed with two parts: necessity and sufficiency.
+       <div class="text-block active">
+           <ol type="i">
+               <li>
+                   <a>Necessity:</a> 
+                   
+                   Assume \(U \cup W\) is a vector subspace of \(\E\). We need to show that this implies \(U \subseteq W\) or \(W \subseteq U\).
+
+<ol type="i">
+    <li>
+        Since \(U\) and \(W\) are subspaces, they both contain the zero vector $0_\E$:
+   \[
+   0_\E \in U \quad \text{ and } \quad 0_\E \in W 
+   \]
+   Therefore, \(0_\E \in U \cup W\)
+    </li>
+    
+    <li>
+        Now, to check closure under addition, take \(u \in U\) and \(w \in W\). 
+        <br>
+        If \(U \cup W\) is a vector subspace, then \(u + w \in U \cup W\). There are a few cases to consider:
+        <ul>
+            <li>
+                If \(u, w \in U\), then \(u + w \in U\).
+            </li>
+            
+            <li>
+                If \(u, w \in W\), then \(u + w \in W\).
+            </li>
+            
+            <li>
+                But if \(u \in U\) and \(w \in W\) with \(u \notin W\) and \(w \notin U\), then \(u + w\) must either be in \(U\) or in \(W\). This is a contradiction because \(u + w\) would need to belong to both \(U\) and \(W\) for \(U \cup W\) to remain closed under addition. 
+            </li>
+        </ul>
+
+    </li>
+</ol>
+
+3. This leads to the conclusion that:
+   - If \(U \cup W\) is closed under addition and contains both \(U\) and \(W\), it must be the case that either \(U \subseteq W\) or \(W \subseteq U\). This ensures that any element \(u + w\) for \(u \in U\) and \(w \in W\) results in \(u + w\) being in either \(U\) or \(W\).
+               </li>
+           </ol>
+       </div>
+       <div class="text-block">
+           <ol type="i" start="2">
+               <li>
+                   <a>Sufficiency:</a> 
+                   
+
+Now, assume \(U \subseteq W\) or \(W \subseteq U\). We will show that \(U \cup W\) is a vector subspace of \(\E\) under these conditions.
+
+**Case 1:** Assume \(U \subseteq W\).
+
+- In this case, we can express \(U \cup W\) as:
+  \[
+  U \cup W = W
+  \]
+  Since \(W\) is a subspace, \(U \cup W\) is certainly closed under addition and scalar multiplication, thus it is a vector subspace.
+
+**Case 2:** Assume \(W \subseteq U\).
+
+- Similarly, we have:
+  \[
+  U \cup W = U.
+  \]
+  Since \(U\) is a subspace, \(U \cup W\) is closed under addition and scalar multiplication, hence it is also a vector subspace.
+
+In both cases, \(U \cup W\) is a vector subspace of \(\E\).
+
+### Conclusion
+
+We have shown that:
+
+- If \(U \cup W\) is a vector subspace, then \(U \subseteq W\) or \(W \subseteq U\).
+- If \(U \subseteq W\) or \(W \subseteq U\), then \(U \cup W\) is a vector subspace.
+
+Thus, we conclude that \(U \cup W\) is a vector subspace of \(\E\) if and only if \(U \subseteq W\) or \(W \subseteq U\).
+
+\[
+\boxed{\text{The statement is proven.}}
+\]
+               </li>
+           </ol>
+       </div>
+    
+       
+       <div class="nav-container">
+           <span class="prevSign nav-sign">&#8810; Previous</span>
+           <span class="nextSign nav-sign">Next &#8811;</span>
+       </div>
+   </div>
+   
+   
  <div class="box-theorem">
         <div class="box-legend editable"><span class="lt-icon-default">សំណើ ១. :  (ទូទៅកម្ម)</span></div>
 <p>
