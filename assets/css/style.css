@@ -1510,7 +1510,7 @@ ol.parenthalpha li::before {
     /*display: table-cell;*/
     display: inline-block;
     text-align: left;
-    padding-right: 0;
+    padding-right: 4px;
     width: 2em;
     margin-left: -2em;
     padding-left: 0;

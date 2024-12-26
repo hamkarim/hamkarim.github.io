@@ -563,6 +563,16 @@ window.MathJax = {
             background-color: cornsilk
         }
     
+    .noind-center {
+            text-indent: 0px!important;
+            text-align: center; /* Center text horizontally */
+            /*border: 2px solid black; /* Add a border around the text */
+            /*padding: 10px; /* Add space inside the border */
+            /*width: 70%; /* Optional: Set a specific width */
+            /*margin: 20px auto; /* Center the <p> element itself */
+            /*background-color: cornsilk*/
+        }
+    
     .text-block {
         display: none;
         /*padding: 10px;
@@ -636,16 +646,21 @@ window.MathJax = {
         font-size: 16px; /* adjust size as needed */
         /*color: rgb(0, 0, 0); /* adjust color as needed */
         /*line-height: 1.6;*/
-        margin-bottom: 20px; /* Adjust spacing below */
+        margin-bottom: 10px; /* Adjust spacing below */
         margin-left: 3em;
         margin-top: 10px; /* Adjust spacing above */
+        margin-right: 1px;
+        padding-right: 2px;
     }
     .main-content ol > li,
     ul > li {
         margin-bottom: 10px; /* Add spacing between items */
         line-height: 1.6; /* Increase line height */
         /*margin-left: 20px;*/
+        /*margin-right: 1px;*/
         padding-left: 1em;
+        padding-right: 0px;
+        /*padding-right:10px; */
     }
     .main-content ol > li > ol,
     ul > li > ul {
@@ -774,10 +789,10 @@ window.MathJax = {
             </div>
         </a>
         <p><!--In mathematics and physics, a vector space (also called a linear space) is a set whose elements, often called vectors, can be added together and multiplied ("scaled") by numbers called scalars. The operations of vector addition and scalar multiplication must satisfy certain requirements, called vector axioms. Real vector spaces and complex vector spaces are kinds of vector spaces based on different kinds of scalars: real numbers and complex numbers. Scalars can also be, more generally, elements of any field.-->
-        នៅក្នុងគណិតវិទ្យា និងរូបវិទ្យា លំហវ៉ិចទ័រ (ឬហៅថា <a>លំហលីនេអ៊ែរ</a>) គឺជាសំណុំមួយ ដែលធាតុរបស់វា ហៅថា <a>វ៉ិចទ័រ</a> ដែលគេអាចបូកបញ្ចូលគ្នាបាន និង គុណ ("ពង្រីក ឬបង្រួមទំហំ") នឹងចំនួនណាមួយ ដែលគេហៅថា <a>ស្កាលែរ</a> ។ ប្រមាណវិធីបូកវ៉ិចទ័រ និងគុណវ៉ិចទ័រនឹងស្កាលែរ ត្រូវតែផ្ទៀងផ្ទាត់ លក្ខខណ្ឌតម្រូវមួយចំនួន ដែលគេហៅថា <a>ស្វ័យសត្យវ៉ិចទ័រ</a> ។ លំហវ៉ិចទ័រចំនួនពិត និងលំហវ៉ិចទ័រចំនួនកុំផ្លិច គឺជាប្រភេទលំហវ៉ិចទ័រ ដែលពឹងផ្អែកលើប្រភេទផ្សេងៗនៃស្កាលែរ៖ ចំនួនពិត និងចំនួនកុំផ្លិច ។ ជាទូទៅ ស្កាលែរ គឺជាធាតុរបស់កាយ ។
+        នៅក្នុងគណិតវិទ្យា និងរូបវិទ្យា លំហវ៉ិចទ័រ (ឬហៅថា <a>លំហលីនេអ៊ែរ</a>) គឺជាសំណុំមួយ ដែលធាតុរបស់វា ហៅថា <a>វ៉ិចទ័រ</a> ដែលគេអាចបូកបញ្ចូលគ្នាបាន និង គុណ ("ពង្រីក ឬបង្រួមទំហំ") នឹងចំនួនណាមួយ ដែលគេហៅថា <a>ស្កាលែរ</a> ។ ប្រមាណវិធីបូកវ៉ិចទ័រ និងគុណវ៉ិចទ័រនឹងស្កាលែរ ត្រូវតែផ្ទៀងផ្ទាត់ លក្ខខណ្ឌតម្រូវមួយចំនួន ដែលគេហៅថា <a>ស្វ័យសត្យវ៉ិចទ័រ</a> ។ លំហវ៉ិចទ័រចំនួនពិត និងលំហវ៉ិចទ័រចំនួនកុំផ្លិច គឺជាលំហវ៉ិចទ័រ ដែលពឹងផ្អែកលើប្រភេទផ្សេងៗនៃស្កាលែរ ដែលជា៖ ចំនួនពិត និងចំនួនកុំផ្លិច ។ ជាទូទៅ ស្កាលែរ គឺជាធាតុរបស់កាយ ។
         </p>
         <p><!--Vector spaces are a foundational concept in linear algebra and many other fields, so mastering them will significantly enhance ones mathematical toolkit and problem-solving capabilities.-->
-        លំហវ៉ិចទ័រ គឺជាគោលគំនិតជាមូលដ្ឋាន នៅក្នុងមុខវិជ្ជាពិជគណិតលីនេអ៊ែរ និងមុខវិជ្ជាជាច្រើនទៀត ។ ដូច្នេះ ការយល់បានច្បាស់លាស់លើមុខវិជ្ជានេះ នឹងជួយបង្កើនយ៉ាងសំខាន់នូវកញ្ចប់ឧបករណ៍គណិតវិទ្យា និងសមត្ថភាពដោះស្រាយបញ្ហា។
+        លំហវ៉ិចទ័រ គឺជាគោលគំនិតជាមូលដ្ឋាន នៅក្នុងមុខវិជ្ជាពិជគណិតលីនេអ៊ែរ និងមុខវិជ្ជាជាច្រើនទៀត ។ ដូច្នេះ ការយល់កាន់តែច្បាស់លាស់លើមុខវិជ្ជានេះ នឹងជួយឱ្យនរណាម្នាក់បង្កើននូវសមត្ថភាពគណិតវិទ្យា និងបំណិននៃការដោះស្រាយចំណោទបញ្ហាផ្សេងៗ។
         </p>
 
     </blockquote>
@@ -793,7 +808,7 @@ window.MathJax = {
         <h5 class="box-legend editable">
             <span class="lt-icon-default">លទ្ធផលរំពឹងទុក!</span></h5>
         <p>ក្រោយបញ្ចប់មេរៀននេះ អ្នកសិក្សានឹងទទួលបាននូវ៖ </p>
-        <ol start="1"  class="parenthnum">
+        <ol class="parenthnum">
             <li class="" style="background-color: unset;"><b>យល់បាននូវគោលគំនិតជាគន្លឹះទាក់ទងនឹង៖</b><!--b--Understanding key concepts of: -->
                 Definition of vector spaces, subspaces, linear independence, basis and dimension. <!--You'll grasp what vector spaces are, including the basic requirements for a set to be considered a vector space. Subspaces: You'll learn about subspaces and how they relate to the larger vector space. Linear Independence: You'll be able to determine if a set of vectors is linearly independent or dependent. Basis and Dimension: You'll understand the concept of a basis of a vector space and how to find it, along with the dimension of a vector space. -->
             </li>
@@ -808,10 +823,12 @@ window.MathJax = {
 
                 Matrix Representation: You'll learn how to represent linear transformations using matrices. -->
             </li>
-            <li class="" style="background-color: unset;"><b>ចេះទ្រឹស្ដីបទទាំងឡាយទាក់ទងនឹង៖</b><!--b.Theoretical insights:</b-->
+            <li><b>ចេះទ្រឹស្ដីបទទាំងឡាយទាក់ទងនឹង៖</b><!--b.Theoretical insights:</b-->
                 <ol type="i">
-                    <li class="" style="background-color: unset;"><a>Properties and Theorems:</a> to gain insights into fundamental properties and theorems related to vector spaces, such as the <a>Rank-Nullity Theorem</a> and the concept of <a>orthogonality</a>.</li>
-                    <li class="" style="background-color: unset;"><a>Abstract Thinking:</a> to develop an ability to think abstractly and generalize ideas beyond specific my-examples.</li>
+                    <li>
+                    <a>Properties and Theorems:</a> <!--to gain insights into fundamental properties and theorems related to vector spaces, such as the--> 
+                    ទទួលបានការយល់ដឹងស៊ីជម្រៅ អំពីលក្ខណៈ និងទ្រឹស្ដីបទជាមូលដ្ឋាន ទាក់ទងនឹងលំហវ៉ិចទ័រ ដូចជា <a>Rank-Nullity Theorem</a> និងគោលគំនិតរបស់ <a>orthogonality</a> ។</li>
+                    <li><a>Abstract Thinking:</a> <!--to develop an ability to think abstractly and generalize ideas beyond specific examples.-->អភិវឌ្ឍសមត្ថភាពក្នុងការគិតបែបអរូបី និងធ្វើឱ្យមានគំនិតទូទៅ លើសពីឧទាហរណ៍ដែលមាន ។</li>
                 </ol>
             </li>
         </ol>
@@ -1428,9 +1445,125 @@ où $x=\left(x_1, x_2, \ldots, x_n\right)$.-->
         </ol>
     </my-example>
     <p onclick="toggleAnswer('ex4')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
-    <div id="answer_ex4" class="box-lemma" style="display: none">
-        <p> Left as exercise (3) </p>
+    
+   
+   <div id="answer_ex4" class="box-lemma text-container" style="display: none; margin-bottom: 20px; padding-bottom: 30px; padding-top: 10px;">
+       <!--Solution is for group discussion.-->
+    <div class="text-block active" style="padding-bottom: 10px;">
+       <i>ចម្លើយ. ${}$</i>
+        <!--p> Left as exercise (3) </p-->
+        
+<b>       
+    Let \(V^A = \Bigl\{f \mid f : A \to V\Bigr\}\), the set of all functions from \(A\) to \(V\).</b>
+<ol type="i">
+    <li>
+        <a>Define addition \((+)\) </a> of two functions \(f, g \in V^A\) pointwise:
+  \[
+  (f + g)(x) = f(x) + g(x), \quad \text{for all } x \in A
+  \]
+    </li>
+<li>
+    <a>Define scalar multiplication \((\cdot)\)</a> of a function \(f \in V^A\) by a scalar \(\alpha \in \mathbb{R}\) pointwise:
+  \[
+  (\alpha \cdot f)(x) = \alpha \cdot f(x), \quad \text{for all } x \in A
+  \]
+</li>
 
+</ol>
+
+Here, \(+ : V^A \times V^A \to V^A\) and \(\cdot : \mathbb{R} \times V^A \to V^A\) denote the addition and scalar multiplication \(V^A\), which are internal and external operations on $V^A$.
+    </div>
+         <div class="text-block">
+             <p class="indent30">យើងនឹងបង្ហាញថា $(\E^A, +)$ ជាក្រុមអាបែល ហើយផ្ទៀងផ្ទាត់បន្ថែមលក្ខណៈ (i.) ដល់ (iv.) ។</p>
+             <ol type="a">
+                 <li>
+                     <a>បង្ហាញថា $(\E^A, +)$ ជាក្រុមអាបែល:</a>
+                     <ul style="list-style-type: disc; margin-left: 10px">
+                         <li>
+                             <a>Closure</a>: យក \(f, g \in \E^A\) គេបានផលបូក \(f + g\) កំណត់ដោយ \[(f + g)(x) = f(x) +
+                             g(x)\] 
+                          ដោយ \(f(a), g(a) \in V\) ហើយ \(\E\) គឺជា $\R$-vs នោះគេបាន៖ \(f(x) + g(x) \in \E\)
+                             គ្រប់ \(x \in A\) ។ ដូច្នេះ \[f + g \in \E^A\]
+                         </li>
+                         <li>
+                             <a>លក្ខណៈផ្ដុំ៖ </a>
+                             គ្រប់ \(f, g, h \in \E^A\) គេបាន៖ 
+                             \[\Bigl[(f + g) + h\Bigr](x) = (f + g)(x) + h(x) = \Bigl[f(x) +
+                             g(x)\Bigr] + h(x)\]
+                             ដោយ $(+)$ ក្នុង $\E$ មានលក្ខណៈផ្ដុំ គេបាន៖ \[\Bigl[f(x) + g(x)\Bigr] +
+                             h(x) = f(x) + \Big[g(x) + h(x)\Bigr]\] 
+                             ដូច្នេះ \(\Bigl[(f + g) + h\Bigr](x) = \Big[f + (g + h)\Bigr](x)\) គ្រប់ \(x \in A\) ។ ដូច្នេះ \[(f + g) + h = f + (g + h)\]
+                         </li>
+                         <li>
+                             <a>លក្ខណៈត្រឡប់៖ </a>
+
+                             ចំពោះគ្រប់ \(f, g \in \E^A\), \((f + g)(x) = f(x) + g(x)\) ។ ដោយ $(+)$ របស់ \(\E\)
+                             មានលក្ខណៈត្រឡប់ គេបាន \(f(x) + g(x) = g(x) + f(x)\) ។ ដូច្នេះ \((f + g)(x) = (g + f)(x)\)
+                             គ្រប់ \(x \in A\) ។ ដូច្នេះ \[f + g = g + f\]
+                         </li>
+                         <li>
+                             <a>មានធាតុណឺតចំពោះ $(+)$ :</a>
+                             យក \(0 \in \E^A\) ជាអនុគមន៍កំណត់ដោយ \[0(x) = 0_V\quad \text{ for all }\; x \in A\] ដែល
+                             \(0_V\) ជា identity ចំពោះ $(+)$ ក្នុង \(\E\) ។ ចំពោះគ្រប់ \(f \in \E^A\) គេបាន៖ \[(f + 0)(x)
+                             = f(x) + 0(x) = f(x) + 0_V = f(x)\] ដូច្នេះ \[f + 0 = f\]
+                         </li>
+                         <li><a>ចម្រាសចំពោះគ្រប់ធាតុរបស់ $\E^A$ :</a>
+                             គ្រប់ \(f \in \E^A\) គេកំណត់ 
+                             \[(-f) \in \E^A :\; (-f)(x) =-f(x)\quad \text{ for all }\; x \in A\]
+                             ដែល \(-f(x)\) គឺជាចម្រាសរបស់ \(f(a)\) ក្នុង \(\E\) ចំពោះ $(+)$ ។ ដូច្នេះ \(\Bigl[f + (-f)\Bigr](x) = f(x) + \Bigl[-f(x)\Bigr] = 0_V\) ។ ដូច្នេះ \[f + (-f) = 0\]
+                         </li>
+                     </ul>
+                 </li>
+             </ol>
+         </div>
+        <div class="text-block">
+            <ol type="a" start="2">
+                <li> <a>លក្ខណៈចំពោះផលគុណនឹងស្កាលែរ៖</a> 
+                    <ul style="list-style-type: disc; margin-left: 10px">
+                        <li>
+                            <a>លក្ខណៈចុះសម្រុងរវាងផលគុណនឹងស្កាលែរជាមួយនឹងផលគុណក្នុងកាយ៖</a><!--Compatibility of scalar multiplication with field multiplication--> គ្រប់ \(\alpha, \beta \in
+                    \mathbb{R}\) និង \(f \in V^A\) គេបាន 
+                    \[\Bigl[(\alpha \beta) \cdot f\Bigr](x) = (\alpha \beta) \cdot f(x)\]
+                    ដោយផលគុណនឹងស្កាលែរក្នុងលំហ \(V\) ផ្ទៀងផ្ទាត់៖ 
+                    \[\Bigl(\alpha \beta\Bigr) \cdot v = \alpha \cdot \Bigl(\beta \cdot v\Bigr),\quad \forall\; v \in V\]
+                    គេបាន \[(\alpha \beta) \cdot f(a) = \alpha \cdot \Bigl(\beta \cdot f(a)\Bigr) = \Bigl(\alpha \cdot
+                   (\beta \cdot f)\Bigr)(a)\]
+                       ដូច្នេះ 
+                       \[(\alpha \beta) \cdot f = \alpha \cdot (\beta \cdot f)\]
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+       <div class="text-block">
+           <ol type="i">
+                        <li>
+                            
+                        </li>
+
+                        <li>
+                            
+
+                        </li>
+           </ol>
+       </div>
+       <div class="text-block">
+           <ol type="i" start="3">
+                <li>
+                           
+                        </li>
+           </ol>
+           <p style="margin-top: 20px" class="indent20">
+               ដូច្នេះ $(\mathbb C, +, \cdot)$ ជាលំហវ៉ិចទ័រកំណត់លើការយ $\mathbb R$ ។
+           </p>
+       </div>
+       <div class="nav-container">
+           <span class="prevSign nav-sign">&#8810; Previous</span>
+           <span class="nextSign nav-sign">Next &#8811;</span>
+       </div>
+   
+   
+   
     </div>
 
     <h3>លំហវ៉ិចទ័ររង (subspaces)</h3>
@@ -1720,19 +1853,73 @@ Let $\E$ be any $\K$-vs, $U$ and $W$ two vector subspaces of $\E$. Then $U \cup 
     <div id="answer_ex6" class="box-lemma" style="display: none">
     
     <i>សម្រាយបញ្ជាក់.</i> 
+    To prove that \( U \cup W \) is a vector subspace of \( \E \) if and only if \( U \subseteq W \) or \( W \subseteq U \), we need to show two implications: 
+<ol type="i">
+    <li>
+        <i>Necessary condition:</i> If \( U \cup W \) is a vector subspace of \( \E \), then either \( U \subseteq W \) or \( W \subseteq U \).
+        <br>
+        
+        Assume \( U \cup W \) is a vector subspace of \( \E \). Suppose \( U \nsubseteq W \) and \( W \nsubseteq U \). Then there exist:
+  <p class="noind-center">
+      \( x \in U \) such that \( x \notin W \) <br>
+      \( y \in W \) such that \( y \notin U \)
+  </p>
+Since \( U \cup W \) is a vector subspace, it must be closed under vector addition. Thus, \( x + y \) must belong to \( U \cup W \). This means:
+<p class="noind-center">
+    \(x + y \in U \)  or \( x + y \in W \)
+</p>
+So, 
+  <ul style="margin-left: 14px">
+      <li>
+      If \( x + y \in U \), then \( y = (x + y) - x \). Since \( x \in U \) and \( U \) is a subspace, \( y \) would have to be in \( U \) as well. This contradicts \( y \notin U \).</li>
+   <li>If \( x + y \in W \), then \( x = (x + y) - y \). Since \( y \in W \) and \( W \) is a subspace, \( x \) would have to be in \( W \) too, leading to a contradiction since \( x \notin W \). </li>
+  </ul>
+ Since both cases lead to contradictions, our assumption that \( U \nsubseteq W \) and \( W \nsubseteq U \) must be false. 
+   <br>
+   
+   Hence, we conclude that either \( U \subseteq W \) or \( W \subseteq U \).
+    </li>
+    
+    <li><i>Sufficient condition:</i>  If either \( U \subseteq W \) or \( W \subseteq U \), then \( U \cup W \) is a vector subspace of \( \E \).
+    <br>
+    
+    Assume \( U \subseteq W \) or \( W \subseteq U \). 
+
+<ul style="margin-left: 14px">
+    <li>
+        <i>Case 1: Assume \( U \subseteq W \):</i>
+        <br>
+   Then every element \( u \in U \) is also in \( W \). Therefore, \( U \cup W = W \) since \( W \) already contains all elements of \( U \).
+   <br>
+   Since \( W \) is a vector subspace, \( U \cup W \) is also a vector subspace.
+    </li>
+    <li>
+        <i>Case 2: Assume \( W \subseteq U \):</i>
+        <br>
+        Similarly, we have \( U \cup W = U \). 
+        Since \( U \) is a vector subspace, \( U \cup W \) is also a vector subspace.
+    </li>
+</ul>
+    
+    
+    
+    
+    </li>
+</ol>
+
+   <!--
     <ol type="i">
         <li>
             <b>NC:</b> Suppose that $F \cup G$ is a vector subspace of $\E$. Then, show that $F \subseteq G$ or $G \subseteq F$. 
     
     <br>
-    To do this, assume, absurdly, that $F \nsubseteq G$ and $G \nsubseteq F$.
+    To do this, assume, absurdly, that $F \nsubseteq G$ and $G \nsubseteq F$. So, 
 
-$$
-\begin{aligned}
-& F \nsubseteq G \Longrightarrow \exists x: x \in F \text { and } x \notin G \\
-& F \nsubseteq G \Longrightarrow \exists y: y \in G \text { et } y \notin F
-\end{aligned}
-$$
+\begin{eqnarray*}
+ F \nsubseteq G \;\; &\Longrightarrow &\;\; \exists x: x \in F \text { and } x \notin G \\
+G \nsubseteq F &\Longrightarrow & \exists y: y \in G \text { et } y \notin F
+\end{eqnarray*}
+
 
 $F \cup G$ being a vector subspace, therefore $x+y \in F \cup G$, consequently, we have
 
@@ -1754,7 +1941,7 @@ So our initial assumption is false, as a result, $F \subseteq G$ or $G \subseteq
         
         <li><b>SC:</b> Trivial.</li>
     </ol>
-
+-->
 </div>  
 
  <p onclick="toggleAnswer('ex6.1')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref5" title="Jump to solution.">&#8617;</span></p>
