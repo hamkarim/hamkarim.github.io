@@ -1136,9 +1136,9 @@ h3.sectcounter:before {
     margin-top: 0;
     margin-bottom: 10px;
     color: #0e81c1;
-    border: 2pt solid #0067eb;
-    border-radius: 10px;
-    background-color: #d5dfe5;
+    border: 1pt solid rgba(108, 116, 126, 0.75);
+    border-radius: 14px;
+    background-color: rgba(229, 239, 17, 0.04);
     text-align: left;
     font-size: 16px!important ;
     /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
@@ -2247,15 +2247,25 @@ span.tab {
 @import url(https://fonts.googleapis.com/css?family=Denk+One);
 @import url(https://fonts.googleapis.com/css?family=Arimo);
 
+.watermark {
+    display: block; /* Block layout */  
+    margin: 0 auto; /* Centers horizontally */  
+    width: 400px;
+    position: relative;
+}
 .rotingtxt {
+    /*display: block; /* Block layout */  
     -webkit-transform: rotate(331deg);
     -moz-transform: rotate(331deg);
     -o-transform: rotate(331deg);
     transform: rotate(331deg);
-    font-size: 6em;
-    color: rgba(255, 5, 5, 0.17);
+    font-size: 3.5em;
+    color: rgba(92, 161, 200, 0.42);
     position: absolute;
     font-family: "Denk One", sans-serif;
     text-transform: uppercase;
-    padding-left: 10%;
+    /*padding-left: 10%;*/
+    text-align: center!important ;
+    margin: 0 auto; /* Centers horizontally */  
+    width: 600px;
 }
