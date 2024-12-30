@@ -558,7 +558,7 @@ window.MathJax = {
             text-align: center; /* Center text horizontally */
             border: 2px solid black; /* Add a border around the text */
             padding: 10px; /* Add space inside the border */
-            width: 70%; /* Optional: Set a specific width */
+            width: 80%; /* Optional: Set a specific width */
             margin: 20px auto; /* Center the <p> element itself */
             background-color: cornsilk
         }
@@ -1831,14 +1831,15 @@ Thus, \( \lambda \cdot x \in W \), is closed under scalar multiplication.
             </li>
 
             <li>
-                Let $\K$ be a commutative field. For any integer $n \geq 0$, we denote by $\mathbf W = \K_n[x]$ the part of $\E=\K[x]$ defined by,
+                <!--Let $\K$ be a commutative field. For any integer $n \geq 0$, we denote by $\mathbf W = \K_n[x]$ the part of $\E=\K[x]$ defined by,-->
+                យក $\K$ ជាកាយត្រឡប់ ។ ចំពោះគ្រប់ចំនួនគត់ $n \geq 0$ គេតាង $\mathbf W = \K_n[x]$ ជាសំណុំរងរបស់ $\E=\K[x]$ កំណត់ដូចខាងក្រោម៖ 
                 $$
                 \K_n[x]=\Bigl\{P \in \K[x]: \operatorname{deg}(P) \leq n\Bigr\}
                 $$
 
                 <br>
 
-                Then $\K_n[x]$ is a subspace of $\K[x]$.
+                បង្ហាញថា $\K_n[x]$ ជាលំហរងរបស់ $\K[x]$?
 
                 <div class="my-example-content" style="text-align: right;">
                     <span id="SHLink_Soln3" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln3" class="fa fa-caret-right" aria-hidden="true"></span></div>
@@ -1864,7 +1865,7 @@ Thus, \( \lambda \cdot x \in W \), is closed under scalar multiplication.
     </p>
           (i.e., $\bigcap_{i \in I} W_i$  ជាលំហរង ?)
         
-          <p onclick="toggleAnswer('ex5')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref5" title="Jump to solution.">&#8617;</span></p>
+          <p onclick="toggleAnswer('ex5')" style="text-align: right;"><i>ដំណោះស្រាយ.</i> <span href="#ref5" title="Jump to solution.">&#8617;</span></p>
    
    <div id="answer_ex5" class="soln-content text-container" style="display: none">
        <!--Solution is for group discussion.-->
@@ -1876,11 +1877,14 @@ Thus, \( \lambda \cdot x \in W \), is closed under scalar multiplication.
    x \in \bigcap_{i \in I} W_i \Longleftrightarrow \forall i \in I, x \in W_i
    $$-->
 
-       <!--To prove that the intersection of any family of vector subspaces of a vector space \(\E\) is itself a vector subspace of \(\E\), we begin by recalling the necessary definitions and properties.-->
+       <!--To prove that the intersection of any family of vector subspaces of a vector space \(\E\) is itself a vector subspace of \(\E\), we begin by recalling the necessary definitions and properties.--
 
        Let \(\{ W_i \}_{i \in I}\) be a family of vector subspaces of \(\E\), indexed by some set \(I\). We define the
-       intersection of these subspaces as follows: \[ W = \bigcap_{i \in I} W_i = \Bigl\{ x \in \E \mid x \in U_i \text{
-       for all } i \in I \Bigr\} \] Then, show that \(W\) is a vector subspace of \(\E\).
+       intersection of these subspaces as follows:-->
+       សន្មតគ្រួសារ \(\Bigl\{ W_i \Bigr\}_{i \in I}\) នៃលំហរងរបស់ \(\E\) ដែលកំណត់សន្ទស្សន៍ដោយ \(I\) ។ យើងតាងប្រសព្វនៃគ្រួសារលំហរងទាំងនេះដោយ៖  
+       \[ W = \bigcap_{i \in I} W_i = \Bigl\{ x \in \E \mid x \in U_i \text{
+       for all } i \in I \Bigr\} \] 
+       យើងនឹងបង្ហាញថា \(W\) ជាលំហរងរបស់ \(\E\) !
        <!--To do this, we must verify that \(U\) satisfies the three conditions that characterize a vector subspace:-->
        <div class="text-block active">
            <ol type="i">
@@ -1944,38 +1948,40 @@ Let $\E$ be any $\K$-vs, $U$ and $W$ two vector subspaces of $\E$. Then $U \cup 
        <p class="center-text">
            $U \cup W$ ជាលំហវ៉ិចទ័ររងរបស់ $\E$ លុះត្រាតែ $U \subseteq W$ ឬក៏ $W \subseteq U$ ។
        </p>
-          <p onclick="toggleAnswer('ex6')" style="text-align: right;"><i>Solution.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
+          <p onclick="toggleAnswer('ex6')" style="text-align: right;"><i>ដំណោះស្រាយ.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
     <div id="answer_ex6" class="box-lemma" style="display: none">
     
     <i>សម្រាយបញ្ជាក់.</i> 
-    To prove that \( U \cup W \) is a vector subspace of \( \E \) if and only if \( U \subseteq W \) or \( W \subseteq U \), we need to show two implications: 
+   <!-- To prove that \( U \cup W \) is a vector subspace of \( \E \) if and only if \( U \subseteq W \) or \( W \subseteq U \), we need to show two implications: -->
+   ដើម្បីបញ្ជាក់ថា \( U \cup W \) គឺជាវ៉ិចទ័ររងនៃ \( \E \) លុះត្រាតែ \( U \subseteq W \) ឬ \( W \subseteq U \) យើងត្រូវបង្ហាញ លក្ខខណ្ឌពីរគឺ៖ 
 <ol type="i">
     <li>
-        <i>Necessary condition:</i> If \( U \cup W \) is a vector subspace of \( \E \), then either \( U \subseteq W \) or \( W \subseteq U \).
+        <i>ល.ខចាំបាច់ :</i> យក \( U \cup W \) ជាលំហរងរបស់ \( \E \) ។ ស្រាយថា \( U \subseteq W \) ឬ \( W \subseteq U \)?
         <br>
-        
-        Assume \( U \cup W \) is a vector subspace of \( \E \). Suppose \( U \nsubseteq W \) and \( W \nsubseteq U \). Then there exist:
+        តាមវិធីផ្ទុយពីការពិត សន្មតថា  \( U \cup W \) ជាលំហរងរបស់ \( \E \) និងកំណត់ \( U \nsubseteq W \) និង \( W \nsubseteq U \) ។ តាមន័យនេះ គេបាន៖ 
   <p class="noind-center">
-      \( x \in U \) such that \( x \notin W \) <br>
-      \( y \in W \) such that \( y \notin U \)
+      \( x \in U \;\) s.t \(\; x \notin W \) <br>
+      \( y \in W \;\) s.t \(\; y \notin U \)
   </p>
-Since \( U \cup W \) is a vector subspace, it must be closed under vector addition. Thus, \( x + y \) must belong to \( U \cup W \). This means:
+ដោយ \( U \cup W \) ជាលំហរង នោះគេបាន  គ្រប់ $x, y\in U \cup W :$ \( x + y \) ត្រូវតែជារបស់ \( U \cup W \) ។ គេបាន 
 <p class="noind-center">
-    \(x + y \in U \)  or \( x + y \in W \)
+    \(x + y \in U \quad\)  ឬ \(\quad x + y \in W \)
 </p>
-So, 
+ដូច្នេះ 
   <ul style="margin-left: 14px">
       <li>
-      If \( x + y \in U \), then \( y = (x + y) - x \). Since \( x \in U \) and \( U \) is a subspace, \( y \) would have to be in \( U \) as well. This contradicts \( y \notin U \).</li>
-   <li>If \( x + y \in W \), then \( x = (x + y) - y \). Since \( y \in W \) and \( W \) is a subspace, \( x \) would have to be in \( W \) too, leading to a contradiction since \( x \notin W \). </li>
+      បើ \( x + y \in U \) នោះ \( y = (x + y) - x \) ។<br>
+      ដោយ \( x \in U \) និង \( U \) ជាលំហរង នោះ \( y \) ត្រូវតែជារបស់ \( U \) (ផ្ទុយពីការពិតដែលថា \( y \notin U \)) </li>
+   <li>បើ \( x + y \in W \) នោះ \( x = (x + y) - y \) ។ <br>
+   ដោយ \( y \in W \) និង \( W \) ជាលំហរង នោះ \( x \) ត្រូវតែជារបស់ \( W \) (ផ្ទុយពីការពិតដែលថា \( x \notin W \) ) </li>
   </ul>
- Since both cases lead to contradictions, our assumption that \( U \nsubseteq W \) and \( W \nsubseteq U \) must be false. 
+ ដោយករណីទាំងពីរសុទ្ធតែផ្ទុយពីការពិត នោះការសន្មតថា \( U \nsubseteq W \) និង \( W \nsubseteq U \) ក៏មិនមែនជាការពិតដែរ ។ 
    <br>
    
-   Hence, we conclude that either \( U \subseteq W \) or \( W \subseteq U \).
+   ដូច្នេះ គេបាន \( U \subseteq W \) ឬក៏ \( W \subseteq U \) ។ 
     </li>
     
-    <li><i>Sufficient condition:</i>  If either \( U \subseteq W \) or \( W \subseteq U \), then \( U \cup W \) is a vector subspace of \( \E \).
+    <li><i>ល.ខគ្រប់គ្រាន់ :</i>  បើ \( U \subseteq W \) ឬ \( W \subseteq U \) នោះបង្ហាញថា  \( U \cup W \) ជាលំហរងរបស់ \( \E \)?
     <br>
     
     Assume \( U \subseteq W \) or \( W \subseteq U \). 
