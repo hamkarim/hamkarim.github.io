@@ -809,10 +809,10 @@ window.MathJax = {
             <span class="lt-icon-default">លទ្ធផលរំពឹងទុក!</span></h5>
         <p>ក្រោយបញ្ចប់មេរៀននេះ អ្នកសិក្សានឹងទទួលបាននូវ៖ </p>
         <ol class="parenthnum">
-            <li class="" style="background-color: unset;"><b>យល់បាននូវគោលគំនិតជាគន្លឹះទាក់ទងនឹង៖</b><!--b--Understanding key concepts of: -->
+            <li class="" style="background-color: unset;"><i>យល់បាននូវគោលគំនិតជាគន្លឹះទាក់ទងនឹង៖</i><!--b--Understanding key concepts of: -->
                 Definition of vector spaces, subspaces, linear independence, basis and dimension. <!--You'll grasp what vector spaces are, including the basic requirements for a set to be considered a vector space. Subspaces: You'll learn about subspaces and how they relate to the larger vector space. Linear Independence: You'll be able to determine if a set of vectors is linearly independent or dependent. Basis and Dimension: You'll understand the concept of a basis of a vector space and how to find it, along with the dimension of a vector space. -->
             </li>
-            <li class="" style="background-color: unset;"><b>មានជំនាញគណិតវិទ្យា៖</b>
+            <li class="" style="background-color: unset;"><i>មានជំនាញគណិតវិទ្យា៖</i>
                 <!--bMathematical skills: </b-->
                 To know  operations, span, linear combinations and matrix representation.
                 <!--You'll become proficient in performing vector addition and scalar multiplication.
@@ -823,7 +823,7 @@ window.MathJax = {
 
                 Matrix Representation: You'll learn how to represent linear transformations using matrices. -->
             </li>
-            <li><b>ចេះទ្រឹស្ដីបទទាំងឡាយទាក់ទងនឹង៖</b><!--b.Theoretical insights:</b-->
+            <li><i>ចេះទ្រឹស្ដីបទទាំងឡាយទាក់ទងនឹង៖</i><!--b.Theoretical insights:</b-->
                 <ol type="i">
                     <li>
                     <a>Properties and Theorems:</a> <!--to gain insights into fundamental properties and theorems related to vector spaces, such as the--> 
@@ -1683,7 +1683,8 @@ Here, \(+ : V^A \times V^A \to V^A\) and \(\cdot : \mathbb{R} \times V^A \to V^A
      
    
     <p style="text-indent: 0px"><b>ចំណាំ :</b>
-        If $\mathbf W$ is a vector subspace of $\E$, then $\mathbf W$ is a vector space for the external law induced by that of $\E$:
+        បើ $\mathbf W$ ជាលំហរងរបស់ $\E$ នោះគេបាន $\mathbf W$ ជាលំហវ៉ិចទ័រមួយ ដែលកំណត់យកប្រមាណវិធីក្រៅដូចលំហ $\E$ ដែរ គឺ៖ 
+        <!--If $\mathbf W$ is a vector subspace of $\E$, then $\mathbf W$ is a vector space for the external law induced by that of $\E$:-->
         $$
         \begin{aligned}
         \K \times \mathbf W & \longrightarrow \mathbf W \\
@@ -1743,47 +1744,47 @@ Here, \(+ : V^A \times V^A \to V^A\) and \(\cdot : \mathbb{R} \times V^A \to V^A
                     <span id="SHLink_Soln1" class="soln-title SH-Link" >Show solution</span> <span id="SHImg_Soln1" class="fa fa-caret-right" aria-hidden="true"></span></div>
                     <div id="SHObj_Soln1" class="soln-content  text-container" style="display: none; ">
                         <!--Solution is for group discussion.-->
-                       <p> <b>ចម្លើយ.</b></p>
+                       <p> <b>ចម្លើយ.</b>
+                       ចូរបង្ហាញថា  $\mathbf W$ ជាលំហវ៉ិចទ័ររងរបស់ $\E=\mathbb{R}^{\mathbb{N}}$ 
+                       </p>
     <div class="text-block active">                    
     <ol type="i">
-        <li> <!--$W\neq \varnothing$?-->To show that \( W \neq \varnothing \):
+        <li> <!--$W\neq \varnothing$?-->
+           បង្ហាញថា \( W \neq \varnothing \):
             <br> 
-Since the sequence \( (0, 0, \ldots) \) converges to \( 0 \), we have:
+ដោយស្វ៊ីត \( (0, 0, \ldots) \) រួមទៅរក \( 0 \) គេបាន៖ 
 \[
-\lim_{n \to \infty} x_n = 0 \quad (\text{true}),
+\lim_{n \to \infty} x_n = 0 \quad (\text{ true })
 \]
-which implies \( 0 \in W \). Thus, \( W \neq \varnothing \).
+នាំឱ្យ \( 0 \in W \) ។ ដូច្នេះ  \( W \neq \varnothing \) ។
         </li>
         </ol>
                         </div>
 <div class="text-block">
 <ol type="i" start="2">
-<li> Let \( x = (x_0, x_1, \ldots, x_n, \ldots) \) such that \( \lim_{n \to \infty} x_n = 0 \) <br> 
-and \( y = (y_0, y_1, \ldots, y_n, \ldots) \) such that \( \lim_{n \to \infty} y_n = 0 \).
-<br>
+<li> យក \( x = (x_0, x_1, \ldots, x_n, \ldots) \) និង \( y = (y_0, y_1, \ldots, y_n, \ldots) \) s.t 
+\[ \lim_{n \to \infty} x_n = 0, \quad \lim_{n \to \infty} y_n = 0 \]
 
-Since \( x, y \in W \), we can represent their sum as:
+ដោយ \( x, y \in W \) គេបានផលបូក៖ 
 \[
 x + y = (x_0 + y_0, x_1 + y_1, \ldots, x_n + y_n, \ldots)
 \]
-Now, we have that 
+តែដោយ 
 \[\lim_{n \to \infty} (x_n + y_n) = \lim_{n \to \infty} x_n + \lim_{n \to \infty} y_n = 0 + 0 = 0 \]
-
-This implies: \( x + y \in W \). Thus, \( W \) is closed under addition.
+គេបាន  \( x + y \in W \) ។ ដូច្នេះ \( W \) មានលក្ខណៈបំណិតចំពោះ $(+)$ ។ <!--is closed under addition.-->
         </li>
     </ol>
                         </div>
                         
  <div class="text-block">
        <ol type="i" start="3">                       
-        <li> To show that \( W \) is closed under scalar multiplication:<br>
-
-Let \( x = (x_0, x_1, \ldots, x_n, \ldots)\) such that \( \lim_{n \to \infty} x_n = 0 \), and let \( \lambda \in \mathbb R\) be any scalar. <br>
+        <li> បង្ហាញថា \( W \) មានលក្ខណៈបំណិតចំពោះប្រមាណវិធីក្រៅ $(\cdot)$ (ប្រមាណវិធីគុណនឹងស្កាលែរ) :
+        <!--To show that \( W \) is closed under scalar multiplication:--><br>
+យក \( x = (x_0, x_1, \ldots, x_n, \ldots)\) ដែល \( \lim_{n \to \infty} x_n = 0 \) និងយក \( \lambda \in \mathbb R\) ។  គេបាន៖ 
 
 <!--We want to show that \( \lambda \cdot x \) also belongs to \( W \). The scalar multiplication is defined as: --> 
-We have then, 
 \[
-\lambda \cdot x = (\lambda x_0, \lambda x_1, \ldots, \lambda x_n, \ldots).
+\lambda \cdot x = (\lambda x_0, \lambda x_1, \ldots, \lambda x_n, \ldots)
 \]
 <!--To prove closure, we need to show that:
 
@@ -1791,13 +1792,12 @@ We have then,
 \lim_{n \to \infty} (\lambda x_n) = \lambda \cdot \lim_{n \to \infty} x_n.
 \]
 -->
-Since \( \lim_{n \to \infty} x_n = 0 \), it follows that:
-
+ដោយ \( \lim_{n \to \infty} x_n = 0 \) នោះគេបាន៖ 
 \[
-\lim_{n \to \infty} (\lambda x_n) = \lambda \cdot \lim_{n \to \infty} x_n = \lambda \cdot 0 = 0.
+\lim_{n \to \infty} (\lambda x_n) = \lambda \cdot \lim_{n \to \infty} x_n = \lambda \cdot 0 = 0
 \]
 
-Thus, \( \lambda \cdot x \in W \), is closed under scalar multiplication. 
+ដូច្នេះ \( \lambda \cdot x \in W \) មានលក្ខណៈបំណិតចំពោះប្រមាណវិធីក្រៅ $(\cdot)$ ។ 
 
         </li>
     </ol>
@@ -1823,8 +1823,29 @@ Thus, \( \lambda \cdot x \in W \), is closed under scalar multiplication.
 
                 <div class="my-example-content" style="text-align: right;">
                     <span id="SHLink_Soln2" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln2" class="fa fa-caret-right" aria-hidden="true"></span></div>
-                    <div id="SHObj_Soln2" class="soln-content" style="display: none;">
-                        Solution is for group discussion.
+                    <div id="SHObj_Soln2" class="soln-content text-container" style="display: none;">
+                        <!--Solution is for group discussion.-->
+                <p onclick="toggleAnswer('ex15')" style="text-align: right;"><i>ដំណោះស្រាយ.</i> <span href="#ref5" title="Jump to solution.">&#8617;</span></p>
+   
+   <div id="answer_ex15" class="soln-content text-container" style="display: none">
+       <!--Solution is for group discussion.-->
+       <i>ចម្លើយ. ${}$</i>
+                      
+                        </div>
+                       
+                        Preliminary Definitions
+                        <ul>
+                            <li>
+                                \(I = (a,b)\) or \(I = [a,b]\) is a real interval
+                            </li>
+                            <li>
+                                \(\mathcal{E} = \mathbb{R}^I\) is the set of all functions from \(I\) to \(\mathbb{R}\)
+                            </li>
+                            <li>
+                                \(\mathbf{W} = \mathcal{C}(I, \mathbb{R})\) is the set of continuous functions from \(I\) to \(\mathbb{R}\)
+                            </li>
+                        </ul>
+
                     </div>
 
                 
@@ -2250,24 +2271,29 @@ $\left(z_1, z_2, \cdots, z_n\right) \in W_1 \times W_2 \times \ldots \times W_n$
 <div class="box-theorem">
         <div class="box-legend editable"><span class="lt-icon-default">ទ្រឹស្ដីបទ ៣. :  (ផលបូកផ្ទាល់)</span></div>
 <p>
-The sum $W_1+W_2+\cdots+W_n$ is direct if and only if,
+<!--The sum $W_1+W_2+\cdots+W_n$ is direct if and only if,-->
+ផលបូក $W_1+W_2+\cdots+W_n$ គឺជាផលបូកផ្ទាល់ លុះត្រាតែ 
 $$
-\forall i \in\{1,2, \ldots, n-1\}: \quad W_i \bigcap \left(\sum_{k=i+1}^n W_{k}\right)=\Bigl\{0\Bigr\}
+\forall i \in\{1,2, \ldots, n-1\}: \;\; W_i \bigcap \left(\sum_{k=i+1}^n W_{k}\right)=\Bigl\{0\Bigr\}
 $$
     </p>
     </div>
-<p onclick="toggleAnswer('ex9')" style="text-align: right;"><i>Solution.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
+<p onclick="toggleAnswer('ex9')" style="text-align: right;"><i>សម្រាយបញ្ជាក់.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
     <div id="answer_ex9" class="box-note" style="display: none">
     
     <i>សម្រាយបញ្ជាក់.</i> 
     <ol type="i">
-        <li><b>$(\Longrightarrow)$:</b>
+        <li><i>ល.ខ.ចាំបាច់៖</i>
          Suppose the sum is direct and let $x_i \in W_i \cap\left(W_{i+1}+\cdots+W_n\right)$, with $i \in\{1,2, \ldots, n- 1\}$.
-We have $x_i \in W_{i+1}+\cdots+W_n$, so there exists $\left(x_{i+1}, \ldots, x_n\right) \in W_{i+1} \times \cdots \times W_n$, such that $x_i=x_{i+1}+\cdots+x_n$, so we will have $x_i+\left(-x_{i+1}\right)+\cdots+\left(-x_n\right)=0$. Now the sum $W_1+W_2+\cdots+W_n$ is direct, so according to the previous lemma, we have $x_i=x_{i+1}=\cdots=x_n=0$, therefore, in particular, we have $x_i=0$.
+         <br>
+We have $x_i \in W_{i+1}+\cdots+W_n$, so there exists $\left(x_{i+1}, \ldots, x_n\right) \in W_{i+1} \times \cdots \times W_n$, such that $x_i=x_{i+1}+\cdots+x_n$, so we will have $x_i+\left(-x_{i+1}\right)+\cdots+\left(-x_n\right)=0$. 
+       
+       <br>
+       Now the sum $W_1+W_2+\cdots+W_n$ is direct, so according to the previous lemma, we have $x_i=x_{i+1}=\cdots=x_n=0$, therefore, in particular, we have $x_i=0$.
         </li>
         
         <li>
-            <b>$(\Longleftarrow)$:</b> 
+            <i>ល.ខ.គ្រប់គ្រាន់៖</i> 
             
             Suppose that $\forall i \in\{1,2, \ldots, n-1\}, \quad W_i \cap\left(W_{i+1}+\cdots+W_n\right )=\{0\}$. Let $\left(x_1, x_2, \ldots, x_n\right) \in W_1 \times W_2 \times \ldots \times W_n$, such that $x_1+x_2+\cdots+x_n=0$. Let us show that $x_1=x_2=\cdots=x_n=0$. For this, we have
 $$
