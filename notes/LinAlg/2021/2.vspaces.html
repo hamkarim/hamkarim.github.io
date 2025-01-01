@@ -1548,25 +1548,25 @@ a\bigl(b \cdot \mathbf{v}\bigr) \;\;&=&\;\; a\bigl(b v_1, b v_2, \ldots, b v_n\b
        <i>ចម្លើយ. ${}$</i>
         <!--p> Left as exercise (3) </p-->
         
-<b>       
-    Let \(V^A = \Bigl\{f \mid f : A \to V\Bigr\}\), the set of all functions from \(A\) to \(V\).</b>
+<a>       
+    យក \( \E^A = \Bigl\{f \mid f : A \to V\Bigr\}\) ជាសំណុំនៃគ្រប់អនុគមន៍កំណត់ពី \(A\) ទៅ \(\E\) </a> ដែល $A\neq \varnothing$, $\E$ ជា $\R$-vs ។  គេកំណត់៖ 
 <ol type="i">
     <li>
-        <a>Define addition \((+)\) </a> of two functions \(f, g \in V^A\) pointwise:
+        <a>ប្រមាណវិធីក្នុង \((+)\) </a> របស់អនុគមន៍ \(f, g \in \E^A\) ត្រង់ចំណុចនីមួយៗ ៖
   \[
-  (f + g)(x) = f(x) + g(x), \quad \text{for all } x \in A
+  (f + g)(x) = f(x) + g(x), \quad \forall  x \in A
   \]
     </li>
 <li>
-    <a>Define scalar multiplication \((\cdot)\)</a> of a function \(f \in V^A\) by a scalar \(\alpha \in \mathbb{R}\) pointwise:
+    <a><!--Define scalar multiplication \((\cdot)\)</a> of a function \(f \in V^A\) by a scalar \(\alpha \in \mathbb{R}\) pointwise:-->
+    ប្រមាណវិធីក្រៅ \((\cdot)\) (scalar multiplication)</a> របស់អនុគមន៍ \(f \in \E^A\) ជាមួយនឹងស្កាលែរ \(\alpha \in \mathbb{R}\) ត្រង់ចំណុចនីមួយៗ ៖
   \[
-  (\alpha \cdot f)(x) = \alpha \cdot f(x), \quad \text{for all } x \in A
+  (\alpha \cdot f)(x) = \alpha \cdot f(x), \quad \forall x \in A
   \]
 </li>
 
 </ol>
-
-Here, \(+ : V^A \times V^A \to V^A\) and \(\cdot : \mathbb{R} \times V^A \to V^A\) denote the addition and scalar multiplication \(V^A\), which are internal and external operations on $V^A$.
+i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to \E^A\) និងប្រមាណវិធីក្រៅ  \(\cdot : \mathbb{R} \times \E^A \to \E^A\) ។ <!-- which are internal and external operations on $V^A$-->
     </div>
          <div class="text-block">
              <p class="indent30">យើងនឹងបង្ហាញថា $(\E^A, +)$ ជាក្រុមអាបែល ហើយផ្ទៀងផ្ទាត់បន្ថែមលក្ខណៈ (i.) ដល់ (iv.) ។</p>
@@ -1577,14 +1577,14 @@ Here, \(+ : V^A \times V^A \to V^A\) and \(\cdot : \mathbb{R} \times V^A \to V^A
                          <li>
                              <a>Closure</a>: យក \(f, g \in \E^A\) គេបានផលបូក \(f + g\) កំណត់ដោយ \[(f + g)(x) = f(x) +
                              g(x)\] 
-                          ដោយ \(f(a), g(a) \in V\) ហើយ \(\E\) គឺជា $\R$-vs នោះគេបាន៖ \(f(x) + g(x) \in \E\)
+                          ដោយ \(f(x), g(x) \in \E\) ហើយ \(\E\) គឺជា $\R$-vs នោះគេបាន៖ \(f(x) + g(x) \in \E\)
                              គ្រប់ \(x \in A\) ។ ដូច្នេះ \[f + g \in \E^A\]
                          </li>
                          <li>
                              <a>លក្ខណៈផ្ដុំ៖ </a>
                              គ្រប់ \(f, g, h \in \E^A\) គេបាន៖ 
-                             \[\Bigl[(f + g) + h\Bigr](x) = (f + g)(x) + h(x) = \Bigl[f(x) +
-                             g(x)\Bigr] + h(x)\]
+                             \[\Bigl[(f + g) + h\Bigr](x) = (f + g)(x) + h(x) = \Bigl(f(x) +
+                             g(x)\Bigr) + h(x)\]
                              ដោយ $(+)$ ក្នុង $\E$ មានលក្ខណៈផ្ដុំ គេបាន៖ \[\Bigl[f(x) + g(x)\Bigr] +
                              h(x) = f(x) + \Big[g(x) + h(x)\Bigr]\] 
                              ដូច្នេះ \(\Bigl[(f + g) + h\Bigr](x) = \Big[f + (g + h)\Bigr](x)\) គ្រប់ \(x \in A\) ។ ដូច្នេះ \[(f + g) + h = f + (g + h)\]
@@ -1598,16 +1598,20 @@ Here, \(+ : V^A \times V^A \to V^A\) and \(\cdot : \mathbb{R} \times V^A \to V^A
                          </li>
                          <li>
                              <a>មានធាតុណឺតចំពោះ $(+)$ :</a>
-                             យក \(0 \in \E^A\) ជាអនុគមន៍កំណត់ដោយ \[0(x) = 0_V\quad \text{ for all }\; x \in A\] ដែល
-                             \(0_V\) ជា identity ចំពោះ $(+)$ ក្នុង \(\E\) ។ ចំពោះគ្រប់ \(f \in \E^A\) គេបាន៖ \[(f + 0)(x)
-                             = f(x) + 0(x) = f(x) + 0_V = f(x)\] ដូច្នេះ \[f + 0 = f\]
+                             យក \(\mathbf 0 \in \E^A\) ជាអនុគមន៍កំណត់ដោយ 
+                             \[\mathbf 0(x) = 0_V, \quad \forall \; x \in A\] ដែល
+                             \(0_V\) ជា identity ចំពោះ $(+)$ ក្នុង \(\E\) ។ ចំពោះគ្រប់ \(f \in \E^A\) គេបាន៖ \[(f + \mathbf 0)(x)
+                             = f(x) + \mathbf 0(x) = f(x) + 0_V = f(x)\] ដូច្នេះ \[f + \mathbf 0 = f\]
                          </li>
                          <li><a>ចម្រាសចំពោះគ្រប់ធាតុរបស់ $\E^A$ :</a>
                              គ្រប់ \(f \in \E^A\) គេកំណត់ 
-                             \[(-f) \in \E^A :\; (-f)(x) =-f(x)\quad \text{ for all }\; x \in A\]
-                             ដែល \(-f(x)\) គឺជាចម្រាសរបស់ \(f(a)\) ក្នុង \(\E\) ចំពោះ $(+)$ ។ ដូច្នេះ \(\Bigl[f + (-f)\Bigr](x) = f(x) + \Bigl[-f(x)\Bigr] = 0_V\) ។ ដូច្នេះ \[f + (-f) = 0\]
+                             \[(-f) \in \E^A :\; (-f)(x) =-f(x), \quad \forall \; x \in A\]
+                             ដែល \(-f(x)\) គឺជាចម្រាសរបស់ \(f(x)\) ក្នុង \(\E\) ចំពោះ $(+)$ ។ <br/>
+                             
+                             ដូច្នេះ \[\Bigl[f + (-f)\Bigr](x) = f(x) + \Bigl(-f(x)\Bigr) =  f(x) -f(x) = 0_V\]  ដូច្នេះ \[f + (-f) = 0\]
                          </li>
                      </ul>
+                     ដូច្នេះ $(\E^A, +)$ ជាក្រុមអាបែល ។
                  </li>
              </ol>
          </div>
@@ -1617,15 +1621,20 @@ Here, \(+ : V^A \times V^A \to V^A\) and \(\cdot : \mathbb{R} \times V^A \to V^A
                     <ul style="list-style-type: disc; margin-left: 10px">
                         <li>
                             <a>លក្ខណៈចុះសម្រុងរវាងផលគុណនឹងស្កាលែរជាមួយនឹងផលគុណក្នុងកាយ៖</a><!--Compatibility of scalar multiplication with field multiplication--> គ្រប់ \(\alpha, \beta \in
-                    \mathbb{R}\) និង \(f \in V^A\) គេបាន 
-                    \[\Bigl[(\alpha \beta) \cdot f\Bigr](x) = (\alpha \beta) \cdot f(x)\]
-                    ដោយផលគុណនឹងស្កាលែរក្នុងលំហ \(V\) ផ្ទៀងផ្ទាត់៖ 
-                    \[\Bigl(\alpha \beta\Bigr) \cdot v = \alpha \cdot \Bigl(\beta \cdot v\Bigr),\quad \forall\; v \in V\]
-                    គេបាន \[(\alpha \beta) \cdot f(a) = \alpha \cdot \Bigl(\beta \cdot f(a)\Bigr) = \Bigl(\alpha \cdot
-                   (\beta \cdot f)\Bigr)(a)\]
+                    \mathbb{R}\) និង \(f \in \E^A\) គេបាន 
+                    \[\Bigl((\alpha \beta) \cdot f\Bigr)(x) = (\alpha \beta) \cdot f(x)\]
+                    ដោយផលគុណនឹងស្កាលែរក្នុងលំហ \(\E\) ផ្ទៀងផ្ទាត់៖ 
+                    \[\Bigl(\alpha \beta\Bigr) \cdot v = \alpha \cdot \Bigl(\beta \cdot v\Bigr),\quad \forall\; v \in \E\]
+                    គេបាន 
+                    \[(\alpha \beta) \cdot f(x) = \alpha \cdot \Bigl(\beta \cdot f(x)\Bigr) = \alpha \cdot \Bigl((\beta \cdot f) (x)\Bigr)= \Bigl(\alpha \cdot
+                   (\beta \cdot f)\Bigr)(x)\]
                        ដូច្នេះ 
                        \[(\alpha \beta) \cdot f = \alpha \cdot (\beta \cdot f)\]
                         </li>
+                    
+                    <li>
+                        
+                    </li>
                     </ul>
                 </li>
             </ol>
@@ -1729,182 +1738,238 @@ Here, \(+ : V^A \times V^A \to V^A\) and \(\cdot : \mathbb{R} \times V^A \to V^A
  
 
 
-    <my-example>
-        (Verify a subspace)
+<my-example>
+    (Verify a subspace)
 
-        <ol>
-            <li><!--The set $\mathbf W$ of real sequences which tend to zero at infinity, is a $\mathbb{R}$-vs,-->
-               សំណុំ $\mathbf W$ ជាស្វ៊ីតចំនួនពិត ដែលមានតួអនន្តខិតទៅរកសូន្យ កំណត់ដូចខាងក្រោម៖ 
-                $$
-                \mathbf W=\left\{\left(x_n\right)_{n \geq 0} \in \mathbb{R}^{\mathbb{N}}: \lim _{n \rightarrow \infty} x_n=0\right\}
-                $$
-               ចូរបង្ហាញថា  $\mathbf W$ ជាលំហវ៉ិចទ័ររងរបស់ $\E=\mathbb{R}^{\mathbb{N}}$ ? <!--It suffices to show that $\mathbf W$ is a vector subspace of $\E=\mathbb{R}^{\mathbb{N}}$-->
+    <ol>
+        <li>
+            <!--The set $\mathbf W$ of real sequences which tend to zero at infinity, is a $\mathbb{R}$-vs,-->
+            សំណុំ $\mathbf W$ ជាស្វ៊ីតចំនួនពិត ដែលមានតួអនន្តខិតទៅរកសូន្យ កំណត់ដូចខាងក្រោម៖ $$ \mathbf
+            W=\left\{\left(x_n\right)_{n \geq 0} \in \mathbb{R}^{\mathbb{N}}: \lim _{n \rightarrow \infty} x_n=0\right\}
+            $$ ចូរបង្ហាញថា $\mathbf W$ ជាលំហវ៉ិចទ័ររងរបស់ $\E=\mathbb{R}^{\mathbb{N}}$ ?
+            <!--It suffices to show that $\mathbf W$ is a vector subspace of $\E=\mathbb{R}^{\mathbb{N}}$-->
 
-                <div class="my-example-content" style="text-align: right;">
-                    <span id="SHLink_Soln1" class="soln-title SH-Link" >Show solution</span> <span id="SHImg_Soln1" class="fa fa-caret-right" aria-hidden="true"></span></div>
-                    <div id="SHObj_Soln1" class="soln-content  text-container" style="display: none; ">
-                        <!--Solution is for group discussion.-->
-                       <p> <b>ចម្លើយ.</b>
-                       ចូរបង្ហាញថា  $\mathbf W$ ជាលំហវ៉ិចទ័ររងរបស់ $\E=\mathbb{R}^{\mathbb{N}}$ 
-                       </p>
-    <div class="text-block active">                    
-    <ol type="i">
-        <li> <!--$W\neq \varnothing$?-->
-           បង្ហាញថា \( W \neq \varnothing \):
-            <br> 
-ដោយស្វ៊ីត \( (0, 0, \ldots) \) រួមទៅរក \( 0 \) គេបាន៖ 
-\[
-\lim_{n \to \infty} x_n = 0 \quad (\text{ true })
-\]
-នាំឱ្យ \( 0 \in W \) ។ ដូច្នេះ  \( W \neq \varnothing \) ។
-        </li>
-        </ol>
-                        </div>
-<div class="text-block">
-<ol type="i" start="2">
-<li> យក \( x = (x_0, x_1, \ldots, x_n, \ldots) \) និង \( y = (y_0, y_1, \ldots, y_n, \ldots) \) s.t 
-\[ \lim_{n \to \infty} x_n = 0, \quad \lim_{n \to \infty} y_n = 0 \]
+            <div class="my-example-content" style="text-align: right">
+                <span id="SHLink_Soln1" class="soln-title SH-Link">Show solution</span>
+                <span id="SHImg_Soln1" class="fa fa-caret-right" aria-hidden="true"></span>
+            </div>
+            <div id="SHObj_Soln1" class="soln-content text-container" style="display: none">
+                <!--Solution is for group discussion.-->
+                <p>
+                    <b>ចម្លើយ.</b>
+                    ចូរបង្ហាញថា $\mathbf W$ ជាលំហវ៉ិចទ័ររងរបស់ $\E=\mathbb{R}^{\mathbb{N}}$
+                </p>
+                <div class="text-block active">
+                    <ol type="i">
+                        <li>
+                            <!--$W\neq \varnothing$?-->
+                            បង្ហាញថា \( W \neq \varnothing \):
+                            <br />
+                            ដោយស្វ៊ីត \( (0, 0, \ldots) \) រួមទៅរក \( 0 \) គេបាន៖ \[ \lim_{n \to \infty} x_n = 0 \quad
+                            (\text{ true }) \] នាំឱ្យ \( 0 \in W \) ។ ដូច្នេះ \( W \neq \varnothing \) ។
+                        </li>
+                    </ol>
+                </div>
+                <div class="text-block">
+                    <ol type="i" start="2">
+                        <li>
+                            យក \( x = (x_0, x_1, \ldots, x_n, \ldots) \) និង \( y = (y_0, y_1, \ldots, y_n, \ldots) \)
+                            s.t \[ \lim_{n \to \infty} x_n = 0, \quad \lim_{n \to \infty} y_n = 0 \] ដោយ \( x, y \in W
+                            \) គេបានផលបូក៖ \[ x + y = (x_0 + y_0, x_1 + y_1, \ldots, x_n + y_n, \ldots) \] តែដោយ
+                            \[\lim_{n \to \infty} (x_n + y_n) = \lim_{n \to \infty} x_n + \lim_{n \to \infty} y_n = 0 +
+                            0 = 0 \] គេបាន \( x + y \in W \) ។ ដូច្នេះ \( W \) មានលក្ខណៈបំណិតចំពោះ $(+)$ ។
+                            <!--is closed under addition.-->
+                        </li>
+                    </ol>
+                </div>
 
-ដោយ \( x, y \in W \) គេបានផលបូក៖ 
-\[
-x + y = (x_0 + y_0, x_1 + y_1, \ldots, x_n + y_n, \ldots)
-\]
-តែដោយ 
-\[\lim_{n \to \infty} (x_n + y_n) = \lim_{n \to \infty} x_n + \lim_{n \to \infty} y_n = 0 + 0 = 0 \]
-គេបាន  \( x + y \in W \) ។ ដូច្នេះ \( W \) មានលក្ខណៈបំណិតចំពោះ $(+)$ ។ <!--is closed under addition.-->
-        </li>
-    </ol>
-                        </div>
-                        
- <div class="text-block">
-       <ol type="i" start="3">                       
-        <li> បង្ហាញថា \( W \) មានលក្ខណៈបំណិតចំពោះប្រមាណវិធីក្រៅ $(\cdot)$ (ប្រមាណវិធីគុណនឹងស្កាលែរ) :
-        <!--To show that \( W \) is closed under scalar multiplication:--><br>
-យក \( x = (x_0, x_1, \ldots, x_n, \ldots)\) ដែល \( \lim_{n \to \infty} x_n = 0 \) និងយក \( \lambda \in \mathbb R\) ។  គេបាន៖ 
+                <div class="text-block">
+                    <ol type="i" start="3">
+                        <li>
+                            បង្ហាញថា \( W \) មានលក្ខណៈបំណិតចំពោះប្រមាណវិធីក្រៅ $(\cdot)$ (ប្រមាណវិធីគុណនឹងស្កាលែរ) :
+                            <!--To show that \( W \) is closed under scalar multiplication:--><br />
+                            យក \( x = (x_0, x_1, \ldots, x_n, \ldots)\) ដែល \( \lim_{n \to \infty} x_n = 0 \) និងយក \(
+                            \lambda \in \mathbb R\) ។ គេបាន៖
 
-<!--We want to show that \( \lambda \cdot x \) also belongs to \( W \). The scalar multiplication is defined as: --> 
-\[
-\lambda \cdot x = (\lambda x_0, \lambda x_1, \ldots, \lambda x_n, \ldots)
-\]
-<!--To prove closure, we need to show that:
+                            <!--We want to show that \( \lambda \cdot x \) also belongs to \( W \). The scalar multiplication is defined as: -->
+                            \[ \lambda \cdot x = (\lambda x_0, \lambda x_1, \ldots, \lambda x_n, \ldots) \]
+                            <!--To prove closure, we need to show that:
 
 \[
 \lim_{n \to \infty} (\lambda x_n) = \lambda \cdot \lim_{n \to \infty} x_n.
 \]
 -->
-ដោយ \( \lim_{n \to \infty} x_n = 0 \) នោះគេបាន៖ 
-\[
-\lim_{n \to \infty} (\lambda x_n) = \lambda \cdot \lim_{n \to \infty} x_n = \lambda \cdot 0 = 0
-\]
+                            ដោយ \( \lim_{n \to \infty} x_n = 0 \) នោះគេបាន៖ \[ \lim_{n \to \infty} (\lambda x_n) =
+                            \lambda \cdot \lim_{n \to \infty} x_n = \lambda \cdot 0 = 0 \] ដូច្នេះ \( \lambda \cdot x
+                            \in W \) មានលក្ខណៈបំណិតចំពោះប្រមាណវិធីក្រៅ $(\cdot)$ ។
+                        </li>
+                    </ol>
+                    <p style="margin-top: 20px" class="indent20">
+                        ដូច្នេះ $W$ ជាលំហវ៉ិចទ័ររងរបស់ $(\mathbb R^{\mathbb N}, +, \cdot)$ ។
+                    </p>
+                </div>
+                <div class="nav-container">
+                    <span class="prevSign nav-sign">&#8810; Previous</span>
+                    <span class="nextSign nav-sign">Next &#8811;</span>
+                </div>
+            </div>
+        </li>
 
-ដូច្នេះ \( \lambda \cdot x \in W \) មានលក្ខណៈបំណិតចំពោះប្រមាណវិធីក្រៅ $(\cdot)$ ។ 
+        <li>
+            <!--Let $I = (a,b)$ or $[a,b]$ be an interval of $\mathbb{R}$, then let $\mathbf W = \mathcal{C}(I, \mathbb{R})$, the set continuous functions from $I$ to $\mathbb{R}$, is a $\mathbb{R}$-vector space.-->
+            គេឱ្យ $I = (a,b)$ ឬ $[a,b]$ ជាចន្លោះមួយរបស់ $\mathbb{R}$ និងយក $\mathbf W = \mathcal{C}(I, \mathbb{R} )$
+            សំណុំនៃអនុគមន៍ជាប់ កំណត់ពី $I$ ទៅ $\mathbb{R}$ គឺជា $\mathbb{R}$-vs ។
 
+            <br />
+
+            <!--It suffices to verify that $\mathbf W = \mathcal{C}(I, \mathbb{R})$ is a vector subspace of $\E=\mathbb{R}^I$, the vector space of all maps of $I$ to $\mathbb{R}$.-->
+            ចូរបង្ហាញថា $\mathbf W = \mathcal{C}(I, \mathbb{R})$ គឺជាលំហវ៉ិចទ័ររងរបស់ $\E=\mathbb{R}^I$
+            ដែលជាលំហវ៉ិចទ័រនៃគ្រប់អនុគមន៍ទាំងអស់កំណត់ពី $I$ ទៅ $\mathbb{R}$ ។
+
+            <div class="my-example-content" style="text-align: right">
+                <span id="SHLink_Soln2" class="soln-title SH-Link">Show solution</span>
+                <span id="SHImg_Soln2" class="fa fa-caret-right" aria-hidden="true"></span>
+            </div>
+            <div id="SHObj_Soln2" class="soln-content text-container" style="display: none">
+                <!--Solution is for group discussion.-->
+
+                <p>
+                    <i>ចម្លើយ. ${}$</i>
+                    គេមាន ៖
+                </p>
+
+                <ul>
+                    <li>\(I = (a,b)\) ឬ \(I = [a,b]\) ជាចន្លោះចំនួនពិត ។</li>
+                    <li>
+                        \(\mathbf{V} = \mathbb{R}^I\) សំណុំនៃគ្រប់អនុគមន៍កំណត់ពី \(I\) ទៅ \(\mathbb{R}\) ជា $\R$-vs ។
+                    </li>
+                    <li>
+                        \(\mathbf{W} = \mathcal{C}(I, \mathbb{R})\) ជាសំណុំនៃគ្រប់អនុគមន៍ជាប់កំណត់ពី \(I\) ទៅ
+                        \(\mathbb{R}\) ។
+                    </li>
+                </ul>
+                យើងនឹងស្រាយបញ្ជាក់ករណីខាងក្រោម៖
+                <div class="text-block active">
+                    <ol type="i" style="margin-left: 40px">
+                        <li>
+                            \(\mathbf{W} \subseteq \E\) <!--(Every continuous function is a function from \(I\) to
+                            \(\mathbb{R}\))--> :<br />
+
+                            យក \(f \in \mathbf{W}\) <br />
+                            តាមនិយមន័យរបស់ $\mathbf W$ គេបាន \(f: I \to \mathbb{R}\) ជាអនុគមន៍ជាប់កំណត់ពីចន្លោះ $I$ ទៅ $\mathbb
+                            R$ ។ គ្រប់អនុគមន៍ជាប់ពី \(I\) ទៅ 
+                            \(\mathbb{R}\) គឺជាអនុគមន៍កំណត់ពី \(I\) ទៅ 
+                            \(\mathbb{R}\) ។ ដូច្នេះ  \(f \in \E\) ។
+                        </li>
+                    </ol>
+                </div>
+                <div class="text-block">
+                    <ol type="i" start="2" style="margin-left: 40px">
+                        <li>
+                            \(\mathbf{W}\) ផ្ទុកវ៉ិចទ័រសូន្យ : <br />
+
+                            គេមានអនុគមន៍សូន្យ (zero function) \(\mathbf 0: I \to \mathbb{R}\) កំណត់ដោយ \(\mathbf 0(x) = 0\) ។<br />
+                            គេបាន \(\mathbf 0\) ជាអនុគមន៍ថេរកំណត់លើ \(I\) ។ <br />
+                            ដោយអនុគមន៍ថេរជាអនុគមន៍ជាប់ នោះគេបាន \(\mathbf 0 \in \mathbf{W}\) ។
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="text-block">
+                    <ol type="i" start="3" style="margin-left: 40px">
+                        <li>
+                            \(\mathbf{W}\) បិទចំពោះប្រមាណវិធីក្នុង $(+)$ :<br />
+
+                            យក \(f, g \in \mathbf{W}\) ។  ដូច្នេះ \(f\) និង \(g\) ជាអនុគមន៍ជាប់លើ \(I\) ។<br>
+
+                            សន្មត \(x_0 \in I\) ជាធាតុទូទៅ ។ <br/>
+                            
+                            ចំពោះគ្រប់ \(\varepsilon \gt 0\) យើងនឹងរក \(\delta \gt 0\) ដែល
+                            : \[ |x - x_0| \lt \delta \implies \Bigl|(f+g)(x) - (f+g)(x_0)\Bigr| \lt \varepsilon \]
+                            <ul style="margin-left: 20px">
+                                <li>តាមភាពជាប់របស់អនុគមន៍ \(f\) យក \(\varepsilon_1 = \frac{\varepsilon}{2}\) គេបាន៖
+  \[\exists \delta_1 \gt 0: |x - x_0| \lt \delta_1 \implies |f(x) - f(x_0)| \lt \frac{\epsilon}{2}\]
+                                                </li>
+                                                <li> ដូចគ្នា ចំពោះអនុគមន៍ \(g\) យក \(\varepsilon_2 =\frac{\varepsilon}{2}\) គេបាន៖ 
+                                                \[\exists \delta_2 \gt 0: |x - x_0| \lt \delta_2 \implies |g(x) - g(x_0)| \lt \frac{\varepsilon}{2}\]
+                                </li>
+                         </ul>
+                         ដោយយក \(\delta = \min(\delta_1, \delta_2)\) នោះបើ \(|x - x_0| \lt \delta\) គេបាន៖ 
+  \begin{eqnarray*}
+  \Bigl|(f+g)(x) - (f+g)(x_0)\Bigr| \;\;&=&\;\; \Bigl|f(x) + g(x) - f(x_0) - g(x_0)\Bigr|\\
+  \;\; &\leq &\;\;  \Bigl|f(x) - f(x_0)\Bigr| + \Bigl|g(x) - g(x_0)\Bigr| \\
+  \;\;&\lt &\;\;  \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+  \end{eqnarray*}
+ដូច្នេះ \(f+g\) ជាអនុគមន៍ជាប់លើ $I$ ។ ដូច្នេះ  \(f+g \in \mathbf{W}\) ។
+                        </li>
+                    </ol>
+                </div>
+                <div class="text-block">
+                    <ol type="i" start="4" style="margin-left: 40px">
+                        <li>\(\mathbf{W}\) បិទចំពោះប្រមាណវិធីក្រៅ $(\cdot)$ :
+                        <br/>
+                        
+                        សន្មត \(f\) ជាអនុគមន៍ជាប់កំណត់លើ \(I\) និងយក \(\alpha \in \R\) ។ តាង \(g(x) = (\alpha \cdot f)(x) = \alpha \cdot f(x)\) យើងនឹងបង្ហាញថាអនុគមន៍ \(g\) ជាប់ត្រង់ចំណុចទូទៅ \(x_0 \in I\) ?
+                        <br/>
+                        គ្រប់ \(\varepsilon \gt 0\) គេបាន៖ 
+                        
+    \begin{eqnarray*}
+   \Bigl|g(x) - g(x_0)\Bigr| \;\;&=&\;\; \Bigl|c \cdot f(x) - c \cdot f(x_0)\Bigr| \\
+   \;\;&=&\;\; |c| \times \Bigl|f(x) -  f(x_0)\Bigr| 
+   \end{eqnarray*}
+        <ul>
+            <li>
+                ករណី  \(c = 0\):<br/>
+                គេបាន \(g(x) = 0\) ចំពោះគ្រប់ \(x\) ។ ដូច្នេះ $g$ ជាអនុគមន៍ជាប់ ព្រោះជាអនុគមន៍ថេរ ។
+            </li>
+            <li>
+                ករណី  \(c \neq 0\): <br/>
+                ដោយ \(f\) ជាអនុគមន៍ជាប់ត្រង់ \(x_0\) នោះគ្រប់ \(\varepsilon \gt 0\) មាន  \(\delta_f \gt 0\) ដែល 
+     \[
+     |x - x_0| \lt \delta_f \implies |f(x) - f(x_0)| \lt \frac{\varepsilon}{|c|}
+     \]
+   ជ្រើសយក \(\delta = \delta_f\) នោះចំពោះ  \(|x - x_0| \lt \delta\) គេបាន ៖
+             \begin{eqnarray*}
+   \Bigl|g(x) - g(x_0)\Bigr| \;\;&=&\;\; |c|\times \Bigl|f(x) -  f(x_0)\Bigr| \\
+   \;\;&\lt &\;\; |c| \times \frac{\varepsilon}{|c|} = \varepsilon
+   \end{eqnarray*}
+           
+           ដូច្នេះ គ្រប់ \(\varepsilon \gt 0\) មាន  \(\delta = \delta_f \gt 0\) ដែល :
+    \[
+   |x - x_0| \lt \delta \implies |g(x) - g(x_0)| \lt \varepsilon
+   \]
+    ដូច្នេះ \(g\) ជាអនុគមន៍ជាប់ត្រង់ចំណុចទូទៅ $x_0\in I$ ។ ដូច្នេះ  \(\alpha \cdot f \in \mathbf{W}\) ។       
+            </li>
+        </ul>
+    ដូច្នេះ \(\mathbf{W} = \mathcal{C}(I, \mathbb{R})\) ជាលំហរងរបស់ \(\mathcal{E} = \mathbb{R}^I\) ។
+
+                        </li>
+                    </ol>
+                </div>
+                <div class="nav-container">
+                    <span class="prevSign nav-sign">&#8810; Previous</span>
+                    <span class="nextSign nav-sign">Next &#8811;</span>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <!--Let $\K$ be a commutative field. For any integer $n \geq 0$, we denote by $\mathbf W = \K_n[x]$ the part of $\E=\K[x]$ defined by,-->
+            យក $\K$ ជាកាយត្រឡប់ ។ ចំពោះគ្រប់ចំនួនគត់ $n \geq 0$ គេតាង $\mathbf W = \K_n[x]$ ជាសំណុំរងរបស់ $\E=\K[x]$
+            កំណត់ដូចខាងក្រោម៖ $$ \K_n[x]=\Bigl\{P \in \K[x]: \operatorname{deg}(P) \leq n\Bigr\} $$
+
+            <br />
+
+            បង្ហាញថា $\K_n[x]$ ជាលំហរងរបស់ $\K[x]$?
+
+            <div class="my-example-content" style="text-align: right">
+                <span id="SHLink_Soln3" class="soln-title SH-Link">Show solution</span>
+                <span id="SHImg_Soln3" class="fa fa-caret-right" aria-hidden="true"></span>
+            </div>
+            <div id="SHObj_Soln3" class="soln-content" style="display: none">Solution is for group discussion.</div>
         </li>
     </ol>
-    <p style="margin-top: 20px" class="indent20">ដូច្នេះ $W$ ជាលំហវ៉ិចទ័ររងរបស់ $(\mathbb R^{\mathbb N}, +, \cdot)$ ។ </p>
-                        </div>
-        <div class="nav-container">  
-        <span class="prevSign nav-sign">&#8810; Previous</span>  
-        <span class="nextSign nav-sign">Next &#8811;</span>  
-    </div>
-        </div>
-
-                
-            </li>
-
-            <li>
-                <!--Let $I = (a,b)$ or $[a,b]$ be an interval of $\mathbb{R}$, then let $\mathbf W = \mathcal{C}(I, \mathbb{R})$, the set continuous functions from $I$ to $\mathbb{R}$, is a $\mathbb{R}$-vector space.-->
-                គេឱ្យ $I = (a,b)$ ឬ $[a,b]$ ជាចន្លោះមួយរបស់ $\mathbb{R}$ និងយក $\mathbf W = \mathcal{C}(I, \mathbb{R} )$ សំណុំនៃអនុគមន៍ជាប់ កំណត់ពី $I$ ទៅ $\mathbb{R}$ គឺជា $\mathbb{R}$-vs ។
-                
-                <br>
-
-                <!--It suffices to verify that $\mathbf W = \mathcal{C}(I, \mathbb{R})$ is a vector subspace of $\E=\mathbb{R}^I$, the vector space of all maps of $I$ to $\mathbb{R}$.-->
-                ចូរបង្ហាញថា $\mathbf W = \mathcal{C}(I, \mathbb{R})$ គឺជាលំហវ៉ិចទ័ររងរបស់  $\E=\mathbb{R}^I$ ដែលជាលំហវ៉ិចទ័រនៃគ្រប់អនុគមន៍ទាំងអស់កំណត់ពី $I$ ទៅ $\mathbb{R}$ ។
-
-                <div class="my-example-content" style="text-align: right;">
-                    <span id="SHLink_Soln2" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln2" class="fa fa-caret-right" aria-hidden="true"></span></div>
-                    <div id="SHObj_Soln2" class="soln-content text-container" style="display: none;">
-                        <!--Solution is for group discussion.-->
-                
-   
-   <p>
-       <i>ចម្លើយ. ${}$</i>
-       គេមាន ៖
-   </p>
-
-   <ul>
-       <li>\(I = (a,b)\) ឬ \(I = [a,b]\) ជាចន្លោះចំនួនពិត ។</li>
-       <li>\(\mathbf{V} = \mathbb{R}^I\) សំណុំនៃគ្រប់អនុគមន៍កំណត់ពី  \(I\) ទៅ \(\mathbb{R}\) ជា $\K$-vs ។</li>
-       <li>
-           \(\mathbf{W} = \mathcal{C}(I, \mathbb{R})\) ជាសំណុំនៃគ្រប់អនុគមន៍ជាប់កំណត់ពី  \(I\) ទៅ \(\mathbb{R}\) ។
-       </li>
-   </ul>
-យើងនឹងស្រាយបញ្ជាក់ករណីខាងក្រោម៖ 
-       <div class="text-block active"> 
-        <ol type="i">
-            <li>\(\mathbf{W} \subseteq \E\) (Every continuous function is a function from \(I\) to \(\mathbb{R}\)) :<br>
-            
-            យក \(f \in \mathbf{W}\) ។ តាមនិយមន័យរបស់ $W$ គេបាន \(f: I \to \mathbb{R}\) ជាអនុគមន៍ជាប់កំណត់ពីចន្លោះ $I$ ទៅ $\mathbb R$ ។ ដូច្នេះ \(f \in \E\) ។
-            
-            </li>
-           </ol>
-                       
-       </div>
-            <ol type="i" start="2">    
-            <li>
-                \(\mathbf{W}\) ផ្ទុកវ៉ិចទ័រសូន្យ : <br>
-                
-                គេមានអនុគមន៍សូន្យ (zero function)  \(0: I \to \mathbb{R}\) កំណត់ដោយ  \(0(x) = 0\) ។<br>
-                គេបាន \(0\) ជាអនុគមន៍ថេរកំណត់លើ \(I\) ។ ដោយអនុគមន៍ថេរជាអនុគមន៍ជាប់ នោះគេបាន \(0 \in \mathbf{W}\) ។
-            </li>
-            
-            <li>
-                \(\mathbf{W}\) បិទចំពោះប្រមាណវិធីក្នុង $(+)$ :<br>
-                
-                យក \(f, g \in \mathbf{W}\) ។ គេបាន \(f\) និង \(g\) ជាអនុគមន៍ជាប់លើ  \(I\) ។<br>
-                
-                សន្មត  \(x_0 \in I\) ជាធាតុទូទៅ ។ ចំពោះគ្រប់  \(\epsilon \gt 0\) យើងនឹងរក \(\delta \gt 0\) ដែល :
-  \[
-           |x - x_0| \lt \delta \implies \Bigl|(f+g)(x) - (f+g)(x_0)\Bigr| \lt \epsilon
-    \]
-            </li>
-               
-            <li>
-                \(\mathbf{W}\) បិទចំពោះប្រមាណវិធីក្រៅ $(\cdot)$ :
-            </li>
-            
-            
-            
-        </ol>
-                   
-                   
-                    </div>
-
-                
-            </li>
-
-            <li>
-                <!--Let $\K$ be a commutative field. For any integer $n \geq 0$, we denote by $\mathbf W = \K_n[x]$ the part of $\E=\K[x]$ defined by,-->
-                យក $\K$ ជាកាយត្រឡប់ ។ ចំពោះគ្រប់ចំនួនគត់ $n \geq 0$ គេតាង $\mathbf W = \K_n[x]$ ជាសំណុំរងរបស់ $\E=\K[x]$ កំណត់ដូចខាងក្រោម៖ 
-                $$
-                \K_n[x]=\Bigl\{P \in \K[x]: \operatorname{deg}(P) \leq n\Bigr\}
-                $$
-
-                <br>
-
-                បង្ហាញថា $\K_n[x]$ ជាលំហរងរបស់ $\K[x]$?
-
-                <div class="my-example-content" style="text-align: right;">
-                    <span id="SHLink_Soln3" class="soln-title SH-Link">Show solution</span> <span id="SHImg_Soln3" class="fa fa-caret-right" aria-hidden="true"></span></div>
-                    <div id="SHObj_Soln3" class="soln-content" style="display: none;">
-                        Solution is for group discussion.
-                    </div>
-
-                
-
-            </li>
-        </ol>
-    </my-example>
+</my-example>
 
 <h3>ប្រមាណវិធីលើលំហរង (Operations on vector subspaces)</h3>
         
