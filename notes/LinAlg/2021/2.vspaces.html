@@ -1522,7 +1522,8 @@ a\bigl(b \cdot \mathbf{v}\bigr) \;\;&=&\;\; a\bigl(b v_1, b v_2, \ldots, b v_n\b
         យក $\E$ ជា $\K$-vs និងកំណតសំណុំ $A\neq \varnothing$ ។ គេតាង $\E^A$ ជាសំណុំនៃគ្រប់អនុគមន៍ទាំងអស់ កំណត់ពី $A$ ទៅ $\E$ ។
         ចូរបង្ហាញថាសំណុំ $\E^A$ គឺជា $\K$-vs ដែលមានប្រមាណវិធីក្រៅ ៖
         $$ \begin{array}{rccl} \cdot: &\K
-        \times \E^A & \longrightarrow & \E^A \\ &(\lambda, f) &\longmapsto &\lambda \cdot f \end{array} $$ ដែលមានលក្ខណៈខាងក្រោម៖ 
+        \times \E^A & \longrightarrow & \E^A \\ &(\lambda, f) &\longmapsto &\lambda \cdot f \end{array} $$ 
+        ចំពោះ $f, g\in \E^A$ និង $\lambda\in \K$ គេកំណត់ ៖ 
         <ol type="i">
             <li>
                 $\lambda \cdot f$ គឺជាអនុគមន៍ពី $A$ ទៅ $\E$ កំណត់ដោយ៖  
@@ -1632,7 +1633,26 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
                        \[(\alpha \beta) \cdot f = \alpha \cdot (\beta \cdot f)\]
                         </li>
                     
-                    <li>
+                    <li><a>ធាតុណឺតរបស់ប្រមាណវិធីគុណនឹងស្កាលែរ : <!--Identity element of scalar multiplication:--></a>
+                    <br/>
+គ្រប់ \(f \in \E^A\) គេបាន \[(1 \cdot f)(a) = 1 \cdot f(a)\]
+                       ដោយ \(1 \cdot v = v\) គ្រប់ \(v \in \E\) នោះគេបាន 
+                        \[1 \cdot f(a) = f(a) \implies  1 \cdot f = f\]
+                        </li>
+                        <li><a>លក្ខណៈបំបែករបស់ផលគុណនឹងស្កាលែរ និងប្រមាណវិធីបូកវ៉ិចទ័រ : <!-- Distributivity of scalar multiplication over vector addition ---> </a>
+គ្រប់ \(\alpha \in \mathbb{R}\) និងគ្រប់ \(f, g \in \E^A\) : 
+\[
+(\alpha \cdot (f + g))(a) = \alpha \cdot (f + g)(a) = \alpha \cdot (f(a) + g(a))\]
+ដោយវិធីគុណនឹងស្កាលែរ \(\E\) ផ្ទៀងផ្ទាត់៖ \(\alpha \cdot (v + w) = \alpha \cdot v + \alpha \cdot w\) គ្រប់ \(v, w \in \E\) នោះគេបាន៖ 
+\[\alpha \cdot (f(a) + g(a)) = (\alpha \cdot f(a)) + (\alpha \cdot g(a))\]
+ដូច្នេះ \((\alpha \cdot (f + g))(a) = ((\alpha \cdot f) + (\alpha \cdot g))(a)\)<br/>
+ដូច្នេះ
+\[\alpha \cdot (f + g) = (\alpha \cdot f) + (\alpha \cdot g)\]
+</li>
+
+<li>
+<a>Distributivity of scalar multiplication over field addition:</a>
+For \(\alpha, \beta \in \mathbb{R}\) and \(f \in V^A\), \(((\alpha + \beta) \cdot f)(a) = (\alpha + \beta) \cdot f(a)\). Since scalar multiplication in \(V\) satisfies \((\alpha + \beta) \cdot v = \alpha \cdot v + \beta \cdot v\) for \(v \in V\), \((\alpha + \beta) \cdot f(a) = (\alpha \cdot f(a)) + (\beta \cdot f(a))\). Thus, \(((\alpha + \beta) \cdot f)(a) = ((\alpha \cdot f) + (\beta \cdot f))(a)\), so \((\alpha + \beta) \cdot f = (\alpha \cdot f) + (\beta \cdot f)\).
                         
                     </li>
                     </ul>
