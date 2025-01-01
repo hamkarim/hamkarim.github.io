@@ -1030,9 +1030,9 @@ Par exemple, $\E=\mathbb{C}$ et $\K=\mathbb{R}, \E=\mathbb{R}$ et $\K=\mathbb{Q}
          <!--In particular, any field $\K$ can be considered as a vector space on itself.-->
     </my-example>
 
-   <p onclick="toggleAnswer('ex11')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump to solution.">&#8617;</span></p>
+   <p onclick="toggleAnswer('ex1')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump to solution.">&#8617;</span></p>
    
-   <div id="answer_ex11" class="soln-content text-container" style="display: none">
+   <div id="answer_ex1" class="soln-content text-container" style="display: none">
        <!--Solution is for group discussion.-->
        <b>ចម្លើយ.</b> ឧបមា $\E=\mathbb{C}$ និង $\K=\mathbb{R}$ ។ 
        <div class="text-block active">
@@ -1334,9 +1334,9 @@ où $x=\left(x_1, x_2, \ldots, x_n\right)$.-->
         <p> Left as exercise (1) </p>
 
     </div>-->
-     <p onclick="toggleAnswer('ex12')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump to solution.">&#8617;</span></p>
+     <p onclick="toggleAnswer('ex2')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump to solution.">&#8617;</span></p>
    
-   <div id="answer_ex12" class="soln-content text-container" style="display: none">
+   <div id="answer_ex2" class="soln-content text-container" style="display: none">
        <!--Solution is for group discussion.-->
        <b>ចម្លើយ.</b> យក $\E=\mathbb{R}^n$ និង $\K=\mathbb{R}$ ។ 
        <div class="text-block active">
@@ -1505,17 +1505,157 @@ a\bigl(b \cdot \mathbf{v}\bigr) \;\;&=&\;\; a\bigl(b v_1, b v_2, \ldots, b v_n\b
         $$
         \begin{array}{rccl}
         +: & \K[x]  \times \K[x] & \longrightarrow & \K[x] \\
-        &\Bigl(P(x), Q(x)\Bigr) & \longmapsto & P(x) + Q(x) = \sum_{i=0}^n\left(a_i + b_i\right) x^i
+        &\Bigl(P(x), Q(x)\Bigr) & \longmapsto & P(x) + Q(x) = \sum_{i=0}^{\max (n,m)}\left(a_i + b_i\right) x^i
         \end{array}
         $$
-        ដែល $P(x)=\sum_{i=0}^n a_i x^i$ និង $Q(x)=\sum_{i=0}^n b_i x^i$ ។
+        ដែល $P(x)=\sum_{i=0}^n a_i x^i$ និង $Q(x)=\sum_{i=0}^m b_i x^i$ ។
     </my-example>
     <p onclick="toggleAnswer('ex3')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref3" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
-    <div id="answer_ex3" class="box-lemma" style="display: none">
-        <p> Left as exercise (2) </p>
+    <div id="answer_ex3" class="box-lemma text-container" style="display: none; margin-bottom: 20px; padding-bottom: 30px; padding-top: 10px;">
+        <!--p> Left as exercise (2) </p-->
+       <!--Solution is for group discussion.-->
+    <div class="text-block active" style="padding-bottom: 10px;">
+       <i>ចម្លើយ. ${}$</i> យក $\K = \R$ ។  ដើម្បីបង្ហាញថា $\R[x]$ ជា $\R$-vs គេត្រូវផ្ទៀងផ្ទាត់ស្វ័យសត្យរបស់លំហវ៉ិចទ័រខាងក្រោម៖ <br/>
+       <p>
+       តាង $\begin{cases} 
+       P(x) = \sum_{i=0}^n a_i x^i &\\
+       Q(x)=\sum_{i=0}^m b_i x^i & \\
+       R(x) = \sum_{i=0}^p c_i x^i & 
+       \end{cases}$ 
+       ជាពហុធានៅក្នុង $\R[x]$ ដែល \( a_i, b_i, c_i \in \R \) ជាមេគុណរបស់ពហុធា និងមានដឺក្រេ \( n, m, p \) រៀងគ្នា និងយក  $\lambda, \beta \in\R$ ។</p>
+<ol type="i">
+    <li>
+        <a>បំណិត (closure):</a>
+        <ul style="margin-left: 15px">
+            <li>
+                Under scalar multiplication:<br />
+                គ្រប់ $\lambda \in \R$ និង $P(x) = \sum_{i=0}^n a_i x^i \in \R[x]$ គេបាន៖ 
+                \[
+                \lambda \cdot P(x) =
+                \lambda\cdot \sum_{i=0}^n a_i x^i = \sum_{i=0}^n (\lambda a_i) x^i
+                \] 
+                ដោយមេគុណនីមួយៗ $\lambda a_i \in \K$ នោះគេបាន $\lambda \cdot P(x)\in \R[x]$ ។
+            </li>
+
+            <li>
+                Under Addition:<br />
+                យក $P(x) = \sum_{i=0}^n a_i x^i$ និង $Q(x) = \sum_{i=0}^m b_i x^i$ ជាពហុធាពីរក្នុង $\R[x]$ ។ គេបាន៖
+                $$P(x) + Q(x) \;\; =\;\; \sum_{i=0}^{\max(n,m)} (a_i + b_i) x^i$$ ដោយមេគុណនីមួយៗ $(a_i + b_i) \in \R$ នោះគេបាន $
+                P(x) + Q(x) \in \R[x]$ ។
+                <!-- -The resulting sum is a polynomial with coefficients in $\K$
+- The degree of the result is at most $\max(n,m)$-->
+            </li>
+        </ul>
+    </li>
+
+    <li>
+        <a>Scalar multiplication properties:</a>
+        <ul style="margin-left: 15px">
+            <li>$1 \cdot P(x) \; \overset{?}{=}\; P(x)$ <br/>
+            គេបាន៖ 
+            \begin{eqnarray*}
+            1 \cdot P(x) \;\;&=&\;\; \sum_{i=0}^n (1 \cdot a_i) x^i \\
+            \;\;&=&\;\; \sum_{i=0}^n a_i x^i = P(x)
+            \end{eqnarray*}
+            </li>
+
+            <li>$\lambda\Bigl(\mu \cdot P(x)\Bigr) \;\overset{?}{=}\;  (\lambda\mu) \cdot P(x)$<br/>
+               គេបាន៖ 
+                \begin{eqnarray*}
+                \lambda\Bigl(\mu \cdot P(x)\Bigr) \;\;&=&\;\; \lambda\left(\sum_{i=0}^n (\mu a_i) x^i\right) \\
+                \;\;&=&\;\; \sum_{i=0}^n \lambda(\mu a_i) x^i\\
+                \;\;&=&\;\;  \sum_{i=0}^n (\lambda\mu) a_i x^i \\
+                \;\;&=&\;\; (\lambda\mu) \cdot P(x)
+                \end{eqnarray*}
+            </li>
+        </ul>
+    </li>
+    <li><a>Distributive properties:</a> 
+        <ul style="margin-left: 15px">
+           <li>
+               $\lambda\Bigl(P(x) + Q(x)\Bigr) \;\overset{?}{=}\; \lambda \cdot P(x) + \lambda \cdot Q(x)$: <br/>
+               គេបាន៖ 
+               \begin{eqnarray*}
+               \lambda\Bigl(P(x) + Q(x)\Bigr) \;\;&=&\;\; \lambda\left(\sum_{i=0}^{\max(n,m)} (a_i + b_i) x^i\right)\\
+               \;\;&=&\;\; \sum_{i=0}^{\max(n,m)} \lambda(a_i + b_i) x^i \\
+               \;\;&=&\;\; \sum_{i=0}^{\max(n,m)} (\lambda a_i + \lambda b_i) x^i \\
+               \;\;&=&\;\; \sum_{i=0}^n (\lambda a_i) x^i + \sum_{i=0}^m (\lambda b_i) x^i \\
+               \;\;&=&\;\; \lambda \cdot P(x) + \lambda \cdot Q(x)
+               \end{eqnarray*}
+           </li>
+           
+           <li>$(\lambda + \mu) \cdot P(x) \;\overset{?}{=}\; \lambda \cdot P(x) + \mu\cdot P(x)$: <br/>
+              គេបាន៖ 
+              \begin{eqnarray*}
+              (\lambda + \mu) \cdot P(x) \;\;&=&\;\;\sum_{i=0}^n \bigl((\lambda + \mu)a_i\bigr) x^i\\
+              \;\;&=&\;\; \sum_{i=0}^n (\lambda a_i + \mu a_i) x^i \\
+              \;\;&=&\;\; \lambda \cdot P(x) + \mu \cdot P(x)
+              \end{eqnarray*}
+           </li>
+       </ul>
+
+        
+        <br />
+    </li>
+    
+    <li><a>Associativity of addition:</a><br/>
+
+   យក \( P(x), Q(x), R(x) \in \K[x] \) គេបាន៖ 
+   \begin{eqnarray*}
+   \Bigl(P(x) + Q(x)\Bigr) + R(x) \;\;&=&\;\; \sum_{i=0}^{\max(n,m)} (a_i + b_i) x^i + \sum_{i=0}^{p} c_i x^i \\
+   \;\;&=&\;\; \sum_{i=0}^{\max(\max(n,m),p)} ((a_i + b_i) + c_i) x^i
+   \end{eqnarray*}
+   ម្យ៉ាងទៀត 
+   \begin{eqnarray*}
+   P(x) + \Bigl(Q(x) + R(x)\Bigr) \;\;&=&\;\; \sum_{i=0}^{n} a_i x^i + \sum_{i=0}^{\max(m,p)} (b_i + c_i) x^i \\
+   \;\;&=&\;\; \sum_{i=0}^{\max(n, \max(m,p))} \left( a_i + (b_i + c_i) \right) x^i
+   \end{eqnarray*}
+   ក្នុងផលបូកខាងលើ យក \(a_i, b_i \) ឬ \( c_i = 0 \) ក្នុងករណីសន្ទស្សន៍ $i \gt n, m, p$ រៀងគ្នា ។ ដោយប្រើលក្ខណៈផ្ដុំរបស់ $(+)$ នៅក្នុងកាយ $\R$: 
+   \[
+   (a_i + b_i) + c_i = a_i + (b_i + c_i)
+   \]
+   ដូច្នេះ គេបាន    
+   \[
+   (P(x) + Q(x)) + R(x) = P(x) + (Q(x) + R(x))
+   \]
+    </li>
+    
+    <li><a>Commutativity of addition:</a> <br/>
+   គ្រប់ពហុធា \( P(x), Q(x) \in \K[x] \) គេបាន៖ 
+   \begin{eqnarray*}
+   P(x) + Q(x) \;\;&=&\;\; \sum_{i=0}^{\max(n,m)} (a_i + b_i) x^i\\
+   \;\;&=&\;\; \sum_{i=0}^{\max(n,m)} (b_i + a_i) x^i\\
+   \;\;&=&\;\; Q(x) + P(x)
+   \end{eqnarray*}
+   ដោយប្រើលក្ខណៈត្រឡប់នៅក្នុង $\R$ គឺ : $a_i + b_i = b_i + a_i$។ ដូច្នេះ 
+   \[
+   P(x) + Q(x) = Q(x) + P(x)
+   \]
+    </li>
+
+    <li><a>Existence of the zero vector:</a><br/>
+    ពហុធាសូន្យ \( 0(x) = 0 \) គឺជាវ៉ិចទ័រសូន្យក្នុង  \( \R[x] \) ព្រោះគ្រប់មេគុណរបស់ពហុធាសូន្យ គឺស្មើសូន្យ ។ ដូច្នេះ គ្រប់ \( P(x) \in \R[x] \) គេបាន៖
+   \[
+   P(x) + 0 = \sum_{i=0}^n (a_i + 0) x^i =  P(x)
+   \]
+   ដូច្នេះ មាន \(0(x)\in \K[x] \) ជាធាតុណឺតចំពោះប្រមាណវិធីក្នុង $(+)$។
+    </li>
+    
+    <li><a>Existence of additive inverses:</a><br/>
+        
+   គ្រប់ពហុធា  \( P(x) = \sum_{i=0}^n a_i x^i \) គេមានពហុធា \((-1)\cdot P(x) = \sum_{i=0}^n (-a_i) x^i = -P(x)\) គឺជាចម្រាសរបស់ $P(x)$ ចំពោះប្រមាណវិធីបូក ព្រោះ
+   \[
+   P(x) + (-P(x)) = \sum_{i=0}^n (a_i - a_i) x^i = 0
+   \]
+    </li>
+</ol>
+<p>ដោយ \( \R[x] \) ផ្ទៀងផ្ទាត់គ្រប់លក្ខណៈរបស់លំហវ៉ិចទ័រ ដូច្នេះ \( (\K[x], +, \cdot )\) គឺជាលំហវ៉ិចទ័រកំណត់លើកាយ \( \R \) ។</p>
+
+
+<!--Therefore, $\K[x]$ is indeed a $\K$-vector space.-->
 
     </div>
-
+    </div>
 
     <my-example>
         <!--Let $\E$ be a $\K$-vs, $A$ be any non-empty set and $\E^A$ be the set of all maps from $A$ to $\E$. Then $\E^A$ is a $\K$-vs for the external law,-->
@@ -1528,14 +1668,14 @@ a\bigl(b \cdot \mathbf{v}\bigr) \;\;&=&\;\; a\bigl(b v_1, b v_2, \ldots, b v_n\b
             <li>
                 $\lambda \cdot f$ គឺជាអនុគមន៍ពី $A$ ទៅ $\E$ កំណត់ដោយ៖  
                 $$ 
-                \forall x \in A: (\lambda \cdot
+                \forall x \in A:\;  (\lambda \cdot
                 f)(x)=\lambda \cdot f(x) 
                 $$
             </li>
             <li>
                 បើ $f$ និង $g$ ជាអនុគមន៍ពី $A$ ទៅ $\E$ នោះគេបាន $f+g$ ក៏ជាអនុគមន៍ពី $A\to\E$ កំណត់ដោយ៖  
                 $$
-                \forall x \in A: (f+g)(x)=f(x)+g(x) 
+                \forall x \in A:\; (f+g)(x)=f(x)+g(x) 
                 $$
             </li>
         </ol>
@@ -1550,8 +1690,10 @@ a\bigl(b \cdot \mathbf{v}\bigr) \;\;&=&\;\; a\bigl(b v_1, b v_2, \ldots, b v_n\b
         <!--p> Left as exercise (3) </p-->
         
 <a>       
-    យក \( \E^A = \Bigl\{f \mid f : A \to V\Bigr\}\) ជាសំណុំនៃគ្រប់អនុគមន៍កំណត់ពី \(A\) ទៅ \(\E\) </a> ដែល $A\neq \varnothing$, $\E$ ជា $\R$-vs ។  គេកំណត់៖ 
-<ol type="i">
+    យក \( \E^A = \Bigl\{f \mid f : A \to V\Bigr\}\) ជាសំណុំនៃគ្រប់អនុគមន៍កំណត់ពី \(A\) ទៅ \(\E\) </a><br/> 
+    
+    ដែល $A\neq \varnothing$, $\E$ ជា $\R$-vs ។  គេកំណត់៖ 
+<ul>
     <li>
         <a>ប្រមាណវិធីក្នុង \((+)\) </a> របស់អនុគមន៍ \(f, g \in \E^A\) ត្រង់ចំណុចនីមួយៗ ៖
   \[
@@ -1566,7 +1708,7 @@ a\bigl(b \cdot \mathbf{v}\bigr) \;\;&=&\;\; a\bigl(b v_1, b v_2, \ldots, b v_n\b
   \]
 </li>
 
-</ol>
+</ul>
 i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to \E^A\) និងប្រមាណវិធីក្រៅ  \(\cdot : \mathbb{R} \times \E^A \to \E^A\) ។ <!-- which are internal and external operations on $V^A$-->
     </div>
          <div class="text-block">
@@ -1609,7 +1751,7 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
                              \[(-f) \in \E^A :\; (-f)(x) =-f(x), \quad \forall \; x \in A\]
                              ដែល \(-f(x)\) គឺជាចម្រាសរបស់ \(f(x)\) ក្នុង \(\E\) ចំពោះ $(+)$ ។ <br/>
                              
-                             ដូច្នេះ \[\Bigl[f + (-f)\Bigr](x) = f(x) + \Bigl(-f(x)\Bigr) =  f(x) -f(x) = 0_V\]  ដូច្នេះ \[f + (-f) = 0\]
+                             ដូច្នេះ \[\Bigl(f + (-f)\Bigr)(x) = f(x) + \Bigl(-f(x)\Bigr) =  f(x) -f(x) = 0_V\]  ដូច្នេះ \[f + (-f) = 0\]
                          </li>
                      </ul>
                      ដូច្នេះ $(\E^A, +)$ ជាក្រុមអាបែល ។
@@ -1639,27 +1781,38 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
                        ដោយ \(1 \cdot v = v\) គ្រប់ \(v \in \E\) នោះគេបាន 
                         \[1 \cdot f(a) = f(a) \implies  1 \cdot f = f\]
                         </li>
-                        <li><a>លក្ខណៈបំបែករបស់ផលគុណនឹងស្កាលែរ និងប្រមាណវិធីបូកវ៉ិចទ័រ : <!-- Distributivity of scalar multiplication over vector addition ---> </a>
+                        <li><a>លក្ខណៈបំបែករបស់ប្រមាណវិធីគុណនឹងស្កាលែរ និងប្រមាណវិធីបូកវ៉ិចទ័រ : <!-- Distributivity of scalar multiplication over vector addition ---> </a>
 គ្រប់ \(\alpha \in \mathbb{R}\) និងគ្រប់ \(f, g \in \E^A\) : 
 \[
-(\alpha \cdot (f + g))(a) = \alpha \cdot (f + g)(a) = \alpha \cdot (f(a) + g(a))\]
-ដោយវិធីគុណនឹងស្កាលែរ \(\E\) ផ្ទៀងផ្ទាត់៖ \(\alpha \cdot (v + w) = \alpha \cdot v + \alpha \cdot w\) គ្រប់ \(v, w \in \E\) នោះគេបាន៖ 
-\[\alpha \cdot (f(a) + g(a)) = (\alpha \cdot f(a)) + (\alpha \cdot g(a))\]
-ដូច្នេះ \((\alpha \cdot (f + g))(a) = ((\alpha \cdot f) + (\alpha \cdot g))(a)\)<br/>
-ដូច្នេះ
-\[\alpha \cdot (f + g) = (\alpha \cdot f) + (\alpha \cdot g)\]
+\Bigl(\alpha \cdot (f + g)\Bigr)(x) = \alpha \cdot (f + g)(x) = \alpha \cdot \Bigl(f(x) + g(x)\Bigr)\]
+ដោយវិធីគុណនឹងស្កាលែរផ្ទៀងផ្ទាត់៖ \(\alpha \cdot (v + w) = \alpha \cdot v + \alpha \cdot w\) គ្រប់ \(v, w \in \E\) នោះគេបាន៖ 
+\[\alpha \cdot \Bigl(f(x) + g(x)\Bigr) =\alpha \cdot f(x) + \alpha \cdot g(x)\]
+ដូច្នេះ \(\Bigl(\alpha \cdot (f + g)\Bigr)(x) = \Bigl((\alpha \cdot f) + (\alpha \cdot g)\Bigr)(x)\) ។  ដូច្នេះ
+\[\alpha \cdot (f + g) = \alpha \cdot f + \alpha \cdot g\]
 </li>
 
 <li>
-<a>Distributivity of scalar multiplication over field addition:</a>
-For \(\alpha, \beta \in \mathbb{R}\) and \(f \in V^A\), \(((\alpha + \beta) \cdot f)(a) = (\alpha + \beta) \cdot f(a)\). Since scalar multiplication in \(V\) satisfies \((\alpha + \beta) \cdot v = \alpha \cdot v + \beta \cdot v\) for \(v \in V\), \((\alpha + \beta) \cdot f(a) = (\alpha \cdot f(a)) + (\beta \cdot f(a))\). Thus, \(((\alpha + \beta) \cdot f)(a) = ((\alpha \cdot f) + (\beta \cdot f))(a)\), so \((\alpha + \beta) \cdot f = (\alpha \cdot f) + (\beta \cdot f)\).
+<a>លក្ខណៈបំបែករបស់ប្រមាណវិធីគុណនឹងស្កាលែរ លើប្រមាណវិធីបូកក្នុងកាយ : <!--Distributivity of scalar multiplication over field addition:--></a>
+គ្រប់ \(\alpha, \beta \in \mathbb{R}\) និង \(f \in \E^A\) គេបាន៖ 
+                       \[
+                       \Bigl((\alpha + \beta) \cdot f\Bigr)(x) = (\alpha + \beta) \cdot f(x)
+                       \]
+                       ដោយវិធីគុណនឹងស្កាលែរក្នុង \(\E\) ផ្ទៀងផ្ទាត់ \((\alpha + \beta) \cdot v = \alpha \cdot v + \beta \cdot v\) គ្រប់ \(v \in \E\) គេបាន៖  
+                       \[
+                       (\alpha + \beta) \cdot f(x) = \alpha \cdot f(x) + \beta \cdot f(x)
+                       \]
+                       ដូច្នេះ \( \Bigl((\alpha + \beta) \cdot f\Bigr)(x) = \Bigl((\alpha \cdot f) + (\beta \cdot f)\Bigr)(x)\) ។ ដូច្នេះ 
+                       \[
+                       (\alpha + \beta) \cdot f = \alpha \cdot f + \beta \cdot f
+                       \]
                         
                     </li>
                     </ul>
                 </li>
             </ol>
+           <p class="indent30"> ដូច្នេះ  $(\E^A, +, \cdot)$ គឺជា $\R$-vs ។</p>
         </div>
-       <div class="text-block">
+       <!--div class="text-block">
            <ol type="i">
                         <li>
                             
@@ -1680,7 +1833,8 @@ For \(\alpha, \beta \in \mathbb{R}\) and \(f \in V^A\), \(((\alpha + \beta) \cdo
            <p style="margin-top: 20px" class="indent20">
                ដូច្នេះ $(\mathbb C, +, \cdot)$ ជាលំហវ៉ិចទ័រកំណត់លើការយ $\mathbb R$ ។
            </p>
-       </div>
+       </div>-->
+       
        <div class="nav-container">
            <span class="prevSign nav-sign">&#8810; Previous</span>
            <span class="nextSign nav-sign">Next &#8811;</span>
