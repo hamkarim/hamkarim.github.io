@@ -605,13 +605,20 @@ window.MathJax = {
             background-color: cornsilk
         }
 
+    .center-nobd {
+            text-align: center!important; /* Center text horizontally */
+            padding: 20px; /* Add space inside the border */
+            width: 90%; /* Optional: Set a specific width */
+            margin: 20px auto; /* Center the <p> element itself */
+        }
+
     .noind-center {
             text-indent: 0px!important;
             text-align: center; /* Center text horizontally */
             /*border: 2px solid black; /* Add a border around the text */
-            /*padding: 10px; /* Add space inside the border */
+            padding: 20px; /* Add space inside the border */
             /*width: 70%; /* Optional: Set a specific width */
-            /*margin: 20px auto; /* Center the <p> element itself */
+            margin-bottom: 20px; /* Center the <p> element itself */
             /*background-color: cornsilk*/
         }
 
@@ -2612,12 +2619,15 @@ Let $W_1, W_2, \ldots, W_n$ be vector subspaces of $\E$, then $\bigcup_{k=1}^n W
         
         <li><b>$(\Longrightarrow)$:</b> 
         
-On procède par récurrence sur $n \geq 2$.
+On procède par récurrence sur $n \geq 2$. 
 Le cas $n=2$ est déjà vu, car tout corps est de caractéristique $\geq 2$.
 <br>
-Supposons, done que $n\gt 2$ et que la proposition est vérifiée pour tout enticr $m\lt n$. Soient $W_1, W_2, \ldots, W_n$ des sous-espaces vectoriels de $E$, tel que $W_1 \cup W_2 \cdots \cup W_n$ soit un sous-espace vectoriel de $E$.
+
+Supposons, donc que $n\gt 2$ et que la proposition est vérifiée pour tout enticr $m\lt n$. Soient $W_1, W_2, \ldots, W_n$ des sous-espaces vectoriels de $E$, tel que $W_1 \cup W_2 \cdots \cup W_n$ soit un sous-espace vectoriel de $E$.
 <br>
-Supposons, par absurde, que pour tout $i \in\{1,2, \ldots, n\}$, on a $\bigcup_{\substack{j=1 \\ j \neq i}}^n W_j \nsubseteq W_i$, done, en particuler, on a $\bigcup_{j=1}^{n-1} W_j \nsubseteq W_n$. D'autre part, d'après l'hypothèse de récurrence, on peut supposer que $W_n \nsubseteq \bigcup_{j=1}^{n-1} W_j$.
+
+Supposons, par absurde, que pour tout $i \in\{1,2, \ldots, n\}$, on a $\bigcup_{\substack{j=1 \\ j \neq i}}^n W_j \nsubseteq W_i$, done, en particuler, on a $\bigcup_{j=1}^{n-1} W_j \nsubseteq W_n$. <br/>
+D'autre part, d'après l'hypothèse de récurrence, on peut supposer que $W_n \nsubseteq \bigcup_{j=1}^{n-1} W_j$.
 Soient $x \in W_n$ ct $y \in \bigcup_{j=1}^{n-1} W_j$, tels que $x \notin \bigcup_{j=1}^{n-1} W_j$ et $y \notin W_n$.
 
 $$
@@ -2625,7 +2635,9 @@ $$
 $$
 
 
-Or, $\bigcup_{j=1}^n W_j$ est un sous-espace vectoriel de $E$, donc pour tout $\lambda \in K$, on a $\lambda x+y \in \bigcup_{j=1}^n W_j$. Remarquons que si $\lambda x+y \in W_j$, pour un certain $j \in\{1,2, \ldots, n-1\}$, alors pour tout $\mu \neq \lambda, \mu x+y \notin W_j$, car sinon, on aura $x \in W_j$, ce qui est absurde. $K$ est de caractéristique $\geq n$, done l'ensemble $\left\{1_K, 21_K, \ldots,(n-1) 1_K\right\}$ est de cardinal $n-1$, par suite, d`après la remarque précédente, pour chaque $j \in\{1,2, \ldots, n-1\}$, il existe un unique $\lambda_j$, avec $\lambda_j \in\left\{1_K, 21_K, \ldots,(n-1) 1_K\right\}$, tel que, $\lambda_j x+y \in W_j$. Or $y \in \bigcup_{i=1}^{n-1} W_j$, donc il existe $j \in\{1,2, \ldots, n-1\}$, tel que, $y \in W_j$. donc $x \in W_j$, car $\lambda_j x+y \in W_j$ et $\lambda_j \neq 0$, ce qui est absurde, $\operatorname{car} x \notin W_j$.
+Or, $\bigcup_{j=1}^n W_j$ est un sous-espace vectoriel de $E$, donc pour tout $\lambda \in K$, on a $\lambda x+y \in \bigcup_{j=1}^n W_j$. 
+       <br/>
+    Remarquons que si $\lambda x+y \in W_j$, pour un certain $j \in\{1,2, \ldots, n-1\}$, alors pour tout $\mu \neq \lambda, \mu x+y \notin W_j$, car sinon, on aura $x \in W_j$, ce qui est absurde. $K$ est de caractéristique $\geq n$, done l'ensemble $\left\{1_K, 21_K, \ldots,(n-1) 1_K\right\}$ est de cardinal $n-1$, par suite, d`après la remarque précédente, pour chaque $j \in\{1,2, \ldots, n-1\}$, il existe un unique $\lambda_j$, avec $\lambda_j \in\left\{1_K, 21_K, \ldots,(n-1) 1_K\right\}$, tel que, $\lambda_j x+y \in W_j$. Or $y \in \bigcup_{i=1}^{n-1} W_j$, donc il existe $j \in\{1,2, \ldots, n-1\}$, tel que, $y \in W_j$. donc $x \in W_j$, car $\lambda_j x+y \in W_j$ et $\lambda_j \neq 0$, ce qui est absurde, $\operatorname{car} x \notin W_j$.
         
         </li>
     </ol>
