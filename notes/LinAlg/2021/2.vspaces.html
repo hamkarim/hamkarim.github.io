@@ -509,6 +509,8 @@ window.MathJax = {
     <script>
         // Create element:
         const para = document.createElement("mydef");
+        const para = document.createElement("my-fig");
+        const para = document.createElement("fig-cap");
     </script>
 
 <!--- Show/Hide Toggle--->
@@ -554,6 +556,46 @@ window.MathJax = {
 <!--Previous/Next--->
 
 <style>
+    my-fig {
+        display: block;
+        margin: 20px 0;
+        text-align: center;
+    }
+    fig-cap {
+        display: block;
+        font-size: 14px;
+        color: #555;
+        margin-top: 10px;
+    }
+    .image-container {
+        display: flex;
+        justify-content: space-around; /* Adjust spacing */
+        align-items: center;
+    }
+    .image-container img {
+        /*width: 200px; /* Adjust image size */
+        margin: 5px;
+    }
+    .twocols {
+        display: flex; /* Use Flexbox to create columns */
+        justify-content: space-between; /* Space between the columns */
+        align-items: center; /* Align content vertically in the center */
+        text-align: center; /* Center text horizontally */
+        /*width: 80%; /* Optional: Adjust container width */
+        margin: 0 auto; /* Center the container on the page */
+        /*border: 1px solid #ccc; /* Optional: Add a border for visualization */
+        padding: 10px;
+        padding-top: 8px;
+        margin-top: -1em;
+    }
+
+    .column {
+        flex: 1; /* Each column takes up equal space */
+        margin: 0 10px; /* Optional: Add some spacing between columns */
+        padding: 10px; /* Optional: Add padding inside columns */
+        /*background-color: #f9f9f9; /* Optional: Column background color */
+        /*border: 1px solid #ddd; /* Optional: Add border for visualization */
+    }
     .center-text {
             text-align: center; /* Center text horizontally */
             border: 2px solid black; /* Add a border around the text */
@@ -562,7 +604,7 @@ window.MathJax = {
             margin: 20px auto; /* Center the <p> element itself */
             background-color: cornsilk
         }
-    
+
     .noind-center {
             text-indent: 0px!important;
             text-align: center; /* Center text horizontally */
@@ -572,7 +614,7 @@ window.MathJax = {
             /*margin: 20px auto; /* Center the <p> element itself */
             /*background-color: cornsilk*/
         }
-    
+
     .text-block {
         display: none;
         /*padding: 10px;
@@ -592,14 +634,14 @@ window.MathJax = {
         padding-bottom: 40px;
         padding-right: 10px;
     } */
-   /* .nav-link {  
-            cursor: pointer; /* Change cursor to pointer when hovering */  
-    /*        margin: 0 10px; /* Add some space around the navigation items */  
-    /*        font-size: 16px; /* Increase font size for visibility */  
-    /*        user-select: none; /* Prevent text selection */  
+   /* .nav-link {
+            cursor: pointer; /* Change cursor to pointer when hovering */
+    /*        margin: 0 10px; /* Add some space around the navigation items */
+    /*        font-size: 16px; /* Increase font size for visibility */
+    /*        user-select: none; /* Prevent text selection */
     /*    }  */
-    .text-container {  
-            position: relative; /* Set position context for absolute positioning of nav signs */  
+    .text-container {
+            position: relative; /* Set position context for absolute positioning of nav signs */
             padding: 20px; /* Add padding around text blocks */
             padding-bottom: 40px;
             padding-right: 10px;
@@ -607,31 +649,31 @@ window.MathJax = {
             border-left: 5px solid darkgray;
             border-bottom: 5px solid darkgray;
             border-radius: 20px;
-        } 
-       
-        .nav-sign {  
-            position: static; /* Position absolutely within the container */  
-            font-size: 16px; /* Increase font size for visibility */  
-            cursor: pointer; /* Change cursor to pointer when hovering */  
+        }
+
+        .nav-sign {
+            position: static; /* Position absolutely within the container */
+            font-size: 16px; /* Increase font size for visibility */
+            cursor: pointer; /* Change cursor to pointer when hovering */
             color: darkred;
             margin: 0 4px; /*Add margin for spacing*/
-        }  
-        .nav-container {  
-            position: absolute; /* Positioning relative to container */  
-            bottom: 5px; /* Position near the bottom */  
-            left: 50%; /* Centering left */  
-            transform: translateX(-50%); /* Adjust for element width to truly center */  
-        }  
-        .prevSign {  
-            left: 10px; /* Position to the bottom left */  
-            bottom: 10px; /* Position near the bottom */  
-            display: none; /* Initially hidden */  
-        }  
-        .nextSign {  
-            right: 10px; /* Position to the bottom right */  
-            bottom: 10px; /* Position near the bottom */  
-            display: inline; /* Initially visible */  
-        }  
+        }
+        .nav-container {
+            position: absolute; /* Positioning relative to container */
+            bottom: 5px; /* Position near the bottom */
+            left: 50%; /* Centering left */
+            transform: translateX(-50%); /* Adjust for element width to truly center */
+        }
+        .prevSign {
+            left: 10px; /* Position to the bottom left */
+            bottom: 10px; /* Position near the bottom */
+            display: none; /* Initially hidden */
+        }
+        .nextSign {
+            right: 10px; /* Position to the bottom right */
+            bottom: 10px; /* Position near the bottom */
+            display: inline; /* Initially visible */
+        }
 </style>
 <!---End code--->
 
@@ -826,7 +868,7 @@ window.MathJax = {
             <li><i>ចេះទ្រឹស្ដីបទទាំងឡាយទាក់ទងនឹង៖</i><!--b.Theoretical insights:</b-->
                 <ol type="i">
                     <li>
-                    <a>Properties and Theorems:</a> <!--to gain insights into fundamental properties and theorems related to vector spaces, such as the--> 
+                    <a>Properties and Theorems:</a> <!--to gain insights into fundamental properties and theorems related to vector spaces, such as the-->
                     ទទួលបានការយល់ដឹងស៊ីជម្រៅ អំពីលក្ខណៈ និងទ្រឹស្ដីបទជាមូលដ្ឋាន ទាក់ទងនឹងលំហវ៉ិចទ័រ ដូចជា <a>Rank-Nullity Theorem</a> និងគោលគំនិតរបស់ <a>orthogonality</a> ។</li>
                     <li><a>Abstract Thinking:</a> <!--to develop an ability to think abstractly and generalize ideas beyond specific examples.-->អភិវឌ្ឍសមត្ថភាពក្នុងការគិតបែបអរូបី និងធ្វើឱ្យមានគំនិតទូទៅ លើសពីឧទាហរណ៍ដែលមាន ។</li>
                 </ol>
@@ -877,7 +919,7 @@ window.MathJax = {
             </ol>
         </div>
     </my-defn>
-    
+
 <p class="rotingtxt">ham karim</p>
 
     <!--Footnote: -->
@@ -1026,20 +1068,20 @@ Par exemple, $\E=\mathbb{C}$ et $\K=\mathbb{R}, \E=\mathbb{R}$ et $\K=\mathbb{Q}
         &(\lambda, x) &\longmapsto& \lambda \cdot x=\lambda x
         \end{array}
         $$
-        ឧទាហរណ៍ [$\E=\mathbb{C}$ និង $\K=\mathbb{R}$],  [$\E=\mathbb{R}$ និង  $\K=\mathbb{Q}$] ឬ [$\E=\mathbb{C}$ និង $\K=\mathbb{Q}$] ។ ជាងពិសេស គ្រប់កាយ $\K$ អាចចាត់ទុកជាលំហវ៉ិចទ័រកំណត់លើកាយខ្លួនឯងបាន ។ 
+        ឧទាហរណ៍ [$\E=\mathbb{C}$ និង $\K=\mathbb{R}$],  [$\E=\mathbb{R}$ និង  $\K=\mathbb{Q}$] ឬ [$\E=\mathbb{C}$ និង $\K=\mathbb{Q}$] ។ ជាងពិសេស គ្រប់កាយ $\K$ អាចចាត់ទុកជាលំហវ៉ិចទ័រកំណត់លើកាយខ្លួនឯងបាន ។
          <!--In particular, any field $\K$ can be considered as a vector space on itself.-->
     </my-example>
 
    <p onclick="toggleAnswer('ex1')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump to solution.">&#8617;</span></p>
-   
+
    <div id="answer_ex1" class="soln-content text-container" style="display: none">
        <!--Solution is for group discussion.-->
-       <b>ចម្លើយ.</b> ឧបមា $\E=\mathbb{C}$ និង $\K=\mathbb{R}$ ។ 
+       <b>ចម្លើយ.</b> ឧបមា $\E=\mathbb{C}$ និង $\K=\mathbb{R}$ ។
        <div class="text-block active">
        <p class="indent30">យើងនឹងបង្ហាញថា $(\E, +)$ ជាក្រុមអាបែល ហើយផ្ទៀងផ្ទាត់បន្ថែមលក្ខណៈ (i.) ដល់ (iv.) ។</p>
            <ol type="a">
-               <li> 
-                   <a>បង្ហាញថា $(\E, +)$ ជាក្រុមអាបែល:</a> 
+               <li>
+                   <a>បង្ហាញថា $(\E, +)$ ជាក្រុមអាបែល:</a>
                     <ul style="list-style-type: disc; margin-left: inherit">
                         <li><i>លក្ខណៈផ្ដុំ៖ </i> យក $a,b,c \in \E$ គេបាន
                             \begin{eqnarray*}
@@ -1077,7 +1119,7 @@ Par exemple, $\E=\mathbb{C}$ et $\K=\mathbb{R}, \E=\mathbb{R}$ et $\K=\mathbb{Q}
                             \begin{cases}
                             x_e+x_a = x_a & \\
                             y_e+y_a = y_a
-                            \end{cases} \;\; \Longleftrightarrow \quad 
+                            \end{cases} \;\; \Longleftrightarrow \quad
                             \begin{cases}
                             x_e+x_a = 0+x_a & \\
                             y_e+y_a = 0+y_a
@@ -1096,7 +1138,7 @@ Par exemple, $\E=\mathbb{C}$ et $\K=\mathbb{R}, \E=\mathbb{R}$ et $\K=\mathbb{Q}
                             \begin{cases}
                             x_a+\alpha = 0 & \\
                             y_a+\beta = 0&
-                            \end{cases} \;\; \Longleftrightarrow \quad 
+                            \end{cases} \;\; \Longleftrightarrow \quad
                             \begin{cases}
                             x_a+\alpha = x_a + (-x_a) & \\
                             y_a+\beta = y_a + (-y_a) &
@@ -1106,7 +1148,7 @@ Par exemple, $\E=\mathbb{C}$ et $\K=\mathbb{R}, \E=\mathbb{R}$ et $\K=\mathbb{Q}
                         </li>
                     </ul>
                     ដូច្នេះ $(\E, +)$ ជាក្រុមអាបែល ។
-               
+
        </div>
        <div class="text-block">
            <ol type="a" start="2">
@@ -1176,7 +1218,7 @@ Par exemple, $\E=\mathbb{C}$ et $\K=\mathbb{R}, \E=\mathbb{R}$ et $\K=\mathbb{Q}
            <span class="nextSign nav-sign">Next &#8811;</span>
        </div>
    </div>
-   
+
    <!-- <p onclick="toggleAnswer('ex1')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
     <div id="answer_ex1" style="display: none">
         <-- Left as exercise (1).--
@@ -1313,14 +1355,14 @@ $$
 \end{array}
 $$
 où $x=\left(x_1, x_2, \ldots, x_n\right)$.-->
-        យក $\K$ ជាកាយត្រឡប់ ។ ចំពោះ $n \geq 1$ ចូរបង្ហាញថា  $\K^n$ គឺជា $\K$-vs ដែលមានប្រមាណវិធីក្នុង $(+)$ ៖ 
+        យក $\K$ ជាកាយត្រឡប់ ។ ចំពោះ $n \geq 1$ ចូរបង្ហាញថា  $\K^n$ គឺជា $\K$-vs ដែលមានប្រមាណវិធីក្នុង $(+)$ ៖
          $$
         \begin{array}{r cc l}
         +: &\K^n \times \K^n & \longrightarrow & \K^n \\
         &(x, y) & \longmapsto & x + y = \left( x_1 + y_1, \ldots,  x_n + y_n\right)
         \end{array}
         $$
-        និងប្រមាណវិធីក្រៅ $(\cdot)$ ៖ 
+        និងប្រមាណវិធីក្រៅ $(\cdot)$ ៖
         $$
         \begin{array}{r cc l}
         \cdot:&\K \times \K^n & \longrightarrow & \K^n \\
@@ -1335,28 +1377,28 @@ où $x=\left(x_1, x_2, \ldots, x_n\right)$.-->
 
     </div>-->
      <p onclick="toggleAnswer('ex2')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump to solution.">&#8617;</span></p>
-   
+
    <div id="answer_ex2" class="soln-content text-container" style="display: none">
        <!--Solution is for group discussion.-->
-       <b>ចម្លើយ.</b> យក $\E=\mathbb{R}^n$ និង $\K=\mathbb{R}$ ។ 
+       <b>ចម្លើយ.</b> យក $\E=\mathbb{R}^n$ និង $\K=\mathbb{R}$ ។
        <div class="text-block active">
        <p class="indent30">យើងនឹងបង្ហាញថា $(\E, +)$ ជាក្រុមអាបែល ហើយផ្ទៀងផ្ទាត់បន្ថែមលក្ខណៈ (i.) ដល់ (iv.) ។</p>
            <ol type="a">
-               <li> 
-                   <a>បង្ហាញថា $(\E, +)$ ជាក្រុមអាបែល:</a> 
+               <li>
+                   <a>បង្ហាញថា $(\E, +)$ ជាក្រុមអាបែល:</a>
                     <ul style="list-style-type: disc; margin-left: inherit">
-                       <li><a>លក្ខណៈបំណិត (Closure) ចំពោះ $(+)$</a>: បើយកវ៉ិចទ័រ \(\mathbf{u}, \mathbf{v} \in \mathbb{K}^n\) នោះគេបាន \(\mathbf{u} + \mathbf{v}\) ត្រូវតែនៅក្នុងសំណុំ \(\mathbb{K}^n\) ព្រោះ \(\mathbf{u} = (u_1, u_2, \ldots, u_n)\) និង \(\mathbf{v} = (v_1, v_2, \ldots, v_n)\) ដែលផលបូកកំណត់ដោយ៖ 
+                       <li><a>លក្ខណៈបំណិត (Closure) ចំពោះ $(+)$</a>: បើយកវ៉ិចទ័រ \(\mathbf{u}, \mathbf{v} \in \mathbb{K}^n\) នោះគេបាន \(\mathbf{u} + \mathbf{v}\) ត្រូវតែនៅក្នុងសំណុំ \(\mathbb{K}^n\) ព្រោះ \(\mathbf{u} = (u_1, u_2, \ldots, u_n)\) និង \(\mathbf{v} = (v_1, v_2, \ldots, v_n)\) ដែលផលបូកកំណត់ដោយ៖
    \[
    \mathbf{u} + \mathbf{v} = (u_1 + v_1, u_2 + v_2, \ldots, u_n + v_n).
    \]
-   ដោយផលបូកកូអរដោនេនីមួយៗ \(u_i + v_i\) ជារបស់ \(\mathbb{K}\) ចំពោះគ្រប់ \(i\) គេបាន \(\mathbf{u} + \mathbf{v} \in \mathbb{K}^n\) ។ ដូច្នេះ \(\mathbb{K}^n\) is closed. 
+   ដោយផលបូកកូអរដោនេនីមួយៗ \(u_i + v_i\) ជារបស់ \(\mathbb{K}\) ចំពោះគ្រប់ \(i\) គេបាន \(\mathbf{u} + \mathbf{v} \in \mathbb{K}^n\) ។ ដូច្នេះ \(\mathbb{K}^n\) is closed.
                        </li>
-                        <li><a>លក្ខណៈផ្ដុំចំពោះ $(+)$៖ </a> យក \(\mathbf{u}, \mathbf{v}, \mathbf{w} \in \mathbb{K}^n\) គេបាន៖ 
+                        <li><a>លក្ខណៈផ្ដុំចំពោះ $(+)$៖ </a> យក \(\mathbf{u}, \mathbf{v}, \mathbf{w} \in \mathbb{K}^n\) គេបាន៖
    \begin{eqnarray*}
    (\mathbf{u} + \mathbf{v}) + \mathbf{w}\;\; &=&\;\; \bigl(u_1 + v_1 , \ldots, u_n + v_n \bigr) + (w_1, \ldots, w_n)\\
    \;\;&=&\;\; \Bigl((u_1 + v_1) + w_1, (u_2 + v_2) + w_2, \ldots, (u_n + v_n) + w_n\Bigr)
    \end{eqnarray*}
-   ហើយ 
+   ហើយ
    \[
    \mathbf{u} + (\mathbf{v} + \mathbf{w}) = \Bigl(u_1 + (v_1 + w_1), u_2 + (v_2 + w_2), \ldots, u_n + (v_n + w_n)\Bigr)
    \]
@@ -1368,17 +1410,17 @@ où $x=\left(x_1, x_2, \ldots, x_n\right)$.-->
        </div>
         <div class="text-block">
                 <ul>
-                        <li><a>លក្ខណៈត្រឡប់ចំពោះ $(+)$</a>៖  
-                        យក \(\mathbf{u}, \mathbf{v} \in \mathbb{K}^n\) គេបាន 
+                        <li><a>លក្ខណៈត្រឡប់ចំពោះ $(+)$</a>៖
+                        យក \(\mathbf{u}, \mathbf{v} \in \mathbb{K}^n\) គេបាន
    \begin{eqnarray*}
    \mathbf{u} + \mathbf{v} \;\; &=& \;\;(u_1 + v_1, u_2 + v_2, \ldots, u_n + v_n) \\
    \;\; &=& \;\; (v_1 + u_1, v_2 + u_2, \ldots, v_n + u_n).
    \end{eqnarray*}
-   ព្រោះ \(u_i + v_i = v_i + u_i\) ចំពោះគ្រប់ \(i\) (លក្ខណៈត្រឡប់ចំពោះ $(+)$ ក្នុងកាយ \(\mathbb{K}\)) នោះគេបាន \(\mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}\) ។ 
+   ព្រោះ \(u_i + v_i = v_i + u_i\) ចំពោះគ្រប់ \(i\) (លក្ខណៈត្រឡប់ចំពោះ $(+)$ ក្នុងកាយ \(\mathbb{K}\)) នោះគេបាន \(\mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}\) ។
                         </li>
-                        
-                        <li><a>ធាតុណឺតចំពោះ $(+)$៖</a> 
-                            មានធាតុណឺត \(\mathbf{0} = (0, 0, \ldots, 0) \in \mathbb{K}^n\) ចំពោះ $(+)$ ព្រោះគ្រប់  \(\mathbf{v} \in \mathbb{K}^n\) គេបាន៖ 
+
+                        <li><a>ធាតុណឺតចំពោះ $(+)$៖</a>
+                            មានធាតុណឺត \(\mathbf{0} = (0, 0, \ldots, 0) \in \mathbb{K}^n\) ចំពោះ $(+)$ ព្រោះគ្រប់  \(\mathbf{v} \in \mathbb{K}^n\) គេបាន៖
    \begin{eqnarray*}
    \mathbf{v} + \mathbf{0} &=& (v_1 + 0, v_2 + 0, \ldots, v_n + 0) \\
    &=& (v_1, v_2, \ldots, v_n) \\
@@ -1389,7 +1431,7 @@ où $x=\left(x_1, x_2, \ldots, x_n\right)$.-->
 
                     <li><a>ធាតុច្រាសចំពោះ $(+)$៖ </a> គ្រប់ \(\mathbf{v} \in \mathbb{K}^n\) មាន \(-\mathbf{v} = (-v_1, -v_2, \ldots, -v_n)\) ដែល :
    \begin{eqnarray*}
-   \mathbf{v} + (-\mathbf{v}) 
+   \mathbf{v} + (-\mathbf{v})
   &=& (v_1 + (-v_1), v_2 + (-v_2), \ldots, v_n + (-v_n)) \\
   &=& (0, 0, \ldots, 0) \\
   &=& \mathbf{0}
@@ -1399,27 +1441,27 @@ où $x=\left(x_1, x_2, \ldots, x_n\right)$.-->
                     </ul>
                We conclude that \((\mathbb{K}^n, +)\) is indeed an abelian group. \(\blacksquare\)
    <!-- ដូច្នេះ $(\E, +)$ ជាក្រុមអាបែល ។ -->
-               
+
        </div>
        <div class="text-block">
            <ul>
                <li>
                    <a>លក្ខណៈបំបែក៖ </a>
-                
+
             <i>ធៀបនឹងប្រមាណវិធីក្នុង $(+)$ (Distributive property w.r.t vector addition)</i>៖ <br>
 
-យក \(\mathbf{u} = (u_1, u_2, \ldots, u_n)\) និង \(\mathbf{v} = (v_1, v_2, \ldots, v_n)\) ។ គេបាន៖ 
+យក \(\mathbf{u} = (u_1, u_2, \ldots, u_n)\) និង \(\mathbf{v} = (v_1, v_2, \ldots, v_n)\) ។ គេបាន៖
 \[
 \mathbf{u} + \mathbf{v} = (u_1 + v_1, u_2 + v_2, \ldots, u_n + v_n).
 \]
-ដោយគុណនឹងស្កាលែរ $a$ គេបាន៖ 
+ដោយគុណនឹងស្កាលែរ $a$ គេបាន៖
 \begin{eqnarray*}
 a(\mathbf{u} + \mathbf{v}) &=& a(u_1 + v_1, u_2 + v_2, \ldots, u_n + v_n) \\
 &=& \Bigl(a(u_1 + v_1), a(u_2 + v_2), \ldots, a(u_n + v_n)\Bigr)
 \end{eqnarray*}
 ដោយប្រើលក្ខណៈបំបែករបស់ប្រមាណវិធីគុណក្នុងកាយ \(\mathbb{K}\) គេបាន \(a(u_i + v_i) =  a u_i + a v_i\) ចំពោះគ្រប់ $i$។
-ដូច្នេះ គេបាន៖ 
-\[a(\mathbf{u} + \mathbf{v}) = a \cdot \mathbf{u} + a \cdot \mathbf{v}\] 
+ដូច្នេះ គេបាន៖
+\[a(\mathbf{u} + \mathbf{v}) = a \cdot \mathbf{u} + a \cdot \mathbf{v}\]
 
 <br>
 
@@ -1429,7 +1471,7 @@ a(\mathbf{u} + \mathbf{v}) &=& a(u_1 + v_1, u_2 + v_2, \ldots, u_n + v_n) \\
 \[
 (a + b) \cdot \mathbf{v} = (a + b)(v_1, v_2, \ldots, v_n) = \Bigl((a + b)v_1, (a + b)v_2, \ldots, (a + b)v_n\Bigr)
 \]
-ដោយប្រើលក្ខណៈបំបែកក្នុង  \(\mathbb{K}\) គេបាន៖ 
+ដោយប្រើលក្ខណៈបំបែកក្នុង  \(\mathbb{K}\) គេបាន៖
 \begin{eqnarray*}
 \Bigl((a + b)v_1, (a + b)v_2, \ldots, (a + b)v_n\Bigr) \;\;&=&\;\; (av_1 + bv_1, av_2 + bv_2, \ldots, av_n + bv_n)\\
 \;\;&=&\;\; (a v_1, a v_2, \ldots, a v_n) + (b v_1, b v_2, \ldots, b v_n) \\ \;\;&=&\;\; a \cdot \mathbf{v} + b \cdot \mathbf{v}
@@ -1437,7 +1479,7 @@ a(\mathbf{u} + \mathbf{v}) &=& a(u_1 + v_1, u_2 + v_2, \ldots, u_n + v_n) \\
 ដូច្នេះ \[(a + b) \cdot \mathbf{v} = a \cdot \mathbf{v} + b \cdot \mathbf{v}\]
                </li>
            </ul>
-           
+
        </div>
        <div class="text-block">
            <ul>
@@ -1447,21 +1489,21 @@ a(\mathbf{u} + \mathbf{v}) &=& a(u_1 + v_1, u_2 + v_2, \ldots, u_n + v_n) \\
 \[
 b \cdot \mathbf{v} = (b v_1, b v_2, \ldots, b v_n).
 \]
-បន្ទាប់មកគុណនឹងស្កាលែរ \(a\) គេបាន៖ 
+បន្ទាប់មកគុណនឹងស្កាលែរ \(a\) គេបាន៖
 \begin{eqnarray*}
 a\bigl(b \cdot \mathbf{v}\bigr) \;\;&=&\;\; a\bigl(b v_1, b v_2, \ldots, b v_n\bigr) \\
 \;\;&=&\;\; \Bigl(a(b v_1), a(b v_2), \ldots, a(b v_n)\Bigr)
 \end{eqnarray*}
-តាមលក្ខណៈផ្ដុំរបស់ប្រមាណវិធីគុណក្នុងកាយ \(\mathbb{K}\) គេបាន៖ 
+តាមលក្ខណៈផ្ដុំរបស់ប្រមាណវិធីគុណក្នុងកាយ \(\mathbb{K}\) គេបាន៖
 \[
 \Bigl(a(b v_1), a(b v_2), \ldots, a(b v_n) \Bigr)= \Bigl((ab) v_1, (ab) v_2, \ldots, (ab) v_n \Bigr)
 \]
 ដូច្នេះ \[a(b \cdot \mathbf{v}) = (ab) \cdot \mathbf{v}\]
                         </li>
            </ul>
-        
+
        </div>
-       
+
        <div class="text-block">
            <ul>
                <li>
@@ -1471,7 +1513,7 @@ a\bigl(b \cdot \mathbf{v}\bigr) \;\;&=&\;\; a\bigl(b v_1, b v_2, \ldots, b v_n\b
 \[
 1 \cdot \mathbf{v} = 1(v_1, v_2, \ldots, v_n) = (1 \cdot v_1, 1 \cdot v_2, \ldots, 1 \cdot v_n).
 \]
-ដោយ $1$ ជាធាតុណឺតចំពោះប្រមាណវិធីគុណក្នុង \(\mathbb{K}\) គេបាន៖ 
+ដោយ $1$ ជាធាតុណឺតចំពោះប្រមាណវិធីគុណក្នុង \(\mathbb{K}\) គេបាន៖
 \[
 (1 \cdot v_1, 1 \cdot v_2, \ldots, 1 \cdot v_n) = (v_1, v_2, \ldots, v_n) = \mathbf{v}
 \]
@@ -1480,7 +1522,7 @@ a\bigl(b \cdot \mathbf{v}\bigr) \;\;&=&\;\; a\bigl(b v_1, b v_2, \ldots, b v_n\b
            </ul>
 
    <p style="margin-top: 20px" class="indent20">
-ដូច្នេះ ប្រមាណវិធីក្នុង $(+)$ និងប្រមាណវិធីក្រៅ $(\cdot)$ កំណត់លើ  \(\mathbb{K}^n\) ផ្ទៀងផ្ទាត់លក្ខខណ្ឌចាំបាច់របស់លំហវ៉ិចទ័រ ។ 
+ដូច្នេះ ប្រមាណវិធីក្នុង $(+)$ និងប្រមាណវិធីក្រៅ $(\cdot)$ កំណត់លើ  \(\mathbb{K}^n\) ផ្ទៀងផ្ទាត់លក្ខខណ្ឌចាំបាច់របស់លំហវ៉ិចទ័រ ។
      i.e., $(\mathbb{K}^n, +, \cdot)$ ជាលំហវ៉ិចទ័រកំណត់លើកាយ $\K = \mathbb R$ ។
            </p>
        </div>
@@ -1489,19 +1531,19 @@ a\bigl(b \cdot \mathbf{v}\bigr) \;\;&=&\;\; a\bigl(b v_1, b v_2, \ldots, b v_n\b
            <span class="nextSign nav-sign">Next &#8811;</span>
        </div>
    </div>
-   
+
 
 
     <my-example>
        <!--Let $\K$ be a field and $\K[x]$ be the ring of polynomials with coefficients in $\K$. Then $\K[x]$ is a $\K$-vs for the external law,-->
-        យក $\K$ ជាកាយ និងកំណត់ $\K[x]$ ជាកងពហុធាមានមេគុណកំណត់ក្នុងកាយ $\K$ ។ បង្ហាញថា $\K[x]$ គឺជា $\K$-vs ចំពោះប្រមាណវិធីក្រៅ $(\cdot)$ ៖ 
+        យក $\K$ ជាកាយ និងកំណត់ $\K[x]$ ជាកងពហុធាមានមេគុណកំណត់ក្នុងកាយ $\K$ ។ បង្ហាញថា $\K[x]$ គឺជា $\K$-vs ចំពោះប្រមាណវិធីក្រៅ $(\cdot)$ ៖
         $$
         \begin{array}{rccl}
         \cdot: & \K \times \K[x] & \longrightarrow & \K[x] \\
         &\Bigl(\lambda, P(x)\Bigr) & \longmapsto &\lambda \cdot P(x)=\sum_{i=0}^n\left(\lambda a_i\right) x^i
         \end{array}
         $$
-        និងប្រមាណវិធីក្នុង $(+)$ ៖ 
+        និងប្រមាណវិធីក្នុង $(+)$ ៖
         $$
         \begin{array}{rccl}
         +: & \K[x]  \times \K[x] & \longrightarrow & \K[x] \\
@@ -1511,18 +1553,18 @@ a\bigl(b \cdot \mathbf{v}\bigr) \;\;&=&\;\; a\bigl(b v_1, b v_2, \ldots, b v_n\b
         ដែល $P(x)=\sum_{i=0}^n a_i x^i$ និង $Q(x)=\sum_{i=0}^m b_i x^i$ ។
     </my-example>
     <p onclick="toggleAnswer('ex3')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref3" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
-    
+
        <div id="answer_ex3" class="box-lemma text-container" style="display: none; margin-bottom: 20px; padding-bottom: 30px; padding-top: 10px;">
         <!--p> Left as exercise (2) </p-->
        <!--Solution is for group discussion.-->
     <div class="text-block active" style="padding-bottom: 10px;">
        <i>ចម្លើយ. ${}$</i> យក $\K = \R$ ។  ដើម្បីបង្ហាញថា $\R[x]$ ជា $\R$-vs គេត្រូវផ្ទៀងផ្ទាត់ស្វ័យសត្យរបស់លំហវ៉ិចទ័រខាងក្រោម៖ <br/>
        <p>
-       តាង $\begin{cases} 
+       តាង $\begin{cases}
        P(x) = \sum_{i=0}^n a_i x^i &\\
        Q(x)=\sum_{i=0}^m b_i x^i & \\
-       R(x) = \sum_{i=0}^p c_i x^i & 
-       \end{cases}$ 
+       R(x) = \sum_{i=0}^p c_i x^i &
+       \end{cases}$
        ជាពហុធានៅក្នុង $\R[x]$ ដែល \( a_i, b_i, c_i \in \R \) ជាមេគុណរបស់ពហុធា និងមានដឺក្រេ \( n, m, p \) រៀងគ្នា និងយក  $\lambda, \beta \in\R$ ។</p>
 <ol type="i">
     <li>
@@ -1530,11 +1572,11 @@ a\bigl(b \cdot \mathbf{v}\bigr) \;\;&=&\;\; a\bigl(b v_1, b v_2, \ldots, b v_n\b
         <ul style="margin-left: 15px">
             <li><b>ចំពោះប្រមាណវិធីក្រៅ </b>
                 (Under scalar multiplication):<br />
-                គ្រប់ $\lambda \in \R$ និង $P(x) = \sum_{i=0}^n a_i x^i \in \R[x]$ គេបាន៖ 
+                គ្រប់ $\lambda \in \R$ និង $P(x) = \sum_{i=0}^n a_i x^i \in \R[x]$ គេបាន៖
                 \[
                 \lambda \cdot P(x) =
                 \lambda\cdot \sum_{i=0}^n a_i x^i = \sum_{i=0}^n (\lambda a_i) x^i
-                \] 
+                \]
                 ដោយមេគុណនីមួយៗ $\lambda a_i \in \K$ នោះគេបាន $\lambda \cdot P(x)\in \R[x]$ ។
             </li>
 
@@ -1551,12 +1593,12 @@ a\bigl(b \cdot \mathbf{v}\bigr) \;\;&=&\;\; a\bigl(b v_1, b v_2, \ldots, b v_n\b
         </ol>
         </div>
         <div class="text-block">
-     <ol type="i" start="2"> 
+     <ol type="i" start="2">
     <li>
         <a>លក្ខណៈរបស់ផលគុណនឹងស្កាលែរ (Scalar multiplication properties):</a>
         <ul style="margin-left: 15px">
             <li>$1 \cdot P(x) \; \overset{?}{=}\; P(x)$ <br/>
-            គេបាន៖ 
+            គេបាន៖
             \begin{eqnarray*}
             1 \cdot P(x) \;\;&=&\;\; \sum_{i=0}^n (1 \cdot a_i) x^i \\
             \;\;&=&\;\; \sum_{i=0}^n a_i x^i = P(x)
@@ -1564,7 +1606,7 @@ a\bigl(b \cdot \mathbf{v}\bigr) \;\;&=&\;\; a\bigl(b v_1, b v_2, \ldots, b v_n\b
             </li>
 
             <li>$\lambda\Bigl(\mu \cdot P(x)\Bigr) \;\overset{?}{=}\;  (\lambda\mu) \cdot P(x)$<br/>
-               គេបាន៖ 
+               គេបាន៖
                 \begin{eqnarray*}
                 \lambda\Bigl(\mu \cdot P(x)\Bigr) \;\;&=&\;\; \lambda\left(\sum_{i=0}^n (\mu a_i) x^i\right) \\
                 \;\;&=&\;\; \sum_{i=0}^n \lambda(\mu a_i) x^i\\
@@ -1577,12 +1619,12 @@ a\bigl(b \cdot \mathbf{v}\bigr) \;\;&=&\;\; a\bigl(b v_1, b v_2, \ldots, b v_n\b
             </ol>
            </div>
               <div class="text-block">
-           <ol type="i" start="3"> 
-    <li><a>លក្ខណៈបំបែក (Distributive properties):</a> 
+           <ol type="i" start="3">
+    <li><a>លក្ខណៈបំបែក (Distributive properties):</a>
         <ul style="margin-left: 15px">
            <li>
                $\lambda\Bigl(P(x) + Q(x)\Bigr) \;\overset{?}{=}\; \lambda \cdot P(x) + \lambda \cdot Q(x)$: <br/>
-               គេបាន៖ 
+               គេបាន៖
                \begin{eqnarray*}
                \lambda\Bigl(P(x) + Q(x)\Bigr) \;\;&=&\;\; \lambda\left(\sum_{i=0}^{\max(n,m)} (a_i + b_i) x^i\right)\\
                \;\;&=&\;\; \sum_{i=0}^{\max(n,m)} \lambda(a_i + b_i) x^i \\
@@ -1591,9 +1633,9 @@ a\bigl(b \cdot \mathbf{v}\bigr) \;\;&=&\;\; a\bigl(b v_1, b v_2, \ldots, b v_n\b
                \;\;&=&\;\; \lambda \cdot P(x) + \lambda \cdot Q(x)
                \end{eqnarray*}
            </li>
-           
+
            <li>$(\lambda + \mu) \cdot P(x) \;\overset{?}{=}\; \lambda \cdot P(x) + \mu\cdot P(x)$: <br/>
-              គេបាន៖ 
+              គេបាន៖
               \begin{eqnarray*}
               (\lambda + \mu) \cdot P(x) \;\;&=&\;\;\sum_{i=0}^n \bigl((\lambda + \mu)a_i\bigr) x^i\\
               \;\;&=&\;\; \sum_{i=0}^n (\lambda a_i + \mu a_i) x^i \\
@@ -1605,41 +1647,41 @@ a\bigl(b \cdot \mathbf{v}\bigr) \;\;&=&\;\; a\bigl(b v_1, b v_2, \ldots, b v_n\b
             </ol>
         </div>
         <div class="text-block">
-           <ol type="i" start="4"> 
+           <ol type="i" start="4">
     <li><a>លក្ខណៈផ្ដុំចំពោះ $+$ (Associativity of addition):</a><br/>
 
-   យក \( P(x), Q(x), R(x) \in \K[x] \) គេបាន៖ 
+   យក \( P(x), Q(x), R(x) \in \K[x] \) គេបាន៖
    \begin{eqnarray*}
    \Bigl(P(x) + Q(x)\Bigr) + R(x) \;\;&=&\;\; \sum_{i=0}^{\max(n,m)} (a_i + b_i) x^i + \sum_{i=0}^{p} c_i x^i \\
    \;\;&=&\;\; \sum_{i=0}^{\max(\max(n,m),p)} ((a_i + b_i) + c_i) x^i
    \end{eqnarray*}
-   ម្យ៉ាងទៀត 
+   ម្យ៉ាងទៀត
    \begin{eqnarray*}
    P(x) + \Bigl(Q(x) + R(x)\Bigr) \;\;&=&\;\; \sum_{i=0}^{n} a_i x^i + \sum_{i=0}^{\max(m,p)} (b_i + c_i) x^i \\
    \;\;&=&\;\; \sum_{i=0}^{\max(n, \max(m,p))} \left( a_i + (b_i + c_i) \right) x^i
    \end{eqnarray*}
-   ក្នុងផលបូកខាងលើ យក \(a_i, b_i \) ឬ \( c_i = 0 \) ក្នុងករណីសន្ទស្សន៍ $i \gt n, m, p$ រៀងគ្នា ។ ដោយប្រើលក្ខណៈផ្ដុំរបស់ $(+)$ នៅក្នុងកាយ $\R$: 
+   ក្នុងផលបូកខាងលើ យក \(a_i, b_i \) ឬ \( c_i = 0 \) ក្នុងករណីសន្ទស្សន៍ $i \gt n, m, p$ រៀងគ្នា ។ ដោយប្រើលក្ខណៈផ្ដុំរបស់ $(+)$ នៅក្នុងកាយ $\R$:
    \[
    (a_i + b_i) + c_i = a_i + (b_i + c_i)
    \]
-   ដូច្នេះ គេបាន    
+   ដូច្នេះ គេបាន
    \[
    (P(x) + Q(x)) + R(x) = P(x) + (Q(x) + R(x))
    \]
     </li>
             </ol>
         </div>
-        
+
            <div class="text-block">
-        <ol type="i" start="5"> 
+        <ol type="i" start="5">
     <li><a>លក្ខណៈត្រឡប់ចំពោះ $+$ (Commutativity of addition):</a> <br/>
-   គ្រប់ពហុធា \( P(x), Q(x) \in \K[x] \) គេបាន៖ 
+   គ្រប់ពហុធា \( P(x), Q(x) \in \K[x] \) គេបាន៖
    \begin{eqnarray*}
    P(x) + Q(x) \;\;&=&\;\; \sum_{i=0}^{\max(n,m)} (a_i + b_i) x^i\\
    \;\;&=&\;\; \sum_{i=0}^{\max(n,m)} (b_i + a_i) x^i\\
    \;\;&=&\;\; Q(x) + P(x)
    \end{eqnarray*}
-   ដោយប្រើលក្ខណៈត្រឡប់នៅក្នុង $\R$ គឺ : $a_i + b_i = b_i + a_i$។ ដូច្នេះ 
+   ដោយប្រើលក្ខណៈត្រឡប់នៅក្នុង $\R$ គឺ : $a_i + b_i = b_i + a_i$។ ដូច្នេះ
    \[
    P(x) + Q(x) = Q(x) + P(x)
    \]
@@ -1652,9 +1694,9 @@ a\bigl(b \cdot \mathbf{v}\bigr) \;\;&=&\;\; a\bigl(b v_1, b v_2, \ldots, b v_n\b
    \]
    ដូច្នេះ មាន \(0(x)\in \K[x] \) ជាធាតុណឺតចំពោះប្រមាណវិធីក្នុង $(+)$។
     </li>
-    
+
     <li><a>ធាតុច្រាស (Existence of additive inverses):</a><br/>
-        
+
    គ្រប់ពហុធា  \( P(x) = \sum_{i=0}^n a_i x^i \) គេមានពហុធា \((-1)\cdot P(x) = \sum_{i=0}^n (-a_i) x^i = -P(x)\) គឺជាចម្រាសរបស់ $P(x)$ ចំពោះប្រមាណវិធីបូក ព្រោះ
    \[
    P(x) + (-P(x)) = \sum_{i=0}^n (a_i - a_i) x^i = 0
@@ -1677,37 +1719,37 @@ a\bigl(b \cdot \mathbf{v}\bigr) \;\;&=&\;\; a\bigl(b v_1, b v_2, \ldots, b v_n\b
         យក $\E$ ជា $\K$-vs និងកំណតសំណុំ $A\neq \varnothing$ ។ គេតាង $\E^A$ ជាសំណុំនៃគ្រប់អនុគមន៍ទាំងអស់ កំណត់ពី $A$ ទៅ $\E$ ។
         ចូរបង្ហាញថាសំណុំ $\E^A$ គឺជា $\K$-vs ដែលមានប្រមាណវិធីក្រៅ ៖
         $$ \begin{array}{rccl} \cdot: &\K
-        \times \E^A & \longrightarrow & \E^A \\ &(\lambda, f) &\longmapsto &\lambda \cdot f \end{array} $$ 
-        ចំពោះ $f, g\in \E^A$ និង $\lambda\in \K$ គេកំណត់ ៖ 
+        \times \E^A & \longrightarrow & \E^A \\ &(\lambda, f) &\longmapsto &\lambda \cdot f \end{array} $$
+        ចំពោះ $f, g\in \E^A$ និង $\lambda\in \K$ គេកំណត់ ៖
         <ol type="i">
             <li>
-                $\lambda \cdot f$ គឺជាអនុគមន៍ពី $A$ ទៅ $\E$ កំណត់ដោយ៖  
-                $$ 
+                $\lambda \cdot f$ គឺជាអនុគមន៍ពី $A$ ទៅ $\E$ កំណត់ដោយ៖
+                $$
                 \forall x \in A:\;  (\lambda \cdot
-                f)(x)=\lambda \cdot f(x) 
+                f)(x)=\lambda \cdot f(x)
                 $$
             </li>
             <li>
-                បើ $f$ និង $g$ ជាអនុគមន៍ពី $A$ ទៅ $\E$ នោះគេបាន $f+g$ ក៏ជាអនុគមន៍ពី $A\to\E$ កំណត់ដោយ៖  
+                បើ $f$ និង $g$ ជាអនុគមន៍ពី $A$ ទៅ $\E$ នោះគេបាន $f+g$ ក៏ជាអនុគមន៍ពី $A\to\E$ កំណត់ដោយ៖
                 $$
-                \forall x \in A:\; (f+g)(x)=f(x)+g(x) 
+                \forall x \in A:\; (f+g)(x)=f(x)+g(x)
                 $$
             </li>
         </ol>
     </my-example>
     <p onclick="toggleAnswer('ex4')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</span></p>
-    
-   
+
+
    <div id="answer_ex4" class="box-lemma text-container" style="display: none; margin-bottom: 20px; padding-bottom: 30px; padding-top: 10px;">
        <!--Solution is for group discussion.-->
     <div class="text-block active" style="padding-bottom: 10px;">
        <i>ចម្លើយ. ${}$</i>
         <!--p> Left as exercise (3) </p-->
-        
-<a>       
-    យក \( \E^A = \Bigl\{f \mid f : A \to V\Bigr\}\) ជាសំណុំនៃគ្រប់អនុគមន៍កំណត់ពី \(A\) ទៅ \(\E\) </a><br/> 
-    
-    ដែល $A\neq \varnothing$, $\E$ ជា $\R$-vs ។  គេកំណត់៖ 
+
+<a>
+    យក \( \E^A = \Bigl\{f \mid f : A \to V\Bigr\}\) ជាសំណុំនៃគ្រប់អនុគមន៍កំណត់ពី \(A\) ទៅ \(\E\) </a><br/>
+
+    ដែល $A\neq \varnothing$, $\E$ ជា $\R$-vs ។  គេកំណត់៖
 <ul>
     <li>
         <a>ប្រមាណវិធីក្នុង \((+)\) </a> របស់អនុគមន៍ \(f, g \in \E^A\) ត្រង់ចំណុចនីមួយៗ ៖
@@ -1734,17 +1776,17 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
                      <ul style="list-style-type: disc; margin-left: 10px">
                          <li>
                              <a>Closure</a>: យក \(f, g \in \E^A\) គេបានផលបូក \(f + g\) កំណត់ដោយ \[(f + g)(x) = f(x) +
-                             g(x)\] 
+                             g(x)\]
                           ដោយ \(f(x), g(x) \in \E\) ហើយ \(\E\) គឺជា $\R$-vs នោះគេបាន៖ \(f(x) + g(x) \in \E\)
                              គ្រប់ \(x \in A\) ។ ដូច្នេះ \[f + g \in \E^A\]
                          </li>
                          <li>
                              <a>លក្ខណៈផ្ដុំ៖ </a>
-                             គ្រប់ \(f, g, h \in \E^A\) គេបាន៖ 
+                             គ្រប់ \(f, g, h \in \E^A\) គេបាន៖
                              \[\Bigl[(f + g) + h\Bigr](x) = (f + g)(x) + h(x) = \Bigl(f(x) +
                              g(x)\Bigr) + h(x)\]
                              ដោយ $(+)$ ក្នុង $\E$ មានលក្ខណៈផ្ដុំ គេបាន៖ \[\Bigl[f(x) + g(x)\Bigr] +
-                             h(x) = f(x) + \Big[g(x) + h(x)\Bigr]\] 
+                             h(x) = f(x) + \Big[g(x) + h(x)\Bigr]\]
                              ដូច្នេះ \(\Bigl[(f + g) + h\Bigr](x) = \Big[f + (g + h)\Bigr](x)\) គ្រប់ \(x \in A\) ។ ដូច្នេះ \[(f + g) + h = f + (g + h)\]
                          </li>
                          <li>
@@ -1756,16 +1798,16 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
                          </li>
                          <li>
                              <a>មានធាតុណឺតចំពោះ $(+)$ :</a>
-                             យក \(\mathbf 0 \in \E^A\) ជាអនុគមន៍កំណត់ដោយ 
+                             យក \(\mathbf 0 \in \E^A\) ជាអនុគមន៍កំណត់ដោយ
                              \[\mathbf 0(x) = 0_V, \quad \forall \; x \in A\] ដែល
                              \(0_V\) ជា identity ចំពោះ $(+)$ ក្នុង \(\E\) ។ ចំពោះគ្រប់ \(f \in \E^A\) គេបាន៖ \[(f + \mathbf 0)(x)
                              = f(x) + \mathbf 0(x) = f(x) + 0_V = f(x)\] ដូច្នេះ \[f + \mathbf 0 = f\]
                          </li>
                          <li><a>ចម្រាសចំពោះគ្រប់ធាតុរបស់ $\E^A$ :</a>
-                             គ្រប់ \(f \in \E^A\) គេកំណត់ 
+                             គ្រប់ \(f \in \E^A\) គេកំណត់
                              \[(-f) \in \E^A :\; (-f)(x) =-f(x), \quad \forall \; x \in A\]
                              ដែល \(-f(x)\) គឺជាចម្រាសរបស់ \(f(x)\) ក្នុង \(\E\) ចំពោះ $(+)$ ។ <br/>
-                             
+
                              ដូច្នេះ \[\Bigl(f + (-f)\Bigr)(x) = f(x) + \Bigl(-f(x)\Bigr) =  f(x) -f(x) = 0_V\]  ដូច្នេះ \[f + (-f) = 0\]
                          </li>
                      </ul>
@@ -1775,32 +1817,32 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
          </div>
         <div class="text-block">
             <ol type="a" start="2">
-                <li> <a>លក្ខណៈចំពោះផលគុណនឹងស្កាលែរ៖</a> 
+                <li> <a>លក្ខណៈចំពោះផលគុណនឹងស្កាលែរ៖</a>
                     <ul style="list-style-type: disc; margin-left: 10px">
                         <li>
                             <a>លក្ខណៈចុះសម្រុងរវាងផលគុណនឹងស្កាលែរជាមួយនឹងផលគុណក្នុងកាយ៖</a><!--Compatibility of scalar multiplication with field multiplication--> គ្រប់ \(\alpha, \beta \in
-                    \mathbb{R}\) និង \(f \in \E^A\) គេបាន 
+                    \mathbb{R}\) និង \(f \in \E^A\) គេបាន
                     \[\Bigl((\alpha \beta) \cdot f\Bigr)(x) = (\alpha \beta) \cdot f(x)\]
-                    ដោយផលគុណនឹងស្កាលែរក្នុងលំហ \(\E\) ផ្ទៀងផ្ទាត់៖ 
+                    ដោយផលគុណនឹងស្កាលែរក្នុងលំហ \(\E\) ផ្ទៀងផ្ទាត់៖
                     \[\Bigl(\alpha \beta\Bigr) \cdot v = \alpha \cdot \Bigl(\beta \cdot v\Bigr),\quad \forall\; v \in \E\]
-                    គេបាន 
+                    គេបាន
                     \[(\alpha \beta) \cdot f(x) = \alpha \cdot \Bigl(\beta \cdot f(x)\Bigr) = \alpha \cdot \Bigl((\beta \cdot f) (x)\Bigr)= \Bigl(\alpha \cdot
                    (\beta \cdot f)\Bigr)(x)\]
-                       ដូច្នេះ 
+                       ដូច្នេះ
                        \[(\alpha \beta) \cdot f = \alpha \cdot (\beta \cdot f)\]
                         </li>
-                    
+
                     <li><a>ធាតុណឺតរបស់ប្រមាណវិធីគុណនឹងស្កាលែរ : <!--Identity element of scalar multiplication:--></a>
                     <br/>
 គ្រប់ \(f \in \E^A\) គេបាន \[(1 \cdot f)(a) = 1 \cdot f(a)\]
-                       ដោយ \(1 \cdot v = v\) គ្រប់ \(v \in \E\) នោះគេបាន 
+                       ដោយ \(1 \cdot v = v\) គ្រប់ \(v \in \E\) នោះគេបាន
                         \[1 \cdot f(a) = f(a) \implies  1 \cdot f = f\]
                         </li>
                         <li><a>លក្ខណៈបំបែករបស់ប្រមាណវិធីគុណនឹងស្កាលែរ និងប្រមាណវិធីបូកវ៉ិចទ័រ : <!-- Distributivity of scalar multiplication over vector addition ---> </a>
-គ្រប់ \(\alpha \in \mathbb{R}\) និងគ្រប់ \(f, g \in \E^A\) : 
+គ្រប់ \(\alpha \in \mathbb{R}\) និងគ្រប់ \(f, g \in \E^A\) :
 \[
 \Bigl(\alpha \cdot (f + g)\Bigr)(x) = \alpha \cdot (f + g)(x) = \alpha \cdot \Bigl(f(x) + g(x)\Bigr)\]
-ដោយវិធីគុណនឹងស្កាលែរផ្ទៀងផ្ទាត់៖ \(\alpha \cdot (v + w) = \alpha \cdot v + \alpha \cdot w\) គ្រប់ \(v, w \in \E\) នោះគេបាន៖ 
+ដោយវិធីគុណនឹងស្កាលែរផ្ទៀងផ្ទាត់៖ \(\alpha \cdot (v + w) = \alpha \cdot v + \alpha \cdot w\) គ្រប់ \(v, w \in \E\) នោះគេបាន៖
 \[\alpha \cdot \Bigl(f(x) + g(x)\Bigr) =\alpha \cdot f(x) + \alpha \cdot g(x)\]
 ដូច្នេះ \(\Bigl(\alpha \cdot (f + g)\Bigr)(x) = \Bigl((\alpha \cdot f) + (\alpha \cdot g)\Bigr)(x)\) ។  ដូច្នេះ
 \[\alpha \cdot (f + g) = \alpha \cdot f + \alpha \cdot g\]
@@ -1808,19 +1850,19 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
 
 <li>
 <a>លក្ខណៈបំបែករបស់ប្រមាណវិធីគុណនឹងស្កាលែរ លើប្រមាណវិធីបូកក្នុងកាយ : <!--Distributivity of scalar multiplication over field addition:--></a>
-គ្រប់ \(\alpha, \beta \in \mathbb{R}\) និង \(f \in \E^A\) គេបាន៖ 
+គ្រប់ \(\alpha, \beta \in \mathbb{R}\) និង \(f \in \E^A\) គេបាន៖
                        \[
                        \Bigl((\alpha + \beta) \cdot f\Bigr)(x) = (\alpha + \beta) \cdot f(x)
                        \]
-                       ដោយវិធីគុណនឹងស្កាលែរក្នុង \(\E\) ផ្ទៀងផ្ទាត់ \((\alpha + \beta) \cdot v = \alpha \cdot v + \beta \cdot v\) គ្រប់ \(v \in \E\) គេបាន៖  
+                       ដោយវិធីគុណនឹងស្កាលែរក្នុង \(\E\) ផ្ទៀងផ្ទាត់ \((\alpha + \beta) \cdot v = \alpha \cdot v + \beta \cdot v\) គ្រប់ \(v \in \E\) គេបាន៖
                        \[
                        (\alpha + \beta) \cdot f(x) = \alpha \cdot f(x) + \beta \cdot f(x)
                        \]
-                       ដូច្នេះ \( \Bigl((\alpha + \beta) \cdot f\Bigr)(x) = \Bigl((\alpha \cdot f) + (\beta \cdot f)\Bigr)(x)\) ។ ដូច្នេះ 
+                       ដូច្នេះ \( \Bigl((\alpha + \beta) \cdot f\Bigr)(x) = \Bigl((\alpha \cdot f) + (\beta \cdot f)\Bigr)(x)\) ។ ដូច្នេះ
                        \[
                        (\alpha + \beta) \cdot f = \alpha \cdot f + \beta \cdot f
                        \]
-                        
+
                     </li>
                     </ul>
                 </li>
@@ -1830,11 +1872,11 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
        <!--div class="text-block">
            <ol type="i">
                         <li>
-                            
+
                         </li>
 
                         <li>
-                            
+
 
                         </li>
            </ol>
@@ -1842,21 +1884,21 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
        <div class="text-block">
            <ol type="i" start="3">
                 <li>
-                           
+
                         </li>
            </ol>
            <p style="margin-top: 20px" class="indent20">
                ដូច្នេះ $(\mathbb C, +, \cdot)$ ជាលំហវ៉ិចទ័រកំណត់លើការយ $\mathbb R$ ។
            </p>
        </div>-->
-       
+
        <div class="nav-container">
            <span class="prevSign nav-sign">&#8810; Previous</span>
            <span class="nextSign nav-sign">Next &#8811;</span>
        </div>
-   
-   
-   
+
+
+
     </div>
 
     <h3>លំហវ៉ិចទ័ររង (subspaces)</h3>
@@ -1864,24 +1906,24 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
         <div class="definition">(Subspaces) </div>
         <div class="definitionb">
             <!--Let $\E$ be a $\K$-vector space and $\mathbf W$ be a part of $\E$. We say that $\mathbf W$ is a vector subspace of $\E$, if-->
-            
+
             គេឱ្យ $\E$ ជា $\K$-vs និង $\mathbf W$ ជាផ្នែកមួយ (សំណុំរង) របស់ $\E$ ។  គេថា $\mathbf W$ គឺជាលំហវ៉ិចទ័ររងរបស់ $\E$ ប្រសិនបើ
             <ol type="i">
                 <li>
                     $(\mathbf W,+)$ ជាក្រុមរងរបស់ $(\E,+)$ <!--is a subgroup of --->
                 </li>
                 <li>
-                    $\forall \lambda \in \K, \forall x \in \mathbf W: \lambda \cdot x \in \mathbf W\quad $ (បំណិតចំពោះប្រមាណវិធីក្រៅ $\cdot$) 
+                    $\forall \lambda \in \K, \forall x \in \mathbf W: \lambda \cdot x \in \mathbf W\quad $ (បំណិតចំពោះប្រមាណវិធីក្រៅ $\cdot$)
                 </li>
             </ol>
 
         </div>
     </my-defn>
 
-     
-   
+
+
     <p style="text-indent: 0px"><b>ចំណាំ :</b>
-        បើ $\mathbf W$ ជាលំហរងរបស់ $\E$ នោះគេបាន $\mathbf W$ ជាលំហវ៉ិចទ័រមួយ ដែលកំណត់យកប្រមាណវិធីក្រៅដូចលំហ $\E$ ដែរ គឺ៖ 
+        បើ $\mathbf W$ ជាលំហរងរបស់ $\E$ នោះគេបាន $\mathbf W$ ជាលំហវ៉ិចទ័រមួយ ដែលកំណត់យកប្រមាណវិធីក្រៅដូចលំហ $\E$ ដែរ គឺ៖
         <!--If $\mathbf W$ is a vector subspace of $\E$, then $\mathbf W$ is a vector space for the external law induced by that of $\E$:-->
         $$
         \begin{aligned}
@@ -1890,10 +1932,10 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
         \end{aligned}
         $$
     </p>
-    
 
-<!--div class="text-container">  
-  <div class="text-block active">  
+
+<!--div class="text-container">
+  <div class="text-block active">
     Let \( (E,+, \times)\) be a commutative field and $K$ be a subfield of $E$, then $E$ can be considered as a $K$-vector space for the external law defined as follows,
         $$
         \begin{array}{r c c l}
@@ -1901,30 +1943,30 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
         &(\lambda, x) &\longmapsto& \lambda \cdot x=\lambda x
         \end{array}
         $$
-        For example, $E=\mathbb{C}$ and $K=\mathbb{R}, E=\mathbb{R}$ and $K=\mathbb{Q}$ or $E=\mathbb{C}$ and $K=\mathbb{Q}$. In particular, any field $K$ can be considered as a vector space on itself.  
-  </div>  
-  <div class="text-block">  
+        For example, $E=\mathbb{C}$ and $K=\mathbb{R}, E=\mathbb{R}$ and $K=\mathbb{Q}$ or $E=\mathbb{C}$ and $K=\mathbb{Q}$. In particular, any field $K$ can be considered as a vector space on itself.
+  </div>
+  <div class="text-block">
     $\mathbf W = \mathcal{C}(I, \mathbb{R})$, the set continuous functions from $I$ to $\mathbb{R}$, is a
         $\mathbb{R}$-vector space.
-  </div>  
-  <div class="text-block">  
-    This is the third text block.  
-  </div>  
-  
+  </div>
+  <div class="text-block">
+    This is the third text block.
+  </div>
+
   <--span id="prevBtn" class="nav-link" style="display:none; text-align: left">&#8810;</!--span> <span id="nextBtn" class="nav-link" style="text-align: right">&#8811;</span-->
-  
-  <!-- <span id="prevSign" class="nav-sign" onclick="prevText()">&#8810;</span>  
-    <span id="nextSign" class="nav-sign" onclick="nextText()">&#8811;</span> 
+
+  <!-- <span id="prevSign" class="nav-sign" onclick="prevText()">&#8810;</span>
+    <span id="nextSign" class="nav-sign" onclick="nextText()">&#8811;</span>
     -->
-    
-    <!--div class="nav-container">  
-        <span class="prevSign nav-sign">&#8810;</span>  
-        <span class="nextSign nav-sign"> &#8811;</span>  
+
+    <!--div class="nav-container">
+        <span class="prevSign nav-sign">&#8810;</span>
+        <span class="nextSign nav-sign"> &#8811;</span>
     </div>
 </div>  -->
 
 
- 
+
 
 
 <my-example>
@@ -2046,8 +2088,8 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
 
                             យក \(f \in \mathbf{W}\) <br />
                             តាមនិយមន័យរបស់ $\mathbf W$ គេបាន \(f: I \to \mathbb{R}\) ជាអនុគមន៍ជាប់កំណត់ពីចន្លោះ $I$ ទៅ $\mathbb
-                            R$ ។ គ្រប់អនុគមន៍ជាប់ពី \(I\) ទៅ 
-                            \(\mathbb{R}\) គឺជាអនុគមន៍កំណត់ពី \(I\) ទៅ 
+                            R$ ។ គ្រប់អនុគមន៍ជាប់ពី \(I\) ទៅ
+                            \(\mathbb{R}\) គឺជាអនុគមន៍កំណត់ពី \(I\) ទៅ
                             \(\mathbb{R}\) ។ ដូច្នេះ  \(f \in \E\) ។
                         </li>
                     </ol>
@@ -2072,18 +2114,18 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
                             យក \(f, g \in \mathbf{W}\) ។  ដូច្នេះ \(f\) និង \(g\) ជាអនុគមន៍ជាប់លើ \(I\) ។<br>
 
                             សន្មត \(x_0 \in I\) ជាធាតុទូទៅ ។ <br/>
-                            
+
                             ចំពោះគ្រប់ \(\varepsilon \gt 0\) យើងនឹងរក \(\delta \gt 0\) ដែល
                             : \[ |x - x_0| \lt \delta \implies \Bigl|(f+g)(x) - (f+g)(x_0)\Bigr| \lt \varepsilon \]
                             <ul style="margin-left: 20px">
                                 <li>តាមភាពជាប់របស់អនុគមន៍ \(f\) យក \(\varepsilon_1 = \frac{\varepsilon}{2}\) គេបាន៖
   \[\exists \delta_1 \gt 0: |x - x_0| \lt \delta_1 \implies |f(x) - f(x_0)| \lt \frac{\epsilon}{2}\]
                                                 </li>
-                                                <li> ដូចគ្នា ចំពោះអនុគមន៍ \(g\) យក \(\varepsilon_2 =\frac{\varepsilon}{2}\) គេបាន៖ 
+                                                <li> ដូចគ្នា ចំពោះអនុគមន៍ \(g\) យក \(\varepsilon_2 =\frac{\varepsilon}{2}\) គេបាន៖
                                                 \[\exists \delta_2 \gt 0: |x - x_0| \lt \delta_2 \implies |g(x) - g(x_0)| \lt \frac{\varepsilon}{2}\]
                                 </li>
                          </ul>
-                         ដោយយក \(\delta = \min(\delta_1, \delta_2)\) នោះបើ \(|x - x_0| \lt \delta\) គេបាន៖ 
+                         ដោយយក \(\delta = \min(\delta_1, \delta_2)\) នោះបើ \(|x - x_0| \lt \delta\) គេបាន៖
   \begin{eqnarray*}
   \Bigl|(f+g)(x) - (f+g)(x_0)\Bigr| \;\;&=&\;\; \Bigl|f(x) + g(x) - f(x_0) - g(x_0)\Bigr|\\
   \;\; &\leq &\;\;  \Bigl|f(x) - f(x_0)\Bigr| + \Bigl|g(x) - g(x_0)\Bigr| \\
@@ -2097,14 +2139,14 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
                     <ol type="i" start="4" style="margin-left: 40px">
                         <li>\(\mathbf{W}\) បិទចំពោះប្រមាណវិធីក្រៅ $(\cdot)$ :
                         <br/>
-                        
+
                         សន្មត \(f\) ជាអនុគមន៍ជាប់កំណត់លើ \(I\) និងយក \(\alpha \in \R\) ។ តាង \(g(x) = (\alpha \cdot f)(x) = \alpha \cdot f(x)\) យើងនឹងបង្ហាញថាអនុគមន៍ \(g\) ជាប់ត្រង់ចំណុចទូទៅ \(x_0 \in I\) ?
                         <br/>
-                        គ្រប់ \(\varepsilon \gt 0\) គេបាន៖ 
-                        
+                        គ្រប់ \(\varepsilon \gt 0\) គេបាន៖
+
     \begin{eqnarray*}
    \Bigl|g(x) - g(x_0)\Bigr| \;\;&=&\;\; \Bigl|c \cdot f(x) - c \cdot f(x_0)\Bigr| \\
-   \;\;&=&\;\; |c| \times \Bigl|f(x) -  f(x_0)\Bigr| 
+   \;\;&=&\;\; |c| \times \Bigl|f(x) -  f(x_0)\Bigr|
    \end{eqnarray*}
         <ul>
             <li>
@@ -2113,7 +2155,7 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
             </li>
             <li>
                 ករណី  \(c \neq 0\): <br/>
-                ដោយ \(f\) ជាអនុគមន៍ជាប់ត្រង់ \(x_0\) នោះគ្រប់ \(\varepsilon \gt 0\) មាន  \(\delta_f \gt 0\) ដែល 
+                ដោយ \(f\) ជាអនុគមន៍ជាប់ត្រង់ \(x_0\) នោះគ្រប់ \(\varepsilon \gt 0\) មាន  \(\delta_f \gt 0\) ដែល
      \[
      |x - x_0| \lt \delta_f \implies |f(x) - f(x_0)| \lt \frac{\varepsilon}{|c|}
      \]
@@ -2122,12 +2164,12 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
    \Bigl|g(x) - g(x_0)\Bigr| \;\;&=&\;\; |c|\times \Bigl|f(x) -  f(x_0)\Bigr| \\
    \;\;&\lt &\;\; |c| \times \frac{\varepsilon}{|c|} = \varepsilon
    \end{eqnarray*}
-           
+
            ដូច្នេះ គ្រប់ \(\varepsilon \gt 0\) មាន  \(\delta = \delta_f \gt 0\) ដែល :
     \[
    |x - x_0| \lt \delta \implies |g(x) - g(x_0)| \lt \varepsilon
    \]
-    ដូច្នេះ \(g\) ជាអនុគមន៍ជាប់ត្រង់ចំណុចទូទៅ $x_0\in I$ ។ ដូច្នេះ  \(\alpha \cdot f \in \mathbf{W}\) ។       
+    ដូច្នេះ \(g\) ជាអនុគមន៍ជាប់ត្រង់ចំណុចទូទៅ $x_0\in I$ ។ ដូច្នេះ  \(\alpha \cdot f \in \mathbf{W}\) ។
             </li>
         </ul>
     ដូច្នេះ \(\mathbf{W} = \mathcal{C}(I, \mathbb{R})\) ជាលំហរងរបស់ \(\mathcal{E} = \mathbb{R}^I\) ។
@@ -2158,17 +2200,17 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
             <div id="SHObj_Soln3" class="soln-content text-container" style="display: none">
             <i>ចម្លើយ.</i>
             <!--Solution is for group discussion.--->
-            យក \(\K\) ជាកាយត្រឡប់ និងកំណត់ចំនួនគត់ \(n \geq 0\) ។ គេកំណត់៖ 
+            យក \(\K\) ជាកាយត្រឡប់ និងកំណត់ចំនួនគត់ \(n \geq 0\) ។ គេកំណត់៖
 \[
 \K_n[x] = \{P \in \K[x] : \operatorname{deg}(P) \leq n\}
 \]
 
-យើងនឹងស្រាយថា \(\K_n[x]\) ជាលំហរងរបស់ \(\K[x]\) ដោយផ្ទៀងផ្ទាត់លក្ខខណ្ឌទាំងបី៖ 
+យើងនឹងស្រាយថា \(\K_n[x]\) ជាលំហរងរបស់ \(\K[x]\) ដោយផ្ទៀងផ្ទាត់លក្ខខណ្ឌទាំងបី៖
          <div class="text-block active">
             <ul>
                 <li><a>Contains zero vector:</a><br/>
-                    
-យក \(\mathbf 0\) ជាពហុធាសូន្យ ដែលគ្រប់មេគុណទាំងអស់ស្មើសូន្យ គឺ៖ 
+
+យក \(\mathbf 0\) ជាពហុធាសូន្យ ដែលគ្រប់មេគុណទាំងអស់ស្មើសូន្យ គឺ៖
 \[
 0 = 0 \cdot x^0 + 0 \cdot x^1 + 0 \cdot x^2 + \ldots + 0 \cdot x^n,
 \]
@@ -2176,13 +2218,13 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
                 ដូច្នេះ \(\mathbf 0 \in \K_n[x]\) ។
                 </li>
             <li><a>Closed under addition: </a><br/>
-                
-យក \(P, Q \in \K_n[x]\) ។ គេបាន 
+
+យក \(P, Q \in \K_n[x]\) ។ គេបាន
 
 \[
  \operatorname{deg}(P) \leq n, \quad \operatorname{deg}(Q) \leq n
  \]
-ដោយដឹងថា 
+ដោយដឹងថា
 \[
 \operatorname{deg}(P + Q) \leq \max(\operatorname{deg}(P), \operatorname{deg}(Q)) \leq n
 \]
@@ -2190,12 +2232,12 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
 ដូច្នេះ  \(P + Q \in \K_n[x]\) ។
             </li>
             </ul>
-        </div>   
-          
+        </div>
+
            <div class="text-block">
               <ul>
                   <li><a>Closed under scalar multiplication:</a><br/>
-                      
+
 យក \(P \in \K_n[x]\) និង \(\alpha \in \K\) ។ គេបាន \(\operatorname{deg}(P) \leq n\) ។ ចំពោះ \(\alpha\cdot P\) :
  <ul>
      <li>
@@ -2214,7 +2256,7 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
               </ul>
     ដូច្នេះ \(\K_n[x]\) គឺជាលំហរងរបស់ \(\K[x]\) ។
           </div>
-           
+
            <div class="nav-container">
                     <span class="prevSign nav-sign">&#8810; Previous</span>
                     <span class="nextSign nav-sign">Next &#8811;</span>
@@ -2225,6 +2267,29 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
 </my-example>
 
 <h3>ប្រមាណវិធីលើលំហរង (Operations on vector subspaces)</h3>
+        <!--div class="image-container">
+            <img src="fig/union_subspaces.png" width="45%"  class="center"/>
+         <img src="fig/intersection_subspaces.png" width="35%" class="center"/>
+        </!--div -->
+          <div class="twocols">
+        <div class="column">
+             <my-fig>
+        <img src="fig/union_subspaces.png" class="center" alt="Sea">
+        <fig-cap data-cap="This is Sea"></fig-cap>
+    </my-fig>
+        </div>
+        <div class="column">
+          <my-fig>
+        <img src="fig/intersection_subspaces.png" class="center" alt="Sea" width="78%">
+        <fig-cap data-cap="This is Sea"></fig-cap>
+    </my-fig>
+        </div>
+    </div>
+      <my-fig>
+        <img src="fig/union_subspaces.png" width="45%"  class="center" alt="Sea">
+        <fig-cap data-cap="This is Sea"></fig-cap>
+    </my-fig>
+       
         
 <ol type="i">
     <li><b>ប្រសព្វរបស់លំហរង៖</b>
@@ -2260,9 +2325,8 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
        <div class="text-block active">
            <ol type="i">
                <li>
-                   <a>Zero vector is in \(W\):</a> Each \(W_i\) is a vector subspace of \(\E\), and therefore contains
-                   the zero vector \(\mathbf{0_\E} \in \E\). Hence, for all \(i \in I\), \[ \mathbf{0_\E} \in W_i \]
-                   Then,
+                   <a>Zero vector is in \(W\):</a><br/>
+                   ដោយ \(W_i\) ជាលំហរងរបស់ \(\E\) នោះគ្រប់  \(i \in I\): \( \mathbf{0_\E} \in W_i \) ។ ដូច្នេះ 
                    <!--since the zero vector is in each \(W_i\), it is also in their intersection:-->
                    \[ \mathbf{0_\E} \in W = \bigcap_{i \in I} W_i \]
                </li>
@@ -2271,11 +2335,15 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
        <div class="text-block">
            <ol type="i" start="2">
                <li>
-                   <a>Closure under addition:</a> Let \(u, v \in W\). By the definition of \(W\), this means that \(u, v
-                   \in W_i\) for all \(i \in I\). Since each \(W_i\) is a vector subspace, then
+                   <a>Closure under addition:</a><br/>
+                   យក \(u, v \in W\) ។  គេបាន  \(u, v \in W_i\) គ្រប់ \(i \in I\) <br/>
+                   ដោយ \(W_i\) ជាលំហរងរបស់ $\E$ នោះ ៖ 
                    <!-- it is closed under addition, which implies:-->
-                   \[ u + v \in W_i, \quad \forall i \in I \] Consequently, we have: \[ u + v \in W = \bigcap_{i \in I}
-                   W_i \] Therefore, \(W\) is closed under addition.
+                   \[ u + v \in W_i, \quad \forall i \in I \]
+                   ដូច្នេះ  
+                   \[ u + v \in W = \bigcap_{i \in I}
+                   W_i \] 
+                   ដូច្នេះ \(W\) ស្តាបចំពោះប្រមាណវិធីក្នុង $(+)$ ។ 
                </li>
            </ol>
        </div>
@@ -2284,18 +2352,20 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
                <li>
                    <a>Closure under scalar multiplication: </a>
                    <br />
-                   Let \(u \in W\) and let \(\alpha \in \K\) be any scalar. By the definition of \(W\), \(u \in W_i\)
-                   for all \(i \in I\). Then,
+                   យក \(u \in W\) និងកំណត់ \(\alpha \in \K\) ។ តាមនិយមន័យរបស់ \(W\) ៖ \(u \in W_i\)
+                   គ្រប់ \(i \in I\) ។ ដោយ $W_i$ ជាលំហរងរបស់ $\E$ គេបាន ៖ 
                    <!--Since each \(U_i\) is a vector subspace, it is closed under scalar multiplication, which means:-->
-                   \[ \alpha u \in W_i, \quad \forall i \in I \] Hence, \[ \alpha u \in W = \bigcap_{i \in I} W_i \]
-                   Thus, \(W\) is closed under scalar multiplication.
+                   \[ \alpha \cdot u \in W_i, \quad \forall i \in I \] 
+                   ដូច្នេះ \[ \alpha \cdot u \in W = \bigcap_{i \in I} W_i \]
+                   ដូច្នេះ \(W\) ស្តាបចំពោះប្រមាណវិធីក្រៅ $(\cdot)$ ។
                </li>
            </ol>
-           <p class="indent30">Since \(W\) contains the zero vector, is closed under addition, and closed under scalar multiplication, we
-           conclude that \(W\) is a vector subspace of \(\E\).</p>
-           <!--Therefore, the intersection of any family of vector subspaces of \(\E\) is indeed a vector subspace of \(\E\).-->
+           
+           <p class="indent30">
+           ដោយ \(W\) ផ្ទុកវ៉ិចទ័រសូន្យ ស្តាបចំពោះ $(+)$ និង $(\cdot)$ នោះគេបាន \(W\) គឺជាលំហរងរបស់ \(\E\) ។</p>
+           <!--Therefore, the intersection of any family of vector subspaces of \(\E\) is indeed a vector subspace of \(\E\).--
 
-           \[ \boxed{\text{The intersection of any family of subspaces of } \E \text{ is a vector subspace of } \E.} \]
+           \[ \boxed{\text{The intersection of any family of subspaces of } \E \text{ is a vector subspace of } \E.} \]-->
        </div>
        
        <div class="nav-container">
@@ -2320,16 +2390,18 @@ Let $\E$ be any $\K$-vs, $U$ and $W$ two vector subspaces of $\E$. Then $U \cup 
            $U \cup W$ ជាលំហវ៉ិចទ័ររងរបស់ $\E$ លុះត្រាតែ $U \subseteq W$ ឬក៏ $W \subseteq U$ ។
        </p>
           <p onclick="toggleAnswer('ex6')" style="text-align: right;"><i>ដំណោះស្រាយ.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
-    <div id="answer_ex6" class="box-lemma" style="display: none">
+    <div id="answer_ex6" class="text-container" style="display: none;">
     
     <i>សម្រាយបញ្ជាក់.</i> 
    <!-- To prove that \( U \cup W \) is a vector subspace of \( \E \) if and only if \( U \subseteq W \) or \( W \subseteq U \), we need to show two implications: -->
    ដើម្បីបញ្ជាក់ថា \( U \cup W \) គឺជាវ៉ិចទ័ររងនៃ \( \E \) លុះត្រាតែ \( U \subseteq W \) ឬ \( W \subseteq U \) យើងត្រូវបង្ហាញ លក្ខខណ្ឌពីរគឺ៖ 
-<ol type="i">
+   <div class="text-block active">
+       <ol type="i" style="margin-left: 30px">
     <li>
-        <i>ល.ខ.ចាំបាច់ :</i> យក \( U \cup W \) ជាលំហរងរបស់ \( \E \) ។ ស្រាយថា \( U \subseteq W \) ឬ \( W \subseteq U \)?
+        <i>ល.ខ.ចាំបាច់ :</i> យក \( U \cup W \) ជាលំហរងរបស់ \( \E \) ។ <br/>
+        ស្រាយថា \( U \subseteq W \) ឬ \( W \subseteq U \)? (តាមវិធីផ្ទុយពីការពិត)
         <br>
-        តាមវិធីផ្ទុយពីការពិត សន្មតថា  \( U \cup W \) ជាលំហរងរបស់ \( \E \) និងកំណត់ \( U \nsubseteq W \) និង \( W \nsubseteq U \) ។ តាមន័យនេះ គេបាន៖ 
+        សន្មត \( U \cup W \) ជាលំហរងរបស់ \( \E \) និងកំណត់ \( U \nsubseteq W \) និង \( W \nsubseteq U \) ។ តាមន័យនេះ គេបាន៖ 
   <p class="noind-center">
       \( x \in U \;\) s.t \(\; x \notin W \) <br>
       \( y \in W \;\) s.t \(\; y \notin U \)
@@ -2341,42 +2413,44 @@ Let $\E$ be any $\K$-vs, $U$ and $W$ two vector subspaces of $\E$. Then $U \cup 
   <ul style="margin-left: 14px">
       <li>
       បើ \( x + y \in U \) នោះ \( y = (x + y) - x \) ។<br>
-      ដោយ \( x \in U \) និង \( U \) ជាលំហរង នោះ \( y \) ត្រូវតែជារបស់ \( U \) (ផ្ទុយពីការពិតដែលថា \( y \notin U \)) </li>
+      ដោយ \( x \in U \) និង \( U \) ជាលំហរង នោះ \( y \) ត្រូវតែជារបស់ \( U \) <br/>
+      (ផ្ទុយពីការពិតដែលថា \( y \notin U \)) </li>
    <li>បើ \( x + y \in W \) នោះ \( x = (x + y) - y \) ។ <br>
-   ដោយ \( y \in W \) និង \( W \) ជាលំហរង នោះ \( x \) ត្រូវតែជារបស់ \( W \) (ផ្ទុយពីការពិតដែលថា \( x \notin W \) ) </li>
+   ដោយ \( y \in W \) និង \( W \) ជាលំហរង នោះ \( x \) ត្រូវតែជារបស់ \( W \) <br/>
+   (ផ្ទុយពីការពិតដែលថា \( x \notin W \) ) </li>
   </ul>
- ដោយករណីទាំងពីរសុទ្ធតែផ្ទុយពីការពិត នោះការសន្មតថា \( U \nsubseteq W \) និង \( W \nsubseteq U \) ក៏មិនមែនជាការពិតដែរ ។ 
-   <br>
-   
+ <p>ដោយករណីទាំងពីរសុទ្ធតែផ្ទុយពីការពិត នោះការសន្មតថា \( U \nsubseteq W \) និង \( W \nsubseteq U \) ក៏មិនមែនជាការពិតដែរ ។ 
+   </p>
    ដូច្នេះ គេបាន \( U \subseteq W \) ឬក៏ \( W \subseteq U \) ។ 
     </li>
-    
+</ol>
+   </div>
+   
+   <div class="text-block">
+       <ol type="i" style="margin-left: 30px" start="2">
     <li><i>ល.ខ.គ្រប់គ្រាន់ :</i>  បើ \( U \subseteq W \) ឬ \( W \subseteq U \) នោះបង្ហាញថា  \( U \cup W \) ជាលំហរងរបស់ \( \E \)?
     <br>
     
-    Assume \( U \subseteq W \) or \( W \subseteq U \). 
+    សន្មត \( U \subseteq W \) or \( W \subseteq U \) ។
 
 <ul style="margin-left: 14px">
     <li>
-        <i>Case 1: Assume \( U \subseteq W \):</i>
+        <i>Case 1: សន្មត \( U \subseteq W \):</i>
         <br>
-   Then every element \( u \in U \) is also in \( W \). Therefore, \( U \cup W = W \) since \( W \) already contains all elements of \( U \).
+   គេបាន គ្រប់ធាតុ \( u \in U \) គឺជារបស់ \( W \) ។ ដូច្នេះ  \( U \cup W = W \) ព្រោះ \( W \) ផ្ទុកគ្រប់ធាតុទាំងអស់របស់ \( U \) ។
    <br>
-   Since \( W \) is a vector subspace, \( U \cup W \) is also a vector subspace.
+   ដោយ \( W \) ជាលំហរងរបស់ $\E$ គេបាន \( U \cup W \) ក៏ជាលំហរងដែរ ។ 
     </li>
     <li>
-        <i>Case 2: Assume \( W \subseteq U \):</i>
+        <i>Case 2: សន្មត \( W \subseteq U \):</i>
         <br>
-        Similarly, we have \( U \cup W = U \). 
-        Since \( U \) is a vector subspace, \( U \cup W \) is also a vector subspace.
+        ដូចខាងលើដែរ គេបាន \( U \cup W = U \) ។ ដោយ \( U \) ជាលំហរង នោះគេបាន \( U \cup W \) ក៏ជាលំហរងរបស់ $\E$ ។
     </li>
 </ul>
-    
-    
-    
-    
     </li>
 </ol>
+   </div>
+
 
    <!--
     <ol type="i">
@@ -2413,16 +2487,22 @@ So our initial assumption is false, as a result, $F \subseteq G$ or $G \subseteq
         <li><b>SC:</b> Trivial.</li>
     </ol>
 -->
+
+<div class="nav-container">
+           <span class="prevSign nav-sign">&#8810; Previous</span>
+           <span class="nextSign nav-sign">Next &#8811;</span>
+       </div>
 </div>  
 
  <!--<p onclick="toggleAnswer('ex6.1')" style="text-align: right;"><i>ចម្លើយ.</i> <span href="#ref5" title="Jump to solution.">&#8617;</span></p> 
   -->
    
   <!-- <div id="answer_ex6.1" class="soln-content text-container" style="display: none">
-       <!--Solution is for group discussion.--
-       <i>ចម្លើយ. ${}$</i>
-       To prove that \(U \cup W\) is a vector subspace of a vector space \(\E\) if and only if \(U \subseteq W\) or \(W \subseteq U\) for two vector subspaces \(U\) and \(W\) of \(\E\), we will proceed with two parts: necessity and sufficiency.
-       
+      -- Solution is for group discussion.-->
+    <!--   <i>ចម្លើយ. ${}$</i>
+       To prove that \(U \cup W\) is a vector subspace of a vector space \(\E\) if and only if \(U \subseteq W\) or \(W \subseteq U\) for two vector subspaces \(U\) and \(W\) of \(\E\), we will proceed with two parts: necessity and sufficiency. 
+      -->
+   <!--    
        <div class="text-block active">
            <ol type="i">
                <li>
@@ -3944,6 +4024,17 @@ Now let $f \in \E$. Let's look for $(g, h) \in F \times G$, such that $f=g+h$. T
 </script>
 
 <!----End--->
+
+<!--For figure script-->
+<script>
+        // Automatically generate captions with figure numbers
+        document.querySelectorAll("my-fig").forEach((fig, index) => {
+            const figcaption = fig.querySelector("fig-cap");
+            const captionText = figcaption.getAttribute("data-cap");
+            figcaption.textContent = `Fig.${index + 1}. ${captionText}`;
+        });
+    </script>
+<!--End figure script--->
 </body>
 
 
