@@ -1373,6 +1373,27 @@ div.definitionb {
     font-family: "Battambang", "Kaushan Script", serif;
 }
 
+.main-content div.exercise {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    background: linear-gradient(to right, darkblue 1%, darkblue 0%, white 90%, white 100%);
+    /*border-radius: 15px 1px;*/
+    /*border: #cc0f12;*/
+    color: white;
+    padding: 4px 10px 4px 20px;
+    font-size: 100%;
+    /* font-family: 'Bangers', cursive; */
+    font-family: "Battambang", "Kaushan Script", serif;
+}
+.main-content div.exercise:before {
+    text-align: center;
+    counter-increment: subsection;
+    content: "លំហាត់អនុវត្តន៍ " counter(section, khmer) ". ";
+    /*font-weight:bold; */
+    font-family: "Koulen", cursive;
+}
+
 .main-content div.definition:before {
     counter-increment: subsection;
     content: "និយមន័យ " counter(section, khmer) "." counter(subsection, khmer) "  ";
@@ -2269,3 +2290,4 @@ span.tab {
     margin: 0 auto; /* Centers horizontally */  
     width: 600px;
 }
+

@@ -1972,7 +1972,7 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
 <my-example>
     (Verify a subspace)
 
-    <ol>
+    <ol class="parenthnum" style="margin-left: 40px">
         <li>
             <!--The set $\mathbf W$ of real sequences which tend to zero at infinity, is a $\mathbb{R}$-vs,-->
             សំណុំ $\mathbf W$ ជាស្វ៊ីតចំនួនពិត ដែលមានតួអនន្តខិតទៅរកសូន្យ កំណត់ដូចខាងក្រោម៖ $$ \mathbf
@@ -2275,20 +2275,16 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
         <div class="column">
              <my-fig>
         <img src="fig/union_subspaces.png" class="center" alt="Sea">
-        <fig-cap data-cap="This is Sea"></fig-cap>
+        <fig-cap data-cap="ប្រជុំរបស់លំហរងពីរ"></fig-cap>
     </my-fig>
         </div>
         <div class="column">
           <my-fig>
         <img src="fig/intersection_subspaces.png" class="center" alt="Sea" width="78%">
-        <fig-cap data-cap="This is Sea"></fig-cap>
+        <fig-cap data-cap="ប្រសព្វរបស់លំហរងពីរ"></fig-cap>
     </my-fig>
         </div>
     </div>
-      <my-fig>
-        <img src="fig/union_subspaces.png" width="45%"  class="center" alt="Sea">
-        <fig-cap data-cap="This is Sea"></fig-cap>
-    </my-fig>
        
         
 <ol type="i">
@@ -2640,8 +2636,10 @@ Or, $\bigcup_{j=1}^n W_j$ est un sous-espace vectoriel de $E$, donc pour tout $\
 <li><b>ផលបូករបស់លំហរង៖</b>
     យក $\E$ ជា $\K$-vs និងកំណត់  $W_1, W_2, \ldots, W_n$ ជាលំហរងរបស់ $\E$ ដែល $n \geq 2$ ។ ផ្នែកមួយរបស់  $\E$ តាងដោយ  $W_1+W_2+\cdots+W_n$ ។ គេថា $x \in W_1+W_2+\cdots+W_n$ លុះត្រាតែមាន $\left(x_1, x_2, \ldots, x_n\right) \in W_1 \times W_2 \times \cdots \times W_n$ ដែល  $x=x_1+x_2+\cdots+x_n$ ។ 
 <br>
+<p class="indent30">
+    ដូច្នេះ $W_1+W_2+\cdots+W_n$ គឺជាលំហរងរបស់ $\E$ ហៅថា <a>លំហរងផលបូក</a> (subspace sum) របស់លំហរង  $W_1, W_2, \ldots, W_n$ ។
+</p>
 
-ដូច្នេះ $W_1+W_2+\cdots+W_n$ គឺជាលំហរងរបស់ $\E$ ហៅថា <a>លំហរងផលបូក</a> (subspace sum) របស់លំហរង  $W_1, W_2, \ldots, W_n$ ។
 </li>
 
 <li>
@@ -2854,6 +2852,40 @@ Now let $f \in \E$. Let's look for $(g, h) \in F \times G$, such that $f=g+h$. T
           
       </ol>
   </my-example>
+   
+   
+   <div class="exercise"> (Vector spaces and subspaces) </div>
+   
+    <ol class="parenthnum" style="margin-left: -10px">
+       <li>
+           Let’s consider a vector space \(E\) over a field \(K\). We’ll look at relations involving basic set operations and sum of subspaces. We denote by \(F, G\) and \(H\) subspaces of \(E\). Justify that 
+           <ol type ="i" style="margin-left: 20px">
+               <li>
+                   The relation \((F \cap G) + H \subset (F+H) \cap (G + H)\)
+               </li>
+               
+               <li>
+                   The relation \((F \cap H) + (G \cap H) \subset (F+G) \cap H\)
+               </li>
+               
+               <li>
+                   Take an example for the space \(E\) the real 3-D space \(\mathbb R^3\). Find for the subspaces.
+                   
+                   <!--And for the subspaces:
+\(H\) the plane of equation \(z=0\),
+\(F\) the line of equations \(y = 0, \, x=z\),
+\(G\) the line of equations \(y = 0, \, x=-z\),-->
+               </li>
+           </ol>
+           
+           
+       </li>
+       
+       <li>
+           We 
+           
+       </li>
+   </ol>
    
    
    
@@ -4021,12 +4053,8 @@ Now let $f \in \E$. Let's look for $(g, h) \in F \times G$, such that $f=g+h$. T
     document.querySelectorAll(".text-container").forEach((container) => {
         initializeNavigation(container);
     });
-</script>
-
-<!----End--->
-
-<!--For figure script-->
-<script>
+    
+    <!--For figure script-->
         // Automatically generate captions with figure numbers
         document.querySelectorAll("my-fig").forEach((fig, index) => {
             const figcaption = fig.querySelector("fig-cap");
@@ -4035,6 +4063,11 @@ Now let $f \in \E$. Let's look for $(g, h) \in F \times G$, such that $f=g+h$. T
         });
     </script>
 <!--End figure script--->
+
+
+<!----End--->
+
+
 </body>
 
 
