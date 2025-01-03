@@ -508,9 +508,24 @@ window.MathJax = {
 
     <script>
         // Create element:
-        const para = document.createElement("mydef");
-        const para = document.createElement("my-fig");
-        const para = document.createElement("fig-cap");
+        //const para = document.createElement("mydef");
+       // const para = document.createElement("my-fig");
+        //const para = document.createElement("fig-cap");
+        // Create elements with unique variable names
+
+    //    const myDef = document.createElement("my-def"); // Valid custom element name
+    //    const myFig = document.createElement("my-fig");
+    //    const figCap = document.createElement("fig-cap");
+
+// Optionally append elements to the DOM
+    //    document.body.appendChild(myDef);
+    //    document.body.appendChild(myFig);
+    //    document.body.appendChild(figCap);
+//If you want to define custom behaviors for these elements, you can use the customElements.define API:
+ customElements.define("my-def", class extends HTMLElement {});
+ customElements.define("my-fig", class extends HTMLElement {});
+ customElements.define("fig-cap", class extends HTMLElement {});
+
     </script>
 
 <!--- Show/Hide Toggle--->
@@ -815,7 +830,7 @@ window.MathJax = {
     \( \newcommand{\Span}{\mathrm{span}}\)
     \(\newcommand{\E}{\mathbf{V}}\)
     \(\newcommand{\K}{\mathbb{K}}\)
-    \(\newcommand{\F}{\mathbb{F}}\)
+    \(\newcommand{\F}{\mathbf{W}}\)
     \(\newcommand{\R}{\mathbb{R}}\)
 </div>
 
