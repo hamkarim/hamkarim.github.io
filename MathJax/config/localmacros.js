@@ -1,6 +1,10 @@
 // <script type="text/x-mathjax-config"> //
   MathJax.Hub.Config({
+    extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
     TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        tagSide: "right",
         Macros: {
           RR: "{\\bf R}",
           E: "{\\bf E}",
@@ -22,8 +26,8 @@
     },
     tex2jax: {
       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true,
-      equationNumbers: { autoNumber: "AMS" }
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
     }
   });
 
