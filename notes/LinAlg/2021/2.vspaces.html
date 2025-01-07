@@ -486,12 +486,13 @@ window.MathJax = {
   
   <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
          
+-->
 
-   <script type="text/x-mathjax-config">
+   <!--script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
       jax: ["input/TeX","output/HTML-CSS"],
-      TeX: {
+      tex: {
           equationNumbers: { autoNumber: "AMS" },
           tagSide: "right",
           Macros: {
@@ -519,13 +520,54 @@ window.MathJax = {
         processEscapes: true
       },
     });
-</script>
- ---->
+</script-->
 
-  <!---- Below is good --->
+<script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']], // Enable $...$ for inline math
+        displayMath: [['$$', '$$'], ['\\[', '\\]']], // For display math
+        processEscapes: true,
+        tags: 'ams', // Enables AMS-style numbering for equations
+        tagSide: 'right', // Position of the equation numbers
+        //tagIndent: '0.8em' // Indentation from the equation
+        Macros: {
+            RR: "{\\bf R}",
+            E: "{\\bf E}",
+            F: "{\\bf F}",
+            G: "{\\bf G}",
+            H: "{\\bf H}",
+            calE: "{\\mathcal E}",
+            calF: "{\\mathcal F}",
+            calG: "{\\mathcal G}",
+            calH: "{\\mathcal H}",
+            R: "{\\mathbb R}",
+            Cc: "{\\mathbb C}",
+            bold: ["{\\bf #1}",1],
+            bfseries: ["{\\bf{\\text{ #1 }}",1],
+            fontbold: ["{\\bf{\\text{ #1 }}}",1],
+            Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+            vect: ["{\\overrightarrow{#1}}",1],
+          }
+      },
+      chtml: {
+      scale: 0.85, // default font scaling
+      mtextFont: null, // Use default MathJax fonts
+      merrorFont: null, // Handle errors with default fonts
+      }
+    };
+  </script>
+  <!---- Below is good for MathJax 3.x--->
    <script
-            type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js"></script>
+            type="text/javascript" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <style>
+        mjx-container * {
+              /*font-family: 'serif' !important;*/
+              font-weight: normal !important;
+        }
+    </style>
   
    <!---Script for latex called from local--->
     <!--script src="https://hamkarim.github.io/MathJax/config/local/mathjax-config.js" defer></script--
@@ -2847,21 +2889,18 @@ $$
 </ol>
 
 <b>Remember! </b>
-Let $\E$ be any $\K$-vs, then according to the previous theorem: 
-
+យក $\E$ ជា $\K$-vs ។ តាមទ្រឹស្ដីបទខាងលើ គេបាន៖ 
     <ol>
         <li>
-            The sum of two vector subspaces $W_1$ and $W_2$ of $\E$ is direct if and only if,
-
+            ផលបូកលំហរងទាំងពីរ  $W_1$ និង $W_2$ របស់ $\E$ ជាផលបូកផ្ទាល់ លុះត្រាតែ <!---The sum of two vector subspaces $W_1$ and $W_2$ of $\E$ is direct if and only if,-->
 $$
 W_1 \cap W_2 = \{0\}
 $$
         </li>
-        <li>
-            The sum of three vector subspaces $W_1, W_2$ and $W_3$ of $\E$ is direct if and only if,
-
+        <li> ផលបូកលំហរង  $W_1, W_2$  និង $W_2$ របស់ $\E$ ជាផលបូកផ្ទាល់ លុះត្រាតែ
+            <!--The sum of three vector subspaces $W_1, W_2$ and $W_3$ of $\E$ is direct if and only if,-->
 $$
-W_1 \cap (W_2+W_3) = \{0\} \quad \text { and }\quad W_2 \cap W_3=\{0\}
+W_1 \cap (W_2+W_3) = \{0\}, \quad  W_2 \cap W_3=\{0\}
 $$
         </li>
     </ol>
@@ -2872,14 +2911,14 @@ $$
         <div class="definition">(លំហរងបំពេញគ្នា)</div>
         <div class="definitionb">
             <p>
-                Let $\E$ be a $K$-vector space, $U$ and $W$ two vector subspaces of $\E$. We say that $U$ and $W$ are supplementary in $\E$ if,
+                <!--Let $\E$ be a $K$-vector space, $U$ and $W$ two vector subspaces of $\E$. We say that $U$ and $W$ are supplementary in $\E$ if,-->
+                យក $\E$ ជា $K$-vs និងកំណត់ $U$ និង $W$ ជាលំហរងពីររបស់ $\E$ ។ គេថា $U$ និង $W$ ជាលំហរងបំពេញគ្នាក្នុង $\E$ បើ
             </p>
-<ol type="i">
-    <li>
-The sum $U+W$ is direct.
+<ol class="romanlist">
+    <li> $U+W$ គឺជាផលបូកផ្ទាល់ និង
     </li>
     <li>
-        $\E=U \oplus W$.
+        $\E=U \oplus W$ 
     </li>
 </ol>
         </div>
@@ -2903,11 +2942,12 @@ This concept is fundamental in understanding vector space structures and their d
   
   <my-example>
       <ol type="1">
-         <li>Consider \( \mathbb{R}^3 \) (three-dimensional space). Let \( U \) be the plane defined by \( z = 0 \) (the xy-plane), and let \( W \) be the line along the z-axis (where \( x = 0, y = 0 \)). <br/>
+         <li><!--Consider \( \mathbb{R}^3 \) (three-dimensional space). Let \( U \) be the plane defined by \( z = 0 \) (the xy-plane), and let \( W \) be the line along the z-axis (where \( x = 0, y = 0 \)). <br/>
          
-         These two subspaces are complementary, as any vector in \( \mathbb{R}^3 \) can be represented as a vector in the plane plus a vector along the z-axis, and their only common point is the origin \((0,0,0)\).
-
-
+         These two subspaces are complementary, as any vector in \( \mathbb{R}^3 \) can be represented as a vector in the plane plus a vector along the z-axis, and their only common point is the origin \((0,0,0)\).-->
+         ក្នុង \( \mathbb{R}^3 \) (លំហបីវិមាត្រ) យក \( U \) ជាប្លង់ដែលកំណត់ដោយសមីការ \( z = 0 \) ( គឺជាប្លង់ xy ) និងយក \( W \) ជាបន្ទាត់តាមអ័ក្ស z (i.e., \( x = 0, y = 0 \)) ។ <br/>
+         
+         លំហរងទាំងពីរនេះ គឺជាលំហរងបំពេញគ្នា ព្រោះគ្រប់ វ៉ិចទ័រនៅក្នុង \( \mathbb{R}^3 \) អាចតាងដោយវ៉ិចទ័រក្នុងប្លង់ បូកនឹងវ៉ិចទ័រតាមអ័ក្ស $z$ ហើយមានចំនុចរួមតែមួយគត់ គឺគល់តម្រុយ  \((0,0,0)\) ។
          </li>
           <li>
               Let $\E=\mathbb{R}^{\mathbb{R}}$ be the $\mathbb{R}$-vs of all functions from $\mathbb{R}$ to $\mathbb{R} $, $U$ the set of functions $f \in \E$ which are even and $W$ the set of functions $f \in \E$ which are odd. 
