@@ -2999,10 +2999,93 @@ and since $f \in F$, then $\forall k \in\{0,1, \ldots, m\}, f^k(0)=0$, therefore
 Now let $f \in \E$. Let's look for $(g, h) \in F \times G$, such that $f=g+h$. To do this, it suffices to consider the functions $g$ and $h$ defined for all $x \in \mathbb{R}, \operatorname{par} h(x)=\sum_{k=0}^m \frac {f^k(0)}{k!} x^k$ and $g(x)=f(x)-h(x)$. Then $g \in F$, $h \in G$ and we have $f=g+h$.
         </div>
     </li>
-          
+    <li>
+        Let $\E=\mathcal{M}_n(\mathbb{K})$, with $\mathbb{K}=\mathbb{R}$ or $\mathbb{K}=\mathbb{C}$ , the $\mathbb{K}$-vector space of square matrices of order $n$ with coefficients in $\mathbb{K}$. We say that 
+        <ul style="margin-left: 14px">
+            <li>
+                An element $A$ of $\mathcal{M}_n(\mathbb{K})$ is symmetric (resp. antisymmetric), if ${ }^t A=A$ (resp. $\left. { }^t A=-A\right)$.
+            </li>
+            <li>
+                We denote, respectively, by $\mathcal{S}_n(\mathbb{K})$ and $\mathcal{A}_n(\mathbb{K})$ the set of symmetric matrices and that of antisymmetric matrices and we sets $F=\mathcal{S}_n(\mathbb{K})$ and $G=\mathcal{A}_n(\mathbb{K})$. 
+            </li>
+        </ul>
+         Then, show that $F$ and $G$ are two complementary subspaces of $\E$.
+         
+         <!---Solution.---->
+   <p onclick="toggleAnswer('ex12')" style="text-align: right;"><i>Solution.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
+    <div id="answer_ex12" class="box-note" style="display: none">
+    
+    <i>ចំលើយ.</i> 
+         To show that $F$ and $G$ are two complementary subspaces of $\E$, we must satisfy two conditions:
+<ol type="i">
+    <li>
+         $F \cap G = \{0\}$: <br/>
+         
+         Let $A \in F \cap G$, we have the following two equalities:
+\[
+{ }^t A = A,  \quad { }^t A = -A.
+\]
+So, 
+\[
+A = -A
+\]
+This equation implies that:
+\[
+2A = 0 \quad \Rightarrow \quad A = 0
+\]
+So the only element that is both symmetric and antisymmetric is the zero matrix, which means that:
+\[
+F \cap G = \{0\}
+\]
+    </li>
+    <li>
+        $\E = F + G$: For this, you showed that a matrix $A$ is the sum of a symmetric matrix $A_1$ and an antisymmetric matrix $A_2$ defined by $$A_1 = \frac {A + { }^t A}{2}, \quad A_2 = \frac{A - { }^t A}{2}$$ 
+        Indeed, any matrix $A \in \E$ can be written as $A = A_1 + A_2$ with $A_1 \in F$ and $A_2 \in G$, which shows that $\E = F + G$.<br/>
+        
+        <br/>
+        
+Let $A$ in $E$. Now, define matrices $A_1$ and $A_2$ as:
+  \[ A_1 = \frac{A + { }^t A}{2},  \quad  A_2 = \frac{A - { }^t A}{2} \]
+We will show that  $A_1 \in F$ and $A_2 \in G$:
+<ul style="margin-left: 14px">
+    <li>
+        For $A_1$: 
+   $${ }^t A_1 = { }^t \left(\frac{A + { }^t A}{2}\right) = \frac{{ }^t A + { }^t ({ }^t A)}{2} = \frac{A + { }^t A}{2} = A_1$$ 
+   Therefore, $A_1$ is symmetric and belongs to $F$.
+    </li>
+    <li>
+        For $A_2$:
+   $${ }^t A_2 = { }^t \left(\frac{A - { }^t A}{2}\right) = \frac{{ }^t A - { }^t({ }^tA)}{2} = \frac{{ }^t A - A}{2} = -A_2$$  
+   Thus, $A_2$ is antisymmetric and belongs to $G$.
+    </li>
+</ul>
+
+
+**Every matrix $A$ can be expressed as the sum of $A_1$ and $A_2$:**
+- Given $A = A_1 + A_2$ and $A_1 \in F$, $A_2 \in G$, we have represented $A$ as the sum of a symmetric matrix and an antisymmetric matrix.
+
+Therefore, any matrix $A$ in $E$ can indeed be expressed as the sum of a symmetric matrix from $F$ and an antisymmetric matrix from $G$, demonstrating that $E = F + G$.
+    </li>
+</ol>
+
+        </div>
+    </li>
       </ol>
   </my-example>
    
+   
+      <h3>លំហផលចែក (Quotient spaces)</h3>
+   
+   Let $E$ be a $K$-vector space, $F$ be a vector subspace of $E$ and $E / F$ be the quotient group of $E$ by $F$. Then $E/F$ is a $K$-vector space for the external law:
+
+$$
+\begin{aligned}
+& K \times E / F \longrightarrow E / F \\
+& \quad(\lambda, \bar{x}) \longmapsto \lambda \cdot \bar{x}=\overline{\lambda \cdot x}
+\end{aligned}
+$$
+
+called the quotient vector space of $E$ by $F$.
    
    <div class="exercise"> (Vector spaces and subspaces) </div>
    
