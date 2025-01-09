@@ -345,9 +345,15 @@
         /*]]>*/
     </style>
 
+<!----
+The link you provided is a script for Google's Custom Search Engine (CSE). The "cse.js" file is responsible for loading and enabling the custom search functionalities on a website integrated with Google’s search capabilities. The "cx" parameter in the URL specifies the unique identifier for a specific custom search engine setup.
+
+With this integration, website owners can add search boxes to their sites that allow users to search for content using Google's search algorithms, tailored to the specific site or a broader set of sites that the owner defines. This enhances search results and provides a better search experience for users visiting that site.
+-->
     <!--script-- async="" src="//cse.google.com/adsense/search/async-ads.js"></script-->
-    <!--script-- type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script-->
-    <script type="text/javascript" async="" src="https://cse.google.com/cse.js?cx=001004262401526223570:11yv6vpcqvy"></script>
+    <!--script-- type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async="" src="https://cse.google.com/cse.js?cx=001004262401526223570:11yv6vpcqvy"></script--> 
+
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-331594-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -363,6 +369,10 @@
     <link rel="stylesheet" href="../../../assets/css/style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245">
     <link rel="stylesheet" href="../../../assets/css/all.css">
 
+
+    <!------
+    The <script src="https://d3js.org/d3.v4.min.js"></script> tag is used to include the D3.js library in a web page. D3.js (Data-Driven Documents) is a powerful JavaScript library for producing dynamic, interactive data visualizations in web browsers.
+    -->
     <script src="https://d3js.org/d3.v4.min.js"></script>
 
     <!-- Script to show and hide proof -->
@@ -696,8 +706,9 @@ window.MathJax = {
     fig-cap {
         display: block;
         font-size: 14px;
-        color: #555;
-        margin-top: 10px;
+        font-style: italic;
+        color: #265d73;
+        margin-top: 5px;
     }
     .image-container {
         display: flex;
@@ -710,12 +721,12 @@ window.MathJax = {
     }
     .twocols {
         display: flex; /* Use Flexbox to create columns */
-        justify-content: space-between; /* Space between the columns */
+        /*justify-content: space-between; /* Space between the columns */
         align-items: center; /* Align content vertically in the center */
         text-align: center; /* Center text horizontally */
-        /*width: 80%; /* Optional: Adjust container width */
-        margin: 0 auto; /* Center the container on the page */
-        /*border: 1px solid #ccc; /* Optional: Add a border for visualization */
+        width: 100%; /* Optional: Adjust container width */
+        /*margin: 0 auto; /* Center the container on the page */
+        border: 1px solid #ccc; /* Optional: Add a border for visualization */
         padding: 10px;
         padding-top: 8px;
         margin-top: -1em;
@@ -723,7 +734,8 @@ window.MathJax = {
 
     .column {
         flex: 1; /* Each column takes up equal space */
-        margin: 0 10px; /* Optional: Add some spacing between columns */
+        width: 100%;
+        /*margin: 0 10px; /* Optional: Add some spacing between columns */
         padding: 10px; /* Optional: Add padding inside columns */
         /*background-color: #f9f9f9; /* Optional: Column background color */
         /*border: 1px solid #ddd; /* Optional: Add border for visualization */
@@ -963,10 +975,10 @@ window.MathJax = {
     <p style="text-indent:0px; font-size: 14px;">From Wikipedia:</p>
     <blockquote>
         <a href="https://www.oreilly.com/api/v2/epubs/9781118434413/files/images/Graph.jpg">
-            <div class="divfigure">
-                <p> <img class="wrap-right" alt="Euclidean Vector Spaces" src="fig/E_vs.jpg">
-                    Euclidean Vector Space:</p><p> <mark style="font-size: 10px;">Engineers and physicists distinguish between two types of physical quantities—scalars, which are quantities that can be described by a numerical value alone, and vectors, which are quantities that require both a number and a direction for their complete physical description.</mark>
-            </p>
+            <div class="divfigure" style="line-height:1.2">
+                <img alt="Euclidean Vector Spaces" src="fig/E_vs.jpg" width="70%"><br/>
+                    <b> Euclidean Vector Space:</b><br/>
+                    <mark style="font-size: 9px;">Engineers and physicists distinguish between two types of physical quantities—scalars, which are quantities that can be described by a numerical value alone, and vectors, which are quantities that require both a number and a direction for their complete physical description.</mark>
             </div>
         </a>
         <p><!--In mathematics and physics, a vector space (also called a linear space) is a set whose elements, often called vectors, can be added together and multiplied ("scaled") by numbers called scalars. The operations of vector addition and scalar multiplication must satisfy certain requirements, called vector axioms. Real vector spaces and complex vector spaces are kinds of vector spaces based on different kinds of scalars: real numbers and complex numbers. Scalars can also be, more generally, elements of any field.-->
@@ -990,7 +1002,7 @@ window.MathJax = {
             <span class="lt-icon-default">លទ្ធផលរំពឹងទុក!</span></h5>
         <p>ក្រោយបញ្ចប់មេរៀននេះ អ្នកសិក្សានឹងទទួលបាននូវ៖ </p>
         <ol class="parenthnum">
-            <li class="" style="background-color: unset;"><i>យល់បាននូវគោលគំនិតជាគន្លឹះទាក់ទងនឹង៖</i><!--b--Understanding key concepts of: -->
+            <li><i>យល់បាននូវគោលគំនិតជាគន្លឹះទាក់ទងនឹង៖</i><!--b--Understanding key concepts of: -->
                 Definition of vector spaces, subspaces, linear independence, basis and dimension. <!--You'll grasp what vector spaces are, including the basic requirements for a set to be considered a vector space. Subspaces: You'll learn about subspaces and how they relate to the larger vector space. Linear Independence: You'll be able to determine if a set of vectors is linearly independent or dependent. Basis and Dimension: You'll understand the concept of a basis of a vector space and how to find it, along with the dimension of a vector space. -->
             </li>
             <li class="" style="background-color: unset;"><i>មានជំនាញគណិតវិទ្យា៖</i>
@@ -2407,19 +2419,19 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
 
 <h3>ប្រមាណវិធីលើលំហរង (Operations on vector subspaces)</h3>
         <!--div class="image-container">
-            <img src="fig/union_subspaces.png" width="45%"  class="center"/>
-         <img src="fig/intersection_subspaces.png" width="35%" class="center"/>
-        </!--div -->
+            <img src="fig/union_subspaces.png" width="30%"  class="center"/>
+            <img src="fig/intersection_subspaces.png" width="25%" class="center"/>
+        </div-->
           <div class="twocols">
         <div class="column">
-             <my-fig>
-        <img src="fig/union_subspaces.png" class="center" alt="Sea">
+             <my-fig >
+        <img src="fig/union_subspaces.png" class="center" alt="ប្រជុំរបស់លំហរងពីរ" width="85%;">
         <fig-cap data-cap="ប្រជុំរបស់លំហរងពីរ"></fig-cap>
     </my-fig>
         </div>
         <div class="column">
           <my-fig>
-        <img src="fig/intersection_subspaces.png" class="center" alt="Sea" width="78%">
+        <img src="fig/intersection_subspaces.png" class="center" alt="ប្រសព្វរបស់លំហរងពីរ" width="55%" >
         <fig-cap data-cap="ប្រសព្វរបស់លំហរងពីរ"></fig-cap>
     </my-fig>
         </div>
@@ -2792,10 +2804,11 @@ Or, $\bigcup_{j=1}^n W_j$ est un sous-espace vectoriel de $E$, donc pour tout $\
 <my-defn>
    <div class="definition">(ផលបូកផ្ទាល់)</div>
         <div class="definitionb">
-    Let $\E$ be a $\K$-vs and $W_1, W_2, \ldots, W_n$ be vector subspaces of $\E$. We say that the sum $W_1+W_2+\cdots+W_n$ is direct, if for all $x \in W_1+W_2+\cdots+W_n$, there exists a unique 
+    <!--Let $\E$ be a $\K$-vs and $W_1, W_2, \ldots, W_n$ be vector subspaces of $\E$. We say that the sum $W_1+W_2+\cdots+W_n$ is direct, if for all $x \in W_1+W_2+\cdots+W_n$, there exists a unique-->
+    គេឱ្យ $\E$ ជា $\K$-vs និង $W_1, W_2, \ldots, W_n$ ជាលំហវ៉ិចទ័ររងរបស់ $\E$ ។ គេថា ផលបូក $W_1+W_2+\cdots+W_n$ គឺជាផលបូកផ្ទាល់ ប្រសិនបើ គ្រប់ $x\in W_1+W_2+\cdots+$ $W_n$ នោះមានធាតុតែមួយគត់ 
    $$
-    \left(x_1, x_2, \cdots, x_n\right) \in W_1 \times W_2 \times \cdots \times W_n: \;\; x=x_1+x_2+\cdots+x_n
-    $$,
+    \left(x_1, \cdots, x_n\right) \in \prod_{i=1}^n W_i: \;\; x=x_1+x_2+\cdots+x_n
+    $$
     </div>
 </my-defn>
 
@@ -2808,9 +2821,9 @@ $$
 <div class="box-theorem">
         <div class="box-legend editable"><span class="lt-icon-default">ឡែម ២. :  (ផលបូកផ្ទាល់)</span></div>
 <p>
-    The sum $\sum_{i=1}^n W_i$ is direct if and only if for all $\left(x_1, x_2, \cdots, x_n\right) $ $ \in W_1 \times W_2 \times \cdots \times W_n$, we has
-
-$$
+    <!--The sum $\sum_{i=1}^n W_i$ is direct if and only if for all $\left(x_1, x_2, \cdots, x_n\right) $ $ \in W_1 \times W_2 \times \cdots \times W_n$, we has-->
+    ផលបូក $\sum_{i=1}^n W_i$ នេះ ជាផលបូកផ្ទាល់ លុះត្រាតែ $\forall \left(x_i\right)_{i=1,\cdots, n} \in \prod_{i=1}^n W_i:$
+$$ 
 x_1+x_2+\cdots+x_n=0 \Longrightarrow x_1=x_2=\cdots=x_n=0
 $$
 </p>
@@ -2845,9 +2858,10 @@ $\left(z_1, z_2, \cdots, z_n\right) \in W_1 \times W_2 \times \ldots \times W_n$
         <div class="box-legend editable"><span class="lt-icon-default">ទ្រឹស្ដីបទ ៣. :  (ផលបូកផ្ទាល់)</span></div>
 <p>
 <!--The sum $W_1+W_2+\cdots+W_n$ is direct if and only if,-->
-ផលបូក $W_1+W_2+\cdots+W_n$ គឺជាផលបូកផ្ទាល់ លុះត្រាតែ 
-$$
-\forall i \in\{1,2, \ldots, n-1\}: \;\; W_i \bigcap \left(\sum_{k=i+1}^n W_{k}\right)=\Bigl\{0\Bigr\}
+ផលបូក $\sum_{i=1}^n W_i$ នេះ ជាផលបូកផ្ទាល់ លុះត្រាតែ 
+$
+\forall\  i \in\{1,2, \ldots, n-1\}:$
+$$W_i \bigcap \left(\sum_{k=i+1}^n W_{k}\right)=\Bigl\{0\Bigr\}
 $$
     </p>
     </div>
@@ -2924,7 +2938,11 @@ $$
         </div>
     </my-defn>
    
-   <b>Remember! </b>
+   <b>Remember! </b> <span>
+    នេះជាគោលគំនិតជាមូលដ្ឋាន ក្នុងការយល់អំពីទម្រង់របស់លំហវ៉ិចទ័រ និងការបំបែករបស់វានៅក្នុងពិជគណិតលីនេអ៊ែរ ៖
+<!--This concept is fundamental in understanding vector space structures and their decompositions in linear algebra.-->
+</span>
+  
    $$
 \begin{aligned}
 \E=U \oplus W &\quad \Longleftrightarrow\quad \left\{\begin{array}{l}
@@ -2937,24 +2955,35 @@ U \cap W=\{0\}
 \end{array}\right.
 \end{aligned}
 $$
-<p class="indent30">
-    គោលគំនិតនេះ គឺជាមូលដ្ឋានគ្រឹះក្នុងការយល់អំពីទម្រង់របស់លំហវ៉ិចទ័រ និងការបំបែករបស់វានៅក្នុងពិជគណិតលីនេអ៊ែរ ។   
-This concept is fundamental in understanding vector space structures and their decompositions in linear algebra.
-</p>
-  
+ 
   <my-example>
-      <ol type="1">
-         <li><!--Consider \( \mathbb{R}^3 \) (three-dimensional space). Let \( U \) be the plane defined by \( z = 0 \) (the xy-plane), and let \( W \) be the line along the z-axis (where \( x = 0, y = 0 \)). <br/>
+<!--Consider \( \mathbb{R}^3 \) (three-dimensional space). Let \( U \) be the plane defined by \( z = 0 \) (the xy-plane), and let \( W \) be the line along the z-axis (where \( x = 0, y = 0 \)). <br/>
          
          These two subspaces are complementary, as any vector in \( \mathbb{R}^3 \) can be represented as a vector in the plane plus a vector along the z-axis, and their only common point is the origin \((0,0,0)\).-->
-         ក្នុង \( \mathbb{R}^3 \) (លំហបីវិមាត្រ) យក \( U \) ជាប្លង់ដែលកំណត់ដោយសមីការ \( z = 0 \) ( គឺជាប្លង់ xy ) និងយក \( W \) ជាបន្ទាត់តាមអ័ក្ស z (i.e., \( x = 0, y = 0 \)) ។ <br/>
+         ក្នុង \( \mathbb{R}^3 \) (លំហវិមាត្រ3) យក \( U \) ជាប្លង់ដែលកំណត់ដោយសមីការ \( z = 0 \) (ប្លង់ $xy$) និងយក \( W \) ជាបន្ទាត់តាមអ័ក្ស z (i.e., \( x = 0, y = 0 \)) ។ <br/>
          
-         លំហរងទាំងពីរនេះ គឺជាលំហរងបំពេញគ្នា ព្រោះគ្រប់ វ៉ិចទ័រនៅក្នុង \( \mathbb{R}^3 \) អាចតាងដោយវ៉ិចទ័រក្នុងប្លង់ បូកនឹងវ៉ិចទ័រតាមអ័ក្ស $z$ ហើយមានចំនុចរួមតែមួយគត់ គឺគល់តម្រុយ  \((0,0,0)\) ។
-         </li>
-          <li>
-              Let $\E=\mathbb{R}^{\mathbb{R}}$ be the $\mathbb{R}$-vs of all functions from $\mathbb{R}$ to $\mathbb{R} $, $U$ the set of functions $f \in \E$ which are even and $W$ the set of functions $f \in \E$ which are odd. 
+         <p class="indent30">
+             លំហរងទាំងពីរនេះ គឺជាលំហរងបំពេញគ្នា ព្រោះគ្រប់ វ៉ិចទ័រនៅក្នុង \( \mathbb{R}^3 \) អាចតាងដោយវ៉ិចទ័រក្នុងប្លង់ បូកនឹងវ៉ិចទ័រតាមអ័ក្ស $z$ ហើយមានចំនុចរួមតែមួយគត់ គឺគល់តម្រុយ  \((0,0,0)\) ។
+         </p>
+    </my-example>
+ <p onclick="toggleAnswer('ex13')" style="text-align: right; margin-top: -1em;"><i>Solution.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
+    <div id="answer_ex13" class="box-note" style="display: none">
+    
+    <i>ចំលើយ.</i> 
+         To show that $U$ and $W$ are ....
+         <my-fig>
+         <a href="FA_ex1.html">
+            <img src="fig/tryYself.png" width="25%" style="opacity: 0.5;">
+            </a>
+         <fig-cap data-cap="ចង់បានចម្លើយទេ?"></fig-cap>
+      </my-fig>
+    </div> 
+  
+  
+<my-example>         
+Let $\E=\mathbb{R}^{\mathbb{R}}$ be the $\mathbb{R}$-vs of all functions from $\mathbb{R}$ to $\mathbb{R} $, $U$ the set of functions $f \in \E$ which are even and $W$ the set of functions $f \in \E$ which are odd. 
 
-Then show that $U$ and $W$ are two additional subspaces of $\E$.
+Then show that $U$ and $W$ are two complementary  subspaces of $\E$.
 
 <!--Indeed, It is clear that $U$ and $W$ are two vector subspaces of $\E$, because the sum of two even (resp. odd) functions is an even (resp. odd) function, as well as the multiplication of an even (resp. odd) function is an even (resp. odd) function.
 If $f \in U \cap W$, then $f$ is a function that is both even and odd, so $f$ is zero, hence, $U \cap W=\{0\}$.
@@ -2967,11 +2996,18 @@ $$
 
 Then $g$ and $h$ are even and odd respectively and we have $f=g+h$.
 -->
-          
-    </li>
-         
-    <li>
-        Let $\E=\mathcal{C}^m(\mathbb{R}, \mathbb{R})$ be $\mathbb{R}$-vs of real functions of class $\mathcal{C}^ m$ on $\mathbb{R}$, $F$ and $G$ the subsets of $\E$ defined by,
+
+</my-example>
+ <p onclick="toggleAnswer('ex14')" style="text-align: right; margin-top: -1em;"><i>Solution.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
+    <div id="answer_ex14" class="box-note" style="display: none">
+    
+    <i>ចំលើយ.</i> 
+         To show that $F$ and $G$ 
+  
+    </div> 
+
+<my-example> 
+Let $\E=\mathcal{C}^m(\mathbb{R}, \mathbb{R})$ be $\mathbb{R}$-vs of real functions of class $\mathcal{C}^ m$ on $\mathbb{R}$, $F$ and $G$ the subsets of $\E$ defined by,
 
 $$
 F=\left\{f \in E: f(0)=f^{\prime}(0)=\cdots=f^{(m)}(0)=0\right\} \quad \text { and } \quad G=\mathbb{R}_m[x]
@@ -2981,10 +3017,9 @@ where $\mathbb{R}_m[x]$ is the set of polynomial functions of degree $\leq m$.
 Recall that $f \in \mathbb{R}_m[x]$, if and only if, there exists $\left(a_0, a_1, \ldots, a_m\right) \in \mathbb{R}^{m+ 1}$, such that for all $x \in \mathbb{R}$, we have $$f(x)=\sum_{i=0}^m a_i x^i$$ 
 
    Then, show that $F$ and $G$ are two additional subspaces of $\E$.
-   
-   
-   <!---Solution.---->
-   <p onclick="toggleAnswer('ex10')" style="text-align: right;"><i>Solution.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
+</my-example>
+<!---Solution.---->
+   <p onclick="toggleAnswer('ex10')" style="text-align: right; margin-top: -1em;"><i>Solution.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
     <div id="answer_ex10" class="box-note" style="display: none">
     
     <i>ចំលើយ.</i> 
@@ -2998,9 +3033,10 @@ and since $f \in F$, then $\forall k \in\{0,1, \ldots, m\}, f^k(0)=0$, therefore
 
 Now let $f \in \E$. Let's look for $(g, h) \in F \times G$, such that $f=g+h$. To do this, it suffices to consider the functions $g$ and $h$ defined for all $x \in \mathbb{R}, \operatorname{par} h(x)=\sum_{k=0}^m \frac {f^k(0)}{k!} x^k$ and $g(x)=f(x)-h(x)$. Then $g \in F$, $h \in G$ and we have $f=g+h$.
         </div>
-    </li>
-    <li>
-        Let $\E=\mathcal{M}_n(\mathbb{K})$, with $\mathbb{K}=\mathbb{R}$ or $\mathbb{K}=\mathbb{C}$ , the $\mathbb{K}$-vector space of square matrices of order $n$ with coefficients in $\mathbb{K}$. We say that 
+        
+        
+<my-example>
+    Let $\E=\mathcal{M}_n(\mathbb{K})$, with $\mathbb{K}=\mathbb{R}$ or $\mathbb{K}=\mathbb{C}$ , the $\mathbb{K}$-vector space of square matrices of order $n$ with coefficients in $\mathbb{K}$. We say that 
         <ul style="margin-left: 14px">
             <li>
                 An element $A$ of $\mathcal{M}_n(\mathbb{K})$ is symmetric (resp. antisymmetric), if ${ }^t A=A$ (resp. $\left. { }^t A=-A\right)$.
@@ -3010,9 +3046,9 @@ Now let $f \in \E$. Let's look for $(g, h) \in F \times G$, such that $f=g+h$. T
             </li>
         </ul>
          Then, show that $F$ and $G$ are two complementary subspaces of $\E$.
-         
-         <!---Solution.---->
-   <p onclick="toggleAnswer('ex12')" style="text-align: right;"><i>Solution.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
+  </my-example>
+       <!---Solution.---->
+   <p onclick="toggleAnswer('ex12')" style="text-align: right; margin-top: -1em;"><i>Solution.</i> <span href="#ref12" title="Jump back to solution.">&#8617;</span></p>
     <div id="answer_ex12" class="box-note" style="display: none">
     
     <i>ចំលើយ.</i> 
@@ -3069,10 +3105,6 @@ Therefore, any matrix $A$ in $E$ can indeed be expressed as the sum of a symmetr
 </ol>
 
         </div>
-    </li>
-      </ol>
-  </my-example>
-   
    
       <h3>លំហផលចែក (Quotient spaces)</h3>
    
@@ -4286,19 +4318,20 @@ called the quotient vector space of $E$ by $F$.
     document.querySelectorAll(".text-container").forEach((container) => {
         initializeNavigation(container);
     });
-    
-    <!--For figure script-->
-        // Automatically generate captions with figure numbers
-        document.querySelectorAll("my-fig").forEach((fig, index) => {
-            const figcaption = fig.querySelector("fig-cap");
-            const captionText = figcaption.getAttribute("data-cap");
-            figcaption.textContent = `Fig.${index + 1}. ${captionText}`;
-        });
-    </script>
-<!--End figure script--->
-
-
+</script>
 <!----End--->
+<!---For figure script--*/
+// Automatically generate captions with figure numbers-->
+<script>        
+            document.querySelectorAll("my-fig").forEach((fig, index) => {
+                const figcaption = fig.querySelector("fig-cap");
+                const captionText = figcaption.getAttribute("data-cap");
+                figcaption.innerHTML = `<b>Fig.${index + 1}</b>. ${captionText}`;
+            });
+</script>
+    <!--End figure script--->
+
+
 
 
 </body>

@@ -217,7 +217,7 @@ button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    -webkit-appearance: button; /* Vendor-prefixed for WebKit browsers */
+   /* -webkit-appearance: button; /* Vendor-prefixed for WebKit browsers */
     appearance: button;         /* Standard property for modern browsers */
     cursor: pointer;            /* Ensures pointer cursor for better UX */
 }
@@ -827,9 +827,9 @@ a:hover {
 }
 
 .main-content img {
-    max-width: 100%;
-    width: "40%";
-    height: "40%";
+    max-width: 80%;
+    /*width:60%;
+    height:60%;*/
 }
 
 .main-content h3,
@@ -1543,7 +1543,7 @@ ol.parenthalpha li::before {
 ol.parenthnum {
     counter-reset: parenthlist;
     margin: auto;
-    width: 98%;
+    width: auto;
 }
 
 ol.parenthnum > li {
@@ -1681,7 +1681,7 @@ ol.oneem {
 }
 
 figure {
-    display: inlin-block;
+    display: inline-block;
     /*border: 1px dotted gray;*/
     margin: 10px;
     /* adjust as needed */
