@@ -959,7 +959,7 @@ window.MathJax = {
     \( \newcommand{\Span}{\mathrm{span}}\)
     \(\newcommand{\E}{\mathbf{V}}\)
     \(\newcommand{\K}{\mathbb{K}}\)
-    \(\newcommand{\F}{\mathbf{W}}\)
+    \(\newcommand{\F}{W}\)
     \(\newcommand{\R}{\mathbb{R}}\)
 </div>
 
@@ -2054,20 +2054,24 @@ i.e.,  ប្រមាណវិធីក្នុង \(+ : \E^A \times \E^A \to 
 
     <h3>លំហវ៉ិចទ័ររង (subspaces)</h3>
     <my-defn>
-        <div class="definition">(Subspaces) </div>
+        <div class="definition">(Subspaces)</div>
         <div class="definitionb">
             <!--Let $\E$ be a $\K$-vector space and $\mathbf W$ be a part of $\E$. We say that $\mathbf W$ is a vector subspace of $\E$, if-->
+            <p>
+                គេឱ្យ $\E$ ជា $\K$-vs និង $\mathbf W$ ជាផ្នែកមួយ (សំណុំរង) របស់ $\E$ ។ គេថា $\mathbf W$
+                គឺជាលំហវ៉ិចទ័ររងរបស់ $\E$ ប្រសិនបើ
+            </p>
 
-            គេឱ្យ $\E$ ជា $\K$-vs និង $\mathbf W$ ជាផ្នែកមួយ (សំណុំរង) របស់ $\E$ ។  គេថា $\mathbf W$ គឺជាលំហវ៉ិចទ័ររងរបស់ $\E$ ប្រសិនបើ
             <ol type="i">
                 <li>
-                    $(\mathbf W,+)$ ជាក្រុមរងរបស់ $(\E,+)$ <!--is a subgroup of --->
+                    $(\mathbf W,+)$ ជាក្រុមរងរបស់ $(\E,+)$
+                    <!--is a subgroup of --->
                 </li>
                 <li>
-                    $\forall \lambda \in \K, \forall x \in \mathbf W: \lambda \cdot x \in \mathbf W\quad $ (បំណិតចំពោះប្រមាណវិធីក្រៅ $\cdot$)
+                    $\forall \lambda \in \K, \forall x \in \mathbf W: \lambda \cdot x \in \mathbf W\quad $
+                    (បំណិតចំពោះប្រមាណវិធីក្រៅ $\cdot$)
                 </li>
             </ol>
-
         </div>
     </my-defn>
 
@@ -2805,7 +2809,9 @@ Or, $\bigcup_{j=1}^n W_j$ est un sous-espace vectoriel de $E$, donc pour tout $\
    <div class="definition">(ផលបូកផ្ទាល់)</div>
         <div class="definitionb">
     <!--Let $\E$ be a $\K$-vs and $W_1, W_2, \ldots, W_n$ be vector subspaces of $\E$. We say that the sum $W_1+W_2+\cdots+W_n$ is direct, if for all $x \in W_1+W_2+\cdots+W_n$, there exists a unique-->
-    គេឱ្យ $\E$ ជា $\K$-vs និង $W_1, W_2, \ldots, W_n$ ជាលំហវ៉ិចទ័ររងរបស់ $\E$ ។ គេថា ផលបូក $W_1+W_2+\cdots+W_n$ គឺជាផលបូកផ្ទាល់ ប្រសិនបើ គ្រប់ $x\in W_1+W_2+\cdots+$ $W_n$ នោះមានធាតុតែមួយគត់ 
+    <p>
+        គេឱ្យ $\E$ ជា $\K$-vs និង $W_1, W_2, \ldots, W_n$ ជាលំហវ៉ិចទ័ររងរបស់ $\E$ ។ គេថា ផលបូក $W_1+W_2+\cdots+W_n$ គឺជាផលបូកផ្ទាល់ ប្រសិនបើ គ្រប់ $x\in W_1+W_2+\cdots+$ $W_n$ នោះមានធាតុតែមួយគត់ 
+    </p>
    $$
     \left(x_1, \cdots, x_n\right) \in \prod_{i=1}^n W_i: \;\; x=x_1+x_2+\cdots+x_n
     $$
@@ -3002,7 +3008,12 @@ Then $g$ and $h$ are even and odd respectively and we have $f=g+h$.
     <div id="answer_ex14" class="box-note" style="display: none">
     
     <i>ចំលើយ.</i> 
-         To show that $F$ and $G$ 
+         <my-fig>
+         <a href="FA_ex1.html">
+            <img src="fig/tryYself.png" width="25%" style="opacity: 0.5;">
+            </a>
+         <fig-cap data-cap="ចង់បានចម្លើយទេ?"></fig-cap>
+      </my-fig>
   
     </div> 
 
@@ -3107,18 +3118,126 @@ Therefore, any matrix $A$ in $E$ can indeed be expressed as the sum of a symmetr
         </div>
    
       <h3>លំហផលចែក (Quotient spaces)</h3>
-   
-   Let $E$ be a $K$-vector space, $F$ be a vector subspace of $E$ and $E / F$ be the quotient group of $E$ by $F$. Then $E/F$ is a $K$-vector space for the external law:
-
+      
+    <p class="indent30">
+        A quotient vector space is a construction in linear algebra that creates a new vector space from an existing one by "collapsing" certain vectors into equivalence classes. This is done by dividing the original vector space \(\E\) by a subspace \( W \), producing the quotient vector space \( \E / W \).
+        
+    </p>
+    
+<my-defn>
+ <div class="definition">(លំហផលចែក)</div>
+        <div class="definitionb">
+            <p>
+Let $\E$ be a $\K$-vs, $\F$ be a vector subspace of $\E$ and $\E / \F$ be the quotient group of $\E$ by $\F$. Then $\E/\F$ is a $\K$-vs for the external law:
+            </p>
 $$
-\begin{aligned}
-& K \times E / F \longrightarrow E / F \\
-& \quad(\lambda, \bar{x}) \longmapsto \lambda \cdot \bar{x}=\overline{\lambda \cdot x}
-\end{aligned}
+\begin{array}{rccl}
+\cdot : & \K \times \E /\F & \longrightarrow & \E /\F \\
+&\bigl(\alpha, [x]\bigr) &\longmapsto & \alpha \cdot [x]=[\alpha \cdot x]
+\end{array}
 $$
+called the quotient vector space of $\E$ by $\F$.
+    </div>
+    </my-defn>
 
-called the quotient vector space of $E$ by $F$.
+ <p><b>Explaination: </b>   
+        Let \(\E\) be a vector space over a field \(\mathbb{K}\) and let \(\F\) be a subspace of \(\E\) (i.e., \(\F \subseteq \E\)). The quotient space, denoted by \(\E/\F\), is defined as the set of equivalence classes of vectors in \(\E\) under the equivalence relation defined by the subspace \(\F\).
+    </p>
+
+<ul style="margin-left: 30px">
+    <li><a>ទំនាក់ទំនងសមមូល៖ </a>
+        Two vectors in \(\E\) are "equivalent" if their difference belongs to the subspace \( W \), i.e., \( u, v \in V \):
+\[
+u \sim v \iff u - v \in W
+\]
+This means that \( u \) and \( v \) are in the same <i>equivalence class</i> if their difference lies in \( W \).
+<br/><br/>
+The set of equivalence classes \( [v] \) (where \( v \in \E\)) is defined as:
+  \[
+  [v] = \{v + w \mid w \in W\}
+  \]
+  Each equivalence class \( [v] \) is a coset of \( W \) in \( \E\). The set of all equivalence classes forms the   
+<br/><br/> 
+    <a>Elements of \( \E / W \): </a> are equivalence classes (or cosets) \( [v] = v + W \), where:
+  \[
+  v + W = \Bigl\{v + w \mid w \in W\Bigr\}
+  \]
+Thus, each equivalence class represents all vectors in \( \E\) that differ from \( v \) by some vector in \( W \).
+        
+    </li>
+    
+    <li>
+       <a> Vector space structure of \(\E/ W \): </a>
+The quotient space \( \E / W \) inherits a vector space structure from \( V \). The operations are defined as:
+<ol type="i" style="margin-left: 14px">
+    <li>
+        <b>Internal operation (addition)</b> :
+   For \( [u], [v] \in \E / W \), define:
+   \[
+   [u] + [v] = [u + v]
+   \]
+    </li>
+    
+    <li>
+        <b>External operation (scalar multiplication)</b>: 
+        For \( \alpha \in \mathbb{F} \) and \( [v] \in \E / W \), define:
+   \[
+   \alpha [v] = [\alpha v]
+   \]
    
+   These operations are well-defined because they do not depend on the choice of representatives from each equivalence class.
+    </li>
+</ol>
+
+    </li>
+</ul>
+<p>
+    <b>ការអនុវត្តរបស់លំហផលចែក៖</b> Quotient vector spaces arise in many areas of mathematics and its applications: <i>(i) Linear Algebra:</i> Simplifies computations by reducing dimensionality. <i>(ii) Differential Geometry: </i> Used in constructing tangent spaces of manifolds. <i>(iii) Functional Analysis: </i> Quotients of function spaces help in understanding solution spaces of differential equations. <i> (iv) Coding Theory:</i> Helps in analyzing vector spaces modded by a code subspace.
+</p>
+<p>
+    <b>Philosophy: </b> Imagine \( \E \) as a "high-dimensional space" and \( W \) as a "lower-dimensional subspace." The quotient space \( \E / W \) is the space of directions orthogonal to \( W \), effectively collapsing \( W \) to a single point (the zero vector in \( \E / W \)).
+</p>        
+  
+  <my-example>
+       <a>Quotient of \( \mathbb{R}^3 \) by a subspace: </a>
+       <br/>
+       
+<p class="indent30">
+    Consider \( \E = \mathbb{R}^3 \) and \( W \) as the subspace of \( \mathbb{R}^3 \) consisting of all vectors of the form \( (x, 0, 0) \), i.e., the \( x \)-axis.
+</p>
+<ol type="i">
+    <li>
+        Equivalence Classes:
+   Two vectors \( u = (u_1, u_2, u_3) \) and \( v = (v_1, v_2, v_3) \) in \( \mathbb{R}^3 \) are equivalent if \( u - v \in W \). This means:
+   \[
+   u - v = (u_1 - v_1, u_2 - v_2, u_3 - v_3) \in W
+   \]
+   So \( u_2 = v_2 \) and \( u_3 = v_3 \), but \( u_1 \) and \( v_1 \) can differ by any amount.
+    </li>
+    
+    <li>
+        Quotient Space: <br/>
+   The quotient space \( \mathbb{R}^3 / W \) consists of equivalence classes of vectors that differ only in their \( x \)-component. Intuitively, \( \mathbb{R}^3 / W \) is "flattened" to \( \mathbb{R}^2 \), as the \( x \)-component is "collapsed out."
+    </li>
+</ol>
+
+<!--Dimensionality**:
+   Here, \( \dim(V) = 3 \) and \( \dim(W) = 1 \), so:
+   \[
+   \dim(V / W) = \dim(V) - \dim(W) = 3 - 1 = 2
+   \]
+   -->
+  </my-example>
+  
+  <my-fig>
+      <img src="fig/quotientSpace_no_bg.png" alt="Quotent space of $\mathbb R^3/W$" width="35%">
+      <fig-cap data-cap="បង្រួមរូបនេះតាមអ័ក្ស $x$ តើបានអ្វី?"></fig-cap>
+  </my-fig>
+  
+  
+  
+  
+  
    <div class="exercise"> (Vector spaces and subspaces) </div>
    
     <ol class="parenthnum" style="margin-left: -10px">
