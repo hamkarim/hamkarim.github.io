@@ -1,0 +1,17 @@
+/* Do not edit or override these styles! The system will likely break if you do. */
+
+div#header, div#footer, div#controls, .slide {position: absolute;}
+html>body div#header, html>body div#footer, 
+  html>body div#controls, html>body .slide {position: fixed;}
+.handout {display: none;}
+.layout {display: block;}
+.slide, .hideme, .incremental {visibility: hidden;}
+#slide0 {visibility: visible;}
+
+/*.slide {
+  /*width: 100vw; /* Full width of the viewport */  
+  /*height: 100vh; /* Full height of the viewport *
+  font-size: 2vw; /* Adjust the font size to fit the screen width * 
+  padding-right: 20px;
+  margin: 10px;
+}*/

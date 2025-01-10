@@ -52,182 +52,1017 @@
                     <title>Lecture-1.</title>
                     <meta name="description" content="binary relation" />
 
-                    <style>
-                              .deffont {
-                                        font-family: "Noto Serif Khmer", "CMU Serif";
-                                        font-size: 16px;
-                              }
-                              ul.liststyle1 {
-                                        list-style-type: square;
-                              }
-                              ul.liststyle2 {
-                                        list-style-type: hebrew;
-                              }
-                              a.onmenu {
-                                        font-family: "Noto Serif Khmer", "CMU Serif";
-                                        font-weight: bold;
-                              }
-                    </style>
+<!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
 
-                    <script async="" src="//cse.google.com/adsense/search/async-ads.js"></script>
-                    <script
-                              type="text/javascript"
-                              async=""
-                              src="https://www.google-analytics.com/analytics.js"></script>
-                    <script
-                              type="text/javascript"
-                              async=""
-                              src="https://cse.google.com/cse.js?cx=001004262401526223570:11yv6vpcqvy"></script>
-                    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-331594-1"></script>
-                    <script>
-                              window.dataLayer = window.dataLayer || [];
-                              function gtag() {
-                                        dataLayer.push(arguments);
-                              }
-                              gtag("js", new Date());
+    <style type="text/css">
+      /*  .deffont {
+            font-family: 'Noto Serif Khmer', 'CMU Serif';
+            font-size: 17px;
+        } */
 
-                              gtag("config", "UA-331594-1");
-                    </script>
+        ul.liststyle1 {
+            list-style-type: square;
+        }
 
-                    <link
-                              rel="stylesheet"
-                              href="../../../../assets/css/style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245" />
+        ul.liststyle2 {
+            list-style-type: hebrew;
+        }
 
-                    <script src="https://d3js.org/d3.v4.min.js"></script>
+        ol.liststyle1 {
+            list-style-type: lower-latin;
+        }
 
-                    <!-- Script to show and hide proof -->
-                    <script type="text/javascript" src="https://hamkarim.github.io/assets/js/showhide.js"></script>
-                    <!-- Other style of showing and hiding proof -->
-                    <link
-                              rel="stylesheet"
-                              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-                    <script
-                              type="text/javascript"
-                              src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
-                    <script
-                              type="text/javascript"
-                              src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>
-                    <!-- end -->
+        a.onmenu {
+            font-family: 'Noto Serif Khmer', 'CMU Serif';
+            font-weight: bold;
+        }
+    </style>
 
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-                    <script type="text/javascript">
-                              //Another method to toggle the button
-                              $(document).ready(function () {
-                                        $(".showanswer").click(function () {
-                                                  $(".block_proof").show();
-                                                  $(".showanswer").hide();
-                                                  $(".hideanswer").show();
-                                        });
-                                        $(".hideanswer").click(function () {
-                                                  $(".block_proof").hide();
-                                                  $(".showanswer").show();
-                                                  $(".hideanswer").hide();
-                                        });
-                              });
-                    </script>
+    <style type="text/css">
+        /**************** Box container styles *******************/
+        .mt-content-container .boxobjectives,
+        .boxmy-example,
+        .boxexercise,
+        .boxquery,
+        .boxnotewithlegend,
+        .boxnotewithoutlegend,
+        .boxprocedure,
+        .boxdefinition,
+        .boxtheorem,
+        .boxlemma,
+        .boxnotation,
+        .boxproposition {
+            -moz-border-radius: 8px;
+            -webkit-border-radius: 8px;
+            border-radius: 8px;
+            padding-top: 0em;
+            padding-bottom: 0em;
+            padding-left: 1em;
+            padding-right: 1em;
+            margin-bottom: 1em;
+            overflow: visible;
+            border: 0px;
+            orphans: 2;
+        }
 
-                    <!-- For local function, define to exchange text -->
-                    <script>
-                              function showhideFunction() {
-                                        document.getElementById("idClick").innerHTML === "[Hide proof]"
-                                                  ? (document.getElementById("idClick").innerHTML = "[Show proof]")
-                                                  : (document.getElementById("idClick").innerHTML = "[Hide proof]");
-                              }
-                    </script>
+        .mt-content-container .boxnotewithlegend,
+        .boxprocedure,
+        .notation {
+            background-color: hsla(20, 0%, 93%, 1);
+        }
 
-                    <!-- script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,https://hamkarim.github.io/MathJax/config/local/local.js"></script  -->
+        .mt-content-container .boxmy-example,
+        .boxexercise {
+            background-color: hsla(220, 100%, 97%, 1);
+        }
 
-                    <!-- script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script -->
+        .mt-content-container .boxwarning {
+            background-color: hsla(0, 100%, 96%, 1);
+        }
 
-                    <script
-                              type="text/javascript"
-                              src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js"></script>
+        .mt-content-container .boxdefinition,
+        .boxtheorem,
+        .boxlemma,
+        .boxnotation,
+        .boxproposition {
+            background-color: hsla(28, 80%, 95%, 1);
+        }
 
-                    <!-- script type="text/javascript" config=TeX-MML-AM_CHTML
-src="">
-</script -->
+        .mt-content-container .boxobjectives {
+            background-color: hsla(0, 0%, 90%, 1);
+        }
 
-                    <!-- To get it to work in old versions of Internet Explorer, you need to append this script to the head (Important if you need it to work in older versions of IE!): -->
-                    <!--[if lt IE 9] -->
-                    <script>
-                              document.createElement("example, defn");
-                    </script>
-                    <!-- [endif]-->
-          </head>
+        .mt-content-container .boxnotewithoutlegend {
+            background-color: hsla(20, 0%, 93%, 1);
+            padding-right: 1em;
+            padding-left: 1em;
+            padding-top: 0.5em !important;
+            padding-bottom: 0.5em !important;
+            margin-right: 1em;
+            margin-left: 1em;
+        }
+
+        .mt-content-container .boxquery {
+            border: 2px solid green;
+            page-break-inside: avoid;
+            visibility: hidden !important;
+            display: none !important;
+        }
+
+        /**************** Box legend container styles *******************
+	.mt-content-container .boxlegend {
+		font-style: normal !important;
+		font-size: 1.1em !important;
+		font-weight: normal !important;
+		font-family: "Tahoma", Arial, serif !important;
+		padding-top: 0.2em !important;
+		padding-bottom: 0.2em !important;
+		padding-left: 0.3em !important;
+		padding-right: 0.3em !important;
+		margin-left: 0.35em;
+		color: white;
+		border-radius: 3px;
+		overflow: visible;
+		break-inside: avoid !important;
+	}
+
+	/************** Defining the Legends ******************
+
+
+	.box-definition>header,
+	.box-structure>header,
+	.box-note>header,
+	.box-theorem>header,
+	.box-my-example>header,
+	.box-exercise>header,
+	.box-query>header,
+	.box-adapt>header,
+	.box-objectives>header,
+	.box-warning>header {
+		display: inline-flex;
+		overflow: hidden;
+		break-inside: avoid-page;
+		page-break-inside: avoid;
+		text-align: left;
+		width: auto;
+		margin: 0 0px 2px 0px !important;
+		padding: 4px 6px 4px 4px !important;
+		transform: translate(-11px, 0px) !important;
+		border-radius: 3px 5px 5px 0;
+		-moz-border-radius: 3px 5px 5px 0;
+		-webkit-border-radius: 3px 5px 5px 0;
+	}
+	.box-definition>header *,
+	.box-structure>header *,
+	.box-note>header *,
+	.box-theorem>header *,
+	.box-my-example>header *,
+	.box-exercise>header *,
+	.box-query>header *,
+	.box-adapt>header *,
+	.box-objectives>header *,
+	.box-warning>header * {
+		font-family: "Battambang", "Tahoma", Arial, serif !important;
+		font-size: 17px !important;
+		font-weight: 400 !important;
+		color: white !important;
+		;
+		width: auto !important;
+		;
+		float: left !important;
+		;
+		line-height: 1 !important;
+		;
+		margin-block-start: 0 !important;
+		margin-block-end: 0 !important;
+	}
+*/
+    </style>
+
+    <style type="text/css">
+        /*<![CDATA[*/
+        .Headertext {
+            display: none;
+        }
+
+        /*]]>*/
+    </style>
+
+    <style type="text/css">
+        /*<![CDATA[*/
+        /* CSS pseudo-element styling https://fontawesome.com/how-to-use/on-the-web/advanced/css-pseudo-elements */
+
+        /* general reset/setup styling for icons - needed on all */
+
+        .lt-icon-default::before,
+        .lt-icon-brain::before,
+        .lt-icon-pin::before,
+        .lt-icon-hand::before,
+        .lt-icon-pathway::before,
+        .lt-icon-logic::before,
+        .lt-icon-check::before,
+        .lt-icon-question::before,
+        .lt-icon-exclamation::before {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1.5;
+            font-family: "Font Awesome 5 Pro";
+            font-weight: 900;
+            margin-right: 0.5rem;
+        }
+
+        /*default */
+
+        .box-my-example .lt-icon-default::before {
+            content: "\f00c";
+        }
+
+        .box-exercise .lt-icon-default::before {
+            content: "\f128";
+        }
+
+        .box-query .lt-icon-default::before {
+            content: "\f126";
+        }
+
+        .box-adapt .lt-icon-default::before {
+            content: "\f126";
+        }
+
+        .box-interactive .lt-icon-default::before {
+            content: "\f542";
+        }
+
+        .box-note .lt-icon-default::before {
+            content: "\f08d";
+        }
+
+        .box-objectives .lt-icon-default::before {
+            content: "\f5dc";
+        }
+
+        .box-definition .lt-icon-default::before {
+            content: "\f303";
+        }
+
+        .box-theorem .lt-icon-default::before {
+            content: "\f1b3";
+        }
+
+        .box-warning .lt-icon-default::before {
+            content: "\f256";
+        }
+
+
+        /*specific icons*/
+        .lt-icon-brain::before {
+            content: "\f5dc";
+        }
+
+        .lt-icon-pin::before {
+            content: "\f08d";
+        }
+        /*
+                .lt-icon-pathway::before,
+                    {
+                    content: "\f126";
+                }*/
+        /*
+                .lt-icon-logic::before,
+                    {
+                    content: "\f1b3";
+                }*/
+        /*
+                .lt-icon-hand::before,
+                    {
+                    content: "\f126";
+                }*/
+        /*
+                .lt-icon-pathway::before,
+                    {
+                    content: "\f256";
+                }*/
+        /*
+                .lt-icon-check::before,
+                    {
+                    content: "\f00c";
+                }*/
+        /*
+                .lt-icon-question::before,
+                    {
+                    content: "\f128";
+                } */
+        /*
+                .lt-icon-exclamation::before,
+                    {
+                    content: "\f12a";
+                }*/
+
+        /*]]>*/
+    </style>
+
+<!----
+The link you provided is a script for Google's Custom Search Engine (CSE). The "cse.js" file is responsible for loading and enabling the custom search functionalities on a website integrated with Google’s search capabilities. The "cx" parameter in the URL specifies the unique identifier for a specific custom search engine setup.
+
+With this integration, website owners can add search boxes to their sites that allow users to search for content using Google's search algorithms, tailored to the specific site or a broader set of sites that the owner defines. This enhances search results and provides a better search experience for users visiting that site.
+-->
+    <!--script-- async="" src="//cse.google.com/adsense/search/async-ads.js"></script-->
+    <!--script-- type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async="" src="https://cse.google.com/cse.js?cx=001004262401526223570:11yv6vpcqvy"></script--> 
+
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-331594-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-331594-1');
+    </script>
+
+    <link rel="stylesheet" href="../../../assets/css/style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245">
+    <link rel="stylesheet" href="../../../assets/css/all.css">
+
+
+    <!------
+    The <script src="https://d3js.org/d3.v4.min.js"></script> tag is used to include the D3.js library in a web page. D3.js (Data-Driven Documents) is a powerful JavaScript library for producing dynamic, interactive data visualizations in web browsers.
+    -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- Script to show and hide proof -->
+    <script type="text/javascript" src="https://hamkarim.github.io/assets/js/showhide.js"></script>
+    <!-- Other style of showing and hiding proof -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
+    <script type="text/javascript" src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>
+    <!-- end -->
+
+    <script type="text/javascript" src="../../../assets/sidebar/sidebar.min.js"></script>
+    <link rel="stylesheet" href="../../../assets/sidebar/Sidebar.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        //Another method to toggle the button
+        $(document).ready(function() {
+            $('.showmy-answer').click(function() {
+                $('.block_proof').show();
+                $('.showmy-answer').hide();
+                $('.hidemy-answer').show();
+            });
+            $('.hidemy-answer').click(function() {
+                $('.block_proof').hide();
+                $('.showmy-answer').show();
+                $('.hidemy-answer').hide();
+            });
+        });
+    </script>
+
+    <!-- For local function, define to exchange text -->
+    <script>
+        function showhideFunction() {
+            document.getElementById('idClick').innerHTML === '[Hide proof]' ? document.getElementById('idClick').innerHTML = '[Show proof]' : document.getElementById('idClick').innerHTML = '[Hide proof]';
+        }
+    </script>
+
+    <!-- script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,https://hamkarim.github.io/MathJax/config/local/local.js"></script -->
+
+    <!--script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { fonts: ["TeX"] }
+  });
+</script-->
+
+    <!-- script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js">
+</script-->
+
+  <!--Call latex sript from server-->
+  <!--
+  <script>
+window.MathJax = {
+  startup: {
+    ready: () => {
+      MathJax.startup.defaultReady();
+      MathJax.startup.promise.then(() => {
+        console.log('MathJax initial typesetting complete');
+      });
+    }
+  },
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script> -->
+  
+  <!-- End script--->
+  
+<!----
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        equationNumbers: { autoNumber: "AMS" },
+        tagSide: "right",
+        Macros: {
+            RR: "{\\bf R}",
+            E: "{\\bf E}",
+            F: "{\\bf F}",
+            G: "{\\bf G}",
+            H: "{\\bf H}",
+            calE: "{\\mathcal E}",
+            calF: "{\\mathcal F}",
+            calG: "{\\mathcal G}",
+            calH: "{\\mathcal H}",
+            R: "{\\mathbb R}",
+            Cc: "{\\mathbb C}",
+            bold: ["{\\bf #1}",1],
+            bfseries: ["{\\bf{\\text{ #1 }}",1],
+            fontbold: ["{\\bf{\\text{ #1 }}}",1],
+            Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+            vect: ["{\\overrightarrow{#1}}",1],
+          }
+      },
+      chtml: {
+        fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2'
+      }
+    };
+  </script> 
+  
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+         
+-->
+
+   <!--script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+      jax: ["input/TeX","output/HTML-CSS"],
+      tex: {
+          equationNumbers: { autoNumber: "AMS" },
+          tagSide: "right",
+          Macros: {
+            RR: "{\\bf R}",
+            E: "{\\bf E}",
+            F: "{\\bf F}",
+            G: "{\\bf G}",
+            H: "{\\bf H}",
+            calE: "{\\mathcal E}",
+            calF: "{\\mathcal F}",
+            calG: "{\\mathcal G}",
+            calH: "{\\mathcal H}",
+            R: "{\\mathbb R}",
+            Cc: "{\\mathbb C}",
+            bold: ["{\\bf #1}",1],
+            bfseries: ["{\\bf{\\text{ #1 }}",1],
+            fontbold: ["{\\bf{\\text{ #1 }}}",1],
+            Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+            vect: ["{\\overrightarrow{#1}}",1],
+          }
+      },
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+    });
+</script-->
+
+<script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']], // Enable $...$ for inline math
+        displayMath: [['$$', '$$'], ['\\[', '\\]']], // For display math
+        processEscapes: true,
+        tags: 'ams', // Enables AMS-style numbering for equations
+        tagSide: 'right', // Position of the equation numbers
+        //tagIndent: '0.8em' // Indentation from the equation
+        Macros: {
+            RR: "{\\bf R}",
+            E: "{\\bf E}",
+            F: "{\\bf F}",
+            G: "{\\bf G}",
+            H: "{\\bf H}",
+            calE: "{\\mathcal E}",
+            calF: "{\\mathcal F}",
+            calG: "{\\mathcal G}",
+            calH: "{\\mathcal H}",
+            R: "{\\mathbb R}",
+            Cc: "{\\mathbb C}",
+            bold: ["{\\bf #1}",1],
+            bfseries: ["{\\bf{\\text{ #1 }}",1],
+            fontbold: ["{\\bf{\\text{ #1 }}}",1],
+            Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+            vect: ["{\\overrightarrow{#1}}",1],
+          }
+      },
+      chtml: {
+      scale: 0.85, // default font scaling
+      mtextFont: null, // Use default MathJax fonts
+      merrorFont: null, // Handle errors with default fonts
+      }
+    };
+  </script>
+  <!---- Below is good for MathJax 3.x--->
+   <script
+            type="text/javascript" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <style>
+        mjx-container * {
+              /*font-family: 'serif' !important;*/
+              font-weight: normal !important;
+        }
+    </style>
+  
+   <!---Script for latex called from local--->
+    <!--script src="https://hamkarim.github.io/MathJax/config/local/mathjax-config.js" defer></script--
+    <script type="text/javascript" src="../../../MathJax/config/local/mathjax-config.js" defer></script>--
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml-full.min.js">
+    </script>-->
+<!---End code for latex---->
+    
+    
+    <!--Show/Hide my-answer with: toggleAnswer(my-exampleId)-->
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function toggleAnswer(answerId) {
+            // Create the dynamic id
+            let dynamicId = `answer_${answerId}`;
+
+            // Get the element by the dynamic id
+            let element = document.getElementById(dynamicId);
+
+            // Toggle the 'hidden' class to show/hide the my-answer block
+            if (element) {
+                // Toggle visibility based on the current display style
+                if (element.style.display === 'none') {
+                    element.style.display = 'block';  // Show the element
+                } else {
+                    element.style.display = 'none';  // Hide the element
+                }
+            } else {
+                console.error(`Element with id "${answerId}" not found.`);
+            }
+        }
+    </script>
+
+    <!--End-->
+    <script>
+        $(document).ready(function(){
+            $("my-sh").click(function(){
+                $(".foote").toggle();
+            });
+            $("#ansSH").click(function(){
+                $(".ansToggle").toggle();
+            });
+        });
+    </script>
+
+    <!--script>
+      window.customElements.define("my-defn", class extends HTMLElement {})
+        </!--script-->
+
+    <script>
+        // Create element:
+        //const para = document.createElement("mydef");
+       // const para = document.createElement("my-fig");
+        //const para = document.createElement("fig-cap");
+        // Create elements with unique variable names
+
+    //    const myDef = document.createElement("my-def"); // Valid custom element name
+    //    const myFig = document.createElement("my-fig");
+    //    const figCap = document.createElement("fig-cap");
+
+// Optionally append elements to the DOM
+    //    document.body.appendChild(myDef);
+    //    document.body.appendChild(myFig);
+    //    document.body.appendChild(figCap);
+//If you want to define custom behaviors for these elements, you can use the customElements.define API:
+ customElements.define("my-def", class extends HTMLElement {});
+ customElements.define("my-fig", class extends HTMLElement {});
+ customElements.define("fig-cap", class extends HTMLElement {});
+
+    </script>
+
+<!--- Show/Hide Toggle--->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+    <style>  
+        .sols {  
+            display: none; /* Initially hidden */  
+            margin-top: 30px;  
+            margin-bottom: 20px;
+            border: 1px solid #9cbcdf;  
+            background-color: rgba(229, 229, 229, 0.25);
+            padding: 10px;  
+        }  
+        /* Styles for the toggle element */  
+        my-toggle {  
+            cursor: pointer; /* Hand pointer cursor */  
+            color: blue; /* Initial color */  
+           /* font-weight: italic;  */
+            font-style: italic;
+            font-size: 85%;
+            float: right; /* Align to the right */  
+            margin-top: 10px; /* Adjust the height as needed */  
+            margin-right: 20px; /* Space from the right margin */ 
+            margin-bottom: 30px; /* Space from the bottom margin */ 
+        }  
+    </style>  
+<script>  
+    $(document).ready(function(){  
+        $("my-toggle").click(function(){  
+            $(".sols").toggle(); // Toggle visibility of the solution  
+            // Change the text of the toggle element based on visibility  
+            // $(this).text($(this).text() === 'Show Solution' ? 'Hide Solution' : 'Show Solution');  
+            // Alternate the text and color based on visibility  
+            if ($(".sols").is(":visible")) {  
+                $(this).html("Hide Solution"+"&#8617;").css("color", "red");  // Change to red
+            } else {  
+                $(this).html("Show Solution"+"&#8617;").css("color", "blue");  // Change to blue
+            }  
+        });  
+    });  
+</script>  
+
+<!--Previous/Next--->
+
+<style>
+    my-fig {
+        display: block;
+        margin: 20px 0;
+        text-align: center;
+    }
+    fig-cap {
+        display: block;
+        font-size: 14px;
+        font-style: italic;
+        color: #265d73;
+        margin-top: 5px;
+    }
+    .image-container {
+        display: flex;
+        justify-content: space-around; /* Adjust spacing */
+        align-items: center;
+    }
+    .image-container img {
+        /*width: 200px; /* Adjust image size */
+        margin: 5px;
+    }
+    .twocols {
+        display: flex; /* Use Flexbox to create columns */
+        /*justify-content: space-between; /* Space between the columns */
+        align-items: center; /* Align content vertically in the center */
+        text-align: center; /* Center text horizontally */
+        width: 100%; /* Optional: Adjust container width */
+        /*margin: 0 auto; /* Center the container on the page */
+        border: 1px solid #ccc; /* Optional: Add a border for visualization */
+        padding: 10px;
+        padding-top: 8px;
+        margin-top: -1em;
+    }
+
+    .column {
+        flex: 1; /* Each column takes up equal space */
+        width: 100%;
+        /*margin: 0 10px; /* Optional: Add some spacing between columns */
+        padding: 10px; /* Optional: Add padding inside columns */
+        /*background-color: #f9f9f9; /* Optional: Column background color */
+        /*border: 1px solid #ddd; /* Optional: Add border for visualization */
+    }
+    .center-text {
+            text-align: center; /* Center text horizontally */
+            border: 2px solid black; /* Add a border around the text */
+            padding: 10px; /* Add space inside the border */
+            width: 80%; /* Optional: Set a specific width */
+            margin: 20px auto; /* Center the <p> element itself */
+            background-color: cornsilk
+        }
+
+    .center-nobd {
+            text-align: center!important; /* Center text horizontally */
+            padding: 20px; /* Add space inside the border */
+            width: 90%; /* Optional: Set a specific width */
+            margin: 20px auto; /* Center the <p> element itself */
+        }
+
+    .noind-center {
+            text-indent: 0px!important;
+            text-align: center; /* Center text horizontally */
+            /*border: 2px solid black; /* Add a border around the text */
+            padding: 20px; /* Add space inside the border */
+            /*width: 70%; /* Optional: Set a specific width */
+            margin-bottom: 20px; /* Center the <p> element itself */
+            /*background-color: cornsilk*/
+        }
+
+    .text-block {
+        display: none;
+        /*padding: 10px;
+            /*border: 2pt solid #0067eb;*/
+        /*border-radius: 10px;*/
+            margin-top: 10px;
+        /*    margin-bottom: 10px;
+          /*  background-color: #d5dfe5; */
+    } /* Initially hide all text blocks */
+
+    .text-block.active {
+        display: block; /* Show the active text block */
+    }
+   /* .text-container {
+        position: relative;
+        padding: 20px; /* Add padding around text blocks /
+        padding-bottom: 40px;
+        padding-right: 10px;
+    } */
+   /* .nav-link {
+            cursor: pointer; /* Change cursor to pointer when hovering */
+    /*        margin: 0 10px; /* Add some space around the navigation items */
+    /*        font-size: 16px; /* Increase font size for visibility */
+    /*        user-select: none; /* Prevent text selection */
+    /*    }  */
+    .text-container {
+            position: relative; /* Set position context for absolute positioning of nav signs */
+            padding: 20px; /* Add padding around text blocks */
+            padding-bottom: 40px;
+            padding-right: 10px;
+            border: 1px solid #ccc; /* Optional: Add border for visibility */
+            border-left: 5px solid darkgray;
+            border-bottom: 5px solid darkgray;
+            border-radius: 20px;
+        }
+
+        .nav-sign {
+            position: static; /* Position absolutely within the container */
+            font-size: 16px; /* Increase font size for visibility */
+            cursor: pointer; /* Change cursor to pointer when hovering */
+            color: darkred;
+            margin: 0 4px; /*Add margin for spacing*/
+        }
+        .nav-container {
+            position: absolute; /* Positioning relative to container */
+            bottom: 5px; /* Position near the bottom */
+            left: 50%; /* Centering left */
+            transform: translateX(-50%); /* Adjust for element width to truly center */
+        }
+        .prevSign {
+            left: 10px; /* Position to the bottom left */
+            bottom: 10px; /* Position near the bottom */
+            display: none; /* Initially hidden */
+        }
+        .nextSign {
+            right: 10px; /* Position to the bottom right */
+            bottom: 10px; /* Position near the bottom */
+            display: inline; /* Initially visible */
+        }
+</style>
+<!---End code--->
+
+<!---CSS for parentheses list ----->
+
+<style>
+    .main-content ol,
+    ul {
+        /*list-style-type: decimal; /* or 'upper-alpha' for A, B, C */
+        /*padding-left: 0; /* or any value that looks good */
+        /*font-family: Arial, sans-serif;  */
+        font-size: 16px; /* adjust size as needed */
+        /*color: rgb(0, 0, 0); /* adjust color as needed */
+        /*line-height: 1.6;*/
+        margin-bottom: 10px; /* Adjust spacing below */
+        margin-left: 3em;
+        margin-top: 10px; /* Adjust spacing above */
+        margin-right: 1px;
+        padding-right: 2px;
+    }
+    .main-content ol > li,
+    ul > li {
+        margin-bottom: 10px; /* Add spacing between items */
+        line-height: 1.6; /* Increase line height */
+        /*margin-left: 20px;*/
+        /*margin-right: 1px;*/
+        padding-left: 1em;
+        padding-right: 0px;
+        /*padding-right:10px; */
+    }
+    .main-content ol > li > ol,
+    ul > li > ul {
+        margin-left: 0; /* Reset margins for the ordered list */
+        padding-left: 10px; /* Add some padding to the left */
+    }
+
+    ol.parenthroman {
+        counter-reset: item;
+        font-size: 16px; /* adjust size as needed */
+        /*color: rgb(0, 0, 0); /* adjust color as needed */
+        /*line-height: 1.6;*/
+        margin-bottom: 20px; /* Adjust spacing above */
+        margin-left: -2em;
+	    /*display: table-row;*
+        display: block;
+        /*margin-bottom: 0.5em;*/
+        /*margin-left: 2em;*/
+    /*font-size: 16px;
+	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
+    }
+
+    ol.parenthroman > li::before {
+        counter-increment: item;
+        content: "(" counter(item, lower-roman) ") ";
+        /*display: table-cell;*
+        display: inline-block;
+        text-align: left;
+        /*padding-right: 0;*/
+        width: 2em;
+        margin-left: -1.8em;
+        padding-left: 2em;
+    /*font-size: 16px;
+	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
+    }
+
+    ol.rom-par {
+        list-style: none;
+        counter-reset: tcounter;
+    }
+
+    ol.rom-par > li:before {
+        counter-increment: tcounter;
+        content: "(" counter(tcounter, lower-roman) ") ";
+        margin-right: 0.5em; /* Add margin to the right of the generated content */
+    }
+    ol.ar-par {
+        list-style: none;
+        counter-reset: tcounter;
+    }
+
+    ol.ar-par > li:before {
+        counter-increment: tcounter;
+        content: "(" counter(tcounter) ") ";
+        margin-right: 0.5em; /* Add margin to the right of the generated content */
+    }
+
+    ol.alp-par {
+        list-style: none;
+        counter-reset: tcounter;
+    }
+
+    ol.alph-par > li:before {
+        counter-increment: tcounter;
+        content: "(" counter(tcounter, lower-alpha) ") ";
+        margin-right: 0.5em; /* Add margin to the right of the generated content */
+    }
+</style>
+
+
+
+<!-- To get it to work in old versions of Internet Explorer, you need to append this script to the head (Important if you need it to work in older versions of IE!): -->
+<!--[if lt IE 9] -->
+    <script>
+            document.createElement("example, defn");
+   </script>
+<!-- [endif]-->
+<!---End--->
+
+</head>
+
 <body>
-                    <section class="page-header">
+<div class="Headertext">
+
+    \( \newcommand{\vecs}[1]{\overset { \scriptstyle \rightharpoonup} {\mathbf{#1}}&nbsp;}&nbsp;\)
+    \( \newcommand{\vecd}[1]{\overset{-\!-\!\rightharpoonup}{\vphantom{a}\smash&nbsp;{#1}}} \)
+    \(\newcommand{\id}{\mathrm{id}}\)
+    \( \newcommand{\Span}{\mathrm{span}}\)
+    \( \newcommand{\kernel}{\mathrm{null}\,}\)
+    \( \newcommand{\range}{\mathrm{range}\,}\)
+    \( \newcommand{\RealPart}{\mathrm{Re}}\)
+    \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+    \( \newcommand{\Argument}{\mathrm{Arg}}\)
+    \( \newcommand{\norm}[1]{\| #1 \|}\)
+    \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+    \( \newcommand{\Span}{\mathrm{span}}\)
+    \(\newcommand{\id}{\mathrm{id}}\)
+    \( \newcommand{\Span}{\mathrm{span}}\)
+    \( \newcommand{\kernel}{\mathrm{null}\,}\)
+    \( \newcommand{\range}{\mathrm{range}\,}\)
+    \( \newcommand{\RealPart}{\mathrm{Re}}\)
+    \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+    \( \newcommand{\Argument}{\mathrm{Arg}}\)
+    \( \newcommand{\norm}[1]{\| #1 \|}\)
+    \( \newcommand{\cof}{\mathbf{cof}}\)
+    \( \newcommand{\adj}{\mathbf{adj}}\)
+    \( \renewcommand{\det}{\mathbf{det\,\!}}\)
+    \( \newcommand{\minor}{\mathbf{minor}}\)
+    \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+    \( \newcommand{\Span}{\mathrm{span}}\)
+    \(\newcommand{\E}{\mathbf{V}}\)
+    \(\newcommand{\K}{\mathbb{K}}\)
+    \(\newcommand{\F}{W}\)
+    \(\newcommand{\R}{\mathbb{R}}\)
+</div>
+<section class="page-header">
                               <h1 class="project-name">ហាំ ការីម</h1>
                               <h2 class="project-tagline">Maths, Program, Music</h2>
-                    </section>
+</section>
 
-                    <section class="main-content">
-                              <h1 style="text-shadow: 4px 4px 4px #c0c0c0">ជំពូក ១:&nbsp; Introduction to Probability Theory</h1>
-                              <span style="font-style: italic; font-weight: bold; font-family: Arial; opacity: 0.5">
+<section class="main-content">
+    <h1 style="text-shadow: 4px 4px 4px #c0c0c0">ជំពូក ១:&nbsp; Introduction to Probability Theory</h1>
+         <span style="font-style: italic; font-weight: bold; font-family: Arial; opacity: 0.5">
                                         October 1st, 2024
-                              </span>
-                              <hr />
+        </span>
+<hr />
 
-                              <h2 class="frame-sect sectcounter">សេចក្ដីផ្ដើម</h2>
+<h2 class="frame-sect sectcounter">សេចក្ដីផ្ដើម</h2>
                               
-                              <h3>Reasoning under uncertainty</h3>
+     <h3>Reasoning under uncertainty</h3>
                               
-                              <ul>
-                                  <!--li><b>Real-World Complexity: </b>The world is filled with uncertainty. From predicting the weather to making decisions based on incomplete data, uncertainty is inherent in most real-life situations.</li-->
-                                  <li><b>ភាពស្មុគស្មាញរបស់ពិភពពិត៖</b> ពិភពលោកពោរពេញទៅដោយភាពមិនប្រាកដប្រជា។ ឧ. ចេញពីការទស្សន៍ទាយអាកាសធាតុ រហូតដល់ការសម្រេចចិត្តដោយផ្អែកលើទិន្នន័យមិនពេញលេញ ភាពមិនប្រាកដប្រជា មាននៅក្នុងស្ថានភាពជីវិតពិតភាគច្រើន។</li>
-                                  <!--li><b>Decision-Making:</b> Probabilistic reasoning helps in making informed decisions when outcomes are not certain. It allows for evaluating risks and benefits, leading to more rational choices.</li-->
-                                  <li>ការ​សម្រេច​ចិត្ត៖ ហេតុផល​ដែល​ទំនង​ជា​ជួយ​ក្នុង​ការ​ធ្វើ​ការ​សម្រេច​ចិត្តចេញពីព័ត៌មានទទួលបាន​នៅ​ពេល​ដែលលទ្ធផល​មិនអាចឱ្យគេដឹង​ប្រាកដ​ប្រជាបាន ។ ហេតុនេះ គេអាចវាយតម្លៃបានអំពីហានិភ័យ និងអត្ថប្រយោជន៍ ដែលនាំឱ្យមានជម្រើសសមហេតុផលបន្ថែមទៀត ។</li>
-                                  <!--li><b>Statistical Inference:</b> Much of statistical analysis revolves around drawing conclusions from data that are inherently uncertain. Probability theory provides the tools to make these inferences in a principled way.</li-->
-                                  <li><b>ការ​សន្និដ្ឋាន​បែបស្ថិតិ៖</b> ការវិភាគ​បែបស្ថិតិ​ភាគច្រើន​ទាក់ទង​នឹង​ការ​ទាញសេចក្ដី​សន្និដ្ឋាន​ពី​ទិន្នន័យ​ដែល​មិន​ប្រាកដ​ប្រជា។ ទ្រឹស្ដីប្រូបាប៊ីលីតេផ្ដល់នូវឧបករណ៍មួយ ដើម្បីបង្កើតការសន្និដ្ឋានទាំងនេះ តាមគោលការណ៍កំណត់មួយ ។</li>
-                                 <!-- <li><b>Modeling and Simulation:</b> Probabilistic models can simulate complex systems and processes where certainty is impossible. This is essential in fields like finance, engineering, and science.</li> -->
-                                 <li><b>ការកំណត់គំរូ និង ស៊ីមុយឡាស្យុង (Simulation)៖</b> គំរូប្រូបាប៊ីលីតេ អាចក្លែងធ្វើប្រព័ន្ធ និងដំណើរការស្មុគស្មាញ ដែលភាពប្រាកដប្រជាមិនអាចទៅរួច។ នេះគឺចាំបាច់ក្នុងវិស័យដូចជា ហិរញ្ញវត្ថុ វិស្វកម្ម និងវិទ្យាសាស្ត្រ។</li>
-                                 <!-- <li><b>Learning and Adaptation:</b> In areas like machine learning and artificial intelligence, probabilistic reasoning allows systems to learn from data, adapt to new information, and improve over time.</li> -->
-                                  <li><b>ការរៀន និង ការសម្របខ្លួនតាម៖</b> នៅក្នុងមុខជំនាញ ដូចជា machine learning (ML) និងបញ្ញាសិប្បនិម្មិត (artificial intelligence: AI) ការផ្ដល់ហេតុផលមួយតាមន័យប្រូបាប៊ីលីតេ អនុញ្ញាតឱ្យប្រព័ន្ធនានា រៀនពីទិន្នន័យដែលមានស្រាប់ សម្របទៅនឹងព័ត៌មានថ្មីៗ ហើយធ្វើការកែលម្អទៅតាមកាលវេលាតម្រូវ ។</li>
-                              </ul><br>
+    <ul>
+              <!--li><b>Real-World Complexity: </b>The world is filled with uncertainty. From predicting the weather to making decisions based on incomplete data, uncertainty is inherent in most real-life situations.</li-->
+              <li>
+                        <b>ភាពស្មុគស្មាញរបស់ពិភពពិត៖</b> ពិភពលោកពោរពេញទៅដោយភាពមិនប្រាកដប្រជា។ ឧ.
+                        ចេញពីការទស្សន៍ទាយអាកាសធាតុ រហូតដល់ការសម្រេចចិត្តដោយផ្អែកលើទិន្នន័យមិនពេញលេញ ភាពមិនប្រាកដប្រជា
+                        មាននៅក្នុងស្ថានភាពជីវិតពិតភាគច្រើន។
+              </li>
+              <!--li><b>Decision-Making:</b> Probabilistic reasoning helps in making informed decisions when outcomes are not certain. It allows for evaluating risks and benefits, leading to more rational choices.</li-->
+              <li>
+                        ការ​សម្រេច​ចិត្ត៖
+                        ហេតុផល​ដែល​ទំនង​ជា​ជួយ​ក្នុង​ការ​ធ្វើ​ការ​សម្រេច​ចិត្តចេញពីព័ត៌មានទទួលបាន​នៅ​ពេល​ដែលលទ្ធផល​មិនអាចឱ្យគេដឹង​ប្រាកដ​ប្រជាបាន
+                        ។ ហេតុនេះ គេអាចវាយតម្លៃបានអំពីហានិភ័យ និងអត្ថប្រយោជន៍ ដែលនាំឱ្យមានជម្រើសសមហេតុផលបន្ថែមទៀត ។
+              </li>
+              <!--li><b>Statistical Inference:</b> Much of statistical analysis revolves around drawing conclusions from data that are inherently uncertain. Probability theory provides the tools to make these inferences in a principled way.</li-->
+              <li>
+                        <b>ការ​សន្និដ្ឋាន​បែបស្ថិតិ៖</b>
+                        ការវិភាគ​បែបស្ថិតិ​ភាគច្រើន​ទាក់ទង​នឹង​ការ​ទាញសេចក្ដី​សន្និដ្ឋាន​ពី​ទិន្នន័យ​ដែល​មិន​ប្រាកដ​ប្រជា។
+                        ទ្រឹស្ដីប្រូបាប៊ីលីតេផ្ដល់នូវឧបករណ៍មួយ ដើម្បីបង្កើតការសន្និដ្ឋានទាំងនេះ តាមគោលការណ៍កំណត់មួយ ។
+              </li>
+              <!-- <li><b>Modeling and Simulation:</b> Probabilistic models can simulate complex systems and processes where certainty is impossible. This is essential in fields like finance, engineering, and science.</li> -->
+              <li>
+                        <b>ការកំណត់គំរូ និង ស៊ីមុយឡាស្យុង (Simulation)៖</b> គំរូប្រូបាប៊ីលីតេ អាចក្លែងធ្វើប្រព័ន្ធ
+                        និងដំណើរការស្មុគស្មាញ ដែលភាពប្រាកដប្រជាមិនអាចទៅរួច។ នេះគឺចាំបាច់ក្នុងវិស័យដូចជា ហិរញ្ញវត្ថុ
+                        វិស្វកម្ម និងវិទ្យាសាស្ត្រ។
+              </li>
+              <!-- <li><b>Learning and Adaptation:</b> In areas like machine learning and artificial intelligence, probabilistic reasoning allows systems to learn from data, adapt to new information, and improve over time.</li> -->
+              <li>
+                        <b>ការរៀន និង ការសម្របខ្លួនតាម៖</b> នៅក្នុងមុខជំនាញ ដូចជា machine learning (ML)
+                        និងបញ្ញាសិប្បនិម្មិត (artificial intelligence: AI) ការផ្ដល់ហេតុផលមួយតាមន័យប្រូបាប៊ីលីតេ
+                        អនុញ្ញាតឱ្យប្រព័ន្ធនានា រៀនពីទិន្នន័យដែលមានស្រាប់ សម្របទៅនឹងព័ត៌មានថ្មីៗ
+                        ហើយធ្វើការកែលម្អទៅតាមកាលវេលាតម្រូវ ។
+              </li>
+    </ul>
+    <br />
                               ការវែកញែកនៅក្រោមភាពមិនច្បាស់លាស់ អាចឱ្យគេរុករក និងធ្វើឱ្យយល់ អំពីពិភពមួយ ដែលជារឿយៗមិនអាចទាយទុកជាមុនបាន និងមិនពេញលេញ។ <!--Reasoning under uncertainty enables us to navigate and make sense of a world that is often unpredictable and incomplete. -->
-                              <br>
+ <br>
                               
-                              <ul>
-                                  <li>In many settings, we must try to understand what is going on in a system when we have imperfect or incomplete information.</li>
-                                  
-                                  <li>Two reasons why we might reason under uncertainty:
-                                  <ul>
-                                      <li>
-                                                <b>laziness</b> (modeling every detail of a complex system is costly)</li>
-                                                <li><b>ignorance</b> (we may not completely understand the system)</li>
-                                            </ul>
-                                            
-                                            
-                                            
-                                            
-                                      </li>
-                                      
-                                 
-                                 
-                                  
-                              </ul>
+   <ul>
+             <li>
+                       In many settings, we must try to understand what is going on in a system when we have imperfect
+                       or incomplete information.
+             </li>
+
+             <li>
+                       Two reasons why we might reason under uncertainty:
+                       <ul>
+                                 <li><b>laziness</b> (modeling every detail of a complex system is costly)</li>
+                                 <li><b>ignorance</b> (we may not completely understand the system)</li>
+                       </ul>
+             </li>
+   </ul>
                               
-                              <h3>Using Probability Theory to reason under uncertainty</h3>
+<h3>Using Probability Theory to reason under uncertainty</h3>
 
                             
-                              <ul style="margin-left: 20pt" >
-                                  <li>Probabilities quantify uncertainty regarding the occurrence of events.</li>
-                                  
-                                  <li>Are there alternatives? Yes, e.g., Dempster-Shafer Theory, disjunctive uncertainty, etc. (Fuzzy Logic is about imprecision, not uncertainty.)</li>
-                                  <li>Why is Probability Theory better? Because if you do not reason according to Probability Theory, you can be made to act irrationally (de Finetti)</li>
-                                  <li>Probability Theory is key to the study of action and communication:
-                                  <ul>
-                                      <li><b>Decision Theory:</b> combines Probability Theory with Utility Theory.</li>
-                                      <li><b>Information Theory:</b> is "the logarithm of Probability Theory".</li>
-                                      
-                                  </ul>
-</li>
-                                  <li>Probability Theory gives rise to many interesting and important philosophical questions (which we will not cover).</li>
+    <ul style="margin-left: 20pt">
+              <li>Probabilities quantify uncertainty regarding the occurrence of events.</li>
 
-                                  
-                                  
-                              </ul>
+              <li>
+                        Are there alternatives? Yes, e.g., Dempster-Shafer Theory, disjunctive uncertainty, etc. (Fuzzy
+                        Logic is about imprecision, not uncertainty.)
+              </li>
+              <li>
+                        Why is Probability Theory better? Because if you do not reason according to Probability Theory,
+                        you can be made to act irrationally (de Finetti)
+              </li>
+              <li>
+                        Probability Theory is key to the study of action and communication:
+                        <ul>
+                                  <li><b>Decision Theory:</b> combines Probability Theory with Utility Theory.</li>
+                                  <li><b>Information Theory:</b> is "the logarithm of Probability Theory".</li>
+                        </ul>
+              </li>
+              <li>
+                        Probability Theory gives rise to many interesting and important philosophical questions (which
+                        we will not cover).
+              </li>
+    </ul>
                
 <h2>១.១ ប្រូបាប៊ីលីតេបឋមៗ (elementary probability)</h2>
                              
@@ -482,6 +1317,49 @@ There are two special events: </p>
      </li>
  </ul>
 
+<h2>សង្ខេប (Sample Spaces and Events)</h2>
+
+<ul>
+   <li>
+       <i>An experiment</i> is a process whose outcome can be observed.
+   </li>
+   <li>
+       <i>The sample space,</i> $S$ or $\Omega$, of an experiment is the set of possible outcomes for the experiment. (The sample space may be finite or infinite).
+   </li>
+   
+   <li>
+       <i>An EVENT</i> is a subset of the sample space, i.e. a (possibly empty) collection of possible outcomes to the experiment. We say that an event A OCCURS if the outcome is an element of $A$.
+   </li>
+
+</ul>
+
+<p><b>Note: </b>
+The difference between an outcome and an event in this context is that an
+outcome is an individual possible result of the experiment; an event may include
+many different possible outcomes.
+</p>
+<my-example>
+    Experiment: Toss a coin three times.
+    <ul>
+        <li>
+            The Sample Space is $$S=\Bigl\{{HHH}, {HHT}, {HTH}, {HTT}, {THH}, {THT}, {TTH}, {TTT}\Bigr\}$$
+        </li>
+        
+        <li>
+            The event "2 heads, one tail" is the subset 
+            $$A=\{H H T, H T H, T H H\} \; \text{ of } S$$
+        </li>
+    </ul>
+
+
+</my-example>
+
+
+
+
+
+
+
   <!--
                                                                                                                                                 
                               <defn>
@@ -708,7 +1586,9 @@ $$
                                         >
                               </footer>
                     </section>
-          </body>
+
+          
+</body>
 
           <!--script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
