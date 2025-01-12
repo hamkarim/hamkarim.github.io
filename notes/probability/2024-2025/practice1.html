@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en-US">
+          <head>
+                    <meta charset="utf-8" />
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                    <meta
+                              name="viewport"
+                              content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" />
+                    <!-- Begin Jekyll SEO tag v2.3.0 -->
+                    <meta property="og:title" content="Ham Karim" />
+                    <meta name="author" content="Ham Karim" />
+                    <meta name="author" content="ហាំ ការីម" />
+                    <meta property="og:locale" content="en_US" />
+                    <!--meta http-equiv="keywords"
+                        name="keywords"
+                        content="relations, binary relation, relation and function, ទំនាក់ទំនងទ្វេធាតុ, អនុគមន៍ និងទំនាក់ទំនង" /-->
+                    <!--meta http-equiv="description" name="description" content="ក្នុងគណិតវិទ្យា ......... ">
+<meta name="description" content="binary relation, ទំនាក់ទំនងទ្វេធាតុ">
+<meta property="og:description" content="Math, Programmer, Music">
+<link rel="canonical" href="../../index.html">
+<meta property="og:url" content="https://hamkarim.github.io/">
+<meta property="og:site_name" content="Binary Relation">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@pkarim">
+<meta name="twitter:creator" content="@pkarim">
+<meta name="google-site-verification" content="b9bg3P9zc8qbL4szvVYaf551jD9x017IyGBVSaQZDDY" /-->
+
+                    <script type="application/ld+json">
+                              {
+                                        "name": "Ham Karim",
+                                        "description": "I am a faculty member at the Royal Univeristy of Phnom Penh (RUPP). This is my blog of lectures at universities. ",
+                                        "author": { "@type": "Person", "name": "Ham Karim" },
+                                        "@type": "WebSite",
+                                        "url": "https://hamkarim.github.io/",
+                                        "image": null,
+                                        "publisher": null,
+                                        "headline": "Ham Karim",
+                                        "dateModified": null,
+                                        "datePublished": "2020-06-01",
+                                        "sameAs": null,
+                                        "mainEntityOfPage": null,
+                                        "@context": "http://schema.org"
+                              }
+                    </script>
+                    <!-- End Jekyll SEO tag -->
+
+                    <meta
+                              property="og:image"
+                              content="http://www.cliparts101.com/files/376/298FE3955707B1DE458221E4BFABFBBE/Greek_Gamma_4.png" />
+                    <link rel="shortcut icon" type="image/x-icon" href="../../algebra/1st-year/notes/favicon.ico" />
+                    <meta charset="UTF-8" />
+                    <title>practice1</title>
+                    <meta name="description" content="binary relation" />
+
+                    <style>
+                              .deffont {
+                                        font-family: "Noto Serif Khmer", "CMU Serif";
+                                        font-size: 16px;
+                              }
+                              ul.liststyle1 {
+                                        list-style-type: square;
+                              }
+                              ul.liststyle2 {
+                                        list-style-type: hebrew;
+                              }
+                              a.onmenu {
+                                        font-family: "Noto Serif Khmer", "CMU Serif";
+                                        font-weight: bold;
+                              }
+                    </style>
+
+                    <script async="" src="//cse.google.com/adsense/search/async-ads.js"></script>
+                    <script
+                              type="text/javascript"
+                              async=""
+                              src="https://www.google-analytics.com/analytics.js"></script>
+                    <script
+                              type="text/javascript"
+                              async=""
+                              src="https://cse.google.com/cse.js?cx=001004262401526223570:11yv6vpcqvy"></script>
+                    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-331594-1"></script>
+                    <script>
+                              window.dataLayer = window.dataLayer || [];
+                              function gtag() {
+                                        dataLayer.push(arguments);
+                              }
+                              gtag("js", new Date());
+
+                              gtag("config", "UA-331594-1");
+                    </script>
+
+                    <link
+                              rel="stylesheet"
+                              href="../../../../assets/css/style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245" />
+
+                    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+                    <!-- Script to show and hide proof -->
+                    <script type="text/javascript" src="https://hamkarim.github.io/assets/js/showhide.js"></script>
+                    <!-- Other style of showing and hiding proof -->
+                    <link
+                              rel="stylesheet"
+                              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+                    <script
+                              type="text/javascript"
+                              src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
+                    <script
+                              type="text/javascript"
+                              src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>
+                    <!-- end -->
+
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                    <script type="text/javascript">
+                              //Another method to toggle the button
+                              $(document).ready(function () {
+                                        $(".showanswer").click(function () {
+                                                  $(".block_proof").show();
+                                                  $(".showanswer").hide();
+                                                  $(".hideanswer").show();
+                                        });
+                                        $(".hideanswer").click(function () {
+                                                  $(".block_proof").hide();
+                                                  $(".showanswer").show();
+                                                  $(".hideanswer").hide();
+                                        });
+                              });
+                    </script>
+
+                    <!-- For local function, define to exchange text -->
+                    <script>
+                              function showhideFunction() {
+                                        document.getElementById("idClick").innerHTML === "[Hide proof]"
+                                                  ? (document.getElementById("idClick").innerHTML = "[Show proof]")
+                                                  : (document.getElementById("idClick").innerHTML = "[Hide proof]");
+                              }
+                    </script>
+
+                    <!-- script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,https://hamkarim.github.io/MathJax/config/local/local.js"></script  -->
+
+                    <!-- script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script -->
+
+                    <script
+                              type="text/javascript"
+                              src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js"></script>
+
+                    <!-- script type="text/javascript" config=TeX-MML-AM_CHTML
+src="">
+</script -->
+
+                    <!-- To get it to work in old versions of Internet Explorer, you need to append this script to the head (Important if you need it to work in older versions of IE!): -->
+                    <!--[if lt IE 9] -->
+                    <script>
+                              document.createElement("example, defn");
+                    </script>
+                    <!-- [endif]-->
+          </head>
+
+          <body>
+                    <section class="page-header">
+                              <h1 class="project-name">ហាំ ការីម</h1>
+                              <h2 class="project-tagline">Maths, Program, Music</h2>
+                    </section>
+
+                    <section class="main-content">
+                              <h1 style="text-shadow: 4px 4px 4px #c0c0c0">អនុវត្តន៍ ១.</h1>
+                              <span style="font-style: italic; font-weight: bold; font-family: Arial; opacity: 0.5">
+                                        October 1st, 2024
+                              </span>
+                              <hr />
+
+                              <h2 class="frame-sect sectcounter">Permutations and Combinations</h2>
+                              
+                              
+                                                  
+                              <h3>Repetition of an Event</h3>
+                              
+                              <ol>
+                                  <li>How many different car number plates (ស្លាកលេខរថយន្ត) are
+possible with 3 letters followed by 3 digits? </li>
+                                 <li>
+                                     How many of these number plates begin with ABC ?
+                                 </li>
+                                 
+                                 <li>
+                                     If a plate is chosen at random, what is the
+probability that it begins with ABC?
+                                 </li>
+                                  
+                              </ol>
+                              
+                              
+                              <h3>Arrangements or Permutations</h3>
+
+                            
+                              <ol><!--style="margin-left: 20pt"-->
+                                  <li>
+                                      A maths debating team (ក្រុមជជែកពិភាក្សាគណិតវិទ្យា) consists of 4 speakers.
+                                      <ul>
+                                          <li>
+                                              In how many ways can all 4 speakers (អ្នកពិភាក្សា) be arranged in a row for a photo?
+                                          </li>
+                                          <li>
+                                              How many ways can the captain (ប្រធានក្រុម) and vice-captain (អនុប្រធានក្រុម) be chosen?
+                                          </li>
+                                      </ul>
+                                  </li>
+                                      
+                                  </ol>
+<h3>Permutations with Restrictions</h3>
+               
+<ol>
+    <li>
+        In how many ways can 5 boys and 4 girls be
+arranged on a bench (តម្រៀបអោយអង្គុយនៅលើកៅអីវែងមួយ) if
+   <ul>
+       <li>
+           there are no restrictions (គ្មានគិតលក្ខខណ្ឌ)?
+       </li>
+       <li>
+           boys and girls alternate?
+       </li>
+       <li>
+           boys and girls are in separate groups?
+       </li>
+       <li>
+           Dara and Sam wish to stay together?
+       </li>
+   </ul>
+    </li>
+
+</ol>
+                              
+ <h3>Arrangements with Repetitions</h3>                             
+ <ol>
+     <li>
+         How many different arrangements (តម្រៀប) of the word
+PARRAMETTER are possible?
+     </li>
+     <li>
+         How many arrangements of the letters of the word REMIND are possible if:
+         <ul>
+             <li>
+                 there are no restrictions (មិនគិតលំដាប់ ឬមិនគិតលក្ខខណ្ឌ)?
+             </li>
+             <li>
+                 they begin with RE?
+             </li>
+             <li>
+                 they do not begin with RE?
+             </li>
+             <li>they have RE together in order?</li>
+             <li>they have REM together in any order?</li>
+             <li>
+                 letters: R, E and M are not to be together?
+             </li>
+         </ul>
+     </li>
+     <li>
+         There are 6 boys who enter a boat with 8
+seats, 4 on each side. In how many ways can
+    <ul>
+        <li>
+            they sit anywhere?
+        </li>
+        <li>
+            two boys A and B sit on the port side (គែមទូកខាងឆ្វេង) and another
+boy W sit on the starboard side (គែមទូកខាងស្ដាំ)?
+        </li>
+    </ul>
+     </li>
+     <li>
+         From the digits 2, 3, 4, 5, 6
+         <ul>
+             <li>
+                 how many numbers greater than 4 000 can be formed?
+             </li>
+             <li>
+                 how many 4 digit numbers would be even?
+             </li>
+         </ul>
+     </li>
+ </ol>                             
+                              
+    <h3>Circular Arrangements</h3>                          
+     <ol>
+         <li>
+             At a dinner party 6 men and 6 women sit at a
+round table. In how many ways can they sit if:
+        <ul>
+            <li>
+                there are no restrictions
+            </li>
+            <li>
+                men and women alternate
+            </li>
+            <li>Sam and Dara must sit together</li>
+            <li>
+                Sam, Tevy and Dara must sit together
+            </li>
+            <li>Neither Sam nor Tevy can sit next to Dara.</li>
+        </ul>
+         </li>
+         <li>In how many ways can 8 differently
+coloured beads (គ្រាប់អង្កាំ) be threaded on a string (ដោតបានជាខ្សែដៃ)?</li>
+    <li></li>
+     </ol>                         
+                              
+                              
+                              
+
+                              <footer class="site-footer">
+                                        <span class="site-footer-credits"
+                                                  >This page was generated by
+                                                  <a href="https://pages.github.com">GitHub Pages</a>.</span
+                                        >
+                              </footer>
+                    </section>
+          </body>
+
+          <!--script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-102852226-1', 'auto');
+    ga('send', 'pageview');
+  </script-->
+
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171606319-1"></script>
+          <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                              dataLayer.push(arguments);
+                    }
+                    gtag("js", new Date());
+
+                    gtag("config", "UA-171606319-1");
+          </script>
+</html>
+         <!--           function gtag() {
+                              dataLayer.push(arguments);
+                    }
+                    gtag("js", new Date());
+
+                    gtag("config", "UA-171606319-1");
+          </script>
+</html-->

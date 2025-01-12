@@ -217,7 +217,7 @@ $(document).ready(function () {
       var isProblem = (linkID.indexOf("prev_problem") !== -1 || linkID.indexOf("next_problem") !== -1);
       var isPrint = linkID.indexOf("print_menu") !== -1;
       var isShowing = linkText.indexOf("Show") !== -1;
-      var isHiding = linkText.indexOf("Hide") !== -1
+      var isHiding = linkText.indexOf("Hide") !== -1;
       var isClasses = linkURL.indexOf("Classes") !== -1;
       var isAsgn = linkURL.indexOf("ProblemsNS") !== -1;
       var isPractice = linkURL.indexOf("Problems") !== -1 && !isAsgn;
@@ -645,6 +645,16 @@ function SHPrintPage(sh, prt) {
 
       ShowHide(objSubID, isShowing, false);
     });
+    
+    $("div[id*='Ans'], div[id*='Step']").each(function () {
+      obj = this;
+      divID = obj.id;
+      objSubID = divID.substring(6, divID.length);
+
+      isShowing = sh === 0;
+
+      ShowHide(objSubID, isShowing, false);
+    });  
 
     if (prt == 1) {
       window.print();

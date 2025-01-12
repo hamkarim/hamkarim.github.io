@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* Global Styles */
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize -Share:400,700&subset=latin,latin-ext */
+
+
+@import url(s5-core.css); /* required to make the slide show run at all */
+@import url(framing.css); /* sets basic placement and size of slide components */
+@import url(pretty.css);  /* stuff that makes the slides look better than blah */
+
+/*----Adding unicode fonts --*/
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Koulen&family=Angkor&family=Bangers&family=Kaushan+Script&family=Modak&family=Ultra&family=Fjalla+One&family=Oswald:wght@400&family=Noto+Serif:wght@400&family=Noto+Sans:wght@700&family=Lalezar&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Open Sans|Didact Gothic|Siemreap|Bayon|Battambang|");
+
+/*@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@300;400;500;600;700&display=swap');*/
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@300;400;500;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Noto+Serif+Khmer:wght@300;400;500;600;700&display=swap");

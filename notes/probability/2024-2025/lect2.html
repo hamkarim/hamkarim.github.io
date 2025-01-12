@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en-US">
+    <head>
+        <title>Lecture No.2</title>
+        <!-- metadata -->
+        <meta name="generator" content="{{ headers['generator'] }}" />
+        <meta name="version" content="S5 1.1" />
+        <meta name="author" content="Ham Karim" />
+        <meta name="company" content="RUPP" />
+        <!-- configuration parameters -->
+        <meta name="defaultView" content="slideshow" />
+        <meta name="controlVis" content="hidden" />
+        <!-- style sheet links -->
+        <link rel="stylesheet" href="ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+        <link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+        <link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+        <!--link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+        <!-- S5 JS -->
+        <script src="ui/default/slides.js" type="text/javascript"></script>
+
+       <!---- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
+
+       <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']], // Enable $...$ for inline math
+            displayMath: [['$$', '$$'], ['\\[', '\\]']], // For display math
+            processEscapes: true,
+            tags: 'ams', // Enables AMS-style numbering for equations
+            tagSide: 'right', // Position of the equation numbers
+            //tagIndent: '0.8em' // Indentation from the equation
+            Macros: {
+                RR: "{\\bf R}",
+                E: "{\\bf E}",
+                F: "{\\bf F}",
+                G: "{\\bf G}",
+                H: "{\\bf H}",
+                calE: "{\\mathcal E}",
+                calF: "{\\mathcal F}",
+                calG: "{\\mathcal G}",
+                calH: "{\\mathcal H}",
+                R: "{\\mathbb R}",
+                Cc: "{\\mathbb C}",
+                bold: ["{\\bf #1}",1],
+                bfseries: ["{\\bf{\\text{ #1 }}",1],
+                fontbold: ["{\\bf{\\text{ #1 }}}",1],
+                Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""],
+                vect: ["{\\overrightarrow{#1}}",1],
+              }
+          },
+          chtml: {
+          scale: 0.95, // default font scaling
+          mtextFont: null, // Use default MathJax fonts
+          merrorFont: null, // Handle errors with default fonts
+          }
+        };
+      </script>
+      <!---- Below is good for MathJax 3.x--->
+       <script
+                type="text/javascript" async
+                src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+        <style>
+            mjx-container * {
+                  /*font-family: 'serif' !important;*/
+                  font-weight: normal !important;
+            }
+        </style>
+  
+        
+<!------
+        <script type="text/x-mathjax-config;executed=true">
+        /*<![CDATA[*/
+            MathJax.Ajax.config.path["mhchem"] = "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
+            MathJax.Hub.Config({ 
+                        jax: ["input/TeX","input/MathML","output/SVG"],
+                        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js","TeX/AMSmath.js","TeX/AMSsymbols.js"]],
+                        TeX: {
+                            extensions: ["autobold.js","mhchem.js","color.js","cancel.js", "AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
+                            equationNumbers: { autoNumber: "AMS" },
+                            tagSide: "right",
+                        },
+                        tex2jax: {
+                            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                            processEscapes: true
+                        },
+                        "HTML-CSS": { linebreaks: { automatic: true , width: "90%"}, scale: 85, mtextFontInherit: false},
+                        menuSettings: { zscale: "150%", zoom: "Double-Click" },
+                        SVG: { linebreaks: { automatic: true } }
+            });
+            /*]]>*/
+        </script> -->
+
+       <!----
+       <script type="text/x-mathjax-config;executed=true">
+           /*<![CDATA[*/
+             MathJax.Ajax.config.path["mhchem"] =
+             "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
+             MathJax.Hub.Config({ jax: ["input/TeX","input/MathML","output/SVG"],
+             extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js"],
+             TeX: {
+               extensions: ["autobold.js","mhchem.js","color.js","cancel.js", "AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
+               equationNumbers: { autoNumber: "AMS" },
+               tagSide: "right"
+             },
+               "HTML-CSS": { linebreaks: { automatic: true , width: "90%"}, scale: 85, mtextFontInherit: false},
+           menuSettings: { zscale: "150%", zoom: "Double-Click" },
+                    SVG: { linebreaks: { automatic: true } }});
+           //*]]>*/
+       </script>  --
+       <script 
+           type="text/javascript" async
+           src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>-->
+
+ <!----       
+           <script>
+            MathJax = {
+              chtml: {
+                scale: 1, // font scaling
+                mtextInheritFont: true, // inherit font from the page
+                mtextFont: 'serif', // set default font family
+              }
+            };
+          </script>
+--->     
+<!----  
+<script type="text/javascript" async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+  },
+  chtml: {
+    fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2'
+  }
+};
+</script>
+-->
+   
+<style>
+    
+.slide { width: 100vw; height: 100vh; }
+        /*Begin my-example element*/
+my-example {
+    display: block;
+    padding: 0 0 0 1rem;
+    margin-left: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #076422;
+    border-left: 2pt solid #eb0000;
+    text-align: left;
+    font-size: inherit;
+    /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
+}
+
+my-example > :first-child {
+    margin-top: 0;
+}
+
+my-example > :last-child {
+    margin-bottom: 0;
+}
+
+
+/*example counter*/
+div {
+    counter-reset: counterex !important;
+    /*font-size: 2vw; /* Adjust the font size to fit the screen width */  
+}
+
+my-example::before {
+    counter-increment: counterex;
+    content: "ឧទាហរណ៍ " /*counter(section, khmer) ".";*/ counter(counterex, khmer) ".";
+    font-weight: bold;
+    /*font-size: 17px;*/
+    font-family: Battambang;
+    /*Angkor*/
+}
+/*End my-example*/        
+  
+
+        /* Optional: Add background colors for clarity *
+        .slide:nth-child(odd) {  
+            background-color: #4CAF50; /* Green *
+        }  
+
+        .slide:nth-child(even) {  
+            background-color: #2196F3; /* Blue * 
+        }  */
+</style>
+   
+   
+   
+    </head>
+    <body>
+        <div class="layout">
+            <div id="controls"><!-- DO NOT EDIT --></div>
+            <div id="currentSlide"><!-- DO NOT EDIT --></div>
+            <div id="header"></div>
+            <div id="footer">
+                <h1>Introduction to probability theory</h1>
+                <h2>Lecture Note 2.</h2>
+            </div>
+        </div>
+
+        <div class="presentation">
+            <div class="slide">
+                <h1>Probability Spaces</h1>
+                <h2>Sample Spaces and Events</h2>
+                <h3>Ham Karim</h3>
+                <h4>RUPP</h4>
+            </div>
+
+            {{ content }}
+        </div>
+        <!-- presentation -->
+
+        <div class="slide">
+            <h1>What is Probability?</h1>
+
+            មាតិកា
+
+            
+        </div>
+
+        <div class="slide">
+            <h1>2. លំហសំណាក និងព្រឹត្តិការណ៍ (Sample Spaces and Events)</h1>
+
+<b>រំលឹក៖ </b>
+<ul style="margin-left: 20px;">
+   <li>
+       <i>ពិសោធន៍ (experiment)</i> is a process whose outcome can be observed.
+   </li>
+   <li>
+       <i>លំហសំណាក (sample space)</i> $S$ or $\Omega$, of an experiment is the set of possible outcomes for the experiment. (The sample space may be finite or infinite).
+   </li>
+   
+   <li>
+       <i>ព្រឹត្តិការណ៍ (event)</i> is a subset of the sample space, i.e. a (possibly empty) collection of possible outcomes to the experiment. We say that an event A OCCURS if the outcome is an element of $A$.
+   </li>
+
+</ul>
+<p><b>Note: </b>
+The difference between an outcome and an event in this context is that an
+outcome is an individual possible result of the experiment; an event may include
+many different possible outcomes.
+</p>
+<my-example>
+    Experiment: Toss a coin three times.
+    <ul>
+        <li>
+            The Sample Space is $$S=\Bigl\{{HHH}, {HHT}, {HTH}, {HTT}, {THH}, {THT}, {TTH}, {TTT}\Bigr\}$$
+        </li>
+        
+        <li>
+            The event "2 heads, one tail" is the subset 
+            $$A=\{H H T, H T H, T H H\} \; \text{ of } S$$
+        </li>
+    </ul>
+
+
+</my-example>
+        </div>
+
+        <div class="slide">
+            <h1>Cont'...</h1>
+            <ul>
+                <li>
+                    To ensure a unique solution:
+                    <!--impose a suitable boundary conditions that describe the behavior of \(u\) on the boundary $\partial \Omega$. There are two primary types of boundary conditions: -->
+                    <ol>
+                        <li>
+                            <i>Dirichlet Boundary Condition:</i>
+                            <!--This specifies the value of \(u\) on the boundary:-->
+                            \[ u = g \quad \text{on } \partial\Omega \] where \(g\) is a given function. If \(g = 0\),
+                            it is a homogeneous Dirichlet problem.
+                        </li>
+                        <li>
+                            <i>Neumann Boundary Condition:</i>
+                            <!--This specifies the normal derivative of \(u\) on the boundary:-->
+                            \[ \frac{\partial u}{\partial n} = h \quad \text{on } \partial\Omega \] where \(n\): the
+                            outward unit normal vector, \(h\): a specified function. A homogeneous Neumann problem
+                            occurs when \(h = 0\).
+                        </li>
+                        <li>
+                            Additionally, mixed boundary conditions can be applied, where different conditions are
+                            assigned to different parts of the boundary.
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h1>Cont'...</h1>
+            <ul>
+                <li>
+                    Note that even when \(f\) is continuous in $\Omega$, a <b>regular solution</b> \(u\) may not exist
+                    in the space \(C^2(\Omega)\). For example, if we take the domain \((0, 1) \times (0, 1)\) and set
+                    \(f = 1\), the solution \(u\) cannot belong to \(C^2(\Omega)\) because the boundary conditions would
+                    imply certain values at the corners, leading to a contradiction with the equation.
+                </li>
+
+                <li>
+                    This observation indicates that while \(f\) may be continuous, seeking a solution \(u\) in
+                    \(C^2(\Omega)\) is not always feasible. Instead, we have a better chance of finding a solution in a
+                    larger space, such as \(C^2(\Omega) \cap C^0(\Omega)\).
+                </li>
+
+                <li>
+                    Thus, we are motivated to find an alternative formulation to the strong one, especially since the
+                    strong formulation does not adequately address cases with non-smooth data. In such scenarios, it is
+                    not guaranteed that the physical solution lies within the spaces \[C^2(\Omega) \cap C^0(\Omega)\quad
+                    \text{or}\quad C^1(\Omega) \cap C^0(\Omega)\]
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

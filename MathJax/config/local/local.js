@@ -1,7 +1,7 @@
 /* <script type="text/x-mathjax-config"> */
   MathJax.Hub.Config({
     TeX: {
-          equationNumbers: {autoNumber: "AMS"},
+        equationNumbers: {autoNumber: "AMS"},
         Macros: {
           RR: "{\\bf R}",
           E: "{\\bf E}",
@@ -31,14 +31,16 @@
     tex2jax: {
              inlineMath: [ ['$','$'], ["\\(","\\)"] ],
              displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-             processEscapes: true },
-             "HTML-CSS": { fonts: ["TeX"],
-             linebreaks: { automatic: true } ,
+             processEscapes: true 
+    },
+    "HTML-CSS": { 
+            fonts: ["TeX"],
+            linebreaks: { automatic: true },
      //scale:90
-          },
-      commonHTML: { scale: 90, linebreaks: { automatic: true } },
-      //CommonHTML: {scale: 20},
-      SVG: { linebreaks: { automatic:true } },
+    },
+    commonHTML: { scale: 90, linebreaks: { automatic: true } },
+    //CommonHTML: {scale: 20},
+    SVG: { linebreaks: { automatic:true } },
     /*tex2jax: {
       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
       processEscapes: true,

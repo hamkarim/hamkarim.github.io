@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en-US">
+          <head>
+                    <meta charset="utf-8" />
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                    <meta
+                              name="viewport"
+                              content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" />
+                    <!-- Begin Jekyll SEO tag v2.3.0 -->
+                    <meta property="og:title" content="Ham Karim" />
+                    <meta name="author" content="Ham Karim" />
+                    <meta name="author" content="ហាំ ការីម" />
+                    <meta property="og:locale" content="en_US" />
+                    <meta
+                              http-equiv="keywords"
+                              name="keywords"
+                              content="relations, binary relation, relation and function, ទំនាក់ទំនងទ្វេធាតុ, អនុគមន៍ និងទំនាក់ទំនង" />
+                    <!--meta http-equiv="description" name="description" content="ក្នុងគណិតវិទ្យា ......... ">
+<meta name="description" content="binary relation, ទំនាក់ទំនងទ្វេធាតុ">
+<meta property="og:description" content="Math, Programmer, Music">
+<link rel="canonical" href="../../index.html">
+<meta property="og:url" content="https://hamkarim.github.io/">
+<meta property="og:site_name" content="Binary Relation">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@pkarim">
+<meta name="twitter:creator" content="@pkarim">
+<meta name="google-site-verification" content="b9bg3P9zc8qbL4szvVYaf551jD9x017IyGBVSaQZDDY" /-->
+
+                    <script type="application/ld+json">
+                              {
+                                        "name": "Ham Karim",
+                                        "description": "I am a faculty member at the Royal Univeristy of Phnom Penh (RUPP). This is my blog of lectures at universities. ",
+                                        "author": { "@type": "Person", "name": "Ham Karim" },
+                                        "@type": "WebSite",
+                                        "url": "https://hamkarim.github.io/",
+                                        "image": null,
+                                        "publisher": null,
+                                        "headline": "Ham Karim",
+                                        "dateModified": null,
+                                        "datePublished": "2020-06-01",
+                                        "sameAs": null,
+                                        "mainEntityOfPage": null,
+                                        "@context": "http://schema.org"
+                              }
+                    </script>
+                    <!-- End Jekyll SEO tag -->
+
+                    <meta
+                              property="og:image"
+                              content="http://www.cliparts101.com/files/376/298FE3955707B1DE458221E4BFABFBBE/Greek_Gamma_4.png" />
+                    <link rel="shortcut icon" type="image/x-icon" href="../../algebra/topology/2019/favicon.ico" />
+                    <meta charset="UTF-8" />
+                    <title>Oral Quiz</title>
+                    <meta name="description" content="binary relation" />
+
+                    <style>
+                              .deffont {
+                                        font-family: "Noto Serif Khmer", "CMU Serif";
+                                        font-size: 16px;
+                              }
+                              ul.liststyle1 {
+                                        list-style-type: square;
+                              }
+                              ul.liststyle2 {
+                                        list-style-type: hebrew;
+                              }
+                              a.onmenu {
+                                        font-family: "Noto Serif Khmer", "CMU Serif";
+                                        font-weight: bold;
+                              }
+                    </style>
+
+                    <script async="" src="//cse.google.com/adsense/search/async-ads.js"></script>
+                    <script
+                              type="text/javascript"
+                              async=""
+                              src="https://www.google-analytics.com/analytics.js"></script>
+                    <script
+                              type="text/javascript"
+                              async=""
+                              src="https://cse.google.com/cse.js?cx=001004262401526223570:11yv6vpcqvy"></script>
+                    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-331594-1"></script>
+                    <script>
+                              window.dataLayer = window.dataLayer || [];
+                              function gtag() {
+                                        dataLayer.push(arguments);
+                              }
+                              gtag("js", new Date());
+
+                              gtag("config", "UA-331594-1");
+                    </script>
+
+                    <link
+                              rel="stylesheet"
+                              href="../../../../assets/css/style.css?v=7a1f16daa2f596657376cb9c26d7a5721c1cd245" />
+
+                    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+                    <!-- Script to show and hide proof -->
+                    <script type="text/javascript" src="https://hamkarim.github.io/assets/js/showhide.js"></script>
+                    <!-- Other style of showing and hiding proof -->
+                    <link
+                              rel="stylesheet"
+                              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+                    <script
+                              type="text/javascript"
+                              src="https://hamkarim.github.io/assets/js/others/jquery_on.js"></script>
+                    <script
+                              type="text/javascript"
+                              src="https://hamkarim.github.io/assets/js/others/notes-all.js"></script>
+                    <!-- end -->
+
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                    <script type="text/javascript">
+                              //Another method to toggle the button
+                              $(document).ready(function () {
+                                        $(".showanswer").click(function () {
+                                                  $(".block_proof").show();
+                                                  $(".showanswer").hide();
+                                                  $(".hideanswer").show();
+                                        });
+                                        $(".hideanswer").click(function () {
+                                                  $(".block_proof").hide();
+                                                  $(".showanswer").show();
+                                                  $(".hideanswer").hide();
+                                        });
+                              });
+                    </script>
+
+                    <!-- For local function, define to exchange text -->
+                    <script>
+                              function showhideFunction() {
+                                        document.getElementById("idClick").innerHTML === "[Hide proof]"
+                                                  ? (document.getElementById("idClick").innerHTML = "[Show proof]")
+                                                  : (document.getElementById("idClick").innerHTML = "[Hide proof]");
+                              }
+                    </script>
+
+                    <!-- script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,https://hamkarim.github.io/MathJax/config/local/local.js"></script  -->
+
+                    <!-- script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script -->
+
+                    <script
+                              type="text/javascript"
+                              src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML-full,https://hamkarim.github.io/MathJax/config/local/local.js"></script>
+
+                    <!-- script type="text/javascript" config=TeX-MML-AM_CHTML
+src="">
+</script -->
+
+                    <!-- To get it to work in old versions of Internet Explorer, you need to append this script to the head (Important if you need it to work in older versions of IE!): -->
+                    <!--[if lt IE 9] -->
+                    <script>
+                              document.createElement("example, defn");
+                    </script>
+                    <!-- [endif]-->
+          </head>
+
+          <body>
+                    <section class="page-header">
+                              <h1 class="project-name">ហាំ ការីម</h1>
+                              <h2 class="project-tagline">Maths, Program, Music</h2>
+                    </section>
+
+                    <section class="main-content">
+                              <h1 style="text-shadow: 4px 4px 4px #c0c0c0">ប្រលងឆមាសទី២ មុខវិជ្ជា៖ ពិជគណិតទូទៅ</h1>
+                              <span style="font-style: italic; font-weight: bold; font-family: Arial; opacity: 0.5">
+                                        October 28th, 2024
+                              </span>
+                              <hr />
+
+                              <h2>សំណួរ</h2>
+                              
+                              <p>ចូរជ្រើសរើសយកចម្លើយមួយណា ដែលត្រឹមត្រូវជាងគេ ក្នុងសំណួរដូចខាងក្រោម៖</p>
+
+                              <ol>
+                                        <li>យក $g$ ជាអនុគមន៍យកតម្លៃពិតកំណត់ដោយ $g(x)=x^2+3$ ។
+
+                                                  <ol type ="i">
+                                                            <li>
+                                                                      បើ $b \in \mathbb{R}$ និង $b&gt;3$ នោះគេបាន
+                                                                      $g^{-1}(b)= \cdots ?$
+                                                                      <ol type="A">
+                                                                          
+                                                                          <li> $\{\sqrt{b-3},-\sqrt{b-3}\}$</li>
+                                                                          <li> $\{\sqrt{b-3}\}$ និង $\{-\sqrt{b-3}\}$</li>
+                                                                          <li> $\{\sqrt{b-3}-\sqrt{b-3}\}$</li>
+                                                                          <li> ចម្លើយផ្សេង</li>
+                                                                      </ol>
+                                                                      
+                                                            </li>
+                                                            <li>បើ $b=3$ នោះគេបាន $g^{-1}(3)=\cdots ?$
+                                                            <ol type="A">
+                                                                          <li> $\{-\sqrt{b-3}\}$</li>
+                                                                          <li> $\{0\}$ និង $\{-0\}$</li>
+                                                                          <li> $\{0\}$</li>
+                                                                          <li> ចម្លើយផ្សេង</li>
+                                                                      </ol>
+                                                                </li>      
+                                                            <li>បើ $b&lt;3$ នោះគេបាន $g^{-1}(b) = \cdots ?$
+                                                            <ol type="A">
+                                                                          <li> $\{-\sqrt{-6}\}$</li>
+                                                                          <li> $\{-0\}$</li>
+                                                                          <li> ចម្លើយ A. ឬ B.</li>
+                                                                          <li> $\varnothing$</li>
+                                                                      </ol>
+                                                            </li>
+                                                            <!--is empty.-->
+                                                  </ol>
+                                        </li>
+                                        <li> យក $f$ ជាអនុគមន៍យកតម្លៃពិតកំណត់ដោយ $f(x)=x^2$ ។ 
+                                        <ol type="i">
+                                            <li>គេថា បើ $f$ មិនមួយទល់មួយ នោះ 
+                                                     <ol type="A">
+                                                                          <li> $f$ មិនមានអនុគមន៍ច្រាសទេ ។</li>
+                                                                          <li> $f$ មិនប្រកាន់ ។</li>
+                                                                          <li> $f$ មិនពេញ។</li>
+                                                                          <li> $\varnothing$</li>
+                                                                      </ol>      
+                                                            </li>
+                                                            <li>តែអនុគមន៍ខាងក្រោម៖
+                                                  $$ \begin{aligned} g:[0, \infty) & \longrightarrow[0, \infty) \\ x &
+                                                  \longmapsto x^2 \end{aligned} $$ មួយទល់មួយ ។ ក្នុងករណីនេះ
+                                                  ចូររកអនុគមន៍ច្រាស $g^{-1}$? 
+                                                  <!--$ g^{-1}(y)= \cdots ? $<!--\sqrt{y}-->
+                                                  <ol type="A">
+                                                                          <li> $g^{-1}(x) = \sqrt{x-3}$ </li>
+                                                                          <li> $g^{-1}(x) = -\sqrt{x-3}$ </li>
+                                                                          <li> ទាំង A. និង B. </li>
+                                                                          <li> ចម្លើយផ្សេង</li>
+                                                                      </ol> 
+                                                  </li>
+                                            
+                                        </ol>                   
+                                                           
+                                        </li>
+
+                                        <li> យក $f(x)=(x-2)^4$ ។ គេកំណត់ $W=[2, \infty)$ ។ 
+                                        <ol type="i">
+                                                  <li>អនុគម៍ $\left.f\right|_W: W \rightarrow[0, \infty) $ ហៅថា៖ 
+                                                  <ol type="A">
+                                                                          <li> បង្រួមរបស់ $f$ មកលើសំណុំ $W$ ។ </li>
+                                                                          <li> បន្លាយរបស់ $f$ </li>
+                                                                          <li> សំណុំផលចែក </li>
+                                                                          <li> ចម្លើយផ្សេង</li>
+                                                                      </ol> 
+                                                  </li>
+                                                  <li>តើគេបាន $\left.f\right|_W$ មួយទល់មួយឬទេ?
+                                                  <ol type="A">
+                                                                          <li> មិនពិត</li>
+                                                                          <li> ពិត</li>
+                                                                          
+                                                                          <li> ចម្លើយផ្សេង</li>
+                                                                      </ol> 
+                                                  </li>
+                                        </ol>
+                                        </li>
+<li>យក  $A=\mathbb{Z}_4$ និងប្រមាណវិធី  $\ast=\oplus$ ។ ពិនិត្យតាងផលគុណខាងក្រោម៖
+$$
+\begin{array}{c|llll}
+\oplus & 0 & 1 & 2 & 3 \\
+\hline 0 & 0 & 1 & 2 & 3 \\
+1 & 1 & 2 & 3 & 0 \\
+2 & 2 & 3 & 0 & 1 \\
+3 & 3 & 0 & 1 & 2
+\end{array}
+$$    
+     <ol type="i">
+         <li>ធាតុណឺតចំពោះ $\oplus$ គឺ៖ 
+         <ol type="A">
+                                                                          <li> $1$</li>
+                                                                          <li> $\overline{0}$ </li>
+                                                                          <li> ទាំង A. និង B. </li>
+                                                                          <li> ចម្លើយផ្សេង</li>
+                                                                      </ol> 
+         </li>
+         <li>ធាតុច្រាសរបស់ $2$ គឺ $2^{-1} = ?$៖ 
+         <ol type="A">
+                                                                          <li> $2$</li>
+                                                                          <li> $3$ </li>
+                                                                          <li> ទាំង A. និង B. </li>
+                                                                          <li> ចម្លើយផ្សេង</li>
+                                                                      </ol> 
+         </li>
+         <li>គេបាន $\overline{3}\oplus \Bigl(\overline 3\Bigr)^{-1} =\overline{3}\oplus \overline{1} = 0$ គឺ៖ 
+         <ol type="A">
+                                                                          <li> ពិត </li>
+                                                                          <li> មិនពិត </li>
+                                                                          <li> ចម្លើយផ្សេង</li>
+                                                                      </ol> 
+         </li>
+            
+     </ol>   
+      
+                                        </li>                                        
+                                             
+     <li>ចំពោះ $A=\{\alpha, \beta, \gamma, \delta\}$ គេកំណត់តារាងផលគុណចំពោះ  $*$ ដូចខាងក្រោម :
+$$
+\begin{array}{l|llll}
+\ast & \alpha & \beta & \gamma &\delta \\
+\hline\alpha & \alpha & \gamma & \beta & 1\\
+\beta & \alpha & \beta & \beta & \delta\\
+\gamma & \beta & \alpha & \gamma & \delta\\
+\delta & \alpha & \alpha & \gamma & 1
+\end{array}
+$$              
+     <ol type="i">
+         <li>តើ $\ast$ ជាប្រមាណវិធីទ្វេធាតុលើ $A$ ឬទេ? 
+          <ol type="A">
+                                                                          <li> ពិត </li>
+                                                                          <li> មិនពិត </li>
+                                                                          <li> ទាំង A. និង B. </li>
+                                                                          <li> ចម្លើយផ្សេង</li>
+                                                                      </ol> 
+         
+         </li>
+         
+         <li>តើ $\ast$ មានលក្ខណៈផ្ដុំ និង ត្រឡប់ឬទេ? 
+         <ol type="A">
+                                                                          <li> ពិតទាំងពីរ </li>
+                                                                          <li> មានលក្ខណៈត្រឡប់ តែគ្មានលក្ខណៈផ្ដុំ </li>
+                                                                          <li> មិនពិតទាំងពីរ </li>
+                                                                          <li> ចម្លើយផ្សេង</li>
+                                                                      </ol> 
+         </li>
+         <li>គេថា $1$ ជាធាតុសម្រួលបាន? 
+         <ol type="A">
+                                                                          <li> ពិត</li>
+                                                                          <li> សម្រួលបានខាងឆ្វេង តែមិនអាចសម្រួលបានខាងស្ដាំទេ</li>
+                                                                          <li> មិនពិតទាំងពីរ </li>
+                                                                          <li> ចម្លើយផ្សេង</li>
+                                                                      </ol> 
+         </li>
+         
+     </ol>
+                                      </li>                                          
+                                             
+    <li>ចំពោះសំណុំ $S=\mathbb{Z}_{11}$ និងកំណត់ $*=\oplus$ គេបាន៖
+$4^5=?$
+<ol type="A">
+                                                                          <li> $9$</li>
+                                                                          <li> $0$</li>
+                                                                          <li> មិនពិតទាំងពីរ </li>
+                                                                          <li> ចម្លើយផ្សេង</li>
+                                                                      </ol> 
+</li>                                         
+                                             
+                                             
+       <li>គេកំណត់ប្រមាណវិធី oplus លើសំណុំ \(\mathbb{Z}\) ដោយ \(a \oplus b =ab+a+b, \forall a,b \in\mathbb{Z}\).
+       <ol type="i">
+           <li>$2\oplus 3 = ?$
+           <ol type="A">
+                                                                          <li> $-9$</li>
+                                                                          <li> $0$</li>
+                                                                          <li> $11$ </li>
+                                                                          <li> ចម្លើយផ្សេង</li>
+                                                                      </ol> 
+           </li>
+           <li>តើ $0$ ជាធាតុណឺតចំពោះ $\oplus$?
+           
+           <ol type="A">
+                                                                          <li> ពិត </li>
+                                                                          <li> មិនពិត </li>
+                                                                          <li> ចម្លើយផ្សេង</li>
+                                                                      </ol> 
+       </li>
+       <li>រកធាតុសម្រួលបានចំពោះ $\oplus$?
+           
+           <ol type="A">
+                                                                          <li> $2$ </li>
+                                                                          <li>$-2$</li>
+                                                                          <li> មិនពិតទាំងពីរ </li>
+                                                                          <li> ចម្លើយផ្សេង</li>
+                                                                      </ol> 
+       </li>
+       <li>ធាតុច្រាសរបស់ $5$ ចំពោះ $\oplus$ គឺ៖ ?
+           
+           <ol type="A">
+                                                                          <li> $5$ </li>
+                                                                          <li>$-2$</li>
+                                                                          <li> មិនពិតទាំងពីរ </li>
+                                                                          <li> ចម្លើយផ្សេង</li>
+                                                                      </ol> 
+       </li>
+       </ol>
+       
+       </li>                       
+       
+        <li>
+            អនុគមន៍ $f$ កំណត់ពីសំណុំ $(G,+)$ ទៅ $(G', \times)$ មានលក្ខណៈមួយទល់មួយ ។ ដូច្នេះ $f$ ហៅថា 
+             <ol type="A">
+                                                                          <li> Homomorphism </li>
+                                                                          <li>Isomorphism</li>
+                                                                          <li> Automorphism</li>
+                                                                          <li> Endomorphism</li>
+                                                                      </ol> 
+
+        </li>                                                                                         
+        <li>
+            គេឱ្យអនុគមន៍ខាងក្រោម 
+
+$$
+f: (\mathbb Z, +) \rightarrow (\mathbb Z_3, +), \text{ such that }  f(x)=3 x
+$$
+ចូរបញ្ជាក់ថា $f$ ជា៖ 
+           <ol type="A">
+                                                                          <li> Homomorphism </li>
+                                                                          <li>Isomorphism</li>
+                                                                          <li> Automorphism</li>
+                                                                          <li> Endomorphism</li>
+                                                                      </ol> 
+
+            
+        </li>                       
+       <li>តើអនុគមន៍ $f$ កំណត់ពី $(\mathbb R, +) \to (\mathbb R^*_+, \times)$ កំណត់ដោយ $f(x) = e^x$ ជាអ្វី? 
+       <ol type="A">
+                                                                          <li> Homomorphism </li>
+                                                                          <li>Isomorphism</li>
+                                                                          <li> Automorphism</li>
+                                                                          <li> Endomorphism</li>
+                                                                      </ol> 
+       </li>
+        <li>គេបាន $f(X\cap Y) = $
+        <ol type="A">
+                                                                          <li> រង $f(X) \cap f(Y)$ </li>
+                                                                          <li>ស្មើ $f(X) \cap f(Y)$</li>
+                                                                          <li> ទាំង A. និង B. មិនពិត</li>
+                                                                          <li> ចម្លើយផ្សេងទៀត</li>
+                                                                      </ol> 
+        
+        </li>                                      
+         <li>យក $A=\{1, 2, 3, 5, 6\}$ និងកំណត់ទំនាក់ទំនងលំដាប់លើ $\mathbb Z$ ដោយ ចែកដាច់ $\mid$                     
+       <ol type="i">
+           <li>ចូររក max និង min របស់សំណុំ $A$
+           <ol type="A">
+                                                                          <li> </li>
+                                                                          <li></li>
+                                                                          <li> </li>
+                                                                          <li></li>
+                                                                      </ol> 
+           </li>
+           <li>ចូររកធាតុ maximal និង minimal របស់សំណុំ $A$
+           <ol type="A">
+                                                                          <li> </li>
+                                                                          <li></li>
+                                                                          <li> </li>
+                                                                          <li></li>
+                                                                      </ol> 
+           </li>
+           <li>ចូររកសំណុំគោលក្រោម និងសំណុំគោលលើរបស់សំណុំ $A$
+           <ol type="A">
+                                                                          <li> </li>
+                                                                          <li></li>
+                                                                          <li> </li>
+                                                                          <li></li>
+                                                                      </ol> 
+           </li>
+           <li>ចូររក $\inf(A)$ និង $\sup (A)$
+           <ol type="A">
+                                                                          <li> </li>
+                                                                          <li></li>
+                                                                          <li> </li>
+                                                                          <li></li>
+                                                                      </ol> 
+           </li>
+           
+       </ol></li>  
+                </ol>                                  
+
+
+                              <footer class="site-footer">
+                                        <span class="site-footer-credits"
+                                                  >This page was generated by
+                                                  <a href="https://pages.github.com">GitHub Pages</a>.</span
+                                        >
+                              </footer>
+                    </section>
+          </body>
+
+          <!--script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-102852226-1', 'auto');
+    ga('send', 'pageview');
+  </script-->
+
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171606319-1"></script>
+          <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                              dataLayer.push(arguments);
+                    }
+                    gtag("js", new Date());
+
+                    gtag("config", "UA-171606319-1");
+          </script>
+</html>

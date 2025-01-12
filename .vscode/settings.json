@@ -2,5 +2,6 @@
     "editor.fontFamily": "'Ang DaunKeo', Consolas, 'Courier New', monospace",
     "editor.fontSize": 18,
     "editor.wordWrap": "bounded",
-    "editor.wordWrapColumn": 90
+    "editor.wordWrapColumn": 90,
+    "files.autoSave": "afterDelay"
 }

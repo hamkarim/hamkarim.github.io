@@ -1,3 +1,7 @@
 {
-    "sbruchmann.staticpreview.basepath": "C:/Users/Karim/Documents/GitHub/hamkarim.github.io/"
+    "sbruchmann.staticpreview.basepath": "C:/Users/Karim/Documents/GitHub/hamkarim.github.io/",
+    "livePreviewUseDevServer": false,
+    "livePreviewServerProjectPath": "/",
+    "livePreviewHotReloadSupported": false,
+    "livePreviewFramework": "Custom"
 }

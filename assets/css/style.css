@@ -2,21 +2,20 @@
 /* Global Styles */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize -Share:400,700&subset=latin,latin-ext */
 
-
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Koulen&family=Angkor&family=Bangers&family=Kaushan+Script&family=Modak&family=Ultra&family=Fjalla+One&family=Oswald:wght@400&family=Noto+Serif:wght@400&family=Noto+Sans:wght@700&family=Lalezar&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Koulen&family=Angkor&family=Bangers&family=Kaushan+Script&family=Modak&family=Ultra&family=Fjalla+One&family=Oswald:wght@400&family=Noto+Serif:wght@400&family=Noto+Sans:wght@700&family=Lalezar&display=swap");
 
 @import url("https://fonts.googleapis.com/css?family=Open Sans|Didact Gothic|Siemreap|Bayon|Battambang|");
 
 /*@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@300;400;500;600;700&display=swap');*/
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@300;400;500;600;700&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Noto+Serif+Khmer:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Noto+Serif+Khmer:wght@300;400;500;600;700&display=swap");
 
 html,
 body {
     /*for html, body fonts*/
-    font-family: 'Century Gothic', 'Didact Gothic', 'Noto Serif Khmer', 'Ang DaunKeo', 'Siemreap';
+    font-family: "Century Gothic", "Didact Gothic", "Noto Serif Khmer", "Ang DaunKeo", "Siemreap";
     /*serif*/
     -ms-text-size-adjust: 120%;
     -webkit-text-size-adjust: 120%;
@@ -56,18 +55,34 @@ p {
     line-height: 1.5 !important;
     margin-block-start: 0.5em;
     margin-block-end: 0.5em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
 }
- 
+
 p.parindent {
-    text-indent: 40px!important;
+    text-indent: 40px !important;
+    margin-top: 10px;
 }
 
 .indent {
-    text-indent: 40px!important;
+    text-indent: 40px !important;
+    margin-top: 10px;
 }
 
+.indent30 {
+    text-indent: 30px !important;
+    margin-top: 10px;
+}
+
+.indent20 {
+    text-indent: 20px !important;
+    margin-top: 10px;
+}
+
+.dRed{
+    color: darkred;
+    text-emphasis-color: skyblue ;
+}
 article,
 aside,
 details,
@@ -78,7 +93,7 @@ main,
 menu,
 section,
 summary {
-    display: block
+    display: block;
 }
 
 audio,
@@ -86,88 +101,89 @@ canvas,
 progress,
 video {
     display: inline-block;
-    vertical-align: baseline
+    vertical-align: baseline;
 }
 
 audio:not([controls]) {
     display: none;
-    height: 0
+    height: 0;
 }
 
 [hidden],
 template {
-    display: none
+    display: none;
 }
 
 a {
-    background-color: transparent
+    background-color: transparent;
 }
 
 a:active,
 a:hover {
-    outline: 0
+    outline: 0;
 }
 
 abbr[title] {
-    border-bottom: 1px dotted
+    border-bottom: 1px dotted;
 }
 
-b,
+b 
 strong {
     font-weight: bold;
-    color: #1e6bb8
+    color: #1e6bb8;
 }
 
 dfn {
-    font-style: italic
+    font-style: italic;
 }
 
 h1 {
     font-size: 2em;
-    margin: 0.67em 0
+    margin: 0.67em 0;
 }
 
 mark {
     background: #ff0;
-    color: #000
+    color: #000;
 }
 
 small {
-    font-size: 80%
+    font-size: 80%;
 }
 
 sub,
 sup {
-    font-size: 75%;
+    font-size: 85%;
     line-height: 0;
     position: relative;
-    vertical-align: baseline
+    vertical-align: baseline;
+    color: cadetblue;
 }
 
 sup {
-    top: -0.5em
+    top: -0.5em;
 }
 
 sub {
-    bottom: -0.25em
+    bottom: -0.25em;
 }
 
 img {
-    border: 0
+    border: 0;
 }
 
 svg:not(:root) {
-    overflow: hidden
+    overflow: hidden;
 }
 
 /*figure{margin:1em 40px}*/
 hr {
     box-sizing: content-box;
-    height: 0
+    height: 0;
 }
 
 pre {
-    overflow: auto
+    overflow: auto;
 }
 
 code,
@@ -175,7 +191,7 @@ kbd,
 pre,
 samp {
     font-family: monospace, monospace;
-    font-size: 1em
+    font-size: 1em;
 }
 
 button,
@@ -185,383 +201,385 @@ select,
 textarea {
     color: inherit;
     font: inherit;
-    margin: 0
+    margin: 0;
 }
 
 button {
-    overflow: visible
+    overflow: visible;
 }
 
 button,
 select {
-    text-transform: none
+    text-transform: none;
 }
 
 button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    -webkit-appearance: button;
-    cursor: pointer
+   /* -webkit-appearance: button; /* Vendor-prefixed for WebKit browsers */
+    appearance: button;         /* Standard property for modern browsers */
+    cursor: pointer;            /* Ensures pointer cursor for better UX */
 }
 
 button[disabled],
 html input[disabled] {
-    cursor: default
+    cursor: default;
 }
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
     border: 0;
-    padding: 0
+    padding: 0;
 }
 
 input {
-    line-height: normal
+    line-height: normal;
 }
 
 input[type="checkbox"],
 input[type="radio"] {
     box-sizing: border-box;
-    padding: 0
+    padding: 0;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-    height: auto
+    height: auto;
 }
 
 input[type="search"] {
-    -webkit-appearance: textfield;
-    box-sizing: content-box
+    -webkit-appearance: textfield; /* Vendor-prefixed for WebKit browsers */
+    appearance: textfield;         /* Standard property for modern browsers */
+    box-sizing: content-box;       /* Ensures box model behavior */
 }
 
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none
+    -webkit-appearance: none;
 }
 
 fieldset {
     border: 1px solid #c0c0c0;
     margin: 0 2px;
-    padding: 0.35em 0.625em 0.75em
+    padding: 0.35em 0.625em 0.75em;
 }
 
 legend {
     border: 0;
-    padding: 0
+    padding: 0;
 }
 
 textarea {
-    overflow: auto
+    overflow: auto;
 }
 
 optgroup {
-    font-weight: bold
+    font-weight: bold;
 }
 
 table {
     border-collapse: collapse;
-    border-spacing: 0
+    border-spacing: 0;
 }
 
 td,
 th {
-    padding: 0
+    padding: 0;
 }
 
 .highlight table td {
-    padding: 5px
+    padding: 5px;
 }
 
 .highlight table pre {
-    margin: 0
+    margin: 0;
 }
 
 .highlight .cm {
     color: #999988;
-    font-style: italic
+    font-style: italic;
 }
 
 .highlight .cp {
     color: #999999;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .highlight .c1 {
     color: #999988;
-    font-style: italic
+    font-style: italic;
 }
 
 .highlight .cs {
     color: #999999;
     font-weight: bold;
-    font-style: italic
+    font-style: italic;
 }
 
 .highlight .c,
 .highlight .cd {
     color: #999988;
-    font-style: italic
+    font-style: italic;
 }
 
 .highlight .err {
     color: #a61717;
-    background-color: #e3d2d2
+    background-color: #e3d2d2;
 }
 
 .highlight .gd {
     color: #000000;
-    background-color: #ffdddd
+    background-color: #ffdddd;
 }
 
 .highlight .ge {
     color: #000000;
-    font-style: italic
+    font-style: italic;
 }
 
 .highlight .gr {
-    color: #aa0000
+    color: #aa0000;
 }
 
 .highlight .gh {
-    color: #999999
+    color: #999999;
 }
 
 .highlight .gi {
     color: #000000;
-    background-color: #ddffdd
+    background-color: #ddffdd;
 }
 
 .highlight .go {
-    color: #888888
+    color: #888888;
 }
 
 .highlight .gp {
-    color: #555555
+    color: #555555;
 }
 
 .highlight .gs {
-    font-weight: bold
+    font-weight: bold;
 }
 
 .highlight .gu {
-    color: #aaaaaa
+    color: #aaaaaa;
 }
 
 .highlight .gt {
-    color: #aa0000
+    color: #aa0000;
 }
 
 .highlight .kc {
     color: #000000;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .highlight .kd {
     color: #000000;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .highlight .kn {
     color: #000000;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .highlight .kp {
     color: #000000;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .highlight .kr {
     color: #000000;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .highlight .kt {
     color: #445588;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .highlight .k,
 .highlight .kv {
     color: #000000;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .highlight .mf {
-    color: #009999
+    color: #009999;
 }
 
 .highlight .mh {
-    color: #009999
+    color: #009999;
 }
 
 .highlight .il {
-    color: #009999
+    color: #009999;
 }
 
 .highlight .mi {
-    color: #009999
+    color: #009999;
 }
 
 .highlight .mo {
-    color: #009999
+    color: #009999;
 }
 
 .highlight .m,
 .highlight .mb,
 .highlight .mx {
-    color: #009999
+    color: #009999;
 }
 
 .highlight .sb {
-    color: #d14
+    color: #d14;
 }
 
 .highlight .sc {
-    color: #d14
+    color: #d14;
 }
 
 .highlight .sd {
-    color: #d14
+    color: #d14;
 }
 
 .highlight .s2 {
-    color: #d14
+    color: #d14;
 }
 
 .highlight .se {
-    color: #d14
+    color: #d14;
 }
 
 .highlight .sh {
-    color: #d14
+    color: #d14;
 }
 
 .highlight .si {
-    color: #d14
+    color: #d14;
 }
 
 .highlight .sx {
-    color: #d14
+    color: #d14;
 }
 
 .highlight .sr {
-    color: #009926
+    color: #009926;
 }
 
 .highlight .s1 {
-    color: #d14
+    color: #d14;
 }
 
 .highlight .ss {
-    color: #990073
+    color: #990073;
 }
 
 .highlight .s {
-    color: #d14
+    color: #d14;
 }
 
 .highlight .na {
-    color: #008080
+    color: #008080;
 }
 
 .highlight .bp {
-    color: #999999
+    color: #999999;
 }
 
 .highlight .nb {
-    color: #0086B3
+    color: #0086b3;
 }
 
 .highlight .nc {
     color: #445588;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .highlight .no {
-    color: #008080
+    color: #008080;
 }
 
 .highlight .nd {
     color: #3c5d5d;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .highlight .ni {
-    color: #800080
+    color: #800080;
 }
 
 .highlight .ne {
     color: #990000;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .highlight .nf {
     color: #990000;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .highlight .nl {
     color: #990000;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .highlight .nn {
-    color: #555555
+    color: #555555;
 }
 
 .highlight .nt {
-    color: #000080
+    color: #000080;
 }
 
 .highlight .vc {
-    color: #008080
+    color: #008080;
 }
 
 .highlight .vg {
-    color: #008080
+    color: #008080;
 }
 
 .highlight .vi {
-    color: #008080
+    color: #008080;
 }
 
 .highlight .nv {
-    color: #008080
+    color: #008080;
 }
 
 .highlight .ow {
     color: #000000;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .highlight .o {
     color: #000000;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .highlight .w {
-    color: #bbbbbb
+    color: #bbbbbb;
 }
 
 .highlight {
-    background-color: #f8f8f8
+    background-color: #f8f8f8;
 }
 
 /*.caption{text-align:center;font-size:16px;;margin-bottom:10px} */
 
 table {
-    border: none
+    border: none;
 }
 
 tr {
-    align-content: center
+    align-content: center;
 }
 
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 /*body{margin:0;
@@ -571,11 +589,11 @@ tr {
 
 a {
     color: #1e6bb8;
-    text-decoration: none
+    text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline
+    text-decoration: underline;
 }
 
 .video-container {
@@ -583,7 +601,7 @@ a:hover {
     padding-bottom: 50%;
     height: 0;
     bottom: 20px;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .video-container iframe {
@@ -591,7 +609,7 @@ a:hover {
     top: 20px;
     left: 0;
     width: 100%;
-    height: 100%
+    height: 100%;
 }
 
 .btn {
@@ -603,30 +621,33 @@ a:hover {
     border-style: solid;
     border-width: 1px;
     border-radius: 0.3rem;
-    transition: color 0.2s, background-color 0.2s, border-color 0.2s
+    transition:
+        color 0.2s,
+        background-color 0.2s,
+        border-color 0.2s;
 }
 
 .btn:hover {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.3)
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .btn + .btn {
-    margin-left: 1rem
+    margin-left: 1rem;
 }
 
 @media screen and (min-width: 64em) {
     .btn {
-        padding: 0.75rem 1rem
+        padding: 0.75rem 1rem;
     }
 }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
     .btn {
         padding: 0.6rem 0.9rem;
-        font-size: 0.9rem
+        font-size: 0.9rem;
     }
 }
 
@@ -635,36 +656,36 @@ a:hover {
         display: block;
         width: 100%;
         padding: 0.75rem;
-        font-size: 0.9rem
+        font-size: 0.9rem;
     }
 
     .btn + .btn {
         margin-top: 1rem;
-        margin-left: 0
+        margin-left: 0;
     }
 }
 
 .page-header {
     color: #fff;
     text-align: center;
-    background-color: black
+    background-color: black;
 }
 
 @media screen and (min-width: 64em) {
     .page-header {
-        padding: 3rem 4rem
+        padding: 3rem 4rem;
     }
 }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
     .page-header {
-        padding: 2rem 3rem
+        padding: 2rem 3rem;
     }
 }
 
 @media screen and (max-width: 42em) {
     .page-header {
-        padding: 1rem 1rem
+        padding: 1rem 1rem;
     }
 }
 
@@ -673,7 +694,7 @@ a:hover {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0;
-    margin: 0
+    margin: 0;
 }
 
 .tabs {
@@ -687,89 +708,89 @@ a:hover {
 
 .tabs__item {
     width: 100%;
-    float: left
+    float: left;
 }
 
 @media screen and (min-width: 40em) {
     .tabs__item {
         display: table-cell;
         float: none;
-        width: auto
+        width: auto;
     }
 }
 
 .tabs__link {
     display: block;
-    font-family: 'Angkor', 'Bangers', cursive;
+    font-family: "Angkor", "Bangers", cursive;
 }
 
 .primary-nav {
     text-align: center;
     border-radius: 0;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .primary-nav a {
-    padding: .75em 1em;
+    padding: 0.75em 1em;
     color: white;
     background: black;
     text-decoration: none;
     border-right: 1px solid #000;
     font-weight: 400;
-    font-size: 1.25em
+    font-size: 1.25em;
 }
 
 .primary-nav a:hover {
     color: blue;
-    background: white
+    background: white;
 }
 
 .project-name {
     margin-top: 0;
-    font-family: 'Angkor', 'Didact Gothic';
+    font-family: "Angkor", "Didact Gothic";
     margin-bottom: 0;
 }
 
 @media screen and (min-width: 64em) {
     .project-name {
-        font-size: 3.25rem
+        font-size: 3.25rem;
     }
 }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
     .project-name {
-        font-size: 2.25rem
+        font-size: 2.25rem;
     }
 }
 
 @media screen and (max-width: 42em) {
     .project-name {
-        font-size: 1.75rem
+        font-size: 1.75rem;
     }
 }
 
 .project-tagline {
-    margin-top: 0rem;
+    margin-top: 0;
     margin-bottom: -2rem;
     font-weight: normal;
-    opacity: 0.9
+    opacity: 0.9;
 }
 
 @media screen and (min-width: 64em) {
     .project-tagline {
-        font-size: .825rem
+        font-size: 0.825rem;
     }
 }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
     .project-tagline {
-        font-size: .775rem
+        font-size: 0.775rem;
     }
 }
 
 @media screen and (max-width: 42em) {
     .project-tagline {
-        font-size: .6rem
+        font-size: 0.6rem;
     }
 }
 
@@ -782,33 +803,33 @@ a:hover {
 }
 
 .main-content :first-child {
-    margin-top: 0
+    margin-top: 0;
 }
 
 @media screen and (min-width: 64em) {
     .main-content {
         max-width: 64rem;
         padding: 2rem 6rem;
-        margin: 0 auto
+        margin: 0 auto;
     }
 }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
     .main-content {
-        padding: 2rem 4rem
+        padding: 2rem 4rem;
     }
 }
 
 @media screen and (max-width: 42em) {
     .main-content {
-        padding: 2rem 1rem
+        padding: 2rem 1rem;
     }
 }
 
 .main-content img {
-    max-width: 100%;
-    width: "40%";
-    height: "40%"
+    max-width: 80%;
+    /*width:60%;
+    height:60%;*/
 }
 
 .main-content h3,
@@ -817,33 +838,33 @@ a:hover {
 .main-content h6 {
     margin-top: 2rem;
     margin-bottom: 1rem;
-    font-family: 'Bayon', 'Kaushan Script', cursive;
+    font-family: "Bayon", "Kaushan Script", cursive;
     /*'Didact Gothic'; /*'Century Gothic','Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang'; */
     color: #000;
     /* font-weight:bold; */
-    line-height: 1
+    line-height: 1;
 }
 
 .main-content h1 {
     font-size: 1.5em;
     margin-top: 2rem;
     margin-bottom: 1rem;
-    font-family: 'Angkor', 'Bangers', cursive;
+    font-family: "Angkor", "Bangers", cursive;
     /*'Didact Gothic'; /*'Century Gothic','Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang'; */
     color: #000;
     /* font-weight:bold; */
-    line-height: 1
+    line-height: 1;
 }
 
 .main-content h2 {
     font-size: 1.3em;
-    color: #7A0002;
+    color: #7a0002;
     margin-top: 2rem;
     margin-bottom: 1rem;
-    font-family: 'Angkor', 'Oswald', sans-serif;
+    font-family: "Angkor", "Oswald", sans-serif;
     /*'Didact Gothic'; /*'Century Gothic','Noto Serif Khmer','CMU Serif',sans-serif,'Khmer OS Battambang'; */
     /*font-weight:bold;*/
-    line-height: 1
+    line-height: 1;
 }
 
 .main-content h3 {
@@ -888,7 +909,7 @@ h2.sectcounter:before {
 
 h3.sectcounter:before {
     counter-increment: subsection;
-    content: counter(section, khmer) "."counter(subsection, khmer) "  ";
+    content: counter(section, khmer) "." counter(subsection, khmer) "  ";
     font-weight: bold;
 }
 
@@ -898,19 +919,24 @@ h3.sectcounter:before {
     font-size: 0.9rem;
     color: #567482;
     background-color: #f3f6fa;
-    border-radius: 0.3rem
+    border-radius: 0.3rem;
 }
 
 .main-content pre {
     padding: 0.8rem;
     margin-top: 0;
     margin-bottom: 1rem;
-    font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font:
+        1rem Consolas,
+        "Liberation Mono",
+        Menlo,
+        Courier,
+        monospace;
     color: #567482;
     word-wrap: normal;
     background-color: #f3f6fa;
     border: solid 1px #dce6f0;
-    border-radius: 0.3rem
+    border-radius: 0.3rem;
 }
 
 .main-content pre > code {
@@ -921,16 +947,16 @@ h3.sectcounter:before {
     word-break: normal;
     white-space: pre;
     background: transparent;
-    border: 0
+    border: 0;
 }
 
 .main-content .highlight {
-    margin-bottom: 1rem
+    margin-bottom: 1rem;
 }
 
 .main-content .highlight pre {
     margin-bottom: 0;
-    word-break: normal
+    word-break: normal;
 }
 
 .main-content .highlight pre,
@@ -940,7 +966,7 @@ h3.sectcounter:before {
     font-size: 0.9rem;
     line-height: 1.45;
     border-radius: 0.3rem;
-    -webkit-overflow-scrolling: touch
+    -webkit-overflow-scrolling: touch;
 }
 
 .main-content pre code,
@@ -953,24 +979,19 @@ h3.sectcounter:before {
     line-height: inherit;
     word-wrap: normal;
     background-color: transparent;
-    border: 0
+    border: 0;
 }
 
 .main-content pre code:before,
 .main-content pre code:after,
 .main-content pre tt:before,
 .main-content pre tt:after {
-    content: normal
+    content: normal;
 }
 
-.main-content ul,
-.main-content ol {
-    margin-top: 0;
-    margin: auto;
-    line-height: 1.5;
-    width: 100%
+.main-content em, i {
+    color: darkturquoise;
 }
-
 .main-content blockquote {
     font-size: 14px;
     padding: 0 1rem;
@@ -978,30 +999,29 @@ h3.sectcounter:before {
     margin-top: 10px;
     margin-bottom: 10px;
     color: #819198;
-    border-left: 0.3rem solid #dce6f0
+    border-left: 0.3rem solid #dce6f0;
 }
 
 .main-content blockquote > :first-child {
-    margin-top: 0
+    margin-top: 0;
 }
 
 .main-content blockquote > :last-child {
-    margin-bottom: 0
+    margin-bottom: 0;
 }
 
 .main-content blockquote p {
     text-indent: 25px;
     font-size: 14px;
-    padding: 0px;
+    padding: 0;
     margin-left: -0.5em;
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 10px;
-    margin-top: 0
 }
 
 .main-content thead {
     text-align: left;
-    align-content: left
+    align-content: left;
 }
 
 .main-content table {
@@ -1010,35 +1030,35 @@ h3.sectcounter:before {
     overflow: auto;
     font-size: 15px;
     word-break: normal;
-    word-break: keep-all;
-    -webkit-overflow-scrolling: touch
+    /*word-break: keep-all;*/
+    -webkit-overflow-scrolling: touch;
 }
 
 .main-content table th {
     text-align: left;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .main-content table td {
     width: 25%;
-    padding: 0.5rem 0rem;
-    border: 0px solid #e9ebec
+    padding: 0.5rem 0;
+    border: 0 solid #e9ebec;
 }
 
 .main-content dl {
-    padding: 0
+    padding: 0;
 }
 
 .main-content dl dt {
     padding: 0;
     margin-top: 1rem;
     font-size: 1rem;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .main-content dl dd {
     padding: 0;
-    margin-bottom: 1rem
+    margin-bottom: 1rem;
 }
 
 .main-content hr {
@@ -1046,44 +1066,44 @@ h3.sectcounter:before {
     padding: 0;
     margin: 1rem 0;
     background-color: #eff0f1;
-    border: 0
+    border: 0;
 }
 
 .site-footer {
     padding-top: 2rem;
     margin-top: 2rem;
-    border-top: solid 1px #eff0f1
+    border-top: solid 1px #eff0f1;
 }
 
 @media screen and (min-width: 64em) {
     .site-footer {
-        font-size: 1rem
+        font-size: 1rem;
     }
 }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
     .site-footer {
-        font-size: 1rem
+        font-size: 1rem;
     }
 }
 
 @media screen and (max-width: 42em) {
     .site-footer {
-        font-size: 0.9rem
+        font-size: 0.9rem;
     }
 }
 
 .site-footer-owner {
     display: block;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .site-footer-credits {
-    color: #819198
+    color: #819198;
 }
 
 .main-content .blockproof {
-    display: inline-block; 
+    display: inline-block;
     padding: 0 0 0 1em;
     margin-left: 0;
     margin-top: 0;
@@ -1091,7 +1111,7 @@ h3.sectcounter:before {
     color: dimgray; /*#0037A8;*/
     border-left: 0.15rem solid #960000;
     border-right: 0;
-    border-top: 0px;
+    border-top: 0;
     border-bottom: 0;
     border-style: dotted;
     text-align: left;
@@ -1105,8 +1125,44 @@ h3.sectcounter:before {
 }
 
 .main-content .blockproof > :last-child {
-    margin-bottom: 0
+    margin-bottom: 0;
 }
+
+/*Begin element my-answer*/
+.main-content my-answer {
+    display: block;
+    padding: 0 0 0 1rem;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #0e81c1;
+    border: 1pt solid rgba(108, 116, 126, 0.75);
+    border-radius: 14px;
+    background-color: rgba(229, 239, 17, 0.04);
+    text-align: left;
+    font-size: 16px!important ;
+    /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
+}
+
+.main-content my-answer > :first-child {
+    margin-top: 0;
+}
+
+.main-content my-answer > :last-child {
+    margin-bottom: 0;
+}
+
+.main-content my-answer::before {
+    counter-increment: counteran;
+    content: "ចម្លើយ" "."; /*counter(section, khmer) "." counter(counteran, khmer) ". ";*/
+    font-weight: bold;
+    font-size: 16px;
+    font-family: Battambang;
+    color: darkred;
+    /*Angkor*/
+}
+
+/*End*/
 
 .main-content example {
     display: block;
@@ -1115,36 +1171,72 @@ h3.sectcounter:before {
     margin-top: 0;
     margin-bottom: 10px;
     color: #076422;
-    border-left: 2pt solid #EB0000;
+    border-left: 2pt solid #eb0000;
     text-align: left;
     font-size: 16px;
-    ;
     /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
 
 .main-content example > :first-child {
-    margin-top: 0
+    margin-top: 0;
 }
 
 .main-content example > :last-child {
-    margin-bottom: 0
+    margin-bottom: 0;
 }
 
+
 /*example counter*/
-.main-content  {
-    counter-reset: counterex!important;
+.main-content {
+    counter-reset: counterex !important;
 }
 
 .main-content example::before {
     counter-increment: counterex;
-    content: "ឧទាហរណ៍ "counter(section, khmer)"."counter(counterex, khmer) "  ";
+    content: "ឧទាហរណ៍ " /*counter(section, khmer) ".";*/ counter(counterex, khmer) ".";
     font-weight: bold;
     font-size: 17px;
     font-family: Battambang;
     /*Angkor*/
 }
 
+/*Begin my-example element*/
+.main-content my-example {
+    display: block;
+    padding: 0 0 0 1rem;
+    margin-left: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #076422;
+    border-left: 2pt solid #eb0000;
+    text-align: left;
+    font-size: 16px;
+    /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
+}
 
+.main-content my-example > :first-child {
+    margin-top: 0;
+}
+
+.main-content my-example > :last-child {
+    margin-bottom: 0;
+}
+
+
+/*example counter*/
+.main-content {
+    counter-reset: counterex !important;
+}
+
+.main-content my-example::before {
+    counter-increment: counterex;
+    content: "ឧទាហរណ៍ " /*counter(section, khmer) ".";*/ counter(counterex, khmer) ".";
+    font-weight: bold;
+    font-size: 17px;
+    font-family: Battambang;
+    /*Angkor*/
+}
+/*End my-example*/
 
 .line-bottom {
     border-bottom: 5px solid black;
@@ -1193,7 +1285,7 @@ padding-top: 8px;-*/
     width: 100%;
     background: linear-gradient(to right, blue 1%, blue 0%, white 90%, white 100%);
     border-radius: 3px 15px;
-    border: #CC0F12;
+    border: #cc0f12;
     color: white;
     padding: 0 10px 0 20px;
     font-size: 105%;
@@ -1203,9 +1295,9 @@ padding-top: 8px;-*/
 .headproof {
     display: inline-block;
     width: 100%;
-    background: linear-gradient(to right, #1860C1 1%, #1860C1 0%, white 90%, white 100%);
+    background: linear-gradient(to right, #1860c1 1%, #1860c1 0%, white 90%, white 100%);
     border-radius: 3px 15px;
-    border: #CC0F12;
+    border: #cc0f12;
     color: white;
     padding: 0 10px 0 20px;
     font-size: 100%;
@@ -1217,22 +1309,22 @@ div.definitionb {
     color: darkblue;
     display: inline-block;
     background-color: lightyellow;
-    border-radius: 0px 0px 20px 20px;
+    border-radius: 0 0 20px 20px;
     width: 100%;
     /*padding:0 0 0 0; */
-    margin-right: 0px;
+    margin-right: 0;
     margin-left: 5px;
     margin-top: -0.14em;
     margin-bottom: 20px !important;
     padding-left: 15px;
     padding-right: 10px;
-    padding-top: 0px;
+    padding-top: 10px;
     padding-bottom: 2px;
     /*color:#076422;*/
-    border-left: 0.2rem solid #0E81C1;
-    border-right: 0.2em solid #0E81C1;
-    border-top: 0.1rem solid #0E81C1;
-    border-bottom: 0.2rem solid #0E81C1;
+    border-left: 0.2rem solid #0e81c1;
+    border-right: 0.2em solid #0e81c1;
+    border-top: 0.1rem solid #0e81c1;
+    border-bottom: 0.2rem solid #0e81c1;
     border-style: dotted;
     /* text-align: left; * border-left-width:;*
    font-size: 16px;*/
@@ -1240,7 +1332,8 @@ div.definitionb {
     /*text-indent: 10px; */
 }
 
-.main-content defn {
+/*Begin my-defn*/
+.main-content my-defn {
     display: block;
     padding: 10px 0 10px 0;
     margin-left: 0;
@@ -1249,22 +1342,22 @@ div.definitionb {
     /*          font-size: 16px;;*/
 }
 
-.main-content defn > :first-child {
-    margin-top: 0
+.main-content my-defn > :first-child {
+    margin-top: 0;
 }
 
-.main-content defn > :last-child {
-    margin-bottom: 0
+.main-content my-defn > :last-child {
+    margin-bottom: 0;
 }
 
-.main-content defn p {
-    padding-top: 10px;
+.main-content my-defn p {
+    padding-top: 2px;
     text-indent: 32px;
 }
 
 /*definition counter*/
-.main-content defn {
-    counter-reset: counterdef!important;
+.main-content my-defn {
+    counter-reset: counterdef !important;
 }
 
 .main-content div.definition {
@@ -1272,71 +1365,93 @@ div.definitionb {
     width: 100%;
     background: linear-gradient(to right, red 1%, red 0%, white 90%, white 100%);
     border-radius: 15px 1px;
-    border: #CC0F12;
+    border: #cc0f12;
     color: white;
     padding: 4px 10px 4px 20px;
     font-size: 100%;
     /* font-family: 'Bangers', cursive; */
-    font-family: 'Battambang','Kaushan Script', serif;
+    font-family: "Battambang", "Kaushan Script", serif;
+}
+
+.main-content div.exercise {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    background: linear-gradient(to right, darkblue 1%, darkblue 0%, white 90%, white 100%);
+    /*border-radius: 15px 1px;*/
+    /*border: #cc0f12;*/
+    color: white;
+    margin-top: 20px;
+    padding: 4px 10px 4px 20px;
+    font-size: 100%;
+    /* font-family: 'Bangers', cursive; */
+    font-family: "Battambang", "Kaushan Script", serif;
+}
+.main-content div.exercise:before {
+    text-align: center;
+    counter-increment: subsection;
+    content: "លំហាត់អនុវត្តន៍ " counter(section, khmer) ". ";
+    /*font-weight:bold; */
+    font-family: "Koulen", cursive;
 }
 
 .main-content div.definition:before {
     counter-increment: subsection;
-    content: "និយមន័យ "counter(section, khmer)"."counter(subsection, khmer) "  ";
+    content: "និយមន័យ " counter(section, khmer) "." counter(subsection, khmer) "  ";
     /*font-weight:bold; */
-    font-family: 'Koulen', cursive;
+    font-family: "Koulen", cursive;
+}
+/*End my-defn*/
+
+.main-content div.answer {
+    display: inline-block;
+    width: 100%;
+    background: linear-gradient(to right, blue 1%, blue 1%, white 70%, white 100%);
+    border-radius: 15px 0;
+    border: #009999;
+    color: white;
+    padding: 4px 10px 4px 20px;
+    font-size: 100%;
+    /* font-family: 'Bangers', cursive; */
+    font-family: "Battambang", "Kaushan Script", serif;
 }
 
-
-ul {
-    padding-left: 20px;
-    display: table-cell;
-    padding-right: 0;
+.main-content .answer-upper-left {
+    border-top: solid linear-gradient(to right, blue 1%, blue 60%, white 90%, white 95%); /* Upper border */
+    border-left: solid rgba(128, 128, 128, 0.95); /* Left border */
+    border-right: none; /* No right border */
+    border-bottom: none; /* No bottom border */
+    display: block;
+    /*padding: 0 0 0 1rem;*/
+    padding: 4px 10px 4px 20px;
+    margin-left: -5px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: dimgrey;
+    background: rgba(208, 211, 244, 0.67);
     text-align: left;
-    /*font-size: 16px; */
+    
 }
 
-ul > li {
-    /* margin-bottom:1em;*/
-    font-size: 16px;
-    ;
-    /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
-}
-
-li ul > li {
-    /* margin-bottom:1em;*/
-    font-size: 16px;
-    ;
-    padding-left: 6px;
-    margin-left: 0;
-    /*counter-increment: item;*/
-    margin-bottom: 0.6em;
-    /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
-}
-
-center {
-    font-size: 17px
-}
 
 ul.leftborder {
     color: darkred;
     display: inline-block;
     width: 100%;
     /*padding:0 0 0 0; */
-    margin-right: 0px;
+    margin-right: 0;
     margin-left: 10px;
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 10px;
     padding-left: 30px;
     /*color:#076422;*/
-    border-left: 0.2rem solid #0E81C1;
+    border-left: 0.2rem solid #0e81c1;
     border-right: 0;
     border-top: 0;
     border-bottom: 0;
     border-style: dotted;
     /* text-align: left; * border-left-width:;*/
     font-size: 16px;
-    ;
     /*  font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
     /*text-indent: 10px; */
 }
@@ -1351,11 +1466,10 @@ ul.leftborder {
     margin: auto;
     padding: 10px;
     /*color:#076422;*/
-    border: 0.1rem solid #0E81C1;
+    border: 0.1rem solid #0e81c1;
     border-style: dotted;
     /* text-align: left; * border-left-width:;*/
     font-size: 16px;
-    ;
     /*  font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
     /*text-indent: 10px; */
 }
@@ -1366,18 +1480,17 @@ ul.leftborder {
     background-color: lightblue;
     width: 80%;
     /*padding:0 0 0 0; */
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
     padding-left: 10px;
     padding-bottom: 5px;
     /*color:#076422;*/
-    border: 0.1rem solid #0E81C1;
+    border: 0.1rem solid #0e81c1;
     border-style: dotted;
     /* text-align: left; * border-left-width:;*/
     font-size: 16px;
-    ;
     /*  font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
     /*text-indent: 10px; */
 }
@@ -1387,93 +1500,42 @@ ul.leftborder {
     display: inline-block;
     width: 100%;
     /*padding:0 0 0 0; */
-    margin-right: 0px;
+    margin-right: 0;
     margin-left: 10px;
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 10px;
     padding-left: 30px;
     /*color:#076422;*/
-    border-left: 0.2rem solid #0E81C1;
+    border-left: 0.2rem solid #0e81c1;
     border-right: 0;
     border-top: 0;
     border-bottom: 0;
     border-style: dotted;
     /* text-align: left; * border-left-width:;*/
     font-size: 16px;
-    ;
     /*  font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
     /*text-indent: 10px; */
-}
-
-/*style for ol and ul*/
-ol {
-    /*table-cell;*/
-    counter-reset: item;
-    padding-left: 32px;
-    /*margin: 0;*/
-    margin-left: 0;
-    text-align: left;
-    width: 100%;
-    /* font-size: 16px; */
-}
-
-ol > li {
-    /* margin-bottom:1em;*/
-    font-size: 16px;
-    ;
-    padding-left: 10px;
-    margin: 0;
-    counter-increment: item;
-    margin-bottom: 0.6em;
-    /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
-}
-
-li ol > li {
-    margin: 0;
-}
-
-ol.parenthroman li {
-    /* counter-increment: section;
-	/*display: table-row;*/
-    display: block;
-    margin-bottom: .5em;
-    margin-left: 3em;
-    /*font-size: 16px;
-	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
-}
-
-ol.parenthroman li::before {
-    content: "("counter(item, lower-roman) ") ";
-    /*display: table-cell;*/
-    display: inline-block;
-    text-align: left;
-    padding-right: 0px;
-    width: 2em;
-    margin-left: -4em;
-    padding-left: 2em;
-    /*font-size: 16px;
-	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
 
 ol.parenthalpha li {
     /* counter-increment: section;
 	/*display: table-row;*/
     display: block;
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
     margin-left: 2em;
     /*font-size: 16px;
 	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
 
 ol.parenthalpha li::before {
-    content: "("counter(item, lower-alpha) ") ";
+    content: "(" counter(item, lower-alpha) ") ";
     /*display: table-cell;*/
     display: inline-block;
     text-align: left;
-    padding-right: 0px;
+    padding-right: 4px;
     width: 2em;
     margin-left: -2em;
-    padding-left: 0em;
+    padding-left: 0;
     /*font-size: 16px;
 	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
 }
@@ -1481,12 +1543,12 @@ ol.parenthalpha li::before {
 ol.parenthnum {
     counter-reset: parenthlist;
     margin: auto;
-    width: 98%;
+    width: auto;
 }
 
 ol.parenthnum > li {
     display: block;
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
     list-style: none;
     position: relative;
     margin-left: auto;
@@ -1502,7 +1564,7 @@ ol.parenthnum > li::before {
   list-style-position: inside;
 	padding-right: 0px;
 	display: inline-block;*/
-    content: "("counter(parenthlist, khmer)")";
+    content: "(" counter(parenthlist, khmer) ")";
     /*counter-increment: item;*
 	width:2em; /**
   margin-left: -37px;
@@ -1514,7 +1576,7 @@ ol.parenthnum > li::before {
     left: -2.1em;
     padding-left: 8px;
     padding-right: 5px;
-    padding-top: 6px;
+    /*padding-top: 6px;*/
 }
 
 ol.romanlist {
@@ -1528,12 +1590,12 @@ ol.romanlist > li {
     list-style: none;
     position: relative;
     margin-left: auto;
-    line-height: 1.5!important;
+    line-height: 1.5 !important;
 }
 
 ol.romanlist > li::before {
     counter-increment: list;
-    content: " ("counter(list, lower-roman) ") ";
+    content: " (" counter(list, lower-roman) ") ";
     position: absolute;
     left: -2.1em;
     padding-left: 8px;
@@ -1552,12 +1614,12 @@ ol.alplist > li {
     list-style: none;
     position: relative;
     margin-left: auto;
-    line-height: 1.5!important;
+    line-height: 1.5 !important;
 }
 
 ol.alplist > li::before {
     counter-increment: list;
-    content: " ("counter(list, lower-alpha) ") ";
+    content: " (" counter(list, lower-alpha) ") ";
     position: absolute;
     left: -2.1em;
     padding-left: 8px;
@@ -1577,11 +1639,10 @@ ol.oneem {
     margin-left: 1em;
 }
 
-
 .indentli li {
     padding-left: 10px;
     /*display: block;*/
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
     margin-left: 5px;
     /*counter-increment: section;*/
     /*display: table-row;
@@ -1595,8 +1656,8 @@ ol.oneem {
 	display: inline-block;
 	content: "(" counter(item,khmer) ")";
 	/*counter-increment: item;*/
-    margin-left: 0em;
-    padding-left: 0em;
+    margin-left: 0;
+    padding-left: 0;
     /*text-align: left;
 	font-size: 16px;
 	/* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer",'Khmer OS Content' */
@@ -1620,7 +1681,7 @@ ol.oneem {
 }
 
 figure {
-    display: inlin-block;
+    display: inline-block;
     /*border: 1px dotted gray;*/
     margin: 10px;
     /* adjust as needed */
@@ -1658,11 +1719,11 @@ div.divfigure {
 }
 
 .centerDiv {
-            text-align: center;
-            margin-right: auto;
-            margin-left: auto;
-            margin-bottom: 20px;
-    }
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+}
 
 /* panel to show and hide text block of examples and extra */
 .hidepanel {
@@ -1670,9 +1731,9 @@ div.divfigure {
 }
 
 .toggle.bground {
-    background-color: #1860C1;
+    background-color: #1860c1;
     color: white;
-    padding: 0px 10px 0px 10px;
+    padding: 0 10px 0 10px;
     text-align: right;
     font-style: italic;
     font-size: 85%;
@@ -1680,15 +1741,15 @@ div.divfigure {
 
 /* Show and hide bacground and block proof display*/
 .showhidebground {
-    margin: 0px auto;
+    margin: 0 auto;
     text-align: right;
 }
 
 .showhidebground .input_name {
     border: 0;
-    padding: 0px 10px;
+    padding: 0 10px;
     font-size: 85%;
-    background-color: #1860C1;
+    background-color: #1860c1;
     color: white;
     font-style: italic;
 }
@@ -1698,16 +1759,15 @@ div.divfigure {
     padding: 0 0 0 1em;
     margin-left: 0;
     margin-top: 0;
-    margin-bottom: 0px;
-    color: #0037A8;
+    margin-bottom: 0;
+    color: #0037a8;
     border-left: 0.15rem solid #960000;
     border-right: 0;
-    border-top: 0px;
+    border-top: 0;
     border-bottom: 0;
     border-style: dotted;
     text-align: left;
     font-size: 16px;
-    ;
 }
 
 /*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1716,8 +1776,6 @@ Show hide answer in examples
 
 .example {
     border: 2px solid #000000;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
     border-radius: 10px;
     width: 100%;
     padding: 5px;
@@ -1761,7 +1819,7 @@ Show hide answer in examples
 
 .example_parts_list > li::before {
     counter-increment: item;
-    content: "("counter(item, lower-alpha) ")";
+    content: "(" counter(item, lower-alpha) ")";
     padding-right: 5px;
     margin-left: -3px;
     font-weight: bold;
@@ -1769,12 +1827,11 @@ Show hide answer in examples
 
 .example_parts_sub_list > li::before {
     counter-increment: item;
-    content: "("counter(item, lower-roman) ")";
+    content: "(" counter(item, lower-roman) ")";
     padding-right: 5px;
     margin-left: -3px;
     font-weight: bold;
 }
-
 
 .soln-parts-list > li {
     margin-bottom: 20px;
@@ -1815,7 +1872,6 @@ Show hide answer in examples
     padding-bottom: 25px;
 }
 
-
 .S-Hint {
     color: rgb(188, 43, 43);
     padding: 0 5px;
@@ -1831,7 +1887,7 @@ Show hide answer in examples
 .SH-Link-Hover {
     font-size: smaller;
     font-weight: bold;
-    color: #FF00FF;
+    color: #ff00ff;
     cursor: pointer;
 }
 
@@ -1895,8 +1951,6 @@ Show hide answer in examples
     background-color: rgb(188, 43, 43);
     color: #ffffff;
     border: 2px solid rgb(188, 43, 43);
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
     border-radius: 10px;
     text-align: center;
     font-weight: bold;
@@ -1957,13 +2011,10 @@ Show hide answer in examples
     width: 100%;
     background: white;
     padding: 15px 0 0 0;
-    z-index: 1
-        /* make sure math goes under... */
-    ;
+    z-index: 1 /* make sure math goes under... */;
 }
 
 @media (max-width: 600px) {
-
     .top-menu-breadcrumb {
         display: inline-block;
         max-width: 500px;
@@ -2023,8 +2074,6 @@ Show hide answer in examples
 .main-content .box-warning {
     display: block;
     border-radius: 1px;
-    -moz-border-radius: 1px;
-    -webkit-border-radius: 1px;
     border-top: none;
     border-bottom: none;
     border-right: none;
@@ -2032,6 +2081,22 @@ Show hide answer in examples
     margin-bottom: 1.2em !important;
     margin-top: 1.2em !important;
     orphans: 3;
+}
+
+/*Box for references/footnote*/
+.main-content .box-reference {
+    display: block;
+    border-radius: 10px;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    padding: 15px 10px 15px 15px;
+    margin-bottom: 1.2em !important;
+    margin-top: 1.2em !important;
+    orphans: 3;
+    background-color: rgba(192, 236, 236, 0.59);
+    border-left: 4px solid #5e6e6e;
+    color: brown;
 }
 
 /**/
@@ -2042,7 +2107,6 @@ Show hide answer in examples
 
 .box-legend {
     margin: 0 0 3px !important;
-    ;
     transform: translate(-11px, 0);
     break-inside: avoid-page !important;
     page-break-inside: avoid !important;
@@ -2053,14 +2117,13 @@ Show hide answer in examples
 .box-notation .box-legend > span,
 .box-proposition .box-legend > span,
 .box-theorem .box-legend > span {
-    background-color: #a67c11
+    background-color: #a67c11;
 }
 
 .box-legend p,
 .box-legend > span {
     font-family: "Book Antiqua", "Battambang";
-    font-size: 18px;
-     !important;
+    font-size: 18px !important;
     /*font-weight: 400 !important;
           line-height: 1 !important;*/
     font-weight: 400 !important;
@@ -2106,7 +2169,6 @@ Show hide answer in examples
       }
       */
 
-
 /*  .box-legend {
        display:block;
        overflow:hidden;
@@ -2117,39 +2179,36 @@ Show hide answer in examples
        text-align:left!important
       }*/
 
-
 .box-note .box-legend > span {
-    background-color: #5e6e6e
+    background-color: #5e6e6e;
 }
-
 
 /*
 .box-legend>span{font-size:1rem!important}
 .box-legend p{font-size:17px!important}
 */
 
-
 .box-example .box-legend > span,
 .box-exercise .box-legend > span,
 .box-objectives .box-legend > span,
 .box-query .box-legend > span {
-    background-color: #1c72d4
+    background-color: #1c72d4;
 }
 
 .box-interactive .box-legend > span {
-    background-color: #000
+    background-color: #000;
 }
 
 .box-note .box-legend > span {
-    background-color: #127abf
+    background-color: #127abf;
 }
 
 .box-warning .box-legend > span {
-    background-color: #d10000
+    background-color: #d10000;
 }
 
 .box-procedure .box-legend > span {
-    background-color: #ffb429
+    background-color: #ffb429;
 }
 
 a.fnote {
@@ -2172,7 +2231,7 @@ a.fnote {
     text-align: right;
 }
 span.tab {
-    margin-left: 5em
+    margin-left: 5em;
 }
 
 .img-container {
@@ -2182,25 +2241,54 @@ span.tab {
 }
 
 .clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
+    content: "";
+    clear: both;
+    display: table;
 }
 
 /* Side by side picture*/
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .column {
-  float: left;
-  width: 40%;
-  padding: 5px;
+    float: left;
+    width: 40%;
+    padding: 5px;
 }
 
 /* Clearfix (clear floats) */
 .row::after {
-  content: "";
-  clear: both;
-  display: table;
+    content: "";
+    clear: both;
+    display: table;
 }
+
+/* Watermarks*/
+
+@import url(https://fonts.googleapis.com/css?family=Denk+One);
+@import url(https://fonts.googleapis.com/css?family=Arimo);
+
+.watermark {
+    display: block; /* Block layout */  
+    margin: 0 auto; /* Centers horizontally */  
+    width: 400px;
+    position: relative;
+}
+.rotingtxt {
+    /*display: block; /* Block layout */  
+    -webkit-transform: rotate(331deg);
+    -moz-transform: rotate(331deg);
+    -o-transform: rotate(331deg);
+    transform: rotate(331deg);
+    font-size: 3.5em;
+    color: rgba(92, 161, 200, 0.42);
+    position: absolute;
+    font-family: "Denk One", sans-serif;
+    text-transform: uppercase;
+    /*padding-left: 10%;*/
+    text-align: center!important ;
+    margin: 0 auto; /* Centers horizontally */  
+    width: 600px;
+}
+
