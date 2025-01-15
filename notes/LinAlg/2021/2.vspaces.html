@@ -3289,6 +3289,8 @@ Thus, each equivalence class represents all vectors in \( \E\) that differ from 
     <p class="indent30">
         <!---A spanning set is a fundamental concept in linear algebra, critical for understanding vector spaces and linear independence. It consists of a group of vectors in a vector space that, through linear combinations, can cover the entire space, essentially 'spanning' it. Grasping this principle is key for students aiming to master the intricacies of mathematical vector spaces and their applications.-->
         
+<b>សំណុំវិសាលគម</b> ឬ <i>សំណុំបង្ក</i> ត្រូវបានបង្កើតឡើងដើម្បីជាគោលគំនិតគ្រឹះនៅក្នុងពិជគណិតលីនេអ៊ែរ ដែលវាមានសារៈសំខាន់ណាស់ចំពោះការយល់ដឹងអំពីលំហវ៉ិចទ័រ ជាពិសេសពីភាពមិនអាស្រ័យលីនេអ៊ែរ ។ ក្នុងន័យនេះ មានវ៉ិចទ័រមួយក្រុម នៅក្នុងលំហវ៉ិចទ័រ ដែល​អាច​រួម​បញ្ចូល​គ្នា​ ដើម្បីគ្របជិតលើលំហវ៉ិចទ័រទាំងមូលបាន - i.e., ក្រុមវ៉ិចទ័រនេះអាច '<a>ពង្រីក</a>' (spanning) ខ្លួនកាន់តែធំទៅៗ ស្មើនឹងលំហវ៉ិចទ័រទាំងមូល ។ ការយល់បាននូវគោលការណ៍នេះ គឺមានសារៈសំខាន់សម្រាប់អ្នកសិក្សា ដែលចង់កាត់បន្ថយភាពស្មុគស្មាញរបស់លំហវ៉ិចទ័រនៅក្នុងន័យគណិតវិទ្យា និងយល់បានអំពីអនុវត្តរបស់វា ។ 
+
         </p>
 
 <my-defn>
@@ -3298,13 +3300,13 @@ Thus, each equivalence class represents all vectors in \( \E\) that differ from 
     យក $\E$ ជា $\K$-vs និង កំណត់ $S=\Bigl\{\vec x_i\in V \ | \, i\in I\Bigr\}$ ជាលំហរងរបស់ $\E$ ។
 </p>
 <ol style="margin-left: 40px;">
-    <li>We called <b>linear combination</b> of vectors of $S$, the vector $\vec x\in \E$ such that there exists a family of scalars $\{\lambda_i\}_{i\in I}$ where only finitely many are non zero and 
+    <li>We called <b>បន្សំលីនេអ៊ែរ </b> (<i>linear combination</i>) of vectors of $S$, the vector $\vec x\in \E$ such that there exists a family of scalars $\{\lambda_i\}_{i\in I}$ where only finitely many are non zero and 
     
-    $$ \vec x = \lambda_1 \vec x_1 + \cdots + \lambda_n \vec x_n = \sum _{i\in I}\lambda_i\vec x_i$$
+    $$ \vec x = \lambda_1 \vec x_1 + \cdots + \lambda_n \vec x_n = \sum _{i\in I}\lambda_i \cdot\vec x_i$$
     </li>
 <li>
-    The <b>span</b> (or <i>linear closure</i>) of a nonempty subset S of $\E$ which is denoted $\langle S \rangle$, is the set of all linear combinations of vectors from $S$, i .e.
-$$\Bigl\langle S \Bigr\rangle = \left\{\; \sum _{i\in I}a_i\vec x_i \ |\  a_i\in {\K},\ {\mbox{ finitely many nonzero}}, \ \vec x_i\in S\; \right\}$$
+    The span <b>(ភាពបង្ក)</b> (or <i>linear closure</i>) of a nonempty subset S of $\E$ which is denoted $\langle S \rangle$, is the set of all linear combinations of vectors from $S$, i .e.
+$$\bigl\langle S \bigr\rangle = \left\{\; \sum _{i\in I} \lambda_i\cdot \vec x_i : \  \lambda_i\in {\K}, \vec x_i\in S, I\subset \mathbb N\; \right\}$$
 </li>
   
   <li> We say \( S \) spans \( V \) (or $S$ is called <b>spanning set</b> of $\E$) if $\E = \bigl\langle S \bigr\rangle$. i.e.,  
@@ -3368,10 +3370,48 @@ $$\Bigl\langle S \Bigr\rangle = \left\{\; \sum _{i\in I}a_i\vec x_i \ |\  a_i\in
 </my-example>
 
 <my-fig>
-    <img src="fig/spanningR_3.png" width="40%">
+    <img src="fig/spanningR_3.png" width="37%">
     <fig-cap data-cap="$x_1x_2$-plane បង្កដោយ $\{e_1, e_2\}$"></fig-cap>
         </my-fig>
+
+<my-example>
+   <ul style="margin-left: 20px;">
+    <li>
+        <i>Polynomial vector space \( P_2 \): </i>
+  <br/>
+       The polynomials \( \{ 1, x, x^2 \} \) span \( P_2 \) (vector space of polynomials of degree $2$ or less).<br/>
         
+        Any polynomial \( p(x) = a_0 + a_1 x + a_2 x^2 \in P_2\) can be written as:
+     \[
+     p(x) = a_0 (1) + a_1(x) + a_2(x^2)
+     \]
+       
+       </li>
+    
+       <li>
+       <i>Spanning set in a matrix space \( M_2(\mathbb{R}) \):</i><br/>
+           
+           For a \( 2 \times 2 \) matrix space \( M_2(\mathbb{R}) \), the set of matrices \( \{ E_{11}, E_{12}, E_{21}, E_{22} \} \) where \( E_{ij} \) is the matrix with a $1$ in the \( (i,j) \) position and $0$ elsewhere spans \( M_2(\mathbb{R}) \). <br/>
+       
+           Any matrix \( 
+   A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \) can be expressed as:
+     \[
+     A = aE_{11} + bE_{12} + cE_{21} + dE_{22}
+     \]
+       
+       </li>
+       <li>
+       <i>Span from linear combinations:</i>
+       <br/>
+       Let the vectors \( v_1 = (1, 2, 3) \) and \( v_2 = (4, 5, 6) \) in \( \mathbb{R}^3 \). <br/>
+           
+    With all linear combinations \( c_1v_1 + c_2v_2 \), the span of these vectors would cover a plane in \( \mathbb{R}^3 \), as both vectors are not scalar multiples of each other, shows that they create a $2$-dimensional plane within the $3$-dimensional space.
+
+       </li>
+    </ul>
+
+</my-example>        
+
 <my-example>
     <ol type="i" style="margin-left: 20px;">
         <li>
@@ -3395,13 +3435,13 @@ $$\Bigl\langle S \Bigr\rangle = \left\{\; \sum _{i\in I}a_i\vec x_i \ |\  a_i\in
     <div id="answer_ex2.3" class="box-note text-container" style="display: none">
     
     <i>ចំលើយ.</i> 
-         To show that $U$ and $W$ are ....
+         <!---To show that $U$ and $W$ are ....
          <my-fig>
          <a href="FA_ex1.html">
             <img src="fig/tryYself.png" width="25%" style="opacity: 0.5;">
             </a>
          <fig-cap data-cap="ចង់បានចម្លើយទេ?"></fig-cap>
-      </my-fig>
+      </my-fig>--->
         
         <div class="text-block active">
            <ol type="i" style="margin-left: 20px;">
@@ -3455,7 +3495,7 @@ $$
             <ol type="i" start="2" style="margin-left: 20px;">
             
             <li>
-                តើវ៉ិចទ័រ $\mathbf{v}_1=(1,-1,4), \mathbf{v}_2=(-2,1,3)$ និង $\mathbf{v}_3=(4,-3,5)$ បង្កបានលំហ $\mathbb{R}^3$ ឬទេ?<br/>
+                តើវ៉ិចទ័រ $\mathbf{v}_1=(1,-1,4), \mathbf{v}_2=(-2,1,3)$ និង $\mathbf{v}_3=(4,-3,5)$ បង្កបានលំហ $\mathbb{R}^3$ ?<br/>
 
 
                 Let $\mathbf{v}=\left(x_1, x_2, x_3\right)\in\mathbb{R}^3$. Find the real numbers $c_1, c_2, c_3$ such that
@@ -3475,6 +3515,31 @@ c_1-2 c_2+4 c_3 & =x_1 \\
 4 c_1+3 c_2+5 c_3 & =x_3
 \end{aligned}\right.
 $$
+               
+Reducing the augmented matrix of this system to row-echelon form, we obtain
+
+$$
+\begin{bmatrix}
+1 & -2 & 4 & x_1 \\
+0 & 1 & -1 & -x_1-x_2 \\
+0 & 0 & 0 & 7 x_1+11 x_2+x_3
+\end{bmatrix}
+$$
+
+It follows that the system is consistent if and only if $x_1, x_2, x_3$ satisfy
+
+\begin{equation}
+7 x_1+11 x_2+x_3=0
+\end{equation}
+
+
+Consequently, some vectors $\mathbf{v}=\left(x_1, x_2, x_3\right)$ in $\mathbb{R}^3$ whose components can satisfy Equation (2). Hence, $\mathbf{v}_1, \mathbf{v}_2$, and $\mathbf{v}_3$ do not span $\mathbb{R}^3$. 
+
+<br/>Geometrically, Equation (2) is the equation of a plane through the origin in space, and so by taking linear combinations of the given vectors, we can obtain only those vectors which lie on this plane.
+
+<br/> It is worth noting that this plane forms a subspace $S$ of $\mathbb{R}^3$, and that while $V$ is not spanned by the vectors $\mathbf{v}_1, \mathbf{v}_2$, and $\mathbf{v}_3$, $S$ is.<br/><br/>
+
+The reason that the vectors in the previous example did not span $\mathbb{R}^3$ was because they were coplanar. In general, any three noncoplanar vectors $\mathbf{v}_1, \mathbf{v}_2$, and $\mathbf{v}_3$ in $\mathbb{R}^3$ span $\mathbb{R}^3$, since, as illustrated in Figure 4.4.3, every vector in $\mathbb{R}^3$ can be written as a linear combination of $\mathbf{v}_1, \mathbf{v}_2$, and $\mathbf{v}_3$. In subsequent sections we will make this same observation from a more algebraic point of view.
                 </li>
             </ol>
             
@@ -3490,46 +3555,7 @@ $$
         
     </div> 
         
-<my-example>
-   <ul style="margin-left: 20px;">
-    <li>
-        <i>Polynomial vector space \( P_2 \): </i>
-  <br/>
-       The polynomials \( \{ 1, x, x^2 \} \) span \( P_2 \) (vector space of polynomials of degree $2$ or less).<br/>
-        
-        Any polynomial \( p(x) = a_0 + a_1 x + a_2 x^2 \in P_2\) can be written as:
-     \[
-     p(x) = a_0 (1) + a_1(x) + a_2(x^2)
-     \]
-       
-       </li>
-    
-       <li>
-       <i>Spanning set in a matrix space \( M_2(\mathbb{R}) \):</i><br/>
-           
-           For a \( 2 \times 2 \) matrix space \( M_2(\mathbb{R}) \), the set of matrices \( \{ E_{11}, E_{12}, E_{21}, E_{22} \} \) where \( E_{ij} \) is the matrix with a $1$ in the \( (i,j) \) position and $0$ elsewhere spans \( M_2(\mathbb{R}) \). <br/>
-       
-           Any matrix \( 
-   A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \) can be expressed as:
-     \[
-     A = aE_{11} + bE_{12} + cE_{21} + dE_{22}
-     \]
-       
-       </li>
-       <li>
-       <i>Span from linear combinations:</i>
-       <br/>
-       Let the vectors \( v_1 = (1, 2, 3) \) and \( v_2 = (4, 5, 6) \) in \( \mathbb{R}^3 \). <br/>
-           
-    With all linear combinations \( c_1v_1 + c_2v_2 \), the span of these vectors would cover a plane in \( \mathbb{R}^3 \), as both vectors are not scalar multiples of each other, shows that they create a $2$-dimensional plane within the $3$-dimensional space.
 
-       </li>
-    </ul>
-
-
-        
-        
-</my-example>        
         
 <my-example>
 Consider the vector space ${\K}^{\N}$ of formal power series with coefficients in $\F$, with the usual addition and multiplication by a scalar. Let $e_i$ be the series of all zeroes except the $i$-th position. The vectors $e_i$, where $i\in {\N}$, don't span ${\K}^{\N}$. Every linear combination of the $e_i$'s is a vector with finitely many non-zero components. Thus, the vector $(1,1,\ldots,1,\ldots)\in {\K}^{\N}$ cannot be written as a linear combination of the $e_i$'s.
