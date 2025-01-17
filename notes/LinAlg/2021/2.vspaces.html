@@ -2869,7 +2869,7 @@ $\left(z_1, z_2, \cdots, z_n\right) \in W_1 \times W_2 \times \ldots \times W_n$
 ផលបូក $\sum_{i=1}^n W_i$ នេះ ជាផលបូកផ្ទាល់ លុះត្រាតែ 
 $
 \forall\  i \in\{1,2, \ldots, n-1\}:$
-$$W_i \bigcap \left(\sum_{k=i+1}^n W_{k}\right)=\Bigl\{0\Bigr\}
+$$W_i \bigcap \left(\sum_{k\neq i}^n W_{k}\right)=\Bigl\{0\Bigr\}
 $$
     </p>
     </div>
@@ -2919,14 +2919,117 @@ $$
 W_1 \cap W_2 = \{0\}
 $$
         </li>
-        <li> ផលបូកលំហរង  $W_1, W_2$  និង $W_2$ របស់ $\E$ ជាផលបូកផ្ទាល់ លុះត្រាតែ
+        <li> ផលបូកលំហរង  $W_1 + W_2  + W_3$ ជាផលបូកផ្ទាល់ លុះត្រាតែ
             <!--The sum of three vector subspaces $W_1, W_2$ and $W_3$ of $\E$ is direct if and only if,-->
 $$
 W_1 \cap (W_2+W_3) = \{0\}, \quad  W_2 \cap W_3=\{0\}
-$$
+$$ និងជាបន្តបន្ទាប់....!
         </li>
     </ol>
 
+  <b>អនុវត្តន៍.</b>
+  
+  <ol type="i" style="margin-left: 20px;">
+      
+      <li>
+          To determine whether \( U \oplus W \) holds:
+<ul style="margin-left: 15px">
+    <li>
+        <i>The sum \( U + W \): </i> This set is made up of all vectors that can be written as a sum of a vector from \( U \) and a vector from \( W \).
+    </li>
+    
+    <li>
+        <i>The intersection \( U \cap W \): </i>
+        This must only contain the zero vector \( \{(0, 0)\} \) for it to be a direct sum.
+    </li>
+</ul>
+Now, check the given subspaces
+
+\[ U = \Bigl\{ (x, 2x) \mid x \in \mathbb{R} \Bigr\}, \qquad  W = \left\{ (x, -\frac{1}{4}x) \mid x \in \mathbb{R} \right\} \]
+
+<a>Step 1: Sum \( U + W \) </a> 
+<br/>
+ Let \((u, 2u)\in U \) and $(w, -1/4w) \in W$ where $u, w\in \mathbb{R}$. Thus, find a vector in \( U + W \):
+\[
+(u_1, u_2) + (w_1, w_2) = (u + w, 2u - \frac{1}{4}w)
+\]
+Let $(x,y)\in \mathbb R^2$, so if $\mathbb R = U + W$, we can express the relation:
+\[
+\left( u+ w, 2u - \frac{1}{4}w \right) = (x,y)
+\]
+Now, find $u$ and $w$?
+
+<br/><br/>
+
+<a>Step 2: Intersection \( U \cap W \)</a>
+<br/>
+
+<!---To find the intersection \( U \cap W \), we need to find vectors that can be expressed in both forms:---->
+
+Let \( (a, 2a) \) be from \( U \) and \( (b, -\frac{1}{4}b) \) be from \( W \). For these to be equal, we set:
+\[
+(a, 2a) = (b, -\frac{1}{4}b).
+\]
+Find $a, b$?
+
+<br/>
+
+This gives us the equations:
+1. \( a = b \)
+2. \( 2a = -\frac{1}{4}b \)
+
+Substituting the first equation into the second:
+\[
+2a = -\frac{1}{4}a.
+\]
+Multiplying both sides by 4 gives:
+\[
+8a = -a.
+\]
+Thus,
+\[
+9a = 0 \implies a = 0.
+\]
+This leads us to \( b = 0 \) as well.
+
+So the only vector in \( U \cap W \) is:
+\[
+(0, 0).
+\]
+
+### Conclusion
+
+Since we have verified that:
+- The intersection \( U \cap W = \{(0, 0)\} \).
+- Any vector in \( U + W \) can be formed by a linear combination of elements in \( U \) and \( W \).
+
+Thus, we conclude that:
+\[
+U \oplus W
+\]
+is indeed valid, meaning that \( U + W \) is a direct sum.
+
+          
+      </li>
+      
+      
+      <li>
+          Given:
+
+\[W_1 = \{ (a, 0) \mid a \in \mathbb{R} \} \quad \text{ (the x-axis),} \]
+\[ W_2 = \{ (0, b) \mid b \in \mathbb{R} \} \quad \text{ (the y-axis),} \]
+\[ W_3 = \{ (c, c) \mid c \in \mathbb{R} \} \quad \text{ (the line through the origin with slope 1)} \]
+
+Can \( W_1 + W_2 + W_3 \) be a direct sum?
+      </li>
+      
+      
+      
+      
+      
+  </ol>
+  
+  
    <h3>លំហរងបំពេញគ្នា (Complementary  subspaces)</h3>
    
       <my-defn>
@@ -4686,8 +4789,37 @@ $$W_1+W_2+\cdots +W_p=\left\{\vec x_1+\vec x_2+\cdots +\vec x_p\ |\ \vec x_i\in 
 
 
 
+<hr>
+    
+    <h3>
+        LaTeX:
+    </h3>
 
+   <ol style="margin-left: 40px;">
+       <li><a href="http://www.math.ku.edu/computing-help/docs/latex/index.html">
+           LaTeX help</a></li>
+    <li>
 
+        <a href="http://detexify.kirelabs.org/classify.html">DeTeXify</a> is a great tool for figuing out how to represent symbols in LaTeX.
+       </li>
+    <li>
+        Packages for making figures include <a href="http://www.texample.net/tikz"> TikZ</a>, <a href="http://ipe7.sourceforge.net/">Ipe</a>, and <a href="http://xfig.org/">xfig</a>.
+       </li>
+    <li>
+"A very minimal introduction to TikZ" by Jacques Cremer - I think this is a great way to learn the basics.
+       </li>
+    <li>
+A short example of how to draw a graph using TikZ
+       </li>
+       
+   </ol>
+   
+   
+   
+   
+   
+   
+   
     <hr>
 
     <h3> Recent Posts </h3>
