@@ -517,7 +517,7 @@ div.definitionb {
             position: relative; /* Position relative for tooltip */  
             display: inline-block; /* Required for tooltip positioning */  
         }  
- .tooltip {  
+        .tooltip {  
             display: none; /* Hidden by default */  
             position: absolute; /* Absolute positioning */  
             background-color: white; /* Set background to white */  
@@ -525,11 +525,10 @@ div.definitionb {
             padding: 10px;  
             z-index: 1; /* Ensure it appears above other elements */  
             width: 300px; /* Set a fixed width for the tooltip */  
-            top: 100%; /* Position below the word */  
-            left: 50%; /* Center tooltip */  
-            transform: translateX(-50%); /* Adjust for centering */  
+            top: auto; /* Top to be calculated dynamically */  
+            transform: translateX(-50%); /* Center tooltip under the word */  
         }  
- .tooltip img {  
+        .tooltip img {  
             max-width: 100%; /* Make image responsive */  
             height: auto; /* Maintain aspect ratio */  
-        }  
+        } 

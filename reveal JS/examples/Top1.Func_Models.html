@@ -431,15 +431,17 @@ These different representations provide various ways to understand and analyze f
             tooltip.style.display = 'block'; // Show the tooltip  
 
             const rect = word.getBoundingClientRect(); // Get position of the word  
-            tooltip.style.top = `${rect.bottom + window.scrollY}px`; // Position below the word  
-            tooltip.style.left = `${rect.left + rect.width / 2}px`; // Center tooltip under the word  
+            
+            // Position the tooltip above and to the right of the word  
+            tooltip.style.top = `${rect.top + window.scrollY - 1.4*tooltip.offsetHeight}px`; // Calculate top position  
+            tooltip.style.left = `${rect.right}px`; // Position to the right of the word  
         });  
 
         word.addEventListener('mouseleave', () => {  
             tooltip.style.display = 'none'; // Hide the tooltip  
         });  
     });  
-</script>  
+</script>
 
 
 	</body>
