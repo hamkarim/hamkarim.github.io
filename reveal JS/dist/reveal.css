@@ -81,10 +81,10 @@
  justify-content: flex-end;
 }
 html.reveal-full-page {
- width: 100%;
- height: 100%;
- height: 100vh;/* Full viewport height */  
- height: calc(var(--vh, 1vh) * 100);
+ /*width: 100%;
+ height: 100%;*
+ height: 100vh;/* Full viewport height //  
+ height: calc(var(--vh, 1vh) * 100);*/
  height: 100svh;
  overflow: hidden;
 }
@@ -102,7 +102,7 @@ html.reveal-full-page {
  top: 0 !important;
  left: 0 !important;
  width: 100% !important;
- height: 100% !important;
+ /*height: 100% !important;*/
  transform: none !important;
  height: 100vh;/* Full viewport height */  
 }
@@ -323,6 +323,7 @@ html.reveal-full-page {
  visibility: hidden;
  opacity: 0;
  -webkit-appearance: none;
+  appearance: none;
  -webkit-tap-highlight-color: transparent;
 }
 .reveal .controls .controls-arrow:after,
@@ -897,6 +898,7 @@ html.reveal-full-page {
  z-index: 1;
  border-radius: 4px;
  box-shadow: 0 95px 25px rgba(0, 0, 0, 0.2);
+ transform: translateZ(-90px) rotateX(65deg);
  -webkit-transform: translateZ(-90px) rotateX(65deg);
 }
 .reveal.page .slides > section.stack {
@@ -1163,7 +1165,8 @@ html.reveal-full-page {
  perspective: 700px;
 }
 .reveal.overview .slides {
- -moz-transform-style: preserve-3d;
+ /*-moz-transform-style: preserve-3d;*/
+  transform-style: preserve-3d;
 }
 .reveal.overview .slides section {
  height: 100%;
@@ -1196,7 +1199,8 @@ html.reveal-full-page {
 }
 .reveal.overview .backgrounds {
  perspective: inherit;
- -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+ /*-moz-transform-style: preserve-3d;*/
 }
 .reveal.overview .backgrounds .slide-background {
  opacity: 1;
@@ -1286,7 +1290,7 @@ html.reveal-full-page {
  height: 40px;
  line-height: 36px;
  padding: 0 10px;
- float: right;
+ /*float: right;*/
  opacity: 0.6;
  box-sizing: border-box;
 }
@@ -1518,7 +1522,7 @@ html.reveal-full-page {
  .reveal.show-notes {
   border-left: 0;
   max-width: none;
-  max-height: 70%;
+  /*max-height: 70%;*/
   max-height: 70vh;
   overflow: visible;
  }
@@ -1532,7 +1536,7 @@ html.reveal-full-page {
 }
 @media screen and (max-width: 600px) {
  .reveal.show-notes {
-  max-height: 60%;
+  /*max-height: 60%;*/
   max-height: 60vh;
  }
  .reveal.show-notes .speaker-notes {
@@ -1784,7 +1788,8 @@ html.reveal-full-page {
  background-color: rgba(var(--r-overlay-element-bg-color), 1);
 }
 html.reveal-print * {
- -webkit-print-color-adjust: exact;
+ /*-webkit-print-color-adjust: exact;*/
+  print-color-adjust: exact;
 }
 html.reveal-print {
  width: 100%;

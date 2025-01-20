@@ -397,7 +397,7 @@ div.definitionb {
     display: inline-block;
     background-color: rgb(255, 255, 255);
     border-radius: 0 0 20px 20px;
-    width: 100%;
+    width: inherit;
     /*padding:0 0 0 0; */
     margin-right: 0;
     margin-left: 5px;
@@ -450,7 +450,7 @@ div.definitionb {
 
 .reveal div.definition {
     display: inline-block;
-    width: 100%;
+    width: 97%;
     background: linear-gradient(to right, red 1%, red 0%, white 90%, white 100%);
     border-radius: 15px 1px;
     border: #cc0f12;
@@ -492,7 +492,7 @@ div.definitionb {
 /*End my-defn*/
 
 .slide {  
-  flex: 1; /* Slides take equal space *
+  flex: 2; /* Slides take equal space 
   overflow: auto; /* Allow scroll if content exceeds height */  
 }  
 
@@ -503,7 +503,7 @@ div.definitionb {
   font-size: 14px;
   font-style: italic;
   position: absolute; /* Absolute positioning for precise control */  
-  padding-top: 1em; /* Distance from the bottom */  
+  padding-top: 0.5em; /* Distance from the bottom */  
   left: 47%;  
   transform: translateX(-50%); /* Center horizontally */
   cursor: pointer; /* Indicate that it's clickable */ 

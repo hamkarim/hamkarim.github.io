@@ -17,7 +17,10 @@
         }
 
         /*]]>*/
-    </style>
+        .slide {
+            font-size: 22px;
+        }
+        </style>
 	
 	</head>
 
@@ -89,7 +92,7 @@
   <div class="page-number"></div>  
             </section>
             
-            <section class="slide" style="font-size: 28px;">
+            <section class="slide" style="font-size: 26px;">
                <h3>Four Ways to Represent a Function</h3>
                <p> ពិនិត្យឧទាហរណ៍ខាងក្រោម៖ </p>
                
@@ -98,18 +101,22 @@
                        <!--The area $A$ of a circle depends on the radius $r$ of the circle. The rule that connects $r$ and $A$ is given by the equation $A=\pi r^2$. With each positive number $r$ there is associated one value of $A$, and we say that $A$ is a function of $r$.--
                        The area \( A \) of a circle as a function of its radius \( r \) is expressed by the equation \( A = \pi r^2 \). This mathematical representation clearly shows how the output (area) depends on the input (radius).-->
                        ផ្ទៃក្រឡាថាស (រង្វង់) តាងដោយ \( A \) ជាអនុគមន៍ទៅនឹងកាំ \( r \) តាងដោយសមីការ \( A = \pi r^2 \) ។ ការតាងបែបនេះ បង្ហាញយ៉ាងច្បាស់ពី output (ធាតុចេញ) គឺ ផ្ទៃ អាស្រ័យទៅនឹង input (ធាតុចូល) គឺ កាំ  ។
-    <br/><br/>                   
+    <br/>               
                        <div style="text-align: center">
                            <img src="img/Circle-Area-Tran.png" width="24%">
                        </div>
 
                    </li>
 				</ol>
+       
+       <b>Algebraic formula:</b> $A(r)=\pi r^2$
+       
+       <!--A. The most useful representation of the area of a circle as a function of its radius is probably the algebraic formula $A=\pi r^2$ or, in function notation, $A(r)=\pi r^2$. It is also possible to compile a table of values or sketch a graph (half a parabola). Because a circle has to have a positive radius, the domain is $\{r \mid r\gt 0\}=(0, \infty)$ and the range is also $(0, \infty)$.-->
         <div class="page-number"></div>  
             </section>
             
             
-	<section class="slide" style="font-size: 28px;">
+	<section class="slide" style="font-size:24px;">
         <ol start="2">
                    <li>
 <!--The human population of the world $P$ depends on the time $t$. Table 1 gives estimates of the world population $P$ at time $t$, for certain years. For instance,
@@ -124,9 +131,12 @@ For each value of the time $t$ there is a corresponding value of $P$, and we say
              The world population \( P \) as a function of time \( t \) can be represented in a table, providing specific population estimates for certain years. For instance, \( P \approx 2,560,000,000 \) when \( t = 1950 \). This format allows for easy reference of values at specific points in time.-->
         ចំនួនប្រជាជនពិភពលោក តាងដោយ \( P \) ជាអនុគមន៍ទៅនឹងពេលវេលា \( t \) អាចអោយគេចុះជាតារាងមួយដូចខាងក្រោម។ គេអាចប៉ាន់ស្មានចំនួនប្រជាជនបានជាក់លាក់ ក្នុងឆ្នាំណាមួយ ជាទាហរណ៍ \( P \approx 2,560,000,000 \) នៅក្នុងឆ្នាំ \( t = 1950 \) ។ ទម្រង់ជាតារាងនេះ អាចឱ្យគេងាយស្រួលនិយាយយោងលើតម្លៃនៅត្រង់ចំណុចជាក់លាក់ណាមួយនៃពេលវេលា ។
         
-        <br/><br/>
-        
- <p style="font-size: 20px;">
+        <br/>
+
+                    </li>
+				</ol>
+       
+       <p style="font-size: 18px;">
         \[
 \begin{array}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
@@ -137,13 +147,24 @@ For each value of the time $t$ there is a corresponding value of $P$, and we say
 \end{array}
 \]    
    </p>
-              
-                    </li>
-				</ol>
+   
+  <b> In words:</b>  $P(t)$ is the human population of the world at time $t$.
+   
+   <!--We are given a description of the function in words: $P(t)$ is the human population of the world at time $t$. Let's measure $t$ so that $t=0$ corresponds to the year 1900. Table 2 provides a convenient representation of this function. If we plot the ordered pairs in the table, we get the graph (called a scatter plot) in Figure 9. It too is a useful representation; the graph allows us to absorb all the data at once. What about a formula? Of course, it's impossible to devise an explicit formula that gives the exact human population $P(t)$ at any time $t$. But it is possible to find an expression for a function that approximates $P(t)$. In fact, using methods explained in Section 1.4, we obtain an approximation for the population $P$ :
+
+$$
+P(t) \approx f(t)=\left(1.43653 \times 10^9\right) \cdot(1.01395)^t
+$$
+-->
+
+<div style="text-align: center; display: block;">
+    <img src="img/function0.png" width="40%">
+    <br/><a>ក្រាហ្វនេះមានឈ្មោះ scatter plot</a>
+</div>
 <div class="page-number"></div> 
 				</section>
               
-    <section class="slide" style="font-size: 28px;">
+    <section class="slide" style="font-size: 25px;">
       
        <ol start="3">
                <li>
@@ -151,12 +172,21 @@ For each value of the time $t$ there is a corresponding value of $P$, and we say
                    The cost \( C \) of mailing an envelope as a function of its weight \( w \) is determined by postal rules. Although there is no simple formula, the relationship is defined by a set of guidelines that dictate how to calculate the cost based on weight.-->
                    តម្លៃ \(C \) ក្នុងការផ្ញើសំបុត្រមួយ ជាអនុគមន៍ទៅនឹងទម្ងន់ \(w \) របស់វា ដែលជាការកំណត់ដោយភ្នាក់ងារប្រៃសណីយ៍ ។ ទោះបីជាវាមិនមានរូបមន្តសាមញ្ញណាមួយក៏ដោយ ទំនាក់ទំនងនេះ ត្រូវបានកំណត់ដោយគោលការណ៍ណែនាំ ចេញជារបៀបគណនាថ្លៃដើម ដោយផ្អែកលើទម្ងន់ ។
                    
-                   <div style="text-align: center; margin-top: 50px; margin-bottom: 50px;">
-                       <img src="img/mailing-envelope.jpg" width="23%" style="transform: rotate(17deg);  transition: transform 0.5s;">
+                   <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
+                       <img src="img/mailing-envelope.jpg" width="10%" style="transform: rotate(17deg);  transition: transform 0.5s;">
                    </div>
                </li>
-             
-		</ol>  
+
+		</ol>
+
+        <b>In words:</b> Let $C(w)$ be the cost of mailing a large envelope with weight $w$.
+
+        <!--The rule that the US Postal Service used as of 2019 is as follows: The cost is 1 dollar for up to 25 g plus 15 cents for each additional gram (or less) up to 350 g . A table of values is the most convenient representation for this function (see Table 3), though it is possible to sketch a graph (see Example 10).-->
+
+        <div style="text-align: center; display: block;">
+            <img src="img/function01.png" width="35%">
+            <br/>តារាងនេះឈ្មោះថា <a>tabular function</a>
+        </div>
         <div class="page-number"></div> 
 				</section>
              
@@ -166,12 +196,12 @@ For each value of the time $t$ there is a corresponding value of $P$, and we say
                    <!--The vertical acceleration $a$ of the ground as measured by a seismograph during an earthquake is a function of the elapsed time $t$. Figure 1 shows a graph generated by seismic activity during the Northridge earthquake that shook Los Angeles in 1994. For a given value of $t$, the graph provides a corresponding value of $a$.---
                    The vertical acceleration \( a \) measured by a seismograph during an earthquake as a function of elapsed time \( t \) can be visualized in a graph. The graph shows how acceleration varies over time, allowing for a visual understanding of the relationship between these two variables.-->
                    
-                   សន្ទុះតាមទិសឈរ \(a \) នៃផ្ទៃដី ដែលកំណត់បានរង្វាស់ដោយឧបករណ៍ស្ទង់រញ្ជួយដី (seismograph) ក្នុងកំឡុងពេលរញ្ជួយដីមួយ គឺជាអនុគមន៍ទៅនឹងរយៈពេល \( t \) អាចឱ្យគេគូសតាងបានជាក្រាហ្វិកមួយ ។ ក្រាហ្វិកនេះ បង្ហាញពីរសន្ទុះប្រែប្រួលតាមពេលវេលា ដែលអាចឱ្យគេយល់បានអំពីទំនាក់ទំនងរវាងអថេរទាំងពីរនេះ ។
+                   សន្ទុះតាមទិសឈរ \(a \) នៃផ្ទៃដី ដែលកំណត់បានរង្វាស់ដោយឧបករណ៍ស្ទង់រញ្ជួយដី (seismograph) ក្នុងកំឡុងពេលរញ្ជួយដីមួយកន្លែង គឺជាអនុគមន៍ទៅនឹងរយៈពេល \( t \) អាចឱ្យគេគូសតាងបានជាក្រាហ្វិកមួយ ។ ក្រាហ្វិកនេះ បង្ហាញពីរសន្ទុះប្រែប្រួលតាមពេលវេលា ដែលអាចឱ្យគេយល់បានអំពីទំនាក់ទំនងរវាងអថេរទាំងពីរនេះ ។
                    
                    <br/><br/>
                    
 <div style="text-align: center; margin-top: 30px;">
-                       <img src="img/seismograph.png" width="45%">
+                       <img src="img/seismograph.png" width="40%">
                    </div>
                </li>
                </ol>
@@ -208,7 +238,7 @@ These different representations provide various ways to understand and analyze f
 <div class="page-number"></div>
 				</section>
 
-<section class="slide" style="font-size: 25px;">
+<section class="slide" style="font-size: 24px;">
 					<h3>និយមន័យ.</h3>
 <my-defn>
         <div class="definition"><span> (Vector spaces)</span> </div>
@@ -241,7 +271,7 @@ These different representations provide various ways to understand and analyze f
 				<div class="page-number"></div>
 				
 				
-<section style="font-size: 30px;">
+<section style="font-size: 22px;">
  <b>Note: </b>             
     <ul>
         <li>
@@ -250,19 +280,32 @@ These different representations provide various ways to understand and analyze f
         <li>
 			It's helpful to think of a function as a 
 			<span class="word" data-title="ក្នុងការអនុវត្តន៍ គេប្រៀបធៀបអនុគមន៍មួយដូចជាម៉ាស៊ីន ។" data-image="img/mapping_machine.png"><a>machine</a></span>. Then, <!--every $x$ is in the domain called an <b>input</b> and the machine produces an <b>output</b> $f(x)$ according to the rule of the function. -->
-            the domain is the set of all possible <b>inputs</b> (ធាតុចូល) and the range as the set of all possible <b>outputs</b> (ធាតុចេញ). 
-            
+            the domain is the set of all possible <b>inputs</b> (ធាតុចូល) and the range as the set of all possible <b>outputs</b> (ធាតុចេញ).
+
+            <div class="tooltip" id="tooltip">
+                <img src="mg/mapping_machine.png" id="tooltipImage" alt="Tooltip Image">
+                <div id="tooltipText"></div>
+            </div>
             <br/><br/>
             
             <div style="text-align: center">
-                <img src="img/function1.png" width="25%">
-                <img src="img/function2.png" width="56%">
+                <img src="img/function1.png" width="23%">$\quad$
+                <img src="img/function2.png" width="52%">
             </div>
-            
-            <div class="tooltip" id="tooltip">  
-    <img src="mg/mapping_machine.png" id="tooltipImage" alt="Tooltip Image">  
-    <div id="tooltipText"></div>  
-</div>
+        </li>
+
+        <li>
+            The useful method for visualizing a function is its graph. <!--If $f$ is a function with domain $D$, then its graph is the set of ordered pairs-->
+            $$
+            \Bigl\{(x, f(x)) \mid x \in A\Bigr\}
+            $$
+        </li>
+
+        <li>
+            <!--(Notice that these are input-output pairs.) In other words, the graph of $f$ consists of all points $(x, y)$ in the coordinate plane such that $y=f(x)$ and $x$ is in the domain of $f$.
+
+            The graph of a function $f$ gives us a useful picture of the behavior or "life history" of a function. -->
+            Since the $y$-coordinate of any point $(x, y)$ on the graph is $y=f(x)$, the value of $f(x)$ from the graph is the height of the graph above the point $x$.
         </li>
     </ul>            
      
@@ -273,7 +316,7 @@ These different representations provide various ways to understand and analyze f
 				</section>
 
             
- <section style="font-size: 26px;">
+ <section style="font-size: 24px;">
      <h3>Examples 1.</h3>  
 
    The graph of a function $f$ is shown in Figure 6.
@@ -291,15 +334,15 @@ These different representations provide various ways to understand and analyze f
 <br/>
    
    <div style="text-align: center">
-       <img src="img/function3.png" width="40%">
+       <img src="img/function3.png" width="35%">
    </div>
 <div class="page-number"></div>
 
  </section>
             
-<section style="font-size: 30px;">
+<section style="font-size: 26px;">
    <h3>Example 2.</h3>
-    Sketch the graph (ចូរសង់ក្រាហ្វ) and find the <b></b> of each function.
+    Sketch the graph (ចូរសង់ក្រាហ្វ) and find the <b>the domain and range</b> of each function.
 <ol type="i">
     <li>
         $f(x)=2 x-1$
@@ -313,14 +356,14 @@ These different representations provide various ways to understand and analyze f
 
 <div style="text-align: center">
        <img src="img/function4.png" width="33%">
-
+$\qquad$
        <img src="img/function5.png" width="30%">
    </div>
 <div class="page-number"></div>
 
  </section>
  
- <section style="font-size: 30px;">
+ <section style="font-size: 26px;">
     <h3>Example 3.</h3>
     If $f(x)=2 x^2-5 x+1$ and $h \neq 0$, evaluate $$\frac{f(a+h)-f(a)}{h}$$
     
@@ -332,9 +375,29 @@ These different representations provide various ways to understand and analyze f
 <div class="page-number"></div>
 
  </section>
- 
- 
- 
+
+<section class="slide" style="font-size: 28px;">
+<h3>Remember: </h3>
+    <ul>
+        <li>
+            Not every equation defines a function. <!--The equation $y=x^2$ defines $y$ as a function of $x$ because the equation determines exactly one value of $y$ for each value of $x$. However, the equation $y^2=x$ does not define $y$ as a function of $x$ because some input values $x$ correspond to more than one output $y$; for instance, for the input $x=4$ the equation gives the outputs $y=2$ and $y=-2$. -->
+        </li>
+        <li>
+            Not every table defines a function. <!--Table 3 defined $C$ as a function of $w$-each package weight $w$ corresponds to exactly one mailing cost. On the other hand, Table 4 does not define $y$ as a function of $x$ because some input values $x$ in the table correspond to more than one output $y$; for instance, the input $x=5$ gives the outputs $y=7$ and $y=8$.-->
+        </li>
+    </ul>
+
+    <h3>The Vertical Line Test</h3>
+    A curve in the $xy$-plane is the graph of a function of $x$ if
+    and only if no vertical line intersects the curve more than once.<br/>
+
+    <div style="text-align: center">
+        <img src="img/function6.png" width="33%">$\qquad$
+        <img src="img/function7.png" width="32%">
+    </div>
+ <div class="page-number"></div>
+  </section>
+
  <section style="font-size: 30px;">
     <h2>Practices. </h2>
     <p style="text-align: center">
