@@ -512,10 +512,10 @@ div.definitionb {
 .word {  
             cursor: pointer; /* Indicate that the word is clickable */  
             color: blue;  
-            font-size: 1.5rem;  
             margin: 10px;  
             position: relative; /* Position relative for tooltip */  
             display: inline-block; /* Required for tooltip positioning */  
+	        font-size: inherit;
         }  
         .tooltip {  
             display: none; /* Hidden by default */  
