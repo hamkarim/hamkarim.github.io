@@ -8,11 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bed891d6-648f-4aac-9ba6-dd4e632894ab" name="Changes" comment="Update2">
-      <change afterPath="$PROJECT_DIR$/reveal JS/examples/img/function0.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reveal JS/dist/reveal.css" beforeDir="false" afterPath="$PROJECT_DIR$/reveal JS/dist/reveal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reveal JS/dist/reveal.js" beforeDir="false" afterPath="$PROJECT_DIR$/reveal JS/dist/reveal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reveal JS/dist/theme/beige.css" beforeDir="false" afterPath="$PROJECT_DIR$/reveal JS/dist/theme/beige.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reveal JS/examples/Top1.Func_Models.html" beforeDir="false" afterPath="$PROJECT_DIR$/reveal JS/examples/Top1.Func_Models.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +57,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.editor",
+    "settings.editor.selected.configurable": "Docker",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -109,7 +105,8 @@
       <workItem from="1736259581777" duration="2777000" />
       <workItem from="1736281314985" duration="162000" />
       <workItem from="1736281623722" duration="107000" />
-      <workItem from="1737389115770" duration="8249000" />
+      <workItem from="1737389115770" duration="8862000" />
+      <workItem from="1737424098986" duration="2268000" />
     </task>
     <servers />
   </component>
