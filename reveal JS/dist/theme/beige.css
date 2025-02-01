@@ -527,8 +527,11 @@ div.definitionb {
             width: 300px; /* Set a fixed width for the tooltip */  
             top: auto; /* Top to be calculated dynamically */  
             transform: translateX(-50%); /* Center tooltip under the word */  
+			font-size: 14px;
+			text-align: center;
+			color: #884b0b;
         }  
         .tooltip img {  
-            max-width: 100%; /* Make image responsive */  
+            max-width: 80%; /* Make image responsive */  
             height: auto; /* Maintain aspect ratio */  
         } 
