@@ -3480,7 +3480,7 @@ $$\bigl\langle S \bigr\rangle = \left\{\; \sum _{i\in I} \lambda_i\cdot \vec x_i
 <my-example>
    <ul style="margin-left: 20px;">
     <li>
-        <i>Polynomial vector space \( P_2 \): </i>
+        <b><i>លំហវ៉ិចទ័រជាពហុធា (polynomial vector space) \( P_2 \): </i></b>
   <br/>
        The polynomials \( \{ 1, x, x^2 \} \) span \( P_2 \) (vector space of polynomials of degree $2$ or less).<br/>
         
@@ -3492,7 +3492,7 @@ $$\bigl\langle S \bigr\rangle = \left\{\; \sum _{i\in I} \lambda_i\cdot \vec x_i
        </li>
     
        <li>
-       <i>Spanning set in a matrix space \( M_2(\mathbb{R}) \):</i><br/>
+       <b><i>សំណុំដែលបង្កបានជាម៉ាទ្រីស (spanning set in a matrix space) \( M_2(\mathbb{R}) \):</i></b><br/>
            
            For a \( 2 \times 2 \) matrix space \( M_2(\mathbb{R}) \), the set of matrices \( \{ E_{11}, E_{12}, E_{21}, E_{22} \} \) where \( E_{ij} \) is the matrix with a $1$ in the \( (i,j) \) position and $0$ elsewhere spans \( M_2(\mathbb{R}) \). <br/>
        
@@ -3504,11 +3504,11 @@ $$\bigl\langle S \bigr\rangle = \left\{\; \sum _{i\in I} \lambda_i\cdot \vec x_i
        
        </li>
        <li>
-       <i>Span from linear combinations:</i>
+       <b><i>ចេញពីបន្សំលីនេអ៊ែរបានសំណុំបង្ក (span from linear combinations:)</i></b>
        <br/>
        Let the vectors \( v_1 = (1, 2, 3) \) and \( v_2 = (4, 5, 6) \) in \( \mathbb{R}^3 \). <br/>
            
-    With all linear combinations \( c_1v_1 + c_2v_2 \), the span of these vectors would cover a plane in \( \mathbb{R}^3 \), as both vectors are not scalar multiples of each other, shows that they create a $2$-dimensional plane within the $3$-dimensional space.
+    With all linear combinations \( c_1v_1 + c_2v_2 \), the span of these vectors would cover a plane in \( \mathbb{R}^3 \), as both vectors are not scalar multiples of each other, shows that they create a $2$-D plane within the $3$-dimensional space.
 
        </li>
     </ul>
@@ -3518,7 +3518,7 @@ $$\bigl\langle S \bigr\rangle = \left\{\; \sum _{i\in I} \lambda_i\cdot \vec x_i
 <my-example>
     <ol type="i" style="margin-left: 20px;">
         <li>
-            ចូរបង្ហាញថា $\mathbb{R}^2$ ត្រូវបានបង្កដោយសំណុំវ៉ិចទ័រ
+            ចូរបង្ហាញថា $\mathbb{R}^2$ ត្រូវបានបង្កដោយសំណុំមានវ៉ិចទ័រ
 
             $$
             \mathbf{v}_1=(1,1) \quad \text { and } \quad \mathbf{v}_2=(2,-1)
@@ -3526,7 +3526,7 @@ $$\bigl\langle S \bigr\rangle = \left\{\; \sum _{i\in I} \lambda_i\cdot \vec x_i
 
         </li>
 
-        <li>កំណត់ថាតើ វ៉ិចទ័រ $\mathbf{v}_1=(1,-1,4), \mathbf{v}_2=(-2,1,3)$ និង $\mathbf{v}_3=(4,-3,5)$ បង្កបានលំហ $\mathbb{R}^3$ ។
+        <li>កំណត់ថាតើ វ៉ិចទ័រ $\mathbf{v}_1=(1,-1,4), \mathbf{v}_2=(-2,1,3)$ និង $\mathbf{v}_3=(4,-3,5)$ បង្កបានលំហ $\mathbb{R}^3$ ឬទេ?
             <!---Determine whether the vectors $\mathbf{v}_1=(1,-1,4), \mathbf{v}_2=(-2,1,3)$, and $\mathbf{v}_3=(4,-3,5)$ span $\mathbb{R}^3$.-->
         </li>
 
@@ -3661,24 +3661,34 @@ The reason that the vectors in the previous example did not span $\mathbb{R}^3$ 
 
         
 <my-example>
-Consider the vector space ${\K}^{\N}$ of formal power series with coefficients in $\F$, with the usual addition and multiplication by a scalar. Let $e_i$ be the series of all zeroes except the $i$-th position. The vectors $e_i$, where $i\in {\N}$, don't span ${\K}^{\N}$. Every linear combination of the $e_i$'s is a vector with finitely many non-zero components. Thus, the vector $(1,1,\ldots,1,\ldots)\in {\K}^{\N}$ cannot be written as a linear combination of the $e_i$'s.
+Consider the vector space ${\K}^{\N}$ of formal power series with coefficients in $\K$, with the usual addition and multiplication by a scalar.<br/> 
+Let $e_i$ be the series of all zeroes except the $i$-th position. The vectors $e_i$, where $i\in {\N}$, don't span ${\K}^{\N}$. Every linear combination of the $e_i$'s is a vector with finitely many non-zero components. <br/><br/>
+
+Thus, the vector $(1,1,\ldots,1,\ldots)\in {\K}^{\N}$ cannot be written as a linear combination of the $e_i$'s.
 </my-example>
 
         
         
+<div style="border-style: double;">
+    <b>Important: </b>
+<ol type="i">
+    <li>
+        <b>Complete Representation:</b> If a set of vectors spans a space \(V\), then no vector in \(V\) is <i>left out</i> of the linear combinations of these vectors.</li>
         
+        <li>
+            <b>Minimal Spanning Set:</b> If a spanning set is also linearly independent, it forms a <a>basis</a> for the vector space.
+        </li>
         
+        <li>
+            <b>Overlapping Spanning Sets:</b> If a spanning set has more vectors than necessary, it is not linearly independent. Removing redundant vectors can result in a basis.
+        </li>
+
+</ol>
+</div>
         
-<p>
     
-    ### Key Points:
-1. **Complete Representation**: If a set of vectors spans a space \(V\), then no vector in \(V\) is "left out" of the linear combinations of these vectors.<br/>
 
-2. **Minimal Spanning Set**: If a spanning set is also linearly independent, it forms a **basis** for the vector space.
-<br/>
 
-3. **Overlapping Spanning Sets**: If a spanning set has more vectors than necessary, it is not linearly independent. Removing redundant vectors can result in a basis.
-</p>
 
  <div class="box-theorem">
         <div class="box-legend editable"><span class="lt-icon-default">សំណើ :  (លំហបង្ក)</span></div>
