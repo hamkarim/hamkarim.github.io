@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Topic 1. Functions and Models</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/beige.css" id="theme">
+		<style type="text/css">
+        /*<![CDATA[*/
+        .Headertext {
+            display: none;
+        }
+
+        /*]]>*/
+        .slide {
+            font-size: 22px;
+        }
+        </style>
+	
+	</head>
+
+	<body>
+    <div class="Headertext">
+
+    \( \newcommand{\vecs}[1]{\overset { \scriptstyle \rightharpoonup} {\mathbf{#1}}&nbsp;}&nbsp;\)
+    \( \newcommand{\vecd}[1]{\overset{-\!-\!\rightharpoonup}{\vphantom{a}\smash&nbsp;{#1}}} \)
+    \(\newcommand{\id}{\mathrm{id}}\)
+    \( \newcommand{\Span}{\mathrm{span}}\)
+    \( \newcommand{\kernel}{\mathrm{null}\,}\)
+    \( \newcommand{\range}{\mathrm{range}\,}\)
+    \( \newcommand{\RealPart}{\mathrm{Re}}\)
+    \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+    \( \newcommand{\Argument}{\mathrm{Arg}}\)
+    \( \newcommand{\norm}[1]{\| #1 \|}\)
+    \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+    \( \newcommand{\Span}{\mathrm{span}}\)
+    \(\newcommand{\id}{\mathrm{id}}\)
+    \( \newcommand{\Span}{\mathrm{span}}\)
+    \( \newcommand{\kernel}{\mathrm{null}\,}\)
+    \( \newcommand{\range}{\mathrm{range}\,}\)
+    \( \newcommand{\RealPart}{\mathrm{Re}}\)
+    \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+    \( \newcommand{\Argument}{\mathrm{Arg}}\)
+    \( \newcommand{\norm}[1]{\| #1 \|}\)
+    \( \newcommand{\cof}{\mathbf{cof}}\)
+    \( \newcommand{\adj}{\mathbf{adj}}\)
+    \( \renewcommand{\det}{\mathbf{det\,\!}}\)
+    \( \newcommand{\minor}{\mathbf{minor}}\)
+    \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+    \( \newcommand{\Span}{\mathrm{span}}\)
+    \(\newcommand{\E}{\mathbf{V}}\)
+    \(\newcommand{\K}{\mathbb{K}}\)
+    \(\newcommand{\F}{W}\)
+    \(\newcommand{\R}{\mathbb{R}}\)
+    \(\newcommand{\N}{\mathbb{N}}\)
+</div>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+ 
+
+ <section class="slide">
+      <h4>Quiz No. 1 (M2) - 05/02/25:</h4>
+
+      <ol start="1" style="margin-left: 0">
+        <li>
+            ចូររកដែនកំណត់ និង រ៉ង់របស់ទំនាក់ទំនងក្នុងតារាងខាងក្រោម៖ 
+<!--
+Determine the domain and range for the relation shown in the table.
+\begin{tabular}{|c|c|}
+\hline Inputs (or $x$ ) & Outputs (or $y$ ) \\
+\hline-2 & 0 \\
+\hline-1 & 2 \\
+\hline 3 & -2 \\
+\hline 3 & 4 \\
+5 & 4 \\
+\hline
+\end{tabular}$-->
+       <div style="text-align: center">
+           <img src="img/quiz1.png" width="40%">
+       </div>
+        </li>
+                 
+        <li>
+            Determine if the following relations are functions.
+<ol type="i">
+    <li>
+        $R=\{(0,1),(1,3),(3,4),(5,2), (1,-2), (3,-2)\}$
+
+    </li>
+    <li>
+        $S=\{(0,1),(0,2),(3,4),(3,1)\}$
+    </li>
+    <li>
+        $T=\{(0,1),(1,2),(3,4),(4,1,0), (2,1)\}$
+    </li>
+</ol>
+        </li>
+    <li>
+       A function $f$ is defined by
+$$
+f(x)= \begin{cases}1-x & \text { if } x \leqslant-1 \\ x^2 & \text { if } x \gt -1\end{cases}
+$$
+
+
+គណនា $f(-2), f(-1)$ និង $f(0)$ រួចគូសក្រាហ្វរបស់វា។
+    </li>                  
+     </ol>
+
+      <!--div style="text-align: center">
+          <img src="img/verticalLine1.png" width="90%"><br/>
+      
+      </!--div-->
+
+      <div class="page-number"></div>
+  </section>
+
+<section class="slide">
+      <h4>Quiz No. 1 (M2) - 05/02/25:</h4>
+
+      <ol start="4" style="margin-left: 0">
+<li>
+       <ol type="a">
+        <li>
+            ចូររកដែនកំណត់ និង រ៉ង់របស់អនុគមន៍ក្នុងដ្យាក្រាមខាងក្រោម។
+         </li>
+         
+        <li>
+            ចូរកំណត់អនុគមន៍តាមដ្យាក្រាមនេះ។
+        </li> 
+         </ol>
+    </li>    
+    </ol>
+       <div style="text-align: center">
+           <img src="img/quiz1M2.png" width="40%">
+       </div>
+       
+                 
+   
+    
+
+      <div class="page-number"></div>
+  </section>
+
+<section class="slide">
+      <h4>Quiz No. 1 (M1) - 05/02/25:</h4>
+
+      <ol start="1" style="margin-left: 0">
+        <li>
+            <!--Temperature readings $T$ (in ${ }^{\circ} \mathrm{C}$ ) were recorded every two hours from midnight to 2:00 PM in Atlanta on a day in June. The time $t$ was measured in hours from midnight.-->
+            សីតុណ្ហភាព $T$ (គិតជា ${ }^{\circ} \mathrm{C}$) ត្រូវបានកត់ត្រារៀងរាល់ 2 ម៉ោងម្ដង ចាប់ពីកណ្ដាលអាធ្រាតដល់ម៉ោង 2:00 PM ក្នុងទីក្រុងមួយនៅថ្ងៃមួយក្នុងខែមិថុនា។ ពេល $t$ ត្រូវបានវាស់គិតជាម៉ោង ចាប់ពីពាក់កណ្តាលអធ្រាត្រ។
+            \[
+\begin{array}{|c|c|c|c|c|c|c|c|c|}
+\hline t & 0 & 2 & 4 & 6 & 8 & 10 & 12 & 14 \\
+\hline T & 23 & 21 & 20 & 19 & 21 & 26 & 28 & 30 \\
+\hline
+\end{array}
+    \]
+      
+    <ol type="a">
+        <li>
+            ចូរគូសក្រាហ្វតំណាង $T$ ជាអនុគមន៍ទៅនឹង $t$ ។
+        </li>
+        
+        <li>
+            ដោយប្រើក្រាហ្វនេះ ចូរប៉ាន់ស្មានសីតុណ្ហភាពនៅម៉ោង 9:00 Am ។
+        </li>
+    </ol>
+        </li>
+                 
+        <li>
+           ចូរគណនា <br/>
+(a). $f(x)=4+3 x-x^2, \quad \frac{f(3+h)-f(3)}{h}, \qquad$ 
+(b) $f(x)=x^3, \quad \frac{f(a+h)-f(a)}{h}$<br/>
+
+(c) $f(x)=\frac{1}{x}, \quad \frac{f(x)-f(a)}{x-a},\qquad$
+(d). $f(x)=\sqrt{x+2}, \quad \frac{f(x)-f(1)}{x-1}$
+
+        </li>
+    <li>
+       A function $f$ is defined by
+$$
+f(x)= \begin{cases} -2x & \text { if } x \leqslant 2 \\ x^2 & \text { if } x^2 \gt 2\end{cases}
+$$
+
+
+គណនា $f(-1), f(3)$ និង $f(0)$ រួចគូសក្រាហ្វរបស់វា។
+    </li>                  
+     </ol>
+
+      <!--div style="text-align: center">
+          <img src="img/verticalLine1.png" width="90%"><br/>
+      
+      </!--div-->
+
+      <div class="page-number"></div>
+  </section>
+
+  <section>
+      <ol start="4">
+          <li>
+              Find the domain of the function.<br/>
+
+i. $f(u)=\frac{u+1}{1+\frac{1}{u+1}}$<br/>
+
+ii. $F(p)=\sqrt{2-\sqrt{p}}$<br/>
+
+iii. $h(x)=\sqrt{x^2-4 x-5}$
+          </li>
+          
+<li>
+       <ol type="a">
+        <li>
+            ចូររកដែនកំណត់ និង រ៉ង់របស់អនុគមន៍ក្នុងដ្យាក្រាមខាងក្រោម។
+         </li>
+         
+        <li>
+            ចូរកំណត់អនុគមន៍តាមដ្យាក្រាមនេះ។
+        </li> 
+         </ol>
+    </li>    
+      </ol>
+    <div style="text-align: center">
+           <img src="img/quiz1M2.png" width="40%">
+       </div>
+  </section>
+
+  <section class="slide">
+      <h4>Quiz No. 1 (M4):</h4>
+
+      <ol start="1" style="margin-left: 0">
+        <li>
+            Determine the domain and range for the relation shown in the table.
+<!--\begin{tabular}{|c|c|}
+\hline Inputs (or $x$ ) & Outputs (or $y$ ) \\
+\hline-2 & 0 \\
+\hline-1 & 2 \\
+\hline 3 & -2 \\
+\hline 3 & 4 \\
+5 & 4 \\
+\hline
+\end{tabular}$-->
+       <div style="text-align: center">
+           <img src="img/quiz1.png" width="40%">
+       </div>
+        </li>
+                 
+        <li>
+            Determine if the following relations are functions.
+<ol type="i">
+    <li>
+        $R=\{(0,1),(1,3),(3,4),(5,2)\}$
+
+    </li>
+    <li>
+        $R=\{(0,1),(0,2),(3,4)\}$
+    </li>
+</ol>
+        </li>
+    <li>
+        Use a mapping diagram to determine if the relation $R=\{(0,1),(0,2),(3,4)\}$ is a function.
+    </li>
+    <li>
+        Using the function $f=\{(0,1),(1,3),(3,4),(5,2)\}$, evaluate the following: a. $f(1)$, $\quad$ b. $f(5)$, $\quad$ c. $f(3)$
+    </li>
+                  
+     </ol>
+
+      <!--div style="text-align: center">
+          <img src="img/verticalLine1.png" width="90%"><br/>
+      
+      </!--div-->
+
+      <div class="page-number"></div>
+  </section>
+  
+  
+  <section class="slide">
+      <h4>Quiz No. 1:</h4>
+
+      <ol start="5" style="margin-left: 0">
+      
+      <li>
+           Determine whether the curve is the graph of a function
+of $x$. If it is, state the domain and range of the function.
+     
+     <div style="text-align: center">
+           <img src="img/quiz2.png" width="50%">
+       </div>
+      </li>
+      
+      <li>
+          If $g(x)=\frac{x}{\sqrt{x+1}}$, find $g(0), g(3), 5 g(a), \frac{1}{2} g(4 a), g\left(a^2\right)$, $[g(a)]^2, g(a+h)$, and $g(x-a)$.
+      </li>
+      
+      <li>
+          Evaluate $f(-3), f(0)$, and $f(2)$ for the piecewise defined function. Then sketch the graph of the function.
+<ol type="a">
+    <li>
+        $f(x)= \begin{cases}x^2+2 & \text { if } x\lt 0 \\ x & \text { if } x \geqslant 0\end{cases}$
+    </li>
+    
+    <li>
+        $f(x)= \begin{cases}5 & \text { if } x \lt 2 \\ \frac{1}{2} x-3 & \text { if } x \geqslant 2\end{cases}$
+    </li>
+</ol>
+      </li>
+      </ol>
+           <div class="page-number"></div> 
+                </section>
+   
+                
+<section class="slide">
+      <h4>Quiz No. 1 (S):</h4>
+
+      <ol start="1" style="margin-left: 0">
+       
+       <li>
+           Is the following <a>Arrow diagram</a> is a function? Yes or No?
+           <div style="text-align: center">
+           <img src="img/Quiz3.jpeg" width="13%">linear-1.png
+       </div>
+       </li>
+    
+                 
+        <li>
+            គេឱ្យសំណុំ $A=\{1,2,3,4\}, B=\{2,3,4\}$ ។ តើមួយណាជាអនុគមន៍ពី $A$ ទៅ $B$?<br/>
+
+      (a)  $\{(1,2),(1,3),(2,3),(3,3)\}, \qquad$ (b)  $\{(1,3),(2,3)\}$<br/>
+
+    (c)  $\{(1,3),(2,2),(3,3)\}, \qquad$ (d) 
+        $\{(1,2),(2,3),(3,2),(3,4)\}$
+        </li>
+    <li>
+        <!--Use a mapping diagram to determine if the relation $R=\{(0,1),(0,2),(3,4)\}$ is a function.-->
+        តើមួយណាមិនមែនជាអនុគមន៍ ?<br/>
+a. $\left\{(x, y): x, y \in R, x^2=y\right\}\qquad$
+
+b. $\left\{(x, y): x, y \in R, y^2=x\right\}$<br/>
+
+c. $\left\{(x, y): x, y \in R, x=y^3\right\}\qquad$
+
+d. $\left\{(x, y): x, y \in R, y=x^3\right\}$
+    </li>
+    <li>
+        Using the function $f=\{(0,1),(1,3),(3,4),(5,2)\}$, evaluate the following: <br/>
+        a. $f(1)$, $\quad$ b. $f(5)$, $\quad$ c. $f(3)$
+    </li>
+                  
+     </ol>
+
+      <!--div style="text-align: center">
+          <img src="img/verticalLine1.png" width="90%"><br/>
+      
+      </!--div-->
+
+      <div class="page-number"></div>
+  </section>
+  
+  
+  <section class="slide">
+      <h4>Quiz No. 1:</h4>
+
+      <ol start="5" style="margin-left: 0">
+      
+      <li>
+           យាយរបស់អ្នកមានដើមស្រល់នៅក្នុងទីធ្លារបស់គាត់ ដែលជ្រុះផ្លែច្រើន។ គាត់នឹងបង់លុយឱ្យអ្នក $\$0.10 $ សម្រាប់ការរប្រមូលបានផ្លែស្រល់ជ្រុះមួយកូនបាវ។ កាលពីសប្តាហ៍មុនអ្នករកបាន $5 ដុល្លារ ក្នុងការប្រមូលសម្រាមនេះ ។
+<ol type="i">
+    <li>
+        ចូរសរសេរទំនាក់ទំនងមួយអំពីចំនួនទឹកប្រាក់សរុបដែលអ្នកអាចរកបានជាអនុគមន៍ទៅនឹងចំនួនកូនបាវដាក់ផ្លែស្រល់ ដែលអ្នកប្រមូលបាន ។
+    </li>
+    <li>
+        ចូរកំណត់អថេរអាស្រ័យ និងអថេរមិនអាស្រ័យ។ 
+    </li>
+    <li>
+        ប្រសិនបើអ្នកប្រមូលបានចំនួន 200 កូនបាវក្នុងសប្តាហ៍នេះ តើអ្នករកលុយបានប៉ុន្មាន?
+    </li>
+</ol>
+      </li>
+      
+      <li>
+          If $g(x)=\frac{x}{\sqrt{x+1}}$, find $g(0), g(3), 5 g(a), \frac{1}{2} g(4 a), g\left(a^2\right)$, $[g(a)]^2, g(a+h)$, and $g(x-a)$.
+      </li>
+      </ol>
+           <div class="page-number"></div> 
+                </section>             
+                
+   <!--Quiz M3-->
+   
+<section class="slide">
+      <h4>Quiz No. 1 (M3):</h4>
+
+      <ol start="1" style="margin-left: 0">
+       
+       <li>
+           Is the following <a>Arrow diagram</a> is a function? Yes or No?
+           <div style="text-align: center">
+           <img src="img/quiz1M3.png" width="50%">
+       </div>
+       </li>
+    
+                 
+        <li>
+            គេឱ្យសំណុំ $A=\{1,2,3,4\}, B=\{2,3,4\}$ ។ តើមួយណាជាអនុគមន៍ពី $A$ ទៅ $B$?<br/>
+
+      (a)  $\{(-1,2),(1,3),(2,3),(-2,3)\}, \qquad$ (b)  $\{(1,3),(2,3),(3,3)\}$<br/>
+
+    (c)  $\{(1,3),(2,2),(3,3)\}, \qquad$ (d) 
+        $\{(1,-2),(2,3),(3,2),(3,4)\}$
+        </li>
+    <li>
+        <!--Use a mapping diagram to determine if the relation $R=\{(0,1),(0,2),(3,4)\}$ is a function.-->
+        តើមួយណាមិនមែនជាអនុគមន៍ ?<br/>
+a. $\left\{(x, y): x, y \in \mathbb R, -x^2=y\right\}\qquad$
+
+b. $\left\{(x, y): x, y \in \mathbb R, y^2=-x\right\}$<br/>
+
+c. $\left\{(x, y): x, y \in  \mathbb R, x=y^3\right\}\qquad$
+
+d. $\left\{(x, y): x, y \in  \mathbb R, y^2=(x-1)^3\right\}$
+    </li>
+    <li>
+        Using the function $f=\{(0,1),(1,-3),(-3,4),(5,-2)\}$, evaluate (គណនា) the following: <br/>
+        a. $f(1)$, $\quad$ b. $f(5)$, $\quad$ c. $f(3)$
+    </li>
+                  
+     </ol>
+
+      <!--div style="text-align: center">
+          <img src="img/verticalLine1.png" width="90%"><br/>
+      
+      </!--div-->
+
+      <div class="page-number"></div>
+  </section>
+  
+  
+  <section class="slide">
+      <h4>Quiz No. 1:</h4>
+
+      <ol start="5" style="margin-left: 0">
+      
+      <li>
+           យាយរបស់សុភាពមានដើមស្រល់ជាច្រើនដើម ដែលដាំនៅក្នុងទីធ្លាផ្ទះរបស់គាត់ ហើយមានជ្រុះផ្លែច្រើនជារៀងរាល់ព្រឹក។ គាត់អោយសុភាពប្រមូលផ្លែទាំងនោះដាក់កូនបាវតូចៗ ដោយឱ្យថ្លៃ $\$0.3 $ ក្នុងមួយកូនបាវ។ ការប្រមូលយកផ្លែស្រល់ដែលជ្រុះនេះ គឺទើបតែចាប់ផ្ដើមពីព្រឹកព្រលឹមនៅថ្ងៃមួយក្នុងសប្តាហ៍មុនប៉ុណ្ណោះ ព្រោះជាពេលដែលផ្លែស្រល់ចាប់ផ្ដើមជ្រុះច្រើន ហើយសុភាពរកបាន $8$ ដុល្លារ ក្នុងការប្រមូលសម្រាមនេះ ។
+<ol type="i">
+    <li>
+        ចូរសរសេរទំនាក់ទំនងមួយអំពីចំនួនទឹកប្រាក់សរុបដែលអ្នកអាចរកបានជាអនុគមន៍ទៅនឹងចំនួនកូនបាវដាក់ផ្លែស្រល់ ដែលអ្នកប្រមូលបាន ។
+    </li>
+    <li>
+        ចូរកំណត់អថេរអាស្រ័យ និងអថេរមិនអាស្រ័យ។ 
+    </li>
+    <li>
+        ប្រសិនបើអ្នកប្រមូលបានចំនួន 200 កូនបាវក្នុងសប្តាហ៍នេះ តើអ្នករកលុយបានប៉ុន្មាន?
+    </li>
+</ol>
+      </li>
+      
+      <li>
+          If $g(x)=\frac{x}{\sqrt{x+1}}$, find $g(0), g(3), 5 g(a), \frac{1}{2} g(4 a), g\left(a^2\right)$, $[g(a)]^2, g(a+h)$, and $g(x-a)$.
+      </li>
+      </ol>
+           <div class="page-number"></div> 
+                </section>          
+
+ <!----Start quiz no. 2---->
+ 
+ <section class="slide">
+      <h4>Quiz No. 2 (Physics S1)  - 17/02/25):</h4>
+
+     <ol>
+        <li>
+            លំហាត់ 3-4 ទំព័រ ៣៣
+        </li>
+        <li>
+            លំហាត់ 11-12 ទំព័រ ៣៣
+        </li>
+         <li>
+             លំហាត់ 27-28 ទំព័រ ៣៥
+         </li>
+         <li>
+             លំហាត់ 30 ទំព័រ ៣៥
+         </li>
+     </ol>
+          
+          
+          
+          
+           <div class="page-number"></div> 
+                </section>          
+                
+ <!----Topic 3. Linear Models and Applications----->
+ 
+ 
+ <section class="title">
+				    <h2>Topic 3. គម្រូលីនេអ៊ែរ (Linear Models): </h2>
+				    <h3>Application of linear models</h3>
+				    <br /><br /><br />
+				    <p style="text-align: center">បង្រៀនដោយ</p>
+				    <br />
+
+				    <h3>ហាំ ការីម</h3>
+				    <br /><br />
+				    <!--<img src="img/Ph.Y1_QR.png" width="15%">-->
+				</section>
+
+<section class="slide">
+               <h3>វត្ថុបំណង - Objectives: </h3>
+                <ul>
+                    <li>
+                       Determine the slope (មេគុណប្រាប់ទិស) of a given linear model and describe its meaning, in context.
+                        </li>
+                <li>
+                យកម៉ូដែលលីនេអ៊ែរដែលស្គាល់ដើម្បីដោះស្រាយចំណោទ (Use a given linear model to solve problems)
+                </li>
+                <li>
+                    បង្កើតម៉ូដែលលីនេអ៊ែរចេញពីទិន្នន័យដែលមាន (Create a linear model from data to solve problems)
+                </li>
+                </ul>
+  <div class="page-number"></div>  
+            </section>   
+<section class="slide">
+					<h3>Linear Models: </h3>
+
+<ul>
+    <li> When we say that $y$ is a linear function of $x$, we mean that the graph of the function is a line. </li>
+
+<li>
+    All of you are familiar with the idea of a linear model from learning the equation of a line, which is
+
+\begin{equation}\label{eq:line}
+Y=m X+b\tag{1}
+\end{equation}
+where $m$ is the slope of the line and $b$ is the $Y$-intercept. 
+   
+   <ol>
+       <li>
+        $y$ is the response variable (it responds to changes in $x$ )
+       </li>
+       <li>
+           $x$ is the predictor variabl
+       </li>
+       <li>
+           $m$ represents the estimated change in the response $y$ for a one-unit change in the predictor $x$
+       </li>
+       <li>
+           $b$ is the value of the response $y$ when the predictor $x=0$
+       </li>
+   </ol>
+    </li>
+    </ul>  
+    
+	<div class="page-number"></div>
+				</section>
+
+
+<section class="slide">
+					<h3>Linear Models: </h3>
+<ul>
+<li> It is useful to think of equation $(\ref{eq:line})$ as a function that maps values of $X$ to values of $Y$. <!--Using this function, if we input some value of $X$, we always get the same value of Y as the output.--->
+    </li>
+</ul>
+ <div style="text-align: center">
+           <img src="img/linear-1.png" width="50%">
+       </div>
+	<div class="page-number"></div>
+</section>				
+
+
+<section class="slide">
+					<h3>Discussion Group: </h3>
+<ol>
+    <li>
+        Determine whether the vectors are linearly independent. Justify each answer.<br/>
+        
+(a) 
+$\left[\begin{array}{l}4 \\ 4\end{array}\right],\left[\begin{array}{r}-1 \\ 3\end{array}\right],\left[\begin{array}{l}2 \\ 5\end{array}\right],\left[\begin{array}{l}8 \\ 1\end{array}\right]$
+<br/>
+  
+  
+   (b) $\left[\begin{array}{r}1 \\ 4 \\ -7\end{array}\right],\left[\begin{array}{r}-2 \\ 5 \\ 3\end{array}\right],\left[\begin{array}{l}0 \\ 0 \\ 0\end{array}\right]$        
+    </li>
+</ol>
+	<div class="page-number"></div>
+</section>		
+
+<section class="slide">
+					<h3>Linear Models: </h3>
+
+	<div class="page-number"></div>
+</section>		
+
+
+<section class="slide">
+					<h3>Linear Models: </h3>
+
+	<div class="page-number"></div>
+</section>		
+
+
+<section class="slide">
+					<h3>Linear Models: </h3>
+
+	<div class="page-number"></div>
+</section>		
+
+
+<section class="slide">
+					<h3>Linear Models: </h3>
+
+	<div class="page-number"></div>
+</section>		
+
+
+
+</div>
+
+</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+
+				mathjax2: {
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				// There are three typesetters available
+				// RevealMath.MathJax2 (default)
+				// RevealMath.MathJax3
+				// RevealMath.KaTeX
+				//
+				// More info at https://revealjs.com/math/
+				plugins: [ RevealMath.MathJax2 ]
+			});
+		</script>
+
+<script>  
+  const slides = document.querySelectorAll('.slide .page-number');  
+  slides.forEach((slide, index) => {  
+    slide.textContent = `Page ${ index + 1 }`; // Add page number  
+  });  
+</script>
+
+<script>  
+    const words = document.querySelectorAll('.word');  
+    const tooltip = document.getElementById('tooltip');  
+    const tooltipImage = document.getElementById('tooltipImage');  
+    const tooltipText = document.getElementById('tooltipText');  
+/*const words = document.querySelectorAll('.word');  
+const tooltip = document.querySelector('.tooltip');  // Use class selector 
+const tooltipImage = tooltip.querySelector('.tooltipImage');  // Use class within tooltip  
+const tooltipText = tooltip.querySelector('.tooltipText');  // Use class within tooltip*/
+
+    words.forEach(word => {  
+        word.addEventListener('mouseover', () => {  
+            const title = word.getAttribute('data-title'); // Get the title text  
+            const imageSrc = word.getAttribute('data-image'); // Get the image source  
+
+            tooltipText.textContent = title; // Set tooltip text  
+            tooltipImage.src = imageSrc; // Set tooltip image  
+            tooltip.style.display = 'block'; // Show the tooltip  
+
+            const rect = word.getBoundingClientRect(); // Get position of the word  
+            
+            // Position the tooltip above and to the right of the word  
+            tooltip.style.top = `${rect.top + window.scrollY - 1.4*tooltip.offsetHeight}px`; // Calculate top position  
+            tooltip.style.left = `${rect.right}px`; // Position to the right of the word  
+        });  
+
+        word.addEventListener('mouseleave', () => {  
+            tooltip.style.display = 'none'; // Hide the tooltip  
+        });  
+    });  
+</script>
+
+
+	</body>
+</html>
