@@ -3771,6 +3771,49 @@ $$W_1+W_2=\{\vec x_1+\vec x_2 \ |\ \vec x_i\in W_i, i=1,2\}$$
 More generally, let $W_1, W_2, \ldots, W_p$ be a finite family of subspace of the $\K$-vector space $V$. Let $W=\{\vec x_1+\vec x_2+\cdots +\vec x_p\}$ where $\vec x_i\in W_i$. Then $W=\langle W_1\cup \cdots \cup W_p\rangle$ is  called the { sum} of the subspaces $W_1, W_2, \ldots, W_p$. It is shown that $W$ is the smallest subspace containing $W_1, W_2, \ldots ,W_p$. It is denoted $W_1+W_2+\cdots +W_p$.
 $$W_1+W_2+\cdots +W_p=\left\{\vec x_1+\vec x_2+\cdots +\vec x_p\ |\ \vec x_i\in W_i, i=1,\ldots ,p\right\}$$
 </my-defn>
+  
+  
+<div class="box-theorem">
+        <div class="box-legend editable"><span class="lt-icon-default">ទ្រឹស្ដីបទ 4. :  (Equivalent conditions in a matrix)</span></div>
+<p>
+Let $A$ be an $n \times n$ matrix. Then the following are equivalent:
+    </p>
+<ol type="i">
+    <li>
+        $A$ is invertible.
+    </li>
+    
+    <li>
+        $A x = \mathbf{0}$ has only the trivial solution.
+    </li>
+    
+    <li>
+        The reduced row echelon form of $A$ is $I_n$.
+    </li>
+    
+    <li>
+        $A$ is a product of elementary matrices.
+    </li>
+    
+    <li>
+        $A x = b$ is consistent for every $n \times 1$ matrix $b$.
+    </li>
+    
+    <li>
+        $A x=b$ has exactly one solution for every $n \times 1$ matrix $\mathbf{b}$.
+    </li>
+    
+    <li>
+        $\operatorname{det} A \neq 0$.
+    </li>
+</ol>
+    
+    
+    </div>
+
+The main point of the theorem is that (for square matrices) the coefficient matrix $A$ determines whether any system $A x = b$ is consistent, and knowing data about $A$ (in particular, its determinant) tells us immediately whether or not the system will be consistent.
+
+  
    
    <h3>ភាពអាស្រ័យ និងមិនអាស្រ័យលីនេអ៊ែរ </h3>
    
@@ -3806,24 +3849,276 @@ $$W_1+W_2+\cdots +W_p=\left\{\vec x_1+\vec x_2+\cdots +\vec x_p\ |\ \vec x_i\in 
    </p>
    
    
+<my-example>
+    Let $A=\left[\begin{array}{rrr}0 & 1 & 3 & -1\\ -1 & 0 & 1 & 2\\ -1 & 2 & 7&-1\end{array}\right]$.<br/>
+
+(a) Find a basis for the row space of the matrix $A$.<br/>
+
+(b) Find a basis for the column space of the matrix $A$.<br/>
+
+(c) Find a basis for the null space of the matrix $A$. (Recall that the null space of $A$ is the solution space of the homogeneous linear system $A \vec{x}=\overrightarrow{0}$.)<br/>
+
+(d) Determine if each of the vectors $\vec{v}=\left[\begin{array}{llll}1 & 1 & 1 & 1\end{array}\right]$ and $\vec{w}=\left[\begin{array}{llll}2 & 1 & 1& 0\end{array}\right]$ is in the row space of $A$.<br/>
+
+(e) Determine if each of the vectors $\vec{a}=\left[\begin{array}{l}1 \\ 1 \\ 3\end{array}\right]$ and $\vec{b}=\left[\begin{array}{l}3 \\ 1 \\ 1\end{array}\right]$ is in the column space of A.
+</my-example>
    
    
-   
-   
-   
-   
-   
-   
-   
-   
-   
+ <h3>លំហជួរដេក - លំហជួរឈរ - លំហស្នូល របស់ម៉ាទ្រីស (Row spaces - Column spaces and Null spaces)</h3>
+ 
+       
+<my-defn>
+ <div class="definition">(Row/Column/Null spaces of a matrix)</div>
+        <div class="definitionb">
+            <p>
+           គេឱ្យម៉ាទ្រីស $A(m\times n)$ ។ គេបាន៖
+            </p>
+            
+
+   <ol>
+       <li>
+           <b>លំហជួរឈរ (column space) តាងដោយ \(\mathrm{Col}(A)\) :</b> The column space of \(A\) is the set of all linear combinations of the columns of \(A\). 
+\[
+\mathrm{Col}(A) = \Bigl\{ \mathbf{u} \in \mathbb{R}^m \mid \mathbf{y} = A\mathbf{v},\;\text{ for some  }\; \mathbf{v} \in \mathbb{R}^n \Bigr\}
+\]
+<!--where, \(\mathbf{u}\) is a vector in \(\mathbb{R}^m\), and \(\mathbf{v}\) is a vector in \(\mathbb{R}^n\).<br/>-->
+
+Thus, \(\mathrm{Col}(A)\) is the span of the columns of \(A\).
+           </li>
+           
+           <li>
+       <b>លំហជួរដេក (row space) តាងដោយ \mathrm{Row}(A)\) : </b> The row space of \(A\) is the set of all linear combinations of the rows of \(A\). 
+\[
+\mathrm{Row}(A) = \Bigl\{ \mathbf{v} \in \mathbb{R}^n \mid \mathbf{v} = \mathbf{u}^T A \text{ for some } \mathbf{u} \in \mathbb{R}^m \Bigr\}
+\]
+<!--where, \(\mathbf{v}\in\mathbb{R}^n\), and \(\mathbf{u} \in \mathbb{R}^m\).<br/>-->
+ 
+ Thus, \(\mathrm{Row}(A)\) is the span of the rows of \(A\).
+          </li>
+           
+    <li><b>លំហសូន្យ ឬ ស្នូល (null space) តាងដោយ \(\mathrm{Null}(A)\) : </b> The null space of \(A\) is the set of all solutions to the homogeneous equation \(A\mathbf{x} = \mathbf{0}\): 
+\[
+\mathrm{Null}(A) = \Bigl\{ \mathbf{v} \in \mathbb{R}^n \mid A\mathbf{v} = \mathbf{0} \Bigr\}
+\]
+where, <!--\(\mathbf{v}\) is a vector in \(\mathbb{R}^n\), and --> \(\mathbf{0}\) is the zero vector in \(\mathbb{R}^m\).<br/>
+ 
+Thus, \(\mathrm{Null}(A)\) consists of all vectors \(\mathbf{x}\) that are mapped to the zero vector by \(A\).           
+       </li>
+   </ol>
+    </div>
+    </my-defn>      
+       
+        <b>វិធាន៖ </b> ដើម្បីរកគោលរបស់លំហ <i>\(\mathrm{Row}(A)\)</i>, <i>\(\mathrm{Col}(A)\)</i> និង <i>\(\mathrm{Null}(A)\)</i> របស់ម៉ាទ្រីស \(A(m\times n)\) គេត្រូវប្រើប្រមាណវិធីជួរដេក (EROs) ទៅលើម៉ាទ្រីស $A$ ដើម្បីបានទម្រង់ REF ឬ RREF (ហៅថា៖ វិធី row reduction ឬ Gaussian elimination method). 
+
+<ol>
+    <li>
+        <b>Row Space - \(\mathrm{Row}(A)\): </b> The row space of \(A\) is the span of its row vectors. To find a basis for \(\mathrm{Row}(A)\), we need to do:
+        
+<ol type="i">
+    <li>អនុវត្តប្រមាណវិធីជួរដេកលើ \(A\) ដើម្បីបានទម្រង់  <i>REF</i> or <i>RREF</i>.<!--Perform row reduction on \(A\) to obtain its <i>REF</i> or <i>RREF</i>.-->
+    </li>
+    <li>
+        ពិនិត្យរក <b>ជួរដេកមិនសូន្យ (nonzero rows)</b> នៅក្នុងម៉ាទ្រីស REF (or RREF) ដែលជួរដេកមិនសូន្យនេះ បង្កើតបានជាគោលមួយរបស់ \(\mathrm{Row}(A)\). <!-----The nonzero rows in the REF (or RREF) form a basis for $\mathrm{Row}(A)$----->
+    </li>
+</ol>
+
+<b>This is why?</b>: <span style="color: red">Row operations do not change the row space of \(A\), so the nonzero rows in the REF are linearly independent and span \(\mathrm{Row}(A)\).</span>
+    </li>
+    
+    <li>
+        <b>Column Space  - \(\mathrm{Col}(A)\):</b> The column space of \(A\) is the span of its column vectors. To find a basis for \(\mathrm{Col}(A)\), we need to do:
+        <ol type="i">
+           <li>អនុវត្តប្រមាណវិធីជួរដេកលើ \(A\) ដើម្បីបានទម្រង់  <i>REF</i> or <i>RREF</i>.
+            <!---Perform row reduction on \(A\) to obtain its REF (or RREF). --->
+            </li>
+            
+            <li>ពិនិត្យរក <i>ជួរឈរណាមានធាតុនាំមុខ (pivot columns)</i> នៅក្នុងម៉ាទ្រីសទម្រង់ REF or RREF ។ ជួរឈរទាំងនេះ ត្រូវគ្នានឹងជួរឈរនៅក្នុង  <i>ម៉ាទ្រីសដើម (original matrix) \(A\)</i> ដែលបង្កើតបានជា គោលមួយរបស់លំហជួរឈរ \(\mathrm{Col}(A)\) ។
+               <!--- Identify the <i>pivot columns</i> in the REF. These correspond to the columns of the <i>original matrix \(A\)</i> that form a basis for \(\mathrm{Col}(A)\).-->
+            </li>
+        </ol>
+
+<b>This is why?</b>: <span style="color: red">The pivot columns in the REF correspond to linearly independent columns in \(A\), and they span \(\mathrm{Col}(A)\).</span>
+    </li>
+    
+    <li>
+        <b>Null Space - \(\mathrm{Null}(A)\): </b>The null space of \(A\) is the set of all solutions to the homogeneous equation \(A\mathbf{x} = \mathbf{0}\). To find a basis for \(\mathrm{Null}(A)\), we need the following steps:
+        
+        <ol type="i">
+            <li>អនុវត្តប្រមាណវិធីជួរដេកលើ \(A\) ដើម្បីបានទម្រង់  <i>REF</i> or <i>RREF</i>.
+                <!---Perform row reduction on \(A\) to obtain its REF or RREF.-->
+            </li>
+            
+            <li> កំណត់អថេរសេរីនៅក្នុងប្រព័ន្ធសមីការ \(A\mathbf{x} = \mathbf{0}\) ។
+              <!--Express the system \(A\mathbf{x} = \mathbf{0}\) in terms of the free variables.-->
+            </li>
+            
+            <li>ដោះស្រាយប្រព័ន្ធរកអថេរគោល ជាអនុគមន៍ទៅនឹងអថេរសេរី។ 
+                <!--Solve for the basic variables in terms of the free variables.-->
+            </li>
+            
+            <li>ចម្លើយរបស់ប្រព័ន្ធបង្កើតបានជាលំហស្នូល  \(\mathrm{Null}(A)\) ។
+                <!--The solutions form a basis for \(\mathrm{Null}(A)\).---->
+            </li>
+        </ol>
+        <b>This is why?</b>:  <span style="color: red">The null space is defined by the solutions to \(A\mathbf{x} = \mathbf{0}\), and the free variables determine the dimension of the null space.</span>
+    </li>
+</ol>
+
+<my-example> រកគោលរបស់ \(\mathrm{Col}(A)\), \(\mathrm{Row}(A)\) និង \(\mathrm{Null}(A)\)? ដែល \(A(3 \times 4)\) កំណត់ដូចខាងក្រោម៖ 
+
+\[
+A = \begin{bmatrix}
+1 & 2 & 3 & 4 \\
+2 & 4 & 6 & 8 \\
+1 & 1 & 1 & 1
+\end{bmatrix}.
+\]
+</my-example>
+
+Example: 
+
+Step 1: Row Reduction
+Perform row operations to reduce \(A\) to its RREF:
+1. Subtract \(2 \times \text{Row 1}\) from Row 2:
+   \[
+   \begin{bmatrix}
+   1 & 2 & 3 & 4 \\
+   0 & 0 & 0 & 0 \\
+   1 & 1 & 1 & 1
+   \end{bmatrix}.
+   \]
+2. Subtract Row 1 from Row 3:
+   \[
+   \begin{bmatrix}
+   1 & 2 & 3 & 4 \\
+   0 & 0 & 0 & 0 \\
+   0 & -1 & -2 & -3
+   \end{bmatrix}.
+   \]
+3. Multiply Row 3 by \(-1\):
+   \[
+   \begin{bmatrix}
+   1 & 2 & 3 & 4 \\
+   0 & 0 & 0 & 0 \\
+   0 & 1 & 2 & 3
+   \end{bmatrix}.
+   \]
+4. Subtract \(2 \times \text{Row 3}\) from Row 1:
+   \[
+   \begin{bmatrix}
+   1 & 0 & -1 & -2 \\
+   0 & 0 & 0 & 0 \\
+   0 & 1 & 2 & 3
+   \end{bmatrix}.
+   \]
+5. Swap Row 2 and Row 3:
+   \[
+   \text{RREF}(A) = \begin{bmatrix}
+   1 & 0 & -1 & -2 \\
+   0 & 1 & 2 & 3 \\
+   0 & 0 & 0 & 0
+   \end{bmatrix}.
+   \]
+
+Step 2: Basis for \(\mathrm{Row}(A)\)
+The nonzero rows in the RREF form a basis for \(\mathrm{Row}(A)\):
+\[
+\mathrm{Row}(A) = \text{Span}\left\{
+\begin{bmatrix}
+1 & 0 & -1 & -2
+\end{bmatrix},
+\begin{bmatrix}
+0 & 1 & 2 & 3
+\end{bmatrix}
+\right\}.
+\]
+
+Step 3: Basis for \(\mathrm{Col}(A)\)
+The pivot columns in the RREF correspond to the first and second columns of the original matrix \(A\). Thus, a basis for \(\mathrm{Col}(A)\) is:
+\[
+\mathrm{Col}(A) = \text{Span}\left\{
+\begin{bmatrix}
+1 \\
+2 \\
+1
+\end{bmatrix},
+\begin{bmatrix}
+2 \\
+4 \\
+1
+\end{bmatrix}
+\right\}.
+\]
+
+Step 4: Basis for \(\mathrm{Null}(A)\)
+Solve \(A\mathbf{x} = \mathbf{0}\) using the RREF:
+1. The system is:
+   \[
+   \begin{cases}
+   x_1 - x_3 - 2x_4 = 0, \\
+   x_2 + 2x_3 + 3x_4 = 0.
+   \end{cases}
+   \]
+2. Express \(x_1\) and \(x_2\) in terms of \(x_3\) and \(x_4\):
+   \[
+   x_1 = x_3 + 2x_4, \quad x_2 = -2x_3 - 3x_4.
+   \]
+3. The general solution is:
+   \[
+   \mathbf{x} = x_3 \begin{bmatrix}
+   1 \\
+   -2 \\
+   1 \\
+   0
+   \end{bmatrix} + x_4 \begin{bmatrix}
+   2 \\
+   -3 \\
+   0 \\
+   1
+   \end{bmatrix}.
+   \]
+4. A basis for \(\mathrm{Null}(A)\) is:
+   \[
+   \mathrm{Null}(A) = \text{Span}\left\{
+   \begin{bmatrix}
+   1 \\
+   -2 \\
+   1 \\
+   0
+   \end{bmatrix},
+   \begin{bmatrix}
+   2 \\
+   -3 \\
+   0 \\
+   1
+   \end{bmatrix}
+   \right\}.
+   \]
+
+
+Summary
+ 
+- **Basis for \(\mathrm{Row}(A)\)**: Nonzero rows in the RREF.
+ 
+ 
+- **Basis for \(\mathrm{Col}(A)\)**: Columns of \(A\) corresponding to pivot columns in the RREF.
+ 
+ 
+- **Basis for \(\mathrm{Null}(A)\)**: Solutions to \(A\mathbf{x} = \mathbf{0}\) expressed in terms of free variables.
+    
+
     </section>
+    
+    
+    
+    
+    
    
    <section class="main-content">
    
    <h2 class="frame-sect sectcounter">&nbsp; លំហវ៉ិចទ័រមានវិមាត្ររាប់អស់ </h2>
 
-    <h3>និយមន័យ និងឧទាហរណ៍</h3>
+   
     
     
     <h3>និយមន័យ និងឧទាហរណ៍</h3>
