@@ -3849,21 +3849,6 @@ The main point of the theorem is that (for square matrices) the coefficient matr
    </p>
    
    
-<my-example>
-    Let $A=\left[\begin{array}{rrr}0 & 1 & 3 & -1\\ -1 & 0 & 1 & 2\\ -1 & 2 & 7&-1\end{array}\right]$.<br/>
-
-(a) Find a basis for the row space of the matrix $A$.<br/>
-
-(b) Find a basis for the column space of the matrix $A$.<br/>
-
-(c) Find a basis for the null space of the matrix $A$. (Recall that the null space of $A$ is the solution space of the homogeneous linear system $A \vec{x}=\overrightarrow{0}$.)<br/>
-
-(d) Determine if each of the vectors $\vec{v}=\left[\begin{array}{llll}1 & 1 & 1 & 1\end{array}\right]$ and $\vec{w}=\left[\begin{array}{llll}2 & 1 & 1& 0\end{array}\right]$ is in the row space of $A$.<br/>
-
-(e) Determine if each of the vectors $\vec{a}=\left[\begin{array}{l}1 \\ 1 \\ 3\end{array}\right]$ and $\vec{b}=\left[\begin{array}{l}3 \\ 1 \\ 1\end{array}\right]$ is in the column space of A.
-</my-example>
-   
-   
  <h3>លំហជួរដេក - លំហជួរឈរ - លំហស្នូល របស់ម៉ាទ្រីស (Row spaces - Column spaces and Null spaces)</h3>
  
        
@@ -3912,7 +3897,7 @@ Thus, \(\mathrm{Null}(A)\) consists of all vectors \(\mathbf{x}\) that are mappe
 
 <ol>
     <li>
-        <b>Row Space - \(\mathrm{Row}(A)\): </b> The row space of \(A\) is the span of its row vectors. To find a basis for \(\mathrm{Row}(A)\), we need to do:
+        <b>លំហជួរដេក (row space) - \(\mathrm{Row}(A)\): </b> The row space of \(A\) is the span of its row vectors. To find a basis for \(\mathrm{Row}(A)\), we need to do:
         
 <ol type="i">
     <li>អនុវត្តប្រមាណវិធីជួរដេកលើ \(A\) ដើម្បីបានទម្រង់  <i>REF</i> or <i>RREF</i>.<!--Perform row reduction on \(A\) to obtain its <i>REF</i> or <i>RREF</i>.-->
@@ -3926,7 +3911,7 @@ Thus, \(\mathrm{Null}(A)\) consists of all vectors \(\mathbf{x}\) that are mappe
     </li>
     
     <li>
-        <b>Column Space  - \(\mathrm{Col}(A)\):</b> The column space of \(A\) is the span of its column vectors. To find a basis for \(\mathrm{Col}(A)\), we need to do:
+        <b>លំហជួរឈរ (column space)  - \(\mathrm{Col}(A)\):</b> The column space of \(A\) is the span of its column vectors. To find a basis for \(\mathrm{Col}(A)\), we need to do:
         <ol type="i">
            <li>អនុវត្តប្រមាណវិធីជួរដេកលើ \(A\) ដើម្បីបានទម្រង់  <i>REF</i> or <i>RREF</i>.
             <!---Perform row reduction on \(A\) to obtain its REF (or RREF). --->
@@ -3941,7 +3926,7 @@ Thus, \(\mathrm{Null}(A)\) consists of all vectors \(\mathbf{x}\) that are mappe
     </li>
     
     <li>
-        <b>Null Space - \(\mathrm{Null}(A)\): </b>The null space of \(A\) is the set of all solutions to the homogeneous equation \(A\mathbf{x} = \mathbf{0}\). To find a basis for \(\mathrm{Null}(A)\), we need the following steps:
+        <b>លំហស្នូល (null space) - \(\mathrm{Null}(A)\): </b>The null space of \(A\) is the set of all solutions to the homogeneous equation \(A\mathbf{x} = \mathbf{0}\). To find a basis for \(\mathrm{Null}(A)\), we need the following steps:
         
         <ol type="i">
             <li>អនុវត្តប្រមាណវិធីជួរដេកលើ \(A\) ដើម្បីបានទម្រង់  <i>REF</i> or <i>RREF</i>.
@@ -3964,6 +3949,34 @@ Thus, \(\mathrm{Null}(A)\) consists of all vectors \(\mathbf{x}\) that are mappe
     </li>
 </ol>
 
+<my-example>
+    Let $A=\left[\begin{array}{rrr}0 & 1 & 3 & -1\\ -1 & 0 & 1 & 2\\ -1 & 2 & 7&-1\end{array}\right]$.<br/>
+<ol type="a">
+    <li>
+        Find a basis for the row space of the matrix $A$.<br/>
+    </li>
+    
+    <li>
+        Find a basis for the column space of the matrix $A$.<br/>
+    </li>
+    
+    <li>
+        Find a basis for the null space of the matrix $A$. (Recall that the null space of $A$ is the solution space of the homogeneous linear system $A \vec{x}=\overrightarrow{0}$.)<br/>
+    </li>
+    
+    <li>
+        Determine if each of the vectors $\vec{v}=\left[\begin{array}{llll}1 & 1 & 1 & 1\end{array}\right]$ and $\vec{w}=\left[\begin{array}{llll}2 & 1 & 1& 0\end{array}\right]$ is in the row space of $A$.<br/>
+    </li>
+    
+    <li>
+        Determine if each of the vectors $\vec{a}=\left[\begin{array}{l}1 \\ 1 \\ 3\end{array}\right]$ and $\vec{b}=\left[\begin{array}{l}3 \\ 1 \\ 1\end{array}\right]$ is in the column space of A.
+    </li>
+</ol>
+
+</my-example>
+
+
+
 <my-example> រកគោលរបស់ \(\mathrm{Col}(A)\), \(\mathrm{Row}(A)\) និង \(\mathrm{Null}(A)\)? ដែល \(A(3 \times 4)\) កំណត់ដូចខាងក្រោម៖ 
 
 \[
@@ -3971,21 +3984,25 @@ A = \begin{bmatrix}
 1 & 2 & 3 & 4 \\
 2 & 4 & 6 & 8 \\
 1 & 1 & 1 & 1
-\end{bmatrix}.
+\end{bmatrix}
 \]
 </my-example>
 
-Example: 
+<b>Sol.</b>
 
 Step 1: Row Reduction
 Perform row operations to reduce \(A\) to its RREF:
 1. Subtract \(2 \times \text{Row 1}\) from Row 2:
    \[
-   \begin{bmatrix}
+   A = \begin{bmatrix}
+1 & 2 & 3 & 4 \\
+2 & 4 & 6 & 8 \\
+1 & 1 & 1 & 1
+\end{bmatrix} \sim \begin{bmatrix}
    1 & 2 & 3 & 4 \\
    0 & 0 & 0 & 0 \\
    1 & 1 & 1 & 1
-   \end{bmatrix}.
+   \end{bmatrix} 
    \]
 2. Subtract Row 1 from Row 3:
    \[
@@ -4107,6 +4124,157 @@ Summary
 - **Basis for \(\mathrm{Null}(A)\)**: Solutions to \(A\mathbf{x} = \mathbf{0}\) expressed in terms of free variables.
     
 
+<h4>រ៉ង់របស់ម៉ាទ្រីស (Rank)</h4>
+
+  <my-defn>
+ <div class="definition">(Rank - Nullity)</div>
+        <div class="definitionb">
+    <ol style="margin-left: 20px;">
+        <li>
+            The rank of a $A(m\times n)$ is the dimension of its row space or its column space, written
+$$
+\operatorname{rank}(A) = \operatorname{dim} \mathrm{Row}(A) = \operatorname{dim} \mathrm{Col}(A)
+$$
+        </li>
+        
+        <li>
+            The nullity of a $A$ is the dimension of the kernel (null space) of $A$, written
+$$
+\operatorname{nullity}(A) = \operatorname{dim} \operatorname{Null}(A)
+$$
+        </li>
+    </ol>
+    </div>
+    </my-defn>
+   
+
+<div class="box-theorem">
+        <div class="box-legend editable"><span class="lt-icon-default">ទ្រឹស្ដីបទ 5. :  (Dimension formula)</span></div>
+Let $A(m\times n)$ be a matrix in $\mathcal{M}_{m\times n}(\mathbb R)$. Then:
+\begin{eqnarray*} 
+    n = \dim \mathbb R^n &=& \dim \mathrm{Null}(A)  + \operatorname{dim} \mathrm{Row}(A)\\ 
+    &=& \mathrm{nullity}(A)  + \mathrm{rank}(A)
+\end{eqnarray*}
+
+    </div>
+   <p onclick="toggleAnswer('ex20')" style="text-align: right;"><i>សម្រាយបញ្ជាក់.</i> <span href="#ref20" title="Jump back to solution.">&#8617;</span></p>
+    <div id="answer_ex20" class="box-note" style="display: none">
+    
+    <i>សម្រាយបញ្ជាក់.</i> 
+    <ol type="i">
+        <li><i>Row-reduce \( A \) to its row echelon form.</i>
+Perform row operations on \( A \) to transform it into its row echelon form \( R \), which has the same row space as \( A \). Let the number of non-zero rows in \( R \) be \( r \). This \( r \) is the rank of \( A \), because the row vectors in \( R \) form a basis for \( \text{Row}(A) \).
+
+Thus:
+\[
+\dim(\text{Row}(A)) = r, \quad \text{where } r \text{ is the rank of } A.
+\]
+        </li>
+        
+        <li>
+            <i>Basis for \( \mathbb{R}^n \).</i> 
+
+The matrix \( A \) acts on vectors in \( \mathbb{R}^n \). For each solution \( \mathbf{x} \in \mathbb{R}^n \) to \( A\mathbf{x} = 0 \), the components of \( \mathbf{x} \) can be described in terms of free variables corresponding to the columns of \( A \) that are not pivot columns (i.e., the dependent variables are determined by the pivot structure). Let the number of free variables be \( d \), where \( d \) equals the number of non-pivot columns in \( A \). Then:
+\[
+\dim(\text{Null}(A)) = d, \quad \text{where } d \text{ is the nullity of } A.
+\]
+            
+            
+        </li>
+        
+    <li><i>Relationship between rank and nullity.</i>
+    
+The rank \( r \) and nullity \( d \) of \( A \) account for all \( n \) columns of \( A \). Specifically:<br/>
+ 
+- \( r \), the number of pivot columns, corresponds to the dimension of \( \text{Row}(A) \).
+ <br/>
+ 
+- \( d \), the number of non-pivot columns, corresponds to the dimension of \( \text{Null}(A) \).
+
+Hence:
+\[
+n = r + d.
+\]
+
+Substituting the definitions of \( r \) (rank) and \( d \) (nullity), this becomes:
+\[
+\dim(\mathbb{R}^n) = \dim(\text{Row}(A)) + \dim(\text{Null}(A)).
+\]
+
+<!--Conclusion:
+We have shown that \( \dim(\mathbb{R}^n) = \dim(\text{Row}(A)) + \dim(\text{Null}(A)) \), which matches the statement of the dimension formula. Equivalently:
+\[
+n = \text{rank}(A) + \text{nullity}(A).
+\]
+-->
+
+This completes the proof.
+
+    </li>
+        </ol>
+    </div>
+
+   
+   
+   <h3>Coordinate Systems</h3>
+   
+   
+<b>Problem 1:</b> ចូររកវ៉ិចទ័រ $\vec{v}$ នៅក្នុងគោលកាណូនិក បើគេកំណត់ $\vec{v}$ នៅក្នុងគោល $\mathcal{B}$ ដូចខាងក្រោម៖ 
+
+$$
+\vec{v}=\left[\begin{array}{l}
+2 \\
+3 \\
+4 \\
+5
+\end{array}\right], \mathcal{B}=\left\{\left[\begin{array}{l}
+3 \\
+1 \\
+1 \\
+1
+\end{array}\right],\left[\begin{array}{l}
+1 \\
+1 \\
+1 \\
+0
+\end{array}\right],\left[\begin{array}{l}
+1 \\
+1 \\
+0 \\
+0
+\end{array}\right],\left[\begin{array}{l}
+1 \\
+0 \\
+0 \\
+0
+\end{array}\right]\right\} ?
+$$
+
+
+<b>Problem 2. </b> ក្នុង $\mathbf{R}^2$ គេមានគោលស្តង់ដា $B=\left\{e_1, e_2\right\}$ ។ យកគោលថ្មី $B^{\prime}=\left\{v_1, v_2\right\}$ ដែល 
+
+$$
+v_1=\binom{1}{1}, v_2=\binom{-1}{1}
+$$
+
+
+បើ $v=\binom{2}{3}$ ចូររក $[v]_{B^{\prime}}$ (រកកូអរដោនេរបស់ $v$ ក្នុងគោល $B^{\prime}$)
+   
+   
+<br/><br/>
+   
+<b>Problem 3. </b> ចូរកំណត់តម្លៃ $r$ និង $s$ ដែលធ្វើឱ្យម៉ាទ្រីស 
+
+$$
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & r-2 & 2 \\
+0 & s-1 & r+2 \\
+0 & 0 & 3
+\end{array}\right]
+$$
+
+មាន rank $= 1$? មាន rank $= 2$? 
     </section>
     
     
