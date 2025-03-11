@@ -3695,7 +3695,8 @@ Thus, the vector $(1,1,\ldots,1,\ldots)\in {\K}^{\N}$ cannot be written as a lin
      <p> Let $S$ be a nonempty subset of the $\K$-vector space $V$. Then $\langle S \rangle$ is the smallest subspace of $V$ containing $S$.</p>
     </div>
 
- {Proof:}
+<div>
+     {Proof:}
 <ol>
     <li>
         $\langle S \rangle$ is a subspace of $V$.
@@ -3723,6 +3724,7 @@ Let $\displaystyle \vec x=\sum _{i\in I}a_i\vec x_i\in \langle S \rangle$ where 
 
 
 Moreover $\langle S \rangle=\bigcap_{i\in I}W_i$ such that $W_i$ are all the s which contain $S$. (exercise). Notice that if $S=\emptyset$, then $\langle S \rangle=\{\vec 0\}$.
+</div>
 
 <my-example>
     Let ${\K}^{\K}$ be the $\K$-vector space of all maps from $\K$ to $\K$. For any $n\in {\mathbb Z}_{\geq 0}$, let $X\mapsto X^n$ be the monomial map. Let define $S$ as the set of all monomials. Then the vector space of the polynomials functions with coefficients in $\K$ is $\langle S \rangle$.
@@ -3997,7 +3999,7 @@ A = \begin{bmatrix}
 \end{bmatrix}
 \]
 </my-example>
-
+<div>
 <b>Sol.</b>
 
 Step 1: Row Reduction
@@ -4121,19 +4123,28 @@ Solve \(A\mathbf{x} = \mathbf{0}\) using the RREF:
    \end{bmatrix}
    \right\}.
    \]
+</div>
+        
+<div>
+<b>សង្ខេប.</b>
+ <ul>
+     <li>
+         <i>Basis for \(\mathrm{Row}(A)\): </i> Nonzero rows in the RREF.
+     </li>
+     
+     <li>
+         <i>Basis for \(\mathrm{Col}(A)\): </i> Columns of \(A\) corresponding to pivot columns in the REF or RREF.
+     </li>
+     
+     <li>
+         <i>Basis for \(\mathrm{Null}(A)\): </i> Solutions to \(A\mathbf{x} = \mathbf{0}\) expressed in terms of free variables.
+     </li>
+ </ul>
 
-
-Summary
- 
-- **Basis for \(\mathrm{Row}(A)\)**: Nonzero rows in the RREF.
- 
- 
-- **Basis for \(\mathrm{Col}(A)\)**: Columns of \(A\) corresponding to pivot columns in the RREF.
- 
- 
-- **Basis for \(\mathrm{Null}(A)\)**: Solutions to \(A\mathbf{x} = \mathbf{0}\) expressed in terms of free variables.
     
-
+        </div>
+        
+        
 <h4>រ៉ង់របស់ម៉ាទ្រីស (Rank)</h4>
 
   <my-defn>
@@ -4226,9 +4237,196 @@ This completes the proof.
 
    
    
-   <h3>Coordinate Systems</h3>
+   <h3>Coordinate Systems and Change of Basis</h3>
    
+<div class="box-theorem">
+        <div class="box-legend editable"><span class="lt-icon-default">ទ្រឹស្ដីបទ ៦. :  (unique representation theorem)</span></div>
+Let $\mathcal{B}=\left\{\mathbf{b}_1, \ldots, \mathbf{b}_n\right\}$ be a basis for a vector space $V$. Then for each $\mathbf{v} \in V$, there exists a unique set of scalars $c_1, \ldots, c_n$ such that
+\begin{equation}
+\mathbf{v}=c_1 \mathbf{b}_1+\cdots+c_n \mathbf{b}_n
+\end{equation}
    
+    </div>
+   <p onclick="toggleAnswer('ex21')" style="text-align: right;"><i>សម្រាយបញ្ជាក់.</i> <span href="#ref21" title="Jump back to solution.">&#8617;</span></p>
+    <div id="answer_ex21" class="box-note" style="display: none">
+
+
+        </div>
+        
+        
+<my-defn>
+ <div class="definition">(កំប៉ូសង់របស់វ៉ិចទ័រធៀបនឹងគោល)</div>
+        <div class="definitionb">
+    <p>
+        Let $V$ be $\mathbb{K}$-v.s, and suppose $\mathcal{B}=\left\{\mathbf{b}_1, \ldots, \mathbf{b}_n\right\}$ is a basis for $V$ and $\mathbf{v}\in V$.
+    </p>
+    <ol style="margin-left: 20px;">
+        <li> <b>កូអរដោនេរបស់ $\mathbf{v}$ ធៀបនឹងគោល $\mathcal{B}$</b> - <i> the coordinates of $\mathbf{v}$ relative to the basis $\mathcal{B}$</i> (or the <a>$\mathcal{B}$-coordinates of $\mathbf{v}$</a>) are the weights (ស្កាលែរ) $c_1, \ldots, c_n$ such that
+$$
+\mathbf{v}=c_1 \mathbf{b}_1+\cdots+c_n \mathbf{b}_n
+$$
+        </li>
+        
+    <li>
+    If $c_1, \ldots, c_n$ are the $\mathcal{B}$-coordinates of $\mathbf{v}$, then the vector in $\mathbb{R}^n$
+$$
+[\mathbf{v}]_{\mathcal{B}}=\left[\begin{array}{c}
+c_1 \\
+\vdots \\
+c_n
+\end{array}\right]
+$$
+is the coorrdinate vector of $\mathbf{v}$ relative to $\mathcal{B}$, or the $\mathcal{B}$-coordinate vector of $\mathbf{v}$.
+        </li>
+        
+    <li> The mapping $\mathbf{v} \mapsto[\mathbf{v}]_{\mathcal{B}}$ is the coordinate mapping determined by $\mathcal{B}$.
+        </li>
+    </ol>
+    </div>
+    </my-defn>
+
+<div>
+    <b>Remark: </b>
+    <ul>
+    <li>
+        <i>Coordinate mapping/function</i> means the vector in terms of the chosen basis.
+    </li>
+    
+    <li>
+        The coordinate mapping is a function that translates each vector $\mathbf{v} \in V$ to its corresponding coordinate vector in $\mathbb{R}^n$ :
+$$
+\Phi: V \longrightarrow \mathbb{R}^n
+$$
+
+where $\Phi(\mathbf{v})=[\mathbf{v}]_{\mathcal{B}}$.
+    </li>
+    </ul>
+
+</div>
+
+<my-example>
+    Let $V=\mathbb{R}^2$ be a $\mathbb{R}$-vs. Consider the basis $\mathcal{B}=\left\{\mathbf{b}_1, \mathbf{b}_2\right\}$, where:
+
+$$
+\mathbf{b}_1=\left[\begin{array}{l}
+1 \\
+0
+\end{array}\right], \quad \mathbf{b}_2=\left[\begin{array}{l}
+1 \\
+1
+\end{array}\right]
+$$
+
+
+Let $\mathbf{x}=\left[\begin{array}{l}3 \\ 2\end{array}\right]$ be a vector in $V$.
+We want to find the coordinate vector $[\mathbf{x}]_{\mathcal{B}}$ and describe the coordinate mapping.
+</my-example>
+
+<my-defn>
+ <div class="definition">(change-of-basis matrix)</div>
+        <div class="definitionb">
+    <p>
+        Suppose $\mathcal{B}=\left\{v_1, v_2, \ldots, v_n\right\}$ is a basis of $V$ and $\mathcal{C}=\left\{u_1, u_2, \ldots, u_n\right\}$ is another basis of $V$. Then, by the definition of basis, there is precisely one way to write each $v_k$ in terms of $u_i$ 's. Specifically, there are scalars $a_{i, j}$ (for integers $\left.1 \leq i, j \leq n\right)$ ) such that
+
+\begin{eqnarray*}
+v_1 & = & a_{1,1} u_1+a_{2,1} u_2+&\cdots&+a_{n, 1} u_n \\
+& \vdots &  &\vdots & \\
+v_n &=& a_{1, n} u_1+a_{2, n} u_2+ &\cdots & +a_{n, n} u_n
+\end{eqnarray*}
+Then, there is an $n \times n$ matrix $$M_{\mathcal{C} \leftarrow \mathcal{B}}=\Bigl[a_{i, j}\Bigr]_{i, j}$$ called the <i>change-of-basis matrix</i>.
+            </p>
+    <ul>
+        <li>
+            $M$ must be invertible because it must be injective (and it is square), by the definition of basis.
+        </li>
+        
+    <li>
+        Any vector $v=b_1 v_1+b_2 v_2+\cdots+b_n v_n$ could then be represented in terms of the $u_i$ 's by means of direct substitution:
+$$
+\begin{aligned}
+v & =\left(\begin{array}{llll}
+v_1 & v_2 & \ldots & v_n
+\end{array}\right)\left(\begin{array}{c}
+a_1 \\
+a_2 \\
+\vdots \\
+a_n
+\end{array}\right) \\
+& =\left(\begin{array}{llll}
+u_1 & u_2 & \ldots & u_n
+\end{array}\right) \cdot M \cdot\left(\begin{array}{c}
+a_1 \\
+a_2 \\
+\vdots \\
+a_n
+\end{array}\right)
+\end{aligned}
+$$
+    </li>
+    </ul>
+    
+    </div>
+</my-defn>
+
+<my-example>
+    Suppose $\mathcal{C}=\left\{u_1, u_2\right\}$ is a basis for $\mathbb{R}^2$ and that with respect to other basis $\mathcal{B}=\left\{v_1, v_2\right\}$ for $V$, where
+
+$$
+u_1=\left[\begin{array}{c}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{array}\right]_{\mathcal{B}} \quad \text { and } \quad u_2=\left[\begin{array}{c}
+\frac{1}{\sqrt{3}} \\
+-\frac{1}{\sqrt{3}}
+\end{array}\right]_{\mathcal{B}}
+$$
+
+
+This means
+$$
+u_1=\left(v_1, v_2\right)
+\begin{bmatrix}
+\frac{1}{\sqrt{2}}\\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+=\frac{v_1+v_2}{\sqrt{2}} \quad \text { and } \quad u_2=\left(v_1, v_2\right)
+\begin{bmatrix}
+\frac{1}{\sqrt{3}} \\
+-\frac{1}{\sqrt{3}}
+\end{bmatrix}
+=\frac{v_1-v_2}{\sqrt{3}}
+$$
+
+The change of basis matrix has as its columns just the components of $u_1$ and $u_2$
+
+$$
+P=\left(\begin{array}{cc}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{3}} \\
+\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{3}}
+\end{array}\right)
+$$
+</my-example>
+
+<my-example>
+    In $\mathcal{P}_2[\mathbb{R}]$, determine the component vector of $p(x)=5+7 x-3 x^2$ relative to the following: 
+    <ol style="a">
+        <li>
+            The standard (ordered) basis $\mathcal{B}=\left\{1, x, x^2\right\}$. 
+        </li>
+        
+        <li>
+            The ordered basis $\mathcal{C}=\left\{1+x, 2+3 x, 5+x+x^2\right\}$.
+        </li>
+    </ol>
+</my-example>
+
+<div>
+<div style="text-align: center">
+    <b>Homework</b><br/>
+</div>
+<br/>
+
+
 <b>Problem 1:</b> ចូររកវ៉ិចទ័រ $\vec{v}$ នៅក្នុងគោលកាណូនិក បើគេកំណត់ $\vec{v}$ នៅក្នុងគោល $\mathcal{B}$ ដូចខាងក្រោម៖ 
 
 $$
@@ -4285,6 +4483,9 @@ $$
 $$
 
 មាន rank $= 1$? មាន rank $= 2$? 
+   
+   
+        </div>
     </section>
     
     
