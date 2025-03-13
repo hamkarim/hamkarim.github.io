@@ -1,0 +1,542 @@
+@charset "utf-8";
+/* Global Styles */
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize -Share:400,700&subset=latin,latin-ext */
+
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Koulen&family=Angkor&family=Bangers&family=Kaushan+Script&family=Modak&family=Ultra&family=Fjalla+One&family=Oswald:wght@400&family=Noto+Serif:wght@400&family=Noto+Sans:wght@700&family=Lalezar&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Open Sans|Didact Gothic|Siemreap|Bayon|Battambang|");
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@300;400;500;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Noto+Serif+Khmer:wght@300;400;500;600;700&display=swap"); 
+
+/**
+ * Beige theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+@import url(./fonts/league-gothic/league-gothic.css);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
+  color: #fff;
+}
+
+.reveal-viewport {
+  background: rgb(247, 242, 211);
+  background: -moz-radial-gradient(center, circle cover, rgb(255, 255, 255) 0%, rgb(247, 242, 211) 100%);
+  background: -webkit-gradient(radial, center center, 0, center center, 100%, color-stop(0%, rgb(255, 255, 255)), color-stop(100%, rgb(247, 242, 211)));
+  background: -webkit-radial-gradient(center, circle cover, rgb(255, 255, 255) 0%, rgb(247, 242, 211) 100%);
+  background: -o-radial-gradient(center, circle cover, rgb(255, 255, 255) 0%, rgb(247, 242, 211) 100%);
+  background: -ms-radial-gradient(center, circle cover, rgb(255, 255, 255) 0%, rgb(247, 242, 211) 100%);
+  background: radial-gradient(center, circle cover, rgb(255, 255, 255) 0%, rgb(247, 242, 211) 100%);
+  /*background-color: var(--r-background-color);*/
+}
+
+
+.reveal {
+	font-family: "Century Gothic", "Didact Gothic","Noto Serif Khmer", "Ang DaunKeo", "Siemreap";/*var(--r-main-font);*/
+	font-size: 20px;
+	font-weight: normal;
+	color: inherit;/*
+    left: 10px;
+    margin: 0;  
+    display: flex;  
+    flex-direction: column;  
+    justify-content: center;  
+    align-items: center;  */
+    height: 100vh; /* Full viewport height for slide *
+    display: flex;  
+    flex-direction: column; /* Stack slides vertically */  
+}
+
+.reveal ::selection {
+	color: #ffffff;
+	background: #0e81c1; /*var(--r-selection-background-color);*/
+	text-shadow: none;
+}
+
+/*
+.reveal ::-moz-selection {
+	color: var(--r-selection-color);
+	background: var(--r-selection-background-color);
+	text-shadow: none;
+}*/
+
+.reveal .slides section,
+.reveal .slides section>section {
+	line-height: 1.5;
+	font-weight: inherit;
+    text-align: left;
+}
+
+.slides section.title {
+    text-align: center;
+}
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+	margin: 10px; /*var(--r-heading-margin);*/
+    padding-bottom: 10px;
+	font-weight: bold; /*var(--r-heading-font-weight);*/
+	line-height: 1.4; /*var(--r-heading-line-height);
+	letter-spacing: var(--r-heading-letter-spacing);
+
+	text-transform: var(--r-heading-text-transform);
+	text-shadow: var(--r-heading-text-shadow);*/
+
+	word-wrap: break-word;
+}
+
+.reveal h1 {
+    font-size: 45px; /*var(--r-heading1-size);*/
+}
+.reveal h2 {
+	font-size: 43px; /*var(--r-heading2-size);*/
+	color: green; /*var(--r-heading-color);*/
+	font-family: "Bangers","Angkor";
+	/*var(--r-heading-font);*/
+}
+.reveal h3 {
+   /*margin-top: -1em;*/
+	font-size: 38px; /*var(--r-heading3-size);*/
+	color: darkred; /*var(--r-heading-color);*/
+	font-family: "Century Gothic", "Didact Gothic", "Angkor"; 
+}
+.reveal h4 {
+	font-size: 32px; /*var(--r-heading4-size);*/
+	font-family: "Century Gothic", "Didact Gothic", "Battambang"; 
+}
+
+
+.reveal h1, h2, h3 {
+	text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /*var(--r-heading1-text-shadow);*/
+}
+
+
+/*********************************************
+ * OTHER
+ *********************************************/
+
+.reveal p {
+	margin: 0;
+	line-height: 1.5;
+    text-align: left;
+}
+
+/* Remove trailing margins after titles */
+.reveal h1:last-child,
+.reveal h2:last-child,
+.reveal h3:last-child,
+.reveal h4:last-child,
+.reveal h5:last-child,
+.reveal h6:last-child {
+	margin-bottom: 0;
+}
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+	max-width: 95%;
+	max-height: 95%;
+}
+.reveal strong,
+.reveal b {
+	font-weight: bold;
+}
+
+.reveal em {
+	font-style: italic;
+}
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+	/*display: block;*/
+	text-align: left;
+	margin: 0 0 0 1em;
+    line-height: 1.5;
+    padding-bottom: 20px;
+}
+
+.reveal ol li,
+.reveal ul li {
+	padding-top: 16px;
+    line-height: 1.5;
+	padding-right: 16px;
+}
+
+/*.reveal ol {
+	list-style-type: decimal;
+}*/
+
+.reveal ol li {
+    display: list-item;
+}
+
+.reveal ul {
+	list-style-type: disc;
+}
+
+.reveal ul ul {
+	list-style-type: square;
+}
+
+.reveal ul ul ul {
+	list-style-type: circle;
+}
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+	display: block;
+	margin-left: 0;
+}
+
+.reveal dt {
+	font-weight: bold;
+}
+
+.reveal dd {
+	margin-left: 40px;
+}
+
+.reveal blockquote {
+	display: block;
+	position: relative;
+	width: 70%;
+	margin: var(--r-block-margin) auto;
+	padding: 5px;
+
+	font-style: italic;
+	background: rgba(255, 255, 255, 0.05);
+	box-shadow: 0 0 2px rgba(0,0,0,0.2);
+}
+	.reveal blockquote p:first-child,
+	.reveal blockquote p:last-child {
+		display: inline-block;
+	}
+
+.reveal q {
+	font-style: italic;
+}
+
+.reveal pre {
+	display: block;
+	position: relative;
+	width: 90%;
+	margin: auto; /*var(--r-block-margin) */
+
+	text-align: left;
+	font-size: 0.55em;
+	font-family: "Century Gothic", "Didact Gothic", "Noto Serif Khmer", "Ang DaunKeo", "Siemreap";/*var(--r-code-font);*/
+	line-height: 1.2em;
+
+	word-wrap: break-word;
+
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+.reveal code {
+	font-family: "Century Gothic"; /*var(--r-code-font);*/
+	text-transform: none;
+	tab-size: 2;
+}
+
+.reveal pre code {
+	display: block;
+	padding: 5px;
+	overflow: auto;
+	max-height: 400px;
+	word-wrap: normal;
+}
+
+.reveal .code-wrapper {
+	white-space: normal;
+}
+
+.reveal .code-wrapper code {
+	white-space: pre;
+}
+
+.reveal table {
+	margin: auto;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.reveal table th {
+	font-weight: bold;
+}
+
+.reveal table th,
+.reveal table td {
+	text-align: left;
+	padding: 0.2em 0.5em 0.2em 0.5em;
+	/*border-bottom: 1px solid;*/
+}
+
+.reveal table th[align="center"],
+.reveal table td[align="center"] {
+	text-align: center;
+}
+
+.reveal table th[align="right"],
+.reveal table td[align="right"] {
+	text-align: right;
+}
+
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+	border-bottom: none;
+}
+
+.reveal sup {
+	vertical-align: super;
+	font-size: smaller;
+}
+.reveal sub {
+	vertical-align: sub;
+	font-size: smaller;
+}
+
+.reveal small {
+	display: inline-block;
+	font-size: 0.6em;
+	line-height: 1.2em;
+	vertical-align: top;
+}
+
+.reveal small * {
+	vertical-align: top;
+}
+
+.reveal img {
+	margin:0; /*var(--r-block-margin) */
+}
+
+
+/*********************************************
+ * LINKS
+ *********************************************/
+
+.reveal a {
+	color: rgb(131, 4, 58); /*var(--r-link-color);*/
+	text-decoration: none;
+	transition: color .15s ease;
+}
+	.reveal a:hover {
+		color: dodgerblue; /*var(--r-link-color-hover);*/
+		text-shadow: none;
+		border: none;
+	}
+
+.reveal .roll span:after {
+	color: #fff;
+	background: grey; /*var(--r-link-color-dark); */
+
+}
+
+
+/*********************************************
+ * Frame helper
+ *********************************************/
+
+.reveal .r-frame {
+	/*border: 4px solid var(--r-main-color);*/
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.reveal a .r-frame {
+	transition: all .15s linear;
+}
+
+.reveal a:hover .r-frame {
+	/*border-color: var(--r-link-color);*/
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
+
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+
+.reveal .controls {
+	color: deepskyblue; /*var(--r-link-color);*/
+}
+
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+
+.reveal .progress {
+	background: rgba(0,0,0,0.2);
+	color: brown; /*var(--r-link-color);*/
+}
+
+/*********************************************
+ * PRINT BACKGROUND
+ *********************************************/
+ @media print {
+    .backgrounds {
+        background-color: beige;/*var(--r-background-color);*/
+    }
+}	
+
+/* background for definition*/
+div.definitionb {
+    /* To define border and style around text*/
+    color: rgb(5, 5, 86);
+    display: inline-block;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0 0 20px 20px;
+    width: inherit;
+    /*padding:0 0 0 0; */
+    margin-right: 0;
+    margin-left: 5px;
+    margin-top: -0.14em;
+    margin-bottom: 20px !important;
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 2px;
+    /*color:#076422;*/
+    border-left: 0.2rem solid #0e81c1;
+    border-right: 0.2em solid #0e81c1;
+    border-top: 0.1rem solid #0e81c1;
+    border-bottom: 0.2rem solid #0e81c1;
+    border-style: dotted;
+    /* text-align: left; * border-left-width:;*
+   font-size: 16px;*/
+    /* font-family:"Century Gothic","san-serif","CMU Serif","Noto Serif Khmer","Khmer OS Content"; */
+    /*text-indent: 10px; */
+}
+
+/*Begin my-defn*/
+.reveal my-defn {
+    display: block;
+    padding: 10px 0 10px 0;
+    margin-left: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+    /*          font-size: 16px;;*/
+}
+
+.reveal my-defn > :first-child {
+    margin-top: 2;
+}
+
+.reveal my-defn > :last-child {
+    margin-bottom: 0;
+}
+
+.reveal my-defn p {
+    padding-top: 2px;
+    text-indent: 32px;
+}
+
+/*definition counter*/
+.reveal my-defn {
+    counter-reset: counterdef !important;
+}
+
+.reveal div.definition {
+    display: inline-block;
+    width: 97%;
+    background: linear-gradient(to right, red 1%, red 0%, white 90%, white 100%);
+    border-radius: 15px 1px;
+    border: #cc0f12;
+    color: white;
+    padding: 4px 10px 4px 20px;
+    font-size: 100%;
+    /* font-family: 'Bangers', cursive; */
+    font-family: "Battambang", "Kaushan Script", serif;
+}
+
+.reveal div.exercise {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    background: linear-gradient(to right, darkblue 1%, darkblue 0%, white 90%, white 100%);
+    /*border-radius: 15px 1px;*/
+    /*border: #cc0f12;*/
+    color: white;
+    margin-top: 20px;
+    padding: 4px 10px 4px 20px;
+    font-size: 100%;
+    /* font-family: 'Bangers', cursive; */
+    font-family: "Battambang", "Kaushan Script", serif;
+}
+.reveal div.exercise:before {
+    text-align: center;
+    counter-increment: subsection;
+    content: "លំហាត់អនុវត្តន៍ " counter(section, khmer) ". ";
+    /*font-weight:bold; */
+    font-family: "Koulen", cursive;
+}
+
+.reveal div.definition:before {
+    counter-increment: subsection;
+    content: "និយមន័យ " counter(subsection, khmer)  "." " ";
+    /*font-weight:bold; */
+    font-family: "Koulen", cursive;
+}
+/*End my-defn*/
+
+.slide {  
+  flex: 2; /* Slides take equal space 
+  overflow: auto; /* Allow scroll if content exceeds height */  
+}  
+
+
+.page-number {  
+  /*color: rgb(116, 8, 24);*/
+  color: #555; /* Color for the page number */  
+  font-size: 14px;
+  font-style: italic;
+  position: absolute; /* Absolute positioning for precise control */  
+  padding-top: 0.5em; /* Distance from the bottom */  
+  left: 47%;  
+  transform: translateX(-50%); /* Center horizontally */
+  cursor: pointer; /* Indicate that it's clickable */ 
+}  
+
+.word {  
+            cursor: pointer; /* Indicate that the word is clickable */  
+            color: blue;  
+            margin: 10px;  
+            position: relative; /* Position relative for tooltip */  
+            display: inline-block; /* Required for tooltip positioning */  
+	        font-size: inherit;
+        }  
+        .tooltip {  
+            display: none; /* Hidden by default */  
+            position: absolute; /* Absolute positioning */  
+            background-color: white; /* Set background to white */  
+            border: 1px solid #ccc; /* Border for visibility */  
+            padding: 10px;  
+            z-index: 1; /* Ensure it appears above other elements */  
+            width: 300px; /* Set a fixed width for the tooltip */  
+            top: auto; /* Top to be calculated dynamically */  
+            transform: translateX(-50%); /* Center tooltip under the word */  
+			font-size: 14px;
+			text-align: center;
+			color: #884b0b;
+        }  
+        .tooltip img {  
+            max-width: 80%; /* Make image responsive */  
+            height: auto; /* Maintain aspect ratio */  
+        } 

@@ -1,0 +1,1301 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Topic 1. Functions and Models</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/beige.css" id="theme">
+		<style type="text/css">
+        /*<![CDATA[*/
+        .Headertext {
+            display: none;
+        }
+
+        /*]]>*/
+        .slide {
+            font-size: 22px;
+        }
+        </style>
+	
+	</head>
+
+	<body>
+    <div class="Headertext">
+
+    \( \newcommand{\vecs}[1]{\overset { \scriptstyle \rightharpoonup} {\mathbf{#1}}&nbsp;}&nbsp;\)
+    \( \newcommand{\vecd}[1]{\overset{-\!-\!\rightharpoonup}{\vphantom{a}\smash&nbsp;{#1}}} \)
+    \(\newcommand{\id}{\mathrm{id}}\)
+    \( \newcommand{\Span}{\mathrm{span}}\)
+    \( \newcommand{\kernel}{\mathrm{null}\,}\)
+    \( \newcommand{\range}{\mathrm{range}\,}\)
+    \( \newcommand{\RealPart}{\mathrm{Re}}\)
+    \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+    \( \newcommand{\Argument}{\mathrm{Arg}}\)
+    \( \newcommand{\norm}[1]{\| #1 \|}\)
+    \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+    \( \newcommand{\Span}{\mathrm{span}}\)
+    \(\newcommand{\id}{\mathrm{id}}\)
+    \( \newcommand{\Span}{\mathrm{span}}\)
+    \( \newcommand{\kernel}{\mathrm{null}\,}\)
+    \( \newcommand{\range}{\mathrm{range}\,}\)
+    \( \newcommand{\RealPart}{\mathrm{Re}}\)
+    \( \newcommand{\ImaginaryPart}{\mathrm{Im}}\)
+    \( \newcommand{\Argument}{\mathrm{Arg}}\)
+    \( \newcommand{\norm}[1]{\| #1 \|}\)
+    \( \newcommand{\cof}{\mathbf{cof}}\)
+    \( \newcommand{\adj}{\mathbf{adj}}\)
+    \( \renewcommand{\det}{\mathbf{det\,\!}}\)
+    \( \newcommand{\minor}{\mathbf{minor}}\)
+    \( \newcommand{\inner}[2]{\langle #1, #2 \rangle}\)
+    \( \newcommand{\Span}{\mathrm{span}}\)
+    \(\newcommand{\E}{\mathbf{V}}\)
+    \(\newcommand{\K}{\mathbb{K}}\)
+    \(\newcommand{\F}{W}\)
+    \(\newcommand{\R}{\mathbb{R}}\)
+    \(\newcommand{\N}{\mathbb{N}}\)
+</div>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+<section class="title">
+				    <h2>Topic 1. អនុគមន៍ និង ម៉ូដែលគណិតវិទ្យា</h2>
+				    <h3>Functions and Models</h3>
+				    <br /><br /><br />
+				    <p style="text-align: center">បង្រៀនដោយ</p>
+				    <br />
+
+				    <h3>ហាំ ការីម</h3>
+				    <br /><br />
+				    <!--<img src="img/Ph.Y1_QR.png" width="15%">-->
+				</section>
+
+<section class="slide">
+               <h3>វត្ថុបំណង - Objectives: </h3>
+                <ul>
+                    <li>
+                        ពិភាក្សាអំពីគំនិតគន្លឹះទាក់ទងនឹងអនុគមន៍ - ក្រាហ្វរបស់អនុគមន៍ និងរបៀបបំប្លែង និងបន្សំអនុគមន៍ចូលគ្នា ។ <br/>
+                        To discuss the basic ideas concerning functions, their graphs, and ways of transforming and combining them. 
+                    </li>
+                    <li>តាងអនុគមន៍តាមវិធីផ្សេងៗ ដូចជា៖ <b>តាមរយៈសមីការ - តារាង - ក្រាហ្វិក ឬជាពាក្យ ។ </b><br/>
+                        To represent a function in different ways: <b>by an equation, in a table, by a graph, or in words. </b>
+                    </li>
+                    
+                    <li>ស្វែងយល់អនុគមន៍សំខាន់ៗ ដែលមានក្នុងមុខវិជ្ជាគណិតគណនា និងពិពណ៌នាអំពីរបៀបប្រើប្រាស់អនុគមន៍ទាំងនេះ ជាគំរូគណិតវិទ្យាតាងឱ្យបាតុភូតកើតមានក្នុងពិភពពិត ។
+                    <br/>To look at the main types of functions that occur in calculus and describe the process of using these functions as mathematical models of realworld phenomena.</li>
+                </ul>
+  <div class="page-number"></div>  
+            </section>
+            
+            <section class="slide" style="font-size: 26px;">
+               <h3>1. Four Ways to Represent a Function</h3>
+               <p> ពិនិត្យឧទាហរណ៍ខាងក្រោម៖ </p>
+               
+               <ol>
+                   <li>
+                       <!--The area $A$ of a circle depends on the radius $r$ of the circle. The rule that connects $r$ and $A$ is given by the equation $A=\pi r^2$. With each positive number $r$ there is associated one value of $A$, and we say that $A$ is a function of $r$.--
+                       The area \( A \) of a circle as a function of its radius \( r \) is expressed by the equation \( A = \pi r^2 \). This mathematical representation clearly shows how the output (area) depends on the input (radius).-->
+                       ផ្ទៃក្រឡាថាស (រង្វង់) តាងដោយ \( A \) ជាអនុគមន៍ទៅនឹងកាំ \( r \) តាងដោយសមីការ \( A = \pi r^2 \) ។ ការតាងបែបនេះ បង្ហាញយ៉ាងច្បាស់ពី output (ធាតុចេញ) គឺ ផ្ទៃ អាស្រ័យទៅនឹង input (ធាតុចូល) គឺ កាំ  ។
+    <br/>               
+                       <div style="text-align: center">
+                           <img src="img/Circle-Area-Tran.png" width="24%">
+                       </div>
+
+                   </li>
+				</ol>
+       
+       <b>Algebraic formula:</b> $A(r)=\pi r^2$
+       
+       <!--A. The most useful representation of the area of a circle as a function of its radius is probably the algebraic formula $A=\pi r^2$ or, in function notation, $A(r)=\pi r^2$. It is also possible to compile a table of values or sketch a graph (half a parabola). Because a circle has to have a positive radius, the domain is $\{r \mid r\gt 0\}=(0, \infty)$ and the range is also $(0, \infty)$.-->
+        <div class="page-number"></div>  
+            </section>
+            
+            
+	<section class="slide" style="font-size:24px;">
+        <ol start="2">
+                   <li>
+<!--The human population of the world $P$ depends on the time $t$. Table 1 gives estimates of the world population $P$ at time $t$, for certain years. For instance,
+
+$$
+P \approx 2,560,000,000 \quad \text { when } t=1950
+$$
+
+
+For each value of the time $t$ there is a corresponding value of $P$, and we say that $P$ is a function of $t$.
+--
+             The world population \( P \) as a function of time \( t \) can be represented in a table, providing specific population estimates for certain years. For instance, \( P \approx 2,560,000,000 \) when \( t = 1950 \). This format allows for easy reference of values at specific points in time.-->
+        ចំនួនប្រជាជនពិភពលោក តាងដោយ \( P \) ជាអនុគមន៍ទៅនឹងពេលវេលា \( t \) អាចអោយគេចុះជាតារាងមួយដូចខាងក្រោម។ គេអាចប៉ាន់ស្មានចំនួនប្រជាជនបានជាក់លាក់ ក្នុងឆ្នាំណាមួយ ជាទាហរណ៍ \( P \approx 2,560,000,000 \) នៅក្នុងឆ្នាំ \( t = 1950 \) ។ ទម្រង់ជាតារាងនេះ អាចឱ្យគេងាយស្រួលនិយាយយោងលើតម្លៃនៅត្រង់ចំណុចជាក់លាក់ណាមួយនៃពេលវេលា ។
+        
+        <br/>
+
+                    </li>
+				</ol>
+       
+       <p style="font-size: 18px;">
+        \[
+\begin{array}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\text{Year} & 1900 & 1910 & 1920 & 1930 & 1940 & 1950 & 1960 & 1970 & 1980 & 1990 & 2000 & 2010 \\
+\hline
+\text{P (millions)} & 1650 & 1750 & 1860 & 2070 & 2300 & 2560 & 3040 & 3710 & 4450 & 5280 & 6080 & 6870 \\
+\hline
+\end{array}
+\]    
+   </p>
+   
+  <b> In words:</b>  $P(t)$ is the human population of the world at time $t$.
+   <br/>
+   <!--We are given a description of the function in words: $P(t)$ is the human population of the world at time $t$. Let's measure $t$ so that $t=0$ corresponds to the year 1900. Table 2 provides a convenient representation of this function. If we plot the ordered pairs in the table, we get the graph (called a scatter plot) in Figure 9. It too is a useful representation; the graph allows us to absorb all the data at once. What about a formula? Of course, it's impossible to devise an explicit formula that gives the exact human population $P(t)$ at any time $t$. But it is possible to find an expression for a function that approximates $P(t)$. In fact, using methods explained in Section 1.4, we obtain an approximation for the population $P$ :
+
+$$
+P(t) \approx f(t)=\left(1.43653 \times 10^9\right) \cdot(1.01395)^t
+$$
+-->
+<br/>
+<div style="text-align: center; display: block;">
+    <img src="img/function0.png" width="40%">
+    <br/>
+    <i>ក្រាហ្វនេះមានឈ្មោះ <b>scatter plot</b></i>
+</div>
+<div class="page-number"></div> 
+</section>
+              
+    <section class="slide" style="font-size: 25px;">
+      
+       <ol start="3">
+               <li>
+                   <!--The cost $C$ of mailing an envelope depends on its weight $w$. Although there is no simple formula that connects $w$ and $C$, the post office has a rule for determining $C$ when $w$ is known.---
+                   The cost \( C \) of mailing an envelope as a function of its weight \( w \) is determined by postal rules. Although there is no simple formula, the relationship is defined by a set of guidelines that dictate how to calculate the cost based on weight.-->
+                   តម្លៃ \(C \) ក្នុងការផ្ញើសំបុត្រមួយ ជាអនុគមន៍ទៅនឹងទម្ងន់ \(w \) របស់វា ដែលជាការកំណត់ដោយភ្នាក់ងារប្រៃសណីយ៍ ។ ទោះបីជាវាមិនមានរូបមន្តសាមញ្ញណាមួយក៏ដោយ ទំនាក់ទំនងនេះ ត្រូវបានកំណត់ដោយគោលការណ៍ណែនាំ ចេញជារបៀបគណនាថ្លៃដើម ដោយផ្អែកលើទម្ងន់ ។
+                   
+                   <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
+                       <img src="img/mailing-envelope.jpg" width="10%" style="transform: rotate(17deg);  transition: transform 0.5s;">
+                   </div>
+               </li>
+
+		</ol>
+
+        <b>In words:</b> Let $C(w)$ be the cost of mailing a large envelope with weight $w$.
+
+        <!--The rule that the US Postal Service used as of 2019 is as follows: The cost is 1 dollar for up to 25 g plus 15 cents for each additional gram (or less) up to 350 g . A table of values is the most convenient representation for this function (see Table 3), though it is possible to sketch a graph (see Example 10).-->
+
+        <div style="text-align: center; display: block;">
+            <img src="img/function01.png" width="35%">
+            <br/>តារាងនេះមានឈ្មោះ <a>tabular function</a>
+        </div>
+        <div class="page-number"></div> 
+				</section>
+             
+      <section class="slide" style="font-size: 28px;">
+              <ol start="4">
+               <li>
+                   <!--The vertical acceleration $a$ of the ground as measured by a seismograph during an earthquake is a function of the elapsed time $t$. Figure 1 shows a graph generated by seismic activity during the Northridge earthquake that shook Los Angeles in 1994. For a given value of $t$, the graph provides a corresponding value of $a$.---
+                   The vertical acceleration \( a \) measured by a seismograph during an earthquake as a function of elapsed time \( t \) can be visualized in a graph. The graph shows how acceleration varies over time, allowing for a visual understanding of the relationship between these two variables.-->
+                   
+                   សន្ទុះតាមទិសឈរ \(a \) នៃផ្ទៃដី ដែលកំណត់បានរង្វាស់ដោយឧបករណ៍ស្ទង់រញ្ជួយដី (seismograph) ក្នុងកំឡុងពេលរញ្ជួយដីមួយកន្លែង គឺជាអនុគមន៍ទៅនឹងរយៈពេល \( t \) អាចឱ្យគេគូសតាងបានជាក្រាហ្វិកមួយ ។ ក្រាហ្វិកនេះ បង្ហាញពីរសន្ទុះប្រែប្រួលតាមពេលវេលា ដែលអាចឱ្យគេយល់បានអំពីទំនាក់ទំនងរវាងអថេរទាំងពីរនេះ ។
+                   
+                   <br/><br/>
+                   
+<div style="text-align: center; margin-top: 30px;">
+                       <img src="img/seismograph.png" width="40%">
+                   </div>
+               </li>
+               </ol>
+<div class="page-number"></div>
+            </section>
+				
+				
+				
+				<section class="slide">
+					<h3>How many ways to represent a function?</h3>
+<p>ឧទាហរណ៍ខាងលើ គឺរៀបរាប់អំពីវិធីទាំងបួនក្នុងការតាង អនុគមន៍ ដែលកំណត់បានអំពីទំនាក់ទំនងរវាងអថេរ និងអថេរ។ 
+    <!--The above examples are four ways to represent a function illustrating different methods of defining relationships between variables. -->
+					</p>
+<ul>
+    <li>
+        Equation Representation (ការតាងជាសមីការ - algebraically)<br/>
+        
+        By an explicit formula
+	</li>
+<li>
+Tabular Representation (ការតាងដោយតារាង - numerically)<br/>
+
+By a table of values
+	</li>
+   
+	<li>Rule-Based Representation (ការតាងដោយប្រើការពិព័ណ៌នា - verbally) <br/>
+	By a description in words
+	</li>
+  
+<li>
+   Graphical Representation (ការតាងដោយក្រាហ្វិក - visually)<br/>
+   
+   By using a graph
+    </li>
+</ul>					
+					
+  
+<p>
+These different representations provide various ways to understand and analyze functions, each useful in different contexts depending on the nature of the relationship being explored.
+
+</p>
+<div class="page-number"></div>
+				</section>
+
+<section class="slide">
+   <h3>
+       Verbally (with words) </h3>
+   
+   Or with diagrams (ដ្យាក្រាម):
+   <br/>
+   <br/>
+   <div style="text-align: center">
+       <img src="img/function_rep1.png" width="40%">
+   </div>
+    
+<div class="page-number"></div>
+</section>
+				
+<section class="slide">
+    <h3>Numerically: using Tables </h3>
+    
+    <div style="text-align: center">
+       <img src="img/function_rep2.png" width="17%"> $\quad\qquad$
+       <img src="img/function_rep3.png" width="35%">
+   </div>
+   
+     <div style="text-align: center">
+       <img src="img/function_rep4.png" width="35%">
+   </div>
+<div class="page-number"></div>
+</section>
+
+<section class="slide">
+    <h3>Visually: using Graphs
+    </h3>
+    
+     <div style="text-align: center">
+       <img src="img/function_rep5.png" width="85%">
+   </div>
+    
+<div class="page-number"></div>
+</section>
+
+<section class="slide">
+   <h3>Algebraically: using  Formulas</h3>
+   There are several Categories (ប្រភេទ)  of Functions:
+   
+   <ul>
+       <li>
+           អនុគមន៍ពិជគណិត (algebraic functions): can be expressed in terms of algebraic operations (addition, subtraction, multiplication, division, and taking roots) involving a finite number of variables. They are of the form:
+
+\[ f(x) = a_n x^n + a_{n-1} x^{n-1} + \ldots + a_1 x + a_0 \]
+
+where \( a_i \) are constants and \( n \) is a non-negative integer. 
+       </li>
+       <li>
+           អនុគមន៍មិនពិជគណិត (trenscendental functions): involve operations that go beyond algebraic definitions and include functions like exponentials, logarithms, trigonometric functions, and their inverses.
+       </li>
+   </ul>
+
+     <div style="text-align: center">
+       <img src="img/function_rep6.png" width="76%">
+   </div>
+   
+   
+   
+<div class="page-number"></div>
+</section>
+
+<section class="slide" style="font-size: 24px;">
+					<h3>និយមន័យ.</h3>
+<my-defn>
+        <div class="definition"><span> (Vector spaces)</span> </div>
+        <div class="definitionb">
+            <p>  <!--style="text-indent: 0px"-->
+                អនុគមន៍ $f$ កំណត់ពីសំណុំ $A$ ទៅសំណុំ $B$ គឺជាទំនាក់ទំនងមួយ ដែលភ្ជាប់ធាតុនីមួយៗ $x\in A$ ទៅធាតុតែមួយគត់  $f(x)\in B$ ។
+<!--
+A function $f$ is a rule that assigns to each element $x$ in a set $A$ exactly one element, called $f(x)$, in a set $B$.-->
+            
+   គេសរសេរ៖ </p>
+\[
+\begin{array}{rccl}
+     f: & A &\longrightarrow & B\\
+     & x & \longmapsto & y = f(x)
+\end{array}
+\]
+            <ol type="i">
+                <li>
+                    សំណុំ $A$ ហៅថា <b>ដែនកំណត់ (domain)</b> របស់អនុគមន៍ ហើយ $f(x)$ ហៅថា <i>តម្លៃរបស់ $f$ ត្រង់ $x$</i> អានថា <a>"$f$ នៃ $x$"</a>
+                <br/>
+                   The <b>សំណុំរូបភាព (range)</b> of $f$ is the set of all possible values of $f(x)$ as $x$ varies throughout the domain. 
+                </li>
+                <li>
+                  អថេរ $x\in A$ ហៅថា <b>អថេរមិនអាស្រ័យ</b><a> (independent variable)</a> ហើយតម្លៃ $y$ នៅក្នុងសំណុំរូបភាពរបស់ $f$ ហៅថា  <b>អថេរអាស្រ័យ</b><a> (dependent variable)</a> ។
+                   <!--For all $x\in A$ is called an <b>អថេរមិនអាស្រ័យ</b><a> (independent variable)</a> and a number $y$ in the range of $f$ is called a <b>អថេរអាស្រ័យ</b><a> (dependent variable)</a>.--> 
+                </li>
+            </ol>
+           
+        </div>
+    </my-defn>
+    <div class="page-number"></div>
+				</section>
+				<div class="page-number"></div>
+				
+				
+<section class="slide" style="font-size: 22px;">
+ <b>Note: </b>             
+    <ul>
+        <li>ក្នុងការអនុវត្តន៍ គេច្រើនតាងសំណុំ $A$ និង $B$ ដោយ $\R$ (សំណុំចំនួនពិត) ។ <!--
+             In practice, the sets $A$ and $B$ are sets of real numbers $\R$ (សំណុំចំនួនពិត). -->
+        </li>
+        <li> ក្នុងវិទ្យាសាស្ត្រ និងបច្ចេកវិទ្យា គេតែងចាត់ទុកការសិក្សាអនុគមន៍ ដូចទៅនឹងដំណើរការរបស់ <a>ម៉ាស៊ីន</a>
+			<!--It's helpful to think of a function as a -->
+			<span class="word" data-title="ក្នុងអនុវត្តន៍ គេប្រៀបធៀបអនុគមន៍មួយដូចជាម៉ាស៊ីន។" data-image="img/mapping_machine.png"><a>(machine)</a></span>។ ដូច្នេះ <!--Then, every $x$ is in the domain called an <b>input</b> and the machine produces an <b>output</b> $f(x)$ according to the rule of the function. -->
+            សំណុំដែនកំណត់គឺជាសំណុំ <b>inputs</b> (ធាតុចូល) ហើយសំណុំរូបភាព គឺជាសំណុំ <b>outputs</b> (ធាតុចេញ) ។
+
+            <div class="tooltip" id="tooltip">
+                <img src="mg/mapping_machine.png" id="tooltipImage" alt="Tooltip Image">
+                <div id="tooltipText"></div>
+            </div>
+            <br/><br/>
+            
+            <div style="text-align: center">
+                <img src="img/function1.png" width="23%">$\quad$
+                <img src="img/function2.png" width="52%">
+            </div>
+        </li>
+
+        <li>វិធីសំខាន់មួយក្នុងការមើលអនុគមន៍មួយ គឺក្រាហ្វរបស់វា ដែលកំណត់សរសេរដោយ៖ 
+            <!--The useful method for visualizing a function is its graph. <!--If $f$ is a function with domain $D$, then its graph is the set of ordered pairs-->
+            $$
+            \Bigl\{(x, f(x)) \mid x \in A\Bigr\}
+            $$
+        </li>
+
+        <li>
+            <!--(Notice that these are input-output pairs.) In other words, the graph of $f$ consists of all points $(x, y)$ in the coordinate plane such that $y=f(x)$ and $x$ is in the domain of $f$.
+
+            The graph of a function $f$ gives us a useful picture of the behavior or "life history" of a function. -->
+            Since the $y$-coordinate of any point $(x, y)$ on the graph is $y=f(x)$, the value of $f(x)$ from the graph is the height of the graph above the point $x$.
+        </li>
+    </ul>            
+     
+					<!--script type="math/tex; mode=display">
+						\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+					</script-->
+
+	<div class="page-number"></div>
+				</section>
+
+            
+ <section class="slide" style="font-size: 24px;">
+     <h3>Examples 1.</h3>  
+
+   The graph of a function $f$ is shown in Figure 6.
+   
+   <ol type="a">
+       <li>
+           Find the values of $f(1)$ and $f(5)$.
+       </li>
+       
+       <li>
+           What are the <b>domain and range</b> of $f$ ?
+       </li>
+   </ol>
+
+<br/>
+   
+   <div style="text-align: center">
+       <img src="img/function3.png" width="35%">
+   </div>
+   
+<div class="page-number"></div>
+
+ </section>
+            
+<section class="slide" style="font-size: 26px;">
+   <h3>Example 2.</h3>
+    Sketch the graph (ចូរសង់ក្រាហ្វ) and find the <b>the domain and range</b> of each function.
+<ol type="i">
+    <li>
+        $f(x)=2 x-1$
+    </li>
+    
+    <li>
+        $g(x)=x^2$
+    </li>
+    
+</ol>
+
+<div style="text-align: center">
+       <img src="img/function4.png" width="33%">
+$\qquad$
+       <img src="img/function5.png" width="30%">
+   </div>
+<div class="page-number"></div>
+
+ </section>
+ 
+ <section class="slide" style="font-size: 26px;">
+    <h3>Example 3.</h3>
+    If $f(x)=2 x^2-5 x+1$ and $h \neq 0$, evaluate $$\frac{f(a+h)-f(a)}{h}$$
+    
+    <br/>
+    
+    <br/>
+    <div class="word" data-title="ក្នុងអនុវត្តន៍ គេប្រៀបធៀបអនុគមន៍មួយដូចជាម៉ាស៊ីន។" data-image="img/mapping_machine.png"><a><b>ចម្លើយ.</b></a></div>
+    
+    \[
+    4a + 2h - 5
+    \]
+    
+<div class="page-number"></div>
+
+ </section>
+
+<section class="slide" style="font-size: 24px;">
+<h3>Remember: </h3>
+    <ul>
+        <li> គ្រប់សមីការ មិនសុទ្ធតែជាអនុគមន៍នោះទេ/
+            Not every equation defines a function. <!--The equation $y=x^2$ defines $y$ as a function of $x$ because the equation determines exactly one value of $y$ for each value of $x$. However, the equation $y^2=x$ does not define $y$ as a function of $x$ because some input values $x$ correspond to more than one output $y$; for instance, for the input $x=4$ the equation gives the outputs $y=2$ and $y=-2$. -->
+        </li>
+        <li>គ្រប់តារាង មិនសុទ្ធតែជាអនុគមន៍នោះទេ/
+            Not every table defines a function. <!--Table 3 defined $C$ as a function of $w$-each package weight $w$ corresponds to exactly one mailing cost. On the other hand, Table 4 does not define $y$ as a function of $x$ because some input values $x$ in the table correspond to more than one output $y$; for instance, the input $x=5$ gives the outputs $y=7$ and $y=8$.-->
+        </li>
+    </ul>
+
+    <h3>The Vertical Line Test</h3>
+    ខ្សែកោងនៅក្នុងប្លង់ $xy$ គឺជាក្រាហ្វរបស់អនុគមន៍មានអថេរ $x$ លុះត្រាតែ <a>បន្ទាត់ឈរប្រសព្វជាមួយខ្សែកោងបានមួយចំណុចគត់</a>។
+    <!--A curve in the $xy$-plane is the graph of a function of $x$ if
+    and only if no vertical line intersects the curve more than once.-->
+    <br/>
+
+    <div style="text-align: center">
+        <img src="img/function6.png" width="33%">$\qquad$
+        <img src="img/function7.png" width="32%">
+    </div>
+ <div class="page-number"></div>
+  </section>
+  
+  
+  <section class="slide">
+     
+     <h4>Vertical Line Test: </h4>
+      
+      <div style="text-align: center">
+        <img src="img/verticalLine1.png" width="90%"><br/>
+        
+        
+        <img src="img/verticalLine2.png" width="95%">
+    </div>
+ 
+ 
+ <div class="page-number"></div>
+  </section>
+  
+  
+  
+ <section  class="slide" style="font-size: 30px;">
+    <h2>Practices. </h2>
+    <p style="text-align: center">
+        សូមពិនិត្យ <b>លំហាត់ ១.១</b> ទំព័រទី ១៧-១៨ ចាប់ពីលំហាត់ទី១ ដល់ ១៤។
+    </p>
+    
+<div class="page-number"></div>
+
+ </section>
+ 
+ 
+   <section class="slide">
+     
+     <h4>Methods to find Domain and Range: </h4>
+      
+      <ol type="A" style="margin-left: 0;">
+          <li>
+              ដើម្បីរកដែនកំណត់របស់អនុគមន៍កំណត់ដោយសមីការ គេអនុវត្តតាមជំហានខាងក្រោម៖
+              <!--To find the domain of a function defined by an equation, follow these key steps:-->
+              <ul style="margin-left: 0">
+                  <li><a>ផ្តើមដោយសំណុំចំនួនពិត $\mathbb R$៖</a> សន្មតថាដែនកំណត់ដំបូងរបស់អនុគមន៍ គឺជា \( \mathbb{R} \) ។
+                     <!-- Start with the Set of Real Numbers: Assume the initial domain of the function is all real numbers, represented as \( \mathbb{R} \).--->
+                      </li>
+
+<li><a>ពិនិត្យកន្សោមភាគបែង៖ </a>ប្រសិនបើសមីការមានភាគបែង ចូរកំណត់តម្លៃអថេរមិនអាស្រ័យ (ជាទូទៅ \( x \)) ដែលធ្វើឱ្យកន្សោមភាគបែងស្មើសូន្យ។ ដូច្នេះ គេត្រូវដកចោលតម្លៃទាំងនេះ ព្រោះគេមិនអាចចែកនឹងសូន្យបានទេ ។ 
+<!---Examine for Denominators: If the equation includes a denominator, identify any values of the independent variable (usually \( x \)) that would cause the denominator to be zero. These values must be excluded from the domain because division by zero is undefined. --->
+</li>
+
+<li><a>ពិនិត្យរករ៉ាឌីកាល់៖</a> បើអនុគមន៍ណាមានរ៉ាឌីកាល់ (ឬឫសការ៉េ) ជាពិសេសរ៉ាឌីកាល់ដែលមានសន្ទស្សន៍គូ ត្រូវកំណត់ថាកន្សោមក្នុងរ៉ាឌីកាល់មិនអវិជ្ជមាន ព្រោះឫសការេនៃចំនួនអវិជ្ជមានមិនអាចកំណត់បាន នៅក្នុងប្រព័ន្ធចំនួនពិតទេ។
+                 
+  <!--Check for Radicals: If the function contains a radical (or square root), particularly an even-index radical (e.g., square roots), ensure that the expression inside the radical is non-negative. This is crucial because the square root of a negative number is not defined within the real number system.-->
+                  </li>
+              </ul>
+          </li>
+      </ol>
+      
+<b>Example.</b> Find the domain of each of the following functions:
+
+<ol>
+    <li>
+        $f(x)=\frac{x+4}{x^2-2 x-3}$
+    </li>
+    <li>
+        $g(x)=x^2-9$
+    </li>
+    <li>
+        $h(x)=\sqrt{3-2 x}$
+    </li>
+</ol>
+        
+          <!--div style="text-align: center">
+        <img src="img/verticalLine1.png" width="90%"><br/>
+      
+    </!--div-->
+ 
+ 
+ <div class="page-number"></div>
+  </section>
+  
+  <section class="slide">
+      <h4>Methods to find Domain and Range:</h4>
+
+      <ol start="2" style="margin-left: 0">
+          <li>
+              មានច្រើនរបៀប ក្នុងការកំណត់បាន <a>សំណុំរូបភាព ឬ ដែនតម្លៃ</a> របស់អនុគមន៍មួយ
+              ដែលវាអាស្រ័យទៅលើភាពស្មុគស្មាញផ្សេងៗគ្នារបស់អនុគមន៍នោះ ហើយនឹងលក្ខណៈសម្គាល់របស់វា។
+
+              <!--To determine the range of a function, several methods can be employed depending on the complexity of the function and its characteristics. Below are detailed methods to find the range:-->
+              <ul style="margin-left: 0">
+                  <li>To express it in terms of its inverse (algebraic manipulation).</li>
+                  <li>
+                      To graph the function (graphical analysis) is one of the simplest and most effective methods
+                  </li>
+                  <li>
+                      To do a horizontal line test
+                  </li>
+                  <li>
+                      To find a global maximum or minimum (finding extreme points)
+                  </li>
+                  
+                  <li>
+                     To find horizontal asymptotes (in rational functions)
+                  </li>
+                  
+              </ul>
+          </li>
+      </ol>
+
+      <b>Example.</b> Find the range of each of the following functions:
+
+      <ol>
+          <li>$f(x)=\frac{x+4}{x^2-2 x-3}$</li>
+          <li>$g(x)=x^2-9$</li>
+          <li>$h(x)=\sqrt{3-2 x}$</li>
+      </ol>
+
+      <!--div style="text-align: center">
+          <img src="img/verticalLine1.png" width="90%"><br/>
+      
+      </!--div-->
+
+      <div class="page-number"></div>
+  </section>
+ 
+
+ <section class="slide">
+      <h4>Quiz No. 1 (M2) - 05/02/25:</h4>
+
+      <ol start="1" style="margin-left: 0">
+        <li>
+            ចូររកដែនកំណត់ និង រ៉ង់របស់ទំនាក់ទំនងក្នុងតារាងខាងក្រោម៖ 
+<!--
+Determine the domain and range for the relation shown in the table.
+\begin{tabular}{|c|c|}
+\hline Inputs (or $x$ ) & Outputs (or $y$ ) \\
+\hline-2 & 0 \\
+\hline-1 & 2 \\
+\hline 3 & -2 \\
+\hline 3 & 4 \\
+5 & 4 \\
+\hline
+\end{tabular}$-->
+       <div style="text-align: center">
+           <img src="img/quiz1.png" width="40%">
+       </div>
+        </li>
+                 
+        <li>
+            Determine if the following relations are functions.
+<ol type="i">
+    <li>
+        $R=\{(0,1),(1,3),(3,4),(5,2), (1,-2), (3,-2)\}$
+
+    </li>
+    <li>
+        $S=\{(0,1),(0,2),(3,4),(3,1)\}$
+    </li>
+    <li>
+        $T=\{(0,1),(1,2),(3,4),(4,1,0), (2,1)\}$
+    </li>
+</ol>
+        </li>
+    <li>
+       A function $f$ is defined by
+$$
+f(x)= \begin{cases}1-x & \text { if } x \leqslant-1 \\ x^2 & \text { if } x \gt -1\end{cases}
+$$
+
+
+គណនា $f(-2), f(-1)$ និង $f(0)$ រួចគូសក្រាហ្វរបស់វា។
+    </li>                  
+     </ol>
+
+      <!--div style="text-align: center">
+          <img src="img/verticalLine1.png" width="90%"><br/>
+      
+      </!--div-->
+
+      <div class="page-number"></div>
+  </section>
+
+<section class="slide">
+      <h4>Quiz No. 1 (M2) - 05/02/25:</h4>
+
+      <ol start="4" style="margin-left: 0">
+<li>
+       <ol type="a">
+        <li>
+            ចូររកដែនកំណត់ និង រ៉ង់របស់អនុគមន៍ក្នុងដ្យាក្រាមខាងក្រោម។
+         </li>
+         
+        <li>
+            ចូរកំណត់អនុគមន៍តាមដ្យាក្រាមនេះ។
+        </li> 
+         </ol>
+    </li>    
+    </ol>
+       <div style="text-align: center">
+           <img src="img/quiz1M2.png" width="40%">
+       </div>
+       
+                 
+   
+    
+
+      <div class="page-number"></div>
+  </section>
+
+<section class="slide">
+      <h4>Quiz No. 1 (M1) - 05/02/25:</h4>
+
+      <ol start="1" style="margin-left: 0">
+        <li>
+            <!--Temperature readings $T$ (in ${ }^{\circ} \mathrm{C}$ ) were recorded every two hours from midnight to 2:00 PM in Atlanta on a day in June. The time $t$ was measured in hours from midnight.-->
+            សីតុណ្ហភាព $T$ (គិតជា ${ }^{\circ} \mathrm{C}$) ត្រូវបានកត់ត្រារៀងរាល់ 2 ម៉ោងម្ដង ចាប់ពីកណ្ដាលអាធ្រាតដល់ម៉ោង 2:00 PM ក្នុងទីក្រុងមួយនៅថ្ងៃមួយក្នុងខែមិថុនា។ ពេល $t$ ត្រូវបានវាស់គិតជាម៉ោង ចាប់ពីពាក់កណ្តាលអធ្រាត្រ។
+            \[
+\begin{array}{|c|c|c|c|c|c|c|c|c|}
+\hline t & 0 & 2 & 4 & 6 & 8 & 10 & 12 & 14 \\
+\hline T & 23 & 21 & 20 & 19 & 21 & 26 & 28 & 30 \\
+\hline
+\end{array}
+    \]
+      
+    <ol type="a">
+        <li>
+            ចូរគូសក្រាហ្វតំណាង $T$ ជាអនុគមន៍ទៅនឹង $t$ ។
+        </li>
+        
+        <li>
+            ដោយប្រើក្រាហ្វនេះ ចូរប៉ាន់ស្មានសីតុណ្ហភាពនៅម៉ោង 9:00 Am ។
+        </li>
+    </ol>
+        </li>
+                 
+        <li>
+           ចូរគណនា <br/>
+(a). $f(x)=4+3 x-x^2, \quad \frac{f(3+h)-f(3)}{h}, \qquad$ 
+(b) $f(x)=x^3, \quad \frac{f(a+h)-f(a)}{h}$<br/>
+
+(c) $f(x)=\frac{1}{x}, \quad \frac{f(x)-f(a)}{x-a},\qquad$
+(d). $f(x)=\sqrt{x+2}, \quad \frac{f(x)-f(1)}{x-1}$
+
+        </li>
+    <li>
+       A function $f$ is defined by
+$$
+f(x)= \begin{cases} -2x & \text { if } x \leqslant 2 \\ x^2 & \text { if } x^2 \gt 2\end{cases}
+$$
+
+
+គណនា $f(-1), f(3)$ និង $f(0)$ រួចគូសក្រាហ្វរបស់វា។
+    </li>                  
+     </ol>
+
+      <!--div style="text-align: center">
+          <img src="img/verticalLine1.png" width="90%"><br/>
+      
+      </!--div-->
+
+      <div class="page-number"></div>
+  </section>
+
+  <section>
+      <ol start="4">
+          <li>
+              Find the domain of the function.<br/>
+
+i. $f(u)=\frac{u+1}{1+\frac{1}{u+1}}$<br/>
+
+ii. $F(p)=\sqrt{2-\sqrt{p}}$<br/>
+
+iii. $h(x)=\sqrt{x^2-4 x-5}$
+          </li>
+          
+<li>
+       <ol type="a">
+        <li>
+            ចូររកដែនកំណត់ និង រ៉ង់របស់អនុគមន៍ក្នុងដ្យាក្រាមខាងក្រោម។
+         </li>
+         
+        <li>
+            ចូរកំណត់អនុគមន៍តាមដ្យាក្រាមនេះ។
+        </li> 
+         </ol>
+    </li>    
+      </ol>
+    <div style="text-align: center">
+           <img src="img/quiz1M2.png" width="40%">
+       </div>
+  </section>
+
+  <section class="slide">
+      <h4>Quiz No. 1 (M4):</h4>
+
+      <ol start="1" style="margin-left: 0">
+        <li>
+            Determine the domain and range for the relation shown in the table.
+<!--\begin{tabular}{|c|c|}
+\hline Inputs (or $x$ ) & Outputs (or $y$ ) \\
+\hline-2 & 0 \\
+\hline-1 & 2 \\
+\hline 3 & -2 \\
+\hline 3 & 4 \\
+5 & 4 \\
+\hline
+\end{tabular}$-->
+       <div style="text-align: center">
+           <img src="img/quiz1.png" width="40%">
+       </div>
+        </li>
+                 
+        <li>
+            Determine if the following relations are functions.
+<ol type="i">
+    <li>
+        $R=\{(0,1),(1,3),(3,4),(5,2)\}$
+
+    </li>
+    <li>
+        $R=\{(0,1),(0,2),(3,4)\}$
+    </li>
+</ol>
+        </li>
+    <li>
+        Use a mapping diagram to determine if the relation $R=\{(0,1),(0,2),(3,4)\}$ is a function.
+    </li>
+    <li>
+        Using the function $f=\{(0,1),(1,3),(3,4),(5,2)\}$, evaluate the following: a. $f(1)$, $\quad$ b. $f(5)$, $\quad$ c. $f(3)$
+    </li>
+                  
+     </ol>
+
+      <!--div style="text-align: center">
+          <img src="img/verticalLine1.png" width="90%"><br/>
+      
+      </!--div-->
+
+      <div class="page-number"></div>
+  </section>
+  
+  
+  <section class="slide">
+      <h4>Quiz No. 1:</h4>
+
+      <ol start="5" style="margin-left: 0">
+      
+      <li>
+           Determine whether the curve is the graph of a function
+of $x$. If it is, state the domain and range of the function.
+     
+     <div style="text-align: center">
+           <img src="img/quiz2.png" width="50%">
+       </div>
+      </li>
+      
+      <li>
+          If $g(x)=\frac{x}{\sqrt{x+1}}$, find $g(0), g(3), 5 g(a), \frac{1}{2} g(4 a), g\left(a^2\right)$, $[g(a)]^2, g(a+h)$, and $g(x-a)$.
+      </li>
+      
+      <li>
+          Evaluate $f(-3), f(0)$, and $f(2)$ for the piecewise defined function. Then sketch the graph of the function.
+<ol type="a">
+    <li>
+        $f(x)= \begin{cases}x^2+2 & \text { if } x\lt 0 \\ x & \text { if } x \geqslant 0\end{cases}$
+    </li>
+    
+    <li>
+        $f(x)= \begin{cases}5 & \text { if } x \lt 2 \\ \frac{1}{2} x-3 & \text { if } x \geqslant 2\end{cases}$
+    </li>
+</ol>
+      </li>
+      </ol>
+           <div class="page-number"></div> 
+                </section>
+   
+                
+<section class="slide">
+      <h4>Quiz No. 1 (S):</h4>
+
+      <ol start="1" style="margin-left: 0">
+       
+       <li>
+           Is the following <a>Arrow diagram</a> is a function? Yes or No?
+           <div style="text-align: center">
+           <img src="img/Quiz3.jpeg" width="13%">
+       </div>
+       </li>
+    
+                 
+        <li>
+            គេឱ្យសំណុំ $A=\{1,2,3,4\}, B=\{2,3,4\}$ ។ តើមួយណាជាអនុគមន៍ពី $A$ ទៅ $B$?<br/>
+
+      (a)  $\{(1,2),(1,3),(2,3),(3,3)\}, \qquad$ (b)  $\{(1,3),(2,3)\}$<br/>
+
+    (c)  $\{(1,3),(2,2),(3,3)\}, \qquad$ (d) 
+        $\{(1,2),(2,3),(3,2),(3,4)\}$
+        </li>
+    <li>
+        <!--Use a mapping diagram to determine if the relation $R=\{(0,1),(0,2),(3,4)\}$ is a function.-->
+        តើមួយណាមិនមែនជាអនុគមន៍ ?<br/>
+a. $\left\{(x, y): x, y \in R, x^2=y\right\}\qquad$
+
+b. $\left\{(x, y): x, y \in R, y^2=x\right\}$<br/>
+
+c. $\left\{(x, y): x, y \in R, x=y^3\right\}\qquad$
+
+d. $\left\{(x, y): x, y \in R, y=x^3\right\}$
+    </li>
+    <li>
+        Using the function $f=\{(0,1),(1,3),(3,4),(5,2)\}$, evaluate the following: <br/>
+        a. $f(1)$, $\quad$ b. $f(5)$, $\quad$ c. $f(3)$
+    </li>
+                  
+     </ol>
+
+      <!--div style="text-align: center">
+          <img src="img/verticalLine1.png" width="90%"><br/>
+      
+      </!--div-->
+
+      <div class="page-number"></div>
+  </section>
+  
+  
+  <section class="slide">
+      <h4>Quiz No. 1:</h4>
+
+      <ol start="5" style="margin-left: 0">
+      
+      <li>
+           យាយរបស់អ្នកមានដើមស្រល់នៅក្នុងទីធ្លារបស់គាត់ ដែលជ្រុះផ្លែច្រើន។ គាត់នឹងបង់លុយឱ្យអ្នក $\$0.10 $ សម្រាប់ការរប្រមូលបានផ្លែស្រល់ជ្រុះមួយកូនបាវ។ កាលពីសប្តាហ៍មុនអ្នករកបាន $5 ដុល្លារ ក្នុងការប្រមូលសម្រាមនេះ ។
+<ol type="i">
+    <li>
+        ចូរសរសេរទំនាក់ទំនងមួយអំពីចំនួនទឹកប្រាក់សរុបដែលអ្នកអាចរកបានជាអនុគមន៍ទៅនឹងចំនួនកូនបាវដាក់ផ្លែស្រល់ ដែលអ្នកប្រមូលបាន ។
+    </li>
+    <li>
+        ចូរកំណត់អថេរអាស្រ័យ និងអថេរមិនអាស្រ័យ។ 
+    </li>
+    <li>
+        ប្រសិនបើអ្នកប្រមូលបានចំនួន 200 កូនបាវក្នុងសប្តាហ៍នេះ តើអ្នករកលុយបានប៉ុន្មាន?
+    </li>
+</ol>
+      </li>
+      
+      <li>
+          If $g(x)=\frac{x}{\sqrt{x+1}}$, find $g(0), g(3), 5 g(a), \frac{1}{2} g(4 a), g\left(a^2\right)$, $[g(a)]^2, g(a+h)$, and $g(x-a)$.
+      </li>
+      </ol>
+           <div class="page-number"></div> 
+                </section>             
+                
+   <!--Quiz M3-->
+   
+<section class="slide">
+      <h4>Quiz No. 1 (M3):</h4>
+
+      <ol start="1" style="margin-left: 0">
+       
+       <li>
+           Is the following <a>Arrow diagram</a> is a function? Yes or No?
+           <div style="text-align: center">
+           <img src="img/quiz1M3.png" width="50%">
+       </div>
+       </li>
+    
+                 
+        <li>
+            គេឱ្យសំណុំ $A=\{1,2,3,4\}, B=\{2,3,4\}$ ។ តើមួយណាជាអនុគមន៍ពី $A$ ទៅ $B$?<br/>
+
+      (a)  $\{(-1,2),(1,3),(2,3),(-2,3)\}, \qquad$ (b)  $\{(1,3),(2,3),(3,3)\}$<br/>
+
+    (c)  $\{(1,3),(2,2),(3,3)\}, \qquad$ (d) 
+        $\{(1,-2),(2,3),(3,2),(3,4)\}$
+        </li>
+    <li>
+        <!--Use a mapping diagram to determine if the relation $R=\{(0,1),(0,2),(3,4)\}$ is a function.-->
+        តើមួយណាមិនមែនជាអនុគមន៍ ?<br/>
+a. $\left\{(x, y): x, y \in \mathbb R, -x^2=y\right\}\qquad$
+
+b. $\left\{(x, y): x, y \in \mathbb R, y^2=-x\right\}$<br/>
+
+c. $\left\{(x, y): x, y \in  \mathbb R, x=y^3\right\}\qquad$
+
+d. $\left\{(x, y): x, y \in  \mathbb R, y^2=(x-1)^3\right\}$
+    </li>
+    <li>
+        Using the function $f=\{(0,1),(1,-3),(-3,4),(5,-2)\}$, evaluate (គណនា) the following: <br/>
+        a. $f(1)$, $\quad$ b. $f(5)$, $\quad$ c. $f(3)$
+    </li>
+                  
+     </ol>
+
+      <!--div style="text-align: center">
+          <img src="img/verticalLine1.png" width="90%"><br/>
+      
+      </!--div-->
+
+      <div class="page-number"></div>
+  </section>
+  
+  
+  <section class="slide">
+      <h4>Quiz No. 1:</h4>
+
+      <ol start="5" style="margin-left: 0">
+      
+      <li>
+           យាយរបស់សុភាពមានដើមស្រល់ជាច្រើនដើម ដែលដាំនៅក្នុងទីធ្លាផ្ទះរបស់គាត់ ហើយមានជ្រុះផ្លែច្រើនជារៀងរាល់ព្រឹក។ គាត់អោយសុភាពប្រមូលផ្លែទាំងនោះដាក់កូនបាវតូចៗ ដោយឱ្យថ្លៃ $\$0.3 $ ក្នុងមួយកូនបាវ។ ការប្រមូលយកផ្លែស្រល់ដែលជ្រុះនេះ គឺទើបតែចាប់ផ្ដើមពីព្រឹកព្រលឹមនៅថ្ងៃមួយក្នុងសប្តាហ៍មុនប៉ុណ្ណោះ ព្រោះជាពេលដែលផ្លែស្រល់ចាប់ផ្ដើមជ្រុះច្រើន ហើយសុភាពរកបាន $8$ ដុល្លារ ក្នុងការប្រមូលសម្រាមនេះ ។
+<ol type="i">
+    <li>
+        ចូរសរសេរទំនាក់ទំនងមួយអំពីចំនួនទឹកប្រាក់សរុបដែលអ្នកអាចរកបានជាអនុគមន៍ទៅនឹងចំនួនកូនបាវដាក់ផ្លែស្រល់ ដែលអ្នកប្រមូលបាន ។
+    </li>
+    <li>
+        ចូរកំណត់អថេរអាស្រ័យ និងអថេរមិនអាស្រ័យ។ 
+    </li>
+    <li>
+        ប្រសិនបើអ្នកប្រមូលបានចំនួន 200 កូនបាវក្នុងសប្តាហ៍នេះ តើអ្នករកលុយបានប៉ុន្មាន?
+    </li>
+</ol>
+      </li>
+      
+      <li>
+          If $g(x)=\frac{x}{\sqrt{x+1}}$, find $g(0), g(3), 5 g(a), \frac{1}{2} g(4 a), g\left(a^2\right)$, $[g(a)]^2, g(a+h)$, and $g(x-a)$.
+      </li>
+      </ol>
+           <div class="page-number"></div> 
+                </section>          
+<!----------------------------------------------------------------------------------
+------------------------------
+
+
+
+End Topic 1. 
+
+----------------------------->
+
+
+
+
+
+
+<section class="title">
+				    <h2>Topic 2. គម្រូគណិតវិទ្យា (Mathematical Models): </h2>
+				    <h3>A Catalog of Essential Functions</h3>
+				    <br /><br /><br />
+				    <p style="text-align: center">បង្រៀនដោយ</p>
+				    <br />
+
+				    <h3>ហាំ ការីម</h3>
+				    <br /><br />
+				    <!--<img src="img/Ph.Y1_QR.png" width="15%">-->
+				</section>
+
+<section class="slide">
+               <h3>វត្ថុបំណង - Objectives: </h3>
+                <ul>
+                    <li>
+                        </li>
+                </ul>
+  <div class="page-number"></div>  
+            </section>   
+    
+
+ <section style="font-size: 24px;" class="slide"> 
+    <h3>Mathematical Models</h3>
+    <ul>
+        <li>
+            ម៉ូដែលគណិតវិទ្យា គឺជាការពិពណ៌នា (កន្សោម) តាមវិធីគណិតវិទ្យា អំពីបាតុភូតពិតប្រាកដនៅក្នុងជីវភាពរស់នៅ ។ <!-- (A mathematical model is a mathematical description of a real-world phenomenon.)-->
+
+        </li>
+        
+        <li>នៅពេលបង្កើតគំរូគណិតវិទ្យាសម្រាប់ចំណោទបញ្ហាពិតប្រាកដមួយ គេចាប់ផ្តើមដោយកំណត់អថេរមិនអាស្រ័យ និងអថេរអាស្រ័យ ហើយធ្វើឱ្យចំណោទនេះកាន់តែងាយស្រួលតាមរយៈការសន្មតមួយចំនួនផ្សេងទៀត។ 
+            <!--Given a real-world problem, our first task in the mathematical modeling process is to formulate a mathematical model by identifying and naming the independent and dependent variables and making assumptions that simplify the phenomenon enough to make it mathematically tractable.--
+            
+            ពេលសិក្សាចំណោទបញ្ហាពិតប្រាកដមួយ ភារកិច្ចចំបងនៅក្នុងដំណើរការបង្កើតម៉ូដែលគណិតវិទ្យាមួយ គឺការដាក់ចេញជារូបមន្ត ដោយកំណត់និងដាក់ឈ្មោះអថេរមិនអាស្រ័យ និងអថេរអាស្រ័យ ព្រមទាំងកំណត់យកការសន្មតមួយចំនួន ដែលធ្វើឱ្យបាតុភូតនោះ ងាយស្រួលក្នុងការបង្កើតរូបមន្តគណិតវិទ្យា។
+            --->
+        </li>
+        <li>
+            បន្ទាប់មកប្រើការយល់ដឹងរបស់យើងលើស្ថានភាព (លក្ខណៈរូប) និងប្រើប្រាស់ឧបករណ៍គណិតវិទ្យានានា ដើម្បីបង្កើតបានសមីការ ដែលភ្ជាប់អថេរទាំងនោះ។
+        </li>
+        
+        <li> គោលបំណងនៃការបង្កើតគម្រូនេះគឺ៖ 
+            <!--The purpose of the model is -->
+<ul>
+    <li>ស្វែងយល់អំពីបាតុភូតនានាដែលកើតមាន និង 
+        (to understand the phenomenon and)
+    </li>
+    <li>ធ្វើការព្យាករណ៍អំពីទ្រង់ទ្រាយរបស់បាតុភូតនោះ នៅពេលអនាគត (        to make predictions about future behavior)
+    </li>
+</ul>
+
+        </li>
+    </ul>
+    
+    
+<div class="page-number"></div>
+
+ </section>
+ 
+ 
+  <section style="font-size: 26px;" class="slide">
+   <h4>The modeling process</h4>
+         <div style="text-align: center">
+     <img src="img/Model_precessing.png">
+     Fig.1. The modeling process
+    </div>
+    
+    
+    <ul>
+       <li>
+           រូបទី១. បង្ហាញដំណើរការក្នុងការបង្កើតម៉ូដែលគណិតវិទ្យា។
+
+       </li>
+        <li>ម៉ូដែលគណិតវិទ្យាមួយ ពិតជាមិនអាចតំណាងឱ្យបាតុភូតរូបដែលកើតមានទាំងស្រុងនោះទេ — វាគ្រាន់តែជាការប៉ាន់ស្មាន (approximation) មួយប៉ុណ្ណោះ ។ 
+
+<!--A mathematical model doesn’t perfectly match real-world situations—it’s an approximation. A mathematical model is never a completely accurate representation of a physical situation——it is an idealization. -->
+
+        </li>
+        
+        <li>ម៉ូដែលណាមានប្រយោជន៍ ជួយឱ្យយើងមានភាពងាយស្រួលក្នុងកាគណនាតម្លៃលើចំណោទបញ្ហាពិតនោះ ប៉ុន្តែវាគ្រប់គ្រាន់សម្រាប់យើងផ្ដល់នូវការសន្និដ្ឋានដែលមានតម្លៃមួយ។ <!--
+            A good model simplifies reality enough to permit mathematical calculations but is accurate enough to provide valuable conclusions.---->
+
+        </li>
+        
+    </ul>
+
+<div class="page-number"></div>
+
+ </section>
+ 
+ 
+ 
+  <section style="font-size: 28px;" class="slide">
+    <h3>1. Linear Models</h3>
+    
+    When we say that $y$ is a <a>linear function (អនុគមន៍លីនេអ៊ែរ)</a> of $x$, we mean that <b><u>the graph of the function is a line</u></b>, so:
+
+        \[
+        y = f (x) = mx + b
+        \]
+
+where $m$ is the <a>slope (មេគុណប្រាប់ទិស)</a> of the line and $b$ is the <a>$y$-intercept (ចំណុចប្រសព្វនឹងអក្ស $y$).</a>
+
+<br/>
+<br/>
+
+<b>Note: </b>ក្នុងមុខវិជ្ជាគណិតគណនា គេនិយមប្រើទម្រង់ <a>point-slope form</a>:
+          $$y - y_1  = m (x - x_1 )$$
+
+    
+<div class="page-number"></div>
+
+ </section>
+ 
+ 
+ 
+  <section style="font-size: 26px;">
+    <h3>Linear Models</h3>
+    លក្ខណៈពិសេសរបស់អនុគមន៍លីនេអ៊ែរ គឺ <a><i>វាកើនឬថយដោយអត្រាថេរមួយ</i></a>។ <!--A characteristic feature of linear functions is that they grow at a constant rate.-->
+    
+    <br/><br/>
+    
+ 
+For instance,   $f (x) = 3x - 2$
+    <br/>
+    
+   <div style="text-align: center">
+     <img src="img/linear_model1.png">
+     Fig.2. អនុគមន៍  $f (x) = 3x - 2$
+    </div>  
+    
+    
+<div class="page-number"></div>
+
+ </section>
+ 
+ 
+ 
+ 
+ 
+ 
+ <section style="font-size: 30px;">
+    
+    
+    
+    
+<div class="page-number"></div>
+
+ </section>
+ 
+ 
+ 
+ <!----Topic 3. Linear Models and Applications----->
+ 
+ 
+ <section class="title">
+				    <h2>Topic 3. គម្រូលីនេអ៊ែរ (Linear Models): </h2>
+				    <h3>Application of linear models</h3>
+				    <br /><br /><br />
+				    <p style="text-align: center">បង្រៀនដោយ</p>
+				    <br />
+
+				    <h3>ហាំ ការីម</h3>
+				    <br /><br />
+				    <!--<img src="img/Ph.Y1_QR.png" width="15%">-->
+				</section>
+
+<section class="slide">
+               <h3>វត្ថុបំណង - Objectives: </h3>
+                <ul>
+                    <li>
+                        </li>
+                </ul>
+  <div class="page-number"></div>  
+            </section>   
+<section class="slide">
+					<h3>Linear Models: </h3>
+
+<ul>
+    <li> When we say that $y$ is a linear function of $x$, we mean that the graph of the function is a line. </li>
+
+<li>
+    All of you are familiar with the idea of a linear model from learning the equation of a line, which is
+
+\begin{equation}\label{eq:line}
+Y=m X+b\tag{1}
+\end{equation}
+
+where $m$ is the slope of the line and $b$ is the $Y$-intercept. 
+    </li>
+    
+    <li> It is useful to think of equation $(\ref{eq:line})$ as a function that maps values of $X$ to values of $Y$. <!--Using this function, if we input some value of $X$, we always get the same value of Y as the output.--->
+    </li>
+</ul>
+
+ 
+
+ 
+ 
+	<div class="page-number"></div>
+				</section>
+
+				
+
+			</div>
+
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+
+				mathjax2: {
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				// There are three typesetters available
+				// RevealMath.MathJax2 (default)
+				// RevealMath.MathJax3
+				// RevealMath.KaTeX
+				//
+				// More info at https://revealjs.com/math/
+				plugins: [ RevealMath.MathJax2 ]
+			});
+		</script>
+
+<script>  
+  const slides = document.querySelectorAll('.slide .page-number');  
+  slides.forEach((slide, index) => {  
+    slide.textContent = `Page ${ index + 1 }`; // Add page number  
+  });  
+</script>
+
+<script>  
+    const words = document.querySelectorAll('.word');  
+    const tooltip = document.getElementById('tooltip');  
+    const tooltipImage = document.getElementById('tooltipImage');  
+    const tooltipText = document.getElementById('tooltipText');  
+/*const words = document.querySelectorAll('.word');  
+const tooltip = document.querySelector('.tooltip');  // Use class selector 
+const tooltipImage = tooltip.querySelector('.tooltipImage');  // Use class within tooltip  
+const tooltipText = tooltip.querySelector('.tooltipText');  // Use class within tooltip*/
+
+    words.forEach(word => {  
+        word.addEventListener('mouseover', () => {  
+            const title = word.getAttribute('data-title'); // Get the title text  
+            const imageSrc = word.getAttribute('data-image'); // Get the image source  
+
+            tooltipText.textContent = title; // Set tooltip text  
+            tooltipImage.src = imageSrc; // Set tooltip image  
+            tooltip.style.display = 'block'; // Show the tooltip  
+
+            const rect = word.getBoundingClientRect(); // Get position of the word  
+            
+            // Position the tooltip above and to the right of the word  
+            tooltip.style.top = `${rect.top + window.scrollY - 1.4*tooltip.offsetHeight}px`; // Calculate top position  
+            tooltip.style.left = `${rect.right}px`; // Position to the right of the word  
+        });  
+
+        word.addEventListener('mouseleave', () => {  
+            tooltip.style.display = 'none'; // Hide the tooltip  
+        });  
+    });  
+</script>
+
+
+	</body>
+</html>
