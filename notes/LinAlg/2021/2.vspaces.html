@@ -827,6 +827,14 @@ window.MathJax = {
             display: inline; /* Initially visible */
         }
 </style>
+
+<style>  
+        .space_leave {  
+            margin-top: 15pt; /* Space above the paragraph */  
+            margin-bottom: 15pt; /* Space below the paragraph */  
+            /*line-height: 1.5; /* Optional: adjust line height for better readability */  
+        }  
+    </style> 
 <!---End code--->
 
 <!---CSS for parentheses list ----->
@@ -924,12 +932,34 @@ window.MathJax = {
     }
 </style>
 
+<!-----Convert from markdown to html for heading -->
+<style>  
+        .main-content #markdown {  
+            display: none; /* hide markdown source after converting */  
+        }  
+        .main-content #html-output {  
+            /*border: 1px solid #ccc;  */
+            padding: 10px;  
+            margin-top: 10px;  
+        }  
+    </style>  
 
 <!---End--->
 
 </head>
 
-<body>
+<body id="markdown">
+
+<!-- Write your markdown content here -->  
+
+# Heading 1  
+## Heading 2  
+### Heading 3  
+
+
+<!-- Converted result will appear here -->  
+<div id="html-output"></div>  
+
 <div class="Headertext">
 
     \( \newcommand{\vecs}[1]{\overset { \scriptstyle \rightharpoonup} {\mathbf{#1}}&nbsp;}&nbsp;\)
@@ -3475,7 +3505,7 @@ $$\bigl\langle S \bigr\rangle = \left\{\; \sum _{i\in I} \lambda_i\cdot \vec x_i
 <my-fig>
     <img src="fig/spanningR_3.png" width="37%">
     <fig-cap data-cap="$x_1x_2$-plane បង្កដោយ $\{e_1, e_2\}$"></fig-cap>
-        </my-fig>
+</my-fig>
 
 <my-example>
    <ul style="margin-left: 20px;">
@@ -4301,7 +4331,10 @@ $$
 where $\Phi(\mathbf{v})=[\mathbf{v}]_{\mathcal{B}}$.
     </li>
     </ul>
-
+<my-fig>
+    <img src="fig/coordinates0.png" width="55%">
+    <fig-cap data-cap="Coordinate mapping $\Phi$"></fig-cap>
+</my-fig>
 </div>
 
 <my-example>
@@ -4408,6 +4441,38 @@ $$
 </my-example>
 
 <my-example>
+    Let $\mathcal B=\left\{\mathbf{b}_1, \mathbf{b}_2\right\}$ where $\mathbf{b}_1=\left[\begin{array}{l}3 \\ 1\end{array}\right]$ and $\mathbf{b}_2=\left[\begin{array}{l}0 \\ 1\end{array}\right]$ and let $\mathcal E=\left\{\mathbf{e}_1, \mathbf{e}_2\right\}$ where $\mathbf{e}_1=\left[\begin{array}{l}1 \\ 0\end{array}\right]$ and $\mathbf{e}_2=\left[\begin{array}{l}0 \\ 1\end{array}\right]$.
+</my-example>
+
+<div>
+    <b>Solution:</b> 
+If $[\mathbf{x}]_\mathcal B = \left[\begin{array}{l}2 \\ 3\end{array}\right]$, then 
+$$\mathbf{x} =\cdots \left[\begin{array}{l}3 \\ 1\end{array}\right]+\cdots \left[\begin{array}{l}0 \\ 1\end{array}\right]=\left[\phantom{\begin{array}{l}1 \\ 0\end{array}}\quad \right]$$
+
+If $[\mathbf{x}]_\mathcal E=\left[\begin{array}{l}6 \\ 5\end{array}\right]$, then 
+$$\mathbf{x} = \cdots\left[\begin{array}{l}1 \\ 0\end{array}\right]+\cdots\left[\begin{array}{l}0 \\ 1\end{array}\right]=\left[\phantom{\begin{array}{l}1 \\ 0\end{array}}\quad \right]$$
+<my-fig>
+    <img src="fig/coordinates1.png" width="60%">
+    <fig-cap data-cap="កូអរដោនេស្តង់ដា និងកូអរដោនេធៀបនឹងគោល $\mathcal B$"></fig-cap>
+</my-fig>
+
+From the above example, we get
+
+$$
+\left[\begin{array}{l}
+6 \\
+5
+\end{array}\right]=\left[\begin{array}{ll}
+3 & 0 \\
+1 & 1
+\end{array}\right]\left[\begin{array}{l}
+2 \\
+3
+\end{array}\right]
+$$
+</div>
+
+<my-example>
     In $\mathcal{P}_2[\mathbb{R}]$, determine the component vector of $p(x)=5+7 x-3 x^2$ relative to the following: 
     <ol style="a">
         <li>
@@ -4420,7 +4485,68 @@ $$
     </ol>
 </my-example>
 
+
+ <span><b>Remarks: </b></span>
+ 
+ <p class="space_leave"> </p>
+
+<div style="text-align: center">
+
+  <table style="width:100%; text-align: center;">
+   <tr style="border-top: 2px solid black;">
+       <th style="text-align: center">
+           Vector Space $\mathbf{R}^3$
+       </th>
+       <th style="text-align: center">
+           Vector Space $\mathbf{P}_2$
+       </th>
+   </tr>
+   <tr style="border-top: 1px solid black;">
+       <td> 
+       Vector Form: $\left[\begin{array}{l}a \\ b \\ c\end{array}\right]$
+       </td>
+    <td>
+        Vector Form: $a+b t+b t^2$
+    </td>
+   </tr>
+   <tr style="border-top: 1px solid black; border-bottom: 1px solid black; ">
+       <td>
+           Vector Addition: 
+$$
+\left[\begin{array}{c}
+-1 \\
+2 \\
+-3
+\end{array}\right]+\left[\begin{array}{l}
+2 \\
+3 \\
+5
+\end{array}\right]=\left[\begin{array}{l}
+1 \\
+5 \\
+2
+\end{array}\right]
+$$
+       </td>
+    <td>
+    Vector Addition: 
+
+$$
+\begin{aligned}
+& \left(-1+2 t-3 t^2\right)+\left(2+3 t+5 t^2\right) \\
+& =1+5 t+2 t^2
+\end{aligned}
+$$ 
+    </td>
+   </tr>
+    </table>
+ </div>
+
+
 <div>
+
+
+
 <div style="text-align: center">
     <b>Homework</b><br/>
 </div>
@@ -4485,7 +4611,15 @@ $$
 មាន rank $= 1$? មាន rank $= 2$? 
    
    
-        </div>
+ </div>
+        
+<div>
+    
+    
+    
+    
+</div>
+   
     </section>
     
     
@@ -5715,7 +5849,42 @@ A short example of how to draw a graph using TikZ
     <!--End figure script--->
 
 
+<script>  
+// Markdown-to-HTML global function  
+function convertMarkdown(markdown) {  
+    let html = markdown;  
 
+    // Replace Markdown headings with corresponding HTML tags  
+    html = html.replace(/^###### (.*$)/gm, '<h6>$1</h6>');  
+    html = html.replace(/^##### (.*$)/gm, '<h5>$1</h5>');  
+    html = html.replace(/^#### (.*$)/gm, '<h4>$1</h4>');  
+    html = html.replace(/^### (.*$)/gm, '<h3>$1</h3>');  
+    html = html.replace(/^## (.*$)/gm, '<h2>$1</h2>');  
+    html = html.replace(/^# (.*$)/gm, '<h1>$1</h1>');  
+
+    // Preserve line breaks  
+    html = html.replace(/\n/g, '<br>');  
+
+    return html.trim();  
+}  
+
+// Function to automatically convert markdown content within div  
+function renderMarkdownAutomatically() {  
+    const markdownEl = document.getElementById('markdown');  
+    const htmlOutputEl = document.getElementById('html-output');  
+
+    const markdownText = markdownEl.textContent.trim();  
+    const htmlConverted = convertMarkdown(markdownText);  
+
+    htmlOutputEl.innerHTML = htmlConverted;  
+
+    // Optionally, hide original markdown div after converting  
+    markdownEl.style.display = 'none';  
+}  
+
+// Run the conversion automatically when the page loads  
+document.addEventListener('DOMContentLoaded', renderMarkdownAutomatically);  
+</script> 
 
 </body>
 
@@ -5741,6 +5910,8 @@ A short example of how to draw a graph using TikZ
 </script>
 
 -->
+
+
 
 
 
