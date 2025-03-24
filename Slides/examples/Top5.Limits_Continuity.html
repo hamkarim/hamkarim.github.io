@@ -279,56 +279,80 @@ Multiply \((\mathbf{X}^T \mathbf{X})^{-1}\) by \(\mathbf{X}^T \mathbf{y}\) to ge
 </section>
 
 <section class="slide" style="font-size: 26px;">
- <h3>អនុវត្តន៍ : Quadratic polynomial fit.</h3>
-<b>Example:</b> Suppose you have the following data:
+ <h3>អនុវត្តន៍ .</h3>
+<b>Exercise 1.</b> 
 
-\[
- \begin{array}{ll}
-\hline x_i & y_i \\
-\hline 1 & 2 \\
-\hline 2 & 5 \\
-\hline 3 & 10 \\
-\hline 4 & 17 \\
-\hline
-\end{array}
- \]
+Consider two discrete random variables \( A \) and \( B \) with the following probability mass functions (pmf):
+<ul>
+    <li>
+        For \( A \):
+  \[
+  P(A = 0) = 0.3, \quad P(A = 1) = 0.4, \quad P(A = 2) = 0.3
+  \]
+    </li>
+    
+    <li>
+      For \( B \):
+  \[
+  P(B = 0) = 0.1, \quad P(B = 1) = 0.8, \quad P(B = 2) = 0.1
+  \]
+    </li>
+</ul>
 
-Fit a quadratic polynomial to the above data (with help of GeoGebra): \[y = a_2 x^2 + a_1 x + a_0\]
+<ol type="i">
+   <li>
+       Calculate the expected value \( E(A) \) and \( E(B) \).
+   </li> 
+   <li>
+       Calculate the variance \( \text{Var}(A) \) and \( \text{Var}(B) \).
+   </li>
+   <li>
+       Calculate the standard deviation \( \sigma_A \) and \( \sigma_B \).
+   </li>
+   <li>
+       Compare the spread of \( A \) and \( B \) using variance and standard deviation.
+   </li>
+   <li>
+       Conclude which random variable has a wider spread of data.
+   </li>
+</ol>
+ 
 
 
 <div class="page-number"></div>
 </section>
 
 <section class="slide" style="font-size: 26px;">
-    <h3>Exponental Fitting</h3>
-<ul>
-<li>
-    <b>Exponential Models: </b>
-    Exponential models are haracterized by equations like:
-\[
-y = a \cdot b^x
-\]
-where:
-<ul>
-<li>
-    \(a\): The initial value of \(y\) when \(x = 0\).
-</li>
+    <h3>អនុវត្តន៍.</h3>
+<b>Exercise 2. </b> 
+A fair coin is flipped once. Let \( X \) be a random variable that represents the outcome of the coin flip, where \( X = 1 \) if the result is heads and \( X = 0 \) if the result is tails. 
 
-<li>
-    \(b\): The base of the exponential function, which determines the rate of growth (\(b \gt 1\)) or decay (\(0 \lt b \lt 1\)).
-</li>
+<ol type="i">
+    <li>
+        What is the probability mass function (PMF) of \( X \)?
+    </li>
+    <li>
+        Calculate the expected value \( E(X) \) and the raviance $V(X)$
+    </li>
+</ol>
 
-<li>
-    \(x\): The independent variable.
-where \(a\) and \(b\) are constants.
-</li>
-</ul>
-<br/>
+<b>Exercise 3. </b> Suppose you conduct an experiment where you roll a fair six-sided die ten times. Define the random variable \( Y \) to be the total number of times you roll a 4. Let \( Y \) follow a Binomial distribution \( Y \sim \text{Binomial}(n=10, p=\frac{1}{6}) \).
+<ol type="i">
+    <li>
+        What is the mean (expected value) \( E(Y) \) of the distribution?
+    </li>
+    
+    <li>
+        Calculate the variance \( \text{Var}(Y) \) of the distribution.
+    </li>
+    
+    <li>
+        Compute the probability of rolling exactly 4 fours in 10 rolls, i.e. \(P(Y = 4) \)
+    </li>
+</ol>
 
-$\leadsto$ គេប្រើគំរូទាំងនេះជាញឹកញាប់ ដើម្បីពិពណ៌នាអំពីដំណើរការលូតលាស់ ដូចជាកំណើនប្រជាជន ឬការថមថយជាតិវិទ្យុសកម្ម។
-<!--These models are often used to describe growth processes, such as population growth or radioactive decay.-->
-</li>
-</ul>
+
+
 <div class="page-number"></div>
 </section>
 
