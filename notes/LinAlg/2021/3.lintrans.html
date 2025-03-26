@@ -1167,6 +1167,71 @@ y[np.isclose(x, 1)]
 	### Heading 3
 </md-block>
 
+<pre>
+ <code>  
+# Your Jupyter code here  
+import numpy as np  
+import matplotlib.pyplot as plt  
+
+plt.plot([1, 2, 3], [1, 4, 9])  
+plt.show()  
+</code></pre>  
+ 
+  <h1>Plot a Function in HTML</h1>  
+  <div id="myPlot1" style="border: 1px solid #ccc; padding: 10px; margin: 10px;">
+  </div>
+  
+  <script>  
+    async function plotFunction() {  
+      // Load Pyodide and required packages  
+      let pyodide = await loadPyodide();  
+      await pyodide.loadPackage("matplotlib");  
+
+      // Python code to plot a function  
+      const pythonCode = `  
+import matplotlib.pyplot as plt  
+import numpy as np  
+
+def f(x):  
+    return np.exp(-x**2) + 1/(2*x**2)  
+    
+# Create data  
+x = np.linspace(0, 10, 100)  
+y1 = np.sin(x)  
+y2 = f(x)
+
+# Plot the function  
+plt.figure()  
+plt.plot(x, y1)  
+plt.title("Sine Wave")  
+plt.xlabel("X")  
+plt.ylabel("Y")  
+
+# Render the plot in the browser  
+plt.show()  
+
+plt.figure()  
+plt.plot(x, y2)  
+plt.title("Parabola")  
+plt.xlabel("X")  
+plt.ylabel("Y") 
+
+# Render the plot in the browser  
+plt.show()  
+      `;  
+
+      // Run the Python code  
+      await pyodide.runPython(pythonCode);  
+
+      // Display the plot in the div  
+      const plotDiv = document.getElementById("myPlot1");  
+      plotDiv.innerHTML = pyodide.globals.get("plt").gcf().canvas.toDataURL();  
+    }  
+  </script>
+  
+  <button onclick="plotFunction()">Plot Function</button>  
+  
+  
 
  </div>  
    
@@ -3644,6 +3709,8 @@ function renderMarkdownAutomatically() {
 document.addEventListener('DOMContentLoaded', renderMarkdownAutomatically);  
 </script> 
 
+<!--To plot a function--->
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>  
 </body>
 
 
