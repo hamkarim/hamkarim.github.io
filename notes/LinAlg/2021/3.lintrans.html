@@ -962,6 +962,17 @@ import {
 } from "https://md-block.verou.me/md-block.js";
 </script>
 
+
+<style>
+    #plot-container {
+        text-align: center;
+      /*width: 800px;
+      height: 400px;
+      /*border: 1px solid #ccc; */
+      margin-bottom: 10px;
+
+    }
+  </style>
 <!---End--->
 
 </head>
@@ -1178,8 +1189,8 @@ plt.show()
 </code></pre>  
  
   <h1>Plot a Function in HTML</h1>  
-  <div id="myPlot1" style="border: 1px solid #ccc; padding: 10px; margin: 10px;">
-  </div>
+  <!--To plot a function--->
+
   
   <script>  
     async function plotFunction() {  
@@ -1187,53 +1198,54 @@ plt.show()
       let pyodide = await loadPyodide();  
       await pyodide.loadPackage("matplotlib");  
 
-      // Python code to plot a function  
+      // Python code to plot the function f(x) = e^(-x^2) + 2x - 1
       const pythonCode = `  
 import matplotlib.pyplot as plt  
 import numpy as np  
+from js import document
 
+# Define the function
 def f(x):  
-    return np.exp(-x**2) + 1/(2*x**2)  
-    
+    return np.exp(-x**2) + 2*x**2 - 1
+
 # Create data  
-x = np.linspace(0, 10, 100)  
-y1 = np.sin(x)  
-y2 = f(x)
+x = np.linspace(-3, 3, 100)
+y = f(x)
 
 # Plot the function  
-plt.figure()  
-plt.plot(x, y1)  
-plt.title("Sine Wave")  
-plt.xlabel("X")  
-plt.ylabel("Y")  
+fig, ax = plt.subplots()
+ax.plot(x, y, label="$f(x) = e^{-x^2} + 2x - 1$")
+ax.set_title("Plot of $f(x) = e^{-x^2} + 2x - 1$")
+ax.set_xlabel("X")
+ax.set_ylabel("Y")
+ax.grid(True)
+ax.legend()
 
-# Render the plot in the browser  
-plt.show()  
+# Render the plot into a canvas
+from matplotlib.backends.backend_agg import FigureCanvasAgg
+canvas = FigureCanvasAgg(fig)
+canvas.draw()
 
-plt.figure()  
-plt.plot(x, y2)  
-plt.title("Parabola")  
-plt.xlabel("X")  
-plt.ylabel("Y") 
-
-# Render the plot in the browser  
-plt.show()  
+# Convert the canvas to an image and display it in the div
+import io
+buf = io.BytesIO()
+canvas.print_png(buf)
+buf.seek(0)
+data = buf.getvalue()
+data
       `;  
 
       // Run the Python code  
-      await pyodide.runPython(pythonCode);  
+      const data = await pyodide.runPython(pythonCode);
 
-      // Display the plot in the div  
-      const plotDiv = document.getElementById("myPlot1");  
-      plotDiv.innerHTML = pyodide.globals.get("plt").gcf().canvas.toDataURL();  
+      // Convert the data to a base64 image and display it in the div
+      const plotDiv = document.getElementById("plot-container");
+      plotDiv.innerHTML = `<img src="data:image/png;base64,${btoa(String.fromCharCode(...new Uint8Array(data)))}" />`;
     }  
   </script>
-  
+    <div id="plot-container"></div>
   <button onclick="plotFunction()">Plot Function</button>  
-  
-  
-
- </div>  
+   </div>
    
    
     <my-defn>
@@ -3709,8 +3721,10 @@ function renderMarkdownAutomatically() {
 document.addEventListener('DOMContentLoaded', renderMarkdownAutomatically);  
 </script> 
 
-<!--To plot a function--->
+
+<!---Script to plot a function-->
 <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>  
+
 </body>
 
 
