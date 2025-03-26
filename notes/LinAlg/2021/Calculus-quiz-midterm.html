@@ -1040,31 +1040,48 @@ import {
 \end{array}
 \]
 
-<p>
+<!--p>
     <b>II.</b> ចូរកំណត់ថាតើអនុគមន៍នីមួយៗ ជាអនុគមន៍ជាប់? ប្រសិនបើអនុគមន៍ណាមិនជាប់ ចូរកំណត់រកតម្លៃ $x$ រួចកំណត់ប្រភេទដាច់នីមួយៗ៖  infinite ឬ removable ?
 </p>
 <my-fig>
     <img src="fig/quiz-midterm1.png" width="98%">
     <img src="fig/quiz-midterm2.png" width="98%">
     <fig-cap data-cap=""></fig-cap>
-</my-fig>
+</my-fig -->
 
+
+<p><b>II. </b>
+គេអោយអនុគមន៍     
+$$
+f(x)= \begin{cases}\dfrac{x^2-4}{x-2} & \text { if } x \neq 2 \\ K & \text { if } x=2\end{cases}
+$$
+</p>
+
+<ol type="i">
+    <li>
+        ចូរកំណត់តម្លៃ $K$ ដើម្បីធ្វើអោយអនុគគមន៍ជាប់។ 
+    </li>
+    
+    <li>
+        ចូរកំណត់ប្រភេទដាច់របស់អនុគមន៍ បើ $K=0$ ។
+    </li>
+</ol>
 
 <p>
     <b>III.</b> Continuity of a function on a region (Topic 5.3, page 9):
 </p>
 
 <ol type="a">
-    <li>
+    <!--li>
         យក \( f(x) = x^2 + 3x - 5 \) ។ បង្ហាញថា \( f(x) \) ជាប់លើបន្ទាត់ចំនួនពិត \( \mathbb{R} \).
-    </li>
+    </!--li-->
     
     <li>
         គេឱ្យអនុគមន៍កំណត់តាមផ្នែក៖ 
 \[
 f(x) = 
 \begin{cases} 
-\frac{\sin x}{x} & \text{if } x \neq 0, \\
+\dfrac{\sin x}{x} & \text{if } x \neq 0, \\
 1 & \text{if } x = 0.
 \end{cases}
 \]  
@@ -1072,8 +1089,7 @@ f(x) =
     </li>
     
 <li>
-    Let \( f(x) = \frac{1}{x-4} \).  
-Is \( f(x) \) continuous on the interval \( [0, 4) \)? Justify your answer.
+    យក \( f(x) = \dfrac{1}{x-4} \) ។ តើ  \( f\) ជាប់លើតំបន់ \( [0, 4) \) ឬទេ? Justify your answer.
 </li>
 
 <li>
@@ -1089,12 +1105,36 @@ Check whether \( f(x) \) is continuous on the interval \( [1, 3] \). If not, ide
 </li>
 </ol>
 
+<p>
+    <b>IV. </b>
+    គេអោយអនុគមន៍ $f$ ដូចក្នុងរូបខាងក្រោម តើអំណះអំណាងមួយណាត្រឹមត្រូវ៖ 
+    <my-fig>
+    <img src="fig/TypesDisc.webp" width="48%">
+    <fig-cap data-cap=""></fig-cap>
+</my-fig>
+</p>    
+
+<ol type="a">
+    <li>
+        $f$ has a removable discontinuity at $x=-4$.
+    </li>
+    <li>
+        $f$ has a removable discontinuity at $x=0$.
+    </li>
+    <li>
+        $f$ has a jump discontinuity at $x=0$.
+    </li>
+    <li>
+        $f$ has an infinite discontinuity at $x=4$.
+    </li>
+</ol>
+
 
 <p>
-    <b>IV. </b> <i>Limits pass through continuous functions (Topic 5.3, page 14)</i>.
+    <b>V. </b> <i>Limits pass through continuous functions (Topic 5.3, page 14)</i>.
    Compute
 \[
-\lim_{x \to a} f(g(x)) = f\left( \lim_{x \to a} g(x) \right).
+\lim_{x \to a} f(g(x)) = f\left( \lim_{x \to a} g(x) \right)
 \]
 </p>
 
@@ -1128,7 +1168,7 @@ Check whether \( f(x) \) is continuous on the interval \( [1, 3] \). If not, ide
     Let \( f(x) = \dfrac{1}{x} \) (continuous for \( x \neq 0 \)) and \( g(x) = \dfrac{\sin x}{x} \).  
 Evaluate:  
 \[
-\lim_{x \to 0} f(g(x)) = f\left( \lim_{x \to 0} g(x) \right).
+\lim_{x \to 0} f(g(x)) = f\left( \lim_{x \to 0} g(x) \right)
 \]  
 Does the limit exist?
 </li>
@@ -1138,29 +1178,29 @@ Does the limit exist?
     <h3>អាស៊ីមតូត </h3>
         <hr>
 <p>
-    <b>V. </b>ពិនិត្យក្រាហ្វខាងក្រោម រួចកំណត់រកអាស៊ីមតូតឈរ ? 
+    <b>VI. </b>ពិនិត្យក្រាហ្វខាងក្រោម រួចកំណត់រកអាស៊ីមតូតឈរ ? 
 </p>
-    <b>(i)</b> <img src="fig/quiz-midterm3.jpeg" width="38%"> 
+    <b>(a)</b> <img src="fig/quiz-midterm3.jpeg" width="38%"> 
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <b>(ii)</b> <img src="fig/quiz-midterm4.jpeg" width="38%">
+    <b>(b)</b> <img src="fig/quiz-midterm4.jpeg" width="38%">
     <br/>
-    <b>(iii)</b> <img src="fig/quiz-midterm5.jpeg" width="38%"> 
+    <b>(c)</b> <img src="fig/quiz-midterm5.jpeg" width="38%"> 
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <b>(iv)</b> <img src="fig/quiz-midterm6.jpeg" width="38%"> <br/>
-     <img src="fig/quiz-midterm7.jpeg" width="38%"> <b>(v)</b>
+    <b>(d)</b> <img src="fig/quiz-midterm6.jpeg" width="38%"> <br/>
+     <img src="fig/quiz-midterm7.jpeg" width="38%"> <b>(e)</b>
 
    <p>
-       <b>VI. </b>Find the horizontal and vertical asymptotes.
+       <b>VII. </b>Find the horizontal and vertical asymptotes.
    </p>
    
    \[
 \begin{array}{ll ll }
-  (1) & f(x)=x-\frac{9}{x} & \qquad \qquad 
-  (2) & f(x)=\frac{1}{1-x^2}\\
-  (3) & f(x)=\frac{x^3}{4-x^2} & \qquad \qquad 
-  (4) & f(x)=\frac{x^2+3}{x^2+1} \\
+  (1) & f(x)=x-\dfrac{9}{x} & \qquad \qquad 
+  (2) & f(x)=\dfrac{1}{1-x^2}\\
+  (3) & f(x)=\dfrac{x^3}{4-x^2} & \qquad \qquad 
+  (4) & f(x)=\dfrac{x^2+3}{x^2+1} \\
   (5) & f(x)=\sin (x) \sin (2 x) & \qquad \qquad 
-  (6) & f(x)=\frac{x \sin (x)}{x^2-1}
+  (6) & f(x)=\dfrac{x \sin (x)}{x^2-1}
   \end{array}
   \]
 
@@ -1168,7 +1208,7 @@ Does the limit exist?
     <h3>ម៉ូដែលគណិតវិទ្យា</h3>
         <hr>
     <p>
-        <b>VII. </b> វិស្វករកុំព្យូទ័រម្នាក់ បានព្យាករណ៍ថា ចំនួនអតិថិជនចូលទៅប្រើក្រុមហ៊ុនសេវាអ៊ិនធឺរណែត geton.com ដែលកើនក្នុងទម្រង់អ៊ិចស្ប៉ូណង់ស្យែល ក្នុងរយៈពេល 5 ឆ្នាំដំបូង ។ ដោយសន្មតថា គាត់និយាយត្រូវ ។ ប្រសិនបើក្រុមហ៊ុន geton.com មានអតិថិជន 100,000 នាក់ បន្ទាប់ពីរយៈពេល 6 ខែ និង 755 000 នាក់ បន្ទាប់ពីរយៈពេល 12 ខែ តើមានអតិថិជនចំនួនប៉ុន្មាននាក់ ដែលនឹងចូលប្រើសេវានេះ នៅបន្ទាប់ពីរយៈពេល 5 ឆ្នាំ?
+        <b>VIII. </b> វិស្វករកុំព្យូទ័រម្នាក់ បានព្យាករណ៍ថា ចំនួនអតិថិជនចូលទៅប្រើក្រុមហ៊ុនសេវាអ៊ិនធឺរណែត geton.com ដែលកើនក្នុងទម្រង់អ៊ិចស្ប៉ូណង់ស្យែល ក្នុងរយៈពេល 5 ឆ្នាំដំបូង ។ ដោយសន្មតថា គាត់និយាយត្រូវ ។ ប្រសិនបើក្រុមហ៊ុន geton.com មានអតិថិជន 100,000 នាក់ បន្ទាប់ពីរយៈពេល 6 ខែ និង 755 000 នាក់ បន្ទាប់ពីរយៈពេល 12 ខែ តើមានអតិថិជនចំនួនប៉ុន្មាននាក់ ដែលនឹងចូលប្រើសេវានេះ នៅបន្ទាប់ពីរយៈពេល 5 ឆ្នាំ?
     </p>
     
 
