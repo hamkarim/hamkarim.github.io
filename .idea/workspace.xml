@@ -7,7 +7,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bed891d6-648f-4aac-9ba6-dd4e632894ab" name="Changes" comment="Update2" />
+    <list default="true" id="bed891d6-648f-4aac-9ba6-dd4e632894ab" name="Changes" comment="Update2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/statistics/slides/css/colors.css" beforeDir="false" afterPath="$PROJECT_DIR$/notes/statistics/slides/css/colors.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/statistics/slides/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/notes/statistics/slides/gulpfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/statistics/slides/img/favicons/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/notes/statistics/slides/img/favicons/favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/statistics/slides/img/setup.png" beforeDir="false" afterPath="$PROJECT_DIR$/notes/statistics/slides/img/setup.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/statistics/slides/img/share-webslides.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/notes/statistics/slides/img/share-webslides.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/statistics/slides/img/swipe.svg" beforeDir="false" afterPath="$PROJECT_DIR$/notes/statistics/slides/img/swipe.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/statistics/slides/js/svg-icons.js" beforeDir="false" afterPath="$PROJECT_DIR$/notes/statistics/slides/js/svg-icons.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,40 +53,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JavaScript Debug.2.vspaces.html.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Docker&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.2.vspaces.html.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "Docker",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;azure&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "azure"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="2.vspaces.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/hamkarim.github.io/notes/LinAlg/2021/2.vspaces.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JavaScript Debug.2.vspaces.html" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
+        <option value="bundled-python-sdk-0978a7220b69-9867c7d4c0a4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.28294.336" />
       </set>
     </attachedChunks>
   </component>
@@ -105,6 +112,8 @@
       <workItem from="1737389115770" duration="8862000" />
       <workItem from="1737424098986" duration="2268000" />
       <workItem from="1737688194008" duration="590000" />
+      <workItem from="1762178241985" duration="8000" />
+      <workItem from="1765285067309" duration="7000" />
     </task>
     <servers />
   </component>

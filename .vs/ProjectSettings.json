@@ -1,3 +1,395 @@
-{
-  "CurrentProjectSetting": null
-}
+"""
+delivery_robot.py
+
+Simple delivery robot simulator:
+- Grid map with obstacles
+- A* path planning
+- Kinematic robot with heading control
+- Local obstacle detection and reactive replanning
+- Matplotlib visualization animation
+
+Run: python delivery_robot.py
+"""
+
+import math
+import heapq
+import random
+import time
+from typing import List, Tuple, Optional, Dict, Set
+
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+
+########################
+# Map & Path Planning
+########################
+
+
+class GridMap:
+    def __init__(self, width: int, height: int, obstacle_prob: float = 0.15, seed: Optional[int] = None):
+        self.width = width
+        self.height = height
+        self.seed = seed
+        if seed is not None:
+            random.seed(seed)
+            np.random.seed(seed)
+        # 0 = free, 1 = obstacle
+        self.grid = np.zeros((height, width), dtype=np.int8)
+        self.generate_random_obstacles(obstacle_prob)
+
+    def generate_random_obstacles(self, prob: float):
+        for y in range(self.height):
+            for x in range(self.width):
+                if random.random() < prob:
+                    self.grid[y, x] = 1
+        # ensure the outer boundary is clear-ish for visualization
+        self.grid[0, :] = 0
+        self.grid[:, 0] = 0
+        self.grid[-1, :] = 0
+        self.grid[:, -1] = 0
+
+    def is_free(self, x: int, y: int) -> bool:
+        if 0 <= x < self.width and 0 <= y < self.height:
+            return self.grid[y, x] == 0
+        return False
+
+    def neighbors(self, x: int, y: int) -> List[Tuple[int, int]]:
+        # 4-connected grid (up, down, left, right)
+        deltas = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+        out = []
+        for dx, dy in deltas:
+            nx, ny = x + dx, y + dy
+            if self.is_free(nx, ny):
+                out.append((nx, ny))
+        return out
+
+
+def heuristic(a: Tuple[int, int], b: Tuple[int, int]) -> float:
+    # Manhattan
+    return abs(a[0] - b[0]) + abs(a[1] - b[1])
+
+
+def a_star_search(grid: GridMap, start: Tuple[int, int], goal: Tuple[int, int]) -> Optional[List[Tuple[int, int]]]:
+    if not grid.is_free(*start) or not grid.is_free(*goal):
+        return None
+
+    frontier: List[Tuple[float, Tuple[int, int]]] = []
+    heapq.heappush(frontier, (0, start))
+    came_from: Dict[Tuple[int, int], Optional[Tuple[int, int]]] = {start: None}
+    cost_so_far: Dict[Tuple[int, int], float] = {start: 0}
+
+    while frontier:
+        _, current = heapq.heappop(frontier)
+        if current == goal:
+            # reconstruct path
+            path = []
+            node = current
+            while node:
+                path.append(node)
+                node = came_from[node]
+            path.reverse()
+            return path
+
+        for nxt in grid.neighbors(*current):
+            new_cost = cost_so_far[current] + 1  # uniform cost
+            if nxt not in cost_so_far or new_cost < cost_so_far[nxt]:
+                cost_so_far[nxt] = new_cost
+                priority = new_cost + heuristic(nxt, goal)
+                heapq.heappush(frontier, (priority, nxt))
+                came_from[nxt] = current
+    return None
+
+
+########################
+# Robot
+########################
+
+
+class Robot:
+    def __init__(self, x: float, y: float, heading: float = 0.0):
+        self.x = x
+        self.y = y
+        self.heading = heading  # radians, 0 = +x
+        self.speed = 0.0  # units per second
+        self.max_speed = 1.0
+        self.angular_speed = 1.5  # rad/s nominal
+        # PID-ish heading controller gains
+        self.kp_heading = 2.0
+        self.ki_heading = 0.0
+        self.kd_heading = 0.2
+        self._heading_integral = 0.0
+        self._last_heading_error = 0.0
+        self.battery = 100.0  # percent
+        self.battery_drain_per_sec = 0.02  # arbitrary
+
+    def step(self, dt: float, linear_cmd: float, target_heading: float):
+        # linear_cmd: desired forward speed (0..max_speed)
+        # heading controller: compute angular velocity to reduce error
+        # heading error wrapped to [-pi, pi]
+        err = ((target_heading - self.heading + math.pi) % (2 * math.pi)) - math.pi
+        self._heading_integral += err * dt
+        derivative = (err - self._last_heading_error) / dt if dt > 0 else 0.0
+        ang_vel = self.kp_heading * err + self.ki_heading * self._heading_integral + self.kd_heading * derivative
+        # limit ang_vel to robot angular speed limits
+        max_ang = self.angular_speed
+        ang_vel = max(-max_ang, min(max_ang, ang_vel))
+        self._last_heading_error = err
+
+        # update heading
+        self.heading += ang_vel * dt
+        # update position along heading
+        self.speed = max(0.0, min(self.max_speed, linear_cmd))
+        self.x += math.cos(self.heading) * self.speed * dt
+        self.y += math.sin(self.heading) * self.speed * dt
+
+        # battery drain
+        self.battery -= (abs(self.speed) * 0.01 + abs(ang_vel) * 0.005 + self.battery_drain_per_sec) * dt
+        if self.battery < 0:
+            self.battery = 0.0
+
+    def pos(self) -> Tuple[float, float]:
+        return self.x, self.y
+
+
+########################
+# Delivery logic
+########################
+
+
+def grid_cell_center(cell: Tuple[int, int]) -> Tuple[float, float]:
+    cx, cy = cell
+    return cx + 0.5, cy + 0.5
+
+
+def distance(a: Tuple[float, float], b: Tuple[float, float]) -> float:
+    return math.hypot(a[0] - b[0], a[1] - b[1])
+
+
+class DeliveryAgent:
+    """
+    High-level agent that uses A* to plan on the grid and commands the robot to follow the path.
+    It supports simple local obstacle detection: if robot is near a blocked cell not in the path,
+    it triggers replan.
+    """
+
+    def __init__(self, grid: GridMap, robot: Robot, replan_distance: float = 0.7):
+        self.grid = grid
+        self.robot = robot
+        self.path: List[Tuple[int, int]] = []
+        self.path_waypoints: List[Tuple[float, float]] = []
+        self.goal_cell: Optional[Tuple[int, int]] = None
+        self.current_waypoint_index = 0
+        self.replan_distance = replan_distance
+
+    def set_goal(self, cell: Tuple[int, int]):
+        self.goal_cell = cell
+        start_cell = (int(self.robot.x), int(self.robot.y))
+        path = a_star_search(self.grid, start_cell, self.goal_cell)
+        if path is None:
+            print("No path found to goal", self.goal_cell)
+            self.path = []
+            self.path_waypoints = []
+            return False
+        self.path = path
+        self.path_waypoints = [grid_cell_center(c) for c in path]
+        self.current_waypoint_index = 0
+        return True
+
+    def at_goal(self) -> bool:
+        if self.goal_cell is None:
+            return False
+        gx, gy = grid_cell_center(self.goal_cell)
+        return distance(self.robot.pos(), (gx, gy)) < 0.4
+
+    def check_local_obstacles(self):
+        # if any obstacle is discovered near next waypoint that's not free, replan
+        if self.current_waypoint_index < len(self.path):
+            # look ahead a couple of cells
+            look_ahead = min(self.current_waypoint_index + 2, len(self.path) - 1)
+            for idx in range(self.current_waypoint_index, look_ahead + 1):
+                cell = self.path[idx]
+                if not self.grid.is_free(*cell):
+                    # obstacle appeared or was unobserved earlier; replan
+                    return True
+        return False
+
+    def update(self, dt: float) -> Tuple[float, float]:
+        """
+        Returns (linear_cmd, target_heading)
+        """
+        if not self.path_waypoints:
+            return 0.0, self.robot.heading
+
+        # if near current waypoint, advance
+        robot_pos = self.robot.pos()
+        while self.current_waypoint_index < len(self.path_waypoints):
+            wp = self.path_waypoints[self.current_waypoint_index]
+            if distance(robot_pos, wp) < 0.35:
+                self.current_waypoint_index += 1
+            else:
+                break
+
+        # if finished
+        if self.current_waypoint_index >= len(self.path_waypoints):
+            return 0.0, self.robot.heading
+
+        # if local obstacle detected (reactive), replan
+        if self.check_local_obstacles():
+            print("Local obstacle detected — replanning")
+            s = (int(self.robot.x), int(self.robot.y))
+            if self.goal_cell:
+                new_path = a_star_search(self.grid, s, self.goal_cell)
+                if new_path:
+                    self.path = new_path
+                    self.path_waypoints = [grid_cell_center(c) for c in new_path]
+                    self.current_waypoint_index = 0
+                else:
+                    # can't replan: stop
+                    return 0.0, self.robot.heading
+
+        # navigate toward current waypoint
+        wp = self.path_waypoints[self.current_waypoint_index]
+        dx = wp[0] - self.robot.x
+        dy = wp[1] - self.robot.y
+        target_heading = math.atan2(dy, dx)
+        # compute desired linear speed: slow down when heading error large or near waypoint
+        heading_err = abs(((target_heading - self.robot.heading + math.pi) % (2 * math.pi)) - math.pi)
+        dist = math.hypot(dx, dy)
+        # simple speed policy
+        if dist < 0.5:
+            linear_cmd = 0.3 * (dist / 0.5)
+        else:
+            linear_cmd = 0.9
+        # reduce speed if large heading error
+        if heading_err > math.pi / 4:
+            linear_cmd *= 0.4
+        linear_cmd = max(0.0, min(self.robot.max_speed, linear_cmd))
+        return linear_cmd, target_heading
+
+
+########################
+# Simulation & Visualization
+########################
+
+
+def create_demo_map():
+    gm = GridMap(width=30, height=20, obstacle_prob=0.18, seed=42)
+    # carve an empty corridor for start area
+    gm.grid[2:5, 2:6] = 0
+    # place some deterministic obstacles to make the scenario interesting
+    for i in range(8, 14):
+        gm.grid[10, i] = 1
+    for i in range(3, 9):
+        gm.grid[6, i] = 1
+    return gm
+
+
+def run_simulation():
+    grid = create_demo_map()
+    # choose a free start and goal
+    start_cell = (3, 3)
+    goal_cell = (26, 16)
+    # convert to robot coordinates (center)
+    sx, sy = grid_cell_center(start_cell)
+    robot = Robot(x=sx, y=sy, heading=0.0)
+    agent = DeliveryAgent(grid, robot)
+
+    success = agent.set_goal(goal_cell)
+    if not success:
+        print("Could not find initial path — exiting.")
+        return
+
+    # visualization setup
+    fig, ax = plt.subplots(figsize=(10, 6))
+    ax.set_xlim(0, grid.width)
+    ax.set_ylim(0, grid.height)
+    ax.set_aspect('equal')
+    ax.set_title("Delivery Robot Simulator - A* + Simple Control")
+
+    # draw grid obstacles
+    obs_y, obs_x = np.where(grid.grid == 1)
+    ax.scatter(obs_x + 0.5, obs_y + 0.5, marker='s', s=200, label='obstacle')
+
+    # draw path (initial)
+    path_plot, = ax.plot([], [], linestyle='--', linewidth=2, label='planned path')
+
+    # robot marker
+    robot_marker, = ax.plot([], [], marker=(3, 0, math.degrees(robot.heading)-90), markersize=16, linestyle='None', label='robot')
+
+    # battery text
+    battery_text = ax.text(0.02, 0.97, "", transform=ax.transAxes)
+
+    # goal marker
+    gx, gy = grid_cell_center(goal_cell)
+    ax.scatter([gx], [gy], marker='*', s=200, label='goal')
+
+    ax.legend(loc='upper right')
+
+    dt = 0.1  # simulation timestep in seconds
+    sim_time = 0.0
+    max_sim_time = 300.0  # seconds
+
+    # animation state
+    positions_x = []
+    positions_y = []
+
+    def update_frame(frame_num):
+        nonlocal sim_time, positions_x, positions_y
+        if sim_time > max_sim_time:
+            return robot_marker, path_plot, battery_text
+
+        # sometimes simulate dynamic obstacle appearing (randomly)
+        if random.random() < 0.002:
+            # drop an obstacle near the path randomly
+            if agent.path:
+                idx = random.randrange(len(agent.path))
+                cx, cy = agent.path[idx]
+                # avoid placing exactly where robot is
+                if grid.is_free(cx, cy):
+                    grid.grid[cy, cx] = 1
+                    ax.scatter([cx + 0.5], [cy + 0.5], marker='s', s=200)
+                    print(f"Dynamic obstacle introduced at {(cx, cy)}")
+
+        linear_cmd, target_heading = agent.update(dt)
+        robot.step(dt, linear_cmd, target_heading)
+        sim_time += dt
+
+        # update path plot
+        if agent.path_waypoints:
+            px = [p[0] for p in agent.path_waypoints]
+            py = [p[1] for p in agent.path_waypoints]
+            path_plot.set_data(px, py)
+        else:
+            path_plot.set_data([], [])
+
+        # update robot marker (rotate triangle marker by changing marker tuple)
+        robot_marker.set_data([robot.x], [robot.y])
+        # update marker orientation
+        robot_marker.set_marker((3, 0, math.degrees(robot.heading) - 90))
+
+        positions_x.append(robot.x)
+        positions_y.append(robot.y)
+
+        battery_text.set_text(f"Time: {sim_time:.1f}s  Battery: {robot.battery:.1f}%  Waypoint: {agent.current_waypoint_index}/{len(agent.path_waypoints)}")
+
+        # if battery empty, stop
+        if robot.battery <= 0:
+            battery_text.set_text("Battery depleted - simulation stopped")
+            return robot_marker, path_plot, battery_text
+
+        # check arrival
+        if agent.at_goal():
+            battery_text.set_text(f"Delivered! Time: {sim_time:.1f}s  Battery: {robot.battery:.1f}%")
+            print(f"Delivery completed in {sim_time:.1f}s. Battery remaining: {robot.battery:.1f}%")
+            # stop the animation by turning off robot movement (keep plotting)
+            # We will set linear_cmd=0 on further updates because agent.at_goal will cause path exhausted.
+            # Could also stop the animator but for simplicity we just keep showing.
+        return robot_marker, path_plot, battery_text
+
+    ani = animation.FuncAnimation(fig, update_frame, frames=2000, interval=40, blit=False)
+    plt.show()
+
+
+if __name__ == "__main__":
+    run_simulation()
