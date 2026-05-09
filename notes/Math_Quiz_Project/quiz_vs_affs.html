@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>វិញ្ញាសាគណិតវិទ្យា៖ មូលដ្ឋានគ្រឹះលំហវ៉ិចទ័រ</title>
+    <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    }
+  };
+</script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Khmer OS Battambang', sans-serif; line-height: 1.8; background-color: #f4f9f4; padding: 20px; color: #333; }
+        .container { max-width: 850px; margin: auto; background: #fff; padding: 35px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); border-top: 8px solid #27ae60; }
+        h2 { color: #2ecc71; border-bottom: 2px solid #27ae60; padding-bottom: 10px; margin-top: 20px; }
+        .instruction { background-color: #e8f8f5; padding: 15px; border-radius: 8px; border-left: 5px solid #27ae60; margin-bottom: 30px; font-size: 1.05em; }
+        .question-block { margin-bottom: 30px; padding: 20px; background: #fafdfa; border: 1px solid #d5f5e3; border-left: 5px solid #2ecc71; border-radius: 8px; }
+        .options { margin-top: 15px; padding-left: 15px; }
+        .options label { display: block; margin-bottom: 12px; cursor: pointer; transition: color 0.2s; font-size: 1.05em; }
+        .options label:hover { color: #27ae60; font-weight: bold; }
+        .q-image { max-width: 100%; height: auto; border-radius: 5px; margin: 15px 0; border: 1px solid #ccc; display: block; }
+        .submit-btn { background-color: #27ae60; color: white; padding: 15px 20px; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; width: 100%; font-family: inherit; margin-top: 20px; font-weight: bold; }
+        .submit-btn:hover { background-color: #2ecc71; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!--form action="submit_quiz_vectors.php" method="POST"-->
+    <form action="submit_quiz.php" method="POST">
+
+        <h2>វិញ្ញាសាទី ១៤៖ មូលដ្ឋានគ្រឹះនៃលំហវ៉ិចទ័រ (Vector Spaces)</h2>
+        <div class="instruction">
+            <strong>ការណែនាំ៖</strong> លំហាត់នេះមានកម្រិតងាយស្រួល សម្រាប់សាកល្បងការយល់ដឹងជាមូលដ្ឋានទៅលើ វ៉ិចទ័រ ការបូកវ៉ិចទ័រ និងសញ្ញាណនៃលំហរង។
+        </div>
+        
+        <div class="question-block">
+            <strong>១. នៅក្នុងប្លង់ទ្វេវិមាត្រ (លំហ $\mathbb{R}^2$) តើវ៉ិចទ័រមួយត្រូវបានតំណាងដោយអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A" required> ក) ចំនួនពិតតែមួយគត់</label>
+                <label><input type="radio" name="q1" value="B" required> ខ) កូអរដោនេពីរ $(x, y)$</label>
+                <label><input type="radio" name="q1" value="C" required> គ) កូអរដោនេបី $(x, y, z)$</label>
+                <label><input type="radio" name="q1" value="D" required> ឃ) សមីការបន្ទាត់មួយ</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>២. ប្រមាណវិធីបូកវ៉ិចទ័រ៖ ប្រសិនបើគេមានវ៉ិចទ័រ $\vec{u} = (1, 2)$ និង $\vec{v} = (3, 1)$ តើផលបូក $\vec{u} + \vec{v}$ ស្មើនឹងប៉ុន្មាន?</strong>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Vector_addition.svg/400px-Vector_addition.svg.png" alt="Vector Addition" class="q-image" style="max-width: 250px;">
+            <div class="options">
+                <label><input type="radio" name="q2" value="A" required> ក) $(2, -1)$</label>
+                <label><input type="radio" name="q2" value="B" required> ខ) $(4, 3)$</label>
+                <label><input type="radio" name="q2" value="C" required> គ) $(3, 2)$</label>
+                <label><input type="radio" name="q2" value="D" required> ឃ) $(1, 3)$</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៣. ប្រមាណវិធីគុណវ៉ិចទ័រនឹងស្កាលែ (ចំនួនពិត)៖ ប្រសិនបើ $c = 2$ និង $\vec{v} = (-1, 4)$ តើកន្សោម $c\vec{v}$ មានតម្លៃស្មើនឹងអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A" required> ក) $(-2, 8)$</label>
+                <label><input type="radio" name="q3" value="B" required> ខ) $(1, 6)$</label>
+                <label><input type="radio" name="q3" value="C" required> គ) $(-1, 8)$</label>
+                <label><input type="radio" name="q3" value="D" required> ឃ) $(2, 4)$</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៤. លក្ខណៈនៃវ៉ិចទ័រសូន្យ៖ សម្រាប់គ្រប់វ៉ិចទ័រ $\vec{v}$ នៅក្នុងលំហវ៉ិចទ័រ តើផលបូក $\vec{v} + \vec{0}$ ស្មើនឹងអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A" required> ក) $\vec{0}$</label>
+                <label><input type="radio" name="q4" value="B" required> ខ) $1$</label>
+                <label><input type="radio" name="q4" value="C" required> គ) $\vec{v}$</label>
+                <label><input type="radio" name="q4" value="D" required> ឃ) $-\vec{v}$</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៥. នៅក្នុងនិយមន័យនៃ "លំហរងវ៉ិចទ័រ" (Vector Subspace) តើលក្ខខណ្ឌចាំបាច់ទី១ ដែលសំណុំមួយត្រូវតែមានជានិច្ច គឺជាអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A" required> ក) ត្រូវតែមានចំនួនអវិជ្ជមាន</label>
+                <label><input type="radio" name="q5" value="B" required> ខ) ត្រូវតែមានផ្ទុកវ៉ិចទ័រសូន្យ $\vec{0}$ ជានិច្ច</label>
+                <label><input type="radio" name="q5" value="C" required> គ) ត្រូវតែមានផ្ទុកប្រភាគ</label>
+                <label><input type="radio" name="q5" value="D" required> ឃ) មិនចាំបាច់មានលក្ខខណ្ឌអ្វីទេ</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៦. ផ្អែកលើលក្ខខណ្ឌនៃលំហរងខាងលើ តើក្រាបមួយណាខាងក្រោមតំណាងឱ្យ "លំហរង" (Subspace) នៅក្នុង $\mathbb{R}^2$?</strong>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Subspace_illustration.svg/400px-Subspace_illustration.svg.png" alt="Subspace Line through Origin" class="q-image" style="max-width: 280px; background-color: white; padding: 10px;">
+            <div class="options">
+                <label><input type="radio" name="q6" value="A" required> ក) បន្ទាត់ដែលកាត់តាមគល់តម្រុយ $(0,0)$</label>
+                <label><input type="radio" name="q6" value="B" required> ខ) បន្ទាត់ដែលមិនកាត់តាមគល់តម្រុយ</label>
+                <label><input type="radio" name="q6" value="C" required> គ) រង្វង់ដែលមានផ្ចិតនៅគល់តម្រុយ</label>
+                <label><input type="radio" name="q6" value="D" required> ឃ) ចំណុចមួយនៅឆ្ងាយពីគល់តម្រុយ</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៧. តើវ៉ិចទ័រផ្ទុយ (Additive Inverse) នៃវ៉ិចទ័រ $\vec{u} = (5, -3)$ គឺអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A" required> ក) $(-5, -3)$</label>
+                <label><input type="radio" name="q7" value="B" required> ខ) $(5, 3)$</label>
+                <label><input type="radio" name="q7" value="C" required> គ) $(-5, 3)$</label>
+                <label><input type="radio" name="q7" value="D" required> ឃ) $(0, 0)$</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៨. ការបូកវ៉ិចទ័រមានលក្ខណៈត្រឡប់ (Commutativity)។ តើសមភាពមួយណាខាងក្រោមដែលបង្ហាញពីលក្ខណៈនេះបានត្រឹមត្រូវ?</strong>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A" required> ក) $\vec{u} + (\vec{v} + \vec{w}) = (\vec{u} + \vec{v}) + \vec{w}$</label>
+                <label><input type="radio" name="q8" value="B" required> ខ) $\vec{u} + \vec{v} = \vec{v} + \vec{u}$</label>
+                <label><input type="radio" name="q8" value="C" required> គ) $c(\vec{u} + \vec{v}) = c\vec{u} + c\vec{v}$</label>
+                <label><input type="radio" name="q8" value="D" required> ឃ) $\vec{u} + \vec{0} = \vec{u}$</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៩. តើទម្រង់ទូទៅនៃបន្សំលីនេអ៊ែរ (Linear Combination) រវាងពីរវ៉ិចទ័រ $\vec{u}$ និង $\vec{v}$ ដោយមាន $a$ និង $b$ ជាស្កាលែ គឺជាអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A" required> ក) $a\vec{u} \times b\vec{v}$</label>
+                <label><input type="radio" name="q9" value="B" required> ខ) $\frac{a\vec{u}}{b\vec{v}}$</label>
+                <label><input type="radio" name="q9" value="C" required> គ) $a\vec{u} + b\vec{v}$</label>
+                <label><input type="radio" name="q9" value="D" required> ឃ) $a + b + \vec{u} + \vec{v}$</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>១០. ប្រសិនបើគេយកវ៉ិចទ័រ $\vec{w}$ បូកជាមួយនឹងវ៉ិចទ័រផ្ទុយរបស់វា $(-\vec{w})$ តើលទ្ធផលដែលទទួលបានគឺជាអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A" required> ក) វ៉ិចទ័រដើម $\vec{w}$</label>
+                <label><input type="radio" name="q10" value="B" required> ខ) ចំនួនសូន្យ $0$ (ជាស្កាលែ)</label>
+                <label><input type="radio" name="q10" value="C" required> គ) វ៉ិចទ័រទ្វេដង $2\vec{w}$</label>
+                <label><input type="radio" name="q10" value="D" required> ឃ) វ៉ិចទ័រសូន្យ $\vec{0}$</label>
+            </div>
+        </div>
+
+        <button type="submit" class="submit-btn">បញ្ជូនចម្លើយ (Submit Vector Space Quiz)</button>
+    </form>
+</div>
+
+</body>
+</html>

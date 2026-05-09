@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>វិញ្ញាសាគណិតវិទ្យា៖ តក្កវិទ្យា (MCQs)</title>
+    
+    <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    }
+  };
+</script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Khmer OS Battambang', sans-serif; line-height: 1.8; background-color: #f4f7f6; padding: 20px; }
+        .container { max-width: 800px; margin: auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h2 { color: #2980b9; border-bottom: 2px solid #2980b9; padding-bottom: 10px; text-align: center; }
+        .input-group { margin-bottom: 20px; }
+        .input-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-family: inherit; }
+        .question-block { margin-bottom: 25px; padding: 15px; background: #fafafa; border-left: 4px solid #27ae60; border-radius: 4px; }
+        .options { margin-top: 10px; padding-left: 20px; }
+        .options label { display: block; margin-bottom: 8px; cursor: pointer; }
+        .submit-btn { background-color: #2980b9; color: white; padding: 12px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; width: 100%; font-family: inherit; }
+        .submit-btn:hover { background-color: #1a5276; }
+        .logic-box { background: #1a252f; padding: 15px; border-radius: 5px; margin: 15px 0; font-family: 'Courier New', Courier, monospace; font-size: 1em; border: 1px dashed #e74c3c; color: #ecf0f1; overflow-x: auto; }
+
+    </style>
+    
+    <!--style>
+        body { font-family: 'Khmer OS Battambang', sans-serif; line-height: 1.8; background-color: #2c3e50; padding: 20px; color: #ecf0f1; }
+        .container { max-width: 850px; margin: auto; background: #34495e; padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border-top: 8px solid #e74c3c; }
+        h2 { color: #e74c3c; border-bottom: 2px solid #c0392b; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .question-block { margin-bottom: 30px; padding: 25px; background: #2c3e50; border: 1px solid #455a64; border-left: 5px solid #e74c3c; border-radius: 8px; transition: transform 0.2s; }
+        .question-block:hover { transform: translateX(5px); background: #3b4d61; }
+        .options { margin-top: 15px; padding-left: 15px; }
+        .options label { display: block; margin-bottom: 12px; cursor: pointer; transition: color 0.2s; font-size: 1.05em; color: #bdc3c7; }
+        .options label:hover { color: #e74c3c; font-weight: bold; }
+        .logic-box { background: #1a252f; padding: 15px; border-radius: 5px; margin: 15px 0; font-family: 'Courier New', Courier, monospace; font-size: 1em; border: 1px dashed #e74c3c; color: #ecf0f1; overflow-x: auto; }
+        .submit-btn { background-color: #e74c3c; color: white; padding: 16px 20px; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; width: 100%; font-family: inherit; margin-top: 20px; text-transform: uppercase; font-weight: bold; transition: 0.3s; }
+        .submit-btn:hover { background-color: #c0392b; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4); }
+    </!--style -->
+</head>
+<body>
+
+<div class="container">
+    <h2>Quiz: មូលដ្ឋានគ្រឹះនៃលំហវ៉ិចទ័រ និង អាហ្វីន <br/>
+    រយៈពេល ៤៥ នាទី TUP-BA-2026
+    </h2>
+    <form action="submit_quiz.php" method="POST">
+        
+        <div class="input-group">
+            <input type="text" name="student_id" placeholder="បញ្ចូលលេខរៀង *" required>
+        </div>
+        <div class="input-group">
+            <input type="text" name="student_name" placeholder="បញ្ចូលឈ្មោះពេញ *" required>
+        </div>
+
+        <div class="instruction">
+            <strong>ការណែនាំ៖</strong> លំហាត់នេះមានកម្រិតងាយស្រួល សម្រាប់សាកល្បងការយល់ដឹងជាមូលដ្ឋានទៅលើ វ៉ិចទ័រ ការបូកវ៉ិចទ័រ និងសញ្ញាណនៃលំហរង។
+        </div>
+        
+        <div class="question-block">
+            <strong>១. នៅក្នុងប្លង់ទ្វេវិមាត្រ (លំហ \(\mathbb{R}^2\)) តើវ៉ិចទ័រមួយត្រូវបានតំណាងដោយអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A" required> ក) ចំនួនពិតតែមួយគត់</label>
+                <label><input type="radio" name="q1" value="B" required> ខ) កូអរដោនេពីរ $(x, y)$</label>
+                <label><input type="radio" name="q1" value="C" required> គ) កូអរដោនេបី $(x, y, z)$</label>
+                <label><input type="radio" name="q1" value="D" required> ឃ) សមីការបន្ទាត់មួយ</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>២. ប្រមាណវិធីបូកវ៉ិចទ័រ៖ ប្រសិនបើគេមានវ៉ិចទ័រ $\vec{u} = (1, 2)$ និង $\vec{v} = (3, 1)$ តើផលបូក $\vec{u} + \vec{v}$ ស្មើនឹងប៉ុន្មាន?</strong>
+            <!--img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Vector_addition.svg/512px-Vector_addition.svg.png" alt="វិធាននៃការបូកវ៉ិចទ័រ (ចតុកោណកែង និង ត្រីកោណ)" class="q-image" style="max-width: 250px;"-->
+            <div class="options">
+                <label><input type="radio" name="q2" value="A" required> ក) $(2, -1)$</label>
+                <label><input type="radio" name="q2" value="B" required> ខ) $(4, 3)$</label>
+                <label><input type="radio" name="q2" value="C" required> គ) $(3, 2)$</label>
+                <label><input type="radio" name="q2" value="D" required> ឃ) $(1, 3)$</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៣. ប្រមាណវិធីគុណវ៉ិចទ័រនឹងស្កាលែ (ចំនួនពិត)៖ ប្រសិនបើ $c = 2$ និង $\vec{v} = (-1, 4)$ តើកន្សោម $c\vec{v}$ មានតម្លៃស្មើនឹងអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A" required> ក) $(-2, 8)$</label>
+                <label><input type="radio" name="q3" value="B" required> ខ) $(1, 6)$</label>
+                <label><input type="radio" name="q3" value="C" required> គ) $(-1, 8)$</label>
+                <label><input type="radio" name="q3" value="D" required> ឃ) $(2, 4)$</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៤. លក្ខណៈនៃវ៉ិចទ័រសូន្យ៖ សម្រាប់គ្រប់វ៉ិចទ័រ $\vec{v}$ នៅក្នុងលំហវ៉ិចទ័រ តើផលបូក $\vec{v} + \vec{0}$ ស្មើនឹងអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A" required> ក) $\vec{0}$</label>
+                <label><input type="radio" name="q4" value="B" required> ខ) $1$</label>
+                <label><input type="radio" name="q4" value="C" required> គ) $\vec{v}$</label>
+                <label><input type="radio" name="q4" value="D" required> ឃ) $-\vec{v}$</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៥. នៅក្នុងនិយមន័យនៃ "លំហរងវ៉ិចទ័រ" (Vector Subspace) តើលក្ខខណ្ឌចាំបាច់ទី១ ដែលសំណុំមួយត្រូវតែមានជានិច្ច គឺជាអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A" required> ក) ត្រូវតែមានចំនួនអវិជ្ជមាន</label>
+                <label><input type="radio" name="q5" value="B" required> ខ) ត្រូវតែមានផ្ទុកវ៉ិចទ័រសូន្យ $\vec{0}$ ជានិច្ច</label>
+                <label><input type="radio" name="q5" value="C" required> គ) ត្រូវតែមានផ្ទុកប្រភាគ</label>
+                <label><input type="radio" name="q5" value="D" required> ឃ) មិនចាំបាច់មានលក្ខខណ្ឌអ្វីទេ</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៦. ផ្អែកលើលក្ខខណ្ឌនៃលំហរងខាងលើ តើមួយណាខាងក្រោមតំណាងឱ្យ "លំហរង" (Subspace) នៅក្នុង $\mathbb{R}^2$?</strong>
+            <!--img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Subspace_illustration.svg/400px-Subspace_illustration.svg.png" alt="Subspace Line through Origin" class="q-image" style="max-width: 280px; background-color: white; padding: 10px;"-->
+            <div class="options">
+                <label><input type="radio" name="q6" value="A" required> ក) បន្ទាត់ដែលកាត់តាមគល់តម្រុយ $(0,0)$</label>
+                <label><input type="radio" name="q6" value="B" required> ខ) បន្ទាត់ដែលមិនកាត់តាមគល់តម្រុយ</label>
+                <label><input type="radio" name="q6" value="C" required> គ) រង្វង់ដែលមានផ្ចិតនៅគល់តម្រុយ</label>
+                <label><input type="radio" name="q6" value="D" required> ឃ) ចំណុចមួយនៅឆ្ងាយពីគល់តម្រុយ</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៧. តើវ៉ិចទ័រផ្ទុយ (Additive Inverse) នៃវ៉ិចទ័រ $\vec{u} = (5, -3)$ គឺអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A" required> ក) $(-5, -3)$</label>
+                <label><input type="radio" name="q7" value="B" required> ខ) $(5, 3)$</label>
+                <label><input type="radio" name="q7" value="C" required> គ) $(-5, 3)$</label>
+                <label><input type="radio" name="q7" value="D" required> ឃ) $(0, 0)$</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៨. ការបូកវ៉ិចទ័រមានលក្ខណៈត្រឡប់ (Commutativity)។ តើសមភាពមួយណាខាងក្រោមដែលបង្ហាញពីលក្ខណៈនេះបានត្រឹមត្រូវ?</strong>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A" required> ក) $\vec{u} + (\vec{v} + \vec{w}) = (\vec{u} + \vec{v}) + \vec{w}$</label>
+                <label><input type="radio" name="q8" value="B" required> ខ) $\vec{u} + \vec{v} = \vec{v} + \vec{u}$</label>
+                <label><input type="radio" name="q8" value="C" required> គ) $c(\vec{u} + \vec{v}) = c\vec{u} + c\vec{v}$</label>
+                <label><input type="radio" name="q8" value="D" required> ឃ) $\vec{u} + \vec{0} = \vec{u}$</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៩. តើទម្រង់ទូទៅនៃបន្សំលីនេអ៊ែរ (Linear Combination) រវាងពីរវ៉ិចទ័រ $\vec{u}$ និង $\vec{v}$ ដោយមាន $a$ និង $b$ ជាស្កាលែរ គឺជាអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A" required> ក) $a\vec{u} \times b\vec{v}$</label>
+                <label><input type="radio" name="q9" value="B" required> ខ) $\frac{a\vec{u}}{b\vec{v}}$</label>
+                <label><input type="radio" name="q9" value="C" required> គ) $a\vec{u} + b\vec{v}$</label>
+                <label><input type="radio" name="q9" value="D" required> ឃ) $a + b + \vec{u} + \vec{v}$</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>១០. ប្រសិនបើគេយកវ៉ិចទ័រ $\vec{w}$ បូកជាមួយនឹងវ៉ិចទ័រផ្ទុយរបស់វា $(-\vec{w})$ តើលទ្ធផលដែលទទួលបានគឺជាអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A" required> ក) វ៉ិចទ័រដើម $\vec{w}$</label>
+                <label><input type="radio" name="q10" value="B" required> ខ) ចំនួនសូន្យ $0$ (ជាស្កាលែ)</label>
+                <label><input type="radio" name="q10" value="C" required> គ) វ៉ិចទ័រទ្វេដង $2\vec{w}$</label>
+                <label><input type="radio" name="q10" value="D" required> ឃ) វ៉ិចទ័រសូន្យ $\vec{0}$</label>
+            </div>
+        </div>
+        
+        <div class="question-block">
+            <strong>១១. តាមលក្ខខណ្ឌនៃលំហរងវ៉ិចទ័រ តើសមីការប្លង់ \( P: ax + by + cz = d \) មួយណាទើបអាចចាត់ទុកជា "លំហរង" នៃ \( \mathbb{R}^3 \) បាន?</strong>
+            <div class="options">
+                <label><input type="radio" name="q11" value="A" required> ក) ត្រូវតែមាន \( d = 1 \)</label>
+                <label><input type="radio" name="q11" value="B"> ខ) ត្រូវតែមាន \( d = 0 \)</label>
+                <label><input type="radio" name="q11" value="C"> គ) ត្រូវតែមាន \( a, b, c \) ជាលេខវិជ្ជមាន</label>
+                <label><input type="radio" name="q11" value="D"> ឃ) គ្រប់ប្លង់ទាំងអស់ក្នុង \( \mathbb{R}^3 \) សុទ្ធតែជាលំហរង</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>១២. ក្នុងចំណោមសំណុំរងនៃ \( \mathbb{R}^3 \) ខាងក្រោម តើសំណុំមួយណាដែលជាលំហរង (Vector Subspace) ពិតប្រាកដ?</strong>
+            <div class="options">
+                <label><input type="radio" name="q12" value="A" required> ក) សំណុំនៃចំណុចទាំងអស់នៅលើស្វ៊ែរ \( x^2 + y^2 + z^2 = 1 \)</label>
+                <label><input type="radio" name="q12" value="B"> ខ) សំណុំនៃចំណុចដែលផ្ទៀងផ្ទាត់សមីការបន្ទាត់ \( x = t, y = t + 1, z = 2t \)</label>
+                <label><input type="radio" name="q12" value="C"> គ) សំណុំនៃចំណុចដែលផ្ទៀងផ្ទាត់សមីការប្លង់ \( 2x - 3y + 4z = 0 \)</label>
+                <label><input type="radio" name="q12" value="D"> ឃ) សំណុំនៃវ៉ិចទ័រ \( (x, y, z) \) ដែល \( x \ge 0, y \ge 0, z \ge 0 \)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>១៣. ឧបមាថា \( P_1 \) និង \( P_2 \) ជាប្លង់ពីរផ្សេងគ្នាដែលសុទ្ធតែឆ្លងកាត់គល់តម្រុយ \( (0,0,0) \) ក្នុង \( \mathbb{R}^3 \)។ តើប្រពន្ធនៃប្លង់ទាំងពីរនេះ \( P_1 \cap P_2 \) តំណាងឱ្យអ្វី ហើយវាជាលំហរងដែរឬទេ?</strong>
+            <div class="options">
+                <label><input type="radio" name="q13" value="A" required> ក) ជាបន្ទាត់មួយដែលឆ្លងកាត់គល់តម្រុយ ហើយវាជាលំហរង។</label>
+                <label><input type="radio" name="q13" value="B"> ខ) ជាចំណុចតែមួយគត់គឺ \( (0,0,0) \) ហើយវាមិនមែនជាលំហរងទេ។</label>
+                <label><input type="radio" name="q13" value="C"> គ) ជាបន្ទាត់មួយដែលមិនឆ្លងកាត់គល់តម្រុយ ដូច្នេះវាមិនមែនជាលំហរងទេ។</label>
+                <label><input type="radio" name="q13" value="D"> ឃ) ជាសំណុំទទេ \( \emptyset \) ។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>១៤. ឧបមាថា \( L_1 \) និង \( L_2 \) ជាបន្ទាត់ពីរផ្សេងគ្នាដែលឆ្លងកាត់គល់តម្រុយក្នុង \( \mathbb{R}^3 \)។ តើប្រជុំនៃបន្ទាត់ទាំងពីរនេះ \( L_1 \cup L_2 \) ជាលំហរងនៃ \( \mathbb{R}^3 \) ដែរឬទេ?</strong>
+            <div class="options">
+                <label><input type="radio" name="q14" value="A" required> ក) បាទ/ចាស វាជាលំហរងជានិច្ច ព្រោះវាមានផ្ទុក \( \vec{0} \)។</label>
+                <label><input type="radio" name="q14" value="B"> ខ) ទេ វាមិនមែនជាលំហរងទេ ព្រោះវាមិនបិទជិតចំពោះប្រមាណវិធីបូកវ៉ិចទ័រ (Not closed under addition)។</label>
+                <label><input type="radio" name="q14" value="C"> គ) បាទ/ចាស វាបង្កើតបានជាប្លង់មួយដែលជាលំហរង។</label>
+                <label><input type="radio" name="q14" value="D"> ឃ) ទេ ព្រោះវាមិនបិទជិតចំពោះប្រមាណវិធីគុណនឹងស្កាលែ។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>១៥. បន្ទាត់មួយកាត់គល់តម្រុយក្នុង \( \mathbb{R}^3 \) អាចសរសេរជាទម្រង់សំណុំបានថា \[ S = \{ t(a, b, c) \mid t \in \mathbb{R} \} \] តើទម្រង់នេះមានន័យដូចម្តេចក្នុងភាសាពិជគណិតលីនេអ៊ែរ?</strong>
+            <div class="options">
+                <label><input type="radio" name="q15" value="A" required> ក) វាជាគោល (Basis) នៃ \( \mathbb{R}^3 \)</label>
+                <label><input type="radio" name="q15" value="B"> ខ) វាជាលំហរងដែលមានវិមាត្រស្មើ ២</label>
+                <label><input type="radio" name="q15" value="C"> គ) វាជាសំណុំបង្ក (Span) ដោយវ៉ិចទ័រតែមួយគត់ \( \vec{v} = (a, b, c) \)</label>
+                <label><input type="radio" name="q15" value="D"> ឃ) វាជាបន្សំលីនេអ៊ែរនៃវ៉ិចទ័រឯកតាទាំងបី</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>១៦. គេឱ្យសំណុំ \[ S = \{ (x, y, z) \in \mathbb{R}^3 \mid x + y + z = 0 \text{ and } x - y = 0 \} \] តើ \( S \) តំណាងឱ្យរូបរាងធរណីមាត្រអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q16" value="A" required> ក) ជាប្លង់មួយកាត់តាមគល់តម្រុយ</label>
+                <label><input type="radio" name="q16" value="B"> ខ) ជាបន្ទាត់មួយកាត់តាមគល់តម្រុយ ដែលមានវ៉ិចទ័រប្រាប់ទិស \( (1, 1, -2) \)</label>
+                <label><input type="radio" name="q16" value="C"> គ) ជាចំណុចតែមួយគត់គឺគល់តម្រុយ \( (0,0,0) \)</label>
+                <label><input type="radio" name="q16" value="D"> ឃ) ជាលំហ \( \mathbb{R}^3 \) ទាំងមូល</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>១៧. តើលំហរង (Subspace) នៅក្នុងលំហ \( \mathbb{R}^3 \) អាចមានវិមាត្រ (Dimension) ប៉ុន្មានខ្លះ?</strong>
+            <div class="options">
+                <label><input type="radio" name="q17" value="A" required> ក) មានតែ ៣ ប៉ុណ្ណោះ</label>
+                <label><input type="radio" name="q17" value="B"> ខ) មានតែ ១ (បន្ទាត់) និង ២ (ប្លង់)</label>
+                <label><input type="radio" name="q17" value="C"> គ) អាចមានវិមាត្រ ០, ១, ២, ឬ ៣</label>
+                <label><input type="radio" name="q17" value="D"> ឃ) អាចមានវិមាត្រចាប់ពី ១ ដល់អនន្ត</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>១៨. ឧបមាថាប្លង់ \( P \) មួយកាត់តាមគល់តម្រុយក្នុង \( \mathbb{R}^3 \) ដែលមានវ៉ិចទ័រណរម៉ាល់ (Normal Vector) \( \vec{n} = (1, -2, 1) \)។ ក្នុងចំណោមវ៉ិចទ័រខាងក្រោម តើវ៉ិចទ័រមួយណាដែលស្ថិតនៅក្នុងប្លង់លំហរង \( P \) នេះ?</strong>
+            <div class="options">
+                <label><input type="radio" name="q18" value="A" required> ក) \( (1, 1, 1) \)</label>
+                <label><input type="radio" name="q18" value="B"> ខ) \( (1, 0, 0) \)</label>
+                <label><input type="radio" name="q18" value="C"> គ) \( (2, 1, 0) \)</label>
+                <label><input type="radio" name="q18" value="D"> ឃ) \( (1, -2, 1) \)</label>
+            </div>
+        </div>
+
+     <!--   <button type="submit" class="submit-btn">បញ្ជូនចម្លើយ (Submit Cartesian Quiz)</button>-->
+    </form>
+</div>    
+    
+    
+</body>
+
+</html>
