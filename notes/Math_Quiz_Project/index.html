@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>វិញ្ញាសាគណិតវិទ្យា៖ តក្កវិទ្យា (MCQs)</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Khmer OS Battambang', sans-serif; line-height: 1.8; background-color: #f4f7f6; padding: 20px; }
+        .container { max-width: 800px; margin: auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h2 { color: #2980b9; border-bottom: 2px solid #2980b9; padding-bottom: 10px; text-align: center; }
+        .input-group { margin-bottom: 20px; }
+        .input-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-family: inherit; }
+        .question-block { margin-bottom: 25px; padding: 15px; background: #fafafa; border-left: 4px solid #27ae60; border-radius: 4px; }
+        .options { margin-top: 10px; padding-left: 20px; }
+        .options label { display: block; margin-bottom: 8px; cursor: pointer; }
+        .submit-btn { background-color: #2980b9; color: white; padding: 12px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; width: 100%; font-family: inherit; }
+        .submit-btn:hover { background-color: #1a5276; }
+        .logic-box { background: #1a252f; padding: 15px; border-radius: 5px; margin: 15px 0; font-family: 'Courier New', Courier, monospace; font-size: 1em; border: 1px dashed #e74c3c; color: #ecf0f1; overflow-x: auto; }
+
+    </style>
+    
+    <!--style>
+        body { font-family: 'Khmer OS Battambang', sans-serif; line-height: 1.8; background-color: #2c3e50; padding: 20px; color: #ecf0f1; }
+        .container { max-width: 850px; margin: auto; background: #34495e; padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border-top: 8px solid #e74c3c; }
+        h2 { color: #e74c3c; border-bottom: 2px solid #c0392b; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .question-block { margin-bottom: 30px; padding: 25px; background: #2c3e50; border: 1px solid #455a64; border-left: 5px solid #e74c3c; border-radius: 8px; transition: transform 0.2s; }
+        .question-block:hover { transform: translateX(5px); background: #3b4d61; }
+        .options { margin-top: 15px; padding-left: 15px; }
+        .options label { display: block; margin-bottom: 12px; cursor: pointer; transition: color 0.2s; font-size: 1.05em; color: #bdc3c7; }
+        .options label:hover { color: #e74c3c; font-weight: bold; }
+        .logic-box { background: #1a252f; padding: 15px; border-radius: 5px; margin: 15px 0; font-family: 'Courier New', Courier, monospace; font-size: 1em; border: 1px dashed #e74c3c; color: #ecf0f1; overflow-x: auto; }
+        .submit-btn { background-color: #e74c3c; color: white; padding: 16px 20px; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; width: 100%; font-family: inherit; margin-top: 20px; text-transform: uppercase; font-weight: bold; transition: 0.3s; }
+        .submit-btn:hover { background-color: #c0392b; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4); }
+    </!--style -->
+</head>
+<body>
+
+<div class="container">
+    <h2>វិញ្ញាសាពិជគណិត សម្រាប់ឆមាសទី១ <br/>
+    រយៈពេល ៩០នាទី (2025 - 2026) ក្រុម M1-M6-A2
+    </h2>
+    <form action="submit_quiz.php" method="POST">
+        
+        <div class="input-group">
+            <input type="text" name="student_id" placeholder="បញ្ចូលលេខរៀង *" required>
+        </div>
+        <div class="input-group">
+            <input type="text" name="student_name" placeholder="បញ្ចូលឈ្មោះពេញ *" required>
+        </div>
+
+        <div class="question-block">
+            <strong>១. ក្នុងចំណោមប្រយោគខាងក្រោម តើមួយណាជា "សំណើតក្កវិទ្យា" (Proposition)?</strong>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A" required> ក) តើម៉ោងប៉ុន្មានហើយ?</label>
+                <label><input type="radio" name="q1" value="B"> ខ) \( x + 2 = 5 \)</label>
+                <label><input type="radio" name="q1" value="C"> គ) ប្រទេសកម្ពុជាស្ថិតនៅទ្វីបអាស៊ី។</label>
+                <label><input type="radio" name="q1" value="D"> ឃ) សូមបិទទ្វារ!</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>២. ឧបមាថា \( p \) គឺ "ថ្ងៃនេះមានភ្លៀងធ្លាក់" និង \( q \) គឺ "ខ្ញុំយកឆ័ត្រមក"។ តើកន្សោម \( \neg p \rightarrow \neg q \) មានន័យដូចម្តេច?</strong>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A" required> ក) បើថ្ងៃនេះមានភ្លៀង ខ្ញុំយកឆ័ត្រមក។</label>
+                <label><input type="radio" name="q2" value="B"> ខ) បើថ្ងៃនេះគ្មានភ្លៀងទេ ខ្ញុំមិនយកឆ័ត្រមកទេ។</label>
+                <label><input type="radio" name="q2" value="C"> គ) ថ្ងៃនេះគ្មានភ្លៀង ហើយខ្ញុំមិនយកឆ័ត្រមកទេ។</label>
+                <label><input type="radio" name="q2" value="D"> ឃ) បើខ្ញុំមិនយកឆ័ត្រមកទេ ថ្ងៃនេះគ្មានភ្លៀងទេ។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៣. យោងតាមច្បាប់ De Morgan តើសំណើបដិសេធនៃ "ចនចូលចិត្តផ្លែប៉ោម ឬ ម៉ារីចូលចិត្តផ្លែក្រូច" គឺជាអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A" required> ក) ចនមិនចូលចិត្តផ្លែប៉ោម ឬ ម៉ារីមិនចូលចិត្តផ្លែក្រូច។</label>
+                <label><input type="radio" name="q3" value="B"> ខ) ចនមិនចូលចិត្តផ្លែប៉ោម និង ម៉ារីមិនចូលចិត្តផ្លែក្រូច។</label>
+                <label><input type="radio" name="q3" value="C"> គ) ប្រសិនបើចនមិនចូលចិត្តផ្លែប៉ោម ម៉ារីមិនចូលចិត្តផ្លែក្រូច។</label>
+                <label><input type="radio" name="q3" value="D"> ឃ) ចនចូលចិត្តផ្លែប៉ោម និង ម៉ារីចូលចិត្តផ្លែក្រូច។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៤. តើកន្សោម \( p \lor \neg p \) ជាអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A" required> ក) Tautology (ពិតជានិច្ច)</label>
+                <label><input type="radio" name="q4" value="B"> ខ) Contradiction (មិនពិតជានិច្ច)</label>
+                <label><input type="radio" name="q4" value="C"> គ) Contingency (អាចពិតឬមិនពិត)</label>
+                <label><input type="radio" name="q4" value="D"> ឃ) មិនមែនជាកន្សោមតក្កវិទ្យាទេ</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៥. តើកន្សោម "ប្រសិនបើ \( 1 + 1 = 3 \) នោះ ព្រះអាទិត្យរះនៅទិសខាងលិច" មានតម្លៃភាពពិតយ៉ាងដូចម្តេច?</strong>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A" required> ក) មិនពិត (False)</label>
+                <label><input type="radio" name="q5" value="B"> ខ) ពិត (True) ព្រោះសម្មតិកម្មខុស ធ្វើឱ្យលក្ខខណ្ឌពិតជានិច្ច</label>
+                <label><input type="radio" name="q5" value="C"> គ) មិនអាចកំណត់បាន</label>
+                <label><input type="radio" name="q5" value="D"> ឃ) ពិត (True) ព្រោះព្រះអាទិត្យពិតជារះនៅទិសខាងលិច</label>
+            </div>
+        </div>
+
+        <!--button type="submit" class="submit-btn">បញ្ជូនចម្លើយ (Submit Answers)</button-->
+    </form>
+</div>
+
+    
+ <div class="container">
+    <form action="submit_quiz.php" method="POST">
+
+        <!--h2>ផ្នែកទី ២៖ បរិមាណករ (Quantifiers)</h2-->
+        
+        <div class="question-block">
+            <strong>៦. ចូរបកស្រាយអត្ថន័យនៃកន្សោម \( \forall x \in \mathbb{R}:  (x^2 \ge 0) \) មកជាភាសាខ្មែរឲ្យបានត្រឹមត្រូវបំផុត៖</strong>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A" required> ក) មានចំនួនពិតខ្លះដែលការេរបស់វាធំជាង ឬស្មើ ០។</label>
+                <label><input type="radio" name="q6" value="B"> ខ) គ្រប់ចំនួនពិតទាំងអស់ សុទ្ធតែមានការេធំជាង ឬស្មើ ០។</label>
+                <label><input type="radio" name="q6" value="C"> គ) គ្រប់ចំនួនគត់ទាំងអស់ សុទ្ធតែមានការេធំជាង ០។</label>
+                <label><input type="radio" name="q6" value="D"> ឃ) គ្មានចំនួនពិតណាដែលមានការេតូចជាង ០ ទេ។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៧. តើសំណើ \( \exists x \in \mathbb{Z} : (2x = 5) \) ពិតឬមិនពិត? ហេតុអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A" required> ក) ពិត ព្រោះ \( x = 2.5 \) ផ្ទៀងផ្ទាត់សមីការ។</label>
+                <label><input type="radio" name="q7" value="B"> ខ) មិនពិត ព្រោះគ្មានចំនួនគត់ (\( \mathbb{Z} \)) ណាគុណនឹង ២ ស្មើ ៥ ឡើយ។</label>
+                <label><input type="radio" name="q7" value="C"> គ) ពិត ព្រោះ \( x = 5/2 \) ជាចំនួនសនិទាន។</label>
+                <label><input type="radio" name="q7" value="D"> ឃ) មិនពិត ព្រោះសមីការនេះគ្មានឫសសោះ។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៨. ចូររកបដិសេធ (Negation) នៃកន្សោម \( \forall x \exists y: (x + y = 0) \) ដោយមិនឲ្យមានសញ្ញា \( \neg \) នៅពីមុខបរិមាណករ៖</strong>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A" required> ក) \( \exists x \forall y:  (x + y \neq 0) \)</label>
+                <label><input type="radio" name="q8" value="B"> ខ) \( \forall x \forall y: (x + y \neq 0) \)</label>
+                <label><input type="radio" name="q8" value="C"> គ) \( \exists x \exists y: (x + y = 0) \)</label>
+                <label><input type="radio" name="q8" value="D"> ឃ) \( \forall y \exists x: (x + y \neq 0) \)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៩. ឧបមាថា \( P(x,y) \) គឺ "x គោរព y" ។ ចូរបកប្រែឃ្លា "មានមនុស្សម្នាក់ ដែលមនុស្សគ្រប់គ្នាគោរព" ទៅជាកន្សោមតក្កវិទ្យា៖</strong>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A" required> ក) \( \forall x \exists y: P(x, y) \)</label>
+                <label><input type="radio" name="q9" value="B"> ខ) \( \exists x \forall y: P(x, y) \)</label>
+                <label><input type="radio" name="q9" value="C"> គ) \( \exists y \forall x: P(x, y) \)</label>
+                <label><input type="radio" name="q9" value="D"> ឃ) \( \forall y \exists x: P(y, x) \)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>១០. តើកន្សោម \( \forall x \exists y: P(x,y) \) និង \( \exists y \forall x: P(x,y) \) មានអត្ថន័យដូចគ្នាដែរឬទេ?</strong>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A" required> ក) ដូចគ្នាទាំងស្រុងជានិច្ច</label>
+                <label><input type="radio" name="q10" value="B"> ខ) ខុសគ្នា (មួយមានន័យថាគ្រប់ x មាន y រៀងខ្លួន, មួយទៀតមាន y តែមួយសម្រាប់គ្រប់ x)</label>
+                <label><input type="radio" name="q10" value="C"> គ) ដូចគ្នាតែក្នុងករណីចំនួនពិតប៉ុណ្ណោះ</label>
+                <label><input type="radio" name="q10" value="D"> ឃ) មិនអាចប្រៀបធៀបគ្នាបានទេ</label>
+            </div>
+        </div>
+
+   <!--     <h2>ផ្នែកទី ៣៖ ការបកប្រែឃ្លា (Translation: Text ↔ Logic)</h2> -->
+
+        <div class="question-block">
+            <strong>១១. បកប្រែប្រយោគ "If you do not study hard, you will fail the exam" (កំណត់ S: study hard, F: fail)៖</strong>
+            <div class="options">
+                <label><input type="radio" name="q11" value="A" required> ក) \( S \rightarrow F \)</label>
+                <label><input type="radio" name="q11" value="B"> ខ) \( \neg S \rightarrow \neg F \)</label>
+                <label><input type="radio" name="q11" value="C"> គ) \( \neg S \rightarrow F \)</label>
+                <label><input type="radio" name="q11" value="D"> ឃ) \( F \rightarrow \neg S \)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>១២. ប្រែឃ្លា "សិស្សគ្រប់រូបក្នុងថ្នាក់នេះសុទ្ធតែមានកុំព្យូទ័រយួរដៃ" (កំណត់ \( C(x) \): x ជាសិស្ស, \( L(x) \): x មានកុំព្យូទ័រ)៖</strong>
+            <div class="options">
+                <label><input type="radio" name="q12" value="A" required> ក) \( \forall x: (C(x) \land L(x)) \)</label>
+                <label><input type="radio" name="q12" value="B"> ខ) \( \exists x: (C(x) \rightarrow L(x)) \)</label>
+                <label><input type="radio" name="q12" value="C"> គ) \( \forall x: (C(x) \rightarrow L(x)) \)</label>
+                <label><input type="radio" name="q12" value="D"> ឃ) \( \forall x: L(x) \)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>១៣. ចូរបកប្រែកន្សោម \( \neg \exists x: (\text{Student}(x) \land \neg \text{Pass}(x)) \) ជាភាសាខ្មែរដែលមានន័យធម្មជាតិ៖</strong>
+            <div class="options">
+                <label><input type="radio" name="q13" value="A" required> ក) គ្មានសិស្សណាប្រឡងជាប់ទេ។</label>
+                <label><input type="radio" name="q13" value="B"> ខ) មានសិស្សខ្លះប្រឡងធ្លាក់។</label>
+                <label><input type="radio" name="q13" value="C"> គ) សិស្សគ្រប់រូបសុទ្ធតែប្រឡងជាប់។</label>
+                <label><input type="radio" name="q13" value="D"> ឃ) សិស្សមិនមែនគ្រប់រូបសុទ្ធតែប្រឡងជាប់ទេ។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>១៤. "ការមានពិន្ទុ GPA សរុប ៣.៥ គឺជាលក្ខខណ្ឌគ្រប់គ្រាន់ និងចាំបាច់ (Necessary and Sufficient) ដើម្បីទទួលបានអាហារូបករណ៍" (G = GPA 3.5, S = អាហារូបករណ៍)៖</strong>
+            <div class="options">
+                <label><input type="radio" name="q14" value="A" required> ក) \( G \rightarrow S \)</label>
+                <label><input type="radio" name="q14" value="B"> ខ) \( G \leftrightarrow S \)</label>
+                <label><input type="radio" name="q14" value="C"> គ) \( S \rightarrow G \)</label>
+                <label><input type="radio" name="q14" value="D"> ឃ) \( G \lor S \)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>១៥. បកប្រែឃ្លា "គ្មាននរណាម្នាក់អាចបោកប្រាស់មនុស្សគ្រប់គ្នាបានរហូតនោះទេ" ទៅជាភាសាតក្កវិទ្យា (កំណត់ \( P(x,y) \): x បោកប្រាស់ y)៖</strong>
+            <div class="options">
+                <label><input type="radio" name="q15" value="A" required> ក) \( \neg \exists x \forall y: P(x, y) \)</label>
+                <label><input type="radio" name="q15" value="B"> ខ) \( \forall x \forall y: \neg P(x, y) \)</label>
+                <label><input type="radio" name="q15" value="C"> គ) \( \exists x \forall y: \neg P(x, y) \)</label>
+                <label><input type="radio" name="q15" value="D"> ឃ) \( \exists y \forall x: \neg P(x, y) \)</label>
+            </div>
+        </div>
+
+   <!--     <button type="submit" class="submit-btn">បញ្ជូនចម្លើយ (Submit Answers)</button>
+   -->
+ </form>
+</div>
+    
+    
+    
+<div class="container">
+    <form action="submit_quiz.php" method="POST">
+
+  <!--      <h2>ផ្នែកទី ៤៖ វិចារ និង វិធានសន្និដ្ឋាន (Arguments & Rules of Inference)</h2> -->
+        
+        <div class="question-block">
+            <strong>១៦. ពិនិត្យវិចារខាងក្រោម៖</strong>
+            <div class="logic-box">
+                ១. ប្រសិនបើខ្ញុំឈឺ ខ្ញុំនឹងមិនទៅរៀនទេ។ ( \( p \rightarrow q \) )<br>
+                ២. ខ្ញុំមិនទៅរៀនទេ។ ( \( q \) )<br>
+                ៣. ដូច្នេះ ខ្ញុំឈឺ។ ( \( \therefore p \) )
+            </div>
+            <strong>តើវិចារនេះត្រឹមត្រូវ (Valid) ដែរឬទេ?</strong>
+            <div class="options">
+                <label><input type="radio" name="q16" value="A" required> ក) ត្រឹមត្រូវ តាមវិធាន Modus Ponens។</label>
+                <label><input type="radio" name="q16" value="B"> ខ) មិនត្រឹមត្រូវ វាជាកំហុស Affirming the Consequent។</label>
+                <label><input type="radio" name="q16" value="C"> គ) ត្រឹមត្រូវ តាមវិធាន Modus Tollens។</label>
+                <label><input type="radio" name="q16" value="D"> ឃ) មិនត្រឹមត្រូវ វាជាកំហុស Denying the Antecedent។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>១៧. ប្រើវិធាន Modus Tollens ដើម្បីទាញសេចក្តីសន្និដ្ឋានពីសម្មតិកម្ម៖</strong>
+            <div class="logic-box">
+                - សម្មតិកម្មទី១៖ ប្រសិនបើកូដនេះមាន Error នោះកម្មវិធីនឹងគាំង។<br>
+                - សម្មតិកម្មទី២៖ កម្មវិធីមិនគាំងទេ។
+            </div>
+            <strong>តើលទ្ធផលដែលទទួលបានគឺអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q17" value="A" required> ក) កូដនេះមាន Error។</label>
+                <label><input type="radio" name="q17" value="B"> ខ) កម្មវិធីដើរយឺត។</label>
+                <label><input type="radio" name="q17" value="C"> គ) កូដនេះគ្មាន Error ទេ។</label>
+                <label><input type="radio" name="q17" value="D"> ឃ) មិនអាចទាញសេចក្តីសន្និដ្ឋានបានទេ។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>១៨. បើគេមានសម្មតិកម្ម \( (p \land q) \rightarrow r \) និង \( \neg r \) ។ តើគេអាចប្រើវិធានសន្និដ្ឋានអ្វីខ្លះដើម្បីទាញបាន \( \neg p \lor \neg q \) ?</strong>
+            <div class="options">
+                <label><input type="radio" name="q18" value="A" required> ក) Modus Ponens និងច្បាប់ De Morgan។</label>
+                <label><input type="radio" name="q18" value="B"> ខ) Modus Tollens និងច្បាប់ De Morgan។</label>
+                <label><input type="radio" name="q18" value="C"> គ) Hypothetical Syllogism និង Modus Ponens។</label>
+                <label><input type="radio" name="q18" value="D"> ឃ) Disjunctive Syllogism តែមួយគត់។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>១៩. ពិនិត្យវិចារដែលមានបរិមាណករ៖</strong>
+            <div class="logic-box">
+                ១. និស្សិតដែលរៀនពូកែគ្រប់រូប នឹងទទួលបានការងារល្អ។<br>
+                ២. សុខ មិនទទួលបានការងារល្អទេ។
+            </div>
+            <strong>តើយើងអាចសន្និដ្ឋានយ៉ាងណាពី "សុខ" តាមរយៈ Modus Tollens?</strong>
+            <div class="options">
+                <label><input type="radio" name="q19" value="A" required> ក) សុខ រៀនពូកែ ប៉ុន្តែគ្មានសំណាង។</label>
+                <label><input type="radio" name="q19" value="B"> ខ) សុខ មិនមែនជានិស្សិតរៀនពូកែទេ។</label>
+                <label><input type="radio" name="q19" value="C"> គ) មាននិស្សិតខ្លះរៀនមិនពូកែ តែបានការងារល្អ។</label>
+                <label><input type="radio" name="q19" value="D"> ឃ) សុខ មិនបានទៅរៀនទេ។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>២០. តើកំហុសតក្កវិទ្យា (Fallacy) ក្នុងអំណះអំណាងខាងក្រោមនេះគឺជាអ្វី?</strong>
+            <div class="logic-box">
+                "សត្វស្លាបទាំងអស់ចេះហោះ។ ប្រចៀវចេះហោះ។ ដូច្នេះ ប្រចៀវគឺជាសត្វស្លាប។"
+            </div>
+            <div class="options">
+                <label><input type="radio" name="q20" value="A" required> ក) Modus Ponens (ត្រឹមត្រូវ)។</label>
+                <label><input type="radio" name="q20" value="B"> ខ) Fallacy of Denying the Antecedent។</label>
+                <label><input type="radio" name="q20" value="C"> គ) Fallacy of Affirming the Consequent។</label>
+                <label><input type="radio" name="q20" value="D"> ឃ) Circular Reasoning (វិចារវិលជុំ)។</label>
+            </div>
+        </div>
+
+   <!--     <button type="submit" class="submit-btn">បញ្ជូនចម្លើយ (Submit Answers)</button>
+   --> </form>
+</div>
+    
+    
+<div class="container">
+    <form action="submit_quiz.php" method="POST">
+
+   <!--     <h2>ផ្នែកទី ៥៖ វិធីសាស្ត្រស្រាយបញ្ជាក់ (Proof Methods)</h2>-->
+        
+        <div class="question-block">
+            <strong>២១. ក្នុងការស្រាយបញ្ជាក់ផ្ទាល់ (Direct Proof) នៃសំណើ៖ "ប្រសិនបើ \( n \) ជាចំនួនគត់សេស នោះ \( 3n + 5 \) ជាចំនួនគូ"។ តើជំហានដំបូងដែលត្រឹមត្រូវបំផុតគឺអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q21" value="A" required> ក) ឧបមាថា \( 3n + 5 \) ជាចំនួនគូ។</label>
+                <label><input type="radio" name="q21" value="B"> ខ) តាង \( n = 2k + 1 \) ដែល \( k \) ជាចំនួនគត់។</label>
+                <label><input type="radio" name="q21" value="C"> គ) តាង \( n = 2k \) ដែល \( k \) ជាចំនួនគត់។</label>
+                <label><input type="radio" name="q21" value="D"> ឃ) ឧបមាថា \( 3n + 5 \) ជាចំនួនសេស។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>២២. ដើម្បីស្រាយបញ្ជាក់សំណើ \( p \to q \) តាមវិធី Contrapositive គេត្រូវស្រាយបញ្ជាក់ថា \( \neg q \to \neg p \) វិញ។ ចុះចំពោះសំណើ "ប្រសិនបើ \( n^2 \) ជាចំនួនគូ នោះ \( n \) ជាចំនួនគូ" តើសំណើ Contrapositive របស់វាគឺជាអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q22" value="A" required> ក) ប្រសិនបើ \( n \) មិនមែនជាចំនួនគូ នោះ \( n^2 \) ក៏មិនមែនជាចំនួនគូដែរ។</label>
+                <label><input type="radio" name="q22" value="B"> ខ) ប្រសិនបើ \( n^2 \) ជាចំនួនសេស នោះ \( n \) ជាចំនួនសេស។</label>
+                <label><input type="radio" name="q22" value="C"> គ) ប្រសិនបើ \( n \) ជាចំនួនគូ នោះ \( n^2 \) ជាចំនួនគូ។</label>
+                <label><input type="radio" name="q22" value="D"> ឃ) ប្រសិនបើ \( n^2 \) មិនមែនជាចំនួនគូ នោះ \( n \) មិនមែនជាចំនួនគូ។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>២៣. ក្នុងការស្រាយបញ្ជាក់តាមការផ្ទុយ (Proof by Contradiction) ដើម្បីបង្ហាញថា \( \sqrt{2} \) ជាចំនួនអសនិទាន តើគេត្រូវចាប់ផ្តើមដោយការសន្មត (Assumption) បែបណា?</strong>
+            <div class="options">
+                <label><input type="radio" name="q23" value="A" required> ក) សន្មតថា \( \sqrt{2} \) ជាចំនួនអសនិទាន។</label>
+                <label><input type="radio" name="q23" value="B"> ខ) សន្មតថា \( \sqrt{2} = a/b \) ដែល \( a, b \in \mathbb{Z} \) និង \( b \neq 0 \)</label>
+                <label><input type="radio" name="q23" value="C"> គ) សន្មតថា \( (\sqrt{2})^2 \) មិនមែនជាចំនួនគត់។</label>
+                <label><input type="radio" name="q23" value="D"> ឃ) សន្មតថា \( \sqrt{2} \) ជាចំនួនគូ។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>២៤. ចូររកឧទាហរណ៍ផ្ទុយ (Counterexample) ដើម្បីបង្ហាញថា "គ្រប់ចំនួនបឋម (Prime Number) ទាំងអស់ សុទ្ធតែជាចំនួនសេស" ជាសំណើមិនពិត៖</strong>
+            <div class="options">
+                <label><input type="radio" name="q24" value="A" required> ក) លេខ ៩ ព្រោះវាជាចំនួនសេសតែមិនមែនជាចំនួនបឋម។</label>
+                <label><input type="radio" name="q24" value="B"> ខ) លេខ ១ ព្រោះវាជាចំនួនសេស។</label>
+                <label><input type="radio" name="q24" value="C"> គ) លេខ ២ ព្រោះវាជាចំនួនបឋមតែជាចំនួនគូ។</label>
+                <label><input type="radio" name="q24" value="D"> ឃ) លេខ ០ ព្រោះវាមិនមែនជាចំនួនសេស។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>២៥. ក្នុងការស្រាយបញ្ជាក់តាមករណី (Proof by Cases) សម្រាប់សំណើ \( |x| \ge 0 \) ចំពោះគ្រប់ \( x \in \mathbb{R} \) តើគេគួរចែកជាករណីអ្វីខ្លះ?</strong>
+            <div class="options">
+                <label><input type="radio" name="q25" value="A" required> ក) ករណី \( x \gt 0 \) និង \( x \gt 0 \)</label>
+                <label><input type="radio" name="q25" value="B"> ខ) ករណី \( x \ge 0 \) និង \( x \lt 0 \)</label>
+                <label><input type="radio" name="q25" value="C"> គ) ករណី \( x \) ជាចំនួនគត់ និង \( x \) ជាចំនួនសនិទាន។</label>
+                <label><input type="radio" name="q25" value="D"> ឃ) ករណី \( x \) ជាចំនួនវិជ្ជមានតែមួយគត់។</label>
+            </div>
+        </div>
+
+   <!--     <button type="submit" class="submit-btn">បញ្ជូនចម្លើយ (Submit Answers)</button>
+   --> 
+    </form>
+</div>
+    
+    
+<div class="container">
+    <form action="submit_quiz.php" method="POST">
+
+     <!--   <h2>ផ្នែកទី ៦៖ សម្រាយតាមវិចារកំណើន (Mathematical Induction)</h2> -->
+        
+        <div class="question-block">
+            <strong>២៦. នៅក្នុងការស្រាយបញ្ជាក់តាមវិចារកំណើន តើជំហាន Inductive Step មានគោលបំណងសំខាន់បំផុតអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q26" value="A" required> ក) ដើម្បីបង្ហាញថាសំណើពិតចំពោះតម្លៃដំបូងបំផុត (ឧទាហរណ៍ \( n=1 \))។</label>
+                <label><input type="radio" name="q26" value="B"> ខ) ដើម្បីបង្ហាញថា ប្រសិនបើសំណើពិតចំពោះ \( k \) នោះវាក៏ពិតចំពោះ \( k+1 \) ដែរ។</label>
+                <label><input type="radio" name="q26" value="C"> គ) ដើម្បីរកមើលឧទាហរណ៍ផ្ទុយដែលធ្វើឱ្យសំណើមិនពិត។</label>
+                <label><input type="radio" name="q26" value="D"> ឃ) ដើម្បីសាកល្បងសំណើជាមួយតម្លៃលេខធំៗតាមដែលអាចធ្វើបាន។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>២៧. ដើម្បីស្រាយបញ្ជាក់សំណើ \( 1 + 2 + ... + n = \frac{n(n+1)}{2} \) តាមវិចារកំណើន ក្នុងជំហាន Inductive Step បន្ទាប់ពីឧបមាថា \( P(k) \) ពិត តើយើងត្រូវស្រាយបញ្ជាក់បែបណា?</strong>
+            <div class="options">
+                <label><input type="radio" name="q27" value="A" required> ក) បង្ហាញថា \( (1+2+...+k) + (k+1) = \frac{(k+1)(k+2)}{2} \)</label>
+                <label><input type="radio" name="q27" value="B"> ខ) បង្ហាញថា \( 1+2+...+k = \frac{k(k+1)}{2} + 1 \)</label>
+                <label><input type="radio" name="q27" value="C"> គ) បង្ហាញថា \( \frac{k(k+1)}{2} = \frac{(k+1)(k+2)}{2} \)</label>
+                <label><input type="radio" name="q27" value="D"> ឃ) បង្ហាញថា \( k+1 = \frac{(k+1)(k+2)}{2} \)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>២៨. គេចង់ស្រាយថា \( 3^n - 1 \) ចែកដាច់នឹង ២ សម្រាប់គ្រប់ \( n \ge 1 \)។ បើគេឧបមាថា \( 3^k - 1 = 2m \) ពិត តើកន្សោមសម្រាប់ \( 3^{k+1} - 1 \) អាចសរសេរបំបែកដូចម្តេចដើម្បីប្រើសម្មតិកម្មនេះ?</strong>
+            <div class="options">
+                <label><input type="radio" name="q28" value="A" required> ក) \( 3(3^k - 1) + 2 \)</label>
+                <label><input type="radio" name="q28" value="B"> ខ) \( (3^k - 1) + 3 \)</label>
+                <label><input type="radio" name="q28" value="C"> គ) \( 3^k \cdot 3 - 1^2 \)</label>
+                <label><input type="radio" name="q28" value="D"> ឃ) \( 3^k - 1 + 2k \)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>២៩. ចំពោះវិសមភាព \( n! \gt 2^n \) តម្លៃដំបូងបំផុតនៃ \( n \) (Basis Step) ដែលធ្វើឱ្យសំណើនេះ "ចាប់ផ្តើមពិត" គឺលេខប៉ុន្មាន?</strong>
+            <div class="options">
+                <label><input type="radio" name="q29" value="A" required> ក) \( n = 1 \)</label>
+                <label><input type="radio" name="q29" value="B"> ខ) \( n = 2 \)</label>
+                <label><input type="radio" name="q29" value="C"> គ) \( n = 3 \)</label>
+                <label><input type="radio" name="q29" value="D"> ឃ) \( n = 4 \)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៣០. (ការវិភាគកំហុស) </strong> <br/>
+            
+            សិស្សម្នាក់បានប្រើវិចារកំណើនដើម្បីស្រាយបញ្ជាក់ថា "សេះទាំងអស់ក្នុងលោកមានពណ៌ដូចគ្នា" ដោយឧបមាថាបើ \( P(k) \) ពិតសម្រាប់សេះ \( k \) ក្បាល វាក៏ពិតសម្រាប់ \( k+1 \) ក្បាលដែរ ដោយគ្រាន់តែប្តូរសេះមួយចេញ-ចូល។ តើកំហុសតក្កវិទ្យានៃការស្រាយបញ្ជាក់នេះស្ថិតនៅត្រង់ចំណុចណា? (ជំនួយ៖ គិតអំពីជំហានពី \( n=1 \) ទៅ \( n=2 \))។<br/>
+                
+            <br/>   <strong> ក្នុងសម្រាយបញ្ជាក់ដែលថា "សេះទាំងអស់មានពណ៌ដូចគ្នា" ដោយប្រើវិចារកំណើន កំហុសបានកើតឡើងនៅពេលប្តូរពី \( n=1 \) ទៅ \( n=2 \)? តើហេតុអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q30" value="A" required> ក) ព្រោះ Basis Step \( n=1 \) មិនពិត។</label>
+                <label><input type="radio" name="q30" value="B"> ខ) ព្រោះសំណុំសេះពីរផ្សេងគ្នា គ្មានចំណុចប្រសព្វ (Intersection) សម្រាប់ប្រៀបធៀបពណ៌។</label>
+                <label><input type="radio" name="q30" value="C"> គ) ព្រោះវិចារកំណើនមិនអាចប្រើជាមួយសត្វមានជីវិតបានទេ។</label>
+                <label><input type="radio" name="q30" value="D"> ឃ) ព្រោះសម្មតិកម្ម \( P(k) \) មិនអាចកំណត់បាន។</label>
+            </div>
+        </div>
+
+    <!--    <button type="submit" class="submit-btn">បញ្ចប់ការប្រឡង និងបញ្ជូនចម្លើយ</button>
+    --></form>
+</div>    
+    
+
+
+<div class="container">
+  <!--  <h1>វិញ្ញាសាគណិតវិទ្យា៖ កម្រិតលំបាកពិសេស</h1> 
+    <p class="subtitle">(សម្រាប់វាស់ស្ទង់សមត្ថភាពនិស្សិតឆ្នើមលើតក្កវិទ្យា និងទស្សនវិជ្ជាគណិតវិទ្យា)</p>-->
+
+    <form action="submit_quiz_advanced.php" method="POST">
+    <!--    <h2>ផ្នែកទី ៧៖ តក្កវិទ្យាអរូបី និងទ្រឹស្តីសំណុំ (Abstract Logic & Set Theory)</h2> -->
+        
+   <!--     <div class="question-block">
+            <strong>៣១. (Russell's Paradox) ឧបមាថាគេមានសំណុំ \( R = \{ x \mid x \notin x \} \) ។ តើសំណើ \( R \in R \) ផ្តល់នូវលទ្ធផលតក្កវិទ្យាបែបណា?</strong>
+            <div class="options">
+                <label><input type="radio" name="q31" value="A" required> ក) ពិត (True) ជានិច្ច តាមទ្រឹស្តីសំណុំកម្រិតមូលដ្ឋាន។</label>
+                <label><input type="radio" name="q31" value="B"> ខ) មិនពិត (False) ជានិច្ច ព្រោះសំណុំមិនអាចផ្ទុកខ្លួនឯងបានទេ។</label>
+                <label><input type="radio" name="q31" value="C"> គ) បង្កើតបានជាភាពផ្ទុយគ្នា (Contradiction) ព្រោះបើពិតវាទៅជាមិនពិត ហើយបើមិនពិតវាទៅជាពិត។</label>
+                <label><input type="radio" name="q31" value="D"> ឃ) ជា Tautology ផ្អែកតាម Zermelo-Fraenkel Set Theory។</label>
+            </div>
+        </div> -->
+
+        <div class="question-block">
+            <strong>៣១. (Knights and Knaves Puzzle) នៅលើកោះមួយ អ្នកស្រុកប្រភេទ Knight និយាយពិតជានិច្ច ចំណែក Knave និយាយកុហកជានិច្ច។ អ្នកបានជួប A និង B។ A និយាយថា៖ "យើងទាំងពីរនាក់សុទ្ធតែជា Knave"។ តើ A និង B ជាអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q32" value="A" required> ក) A ជា Knave, B ជា Knave</label>
+                <label><input type="radio" name="q32" value="B"> ខ) A ជា Knight, B ជា Knave</label>
+                <label><input type="radio" name="q32" value="C"> គ) A ជា Knave, B ជា Knight</label>
+                <label><input type="radio" name="q32" value="D"> ឃ) មិនអាចកំណត់បានទេ</label>
+            </div>
+        </div>
+
+     <!--   <div class="question-block">
+            <strong>៣២. ក្នុងចំណោមឈុតនៃឈ្នាប់តក្កវិទ្យា (Logical Connectives) ខាងក្រោម តើឈុតមួយណាដែលមានលក្ខណៈ Functional Completeness (អាចបង្កើតបានគ្រប់កន្សោមតក្កវិទ្យាទាំងអស់ដោយមិនបាច់ពឹងឈ្នាប់ផ្សេង)?</strong>
+            <div class="options">
+                <label><input type="radio" name="q33" value="A" required> ក) \( \{\lor, \rightarrow\} \)</label>
+                <label><input type="radio" name="q33" value="B"> ខ) \( \{\land, \lor\} \)</label>
+                <label><input type="radio" name="q33" value="C"> គ) \( \{\text{NAND}\} \) (Not And)</label>
+                <label><input type="radio" name="q33" value="D"> ឃ) \( \{\leftrightarrow, \neg\} \)</label>
+            </div>
+        </div> -->
+
+      <!--  <h2>ផ្នែកទី ៨៖ បរិមាណករនៃគណិតវិទ្យាវិភាគ (Logic in Analysis & Geometry)</h2> -->
+
+        <div class="question-block">
+            <strong>៣២. នៅក្នុងគណិតវិទ្យាវិភាគ និយមន័យនៃលីមីត \( \lim_{x \to a} f(x) = L \) ត្រូវបានសរសេរជា៖ <br> 
+                \[ 
+                \forall \epsilon \gt 0, \exists \delta \gt 0, \forall x (0 \lt |x - a| \lt \delta \rightarrow |f(x) - L| \lt \epsilon) 
+                \] 
+                <br>ចូររកបដិសេធ (Negation) នៃនិយមន័យនេះ៖</strong>
+            <div class="options">
+                <label><input type="radio" name="q34" value="A" required> ក) \( \exists \epsilon \gt 0, \forall \delta \gt 0, \exists x (0 \lt |x - a| \lt \delta \land |f(x) - L| \ge \epsilon) \)</label>
+                <label><input type="radio" name="q34" value="B"> ខ) \( \exists \epsilon \gt 0, \exists \delta \gt 0, \forall x (0 \lt |x - a| \lt \delta \rightarrow |f(x) - L| \ge \epsilon) \)</label>
+                <label><input type="radio" name="q34" value="C"> គ) \( \forall \epsilon \gt 0, \forall \delta \gt 0, \exists x (0 \lt |x - a| \lt \delta \land |f(x) - L| \ge \epsilon) \)</label>
+                <label><input type="radio" name="q34" value="D"> ឃ) \( \exists \epsilon \le 0, \forall \delta \le 0, \exists x (0 \lt |x - a| \lt \delta \rightarrow |f(x) - L| \gt \epsilon) \)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៣៣. ឧបមាថា \( W \) ជាលំហនៃអនុគមន៍ (Function Space)។ សំណើ "គ្រប់អនុគមន៍ \( f \in W \) ជាអនុគមន៍ជាប់ (Continuous)" មានទម្រង់ \( \forall f \in W, C(f) \)។ តើអត្ថន័យនៃបដិសេធរបស់វាគឺជាអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q35" value="A" required> ក) គ្រប់អនុគមន៍ទាំងអស់ក្នុង \( W \) សុទ្ធតែដាច់ (Discontinuous)។</label>
+                <label><input type="radio" name="q35" value="B"> ខ) មានអនុគមន៍មួយយ៉ាងតិចក្នុង \( W \) ដែលមិនជាប់ត្រង់ចំណុចណាមួយ។</label>
+                <label><input type="radio" name="q35" value="C"> គ) គ្មានអនុគមន៍ណាមួយក្នុង \( W \) ដែលជាប់នោះទេ។</label>
+                <label><input type="radio" name="q35" value="D"> ឃ) អនុគមន៍ខ្លះក្នុង \( W \) ជាអនុគមន៍ជាប់។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៣៤. គោលការណ៍ Vacuous Truth ត្រូវបានអនុវត្ត។ តើសំណើ "គ្រប់ធាតុ \( x \) នៅក្នុងសំណុំទទេ (Empty Set) គឺជារង្វង់" មានតម្លៃភាពពិតដូចម្តេច?</strong>
+            <div class="options">
+                <label><input type="radio" name="q36" value="A" required> ក) មិនពិត (False) ព្រោះសំណុំទទេគ្មានរង្វង់ទេ។</label>
+                <label><input type="radio" name="q36" value="B"> ខ) មិនអាចកំណត់បាន (Undecidable)។</label>
+                <label><input type="radio" name="q36" value="C"> គ) ពិតជានិច្ច (Vacuously True) ព្រោះមិនមានធាតុមករំលោភបំពានលក្ខខណ្ឌនេះ។</label>
+                <label><input type="radio" name="q36" value="D"> ឃ) បង្កើតបានជា Paradox។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៣៥. ប្រយោគ "តាមចំណុចមួយនៅក្រៅបន្ទាត់ គេអាចគូសបន្ទាត់ស្របបានតែមួយគត់" (ស្វ័យសត្យទី៥ របស់ Euclid) អាចសរសេរជាភាសាតក្កវិទ្យាបានត្រឹមត្រូវបំផុតតាមរយៈកន្សោមណា? (\( L \): បន្ទាត់, \( P \): ចំណុច, \( \parallel \): ស្រប)</strong>
+            <div class="options">
+                <label><input type="radio" name="q37" value="A" required> ក) \( \forall L, \forall P \notin L, \exists M (M \parallel L \land P \in M) \)</label>
+                <label><input type="radio" name="q37" value="B"> ខ) \( \forall L, \forall P \notin L, \exists! M (M \parallel L \land P \in M) \)</label>
+                <label><input type="radio" name="q37" value="C"> គ) \( \exists L, \forall P, \exists! M (M \parallel L) \)</label>
+                <label><input type="radio" name="q37" value="D"> ឃ) \( \forall L, \exists P \notin L, \forall M (M \parallel L \rightarrow P \in M) \)</label>
+            </div>
+        </div>
+
+      <!--  <h2>ផ្នែកទី ៩៖ វិធីសាស្ត្រស្រាយបញ្ជាក់កម្រិតខ្ពស់ (Advanced Proof Tactics)</h2>-->
+
+        <div class="question-block">
+            <strong>៣៦. គេចង់ស្រាយបញ្ជាក់សំណើ៖ "ប្រសិនបើ \( x + y \) ជាចំនួនអសនិទាន នោះ \( x \) ជាចំនួនអសនិទាន ឬ \( y \) ជាចំនួនអសនិទាន"។ តើវិធីសាស្ត្រមួយណាដែលមានប្រសិទ្ធភាពបំផុត និងងាយស្រួលបំផុត?</strong>
+            <div class="options">
+                <label><input type="radio" name="q38" value="A" required> ក) Direct Proof (ស្រាយបញ្ជាក់ផ្ទាល់)</label>
+                <label><input type="radio" name="q38" value="B"> ខ) Proof by Mathematical Induction (វិចារកំណើន)</label>
+                <label><input type="radio" name="q38" value="C"> គ) Proof by Contrapositive (សម្រាយតាមសំណើផ្ទុយពីសម្មតិកម្ម)</label>
+                <label><input type="radio" name="q38" value="D"> ឃ) Proof by Cases (សម្រាយតាមករណី)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៣៧. គោលការណ៍ទ្រុងព្រាប (Pigeonhole Principle) ជារឿយៗត្រូវបានប្រើក្នុងសម្រាយបញ្ជាក់ដោយការផ្ទុយពីការពិត។ តើទម្រង់តក្កវិទ្យានៃគោលការណ៍នេះគឺយ៉ាងដូចម្តេច ប្រសិនបើដាក់វត្ថុ \( n+1 \) ទៅក្នុងប្រអប់ \( n \)?</strong>
+            <div class="options">
+                <label><input type="radio" name="q39" value="A" required> ក) \( \exists \) ប្រអប់មួយដែលមានវត្ថុពិតប្រាកដ ២ គត់។</label>
+                <label><input type="radio" name="q39" value="B"> ខ) \( \exists \) ប្រអប់មួយដែលមានវត្ថុយ៉ាងតិច ២។</label>
+                <label><input type="radio" name="q39" value="C"> គ) \( \forall \) ប្រអប់ មានវត្ថុយ៉ាងហោចណាស់ ១។</label>
+                <label><input type="radio" name="q39" value="D"> ឃ) មិនមានប្រអប់ណាទទេឡើយ។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៣៨. នៅក្នុងការស្រាយបញ្ជាក់ថា \( \sqrt{3} \) គឺជាចំនួនអសនិទាន តើចំណុចផ្ទុយពី (Contradiction) គោលការណ៍ការពិតមួយណាដែលគេតែងតែទាញបាននៅចុងបញ្ចប់?</strong>
+            <div class="options">
+                <label><input type="radio" name="q40" value="A" required> ក) ចំនួនមួយមិនអាចជាចំនួនគូផង និងជាចំនួនសេសផងក្នុងពេលតែមួយ។</label>
+                <label><input type="radio" name="q40" value="B"> ខ) ប្រភាគ \( \frac{a}{b} \) ត្រូវបានសន្មតថាសម្រួលមិនបានទៀតទេ ប៉ុន្តែគេរកឃើញថា \( a \) និង \( b \) សុទ្ធតែចែកដាច់នឹង ៣ ដែលផ្ទុយពីសម្មតិកម្មដើម។</label>
+                <label><input type="radio" name="q40" value="C"> គ) \( a^2 = 3b^2 \) បំពាននឹងលក្ខណៈនៃចំនួនបឋម។</label>
+                <label><input type="radio" name="q40" value="D"> ឃ) ចំនួន \( \sqrt{3} \) មិនអាចសរសេរជាទសភាគគ្មានទីបញ្ចប់បានទេ។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៣៩. វិធាន Resolution គឺជាគ្រឹះនៃការស្រាយបញ្ជាក់ដោយស្វ័យប្រវត្តិរបស់កុំព្យូទ័រ<!-- (Automated Theorem Proving)--> ។ ប្រសិនបើគេមានសម្មតិកម្ម \( (p \lor q) \) និង \( (\neg p \lor r) \) តើគេទាញបានសន្និដ្ឋានអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q41" value="A" required> ក) \( p \lor r \)</label>
+                <label><input type="radio" name="q41" value="B"> ខ) \( q \lor r \)</label>
+                <label><input type="radio" name="q41" value="C"> គ) \( \neg q \land \neg r \)</label>
+                <label><input type="radio" name="q41" value="D"> ឃ) \( p \land \neg p \)</label>
+            </div>
+        </div>
+
+     <!--   <h2>ផ្នែកទី ១០៖ វិចារកំណើនខ្លាំង និងគោលការណ៍លំដាប់ល្អ (Strong Induction & Well-Ordering)</h2>-->
+        <div class="question-block">
+            <strong>៤០. "គោលការណ៍លំដាប់ល្អ" (Well-Ordering Principle) សម្រាប់ចំនួនគត់វិជ្ជមាន ចែងថាគ្រប់សំណុំរងមិនទទេនៃ \( \mathbb{Z}^+ \) សុទ្ធតែមានធាតុតូចជាងគេជានិច្ច។ នៅក្នុងតក្កវិទ្យា តើគោលការណ៍នេះមានទំនាក់ទំនងយ៉ាងដូចម្តេចជាមួយវិចារកំណើន (Mathematical Induction)?</strong>
+            <div class="options">
+                <label><input type="radio" name="q42" value="A" required> ក) វាគឺជាលទ្ធផលផ្ទុយពីវិចារកំណើន។</label>
+                <label><input type="radio" name="q42" value="B"> ខ) វាទន់ខ្សោយជាងវិចារកំណើន និងមិនអាចជំនួសគ្នាបានទេ។</label>
+                <label><input type="radio" name="q42" value="C"> គ) វាមានសមមូលតក្កវិទ្យា (Logically Equivalent) ទាំងស្រុងទៅនឹងវិចារកំណើន។</label>
+                <label><input type="radio" name="q42" value="D"> ឃ) វាអាចប្រើបានតែក្នុងធរណីមាត្រប៉ុណ្ណោះ។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៤១. ហេតុអ្វីបានជាទ្រឹស្តីបទ "គ្រប់ចំនួនគត់ \( n \ge 2 \) សុទ្ធតែអាចសរសេរជាផលគុណនៃចំនួនបឋម" ទាមទារឱ្យប្រើប្រាស់ វិចារកំណើនខ្លាំង (Strong Induction) ជាជាងវិចារកំណើនធម្មតា (Weak Induction)?</strong>
+            <div class="options">
+                <label><input type="radio" name="q43" value="A" required> ក) ព្រោះចំនួនបឋមមានចំនួនអនន្ត។</label>
+                <label><input type="radio" name="q43" value="B"> ខ) ព្រោះបើ \( k+1 \) ជាចំនួនកុំប៉ូស៊ីត វាអាចបំបែកជាផលគុណពីរលេខដែលតូចជាង \( k+1 \) តែលេខទាំងនោះមិនប្រាកដថាស្មើនឹង \( k \) ទេ (វាអាចជាតម្លៃណាមួយចន្លោះពី 2 ដល់ k)។</label>
+                <label><input type="radio" name="q43" value="C"> គ) ព្រោះវិចារកំណើនធម្មតាមិនអាចប្រើប្រាស់កន្សោមពហុធាបាន។</label>
+                <label><input type="radio" name="q43" value="D"> ឃ) ព្រោះ Basis Step ទាមទារតម្លៃ \( n \) ច្រើនជាងមួយ។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៤២. (Paradox ដ៏ល្បី) គេចង់បង្ហាញថា "គ្រប់ចំនួនគត់វិជ្ជមានទាំងអស់សុទ្ធតែជាលេខគួរឱ្យចាប់អារម្មណ៍ (Interesting Numbers)" ដោយប្រើការផ្ទុយតាមគោលការណ៍លំដាប់ល្អ៖ ឧបមាថាមានសំណុំនៃលេខមិនគួរឱ្យចាប់អារម្មណ៍ នោះវាតែងតែមាន "លេខតូចជាងគេ" ក្នុងសំណុំនោះ។ តើមានភាពផ្ទុយគ្នាយ៉ាងដូចម្តេចកើតឡើង?</strong>
+            <div class="options">
+                <label><input type="radio" name="q44" value="A" required> ក) លេខមិនគួរឱ្យចាប់អារម្មណ៍មិនមាននៅលើលោកនេះទេ។</label>
+                <label><input type="radio" name="q44" value="B"> ខ) ការដែលវាជា "លេខមិនគួរឱ្យចាប់អារម្មណ៍ដែលតូចជាងគេបំផុត" បានធ្វើឱ្យវាក្លាយជាលេខគួរឱ្យចាប់អារម្មណ៍បាត់ទៅហើយ។</label>
+                <label><input type="radio" name="q44" value="C"> គ) សំណុំនោះមិនមានព្រំដែនខាងក្រោម (Lower bound) ទេ។</label>
+                <label><input type="radio" name="q44" value="D"> ឃ) លេខគួរឱ្យចាប់អារម្មណ៍គឺមានតែចំនួនបឋមប៉ុណ្ណោះ។</label>
+            </div>
+        </div>
+
+    <!--    <div class="question-block">
+            <strong>៤៣. (Gödel's Concept) នៅក្នុងតក្កវិទ្យាកម្រិតខ្ពស់ ឧបមាថាប្រព័ន្ធមួយអាចបង្កើតសំណើ \( G \) មួយដែលនិយាយថា៖ "សំណើ \( G \) មិនអាចស្រាយបញ្ជាក់បានទេនៅក្នុងប្រព័ន្ធនេះ" ។ ប្រសិនបើប្រព័ន្ធនោះគ្មានភាពផ្ទុយគ្នា (Consistent) តើសេចក្តីសន្និដ្ឋានមួយណាដែលត្រឹមត្រូវបំផុតអំពី \( G \)?</strong>
+            <div class="options">
+                <label><input type="radio" name="q45" value="A" required> ក) \( G \) មិនពិត ហើយអាចស្រាយបញ្ជាក់បាន។</label>
+                <label><input type="radio" name="q45" value="B"> ខ) \( G \) ពិត ប៉ុន្តែមិនអាចស្រាយបញ្ជាក់បានតាមវិធាននៃប្រព័ន្ធនោះទេ (ប្រព័ន្ធមានភាពមិនពេញលេញ Incomplete)។</label>
+                <label><input type="radio" name="q45" value="C"> គ) \( G \) ពិត ហើយប្រព័ន្ធនោះអាចស្រាយបញ្ជាក់វាបានយ៉ាងងាយ។</label>
+                <label><input type="radio" name="q45" value="D"> ឃ) ប្រយោគនេះគ្រាន់តែជាកំហុសវេយ្យាករណ៍ក្នុងគណិតវិទ្យាប៉ុណ្ណោះ។</label>
+            </div>
+        </div>
+
+    <!--    <button type="submit" class="submit-btn">បញ្ចប់វិញ្ញាសា កម្រិតកំពូល</button>
+  -->  
+    </form>
+</div>
+    
+
+    
+ <div class="container">
+    <form action="submit_quiz_error_analysis.php" method="POST">
+
+     <!--   <h2>ផ្នែកទី ១១៖ ការវិភាគកំហុសតក្កវិទ្យា (Fallacy & Error Analysis)</h2>-->
+        
+        <div class="question-block">
+            <strong>៤៣. (Algebraic Fallacy) និស្សិតម្នាក់បានស្រាយបញ្ជាក់ថា \( 1 = -1 \) តាមរយៈជំហានខាងក្រោម៖ </strong><br>
+            
+                \[ 1 = \sqrt{1} = \sqrt{(-1)(-1)} = \sqrt{-1} \times \sqrt{-1} = i \times i = -1 \]
+            
+          <strong>  តើកំហុសតក្កវិទ្យានៃការស្រាយបញ្ជាក់នេះ ស្ថិតនៅត្រង់ចំណុចណា?</strong>
+            <div class="options">
+                <label><input type="radio" name="q46" value="A" required> ក) ចំនួននិម្មិត \( i \times i \) មិនស្មើ \( -1 \) ទេ។</label>
+                <label><input type="radio" name="q46" value="B"> ខ) វិធានផលគុណរ៉ាឌីកាល់ \( \sqrt{ab} = \sqrt{a}\sqrt{b} \) ពិតលុះត្រាតែ \( a \) ឬ \( b \) យ៉ាងហោចណាស់មួយ ជាចំនួនមិនអវិជ្ជមាន។</label>
+                <label><input type="radio" name="q46" value="C"> គ) \( \sqrt{1} \) ត្រូវតែមានតម្លៃពីរគឺ \( \pm 1 \) ជានិច្ច មិនអាចយកតែលេខ ១ ទេ។</label>
+                <label><input type="radio" name="q46" value="D"> ឃ) ការសរសេរ \( 1 = (-1)(-1) \) គឺជាការសន្មតដែលខុសច្បាប់តាំងពីដើម។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៤៤. (Circular Reasoning in Calculus) និស្សិតម្នាក់ត្រូវបានស្នើឱ្យស្រាយបញ្ជាក់ថា \( \lim_{x \to 0} \frac{\sin x}{x} = 1 \) ។ គាត់បានសម្រេចចិត្តប្រើប្រាស់ "វិធាន L'Hôpital" ដោយធ្វើដេរីវេភាគយក និងភាគបែង ហើយទាញបានលទ្ធផល \( \cos(0)/1 = 1 \)។ តើការធ្វើបែបនេះមានកំហុសតក្កវិទ្យាអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q47" value="A" required> ក) វិធាន L'Hôpital មិនអាចប្រើប្រាស់បានទេ ព្រោះភាគបែងមិនមែនជារាងមិនកំណត់ \( 0/0 \)។</label>
+                <label><input type="radio" name="q47" value="B"> ខ) វាជាកំហុស "វិចារវិលជុំ" (Circular Reasoning) ព្រោះការគណនាដេរីវេនៃ \( \sin x \) ទាមទារឱ្យគេត្រូវដឹងពីតម្លៃលីមីតនេះជាមុនសិនទើបអាចធ្វើទៅបាន។</label>
+                <label><input type="radio" name="q47" value="C"> គ) វិធាន L'Hôpital មិនអាចអនុវត្តលើអនុគមន៍ត្រីកោណមាត្រកម្រិតមូលដ្ឋានបានទេ។</label>
+                <label><input type="radio" name="q47" value="D"> ឃ) មិនមានកំហុសអ្វីទេ ការស្រាយបញ្ជាក់នេះត្រឹមត្រូវ និងស្របច្បាប់ ១០០%។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៤៥. (Cantor's Diagonalization Error) នៅក្នុងទ្រឹស្តីសំណុំ វិធីសាស្ត្រអង្កត់ទ្រូងរបស់កង់ទ័រ (Cantor's Diagonal Argument) ត្រូវបានប្រើដើម្បីស្រាយថា សំណុំចំនួនពិត \( \mathbb{R} \) រាប់មិនអស់។ ប្រសិនបើនរណាម្នាក់ព្យាយាមប្រើវិធានដូចគ្នានេះបេះបិទ ដើម្បីស្រាយថា "សំណុំចំនួនសនិទាន \( \mathbb{Q} \) ជារបស់រាប់មិនអស់" តើការស្រាយបញ្ជាក់នោះនឹងបរាជ័យ (ខុសតក្កវិទ្យា) នៅត្រង់ជំហានណា?</strong>
+            <div class="options">
+                <label><input type="radio" name="q48" value="A" required> ក) ចំនួនសនិទានមិនអាចសរសេរជាទម្រង់ទសភាគ (Decimal Expansion) បានទេ។</label>
+                <label><input type="radio" name="q48" value="B"> ខ) ចំនួនថ្មីដែលបង្កើតបានពីការប្តូរលេខតាមខ្សែអង្កត់ទ្រូងនោះ មិនមានការធានាថាវាជា "ចំនួនសនិទាន" នោះទេ (វាអាចជាចំនួនអសនិទាន) ដូច្នេះវាមិនបង្កើតភាពផ្ទុយគ្នាក្នុងសំណុំ \( \mathbb{Q} \) ឡើយ។</label>
+                <label><input type="radio" name="q48" value="C"> គ) សំណុំ \( \mathbb{Q} \) មានទំហំធំជាងសំណុំ \( \mathbb{R} \) ស្រាប់ទៅហើយ។</label>
+                <label><input type="radio" name="q48" value="D"> ឃ) វិធីសាស្ត្រនេះតម្រូវឱ្យលេខទសភាគគ្មានទីបញ្ចប់រាប់បាន ដែលផ្ទុយនឹងច្បាប់នៃ \( \mathbb{Q} \)។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៤៦. (Geometric Fallacy) ពិនិត្យមើលអំណះអំណាងធរណីមាត្រដ៏ល្បីដែលអះអាងថា "គ្រប់ត្រីកោណទាំងអស់គឺជាត្រីកោណសមបាត"។ ក្នុងសម្រាយបញ្ជាក់ គេគូសកន្លះបន្ទាត់ពុះមុំកំពូល និងបន្ទាត់មេដ្យាទ័រនៃជ្រុងបាត ហើយសន្មតថាវាប្រសព្វគ្នានៅ "ខាងក្នុង" ត្រីកោណ។ បន្ទាប់មកគេប្រើប៉ុនគ្នានៃត្រីកោណកែងដើម្បីទាញរកជ្រុងស្មើគ្នា។ តើចំណុចណាជាកំហុស (Fallacy) នៃអំណះអំណាងនេះ?</strong>
+            <div class="options">
+                <label><input type="radio" name="q49" value="A" required> ក) ការប្រើប្រាស់លក្ខណៈត្រីកោណកែងប៉ុនគ្នា គឺមិនត្រឹមត្រូវតាមស្វ័យស័ត។</label>
+                <label><input type="radio" name="q49" value="B"> ខ) ចំណុចប្រសព្វរវាងកន្លះបន្ទាត់ពុះមុំ និងមេដ្យាទ័រ នៃត្រីកោណមិនសមបាត តែងតែធ្លាក់ទៅនៅ "ខាងក្រៅ" ត្រីកោណជានិច្ច មិនមែននៅខាងក្នុងដូចរូបគំនូសសន្មតនោះទេ។</label>
+                <label><input type="radio" name="q49" value="C"> គ) ត្រីកោណធម្មតាមិនអាចមានបន្ទាត់មេដ្យាទ័រទេ។</label>
+                <label><input type="radio" name="q49" value="D"> ឃ) ការទាញសន្និដ្ឋានប្រើកំហុស Non Sequitur។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៤៧. (Logical Deduction Error) ពិនិត្យការស្រាយបញ្ជាក់ខាងក្រោម៖ </strong><br>
+            <div class="logic-box">
+                សម្មតិកម្ម៖ ឧបមាថា \( n = n + 1 \)<br>
+                គុណអង្គទាំងពីរនឹងសូន្យ៖ \( 0 \times n = 0 \times (n + 1) \)<br>
+                លទ្ធផល៖ \( 0 = 0 \) (ជារឿងពិត)<br>
+                សន្និដ្ឋាន៖ ដោយសារលទ្ធផលចុងក្រោយពិត ដូច្នេះសម្មតិកម្មដើម \( n = n + 1 \) ក៏ត្រូវតែពិតដែរ!
+            </div>
+           <strong> តើកំហុសតក្កវិទ្យានេះមានឈ្មោះជាផ្លូវការថាអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q50" value="A" required> ក) Fallacy of the Converse (ឬ Affirming the Consequent) ព្រោះការដែល \( A \implies B \) ពិត ហើយ \( B \) ពិត មិនមានន័យថាទាញបាន \( A \) ពិតនោះទេ។</label>
+                <label><input type="radio" name="q50" value="B"> ខ) Ad Hominem Fallacy ព្រោះវាវាយប្រហារទៅលើអញ្ញាត \( n \)。</label>
+                <label><input type="radio" name="q50" value="C"> គ) Division by Zero Error ព្រោះគេមិនអាចគុណលេខដោយសូន្យបានទេ។</label>
+                <label><input type="radio" name="q50" value="D"> ឃ) Begging the Question ព្រោះវាបានសន្មតថា \( 0 = 0 \) ជារឿងពិតពីដំបូង។</label>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+    
+ <div class="container">
+    <form action="submit_quiz_sets.php" method="POST">
+
+   <!--     <h2>ផ្នែកទី ១២៖ ទ្រឹស្ដីសំណុំ និងប្រមាណវិធី (Set Theory & Operations)</h2>--
+        <div class="instruction">
+            <strong>ចំណាំ៖</strong> លំហាត់ផ្នែកនេះមានកម្រិតលំបាកខ្ពស់ ផ្តោតលើនិយមន័យអរូបី និងលក្ខណៈទូទៅនៃសំណុំ។ សញ្ញា \( \mathcal{P}(A) \) តំណាងឱ្យសំណុំស្វ័យគុណ (Power Set) នៃ \( A \)។
+        </div>-->
+        
+        <div class="question-block">
+            <strong>៤៨. ឧបមាថាគេមានសំណុំ \( A = \{\emptyset, \{\emptyset\}\} \) ។ តើសំណុំស្វ័យគុណនៃសំណុំស្វ័យគុណរបស់វា ពោលគឺ \( \mathcal{P}(\mathcal{P}(A)) \) មានចំនួនធាតុកាឌីណាល់ (Cardinality) ប៉ុន្មាន?</strong>
+            <div class="options">
+                <label><input type="radio" name="q48" value="A" required> ក) ៤</label>
+                <label><input type="radio" name="q48" value="B"> ខ) ៨</label>
+                <label><input type="radio" name="q48" value="C"> គ) ១៦</label>
+                <label><input type="radio" name="q48" value="D"> ឃ) ២៥៦</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៤៩. ប្រមាណវិធី ផលសងស៊ីមេទ្រី (Symmetric Difference) តាងដោយ \( \Delta \) ត្រូវបានកំណត់ដោយ \( A \Delta B = (A \setminus B) \cup (B \setminus A) \) ។ តើសំណើមួយណាខាងក្រោមនេះដែល <u>មិនពិតជានិច្ច</u> សម្រាប់សំណុំទូទៅ?</strong>
+            <div class="options">
+                <label><input type="radio" name="q49" value="A" required> ក) \( A \Delta B = B \Delta A \)</label>
+                <label><input type="radio" name="q49" value="B"> ខ) \( A \Delta (B \Delta C) = (A \Delta B) \Delta C \)</label>
+                <label><input type="radio" name="q49" value="C"> គ) \( A \Delta A = \emptyset \)</label>
+                <label><input type="radio" name="q49" value="D"> ឃ) \( A \Delta \emptyset = \emptyset \)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៥០. ពិនិត្យគ្រួសារនៃសំណុំអនន្ត \( A_n \) សម្រាប់គ្រប់ចំនួនគត់វិជ្ជមាន \( n \in \mathbb{N}^+ \) ដែលមានទម្រង់ជាចន្លោះបើក៖</strong>
+            
+                \[ A_n = \left( -\frac{1}{n}, \frac{1}{n} \right) \]
+            
+          <strong>  តើប្រមាណវិធីប្រពន្ធនៃសំណុំទាំងនេះ \( \bigcap_{n=1}^{\infty} A_n \) មានលទ្ធផលស្មើនឹងអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q50" value="A" required> ក) \( \emptyset \) (សំណុំទទេ)</label>
+                <label><input type="radio" name="q50" value="B"> ខ) \( \{0\} \) (សំណុំដែលមានតែលេខសូន្យ)</label>
+                <label><input type="radio" name="q50" value="C"> គ) \( (-1, 1) \)</label>
+                <label><input type="radio" name="q50" value="D"> ឃ) \( (-\infty, +\infty) \)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៥១. យោងតាមលក្ខណៈនៃសំណុំស្វ័យគុណ តើសមភាពមួយណាដែលត្រឹមត្រូវជានិច្ច សម្រាប់សំណុំទូទៅ \( A \) និង \( B \)?</strong>
+            <div class="options">
+                <label><input type="radio" name="q51" value="A" required> ក) \( \mathcal{P}(A \cup B) = \mathcal{P}(A) \cup \mathcal{P}(B) \)</label>
+                <label><input type="radio" name="q51" value="B"> ខ) \( \mathcal{P}(A \cap B) = \mathcal{P}(A) \cap \mathcal{P}(B) \)</label>
+                <label><input type="radio" name="q51" value="C"> គ) \( \mathcal{P}(A \setminus B) = \mathcal{P}(A) \setminus \mathcal{P}(B) \)</label>
+                <label><input type="radio" name="q51" value="D"> ឃ) គ្រប់ចម្លើយខាងលើសុទ្ធតែត្រឹមត្រូវ។</label>
+            </div>
+        </div>
+
+       <!-- <div class="question-block">
+            <strong>៥២. អនុគមន៍លក្ខណៈ (Characteristic / Indicator Function) \( \chi_A(x) \) ស្មើ ១ បើ \( x \in A \) និងស្មើ ០ បើ \( x \notin A \)។ សម្រាប់ប្រមាណវិធីផលសងស៊ីមេទ្រី តើកន្សោមរបស់ \( \chi_{A \Delta B}(x) \) ត្រូវគ្នានឹងកន្សោមពិជគណិតមួយណា?</strong>
+            <div class="options">
+                <label><input type="radio" name="q52" value="A" required> ក) \( \chi_A(x) + \chi_B(x) \)</label>
+                <label><input type="radio" name="q52" value="B"> ខ) \( \chi_A(x) \cdot \chi_B(x) \)</label>
+                <label><input type="radio" name="q52" value="C"> គ) \( \chi_A(x) + \chi_B(x) - \chi_A(x)\chi_B(x) \)</label>
+                <label><input type="radio" name="q52" value="D"> ឃ) \( \chi_A(x) + \chi_B(x) - 2\chi_A(x)\chi_B(x) \)</label>
+            </div>
+        </div>-->
+
+        <div class="question-block">
+            <strong>៥២. គេកំណត់សំណុំមួយជាទម្រង់ Set-builder ដូចខាងក្រោម៖</strong>
+            
+                \[ S = \{ x \in \mathbb{R} \mid \forall y \in \mathbb{R}, x^2 \lt y^2 + 1 \} \]
+            
+           <strong> តើសំណុំ \( S \) នេះតំណាងឱ្យចន្លោះមួយណា?</strong>
+            <div class="options">
+                <label><input type="radio" name="q53" value="A" required> ក) \( \mathbb{R} \) (សំណុំចំនួនពិតទាំងអស់)</label>
+                <label><input type="radio" name="q53" value="B"> ខ) ចន្លោះបើក \( (-1, 1) \)</label>
+                <label><input type="radio" name="q53" value="C"> គ) ចន្លោះបិទ \( [-1, 1] \)</label>
+                <label><input type="radio" name="q53" value="D"> ឃ) \( \emptyset \) (សំណុំទទេ)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៥៣. សម្រាប់សំណុំ \( A \) និង \( B \), ប្រសិនបើគេដឹងច្បាស់ថា \( A \setminus B = \emptyset \) តើសេចក្តីសន្និដ្ឋានមួយណាដែលពិតប្រាកដជានិច្ច?</strong>
+            <div class="options">
+                <label><input type="radio" name="q54" value="A" required> ក) \( A = B \)</label>
+                <label><input type="radio" name="q54" value="B"> ខ) \( B \subseteq A \)</label>
+                <label><input type="radio" name="q54" value="C"> គ) \( A \subseteq B \)</label>
+                <label><input type="radio" name="q54" value="D"> ឃ) \( A \cap B = \emptyset \)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៥៤. (Cartesian Product & Relations) ឧបមាថាសំណុំ \( A \) មានធាតុ ៣ និងសំណុំ \( B \) មានធាតុ ៤។ ទំនាក់ទំនង (Relation) ពី \( A \) ទៅ \( B \) គឺជាសំណុំរងនៃផលគុណដេកាត \( A \times B \)។ តើមានទំនាក់ទំនងខុសៗគ្នាសរុបចំនួនប៉ុន្មានពី \( A \) ទៅ \( B \)?</strong>
+            <div class="options">
+                <label><input type="radio" name="q55" value="A" required> ក) ១២</label>
+                <label><input type="radio" name="q55" value="B"> ខ) ៦៤</label>
+                <label><input type="radio" name="q55" value="C"> គ) ៤០៩៦</label>
+                <label><input type="radio" name="q55" value="D"> ឃ) ១២!</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៥៥. តាមរយៈការប្រើប្រាស់លក្ខណៈបំបែក (Distributive Laws) និងច្បាប់ស្រូប (Absorption Laws) ចូរសំរួលកន្សោមសំណុំខាងក្រោមឱ្យនៅខ្លីបំផុត៖</strong>
+            
+                \[ \left( A \cup (B \cap (A \cup C)) \right) \cap \overline{A} \]
+            
+            
+            <div class="options">
+                <label><input type="radio" name="q56" value="A" required> ក) \( B \cap C \setminus A \)</label>
+                <label><input type="radio" name="q56" value="B"> ខ) \( A \cup B \)</label>
+                <label><input type="radio" name="q56" value="C"> គ) \( \emptyset \)</label>
+                <label><input type="radio" name="q56" value="D"> ឃ) \( B \cap C \)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៥៦. យោងតាម ច្បាប់ De Morgan ទូទៅសម្រាប់គ្រួសារសំណុំ (Generalized De Morgan's Law) ដែល \( I \) ជាសំណុំសន្ទស្សន៍ (Index Set), តើទម្រង់ត្រឹមត្រូវនៃ \( X \setminus \left( \bigcup_{i \in I} A_i \right) \) គឺជាអ្វី?</strong>
+            <div class="options">
+                <label><input type="radio" name="q57" value="A" required> ក) \( \bigcup_{i \in I} (X \setminus A_i) \)</label>
+                <label><input type="radio" name="q57" value="B"> ខ) \( \bigcap_{i \in I} (X \setminus A_i) \)</label>
+                <label><input type="radio" name="q57" value="C"> គ) \( X \cap \left( \bigcap_{i \in I} A_i \right) \)</label>
+                <label><input type="radio" name="q57" value="D"> ឃ) ទម្រង់នេះមិនអាចបំបែកបានទេ ប្រសិនបើ \( I \) ជាសំណុំអនន្ត។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៥៧. ពិនិត្យសំណុំដ៏មានល្បិចមួយ៖ \( A = \{a, b, \{a,b\}\} \) ។ ក្នុងចំណោមជម្រើសខាងក្រោម តើសំណើមួយណាដែល <u>មិនពិត (FALSE)</u>?</strong>
+            <div class="options">
+                <label><input type="radio" name="q58" value="A" required> ក) \( \{a,b\} \in A \)</label>
+                <label><input type="radio" name="q58" value="B"> ខ) \( \{a,b\} \subseteq A \)</label>
+                <label><input type="radio" name="q58" value="C"> គ) \( a \in A \)</label>
+                <label><input type="radio" name="q58" value="D"> ឃ) \( \{a\} \in A \)</label>
+            </div>
+        </div>
+
+    <!--    <button type="submit" class="submit-btn">បញ្ជូនចម្លើយ (Submit Set Theory Quiz)</button>
+   --> </form>
+</div>   
+    
+
+ <!--    <h2>ផ្នែកទី ១៣៖ ផលគុណដេកាតនៃសំណុំ (Cartesian Products)</h2>-->
+    <div class="container">
+      <div class="instruction">
+            <strong>ចំណាំ៖</strong> ផលគុណដេកាត \[ A \times B = \{(a, b) \mid a \in A, b \in B\} \]
+         
+          \[ A \times B \times C = \{(a, b, c) \mid a \in A, b \in B, c \in C\} \] <!--និស្សិតត្រូវគិតគូរទាំងលក្ខណៈពិជគណិត និងការបកស្រាយតាមធរណីមាត្រអរូបី។-->
+        </div>   
+    </div>
+    
+    
+<div class="container">
+    <form action="submit_quiz_cartesian.php" method="POST">
+
+   
+        
+        <div class="question-block">
+            <strong>៥៨. ឧបមាថា \( A, B, \) និង \( C \) ជាសំណុំមិនទទេ (Non-empty sets)។ ក្នុងចំណោមលក្ខណៈនៃផលគុណដេកាតខាងក្រោម តើមួយណាដែល <u>មិនពិតជានិច្ច</u>?</strong>
+            <div class="options">
+                <label><input type="radio" name="q59" value="A" required> ក) \( A \times (B \cup C) = (A \times B) \cup (A \times C) \)</label>
+                <label><input type="radio" name="q59" value="B"> ខ) \( (A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D) \)</label>
+                <label><input type="radio" name="q59" value="C"> គ) ប្រសិនបើ \( A \times B = \emptyset \) នោះ \( A = \emptyset \) ឬ \( B = \emptyset \)</label>
+                <label><input type="radio" name="q59" value="D"> ឃ) \( A \times B = B \times A \)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៥៩. ឧបមាថា \( A, B, \) និង \( C \) ជាសំណុំរាប់បាន ដែលមានចំនួនធាតុកាឌីណាល់ \( |A|=2, |B|=3, \) និង \( |C|=4 \)។ តើសំណុំស្វ័យគុណនៃផលគុណដេកាតទាំងបី ពោលគឺ \( \mathcal{P}(A \times B \times C) \) មានចំនួនធាតុសរុបប៉ុន្មាន?</strong>
+            <div class="options">
+                <label><input type="radio" name="q60" value="A" required> ក) \( 24 \)</label>
+                <label><input type="radio" name="q60" value="B"> ខ) \( 2^9 \)</label>
+                <label><input type="radio" name="q60" value="C"> គ) \( 2^{24} \)</label>
+                <label><input type="radio" name="q60" value="D"> ឃ) \( 2^2 \times 2^3 \times 2^4 \)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៦០. (ធរណីមាត្រនៃផលគុណដេកាត) នៅក្នុងប្លង់ដេកាត \( \mathbb{R}^2 \), គេមានសំណុំ \( A = [0, 1] \) និង \( B = [0, 1] \)។ គេកំណត់សំណុំរង \( S \subseteq A \times B \) ដោយ៖</strong>
+            
+                \[ S = \{(x, y) \in A \times B \mid x^2 + y^2 \le 1\} \]
+           
+            <strong>តើក្រឡាផ្ទៃ (Area) នៃសំណុំ \( S \) នេះស្មើនឹងប៉ុន្មាន?</strong>
+            <div class="options">
+                <label><input type="radio" name="q61" value="A" required> ក) \( 1 \)</label>
+                <label><input type="radio" name="q61" value="B"> ខ) \( \frac{\pi}{4} \)</label>
+                <label><input type="radio" name="q61" value="C"> គ) \( \frac{\pi}{2} \)</label>
+                <label><input type="radio" name="q61" value="D"> ឃ) \( \pi \)</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៦១. ចំពោះផលគុណដេកាតនៃ ៣ សំណុំ តើសមភាពមួយណាខាងក្រោមដែលត្រូវបានស្រាយបញ្ជាក់ថា <u>ត្រឹមត្រូវជានិច្ច</u> សម្រាប់សំណុំទូទៅ?</strong>
+            <div class="options">
+                <label><input type="radio" name="q62" value="A" required> ក) \( (A \times B \times C) \cup (D \times E \times F) = (A \cup D) \times (B \cup E) \times (C \cup F) \)</label>
+                <label><input type="radio" name="q62" value="B"> ខ) \( (A \times B \times C) \cap (D \times E \times F) = (A \cap D) \times (B \cap E) \times (C \cap F) \)</label>
+                <label><input type="radio" name="q62" value="C"> គ) \( (A \setminus B) \times C = A \times (C \setminus B) \)</label>
+                <label><input type="radio" name="q62" value="D"> ឃ) \( A \times (B \times C) = (A \times B) \times C \) </label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៦២. (Topology & 3D Space) បើគេមានសំណុំ \( \mathbb{Z} \) (សំណុំចំនួនគត់) និង \( \mathbb{R} \) (សំណុំចំនួនពិត)។ តើផលគុណដេកាត \( \mathbb{Z} \times \mathbb{Z} \times \mathbb{R} \) តំណាងឱ្យរូបរាងធរណីមាត្រអ្វី នៅក្នុងលំហកូអរដោនេ 3D (Oxyz)?</strong>
+            <div class="options">
+                <label><input type="radio" name="q63" value="A" required> ក) បណ្តុំនៃចំណុចដាច់ៗគ្នារាប់មិនអស់ នៅក្នុងលំហទាំងមូល។</label>
+                <label><input type="radio" name="q63" value="B"> ខ) បណ្តុំនៃប្លង់រាប់មិនអស់ ដែលស្របនឹងប្លង់ (Oxy)។</label>
+                <label><input type="radio" name="q63" value="C"> គ) បណ្តុំនៃបន្ទាត់រាប់មិនអស់ ដែលស្របនឹងអ័ក្ស Oz ហើយកាត់ប្លង់ (Oxy) ត្រង់ចំណុចកូអរដោនេចំនួនគត់។</label>
+                <label><input type="radio" name="q63" value="D"> ឃ) សំណុំនៃរាងគូបតូចៗ ដែលមានប្រវែងជ្រុងស្មើ ១ តភ្ជាប់គ្នាពេញលំហ។</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៦៣. គេមានសំណុំ \( A = \{1, 2, 3\} \)។ តើសំណុំរងរបស់ផលគុណដេកាត៣ដង \[ S = \{(x, y, z) \in A \times A \times A \mid x \lt y \lt z\} \] មានធាតុចំនួនប៉ុន្មាន?</strong>
+            <div class="options">
+                <label><input type="radio" name="q64" value="A" required> ក) ១ ធាតុ</label>
+                <label><input type="radio" name="q64" value="B"> ខ) ៣ ធាតុ</label>
+                <label><input type="radio" name="q64" value="C"> គ) ៦ ធាតុ</label>
+                <label><input type="radio" name="q64" value="D"> ឃ) ២៧ ធាតុ</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <strong>៦៤. (Advanced Conceptual Property) ឧបមាថា \( A \) និង \( B \) ជាសំណុំមិនទទេពីរផ្សេងគ្នា (\( A \neq B \))។ តើប្រជុំផលគុណដេកាត \( (A \times B) \cup (B \times A) \) អាចស្មើនឹងផលគុណដេកាតនៃពីរសំណុំតែមួយ \( C \times C \) បានដែរឬទេ?</strong>
+            <div class="options">
+                <label><input type="radio" name="q65" value="A" required> ក) អាចជានិច្ច ប្រសិនបើគេតាង \( C = A \cup B \)</label>
+                <label><input type="radio" name="q65" value="B"> ខ) អាច ប្រសិនបើ \( A \cap B = \emptyset \)</label>
+                <label><input type="radio" name="q65" value="C"> គ) អាច ប្រសិនបើ \( C = A \cap B \)</label>
+                <label><input type="radio" name="q65" value="D"> ឃ) មិនអាចដាច់ខាត ព្រោះប្រសិនបើវាស្មើ \( C \times C \) នោះតម្រូវឱ្យ \( A = B = C \) ដែលផ្ទុយនឹងសម្មតិកម្ម \( A \neq B \)</label>
+            </div>
+        </div>
+
+     <!--   <button type="submit" class="submit-btn">បញ្ជូនចម្លើយ (Submit Cartesian Quiz)</button>-->
+    </form>
+</div>    
+    
+    
+    
+</body>
+
+</html>
