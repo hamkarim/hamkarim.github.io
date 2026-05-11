@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variation Table — g(x)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f7f6f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    h1 {
+      font-family: 'IM Fell English', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+      color: #28251d;
+    }
+    .var-table {
+      border-collapse: collapse;
+      border: 2.5px solid #28251d;
+      background: #fff;
+    }
+    .var-table td {
+      border: 2px solid #28251d;
+      padding: 0;
+    }
+    .row-x   td { height: 56px; }
+    .row-gp  td { height: 64px; }
+    .row-g   td { height: 130px; }
+    .label {
+      width: 110px;
+      text-align: center;
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: 1.3rem;
+      color: #28251d;
+      vertical-align: middle;
+    }
+    .x-val {
+      text-align: center;
+      vertical-align: middle;
+      font-size: 1.25rem;
+      color: #28251d;
+      width: 140px;
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+    }
+    .x-val.mid { width: 120px; }
+    .sign-cell {
+      text-align: center;
+      vertical-align: middle;
+      font-size: 1.35rem;
+      color: #28251d;
+    }
+    .sign-zero {
+      border-left: 2px dotted #28251d !important;
+      border-right: 2px dotted #28251d !important;
+    }
+    .var-cell {
+      position: relative;
+      vertical-align: top;
+      width: 230px;
+    }
+    .v-label {
+      position: absolute;
+      font-size: 1.3rem;
+      color: #28251d;
+      font-family: 'IM Fell English', serif;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Tableau de variation de \(g(x) = (x-1)e^x + 1\) sur \(\mathbb{R}\)</h1>
+
+<table class="var-table">
+
+  <!-- ROW 1 : x -->
+  <tr class="row-x">
+    <td class="label">\(x\)</td>
+    <td class="x-val">\(-\infty\)</td>
+    <td class="x-val mid">\(0\)</td>
+    <td class="x-val">\(+\infty\)</td>
+  </tr>
+
+  <!-- ROW 2 : g'(x) -->
+  <tr class="row-gp">
+    <td class="label">\(g'(x)\)</td>
+    <td class="sign-cell">\(-\)</td>
+    <td class="sign-cell sign-zero">\(0\)</td>
+    <td class="sign-cell">\(+\)</td>
+  </tr>
+
+  <!-- ROW 3 : g(x) variation -->
+  <tr class="row-g">
+    <td class="label">\(g(x)\)</td>
+
+    <!-- Decreasing: 1 (top-left) ↘ 0 (bottom-right) -->
+    <td class="var-cell">
+      <span class="v-label" style="top:10px; left:14px;">1</span>
+      <svg viewBox="0 0 230 130" width="230" height="130" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="a1" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 Z" fill="#28251d"/>
+          </marker>
+        </defs>
+        <line x1="50" y1="24" x2="194" y2="108"
+              stroke="#28251d" stroke-width="1.8" marker-end="url(#a1)"/>
+      </svg>
+    </td>
+
+    <!-- Increasing: 0 (bottom-left) ↗ +∞ (top-right) -->
+    <td class="var-cell">
+      <span class="v-label" style="bottom:8px; left:14px;">\(0\)</span>
+      <span class="v-label" style="top:8px; right:10px;">\(+\infty\)</span>
+      <svg viewBox="0 0 230 130" width="230" height="130" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="a2" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 Z" fill="#28251d"/>
+          </marker>
+        </defs>
+        <line x1="38" y1="108" x2="192" y2="24"
+              stroke="#28251d" stroke-width="1.8" marker-end="url(#a2)"/>
+      </svg>
+    </td>
+  </tr>
+
+</table>
+
+</body>
+</html>

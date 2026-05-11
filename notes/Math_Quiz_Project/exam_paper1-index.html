@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Siemreap&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@400;700&display=swap" rel="stylesheet">
+    
     <title>វិញ្ញាសាគណិតវិទ្យា៖ ការសិក្សាអនុគមន៍ (ស្តង់ដាបាក់ឌុប)</title>
     
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -13,11 +18,12 @@
                 displayMath: [['$$', '$$'], ['\\[', '\\]']]
             }
         };
-    </script>
+    </script> 
+    
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <style>
-        body {
+    /*    body {
             font-family: 'Khmer OS Battambang', 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
@@ -25,7 +31,57 @@
             margin: 0 auto;
             padding: 20px;
             background-color: #f9f9f9;
+        }*/
+        /* ១. កំណត់ Siemreap ជាហ្វុងគោលសម្រាប់អត្ថបទធម្មតាទាំងអស់ក្នុងទំព័រ */
+        body {
+            font-family: 'Siemreap', 'Arial', sans-serif;
+            /*font-family: 'Noto Serif Khmer', serif;*/
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
         }
+
+        /* ២. កំណត់ Battambang សម្រាប់ចំណងជើង (Headers) */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Battambang', 'Arial', sans-serif;
+            font-weight: 700; /* កម្រិតកម្រាស់ Bold */
+            color: #2c3e50;
+        }
+        
+        h3 {
+            font-size: larger;
+        }
+
+        /* ៣. កំណត់ Battambang សម្រាប់អត្ថបទដែលជា Bold ឬសំណួរ *
+        b, strong, .question {
+            font-family: 'Battambang', 'Arial', sans-serif;
+            font-weight: 700;
+        }*/
+        
+        /* អ្នកអាចកំណត់ឱ្យកម្រាស់អក្សរដិត (Bold) សម្រាប់ចំណងជើង ដោយប្រើហ្វុងដដែល *
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Noto Serif Khmer', serif;
+            font-weight: 700; /* 700 គឺសម្រាប់អក្សរដិត *
+            color: #2c3e50;
+        }*/
+
+        b, strong, .question {
+            font-family: 'Noto Serif Khmer', serif;
+            font-weight: 700;
+        }
+
+        /* ៤. បើអ្នកចង់ឱ្យចំណងជើងក្នុងប្រអប់ Hint ប្រើ Battambang ដែរ (ជាជម្រើស) */
+        .hint-title {
+            font-family: 'Battambang', 'Arial', sans-serif;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+            color: #e67e22;
+        }
+        
         .header {
             text-align: center;
             border-bottom: 2px solid #2c3e50;
@@ -46,6 +102,15 @@
             margin-bottom: 15px;
             font-weight: bold;
         }
+        
+        b.bquestion {
+            margin-bottom: 10px;
+            margin-top: 15px;
+            /*font-weight: bold;*/
+            display: block;
+            font-size: large;
+        }
+        
         .sub-question {
             margin-left: 20px;
             margin-bottom: 15px;
@@ -84,7 +149,22 @@
         .rubric-table tr:nth-child(even) {
             background-color: #f2f2f2;
         }
+        
+        /* Flexbox container to center the TikZ table */
+        .table-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        
     </style>
+    
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+    
 </head>
 <body>
 
@@ -287,7 +367,7 @@
         </div>
 
         <div class="sub-question">
-            ២. គណនាតម្លៃអប្បបរមានៃអនុគមន៍ $g$។ ទាញបញ្ជាក់ថាសម្រាប់គ្រប់ $x \in \mathbb{R}$, គេបាន $g(x) \ge 0$។
+            ២. គណនាតម្លៃអប្បបរមានៃអនុគមន៍ $g$។ ទាញបញ្ជាក់ថា គ្រប់ $x \in \mathbb{R}$, គេបាន $g(x) \ge 0$។
             <div class="hint-box">
                 <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
                 - រកឫសនៃសមីការ $g'(x) = 0$ ដើម្បីដឹងថាត្រង់ណាមានតម្លៃបរមា។<br>
@@ -297,7 +377,7 @@
     </div>
 
     <div class="problem-section">
-        <h3>(II) ការសិក្សាអនុគមន៍ $f$ (អនុគមន៍ចម្បង)</h3>
+        <h3>(II) សិក្សាអនុគមន៍ $f$ (អនុគមន៍ចម្បង)</h3>
         <p>គេឱ្យអនុគមន៍ $f$ កំណត់លើ $\mathbb{R}$ ដោយ៖ $$f(x) = (x - 2)e^x + x$$</p>
         <p>តាង $(C)$ ជាខ្សែកោងតំណាងអនុគមន៍ $f$ ក្នុងតម្រុយអរតូណរម៉ាល់។</p>
 
@@ -415,6 +495,252 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+    
+ <!----------
+   --------------------- កំណែលំហាត់១
+----------------------------------------->
+    
+<div class="header">
+        <h1>ចម្លើយលំហាត់ ១ <br/> សិក្សាអនុគមន៍អ៊ិចស្ប៉ូណង់ស្យែល <br/>
+            \[f(x) = (x - 2)e^x + x\]
+    
+    </h1>
+    </div>
+
+    <div class="problem-section">
+        <h3> (I) សិក្សាអនុគមន៍ជំនួយ 
+        $g(x) = (x - 1)e^x + 1$ កំណត់លើ $\mathbb{R}$</h3>
+
+        <div class="sub-question">
+            <b>១. គណនាដេរីវេ $g'(x)$ និងសិក្សាសញ្ញា៖</b><br/><br/>
+            តាមរូបមន្តផលគុណ $(uv)' = u'v + uv'$ គេបាន៖
+                    $$
+            \begin{array}{rcl}
+            g'(x) &=& (x - 1)'e^x + (x - 1)(e^x)' + (1)'\\
+                &=& 1 \cdot e^x + (x - 1)e^x + 0\\
+                &=& e^x(1 + x - 1) \\ &=& xe^x
+            \end{array}$$
+            
+            <b>សិក្សាសញ្ញានៃ $g'(x)$៖</b><br/><br/>
+                    
+            ដោយ $e^x \gt 0$ ជានិច្ចគ្រប់ $x \in \mathbb{R}$ នោះសញ្ញានៃ $g'(x)$ យកសញ្ញាតាម $x$ គឺ៖
+                    <ul>
+                        <li>បើ $x \lt 0$ នោះ $g^\prime(x) \lt 0$</li>
+                        <li>បើ $x = 0$ នោះ $g^\prime(x) = 0$</li>
+                        <li>បើ $x \gt 0$ នោះ $g^\prime(x) \gt 0$</li>
+                    </ul>
+        </div>
+
+        <div class="sub-question">
+            <b>២. គណនាតម្លៃអប្បបរមានៃ $g$ និង ទាញបញ្ជាក់ថា $g(x) \ge 0$ គ្រប់ $x \in \mathbb{R}$ ។ </b><br>
+           <br/> គេមាន៖ (💡 ប្អូនអាចគណនាបន្ថែមដាក់ក្នុងក្រដាសកិច្ចការ ឬក៏ យកចម្លើយពីការគណនាក្នុងក្រដាសប្រុយយ៉ុង)
+            <ul>
+            <li> $g^\prime(x) = xe^x$ និង $g(0) = 0$</li>
+            <li> $\displaystyle\lim_{x \to -\infty} g(x) = 1$</li>
+            <li>$\displaystyle\lim_{x \to +\infty} g(x) = +\infty$ </li>
+            </ul>
+        និងតាមការសិក្សាសញ្ញាក្នុងសំណួរ ១.  គេបានតារាងអថេរភាពដូចខាងក្រោម៖ 
+            
+<div class="table-container">
+        <script type="text/tikz">
+          % Added [font=\Large] to increase the native text and math size
+          \begin{tikzpicture}[font=\Large]
+            % Draw the main table grid
+            \draw (0,0) rectangle (8,-4);
+            \draw (0,-1) -- (8,-1);
+            \draw (0,-2) -- (8,-2);
+            \draw (1.5,0) -- (1.5,-4);
+
+            % Top Row: x values
+            \node at (0.75, -0.5) {$x$};
+            \node at (2, -0.5) {$-\infty$};
+            \node at (4.75, -0.5) {$0$};
+            \node at (7.5, -0.5) {$+\infty$};
+
+            % Middle Row: g'(x) signs
+            \node at (0.75, -1.5) {$g\prime(x)$};
+            \node at (3.375, -1.5) {$-$};
+            \node at (6.125, -1.5) {$+$};
+            
+            % Vertical line with the zero on it
+            \draw (4.75, -1) -- (4.75, -2);
+            \node[fill=white, inner sep=2pt] at (4.75, -1.5) {$0$};
+
+            % Bottom Row: g(x) variations
+            \node at (0.75, -3) {$g(x)$};
+            
+            % Define coordinates for the variation arrows
+            \node (val1) at (2.2, -2.3) {$1$};
+            \node (val2) at (4.75, -3.7) {$0$};
+            \node (val3) at (7.3, -2.3) {$+\infty$};
+
+            % Draw the arrows
+            \draw[->, thick] (val1) -- (val2);
+            \draw[->, thick] (val2) -- (val3);
+          \end{tikzpicture}
+        </script>
+    </div>
+          
+            
+    <!--table class="rubric-table" style="max-width: 500px; text-align: center; margin: auto;">
+                <tr>
+                    <td style="border: 1px solid #000; padding: 5px;">$x$</td>
+                    <td style="border: 1px solid #000; padding: 5px;">$-\infty$</td>
+                    <td style="border: 1px solid #000; padding: 5px;"></td>
+                    <td style="border: 1px solid #000; padding: 5px;">$0$</td>
+                    <td style="border: 1px solid #000; padding: 5px;"></td>
+                    <td style="border: 1px solid #000; padding: 5px;">$+\infty$</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #000; padding: 5px;">$g'(x)$</td>
+                    <td style="border: 1px solid #000; padding: 5px; background-color: #f9f9f9;"></td>
+                    <td style="border: 1px solid #000; padding: 5px;">$-$</td>
+                    <td style="border: 1px solid #000; padding: 5px;">$0$</td>
+                    <td style="border: 1px solid #000; padding: 5px;">$+$</td>
+                    <td style="border: 1px solid #000; padding: 5px; background-color: #f9f9f9;"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #000; padding: 5px;">$g(x)$</td>
+                    <td style="border: 1px solid #000; padding: 5px; background-color: #f9f9f9;"></td>
+                    <td style="border: 1px solid #000; padding: 5px;">$1$<br>$\searrow$</td>
+                    <td style="border: 1px solid #000; padding: 5px;"><br>$0$</td>
+                    <td style="border: 1px solid #000; padding: 5px;">$\nearrow$<br></td>
+                    <td style="border: 1px solid #000; padding: 5px;">$+\infty$</td>
+                </tr>
+            </table-->
+            
+            ដោយអនុគមន៍ $g$  ប្ដូរសញ្ញាពី $(-)$ ទៅ $(+)$ នៅត្រង់ប្ញសនៃដេរីវេ $g^\prime (x) = 0$ នោះវាមានតម្លៃអប្បបរមាត្រង់ $x = 0$ គឺ៖ 
+                    $$g(0) = (0 - 1)e^0 + 1 = -1(1) + 1 = 0$$
+                
+                <br/>ដោយសារតម្លៃតូចបំផុតនៃអនុគមន៍ $g$ ស្មើ $0$ នោះមានន័យថាគ្រប់ចំណុចផ្សេងទៀតក្នុង $\mathbb R$ គេបានតម្លៃ  $g(x)$ ត្រូវតែធំជាង ឬស្មើ $0$។ 
+                <b>ដូចនេះ គ្រប់ $x \in \mathbb{R}$ គេបាន $g(x) \ge 0$។</b>
+        
+        </div>
+    </div>
+
+    <div class="problem-section">
+        <h3>(II) សិក្សាអនុគមន៍ចម្បង $f$</h3>
+        <p>គេមានអនុគមន៍ $f(x) = (x - 2)e^x + x$ កំណត់លើ $\mathbb{R}$។</p>
+
+        <div class="sub-question">
+            <b class="bquestion">១. គណនាលីមីតចុងដែនកំណត់៖</b><br>
+            <ul>
+                <li><b>លីមីតត្រង់ $-\infty$ ៖</b>
+                    \begin{eqnarray}
+                    \lim_{x \to -\infty} f(x) &=& \lim_{x \to -\infty} [(x - 2)e^x + x] \\
+                    &=& \lim_{x \to -\infty} [xe^x - 2e^x + x]\\
+                    &=& 0 - 0 + (-\infty) = -\infty
+                    \end{eqnarray}
+                  ព្រោះ $\displaystyle\lim_{x \to -\infty} e^x = 0$ និង $\displaystyle\lim_{x \to -\infty} xe^x = 0$<br/>
+                ដូចនេះ $\displaystyle\lim_{x \to -\infty} f(x) = 0$ ។
+                </li>
+                <li><b>លីមីតត្រង់ $+\infty$ ៖</b>
+                    \begin{eqnarray}
+                    \lim_{x \to +\infty} f(x) &=& \lim_{x \to +\infty} [(x - 2)e^x + x]\\
+                    &=& (+\infty)(+\infty) + (+\infty) \\
+                    &=& +\infty
+                    \end{eqnarray}
+                    ព្រោះ $\displaystyle\lim_{x \to +\infty} (x-2) = +\infty$ និង $\lim_{x \to +\infty} e^x = +\infty$<br>
+                    ដូចនេះ $\displaystyle\lim_{x \to +\infty} f(x) = +\infty$ ។
+                </li>
+            </ul>
+        </div>
+
+        <div class="sub-question">
+            <b class="bquestion">២. ក) បង្ហាញថាបន្ទាត់ $(\Delta) : y = x$ ជាអាស៊ីមតូតទ្រេតខាង $-\infty$៖</b>
+            <!--ul-->
+               គណនាលីមីតនៃផលដក $f(x) - y$ ត្រង់ $-\infty$ ៖
+                 \begin{eqnarray}
+                    \lim_{x \to -\infty} [f(x) - y] &=& \lim_{x \to -\infty} [(x - 2)e^x + x - x] \\
+                    &=& \lim_{x \to -\infty} (x - 2)e^x\\                    
+                    &=& \lim_{x \to -\infty} (xe^x - 2e^x) \\
+                    &=& 0 - 0 = 0
+                  \end{eqnarray}
+            
+            
+            <b>សន្និដ្ឋាន៖</b> ដោយលីមីតផលដកស្មើ $0$ នោះបន្ទាត់ $(\Delta)$ មានសមីការ $y = x$ ជាអាស៊ីមតូតទ្រេតនៃខ្សែខ្សោង $(C)$ ខាង $-\infty$។
+            <!--ul-->
+        </div>
+
+        <div class="sub-question">
+            <b>២. ខ) សិក្សាទីតាំងធៀប និងចំណុចប្រសព្វ៖</b><br>
+            <ul>
+                <li>សិក្សាសញ្ញានៃផលដក $f(x) - y = (x - 2)e^x$៖<br>
+                ដោយ $e^x \gt 0$ ជានិច្ច នោះសញ្ញានៃផលដកយកសញ្ញាតាម $(x - 2)$។
+                    <ul>
+                        <li>បើ $x - 2 \lt 0 \implies x \lt 2$ ៖ ផលដកអវិជ្ជមាន នោះ <b>$(C)$ ស្ថិតនៅក្រោម $(\Delta)$</b>។</li>
+                        <li>បើ $x - 2 \gt 0 \implies x \gt 2$ ៖ ផលដកវិជ្ជមាន នោះ <b>$(C)$ ស្ថិតនៅលើ $(\Delta)$</b>។</li>
+                        <li>បើ $x - 2 = 0 \implies x = 2$ ៖ ជាចំណុចប្រសព្វ។</li>
+                    </ul>
+                </li>
+                <li><b>រកកូអរដោនេចំណុចប្រសព្វ៖</b> យក $x = 2$ ជំនួសក្នុងសមីការ $y = x \implies y = 2$។<br>
+                ដូចនេះ ចំណុចប្រសព្វគឺ <b>$I(2, 2)$</b>។</li>
+            </ul>
+        </div>
+
+        <div class="sub-question">
+            <b>៣. ផ្ទៀងផ្ទាត់ថា $f'(x) = g(x)$ និងសង់តារាងអថេរភាព៖</b><br>
+            <ul>
+                <li>គណនាដេរីវេ $f'(x)$៖
+                    $$f'(x) = [(x - 2)e^x]' + (x)'$$
+                    $$f'(x) = (x - 2)'e^x + (x - 2)(e^x)' + 1$$
+                    $$f'(x) = 1 \cdot e^x + (x - 2)e^x + 1$$
+                    $$f'(x) = e^x(1 + x - 2) + 1$$
+                    $$f'(x) = (x - 1)e^x + 1$$
+                </li>
+                <li>ដោយសារ $g(x) = (x - 1)e^x + 1$ យើងបាន <b>$f'(x) = g(x)$</b> ពិតប្រាកដមែន។</li>
+                <li><b>សញ្ញានៃ $f'(x)$៖</b> តាមលទ្ធផលផ្នែក ក យើងដឹងថា $g(x) \ge 0$ សម្រាប់គ្រប់ $x \in \mathbb{R}$។<br>
+                ដូចនេះ $f'(x) \ge 0$ ជានិច្ច នាំឱ្យ $f$ ជាអនុគមន៍កើនជានិច្ចលើ $\mathbb{R}$។</li>
+            </ul>
+
+            <p><b>តារាងអថេរភាពនៃ $f$៖</b></p>
+            <table class="rubric-table" style="max-width: 500px; text-align: center; margin: auto;">
+                <tr>
+                    <td style="border: 1px solid #000; padding: 5px;">$x$</td>
+                    <td style="border: 1px solid #000; padding: 5px;">$-\infty$</td>
+                    <td style="border: 1px solid #000; padding: 5px;"></td>
+                    <td style="border: 1px solid #000; padding: 5px;">$0$</td>
+                    <td style="border: 1px solid #000; padding: 5px;"></td>
+                    <td style="border: 1px solid #000; padding: 5px;">$+\infty$</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #000; padding: 5px;">$f'(x)$</td>
+                    <td style="border: 1px solid #000; padding: 5px; background-color: #ddd;"></td>
+                    <td style="border: 1px solid #000; padding: 5px;">$+$</td>
+                    <td style="border: 1px solid #000; padding: 5px;">$0$</td>
+                    <td style="border: 1px solid #000; padding: 5px;">$+$</td>
+                    <td style="border: 1px solid #000; padding: 5px;"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #000; padding: 5px;">$f(x)$</td>
+                    <td style="border: 1px solid #000; padding: 5px; background-color: #ddd;"></td>
+                    <td style="border: 1px solid #000; padding: 5px;"></td>
+                    <td style="border: 1px solid #000; padding: 5px;">$\nearrow$</td>
+                    <td style="border: 1px solid #000; padding: 5px;"></td>
+                    <td style="border: 1px solid #000; padding: 5px;">$+\infty$</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #000; padding: 5px; border-top: none;"></td>
+                    <td style="border: 1px solid #000; padding: 5px; border-top: none;">$-\infty$</td>
+                    <td style="border: 1px solid #000; padding: 5px; border-top: none;">$\nearrow$</td>
+                    <td style="border: 1px solid #000; padding: 5px; border-top: none;"></td>
+                    <td style="border: 1px solid #000; padding: 5px; border-top: none;"></td>
+                    <td style="border: 1px solid #000; padding: 5px; border-top: none;"></td>
+                </tr>
+            </table>
+            <p><i>(ចំណាំ៖ ត្រង់ $x=0$, $f'(x)=0$ តែមិនប្តូរសញ្ញាទេ ដូច្នេះអនុគមន៍នៅតែកើន)។</i></p>
+        </div>
+
+        <div class="sub-question">
+            <b>៤. គណនា $f(0)$ និង $f(2)$ រួចសង់ក្រាប៖</b><br>
+            <ul>
+                <li>$$f(0) = (0 - 2)e^0 + 0 = -2(1) = -2$$</li>
+                <li>$$f(2) = (2 - 2)e^2 + 2 = 0 + 2 = 2$$</li>
+            </ul>
+            <p><i>(ការណែនាំសង់ក្រាប៖ សិស្សត្រូវគូសតម្រុយអរតូណរម៉ាល់ បន្ទាត់ $\Delta: y=x$ និងដៅចំណុច $(0, -2)$ ព្រមទាំងចំណុចប្រសព្វ $(2, 2)$។ ខ្សែខ្សោងកើនឡើងពីខាងក្រោមបន្ទាត់ $\Delta$ កាត់អ័ក្សអរដោនេត្រង់ $-2$ រួចកាត់បន្ទាត់ $\Delta$ ត្រង់ចំណុច $(2, 2)$ ឆ្ពោះទៅ $+\infty$)។</i></p>
+        </div>
+
     </div>
 
 </body>
