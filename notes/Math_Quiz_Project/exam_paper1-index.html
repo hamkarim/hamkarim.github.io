@@ -686,7 +686,7 @@
             
     <div class="table-container">        
         <script type="text/tikz">
-    \begin{tikzpicture}[scale=1.5]
+    \begin{tikzpicture}[scale=1.5, transform shape]
       \draw[->] (-3.5,0) -- (2.6,0) node[right] {$x$};
       \draw[->] (0,-3.5) -- (0,3) node[above] {$y$};
       \draw[<->, blue, very thick, smooth, domain=-3.4:2.1] plot (\x, {(\x-2)*exp(\x) + \x});
