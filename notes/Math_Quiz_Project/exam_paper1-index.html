@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Siemreap&display=swap" rel="stylesheet">
@@ -24,7 +25,9 @@
     // បន្ថែមផ្នែកខាងក្រោមនេះ ដើម្បីកំណត់ទំហំអក្សរគណិតវិទ្យា
     chtml: {
         scale: 1.2,        /* ដំឡើងឱ្យធំជាងអក្សរធម្មតា ១៥% កែសម្រួលលេខនេះរហូតដល់មើលទៅសមល្មមនឹងអក្សរខ្មែរ */
-        matchFontHeight: true /* ឱ្យវាព្យាយាមតម្រូវកម្ពស់តាម Font អត្ថបទ */ 
+        matchFontHeight: true, /* ឱ្យវាព្យាយាមតម្រូវកម្ពស់តាម Font អត្ថបទ */ 
+        displayAlign: 'center',
+        linebreaks: { automatic: true } /* ព្យាយាមបំបែកជួររូបមន្តវែងៗ */
         },
     svg: {
         scale: 1.2,
@@ -60,6 +63,23 @@
     <script src="https://tikzjax.com/v1/tikzjax.js"></script>
     
     <style>
+        /* កូដសម្រាប់ទូរស័ព្ទ (អេក្រង់តូចជាង 768px) */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 10px;  /* បន្ថែមគម្លាតសងខាងបន្តិច */
+            }
+    
+            /* ប្រសិនបើអ្នកមាន Table ច្រើនជួរ ប្តូរវាឱ្យរមូរបាន */
+            table {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            h1 { font-size: 1.5rem; } /* បន្ថយទំហំចំណងជើង */
+            h2 { font-size: 1.2rem; }
+        }
+        
     /*    body {
             font-family: 'Khmer OS Battambang', 'Arial', sans-serif;
             line-height: 1.6;
@@ -73,12 +93,13 @@
         body {
             font-family: 'Siemreap', 'Arial', sans-serif;
             /*font-family: 'Noto Serif Khmer', serif;*/
-            line-height: 1.6;
+            line-height: 1.6; /*បន្ថែមចន្លោះជួរឱ្យអក្សរខ្មែរមើលទៅមិនជាន់គ្នា */
             color: #333;
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
             background-color: #f9f9f9;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* ២. កំណត់ Battambang សម្រាប់ចំណងជើង (Headers) */
@@ -194,9 +215,9 @@
             color: #2980b9;
             border-radius: 0 2px 2px 0;
     
-    /* Optional: ensures padding doesn't push width over 66% */
-    box-sizing: border-box; 
-}
+        /* Optional: ensures padding doesn't push width over 66% */
+            box-sizing: border-box; 
+        }
             
         .hint-title {
             font-weight: bold;
@@ -243,6 +264,19 @@
         /* សម្រាប់រូបមន្តក្នុងជួរអត្ថបទ (Inline) *
         .MathJax {
             font-size: 1.2em !important;
+        }*/
+        
+        /* បន្ថែមក្នុង <style> */
+        svg {
+            max-width: 100%;    /* បង្ខំឱ្យរូបភាពមិនឱ្យធំជាងអេក្រង់ទូរស័ព្ទ */
+            height: auto;       /* រក្សាសមាមាត្ររូបភាព */
+        }
+
+      /*  .table-container {
+            width: 100%;
+            overflow-x: auto;   /* បើករមូរឆ្វេងស្តាំ បើរូបភាពនៅតែធំជាងអេក្រង់ *
+            display: flex;
+            justify-content: center;
         }*/
         
     </style>
