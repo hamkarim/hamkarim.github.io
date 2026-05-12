@@ -12,17 +12,25 @@
     
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                // Define your macro here
-                macros: {
-                    mybullet: "{\\tiny\\bullet\\;\\;}",
-                    mybullett: "{\\quad\\tiny\\bullet\\;\\;}",
-                },
-            }
-        };
+      window.MathJax = {
+    tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        macros: {
+            mybullet: "{\\tiny\\bullet\\;\\;}",
+            mybullett: "{\\quad\\tiny\\bullet\\;\\;}",
+        },
+    },
+    // បន្ថែមផ្នែកខាងក្រោមនេះ ដើម្បីកំណត់ទំហំអក្សរគណិតវិទ្យា
+    chtml: {
+        scale: 0.95,        /* កែសម្រួលលេខនេះ (0.9 ដល់ 1) រហូតដល់មើលទៅសមល្មមនឹងអក្សរខ្មែរ */
+        matchFontHeight: true /* ឱ្យវាព្យាយាមតម្រូវកម្ពស់តាម Font អត្ថបទ */
+    },
+    svg: {
+        scale: 0.95,
+        matchFontHeight: true
+    }
+};
     </script> 
     
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -224,6 +232,18 @@
             margin-bottom: 20px;
             width: 100%;
         }
+        
+        /* កំណត់ឱ្យ MathJax ប្រើទំហំតាមមេ (Parent Container) */
+mjx-container {
+    font-size: 100% !important; /* ឬកំណត់ 0.95em បើចង់ឱ្យវាតូចជាងអត្ថបទបន្តិច */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* សម្រាប់រូបមន្តក្នុងជួរអត្ថបទ (Inline) */
+.MathJax {
+    font-size: 1em !important;
+}
         
     </style>
     
