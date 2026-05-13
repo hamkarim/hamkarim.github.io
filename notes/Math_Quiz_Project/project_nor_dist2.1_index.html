@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Siemreap&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@400;700&display=swap" rel="stylesheet">
+    
+    <title>វិញ្ញាសា៖ ការវិភាគប្រូបាប៊ីលីតេក្នុងទីផ្សាររថយន្ត</title>
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                macros: {
+                    mybullet: "{\\tiny\\bullet\\;\\;}",
+                    mybullett: "{\\quad\\tiny\\bullet\\;\\;}",
+                },
+            },
+            chtml: {
+                scale: 1.2,
+                linebreaks: { automatic: true }
+            },
+            svg: {
+                scale: 1.2,
+                matchFontHeight: true 
+            }
+        };
+    </script> 
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+    
+    <style>
+        @media screen and (max-width: 768px) {
+            .container { padding: 10px; }
+            table { display: block; width: 100%; overflow-x: auto; white-space: nowrap; }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+        }
+        
+        body {
+            font-family: 'Siemreap', 'Arial', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f7f6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h4, h5, h6 {
+            font-family: 'Battambang', 'Arial', sans-serif;
+            font-weight: 700;
+            color: #2c3e50;
+            line-height: 1.4;
+        }
+        
+        h3 {
+            font-family: 'Noto Serif Khmer', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: 25px;
+            color: #1a5276;
+        }
+
+        b, strong {
+            font-family: 'Noto Serif Khmer', serif;
+            font-weight: 700;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #1a5276;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .problem-section {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        b.bquestion {
+            margin-bottom: 12px;
+            margin-top: 25px;
+            display: block;
+            font-size: 1.15rem;
+            color: #d35400;
+            border-left: 5px solid #d35400;
+            padding-left: 10px;
+        }
+        
+        .sub-question {
+            margin-left: 20px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .company-data {
+            background-color: #fdfefe;
+            border: 1px solid #eaeaea;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .hint-box {
+            background-color: #fef9e7;
+            border-left: 4px solid #f1c40f;
+            padding: 15px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            color: #7d6608;
+            border-radius: 0 4px 4px 0;
+        }
+            
+        .hint-title {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #9a7d0a;
+            font-family: 'Battambang', sans-serif;
+        }
+
+        .table-container {
+            display: flex;
+            justify-content: center;
+            margin: 25px 0;
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>វិញ្ញាសាគណិតវិទ្យាអនុវត្តន៍</h1>
+    <p>ប្រធានបទ៖ បំណែងចែកនរម៉ាល់ និងការសម្រេចចិត្តក្នុងធុរកិច្ច (Business Statistics)</p>
+</div>
+
+<div class="problem-section">
+    <h3>ចំណោទ៖ យុទ្ធសាស្ត្រប្រកួតប្រជែងនៃក្រុមហ៊ុនឡានអគ្គិសនី</h3>
+    <p>
+        ក្រុមហ៊ុនផលិតឡានចំនួន ៣ រួមមាន <b>V-Auto</b>, <b>E-Drive</b>, និង <b>Titan-M</b> កំពុងប្រកួតប្រជែងគ្នាយ៉ាងខ្លាំងលើ "ចម្ងាយផ្លូវអតិបរមាដែលឡានអាចរត់បានក្នុងម្ដងសាក (Driving Range)"។ ទិន្នន័យនៃការរត់បានរបស់ឡាននីមួយៗគឺជាអថេរចៃដន្យជាប់ ដែលមានបំណែងចែកនរម៉ាល់ដូចខាងក្រោម៖
+    </p>
+
+    <div class="company-data">
+        <ul>
+            <li><b>V-Auto:</b> $\mu = 450$ km, $\sigma = 20$ km (ផ្តោតលើតុល្យភាព)</li>
+            <li><b>E-Drive:</b> $\mu = 470$ km, $\sigma = 50$ km (រត់បានឆ្ងាយ ប៉ុន្តែមានបម្រែបម្រួលខ្លាំង)</li>
+            <li><b>Titan-M:</b> $\mu = 460$ km, $\sigma = 15$ km (ផ្តោតលើភាពជាក់លាក់ និងទំនុកចិត្ត)</li>
+        </ul>
+    </div>
+
+    <div class="table-container">
+        <script type="text/tikz">
+            \begin{tikzpicture}[scale=1.1]
+              % Titan-M (Narrow/Tall)
+              \draw[thick, red] plot[domain=410:510,samples=100] (\x,{4*exp(-((\x-460)^2)/(2*15^2))}) node[right] {\tiny Titan-M};
+              % V-Auto (Medium)
+              \draw[thick, blue] plot[domain=380:520,samples=100] (\x,{3*exp(-((\x-450)^2)/(2*20^2))}) node[above] {\tiny V-Auto};
+              % E-Drive (Wide/Short)
+              \draw[thick, green!60!black] plot[domain=320:620,samples=100] (\x,{1.5*exp(-((\x-470)^2)/(2*50^2))}) node[right] {\tiny E-Drive};
+              
+              \draw[->] (320,0) -- (630,0) node[right] {km};
+              \node at (460,-0.3) {\tiny 460};
+            \end{tikzpicture}
+        </script>
+    </div>
+
+    <b class="bquestion">១. ការវិភាគលើការសន្យារបស់ក្រុមហ៊ុន (កម្រិតស្រាល)</b>
+    <div class="sub-question">
+        ប្រសិនបើក្រុមហ៊ុនទាំង ៣ ផ្សព្វផ្សាយក្នុងខិត្តប័ណ្ណថា "ឡានរបស់យើងអាចរត់បានយ៉ាងតិច $440$ km" តើក្រុមហ៊ុនណាដែលមានភាគរយនៃឡានធ្វើបានតាមការសន្យានេះខ្ពស់ជាងគេ? ចូរគណនាប្រូបាប៊ីលីតេនៃក្រុមហ៊ុននីមួយៗដើម្បីបញ្ជាក់។
+    </div>
+
+    <b class="bquestion">២. ការនិយមប្រើប្រាស់ និងចិត្តសាស្ត្រអតិថិជន (កម្រិតមធ្យម)</b>
+    <div class="sub-question">
+        តាមការស្ទង់មតិ អតិថិជនមាន ២ ក្រុមធំៗ៖
+        <ul>
+            <li><b>ក្រុម A (Risk-Takers):</b> ចូលចិត្តឡានណាដែលមានឱកាសរត់បានឆ្ងាយខ្លាំង (លើសពី $550$ km)។</li>
+            <li><b>ក្រុម B (Practical Users):</b> ចូលចិត្តឡានណាដែលមានស្ថេរភាពខ្ពស់ ដោយរត់បានក្នុងចន្លោះពី $440$ km ទៅ $480$ km។</li>
+        </ul>
+        <b>សំណួរ៖</b> តើក្រុមហ៊ុនណាដែលទាក់ទាញអតិថិជន "ក្រុម A" ជាងគេ? ហើយក្រុមហ៊ុនណាដែលសក្ដិសមបំផុតសម្រាប់ "ក្រុម B"?
+    </div>
+
+    <b class="bquestion">៣. ការរំពឹងទុក និងការធានានាពេលអនាគត (កម្រិតលំបាក)</b>
+    <div class="sub-question">
+        ក្រុមហ៊ុន <b>E-Drive</b> ចង់បង្កើនទំនុកចិត្តដោយប្រកាសយុទ្ធនាការ "ធានាសងលុយវិញ $20\%$ ប្រសិនបើឡានរត់មិនបានដល់កម្រិត $k$ ម៉ែត្រ"។ នាយកដ្ឋានបច្ចេកទេសចង់ឱ្យមានឡានត្រឹមតែ $1\%$ ប៉ុណ្ណោះនៃផលិតផលសរុប ដែលអាចនឹងត្រូវសងលុយវិញ។
+        <br><br>
+        <b>សំណួរ៖</b> ចូររកតម្លៃ $k$ សម្រាប់ក្រុមហ៊ុន <b>E-Drive</b>។ ប្រសិនបើក្រុមហ៊ុន <b>Titan-M</b> ក៏អនុវត្តគោលការណ៍ $1\%$ នេះដែរ តើតម្លៃ $k$ របស់ក្រុមហ៊ុនណាខ្ពស់ជាង? តើវាឆ្លុះបញ្ចាំងពីអ្វីខ្លះ?
+    </div>
+
+    <b class="bquestion">៤. ការសម្រេចចិត្តយុទ្ធសាស្ត្រ (Business Insights)</b>
+    <div class="sub-question">
+        ក្នុងនាមអ្នកជាអ្នកវិភាគទិន្នន័យ តើអ្នកនឹងផ្តល់អនុសាសន៍យ៉ាងដូចម្តេចទៅកាន់ក្រុមហ៊ុន <b>E-Drive</b> ដើម្បីឱ្យពួកគេអាចប្រកួតប្រជែងផ្នែក "ភាពជឿជាក់ (Reliability)" ជាមួយក្រុមហ៊ុនដទៃបាន? តើការកាត់បន្ថយ $\sigma$ ឬការបង្កើន $\mu$ មួយណាដែលមានប្រសិទ្ធភាពជាង?
+    </div>
+</div>
+
+<div class="hint-box">
+    <span class="hint-title">💡 ជំនួយស្មារតី (Hints):</span>
+    <ul>
+        <li>បំប្លែងទៅជា $Z$-score ជានិច្ច៖ $Z = \frac{x - \mu}{\sigma}$</li>
+        <li>តម្លៃ $Z$ សម្រាប់ផ្ទៃក្រឡា $1\%$ ($0.01$) នៅខាងឆ្វេងគឺ $z \approx -2.33$</li>
+        <li>ចងចាំថា $\sigma$ តូច បញ្ជាក់ពី "ភាពច្បាស់លាស់" ចំណែក $\sigma$ ធំ បញ្ជាក់ពី "ភាពមិនច្បាស់លាស់" ទោះបីជាមានតម្លៃមធ្យមខ្ពស់ក៏ដោយ។</li>
+    </ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Siemreap&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@400;700&display=swap" rel="stylesheet">
+    
+    <title>លំហាត់អនុវត្តន៍ប្រូបាប៊ីលីតេ៖ បំណែងចែកនរម៉ាល់</title>
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                macros: {
+                    mybullet: "{\\tiny\\bullet\\;\\;}",
+                    mybullett: "{\\quad\\tiny\\bullet\\;\\;}",
+                },
+            },
+            chtml: {
+                scale: 1.2,
+                linebreaks: { automatic: true }
+            },
+            svg: {
+                scale: 1.2,
+                matchFontHeight: true 
+            }
+        };
+    </script> 
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+    
+    <style>
+        @media screen and (max-width: 768px) {
+            .container { padding: 10px; }
+            table { display: block; width: 100%; overflow-x: auto; white-space: nowrap; }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+        }
+        
+        body {
+            font-family: 'Siemreap', 'Arial', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h4, h5, h6 {
+            font-family: 'Battambang', 'Arial', sans-serif;
+            font-weight: 700;
+            color: #2c3e50;
+            line-height: 1.4;
+        }
+        
+        h3 {
+            font-family: 'Noto Serif Khmer', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: 25px;
+        }
+
+        b, strong, .question {
+            font-family: 'Noto Serif Khmer', serif;
+            font-weight: 700;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .problem-section {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+        }
+
+        b.bquestion {
+            margin-bottom: 12px;
+            margin-top: 20px;
+            display: block;
+            font-size: 1.1rem;
+            color: #1f618d;
+        }
+        
+        .sub-question {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        .hint-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            color: #2980b9;
+            border-radius: 0 4px 4px 0;
+        }
+            
+        .hint-title {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #1f618d;
+            font-family: 'Battambang', sans-serif;
+        }
+
+        .table-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        mjx-container {
+            font-size: 110% !important;
+        }
+
+        .highlight {
+            color: #c0392b;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>វិញ្ញាសាអនុវត្តន៍ប្រូបាប៊ីលីតេ</h1>
+    <p>ប្រធានបទ៖ អថេរចៃដន្យជាប់ និងបំណែងចែកនរម៉ាល់ (Normal Distribution)</p>
+</div>
+
+<div class="problem-section">
+    <h3>ស្ថានភាព៖ ការវិភាគទីផ្សារ និងខ្សែសង្វាក់ផលិតកម្មនៃ "ស្មាតហ្វូនជំនាន់ថ្មី"</h3>
+    <p>
+        ក្រុមហ៊ុនបច្ចេកវិទ្យា <b>"A-Tech"</b> កំពុងសិក្សាលើអាយុកាលថ្ម (Battery Life) នៃទូរស័ព្ទម៉ូដែលថ្មីរបស់ខ្លួន។ តាមរយៈការធ្វើតេស្ត គេរកឃើញថា អាយុកាលថ្មរបស់វាគឺជាអថេរចៃដន្យជាប់ $X$ ដែលមានបំណែងចែកនរម៉ាល់ ដែលមានមធ្យម $\mu = 15$ ម៉ោង (សម្រាប់ការប្រើប្រាស់ជាប់) និងគម្លាតស្តង់ដា $\sigma = 1.5$ ម៉ោង។
+    </p>
+
+    <div class="table-container">
+        <script type="text/tikz">
+            \begin{tikzpicture}[scale=1.2]
+              \fill[blue!10] (-2,0) -- plot[domain=-2:2,samples=50] (\x,{3*exp(-(\x^2)/2)}) -- (2,0) -- cycle;
+              \draw[->] (-4,0) -- (4,0) node[right] {$x$};
+              \draw[thick, blue] plot[domain=-3.5:3.5,samples=100] (\x,{3*exp(-(\x^2)/2)});
+              \draw[dashed] (0,0) -- (0,3.2) node[above] {$\mu=15$};
+              \draw[<->] (0,1.5) -- (1,1.5) node[midway,above] {$\sigma=1.5$};
+            \end{tikzpicture}
+        </script>
+    </div>
+
+    <b class="bquestion">១. ការវាយតម្លៃគុណភាពផលិតផល (កម្រិតស្រាល)</b>
+    <div class="sub-question">
+        ដើម្បីកំណត់លក្ខណៈបច្ចេកទេសលើប្រអប់ ក្រុមហ៊ុនចង់ដឹងថា តើមានភាគរយប៉ុន្មាននៃទូរស័ព្ទដែលផលិតចេញមក មានអាយុកាលថ្ម <b>ចន្លោះពី $13$ ម៉ោង ទៅ $17$ ម៉ោង</b>?
+    </div>
+
+    <b class="bquestion">២. ការសិក្សាពីការពេញនិយម និងទំនុកចិត្តអតិថិជន (កម្រិតមធ្យម)</b>
+    <div class="sub-question">
+        តាមការស្ទង់មតិ អតិថិជននឹងចាត់ទុកថាទូរស័ព្ទនោះ "មានគុណភាពខ្ពស់" លុះត្រាតែថ្មរបស់វាអាចប្រើបាន <b>លើសពី $17.5$ ម៉ោង</b>។ ផ្ទុយទៅវិញ បើថ្មប្រើបាន <b>តិចជាង $12$ ម៉ោង</b> ពួកគេនឹងធ្វើការរិះគន់តាមបណ្តាញសង្គម។
+        <br><br>
+        <b>សំណួរ៖</b> ប្រសិនបើក្រុមហ៊ុនលក់ទូរស័ព្ទបាន $50,000$ គ្រឿង តើក្រុមហ៊ុនគួរត្រៀមខ្លួនទទួលការរិះគន់ពីអតិថិជនចំនួនប៉ុន្មាននាក់? ហើយតើចំនួនអ្នកដែលសរសើរថា "គុណភាពខ្ពស់" មានច្រើនជាង ឬតិចជាងអ្នករិះគន់?
+    </div>
+
+    <b class="bquestion">៣. ការរំពឹងទុក និងយុទ្ធសាស្ត្រនាពេលអនាគត (កម្រិតលំបាក)</b>
+    <div class="sub-question">
+        ក្រុមហ៊ុនមានគម្រោងចេញយុទ្ធនាការ "ធានាប្តូរថ្មីដោយឥតគិតថ្លៃ" ប្រសិនបើថ្មទូរស័ព្ទមានអាយុកាលទាបជាងកម្រិតកំណត់ $k$ ណាមួយ។
+        <br><br>
+        <b>សំណួរ៖</b> ដើម្បីកុំឱ្យក្រុមហ៊ុនខាតបង់ច្រើន នាយកផ្នែកហិរញ្ញវត្ថុបានកំណត់ថា ចំនួនទូរស័ព្ទដែលត្រូវប្តូរថ្មី <b>មិនត្រូវឱ្យលើសពី $2\%$</b> នៃផលិតផលសរុបឡើយ។ តើក្រុមហ៊ុនគួរកំណត់អាយុកាលថ្មអប្បបរមា $k$ កម្រិតណា ដើម្បីបិទលើខិត្តប័ណ្ណធានារបស់ខ្លួន?
+    </div>
+
+    <b class="bquestion">៤. ការប្រៀបធៀប និងការសម្រេចចិត្ត (ការវិភាគបែបធុរកិច្ច)</b>
+    <div class="sub-question">
+        សន្មតថាគូប្រជែងរបស់ A-Tech បានចេញទូរស័ព្ទដែលមាន $\mu = 15.5$ ម៉ោង ប៉ុន្តែមាន $\sigma = 2.5$ ម៉ោង (អាយុកាលថ្មមិនសូវនឹងន)។ ប្រសិនបើអ្នកជាអតិថិជនដែលចូលចិត្ត "ភាពច្បាស់លាស់ និងការទុកចិត្តបាន" (Reliability) តើអ្នកគួរជ្រើសរើសទូរស័ព្ទពីក្រុមហ៊ុនណា? ចូរពន្យល់ដោយប្រើទ្រឹស្តីប្រូបាប៊ីលីតេ។
+    </div>
+</div>
+
+<div class="hint-box">
+    <span class="hint-title">💡 គន្លឹះសម្រាប់ការដោះស្រាយ៖</span>
+    <ul>
+        <li>ប្រើរូបមន្តបំប្លែងពិន្ទុស្តង់ដា៖ $Z = \frac{x - \mu}{\sigma}$</li>
+        <li>សម្រាប់សំណួរទី ៣៖ អ្នកត្រូវរកតម្លៃ $z$ ពីតារាងនរម៉ាល់ដែលត្រូវនឹងផ្ទៃក្រឡា $0.02$ (កន្ទុយខាងឆ្វេង) រួចទាញរក $k = \mu + z\sigma$។</li>
+        <li>សម្រាប់ការប្រៀបធៀប៖ គម្លាតស្តង់ដា $\sigma$ កាន់តែតូច បញ្ជាក់ពីស្ថេរភាពនៃផលិតផល។</li>
+    </ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Siemreap&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@400;700&display=swap" rel="stylesheet">
+    
+    <title>វិញ្ញាសា៖ អថេរចៃដន្យដាច់ក្នុងជីវភាពរស់នៅ</title>
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                macros: {
+                    mybullet: "{\\tiny\\bullet\\;\\;}",
+                },
+            },
+            chtml: { scale: 1.2, linebreaks: { automatic: true } }
+        };
+    </script> 
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Siemreap', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        .problem-section {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        h1, h2, h3 { font-family: 'Battambang'; color: #2c3e50; }
+        b.bquestion {
+            display: block;
+            margin: 20px 0 10px 0;
+            font-size: 1.1rem;
+            color: #e67e22;
+            font-family: 'Noto Serif Khmer';
+        }
+        .sub-question { margin-left: 20px; margin-bottom: 15px; }
+        .hint-box {
+            background-color: #fdf2e9;
+            border-left: 4px solid #e67e22;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 0.95em;
+            border-radius: 0 4px 4px 0;
+        }
+        .hint-title { font-weight: bold; color: #d35400; display: block; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>វិញ្ញាសា៖ អថេរចៃដន្យដាច់</h1>
+    <p>ការអនុវត្តរបាយទ្វេធា និងរបាយព័រសុង ក្នុងស្ថានភាពជាក់ស្តែង</p>
+</div>
+
+<div class="problem-section">
+    <h3>លំហាត់ទី ១៖ ការគ្រប់គ្រងគុណភាពក្នុងអាជីវកម្មលក់អំពូលភ្លើង (Binomial Distribution)</h3>
+    <p>
+        ម្ចាស់ហាងលក់សម្ភារៈអគ្គិសនីម្នាក់ដឹងថា តាមស្ថិតិមានអំពូលភ្លើងប្រភេទ LED ចំនួន <b>$5\%$</b> ដែលខូចគុណភាពចេញពីរោងចក្រ។ គាត់បានទិញអំពូលចំនួន <b>$20$ គ្រាប់</b> មកទុកលក់ក្នុងហាង។ តាង $X$ ជាចំនួនអំពូលដែលខូចគុណភាពក្នុងចំណោមអំពូលទាំង $20$ នោះ។
+    </p>
+
+    <b class="bquestion">សំណួរ៖</b>
+    <div class="sub-question">
+        ក. ចូរពន្យល់ថាហេតុអ្វីបានជា $X$ ជាអថេរចៃដន្យដែលដេីរតាមរបាយទ្វេធា? រួចកំណត់ប៉ារ៉ាម៉ែត្រ $n$ និង $p$។
+    </div>
+    <div class="sub-question">
+        ខ. គណនាប្រូបាប៊ីលីតេដែលម្ចាស់ហាងរកឃើញអំពូលខូច <b>ចំនួន ២ គ្រាប់ចំ</b>។
+    </div>
+    <div class="sub-question">
+        គ. ប្រសិនបើអតិថិជនម្នាក់មកទិញអំពូលទាំង $20$ គ្រាប់នេះ តើគាត់ "រំពឹង" ថានឹងមានអំពូលខូចចំនួនប៉ុន្មានគ្រាប់?
+    </div>
+
+    <div class="hint-box">
+        <span class="hint-title">💡 រូបមន្តជំនួយ៖</span>
+        $P(X=k) = C(n, k) \cdot p^k \cdot (1-p)^{n-k}$ និង $E(X) = n \cdot p$
+    </div>
+</div>
+
+<div class="problem-section">
+    <h3>លំហាត់ទី ២៖ ការគ្រប់គ្រងសេវាកម្មអតិថិជននៅភោជនីយដ្ឋាន (Poisson Distribution)</h3>
+    <p>
+        នៅភោជនីយដ្ឋានមួយ តាមទិន្នន័យមធ្យមភាគ មានអតិថិជនថ្មីចំនួន <b>$3$ នាក់</b> ដើរចូលក្នុងហាងក្នុងរយៈពេល <b>$10$ នាទី</b>។ សន្មតថាការមកដល់របស់អតិថិជននីមួយៗគឺជាព្រឹត្តិការណ៍ចៃដន្យ និងមិនអាស្រ័យនឹងគ្នា។
+    </p>
+
+    <b class="bquestion">សំណួរ៖</b>
+    <div class="sub-question">
+        ក. ក្នុងរយៈពេល $10$ នាទីណាមួយ តើប្រូបាប៊ីលីតេដែល <b>គ្មានអតិថិជនសោះ</b> ដើរចូលក្នុងហាងមានតម្លៃស្មើប៉ុន្មាន?
+    </div>
+    <div class="sub-question">
+        ខ. ក្នុងរយៈពេល <b>$20$ នាទី</b> វិញ តើប្រូបាប៊ីលីតេដែលហាងទទួលបានអតិថិជនថ្មី <b>យ៉ាងតិច ២ នាក់</b> ស្មើនឹងប៉ុន្មាន?
+    </div>
+    <div class="sub-question">
+        គ. ប្រសិនបើអ្នកជាអ្នកគ្រប់គ្រងហាង ហើយដឹងថាបុគ្គលិកម្នាក់អាចទទួលភ្ញៀវបានអតិបរមា $8$ នាក់ក្នុងរយៈពេល ២០ នាទី។ តើអ្នកបារម្ភដែរឬទេថាភ្ញៀវនឹងលើសចំណុះ? ចូលពន្យល់តាមរយៈការគណនាមធ្យមភាគ និងគម្លាតស្តង់ដា។
+    </div>
+
+    <div class="hint-box">
+        <span class="hint-title">💡 រូបមន្តជំនួយ៖</span>
+        $P(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}$ (សម្រាប់រយៈពេល $20$ នាទី តម្លៃ $\lambda$ ត្រូវប្រែប្រួលតាមសមាមាត្រ)
+    </div>
+</div>
+
+</body>
+</html>

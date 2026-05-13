@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Siemreap&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@400;700&display=swap" rel="stylesheet">
+    
+    <title>វិញ្ញាសាស្ថិតិ៖ ការប្រកួតប្រជែងទីផ្សាររថយន្ត</title>
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                macros: {
+                    mybullet: "{\\tiny\\bullet\\;\\;}",
+                    mybullett: "{\\quad\\tiny\\bullet\\;\\;}",
+                },
+            },
+            chtml: {
+                scale: 1.2,
+                linebreaks: { automatic: true }
+            },
+            svg: {
+                scale: 1.2,
+                matchFontHeight: true 
+            }
+        };
+    </script> 
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Siemreap', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f7f6;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        h1 { font-family: 'Battambang', sans-serif; color: #2c3e50; }
+
+        .problem-section {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .company-box {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+
+        .company-item {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .company-name {
+            font-weight: bold;
+            color: #e67e22;
+            display: block;
+            font-size: 1.1rem;
+        }
+
+        b.bquestion {
+            display: block;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #1f618d;
+            font-family: 'Noto Serif Khmer', serif;
+            border-left: 5px solid #1f618d;
+            padding-left: 10px;
+        }
+        
+        .sub-question {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .hint-box {
+            background-color: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin-top: 30px;
+            font-size: 0.95em;
+            border-radius: 4px;
+        }
+
+        .table-container {
+            display: flex;
+            justify-content: center;
+            margin: 25px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>វិញ្ញាសាអនុវត្តន៍៖ ការវិភាគយុទ្ធសាស្ត្ររថយន្តអគ្គិសនី</h1>
+    <p>អនុវត្តន៍ទ្រឹស្តីបំណែងចែកនរម៉ាល់ (Normal Distribution Comparison)</p>
+</div>
+
+<div class="problem-section">
+    <p>
+        ក្រុមហ៊ុនផលិតឡានចំនួន ៣ រួមមាន <b>V-Auto</b>, <b>E-Drive</b>, និង <b>Titan-M</b> កំពុងប្រកួតប្រជែងគ្នាយ៉ាងខ្លាំងលើ "ចម្ងាយផ្លូវអតិបរមាដែលឡានអាចរត់បានក្នុងម្ដងសាក (Driving Range)"។ ទិន្នន័យនៃចម្ងាយផ្លូវ $X$ គឺជាអថេរចៃដន្យជាប់ដែលមានបំណែងចែកនរម៉ាល់ដូចខាងក្រោម៖
+    </p>
+
+    <div class="company-box">
+        <div class="company-item">
+            <span class="company-name">V-Auto</span>
+            $\mu = 450 \text{ km}$<br>$\sigma = 20 \text{ km}$
+        </div>
+        <div class="company-item">
+            <span class="company-name">E-Drive</span>
+            $\mu = 470 \text{ km}$<br>$\sigma = 50 \text{ km}$
+        </div>
+        <div class="company-item">
+            <span class="company-name">Titan-M</span>
+            $\mu = 460 \text{ km}$<br>$\sigma = 15 \text{ km}$
+        </div>
+    </div>
+
+    <div class="table-container">
+        <script type="text/tikz">
+            \begin{tikzpicture}[scale=1]
+                \draw[->] (-4,0) -- (4,0) node[right] {$x$};
+                % Titan-M (Narrow)
+                \draw[thick, red] plot[domain=-3:3,samples=100] (\x,{3.5*exp(-(\x^2)/0.4)}) node[above] {\tiny Titan-M};
+                % V-Auto (Medium)
+                \draw[thick, blue] plot[domain=-3.5:3.5,samples=100] (\x,{2.5*exp(-(\x^2)/1)}) node[right] {\tiny V-Auto};
+                % E-Drive (Wide)
+                \draw[thick, green!60!black] plot[domain=-4:4,samples=100] (\x,{1.5*exp(-(\x^2)/3)}) node[below] {\tiny E-Drive};
+            \end{tikzpicture}
+        </script>
+    </div>
+
+    <b class="bquestion">១. ការវិភាគលើការសន្យារបស់ក្រុមហ៊ុន (កម្រិតស្រាល)</b>
+    <div class="sub-question">
+        ប្រសិនបើក្រុមហ៊ុនទាំង ៣ ផ្សព្វផ្សាយថា "ឡានរបស់យើងអាចរត់បានយ៉ាងតិច $440$ km" តើក្រុមហ៊ុនណាដែលមានភាគរយនៃផលិតផលធ្វើបានតាមការសន្យានេះខ្ពស់ជាងគេ? ចូរគណនាប្រធានក្រុមហ៊ុននីមួយៗ។
+    </div>
+
+    <b class="bquestion">២. ការនិយមប្រើប្រាស់ និងចិត្តសាស្ត្រអតិថិជន (កម្រិតមធ្យម)</b>
+    <div class="sub-question">
+        អតិថិជនត្រូវបានបែងចែកជា ២ ក្រុម៖
+        <ul>
+            <li><b>ក្រុម A (Risk-Takers):</b> ចូលចិត្តឡានណាដែលមានឱកាសរត់បានឆ្ងាយបំផុត (លើសពី $550$ km)។</li>
+            <li><b>ក្រុម B (Practical Users):</b> ចូលចិត្តឡានណាដែលរត់បានចន្លោះពី $440$ km ទៅ $480$ km ជាប្រចាំ។</li>
+        </ul>
+        <b>សំណួរ៖</b> តើក្រុមហ៊ុនណាដែលទាក់ទាញអតិថិជនក្រុម A ជាងគេ? ហើយក្រុមហ៊ុនណាដែលសក្ដិសមបំផុតសម្រាប់ក្រុម B?
+    </div>
+
+    <b class="bquestion">៣. ការរំពឹងទុក និងការធានានាពេលអនាគត (កម្រិតលំបាក)</b>
+    <div class="sub-question">
+        ក្រុមហ៊ុន <b>E-Drive</b> ចង់ចេញយុទ្ធនាការ "ធានាសងលុយវិញ $20\%$ ប្រសិនបើឡានរត់មិនបានដល់កម្រិត $k$ ណាមួយ"។ ក្រុមហ៊ុនកំណត់ថាមានឡានត្រឹមតែ $1\%$ ប៉ុណ្ណោះដែលអាចធ្លាក់ក្នុងលក្ខខណ្ឌសងលុយនេះ។
+        <br><br>
+        <b>សំណួរ៖</b> ចូររកតម្លៃ $k$ សម្រាប់ក្រុមហ៊ុន <b>E-Drive</b>។ ប្រសិនបើក្រុមហ៊ុន <b>Titan-M</b> ប្រើលក្ខខណ្ឌ $1\%$ ដូចគ្នា តើតម្លៃ $k$ របស់ក្រុមហ៊ុនណាខ្ពស់ជាង? តើនេះបង្ហាញពីអ្វី?
+    </div>
+
+    <b class="bquestion">៤. ការសម្រេចចិត្តយុទ្ធសាស្ត្រ (Business Insights)</b>
+    <div class="sub-question">
+        ក្នុងនាមអ្នកជាអ្នកជំនាញស្ថិតិ តើអ្នកគួរផ្តល់អនុសាសន៍យ៉ាងដូចម្តេចដល់ក្រុមហ៊ុន <b>E-Drive</b> ដើម្បីឱ្យផលិតផលរបស់ខ្លួនមាន "ភាពជឿជាក់ (Reliability)" ប្រកួតប្រជែងជាមួយ <b>Titan-M</b> បាន?
+    </div>
+</div>
+
+<div class="hint-box">
+    <b>💡 គន្លឹះគ្រូ៖</b>
+    <p>
+        - ប្រើតារាង $Z$-Table ដើម្បីស្វែងរកផ្ទៃក្រឡា $P(Z \lt z)$។<br>
+        - កត់សម្គាល់៖ ទោះបីជា <b>E-Drive</b> មានមធ្យម $\mu$ ខ្ពស់ជាងគេ ប៉ុន្តែដោយសារវាមានគម្លាតស្តង់ដា $\sigma$ ធំ វាអាចនឹងមានហានិភ័យខ្ពស់ជាងគេក្នុងការផលិតឡានដែលរត់បានចម្ងាយខ្លីខ្លាំង។
+    </p>
+</div>
+
+</body>
+</html>

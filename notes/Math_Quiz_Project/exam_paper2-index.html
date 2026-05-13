@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Siemreap&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@400;700&display=swap" rel="stylesheet">
+    
+    <title>វិញ្ញាសាគណិតវិទ្យា៖ ការសិក្សាអនុគមន៍ (ស្តង់ដាបាក់ឌុប)</title>
+    
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+      window.MathJax = {
+    tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        macros: {
+            mybullet: "{\\tiny\\bullet\\;\\;}",
+            mybullett: "{\\quad\\tiny\\bullet\\;\\;}",
+        },
+    },
+    // បន្ថែមផ្នែកខាងក្រោមនេះ ដើម្បីកំណត់ទំហំអក្សរគណិតវិទ្យា
+    chtml: {
+        scale: 1.2,        /* ដំឡើងឱ្យធំជាងអក្សរធម្មតា ១៥% កែសម្រួលលេខនេះរហូតដល់មើលទៅសមល្មមនឹងអក្សរខ្មែរ */
+        /*matchFontHeight: true, /* ឱ្យវាព្យាយាមតម្រូវកម្ពស់តាម Font អត្ថបទ */ 
+        /*displayAlign: 'center',*/
+        linebreaks: { automatic: true } /* ព្យាយាមបំបែកជួររូបមន្តវែងៗ */
+        },
+    svg: {
+        scale: 1.2,
+        matchFontHeight: true 
+        }
+    };
+    </script> 
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+    
+    <style>
+        /* កូដសម្រាប់ទូរស័ព្ទ (អេក្រង់តូចជាង 768px) */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 10px;  /* បន្ថែមគម្លាតសងខាងបន្តិច */
+            }
+    
+            /* ប្រសិនបើអ្នកមាន Table ច្រើនជួរ ប្តូរវាឱ្យរមូរបាន */
+            table {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            h1 { font-size: 1.5rem; } /* បន្ថយទំហំចំណងជើង */
+            h2 { font-size: 1.2rem; }
+        }
+        
+    /*    body {
+            font-family: 'Khmer OS Battambang', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }*/
+        /* ១. កំណត់ Siemreap ជាហ្វុងគោលសម្រាប់អត្ថបទធម្មតាទាំងអស់ក្នុងទំព័រ */
+        body {
+            font-family: 'Siemreap', 'Arial', sans-serif;
+            /*font-family: 'Noto Serif Khmer', serif;*/
+            line-height: 1.6; /*បន្ថែមចន្លោះជួរឱ្យអក្សរខ្មែរមើលទៅមិនជាន់គ្នា */
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ២. កំណត់ Battambang សម្រាប់ចំណងជើង (Headers) */
+        h1, h2, h4, h5, h6 {
+            font-family: 'Battambang', 'Arial', sans-serif;
+            font-weight: 700; /* កម្រិតកម្រាស់ Bold */
+            color: #2c3e50;
+            line-height: 1;
+        }
+        
+        h3 {
+            font-family: 'Noto Serif Khmer', serif;
+            font-size: larger;
+            font-weight: 700; /* កម្រិតកម្រាស់ Bold */
+        }
+
+        /* ៣. កំណត់ Battambang សម្រាប់អត្ថបទដែលជា Bold ឬសំណួរ *
+        b, strong, .question {
+            font-family: 'Battambang', 'Arial', sans-serif;
+            font-weight: 700;
+        }*/
+        
+        /* អ្នកអាចកំណត់ឱ្យកម្រាស់អក្សរដិត (Bold) សម្រាប់ចំណងជើង ដោយប្រើហ្វុងដដែល *
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Noto Serif Khmer', serif;
+            font-weight: 700; /* 700 គឺសម្រាប់អក្សរដិត *
+            color: #2c3e50;
+        }*/
+
+        b, strong, .question {
+            font-family: 'Noto Serif Khmer', serif;
+            font-weight: 700;
+        }
+
+        /* ៤. បើអ្នកចង់ឱ្យចំណងជើងក្នុងប្រអប់ Hint ប្រើ Battambang ដែរ (ជាជម្រើស) */
+        .hint-title {
+            font-family: 'Battambang', 'Arial', sans-serif;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+            color: #e67e22;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .problem-section {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+        }
+        .question {
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        span.space {
+            line-height: 2.5;
+            display: block;
+            margin-bottom: 15pt;
+            margin-top: 10pt;
+        }
+        
+        .space {
+            line-height: 2.5;
+        }
+        
+        b.bquestion {
+            margin-bottom: 10px;
+            margin-top: 15px;
+            /*font-weight: bold;*/
+            display: block;
+            font-size: large;
+        }
+        
+        .sub-question {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        .hint-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 10px 15px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            color: #2980b9;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .hint-boxx {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 10px 15px;
+    
+            /* Center the box and set width to 2/3 */
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+    
+            /* Keep your existing spacing and styling */
+            margin-top: 5px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            color: #2980b9;
+            border-radius: 0 2px 2px 0;
+    
+        /* Optional: ensures padding doesn't push width over 66% */
+            box-sizing: border-box; 
+        }
+            
+        .hint-title {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #1f618d;
+        }
+        .rubric-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+        }
+        .rubric-table th, .rubric-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .rubric-table th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        .rubric-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        /* Flexbox container to center the TikZ table */
+        .table-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        
+        /* កំណត់ឱ្យ MathJax ប្រើទំហំតាមមេ (Parent Container) */
+        mjx-container {
+            font-size: 100% !important; /* ឬកំណត់ 0.95em បើចង់ឱ្យវាតូចជាងអត្ថបទបន្តិច */
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /* សម្រាប់រូបមន្តក្នុងជួរអត្ថបទ (Inline) *
+        .MathJax {
+            font-size: 1.2em !important;
+        }*/
+        
+        /* បន្ថែមក្នុង <style> */
+        svg {
+            max-width: 100%;    /* បង្ខំឱ្យរូបភាពមិនឱ្យធំជាងអេក្រង់ទូរស័ព្ទ */
+            height: auto;       /* រក្សាសមាមាត្ររូបភាព */
+        }
+
+      /*  .table-container {
+            width: 100%;
+            overflow-x: auto;   /* បើករមូរឆ្វេងស្តាំ បើរូបភាពនៅតែធំជាងអេក្រង់ *
+            display: flex;
+            justify-content: center;
+        }*/
+        
+    </style>
+    
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+    
+</head>
+<body>
+
+    <!----- លំហាត់ទី២ ----->
+    
+    
+    <div class="header">
+        <h1>លំហាត់ត្រៀមប្រឡងបាក់ឌុប</h1>
+        <h2>ប្រធានបទ២៖ សិក្សាអនុគមន៍លោការីតនេពែ</h2>
+        <p>កម្រិត៖ មធ្យមសិក្សាទុតិយភូមិ</p>
+        <h3>១៧ ឧសភា ២០២៦</h3>
+    </div>
+
+    <div class="problem-section">
+        <h2>លំហាត់ ២.</h2>
+        <p>នៅក្នុងប្លង់កំណត់ដោយតម្រុយអរតូណរម៉ាល់ $(O, \vec{i}, \vec{j})$ ដែលមានឯកតារង្វាស់ $2\text{ cm}$ លើអ័ក្ស។</p>
+
+        <h3>(I) ពិនិត្យអនុគមន៍ $g$</h3>
+        <p>តាង $g$ ជាអនុគមន៍កំណត់លើចន្លោះ $(0, +\infty)$ ដោយ៖ $$g(x) = x^2 - 1 + \ln x$$</p>
+
+        <div class="sub-question">
+            ១. គណនាដេរីវេ $g^\prime(x)$ គ្រប់ចំនួនពិត $x$ ក្នុងចន្លោះ $(0, +\infty)$។ ទាញបញ្ជាក់ពីទិសដៅអថេរភាពនៃអនុគមន៍ $g$ លើចន្លោះនេះ។
+            <div class="hint-box">
+                <span class="hint-title">💡 ចងចាំ៖</span>
+                - រំលឹកទម្រង់ដេរីវេ៖ $(\ln x)' = \frac{1}{x}$ និង $(x^n)' = nx^{n-1}$។<br>
+                - ដោយសារ $x \in (0, +\infty)$ (មានន័យថា $x \gt 0$) ដូច្នេះតើ $g'(x)$ មានសញ្ញាអ្វី? បើ $g'(x) \gt 0$ នោះ $g$ ជាអនុគមន៍កើន។
+            </div>
+        </div>
+
+        <div class="sub-question">
+            ២. គណនាតម្លៃនៃ $g(1)$។ ទាញរកសញ្ញានៃ $g(x)$ ចំពោះ $x \in (0, 1)$ និង  $x \in (1, +\infty)$។
+            <div class="hint-box">
+                <span class="hint-title">💡 ចងចាំ៖</span>
+                - ជំនួស $x=1$ ចូលក្នុងសមីការ $g(x)$ (កុំភ្លេចថា $\ln(1) = 0$)។<br>
+                - ដោយសារ $g$ ជាអនុគមន៍កើនជានិច្ច នោះបើ $x \lt 1$ នាំឲ្យ $g(x) \lt g(1)$ ហើយបើ $x \gt 1$ នាំឲ្យ $g(x) \gt g(1)$។
+            </div>
+        </div>
+    </div>
+
+    <div class="problem-section">
+        <h3>(II) ពិនិត្យអនុគមន៍ $f$</h3>
+        <p>គេឱ្យអនុគមន៍ $f$ កំណត់លើចន្លោះ $(0, +\infty)$ ដោយ៖ $$f(x) = x - 1 - \frac{\ln x}{x}$$</p>
+        <p>តាង $(C)$ ជាខ្សែកោងតំណាងអនុគមន៍ $f$។</p>
+
+        <div class="sub-question">
+            ១. ក) គណនាលីមីតនៃអនុគមន៍ $f$ ត្រង់ $0$ រួចទាញរកសមីការអាស៊ីមតូតឈរនៃ $(C)$។
+            <div class="hint-box">
+                <span class="hint-title">💡 ចងចាំ៖</span>
+                - រំលឹករូបមន្តលីមីត៖ $\displaystyle\lim_{x \to 0^+} \ln x = -\infty$។ <br>
+                - ពិនិត្យមើលផលធៀប $\frac{-\infty}{0^+}$ តើចេញលទ្ធផលអ្វី? បើ $\displaystyle\lim_{x \to 0} f(x) = \infty$ នោះបន្ទាត់ $x=0$ ជាអាស៊ីមតូតឈរ។
+            </div>
+        </div>
+
+        <div class="sub-question">
+            ១. ខ) គណនាលីមីតនៃអនុគមន៍ $f$ ត្រង់ $+\infty$។
+        </div>
+
+        <div class="sub-question">
+            ២. ក) បង្ហាញថាបន្ទាត់ $(D)$ ដែលមានសមីការ $y = x - 1$ ជាអាស៊ីមតូតទ្រេតនៃខ្សែកោង $(C)$ ខាង $+\infty$។
+            <div class="hint-box">
+                <span class="hint-title">💡 ចងចាំ៖</span>
+                - ដើម្បីបង្ហាញថាបន្ទាត់ $(D)$ ជាអាស៊ីមតូតទ្រេត ត្រូវបង្ហាញថា $\lim_{x \to +\infty} [f(x) - y_D] = 0$។ <br>
+                - រំលឹក៖ $\lim_{x \to +\infty} \frac{\ln x}{x} = 0$។
+            </div>
+        </div>
+
+        <div class="sub-question">
+            ២. ខ) សិក្សាទីតាំងធៀបរវាងខ្សែកោង $(C)$ និងបន្ទាត់អាស៊ីមតូត $(D)$។
+            <div class="hint-box">
+                <span class="hint-title">💡 ចងចាំ៖</span>
+                - សិក្សាសញ្ញានៃផលដក $f(x) - y_D = -\frac{\ln x}{x}$។ <br>
+                - ដោយសារ $x \gt 0$ សញ្ញាវាអាស្រ័យលើ $-\ln x$។ ពិនិត្យមើលពេលណា $\ln x \gt 0$ ពេលណា $\ln x \lt 0$។
+            </div>
+        </div>
+
+        <div class="sub-question">
+            ៣. ក) ផ្ទៀងផ្ទាត់ថា គ្រប់ចំនួនពិត $x \in (0, +\infty)$ គេបាន៖ $$f'(x) = \frac{g(x)}{x^2}$$
+            <div class="hint-box">
+                <span class="hint-title">💡 គន្លឹះ (សាកល្បងដោយខ្លួនឯង)៖</span>
+                - ប្រើរូបមន្តដេរីវេផលចែក៖ $\displaystyle\left(\frac{u}{v}\right)' = \dfrac{u'v - uv'}{v^2}$ សម្រាប់តួ $\frac{\ln x}{x}$។<br>
+                - បន្ទាប់ពីគណនារួច តម្រូវភាគបែងរួម នោះអ្នកនឹងឃើញកន្សោម $g(x)$ លេចឡើងនៅភាគយក។
+            </div>
+        </div>
+
+        <div class="sub-question">
+            ៣. ខ) ទាញរកសញ្ញានៃ $f'(x)$ (ដោយផ្អែកលើលទ្ធផលផ្នែក I.) រួចសង់តារាងអថេរភាពនៃ $f$។
+        </div>
+
+        <div class="sub-question">
+            ៤. គូសបន្ទាត់ $(D)$ និងខ្សែកោង $(C)$ ក្នុងតម្រុយអរតូណរម៉ាល់តែមួយ។
+        </div>
+    </div>
+
+    <div class="problem-section">
+        <h2>តារាងកម្រិតពិន្ទុ និងអត្រាកំណែ</h2>
+        <p>ខាងក្រោមនេះជាលក្ខណៈវិនិច្ឆ័យក្នុងការផ្តល់ពិន្ទុ ដើម្បីជួយសិស្សឱ្យដឹងពីកន្លែងដែលពួកគាត់ទទួលបានពិន្ទុក្នុងមួយជំហានៗ។ (ពិន្ទុសរុប៖ ៣៥ ពិន្ទុ)</p>
+
+        <table class="rubric-table">
+            <thead>
+                <tr>
+                    <th>ផ្នែក</th>
+                    <th>ខ្លឹមសារនៃសំណួរ</th>
+                    <th>ការបែងចែកពិន្ទុតាមជំហាន (តម្រុយចម្លើយ)</th>
+                    <th>ពិន្ទុ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2"><b>ផ្នែក (I)</b></td>
+                    <td>១. គណនា $g'(x)$ និងទិសដៅអថេរភាព</td>
+                    <td>
+                        - រកឃើញ $g'(x) = 2x + \frac{1}{x}$ (2 ពិន្ទុ)<br>
+                        - បកស្រាយថាដោយ $x\gt 0$, នោះ $g'(x) \gt 0$ ជានិច្ច (1.5 ពិន្ទុ)<br>
+                        - ទាញសេចក្តីសន្និដ្ឋានថា $g$ ជាអនុគមន៍កើនដាច់ខាត (1.5 ពិន្ទុ)
+                    </td>
+                    <td>៥</td>
+                </tr>
+                <tr>
+                    <td>២. គណនា $g(1)$ និងសញ្ញា $g(x)$</td>
+                    <td>
+                        - គណនាត្រូវ $g(1) = 1^2 - 1 + 0 = 0$ (2 ពិន្ទុ)<br>
+                        - បង្ហាញសញ្ញា៖ $x \in (0,1) \Rightarrow g(x) \lt 0$ (1.5 ពិន្ទុ)<br>
+                        - បង្ហាញសញ្ញា៖ $x \in (1, +\infty) \Rightarrow g(x) \gt 0$ (1.5 ពិន្ទុ)
+                    </td>
+                    <td>៥</td>
+                </tr>
+                <tr>
+                    <td rowspan="6"><b>ផ្នែក (II)</b></td>
+                    <td>១.ក) លីមីតត្រង់ $0$ និងអាស៊ីមតូតឈរ</td>
+                    <td>
+                        - គណនាលីមីត $\lim_{x \to 0^+} f(x) = +\infty$ ត្រឹមត្រូវ (3 ពិន្ទុ)<br>
+                        - ទាញសេចក្តីសន្និដ្ឋានសមីការអាស៊ីមតូតឈរ $x=0$ (2 ពិន្ទុ)
+                    </td>
+                    <td>៥</td>
+                </tr>
+                <tr>
+                    <td>១.ខ) លីមីតត្រង់ $+\infty$</td>
+                    <td>
+                        - គណនាលីមីត $\lim_{x \to +\infty} f(x) = +\infty$ ត្រឹមត្រូវ ព្រមទាំងបញ្ជាក់ហេតុផល (3 ពិន្ទុ)
+                    </td>
+                    <td>៣</td>
+                </tr>
+                <tr>
+                    <td>២.ក) បង្ហាញអាស៊ីមតូតទ្រេត</td>
+                    <td>
+                        - គណនា $f(x) - y = -\frac{\ln x}{x}$ (2 ពិន្ទុ)<br>
+                        - បង្ហាញ $\lim_{x \to +\infty} \left(-\frac{\ln x}{x}\right) = 0$ និងទាញសន្និដ្ឋាន (2 ពិន្ទុ)
+                    </td>
+                    <td>៤</td>
+                </tr>
+                <tr>
+                    <td>២.ខ) ទីតាំងធៀប</td>
+                    <td>
+                        - សិក្សាសញ្ញា $-\ln x$ ត្រឹមត្រូវ (2 ពិន្ទុ)<br>
+                        - បញ្ជាក់ចន្លោះដែល $(C)$ នៅលើ និងនៅក្រោម $(D)$ និងចំណុចប្រសព្វ $(1, 0)$ (2 ពិន្ទុ)
+                    </td>
+                    <td>៤</td>
+                </tr>
+                <tr>
+                    <td>៣. ដេរីវេ និងតារាងអថេរភាព</td>
+                    <td>
+                        - ប្រើរូបមន្តដេរីវេ និងទាញបាន $f'(x) = \frac{x^2 - 1 + \ln x}{x^2}$ (3 ពិន្ទុ)<br>
+                        - បញ្ជាក់ថា $f'(x)$ យកសញ្ញាតាម $g(x)$ ព្រោះ $x^2 \gt 0$ (1 ពិន្ទុ)<br>
+                        - គូសតារាងអថេរភាពបានត្រឹមត្រូវ និងពេញលេញ (2 ពិន្ទុ)
+                    </td>
+                    <td>៦</td>
+                </tr>
+                <tr>
+                    <td>៤. សង់ក្រាប $(C)$ និងបន្ទាត់ $(D)$</td>
+                    <td>
+                        - គូសតម្រុយ អាស៊ីមតូតឈរ និងអាស៊ីមតូតទ្រេត ត្រឹមត្រូវ (1 ពិន្ទុ)<br>
+                        - ដៅចំណុចប្រសព្វ និងចំណុចជំនួយបានត្រឹមត្រូវ (1 ពិន្ទុ)<br>
+                        - ខ្សែខ្សោងមានរាងត្រឹមត្រូវ ឆ្លុះបញ្ចាំងនឹងតារាងអថេរភាព (1 ពិន្ទុ)
+                    </td>
+                    <td>៣</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+ <!----------
+   --------------------- កំណែលំហាត់១
+----------------------------------------->
+    
+<div class="header">
+        <h1>ចម្លើយលំហាត់២. សិក្សាអនុគមន៍ 
+            $$f(x) = x - 1 - \frac{\ln x}{x}$$
+    
+    </h1>
+    </div>
+
+   
+
+</body>
+</html>
