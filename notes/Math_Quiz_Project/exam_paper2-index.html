@@ -11,7 +11,7 @@
     
     <title>វិញ្ញាសាគណិតវិទ្យា៖ ការសិក្សាអនុគមន៍ (ស្តង់ដាបាក់ឌុប)</title>
     
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script>
       window.MathJax = {
     tex: {
@@ -79,6 +79,8 @@
             padding: 20px;
             background-color: #f9f9f9;
             -webkit-font-smoothing: antialiased;
+            /* កំណត់ទំហំអក្សរឱ្យប្រហែល Size 12 ក្នុង Word *
+            font-size: 20px; */
         }
 
         /* ២. កំណត់ Battambang សម្រាប់ចំណងជើង (Headers) */
@@ -137,21 +139,25 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             margin-bottom: 25px;
+            /* កំណត់ទំហំអក្សរឱ្យប្រហែល Size 12 ក្នុង Word */
+            font-size: 18px; 
         }
         .question {
-            margin-bottom: 15px;
+            display: block;
+            margin: 2px;
+            margin-bottom: -10px;
             font-weight: bold;
         }
         
         span.space {
-            line-height: 2.5;
+            line-height: 2;
             display: block;
             margin-bottom: 15pt;
             margin-top: 10pt;
         }
         
         .space {
-            line-height: 2.5;
+            line-height: 2;
         }
         
         b.bquestion {
@@ -209,6 +215,8 @@
             border-collapse: collapse;
             margin-top: 20px;
             background-color: #fff;
+            /* កំណត់ទំហំអក្សរឱ្យប្រហែល Size 10 ក្នុង Word */
+            font-size: 14px; 
         }
         .rubric-table th, .rubric-table td {
             border: 1px solid #ddd;
@@ -235,9 +243,9 @@
         
         /* កំណត់ឱ្យ MathJax ប្រើទំហំតាមមេ (Parent Container) */
         mjx-container {
-            font-size: 100% !important; /* ឬកំណត់ 0.95em បើចង់ឱ្យវាតូចជាងអត្ថបទបន្តិច */
-            display: inline-block;
-            vertical-align: middle;
+            font-size: 115% !important; /* ឬកំណត់ 0.95em បើចង់ឱ្យវាតូចជាងអត្ថបទបន្តិច */
+            /*display: inline-block;
+            vertical-align: middle;*/
         }
 
         /* សម្រាប់រូបមន្តក្នុងជួរអត្ថបទ (Inline) *
@@ -248,7 +256,7 @@
         /* បន្ថែមក្នុង <style> */
         svg {
             max-width: 100%;    /* បង្ខំឱ្យរូបភាពមិនឱ្យធំជាងអេក្រង់ទូរស័ព្ទ */
-            height: auto;       /* រក្សាសមាមាត្ររូបភាព */
+            /*height: auto;       /* រក្សាសមាមាត្ររូបភាព */
         }
 
       /*  .table-container {
@@ -454,7 +462,190 @@
     </h1>
     </div>
 
+<div class="problem-section">
+        <h3>ផ្នែក ក៖ ការសិក្សាអនុគមន៍ជំនួយ $g$</h3>
+        <p>គេមានអនុគមន៍ $g(x) = x^2 - 1 + \ln x$ កំណត់លើចន្លោះ $(0, +\infty)$។</p>
+
+        <div class="sub-question">
+            <span class="question">១. គណនាដេរីវេ $g'(x)$ និងទិសដៅអថេរភាព៖</span><br/>
+            យើងមាន៖ 
+                    $$g'(x) = (x^2)' - (1)' + (\ln x)'$$
+                    $$g'(x) = 2x - 0 + \frac{1}{x} = 2x + \frac{1}{x}$$
+            <b>ទិសដៅអថេរភាព៖</b> ដោយ $x \in (0, +\infty)$ នោះយើងបាន $2x \gt 0$ និង $\frac{1}{x} \gt 0$ ជានិច្ច។
+                <br/>នាំឱ្យ $g'(x) = 2x + \frac{1}{x} \gt 0$ គ្រប់ $x \in (0, +\infty)$។ <br/>
+            ដូចនេះ អនុគមន៍ $g$ ជាអនុគមន៍កើនដាច់ខាតលើចន្លោះ $(0, +\infty)$។
+        </div>
+
+        <div class="sub-question">
+            <span class="question">២. គណនា $g(1)$ និងទាញរកសញ្ញានៃ $g(x)$៖</span>
+            
+                <br/> គេបាន $$g(1) = 1^2 - 1 + \ln(1) = 1 - 1 + 0 = 0$$
+                <b>ទាញរកសញ្ញា៖</b> ដោយ $g$ ជាអនុគមន៍កើនដាច់ខាត នោះវាប្រែប្រួលស្របរទិសដៅជាមួយ $x$៖
+                    <ul>
+                        <li>បើ $0 \lt x \lt 1$ នោះ $g(x) \lt g(1)$ នាំឱ្យ <b>$g(x) \lt 0$</b>។</li>
+                        <li>បើ $x = 1$ នោះ <b>$g(x) = 0$</b>។</li>
+                        <li>បើ $x \gt 1$ នោះ $g(x) \gt g(1)$ នាំឱ្យ <b>$g(x) \gt 0$</b>។
+                    </ul>
+                
+        
+        </div>
+    </div>
+
+    <div class="problem-section">
+        <h3>ផ្នែក ខ៖ ការសិក្សាអនុគមន៍ចម្បង $f$</h3>
+        <p>គេមានអនុគមន៍ $f(x) = x - 1 - \frac{\ln x}{x}$ កំណត់លើចន្លោះ $(0, +\infty)$។</p>
+
+        <div class="sub-question">
+            <span class="question">១. ក) គណនាលីមីតត្រង់ $0$ និងសមីការអាស៊ីមតូតឈរ៖</span>
+            
+            <br/> គេបាន៖ 
+            $$\lim_{x \to 0^+} f(x) = \lim_{x \to 0^+} \left(x - 1 - \frac{\ln x}{x}\right)$$
+            <ul>
+                
+                <li>ដោយ $\lim_{x \to 0^+} \ln x = -\infty$ និងភាគបែង $x \to 0^+$ នោះផលធៀប $\frac{\ln x}{x} \to -\infty$។ នាំឱ្យ $-\frac{\ln x}{x} \to +\infty$។</li>
+                <li>ដូចនេះ $$\lim_{x \to 0^+} f(x) = 0 - 1 + (+\infty) = +\infty$$</li>
+                <li>ដោយ $\lim_{x \to 0^+} f(x) = +\infty$ នោះបន្ទាត់ដែលមានសមីការ <b>$x = 0$</b> (អ័ក្សអរដោនេ) ជាអាស៊ីមតូតឈរនៃខ្សែខ្សោង $(C)$។</li>
+            </ul>
+        </div>
+
+        <div class="sub-question">
+            <span class="question">១. ខ) គណនាលីមីតត្រង់ $+\infty$៖</span>
+            <ul>
+                <li>$$\lim_{x \to +\infty} f(x) = \lim_{x \to +\infty} \left(x - 1 - \frac{\ln x}{x}\right)$$</li>
+                <li>តាមលក្ខណៈលីមីតពិសេស យើងមាន $\lim_{x \to +\infty} \frac{\ln x}{x} = 0$។</li>
+                <li>ដូចនេះ $\lim_{x \to +\infty} f(x) = +\infty - 1 - 0 = +\infty$។</li>
+            </ul>
+        </div>
+
+        <div class="sub-question">
+            <span class="question">២. ក) បង្ហាញថាបន្ទាត់ $(D): y = x - 1$ ជាអាស៊ីមតូតទ្រេតខាង $+\infty$៖</span>
+            <ul>
+                <li>គណនាលីមីតនៃផលដក៖ 
+                    $$\lim_{x \to +\infty} [f(x) - y_D] = \lim_{x \to +\infty} \left[ \left(x - 1 - \frac{\ln x}{x}\right) - (x - 1) \right] = \lim_{x \to +\infty} \left( -\frac{\ln x}{x} \right) = 0$$
+                </li>
+                <li><b>សន្និដ្ឋាន៖</b> ដោយសារលីមីតនៃផលដកស្មើ $0$ នោះបន្ទាត់ <b>$(D) : y = x - 1$</b> ជាអាស៊ីមតូតទ្រេតនៃ $(C)$ ខាង $+\infty$ ពិតមែន។</li>
+            </ul>
+        </div>
+
+        <div class="sub-question">
+            <span class="question">២. ខ) សិក្សាទីតាំងធៀបរវាងខ្សែខ្សោង $(C)$ និងបន្ទាត់ $(D)$៖</span>
+            <ul>
+                <li>សិក្សាសញ្ញាផលដក $f(x) - y_D = -\frac{\ln x}{x}$។ ដោយ $x \gt 0$ ជានិច្ច នោះសញ្ញាអាស្រ័យលើភាគយក $-\ln x$៖
+                    <ul>
+                        <li>បើ $-\ln x \gt 0 \Rightarrow \ln x \lt 0 \Rightarrow 0 \lt x \lt 1$ ៖ ផលដកវិជ្ជមាន នាំឱ្យ <b>$(C)$ ស្ថិតនៅពីលើ $(D)$</b>។</li>
+                        <li>បើ $-\ln x \lt 0 \Rightarrow \ln x \gt 0 \Rightarrow x \gt 1$ ៖ ផលដកអវិជ្ជមាន នាំឱ្យ <b>$(C)$ ស្ថិតនៅពីក្រោម $(D)$</b>។</li>
+                        <li>បើ $-\ln x = 0 \Rightarrow \ln x = 0 \Rightarrow x = 1$ ៖ $(C)$ ប្រសព្វ $(D)$ ត្រង់ចំណុច $I(1, 0)$។</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sub-question">
+            <span class="question">៣. ក) ផ្ទៀងផ្ទាត់ថា $f'(x) = \frac{g(x)}{x^2}$៖</span>
+            <ul>
+                <li>ប្រើរូបមន្ត $\left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2}$ ចំពោះតួប្រភាគ៖
+                    $$f'(x) = (x - 1)' - \left( \frac{\ln x}{x} \right)'$$
+                    $$f'(x) = 1 - \frac{(\ln x)' \cdot x - \ln x \cdot (x)'}{x^2}$$
+                    $$f'(x) = 1 - \frac{\frac{1}{x} \cdot x - \ln x \cdot 1}{x^2} = 1 - \frac{1 - \ln x}{x^2}$$
+                </li>
+                <li>តម្រូវភាគបែងរួម៖
+                    $$f'(x) = \frac{x^2 - (1 - \ln x)}{x^2} = \frac{x^2 - 1 + \ln x}{x^2}$$
+                </li>
+                <li>ដោយ $g(x) = x^2 - 1 + \ln x$ ដូចនេះ <b>$f'(x) = \frac{g(x)}{x^2}$</b> ពិតប្រាកដមែន។</li>
+            </ul>
+        </div>
+
+        <div class="sub-question">
+            <span class="question">៣. ខ) ទាញរកសញ្ញា $f'(x)$ និងសង់តារាងអថេរភាព៖</span>
+            <ul>
+                <li>ដោយសារភាគបែង $x^2 \gt 0$ ជានិច្ច នោះសញ្ញានៃ $f'(x)$ គឺយកសញ្ញាតាម $g(x)$។</li>
+                <li>ផ្អែកតាមចម្លើយផ្នែកក យើងបាន៖
+                    <ul>
+                        <li>បើ $0 \lt x \lt 1 \Rightarrow g(x) \gt 0 \Rightarrow f'(x) \lt 0$ (អនុគមន៍ចុះ)</li>
+                        <li>បើ $x = 1 \Rightarrow g(1) = 0 \Rightarrow f'(1) = 0$ (មានតម្លៃអប្បបរមា)</li>
+                        <li>បើ $x \gt 1 \Rightarrow g(x) \gt 0 \Rightarrow f'(x) \gt 0$ (អនុគមន៍កើន)</li>
+                    </ul>
+                </li>
+                <li>គណនាតម្លៃអប្បបរមា៖ $f(1) = 1 - 1 - \frac{\ln 1}{1} = 0$។</li>
+            </ul>
+
+            <table class="table-variation">
+                <tr>
+                    <td style="width: 15%;">$x$</td>
+                    <td style="width: 15%; border-right: none;">$0$</td>
+                    <td style="width: 20%; border-left: none; border-right: none;"></td>
+                    <td style="width: 15%; border-left: none; border-right: none;">$1$</td>
+                    <td style="width: 20%; border-left: none; border-right: none;"></td>
+                    <td style="width: 15%; border-left: none;">$+\infty$</td>
+                </tr>
+                <tr>
+                    <td>$f'(x)$</td>
+                    <td style="background-color: #eee; border-right: none;"></td>
+                    <td style="border-left: none; border-right: none;">$-$</td>
+                    <td style="border-left: none; border-right: none;">$0$</td>
+                    <td style="border-left: none; border-right: none;">$+$</td>
+                    <td style="border-left: none;"></td>
+                </tr>
+                <tr>
+                    <td>$f(x)$</td>
+                    <td style="background-color: #eee; border-right: none;"></td>
+                    <td style="border-left: none; border-right: none;">$+\infty$<br>$\searrow$</td>
+                    <td style="border-left: none; border-right: none;"><br>$0$</td>
+                    <td style="border-left: none; border-right: none;">$\nearrow$<br></td>
+                    <td style="border-left: none;">$+\infty$</td>
+                </tr>
+            </table>
+            <p style="text-align: center; font-size: 0.9em; color: #555;"><i>(ចំណាំ៖ ត្រង់ $x=0$ គូសបន្ទាត់ឈរពីរ ព្រោះវាមិនចូលក្នុងដែនកំណត់ទេ)</i></p>
+        </div>
    
+    
+      <div class="table-container">        
+        <script type="text/tikz">
+            \begin{tikzpicture}[scale=1.2,transform shape]
+                % គូសក្រឡាចត្រង្គ (Grid)
+                \draw[lightgray, very thin, step=1cm] (-1,-3) grid (6,5);
+                
+                % គូសអ័ក្សកូអរដោនេ (x និង y)
+                \draw[->, thick] (-1,0) -- (6.5,0) node[right] {$x$};
+                \draw[->, thick] (0,-3) -- (0,5.5) node[above] {$y$};
+                
+                % ដៅចំណុចលេខលើអ័ក្ស
+                \foreach \x in {1,2,3,4,5,6} 
+                    \draw (\x,-0.1) -- (\x,0.1) node[below=4pt] {$\x$};
+                \foreach \y in {-2,-1,1,2,3,4,5} 
+                    \draw (-0.1,\y) -- (0.1,\y) node[left=4pt] {$\y$};
+                
+                % គល់តម្រុយ O
+                \node[below left] at (0,0) {$O$};
+                
+                % កាត់ដែនបង្ហាញកុំឱ្យក្រាបលៀនចេញក្រៅប្រអប់
+                \clip (-1,-3) rectangle (6,5);
+                
+                % គូសបន្ទាត់អាស៊ីមតូតទ្រេត (D): y = x - 1
+                \draw[red, thick, dashed] (-2,-3) -- (6,5) node[pos=0.8, below right] {$(D): y = x - 1$};
+                
+                % គូសខ្សែខ្សោង (C): f(x) = x - 1 - ln(x)/x
+                % ចំណាំ៖ ក្នុង TikZ អនុគមន៍លោការីតនេពែ ប្រើពាក្យ ln()
+                \draw[blue, very thick, samples=150, domain=0.15:6] 
+                    plot (\x, {\x - 1 - ln(\x)/\x});
+                    
+                % ដាក់ឈ្មោះខ្សែខ្សោង (C)
+                \node[blue, right] at (4.5, 3) {$(C)$};
+                
+                % ដៅចំណុចអប្បបរមា I(1,0)
+                \filldraw[black] (1,0) circle (2pt) node[above left] {$I(1,0)$};
+                
+            \end{tikzpicture}
+        </script>
+     </div>
+            <p style="text-align: center"><b>ក្រាប $(C)$ របស់អនុគមន៍ $f$</b></p>    
+    
+    </div>
+    
+      
+
+
+
 
 </body>
 </html>
