@@ -38,8 +38,7 @@
     
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
-    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+  
     
     <style>
         /* កូដសម្រាប់ទូរស័ព្ទ (អេក្រង់តូចជាង 768px) */
@@ -639,6 +638,30 @@
         </script>
      </div>
             <p style="text-align: center"><b>ក្រាប $(C)$ របស់អនុគមន៍ $f$</b></p>    
+    
+ <div class="table-container">        
+        <script type="text/tikz">
+    \begin{tikzpicture}[scale=1.5, transform shape]
+      \draw[->] (-3.5,0) -- (2.6,0) node[right] {$x$};
+      \draw[->] (0,-3.5) -- (0,3) node[above] {$y$};
+      \draw[<->, blue, very thick, smooth, domain=-3.4:2.1] plot (\x, {(\x-2)*exp(\x) + \x});
+      \draw[dashed, red, thick, smooth, domain=-3.5:2.6] plot (\x, {\x});
+      
+      \draw[step=1, gray!60, ultra thin] (-3.5,-3.5) grid (2.5,3); %grid
+      \filldraw[black] (0,0) circle (1.3pt) node[above left]  {$O$};
+      \filldraw[black] (2,2) circle (1.3pt) node[above left]  {$I$(2,2)};
+      
+      \foreach \x in {-3,-2,-1,1,2} 
+        \draw (\x, 0.1) -- (\x, -0.1) node[below, font=\small] {$\x$};
+      \foreach \y in {-3,-2,-1,1,2}
+        \draw (0.1, \y) -- (-0.1, \y) node[left, font=\small] {$\y$};
+    
+      \node[below left, font=\small] at (2.3,-2.2) {$(C): f(x) = (x - 2)e^x + x$};
+    \end{tikzpicture}
+  </script>
+     </div>
+            <p style="text-align: center"><b>ក្រាប $(C)$ របស់អនុគមន៍ $f$</b></p>      
+
     
     </div>
     
