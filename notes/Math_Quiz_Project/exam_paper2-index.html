@@ -285,6 +285,31 @@
             display: none;
         }
         
+        
+        /*li {
+            list-style: none;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 8h-8l4-6h-6L3 14h7l-6 9L21 8Z" fill="%231B880A"></path></svg>');
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 15px 15px; /* Set your specific small size here *
+            padding-left: 20px;
+        }*/
+        
+        li::marker {
+            font-size: 0.8rem; /* Adjust this value to make it smaller */
+            /*line-height: 1.8;*/
+        }
+        
+        li {
+            /*font-size: 0.8rem; /* Adjust this value to make it smaller */
+            line-height: 1.8;  
+            margin-bottom: 10px;
+        }
+        /* បិទគម្លាតចុងក្រោយគេបង្អស់ ដើម្បីកុំឱ្យប៉ះពាល់ដល់ Element ខាងក្រោម */
+        li:last-child {
+            margin-bottom: 0!important;
+        }
+        
     </style>
     
 <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
@@ -462,7 +487,7 @@
                     <td>
                         - គូសតម្រុយ អាស៊ីមតូតឈរ និងអាស៊ីមតូតទ្រេត ត្រឹមត្រូវ (1 ពិន្ទុ)<br>
                         - ដៅចំណុចប្រសព្វ និងចំណុចជំនួយបានត្រឹមត្រូវ (1 ពិន្ទុ)<br>
-                        - ខ្សែខ្សោងមានរាងត្រឹមត្រូវ ឆ្លុះបញ្ចាំងនឹងតារាងអថេរភាព (1 ពិន្ទុ)
+                        - ខ្សែកោងមានរាងត្រឹមត្រូវ ឆ្លុះបញ្ចាំងនឹងតារាងអថេរភាព (1 ពិន្ទុ)
                     </td>
                     <td>៣</td>
                 </tr>
@@ -524,7 +549,7 @@
                 
                 <li>ដោយ $\lim_{x \to 0^+} \ln x = -\infty$ និងភាគបែង $x \to 0^+$ នោះផលធៀប $\frac{\ln x}{x} \to -\infty$។ នាំឱ្យ $-\frac{\ln x}{x} \to +\infty$។</li>
                 <li>ដូចនេះ $$\lim_{x \to 0^+} f(x) = 0 - 1 + (+\infty) = +\infty$$</li>
-                <li>ដោយ $\lim_{x \to 0^+} f(x) = +\infty$ នោះបន្ទាត់ដែលមានសមីការ <b>$x = 0$</b> (អ័ក្សអរដោនេ) ជាអាស៊ីមតូតឈរនៃខ្សែខ្សោង $(C)$។</li>
+                <li>ដោយ $\lim_{x \to 0^+} f(x) = +\infty$ នោះបន្ទាត់ដែលមានសមីការ <b>$x = 0$</b> (អ័ក្សអរដោនេ) ជាអាស៊ីមតូតឈរនៃខ្សែកោង $(C)$។</li>
             </ul>
         </div>
 
@@ -644,12 +669,12 @@
                 % គូសបន្ទាត់អាស៊ីមតូតទ្រេត (D): y = x - 1
                 \draw[red, thick, dashed] (-2,-3) -- (6,5) node[pos=0.8, below right] {$(D): y = x - 1$};
                 
-                % គូសខ្សែខ្សោង (C): f(x) = x - 1 - ln(x)/x
+                % គូសខ្សែកោង (C): f(x) = x - 1 - ln(x)/x
                 % ចំណាំ៖ ក្នុង TikZ អនុគមន៍លោការីតនេពែ ប្រើពាក្យ ln()
                 \draw[blue, very thick, samples=150, domain=0.15:6] 
                     plot (\x, {\x - 1 - ln(\x)/\x});
                     
-                % ដាក់ឈ្មោះខ្សែខ្សោង (C)
+                % ដាក់ឈ្មោះខ្សែកោង (C)
                 \node[blue, right] at (4.5, 3) {$(C)$};
                 
                 % ដៅចំណុចអប្បបរមា I(1,0)
@@ -671,14 +696,14 @@
     
 <div class="header">
         <h1>វិញ្ញាសាគណិតវិទ្យា ត្រៀមប្រឡងបាក់ឌុប</h1>
-        <h2>ប្រធានបទ៣៖ ការសិក្សាអនុគមន៍ និង ស៊ីត (កម្រិតខ្ពស់)</h2>
+        <h2>ប្រធានបទ៣៖ ការសិក្សាអនុគមន៍ និង ស៊្វីត (កម្រិតខ្ពស់)</h2>
         <p>កម្រិត៖ មធ្យមសិក្សាទុតិយភូមិ | រយៈពេល៖ ១៥ នាទី</p>
     </div>
 
     <div class="problem-section">
         <!-- <h3>លំហាត់៣</h3> --> 
         <p>តាង $n$ ជាចំនួនគត់ធម្មជាតិ។ គេមានអនុគមន៍ $f_n$ កំណត់លើ $\mathbb{R}^*$ ដោយ៖ $$f_n(x) = \frac{e^{nx}}{x^2}$$</p>
-        <p>តាងខ្សែកោង $(\mathscr{C}_n)$ តំណាងអនុគមន៍ $f_n$ ក្នុងតម្រុយអរតូណរម៉ាល់ $(O, \vec{i}, \vec{j})$។</p><br/>
+        <p>តាងខ្សែកោង $(\mathscr{C}_n)$ តំណាងអនុគមន៍ $f_n$ ក្នុងតម្រុយអរតូណរម៉ាល់ $(O, \vec{i}, \vec{j})$។</p>
 
         <div class="sub-question">
             <span class="question">១. គណនា $\displaystyle\lim_{x \to -\infty} f_n(x)$, $\displaystyle\lim_{x \to +\infty} f_n(x)$ និង $\lim_{x \to 0} f_n(x)$។</span>
@@ -690,7 +715,7 @@
         </div>
 
         <div class="sub-question">
-            <span class="question">២. សិក្សាមែកអនន្តនៃខ្សែខ្សោង $(\mathscr{C}_n)$។</span>
+            <span class="question">២. សិក្សាមែកអនន្តនៃខ្សែកោង $(\mathscr{C}_n)$។</span>
             <div class="hint-box">
                 <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
                 - ទាញរកអាស៊ីមតូតឈរ និងអាស៊ីមតូតដេក តាមរយៈចម្លើយលីមីតក្នុងសំណួរទី១។<br>
@@ -755,47 +780,47 @@
 
     
     
- <div class="noview">
+ <div class=""><!--noview-->
 
     <div class="header">
-        <h1>អត្រាកំណែលម្អិត៖ ការសិក្សាអនុគមន៍ និង ស៊ីត</h1>
-        <p>ចម្លើយពេញលេញជាជំហានៗ សម្រាប់លំហាត់ទី២</p>
+        <h1>កំណែលំហាត់៣៖ ការសិក្សាអនុគមន៍ និង ស៊្វីត</h1>
+        <p>សូមប្អូនៗពិនិត្យចម្លើយពេញលេញជាជំហានៗ</p>
     </div>
 
     <div class="problem-section">
         <h3>បម្រាប់លំហាត់</h3>
-        <p>តាង $n$ ជាចំនួនគត់ធម្មជាតិ ($n \in \mathbb{N}^*$)។ គេមានអនុគមន៍ $f_n$ កំណត់លើ $\mathbb{R}^*$ ដោយ៖ $f_n(x) = \frac{e^{nx}}{x^2}$</p>
-        <p>តាង $(\mathscr{C}_n)$ ជាខ្សែកោង តំណាងអនុគមន៍ $f_n$ ក្នុងតម្រុយអរតូណរម៉ាល់ $(O, \vec{i}, \vec{j})$។</p>
+        <p>យក $n \in \mathbb{N}^*$ និងកំណត់អនុគមន៍ $f_n$ កំណត់លើ $\mathbb{R}^*$ ដោយ៖ $$f_n(x) = \frac{e^{nx}}{x^2}$$</p>
+        <p>តាងដោយ $(\mathscr{C}_n)$ ជាខ្សែកោងរបស់ $f_n$ ក្នុងតម្រុយអរតូណរម៉ាល់ $(O, \vec{i}, \vec{j})$។</p>
 
         <div class="sub-question">
-            <span class="question">១. គណនា $\lim_{x \to -\infty} f_n(x)$, $\lim_{x \to +\infty} f_n(x)$ និង $\lim_{x \to 0} f_n(x)$៖</span>
+            <span class="question">១. គណនា $\displaystyle\lim_{x \to -\infty} f_n(x)$, $\displaystyle\lim_{x \to +\infty} f_n(x)$ និង $\displaystyle\lim_{x \to 0} f_n(x)$៖</span>
             <ul>
                 <li><b>លីមីតត្រង់ $-\infty$ ៖</b>
-                    $$\lim_{x \to -\infty} f_n(x) = \lim_{x \to -\infty} \frac{e^{nx}}{x^2}$$
-                    ដោយ $n \ge 1$, ពេល $x \to -\infty \implies e^{nx} \to 0$ និង $x^2 \to +\infty$។<br>
-                    ដូចនេះ $\lim_{x \to -\infty} f_n(x) = \frac{0}{+\infty} = 0$។
+                    $$\lim_{x \to -\infty} f_n(x) = \lim_{x \to -\infty} \frac{e^{nx}}{x^2} = \frac{0}{+\infty} = 0$$
+                    ព្រោះ $n \ge 1$, ពេល $x \to -\infty \implies e^{nx} \to 0$ និង $x^2 \to +\infty$។<br>
+                    ដូចនេះ $$\boxed{\quad \displaystyle\lim_{x \to -\infty} f_n(x) = 0\quad}$$
                 </li>
                 <li><b>លីមីតត្រង់ $+\infty$ ៖</b>
-                    $$\lim_{x \to +\infty} f_n(x) = \lim_{x \to +\infty} \frac{e^{nx}}{x^2}$$
-                    តាមលក្ខណៈលីមីតប្រៀបធៀប (អ៊ិចស្ប៉ូណង់ស្យែលលូតលឿនជាងពហុធា) <br>
-                    ដូចនេះ $\lim_{x \to +\infty} \frac{e^{nx}}{x^2} = +\infty$។
+                    $$\lim_{x \to +\infty} f_n(x) = \lim_{x \to +\infty} \frac{e^{nx}}{x^2}= +\infty$$
+                    តាមលក្ខណៈលីមីតប្រៀបធៀប (អ៊ិចស្ប៉ូណង់ស្យែលកើនលឿនជាងពហុធា) <br>
+                    ដូចនេះ $$\boxed{\quad\lim_{x \to +\infty} \frac{e^{nx}}{x^2} = +\infty\quad}$$
                 </li>
                 <li><b>លីមីតត្រង់ $0$ ៖</b>
                     $$\lim_{x \to 0} f_n(x) = \lim_{x \to 0} \frac{e^{nx}}{x^2}$$
-                    ដោយ $\lim_{x \to 0} e^{nx} = e^0 = 1$ និង $\lim_{x \to 0} x^2 = 0^+$<br>
-                    ដូចនេះ $\lim_{x \to 0} f_n(x) = \frac{1}{0^+} = +\infty$។
+                    ដោយ $\displaystyle\lim_{x \to 0} e^{nx} = e^0 = 1$ និង $\lim_{x \to 0} x^2 = 0^+$<br>
+                    ដូចនេះ $\displaystyle\lim_{x \to 0} f_n(x) = \frac{1}{0^+} = +\infty$។
                 </li>
             </ul>
         </div>
 
         <div class="sub-question">
-            <span class="question">២. សិក្សាមែកអនន្តនៃខ្សែខ្សោង $(\mathscr{C}_n)$៖</span>
+            <span class="question">២. សិក្សាមែកអនន្តនៃខ្សែកោង $(\mathscr{C}_n)$៖</span>
             <ul>
-                <li>ដោយ $\lim_{x \to 0} f_n(x) = +\infty$ នាំឱ្យបន្ទាត់មានសមីការ <b>$x = 0$ (អ័ក្សអរដោនេ)</b> ជាអាស៊ីមតូតឈរ។</li>
-                <li>ដោយ $\lim_{x \to -\infty} f_n(x) = 0$ នាំឱ្យបន្ទាត់មានសមីការ <b>$y = 0$ (អ័ក្សអាប់ស៊ីស)</b> ជាអាស៊ីមតូតដេកខាង $-\infty$។</li>
-                <li>ចំពោះខាង $+\infty$ យើងមាន $\lim_{x \to +\infty} f_n(x) = +\infty$ ហេតុនេះត្រូវគណនា $\lim_{x \to +\infty} \frac{f_n(x)}{x}$៖
+                <li>ដោយ $\displaystyle\lim_{x \to 0} f_n(x) = +\infty$ នាំឱ្យបន្ទាត់ <b>$x = 0$ (អ័ក្សអរដោនេ)</b> ជាអាស៊ីមតូតឈរ។</li>
+                <li>ដោយ $\displaystyle\lim_{x \to -\infty} f_n(x) = 0$ នាំឱ្យបន្ទាត់ <b>$y = 0$ (អ័ក្សអាប់ស៊ីស)</b> ជាអាស៊ីមតូតដេកខាង $-\infty$។</li>
+                <li>ខាង $+\infty$ យើងមាន $\displaystyle\lim_{x \to +\infty} f_n(x) = +\infty$ ត្រូវគណនា $\lim_{x \to +\infty} \frac{f_n(x)}{x}$៖
                     $$\lim_{x \to +\infty} \frac{f_n(x)}{x} = \lim_{x \to +\infty} \frac{e^{nx}}{x^3} = +\infty$$
-                    ដូចនេះ ខាង $+\infty$ ខ្សែខ្សោង $(\mathscr{C}_n)$ មាន <b>មែកប៉ារ៉ាបូលមានទិសដៅតាមអ័ក្សអរដោនេ $(Oy)$</b>។
+                    ដូចនេះ ខាង $+\infty$ ខ្សែកោង $(\mathscr{C}_n)$ មាន <b>មែកប៉ារ៉ាបូលមានទិសដៅតាមអ័ក្សអរដោនេ $(Oy)$</b>។
                 </li>
             </ul>
         </div>
@@ -817,9 +842,9 @@
             <span class="question">៤. សង់តារាងអថេរភាពនៃ $f_n$៖</span>
             <ul>
                 <li>សិក្សាសញ្ញា $f_n'(x)$៖ ដោយ $e^{nx} \gt 0$ ជានិច្ច នោះសញ្ញានៃ $f_n'(x)$ យកសញ្ញាតាមផលចែក $\frac{nx-2}{x^3}$។ ឫសនៃភាគយកគឺ $x = \frac{2}{n}$។</li>
-                <li>បើ $x \in ]-\infty; 0[ \implies nx - 2 < 0$ និង $x^3 < 0 \implies f_n'(x) > 0$ (អនុគមន៍កើន)។</li>
-                <li>បើ $x \in ]0; \frac{2}{n}[ \implies nx - 2 < 0$ និង $x^3 > 0 \implies f_n'(x) < 0$ (អនុគមន៍ចុះ)។</li>
-                <li>បើ $x \in ]\frac{2}{n}; +\infty[ \implies nx - 2 > 0$ និង $x^3 > 0 \implies f_n'(x) > 0$ (អនុគមន៍កើន)។</li>
+                <li>បើ $x \in ]-\infty; 0[ \implies nx - 2 \lt 0$ និង $x^3 \lt 0 \implies f_n'(x)\gt 0$ (អនុគមន៍កើន)។</li>
+                <li>បើ $x \in ]0; \frac{2}{n}[ \implies nx - 2 \lt 0$ និង $x^3 \gt 0 \implies f_n'(x) \lt 0$ (អនុគមន៍ចុះ)។</li>
+                <li>បើ $x \in ]\frac{2}{n}; +\infty[ \implies nx - 2 \gt 0$ និង $x^3 \gt 0 \implies f_n'(x) \gt 0$ (អនុគមន៍កើន)។</li>
                 <li>តម្លៃអប្បបរមាត្រង់ $x = \frac{2}{n}$ គឺ៖ $f_n(\frac{2}{n}) = \frac{e^{n(2/n)}}{(2/n)^2} = \frac{e^2}{4/n^2} = \frac{n^2 e^2}{4}$។</li>
             </ul>
             <table class="table-variation" style="margin-top: 15px;">
@@ -866,15 +891,15 @@
         </div>
 
         <div class="sub-question">
-            <span class="question">៦. បង្ហាញថា $(\forall n \ge 2) \quad -1 < x_n < -\frac{1}{n}$៖</span>
+            <span class="question">៦. បង្ហាញថា $(\forall n \ge 2) \quad -1 \lt x_n \lt -\frac{1}{n}$៖ </span>
             <ul>
                 <li>យើងមាន $f_n(x_n) = 1$។ គណនាតម្លៃ $f_n(-1)$ និង $f_n(-\frac{1}{n})$៖
                     <ul>
-                        <li>$f_n(-1) = \frac{e^{-n}}{(-1)^2} = e^{-n} = \frac{1}{e^n}$ ។ ដោយ $n \ge 2 \implies e^n > 1 \implies f_n(-1) < 1$ ។</li>
-                        <li>$f_n(-\frac{1}{n}) = \frac{e^{n(-1/n)}}{(-1/n)^2} = \frac{e^{-1}}{1/n^2} = \frac{n^2}{e}$ ។ ដោយ $n \ge 2 \implies n^2 \ge 4$ និង $e \approx 2.718 \implies \frac{n^2}{e} > 1 \implies f_n(-\frac{1}{n}) > 1$ ។</li>
+                        <li>$f_n(-1) = \frac{e^{-n}}{(-1)^2} = e^{-n} = \frac{1}{e^n}$ ។ ដោយ $n \ge 2 \implies e^n \gt 1 \implies f_n(-1) \lt 1$ ។</li>
+                        <li>$f_n(-\frac{1}{n}) = \frac{e^{n(-1/n)}}{(-1/n)^2} = \frac{e^{-1}}{1/n^2} = \frac{n^2}{e}$ ។ ដោយ $n \ge 2 \implies n^2 \ge 4$ និង $e \approx 2.718 \implies \frac{n^2}{e} \gt 1 \implies f_n(-\frac{1}{n}) \gt 1$ ។</li>
                     </ul>
                 </li>
-                <li>យើងបាន $f_n(-1) < f_n(x_n) < f_n(-\frac{1}{n})$។ ដោយសារ $f_n$ ជាអនុគមន៍កើនដាច់ខាតលើ $]-\infty; 0[$ យើងទាញបាន <b>$-1 < x_n < -\frac{1}{n}$</b> ។</li>
+                <li>យើងបាន $f_n(-1) \lt f_n(x_n) \lt f_n(-\frac{1}{n})$។ ដោយសារ $f_n$ ជាអនុគមន៍កើនដាច់ខាតលើ $]-\infty; 0[$ យើងទាញបាន <b>$-1 \lt x_n \lt -\frac{1}{n}$</b> ។</li>
             </ul>
         </div>
 
@@ -886,10 +911,10 @@
                     $$f_{n+1}(x_n) = \frac{e^{(n+1)x_n}}{x_n^2} = \frac{e^{nx_n} \cdot e^{x_n}}{x_n^2} = \frac{x_n^2 \cdot e^{x_n}}{x_n^2} = e^{x_n}$$
                 </li>
                 <li><b>ទាញបញ្ជាក់ថា $(x_n)$ ជាស៊ីតរួម៖</b><br>
-                    ដោយ $x_n < 0 \implies e^{x_n} < e^0 = 1$។ ដូចនេះ $f_{n+1}(x_n) < 1$ ។<br>
-                    តែយើងដឹងថា $f_{n+1}(x_{n+1}) = 1$ ហេតុនេះ $f_{n+1}(x_n) < f_{n+1}(x_{n+1})$ ។<br>
-                    ដោយសារ $f_{n+1}$ ជាអនុគមន៍កើនដាច់ខាតលើ $]-\infty; 0[$ យើងទាញបាន $x_n < x_{n+1}$។<br>
-                    សន្និដ្ឋាន៖ ស៊ីត $(x_n)$ ជាស៊ីតកើន និងទាល់លើដោយ $0$ (ព្រោះ $x_n < 0$) <b>ដូចនេះ $(x_n)_n$ ជាស៊ីតរួម</b>។
+                    ដោយ $x_n \lt 0 \implies e^{x_n} \lt e^0 = 1$។ ដូចនេះ $f_{n+1}(x_n) \lt 1$ ។<br>
+                    តែយើងដឹងថា $f_{n+1}(x_{n+1}) = 1$ ហេតុនេះ $f_{n+1}(x_n) \lt f_{n+1}(x_{n+1})$ ។<br>
+                    ដោយសារ $f_{n+1}$ ជាអនុគមន៍កើនដាច់ខាតលើ $]-\infty; 0[$ យើងទាញបាន $x_n \lt x_{n+1}$។<br>
+                    សន្និដ្ឋាន៖ ស៊ីត $(x_n)$ ជាស៊ីតកើន និងទាល់លើដោយ $0$ (ព្រោះ $x_n \lt 0$) <b>ដូចនេះ $(x_n)_n$ ជាស៊ីតរួម</b>។
                 </li>
             </ul>
         </div>
@@ -899,14 +924,14 @@
             <ul>
                 <li>ពីសមីការ $x_n^2 = e^{nx_n}$ បញ្ចូលលោការីតនេពែសងខាង៖
                     $$\ln(x_n^2) = \ln(e^{nx_n}) \implies 2\ln(|x_n|) = nx_n$$
-                    ដោយ $x_n < 0 \implies |x_n| = -x_n \implies 2\ln(-x_n) = nx_n$ ។
+                    ដោយ $x_n \lt 0 \implies |x_n| = -x_n \implies 2\ln(-x_n) = nx_n$ ។
                 </li>
-                <li>តាមសំណួរទី៦ យើងមាន $x_n < -\frac{1}{n} \implies -x_n > \frac{1}{n}$ ។<br>
-                    បញ្ចូល $\ln$ សងខាង៖ $\ln(-x_n) > \ln(\frac{1}{n}) \implies \ln(-x_n) > -\ln n$ ។
+                <li>តាមសំណួរទី៦ យើងមាន $x_n \lt -\frac{1}{n} \implies -x_n \gt \frac{1}{n}$ ។<br>
+                    បញ្ចូល $\ln$ សងខាង៖ $\ln(-x_n) \gt \ln(\frac{1}{n}) \implies \ln(-x_n) \gt -\ln n$ ។
                 </li>
-                <li>គុណនឹង $2$ ៖ $2\ln(-x_n) > -2\ln n \implies nx_n > -2\ln n \implies$ <b>$x_n \ge -\frac{2\ln n}{n}$</b> ។</li>
+                <li>គុណនឹង $2$ ៖ $2\ln(-x_n) \gt -2\ln n \implies nx_n \gt -2\ln n \implies$ <b>$x_n \ge -\frac{2\ln n}{n}$</b> ។</li>
                 <li><b>ទាញរកលីមីត $\lim_{n \to +\infty} x_n$ ៖</b><br>
-                    យើងមាន $-\frac{2\ln n}{n} \le x_n < -\frac{1}{n}$។ តាមទ្រឹស្ដីបទតម្លៃកៀប ដោយ $\lim_{n \to +\infty} \frac{\ln n}{n} = 0$ និង $\lim_{n \to +\infty} \frac{-1}{n} = 0$<br>
+                    យើងមាន $-\frac{2\ln n}{n} \le x_n \lt -\frac{1}{n}$។ តាមទ្រឹស្ដីបទតម្លៃកៀប ដោយ $\lim_{n \to +\infty} \frac{\ln n}{n} = 0$ និង $\lim_{n \to +\infty} \frac{-1}{n} = 0$<br>
                     ដូចនេះ <b>$\lim_{n \to +\infty} x_n = 0$</b> ។
                 </li>
                 <li><b>ទាញរកលីមីត $\lim_{n \to +\infty} nx_n$ ៖</b><br>
