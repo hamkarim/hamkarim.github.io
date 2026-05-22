@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="km">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>វិញ្ញាសាគណិតវិទ្យា៖ លំហផលចែក (Quotient Spaces)</title>
+
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [
+                        ["$", "$"],
+                        ["\\(", "\\)"]
+                    ],
+                    displayMath: [
+                        ["$$", "$$"],
+                        ["\\[", "\\]"]
+                    ],
+                    macros: {
+                        mybullet: "{\\tiny\\bullet\\;\\;}",
+                        mybullett: "{\\quad\\tiny\\bullet\\;\\;}"
+                    }
+                },
+                // បន្ថែមផ្នែកខាងក្រោមនេះ ដើម្បីកំណត់ទំហំអក្សរគណិតវិទ្យា
+                chtml: {
+                    scale: 1.2 /* ដំឡើងឱ្យធំជាងអក្សរធម្មតា ១៥% កែសម្រួលលេខនេះរហូតដល់មើលទៅសមល្មមនឹងអក្សរខ្មែរ */,
+                    /*matchFontHeight: true, /* ឱ្យវាព្យាយាមតម្រូវកម្ពស់តាម Font អត្ថបទ */
+                    /*displayAlign: 'center',*/
+                    linebreaks: { automatic: true } /* ព្យាយាមបំបែកជួររូបមន្តវែងៗ */
+                },
+                svg: {
+                    scale: 1.2,
+                    matchFontHeight: true
+                }
+            };
+        </script>
+
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css" />
+        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+        <style>
+            body {
+                font-family: "Khmer OS Battambang", sans-serif;
+                line-height: 1.8;
+                background-color: #f4f7f6;
+                padding: 20px;
+            }
+            .container {
+                max-width: 800px;
+                margin: auto;
+                background: #fff;
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            h2 {
+                color: #2980b9;
+                border-bottom: 2px solid #2980b9;
+                padding-bottom: 10px;
+                text-align: center;
+            }
+            .input-group {
+                margin-bottom: 20px;
+            }
+            .input-group input {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                font-family: inherit;
+            }
+            .question-block {
+                margin-bottom: 25px;
+                padding: 15px;
+                background: #fafafa;
+                border-left: 4px solid #27ae60;
+                border-radius: 4px;
+            }
+            .options {
+                margin-top: 10px;
+                padding-left: 20px;
+            }
+            .options label {
+                display: block;
+                margin-bottom: 8px;
+                cursor: pointer;
+            }
+            .submit-btn {
+                background-color: #2980b9;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                width: 100%;
+                font-family: inherit;
+            }
+            .submit-btn:hover {
+                background-color: #1a5276;
+            }
+            .logic-box {
+                background: #1a252f;
+                padding: 15px;
+                border-radius: 5px;
+                margin: 15px 0;
+                font-family: "Courier New", Courier, monospace;
+                font-size: 1em;
+                border: 1px dashed #e74c3c;
+                color: #ecf0f1;
+                overflow-x: auto;
+            }
+
+            /* កំណត់ឱ្យ MathJax ប្រើទំហំតាមមេ (Parent Container) */
+            mjx-container {
+                font-size: 115% !important;
+            }
+
+            svg {
+                max-width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>2L: Quiz No. 1</h2>
+            <form id="quizForm">
+                <div class="question-block">
+                    <p>
+                        <strong>១.</strong> តើលំហផលចែក $V/W$ នៃលំហវ៉ិចទ័រ $V$ និងលំហរង $W$
+                        ត្រូវបានកំណត់សរសេរជាទម្រង់សំណុំយ៉ាងដូចម្តេច?
+                    </p>
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q1" value="A" /> A. $\Bigl\{v + w \mid v \in V, w \in
+                            W\Bigr\}$</label
+                        >
+                        <label><input type="radio" name="q1" value="B" /> B. $\Bigl\{v + W \mid v \in V \Bigr\}$</label>
+                        <label><input type="radio" name="q1" value="C" /> C. $\Bigl\{v \mid v \notin W\Bigr\}$</label>
+                        <label><input type="radio" name="q1" value="D" /> D. $\{W + v \mid v \in W\Bigr\}$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p>
+                        <strong>២.</strong> ឧបមាថា $u, v \in V$ និង $W$ ជាលំហរងនៃ $V$។
+                        តើលក្ខខណ្ឌមួយណាដែលចាំបាច់និងគ្រប់គ្រាន់ ដើម្បីឱ្យ cosets ទាំងពីរស្មើគ្នា ពោលគឺ $u + W = v + W$?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="A" /> A. $u + v \in W$</label>
+                        <label><input type="radio" name="q2" value="B" /> B. $u = v$</label>
+                        <label><input type="radio" name="q2" value="C" /> C. $u - v \in W$</label>
+                        <label><input type="radio" name="q2" value="D" /> D. $u \in W$ និង $v \in W$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p>
+                        <strong>៣.</strong> បើ $V$ ជាលំហវ៉ិចទ័រមានវិមាត្រកំណត់ (finite-dimensional) និង $W$ ជាលំហរងនៃ
+                        $V$ នោះតើវិមាត្រនៃលំហផលចែក $\dim(V/W)$ កំណត់ដោយរូបមន្តមួយណា?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="A" /> A. $\dim(V) / \dim(W)$</label>
+                        <label><input type="radio" name="q3" value="B" /> B. $\dim(V) - \dim(W)$</label>
+                        <label><input type="radio" name="q3" value="C" /> C. $\dim(V) + \dim(W)$</label>
+                        <label><input type="radio" name="q3" value="D" /> D. $\dim(W) - \dim(V)$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p>
+                        <strong>៤.</strong> តើវ៉ិចទ័រសូន្យ (zero vector) ឬធាតុណឺតចំពោះ IO បូក នៅក្នុងលំហផលចែក $V/W$
+                        គឺជាអ្វី?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="A" /> A. លេខ $0$</label>
+                        <label><input type="radio" name="q4" value="B" /> B. សំណុំទទេ $\emptyset$</label>
+                        <label><input type="radio" name="q4" value="C" /> C. វ៉ិចទ័រ $0$ នៃលំហ $V$</label>
+                        <label><input type="radio" name="q4" value="D" /> D. លំហរង $W$ (ឬ $0 + W$)</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p>
+                        <strong>៥.</strong> តាង $V = \mathbb{R}^2$ និង $W$ ជាបន្ទាត់មួយកាត់តាមគល់តម្រុយ $O$។
+                        តើធាតុមួយនៃលំហផលចែក $V/W$ មានរូបរាងធរណីមាត្រ (geometric shape) ជាអ្វី?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="A" /> A. ចំណុចមួយនៅលើបន្ទាត់ $W$</label>
+                        <label><input type="radio" name="q5" value="B" /> B. បន្ទាត់មួយដែលស្របនឹងបន្ទាត់ $W$</label>
+                        <label><input type="radio" name="q5" value="C" /> C. បន្ទាត់មួយដែលកែងនឹងបន្ទាត់ $W$</label>
+                        <label><input type="radio" name="q5" value="D" /> D. រង្វង់មួយដែលមានផ្ចិតត្រង់គល់តម្រុយ</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p>
+                        <strong>៦.</strong> បើ $V = \mathbb{R}^5$ និង $W$ ជាលំហរងនៃ $V$ ដែលមានវិមាត្រ ៣ ($\dim(W) = 3$)។
+                        តើវិមាត្រនៃលំហផលចែក $\dim(V/W)$ ស្មើនឹងប៉ុន្មាន?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="A" /> A. $15$</label>
+                        <label><input type="radio" name="q6" value="B" /> B. $8$</label>
+                        <label><input type="radio" name="q6" value="C" /> C. $2$</label>
+                        <label><input type="radio" name="q6" value="D" /> D. $5/3$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p><strong>៧.</strong> នៅក្នុងលំហផលចែក $V/W$ តើប្រមាណវិធីបូកនៃ coset ត្រូវបានកំណត់យ៉ាងដូចម្តេច?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="A" /> A. $(u + W) + (v + W) = (u + v) + 2W$</label>
+                        <label><input type="radio" name="q7" value="B" /> B. $(u + W) + (v + W) = (u + v) + W$</label>
+                        <label><input type="radio" name="q7" value="C" /> C. $(u + W) + (v + W) = uv + W$</label>
+                        <label><input type="radio" name="q7" value="D" /> D. $(u + W) + (v + W) = u + v$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p>
+                        <strong>៨.</strong> តាង $V = \mathbb{R}^3$ និង $W$ ជាប្លង់មួយកាត់តាមគល់តម្រុយនៅក្នុង
+                        $\mathbb{R}^3$។ តើលំហផលចែក $V/W$ អ៊ីសូម័រ (isomorphic) ទៅនឹងលំហណាមួយខាងក្រោម?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="A" /> A. $\mathbb{R}$</label>
+                        <label><input type="radio" name="q8" value="B" /> B. $\mathbb{R}^2$</label>
+                        <label><input type="radio" name="q8" value="C" /> C. $\mathbb{R}^3$</label>
+                        <label><input type="radio" name="q8" value="D" /> D. $\{0\}$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p><strong>៩.</strong> ប្រសិនបើ $W = V$ តើលំហផលចែក $V/W$ មានលក្ខណៈដូចម្តេច?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="A" /> A. ស្រដៀងនឹងលំហ $V$ (អ៊ីសូម័រនឹង $V$)</label>
+                        <label
+                            ><input type="radio" name="q9" value="B" /> B. ជាលំហសូន្យ (Zero space) ដែលមានតែធាតុ
+                            $\{W\}$</label
+                        >
+                        <label><input type="radio" name="q9" value="C" /> C. មានវិមាត្រស្មើ ១ ជានិច្ច</label>
+                        <label><input type="radio" name="q9" value="D" /> D. មិនមែនជាលំហវ៉ិចទ័រទេ</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p>
+                        <strong>១០.</strong>ចំពោះប្រមាណវិធីគុណនឹងស្កាលែ $c \in \mathbb{R}$ តើផលគុណ $c(v + W)$
+                        នៅក្នុងលំហផលចែក $V/W$ ស្មើនឹងអ្វី?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="A" /> A. $c v + c W$</label>
+                        <label><input type="radio" name="q10" value="B" /> B. $v + c W$</label>
+                        <label><input type="radio" name="q10" value="C" /> C. $c v + W$</label>
+                        <label><input type="radio" name="q10" value="D" /> D. $c(v+w)$ សម្រាប់គ្រប់ $w \in W$</label>
+                    </div>
+                </div>
+
+                <!-- សំណួរទី ១១ -->
+                <div class="question-block">
+                    <p>
+                        <strong>១១.</strong> នៅក្នុងលំហ $\mathbb{R}^2$ គេមានគោល $B = \{u_1, u_2\}$ ដែល $u_1 = (1, 1)$
+                        និង $u_2 = (1, -1)$។ តើកូអរដោនេនៃវ៉ិចទ័រ $v = (3, 1)$ ធៀបនឹងគោល $B$ (តាងដោយ $[v]_B$)
+                        ស្មើនឹងប៉ុន្មាន?
+                    </p>
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q11" value="A" /> A. $\begin{pmatrix} 2 \\ 1
+                            \end{pmatrix}$</label
+                        >
+                        <label
+                            ><input type="radio" name="q11" value="B" /> B. $\begin{pmatrix} 1 \\ 2
+                            \end{pmatrix}$</label
+                        >
+                        <label
+                            ><input type="radio" name="q11" value="C" /> C. $\begin{pmatrix} 3 \\ 1
+                            \end{pmatrix}$</label
+                        >
+                        <label
+                            ><input type="radio" name="q11" value="D" /> D. $\begin{pmatrix} 4 \\ 2
+                            \end{pmatrix}$</label
+                        >
+                    </div>
+                </div>
+
+                <!-- សំណួរទី ១២ -->
+                <div class="question-block">
+                    <p>
+                        <strong>១២.</strong> តាង $B = \{u_1, u_2\}$ ជាគោលនៃ $\mathbb{R}^2$ ដែល $u_1 = (2, 3)$ និង $u_2 =
+                        (-1, 4)$។ បើកូអរដោនេនៃវ៉ិចទ័រ $v$ ធៀបនឹងគោល $B$ គឺ $[v]_B = \begin{pmatrix} 2 \\ -1
+                        \end{pmatrix}$ តើវ៉ិចទ័រ $v$ មានកូអរដោនេជាអ្វីនៅក្នុងគោលស្តង់ដារ?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q12" value="A" /> A. $(1, 7)$</label>
+                        <label><input type="radio" name="q12" value="B" /> B. $(5, 2)$</label>
+                        <label><input type="radio" name="q12" value="C" /> C. $(4, -4)$</label>
+                        <label><input type="radio" name="q12" value="D" /> D. $(3, 7)$</label>
+                    </div>
+                </div>
+
+                <!-- សំណួរទី ១៣ -->
+                <div class="question-block">
+                    <p>
+                        <strong>១៣.</strong> តាង $B = \{b_1, b_2, \dots, b_n\}$ និង $C$ ជាគោលពីរផ្សេងគ្នានៃលំហវ៉ិចទ័រ
+                        $V$។ តើម៉ាទ្រីសប្ដូរគោលពីគោល $B$ ទៅគោល $C$ (តាងដោយ $P_{C\leftarrow B}$) មានជួរឈរ (columns)
+                        បង្កើតឡើងដោយអ្វី?
+                    </p>
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q13" value="A" /> A. កូអរដោនេនៃវ៉ិចទ័រគោល $C$ ធៀបនឹងគោល $B$
+                            ($[c_i]_B$)</label
+                        >
+                        <label
+                            ><input type="radio" name="q13" value="B" /> B. កូអរដោនេនៃវ៉ិចទ័រគោល $B$ ធៀបនឹងគោល $C$
+                            ($[b_i]_C$)</label
+                        >
+                        <label
+                            ><input type="radio" name="q13" value="C" /> C. វ៉ិចទ័រគោលនៃ $B$ និង $C$ បញ្ចូលគ្នា</label
+                        >
+                        <label
+                            ><input type="radio" name="q13" value="D" /> D. ចម្រាស់នៃម៉ាទ្រីសដែលមានជួរឈរជាវ៉ិចទ័រគោល
+                            $B$</label
+                        >
+                    </div>
+                </div>
+
+                <!-- សំណួរទី ១៤ -->
+                <div class="question-block">
+                    <p>
+                        <strong>១៤.</strong> តាង $E$ ជាគោលស្តង់ដារនៃ $\mathbb{R}^2$ និង $B = \{b_1, b_2\}$
+                        ជាគោលមួយទៀតដែល $b_1 = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$ និង $b_2 = \begin{pmatrix} 3 \\ 4
+                        \end{pmatrix}$។ តើម៉ាទ្រីសប្ដូរគោលពីគោល $B$ ទៅគោលស្តង់ដារ $E$ ($P_{E \leftarrow B}$)
+                        ស្មើនឹងម៉ាទ្រីសមួយណា?
+                    </p>
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q14" value="A" /> A. $\begin{pmatrix} 1 & 3 \\ 2 & 4
+                            \end{pmatrix}$</label
+                        >
+                        <label
+                            ><input type="radio" name="q14" value="B" /> B. $\begin{pmatrix} 1 & 2 \\ 3 & 4
+                            \end{pmatrix}$</label
+                        >
+                        <label
+                            ><input type="radio" name="q14" value="C" /> C. $\begin{pmatrix} -2 & 1.5 \\ 1 & -0.5
+                            \end{pmatrix}$</label
+                        >
+                        <label
+                            ><input type="radio" name="q14" value="D" /> D. $\begin{pmatrix} 4 & -3 \\ -2 & 1
+                            \end{pmatrix}$</label
+                        >
+                    </div>
+                </div>
+
+                <!-- សំណួរទី ១៥ -->
+                <div class="question-block">
+                    <p>
+                        <strong>១៥.</strong> តាង $P_{B \to C}$ ជាម៉ាទ្រីសប្ដូរគោលពីគោល $B$ ទៅគោល $C$ សម្រាប់លំហវ៉ិចទ័រ
+                        $V$។ សម្រាប់គ្រប់វ៉ិចទ័រ $v \in V$ តើសមីការមួយណាដែលបង្ហាញពីទំនាក់ទំនងរវាងកូអរដោនេ $[v]_B$ និង
+                        $[v]_C$ បានត្រឹមត្រូវ?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q15" value="A" /> A. $[v]_B = P_{B \to C} [v]_C$</label>
+                        <label><input type="radio" name="q15" value="B" /> B. $[v]_C = P_{B \to C} [v]_B$</label>
+                        <label><input type="radio" name="q15" value="C" /> C. $[v]_C = (P_{B \to C})^{-1} [v]_B$</label>
+                        <label><input type="radio" name="q15" value="D" /> D. $P_{B \to C} = [v]_C [v]_B^{-1}$</label>
+                    </div>
+                </div>
+
+                <!-- សំណួរទី ១៦ -->
+                <div class="question-block">
+                    <p>
+                        <strong>១៦.</strong> ក្នុងរូបភាពខាងក្រោម បន្ទាត់ពណ៌ខៀវតំណាងឱ្យលំហរង $W$ នៃប្លង់ $\mathbb{R}^2$។
+                        តើបន្ទាត់ពណ៌ក្រហមដាច់ៗ (dashed lines) ដែលស្របនឹងបន្ទាត់ $W$ តំណាងឱ្យអ្វីនៅក្នុងលំហផលចែក
+                        $\mathbb{R}^2/W$?
+                    </p>
+                    <div style="text-align: center!inportant; margin: 15px 10px">
+                        <script type="text/tikz">
+                            \begin{tikzpicture}[scale=1]
+                              \draw[->] (-3,0) -- (3,0) node[right] {$x$};
+                              \draw[->] (0,-2) -- (0,3) node[above] {$y$};
+                              \draw[blue, thick] (-2,-1) -- (2,1) node[right] {$W$};
+                              \draw[red, dashed, thick] (-2,0) -- (2,2) node[right] {$v_1 + W$};
+                              \draw[red, dashed, thick] (-2,-2) -- (2,0) node[right] {$v_2 + W$};
+                              \filldraw[black] (0,1) circle (1.5pt) node[left] {$v_1$};
+                              \filldraw[black] (0,-1) circle (1.5pt) node[left] {$v_2$};
+                            \end{tikzpicture}
+                        </script>
+                    </div>
+                    <div class="options">
+                        <label><input type="radio" name="q16" value="A" /> A. វ៉ិចទ័រគោលនៃលំហរង $W$</label>
+                        <label
+                            ><input type="radio" name="q16" value="B" /> B. កូសិត (Cosets) ឬធាតុនីមួយៗនៃលំហផលចែក
+                            $\mathbb{R}^2/W$</label
+                        >
+                        <label><input type="radio" name="q16" value="C" /> C. លំហបំពេញអរតូកូណាល់ $W^\perp$</label>
+                        <label><input type="radio" name="q16" value="D" /> D. វ៉ិចទ័រសូន្យនៃលំហ $\mathbb{R}^2$</label>
+                    </div>
+                </div>
+
+                <!-- សំណួរទី ១៧ -->
+                <div class="question-block">
+                    <p>
+                        <strong>១៧.</strong> តាង $V = \mathbb{R}^3$ និង $W$ ជាប្លង់ $xy$ (ពណ៌ខៀវ)។ ក្នុងលំហផលចែក
+                        $\mathbb{R}^3/W$ រាល់កូសិត $v + W$ គឺជាប្លង់មួយដែលស្របនឹង $W$ (ប្លង់ក្រហម)។ តើលំហផលចែក
+                        $\mathbb{R}^3/W$ នេះមានទម្រង់ធរណីមាត្រ (isomorphic) ទៅនឹងអ្វី?
+                    </p>
+                    <div style="text-align: center; margin: 15px 0">
+                        <script type="text/tikz">
+                                                  \begin{tikzpicture}[scale=1.2]
+                                                    % Axes
+                                                    \draw[->] (0,0) -- (2.5,-1) node[right] {$x$};
+                                                    \draw[->] (0,0) -- (3,1) node[right] {$y$};
+                                                    %\draw[->] (0,0) -- (0,3) node[above] {$z$};
+                                                    % Plane W (z=0)
+                            \filldraw (0,0) circle (1pt) node[left] {$O$};
+                                                    \filldraw[fill=blue!10, draw=blue, thick] (-1,0.5) -- (2,-0.5) -- (3,1.5) -- (0,2.5) -- cycle;
+                                                    \node[blue] at (2.5,0.2) {$W$ ($xy$-plane)};
+                                                    % Coset Plane (z=1.5)
+                                                    \filldraw[fill=red!10, draw=red, thick] (-1,2) -- (2,1) -- (3,3) -- (0,4) -- cycle;
+                                                    \node[red] at (1.8,1.7) {$v + W$};
+                                                    % Vector v
+                                                    \draw[->, thick, black] (0,0) -- (0,1.5) node[left] {$z$};
+                                                  \end{tikzpicture}
+                        </script>
+                    </div>
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q17" value="A" /> A. បន្ទាត់មួយ (ឧទាហរណ៍ អ័ក្ស $z$ មានទម្រង់ជា
+                            $\mathbb{R}$)</label
+                        >
+                        <label
+                            ><input type="radio" name="q17" value="B" /> B. ប្លង់មួយកាត់តាមគល់តម្រុយ
+                            ($\mathbb{R}^2$)</label
+                        >
+                        <label><input type="radio" name="q17" value="C" /> C. លំហ $\mathbb{R}^3$ ទាំងមូល</label>
+                        <label><input type="radio" name="q17" value="D" /> D. ចំណុចមួយ (0-dimensional space)</label>
+                    </div>
+                </div>
+
+                <!-- សំណួរទី ១៨ -->
+                <div class="question-block">
+                    <p>
+                        <strong>១៨.</strong> នៅក្នុងលំហអឺគ្លីត រាល់កូសិត $v+W$ (បន្ទាត់ក្រហម) តែងតែកាត់លំហរងមួយទៀត
+                        (បន្ទាត់បៃតង) ត្រង់ចំណុច $p$ តែមួយគត់។ ចំណុច $p$ នេះជាតំណាងដ៏ល្អបំផុតរបស់កូសិតនោះ។
+                        តើបន្ទាត់បៃតងនោះហៅថាអ្វី?
+                    </p>
+                    <div style="text-align: center; margin: 15px 0">
+                        <script type="text/tikz">
+                            \begin{tikzpicture}[scale=1]
+                              \draw[blue, thick] (-2,-1) -- (2,1) node[right] {$W$};
+                              \draw[green!60!black, thick] (-1,2) -- (1,-2) node[right] {$W^\perp$};
+                              \draw[red, thick] (-3,1) -- (1,3) node[right] {$v+W$};
+                              \filldraw[black] (-0.5,1) circle (1.5pt) node[above left] {$p$};
+                              \draw[->, dashed] (0,0) -- (-0.5,1) node[midway, left] {$v_{proj}$};
+                              % Right angle symbol
+                              \draw (0.15, 0.075) -- (0.075, 0.225) -- (-0.075, 0.15);
+                            \end{tikzpicture}
+                        </script>
+                    </div>
+                    <div class="options">
+                        <label><input type="radio" name="q19" value="A" /> A. លំហរងផ្ទុយ (Opposite Subspace)</label>
+                        <label
+                            ><input type="radio" name="q19" value="B" /> B. លំហបំពេញអរតូកូណាល់ $W^\perp$ (Orthogonal
+                            Complement)</label
+                        >
+                        <label><input type="radio" name="q19" value="C" /> C. លំហផលគុណ (Product Space)</label>
+                        <label><input type="radio" name="q19" value="D" /> D. លំហប៉ារ៉ាឡែល (Parallel Space)</label>
+                    </div>
+                </div>
+
+                <!-- សំណួរទី ១៩ -->
+                <div class="question-block">
+                    <p>
+                        <strong>១៩.</strong> ផ្អែកលើរូបភាពខាងក្រោម បម្លែងលីនេអ៊ែរ $T$ បានបម្លែងការ៉េពណ៌ខៀវ
+                        ទៅជាការ៉េពណ៌ក្រហម ដោយធ្វើឱ្យវ៉ិចទ័រគោល $e_1 \mapsto T(e_1)$ និង $e_2 \mapsto T(e_2)$
+                        កើនប្រវែងទ្វេដង។ តើបម្លែងលីនេអ៊ែរ $T$ នេះមានឈ្មោះអ្វីក្នុងធរណីមាត្រ?
+                    </p>
+                    <div style="text-align: center; margin: 15px 0">
+                        <script type="text/tikz">
+                            \begin{tikzpicture}[scale=1]
+                              \draw[->, gray] (-0.5,0) -- (3,0) node[right] {$x$};
+                              \draw[->, gray] (0,-0.5) -- (0,3) node[above] {$y$};
+                              % Original
+                              \filldraw[blue!10, draw=blue, dashed, thick] (0,0) -- (1,0) -- (1,1) -- (0,1) -- cycle;
+                              \draw[blue, thick, ->] (0,0) -- (1,0) node[below] {$e_1$};
+                              \draw[blue, thick, ->] (0,0) -- (0,1) node[left] {$e_2$};
+                              % Transformed
+                              \draw[red, thick, ->] (0,0) -- (2,0) node[below right] {$T(e_1)$};
+                              \draw[red, thick, ->] (0,0) -- (0,2) node[above left] {$T(e_2)$};
+                              \draw[red, dashed, thick] (2,0) -- (2,2) -- (0,2);
+                            \end{tikzpicture}
+                        </script>
+                    </div>
+                    <div class="options">
+                        <label><input type="radio" name="q21" value="A" /> A. រង្វិល (Rotation)</label>
+                        <label><input type="radio" name="q21" value="B" /> B. ចំណោល (Projection)</label>
+                        <label
+                            ><input type="radio" name="q21" value="C" /> C. ការពង្រីកឯកសណ្ឋាន (Uniform Scaling /
+                            Dilation)</label
+                        >
+                        <label><input type="radio" name="q21" value="D" /> D. ការឆ្លុះ (Reflection)</label>
+                    </div>
+                </div>
+
+                <!-- សំណួរទី ២០ -->
+                <div class="question-block">
+                    <p>
+                        <strong>២០.</strong> ផ្អែកតាមនិយមន័យ តើអនុវត្តន៍ $T: \mathbb{R}^2 \to \mathbb{R}^2$
+                        មួយណាខាងក្រោមនេះជា **បម្លែងលីនេអ៊ែរ (Linear Map)**?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q22" value="A" /> A. $T(x,y) = (x+1, y)$</label>
+                        <label><input type="radio" name="q22" value="B" /> B. $T(x,y) = (x^2, y)$</label>
+                        <label><input type="radio" name="q22" value="C" /> C. $T(x,y) = (2x-y, 3y)$</label>
+                        <label><input type="radio" name="q22" value="D" /> D. $T(x,y) = (\sin x, y)$</label>
+                    </div>
+                </div>
+
+                <!-- សំណួរទី ២១ -->
+                <div class="question-block">
+                    <p>
+                        <strong>២១.</strong> តាង $T: V \to W$ ជាបម្លែងលីនេអ៊ែរពីលំហវ៉ិចទ័រ $V$ ទៅ $W$។
+                        តើលក្ខណៈសម្បត្តិមួយណាខាងក្រោមដែល **ពិតជានិច្ច** សម្រាប់គ្រប់បម្លែងលីនេអ៊ែរ?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q23" value="A" /> A. $T(u) = T(v)$ នាំឱ្យ $u=v$</label>
+                        <label
+                            ><input type="radio" name="q23" value="B" /> B. រូបភាពនៃវ៉ិចទ័រសូន្យក្នុង $V$
+                            គឺស្មើនឹងវ៉ិចទ័រសូន្យក្នុង $W$ ($T(0_V) = 0_W$)</label
+                        >
+                        <label
+                            ><input type="radio" name="q23" value="C" /> C. សម្រាប់គ្រប់ $w \in W$ តែងតែមាន $v \in V$
+                            ដែល $T(v)=w$</label
+                        >
+                        <label
+                            ><input type="radio" name="q23" value="D" /> D. $T(u \cdot v) = T(u) \cdot T(v)$
+                            សម្រាប់គ្រប់ $u,v \in V$</label
+                        >
+                    </div>
+                </div>
+
+                <!-- សំណួរទី ២២ -->
+                <div class="question-block">
+                    <p>
+                        <strong>២២.</strong> តាង $T: \mathbb{R}^2 \to \mathbb{R}^3$ ជាបម្លែងលីនេអ៊ែរកំណត់ដោយ $T(x,y) =
+                        (x+y, x-y, 2x)$។ តើរូបភាពនៃវ៉ិចទ័រ $v = (1, -2)$ ក្រោមបម្លែង $T$ ស្មើនឹងប៉ុន្មាន?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q24" value="A" /> A. $(-1, 3, 2)$</label>
+                        <label><input type="radio" name="q24" value="B" /> B. $(3, -1, 2)$</label>
+                        <label><input type="radio" name="q24" value="C" /> C. $(-1, -1, 2)$</label>
+                        <label><input type="radio" name="q24" value="D" /> D. $(1, 3, -4)$</label>
+                    </div>
+                </div>
+
+                <!-- សំណួរទី ២៣ -->
+                <div class="question-block">
+                    <p>
+                        <strong>២៣.</strong> តាង $T: \mathbb{R}^2 \to \mathbb{R}^2$ ជាបម្លែងលីនេអ៊ែរ។
+                        គេស្គាល់រូបភាពនៃវ៉ិចទ័រគោលគឺ $T(1,0) = (2,1)$ និង $T(0,1) = (-1,3)$។ តើរូបភាពនៃវ៉ិចទ័រ $(3, 2)$
+                        ពោលគឺ $T(3,2)$ ស្មើនឹងអ្វី?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q25" value="A" /> A. $(4, 9)$</label>
+                        <label><input type="radio" name="q25" value="B" /> B. $(1, 4)$</label>
+                        <label><input type="radio" name="q25" value="C" /> C. $(5, 7)$</label>
+                        <label><input type="radio" name="q25" value="D" /> D. $(6, 6)$</label>
+                    </div>
+                </div>
+
+                <!-- សំណួរទី ២៤ -->
+                <div class="question-block">
+                    <p>
+                        <strong>២៤.</strong> តាងបម្លែងលីនេអ៊ែរ $T: \mathbb{R}^2 \to \mathbb{R}^2$ កំណត់ដោយ $T(x,y) = (x,
+                        0)$។ ប្រសិនបើ $S$ ជាសំណុំនៃរង្វង់ឯកតាដែលមានសមីការ $x^2 + y^2 = 1$ នៅក្នុង Domain
+                        នោះតើរូបភាពនៃសំណុំនេះ $T(S)$ គឺជាអ្វីនៅក្នុងលំហចុង (Codomain)?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q26" value="A" /> A. ចំណុចគល់តម្រុយ $(0,0)$ តែមួយគត់</label>
+                        <label><input type="radio" name="q26" value="B" /> B. អង្កត់ $[-1, 1]$ នៅលើអ័ក្ស $x$</label>
+                        <label
+                            ><input type="radio" name="q26" value="C" /> C. អ័ក្ស $x$ ទាំងមូល
+                            (បន្ទាត់គ្មានទីបញ្ចប់)</label
+                        >
+                        <label><input type="radio" name="q26" value="D" /> D. រង្វង់ដដែល $x^2 + y^2 = 1$</label>
+                    </div>
+                </div>
+
+                <!-- សំណួរទី ២៥ -->
+                <div class="question-block">
+                    <p>
+                        <strong>២៥.</strong> គេមានបម្លែងលីនេអ៊ែរ $T: \mathbb{R}^2 \to \mathbb{R}^2$ កំណត់ដោយ $T(x,y) =
+                        (2x, 3y)$។ តើរូបភាពនៃបន្ទាត់ដែលមានសមីការ $y = x$ ក្រោមបម្លែង $T$
+                        ក្លាយទៅជាបន្ទាត់មានសមីការដូចម្តេច?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q27" value="A" /> A. $y = x$</label>
+                        <label><input type="radio" name="q27" value="B" /> B. $y = \frac{2}{3}x$</label>
+                        <label><input type="radio" name="q27" value="C" /> C. $y = \frac{3}{2}x$</label>
+                        <label><input type="radio" name="q27" value="D" /> D. $y = 6x$</label>
+                    </div>
+                </div>
+
+                <!-- សំណួរទី ២៦ -->
+                <div class="question-block">
+                    <p>
+                        <strong>២៦.</strong> ពិនិត្យមើលអនុវត្តន៍ $T: \mathbb{R} \to \mathbb{R}$ កំណត់ដោយ $T(x) = mx + c$
+                        ដែល $m, c \in \mathbb{R}$។ តើក្នុងលក្ខខណ្ឌណាទើប $T$ ត្រូវបានចាត់ទុកជា **បម្លែងលីនេអ៊ែរ**
+                        យ៉ាងពិតប្រាកដក្នុងពីជគណិតលីនេអ៊ែរ?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q28" value="A" /> A. សម្រាប់គ្រប់តម្លៃ $m$ និង $c$</label>
+                        <label><input type="radio" name="q28" value="B" /> B. លុះត្រាតែ $m = 1$</label>
+                        <label><input type="radio" name="q28" value="C" /> C. លុះត្រាតែ $c = 0$</label>
+                        <label
+                            ><input type="radio" name="q28" value="D" /> D. លុះត្រាតែ $m = 0$ និង $c = 0$
+                            ព្រមគ្នា</label
+                        >
+                    </div>
+                </div>
+
+                <!-- សំណួរទី ២៧ -->
+                <div class="question-block">
+                    <p>
+                        <strong>២៧.</strong> តាងបម្លែងលីនេអ៊ែរ $T: \mathbb{R}^2 \to \mathbb{R}^2$ កំណត់ដោយ $T(x,y) =
+                        (x+y, y)$។ ប្រសិនបើ $S$ ជាសំណុំចំណុចនៃការ៉េមួយដែលមានកំពូលត្រង់ $(0,0), (1,0), (1,1)$ និង $(0,1)$
+                        នៅក្នុង Domain នោះតើរូបភាព $T(S)$ មានរាងជាធរណីមាត្រអ្វី?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q29" value="A" /> A. ការ៉េ (Square)</label>
+                        <label><input type="radio" name="q29" value="B" /> B. ចតុកោណកែង (Rectangle)</label>
+                        <label><input type="radio" name="q29" value="C" /> C. ប្រលេឡូក្រាម (Parallelogram)</label>
+                        <label><input type="radio" name="q29" value="D" /> D. ចតុកោណព្នាយ (Trapezoid)</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <button type="button" class="submit-btn" onclick="alert('មុខងារផ្ញើចម្លើយកំពុងស្ថិតក្នុងការអភិវឌ្ឍន៍!')">
+            បញ្ជូនចម្លើយ
+        </button>
+    </body>
+</html>

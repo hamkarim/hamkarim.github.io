@@ -1,64 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="km">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Siemreap&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@400;700&display=swap" rel="stylesheet">
-    
-    <title>វិញ្ញាសាគណិតវិទ្យា៖ ការសិក្សាអនុគមន៍ (ស្តង់ដាបាក់ឌុប)</title>
-    
-   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script>
-      window.MathJax = {
-    tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']],
-        macros: {
-            mybullet: "{\\tiny\\bullet\\;\\;}",
-            mybullett: "{\\quad\\tiny\\bullet\\;\\;}",
-        },
-    },
-    // បន្ថែមផ្នែកខាងក្រោមនេះ ដើម្បីកំណត់ទំហំអក្សរគណិតវិទ្យា
-    chtml: {
-        scale: 1.2,        /* ដំឡើងឱ្យធំជាងអក្សរធម្មតា ១៥% កែសម្រួលលេខនេះរហូតដល់មើលទៅសមល្មមនឹងអក្សរខ្មែរ */
-        /*matchFontHeight: true, /* ឱ្យវាព្យាយាមតម្រូវកម្ពស់តាម Font អត្ថបទ */ 
-        /*displayAlign: 'center',*/
-        linebreaks: { automatic: true } /* ព្យាយាមបំបែកជួររូបមន្តវែងៗ */
-        },
-    svg: {
-        scale: 1.2,
-        matchFontHeight: true 
-        }
-    };
-    </script> 
-    
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-  
-    
-    <style>
-        /* កូដសម្រាប់ទូរស័ព្ទ (អេក្រង់តូចជាង 768px) */
-        @media screen and (max-width: 768px) {
-            .container {
-                padding: 10px;  /* បន្ថែមគម្លាតសងខាងបន្តិច */
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Siemreap&display=swap"
+            rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@400;700&display=swap"
+            rel="stylesheet" />
+
+        <title>វិញ្ញាសាគណិតវិទ្យា៖ ការសិក្សាអនុគមន៍ (ស្តង់ដាបាក់ឌុប)</title>
+
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [
+                        ["$", "$"],
+                        ["\\(", "\\)"]
+                    ],
+                    displayMath: [
+                        ["$$", "$$"],
+                        ["\\[", "\\]"]
+                    ],
+                    macros: {
+                        mybullet: "{\\tiny\\bullet\\;\\;}",
+                        mybullett: "{\\quad\\tiny\\bullet\\;\\;}"
+                    }
+                },
+                // បន្ថែមផ្នែកខាងក្រោមនេះ ដើម្បីកំណត់ទំហំអក្សរគណិតវិទ្យា
+                chtml: {
+                    scale: 1.2 /* ដំឡើងឱ្យធំជាងអក្សរធម្មតា ១៥% កែសម្រួលលេខនេះរហូតដល់មើលទៅសមល្មមនឹងអក្សរខ្មែរ */,
+                    /*matchFontHeight: true, /* ឱ្យវាព្យាយាមតម្រូវកម្ពស់តាម Font អត្ថបទ */
+                    /*displayAlign: 'center',*/
+                    linebreaks: { automatic: true } /* ព្យាយាមបំបែកជួររូបមន្តវែងៗ */
+                },
+                svg: {
+                    scale: 1.2,
+                    matchFontHeight: true
+                }
+            };
+        </script>
+
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <style>
+            /* កូដសម្រាប់ទូរស័ព្ទ (អេក្រង់តូចជាង 768px) */
+            @media screen and (max-width: 768px) {
+                .container {
+                    padding: 10px; /* បន្ថែមគម្លាតសងខាងបន្តិច */
+                }
+
+                /* ប្រសិនបើអ្នកមាន Table ច្រើនជួរ ប្តូរវាឱ្យរមូរបាន */
+                table {
+                    display: block;
+                    width: 100%;
+                    overflow-x: auto;
+                    white-space: nowrap;
+                }
+                h1 {
+                    font-size: 1.5rem;
+                } /* បន្ថយទំហំចំណងជើង */
+                h2 {
+                    font-size: 1.2rem;
+                }
             }
-    
-            /* ប្រសិនបើអ្នកមាន Table ច្រើនជួរ ប្តូរវាឱ្យរមូរបាន */
-            table {
-                display: block;
-                width: 100%;
-                overflow-x: auto;
-                white-space: nowrap;
-            }
-            h1 { font-size: 1.5rem; } /* បន្ថយទំហំចំណងជើង */
-            h2 { font-size: 1.2rem; }
-        }
-        
-    /*    body {
+
+            /*    body {
             font-family: 'Khmer OS Battambang', 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
@@ -67,228 +79,237 @@
             padding: 20px;
             background-color: #f9f9f9;
         }*/
-        /* ១. កំណត់ Siemreap ជាហ្វុងគោលសម្រាប់អត្ថបទធម្មតាទាំងអស់ក្នុងទំព័រ */
-        body {
-            font-family: 'Siemreap', 'Arial', sans-serif;
-            /*font-family: 'Noto Serif Khmer', serif;*/
-            line-height: 1.6; /*បន្ថែមចន្លោះជួរឱ្យអក្សរខ្មែរមើលទៅមិនជាន់គ្នា */
-            color: #333;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-            -webkit-font-smoothing: antialiased;
-            /* កំណត់ទំហំអក្សរឱ្យប្រហែល Size 12 ក្នុង Word *
+            /* ១. កំណត់ Siemreap ជាហ្វុងគោលសម្រាប់អត្ថបទធម្មតាទាំងអស់ក្នុងទំព័រ */
+            body {
+                font-family: "Siemreap", "Arial", sans-serif;
+                /*font-family: 'Noto Serif Khmer', serif;*/
+                line-height: 1.8; /*បន្ថែមចន្លោះជួរឱ្យអក្សរខ្មែរមើលទៅមិនជាន់គ្នា */
+                color: #333;
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #f9f9f9;
+                -webkit-font-smoothing: antialiased;
+                /* កំណត់ទំហំអក្សរឱ្យប្រហែល Size 12 ក្នុង Word *
             font-size: 20px; */
-        }
+            }
 
-        /* ២. កំណត់ Battambang សម្រាប់ចំណងជើង (Headers) */
-        h1, h2, h4, h5, h6 {
-            font-family: 'Battambang', 'Arial', sans-serif;
-            font-weight: 700; /* កម្រិតកម្រាស់ Bold */
-            color: #2c3e50;
-            line-height: 1;
-        }
-        
-        h3 {
-            font-family: 'Noto Serif Khmer', serif;
-            font-size: larger;
-            font-weight: 700; /* កម្រិតកម្រាស់ Bold */
-        }
+            /* ២. កំណត់ Battambang សម្រាប់ចំណងជើង (Headers) */
+            h1,
+            h2,
+            h4,
+            h5,
+            h6 {
+                font-family: "Battambang", "Arial", sans-serif;
+                font-weight: 700; /* កម្រិតកម្រាស់ Bold */
+                color: #2c3e50;
+                line-height: 1;
+            }
 
-        /* ៣. កំណត់ Battambang សម្រាប់អត្ថបទដែលជា Bold ឬសំណួរ *
+            h3 {
+                font-family: "Noto Serif Khmer", serif;
+                font-size: larger;
+                font-weight: 700; /* កម្រិតកម្រាស់ Bold */
+            }
+
+            /* ៣. កំណត់ Battambang សម្រាប់អត្ថបទដែលជា Bold ឬសំណួរ *
         b, strong, .question {
             font-family: 'Battambang', 'Arial', sans-serif;
             font-weight: 700;
         }*/
-        
-        /* អ្នកអាចកំណត់ឱ្យកម្រាស់អក្សរដិត (Bold) សម្រាប់ចំណងជើង ដោយប្រើហ្វុងដដែល *
+
+            /* អ្នកអាចកំណត់ឱ្យកម្រាស់អក្សរដិត (Bold) សម្រាប់ចំណងជើង ដោយប្រើហ្វុងដដែល *
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Noto Serif Khmer', serif;
             font-weight: 700; /* 700 គឺសម្រាប់អក្សរដិត *
             color: #2c3e50;
         }*/
 
-        b, strong, .question {
-            font-family: 'Noto Serif Khmer', serif;
-            font-weight: 700;
-        }
+            b,
+            strong,
+            .question {
+                font-family: "Noto Serif Khmer", serif;
+                font-weight: 700;
+            }
 
-        /* ៤. បើអ្នកចង់ឱ្យចំណងជើងក្នុងប្រអប់ Hint ប្រើ Battambang ដែរ (ជាជម្រើស) */
-        .hint-title {
-            font-family: 'Battambang', 'Arial', sans-serif;
-            font-weight: 700;
-            display: block;
-            margin-bottom: 5px;
-            color: #e67e22;
-        }
-        
-        .header {
-            text-align: center;
-            border-bottom: 2px solid #2c3e50;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
-        .problem-section {
-            background-color: #fff;
-            padding: 25px;
-            padding-left: 50px!important;
-            padding-right: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 25px;
-            /* កំណត់ទំហំអក្សរឱ្យប្រហែល Size 12 ក្នុង Word */
-            font-size: 18px; 
-        }
-        .question {
-            display: block;
-            margin: 2px;
-            margin-bottom: -10px;
-            font-weight: bold;
-        }
-        
-        span.space {
-            line-height: 2;
-            display: block;
-            margin-bottom: 15pt;
-            margin-top: 10pt;
-        }
-        
-        .space {
-            line-height: 2;
-        }
-        
-        b.bquestion {
-            margin-bottom: 10px;
-            margin-top: 15px;
-            /*font-weight: bold;*/
-            display: block;
-            font-size: large;
-        }
-        
-        .sub-question {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-        .hint-box {
-            background-color: #e8f4f8;
-            border-left: 4px solid #3498db;
-            padding: 10px 15px;
-            margin-top: 20px;
-            margin-bottom: 15px;
-            font-size: 0.9em;
-            color: #2980b9;
-            border-radius: 0 4px 4px 0;
-        }
-        
-        .hint-boxx {
-            background-color: #e8f4f8;
-            border-left: 4px solid #3498db;
-            padding: 10px 15px;
-    
-            /* Center the box and set width to 2/3 */
-            width: 70%;
-            margin-left: auto;
-            margin-right: auto;
-    
-            /* Keep your existing spacing and styling */
-            margin-top: 5px;
-            margin-bottom: 15px;
-            font-size: 0.9em;
-            color: #2980b9;
-            border-radius: 0 2px 2px 0;
-    
-        /* Optional: ensures padding doesn't push width over 66% */
-            box-sizing: border-box; 
-        }
-            
-        .hint-title {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-            color: #1f618d;
-        }
-        .rubric-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background-color: #fff;
-            /* កំណត់ទំហំអក្សរឱ្យប្រហែល Size 10 ក្នុង Word */
-            font-size: 14px; 
-        }
-        .rubric-table th, .rubric-table td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        .rubric-table th {
-            background-color: #2c3e50;
-            color: white;
-        }
-        .rubric-table tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        
-        /* Flexbox container to center the TikZ table */
-        .table-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            width: 100%;
-        }
-        
-        /* កំណត់ឱ្យ MathJax ប្រើទំហំតាមមេ (Parent Container) */
-        mjx-container {
-            font-size: 115% !important; /* ឬកំណត់ 0.95em បើចង់ឱ្យវាតូចជាងអត្ថបទបន្តិច */
-            /*display: inline-block;
+            /* ៤. បើអ្នកចង់ឱ្យចំណងជើងក្នុងប្រអប់ Hint ប្រើ Battambang ដែរ (ជាជម្រើស) */
+            .hint-title {
+                font-family: "Battambang", "Arial", sans-serif;
+                font-weight: 700;
+                display: block;
+                margin-bottom: 5px;
+                color: #e67e22;
+            }
+
+            .header {
+                text-align: center;
+                border-bottom: 2px solid #2c3e50;
+                padding-bottom: 10px;
+                margin-bottom: 30px;
+            }
+            h1,
+            h2,
+            h3 {
+                color: #2c3e50;
+            }
+            .problem-section {
+                background-color: #fff;
+                padding: 25px;
+                padding-left: 50px !important;
+                padding-right: 40px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                margin-bottom: 25px;
+                /* កំណត់ទំហំអក្សរឱ្យប្រហែល Size 12 ក្នុង Word */
+                font-size: 18px;
+            }
+            .question {
+                display: block;
+                margin: 0px;
+                padding-bottom: 15px;
+                font-weight: bold;
+            }
+
+            span.space {
+                line-height: 2;
+                display: block;
+                margin-bottom: 15pt;
+                margin-top: 10pt;
+            }
+
+            .space {
+                line-height: 2;
+            }
+
+            b.bquestion {
+                margin-bottom: 10px;
+                margin-top: 15px;
+                /*font-weight: bold;*/
+                display: block;
+                font-size: large;
+            }
+
+            .sub-question {
+                margin-left: 20px;
+                margin-bottom: 15px;
+            }
+            .hint-box {
+                background-color: #e8f4f8;
+                border-left: 4px solid #3498db;
+                padding: 10px 15px;
+                margin-top: 20px;
+                margin-bottom: 15px;
+                font-size: 0.9em;
+                color: #2980b9;
+                border-radius: 0 4px 4px 0;
+            }
+
+            .hint-boxx {
+                background-color: #e8f4f8;
+                border-left: 4px solid #3498db;
+                padding: 10px 15px;
+
+                /* Center the box and set width to 2/3 */
+                width: 70%;
+                margin-left: auto;
+                margin-right: auto;
+
+                /* Keep your existing spacing and styling */
+                margin-top: 5px;
+                margin-bottom: 15px;
+                font-size: 0.9em;
+                color: #2980b9;
+                border-radius: 0 2px 2px 0;
+
+                /* Optional: ensures padding doesn't push width over 66% */
+                box-sizing: border-box;
+            }
+
+            .hint-title {
+                font-weight: bold;
+                display: block;
+                margin-bottom: 5px;
+                color: #1f618d;
+            }
+            .rubric-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+                background-color: #fff;
+                /* កំណត់ទំហំអក្សរឱ្យប្រហែល Size 10 ក្នុង Word */
+                font-size: 14px;
+            }
+            .rubric-table th,
+            .rubric-table td {
+                border: 1px solid #ddd;
+                padding: 12px;
+                text-align: left;
+            }
+            .rubric-table th {
+                background-color: #2c3e50;
+                color: white;
+            }
+            .rubric-table tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            /* Flexbox container to center the TikZ table */
+            .table-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+
+            /* កំណត់ឱ្យ MathJax ប្រើទំហំតាមមេ (Parent Container) */
+            mjx-container {
+                font-size: 115% !important; /* ឬកំណត់ 0.95em បើចង់ឱ្យវាតូចជាងអត្ថបទបន្តិច */
+                /*display: inline-block;
             vertical-align: middle;*/
-        }
+            }
 
-        /* សម្រាប់រូបមន្តក្នុងជួរអត្ថបទ (Inline) *
+            /* សម្រាប់រូបមន្តក្នុងជួរអត្ថបទ (Inline) *
         .MathJax {
             font-size: 1.2em !important;
         }*/
-        
-        /* បន្ថែមក្នុង <style> */
-        svg {
-            max-width: 100%;    /* បង្ខំឱ្យរូបភាពមិនឱ្យធំជាងអេក្រង់ទូរស័ព្ទ */
-            /*height: auto;       /* រក្សាសមាមាត្ររូបភាព */
-        }
 
-      /*  .table-container {
+            /* បន្ថែមក្នុង <style> */
+            svg {
+                max-width: 100%; /* បង្ខំឱ្យរូបភាពមិនឱ្យធំជាងអេក្រង់ទូរស័ព្ទ */
+                /*height: auto;       /* រក្សាសមាមាត្ររូបភាព */
+            }
+
+            /*  .table-container {
             width: 100%;
             overflow-x: auto;   /* បើករមូរឆ្វេងស្តាំ បើរូបភាពនៅតែធំជាងអេក្រង់ *
             display: flex;
             justify-content: center;
         }*/
-        
-        .table-variation {
-            width: 100%;
-            max-width: 600px;
-            margin: 20px auto;
-            border-collapse: collapse;
-            text-align: center;
-        }
 
-        .table-variation th, .table-variation td {
-            border: 1px solid #333;
-            padding: 10px;
-        }
-        
-        /*No view for this div */
-        
-        div.noview {
-            visibility: hidden;
-            display: none;
-        }
-        
-        
-        /*li {
+            .table-variation {
+                width: 100%;
+                max-width: 600px;
+                margin: 20px auto;
+                border-collapse: collapse;
+                text-align: center;
+            }
+
+            .table-variation th,
+            .table-variation td {
+                border: 1px solid #333;
+                padding: 10px;
+            }
+
+            /*No view for this div */
+
+            div.noview {
+                visibility: hidden;
+                display: none;
+            }
+
+            /*li {
             list-style: none;
             background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 8h-8l4-6h-6L3 14h7l-6 9L21 8Z" fill="%231B880A"></path></svg>');
             background-repeat: no-repeat;
@@ -296,655 +317,742 @@
             background-size: 15px 15px; /* Set your specific small size here *
             padding-left: 20px;
         }*/
-        
-        li::marker {
-            font-size: 0.8rem; /* Adjust this value to make it smaller */
-            /*line-height: 1.8;*/
-        }
-        
-        li {
-            /*font-size: 0.8rem; /* Adjust this value to make it smaller */
-            line-height: 1.8;  
-            margin-bottom: 10px;
-        }
-        /* បិទគម្លាតចុងក្រោយគេបង្អស់ ដើម្បីកុំឱ្យប៉ះពាល់ដល់ Element ខាងក្រោម */
-        li:last-child {
-            margin-bottom: 0!important;
-        }
-        
-    </style>
-    
-<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
-<script src="https://tikzjax.com/v1/tikzjax.js"></script>
-    
-</head>
-<body>
 
-    <!----- លំហាត់ទី២ ----->
-    
-    
-    <div class="header">
-        <h1>លំហាត់ត្រៀមប្រឡងបាក់ឌុប</h1>
-        <h2>ប្រធានបទ២៖ សិក្សាអនុគមន៍លោការីតនេពែ</h2>
-        <p>កម្រិត៖ មធ្យមសិក្សាទុតិយភូមិ</p>
-        <h3>១៧ ឧសភា ២០២៦</h3>
-    </div>
+            li::marker {
+                font-size: 0.8rem; /* Adjust this value to make it smaller */
+                /*line-height: 1.8;*/
+            }
 
-    <div class="problem-section">
-        <h2>លំហាត់ ២.</h2>
-        <p>នៅក្នុងប្លង់កំណត់ដោយតម្រុយអរតូណរម៉ាល់ $(O, \vec{i}, \vec{j})$ ដែលមានឯកតារង្វាស់ $2\text{ cm}$ លើអ័ក្ស។</p>
+            li {
+                /*font-size: 0.8rem; /* Adjust this value to make it smaller */
+                line-height: 1.8;
+                margin-bottom: 10px;
+            }
+            /* បិទគម្លាតចុងក្រោយគេបង្អស់ ដើម្បីកុំឱ្យប៉ះពាល់ដល់ Element ខាងក្រោម */
+            li:last-child {
+                margin-bottom: 0 !important;
+            }
+        </style>
 
-        <h3>(I) ពិនិត្យអនុគមន៍ $g$</h3>
-        <p>តាង $g$ ជាអនុគមន៍កំណត់លើចន្លោះ $(0, +\infty)$ ដោយ៖ $$g(x) = x^2 - 1 + \ln x$$</p>
+        <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css" />
+        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+    </head>
+    <body>
+        <!----- លំហាត់ទី២ ----->
 
-        <div class="sub-question">
-            ១. គណនាដេរីវេ $g^\prime(x)$ គ្រប់ចំនួនពិត $x$ ក្នុងចន្លោះ $(0, +\infty)$។ ទាញបញ្ជាក់ពីទិសដៅអថេរភាពនៃអនុគមន៍ $g$ លើចន្លោះនេះ។
-            <div class="hint-box">
-                <span class="hint-title">💡 ចងចាំ៖</span>
-                - រំលឹកទម្រង់ដេរីវេ៖ $(\ln x)' = \frac{1}{x}$ និង $(x^n)' = nx^{n-1}$។<br>
-                - ដោយសារ $x \in (0, +\infty)$ (មានន័យថា $x \gt 0$) ដូច្នេះតើ $g'(x)$ មានសញ្ញាអ្វី? បើ $g'(x) \gt 0$ នោះ $g$ ជាអនុគមន៍កើន។
+        <div class="header">
+            <h1>លំហាត់ត្រៀមប្រឡងបាក់ឌុប</h1>
+            <h2>ប្រធានបទ២៖ សិក្សាអនុគមន៍លោការីតនេពែ</h2>
+            <p>កម្រិត៖ មធ្យមសិក្សាទុតិយភូមិ</p>
+            <h3>១៧ ឧសភា ២០២៦</h3>
+        </div>
+
+        <div class="problem-section">
+            <h2>លំហាត់ ២.</h2>
+            <p>
+                នៅក្នុងប្លង់កំណត់ដោយតម្រុយអរតូណរម៉ាល់ $(O, \vec{i}, \vec{j})$ ដែលមានឯកតារង្វាស់ $2\text{ cm}$ លើអ័ក្ស។
+            </p>
+
+            <h3>(I) ពិនិត្យអនុគមន៍ $g$</h3>
+            <p>តាង $g$ ជាអនុគមន៍កំណត់លើចន្លោះ $(0, +\infty)$ ដោយ៖ $$g(x) = x^2 - 1 + \ln x$$</p>
+
+            <div class="sub-question">
+                ១. គណនាដេរីវេ $g^\prime(x)$ គ្រប់ចំនួនពិត $x$ ក្នុងចន្លោះ $(0, +\infty)$។
+                ទាញបញ្ជាក់ពីទិសដៅអថេរភាពនៃអនុគមន៍ $g$ លើចន្លោះនេះ។
+                <div class="hint-box">
+                    <span class="hint-title">💡 ចងចាំ៖</span>
+                    - រំលឹកទម្រង់ដេរីវេ៖ $(\ln x)' = \frac{1}{x}$ និង $(x^n)' = nx^{n-1}$។<br />
+                    - ដោយសារ $x \in (0, +\infty)$ (មានន័យថា $x \gt 0$) ដូច្នេះតើ $g'(x)$ មានសញ្ញាអ្វី? បើ $g'(x) \gt 0$
+                    នោះ $g$ ជាអនុគមន៍កើន។
+                </div>
+            </div>
+
+            <div class="sub-question">
+                ២. គណនាតម្លៃនៃ $g(1)$។ ទាញរកសញ្ញានៃ $g(x)$ ចំពោះ $x \in (0, 1)$ និង $x \in (1, +\infty)$។
+                <div class="hint-box">
+                    <span class="hint-title">💡 ចងចាំ៖</span>
+                    - ជំនួស $x=1$ ចូលក្នុងសមីការ $g(x)$ (កុំភ្លេចថា $\ln(1) = 0$)។<br />
+                    - ដោយសារ $g$ ជាអនុគមន៍កើនជានិច្ច នោះបើ $x \lt 1$ នាំឲ្យ $g(x) \lt g(1)$ ហើយបើ $x \gt 1$ នាំឲ្យ $g(x)
+                    \gt g(1)$។
+                </div>
             </div>
         </div>
 
-        <div class="sub-question">
-            ២. គណនាតម្លៃនៃ $g(1)$។ ទាញរកសញ្ញានៃ $g(x)$ ចំពោះ $x \in (0, 1)$ និង  $x \in (1, +\infty)$។
-            <div class="hint-box">
-                <span class="hint-title">💡 ចងចាំ៖</span>
-                - ជំនួស $x=1$ ចូលក្នុងសមីការ $g(x)$ (កុំភ្លេចថា $\ln(1) = 0$)។<br>
-                - ដោយសារ $g$ ជាអនុគមន៍កើនជានិច្ច នោះបើ $x \lt 1$ នាំឲ្យ $g(x) \lt g(1)$ ហើយបើ $x \gt 1$ នាំឲ្យ $g(x) \gt g(1)$។
+        <div class="problem-section">
+            <h3>(II) ពិនិត្យអនុគមន៍ $f$</h3>
+            <p>គេឱ្យអនុគមន៍ $f$ កំណត់លើចន្លោះ $(0, +\infty)$ ដោយ៖ $$f(x) = x - 1 - \frac{\ln x}{x}$$</p>
+            <p>តាង $(C)$ ជាខ្សែកោងតំណាងអនុគមន៍ $f$។</p>
+
+            <div class="sub-question">
+                ១. ក) គណនាលីមីតនៃអនុគមន៍ $f$ ត្រង់ $0$ រួចទាញរកសមីការអាស៊ីមតូតឈរនៃ $(C)$។
+                <div class="hint-box">
+                    <span class="hint-title">💡 ចងចាំ៖</span>
+                    - រំលឹករូបមន្តលីមីត៖ $\displaystyle\lim_{x \to 0^+} \ln x = -\infty$។ <br />
+                    - ពិនិត្យមើលផលធៀប $\frac{-\infty}{0^+}$ តើចេញលទ្ធផលអ្វី? បើ $\displaystyle\lim_{x \to 0} f(x) =
+                    \infty$ នោះបន្ទាត់ $x=0$ ជាអាស៊ីមតូតឈរ។
+                </div>
             </div>
-        </div>
-    </div>
 
-    <div class="problem-section">
-        <h3>(II) ពិនិត្យអនុគមន៍ $f$</h3>
-        <p>គេឱ្យអនុគមន៍ $f$ កំណត់លើចន្លោះ $(0, +\infty)$ ដោយ៖ $$f(x) = x - 1 - \frac{\ln x}{x}$$</p>
-        <p>តាង $(C)$ ជាខ្សែកោងតំណាងអនុគមន៍ $f$។</p>
+            <div class="sub-question">១. ខ) គណនាលីមីតនៃអនុគមន៍ $f$ ត្រង់ $+\infty$។</div>
 
-        <div class="sub-question">
-            ១. ក) គណនាលីមីតនៃអនុគមន៍ $f$ ត្រង់ $0$ រួចទាញរកសមីការអាស៊ីមតូតឈរនៃ $(C)$។
-            <div class="hint-box">
-                <span class="hint-title">💡 ចងចាំ៖</span>
-                - រំលឹករូបមន្តលីមីត៖ $\displaystyle\lim_{x \to 0^+} \ln x = -\infty$។ <br>
-                - ពិនិត្យមើលផលធៀប $\frac{-\infty}{0^+}$ តើចេញលទ្ធផលអ្វី? បើ $\displaystyle\lim_{x \to 0} f(x) = \infty$ នោះបន្ទាត់ $x=0$ ជាអាស៊ីមតូតឈរ។
+            <div class="sub-question">
+                ២. ក) បង្ហាញថាបន្ទាត់ $(D)$ ដែលមានសមីការ $y = x - 1$ ជាអាស៊ីមតូតទ្រេតនៃខ្សែកោង $(C)$ ខាង $+\infty$។
+                <div class="hint-box">
+                    <span class="hint-title">💡 ចងចាំ៖</span>
+                    - ដើម្បីបង្ហាញថាបន្ទាត់ $(D)$ ជាអាស៊ីមតូតទ្រេត ត្រូវបង្ហាញថា $\lim_{x \to +\infty} [f(x) - y_D] =
+                    0$។ <br />
+                    - រំលឹក៖ $\lim_{x \to +\infty} \frac{\ln x}{x} = 0$។
+                </div>
             </div>
-        </div>
 
-        <div class="sub-question">
-            ១. ខ) គណនាលីមីតនៃអនុគមន៍ $f$ ត្រង់ $+\infty$។
-        </div>
-
-        <div class="sub-question">
-            ២. ក) បង្ហាញថាបន្ទាត់ $(D)$ ដែលមានសមីការ $y = x - 1$ ជាអាស៊ីមតូតទ្រេតនៃខ្សែកោង $(C)$ ខាង $+\infty$។
-            <div class="hint-box">
-                <span class="hint-title">💡 ចងចាំ៖</span>
-                - ដើម្បីបង្ហាញថាបន្ទាត់ $(D)$ ជាអាស៊ីមតូតទ្រេត ត្រូវបង្ហាញថា $\lim_{x \to +\infty} [f(x) - y_D] = 0$។ <br>
-                - រំលឹក៖ $\lim_{x \to +\infty} \frac{\ln x}{x} = 0$។
+            <div class="sub-question">
+                ២. ខ) សិក្សាទីតាំងធៀបរវាងខ្សែកោង $(C)$ និងបន្ទាត់អាស៊ីមតូត $(D)$។
+                <div class="hint-box">
+                    <span class="hint-title">💡 ចងចាំ៖</span>
+                    - សិក្សាសញ្ញានៃផលដក $f(x) - y_D = -\frac{\ln x}{x}$។ <br />
+                    - ដោយសារ $x \gt 0$ សញ្ញាវាអាស្រ័យលើ $-\ln x$។ ពិនិត្យមើលពេលណា $\ln x \gt 0$ ពេលណា $\ln x \lt 0$។
+                </div>
             </div>
-        </div>
 
-        <div class="sub-question">
-            ២. ខ) សិក្សាទីតាំងធៀបរវាងខ្សែកោង $(C)$ និងបន្ទាត់អាស៊ីមតូត $(D)$។
-            <div class="hint-box">
-                <span class="hint-title">💡 ចងចាំ៖</span>
-                - សិក្សាសញ្ញានៃផលដក $f(x) - y_D = -\frac{\ln x}{x}$។ <br>
-                - ដោយសារ $x \gt 0$ សញ្ញាវាអាស្រ័យលើ $-\ln x$។ ពិនិត្យមើលពេលណា $\ln x \gt 0$ ពេលណា $\ln x \lt 0$។
+            <div class="sub-question">
+                ៣. ក) ផ្ទៀងផ្ទាត់ថា គ្រប់ចំនួនពិត $x \in (0, +\infty)$ គេបាន៖ $$f'(x) = \frac{g(x)}{x^2}$$
+                <div class="hint-box">
+                    <span class="hint-title">💡 គន្លឹះ (សាកល្បងដោយខ្លួនឯង)៖</span>
+                    - ប្រើរូបមន្តដេរីវេផលចែក៖ $\displaystyle\left(\frac{u}{v}\right)' = \dfrac{u'v - uv'}{v^2}$
+                    សម្រាប់តួ $\frac{\ln x}{x}$។<br />
+                    - បន្ទាប់ពីគណនារួច តម្រូវភាគបែងរួម នោះអ្នកនឹងឃើញកន្សោម $g(x)$ លេចឡើងនៅភាគយក។
+                </div>
             </div>
-        </div>
 
-        <div class="sub-question">
-            ៣. ក) ផ្ទៀងផ្ទាត់ថា គ្រប់ចំនួនពិត $x \in (0, +\infty)$ គេបាន៖ $$f'(x) = \frac{g(x)}{x^2}$$
-            <div class="hint-box">
-                <span class="hint-title">💡 គន្លឹះ (សាកល្បងដោយខ្លួនឯង)៖</span>
-                - ប្រើរូបមន្តដេរីវេផលចែក៖ $\displaystyle\left(\frac{u}{v}\right)' = \dfrac{u'v - uv'}{v^2}$ សម្រាប់តួ $\frac{\ln x}{x}$។<br>
-                - បន្ទាប់ពីគណនារួច តម្រូវភាគបែងរួម នោះអ្នកនឹងឃើញកន្សោម $g(x)$ លេចឡើងនៅភាគយក។
+            <div class="sub-question">
+                ៣. ខ) ទាញរកសញ្ញានៃ $f'(x)$ (ដោយផ្អែកលើលទ្ធផលផ្នែកទី I.) រួចសង់តារាងអថេរភាពនៃ $f$។
             </div>
+
+            <div class="sub-question">៤. គូសបន្ទាត់ $(D)$ និងខ្សែកោង $(C)$ ក្នុងតម្រុយអរតូណរម៉ាល់តែមួយ។</div>
         </div>
 
-        <div class="sub-question">
-            ៣. ខ) ទាញរកសញ្ញានៃ $f'(x)$ (ដោយផ្អែកលើលទ្ធផលផ្នែកទី I.) រួចសង់តារាងអថេរភាពនៃ $f$។
+        <div class="problem-section">
+            <h2>តារាងកម្រិតពិន្ទុ និងអត្រាកំណែ</h2>
+            <p>
+                ខាងក្រោមនេះជាលក្ខណៈវិនិច្ឆ័យក្នុងការផ្តល់ពិន្ទុ
+                ដើម្បីជួយសិស្សឱ្យដឹងពីកន្លែងដែលពួកគាត់ទទួលបានពិន្ទុក្នុងមួយជំហានៗ។ (ពិន្ទុសរុប៖ ៣៥ ពិន្ទុ)
+            </p>
+
+            <table class="rubric-table">
+                <thead>
+                    <tr>
+                        <th>ផ្នែក</th>
+                        <th>ខ្លឹមសារនៃសំណួរ</th>
+                        <th>ការបែងចែកពិន្ទុតាមជំហាន (តម្រុយចម្លើយ)</th>
+                        <th>ពិន្ទុ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2"><b>ផ្នែក (I)</b></td>
+                        <td>១. គណនា $g'(x)$ និងទិសដៅអថេរភាព</td>
+                        <td>
+                            - រកឃើញ $g'(x) = 2x + \frac{1}{x}$ (2 ពិន្ទុ)<br />
+                            - បកស្រាយថាដោយ $x\gt 0$, នោះ $g'(x) \gt 0$ ជានិច្ច (1.5 ពិន្ទុ)<br />
+                            - ទាញសេចក្តីសន្និដ្ឋានថា $g$ ជាអនុគមន៍កើនដាច់ខាត (1.5 ពិន្ទុ)
+                        </td>
+                        <td>៥</td>
+                    </tr>
+                    <tr>
+                        <td>២. គណនា $g(1)$ និងសញ្ញា $g(x)$</td>
+                        <td>
+                            - គណនាត្រូវ $g(1) = 1^2 - 1 + 0 = 0$ (2 ពិន្ទុ)<br />
+                            - បង្ហាញសញ្ញា៖ $x \in (0,1) \Rightarrow g(x) \lt 0$ (1.5 ពិន្ទុ)<br />
+                            - បង្ហាញសញ្ញា៖ $x \in (1, +\infty) \Rightarrow g(x) \gt 0$ (1.5 ពិន្ទុ)
+                        </td>
+                        <td>៥</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="6"><b>ផ្នែក (II)</b></td>
+                        <td>១.ក) លីមីតត្រង់ $0$ និងអាស៊ីមតូតឈរ</td>
+                        <td>
+                            - គណនាលីមីត $\lim_{x \to 0^+} f(x) = +\infty$ ត្រឹមត្រូវ (3 ពិន្ទុ)<br />
+                            - ទាញសេចក្តីសន្និដ្ឋានសមីការអាស៊ីមតូតឈរ $x=0$ (2 ពិន្ទុ)
+                        </td>
+                        <td>៥</td>
+                    </tr>
+                    <tr>
+                        <td>១.ខ) លីមីតត្រង់ $+\infty$</td>
+                        <td>
+                            - គណនាលីមីត $\lim_{x \to +\infty} f(x) = +\infty$ ត្រឹមត្រូវ ព្រមទាំងបញ្ជាក់ហេតុផល (3
+                            ពិន្ទុ)
+                        </td>
+                        <td>៣</td>
+                    </tr>
+                    <tr>
+                        <td>២.ក) បង្ហាញអាស៊ីមតូតទ្រេត</td>
+                        <td>
+                            - គណនា $f(x) - y = -\frac{\ln x}{x}$ (2 ពិន្ទុ)<br />
+                            - បង្ហាញ $\lim_{x \to +\infty} \left(-\frac{\ln x}{x}\right) = 0$ និងទាញសន្និដ្ឋាន (2
+                            ពិន្ទុ)
+                        </td>
+                        <td>៤</td>
+                    </tr>
+                    <tr>
+                        <td>២.ខ) ទីតាំងធៀប</td>
+                        <td>
+                            - សិក្សាសញ្ញា $-\ln x$ ត្រឹមត្រូវ (2 ពិន្ទុ)<br />
+                            - បញ្ជាក់ចន្លោះដែល $(C)$ នៅលើ និងនៅក្រោម $(D)$ និងចំណុចប្រសព្វ $(1, 0)$ (2 ពិន្ទុ)
+                        </td>
+                        <td>៤</td>
+                    </tr>
+                    <tr>
+                        <td>៣. ដេរីវេ និងតារាងអថេរភាព</td>
+                        <td>
+                            - ប្រើរូបមន្តដេរីវេ និងទាញបាន $f'(x) = \frac{x^2 - 1 + \ln x}{x^2}$ (3 ពិន្ទុ)<br />
+                            - បញ្ជាក់ថា $f'(x)$ យកសញ្ញាតាម $g(x)$ ព្រោះ $x^2 \gt 0$ (1 ពិន្ទុ)<br />
+                            - គូសតារាងអថេរភាពបានត្រឹមត្រូវ និងពេញលេញ (2 ពិន្ទុ)
+                        </td>
+                        <td>៦</td>
+                    </tr>
+                    <tr>
+                        <td>៤. សង់ក្រាប $(C)$ និងបន្ទាត់ $(D)$</td>
+                        <td>
+                            - គូសតម្រុយ អាស៊ីមតូតឈរ និងអាស៊ីមតូតទ្រេត ត្រឹមត្រូវ (1 ពិន្ទុ)<br />
+                            - ដៅចំណុចប្រសព្វ និងចំណុចជំនួយបានត្រឹមត្រូវ (1 ពិន្ទុ)<br />
+                            - ខ្សែកោងមានរាងត្រឹមត្រូវ ឆ្លុះបញ្ចាំងនឹងតារាងអថេរភាព (1 ពិន្ទុ)
+                        </td>
+                        <td>៣</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
-        <div class="sub-question">
-            ៤. គូសបន្ទាត់ $(D)$ និងខ្សែកោង $(C)$ ក្នុងតម្រុយអរតូណរម៉ាល់តែមួយ។
-        </div>
-    </div>
-
-    <div class="problem-section">
-        <h2>តារាងកម្រិតពិន្ទុ និងអត្រាកំណែ</h2>
-        <p>ខាងក្រោមនេះជាលក្ខណៈវិនិច្ឆ័យក្នុងការផ្តល់ពិន្ទុ ដើម្បីជួយសិស្សឱ្យដឹងពីកន្លែងដែលពួកគាត់ទទួលបានពិន្ទុក្នុងមួយជំហានៗ។ (ពិន្ទុសរុប៖ ៣៥ ពិន្ទុ)</p>
-
-        <table class="rubric-table">
-            <thead>
-                <tr>
-                    <th>ផ្នែក</th>
-                    <th>ខ្លឹមសារនៃសំណួរ</th>
-                    <th>ការបែងចែកពិន្ទុតាមជំហាន (តម្រុយចម្លើយ)</th>
-                    <th>ពិន្ទុ</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td rowspan="2"><b>ផ្នែក (I)</b></td>
-                    <td>១. គណនា $g'(x)$ និងទិសដៅអថេរភាព</td>
-                    <td>
-                        - រកឃើញ $g'(x) = 2x + \frac{1}{x}$ (2 ពិន្ទុ)<br>
-                        - បកស្រាយថាដោយ $x\gt 0$, នោះ $g'(x) \gt 0$ ជានិច្ច (1.5 ពិន្ទុ)<br>
-                        - ទាញសេចក្តីសន្និដ្ឋានថា $g$ ជាអនុគមន៍កើនដាច់ខាត (1.5 ពិន្ទុ)
-                    </td>
-                    <td>៥</td>
-                </tr>
-                <tr>
-                    <td>២. គណនា $g(1)$ និងសញ្ញា $g(x)$</td>
-                    <td>
-                        - គណនាត្រូវ $g(1) = 1^2 - 1 + 0 = 0$ (2 ពិន្ទុ)<br>
-                        - បង្ហាញសញ្ញា៖ $x \in (0,1) \Rightarrow g(x) \lt 0$ (1.5 ពិន្ទុ)<br>
-                        - បង្ហាញសញ្ញា៖ $x \in (1, +\infty) \Rightarrow g(x) \gt 0$ (1.5 ពិន្ទុ)
-                    </td>
-                    <td>៥</td>
-                </tr>
-                <tr>
-                    <td rowspan="6"><b>ផ្នែក (II)</b></td>
-                    <td>១.ក) លីមីតត្រង់ $0$ និងអាស៊ីមតូតឈរ</td>
-                    <td>
-                        - គណនាលីមីត $\lim_{x \to 0^+} f(x) = +\infty$ ត្រឹមត្រូវ (3 ពិន្ទុ)<br>
-                        - ទាញសេចក្តីសន្និដ្ឋានសមីការអាស៊ីមតូតឈរ $x=0$ (2 ពិន្ទុ)
-                    </td>
-                    <td>៥</td>
-                </tr>
-                <tr>
-                    <td>១.ខ) លីមីតត្រង់ $+\infty$</td>
-                    <td>
-                        - គណនាលីមីត $\lim_{x \to +\infty} f(x) = +\infty$ ត្រឹមត្រូវ ព្រមទាំងបញ្ជាក់ហេតុផល (3 ពិន្ទុ)
-                    </td>
-                    <td>៣</td>
-                </tr>
-                <tr>
-                    <td>២.ក) បង្ហាញអាស៊ីមតូតទ្រេត</td>
-                    <td>
-                        - គណនា $f(x) - y = -\frac{\ln x}{x}$ (2 ពិន្ទុ)<br>
-                        - បង្ហាញ $\lim_{x \to +\infty} \left(-\frac{\ln x}{x}\right) = 0$ និងទាញសន្និដ្ឋាន (2 ពិន្ទុ)
-                    </td>
-                    <td>៤</td>
-                </tr>
-                <tr>
-                    <td>២.ខ) ទីតាំងធៀប</td>
-                    <td>
-                        - សិក្សាសញ្ញា $-\ln x$ ត្រឹមត្រូវ (2 ពិន្ទុ)<br>
-                        - បញ្ជាក់ចន្លោះដែល $(C)$ នៅលើ និងនៅក្រោម $(D)$ និងចំណុចប្រសព្វ $(1, 0)$ (2 ពិន្ទុ)
-                    </td>
-                    <td>៤</td>
-                </tr>
-                <tr>
-                    <td>៣. ដេរីវេ និងតារាងអថេរភាព</td>
-                    <td>
-                        - ប្រើរូបមន្តដេរីវេ និងទាញបាន $f'(x) = \frac{x^2 - 1 + \ln x}{x^2}$ (3 ពិន្ទុ)<br>
-                        - បញ្ជាក់ថា $f'(x)$ យកសញ្ញាតាម $g(x)$ ព្រោះ $x^2 \gt 0$ (1 ពិន្ទុ)<br>
-                        - គូសតារាងអថេរភាពបានត្រឹមត្រូវ និងពេញលេញ (2 ពិន្ទុ)
-                    </td>
-                    <td>៦</td>
-                </tr>
-                <tr>
-                    <td>៤. សង់ក្រាប $(C)$ និងបន្ទាត់ $(D)$</td>
-                    <td>
-                        - គូសតម្រុយ អាស៊ីមតូតឈរ និងអាស៊ីមតូតទ្រេត ត្រឹមត្រូវ (1 ពិន្ទុ)<br>
-                        - ដៅចំណុចប្រសព្វ និងចំណុចជំនួយបានត្រឹមត្រូវ (1 ពិន្ទុ)<br>
-                        - ខ្សែកោងមានរាងត្រឹមត្រូវ ឆ្លុះបញ្ចាំងនឹងតារាងអថេរភាព (1 ពិន្ទុ)
-                    </td>
-                    <td>៣</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    
- <!----------
+        <!----------
    --------------------- កំណែលំហាត់១
 ----------------------------------------->
-    
-<div class="header">
-        <h1>ចម្លើយលំហាត់២. សិក្សាអនុគមន៍ 
-            $$f(x) = x - 1 - \frac{\ln x}{x}$$
-    
-    </h1>
-    </div>
 
-<div class="noview">
-<div class="problem-section">
-        <h3>ផ្នែក ក៖ ការសិក្សាអនុគមន៍ជំនួយ $g$</h3>
-        <p>គេមានអនុគមន៍ $g(x) = x^2 - 1 + \ln x$ កំណត់លើចន្លោះ $(0, +\infty)$។</p>
-
-        <div class="sub-question">
-            <span class="question">១. គណនាដេរីវេ $g'(x)$ និងទិសដៅអថេរភាព៖</span><br/>
-            យើងមាន៖ 
-                    $$g'(x) = (x^2)' - (1)' + (\ln x)'$$
-                    $$g'(x) = 2x - 0 + \frac{1}{x} = 2x + \frac{1}{x}$$
-            <b>ទិសដៅអថេរភាព៖</b> ដោយ $x \in (0, +\infty)$ នោះយើងបាន $2x \gt 0$ និង $\frac{1}{x} \gt 0$ ជានិច្ច។
-                <br/>នាំឱ្យ $g'(x) = 2x + \frac{1}{x} \gt 0$ គ្រប់ $x \in (0, +\infty)$។ <br/>
-            ដូចនេះ អនុគមន៍ $g$ ជាអនុគមន៍កើនដាច់ខាតលើចន្លោះ $(0, +\infty)$។
+        <div class="header">
+            <h1>ចម្លើយលំហាត់២. សិក្សាអនុគមន៍ $$f(x) = x - 1 - \frac{\ln x}{x}$$</h1>
         </div>
 
-        <div class="sub-question">
-            <span class="question">២. គណនា $g(1)$ និងទាញរកសញ្ញានៃ $g(x)$៖</span>
-            
-                <br/> គេបាន $$g(1) = 1^2 - 1 + \ln(1) = 1 - 1 + 0 = 0$$
-                <b>ទាញរកសញ្ញា៖</b> ដោយ $g$ ជាអនុគមន៍កើនដាច់ខាត នោះវាប្រែប្រួលស្របរទិសដៅជាមួយ $x$៖
+        <!-- <div class="noview">-->
+        <div class="problem-section">
+            <h3>ផ្នែក ក៖ ការសិក្សាអនុគមន៍ជំនួយ $g$</h3>
+            <p>គេមានអនុគមន៍ $g(x) = x^2 - 1 + \ln x$ កំណត់លើចន្លោះ $(0, +\infty)$។</p>
+
+            <div class="sub-question">
+                <span class="question">១. គណនាដេរីវេ $g'(x)$ និងទិសដៅអថេរភាព៖</span>
+                យើងមាន៖ $$g'(x) = (x^2)' - (1)' + (\ln x)'$$ $$g'(x) = 2x - 0 + \frac{1}{x} = 2x + \frac{1}{x}$$
+                <b>ទិសដៅអថេរភាព៖</b> ដោយ $x \in (0, +\infty)$ នោះយើងបាន $2x \gt 0$ និង $\frac{1}{x} \gt 0$ ជានិច្ច។
+                <br />នាំឱ្យ $g'(x) = 2x + \frac{1}{x} \gt 0$ គ្រប់ $x \in (0, +\infty)$។ <br />
+                ដូចនេះ អនុគមន៍ $g$ ជាអនុគមន៍កើនដាច់ខាតលើចន្លោះ $(0, +\infty)$។
+            </div>
+
+            <div class="sub-question">
+                <span class="question">២. គណនា $g(1)$ និងទាញរកសញ្ញានៃ $g(x)$៖</span>
+
+                គេបាន $$g(1) = 1^2 - 1 + \ln(1) = 1 - 1 + 0 = 0$$ <b>ទាញរកសញ្ញា៖</b> ដោយ $g$ ជាអនុគមន៍កើនដាច់ខាត
+                នោះវាប្រែប្រួលស្របរទិសដៅជាមួយ $x$៖
+                <ul>
+                    <li>បើ $0 \lt x \lt 1$ នោះ $g(x) \lt g(1)$ នាំឱ្យ <b>$g(x) \lt 0$</b>។</li>
+                    <li>បើ $x = 1$ នោះ <b>$g(x) = 0$</b>។</li>
+                    <li>បើ $x \gt 1$ នោះ $g(x) \gt g(1)$ នាំឱ្យ <b>$g(x) \gt 0$</b>។</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="problem-section">
+            <h3>ផ្នែក ខ៖ ការសិក្សាអនុគមន៍ចម្បង $f$</h3>
+            <p>គេមានអនុគមន៍ $f(x) = x - 1 - \frac{\ln x}{x}$ កំណត់លើចន្លោះ $(0, +\infty)$។</p>
+
+            <div class="sub-question">
+                <span class="question">១. ក) គណនាលីមីតត្រង់ $0$ និងសមីការអាស៊ីមតូតឈរ៖</span>
+
+                គេបាន៖ $$\begin{eqnarray*} \lim_{x \to 0^+} f(x) &=& \lim_{x \to 0^+} \left(x - 1 - \frac{\ln
+                x}{x}\right)\\ &=& 0 - 1 + (+\infty)\\ &=& +\infty \end{eqnarray*} $$ (ព្រោះ $\lim_{x \to 0^+} \ln x =
+                -\infty$ និង $x \to 0^+$ នោះផលធៀប $\dfrac{\ln x}{x} \to -\infty$) <br />
+
+                ដោយ $\lim_{x \to 0^+} f(x) = +\infty$ នោះបន្ទាត់ដែលមានសមីការ <b>$x = 0$</b> (អ័ក្សអរដោនេ)
+                ជាអាស៊ីមតូតឈរនៃខ្សែកោង $(C)$។
+            </div>
+
+            <div class="sub-question">
+                <span class="question">១. ខ) គណនាលីមីតត្រង់ $+\infty$៖</span> គេបាន $$ \begin{eqnarray*} \lim_{x \to
+                +\infty} f(x) &=& \lim_{x \to +\infty} \left(x - 1 - \frac{\ln x}{x}\right)\\ &=& +\infty - 1 - 0 \\ &=&
+                +\infty \end{eqnarray*} $$ (តាមលក្ខណៈលីមីតពិសេស $\lim_{x \to +\infty} \frac{\ln x}{x} = 0$)
+            </div>
+
+            <div class="sub-question">
+                <span class="question">២. ក) បង្ហាញថាបន្ទាត់ $(D): y = x - 1$ ជាអាស៊ីមតូតទ្រេតខាង $+\infty$៖</span>
+
+                គណនាលីមីតនៃផលដក៖ $$ \begin{eqnarray*} \lim_{x \to +\infty} [f(x) - y_D] &=& \lim_{x \to +\infty} \left[
+                \left(x - 1 - \frac{\ln x}{x}\right) - (x - 1) \right]\\ &=& \lim_{x \to +\infty} \left( -\frac{\ln
+                x}{x} \right)\\ &=& 0 \end{eqnarray*} $$
+                <b>សន្និដ្ឋាន៖</b> ដោយសារលីមីតនៃផលដកស្មើ $0$ នោះបន្ទាត់ <b>$(D) : y = x - 1$</b> ជាអាស៊ីមតូតទ្រេតនៃ
+                $(C)$ ខាង $+\infty$ ពិតមែន។
+            </div>
+
+            <div class="sub-question">
+                <span class="question">២. ខ) សិក្សាទីតាំងធៀបរវាងខ្សែកោងង $(C)$ និងបន្ទាត់ $(D)$៖</span>
+                <ul>
+                    <li>
+                        សិក្សាសញ្ញាផលដក $f(x) - y_D = -\frac{\ln x}{x}$។ ដោយ $x \gt 0$ ជានិច្ច នោះសញ្ញាអាស្រ័យលើភាគយក
+                        $-\ln x$៖
+                        <ul>
+                            <li>
+                                បើ $-\ln x \gt 0 \Rightarrow \ln x \lt 0 \Rightarrow 0 \lt x \lt 1$ ៖ ផលដកវិជ្ជមាន
+                                នាំឱ្យ <b>$(C)$ ស្ថិតនៅពីលើ $(D)$</b>។
+                            </li>
+                            <li>
+                                បើ $-\ln x \lt 0 \Rightarrow \ln x \gt 0 \Rightarrow x \gt 1$ ៖ ផលដកអវិជ្ជមាន នាំឱ្យ
+                                <b>$(C)$ ស្ថិតនៅពីក្រោម $(D)$</b>។
+                            </li>
+                            <li>
+                                បើ $-\ln x = 0 \Rightarrow \ln x = 0 \Rightarrow x = 1$ ៖ $(C)$ ប្រសព្វ $(D)$ ត្រង់ចំណុច
+                                $I(1, 0)$។
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sub-question">
+                <span class="question">៣. ក) ផ្ទៀងផ្ទាត់ថា $f'(x) = \frac{g(x)}{x^2}$៖</span>
+                <ul>
+                    <li>
+                        ប្រើរូបមន្ត $\left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2}$ ចំពោះតួប្រភាគ៖ $$f'(x) = (x -
+                        1)' - \left( \frac{\ln x}{x} \right)'$$ $$f'(x) = 1 - \frac{(\ln x)' \cdot x - \ln x \cdot
+                        (x)'}{x^2}$$ $$f'(x) = 1 - \frac{\frac{1}{x} \cdot x - \ln x \cdot 1}{x^2} = 1 - \frac{1 - \ln
+                        x}{x^2}$$
+                    </li>
+                    <li>តម្រូវភាគបែងរួម៖ $$f'(x) = \frac{x^2 - (1 - \ln x)}{x^2} = \frac{x^2 - 1 + \ln x}{x^2}$$</li>
+                    <li>ដោយ $g(x) = x^2 - 1 + \ln x$ ដូចនេះ <b>$f'(x) = \frac{g(x)}{x^2}$</b> ពិតប្រាកដមែន។</li>
+                </ul>
+            </div>
+
+            <div class="sub-question">
+                <span class="question">៣. ខ) ទាញរកសញ្ញា $f'(x)$ និងសង់តារាងអថេរភាព៖</span>
+                <ul>
+                    <li>ដោយសារភាគបែង $x^2 \gt 0$ ជានិច្ច នោះសញ្ញានៃ $f'(x)$ គឺយកសញ្ញាតាម $g(x)$។</li>
+                    <li>
+                        ផ្អែកតាមចម្លើយផ្នែកក យើងបាន៖
+                        <ul>
+                            <li>បើ $0 \lt x \lt 1 \Rightarrow g(x) \gt 0 \Rightarrow f'(x) \lt 0$ (អនុគមន៍ចុះ)</li>
+                            <li>បើ $x = 1 \Rightarrow g(1) = 0 \Rightarrow f'(1) = 0$ (មានតម្លៃអប្បបរមា)</li>
+                            <li>បើ $x \gt 1 \Rightarrow g(x) \gt 0 \Rightarrow f'(x) \gt 0$ (អនុគមន៍កើន)</li>
+                        </ul>
+                    </li>
+                    <li>គណនាតម្លៃអប្បបរមា៖ $f(1) = 1 - 1 - \frac{\ln 1}{1} = 0$។</li>
+                </ul>
+
+                <table class="table-variation">
+                    <tr>
+                        <td style="width: 15%">$x$</td>
+                        <td style="width: 15%; border-right: none">$0$</td>
+                        <td style="width: 20%; border-left: none; border-right: none"></td>
+                        <td style="width: 15%; border-left: none; border-right: none">$1$</td>
+                        <td style="width: 20%; border-left: none; border-right: none"></td>
+                        <td style="width: 15%; border-left: none">$+\infty$</td>
+                    </tr>
+                    <tr>
+                        <td>$f'(x)$</td>
+                        <td style="background-color: #eee; border-right: none"></td>
+                        <td style="border-left: none; border-right: none">$-$</td>
+                        <td style="border-left: none; border-right: none">$0$</td>
+                        <td style="border-left: none; border-right: none">$+$</td>
+                        <td style="border-left: none"></td>
+                    </tr>
+                    <tr>
+                        <td>$f(x)$</td>
+                        <td style="background-color: #eee; border-right: none"></td>
+                        <td style="border-left: none; border-right: none">$+\infty$<br />$\searrow$</td>
+                        <td style="border-left: none; border-right: none"><br />$0$</td>
+                        <td style="border-left: none; border-right: none">$\nearrow$<br /></td>
+                        <td style="border-left: none">$+\infty$</td>
+                    </tr>
+                </table>
+                <p style="text-align: center; font-size: 0.9em; color: #555">
+                    <i>(ចំណាំ៖ ត្រង់ $x=0$ គូសបន្ទាត់ឈរពីរ ព្រោះវាមិនចូលក្នុងដែនកំណត់ទេ)</i>
+                </p>
+            </div>
+
+            <div class="table-container">
+                <script type="text/script+tikz">
+                    \begin{tikzpicture}[scale=1.2,transform shape]
+                        % គូសក្រឡាចត្រង្គ (Grid)
+                        \draw[lightgray, very thin, step=1cm] (-1,-3) grid (6,5);
+
+                        % គូសអ័ក្សកូអរដោនេ (x និង y)
+                        \draw[->, thick] (-1,0) -- (6.5,0) node[right] {$x$};
+                        \draw[->, thick] (0,-3) -- (0,5.5) node[above] {$y$};
+
+                        % ដៅចំណុចលេខលើអ័ក្ស
+                        \foreach \x in {1,2,3,4,5,6}
+                            \draw (\x,-0.1) -- (\x,0.1) node[below=4pt] {$\x$};
+                        \foreach \y in {-2,-1,1,2,3,4,5}
+                            \draw (-0.1,\y) -- (0.1,\y) node[left=4pt] {$\y$};
+
+                        % គល់តម្រុយ O
+                        \node[below left] at (0,0) {$O$};
+
+                        % កាត់ដែនបង្ហាញកុំឱ្យក្រាបលៀនចេញក្រៅប្រអប់
+                        \clip (-1,-3) rectangle (6,5);
+
+                        % គូសបន្ទាត់អាស៊ីមតូតទ្រេត (D): y = x - 1
+                        \draw[red, thick, dashed] (-2,-3) -- (6,5) node[pos=0.8, below right] {$(D): y = x - 1$};
+
+                        % គូសខ្សែកោង (C): f(x) = x - 1 - ln(x)/x
+                        % ចំណាំ៖ ក្នុង TikZ អនុគមន៍លោការីតនេពែ ប្រើពាក្យ ln()
+                        \draw[blue, very thick, samples=150, domain=0.15:6]
+                            plot (\x, {\x - 1 - ln(\x)/\x});
+
+                        % ដាក់ឈ្មោះខ្សែកោង (C)
+                        \node[blue, right] at (4.5, 3) {$(C)$};
+
+                        % ដៅចំណុចអប្បបរមា I(1,0)
+                        \filldraw[black] (1,0) circle (2pt) node[above left] {$I(1,0)$};
+
+                    \end{tikzpicture}
+                </script>
+            </div>
+            <p style="text-align: center"><b>ក្រាប $(C)$ របស់អនុគមន៍ $f$</b></p>
+        </div>
+
+        <!--</div>-->
+
+        <div class="header">
+            <h1>វិញ្ញាសាគណិតវិទ្យា ត្រៀមប្រឡងបាក់ឌុប</h1>
+            <h2>ប្រធានបទ៣៖ ការសិក្សាអនុគមន៍ និង ស៊្វីត (កម្រិតខ្ពស់)</h2>
+            <p>កម្រិត៖ មធ្យមសិក្សាទុតិយភូមិ | រយៈពេល៖ ១៥ នាទី</p>
+        </div>
+
+        <div class="problem-section">
+            <!-- <h3>លំហាត់៣</h3> -->
+            <p>
+                តាង $n$ ជាចំនួនគត់ធម្មជាតិ។ គេមានអនុគមន៍ $f_n$ កំណត់លើ $\mathbb{R}^*$ ដោយ៖ $$f_n(x) =
+                \frac{e^{nx}}{x^2}$$
+            </p>
+            <p>តាងខ្សែកោង $(\mathscr{C}_n)$ តំណាងអនុគមន៍ $f_n$ ក្នុងតម្រុយអរតូណរម៉ាល់ $(O, \vec{i}, \vec{j})$។</p>
+
+            <div class="sub-question">
+                <span class="question"
+                    >១. គណនា $\displaystyle\lim_{x \to -\infty} f_n(x)$, $\displaystyle\lim_{x \to +\infty} f_n(x)$ និង
+                    $\lim_{x \to 0} f_n(x)$។</span
+                >
+                <div class="hint-box">
+                    <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
+                    - ត្រង់ $-\infty$ ៖ ពិនិត្យមើលសញ្ញានៃ $e^{-\infty}$។<br />
+                    - ត្រង់ $+\infty$ ៖ ប្រៀបធៀបរវាងអនុគមន៍អ៊ិចស្ប៉ូណង់ស្យែល និងពហុធា (អ៊ិចស្ប៉ូណង់ស្យែលកើនលឿនជាង)។
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <span class="question">២. សិក្សាមែកអនន្តនៃខ្សែកោង $(\mathscr{C}_n)$។</span>
+                <div class="hint-box">
+                    <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
+                    - ទាញរកអាស៊ីមតូតឈរ និងអាស៊ីមតូតដេក តាមរយៈចម្លើយលីមីតក្នុងសំណួរទី១។<br />
+                    - ខាង $+\infty$ ត្រូវគណនា $\displaystyle\lim_{x \to +\infty} \frac{f_n(x)}{x}$ បន្ថែម
+                    ដើម្បីរកមែកប៉ារ៉ាបូល។
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <span class="question"
+                    >៣. បង្ហាញថា $f_n$ មានដេរីវេលើ $]0; +\infty[$ និង $]-\infty; 0[$ រួចគណនា $f_n'(x)$។</span
+                >
+                <div class="hint-box">
+                    <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
+                    - ប្រើរូបមន្តដេរីវេផលចែក៖ $\left(\dfrac{u}{v}\right)' = \dfrac{u'v - uv'}{v^2}$ ដោយ $u = e^{nx}$
+                    នាំឱ្យ $u' = ne^{nx}$។
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <span class="question">៤. សង់តារាងអថេរភាពនៃ $f_n$។</span>
+                <div class="hint-box">
+                    <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
+                    - ដាក់កត្តា $e^{nx}$ ចេញ រួចសិក្សាសញ្ញានៃកន្សោមដែលនៅសល់។ កុំភ្លេចថា $x^2 \gt 0$ តែ $x^3$ យកសញ្ញាតាម
+                    $x$។
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <span class="question"
+                    >៥. បង្ហាញថាសមីការ $f_n(x) = 1$ មានឫសតែមួយគត់ $x_n$ ក្នុងចន្លោះ $]-\infty; 0[$។</span
+                >
+                <div class="hint-box">
+                    <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
+                    - ត្រូវប្រើ ទ្រឹស្ដីបទតម្លៃកណ្ដាល៖ បង្ហាញថាអនុគមន៍ជាប់ និង ម៉ូណូតូនដាច់ខាត (កើនដាច់ខាត ឬ ចុះដាច់ខាត)
+                    លើចន្លោះនោះ រួចរកទីតាំងនៃលេខ $1$។
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <span class="question">៦. បង្ហាញថា $(\forall n \ge 2) \quad -1 \lt x_n \lt -\frac{1}{n}$។</span>
+                <div class="hint-box">
+                    <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
+                    - គណនា $f_n(-1)$ និង $f_n(-\frac{1}{n})$ រួចប្រៀបធៀបតម្លៃទាំងពីរនេះជាមួយ $1$ (ដោយចាំថា $f_n(x_n) =
+                    1$)។
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <span class="question"
+                    >៧. បង្ហាញថា $(\forall n \in \mathbb{N}^*) \quad f_{n+1}(x_n) = e^{x_n}$ រួចទាញបញ្ជាក់ថាស៊ីត
+                    $(x_n)_n$ ជាស៊ីតរួម។</span
+                >
+                <div class="hint-box">
+                    <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
+                    - ជំនួស $x_n$ ចូលក្នុង $f_{n+1}$ ហើយប្រើសម្មតិកម្ម $e^{n x_n} = x_n^2$ ដែលទាញចេញពី $f_n(x_n) = 1$
+                    ដើម្បីសម្រួលកន្សោម។<br />
+                    - ដើម្បីបង្ហាញថាជាស៊ីតរួម ត្រូវបង្ហាញថាវាជាស៊ីតកើន និងទាល់លើ។ ប្រៀបធៀប $f_{n+1}(x_n)$ ជាមួយ $1$។
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <span class="question"
+                    >៨. ស្រាយបញ្ជាក់ថា $(\forall n \ge 2) \quad x_n \ge -\frac{2\ln n}{n}$ រួចទាញរក
+                    $\displaystyle\lim_{n \to +\infty} x_n$ និង $\displaystyle\lim_{n \to +\infty} nx_n$។</span
+                >
+                <div class="hint-box">
+                    <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
+                    - ចាប់ផ្តើមពីទំនាក់ទំនង $x_n^2 = e^{n x_n}$ ដោយបំពាក់ $\ln$ សងខាង រួចទាញប្រើវិសមភាពពីសំណួរទី៦
+                    មកជំនួស។<br />
+                    - ប្រើទ្រឹស្ដីបទតម្លៃកៀប (Théorème des gendarmes) ដើម្បីទាញរកលីមីត។
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <span class="question">៩. សង់ខ្សែកោង $(\mathscr{C}_1)$។</span>
+            </div>
+        </div>
+
+        <div class="">
+            <!--noview-->
+
+            <div class="header">
+                <h1>កំណែលំហាត់៣៖ ការសិក្សាអនុគមន៍ និង ស៊្វីត</h1>
+                <p>សូមប្អូនៗពិនិត្យចម្លើយពេញលេញជាជំហានៗ</p>
+            </div>
+
+            <div class="problem-section">
+                <h3>បម្រាប់លំហាត់</h3>
+                <p>
+                    យក $n \in \mathbb{N}^*$ និងកំណត់អនុគមន៍ $f_n$ កំណត់លើ $\mathbb{R}^*$ ដោយ៖ $$f_n(x) =
+                    \frac{e^{nx}}{x^2}$$
+                </p>
+                <p>តាងដោយ $(\mathscr{C}_n)$ ជាខ្សែកោងរបស់ $f_n$ ក្នុងតម្រុយអរតូណរម៉ាល់ $(O, \vec{i}, \vec{j})$។</p>
+
+                <div class="sub-question">
+                    <span class="question"
+                        >១. គណនា $\displaystyle\lim_{x \to -\infty} f_n(x)$, $\displaystyle\lim_{x \to +\infty} f_n(x)$
+                        និង $\displaystyle\lim_{x \to 0} f_n(x)$៖</span
+                    >
                     <ul>
-                        <li>បើ $0 \lt x \lt 1$ នោះ $g(x) \lt g(1)$ នាំឱ្យ <b>$g(x) \lt 0$</b>។</li>
-                        <li>បើ $x = 1$ នោះ <b>$g(x) = 0$</b>។</li>
-                        <li>បើ $x \gt 1$ នោះ $g(x) \gt g(1)$ នាំឱ្យ <b>$g(x) \gt 0$</b>។
+                        <li>
+                            <b>លីមីតត្រង់ $-\infty$ ៖</b> $$\lim_{x \to -\infty} f_n(x) = \lim_{x \to -\infty}
+                            \frac{e^{nx}}{x^2} = \frac{0}{+\infty} = 0$$ ព្រោះ $n \ge 1$, ពេល $x \to -\infty \implies
+                            e^{nx} \to 0$ និង $x^2 \to +\infty$។<br />
+                            ដូចនេះ $$\boxed{\quad \displaystyle\lim_{x \to -\infty} f_n(x) = 0\quad}$$
+                        </li>
+                        <li>
+                            <b>លីមីតត្រង់ $+\infty$ ៖</b> $$\lim_{x \to +\infty} f_n(x) = \lim_{x \to +\infty}
+                            \frac{e^{nx}}{x^2}= +\infty$$ តាមលក្ខណៈលីមីតប្រៀបធៀប (អ៊ិចស្ប៉ូណង់ស្យែលកើនលឿនជាងពហុធា)
+                            <br />
+                            ដូចនេះ $$\boxed{\quad\lim_{x \to +\infty} \frac{e^{nx}}{x^2} = +\infty\quad}$$
+                        </li>
+                        <li>
+                            <b>លីមីតត្រង់ $0$ ៖</b>
+                            $$\lim_{x \to 0} f_n(x) = \lim_{x \to 0} \frac{e^{nx}}{x^2} = \frac{1}{0^+} = +\infty $$
+                            ដោយសារ $\displaystyle\lim_{x \to 0} e^{nx} = e^0 = 1$ និង $\displaystyle\lim_{x \to 0} x^2 =
+                            0^+$ ។ ដូចនេះ $$\boxed{\quad\displaystyle\lim_{x \to 0} f_n(x) = +\infty}$$
+                        </li>
                     </ul>
-                
-        
-        </div>
-    </div>
+                </div>
 
-    <div class="problem-section">
-        <h3>ផ្នែក ខ៖ ការសិក្សាអនុគមន៍ចម្បង $f$</h3>
-        <p>គេមានអនុគមន៍ $f(x) = x - 1 - \frac{\ln x}{x}$ កំណត់លើចន្លោះ $(0, +\infty)$។</p>
-
-        <div class="sub-question">
-            <span class="question">១. ក) គណនាលីមីតត្រង់ $0$ និងសមីការអាស៊ីមតូតឈរ៖</span>
-            
-            <br/> គេបាន៖ 
-            $$\lim_{x \to 0^+} f(x) = \lim_{x \to 0^+} \left(x - 1 - \frac{\ln x}{x}\right)$$
-            <ul>
-                
-                <li>ដោយ $\lim_{x \to 0^+} \ln x = -\infty$ និងភាគបែង $x \to 0^+$ នោះផលធៀប $\frac{\ln x}{x} \to -\infty$។ នាំឱ្យ $-\frac{\ln x}{x} \to +\infty$។</li>
-                <li>ដូចនេះ $$\lim_{x \to 0^+} f(x) = 0 - 1 + (+\infty) = +\infty$$</li>
-                <li>ដោយ $\lim_{x \to 0^+} f(x) = +\infty$ នោះបន្ទាត់ដែលមានសមីការ <b>$x = 0$</b> (អ័ក្សអរដោនេ) ជាអាស៊ីមតូតឈរនៃខ្សែកោង $(C)$។</li>
-            </ul>
-        </div>
-
-        <div class="sub-question">
-            <span class="question">១. ខ) គណនាលីមីតត្រង់ $+\infty$៖</span>
-            <ul>
-                <li>$$\lim_{x \to +\infty} f(x) = \lim_{x \to +\infty} \left(x - 1 - \frac{\ln x}{x}\right)$$</li>
-                <li>តាមលក្ខណៈលីមីតពិសេស យើងមាន $\lim_{x \to +\infty} \frac{\ln x}{x} = 0$។</li>
-                <li>ដូចនេះ $\lim_{x \to +\infty} f(x) = +\infty - 1 - 0 = +\infty$។</li>
-            </ul>
-        </div>
-
-        <div class="sub-question">
-            <span class="question">២. ក) បង្ហាញថាបន្ទាត់ $(D): y = x - 1$ ជាអាស៊ីមតូតទ្រេតខាង $+\infty$៖</span>
-            <ul>
-                <li>គណនាលីមីតនៃផលដក៖ 
-                    $$\lim_{x \to +\infty} [f(x) - y_D] = \lim_{x \to +\infty} \left[ \left(x - 1 - \frac{\ln x}{x}\right) - (x - 1) \right] = \lim_{x \to +\infty} \left( -\frac{\ln x}{x} \right) = 0$$
-                </li>
-                <li><b>សន្និដ្ឋាន៖</b> ដោយសារលីមីតនៃផលដកស្មើ $0$ នោះបន្ទាត់ <b>$(D) : y = x - 1$</b> ជាអាស៊ីមតូតទ្រេតនៃ $(C)$ ខាង $+\infty$ ពិតមែន។</li>
-            </ul>
-        </div>
-
-        <div class="sub-question">
-            <span class="question">២. ខ) សិក្សាទីតាំងធៀបរវាងខ្សែកោងង $(C)$ និងបន្ទាត់ $(D)$៖</span>
-            <ul>
-                <li>សិក្សាសញ្ញាផលដក $f(x) - y_D = -\frac{\ln x}{x}$។ ដោយ $x \gt 0$ ជានិច្ច នោះសញ្ញាអាស្រ័យលើភាគយក $-\ln x$៖
+                <div class="sub-question">
+                    <span class="question">២. សិក្សាមែកអនន្តនៃខ្សែកោង $(\mathscr{C}_n)$៖</span>
                     <ul>
-                        <li>បើ $-\ln x \gt 0 \Rightarrow \ln x \lt 0 \Rightarrow 0 \lt x \lt 1$ ៖ ផលដកវិជ្ជមាន នាំឱ្យ <b>$(C)$ ស្ថិតនៅពីលើ $(D)$</b>។</li>
-                        <li>បើ $-\ln x \lt 0 \Rightarrow \ln x \gt 0 \Rightarrow x \gt 1$ ៖ ផលដកអវិជ្ជមាន នាំឱ្យ <b>$(C)$ ស្ថិតនៅពីក្រោម $(D)$</b>។</li>
-                        <li>បើ $-\ln x = 0 \Rightarrow \ln x = 0 \Rightarrow x = 1$ ៖ $(C)$ ប្រសព្វ $(D)$ ត្រង់ចំណុច $I(1, 0)$។</li>
+                        <li>
+                            ដោយ $\displaystyle\lim_{x \to 0} f_n(x) = +\infty$ នាំឱ្យបន្ទាត់
+                            <b>$x = 0$ (អ័ក្សអរដោនេ)</b> ជាអាស៊ីមតូតឈរ។
+                        </li>
+                        <li>
+                            ដោយ $\displaystyle\lim_{x \to -\infty} f_n(x) = 0$ នាំឱ្យបន្ទាត់
+                            <b>$y = 0$ (អ័ក្សអាប់ស៊ីស)</b> ជាអាស៊ីមតូតដេកខាង $-\infty$។
+                        </li>
+                        <li>
+                            ខាង $+\infty$ យើងមាន $\displaystyle\lim_{x \to +\infty} f_n(x) = +\infty$ ត្រូវគណនា $\lim_{x
+                            \to +\infty} \frac{f_n(x)}{x}$៖ $$\lim_{x \to +\infty} \frac{f_n(x)}{x} = \lim_{x \to
+                            +\infty} \frac{e^{nx}}{x^3} = +\infty$$ ដូចនេះ ខាង $+\infty$ ខ្សែកោង $(\mathscr{C}_n)$ មាន
+                            <b>មែកប៉ារ៉ាបូលមានទិសដៅតាមអ័ក្សអរដោនេ $(Oy)$</b>។
+                        </li>
                     </ul>
-                </li>
-            </ul>
-        </div>
+                </div>
 
-        <div class="sub-question">
-            <span class="question">៣. ក) ផ្ទៀងផ្ទាត់ថា $f'(x) = \frac{g(x)}{x^2}$៖</span>
-            <ul>
-                <li>ប្រើរូបមន្ត $\left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2}$ ចំពោះតួប្រភាគ៖
-                    $$f'(x) = (x - 1)' - \left( \frac{\ln x}{x} \right)'$$
-                    $$f'(x) = 1 - \frac{(\ln x)' \cdot x - \ln x \cdot (x)'}{x^2}$$
-                    $$f'(x) = 1 - \frac{\frac{1}{x} \cdot x - \ln x \cdot 1}{x^2} = 1 - \frac{1 - \ln x}{x^2}$$
-                </li>
-                <li>តម្រូវភាគបែងរួម៖
-                    $$f'(x) = \frac{x^2 - (1 - \ln x)}{x^2} = \frac{x^2 - 1 + \ln x}{x^2}$$
-                </li>
-                <li>ដោយ $g(x) = x^2 - 1 + \ln x$ ដូចនេះ <b>$f'(x) = \frac{g(x)}{x^2}$</b> ពិតប្រាកដមែន។</li>
-            </ul>
-        </div>
-
-        <div class="sub-question">
-            <span class="question">៣. ខ) ទាញរកសញ្ញា $f'(x)$ និងសង់តារាងអថេរភាព៖</span>
-            <ul>
-                <li>ដោយសារភាគបែង $x^2 \gt 0$ ជានិច្ច នោះសញ្ញានៃ $f'(x)$ គឺយកសញ្ញាតាម $g(x)$។</li>
-                <li>ផ្អែកតាមចម្លើយផ្នែកក យើងបាន៖
+                <div class="sub-question">
+                    <span class="question"
+                        >៣. បង្ហាញថា $f_n$ មានដេរីវេលើ $]0; +\infty[$ និង $]-\infty; 0[$ រួចគណនា $f_n'(x)$៖</span
+                    >
                     <ul>
-                        <li>បើ $0 \lt x \lt 1 \Rightarrow g(x) \gt 0 \Rightarrow f'(x) \lt 0$ (អនុគមន៍ចុះ)</li>
-                        <li>បើ $x = 1 \Rightarrow g(1) = 0 \Rightarrow f'(1) = 0$ (មានតម្លៃអប្បបរមា)</li>
-                        <li>បើ $x \gt 1 \Rightarrow g(x) \gt 0 \Rightarrow f'(x) \gt 0$ (អនុគមន៍កើន)</li>
+                        <li>
+                            អនុគមន៍ $f_n$ ជាផលចែកនៃអនុគមន៍ $u(x) = e^{nx}$ និង $v(x) = x^2$ ដែលមានដេរីវេលើ
+                            $\mathbb{R}^*$ ដូចនេះ $f_n$ ក៏មានដេរីវេលើ $]-\infty; 0[$ និង $]0; +\infty[$ ដែរ។
+                        </li>
+                        <li>
+                            គណនាដេរីវេ ដោយប្រើរូបមន្ត $\left(\frac{u}{v}\right)'$ ៖ $$f_n'(x) = \frac{(e^{nx})' \cdot
+                            x^2 - e^{nx} \cdot (x^2)'}{(x^2)^2}$$ $$f_n'(x) = \frac{n e^{nx} x^2 - 2x e^{nx}}{x^4}$$ ទាញ
+                            $x e^{nx}$ ជាកត្តា សម្រួលនឹង $x$ ភាគបែង៖ $$f_n'(x) = \frac{x e^{nx} (nx - 2)}{x^4} =
+                            \frac{e^{nx}(nx - 2)}{x^3}$$
+                        </li>
                     </ul>
-                </li>
-                <li>គណនាតម្លៃអប្បបរមា៖ $f(1) = 1 - 1 - \frac{\ln 1}{1} = 0$។</li>
-            </ul>
+                </div>
 
-            <table class="table-variation">
-                <tr>
-                    <td style="width: 15%;">$x$</td>
-                    <td style="width: 15%; border-right: none;">$0$</td>
-                    <td style="width: 20%; border-left: none; border-right: none;"></td>
-                    <td style="width: 15%; border-left: none; border-right: none;">$1$</td>
-                    <td style="width: 20%; border-left: none; border-right: none;"></td>
-                    <td style="width: 15%; border-left: none;">$+\infty$</td>
-                </tr>
-                <tr>
-                    <td>$f'(x)$</td>
-                    <td style="background-color: #eee; border-right: none;"></td>
-                    <td style="border-left: none; border-right: none;">$-$</td>
-                    <td style="border-left: none; border-right: none;">$0$</td>
-                    <td style="border-left: none; border-right: none;">$+$</td>
-                    <td style="border-left: none;"></td>
-                </tr>
-                <tr>
-                    <td>$f(x)$</td>
-                    <td style="background-color: #eee; border-right: none;"></td>
-                    <td style="border-left: none; border-right: none;">$+\infty$<br>$\searrow$</td>
-                    <td style="border-left: none; border-right: none;"><br>$0$</td>
-                    <td style="border-left: none; border-right: none;">$\nearrow$<br></td>
-                    <td style="border-left: none;">$+\infty$</td>
-                </tr>
-            </table>
-            <p style="text-align: center; font-size: 0.9em; color: #555;"><i>(ចំណាំ៖ ត្រង់ $x=0$ គូសបន្ទាត់ឈរពីរ ព្រោះវាមិនចូលក្នុងដែនកំណត់ទេ)</i></p>
-        </div>
-   
-    
-      <div class="table-container">        
-        <script type="text/tikz">
-            \begin{tikzpicture}[scale=1.2,transform shape]
-                % គូសក្រឡាចត្រង្គ (Grid)
-                \draw[lightgray, very thin, step=1cm] (-1,-3) grid (6,5);
-                
-                % គូសអ័ក្សកូអរដោនេ (x និង y)
-                \draw[->, thick] (-1,0) -- (6.5,0) node[right] {$x$};
-                \draw[->, thick] (0,-3) -- (0,5.5) node[above] {$y$};
-                
-                % ដៅចំណុចលេខលើអ័ក្ស
-                \foreach \x in {1,2,3,4,5,6} 
-                    \draw (\x,-0.1) -- (\x,0.1) node[below=4pt] {$\x$};
-                \foreach \y in {-2,-1,1,2,3,4,5} 
-                    \draw (-0.1,\y) -- (0.1,\y) node[left=4pt] {$\y$};
-                
-                % គល់តម្រុយ O
-                \node[below left] at (0,0) {$O$};
-                
-                % កាត់ដែនបង្ហាញកុំឱ្យក្រាបលៀនចេញក្រៅប្រអប់
-                \clip (-1,-3) rectangle (6,5);
-                
-                % គូសបន្ទាត់អាស៊ីមតូតទ្រេត (D): y = x - 1
-                \draw[red, thick, dashed] (-2,-3) -- (6,5) node[pos=0.8, below right] {$(D): y = x - 1$};
-                
-                % គូសខ្សែកោង (C): f(x) = x - 1 - ln(x)/x
-                % ចំណាំ៖ ក្នុង TikZ អនុគមន៍លោការីតនេពែ ប្រើពាក្យ ln()
-                \draw[blue, very thick, samples=150, domain=0.15:6] 
-                    plot (\x, {\x - 1 - ln(\x)/\x});
-                    
-                % ដាក់ឈ្មោះខ្សែកោង (C)
-                \node[blue, right] at (4.5, 3) {$(C)$};
-                
-                % ដៅចំណុចអប្បបរមា I(1,0)
-                \filldraw[black] (1,0) circle (2pt) node[above left] {$I(1,0)$};
-                
-            \end{tikzpicture}
-        </script>
-     </div>
-            <p style="text-align: center"><b>ក្រាប $(C)$ របស់អនុគមន៍ $f$</b></p>    
-    
-
-    
-    </div>
-    
-      
-</div>
-    
-    
-    
-<div class="header">
-        <h1>វិញ្ញាសាគណិតវិទ្យា ត្រៀមប្រឡងបាក់ឌុប</h1>
-        <h2>ប្រធានបទ៣៖ ការសិក្សាអនុគមន៍ និង ស៊្វីត (កម្រិតខ្ពស់)</h2>
-        <p>កម្រិត៖ មធ្យមសិក្សាទុតិយភូមិ | រយៈពេល៖ ១៥ នាទី</p>
-    </div>
-
-    <div class="problem-section">
-        <!-- <h3>លំហាត់៣</h3> --> 
-        <p>តាង $n$ ជាចំនួនគត់ធម្មជាតិ។ គេមានអនុគមន៍ $f_n$ កំណត់លើ $\mathbb{R}^*$ ដោយ៖ $$f_n(x) = \frac{e^{nx}}{x^2}$$</p>
-        <p>តាងខ្សែកោង $(\mathscr{C}_n)$ តំណាងអនុគមន៍ $f_n$ ក្នុងតម្រុយអរតូណរម៉ាល់ $(O, \vec{i}, \vec{j})$។</p>
-
-        <div class="sub-question">
-            <span class="question">១. គណនា $\displaystyle\lim_{x \to -\infty} f_n(x)$, $\displaystyle\lim_{x \to +\infty} f_n(x)$ និង $\lim_{x \to 0} f_n(x)$។</span>
-            <div class="hint-box">
-                <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
-                - ត្រង់ $-\infty$ ៖ ពិនិត្យមើលសញ្ញានៃ $e^{-\infty}$។<br>
-                - ត្រង់ $+\infty$ ៖ ប្រៀបធៀបរវាងអនុគមន៍អ៊ិចស្ប៉ូណង់ស្យែល និងពហុធា (អ៊ិចស្ប៉ូណង់ស្យែលកើនលឿនជាង)។
-            </div>
-        </div>
-
-        <div class="sub-question">
-            <span class="question">២. សិក្សាមែកអនន្តនៃខ្សែកោង $(\mathscr{C}_n)$។</span>
-            <div class="hint-box">
-                <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
-                - ទាញរកអាស៊ីមតូតឈរ និងអាស៊ីមតូតដេក តាមរយៈចម្លើយលីមីតក្នុងសំណួរទី១។<br>
-                - ខាង $+\infty$ ត្រូវគណនា $\displaystyle\lim_{x \to +\infty} \frac{f_n(x)}{x}$ បន្ថែម ដើម្បីរកមែកប៉ារ៉ាបូល។
-            </div>
-        </div>
-
-        <div class="sub-question">
-            <span class="question">៣. បង្ហាញថា $f_n$ មានដេរីវេលើ $]0; +\infty[$ និង $]-\infty; 0[$ រួចគណនា $f_n'(x)$។</span>
-            <div class="hint-box">
-                <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
-                - ប្រើរូបមន្តដេរីវេផលចែក៖ $\left(\dfrac{u}{v}\right)' = \dfrac{u'v - uv'}{v^2}$ ដោយ $u = e^{nx}$ នាំឱ្យ $u' = ne^{nx}$។
-            </div>
-        </div>
-
-        <div class="sub-question">
-            <span class="question">៤. សង់តារាងអថេរភាពនៃ $f_n$។</span>
-            <div class="hint-box">
-                <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
-                - ដាក់កត្តា $e^{nx}$ ចេញ រួចសិក្សាសញ្ញានៃកន្សោមដែលនៅសល់។ កុំភ្លេចថា $x^2 \gt 0$ តែ $x^3$ យកសញ្ញាតាម $x$។
-            </div>
-        </div>
-
-        <div class="sub-question">
-            <span class="question">៥. បង្ហាញថាសមីការ $f_n(x) = 1$ មានឫសតែមួយគត់ $x_n$ ក្នុងចន្លោះ $]-\infty; 0[$។</span>
-            <div class="hint-box">
-                <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
-                - ត្រូវប្រើ ទ្រឹស្ដីបទតម្លៃកណ្ដាល៖ បង្ហាញថាអនុគមន៍ជាប់ និង ម៉ូណូតូនដាច់ខាត (កើនដាច់ខាត ឬ ចុះដាច់ខាត) លើចន្លោះនោះ រួចរកទីតាំងនៃលេខ $1$។
-            </div>
-        </div>
-
-        <div class="sub-question">
-            <span class="question">៦. បង្ហាញថា $(\forall n \ge 2) \quad -1 \lt x_n \lt -\frac{1}{n}$។</span>
-            <div class="hint-box">
-                <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
-                - គណនា $f_n(-1)$ និង $f_n(-\frac{1}{n})$ រួចប្រៀបធៀបតម្លៃទាំងពីរនេះជាមួយ $1$ (ដោយចាំថា $f_n(x_n) = 1$)។
-            </div>
-        </div>
-
-        <div class="sub-question">
-            <span class="question">៧. បង្ហាញថា $(\forall n \in \mathbb{N}^*) \quad f_{n+1}(x_n) = e^{x_n}$ រួចទាញបញ្ជាក់ថាស៊ីត $(x_n)_n$ ជាស៊ីតរួម។</span>
-            <div class="hint-box">
-                <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
-                - ជំនួស $x_n$ ចូលក្នុង $f_{n+1}$ ហើយប្រើសម្មតិកម្ម $e^{n x_n} = x_n^2$ ដែលទាញចេញពី $f_n(x_n) = 1$ ដើម្បីសម្រួលកន្សោម។<br>
-                - ដើម្បីបង្ហាញថាជាស៊ីតរួម ត្រូវបង្ហាញថាវាជាស៊ីតកើន និងទាល់លើ។ ប្រៀបធៀប $f_{n+1}(x_n)$ ជាមួយ $1$។
-            </div>
-        </div>
-
-        <div class="sub-question">
-            <span class="question">៨. ស្រាយបញ្ជាក់ថា $(\forall n \ge 2) \quad x_n \ge -\frac{2\ln n}{n}$ រួចទាញរក $\displaystyle\lim_{n \to +\infty} x_n$ និង $\displaystyle\lim_{n \to +\infty} nx_n$។</span>
-            <div class="hint-box">
-                <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
-                - ចាប់ផ្តើមពីទំនាក់ទំនង $x_n^2 = e^{n x_n}$ ដោយបំពាក់ $\ln$ សងខាង រួចទាញប្រើវិសមភាពពីសំណួរទី៦ មកជំនួស។<br>
-                - ប្រើទ្រឹស្ដីបទតម្លៃកៀប (Théorème des gendarmes) ដើម្បីទាញរកលីមីត។
-            </div>
-        </div>
-
-        <div class="sub-question">
-            <span class="question">៩. សង់ខ្សែកោង $(\mathscr{C}_1)$។</span>
-        </div>
-    </div>
-
-    
-    
- <div class=""><!--noview-->
-
-    <div class="header">
-        <h1>កំណែលំហាត់៣៖ ការសិក្សាអនុគមន៍ និង ស៊្វីត</h1>
-        <p>សូមប្អូនៗពិនិត្យចម្លើយពេញលេញជាជំហានៗ</p>
-    </div>
-
-    <div class="problem-section">
-        <h3>បម្រាប់លំហាត់</h3>
-        <p>យក $n \in \mathbb{N}^*$ និងកំណត់អនុគមន៍ $f_n$ កំណត់លើ $\mathbb{R}^*$ ដោយ៖ $$f_n(x) = \frac{e^{nx}}{x^2}$$</p>
-        <p>តាងដោយ $(\mathscr{C}_n)$ ជាខ្សែកោងរបស់ $f_n$ ក្នុងតម្រុយអរតូណរម៉ាល់ $(O, \vec{i}, \vec{j})$។</p>
-
-        <div class="sub-question">
-            <span class="question">១. គណនា $\displaystyle\lim_{x \to -\infty} f_n(x)$, $\displaystyle\lim_{x \to +\infty} f_n(x)$ និង $\displaystyle\lim_{x \to 0} f_n(x)$៖</span>
-            <ul>
-                <li><b>លីមីតត្រង់ $-\infty$ ៖</b>
-                    $$\lim_{x \to -\infty} f_n(x) = \lim_{x \to -\infty} \frac{e^{nx}}{x^2} = \frac{0}{+\infty} = 0$$
-                    ព្រោះ $n \ge 1$, ពេល $x \to -\infty \implies e^{nx} \to 0$ និង $x^2 \to +\infty$។<br>
-                    ដូចនេះ $$\boxed{\quad \displaystyle\lim_{x \to -\infty} f_n(x) = 0\quad}$$
-                </li>
-                <li><b>លីមីតត្រង់ $+\infty$ ៖</b>
-                    $$\lim_{x \to +\infty} f_n(x) = \lim_{x \to +\infty} \frac{e^{nx}}{x^2}= +\infty$$
-                    តាមលក្ខណៈលីមីតប្រៀបធៀប (អ៊ិចស្ប៉ូណង់ស្យែលកើនលឿនជាងពហុធា) <br>
-                    ដូចនេះ $$\boxed{\quad\lim_{x \to +\infty} \frac{e^{nx}}{x^2} = +\infty\quad}$$
-                </li>
-                <li><b>លីមីតត្រង់ $0$ ៖</b>
-                    $$\lim_{x \to 0} f_n(x) = \lim_{x \to 0} \frac{e^{nx}}{x^2} = \frac{1}{0^+} = +\infty $$
-                    ដោយសារ $\displaystyle\lim_{x \to 0} e^{nx} = e^0 = 1$ និង $\displaystyle\lim_{x \to 0} x^2 = 0^+$ ។ 
-                    ដូចនេះ $$\boxed{\quad\displaystyle\lim_{x \to 0} f_n(x) = +\infty}$$
-                </li>
-            </ul>
-        </div>
-
-        <div class="sub-question">
-            <span class="question">២. សិក្សាមែកអនន្តនៃខ្សែកោង $(\mathscr{C}_n)$៖</span>
-            <ul>
-                <li>ដោយ $\displaystyle\lim_{x \to 0} f_n(x) = +\infty$ នាំឱ្យបន្ទាត់ <b>$x = 0$ (អ័ក្សអរដោនេ)</b> ជាអាស៊ីមតូតឈរ។</li>
-                <li>ដោយ $\displaystyle\lim_{x \to -\infty} f_n(x) = 0$ នាំឱ្យបន្ទាត់ <b>$y = 0$ (អ័ក្សអាប់ស៊ីស)</b> ជាអាស៊ីមតូតដេកខាង $-\infty$។</li>
-                <li>ខាង $+\infty$ យើងមាន $\displaystyle\lim_{x \to +\infty} f_n(x) = +\infty$ ត្រូវគណនា $\lim_{x \to +\infty} \frac{f_n(x)}{x}$៖
-                    $$\lim_{x \to +\infty} \frac{f_n(x)}{x} = \lim_{x \to +\infty} \frac{e^{nx}}{x^3} = +\infty$$
-                    ដូចនេះ ខាង $+\infty$ ខ្សែកោង $(\mathscr{C}_n)$ មាន <b>មែកប៉ារ៉ាបូលមានទិសដៅតាមអ័ក្សអរដោនេ $(Oy)$</b>។
-                </li>
-            </ul>
-        </div>
-
-        <div class="sub-question">
-            <span class="question">៣. បង្ហាញថា $f_n$ មានដេរីវេលើ $]0; +\infty[$ និង $]-\infty; 0[$ រួចគណនា $f_n'(x)$៖</span>
-            <ul>
-                <li>អនុគមន៍ $f_n$ ជាផលចែកនៃអនុគមន៍ $u(x) = e^{nx}$ និង $v(x) = x^2$ ដែលមានដេរីវេលើ $\mathbb{R}^*$ ដូចនេះ $f_n$ ក៏មានដេរីវេលើ $]-\infty; 0[$ និង $]0; +\infty[$ ដែរ។</li>
-                <li>គណនាដេរីវេ ដោយប្រើរូបមន្ត $\left(\frac{u}{v}\right)'$ ៖
-                    $$f_n'(x) = \frac{(e^{nx})' \cdot x^2 - e^{nx} \cdot (x^2)'}{(x^2)^2}$$
-                    $$f_n'(x) = \frac{n e^{nx} x^2 - 2x e^{nx}}{x^4}$$
-                    ទាញ $x e^{nx}$ ជាកត្តា សម្រួលនឹង $x$ ភាគបែង៖
-                    $$f_n'(x) = \frac{x e^{nx} (nx - 2)}{x^4} = \frac{e^{nx}(nx - 2)}{x^3}$$
-                </li>
-            </ul>
-        </div>
-
-        <div class="sub-question">
-            <span class="question">៤. សង់តារាងអថេរភាពនៃ $f_n$៖</span>
-            <ul>
-                <li>សិក្សាសញ្ញា $f_n'(x)$៖ ដោយ $e^{nx} \gt 0$ ជានិច្ច នោះសញ្ញានៃ $f_n'(x)$ យកសញ្ញាតាមផលចែក $\frac{nx-2}{x^3}$។ ឫសនៃភាគយកគឺ $x = \frac{2}{n}$។</li>
-                <li>បើ $x \in ]-\infty; 0[ \implies nx - 2 \lt 0$ និង $x^3 \lt 0 \implies f_n'(x)\gt 0$ (អនុគមន៍កើន)។</li>
-                <li>បើ $x \in ]0; \frac{2}{n}[ \implies nx - 2 \lt 0$ និង $x^3 \gt 0 \implies f_n'(x) \lt 0$ (អនុគមន៍ចុះ)។</li>
-                <li>បើ $x \in ]\frac{2}{n}; +\infty[ \implies nx - 2 \gt 0$ និង $x^3 \gt 0 \implies f_n'(x) \gt 0$ (អនុគមន៍កើន)។</li>
-                <li>តម្លៃអប្បបរមាត្រង់ $x = \frac{2}{n}$ គឺ៖ $f_n(\frac{2}{n}) = \frac{e^{n(2/n)}}{(2/n)^2} = \frac{e^2}{4/n^2} = \frac{n^2 e^2}{4}$។</li>
-            </ul>
-            <table class="table-variation" style="margin-top: 15px;">
-                <tr>
-                    <td style="width: 15%;">$x  $</td>
-                    <td style="width: 15%; border-right: none;">$-\infty$</td>
-                    <td style="width: 20%; border-left: none; border-right: none;"></td>
-                    <td style="width: 15%; border-left: none; border-right: none;">$0$</td>
-                    <td style="width: 20%; border-left: none; border-right: none;"></td>
-                    <td style="width: 15%; border-left: none; border-right: none;">$\frac{2}{n}$</td>
-                    <td style="width: 20%; border-left: none; border-right: none;"></td>
-                    <td style="width: 15%; border-left: none;">$+\infty$</td>
-                </tr>
-                <tr>
-                    <td>$f_n'(x)$</td>
-                    <td style="background-color: #eee; border-right: none;"></td>
-                    <td style="border-left: none; border-right: none;">$+$</td>
-                    <td style="background-color: #333; border-left: none; border-right: none;"></td>
-                    <td style="border-left: none; border-right: none;">$-$</td>
-                    <td style="border-left: none; border-right: none;">$0$</td>
-                    <td style="border-left: none; border-right: none;">$+$</td>
-                    <td style="border-left: none;"></td>
-                </tr>
-                <tr>
-                    <td>$f_n(x)$</td>
-                    <td style="background-color: #eee; border-right: none;">$0$</td>
-                    <td style="border-left: none; border-right: none;">$\nearrow$<br></td>
-                    <td style="background-color: #333; border-left: none; border-right: none;"></td>
-                    <td style="border-left: none; border-right: none;">$+\infty$<br>$\searrow$</td>
-                    <td style="border-left: none; border-right: none;"><br>$\frac{n^2 e^2}{4}$</td>
-                    <td style="border-left: none; border-right: none;">$\nearrow$<br></td>
-                    <td style="border-left: none;">$+\infty$</td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="sub-question">
-            <span class="question">៥. បង្ហាញថាសមីការ $f_n(x) = 1$ មានឫសតែមួយគត់ $x_n$ ក្នុងចន្លោះ $]-\infty; 0[$៖</span>
-            <ul>
-                <li>លើចន្លោះ $]-\infty; 0[$ អនុគមន៍ $f_n$ ជាប់ និងកើនដាច់ខាត។</li>
-                <li>រូបភាពនៃចន្លោះ $]-\infty; 0[$ តាមអនុគមន៍ $f_n$ គឺ $]0; +\infty[$។</li>
-                <li>ដោយសារចំនួន $1 \in ]0; +\infty[$ នោះតាមទ្រឹស្ដីបទតម្លៃកណ្ដាល សមីការ $f_n(x) = 1$ មានឫសតែមួយគត់ $x_n$ ក្នុងចន្លោះ $]-\infty; 0[$។</li>
-            </ul>
-        </div>
-
-        <div class="sub-question">
-            <span class="question">៦. បង្ហាញថា $(\forall n \ge 2) \quad -1 \lt x_n \lt -\frac{1}{n}$៖ </span>
-            <ul>
-                <li>យើងមាន $f_n(x_n) = 1$។ គណនាតម្លៃ $f_n(-1)$ និង $f_n(-\frac{1}{n})$៖
+                <div class="sub-question">
+                    <span class="question">៤. សង់តារាងអថេរភាពនៃ $f_n$៖</span>
                     <ul>
-                        <li>$f_n(-1) = \frac{e^{-n}}{(-1)^2} = e^{-n} = \frac{1}{e^n}$ ។ ដោយ $n \ge 2 \implies e^n \gt 1 \implies f_n(-1) \lt 1$ ។</li>
-                        <li>$f_n(-\frac{1}{n}) = \frac{e^{n(-1/n)}}{(-1/n)^2} = \frac{e^{-1}}{1/n^2} = \frac{n^2}{e}$ ។ ដោយ $n \ge 2 \implies n^2 \ge 4$ និង $e \approx 2.718 \implies \frac{n^2}{e} \gt 1 \implies f_n(-\frac{1}{n}) \gt 1$ ។</li>
+                        <li>
+                            សិក្សាសញ្ញា $f_n'(x)$៖ ដោយ $e^{nx} \gt 0$ ជានិច្ច នោះសញ្ញានៃ $f_n'(x)$ យកសញ្ញាតាមផលចែក
+                            $\frac{nx-2}{x^3}$។ ឫសនៃភាគយកគឺ $x = \frac{2}{n}$។
+                        </li>
+                        <li>
+                            បើ $x \in ]-\infty; 0[ \implies nx - 2 \lt 0$ និង $x^3 \lt 0 \implies f_n'(x)\gt 0$
+                            (អនុគមន៍កើន)។
+                        </li>
+                        <li>
+                            បើ $x \in ]0; \frac{2}{n}[ \implies nx - 2 \lt 0$ និង $x^3 \gt 0 \implies f_n'(x) \lt 0$
+                            (អនុគមន៍ចុះ)។
+                        </li>
+                        <li>
+                            បើ $x \in ]\frac{2}{n}; +\infty[ \implies nx - 2 \gt 0$ និង $x^3 \gt 0 \implies f_n'(x) \gt
+                            0$ (អនុគមន៍កើន)។
+                        </li>
+                        <li>
+                            តម្លៃអប្បបរមាត្រង់ $x = \frac{2}{n}$ គឺ៖ $f_n(\frac{2}{n}) = \frac{e^{n(2/n)}}{(2/n)^2} =
+                            \frac{e^2}{4/n^2} = \frac{n^2 e^2}{4}$។
+                        </li>
                     </ul>
-                </li>
-                <li>យើងបាន $f_n(-1) \lt f_n(x_n) \lt f_n(-\frac{1}{n})$។ ដោយសារ $f_n$ ជាអនុគមន៍កើនដាច់ខាតលើ $]-\infty; 0[$ យើងទាញបាន <b>$-1 \lt x_n \lt -\frac{1}{n}$</b> ។</li>
-            </ul>
-        </div>
+                    <table class="table-variation" style="margin-top: 15px">
+                        <tr>
+                            <td style="width: 15%">$x $</td>
+                            <td style="width: 15%; border-right: none">$-\infty$</td>
+                            <td style="width: 20%; border-left: none; border-right: none"></td>
+                            <td style="width: 15%; border-left: none; border-right: none">$0$</td>
+                            <td style="width: 20%; border-left: none; border-right: none"></td>
+                            <td style="width: 15%; border-left: none; border-right: none">$\frac{2}{n}$</td>
+                            <td style="width: 20%; border-left: none; border-right: none"></td>
+                            <td style="width: 15%; border-left: none">$+\infty$</td>
+                        </tr>
+                        <tr>
+                            <td>$f_n'(x)$</td>
+                            <td style="background-color: #eee; border-right: none"></td>
+                            <td style="border-left: none; border-right: none">$+$</td>
+                            <td style="background-color: #333; border-left: none; border-right: none"></td>
+                            <td style="border-left: none; border-right: none">$-$</td>
+                            <td style="border-left: none; border-right: none">$0$</td>
+                            <td style="border-left: none; border-right: none">$+$</td>
+                            <td style="border-left: none"></td>
+                        </tr>
+                        <tr>
+                            <td>$f_n(x)$</td>
+                            <td style="background-color: #eee; border-right: none">$0$</td>
+                            <td style="border-left: none; border-right: none">$\nearrow$<br /></td>
+                            <td style="background-color: #333; border-left: none; border-right: none"></td>
+                            <td style="border-left: none; border-right: none">$+\infty$<br />$\searrow$</td>
+                            <td style="border-left: none; border-right: none"><br />$\frac{n^2 e^2}{4}$</td>
+                            <td style="border-left: none; border-right: none">$\nearrow$<br /></td>
+                            <td style="border-left: none">$+\infty$</td>
+                        </tr>
+                    </table>
+                </div>
 
-        <div class="sub-question">
-            <span class="question">៧. បង្ហាញថា $f_{n+1}(x_n) = e^{x_n}$ រួចទាញបញ្ជាក់ថា $(x_n)_n$ ជាស៊ីតរួម៖</span>
-            <ul>
-                <li>ដោយ $f_n(x_n) = 1 \implies \frac{e^{nx_n}}{x_n^2} = 1 \implies x_n^2 = e^{nx_n}$ ។</li>
-                <li>គណនា $f_{n+1}(x_n)$ ៖
-                    $$f_{n+1}(x_n) = \frac{e^{(n+1)x_n}}{x_n^2} = \frac{e^{nx_n} \cdot e^{x_n}}{x_n^2} = \frac{x_n^2 \cdot e^{x_n}}{x_n^2} = e^{x_n}$$
-                </li>
-                <li><b>ទាញបញ្ជាក់ថា $(x_n)$ ជាស៊ីតរួម៖</b><br>
-                    ដោយ $x_n \lt 0 \implies e^{x_n} \lt e^0 = 1$។ ដូចនេះ $f_{n+1}(x_n) \lt 1$ ។<br>
-                    តែយើងដឹងថា $f_{n+1}(x_{n+1}) = 1$ ហេតុនេះ $f_{n+1}(x_n) \lt f_{n+1}(x_{n+1})$ ។<br>
-                    ដោយសារ $f_{n+1}$ ជាអនុគមន៍កើនដាច់ខាតលើ $]-\infty; 0[$ យើងទាញបាន $x_n \lt x_{n+1}$។<br>
-                    សន្និដ្ឋាន៖ ស៊ីត $(x_n)$ ជាស៊ីតកើន និងទាល់លើដោយ $0$ (ព្រោះ $x_n \lt 0$) <b>ដូចនេះ $(x_n)_n$ ជាស៊ីតរួម</b>។
-                </li>
-            </ul>
-        </div>
+                <div class="sub-question">
+                    <span class="question"
+                        >៥. បង្ហាញថាសមីការ $f_n(x) = 1$ មានឫសតែមួយគត់ $x_n$ ក្នុងចន្លោះ $]-\infty; 0[$៖</span
+                    >
+                    <ul>
+                        <li>លើចន្លោះ $]-\infty; 0[$ អនុគមន៍ $f_n$ ជាប់ និងកើនដាច់ខាត។</li>
+                        <li>រូបភាពនៃចន្លោះ $]-\infty; 0[$ តាមអនុគមន៍ $f_n$ គឺ $]0; +\infty[$។</li>
+                        <li>
+                            ដោយសារចំនួន $1 \in ]0; +\infty[$ នោះតាមទ្រឹស្ដីបទតម្លៃកណ្ដាល សមីការ $f_n(x) = 1$
+                            មានឫសតែមួយគត់ $x_n$ ក្នុងចន្លោះ $]-\infty; 0[$។
+                        </li>
+                    </ul>
+                </div>
 
-        <div class="sub-question">
-            <span class="question">៨. ស្រាយបញ្ជាក់ថា $(\forall n \ge 2) \quad x_n \ge -\frac{2\ln n}{n}$ រួចទាញរកលីមីត៖</span>
-            <ul>
-                <li>ពីសមីការ $x_n^2 = e^{nx_n}$ បញ្ចូលលោការីតនេពែសងខាង៖
-                    $$\ln(x_n^2) = \ln(e^{nx_n}) \implies 2\ln(|x_n|) = nx_n$$
-                    ដោយ $x_n \lt 0 \implies |x_n| = -x_n \implies 2\ln(-x_n) = nx_n$ ។
-                </li>
-                <li>តាមសំណួរទី៦ យើងមាន $x_n \lt -\frac{1}{n} \implies -x_n \gt \frac{1}{n}$ ។<br>
-                    បញ្ចូល $\ln$ សងខាង៖ $\ln(-x_n) \gt \ln(\frac{1}{n}) \implies \ln(-x_n) \gt -\ln n$ ។
-                </li>
-                <li>គុណនឹង $2$ ៖ $2\ln(-x_n) \gt -2\ln n \implies nx_n \gt -2\ln n \implies$ <b>$x_n \ge -\frac{2\ln n}{n}$</b> ។</li>
-                <li><b>ទាញរកលីមីត $\lim_{n \to +\infty} x_n$ ៖</b><br>
-                    យើងមាន $-\frac{2\ln n}{n} \le x_n \lt -\frac{1}{n}$។ តាមទ្រឹស្ដីបទតម្លៃកៀប ដោយ $\lim_{n \to +\infty} \frac{\ln n}{n} = 0$ និង $\lim_{n \to +\infty} \frac{-1}{n} = 0$<br>
-                    ដូចនេះ <b>$\lim_{n \to +\infty} x_n = 0$</b> ។
-                </li>
-                <li><b>ទាញរកលីមីត $\lim_{n \to +\infty} nx_n$ ៖</b><br>
-                    យើងមាន $nx_n = 2\ln(-x_n)$។ ដោយ $x_n \to 0$ ពីឆ្វេង នោះ $-x_n \to 0^+$។<br>
-                    នាំឱ្យ $\lim_{n \to +\infty} \ln(-x_n) = -\infty$ ។<br>
-                    ដូចនេះ <b>$\lim_{n \to +\infty} nx_n = -\infty$</b> ។
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>   
+                <div class="sub-question">
+                    <span class="question">៦. បង្ហាញថា $(\forall n \ge 2) \quad -1 \lt x_n \lt -\frac{1}{n}$៖ </span>
+                    <ul>
+                        <li>
+                            យើងមាន $f_n(x_n) = 1$។ គណនាតម្លៃ $f_n(-1)$ និង $f_n(-\frac{1}{n})$៖
+                            <ul>
+                                <li>
+                                    $f_n(-1) = \frac{e^{-n}}{(-1)^2} = e^{-n} = \frac{1}{e^n}$ ។ ដោយ $n \ge 2 \implies
+                                    e^n \gt 1 \implies f_n(-1) \lt 1$ ។
+                                </li>
+                                <li>
+                                    $f_n(-\frac{1}{n}) = \frac{e^{n(-1/n)}}{(-1/n)^2} = \frac{e^{-1}}{1/n^2} =
+                                    \frac{n^2}{e}$ ។ ដោយ $n \ge 2 \implies n^2 \ge 4$ និង $e \approx 2.718 \implies
+                                    \frac{n^2}{e} \gt 1 \implies f_n(-\frac{1}{n}) \gt 1$ ។
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            យើងបាន $f_n(-1) \lt f_n(x_n) \lt f_n(-\frac{1}{n})$។ ដោយសារ $f_n$ ជាអនុគមន៍កើនដាច់ខាតលើ
+                            $]-\infty; 0[$ យើងទាញបាន <b>$-1 \lt x_n \lt -\frac{1}{n}$</b> ។
+                        </li>
+                    </ul>
+                </div>
 
-</body>
+                <div class="sub-question">
+                    <span class="question"
+                        >៧. បង្ហាញថា $f_{n+1}(x_n) = e^{x_n}$ រួចទាញបញ្ជាក់ថា $(x_n)_n$ ជាស៊ីតរួម៖</span
+                    >
+                    <ul>
+                        <li>ដោយ $f_n(x_n) = 1 \implies \frac{e^{nx_n}}{x_n^2} = 1 \implies x_n^2 = e^{nx_n}$ ។</li>
+                        <li>
+                            គណនា $f_{n+1}(x_n)$ ៖ $$f_{n+1}(x_n) = \frac{e^{(n+1)x_n}}{x_n^2} = \frac{e^{nx_n} \cdot
+                            e^{x_n}}{x_n^2} = \frac{x_n^2 \cdot e^{x_n}}{x_n^2} = e^{x_n}$$
+                        </li>
+                        <li>
+                            <b>ទាញបញ្ជាក់ថា $(x_n)$ ជាស៊ីតរួម៖</b><br />
+                            ដោយ $x_n \lt 0 \implies e^{x_n} \lt e^0 = 1$។ ដូចនេះ $f_{n+1}(x_n) \lt 1$ ។<br />
+                            តែយើងដឹងថា $f_{n+1}(x_{n+1}) = 1$ ហេតុនេះ $f_{n+1}(x_n) \lt f_{n+1}(x_{n+1})$ ។<br />
+                            ដោយសារ $f_{n+1}$ ជាអនុគមន៍កើនដាច់ខាតលើ $]-\infty; 0[$ យើងទាញបាន $x_n \lt x_{n+1}$។<br />
+                            សន្និដ្ឋាន៖ ស៊ីត $(x_n)$ ជាស៊ីតកើន និងទាល់លើដោយ $0$ (ព្រោះ $x_n \lt 0$)
+                            <b>ដូចនេះ $(x_n)_n$ ជាស៊ីតរួម</b>។
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sub-question">
+                    <span class="question"
+                        >៨. ស្រាយបញ្ជាក់ថា $(\forall n \ge 2) \quad x_n \ge -\frac{2\ln n}{n}$ រួចទាញរកលីមីត៖</span
+                    >
+                    <ul>
+                        <li>
+                            ពីសមីការ $x_n^2 = e^{nx_n}$ បញ្ចូលលោការីតនេពែសងខាង៖ $$\ln(x_n^2) = \ln(e^{nx_n}) \implies
+                            2\ln(|x_n|) = nx_n$$ ដោយ $x_n \lt 0 \implies |x_n| = -x_n \implies 2\ln(-x_n) = nx_n$ ។
+                        </li>
+                        <li>
+                            តាមសំណួរទី៦ យើងមាន $x_n \lt -\frac{1}{n} \implies -x_n \gt \frac{1}{n}$ ។<br />
+                            បញ្ចូល $\ln$ សងខាង៖ $\ln(-x_n) \gt \ln(\frac{1}{n}) \implies \ln(-x_n) \gt -\ln n$ ។
+                        </li>
+                        <li>
+                            គុណនឹង $2$ ៖ $2\ln(-x_n) \gt -2\ln n \implies nx_n \gt -2\ln n \implies$
+                            <b>$x_n \ge -\frac{2\ln n}{n}$</b> ។
+                        </li>
+                        <li>
+                            <b>ទាញរកលីមីត $\lim_{n \to +\infty} x_n$ ៖</b><br />
+                            យើងមាន $-\frac{2\ln n}{n} \le x_n \lt -\frac{1}{n}$។ តាមទ្រឹស្ដីបទតម្លៃកៀប ដោយ $\lim_{n \to
+                            +\infty} \frac{\ln n}{n} = 0$ និង $\lim_{n \to +\infty} \frac{-1}{n} = 0$<br />
+                            ដូចនេះ <b>$\lim_{n \to +\infty} x_n = 0$</b> ។
+                        </li>
+                        <li>
+                            <b>ទាញរកលីមីត $\lim_{n \to +\infty} nx_n$ ៖</b><br />
+                            យើងមាន $nx_n = 2\ln(-x_n)$។ ដោយ $x_n \to 0$ ពីឆ្វេង នោះ $-x_n \to 0^+$។<br />
+                            នាំឱ្យ $\lim_{n \to +\infty} \ln(-x_n) = -\infty$ ។<br />
+                            ដូចនេះ <b>$\lim_{n \to +\infty} nx_n = -\infty$</b> ។
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
