@@ -451,11 +451,12 @@
             <!--noview-->
 
             <div class="header">
-                <h1>កំណែលំហាត់៣៖ ការសិក្សាអនុគមន៍ និង ស៊្វីត</h1>
+                <h1>កំណែប្រធានបទ៣៖ ការសិក្សាអនុគមន៍ និង ស៊្វីត</h1>
                 <p>សូមប្អូនៗពិនិត្យចម្លើយពេញលេញជាជំហានៗ</p>
             </div>
 
-            <div class="noview">
+            <div>
+                <!-- class="noview" -->
                 <div class="problem-section">
                     <h3>បម្រាប់លំហាត់</h3>
                     <p>
@@ -503,10 +504,9 @@
                                 <b>$y = 0$ (អ័ក្សអាប់ស៊ីស)</b> ជាអាស៊ីមតូតដេកខាង $-\infty$។
                             </li>
                             <li>
-                                ខាង $+\infty$ យើងមាន $\displaystyle\lim_{x \to +\infty} f_n(x) = +\infty$ ត្រូវគណនា
-                                $\lim_{x \to +\infty} \frac{f_n(x)}{x}$៖ $$\lim_{x \to +\infty} \frac{f_n(x)}{x} =
-                                \lim_{x \to +\infty} \frac{e^{nx}}{x^3} = +\infty$$ ដូចនេះ ខាង $+\infty$ ខ្សែកោង
-                                $(\mathscr{C}_n)$ មាន
+                                ខាង $+\infty$ យើងមាន $\displaystyle\lim_{x \to +\infty} f_n(x) = +\infty$ ត្រូវគណនា៖
+                                $$\lim_{x \to +\infty} \frac{f_n(x)}{x} = \lim_{x \to +\infty} \frac{e^{nx}}{x^3} =
+                                +\infty$$ ដូចនេះ ខាង $+\infty$ ខ្សែកោង $(\mathscr{C}_n)$ មាន
                                 <b>មែកប៉ារ៉ាបូលមានទិសដៅតាមអ័ក្សអរដោនេ $(Oy)$</b>។
                             </li>
                         </ul>
@@ -518,14 +518,14 @@
                         >
                         <ul>
                             <li>
-                                អនុគមន៍ $f_n$ ជាផលចែកនៃអនុគមន៍ $u(x) = e^{nx}$ និង $v(x) = x^2$ ដែលមានដេរីវេលើ
-                                $\mathbb{R}^*$ ដូចនេះ $f_n$ ក៏មានដេរីវេលើ $]-\infty; 0[$ និង $]0; +\infty[$ ដែរ។
+                                ដោយ $e^{nx}$ និង $x^2$ មានដេរីវេលើ$\mathbb{R}^*$ នោះ $f_n$ ក៏មានដេរីវេលើ $]-\infty; 0[$
+                                និង $]0; +\infty[$ ដែរ។
                             </li>
                             <li>
-                                គណនាដេរីវេ ដោយប្រើរូបមន្ត $\left(\frac{u}{v}\right)'$ ៖ $$f_n'(x) = \frac{(e^{nx})'
-                                \cdot x^2 - e^{nx} \cdot (x^2)'}{(x^2)^2}$$ $$f_n'(x) = \frac{n e^{nx} x^2 - 2x
-                                e^{nx}}{x^4}$$ ទាញ $x e^{nx}$ ជាកត្តា សម្រួលនឹង $x$ ភាគបែង៖ $$f_n'(x) = \frac{x e^{nx}
-                                (nx - 2)}{x^4} = \frac{e^{nx}(nx - 2)}{x^3}$$
+                                គណនាដេរីវេ $f'_n$ ៖ $$f_n'(x) = \frac{(e^{nx})' \cdot x^2 - e^{nx} \cdot
+                                (x^2)'}{(x^2)^2}$$ $$f_n'(x) = \frac{n e^{nx} x^2 - 2x e^{nx}}{x^4}$$ ទាញ $x e^{nx}$
+                                ជាកត្តា សម្រួលនឹង $x$ ភាគបែង៖ $$f_n'(x) = \frac{x e^{nx} (nx - 2)}{x^4} =
+                                \frac{e^{nx}(nx - 2)}{x^3}$$
                             </li>
                         </ul>
                     </div>
@@ -534,24 +534,24 @@
                         <span class="question">៤. សង់តារាងអថេរភាពនៃ $f_n$៖</span>
                         <ul>
                             <li>
-                                សិក្សាសញ្ញា $f_n'(x)$៖ ដោយ $e^{nx} \gt 0$ ជានិច្ច នោះសញ្ញានៃ $f_n'(x)$ យកសញ្ញាតាមផលចែក
-                                $\frac{nx-2}{x^3}$។ ឫសនៃភាគយកគឺ $x = \frac{2}{n}$។
+                                ដោយ $e^{nx} \gt 0$ ជានិច្ច នោះសញ្ញានៃ $f_n'(x)$ យកសញ្ញាតាមផលចែក $\frac{nx-2}{x^3}$។
+                                ឫសនៃភាគយកគឺ $x = \frac{2}{n}$។
                             </li>
                             <li>
-                                បើ $x \in ]-\infty; 0[ \implies nx - 2 \lt 0$ និង $x^3 \lt 0 \implies f_n'(x)\gt 0$
+                                បើ $x \in ]-\infty, 0[ \implies nx - 2 \lt 0$ និង $x^3 \lt 0 \implies f_n'(x)\gt 0$
                                 (អនុគមន៍កើន)។
                             </li>
                             <li>
-                                បើ $x \in ]0; \frac{2}{n}[ \implies nx - 2 \lt 0$ និង $x^3 \gt 0 \implies f_n'(x) \lt 0$
+                                បើ $x \in ]0, \frac{2}{n}[ \implies nx - 2 \lt 0$ និង $x^3 \gt 0 \implies f_n'(x) \lt 0$
                                 (អនុគមន៍ចុះ)។
                             </li>
                             <li>
-                                បើ $x \in ]\frac{2}{n}; +\infty[ \implies nx - 2 \gt 0$ និង $x^3 \gt 0 \implies f_n'(x)
+                                បើ $x \in ]\frac{2}{n}, +\infty[ \implies nx - 2 \gt 0$ និង $x^3 \gt 0 \implies f_n'(x)
                                 \gt 0$ (អនុគមន៍កើន)។
                             </li>
                             <li>
-                                តម្លៃអប្បបរមាត្រង់ $x = \frac{2}{n}$ គឺ៖ $f_n(\frac{2}{n}) = \frac{e^{n(2/n)}}{(2/n)^2}
-                                = \frac{e^2}{4/n^2} = \frac{n^2 e^2}{4}$។
+                                តម្លៃអប្បបរមាត្រង់ $x = \frac{2}{n}$ គឺ៖ $$f_n\left(\frac{2}{n}\right) =
+                                \frac{e^{n(2/n)}}{(2/n)^2} = \frac{e^2}{4/n^2} = \frac{n^2 e^2}{4}$$
                             </li>
                         </ul>
                         <table class="table-variation" style="margin-top: 15px">
@@ -593,11 +593,11 @@
                             >៥. បង្ហាញថាសមីការ $f_n(x) = 1$ មានឫសតែមួយគត់ $x_n$ ក្នុងចន្លោះ $]-\infty; 0[$៖</span
                         >
                         <ul>
-                            <li>លើចន្លោះ $]-\infty; 0[$ អនុគមន៍ $f_n$ ជាប់ និងកើនដាច់ខាត។</li>
-                            <li>រូបភាពនៃចន្លោះ $]-\infty; 0[$ តាមអនុគមន៍ $f_n$ គឺ $]0; +\infty[$។</li>
+                            <li>លើចន្លោះ $]-\infty, 0[$ អនុគមន៍ $f_n$ ជាប់ និងកើនដាច់ខាត។</li>
+                            <li>តម្លៃរបស់ $f_n$ ចំពោះ $x\in ]-\infty, 0[$ គឺ $]0; +\infty[$។</li>
                             <li>
-                                ដោយសារចំនួន $1 \in ]0; +\infty[$ នោះតាមទ្រឹស្ដីបទតម្លៃកណ្ដាល សមីការ $f_n(x) = 1$
-                                មានឫសតែមួយគត់ $x_n$ ក្នុងចន្លោះ $]-\infty; 0[$។
+                                ដោយ $1 \in ]0, +\infty[$ នោះតាមទ្រឹស្ដីបទតម្លៃកណ្ដាល សមីការ $f_n(x) = 1$ មានឫសតែមួយគត់
+                                $x_n$ ក្នុងចន្លោះ $]-\infty, 0[$។
                             </li>
                         </ul>
                     </div>
@@ -606,26 +606,22 @@
                         <span class="question"
                             >៦. បង្ហាញថា $(\forall n \ge 2) \quad -1 \lt x_n \lt -\frac{1}{n}$៖
                         </span>
+                        យើងមាន $f_n(x_n) = 1$។ គណនាតម្លៃ $f_n(-1)$ និង $f_n(-\frac{1}{n})$៖
                         <ul>
                             <li>
-                                យើងមាន $f_n(x_n) = 1$។ គណនាតម្លៃ $f_n(-1)$ និង $f_n(-\frac{1}{n})$៖
-                                <ul>
-                                    <li>
-                                        $f_n(-1) = \frac{e^{-n}}{(-1)^2} = e^{-n} = \frac{1}{e^n}$ ។ ដោយ $n \ge 2
-                                        \implies e^n \gt 1 \implies f_n(-1) \lt 1$ ។
-                                    </li>
-                                    <li>
-                                        $f_n(-\frac{1}{n}) = \frac{e^{n(-1/n)}}{(-1/n)^2} = \frac{e^{-1}}{1/n^2} =
-                                        \frac{n^2}{e}$ ។ ដោយ $n \ge 2 \implies n^2 \ge 4$ និង $e \approx 2.718 \implies
-                                        \frac{n^2}{e} \gt 1 \implies f_n(-\frac{1}{n}) \gt 1$ ។
-                                    </li>
-                                </ul>
+                                $f_n(-1) = \frac{e^{-n}}{(-1)^2} = e^{-n} = \frac{1}{e^n}$ ។ ដោយ $n \ge 2 \implies e^n
+                                \gt 1 \implies f_n(-1) \lt 1$ ។
                             </li>
                             <li>
-                                យើងបាន $f_n(-1) \lt f_n(x_n) \lt f_n(-\frac{1}{n})$។ ដោយសារ $f_n$ ជាអនុគមន៍កើនដាច់ខាតលើ
-                                $]-\infty; 0[$ យើងទាញបាន <b>$-1 \lt x_n \lt -\frac{1}{n}$</b> ។
+                                $f_n(-\frac{1}{n}) = \frac{e^{n(-1/n)}}{(-1/n)^2} = \frac{e^{-1}}{1/n^2} =
+                                \frac{n^2}{e}$ ។ ដោយ $n \ge 2 \implies n^2 \ge 4$ $ \implies \frac{n^2}{e} \gt 1
+                                \implies f_n(-\frac{1}{n}) \gt 1$ ។
                             </li>
                         </ul>
+
+                        យើងបាន $f_n(-1) \lt f_n(x_n) \lt f_n(-\frac{1}{n})$ និង $f_n$ ជាអនុគមន៍កើនដាច់ខាតលើ $]-\infty,
+                        0[$ ។ <br />
+                        ដូច្នេះ $$-1 \lt x_n \lt -\frac{1}{n},\quad \forall n\geq 2$$
                     </div>
                     <div class="noview">
                         <div class="sub-question">
@@ -658,29 +654,25 @@
                         >
                         <ul>
                             <li>
-                                ពីសមីការ $x_n^2 = e^{nx_n}$ បញ្ចូលលោការីតនេពែសងខាង៖ $$\ln(x_n^2) = \ln(e^{nx_n})
-                                \implies 2\ln(|x_n|) = nx_n$$ ដោយ $x_n \lt 0 \implies |x_n| = -x_n \implies 2\ln(-x_n) =
-                                nx_n$ ។
+                                ពីសមីការ $x_n^2 = e^{nx_n}$ គេបាន៖ $$\ln(x_n^2) = \ln(e^{nx_n}) \implies 2\ln(|x_n|) =
+                                nx_n$$ ដោយ $x_n \lt 0 \implies |x_n| = -x_n \implies 2\ln(-x_n) = nx_n$ ។
                             </li>
                             <li>
-                                តាមសំណួរទី៦ យើងមាន $x_n \lt -\frac{1}{n} \implies -x_n \gt \frac{1}{n}$ ។<br />
-                                បញ្ចូល $\ln$ សងខាង៖ $\ln(-x_n) \gt \ln(\frac{1}{n}) \implies \ln(-x_n) \gt -\ln n$ ។
+                                តាមសំណួរទី៦៖ $x_n \lt -\frac{1}{n} \implies -x_n \gt \frac{1}{n}$ ។<br />
+                                ដូច្នេះ $\ln(-x_n) \gt \ln(\frac{1}{n}) \implies \ln(-x_n) \gt -\ln n$ ។ គេបាន៖
+                                $$2\ln(-x_n) \gt -2\ln n \implies nx_n \gt -2\ln n \implies x_n \ge -\frac{2\ln n}{n}$$
                             </li>
                             <li>
-                                គុណនឹង $2$ ៖ $2\ln(-x_n) \gt -2\ln n \implies nx_n \gt -2\ln n \implies$
-                                <b>$x_n \ge -\frac{2\ln n}{n}$</b> ។
+                                <b>$\lim_{n \to +\infty} x_n$ ៖</b> យើងមាន៖ <br />
+                                $$-\frac{2\ln n}{n} \le x_n \lt -\frac{1}{n}$$ តាមទ្រឹស្ដីបទតម្លៃកៀប ដោយ $\lim_{n \to
+                                +\infty} \frac{\ln n}{n} = 0$ និង $\lim_{n \to +\infty} \frac{-1}{n} = 0$ ។ ដូចនេះ
+                                $$\lim_{n \to +\infty} x_n = 0$$
                             </li>
                             <li>
-                                <b>ទាញរកលីមីត $\lim_{n \to +\infty} x_n$ ៖</b><br />
-                                យើងមាន $-\frac{2\ln n}{n} \le x_n \lt -\frac{1}{n}$។ តាមទ្រឹស្ដីបទតម្លៃកៀប ដោយ $\lim_{n
-                                \to +\infty} \frac{\ln n}{n} = 0$ និង $\lim_{n \to +\infty} \frac{-1}{n} = 0$<br />
-                                ដូចនេះ <b>$\lim_{n \to +\infty} x_n = 0$</b> ។
-                            </li>
-                            <li>
-                                <b>ទាញរកលីមីត $\lim_{n \to +\infty} nx_n$ ៖</b><br />
-                                យើងមាន $nx_n = 2\ln(-x_n)$។ ដោយ $x_n \to 0$ ពីឆ្វេង នោះ $-x_n \to 0^+$។<br />
-                                នាំឱ្យ $\lim_{n \to +\infty} \ln(-x_n) = -\infty$ ។<br />
-                                ដូចនេះ <b>$\lim_{n \to +\infty} nx_n = -\infty$</b> ។
+                                <b>$\lim_{n \to +\infty} nx_n$ ៖</b> យើងមាន៖ $nx_n = 2\ln(-x_n)$<br />
+                                ដោយ $x_n \to 0$ ពីខាងឆ្វេង នោះ $-x_n \to 0^+$ នាំឱ្យ $\lim_{n \to +\infty} \ln(-x_n) =
+                                -\infty$ ។ <br />
+                                ដូចនេះ $$\lim_{n \to +\infty} nx_n = -\infty$$
                             </li>
                         </ul>
                     </div>

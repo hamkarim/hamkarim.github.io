@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="km">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Siemreap&display=swap"
+            rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@400;700&display=swap"
+            rel="stylesheet" />
+
+        <title>វិញ្ញាសាគណិតវិទ្យា៖ ផ្នែកកោនិក (កម្រិតអន្តរជាតិ)</title>
+
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [
+                        ["$", "$"],
+                        ["\\(", "\\)"]
+                    ],
+                    displayMath: [
+                        ["$$", "$$"],
+                        ["\\[", "\\]"]
+                    ],
+                    macros: {
+                        mybullet: "{\\tiny\\bullet\\;\\;}",
+                        mybullett: "{\\quad\\tiny\\bullet\\;\\;}"
+                    }
+                },
+                chtml: {
+                    scale: 1.2, 
+                    linebreaks: { automatic: true } 
+                },
+                svg: {
+                    scale: 1.2,
+                    matchFontHeight: true
+                }
+            };
+        </script>
+
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <style>
+            @media screen and (max-width: 768px) {
+                .container {
+                    padding: 10px; 
+                }
+                table {
+                    display: block;
+                    width: 100%;
+                    overflow-x: auto;
+                    white-space: nowrap;
+                }
+                h1 {
+                    font-size: 1.5rem;
+                } 
+                h2 {
+                    font-size: 1.2rem;
+                }
+            }
+
+            body {
+                font-family: "Siemreap", "Arial", sans-serif;
+                line-height: 1.8; 
+                color: #333;
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #f9f9f9;
+                -webkit-font-smoothing: antialiased;
+            }
+
+            h1,
+            h2,
+            h4,
+            h5,
+            h6 {
+                font-family: "Battambang", "Arial", sans-serif;
+                font-weight: 700; 
+                color: #2c3e50;
+                line-height: 1.5;
+            }
+
+            h3 {
+                font-family: "Noto Serif Khmer", serif;
+                font-size: larger;
+                font-weight: 700; 
+            }
+
+            b,
+            strong,
+            .question {
+                font-family: "Noto Serif Khmer", serif;
+                font-weight: 700;
+            }
+
+            .hint-title {
+                font-family: "Battambang", "Arial", sans-serif;
+                font-weight: 700;
+                display: block;
+                margin-bottom: 5px;
+                color: #e67e22;
+            }
+
+            .header {
+                text-align: center;
+                border-bottom: 2px solid #2c3e50;
+                padding-bottom: 10px;
+                margin-bottom: 30px;
+            }
+            h1,
+            h2,
+            h3 {
+                color: #2c3e50;
+            }
+            .problem-section {
+                background-color: #fff;
+                padding: 25px;
+                padding-left: 50px !important;
+                padding-right: 40px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                margin-bottom: 25px;
+                font-size: 18px;
+            }
+            .question {
+                display: block;
+                margin: 0px;
+                padding-bottom: 15px;
+                font-weight: bold;
+            }
+
+            span.space {
+                line-height: 2;
+                display: block;
+                margin-bottom: 15pt;
+                margin-top: 10pt;
+            }
+
+            .space {
+                line-height: 2;
+            }
+
+            b.bquestion {
+                margin-bottom: 10px;
+                margin-top: 15px;
+                display: block;
+                font-size: large;
+            }
+
+            .sub-question {
+                margin-left: 20px;
+                margin-bottom: 15px;
+            }
+            .hint-box {
+                background-color: #e8f4f8;
+                border-left: 4px solid #3498db;
+                padding: 10px 15px;
+                margin-top: 20px;
+                margin-bottom: 15px;
+                font-size: 0.9em;
+                color: #2980b9;
+                border-radius: 0 4px 4px 0;
+            }
+
+            .hint-boxx {
+                background-color: #e8f4f8;
+                border-left: 4px solid #3498db;
+                padding: 10px 15px;
+                width: 70%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 5px;
+                margin-bottom: 15px;
+                font-size: 0.9em;
+                color: #2980b9;
+                border-radius: 0 2px 2px 0;
+                box-sizing: border-box;
+            }
+
+            .rubric-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+                background-color: #fff;
+                font-size: 14px;
+            }
+            .rubric-table th,
+            .rubric-table td {
+                border: 1px solid #ddd;
+                padding: 12px;
+                text-align: left;
+            }
+            .rubric-table th {
+                background-color: #2c3e50;
+                color: white;
+            }
+            .rubric-table tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            .table-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+
+            mjx-container {
+                font-size: 115% !important; 
+            }
+
+            svg {
+                max-width: 100%; 
+            }
+
+            .table-variation {
+                width: 100%;
+                max-width: 600px;
+                margin: 20px auto;
+                border-collapse: collapse;
+                text-align: center;
+            }
+
+            .table-variation th,
+            .table-variation td {
+                border: 1px solid #333;
+                padding: 10px;
+            }
+
+            div.noview {
+                visibility: hidden;
+                display: none;
+            }
+
+            li::marker {
+                font-size: 0.8rem; 
+            }
+
+            li {
+                line-height: 1.8;
+                margin-bottom: 10px;
+            }
+            li:last-child {
+                margin-bottom: 0 !important;
+            }
+        </style>
+
+        <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css" />
+        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>វិញ្ញាសាគណិតវិទ្យា ត្រៀមប្រឡងសញ្ញាបត្រមធ្យមសិក្សាទុតិយភូមិ</h1>
+            <h2>ប្រធានបទ៖ ការសិក្សាផ្នែកកោនិក (កម្រិតអន្តរជាតិ)</h2>
+            <p>កម្រិត៖ មធ្យមសិក្សាទុតិយភូមិ និងត្រៀមចូលសាកលវិទ្យាល័យ</p>
+        </div>
+
+        <div class="problem-section">
+            <h3>១. លំហាត់កោនិក - ប្រទេសកម្ពុជា (បាក់ឌុប)</h3>
+            <p>គេមានសមីការ $9x^2 + 25y^2 - 18x + 100y - 116 = 0$ ។</p>
+
+            <div class="sub-question">
+                <span class="question">
+                    ក. បង្ហាញថាសមីការនេះជាសមីការអេលីប រួចទាញរកកូអរដោនេផ្ចិត កំពូល និងកំណុំនៃអេលីបនេះ។
+                </span>
+                <span class="question">
+                    ខ. សង់អេលីបនេះក្នុងតម្រុយអរតូណរម៉ាល់ $(O, \vec{i}, \vec{j})$ ។
+                </span>
+                <div class="hint-box">
+                    <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
+                    - អ្នកត្រូវចាប់ផ្ដុំតួ $x$ និងតួ $y$ ដាក់ដាច់ពីគ្នា។<br />
+                    - បំពេញជាការេ ដើម្បីរុញវាទៅជារាងស្តង់ដារ $\frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = 1$ រួចទើបទាញរកធាតុផ្សេងៗ។
+                </div>
+            </div>
+        </div>
+
+        <div class="problem-section">
+            <h3>២. លំហាត់កោនិក - ប្រទេសវៀតណាម (Kỳ thi THPT Quốc gia)</h3>
+            <div class="sub-question">
+                <span class="question">
+                    ក្នុងប្លង់កូអរដោនេ $Oxy$ គេមានអេលីប $(E)$ មួយដែលមានប្រវែងអ័ក្សធំស្មើនឹង ៨ និងមានកំណុំមួយត្រង់ចំណុច $F_1(-\sqrt{7}, 0)$ ។ សូមសរសេរសមីការស្តង់ដារនៃអេលីប $(E)$ ។
+                </span>
+                <div class="hint-box">
+                    <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
+                    - ប្រវែងអ័ក្សធំ $2a = 8$ នាំឱ្យទាញបាន $a$ ។<br />
+                    - កំណុំ $c = \sqrt{7}$ ។ តាមទំនាក់ទំនងកោនិក $b^2 = a^2 - c^2$ យើងអាចរក $b^2$ រួចសរសេរសមីការ។
+                </div>
+            </div>
+        </div>
+
+        <div class="problem-section">
+            <h3>៣. លំហាត់កោនិក - ប្រទេសបារាំង (Baccalauréat Scientifique)</h3>
+            <p>គេមានអ៊ីពែបូល $(\mathcal{H})$ ដែលមានសមីការ $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$ ។ តាង $M(x_0, y_0)$ ជាចំណុចមួយស្ថិតនៅលើអ៊ីពែបូលនេះ។</p>
+
+            <div class="sub-question">
+                <span class="question">
+                    ចូរស្រាយបញ្ជាក់ថាសមីការបន្ទាត់ប៉ះនឹងអ៊ីពែបូល $(\mathcal{H})$ ត្រង់ចំណុច $M$ គឺមានរាង៖
+                    $$ \frac{x_0 x}{a^2} - \frac{y_0 y}{b^2} = 1 $$
+                </span>
+                <div class="hint-box">
+                    <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
+                    - លំហាត់នេះទាមទារឱ្យប្រើដេរីវេដោយប្រយោល (Implicit differentiation) លើសមីការកោនិក ដើម្បីរកមេគុណប្រាប់ទិស $m = y'$ នៃបន្ទាត់ប៉ះ។
+                </div>
+            </div>
+        </div>
+
+        <div class="problem-section">
+            <h3>៤. លំហាត់កោនិក - សហរដ្ឋអាមេរិក (AP Calculus BC)</h3>
+            <div class="sub-question">
+                <span class="question">
+                    សមីការប៉ូល (Polar Equation) នៃកោនិកមួយត្រូវបានផ្តល់ឱ្យដោយ៖
+                    $$ r = \frac{12}{3 - 4 \cos(\theta)} $$
+                    តើកោនិកនេះជាអ្វី? (រង្វង់, ប៉ារ៉ាបូល, អេលីប ឬ អ៊ីពែបូល) ហើយមានអ៊ិចសង់ទ្រីស៊ីតេស្មើនឹងប៉ុន្មាន?
+                </span>
+                <div class="hint-box">
+                    <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
+                    - ត្រូវបំប្លែងភាគបែងទៅជារាងស្តង់ដារ $1 - e \cos(\theta)$ ដោយទាញលេខ ៣ ជាកត្តារួម។<br />
+                    - ពិនិត្យមើលតម្លៃអ៊ិចសង់ទ្រីស៊ីតេ $e$ ។ បើ $e > 1$ វាជាអ៊ីពែបូល។
+                </div>
+            </div>
+        </div>
+
+        <div class="problem-section">
+            <h3>៥. លំហាត់កោនិក - ប្រទេសជប៉ុន (University Entrance Exams)</h3>
+            <div class="sub-question">
+                <span class="question">
+                    តាង $(E)$ ជាអេលីបដែលមានសមីការ $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$។ គេគូសបន្ទាត់កែងចំនួនពីរដែលកាត់គ្នាត្រង់ចំណុច $P$ ហើយបន្ទាត់ទាំងពីរនេះប៉ះទៅនឹងអេលីប $(E)$។ ចូររកកន្លែងដៅ (Locus) នៃចំណុច $P$ ពេលបន្ទាត់ទាំងពីរផ្លាស់ទី។
+                </span>
+                <div class="hint-box">
+                    <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
+                    - សរសេរសមីការបន្ទាត់ប៉ះជាទម្រង់ $y = mx \pm \sqrt{a^2m^2 + b^2}$។<br />
+                    - ប្រើលក្ខខណ្ឌចំណោទកែង ($m_1 \cdot m_2 = -1$) ដើម្បីទាញរកទំនាក់ទំនងរវាង $x$ និង $y$ របស់ចំណុច $P$ ដែលនឹងចេញជារង្វង់នាយក (Director Circle)។
+                </div>
+            </div>
+        </div>
+
+        <div class="problem-section">
+            <h3>៦. លំហាត់កោនិក - ចក្រភពអង់គ្លេស (A-Levels Further Maths)</h3>
+            <p>គេមានចំណុច $P \left(c t, \frac{c}{t}\right)$ ស្ថិតនៅលើអ៊ីពែបូលកែង $xy = c^2$។</p>
+
+            <div class="sub-question">
+                <span class="question">ក. ចូរស្រាយបញ្ជាក់ថាសមីការបន្ទាត់ប៉ះ (Tangent) ទៅនឹងអ៊ីពែបូលត្រង់ចំណុច $P$ គឺ $x + t^2 y = 2ct$។</span>
+                <span class="question">ខ. បន្ទាត់ប៉ះនេះកាត់អ័ក្ស $x$ ត្រង់ $A$ និងអ័ក្ស $y$ ត្រង់ $B$។ បង្ហាញថាផ្ទៃក្រឡាត្រីកោណ $OAB$ (ដោយ $O$ ជាគល់តម្រុយ) គឺជាតម្លៃថេរ មិនអាស្រ័យនឹងតម្លៃ $t$ ឡើយ។</span>
+                <div class="hint-box">
+                    <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
+                    - (ក) ប្រើដេរីវេនៃអនុគមន៍ $y = \frac{c^2}{x}$ ដើម្បីទាញរកមេគុណប្រាប់ទិស រួចសរសេរសមីការបន្ទាត់ប៉ះ។<br />
+                    - (ខ) រកកូអរដោនេចំណុច $A$ (ឱ្យ $y=0$) និងចំណុច $B$ (ឱ្យ $x=0$) រួចគណនាក្រឡាផ្ទៃ $S = \frac{1}{2} \times OA \times OB$។
+                </div>
+            </div>
+        </div>
+
+        <div class="problem-section">
+            <h3>៧. លំហាត់កោនិក - ប្រទេសថៃ (A-Level Math 1)</h3>
+            <div class="sub-question">
+                <span class="question">
+                    គេមានប៉ារ៉ាបូល $(P)$ មួយដែលមានសមីការ $x^2 - 4x - 8y + 28 = 0$ ។ តាង $V$ ជាកំពូល និង $F$ ជាកំណុំនៃប៉ារ៉ាបូល $(P)$ នេះ។ ចូររកសមីការទូទៅនៃរង្វង់ $(C)$ ដែលមានអង្កត់ $VF$ ជាអង្កត់ផ្ចិតរបស់វា។
+                </span>
+                <div class="hint-box">
+                    <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
+                    - បំពេញជាការេដើម្បីបំប្លែងសមីការប៉ារ៉ាបូលទៅជាទម្រង់ $(x-h)^2 = 4p(y-k)$ ដើម្បីរកកូអរដោនេ $V$ និង $F$ ។<br />
+                    - ផ្ចិតនៃរង្វង់គឺជាចំណុចកណ្ដាលនៃអង្កត់ $VF$ ហើយកាំគឺស្មើនឹង $\frac{VF}{2}$។
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
