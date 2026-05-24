@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="km">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>វិញ្ញាសាគណិតវិទ្យា៖ ផ្នែកកោនិក (Conic Sections)</title>
+
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [
+                        ["$", "$"],
+                        ["\\(", "\\)"]
+                    ],
+                    displayMath: [
+                        ["$$", "$$"],
+                        ["\\[", "\\]"]
+                    ],
+                    macros: {
+                        mybullet: "{\\tiny\\bullet\\;\\;}",
+                        mybullett: "{\\quad\\tiny\\bullet\\;\\;}"
+                    }
+                },
+                chtml: {
+                    scale: 1.2,
+                    linebreaks: { automatic: true }
+                },
+                svg: {
+                    scale: 1.2,
+                    matchFontHeight: true
+                }
+            };
+        </script>
+
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css" />
+        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+        <style>
+            body {
+                font-family: "Khmer OS Battambang", sans-serif;
+                line-height: 1.8;
+                background-color: #f4f7f6;
+                padding: 20px;
+            }
+            .container {
+                max-width: 800px;
+                margin: auto;
+                background: #fff;
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            h2 {
+                color: #2980b9;
+                border-bottom: 2px solid #2980b9;
+                padding-bottom: 10px;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            .question-block {
+                margin-bottom: 25px;
+                padding: 15px;
+                background: #fafafa;
+                border-left: 4px solid #27ae60;
+                border-radius: 4px;
+            }
+            .options {
+                margin-top: 10px;
+                padding-left: 20px;
+            }
+            .options label {
+                display: block;
+                margin-bottom: 8px;
+                cursor: pointer;
+            }
+            .answer-key {
+                margin-top: 40px;
+                background: #e8f4f8;
+                padding: 20px;
+                border-radius: 8px;
+                border-left: 4px solid #2980b9;
+            }
+            mjx-container {
+                font-size: 115% !important;
+            }
+            svg {
+                max-width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>វិញ្ញាសាគណិតវិទ្យា៖ ផ្នែកកោនិក (Conic Sections)</h2>
+            <form>
+                <div class="question-block">
+                    <p>
+                        <b>១.</b> យោងតាមសមីការកំណុំរបស់កោនិក $\frac{MF}{MH}=e$ បើតម្លៃអេសង់ទ្រីស៊ីតេ $e=1$ តើសំណុំចំណុច
+                        $\Gamma$ ហៅថាអ្វី?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="A" /> ក. អេលីប</label>
+                        <label><input type="radio" name="q1" value="B" /> ខ. ប៉ារ៉ាបូល</label>
+                        <label><input type="radio" name="q1" value="C" /> គ. អ៊ីពែរបូល</label>
+                        <label><input type="radio" name="q1" value="D" /> ឃ. រង្វង់</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p><b>២.</b> តើលក្ខខណ្ឌមួយណាដែលបញ្ជាក់ថាសំណុំចំណុច $\Gamma$ ជាអេលីប?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="A" /> ក. $e \gt 1$</label>
+                        <label><input type="radio" name="q2" value="B" /> ខ. $e = 1$</label>
+                        <label><input type="radio" name="q2" value="C" /> គ. $0 \lt e \lt 1$</label>
+                        <label><input type="radio" name="q2" value="D" /> ឃ. $e = 0$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p><b>៣.</b> នៅក្នុងតម្រុយ $(S, \vec{i}, \vec{j})$ តើសមីការ $Y^2=2pX$ តាងឱ្យកោនិកប្រភេទណា?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="A" /> ក. អេលីប</label>
+                        <label><input type="radio" name="q3" value="B" /> ខ. អ៊ីពែរបូល</label>
+                        <label><input type="radio" name="q3" value="C" /> គ. ប៉ារ៉ាបូល</label>
+                        <label><input type="radio" name="q3" value="D" /> ឃ. បន្ទាត់</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p>
+                        <b>៤.</b> ចំពោះអេលីបមានសមីការ $\frac{X^2}{a^2}+\frac{Y^2}{b^2}=1$ ដែល $a\gt b$ តើទំនាក់ទំនងរវាង
+                        $a, b$ និង $c$ គឺមួយណា?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="A" /> ក. $c = \sqrt{a^2+b^2}$</label>
+                        <label><input type="radio" name="q4" value="B" /> ខ. $c = \sqrt{a^2-b^2}$</label>
+                        <label><input type="radio" name="q4" value="C" /> គ. $c = \sqrt{b^2-a^2}$</label>
+                        <label><input type="radio" name="q4" value="D" /> ឃ. $c = a^2+b^2$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p><b>៥.</b> សម្រាប់អេលីប តើរូបមន្តអេសង់ទ្រីស៊ីតេ $e$ ស្មើនឹងអ្វី?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="A" /> ក. $e = \frac{a}{c}$</label>
+                        <label><input type="radio" name="q5" value="B" /> ខ. $e = \frac{c}{b}$</label>
+                        <label><input type="radio" name="q5" value="C" /> គ. $e = \frac{b}{a}$</label>
+                        <label><input type="radio" name="q5" value="D" /> ឃ. $e = \frac{c}{a}$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p><b>៦.</b> តើផ្ទៃក្រឡារបស់អេលីបដែលមានអ័ក្សកន្លះ $a$ និង $b$ កំណត់ដោយរូបមន្តណា?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="A" /> ក. $\mathscr{A} = \pi a^2$</label>
+                        <label><input type="radio" name="q6" value="B" /> ខ. $\mathscr{A} = 2\pi a b$</label>
+                        <label><input type="radio" name="q6" value="C" /> គ. $\mathscr{A} = \pi a b$</label>
+                        <label><input type="radio" name="q6" value="D" /> ឃ. $\mathscr{A} = \frac{\pi a b}{2}$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p><b>៧.</b> សម្រាប់អ៊ីពែរបូល $\frac{X^2}{a^2}-\frac{Y^2}{b^2}=1$ តើសមីការអាស៊ីមតូតរបស់វាគឺអ្វី?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="A" /> ក. $Y = \pm \frac{a}{b} X$</label>
+                        <label><input type="radio" name="q7" value="B" /> ខ. $Y = \pm \frac{b}{a} X$</label>
+                        <label><input type="radio" name="q7" value="C" /> គ. $X = \pm \frac{b}{a} Y$</label>
+                        <label><input type="radio" name="q7" value="D" /> ឃ. $Y = \pm ab X$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p><b>៨.</b> ផលបូកចម្ងាយពីចំណុច $M$ នៅលើអេលីបទៅកំណុំទាំងពីរ $F$ និង $F'$ ($MF + MF'$) ស្មើនឹង៖</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="A" /> ក. $2c$</label>
+                        <label><input type="radio" name="q8" value="B" /> ខ. $2b$</label>
+                        <label><input type="radio" name="q8" value="C" /> គ. $a+b$</label>
+                        <label><input type="radio" name="q8" value="D" /> ឃ. $2a$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p><b>៩.</b> ផលសងរវាងចម្ងាយពីចំណុច $M$ នៅលើអ៊ីពែរបូលមួយ ទៅកំណុំទាំងពីរ $|MF - MF'|$ ស្មើនឹង៖</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="A" /> ក. $2a$</label>
+                        <label><input type="radio" name="q9" value="B" /> ខ. $2b$</label>
+                        <label><input type="radio" name="q9" value="C" /> គ. $2c$</label>
+                        <label><input type="radio" name="q9" value="D" /> ឃ. $0$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p>
+                        <b>១០.</b> ក្នុងតម្រុយអរតូនរមេ សមីការប៉ារ៉ាម៉ែត្រ $\begin{cases}x = a \cos t \\ y = b \sin
+                        t\end{cases}$ តាងឱ្យអ្វី?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="A" /> ក. រង្វង់</label>
+                        <label><input type="radio" name="q10" value="B" /> ខ. ប៉ារ៉ាបូល</label>
+                        <label><input type="radio" name="q10" value="C" /> គ. អេលីប</label>
+                        <label><input type="radio" name="q10" value="D" /> ឃ. អ៊ីពែរបូល</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p>
+                        <b>១១.</b> គេអាចបម្លែងពីរង្វង់កាំ $a$ ទៅអេលីប $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$
+                        តាមរយៈអនុគមន៍អាភីនអរតូកូណាល់ដែលមានសមាមាត្រប៉ុន្មាន?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q11" value="A" /> ក. $\frac{a}{b}$</label>
+                        <label><input type="radio" name="q11" value="B" /> ខ. $\frac{b}{a}$</label>
+                        <label><input type="radio" name="q11" value="C" /> គ. $a \cdot b$</label>
+                        <label><input type="radio" name="q11" value="D" /> ឃ. $a^2 + b^2$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p>
+                        <b>១២.</b> បន្ទាត់ប៉ះទៅនឹងកោនិកនៅត្រង់ចំណុច $M$ កាត់បន្ទាត់ប្រាប់ទិសត្រង់ចំណុច $T$។
+                        តើផលគុណស្កាលែរ $\overrightarrow{FM} \cdot \overrightarrow{FT}$ មានតម្លៃស្មើប៉ុន្មាន?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q12" value="A" /> ក. $1$</label>
+                        <label><input type="radio" name="q12" value="B" /> ខ. $-1$</label>
+                        <label><input type="radio" name="q12" value="C" /> គ. $0$</label>
+                        <label><input type="radio" name="q12" value="D" /> ឃ. $e$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p>
+                        <b>១៣.</b> សម្រាប់អ៊ីពែរបូល ក្នុងតម្រុយនរម៉ាល់មានគល់ $\Omega$ និងអាស៊ីមតូតទាំងពីរ $(\Omega,
+                        \vec{u}, \vec{v})$ តើសមីការរបស់វាមានទម្រង់ដូចម្ដេច?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q13" value="A" /> ក. $X^2 + Y^2 = c^2$</label>
+                        <label><input type="radio" name="q13" value="B" /> ខ. $X Y = \frac{c^2}{4}$</label>
+                        <label><input type="radio" name="q13" value="C" /> គ. $X Y = a \cdot b$</label>
+                        <label><input type="radio" name="q13" value="D" /> ឃ. $Y = X^2 + c$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p><b>១៤.</b> តើអ៊ីពែរបូលសមមូល (equilateral hyperbola) មានលក្ខណៈពិសេសអ្វី?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q14" value="A" /> ក. មានអេសង់ទ្រីស៊ីតេស្មើ $1$</label>
+                        <label><input type="radio" name="q14" value="B" /> ខ. អាស៊ីមតូតទាំងពីរស្របគ្នា</label>
+                        <label><input type="radio" name="q14" value="C" /> គ. អាស៊ីមតូតទាំងពីរកែងគ្នា ($a=b$)</label>
+                        <label><input type="radio" name="q14" value="D" /> ឃ. មិនមានអ័ក្សឆ្លុះ</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p>
+                        <b>១៥.</b> ក្នុងសមីការទូទៅនៃកោនិក $ax^2+by^2+2cx+2dy+e=0$ ប្រសិនបើ $a=0$ និង $c \neq 0$
+                        តើវាបង្កើតបានជាខ្សែកោងអ្វី?
+                    </p>
+                    <div class="options">
+                        <label><input type="radio" name="q15" value="A" /> ក. អេលីប</label>
+                        <label><input type="radio" name="q15" value="B" /> ខ. ប៉ារ៉ាបូលមានអ័ក្សស្រប $(Ox)$</label>
+                        <label><input type="radio" name="q15" value="C" /> គ. ប៉ារ៉ាបូលមានអ័ក្សស្រប $(Oy)$</label>
+                        <label><input type="radio" name="q15" value="D" /> ឃ. អ៊ីពែរបូល</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <b>១៦.</b> ក្នុងសមីការទូទៅនៃកោនិកមានផ្ចិត $ax^2+by^2=k$ បើសិនជា $ab\gt 0$ និង $k\gt 0$
+                    តើកោនិកនោះជាអ្វី?
+
+                    <div class="options">
+                        <label><input type="radio" name="q16" value="A" /> ក. អេលីប</label>
+                        <label><input type="radio" name="q16" value="B" /> ខ. អ៊ីពែរបូល</label>
+                        <label><input type="radio" name="q16" value="C" /> គ. ចំណុចមួយ</label>
+                        <label><input type="radio" name="q16" value="D" /> ឃ. គ្មានចំណុច</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <b>១៧.</b> ក្នុងសមីការទូទៅនៃកោនិកមានផ្ចិត $ax^2+by^2=k$ បើសិនជា $ab\lt 0$ និង $k \neq 0$
+                    តើកោនិកនោះជាអ្វី?
+
+                    <div class="options">
+                        <label><input type="radio" name="q17" value="A" /> ក. អេលីប</label>
+                        <label><input type="radio" name="q17" value="B" /> ខ. ប៉ារ៉ាបូល</label>
+                        <label><input type="radio" name="q17" value="C" /> គ. រង្វង់</label>
+                        <label><input type="radio" name="q17" value="D" /> ឃ. អ៊ីពែរបូល</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p><b>១៨.</b> សម្រាប់ប៉ារ៉ាបូល តើអេសង់ទ្រីស៊ីតេ $e$ មានតម្លៃស្មើប៉ុន្មាន?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q18" value="A" /> ក. $e = \frac{1}{2}$</label>
+                        <label><input type="radio" name="q18" value="B" /> ខ. $e = 1$</label>
+                        <label><input type="radio" name="q18" value="C" /> គ. $e = 0$</label>
+                        <label><input type="radio" name="q18" value="D" /> ឃ. $e = -1$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p><b>១៩.</b> តើប៉ារ៉ាម៉ែត្រ $p$ របស់អេលីប ឬអ៊ីពែរបូល កំណត់ដោយរូបមន្តមួយណា?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q19" value="A" /> ក. $p = \frac{b^2}{c}$</label>
+                        <label><input type="radio" name="q19" value="B" /> ខ. $p = \frac{a^2}{c}$</label>
+                        <label><input type="radio" name="q19" value="C" /> គ. $p = \frac{c^2}{b}$</label>
+                        <label><input type="radio" name="q19" value="D" /> ឃ. $p = a \cdot b$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p><b>២០.</b> អនុគមន៍អូម៉ូក្រាហ្វិក $f(x) = \frac{ax+b}{cx+d}$ គឺជាតំណាងឱ្យខ្សែកោងប្រភេទណា?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q20" value="A" /> ក. អេលីប</label>
+                        <label><input type="radio" name="q20" value="B" /> ខ. ប៉ារ៉ាបូល</label>
+                        <label><input type="radio" name="q20" value="C" /> គ. អ៊ីពែរបូលសមមូល</label>
+                        <label><input type="radio" name="q20" value="D" /> ឃ. បន្ទាត់ស្រប</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p>
+                        <b>២១.</b> ផ្អែកតាមរូបភាពខាងក្រោម ដែលបង្ហាញពីសំណុំចំណុចមានចម្ងាយស្មើគ្នាពីកំណុំ $F$
+                        និងបន្ទាត់ប្រាប់ទិស $\mathscr{D}$ ($MF=MH$ នាំឱ្យ $e=1$) តើខ្សែកោងនេះមានឈ្មោះថាអ្វី?
+                    </p>
+                    <div class="tikz-container">
+                        <script type="text/tikz">
+                            \begin{tikzpicture}[scale=0.6]
+                                \draw[->] (-2,0) -- (4,0) node[right] {$x$};
+                                \draw[->] (0,-4) -- (0,4) node[above] {$y$};
+                                \draw[thick, blue] domain=0:3.5, samples=50 variable=\y plot ({\y*\y/2}, \y);
+                                \draw[thick, blue] domain=0:3.5, samples=50 variable=\y plot ({\y*\y/2}, -\y);
+                                \draw[red, thick] (-1,-4) -- (-1,4) node[above right] {$\mathscr{D}$};
+                                \filldraw[black] (1,0) circle (3pt) node[below right] {$F$};
+                                \filldraw[black] (2,2) circle (3pt) node[above left] {$M$};
+                                \draw[dashed] (2,2) -- (-1,2) node[left] {$H$};
+                                \draw[dashed] (2,2) -- (1,0);
+                            \end{tikzpicture}
+                        </script>
+                    </div>
+                    <div class="options">
+                        <label><input type="radio" name="q21" value="A" /> ក. អេលីប</label>
+                        <label><input type="radio" name="q21" value="B" /> ខ. ប៉ារ៉ាបូល</label>
+                        <label><input type="radio" name="q21" value="C" /> គ. អ៊ីពែរបូល</label>
+                        <label><input type="radio" name="q21" value="D" /> ឃ. រង្វង់</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p><b>២២.</b> យោងតាមរូបភាពនៃអេលីបនេះ តើផលបូកចម្ងាយ $MF + MF'$ ស្មើនឹងអ្វី?</p>
+                    <div class="tikz-container">
+                        <script type="text/tikz">
+                            \begin{tikzpicture}[scale=0.7]
+                                \draw[->] (-4,0) -- (4,0) node[right] {$x$};
+                                \draw[->] (0,-3) -- (0,3) node[above] {$y$};
+                                \draw[thick, blue] (0,0) ellipse (3cm and 2cm);
+                                \filldraw[black] (-2.236,0) circle (3pt) node[below] {$F'$};
+                                \filldraw[black] (2.236,0) circle (3pt) node[below] {$F$};
+                                \filldraw[black] (1.5, 1.732) circle (3pt) node[above right] {$M$};
+                                \draw[red, thick] (-2.236,0) -- (1.5, 1.732) -- (2.236,0);
+                            \end{tikzpicture}
+                        </script>
+                    </div>
+                    <div class="options">
+                        <label><input type="radio" name="q22" value="A" /> ក. $2a$</label>
+                        <label><input type="radio" name="q22" value="B" /> ខ. $2b$</label>
+                        <label><input type="radio" name="q22" value="C" /> គ. $2c$</label>
+                        <label><input type="radio" name="q22" value="D" /> ឃ. $a+b$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p><b>២៣.</b> តាមរូបភាពនៃអ៊ីពែរបូលនេះ តើផលសង $|MF - MF'|$ មានតម្លៃស្មើនឹងអ្វី?</p>
+                    <div class="tikz-container">
+                        <script type="text/tikz">
+                            \begin{tikzpicture}[scale=0.6]
+                                \draw[->] (-4.5,0) -- (4.5,0);
+                                \draw[->] (0,-3) -- (0,3);
+                                \draw[thick, blue] plot[domain=-1.3:1.3] ({2*cosh(\x)}, {1.5*sinh(\x)});
+                                \draw[thick, blue] plot[domain=-1.3:1.3] ({-2*cosh(\x)}, {1.5*sinh(\x)});
+                                \filldraw[black] (-2.5,0) circle (3pt) node[below left] {$F'$};
+                                \filldraw[black] (2.5,0) circle (3pt) node[below right] {$F$};
+                                \filldraw[black] (3.08, 1.67) circle (3pt) node[right] {$M$};
+                                \draw[red, thick] (-2.5,0) -- (3.08, 1.67) -- (2.5,0);
+                            \end{tikzpicture}
+                        </script>
+                    </div>
+                    <div class="options">
+                        <label><input type="radio" name="q23" value="A" /> ក. $2b$</label>
+                        <label><input type="radio" name="q23" value="B" /> ខ. $2c$</label>
+                        <label><input type="radio" name="q23" value="C" /> គ. $2a$</label>
+                        <label><input type="radio" name="q23" value="D" /> ឃ. គ្មានចម្លើយ</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p>
+                        <b>២៤.</b> ផ្អែកលើរូបភាពនៃអ៊ីពែរបូល និងបន្ទាត់កាត់ខ្វែងគ្នា (អាស៊ីមតូត)
+                        តើសមីការអាស៊ីមតូតទាំងពីរនោះមានទម្រង់ដូចម្ដេច ប្រសិនបើសមីការអ៊ីពែរបូលគឺ $\frac{X^2}{a^2} -
+                        \frac{Y^2}{b^2} = 1$?
+                    </p>
+                    <div class="tikz-container">
+                        <script type="text/tikz">
+                            \begin{tikzpicture}[scale=0.6]
+                                \draw[->] (-4,0) -- (4,0) node[right] {$X$};
+                                \draw[->] (0,-3.5) -- (0,3.5) node[above] {$Y$};
+                                \draw[dashed, red, thick] (-4,-3) -- (4,3);
+                                \draw[dashed, red, thick] (-4,3) -- (4,-3);
+                                \draw[thick, blue] plot[domain=-1.3:1.3] ({2*cosh(\x)}, {1.5*sinh(\x)});
+                                \draw[thick, blue] plot[domain=-1.3:1.3] ({-2*cosh(\x)}, {1.5*sinh(\x)});
+                            \end{tikzpicture}
+                        </script>
+                    </div>
+                    <div class="options">
+                        <label><input type="radio" name="q24" value="A" /> ក. $Y = \pm \frac{a}{b} X$</label>
+                        <label><input type="radio" name="q24" value="B" /> ខ. $Y = \pm \frac{b}{a} X$</label>
+                        <label><input type="radio" name="q24" value="C" /> គ. $Y = \pm c X$</label>
+                        <label><input type="radio" name="q24" value="D" /> ឃ. $Y = \pm ab X$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p>
+                        <b>២៥.</b> ក្នុងតម្រុយអរតូនរមេ បើប៉ារ៉ាបូលមានសមីការ $Y^2 = 2pX$ ដូចរូប តើចំណុចកំណុំ $F$
+                        និងបន្ទាត់ប្រាប់ទិសមានតម្លៃអាប់ស៊ីសប៉ុន្មានរៀងគ្នា?
+                    </p>
+                    <div class="tikz-container">
+                        <script type="text/tikz">
+                            \begin{tikzpicture}[scale=0.6]
+                                \draw[->] (-3,0) -- (4,0) node[right] {$X$};
+                                \draw[->] (0,-3.5) -- (0,3.5) node[above] {$Y$};
+                                \draw[thick, blue] domain=-3.5:3.5, samples=50 variable=\y plot ({\y*\y/3}, \y);
+                                \draw[red, thick] (-1.5,-3.5) -- (-1.5,3.5) node[above right] {$X = -\frac{p}{2}$};
+                                \filldraw[black] (1.5,0) circle (3pt) node[below right] {$F$};
+                                \filldraw[black] (0,0) circle (3pt) node[below left] {$S$};
+                            \end{tikzpicture}
+                        </script>
+                    </div>
+                    <div class="options">
+                        <label><input type="radio" name="q25" value="A" /> ក. $F(p, 0)$ និង $X = -p$</label>
+                        <label><input type="radio" name="q25" value="B" /> ខ. $F(0, p/2)$ និង $Y = -p/2$</label>
+                        <label><input type="radio" name="q25" value="C" /> គ. $F(p/2, 0)$ និង $X = -p/2$</label>
+                        <label><input type="radio" name="q25" value="D" /> ឃ. $F(-p/2, 0)$ និង $X = p/2$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p>
+                        <b>២៦.</b> តាមរូបភាពត្រីកោណកែងក្នុងអេលីបនេះ តើទំនាក់ទំនងរវាងប្រវែងអ័ក្សកន្លះធំ $a$,
+                        អ័ក្សកន្លះតូច $b$, និងចម្ងាយពាក់កណ្ដាលកំណុំ $c$ គឺមួយណា?
+                    </p>
+                    <div class="tikz-container">
+                        <script type="text/tikz">
+                            \begin{tikzpicture}[scale=0.8]
+                                \draw[->] (-4,0) -- (4,0) node[right] {$x$};
+                                \draw[->] (0,-3) -- (0,3) node[above] {$y$};
+                                \draw[thick, blue] (0,0) ellipse (3cm and 2cm);
+                                \filldraw[black] (2.236,0) circle (3pt) node[below] {$c$};
+                                \filldraw[black] (0,2) circle (3pt) node[left] {$b$};
+                                \draw[red, thick] (0,0) -- (2.236,0) -- (0,2) -- cycle;
+                                \node at (1.3, 1.3) {$a$};
+                                \node at (1.1, -0.3) {$c$};
+                                \node at (-0.3, 1) {$b$};
+                            \end{tikzpicture}
+                        </script>
+                    </div>
+                    <div class="options">
+                        <label><input type="radio" name="q26" value="A" /> ក. $a^2 = b^2 - c^2$</label>
+                        <label><input type="radio" name="q26" value="B" /> ខ. $c^2 = a^2 + b^2$</label>
+                        <label><input type="radio" name="q26" value="C" /> គ. $a^2 = b^2 + c^2$</label>
+                        <label><input type="radio" name="q26" value="D" /> ឃ. $b^2 = a^2 + c^2$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p>
+                        <b>២៧.</b> ផ្អែកលើទ្រឹស្ដីបន្ទាត់ប៉ះកោនិកក្នុងរូប បន្ទាត់ប៉ះត្រង់ $M$ កាត់បន្ទាត់ប្រាប់ទិសត្រង់
+                        $T$ ដែលមានលក្ខខណ្ឌ $\overrightarrow{FM} \cdot \overrightarrow{FT} = 0$ ។ តើមុំ $\angle MFT$
+                        មានរង្វាស់ប៉ុន្មានដឺក្រេ?
+                    </p>
+                    <div class="tikz-container">
+                        <script type="text/tikz">
+                            \begin{tikzpicture}[scale=0.6]
+                                \draw[thick, blue] (0,0) ellipse (3cm and 2cm);
+                                \draw[->] (-4,0) -- (4.5,0);
+                                \draw[->] (0,-3) -- (0,3);
+                                \draw[red, thick] (4.02,-3) -- (4.02,3) node[above] {$\mathscr{D}$};
+                                \filldraw[black] (2.236,0) circle (3pt) node[below left] {$F$};
+                                \filldraw[black] (1.5, 1.732) circle (3pt) node[above left] {$M$};
+                                \draw[thick, green!60!black] (-1, 2.693) -- (5.5, 0.198); % Tangent line
+                                \filldraw[black] (4.02, 0.767) circle (3pt) node[right] {$T$};
+                                \draw[dashed] (2.236,0) -- (1.5, 1.732);
+                                \draw[dashed] (2.236,0) -- (4.02, 0.767);
+                            \end{tikzpicture}
+                        </script>
+                    </div>
+                    <div class="options">
+                        <label><input type="radio" name="q27" value="A" /> ក. $45^\circ$</label>
+                        <label><input type="radio" name="q27" value="B" /> ខ. $60^\circ$</label>
+                        <label><input type="radio" name="q27" value="C" /> គ. $90^\circ$</label>
+                        <label><input type="radio" name="q27" value="D" /> ឃ. $180^\circ$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p>
+                        <b>២៨.</b> យោងតាមរូប តើគេអាចបម្លែងពីរង្វង់ (គំនូសដាច់ៗ) ទៅអេលីបនេះ
+                        តាមរយៈអនុគមន៍អាភីនអរតូកូណាល់លើអ័ក្ស $(\Omega x)$ តាមសមាមាត្រ $k$ ស្មើនឹងប៉ុន្មាន?
+                    </p>
+                    <div class="tikz-container">
+                        <script type="text/tikz">
+                            \begin{tikzpicture}[scale=0.6]
+                                \draw[->] (-4,0) -- (4,0) node[right] {$x$};
+                                \draw[->] (0,-4) -- (0,4) node[above] {$y$};
+                                \draw[dashed, blue] (0,0) circle (3cm);
+                                \draw[thick, blue] (0,0) ellipse (3cm and 1.5cm);
+                                \filldraw[black] (2.12, 2.12) circle (3pt) node[above right] {$M_1$};
+                                \filldraw[black] (2.12, 1.06) circle (3pt) node[right] {$M$};
+                                \draw[red, dashed] (2.12, 2.12) -- (2.12, 0) node[below left] {$H$};
+                            \end{tikzpicture}
+                        </script>
+                    </div>
+                    <div class="options">
+                        <label><input type="radio" name="q28" value="A" /> ក. $k = \frac{a}{b}$</label>
+                        <label><input type="radio" name="q28" value="B" /> ខ. $k = \frac{b}{a}$</label>
+                        <label><input type="radio" name="q28" value="C" /> គ. $k = a \cdot b$</label>
+                        <label><input type="radio" name="q28" value="D" /> ឃ. $k = \frac{c}{a}$</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p>
+                        <b>២៩.</b> ផ្អែកលើរូប តើកូអរដោនេរបស់ចំណុច $M(x,y)$ ដែលស្ថិតនៅលើអេលីប
+                        កំណត់ដោយសមីការប៉ារ៉ាម៉ែត្រដូចម្ដេច (ដោយផ្អែកលើមុំ $t$)?
+                    </p>
+                    <div class="tikz-container">
+                        <script type="text/tikz">
+                            \begin{tikzpicture}[scale=0.8]
+                                \draw[->] (-3,0) -- (3,0) node[right] {$x$};
+                                \draw[->] (0,-2.5) -- (0,2.5) node[above] {$y$};
+                                \draw[thick, blue] (0,0) ellipse (2cm and 1.5cm);
+                                \filldraw[black] (1.414, 1.06) circle (3pt) node[above right] {$M(x,y)$};
+                                \draw[dashed] (0,0) -- (1.414, 1.06);
+                                \draw (0.5,0) arc (0:36.87:0.5);
+                                \node at (0.7, 0.25) {$t$};
+                            \end{tikzpicture}
+                        </script>
+                    </div>
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q29" value="A" /> ក. $\begin{cases} x = a \sin t \\ y = b \cos t
+                            \end{cases}$</label
+                        >
+                        <label
+                            ><input type="radio" name="q29" value="B" /> ខ. $\begin{cases} x = a \cos t \\ y = b \sin t
+                            \end{cases}$</label
+                        >
+                        <label
+                            ><input type="radio" name="q29" value="C" /> គ. $\begin{cases} x = a \cos t \\ y = a \sin t
+                            \end{cases}$</label
+                        >
+                        <label
+                            ><input type="radio" name="q29" value="D" /> ឃ. $\begin{cases} x = b \cos t \\ y = b \sin t
+                            \end{cases}$</label
+                        >
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <p>
+                        <b>៣០.</b> ក្នុងរូបនេះគឺជា អ៊ីពែរបូលសមមូល (Equilateral hyperbola) ។
+                        តើអាស៊ីមតូតទាំងពីររបស់វាមានលក្ខណៈដូចម្ដេចនឹងគ្នា?
+                    </p>
+                    <div class="tikz-container">
+                        <script type="text/tikz">
+                            \begin{tikzpicture}[scale=0.6]
+                                \draw[->] (-3,0) -- (3,0) node[right] {$X$};
+                                \draw[->] (0,-3) -- (0,3) node[above] {$Y$};
+                                \draw[dashed, red, thick] (-3,-3) -- (3,3);
+                                \draw[dashed, red, thick] (-3,3) -- (3,-3);
+                                \draw[thick, blue] plot[domain=-1.2:1.2] ({1.5*cosh(\x)}, {1.5*sinh(\x)});
+                                \draw[thick, blue] plot[domain=-1.2:1.2] ({-1.5*cosh(\x)}, {1.5*sinh(\x)});
+                                \draw (0.3, 0.3) -- (0, 0.6) -- (-0.3, 0.3);
+                            \end{tikzpicture}
+                        </script>
+                    </div>
+                    <div class="options">
+                        <label><input type="radio" name="q30" value="A" /> ក. ស្របគ្នា</label>
+                        <label><input type="radio" name="q30" value="B" /> ខ. កាត់គ្នាមិនកែង</label>
+                        <label><input type="radio" name="q30" value="C" /> គ. ត្រួតស៊ីគ្នា</label>
+                        <label><input type="radio" name="q30" value="D" /> ឃ. កែងគ្នា</label>
+                    </div>
+                </div>
+            </form>
+
+            <!-- <div class="answer-key">
+                <h3>កំណែចម្លើយ (Answer Key):</h3>
+                <p>
+                    ១. ខ | ២. គ | ៣. គ | ៤. ខ | ៥. ឃ | ៦. គ | ៧. ខ | ៨. ឃ | ៩. ក | ១០. គ <br>
+                    ១១. ខ | ១២. គ | ១៣. ខ | ១៤. គ | ១៥. ខ | ១៦. ក | ១៧. ឃ | ១៨. ខ | ១៩. ក | ២០. គ
+                </p>
+            </div> ---
+            
+              <div class="answer-key">
+                <h3>កំណែចម្លើយ (Answer Key):</h3>
+                <p>
+                    ២១. ខ | ២២. ក | ២៣. គ | ២៤. ខ | ២៥. គ | ២៦. គ | ២៧. គ | ២៨. ខ | ២៩. ខ | ៣០. ឃ
+                </p>
+            </div> -->
+        </div>
+    </body>
+</html>
