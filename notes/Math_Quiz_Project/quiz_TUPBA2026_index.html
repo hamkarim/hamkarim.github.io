@@ -326,16 +326,25 @@
                     </p>
                     <div class="tikz-container">
                         <script type="text/tikz">
-                            \begin{tikzpicture}[scale=0.6]
-                                \draw[->] (-2,0) -- (4,0) node[right] {$x$};
-                                \draw[->] (0,-4) -- (0,4) node[above] {$y$};
-                                \draw[thick, blue] domain=0:3.5, samples=50 variable=\y plot ({\y*\y/2}, \y);
-                                \draw[thick, blue] domain=0:3.5, samples=50 variable=\y plot ({\y*\y/2}, -\y);
-                                \draw[red, thick] (-1,-4) -- (-1,4) node[above right] {$\mathscr{D}$};
-                                \filldraw[black] (1,0) circle (3pt) node[below right] {$F$};
-                                \filldraw[black] (2,2) circle (3pt) node[above left] {$M$};
-                                \draw[dashed] (2,2) -- (-1,2) node[left] {$H$};
-                                \draw[dashed] (2,2) -- (1,0);
+                                                        \begin{tikzpicture}[scale=0.6]
+                            	% Axes
+                            	\draw[->] (-2,0) -- (4,0) node[right] {$x$};
+                            	\draw[->] (0,-4) -- (0,4) node[above] {$y$};
+
+                            	% Parabola (plotted using standard function y = sqrt(2x) and -sqrt(2x))
+                            	\draw[thick, blue, domain=0:4, samples=100] plot (\x, {sqrt(2*\x)});
+                            	\draw[thick, blue, domain=0:4, samples=100] plot (\x, {-sqrt(2*\x)});
+
+                            	% Directrix
+                            	\draw[red, thick] (-1,-4) -- (-1,4) node[above right] {$\mathcal{D}$};
+
+                            	% Points
+                            	\filldraw[black] (1,0) circle (3pt) node[below right] {$F$};
+                            	\filldraw[black] (2,2) circle (3pt) node[above left] {$M$};
+
+                            	% Dashed lines
+                            	\draw[dashed] (2,2) -- (-1,2) node[left] {$H$};
+                            	\draw[dashed] (2,2) -- (1,0);
                             \end{tikzpicture}
                         </script>
                     </div>
@@ -427,13 +436,20 @@
                     </p>
                     <div class="tikz-container">
                         <script type="text/tikz">
-                            \begin{tikzpicture}[scale=0.6]
-                                \draw[->] (-3,0) -- (4,0) node[right] {$X$};
-                                \draw[->] (0,-3.5) -- (0,3.5) node[above] {$Y$};
-                                \draw[thick, blue] domain=-3.5:3.5, samples=50 variable=\y plot ({\y*\y/3}, \y);
-                                \draw[red, thick] (-1.5,-3.5) -- (-1.5,3.5) node[above right] {$X = -\frac{p}{2}$};
-                                \filldraw[black] (1.5,0) circle (3pt) node[below right] {$F$};
-                                \filldraw[black] (0,0) circle (3pt) node[below left] {$S$};
+                                                        \begin{tikzpicture}[scale=0.6]
+                            	% Axes
+                            	\draw[->] (-3,0) -- (4,0) node[right] {$X$};
+                            	\draw[->] (0,-3.5) -- (0,3.5) node[above] {$Y$};
+
+                            	% Parabola (plotting x = y^2 / 3 using y as the variable)
+                            	\draw[thick, blue, domain=-3.5:3.5, samples=100, variable=\y] plot ({\y*\y/3}, \y);
+
+                            	% Directrix
+                            	\draw[red, thick] (-1.5,-3.5) -- (-1.5,3.5) node[above right] {$X = -\frac{p}{2}$};
+
+                            	% Points
+                            	\filldraw[black] (1.5,0) circle (3pt) node[below right] {$F$};
+                            	\filldraw[black] (0,0) circle (3pt) node[below left] {$S$};
                             \end{tikzpicture}
                         </script>
                     </div>
@@ -482,17 +498,17 @@
                     <div class="tikz-container">
                         <script type="text/tikz">
                             \begin{tikzpicture}[scale=0.6]
-                                \draw[thick, blue] (0,0) ellipse (3cm and 2cm);
-                                \draw[->] (-4,0) -- (4.5,0);
-                                \draw[->] (0,-3) -- (0,3);
-                                \draw[red, thick] (4.02,-3) -- (4.02,3) node[above] {$\mathscr{D}$};
-                                \filldraw[black] (2.236,0) circle (3pt) node[below left] {$F$};
-                                \filldraw[black] (1.5, 1.732) circle (3pt) node[above left] {$M$};
-                                \draw[thick, green!60!black] (-1, 2.693) -- (5.5, 0.198); % Tangent line
-                                \filldraw[black] (4.02, 0.767) circle (3pt) node[right] {$T$};
-                                \draw[dashed] (2.236,0) -- (1.5, 1.732);
-                                \draw[dashed] (2.236,0) -- (4.02, 0.767);
-                            \end{tikzpicture}
+	\draw[thick, blue] (0,0) ellipse (3cm and 2cm);
+	\draw[->] (-4,0) -- (4.5,0);
+	\draw[->] (0,-3) -- (0,3);
+	\draw[red, thick] (4.02,-3) -- (4.02,3) node[above] {$\mathcal{D}$};
+	\filldraw[black] (2.236,0) circle (3pt) node[below left] {$F$};
+	\filldraw[black] (1.5, 1.732) circle (3pt) node[above left] {$M$};
+	\draw[thick, green!60!black] (-1, 2.693) -- (5.5, 0.198); % Tangent line
+	\filldraw[black] (4.02, 0.767) circle (3pt) node[right] {$T$};
+	\draw[dashed] (2.236,0) -- (1.5, 1.732);
+	\draw[dashed] (2.236,0) -- (4.02, 0.767);
+\end{tikzpicture}
                         </script>
                     </div>
                     <div class="options">
