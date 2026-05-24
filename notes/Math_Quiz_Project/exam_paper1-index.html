@@ -1,65 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="km">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Siemreap&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@400;700&display=swap" rel="stylesheet">
-    
-    <title>វិញ្ញាសាគណិតវិទ្យា៖ ការសិក្សាអនុគមន៍ (ស្តង់ដាបាក់ឌុប)</title>
-    
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script>
-      window.MathJax = {
-    tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']],
-        macros: {
-            mybullet: "{\\tiny\\bullet\\;\\;}",
-            mybullett: "{\\quad\\tiny\\bullet\\;\\;}",
-        },
-    },
-    // បន្ថែមផ្នែកខាងក្រោមនេះ ដើម្បីកំណត់ទំហំអក្សរគណិតវិទ្យា
-    chtml: {
-        scale: 1.2,        /* ដំឡើងឱ្យធំជាងអក្សរធម្មតា ១៥% កែសម្រួលលេខនេះរហូតដល់មើលទៅសមល្មមនឹងអក្សរខ្មែរ */
-        /*matchFontHeight: true, /* ឱ្យវាព្យាយាមតម្រូវកម្ពស់តាម Font អត្ថបទ */ 
-        /*displayAlign: 'center',*/
-        linebreaks: { automatic: true } /* ព្យាយាមបំបែកជួររូបមន្តវែងៗ */
-        },
-    svg: {
-        scale: 1.2,
-        matchFontHeight: true 
-        }
-    };
-    </script> 
-    
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
-    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
-    
-    <style>
-        /* កូដសម្រាប់ទូរស័ព្ទ (អេក្រង់តូចជាង 768px) */
-        @media screen and (max-width: 768px) {
-            .container {
-                padding: 10px;  /* បន្ថែមគម្លាតសងខាងបន្តិច */
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Siemreap&display=swap"
+            rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@400;700&display=swap"
+            rel="stylesheet" />
+
+        <title>វិញ្ញាសាគណិតវិទ្យា៖ ការសិក្សាអនុគមន៍ (ស្តង់ដាបាក់ឌុប)</title>
+
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [
+                        ["$", "$"],
+                        ["\\(", "\\)"]
+                    ],
+                    displayMath: [
+                        ["$$", "$$"],
+                        ["\\[", "\\]"]
+                    ],
+                    macros: {
+                        mybullet: "{\\tiny\\bullet\\;\\;}",
+                        mybullett: "{\\quad\\tiny\\bullet\\;\\;}"
+                    }
+                },
+                // បន្ថែមផ្នែកខាងក្រោមនេះ ដើម្បីកំណត់ទំហំអក្សរគណិតវិទ្យា
+                chtml: {
+                    scale: 1.2 /* ដំឡើងឱ្យធំជាងអក្សរធម្មតា ១៥% កែសម្រួលលេខនេះរហូតដល់មើលទៅសមល្មមនឹងអក្សរខ្មែរ */,
+                    /*matchFontHeight: true, /* ឱ្យវាព្យាយាមតម្រូវកម្ពស់តាម Font អត្ថបទ */
+                    /*displayAlign: 'center',*/
+                    linebreaks: { automatic: true } /* ព្យាយាមបំបែកជួររូបមន្តវែងៗ */
+                },
+                svg: {
+                    scale: 1.2,
+                    matchFontHeight: true
+                }
+            };
+        </script>
+
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css" />
+        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+        <style>
+            /* កូដសម្រាប់ទូរស័ព្ទ (អេក្រង់តូចជាង 768px) */
+            @media screen and (max-width: 768px) {
+                .container {
+                    padding: 10px; /* បន្ថែមគម្លាតសងខាងបន្តិច */
+                }
+
+                /* ប្រសិនបើអ្នកមាន Table ច្រើនជួរ ប្តូរវាឱ្យរមូរបាន */
+                table {
+                    display: block;
+                    width: 100%;
+                    overflow-x: auto;
+                    white-space: nowrap;
+                }
+                h1 {
+                    font-size: 1.5rem;
+                } /* បន្ថយទំហំចំណងជើង */
+                h2 {
+                    font-size: 1.2rem;
+                }
             }
-    
-            /* ប្រសិនបើអ្នកមាន Table ច្រើនជួរ ប្តូរវាឱ្យរមូរបាន */
-            table {
-                display: block;
-                width: 100%;
-                overflow-x: auto;
-                white-space: nowrap;
+
+            @media print {
+                /* សម្រាប់បង្ខំឱ្យលោតទៅទំព័រថ្មី (ដាក់មុន Element ដែលចង់កាត់) */
+                .page-break {
+                    page-break-before: always; /* កូដចាស់ តែដើរគ្រប់ Browser */
+                    break-before: page; /* កូដស្តង់ដារថ្មី */
+                }
+
+                /* សម្រាប់ការពារកុំឱ្យរូបភាព ឬប្រអប់លំហាត់ដាច់ពាក់កណ្តាលទំព័រ */
+                .keep-together {
+                    page-break-inside: avoid;
+                    break-inside: avoid;
+                }
             }
-            h1 { font-size: 1.5rem; } /* បន្ថយទំហំចំណងជើង */
-            h2 { font-size: 1.2rem; }
-        }
-        
-    /*    body {
+
+            /*    body {
             font-family: 'Khmer OS Battambang', 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
@@ -68,451 +96,459 @@
             padding: 20px;
             background-color: #f9f9f9;
         }*/
-        /* ១. កំណត់ Siemreap ជាហ្វុងគោលសម្រាប់អត្ថបទធម្មតាទាំងអស់ក្នុងទំព័រ */
-        body {
-            font-family: 'Siemreap', 'Arial', sans-serif;
-            /*font-family: 'Noto Serif Khmer', serif;*/
-            line-height: 1.6; /*បន្ថែមចន្លោះជួរឱ្យអក្សរខ្មែរមើលទៅមិនជាន់គ្នា */
-            color: #333;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-            -webkit-font-smoothing: antialiased;
-            /* កំណត់ទំហំអក្សរឱ្យប្រហែល Size 12 ក្នុង Word *
+            /* ១. កំណត់ Siemreap ជាហ្វុងគោលសម្រាប់អត្ថបទធម្មតាទាំងអស់ក្នុងទំព័រ */
+            body {
+                font-family: "Siemreap", "Arial", sans-serif;
+                /*font-family: 'Noto Serif Khmer', serif;*/
+                line-height: 1.6; /*បន្ថែមចន្លោះជួរឱ្យអក្សរខ្មែរមើលទៅមិនជាន់គ្នា */
+                color: #333;
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #f9f9f9;
+                -webkit-font-smoothing: antialiased;
+                /* កំណត់ទំហំអក្សរឱ្យប្រហែល Size 12 ក្នុង Word *
             font-size: 20px; */
-        }
+            }
 
-        /* ២. កំណត់ Battambang សម្រាប់ចំណងជើង (Headers) */
-        h1, h2, h4, h5, h6 {
-            font-family: 'Battambang', 'Arial', sans-serif;
-            font-weight: 700; /* កម្រិតកម្រាស់ Bold */
-            color: #2c3e50;
-            line-height: 1;
-        }
-        
-        h3 {
-            font-family: 'Noto Serif Khmer', serif;
-            font-size: larger;
-            font-weight: 700; /* កម្រិតកម្រាស់ Bold */
-        }
+            /* ២. កំណត់ Battambang សម្រាប់ចំណងជើង (Headers) */
+            h1,
+            h2,
+            h4,
+            h5,
+            h6 {
+                font-family: "Battambang", "Arial", sans-serif;
+                font-weight: 700; /* កម្រិតកម្រាស់ Bold */
+                color: #2c3e50;
+                line-height: 1;
+            }
 
-        /* ៣. កំណត់ Battambang សម្រាប់អត្ថបទដែលជា Bold ឬសំណួរ *
+            h3 {
+                font-family: "Noto Serif Khmer", serif;
+                font-size: larger;
+                font-weight: 700; /* កម្រិតកម្រាស់ Bold */
+            }
+
+            /* ៣. កំណត់ Battambang សម្រាប់អត្ថបទដែលជា Bold ឬសំណួរ *
         b, strong, .question {
             font-family: 'Battambang', 'Arial', sans-serif;
             font-weight: 700;
         }*/
-        
-        /* អ្នកអាចកំណត់ឱ្យកម្រាស់អក្សរដិត (Bold) សម្រាប់ចំណងជើង ដោយប្រើហ្វុងដដែល *
+
+            /* អ្នកអាចកំណត់ឱ្យកម្រាស់អក្សរដិត (Bold) សម្រាប់ចំណងជើង ដោយប្រើហ្វុងដដែល *
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Noto Serif Khmer', serif;
             font-weight: 700; /* 700 គឺសម្រាប់អក្សរដិត *
             color: #2c3e50;
         }*/
 
-        b, strong, .question {
-            font-family: 'Noto Serif Khmer', serif;
-            font-weight: 700;
-        }
+            b,
+            strong,
+            .question {
+                font-family: "Noto Serif Khmer", serif;
+                font-weight: 700;
+            }
 
-        /* ៤. បើអ្នកចង់ឱ្យចំណងជើងក្នុងប្រអប់ Hint ប្រើ Battambang ដែរ (ជាជម្រើស) */
-        .hint-title {
-            font-family: 'Battambang', 'Arial', sans-serif;
-            font-weight: 700;
-            display: block;
-            margin-bottom: 5px;
-            color: #e67e22;
-        }
-        
-        .header {
-            text-align: center;
-            border-bottom: 2px solid #2c3e50;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
-        .problem-section {
-            background-color: #fff;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 25px;
-            /* កំណត់ទំហំអក្សរឱ្យប្រហែល Size 12 ក្នុង Word */
-            font-size: 18px; 
-        }
-        .question {
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-        
-        span.space {
-            line-height: 2;
-            display: block;
-            margin-bottom: 15pt;
-            margin-top: 10pt;
-        }
-        
-        .space {
-            line-height: 2;
-        }
-        
-        b.bquestion {
-            margin-bottom: 10px;
-            margin-top: 15px;
-            /*font-weight: bold;*/
-            display: block;
-            font-size: large;
-        }
-        
-        .sub-question {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-        .hint-box {
-            background-color: #e8f4f8;
-            border-left: 4px solid #3498db;
-            padding: 10px 15px;
-            margin-top: 5px;
-            margin-bottom: 15px;
-            font-size: 0.9em;
-            color: #2980b9;
-            border-radius: 0 4px 4px 0;
-        }
-        
-        .hint-boxx {
-            background-color: #e8f4f8;
-            border-left: 4px solid #3498db;
-            padding: 10px 15px;
-    
-            /* Center the box and set width to 2/3 */
-            width: 70%;
-            margin-left: auto;
-            margin-right: auto;
-    
-            /* Keep your existing spacing and styling */
-            margin-top: 5px;
-            margin-bottom: 15px;
-            font-size: 0.9em;
-            color: #2980b9;
-            border-radius: 0 2px 2px 0;
-    
-        /* Optional: ensures padding doesn't push width over 66% */
-            box-sizing: border-box; 
-        }
-            
-        .hint-title {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-            color: #1f618d;
-        }
-        .rubric-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background-color: #fff;
-            /* កំណត់ទំហំអក្សរឱ្យប្រហែល Size 10 ក្នុង Word */
-            font-size: 14px; 
-        }
-        .rubric-table th, .rubric-table td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        .rubric-table th {
-            background-color: #2c3e50;
-            color: white;
-        }
-        .rubric-table tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        
-        /* Flexbox container to center the TikZ table */
-        .table-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            width: 100%;
-        }
-        
-        /* កំណត់ឱ្យ MathJax ប្រើទំហំតាមមេ (Parent Container) */
-        mjx-container {
-            font-size: 115% !important; /* ឬកំណត់ 0.95em បើចង់ឱ្យវាតូចជាងអត្ថបទបន្តិច */
-            /*display: inline-block;
+            /* ៤. បើអ្នកចង់ឱ្យចំណងជើងក្នុងប្រអប់ Hint ប្រើ Battambang ដែរ (ជាជម្រើស) */
+            .hint-title {
+                font-family: "Battambang", "Arial", sans-serif;
+                font-weight: 700;
+                display: block;
+                margin-bottom: 5px;
+                color: #e67e22;
+            }
+
+            .header {
+                text-align: center;
+                border-bottom: 2px solid #2c3e50;
+                padding-bottom: 10px;
+                margin-bottom: 30px;
+            }
+            h1,
+            h2,
+            h3 {
+                color: #2c3e50;
+            }
+            .problem-section {
+                background-color: #fff;
+                padding: 25px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                margin-bottom: 25px;
+                /* កំណត់ទំហំអក្សរឱ្យប្រហែល Size 12 ក្នុង Word */
+                font-size: 18px;
+            }
+            .question {
+                margin-bottom: 15px;
+                font-weight: bold;
+            }
+
+            span.space {
+                line-height: 2;
+                display: block;
+                margin-bottom: 15pt;
+                margin-top: 10pt;
+            }
+
+            .space {
+                line-height: 2;
+            }
+
+            b.bquestion {
+                margin-bottom: 10px;
+                margin-top: 15px;
+                /*font-weight: bold;*/
+                display: block;
+                font-size: large;
+            }
+
+            .sub-question {
+                margin-left: 20px;
+                margin-bottom: 15px;
+            }
+            .hint-box {
+                background-color: #e8f4f8;
+                border-left: 4px solid #3498db;
+                padding: 10px 15px;
+                margin-top: 5px;
+                margin-bottom: 15px;
+                font-size: 0.9em;
+                color: #2980b9;
+                border-radius: 0 4px 4px 0;
+            }
+
+            .hint-boxx {
+                background-color: #e8f4f8;
+                border-left: 4px solid #3498db;
+                padding: 10px 15px;
+
+                /* Center the box and set width to 2/3 */
+                width: 70%;
+                margin-left: auto;
+                margin-right: auto;
+
+                /* Keep your existing spacing and styling */
+                margin-top: 5px;
+                margin-bottom: 15px;
+                font-size: 0.9em;
+                color: #2980b9;
+                border-radius: 0 2px 2px 0;
+
+                /* Optional: ensures padding doesn't push width over 66% */
+                box-sizing: border-box;
+            }
+
+            .hint-title {
+                font-weight: bold;
+                display: block;
+                margin-bottom: 5px;
+                color: #1f618d;
+            }
+            .rubric-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+                background-color: #fff;
+                /* កំណត់ទំហំអក្សរឱ្យប្រហែល Size 10 ក្នុង Word */
+                font-size: 14px;
+            }
+            .rubric-table th,
+            .rubric-table td {
+                border: 1px solid #ddd;
+                padding: 12px;
+                text-align: left;
+            }
+            .rubric-table th {
+                background-color: #2c3e50;
+                color: white;
+            }
+            .rubric-table tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            /* Flexbox container to center the TikZ table */
+            .table-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+
+            /* កំណត់ឱ្យ MathJax ប្រើទំហំតាមមេ (Parent Container) */
+            mjx-container {
+                font-size: 115% !important; /* ឬកំណត់ 0.95em បើចង់ឱ្យវាតូចជាងអត្ថបទបន្តិច */
+                /*display: inline-block;
             vertical-align: middle;*/
-        }
+            }
 
-        /* សម្រាប់រូបមន្តក្នុងជួរអត្ថបទ (Inline) *
+            /* សម្រាប់រូបមន្តក្នុងជួរអត្ថបទ (Inline) *
         .MathJax {
             font-size: 1.2em !important;
         }*/
-        
-        /* បន្ថែមក្នុង <style> */
-        svg {
-            max-width: 100%;    /* បង្ខំឱ្យរូបភាពមិនឱ្យធំជាងអេក្រង់ទូរស័ព្ទ */
-            /*height: auto;       /* រក្សាសមាមាត្ររូបភាព */
-        }
 
-      /*  .table-container {
+            /* បន្ថែមក្នុង <style> */
+            svg {
+                max-width: 100%; /* បង្ខំឱ្យរូបភាពមិនឱ្យធំជាងអេក្រង់ទូរស័ព្ទ */
+                /*height: auto;       /* រក្សាសមាមាត្ររូបភាព */
+            }
+
+            /*  .table-container {
             width: 100%;
             overflow-x: auto;   /* បើករមូរឆ្វេងស្តាំ បើរូបភាពនៅតែធំជាងអេក្រង់ *
             display: flex;
             justify-content: center;
         }*/
-        
-    </style>
-    
-    
-</head>
-<body>
+        </style>
+    </head>
+    <body>
+        <!----- លំហាត់ទី១ ----->
 
-    <!----- លំហាត់ទី១ ----->
-    
-    <div class="header">
-        <h1>លំហាត់ត្រៀមប្រឡងសញ្ញាបត្រមធ្យមសិក្សាទុតិយភូមិ</h1>
-        <h2>ប្រធានបទ១៖ សិក្សាអនុគមន៍អ៊ិចស្ប៉ូណង់ស្យែល (ស្តង់ដាបាក់ឌុប)</h2> 
-        <h3>១០ ឧសភា ២០២៦</h3>
-    
-    </div>
+        <div class="header">
+            <h1>លំហាត់ត្រៀមប្រឡងសញ្ញាបត្រមធ្យមសិក្សាទុតិយភូមិ</h1>
+            <h2>ប្រធានបទ១៖ សិក្សាអនុគមន៍អ៊ិចស្ប៉ូណង់ស្យែល (ស្តង់ដាបាក់ឌុប)</h2>
+            <h3>១០ ឧសភា ២០២៦</h3>
+        </div>
 
-    <div class="problem-section">
-        <h2>លំហាត់ ១. </h2>
-        <p>ប្លង់មួយប្រដាប់ដោយតម្រុយអរតូណរម៉ាល់ $(O, \vec{i}, \vec{j})$ ដែលមានឯកតារង្វាស់ $1\text{ cm}$ លើអ័ក្ស។</p>
+        <div class="problem-section">
+            <h2>លំហាត់ ១.</h2>
+            <p>ប្លង់មួយប្រដាប់ដោយតម្រុយអរតូណរម៉ាល់ $(O, \vec{i}, \vec{j})$ ដែលមានឯកតារង្វាស់ $1\text{ cm}$ លើអ័ក្ស។</p>
 
-        <h3>(I) ការសិក្សាអនុគមន៍ $g$ (អនុគមន៍ជំនួយ)</h3>
-        <p>គេមានអនុគមន៍ $g$ កំណត់លើ $\mathbb{R}$ ដោយ៖ $$g(x) = (x - 1)e^x + 1$$</p>
+            <h3>(I) ការសិក្សាអនុគមន៍ $g$ (អនុគមន៍ជំនួយ)</h3>
+            <p>គេមានអនុគមន៍ $g$ កំណត់លើ $\mathbb{R}$ ដោយ៖ $$g(x) = (x - 1)e^x + 1$$</p>
 
-        <div class="sub-question">
-            ១. គណនាដេរីវេ $g'(x)$ គ្រប់ $x \in \mathbb{R}$។ សិក្សាសញ្ញារបស់ $g'(x)$។
-            <div class="hint-box">
-                <span class="hint-title">💡 គន្លឹះ៖</span>
-                - កុំភ្លេចប្រើរូបមន្តដេរីវេផលគុណ៖ $(uv)' = u'v + uv'$ ដែល $u = (x-1)$ និង $v = e^x$។<br>
-                - ដោយ $e^x \gt 0$ ជានិច្ច នោះសញ្ញានៃ $g'(x)$ អាស្រ័យទៅលើកន្សោមដែលនៅសល់។
+            <div class="sub-question">
+                ១. គណនាដេរីវេ $g'(x)$ គ្រប់ $x \in \mathbb{R}$។ សិក្សាសញ្ញារបស់ $g'(x)$។
+                <div class="hint-box">
+                    <span class="hint-title">💡 គន្លឹះ៖</span>
+                    - កុំភ្លេចប្រើរូបមន្តដេរីវេផលគុណ៖ $(uv)' = u'v + uv'$ ដែល $u = (x-1)$ និង $v = e^x$។<br />
+                    - ដោយ $e^x \gt 0$ ជានិច្ច នោះសញ្ញានៃ $g'(x)$ អាស្រ័យទៅលើកន្សោមដែលនៅសល់។
+                </div>
+            </div>
+
+            <div class="sub-question">
+                ២. គណនាតម្លៃអប្បបរមានៃអនុគមន៍ $g$។ ទាញបញ្ជាក់ថា គ្រប់ $x \in \mathbb{R}$, គេបាន $g(x) \ge 0$។
+                <div class="hint-box">
+                    <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
+                    - រកឫសនៃសមីការ $g'(x) = 0$ ដើម្បីដឹងថាត្រង់ណាមានតម្លៃបរមា។<br />
+                    - យកតម្លៃ $x$ នោះទៅជំនួសក្នុង $g(x)$ រួចសង្កេតមើលលទ្ធផល។ បើតម្លៃតូចបំផុតស្មើ $0$ ឬវិជ្ជមាន នោះ
+                    $g(x)$ ប្រាកដជាធំជាង ឬស្មើ $0$ ជានិច្ច។
+                </div>
             </div>
         </div>
 
-        <div class="sub-question">
-            ២. គណនាតម្លៃអប្បបរមានៃអនុគមន៍ $g$។ ទាញបញ្ជាក់ថា គ្រប់ $x \in \mathbb{R}$, គេបាន $g(x) \ge 0$។
-            <div class="hint-box">
-                <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
-                - រកឫសនៃសមីការ $g'(x) = 0$ ដើម្បីដឹងថាត្រង់ណាមានតម្លៃបរមា។<br>
-                - យកតម្លៃ $x$ នោះទៅជំនួសក្នុង $g(x)$ រួចសង្កេតមើលលទ្ធផល។ បើតម្លៃតូចបំផុតស្មើ $0$ ឬវិជ្ជមាន នោះ $g(x)$ ប្រាកដជាធំជាង ឬស្មើ $0$ ជានិច្ច។
+        <div class="problem-section">
+            <h3>(II) សិក្សាអនុគមន៍ $f$ (អនុគមន៍ចម្បង)</h3>
+            <p>គេឱ្យអនុគមន៍ $f$ កំណត់លើ $\mathbb{R}$ ដោយ៖ $$f(x) = (x - 2)e^x + x$$</p>
+            <p>តាង $(C)$ ជាខ្សែកោងតំណាងអនុគមន៍ $f$ ក្នុងតម្រុយអរតូណរម៉ាល់។</p>
+
+            <div class="sub-question">
+                ១. គណនាលីមីត \[\lim_{x \to -\infty} f(x), \lim_{x \to +\infty} f(x)\]
+                <div class="hint-box">
+                    <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
+                    - សម្រាប់ $\lim_{x \to -\infty}$៖ ត្រូវពន្លាតកន្សោម $(x-2)e^x$ សិន។ រំលឹកលីមីតពិសេស $\lim_{x \to
+                    -\infty} e^x = 0$ និង $\lim_{x \to -\infty} xe^x = 0$។<br />
+                    - សម្រាប់ $\lim_{x \to +\infty}$៖ វាជាទម្រង់ធម្មតា គ្រាន់តែជំនួសចូល។
+                </div>
+            </div>
+
+            <div class="sub-question">
+                ២. ក) បង្ហាញថាបន្ទាត់ $(\Delta)$ ដែលមានសមីការ $y = x$ ជាអាស៊ីមតូតទ្រេតនៃខ្សែកោង $(C)$ ខាង $-\infty$។
+                <div class="hint-box">
+                    <span class="hint-title">💡 គន្លឹះ៖</span>
+                    - ត្រូវបង្ហាញថា $\lim_{x \to -\infty} [f(x) - y_\Delta] = 0$។
+                </div>
+            </div>
+
+            <div class="sub-question">
+                ២. ខ) សិក្សាទីតាំងធៀបរវាងខ្សែកោង $(C)$ និងបន្ទាត់អាស៊ីមតូត $(\Delta)$។ រកកូអរដោនេចំណុចប្រសព្វរវាង $(C)$
+                និង $(\Delta)$។
+            </div>
+
+            <div class="sub-question">
+                ៣. ផ្ទៀងផ្ទាត់ថាសម្រាប់គ្រប់ $x \in \mathbb{R}$ គេបាន $f'(x) = g(x)$។ ទាញរកសញ្ញានៃ $f'(x)$
+                និងសង់តារាងអថេរភាពនៃ $f$។
+                <div class="hint-box">
+                    <span class="hint-title">💡 គន្លឹះ៖</span>
+                    - ធ្វើដេរីវេ $f(x)$ ម្តងទៀតដោយប្រើរូបមន្ត $(uv)'$ លើតួ $(x-2)e^x$ និងចាំថា $(x)' = 1$។<br />
+                    - យកលទ្ធផលពី "ផ្នែក (I)" សំណួរទី២ មកប្រើដើម្បីកំណត់សញ្ញា $f'(x)$។
+                </div>
+            </div>
+
+            <div class="sub-question">
+                ៤. គណនា $f(0)$ និង $f(2)$។ សង់បន្ទាត់ $(\Delta)$ និងខ្សែខ្សោង $(C)$ ក្នុងតម្រុយអរតូណរម៉ាល់តែមួយ។
             </div>
         </div>
-    </div>
 
-    <div class="problem-section">
-        <h3>(II) សិក្សាអនុគមន៍ $f$ (អនុគមន៍ចម្បង)</h3>
-        <p>គេឱ្យអនុគមន៍ $f$ កំណត់លើ $\mathbb{R}$ ដោយ៖ $$f(x) = (x - 2)e^x + x$$</p>
-        <p>តាង $(C)$ ជាខ្សែកោងតំណាងអនុគមន៍ $f$ ក្នុងតម្រុយអរតូណរម៉ាល់។</p>
+        <div class="problem-section">
+            <h2>តារាងកម្រិតពិន្ទុ និងអត្រាកំណែ</h2>
+            <p>តារាងនេះជួយបញ្ជាក់ពីរបៀបដាក់ពិន្ទុលើចម្លើយរបស់ប្អូនៗ សរុប ៣៥ ពិន្ទុ។</p>
 
-        <div class="sub-question">
-            ១. គណនាលីមីត \[\lim_{x \to -\infty} f(x),  \lim_{x \to +\infty} f(x)\]
-            <div class="hint-box">
-                <span class="hint-title">💡 គន្លឹះសម្រាប់សិស្ស៖</span>
-                - សម្រាប់ $\lim_{x \to -\infty}$៖ ត្រូវពន្លាតកន្សោម $(x-2)e^x$ សិន។ រំលឹកលីមីតពិសេស $\lim_{x \to -\infty} e^x = 0$ និង $\lim_{x \to -\infty} xe^x = 0$។<br>
-                - សម្រាប់ $\lim_{x \to +\infty}$៖ វាជាទម្រង់ធម្មតា គ្រាន់តែជំនួសចូល។
-            </div>
+            <table class="rubric-table">
+                <thead>
+                    <tr>
+                        <th>ផ្នែក</th>
+                        <th>ខ្លឹមសារនៃសំណួរ</th>
+                        <th>ការបែងចែកពិន្ទុតាមជំហាន (តម្រុយចម្លើយ)</th>
+                        <th>ពិន្ទុ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2"><b>ផ្នែក (I)</b></td>
+                        <td>១. គណនា $g'(x)$ និងសិក្សាសញ្ញា</td>
+                        <td>
+                            - គណនាត្រូវ $g'(x) = e^x + (x-1)e^x = xe^x$ (2.5 ពិន្ទុ)<br />
+                            - បញ្ជាក់ $e^x \gt 0$ ជានិច្ច នាំឱ្យ $g'(x)$ យកសញ្ញាតាម $x$ (1.5 ពិន្ទុ)<br />
+                            - សរុបសញ្ញា៖ $x\lt 0 \Rightarrow g'(x)\lt 0$ និង $x \gt 0 \Rightarrow g'(x) \gt 0$ (1
+                            ពិន្ទុ)
+                        </td>
+                        <td class="score-col">៥</td>
+                    </tr>
+                    <tr>
+                        <td>២. តម្លៃអប្បបរមា និងសញ្ញា $g(x)$</td>
+                        <td>
+                            - រកឃើញថា $g$ មានតម្លៃអប្បបរមាត្រង់ $x=0$ (1.5 ពិន្ទុ)<br />
+                            - គណនាតម្លៃអប្បបរមា $g(0) = (0-1)e^0 + 1 = 0$ (2 ពិន្ទុ)<br />
+                            - ទាញសន្និដ្ឋាន៖ ដោយតម្លៃតូចបំផុតគឺ $0$ ដូចនេះ $g(x) \ge 0, \forall x \in \mathbb{R}$ (1.5
+                            ពិន្ទុ)
+                        </td>
+                        <td class="score-col">៥</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5"><b>ផ្នែក (II)</b></td>
+                        <td>១. លីមីតត្រង់ $-\infty$ និង $+\infty$</td>
+                        <td>
+                            - គណនា $\displaystyle\lim_{x \to -\infty} [(x-2)e^x + x] = -\infty$ (ប្រើ $xe^x \to 0$) (3
+                            ពិន្ទុ)<br />
+                            - គណនា $\displaystyle\lim_{x \to +\infty} [(x-2)e^x + x] = +\infty$ (2 ពិន្ទុ)
+                        </td>
+                        <td class="score-col">៥</td>
+                    </tr>
+                    <tr>
+                        <td>២. ក) បង្ហាញអាស៊ីមតូតទ្រេត</td>
+                        <td>
+                            - គណនាផលដក $f(x) - x = (x-2)e^x$ (2 ពិន្ទុ)<br />
+                            - បង្ហាញ $\displaystyle\lim_{x \to -\infty} (x-2)e^x = 0$ និងសន្និដ្ឋានថាជាអាស៊ីមតូតទ្រេត (3
+                            ពិន្ទុ)
+                        </td>
+                        <td class="score-col">៥</td>
+                    </tr>
+                    <tr>
+                        <td>២. ខ) ទីតាំងធៀប និងចំណុចប្រសព្វ</td>
+                        <td>
+                            - សិក្សាសញ្ញា $(x-2)e^x$ យកសញ្ញាតាម $(x-2)$ (1.5 ពិន្ទុ)<br />
+                            - បញ្ជាក់ទីតាំង៖ $x \gt 2, (C)$ នៅលើ $(\Delta)$ និង $x \lt 2, (C)$ នៅក្រោម $(\Delta)$ (2
+                            ពិន្ទុ)<br />
+                            - រកឃើញចំណុចប្រសព្វ $I(2, 2)$ (1.5 ពិន្ទុ)
+                        </td>
+                        <td class="score-col">៥</td>
+                    </tr>
+                    <tr>
+                        <td>៣. ដេរីវេ និងតារាងអថេរភាព</td>
+                        <td>
+                            - គណនា $f'(x) = e^x + (x-2)e^x + 1 = (x-1)e^x + 1 = g(x)$ (2.5 ពិន្ទុ)<br />
+                            - ទាញសញ្ញា៖ ដោយ $g(x) \ge 0$ នាំឱ្យ $f'(x) \ge 0$ (អនុគមន៍កើនជានិច្ច) (1.5 ពិន្ទុ)<br />
+                            - សង់តារាងអថេរភាពបានត្រឹមត្រូវ និងពេញលេញ (2 ពិន្ទុ)
+                        </td>
+                        <td class="score-col">៦</td>
+                    </tr>
+                    <tr>
+                        <td>៤. ចំណុចជំនួយ និងសង់ក្រាប</td>
+                        <td>
+                            - គណនាត្រូវ $f(0) = -2$ និង $f(2) = 2$ (1 ពិន្ទុ)<br />
+                            - គូសបន្ទាត់អាស៊ីមតូត $(\Delta)$ បានត្រឹមត្រូវ (1 ពិន្ទុ)<br />
+                            - សង់ខ្សែខ្សោង $(C)$ បានរលោងល្អ កាត់តាមចំណុច និងត្រូវតាមតារាងអថេរភាព (2 ពិន្ទុ)
+                        </td>
+                        <td class="score-col">៤</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
-        <div class="sub-question">
-            ២. ក) បង្ហាញថាបន្ទាត់ $(\Delta)$ ដែលមានសមីការ $y = x$ ជាអាស៊ីមតូតទ្រេតនៃខ្សែកោង $(C)$ ខាង $-\infty$។
-            <div class="hint-box">
-                <span class="hint-title">💡 គន្លឹះ៖</span>
-                - ត្រូវបង្ហាញថា $\lim_{x \to -\infty} [f(x) - y_\Delta] = 0$។
-            </div>
-        </div>
-
-        <div class="sub-question">
-            ២. ខ) សិក្សាទីតាំងធៀបរវាងខ្សែកោង $(C)$ និងបន្ទាត់អាស៊ីមតូត $(\Delta)$។ រកកូអរដោនេចំណុចប្រសព្វរវាង $(C)$ និង $(\Delta)$។
-        </div>
-
-        <div class="sub-question">
-            ៣. ផ្ទៀងផ្ទាត់ថាសម្រាប់គ្រប់ $x \in \mathbb{R}$ គេបាន $f'(x) = g(x)$។ ទាញរកសញ្ញានៃ $f'(x)$ និងសង់តារាងអថេរភាពនៃ $f$។
-            <div class="hint-box">
-                <span class="hint-title">💡 គន្លឹះ៖</span>
-                - ធ្វើដេរីវេ $f(x)$ ម្តងទៀតដោយប្រើរូបមន្ត $(uv)'$ លើតួ $(x-2)e^x$ និងចាំថា $(x)' = 1$។<br>
-                - យកលទ្ធផលពី "ផ្នែក (I)" សំណួរទី២ មកប្រើដើម្បីកំណត់សញ្ញា $f'(x)$។
-            </div>
-        </div>
-
-        <div class="sub-question">
-            ៤. គណនា $f(0)$ និង $f(2)$។ សង់បន្ទាត់ $(\Delta)$ និងខ្សែខ្សោង $(C)$ ក្នុងតម្រុយអរតូណរម៉ាល់តែមួយ។
-        </div>
-    </div>
-
-    <div class="problem-section">
-        <h2>តារាងកម្រិតពិន្ទុ និងអត្រាកំណែ</h2>
-        <p>តារាងនេះជួយបញ្ជាក់ពីរបៀបដាក់ពិន្ទុលើចម្លើយរបស់ប្អូនៗ សរុប ៣៥ ពិន្ទុ។</p>
-
-        <table class="rubric-table">
-            <thead>
-                <tr>
-                    <th>ផ្នែក</th>
-                    <th>ខ្លឹមសារនៃសំណួរ</th>
-                    <th>ការបែងចែកពិន្ទុតាមជំហាន (តម្រុយចម្លើយ)</th>
-                    <th>ពិន្ទុ</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td rowspan="2"><b>ផ្នែក (I)</b></td>
-                    <td>១. គណនា $g'(x)$ និងសិក្សាសញ្ញា</td>
-                    <td>
-                        - គណនាត្រូវ $g'(x) = e^x + (x-1)e^x = xe^x$ (2.5 ពិន្ទុ)<br>
-                        - បញ្ជាក់ $e^x \gt 0$ ជានិច្ច នាំឱ្យ $g'(x)$ យកសញ្ញាតាម $x$ (1.5 ពិន្ទុ)<br>
-                        - សរុបសញ្ញា៖ $x\lt 0 \Rightarrow g'(x)\lt 0$ និង $x \gt 0 \Rightarrow g'(x) \gt 0$ (1 ពិន្ទុ)
-                    </td>
-                    <td class="score-col">៥</td>
-                </tr>
-                <tr>
-                    <td>២. តម្លៃអប្បបរមា និងសញ្ញា $g(x)$</td>
-                    <td>
-                        - រកឃើញថា $g$ មានតម្លៃអប្បបរមាត្រង់ $x=0$ (1.5 ពិន្ទុ)<br>
-                        - គណនាតម្លៃអប្បបរមា $g(0) = (0-1)e^0 + 1 = 0$ (2 ពិន្ទុ)<br>
-                        - ទាញសន្និដ្ឋាន៖ ដោយតម្លៃតូចបំផុតគឺ $0$ ដូចនេះ $g(x) \ge 0, \forall x \in \mathbb{R}$ (1.5 ពិន្ទុ)
-                    </td>
-                    <td class="score-col">៥</td>
-                </tr>
-                <tr>
-                    <td rowspan="5"><b>ផ្នែក (II)</b></td>
-                    <td>១. លីមីតត្រង់ $-\infty$ និង $+\infty$</td>
-                    <td>
-                        - គណនា $\displaystyle\lim_{x \to -\infty} [(x-2)e^x + x] = -\infty$ (ប្រើ $xe^x \to 0$) (3 ពិន្ទុ)<br>
-                        - គណនា $\displaystyle\lim_{x \to +\infty} [(x-2)e^x + x] = +\infty$ (2 ពិន្ទុ)
-                    </td>
-                    <td class="score-col">៥</td>
-                </tr>
-                <tr>
-                    <td>២. ក) បង្ហាញអាស៊ីមតូតទ្រេត</td>
-                    <td>
-                        - គណនាផលដក $f(x) - x = (x-2)e^x$ (2 ពិន្ទុ)<br>
-                        - បង្ហាញ $\displaystyle\lim_{x \to -\infty} (x-2)e^x = 0$ និងសន្និដ្ឋានថាជាអាស៊ីមតូតទ្រេត (3 ពិន្ទុ)
-                    </td>
-                    <td class="score-col">៥</td>
-                </tr>
-                <tr>
-                    <td>២. ខ) ទីតាំងធៀប និងចំណុចប្រសព្វ</td>
-                    <td>
-                        - សិក្សាសញ្ញា $(x-2)e^x$ យកសញ្ញាតាម $(x-2)$ (1.5 ពិន្ទុ)<br>
-                        - បញ្ជាក់ទីតាំង៖ $x \gt 2, (C)$ នៅលើ $(\Delta)$ និង $x \lt 2, (C)$ នៅក្រោម $(\Delta)$ (2 ពិន្ទុ)<br>
-                        - រកឃើញចំណុចប្រសព្វ $I(2, 2)$ (1.5 ពិន្ទុ)
-                    </td>
-                    <td class="score-col">៥</td>
-                </tr>
-                <tr>
-                    <td>៣. ដេរីវេ និងតារាងអថេរភាព</td>
-                    <td>
-                        - គណនា $f'(x) = e^x + (x-2)e^x + 1 = (x-1)e^x + 1 = g(x)$ (2.5 ពិន្ទុ)<br>
-                        - ទាញសញ្ញា៖ ដោយ $g(x) \ge 0$ នាំឱ្យ $f'(x) \ge 0$ (អនុគមន៍កើនជានិច្ច) (1.5 ពិន្ទុ)<br>
-                        - សង់តារាងអថេរភាពបានត្រឹមត្រូវ និងពេញលេញ (2 ពិន្ទុ)
-                    </td>
-                    <td class="score-col">៦</td>
-                </tr>
-                <tr>
-                    <td>៤. ចំណុចជំនួយ និងសង់ក្រាប</td>
-                    <td>
-                        - គណនាត្រូវ $f(0) = -2$ និង $f(2) = 2$ (1 ពិន្ទុ)<br>
-                        - គូសបន្ទាត់អាស៊ីមតូត $(\Delta)$ បានត្រឹមត្រូវ (1 ពិន្ទុ)<br>
-                        - សង់ខ្សែខ្សោង $(C)$ បានរលោងល្អ កាត់តាមចំណុច និងត្រូវតាមតារាងអថេរភាព (2 ពិន្ទុ)
-                    </td>
-                    <td class="score-col">៤</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    
- <!----------
+        <!----------
    --------------------- កំណែលំហាត់១
 ----------------------------------------->
-    
-<div class="header">
-        <h1>ចម្លើយលំហាត់១ <br/><br/> សិក្សាអនុគមន៍អ៊ិចស្ប៉ូណង់ស្យែល 
-            \(\;\;f(x) = (x - 2)e^x + x\)
-    
-    </h1>
-    </div>
 
-    <div class="problem-section">
-        <h3> (I) សិក្សាអនុគមន៍ជំនួយ 
-        $g(x) = (x - 1)e^x + 1$ កំណត់លើ $\mathbb{R}$</h3>
-
-        <div class="sub-question">
-            <b class="bquestion">១. គណនាដេរីវេ $g'(x)$ និងសិក្សាសញ្ញា៖</b>
-            តាមរូបមន្តផលគុណ $(uv)' = u'v + uv'$ គេបាន៖
-                    $$
-            \begin{array}{rcl}
-            g'(x) &=& (x - 1)'e^x + (x - 1)(e^x)' + (1)'\\
-                &=& 1 \cdot e^x + (x - 1)e^x + 0\\
-                &=& e^x(1 + x - 1) \\ &=& xe^x
-            \end{array}$$
-            
-            <b>សិក្សាសញ្ញានៃ $g'(x)$៖</b><br/>
-                    
-            ដោយ $e^x \gt 0$ ជានិច្ចគ្រប់ $x \in \mathbb{R}$ នោះសញ្ញានៃ $g'(x)$ យកសញ្ញាតាម $x$ គឺ៖
-                    <ul>
-                        <li>បើ $x \lt 0$ នោះ $g^\prime(x) \lt 0$</li>
-                        <li>បើ $x = 0$ នោះ $g^\prime(x) = 0$</li>
-                        <li>បើ $x \gt 0$ នោះ $g^\prime(x) \gt 0$</li>
-                    </ul>
+        <div class="header">
+            <h1>
+                ចម្លើយលំហាត់១ <br /><br />
+                សិក្សាអនុគមន៍អ៊ិចស្ប៉ូណង់ស្យែល \(\;\;f(x) = (x - 2)e^x + x\)
+            </h1>
         </div>
 
-        <div class="sub-question">
-            <b class="bquestion">២. គណនាតម្លៃអប្បបរមានៃ $g$ និង ទាញបញ្ជាក់ថា $g(x) \ge 0$ គ្រប់ $x \in \mathbb{R}$ ។ </b>
-            គេមាន៖ (💡 ប្អូនអាចគណនាបន្ថែមដាក់ក្នុងក្រដាសកិច្ចការ ឬក៏ យកចម្លើយពីការគណនាក្នុងក្រដាសប្រុយយ៉ុង)
-            <ul>
-            <li> $g^\prime(x) = xe^x$ និង $g(0) = 0$</li>
-            <li> $\displaystyle\lim_{x \to -\infty} g(x) = 1$</li>
-            <li>$\displaystyle\lim_{x \to +\infty} g(x) = +\infty$ </li>
-            </ul>
-        និងតាមការសិក្សាសញ្ញាក្នុងសំណួរ ១.  គេបានតារាងអថេរភាពដូចខាងក្រោម៖ 
-            
-<div class="table-container">
-        <script type="text/tikz">
-          % Added [font=\Large] to increase the native text and math size
-          \begin{tikzpicture}[font=\Large]
-            % Draw the main table grid
-            \draw (0,0) rectangle (8,-4);
-            \draw (0,-1) -- (8,-1);
-            \draw (0,-2) -- (8,-2);
-            \draw (1.5,0) -- (1.5,-4);
+        <div class="problem-section">
+            <h3>(I) សិក្សាអនុគមន៍ជំនួយ $g(x) = (x - 1)e^x + 1$ កំណត់លើ $\mathbb{R}$</h3>
 
-            % Top Row: x values
-            \node at (0.75, -0.5) {$x$};
-            \node at (2, -0.5) {$-\infty$};
-            \node at (4.75, -0.5) {$0$};
-            \node at (7.5, -0.5) {$+\infty$};
+            <div class="sub-question">
+                <b class="bquestion">១. គណនាដេរីវេ $g'(x)$ និងសិក្សាសញ្ញា៖</b>
+                តាមរូបមន្តផលគុណ $(uv)' = u'v + uv'$ គេបាន៖ $$ \begin{array}{rcl} g'(x) &=& (x - 1)'e^x + (x - 1)(e^x)' +
+                (1)'\\ &=& 1 \cdot e^x + (x - 1)e^x + 0\\ &=& e^x(1 + x - 1) \\ &=& xe^x \end{array}$$
 
-            % Middle Row: g'(x) signs
-            \node at (0.75, -1.5) {$g\prime(x)$};
-            \node at (3.375, -1.5) {$-$};
-            \node at (6.125, -1.5) {$+$};
-            
-            % Vertical line with the zero on it
-            \draw (4.75, -1) -- (4.75, -2);
-            \node[fill=white, inner sep=2pt] at (4.75, -1.5) {$0$};
+                <b>សិក្សាសញ្ញានៃ $g'(x)$៖</b><br />
 
-            % Bottom Row: g(x) variations
-            \node at (0.75, -3) {$g(x)$};
-            
-            % Define coordinates for the variation arrows
-            \node (val1) at (2.2, -2.3) {$1$};
-            \node (val2) at (4.75, -3.7) {$0$};
-            \node (val3) at (7.3, -2.3) {$+\infty$};
+                ដោយ $e^x \gt 0$ ជានិច្ចគ្រប់ $x \in \mathbb{R}$ នោះសញ្ញានៃ $g'(x)$ យកសញ្ញាតាម $x$ គឺ៖
+                <ul>
+                    <li>បើ $x \lt 0$ នោះ $g^\prime(x) \lt 0$</li>
+                    <li>បើ $x = 0$ នោះ $g^\prime(x) = 0$</li>
+                    <li>បើ $x \gt 0$ នោះ $g^\prime(x) \gt 0$</li>
+                </ul>
+            </div>
 
-            % Draw the arrows
-            \draw[->, thick] (val1) -- (val2);
-            \draw[->, thick] (val2) -- (val3);
-          \end{tikzpicture}
-        </script>
-    </div>
-          
-            
-    <!--table class="rubric-table" style="max-width: 500px; text-align: center; margin: auto;">
+            <div class="sub-question">
+                <b class="bquestion"
+                    >២. គណនាតម្លៃអប្បបរមានៃ $g$ និង ទាញបញ្ជាក់ថា $g(x) \ge 0$ គ្រប់ $x \in \mathbb{R}$ ។
+                </b>
+                គេមាន៖ (💡 ប្អូនអាចគណនាបន្ថែមដាក់ក្នុងក្រដាសកិច្ចការ ឬក៏ យកចម្លើយពីការគណនាក្នុងក្រដាសប្រុយយ៉ុង)
+                <ul>
+                    <li>$g^\prime(x) = xe^x$ និង $g(0) = 0$</li>
+                    <li>$\displaystyle\lim_{x \to -\infty} g(x) = 1$</li>
+                    <li>$\displaystyle\lim_{x \to +\infty} g(x) = +\infty$</li>
+                </ul>
+                និងតាមការសិក្សាសញ្ញាក្នុងសំណួរ ១. គេបានតារាងអថេរភាពដូចខាងក្រោម៖
+
+                <div class="table-container">
+                    <script type="text/tikz">
+                        % Added [font=\Large] to increase the native text and math size
+                        \begin{tikzpicture}[font=\Large]
+                          % Draw the main table grid
+                          \draw (0,0) rectangle (8,-4);
+                          \draw (0,-1) -- (8,-1);
+                          \draw (0,-2) -- (8,-2);
+                          \draw (1.5,0) -- (1.5,-4);
+
+                          % Top Row: x values
+                          \node at (0.75, -0.5) {$x$};
+                          \node at (2, -0.5) {$-\infty$};
+                          \node at (4.75, -0.5) {$0$};
+                          \node at (7.5, -0.5) {$+\infty$};
+
+                          % Middle Row: g'(x) signs
+                          \node at (0.75, -1.5) {$g\prime(x)$};
+                          \node at (3.375, -1.5) {$-$};
+                          \node at (6.125, -1.5) {$+$};
+
+                          % Vertical line with the zero on it
+                          \draw (4.75, -1) -- (4.75, -2);
+                          \node[fill=white, inner sep=2pt] at (4.75, -1.5) {$0$};
+
+                          % Bottom Row: g(x) variations
+                          \node at (0.75, -3) {$g(x)$};
+
+                          % Define coordinates for the variation arrows
+                          \node (val1) at (2.2, -2.3) {$1$};
+                          \node (val2) at (4.75, -3.7) {$0$};
+                          \node (val3) at (7.3, -2.3) {$+\infty$};
+
+                          % Draw the arrows
+                          \draw[->, thick] (val1) -- (val2);
+                          \draw[->, thick] (val2) -- (val3);
+                        \end{tikzpicture}
+                    </script>
+                </div>
+
+                <!--table class="rubric-table" style="max-width: 500px; text-align: center; margin: auto;">
                 <tr>
                     <td style="border: 1px solid #000; padding: 5px;">$x$</td>
                     <td style="border: 1px solid #000; padding: 5px;">$-\infty$</td>
@@ -538,195 +574,184 @@
                     <td style="border: 1px solid #000; padding: 5px;">$+\infty$</td>
                 </tr>
             </table-->
-            
-            ដោយអនុគមន៍ $g$  ប្ដូរសញ្ញាពី $(-)$ ទៅ $(+)$ នៅត្រង់ប្ញសនៃដេរីវេ $g^\prime (x) = 0$ នោះវាមានតម្លៃអប្បបរមាត្រង់ $x = 0$ គឺ៖ 
-                    $$g(0) = (0 - 1)e^0 + 1 = -1(1) + 1 = 0$$
-                
-                <br/>ដោយសារតម្លៃតូចបំផុតរបស់ $g$ ស្មើ $0$ នោះមានន័យថាគ្រប់ចំណុចផ្សេងទៀតក្នុង $\mathbb R$ គេបានតម្លៃ  $g(x)$ ត្រូវតែធំជាង ឬស្មើ $0$។ 
-                <br/>
-            
-            <b>ដូចនេះ គ្រប់ $x \in \mathbb{R}$ គេបាន $g(x) \ge 0$។</b>
-        
-        </div>
-    </div>
 
-    <div class="problem-section">
-        <h3>(II) សិក្សាអនុគមន៍ចម្បង $f$</h3>
-        <p>គេមានអនុគមន៍ $f(x) = (x - 2)e^x + x$ កំណត់លើ $\mathbb{R}$។</p>
+                ដោយអនុគមន៍ $g$ ប្ដូរសញ្ញាពី $(-)$ ទៅ $(+)$ នៅត្រង់ប្ញសនៃដេរីវេ $g^\prime (x) = 0$
+                នោះវាមានតម្លៃអប្បបរមាត្រង់ $x = 0$ គឺ៖ $$g(0) = (0 - 1)e^0 + 1 = -1(1) + 1 = 0$$
 
-        <div class="sub-question">
-            <b class="bquestion">១. គណនាលីមីតចុងដែនកំណត់៖</b>
-            <ul>
-                <li><b>លីមីតត្រង់ $-\infty$ ៖</b>
-                    \begin{eqnarray}
-                    \lim_{x \to -\infty} f(x) &=& \lim_{x \to -\infty} [(x - 2)e^x + x] \\
-                    &=& \lim_{x \to -\infty} [xe^x - 2e^x + x]\\
-                    &=& 0 - 0 + (-\infty) = -\infty
-                    \end{eqnarray}
-                  ព្រោះ $\displaystyle\lim_{x \to -\infty} e^x = 0$ និង $\displaystyle\lim_{x \to -\infty} xe^x = 0$<br/>
-                ដូចនេះ $$\boxed{\quad\displaystyle\lim_{x \to -\infty} f(x) = 0\quad}$$
-                </li>
-                <li><b>លីមីតត្រង់ $+\infty$ ៖</b>
-                    \begin{eqnarray}
-                    \lim_{x \to +\infty} f(x) &=& \lim_{x \to +\infty} [(x - 2)e^x + x]\\
-                    &=& (+\infty)(+\infty) + (+\infty) \\
-                    &=& +\infty
-                    \end{eqnarray}
-                    ព្រោះ $\displaystyle\lim_{x \to +\infty} (x-2) = +\infty$ និង $\lim_{x \to +\infty} e^x = +\infty$<br>
-                    ដូចនេះ $$\boxed{\quad\displaystyle\lim_{x \to +\infty} f(x) = +\infty\quad}$$ 
-                </li>
-            </ul>
-        </div>
+                <br />ដោយសារតម្លៃតូចបំផុតរបស់ $g$ ស្មើ $0$ នោះមានន័យថាគ្រប់ចំណុចផ្សេងទៀតក្នុង $\mathbb R$ គេបានតម្លៃ
+                $g(x)$ ត្រូវតែធំជាង ឬស្មើ $0$។
+                <br />
 
-        <div class="sub-question">
-            <b class="bquestion">២. ក) បង្ហាញថាបន្ទាត់ $(\Delta) : y = x$ ជាអាស៊ីមតូតទ្រេតខាង $-\infty$៖</b>
-            <!--ul-->
-               គណនាលីមីតនៃផលដក $f(x) - y$ ត្រង់ $-\infty$ ៖
-                 \begin{eqnarray}
-                    \lim_{x \to -\infty} [f(x) - y] &=& \lim_{x \to -\infty} [(x - 2)e^x + x - x] \\
-                    &=& \lim_{x \to -\infty} (x - 2)e^x\\                    
-                    &=& \lim_{x \to -\infty} (xe^x - 2e^x) \\
-                    &=& 0 - 0 = 0
-                  \end{eqnarray}
-            
-            <b>សន្និដ្ឋាន៖</b> ដោយលីមីតផលដកស្មើ $0$ នោះបន្ទាត់ $(\Delta): y = x$ ជាអាស៊ីមតូតទ្រេតនៃខ្សែខ្សោង $(C)$ ខាង $-\infty$។
-            <!--ul-->
-        </div>
-
-        <div class="sub-question">
-            <b class="bquestion">២. ខ) សិក្សាទីតាំងធៀប និងចំណុចប្រសព្វ៖</b>
-            <ul>
-                <li>សិក្សាសញ្ញានៃផលដក $f(x) - y = (x - 2)e^x$៖<br>
-                <span class="space">
-                    ដោយ $e^x \gt 0$ នោះសញ្ញានៃផលដកយកសញ្ញាតាម $(x - 2)$។
-                <br/>
-                $\mybullet$ បើ $x - 2 \lt 0 \Rightarrow x \lt 2$ ៖ ផលដកអវិជ្ជមាន នោះ <b>$(C)$ ស្ថិតនៅក្រោម $(\Delta)$</b>។<br/>
-                    
-                $\mybullet$ បើ $x - 2 \gt 0 \Rightarrow x \gt 2$ ៖ ផលដកវិជ្ជមាន នោះ <b>$(C)$ ស្ថិតនៅលើ $(\Delta)$</b>។<br/>
-                
-                $\mybullet$ បើ $x - 2 = 0 \Rightarrow x = 2$ ៖ ជាចំណុចប្រសព្វ។
-                    </span>
-                
-                </li>
-                
-                <li><b>រកកូអរដោនេចំណុចប្រសព្វ៖</b> យក $x = 2$ ជំនួសក្នុងសមីការ $y = x \Rightarrow y = 2$។<br>
-                    ដូចនេះ <b>ចំណុចប្រសព្វគឺ $I(2, 2)$ </b> ។ </li>
-            </ul>
-        </div>
-
-        <div class="sub-question">
-            <b>៣. ផ្ទៀងផ្ទាត់ថា $f'(x) = g(x)$ និងសង់តារាងអថេរភាព៖</b>
-            <ul class="space">
-                <li>គណនាដេរីវេ $f'(x)$៖
-                \begin{eqnarray} 
-                    f'(x) &=& [(x - 2)e^x]' + (x)'\\
-                    &=& (x - 2)'e^x + (x - 2)(e^x)' + 1\\
-                    &=& 1 \cdot e^x + (x - 2)e^x + 1\\
-                    &=& e^x(1 + x - 2) + 1\\
-                    &=& (x - 1)e^x + 1
-                \end{eqnarray}
-                </li>
-                <li>ដោយ $g(x) = (x - 1)e^x + 1$ យើងបាន <b>$f'(x) = g(x)$</b> (ពិត) ។</li>
-                <li><b>សញ្ញានៃ $f'(x)$៖</b> តាមលទ្ធផលផ្នែក (I) គេមាន $g(x) \ge 0$ គ្រប់តម្លៃ $x \in \mathbb{R}$ ។<br>
-                ដូចនេះ $f'(x) \ge 0$ នាំឱ្យ $f$ ជាអនុគមន៍កើនជានិច្ចលើ $\mathbb{R}$ ។
-                </li>
-            </ul>
-
-            <p><b>តារាងអថេរភាពរបស់អនុគមន៍ $f$៖</b></p>
-            
-            <div class="table-container">
-        <script type="text/tikz">
-          % Added [font=\Large] to increase the native text and math size
-          \begin{tikzpicture}[font=\Large]
-            % Draw the main table grid
-            \draw (0,0) rectangle (12,-5);
-            \draw (0,-1.3) -- (12,-1.3);
-            \draw (0,-2.6) -- (12,-2.6);
-            \draw (2,0) -- (2,-5);
-            \filldraw[opacity=0.7,blue!10] (0,0) rectangle (12,-1.3);
-
-            % Top Row: x values
-            \node at (1, -0.65) {$x$};
-            \node at (2.5, -0.65) {$-\infty$};
-            \node at (6.5, -0.65) {$0$};
-            \node at (11.5, -0.65) {$+\infty$};
-
-            % Middle Row: f'(x) signs
-            \node at (1, -2) {$f\prime(x)$};
-            \node at (4, -2) {$+$};
-            \node at (9, -2) {$+$};
-            
-            % Vertical line with the zero on it
-            \draw (6.5, -1.3) -- (6.5, -2.6);
-            \node[fill=white, inner sep=2pt, font=\huge] at (6.5, -1.9) {$0$};
-
-            % Bottom Row: f(x) variations
-            \node at (1, -3.7) {$f(x)$};
-            
-            % Define coordinates for the variation arrows
-            \node (val1) at (2.5, -4.8) {$-\infty$};
-            \node (val2) at (6.5, -3.9) {$-2$};
-            \node (val3) at (11.5, -2.9) {$+\infty$};
-
-            % Draw the arrows
-            \draw[->, thick] (val1) -- (val2);
-            \draw[->, thick] (val2) -- (val3);
-          \end{tikzpicture}
-        </script>
-    </div>
-            
-            
-            <p><i>(ចំណាំ៖ ត្រង់ $x=0$, $f'(x)=0$ តែមិនប្តូរសញ្ញាទេ ដូច្នេះអនុគមន៍នៅតែកើន)។</i></p>
-        </div>
-
-        <div class="sub-question">
-            <b>៤. គណនា $f(0)$ និង $f(2)$ រួចសង់ក្រាប៖</b>
-            <span class="space">            
-            គេបាន៖ <br/>
-            $\mybullett$ $f(0) = (0 - 2)e^0 + 0 = -2(1) = -2$<br/>
-                
-            $\mybullett$ $f(2) = (2 - 2)e^2 + 2 = 0 + 2 = 2$ 
-            </span>
-                        
-            <div class="hint-boxx">
-                💡 <b>ការណែនាំសង់ក្រាប៖</b><br/> <i>
-                <span >
-                $\mybullet$ សិស្សត្រូវគូសតម្រុយអរតូណរម៉ាល់ បន្ទាត់ 
-                $\Delta: y=x$ និងដៅចំណុច $(0, -2)$ ព្រមទាំងចំណុចប្រសព្វ $(2, 2)$។ <br/>
-                $\mybullet$ ខ្សែកោងកើនឡើងពីខាងក្រោមបន្ទាត់ $\Delta$ កាត់អ័ក្សអរដោនេត្រង់ $-2$ 
-                រួចកាត់បន្ទាត់ $\Delta$ ត្រង់ចំណុច $(2, 2)$ ឆ្ពោះទៅ $+\infty$ ។
-                </span>
-                </i>
-    
+                <b>ដូចនេះ គ្រប់ $x \in \mathbb{R}$ គេបាន $g(x) \ge 0$។</b>
             </div>
-            
-            
-    <div class="table-container">        
-        <script type="text/tikz">
-    \begin{tikzpicture}[scale=1.5, transform shape]
-      \draw[->] (-3.5,0) -- (2.6,0) node[right] {$x$};
-      \draw[->] (0,-3.5) -- (0,3) node[above] {$y$};
-      \draw[<->, blue, very thick, smooth, domain=-3.4:2.1] plot (\x, {(\x-2)*exp(\x) + \x});
-      \draw[dashed, red, thick, smooth, domain=-3.5:2.6] plot (\x, {\x});
-      
-      \draw[step=1, gray!60, ultra thin] (-3.5,-3.5) grid (2.5,3); %grid
-      \filldraw[black] (0,0) circle (1.3pt) node[above left]  {$O$};
-      \filldraw[black] (2,2) circle (1.3pt) node[above left]  {$I$(2,2)};
-      
-      \foreach \x in {-3,-2,-1,1,2} 
-        \draw (\x, 0.1) -- (\x, -0.1) node[below, font=\small] {$\x$};
-      \foreach \y in {-3,-2,-1,1,2}
-        \draw (0.1, \y) -- (-0.1, \y) node[left, font=\small] {$\y$};
-    
-      \node[below left, font=\small] at (2.3,-2.2) {$(C): f(x) = (x - 2)e^x + x$};
-    \end{tikzpicture}
-  </script>
-     </div>
-            <p style="text-align: center"><b>ក្រាប $(C)$ របស់អនុគមន៍ $f$</b></p>      
-            
-    </div>
+        </div>
 
-    </div>
+        <div class="problem-section">
+            <h3>(II) សិក្សាអនុគមន៍ចម្បង $f$</h3>
+            <p>គេមានអនុគមន៍ $f(x) = (x - 2)e^x + x$ កំណត់លើ $\mathbb{R}$។</p>
 
-</body>
+            <div class="sub-question">
+                <b class="bquestion">១. គណនាលីមីតចុងដែនកំណត់៖</b>
+                <ul>
+                    <li>
+                        <b>លីមីតត្រង់ $-\infty$ ៖</b> \begin{eqnarray} \lim_{x \to -\infty} f(x) &=& \lim_{x \to
+                        -\infty} [(x - 2)e^x + x] \\ &=& \lim_{x \to -\infty} [xe^x - 2e^x + x]\\ &=& 0 - 0 + (-\infty)
+                        = -\infty \end{eqnarray} ព្រោះ $\displaystyle\lim_{x \to -\infty} e^x = 0$ និង
+                        $\displaystyle\lim_{x \to -\infty} xe^x = 0$<br />
+                        ដូចនេះ $$\boxed{\quad\displaystyle\lim_{x \to -\infty} f(x) = 0\quad}$$
+                    </li>
+                    <li>
+                        <b>លីមីតត្រង់ $+\infty$ ៖</b> \begin{eqnarray} \lim_{x \to +\infty} f(x) &=& \lim_{x \to
+                        +\infty} [(x - 2)e^x + x]\\ &=& (+\infty)(+\infty) + (+\infty) \\ &=& +\infty \end{eqnarray}
+                        ព្រោះ $\displaystyle\lim_{x \to +\infty} (x-2) = +\infty$ និង $\lim_{x \to +\infty} e^x =
+                        +\infty$<br />
+                        ដូចនេះ $$\boxed{\quad\displaystyle\lim_{x \to +\infty} f(x) = +\infty\quad}$$
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sub-question">
+                <b class="bquestion">២. ក) បង្ហាញថាបន្ទាត់ $(\Delta) : y = x$ ជាអាស៊ីមតូតទ្រេតខាង $-\infty$៖</b>
+                <!--ul-->
+                គណនាលីមីតនៃផលដក $f(x) - y$ ត្រង់ $-\infty$ ៖ \begin{eqnarray} \lim_{x \to -\infty} [f(x) - y] &=&
+                \lim_{x \to -\infty} [(x - 2)e^x + x - x] \\ &=& \lim_{x \to -\infty} (x - 2)e^x\\ &=& \lim_{x \to
+                -\infty} (xe^x - 2e^x) \\ &=& 0 - 0 = 0 \end{eqnarray}
+
+                <b>សន្និដ្ឋាន៖</b> ដោយលីមីតផលដកស្មើ $0$ នោះបន្ទាត់ $(\Delta): y = x$ ជាអាស៊ីមតូតទ្រេតនៃខ្សែខ្សោង $(C)$
+                ខាង $-\infty$។
+                <!--ul-->
+            </div>
+
+            <div class="sub-question">
+                <b class="bquestion">២. ខ) សិក្សាទីតាំងធៀប និងចំណុចប្រសព្វ៖</b>
+                <ul>
+                    <li>
+                        សិក្សាសញ្ញានៃផលដក $f(x) - y = (x - 2)e^x$៖<br />
+                        <span class="space">
+                            ដោយ $e^x \gt 0$ នោះសញ្ញានៃផលដកយកសញ្ញាតាម $(x - 2)$។
+                            <br />
+                            $\mybullet$ បើ $x - 2 \lt 0 \Rightarrow x \lt 2$ ៖ ផលដកអវិជ្ជមាន នោះ
+                            <b>$(C)$ ស្ថិតនៅក្រោម $(\Delta)$</b>។<br />
+
+                            $\mybullet$ បើ $x - 2 \gt 0 \Rightarrow x \gt 2$ ៖ ផលដកវិជ្ជមាន នោះ
+                            <b>$(C)$ ស្ថិតនៅលើ $(\Delta)$</b>។<br />
+
+                            $\mybullet$ បើ $x - 2 = 0 \Rightarrow x = 2$ ៖ ជាចំណុចប្រសព្វ។
+                        </span>
+                    </li>
+
+                    <li>
+                        <b>រកកូអរដោនេចំណុចប្រសព្វ៖</b> យក $x = 2$ ជំនួសក្នុងសមីការ $y = x \Rightarrow y = 2$។<br />
+                        ដូចនេះ <b>ចំណុចប្រសព្វគឺ $I(2, 2)$ </b> ។
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sub-question">
+                <b>៣. ផ្ទៀងផ្ទាត់ថា $f'(x) = g(x)$ និងសង់តារាងអថេរភាព៖</b>
+                <ul class="space">
+                    <li>
+                        គណនាដេរីវេ $f'(x)$៖ \begin{eqnarray} f'(x) &=& [(x - 2)e^x]' + (x)'\\ &=& (x - 2)'e^x + (x -
+                        2)(e^x)' + 1\\ &=& 1 \cdot e^x + (x - 2)e^x + 1\\ &=& e^x(1 + x - 2) + 1\\ &=& (x - 1)e^x + 1
+                        \end{eqnarray}
+                    </li>
+                    <li>ដោយ $g(x) = (x - 1)e^x + 1$ យើងបាន <b>$f'(x) = g(x)$</b> (ពិត) ។</li>
+                    <li>
+                        <b>សញ្ញានៃ $f'(x)$៖</b> តាមលទ្ធផលផ្នែក (I) គេមាន $g(x) \ge 0$ គ្រប់តម្លៃ $x \in \mathbb{R}$ ។<br />
+                        ដូចនេះ $f'(x) \ge 0$ នាំឱ្យ $f$ ជាអនុគមន៍កើនជានិច្ចលើ $\mathbb{R}$ ។
+                    </li>
+                </ul>
+
+                <p><b>តារាងអថេរភាពរបស់អនុគមន៍ $f$៖</b></p>
+
+                <div class="table-container">
+                    <script type="text/tikz">
+                        % Added [font=\Large] to increase the native text and math size
+                        \begin{tikzpicture}[font=\Large]
+                          % Draw the main table grid
+                          \draw (0,0) rectangle (12,-5);
+                          \draw (0,-1.3) -- (12,-1.3);
+                          \draw (0,-2.6) -- (12,-2.6);
+                          \draw (2,0) -- (2,-5);
+                          \filldraw[opacity=0.7,blue!10] (0,0) rectangle (12,-1.3);
+
+                          % Top Row: x values
+                          \node at (1, -0.65) {$x$};
+                          \node at (2.5, -0.65) {$-\infty$};
+                          \node at (6.5, -0.65) {$0$};
+                          \node at (11.5, -0.65) {$+\infty$};
+
+                          % Middle Row: f'(x) signs
+                          \node at (1, -2) {$f\prime(x)$};
+                          \node at (4, -2) {$+$};
+                          \node at (9, -2) {$+$};
+
+                          % Vertical line with the zero on it
+                          \draw (6.5, -1.3) -- (6.5, -2.6);
+                          \node[fill=white, inner sep=2pt, font=\huge] at (6.5, -1.9) {$0$};
+
+                          % Bottom Row: f(x) variations
+                          \node at (1, -3.7) {$f(x)$};
+
+                          % Define coordinates for the variation arrows
+                          \node (val1) at (2.5, -4.8) {$-\infty$};
+                          \node (val2) at (6.5, -3.9) {$-2$};
+                          \node (val3) at (11.5, -2.9) {$+\infty$};
+
+                          % Draw the arrows
+                          \draw[->, thick] (val1) -- (val2);
+                          \draw[->, thick] (val2) -- (val3);
+                        \end{tikzpicture}
+                    </script>
+                </div>
+
+                <p><i>(ចំណាំ៖ ត្រង់ $x=0$, $f'(x)=0$ តែមិនប្តូរសញ្ញាទេ ដូច្នេះអនុគមន៍នៅតែកើន)។</i></p>
+            </div>
+
+            <div class="sub-question">
+                <b>៤. គណនា $f(0)$ និង $f(2)$ រួចសង់ក្រាប៖</b>
+                <span class="space">
+                    គេបាន៖ <br />
+                    $\mybullett$ $f(0) = (0 - 2)e^0 + 0 = -2(1) = -2$<br />
+
+                    $\mybullett$ $f(2) = (2 - 2)e^2 + 2 = 0 + 2 = 2$
+                </span>
+
+                <div class="hint-boxx">
+                    💡 <b>ការណែនាំសង់ក្រាប៖</b><br />
+                    <i>
+                        <span>
+                            $\mybullet$ សិស្សត្រូវគូសតម្រុយអរតូណរម៉ាល់ បន្ទាត់ $\Delta: y=x$ និងដៅចំណុច $(0, -2)$
+                            ព្រមទាំងចំណុចប្រសព្វ $(2, 2)$។ <br />
+                            $\mybullet$ ខ្សែកោងកើនឡើងពីខាងក្រោមបន្ទាត់ $\Delta$ កាត់អ័ក្សអរដោនេត្រង់ $-2$ រួចកាត់បន្ទាត់
+                            $\Delta$ ត្រង់ចំណុច $(2, 2)$ ឆ្ពោះទៅ $+\infty$ ។
+                        </span>
+                    </i>
+                </div>
+
+                <div class="table-container page-break">
+                    <script type="text/tikz">
+                        \begin{tikzpicture}[scale=1.5, transform shape]
+                          \draw[->] (-3.5,0) -- (2.6,0) node[right] {$x$};
+                          \draw[->] (0,-3.5) -- (0,3) node[above] {$y$};
+                          \draw[<->, blue, very thick, smooth, domain=-3.4:2.1] plot (\x, {(\x-2)*exp(\x) + \x});
+                          \draw[dashed, red, thick, smooth, domain=-3.5:2.6] plot (\x, {\x});
+
+                          \draw[step=1, gray!60, ultra thin] (-3.5,-3.5) grid (2.5,3); %grid
+                          \filldraw[black] (0,0) circle (1.3pt) node[above left]  {$O$};
+                          \filldraw[black] (2,2) circle (1.3pt) node[above left]  {$I$(2,2)};
+
+                          \foreach \x in {-3,-2,-1,1,2}
+                            \draw (\x, 0.1) -- (\x, -0.1) node[below, font=\small] {$\x$};
+                          \foreach \y in {-3,-2,-1,1,2}
+                            \draw (0.1, \y) -- (-0.1, \y) node[left, font=\small] {$\y$};
+
+                          \node[below left, font=\small] at (2.3,-2.2) {$(C): f(x) = (x - 2)e^x + x$};
+                        \end{tikzpicture}
+                    </script>
+                </div>
+                <p style="text-align: center"><b>ក្រាប $(C)$ របស់អនុគមន៍ $f$</b></p>
+            </div>
+        </div>
+    </body>
 </html>

@@ -70,6 +70,20 @@
                 }
             }
 
+            @media print {
+                /* សម្រាប់បង្ខំឱ្យលោតទៅទំព័រថ្មី (ដាក់មុន Element ដែលចង់កាត់) */
+                .page-break {
+                    page-break-before: always; /* កូដចាស់ តែដើរគ្រប់ Browser */
+                    break-before: page; /* កូដស្តង់ដារថ្មី */
+                }
+
+                /* សម្រាប់ការពារកុំឱ្យរូបភាព ឬប្រអប់លំហាត់ដាច់ពាក់កណ្តាលទំព័រ */
+                .keep-together {
+                    page-break-inside: avoid;
+                    break-inside: avoid;
+                }
+            }
+
             /*    body {
             font-family: 'Khmer OS Battambang', 'Arial', sans-serif;
             line-height: 1.6;
