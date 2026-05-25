@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>វិញ្ញាសាគណិតវិទ្យា៖ លំហផលចែក (Quotient Spaces)</title>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ["$", "$"],
+                    ["\\(", "\\)"]
+                ],
+                displayMath: [
+                    ["$$", "$$"],
+                    ["\\[", "\\]"]
+                ],
+                macros: {
+                    mybullet: "{\\tiny\\bullet\\;\\;}",
+                    mybullett: "{\\quad\\tiny\\bullet\\;\\;}"
+                }
+            },
+            chtml: {
+                scale: 1.2,
+                linebreaks: { automatic: true }
+            },
+            svg: {
+                scale: 1.2,
+                matchFontHeight: true
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css" />
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+    <style>
+        body {
+            font-family: "Khmer OS Battambang", sans-serif;
+            line-height: 1.8;
+            background-color: #f4f7f6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #2980b9;
+            border-bottom: 2px solid #2980b9;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        .question-block {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #fafafa;
+            border-left: 4px solid #27ae60;
+            border-radius: 4px;
+        }
+        .options {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+        .submit-btn {
+            background-color: #2980b9;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            font-family: inherit;
+            margin-top: 20px;
+        }
+        .submit-btn:hover {
+            background-color: #1a5276;
+        }
+        mjx-container {
+            font-size: 115% !important;
+        }
+        svg {
+            max-width: 100%;
+        }
+        .tikz-center {
+            text-align: center;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>វិញ្ញាសាគណិតវិទ្យា៖ លំហផលចែក (Quotient Spaces)</h2>
+        <form id="quizForm">
+
+            <div class="question-block">
+                <p><b>១.</b> តាង $V$ ជាលំហវ៉ិចទ័រ ហើយ $W$ ជាលំហរងនៃ $V$។ តើអ្វីជាធាតុសូន្យ (Zero element) នៅក្នុងលំហផលចែក $V/W$ ?</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="A"> A. $0_V$</label>
+                    <label><input type="radio" name="q1" value="B"> B. $W$</label>
+                    <label><input type="radio" name="q1" value="C"> C. $V$</label>
+                    <label><input type="radio" name="q1" value="D"> D. $\{0_V\}$</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p><b>២.</b> បើសិនជា $V$ ជាលំហវ៉ិចទ័រមានវិមាត្រកំណត់ (finite-dimensional) ហើយ $W$ ជាលំហរងនៃ $V$។ តើរូបមន្តមួយណាត្រឹមត្រូវសម្រាប់វិមាត្រនៃ $V/W$ ?</p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="A"> A. $\dim(V/W) = \dim(V) + \dim(W)$</label>
+                    <label><input type="radio" name="q2" value="B"> B. $\dim(V/W) = \frac{\dim(V)}{\dim(W)}$</label>
+                    <label><input type="radio" name="q2" value="C"> C. $\dim(V/W) = \dim(V) - \dim(W)$</label>
+                    <label><input type="radio" name="q2" value="D"> D. $\dim(V/W) = \dim(W) - \dim(V)$</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p><b>៣.</b> សម្រាប់កូសិត (Cosets) $v_1 + W$ និង $v_2 + W$ នៅក្នុង $V/W$។ តើលក្ខខណ្ឌអ្វីដែលធ្វើឱ្យ $v_1 + W = v_2 + W$ ?</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="A"> A. $v_1 + v_2 \in W$</label>
+                    <label><input type="radio" name="q3" value="B"> B. $v_1 - v_2 \in W$</label>
+                    <label><input type="radio" name="q3" value="C"> C. $v_1 = v_2$ តែប៉ុណ្ណោះ</label>
+                    <label><input type="radio" name="q3" value="D"> D. $v_1 \in W$ និង $v_2 \in W$</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p><b>៤.</b> ពិនិត្យមើលរូបភាពខាងក្រោមដែលបង្ហាញពីលំហរង $W$ ក្នុង $\mathbb{R}^2$៖</p>
+                <div class="tikz-center">
+                    <script type="text/tikz">
+                        \begin{tikzpicture}[scale=0.8]
+                            \draw[->] (-3,0) -- (3,0) node[right] {$x$};
+                            \draw[->] (0,-3) -- (0,3) node[above] {$y$};
+                            \draw[thick, blue] (-2,-2) -- (2,2) node[right] {$W$};
+                            \draw[thick, red, dashed] (-3,-1) -- (1,3) node[right] {$v + W$};
+                            \filldraw[black] (-1,1) circle (2pt) node[above left] {$v$};
+                            \draw[->, thick, green!60!black] (0,0) -- (-1,1);
+                        \end{tikzpicture}
+                    </script>
+                </div>
+                <p>តើបន្ទាត់ពណ៌ក្រហមដាច់ៗតំណាងឱ្យអ្វីនៅក្នុងលំហផលចែក $\mathbb{R}^2/W$ ?</p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="A"> A. លំហរងថ្មីមួយនៃ $\mathbb{R}^2$</label>
+                    <label><input type="radio" name="q4" value="B"> B. ធាតុមួយ (កូសិត) នៃលំហផលចែក $\mathbb{R}^2/W$</label>
+                    <label><input type="radio" name="q4" value="C"> C. ប្លង់កូអរដោនេថ្មី</label>
+                    <label><input type="radio" name="q4" value="D"> D. ចំណុចប្រសព្វនៃ $v$ និង $W$</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p><b>៥.</b> តាង $\pi: V \to V/W$ ជាអនុវត្តន៍ចោល (Canonical projection map) ដែលកំណត់ដោយ $\pi(v) = v + W$។ តើអ្វីជាខឺណែល (Kernel) នៃ $\pi$ ?</p>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="A"> A. $V$</label>
+                    <label><input type="radio" name="q5" value="B"> B. $\{0_V\}$</label>
+                    <label><input type="radio" name="q5" value="C"> C. $W$</label>
+                    <label><input type="radio" name="q5" value="D"> D. $V \setminus W$</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p><b>៦.</b> បើ $V = \mathbb{R}^3$ និង $W$ ជាប្លង់មួយកាត់តាមគល់តម្រុយក្នុង $V$។ តើលំហផលចែក $V/W$ មានលក្ខណៈភូមិមាត្រ (Geometrically) ដូចម្តេច?</p>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="A"> A. ជាប្លង់មួយ</label>
+                    <label><input type="radio" name="q6" value="B"> B. ជាបន្ទាត់មួយកាត់តាមគល់តម្រុយ</label>
+                    <label><input type="radio" name="q6" value="C"> C. ជាចំណុចមួយ</label>
+                    <label><input type="radio" name="q6" value="D"> D. មិនអាចកំណត់បាន</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p><b>៧.</b> យោងតាមទ្រឹស្ដីបទអ៊ីសូម័រភីសទី១ (First Isomorphism Theorem) បើ $T: V \to U$ ជាអនុវត្តន៍លីនេអ៊ែរ នោះគេបាន៖</p>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="A"> A. $V/\text{Im}(T) \cong \ker(T)$</label>
+                    <label><input type="radio" name="q7" value="B"> B. $V/\ker(T) \cong \text{Im}(T)$</label>
+                    <label><input type="radio" name="q7" value="C"> C. $U/\ker(T) \cong \text{Im}(T)$</label>
+                    <label><input type="radio" name="q7" value="D"> D. $V/U \cong \ker(T)$</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p><b>៨.</b> បើសិន $\dim(V) = 7$ និង $\dim(W) = 3$។ តើវិមាត្រនៃ $V/W$ ស្មើនឹងប៉ុន្មាន?</p>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="A"> A. 10</label>
+                    <label><input type="radio" name="q8" value="B"> B. 4</label>
+                    <label><input type="radio" name="q8" value="C"> C. 21</label>
+                    <label><input type="radio" name="q8" value="D"> D. 3</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p><b>៩.</b> តើកូសិត២ បូកបញ្ចូលគ្នា $(v_1 + W) + (v_2 + W)$ ស្មើនឹងអ្វី?</p>
+                <div class="options">
+                    <label><input type="radio" name="q9" value="A"> A. $(v_1 + v_2) + 2W$</label>
+                    <label><input type="radio" name="q9" value="B"> B. $(v_1 + v_2) + W$</label>
+                    <label><input type="radio" name="q9" value="C"> C. $(v_1 \cdot v_2) + W$</label>
+                    <label><input type="radio" name="q9" value="D"> D. $v_1 + v_2$</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p><b>១០.</b> ពិនិត្យរូបភាពដែលតំណាងឱ្យការបូកកូសិត៖</p>
+                <div class="tikz-center">
+                    <script type="text/tikz">
+                        \begin{tikzpicture}[scale=0.7]
+                            \draw[->] (-1,0) -- (5,0);
+                            \draw[->] (0,-1) -- (0,4);
+                            \draw[thick, blue] (-1,-0.5) -- (4,2) node[right] {$W$};
+                            \draw[thick, red, dashed] (-1, 1.5) -- (4, 4) node[right] {$u + W$};
+                            \draw[thick, green!60!black, dashed] (-1, -2.5) -- (4, 0) node[right] {$v + W$};
+                            \draw[->, thick] (0,0) -- (1, 2.5) node[above left] {$u$};
+                            \draw[->, thick] (0,0) -- (2, -1) node[below right] {$v$};
+                        \end{tikzpicture}
+                    </script>
+                </div>
+                <p>តើលទ្ធផលនៃ $(u + W) + (v + W)$ នឹងមានទីតាំងស្របជាមួយបន្ទាត់ណា?</p>
+                <div class="options">
+                    <label><input type="radio" name="q10" value="A"> A. ស្របជាមួយអ័ក្សអាប់ស៊ីស</label>
+                    <label><input type="radio" name="q10" value="B"> B. ស្របជាមួយបន្ទាត់ $W$</label>
+                    <label><input type="radio" name="q10" value="C"> C. ស្របជាមួយវ៉ិចទ័រ $u+v$</label>
+                    <label><input type="radio" name="q10" value="D"> D. កាត់កែងជាមួយ $W$</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p><b>១១.</b> សម្រាប់លំហ $V$ និងលំហរង $W$ គេមាន $\lambda \in \mathbb{F}$។ តើផលគុណស្កាលែ $\lambda(v + W)$ កំណត់ដូចម្តេច?</p>
+                <div class="options">
+                    <label><input type="radio" name="q11" value="A"> A. $\lambda v + \lambda W$</label>
+                    <label><input type="radio" name="q11" value="B"> B. $\lambda v + W$</label>
+                    <label><input type="radio" name="q11" value="C"> C. $v + \lambda W$</label>
+                    <label><input type="radio" name="q11" value="D"> D. $(\lambda + v) + W$</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p><b>១២.</b> តើលំហផលចែក $V/V$ អ៊ីសូម័រ (Isomorphic) ទៅនឹងអ្វី?</p>
+                <div class="options">
+                    <label><input type="radio" name="q12" value="A"> A. $V$</label>
+                    <label><input type="radio" name="q12" value="B"> B. $\{0\}$</label>
+                    <label><input type="radio" name="q12" value="C"> C. $\mathbb{R}$</label>
+                    <label><input type="radio" name="q12" value="D"> D. មិនមានចម្លើយត្រឹមត្រូវ</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p><b>១៣.</b> ផ្ទុយពីសំណួរទី១២ តើលំហផលចែក $V/\{0\}$ អ៊ីសូម័រទៅនឹងអ្វី?</p>
+                <div class="options">
+                    <label><input type="radio" name="q13" value="A"> A. $\{0\}$</label>
+                    <label><input type="radio" name="q13" value="B"> B. មិនមានកំណត់</label>
+                    <label><input type="radio" name="q13" value="C"> C. $V$</label>
+                    <label><input type="radio" name="q13" value="D"> D. $\text{Im}(V)$</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p><b>១៤.</b> ក្នុងលំហកូអរដោនេ $\mathbb{R}^3$ បើ $W = \{(x,y,0) \mid x,y \in \mathbb{R}\}$ ជាប្លង់ $xy$។ តើកូសិត $(1, 2, 3) + W$ ជាអ្វីតាមលក្ខណៈភូមិមាត្រ?</p>
+                <div class="options">
+                    <label><input type="radio" name="q14" value="A"> A. ជាប្លង់ស្របនឹងប្លង់ $xy$ ដែលកាត់អ័ក្ស $z$ ត្រង់ $3$</label>
+                    <label><input type="radio" name="q14" value="B"> B. ជាបន្ទាត់ស្របនឹងអ័ក្ស $z$</label>
+                    <label><input type="radio" name="q14" value="C"> C. ជាចំណុច $(1,2,3)$</label>
+                    <label><input type="radio" name="q14" value="D"> D. ជាស្វ៊ែរដែលមានផ្ចិតត្រង់គល់តម្រុយ</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p><b>១៥.</b> អនុវត្តន៍ចោល $\pi: V \to V/W$ តែងតែមានលក្ខណៈជា៖</p>
+                <div class="options">
+                    <label><input type="radio" name="q15" value="A"> A. អនុវត្តន៍ប្រកាន់ (Injective / One-to-one)</label>
+                    <label><input type="radio" name="q15" value="B"> B. អនុវត្តន៍ពេញ (Surjective / Onto)</label>
+                    <label><input type="radio" name="q15" value="C"> C. អ៊ីសូម័រភីស (Isomorphism)</label>
+                    <label><input type="radio" name="q15" value="D"> D. អនុវត្តន៍មិនលីនេអ៊ែរ</label>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">បញ្ជូនចម្លើយ</button>
+        </form>
+    </div>
+</body>
+</html>
