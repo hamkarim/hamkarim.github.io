@@ -118,9 +118,14 @@
                         <strong>១.</strong> តើអនុគមន៍ $T: \mathbb{R}^2 \to \mathbb{R}^2$ ដែលកំណត់ដោយ $T(x,y) = (x+y,
                         x-y)$ ជាបម្លែងលីនេអ៊ែរដែរឬទេ?
                     </p>
-                    <div class="options">
+                    <!--   <div class="options">
                         <label><input type="radio" name="q1" value="a" /> ក. ជាបម្លែងលីនេអ៊ែរ</label>
                         <label><input type="radio" name="q1" value="b" /> ខ. មិនមែនជាបម្លែងលីនេអ៊ែរ</label>
+                    </div> -->
+
+                    <div class="options">
+                        <input type="radio" name="q1" value="correct" /> ក. ជាបម្លែងលីនេអ៊ែរ<br />
+                        <input type="radio" name="q1" value="wrong" /> ខ. មិនមែនជាបម្លែងលីនេអ៊ែរ<br />
                     </div>
                 </div>
 
@@ -137,8 +142,8 @@
                         \end{tikzpicture}
                     </script>
                     <div class="options">
-                        <label><input type="radio" name="q2" value="a" /> ក. វ៉ិចទ័រក្នុងលំហដើម $V$</label>
-                        <label><input type="radio" name="q2" value="b" /> ខ. ស្នូលនៃបម្លែង (Kernel)</label>
+                        <input type="radio" name="q2" value="correct" /> ក. វ៉ិចទ័រក្នុងលំហដើម V<br />
+                        <input type="radio" name="q2" value="wrong" /> ខ. ស្នូលនៃបម្លែង (Kernel)<br />
                     </div>
                 </div>
 
@@ -146,11 +151,11 @@
                     <p><strong>៣.</strong> តើលក្ខខណ្ឌនៃភាពលីនេអ៊ែរមានអ្វីខ្លះ?</p>
                     <div class="options">
                         <label
-                            ><input type="radio" name="q3" value="a" /> ក. $T(u+v) = T(u)+T(v)$ និង $T(\lambda v) =
-                            \lambda T(v)$</label
+                            ><input type="radio" name="q3" value="correct" /> ក. $T(u+v) = T(u)+T(v)$ និង $T(\lambda v)
+                            = \lambda T(v)$</label
                         >
                         <label
-                            ><input type="radio" name="q3" value="b" /> ខ. $T(u+v) = T(u)T(v)$ និង $T(\lambda v) =
+                            ><input type="radio" name="q3" value="wrong" /> ខ. $T(u+v) = T(u)T(v)$ និង $T(\lambda v) =
                             \lambda^2 T(v)$</label
                         >
                     </div>
@@ -159,16 +164,16 @@
                 <div class="question-block">
                     <p><strong>៤.</strong> ប្រសិនបើ $T \in \mathcal{L}(V,W)$ តើអ្វីទៅជាតម្លៃនៃ $T(0)$?</p>
                     <div class="options">
-                        <label><input type="radio" name="q4" value="a" /> ក. $0_V$</label>
-                        <label><input type="radio" name="q4" value="b" /> ខ. $0_W$</label>
+                        <label><input type="radio" name="q4" value="wrong" /> ក. $0_V$</label>
+                        <label><input type="radio" name="q4" value="correct" /> ខ. $0_W$</label>
                     </div>
                 </div>
 
                 <div class="question-block">
                     <p><strong>៥.</strong> តើឈ្មោះមួយទៀតនៃ "Null Space" គឺអ្វី?</p>
                     <div class="options">
-                        <label><input type="radio" name="q5" value="a" /> ក. Kernel</label>
-                        <label><input type="radio" name="q5" value="b" /> ខ. Image</label>
+                        <input type="radio" name="q5" value="correct" /> ក. Kernel<br />
+                        <input type="radio" name="q5" value="wrong" /> ខ. Image<br />
                     </div>
                 </div>
 
@@ -177,41 +182,43 @@
                         <strong>៦.</strong> យោងតាមទ្រឹស្ដីបទ Rank-Nullity, ប្រសិនបើ $\dim V = 5$ និង
                         $\operatorname{nullity}(T) = 2$, តើ $\operatorname{rank}(T)$ មានតម្លៃប៉ុន្មាន?
                     </p>
+
                     <div class="options">
-                        <label><input type="radio" name="q6" value="a" /> ក. $7$</label>
-                        <label><input type="radio" name="q6" value="b" /> ខ. $3$</label>
+                        <input type="radio" name="q6" value="wrong" /> ក. 7<br />
+                        <input type="radio" name="q6" value="correct" /> ខ. 3<br />
                     </div>
                 </div>
 
                 <div class="question-block">
                     <p><strong>៧.</strong> តើបម្លែងលីនេអ៊ែរ $T$ ត្រូវបានហៅថា "Injective" នៅពេលណា?</p>
+
                     <div class="options">
-                        <label><input type="radio" name="q7" value="a" /> ក. $\ker T = \{0\}$</label>
-                        <label><input type="radio" name="q7" value="b" /> ខ. $\operatorname{range} T = W$</label>
+                        <input type="radio" name="q7" value="correct" /> ក. $\ker T = \{0\}$<br />
+                        <input type="radio" name="q7" value="wrong" /> ខ. $\operatorname{range} T = W$<br />
                     </div>
                 </div>
 
                 <div class="question-block">
                     <p><strong>៨.</strong> ប្រសិនបើ $\dim V \lt \dim W$ តើ $T: V \to W$ អាចជា Surjective បានដែរឬទេ?</p>
                     <div class="options">
-                        <label><input type="radio" name="q8" value="a" /> ក. បាន</label>
-                        <label><input type="radio" name="q8" value="b" /> ខ. មិនអាចទៅរួចទេ</label>
+                        <input type="radio" name="q8" value="wrong" /> ក. បាន<br />
+                        <input type="radio" name="q8" value="correct" /> ខ. មិនអាចទៅរួចទេ<br />
                     </div>
                 </div>
 
                 <div class="question-block">
                     <p><strong>៩.</strong> តើអ្វីទៅជាការកំណត់នៃ "Linear Operators"?</p>
                     <div class="options">
-                        <label><input type="radio" name="q9" value="a" /> ក. $T: V \to W$</label>
-                        <label><input type="radio" name="q9" value="b" /> ខ. $T: V \to V$</label>
+                        <label><input type="radio" name="q9" value="wrong" /> ក. $T: V \to W$</label>
+                        <label><input type="radio" name="q9" value="correct" /> ខ. $T: V \to V$</label>
                     </div>
                 </div>
 
                 <div class="question-block">
                     <p><strong>១០.</strong> តើប្រមាណវិធី $(S+T)(v)$ ស្មើនឹងអ្វី?</p>
                     <div class="options">
-                        <label><input type="radio" name="q10" value="a" /> ក. $S(v) + T(v)$</label>
-                        <label><input type="radio" name="q10" value="b" /> ខ. $S(T(v))$</label>
+                        <label><input type="radio" name="q10" value="correct" /> ក. $S(v) + T(v)$</label>
+                        <label><input type="radio" name="q10" value="wrong" /> ខ. $S(T(v))$</label>
                     </div>
                 </div>
 
@@ -221,15 +228,15 @@
                         $ST$ តំណាងឱ្យអ្វី?
                     </p>
                     <div class="options">
-                        <label><input type="radio" name="q11" value="a" /> ក. ការបូកបម្លែង</label>
-                        <label><input type="radio" name="q11" value="b" /> ខ. ការផ្គុំបម្លែង (Composition)</label>
+                        <label><input type="radio" name="q11" value="wrong" /> ក. ការបូកបម្លែង</label>
+                        <label><input type="radio" name="q11" value="correct" /> ខ. ការផ្គុំបម្លែង (Composition)</label>
                     </div>
                 </div>
 
                 <div class="question-block">
                     <p><strong>១២.</strong> តើបម្លែងលីនេអ៊ែរត្រូវបានកំណត់យ៉ាងពេញលេញដោយការផ្ដល់តម្លៃលើអ្វី?</p>
                     <div class="options">
-                        <label><input type="radio" name="q12" value="a" /> ក. រូបភាពនៃមូលដ្ឋាននៃ $V$</label>
+                        <label><input type="radio" name="q12" value="correct" /> ក. រូបភាពនៃមូលដ្ឋាននៃ $V$</label>
                         <label><input type="radio" name="q12" value="b" /> ខ. វ៉ិចទ័រមួយចំនួននៅក្នុង $W$</label>
                     </div>
                 </div>
@@ -238,14 +245,14 @@
                     <p><strong>១៣.</strong> តើអ្វីទៅជាវិមាត្រនៃលំហវ៉ិចទ័រនៃបម្លែងលីនេអ៊ែរ $\dim \mathcal{L}(V,W)$?</p>
                     <div class="options">
                         <label><input type="radio" name="q13" value="a" /> ក. $\dim V + \dim W$</label>
-                        <label><input type="radio" name="q13" value="b" /> ខ. $(\dim V)(\dim W)$</label>
+                        <label><input type="radio" name="q13" value="correct" /> ខ. $(\dim V)(\dim W)$</label>
                     </div>
                 </div>
 
                 <div class="question-block">
                     <p><strong>១៤.</strong> តើ Null Space នៃ $T$ គឺជាសំណុំនៃវ៉ិចទ័រអ្វីខ្លះ?</p>
                     <div class="options">
-                        <label><input type="radio" name="q14" value="a" /> ក. $v \in V$ ដែល $T(v) = 0$</label>
+                        <label><input type="radio" name="q14" value="correct" /> ក. $v \in V$ ដែល $T(v) = 0$</label>
                         <label><input type="radio" name="q14" value="b" /> ខ. $v \in V$ ដែល $T(v) = v$</label>
                     </div>
                 </div>
@@ -253,7 +260,7 @@
                 <div class="question-block">
                     <p><strong>១៥.</strong> តើបម្លែង $T: V \to W$ ហៅថា "Surjective" នៅពេលណា?</p>
                     <div class="options">
-                        <label><input type="radio" name="q15" value="a" /> ក. $\operatorname{range} T = W$</label>
+                        <label><input type="radio" name="q15" value="correct" /> ក. $\operatorname{range} T = W$</label>
                         <label><input type="radio" name="q15" value="b" /> ខ. $\ker T = \{0\}$</label>
                     </div>
                 </div>
@@ -264,7 +271,7 @@
                         $T$ ជាបម្លែងលីនេអ៊ែរដែរឬទេ?
                     </p>
                     <div class="options">
-                        <label><input type="radio" name="q16" value="a" /> ក. មែន</label>
+                        <label><input type="radio" name="q16" value="correct" /> ក. មែន</label>
                         <label><input type="radio" name="q16" value="b" /> ខ. មិនមែន</label>
                     </div>
                 </div>
@@ -273,7 +280,7 @@
                     <p><strong>១៧.</strong> តើលក្ខណៈ "Non-commutativity" នៃផលគុណបម្លែងមានន័យថាដូចម្ដេច?</p>
                     <div class="options">
                         <label><input type="radio" name="q17" value="a" /> ក. $ST = TS$</label>
-                        <label><input type="radio" name="q17" value="b" /> ខ. $ST \neq TS$ ជាទូទៅ</label>
+                        <label><input type="radio" name="q17" value="correct" /> ខ. $ST \neq TS$ ជាទូទៅ</label>
                     </div>
                 </div>
 
@@ -281,7 +288,7 @@
                     <p><strong>១៨.</strong> ប្រសិនបើ $\dim V = \dim W \lt \infty$, តើ $T$ មានលក្ខណៈពិសេសអ្វី?</p>
                     <div class="options">
                         <label
-                            ><input type="radio" name="q18" value="a" /> ក. $T$ ជា Injective លុះត្រាតែ $T$ ជា
+                            ><input type="radio" name="q18" value="correct" /> ក. $T$ ជា Injective លុះត្រាតែ $T$ ជា
                             Surjective</label
                         >
                         <label><input type="radio" name="q18" value="b" /> ខ. $T$ មិនអាចជា Surjective</label>
@@ -292,14 +299,14 @@
                     <p><strong>១៩.</strong> តើអ្វីទៅជា Identity Map $I$?</p>
                     <div class="options">
                         <label><input type="radio" name="q19" value="a" /> ក. $I(v) = 0$</label>
-                        <label><input type="radio" name="q19" value="b" /> ខ. $I(v) = v$</label>
+                        <label><input type="radio" name="q19" value="correct" /> ខ. $I(v) = v$</label>
                     </div>
                 </div>
 
                 <div class="question-block">
                     <p><strong>២០.</strong> តើផលបូកនៃបម្លែងពីរ $(\alpha S+T)(v)$ ស្មើអ្វី?</p>
                     <div class="options">
-                        <label><input type="radio" name="q20" value="a" /> ក. $\alpha S(v) + T(v)$</label>
+                        <label><input type="radio" name="q20" value="correct" /> ក. $\alpha S(v) + T(v)$</label>
                         <label><input type="radio" name="q20" value="b" /> ខ. $S(v) \cdot T(v)$</label>
                     </div>
                 </div>
@@ -310,7 +317,7 @@
                         តើ $f(S)$ ជាសំណុំយ៉ាងដូចម្ដេចក្នុង $W$?
                     </p>
                     <div class="options">
-                        <label><input type="radio" name="q21" value="a" /> ក. Linear Independent</label>
+                        <label><input type="radio" name="q21" value="correct" /> ក. Linear Independent</label>
                         <label><input type="radio" name="q21" value="b" /> ខ. Linear Dependent</label>
                     </div>
                 </div>
@@ -319,7 +326,7 @@
                     <p><strong>២២.</strong> តើអ្វីទៅជាការបកស្រាយតាមន័យធរណីមាត្រនៃ Rank-Nullity Theorem?</p>
                     <div class="options">
                         <label
-                            ><input type="radio" name="q22" value="a" /> ក. ការបែងចែកលំហដើមទៅជា Null Space និង
+                            ><input type="radio" name="q22" value="correct" /> ក. ការបែងចែកលំហដើមទៅជា Null Space និង
                             Complement</label
                         >
                         <label><input type="radio" name="q22" value="b" /> ខ. ការគុណវិមាត្រនៃលំហពីរ</label>
@@ -329,7 +336,9 @@
                 <div class="question-block">
                     <p><strong>២៣.</strong> តើ "Isomorphism" មានន័យថាយ៉ាងដូចម្ដេច?</p>
                     <div class="options">
-                        <label><input type="radio" name="q23" value="a" /> ក. បម្លែងលីនេអ៊ែរដែលជា Bijection</label>
+                        <label
+                            ><input type="radio" name="q23" value="correct" /> ក. បម្លែងលីនេអ៊ែរដែលជា Bijection</label
+                        >
                         <label><input type="radio" name="q23" value="b" /> ខ. បម្លែងលីនេអ៊ែរដែលមាន Kernel មិនទទេ</label>
                     </div>
                 </div>
@@ -341,14 +350,14 @@
                     </p>
                     <div class="options">
                         <label><input type="radio" name="q24" value="a" /> ក. បាន</label>
-                        <label><input type="radio" name="q24" value="b" /> ខ. មិនអាចទៅរួចទេ</label>
+                        <label><input type="radio" name="q24" value="correct" /> ខ. មិនអាចទៅរួចទេ</label>
                     </div>
                 </div>
 
                 <div class="question-block">
                     <p><strong>២៥.</strong> តើអ្វីទៅជាសញ្ញាណនៃ "Linear Operators" នៅពេល $V=W$?</p>
                     <div class="options">
-                        <label><input type="radio" name="q25" value="a" /> ក. $\mathcal{L}(V)$</label>
+                        <label><input type="radio" name="q25" value="correct" /> ក. $\mathcal{L}(V)$</label>
                         <label><input type="radio" name="q25" value="b" /> ខ. $\mathcal{L}(V,W)$</label>
                     </div>
                 </div>
@@ -359,8 +368,8 @@
                     </p>
                     <div class="options">
                         <label
-                            ><input type="radio" name="q26" value="a" /> ក. មានវត្តមាននៃថេរ $b$ ឬតួមិនលីនេអ៊ែរ $cxy
-                            z$</label
+                            ><input type="radio" name="q26" value="correct" /> ក. មានវត្តមាននៃថេរ $b$ ឬតួមិនលីនេអ៊ែរ
+                            $cxy z$</label
                         >
                         <label><input type="radio" name="q26" value="b" /> ខ. វាជាអនុគមន៍ដេរីវេ</label>
                     </div>
@@ -371,7 +380,7 @@
                         <strong>២៧.</strong> តើ "Spanning set" របស់ $V$ តាមបម្លែងលីនេអ៊ែរ $f$ ក្លាយជាអ្វីក្នុង $f(V)$?
                     </p>
                     <div class="options">
-                        <label><input type="radio" name="q27" value="a" /> ក. Spanning set របស់ $f(V)$</label>
+                        <label><input type="radio" name="q27" value="correct" /> ក. Spanning set របស់ $f(V)$</label>
                         <label><input type="radio" name="q27" value="b" /> ខ. Basis របស់ $f(V)$</label>
                     </div>
                 </div>
@@ -382,7 +391,7 @@
                         $\mathcal{P}(\mathbb{R})$ ឬទេ?
                     </p>
                     <div class="options">
-                        <label><input type="radio" name="q28" value="a" /> ក. មែន</label>
+                        <label><input type="radio" name="q28" value="correct" /> ក. មែន</label>
                         <label><input type="radio" name="q28" value="b" /> ខ. មិនមែន</label>
                     </div>
                 </div>
@@ -390,7 +399,7 @@
                 <div class="question-block">
                     <p><strong>២៩.</strong> តើលក្ខណៈ "Associativity" នៃផលគុណបម្លែងមានន័យដូចម្ដេច?</p>
                     <div class="options">
-                        <label><input type="radio" name="q29" value="a" /> ក. $(RS)T = R(ST)$</label>
+                        <label><input type="radio" name="q29" value="correct" /> ក. $(RS)T = R(ST)$</label>
                         <label><input type="radio" name="q29" value="b" /> ខ. $R(S+T) = RS + RT$</label>
                     </div>
                 </div>
@@ -399,7 +408,7 @@
                     <p><strong>៣០.</strong> នៅក្នុង Rank-Nullity Theorem, តើ $k$ តំណាងឱ្យអ្វី?</p>
                     <div class="options">
                         <label><input type="radio" name="q30" value="a" /> ក. វិមាត្រនៃ Null Space</label>
-                        <label><input type="radio" name="q30" value="b" /> ខ. វិមាត្រនៃ Range</label>
+                        <label><input type="radio" name="q30" value="correct" /> ខ. វិមាត្រនៃ Range</label>
                     </div>
                 </div>
 
@@ -407,7 +416,7 @@
                     <p><strong>៣១.</strong> តើអ្វីទៅជានិយមន័យនៃ $\operatorname{nullity}(T)$?</p>
                     <div class="options">
                         <label><input type="radio" name="q31" value="a" /> ក. $\dim(\operatorname{range } T)$</label>
-                        <label><input type="radio" name="q31" value="b" /> ខ. $\dim(\ker T)$</label>
+                        <label><input type="radio" name="q31" value="correct" /> ខ. $\dim(\ker T)$</label>
                         <label><input type="radio" name="q31" value="c" /> គ. $\dim V + \dim W$</label>
                         <label><input type="radio" name="q31" value="d" /> ឃ. $\dim V - \dim W$</label>
                     </div>
@@ -420,7 +429,7 @@
                     </p>
                     <div class="options">
                         <label><input type="radio" name="q32" value="a" /> ក. គ្មាន</label>
-                        <label><input type="radio" name="q32" value="b" /> ខ. តែមួយគត់ (Unique)</label>
+                        <label><input type="radio" name="q32" value="correct" /> ខ. តែមួយគត់ (Unique)</label>
                         <label><input type="radio" name="q32" value="c" /> គ. ពីរ</label>
                         <label><input type="radio" name="q32" value="d" /> ឃ. អនន្ត</label>
                     </div>
@@ -430,7 +439,9 @@
                     <p><strong>៣៣.</strong> តើលក្ខខណ្ឌណាដែលធ្វើឱ្យ $T$ ជា Surjective?</p>
                     <div class="options">
                         <label><input type="radio" name="q33" value="a" /> ក. $\ker T = \{0\}$</label>
-                        <label><input type="radio" name="q33" value="b" /> ខ. $\operatorname{range } T = W$</label>
+                        <label
+                            ><input type="radio" name="q33" value="correct" /> ខ. $\operatorname{range } T = W$</label
+                        >
                         <label><input type="radio" name="q33" value="c" /> គ. $T(0) \neq 0$</label>
                         <label><input type="radio" name="q33" value="d" /> ឃ. $T$ ជាតួលេខថេរ</label>
                     </div>
@@ -440,7 +451,7 @@
                     <p><strong>៣៤.</strong> តើលក្ខណៈរបស់ Identity Map $I$ គឺអ្វី?</p>
                     <div class="options">
                         <label><input type="radio" name="q34" value="a" /> ក. $I(v) = 0$</label>
-                        <label><input type="radio" name="q34" value="b" /> ខ. $I(v) = v$</label>
+                        <label><input type="radio" name="q34" value="correct" /> ខ. $I(v) = v$</label>
                         <label><input type="radio" name="q34" value="c" /> គ. $I(v) = \lambda v$</label>
                         <label><input type="radio" name="q34" value="d" /> ឃ. $I(v) = v^2$</label>
                     </div>
@@ -454,8 +465,8 @@
                             \end{pmatrix}$</label
                         >
                         <label
-                            ><input type="radio" name="q35" value="b" /> ខ. $\begin{pmatrix} \cos\theta & -\sin\theta \\
-                            \sin\theta & \cos\theta \end{pmatrix}$</label
+                            ><input type="radio" name="q35" value="correct" /> ខ. $\begin{pmatrix} \cos\theta &
+                            -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}$</label
                         >
                         <label
                             ><input type="radio" name="q35" value="c" /> គ. $\begin{pmatrix} 0 & 1 \\ 1 & 0
@@ -472,7 +483,7 @@
                     <p><strong>៣៦.</strong> តើអ្វីទៅជាលក្ខណៈនៃ Null Space របស់បម្លែងលីនេអ៊ែរ?</p>
                     <div class="options">
                         <label><input type="radio" name="q36" value="a" /> ក. វាមិនមែនជាលំហរង</label>
-                        <label><input type="radio" name="q36" value="b" /> ខ. វាគឺជាលំហរងនៃ $V$</label>
+                        <label><input type="radio" name="q36" value="correct" /> ខ. វាគឺជាលំហរងនៃ $V$</label>
                         <label><input type="radio" name="q36" value="c" /> គ. វាគឺជាលំហរងនៃ $W$</label>
                         <label><input type="radio" name="q36" value="d" /> ឃ. វាមានទំហំស្មើនឹង $W$</label>
                     </div>
@@ -482,7 +493,7 @@
                     <p><strong>៣៧.</strong> តើអ្វីទៅជាលក្ខណៈនៃ Range របស់បម្លែងលីនេអ៊ែរ?</p>
                     <div class="options">
                         <label><input type="radio" name="q37" value="a" /> ក. វាគឺជាលំហរងនៃ $V$</label>
-                        <label><input type="radio" name="q37" value="b" /> ខ. វាគឺជាលំហរងនៃ $W$</label>
+                        <label><input type="radio" name="q37" value="correct" /> ខ. វាគឺជាលំហរងនៃ $W$</label>
                         <label><input type="radio" name="q37" value="c" /> គ. វាមិនមែនជាលំហរង</label>
                         <label><input type="radio" name="q37" value="d" /> ឃ. វាមានទំហំស្មើនឹង $V$</label>
                     </div>
@@ -493,7 +504,7 @@
                     <div class="options">
                         <label><input type="radio" name="q38" value="a" /> ក. $T$ ជា Injective</label>
                         <label><input type="radio" name="q38" value="b" /> ខ. $T$ ជា Surjective</label>
-                        <label><input type="radio" name="q38" value="c" /> គ. ទាំង ក និង ខ ត្រឹមត្រូវ</label>
+                        <label><input type="radio" name="q38" value="correct" /> គ. ទាំង ក និង ខ ត្រឹមត្រូវ</label>
                         <label><input type="radio" name="q38" value="d" /> ឃ. មិនអាចទៅរួចទេ</label>
                     </div>
                 </div>
@@ -501,7 +512,7 @@
                 <div class="question-block">
                     <p><strong>៣៩.</strong> តើអ្វីទៅជាសញ្ញាណនៃ "Linear Transformations"?</p>
                     <div class="options">
-                        <label><input type="radio" name="q39" value="a" /> ក. ឈ្មោះផ្សេងនៃបម្លែងលីនេអ៊ែរ</label>
+                        <label><input type="radio" name="q39" value="correct" /> ក. ឈ្មោះផ្សេងនៃបម្លែងលីនេអ៊ែរ</label>
                         <label><input type="radio" name="q39" value="b" /> ខ. ឈ្មោះនៃម៉ាទ្រីសតែមួយ</label>
                         <label><input type="radio" name="q39" value="c" /> គ. ឈ្មោះនៃអនុគមន៍មិនលីនេអ៊ែរ</label>
                         <label><input type="radio" name="q39" value="d" /> ឃ. គ្មានចម្លើយ</label>
@@ -512,7 +523,7 @@
                     <p><strong>៤០.</strong> តើផលបូកនៃវិមាត្រ Nullity និង Rank ស្មើនឹងអ្វី?</p>
                     <div class="options">
                         <label><input type="radio" name="q40" value="a" /> ក. $\dim W$</label>
-                        <label><input type="radio" name="q40" value="b" /> ខ. $\dim V$</label>
+                        <label><input type="radio" name="q40" value="correct" /> ខ. $\dim V$</label>
                         <label><input type="radio" name="q40" value="c" /> គ. $\dim V + \dim W$</label>
                         <label><input type="radio" name="q40" value="d" /> ឃ. ០</label>
                     </div>
@@ -522,7 +533,7 @@
                     <p><strong>៤១.</strong> ប្រសិនបើ $T(u) = T(v)$ នោះ $u=v$។ តើ $T$ មានលក្ខណៈអ្វី?</p>
                     <div class="options">
                         <label><input type="radio" name="q41" value="a" /> ក. Surjective</label>
-                        <label><input type="radio" name="q41" value="b" /> ខ. Injective</label>
+                        <label><input type="radio" name="q41" value="correct" /> ខ. Injective</label>
                         <label><input type="radio" name="q41" value="c" /> គ. Bijective</label>
                         <label><input type="radio" name="q41" value="d" /> ឃ. Constant</label>
                     </div>
@@ -531,7 +542,7 @@
                 <div class="question-block">
                     <p><strong>៤២.</strong> តើអ្វីទៅជាការបូកវ៉ិចទ័រនៅក្នុងលំហ $\mathcal{L}(V,W)$?</p>
                     <div class="options">
-                        <label><input type="radio" name="q42" value="a" /> ក. $(S+T)(v) = S(v)+T(v)$</label>
+                        <label><input type="radio" name="q42" value="correct" /> ក. $(S+T)(v) = S(v)+T(v)$</label>
                         <label><input type="radio" name="q42" value="b" /> ខ. $(S+T)(v) = S(v) \cdot T(v)$</label>
                         <label><input type="radio" name="q42" value="c" /> គ. $(S+T)(v) = S(T(v))$</label>
                         <label><input type="radio" name="q42" value="d" /> ឃ. $(S+T)(v) = v$</label>
@@ -541,7 +552,7 @@
                 <div class="question-block">
                     <p><strong>៤៣.</strong> ប្រសិនបើ $T \in \mathcal{L}(V,W)$ នោះលំហ $T(V)$ គឺជាអ្វីនៃ $W$?</p>
                     <div class="options">
-                        <label><input type="radio" name="q43" value="a" /> ក. លំហរង (Subspace)</label>
+                        <label><input type="radio" name="q43" value="correct" /> ក. លំហរង (Subspace)</label>
                         <label><input type="radio" name="q43" value="b" /> ខ. វ៉ិចទ័រតែមួយ</label>
                         <label><input type="radio" name="q43" value="c" /> គ. សំណុំទទេ</label>
                         <label><input type="radio" name="q43" value="d" /> ឃ. មិនមែនជាលំហរងទេ</label>
@@ -551,9 +562,9 @@
                 <div class="question-block">
                     <p><strong>៤៤.</strong> តើលក្ខខណ្ឌណាដែលធ្វើឱ្យ $T$ ជា Monomorphism?</p>
                     <div class="options">
-                        <label><input type="radio" name="q44" value="a" /> ក. $T$ ជា Injective</label>
+                        <label><input type="radio" name="q44" value="correct" /> ក. $T$ ជា Injective</label>
                         <label><input type="radio" name="q44" value="b" /> ខ. $T$ ជា Surjective</label>
-                        <label><input type="radio" name="q44" value="c" /> គ. $\dim V > \dim W$</label>
+                        <label><input type="radio" name="q44" value="c" /> គ. $\dim V \gt \dim W$</label>
                         <label><input type="radio" name="q44" value="d" /> ឃ. $T = 0$</label>
                     </div>
                 </div>
@@ -563,7 +574,7 @@
                     <div class="options">
                         <label><input type="radio" name="q45" value="a" /> ក. $\dim(\operatorname{range } T)$</label>
                         <label><input type="radio" name="q45" value="b" /> ខ. $\dim(\ker T)$</label>
-                        <label><input type="radio" name="q45" value="c" /> គ. $\dim V$</label>
+                        <label><input type="radio" name="q45" value="correct" /> គ. $\dim V$</label>
                         <label><input type="radio" name="q45" value="d" /> ឃ. $\dim W$</label>
                     </div>
                 </div>
@@ -571,7 +582,7 @@
                 <div class="question-block">
                     <p><strong>៤៦.</strong> តើបម្លែងលីនេអ៊ែរអាចរក្សាទុកភាពលីនេអ៊ែរបានដែរឬទេ?</p>
                     <div class="options">
-                        <label><input type="radio" name="q46" value="a" /> ក. បាទ តែងតែរក្សាបាន</label>
+                        <label><input type="radio" name="q46" value="correct" /> ក. បាទ តែងតែរក្សាបាន</label>
                         <label><input type="radio" name="q46" value="b" /> ខ. អាស្រ័យលើ Field $\mathbb{F}$</label>
                         <label><input type="radio" name="q46" value="c" /> គ. ទេ វានឹងក្លាយជាមិនលីនេអ៊ែរ</label>
                         <label><input type="radio" name="q46" value="d" /> ឃ. គ្មានចម្លើយ</label>
@@ -581,7 +592,10 @@
                 <div class="question-block">
                     <p><strong>៤៧.</strong> តើ $T \in \mathcal{L}(V,W)$ អាចផ្ញើវ៉ិចទ័រមិនសូន្យទៅវ៉ិចទ័រសូន្យបានទេ?</p>
                     <div class="options">
-                        <label><input type="radio" name="q47" value="a" /> ក. បាន ប្រសិនបើ $T$ មិនមែន Injective</label>
+                        <label
+                            ><input type="radio" name="q47" value="correct" /> ក. បាន ប្រសិនបើ $T$ មិនមែន
+                            Injective</label
+                        >
                         <label><input type="radio" name="q47" value="b" /> ខ. មិនបាន</label>
                         <label><input type="radio" name="q47" value="c" /> គ. បានជានិច្ច</label>
                         <label><input type="radio" name="q47" value="d" /> ឃ. តែលើលំហរត្រីកោណ</label>
@@ -592,7 +606,7 @@
                     <p><strong>៤៨.</strong> ប្រសិនបើ $\dim V = 2$ និង $\dim W = 5$, តើ $T$ អាចជា Surjective ទេ?</p>
                     <div class="options">
                         <label><input type="radio" name="q48" value="a" /> ក. បាន</label>
-                        <label><input type="radio" name="q48" value="b" /> ខ. មិនអាចទៅរួចទេ</label>
+                        <label><input type="radio" name="q48" value="correct" /> ខ. មិនអាចទៅរួចទេ</label>
                         <label><input type="radio" name="q48" value="c" /> គ. អាស្រ័យលើ $T$</label>
                         <label><input type="radio" name="q48" value="d" /> ឃ. អាស្រ័យលើមូលដ្ឋាន</label>
                     </div>
@@ -605,7 +619,7 @@
                     </p>
                     <div class="options">
                         <label><input type="radio" name="q49" value="a" /> ក. មែន</label>
-                        <label><input type="radio" name="q49" value="b" /> ខ. មិនមែន</label>
+                        <label><input type="radio" name="q49" value="correct" /> ខ. មិនមែន</label>
                         <label><input type="radio" name="q49" value="c" /> គ. ត្រឹមតែសម្រាប់ $x$ តូច</label>
                         <label><input type="radio" name="q49" value="d" /> ឃ. មិនប្រាកដ</label>
                     </div>
@@ -614,7 +628,7 @@
                 <div class="question-block">
                     <p><strong>៥០.</strong> តើបណ្ដាក់ (Composition) នៃបម្លែងលីនេអ៊ែរពីរ គឺជាបម្លែងលីនេអ៊ែរដែរឬទេ?</p>
                     <div class="options">
-                        <label><input type="radio" name="q50" value="a" /> ក. បាទ</label>
+                        <label><input type="radio" name="q50" value="correct" /> ក. បាទ</label>
                         <label><input type="radio" name="q50" value="b" /> ខ. ទេ</label>
                         <label><input type="radio" name="q50" value="c" /> គ. តែនៅពេល $V=W$</label>
                         <label><input type="radio" name="q50" value="d" /> ឃ. មិនប្រាកដ</label>
@@ -630,7 +644,9 @@
                     </p>
                     <div class="options">
                         <label><input type="radio" name="q26" value="A" /> A. ចំណុចគល់តម្រុយ $(0,0)$ តែមួយគត់</label>
-                        <label><input type="radio" name="q26" value="B" /> B. អង្កត់ $[-1, 1]$ នៅលើអ័ក្ស $x$</label>
+                        <label
+                            ><input type="radio" name="q26" value="correct" /> B. អង្កត់ $[-1, 1]$ នៅលើអ័ក្ស $x$</label
+                        >
                         <label
                             ><input type="radio" name="q26" value="C" /> C. អ័ក្ស $x$ ទាំងមូល
                             (បន្ទាត់គ្មានទីបញ្ចប់)</label
@@ -649,7 +665,7 @@
                     <div class="options">
                         <label><input type="radio" name="q27" value="A" /> A. $y = x$</label>
                         <label><input type="radio" name="q27" value="B" /> B. $y = \frac{2}{3}x$</label>
-                        <label><input type="radio" name="q27" value="C" /> C. $y = \frac{3}{2}x$</label>
+                        <label><input type="radio" name="q27" value="correct" /> C. $y = \frac{3}{2}x$</label>
                         <label><input type="radio" name="q27" value="D" /> D. $y = 6x$</label>
                     </div>
                 </div>
@@ -664,7 +680,7 @@
                     <div class="options">
                         <label><input type="radio" name="q28" value="A" /> A. សម្រាប់គ្រប់តម្លៃ $m$ និង $c$</label>
                         <label><input type="radio" name="q28" value="B" /> B. លុះត្រាតែ $m = 1$</label>
-                        <label><input type="radio" name="q28" value="C" /> C. លុះត្រាតែ $c = 0$</label>
+                        <label><input type="radio" name="q28" value="correct" /> C. លុះត្រាតែ $c = 0$</label>
                         <label
                             ><input type="radio" name="q28" value="D" /> D. លុះត្រាតែ $m = 0$ និង $c = 0$
                             ព្រមគ្នា</label
@@ -682,7 +698,7 @@
                     <div class="options">
                         <label><input type="radio" name="q29" value="A" /> A. ការ៉េ (Square)</label>
                         <label><input type="radio" name="q29" value="B" /> B. ចតុកោណកែង (Rectangle)</label>
-                        <label><input type="radio" name="q29" value="C" /> C. ប្រលេឡូក្រាម (Parallelogram)</label>
+                        <label><input type="radio" name="q29" value="correct" /> C. ប្រលេឡូក្រាម (Parallelogram)</label>
                         <label><input type="radio" name="q29" value="D" /> D. ចតុកោណព្នាយ (Trapezoid)</label>
                     </div>
                 </div>
@@ -715,8 +731,8 @@
                     </div>
                     <div class="options">
                         <label
-                            ><input type="radio" name="q17" value="A" /> A. បន្ទាត់មួយ (ឧទាហរណ៍ អ័ក្ស $z$ មានទម្រង់ជា
-                            $\mathbb{R}$)</label
+                            ><input type="radio" name="q17" value="correct" /> A. បន្ទាត់មួយ (ឧទាហរណ៍ អ័ក្ស $z$
+                            មានទម្រង់ជា $\mathbb{R}$)</label
                         >
                         <label
                             ><input type="radio" name="q17" value="B" /> B. ប្លង់មួយកាត់តាមគល់តម្រុយ
@@ -750,8 +766,8 @@
                     <div class="options">
                         <label><input type="radio" name="q19" value="A" /> A. លំហរងផ្ទុយ (Opposite Subspace)</label>
                         <label
-                            ><input type="radio" name="q19" value="B" /> B. លំហបំពេញអរតូកូណាល់ $W^\perp$ (Orthogonal
-                            Complement)</label
+                            ><input type="radio" name="q19" value="correct" /> B. លំហបំពេញអរតូកូណាល់ $W^\perp$
+                            (Orthogonal Complement)</label
                         >
                         <label><input type="radio" name="q19" value="C" /> C. លំហផលគុណ (Product Space)</label>
                         <label><input type="radio" name="q19" value="D" /> D. លំហប៉ារ៉ាឡែល (Parallel Space)</label>
@@ -785,7 +801,7 @@
                         <label><input type="radio" name="q21" value="A" /> A. រង្វិល (Rotation)</label>
                         <label><input type="radio" name="q21" value="B" /> B. ចំណោល (Projection)</label>
                         <label
-                            ><input type="radio" name="q21" value="C" /> C. ការពង្រីកឯកសណ្ឋាន (Uniform Scaling /
+                            ><input type="radio" name="q21" value="correct" /> C. ការពង្រីកឯកសណ្ឋាន (Uniform Scaling /
                             Dilation)</label
                         >
                         <label><input type="radio" name="q21" value="D" /> D. ការឆ្លុះ (Reflection)</label>
