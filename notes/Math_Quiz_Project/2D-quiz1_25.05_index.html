@@ -871,17 +871,30 @@
         }
 
         let totalScore = 0;
+        let totalQuestions = 57; // ឧបមាថាអ្នកមាន ៥៧ សំណួរ (សូមដាក់លេខសរុបនៃសំណួររបស់អ្នក)
+        let scorePerQuestion = 1; // ឧបមាថា ១ សំណួរ ១ ពិន្ទុ
+
+        // ប្រើ for loop ដើម្បីរត់ឆែករាល់សំណួរទាំងអស់
+        for (let i = 1; i <= totalQuestions; i++) {
+            let questionName = "q" + i;
+            let selectedAnswer = document.querySelector('input[name="' + questionName + '"]:checked');
+
+            // បើគាត់បានជ្រើសរើសចម្លើយ ហើយវាត្រូវ
+            if (selectedAnswer && selectedAnswer.value === "correct") {
+                totalScore += scorePerQuestion;
+            }
+        }
 
         // ចាប់យកចម្លើយ (ឧទាហរណ៍ដូចសំនួរទី២៦ និង២៧)
-        let q26Answer = document.querySelector('input[name="q26"]:checked');
-        let q27Answer = document.querySelector('input[name="q27"]:checked');
+        //let q26Answer = document.querySelector('input[name="q26"]:checked');
+        //let q27Answer = document.querySelector('input[name="q27"]:checked');
 
-        if (q26Answer && q26Answer.value === "correct") {
-            totalScore += 10;
-        }
-        if (q27Answer && q27Answer.value === "correct") {
-            totalScore += 10;
-        }
+        //if (q26Answer && q26Answer.value === "correct") {
+        //    totalScore += 10;
+        //}
+        //if (q27Answer && q27Answer.value === "correct") {
+        //    totalScore += 10;
+        //}
 
         // បិទប៊ូតុង និងបង្ហាញពាក្យ "កំពុងបញ្ជូន..." ដើម្បីកុំឱ្យគាត់ចុចដដែលៗ
         let submitBtn = document.getElementById("submitBtn");
