@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="km">
+    <head>
+        <title>ទំព័រចម្លើយ!</title>
+        <style>
+            body {
+                font-family: "Battambang", sans-serif;
+                background-color: #f4f7f6;
+                display: flex;
+                justify-content: center;
+                padding-top: 50px;
+            }
+            .card {
+                background: white;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                width: 350px;
+                text-align: center;
+            }
+            input {
+                width: 90%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            button {
+                background-color: #4caf50;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #45a049;
+            }
+            #resultArea {
+                margin-top: 20px;
+                font-weight: bold;
+                color: #333;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <h2>លទ្ធផលប្រលង</h2>
+            <input type="text" id="checkId" placeholder="បញ្ចូលលេខរៀងរបស់អ្នក" />
+            <button onclick="checkScore()">ពិនិត្យពិន្ទុ</button>
+            <div id="resultArea"></div>
+        </div>
+
+        <!-- <script>
+            function checkScore() {
+                let id = document.getElementById("checkId").value;
+                document.getElementById("resultArea").innerHTML = "កំពុងស្វែងរក...";
+                google.script.run.withSuccessHandler(showResult).getStudentScore(id);
+            }
+
+            function showResult(res) {
+                document.getElementById("resultArea").innerHTML = res;
+            }
+        </script>-->
+
+        <script>
+            function checkScore() {
+                let id = document.getElementById("checkId").value;
+                let resultArea = document.getElementById("resultArea");
+
+                resultArea.innerHTML = "កំពុងស្វែងរក...";
+
+                // ដាក់ URL ដែលបានពីការ Deploy Apps Script របស់អ្នកនៅទីនេះ
+                const WEB_APP_URL =
+                    "https://script.google.com/macros/s/AKfycbxuQlrV_jN9-rKplHBI_8_UlIM9Do81Mpns49A1GjalNWCai8hF40jVMUSnYCzKrDhMzA/exec";
+
+                fetch(WEB_APP_URL + "?id=" + id)
+                    .then((response) => response.json())
+                    .then((data) => {
+                        resultArea.innerHTML = data.result;
+                    })
+                    .catch((error) => {
+                        resultArea.innerHTML = "មានបញ្ហា៖ " + error;
+                    });
+            }
+        </script>
+    </body>
+</html>
