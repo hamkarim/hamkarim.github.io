@@ -42,26 +42,26 @@
             const questions = document.getElementsByClassName("question-box");
 
             /*function changeQuestion(n) {
-                // លាក់សំណួរដែលកំពុងបង្ហាញ
-                questions[currentQuestion].style.display = "none";
+                  // លាក់សំណួរដែលកំពុងបង្ហាញ
+                  questions[currentQuestion].style.display = "none";
 
-                // ប្តូរលេខសំណួរ
-                currentQuestion += n;
+                  // ប្តូរលេខសំណួរ
+                  currentQuestion += n;
 
-                // កំណត់ព្រំដែន (កុំឱ្យហួសសំណួរទីមួយ ឬចុងក្រោយ)
-                if (currentQuestion < 0) currentQuestion = 0;
-                if (currentQuestion >= questions.length) currentQuestion = questions.length - 1;
+                  // កំណត់ព្រំដែន (កុំឱ្យហួសសំណួរទីមួយ ឬចុងក្រោយ)
+                  if (currentQuestion < 0) currentQuestion = 0;
+                  if (currentQuestion >= questions.length) currentQuestion = questions.length - 1;
 
-                // បង្ហាញសំណួរថ្មី
-                questions[currentQuestion].style.display = "block";
-            }*/
+                  // បង្ហាញសំណួរថ្មី
+                  questions[currentQuestion].style.display = "block";
+              }*/
 
             // បន្ថែមមុខងារនេះនៅខាងក្នុង Function changeQuestion()
             /*function updateIndicator() {
-                let indicator = document.getElementById("question-indicator");
-                let totalQuestions = questions.length;
-                indicator.innerText = "លំហាត់ទី " + (currentQuestion + 1) + " / " + totalQuestions;
-            }*/
+                  let indicator = document.getElementById("question-indicator");
+                  let totalQuestions = questions.length;
+                  indicator.innerText = "លំហាត់ទី " + (currentQuestion + 1) + " / " + totalQuestions;
+              }*/
 
             function updateIndicator() {
                 let indicator = document.getElementById("question-indicator");
@@ -75,7 +75,34 @@
                     currentQuestion === questions.length - 1;
             }
 
+            // កំណត់ស្ថានភាពដំបូង នៅពេលទំព័រផ្ទុក (Load)
+            window.onload = function () {
+                updateButtonStates(); // ហៅមុខងារនេះដើម្បីបិទប៊ូតុងនៅពេលចាប់ផ្ដើម
+            };
+
+            function updateButtonStates() {
+                // 1. គ្រប់គ្រងប៊ូតុង Previous
+                // បើស្ថិតនៅសំណួរទី ១ (currentQuestion === 0) គឺបិទវា
+                document.querySelector('button[onclick="changeQuestion(-1)"]').disabled = currentQuestion === 0;
+
+                // 2. គ្រប់គ្រងប៊ូតុង បញ្ជូនចម្លើយ (Submit)
+                // ត្រង់នេះយើងប្រើ Logic ដែលយើងធ្លាប់ធ្វើពីមុន៖ បិទវារហូតដល់ឆ្លើយគ្រប់សំណួរ
+                document.getElementById("submitBtn").disabled = true;
+            }
+
             function changeQuestion(n) {
+                // ១. ឆែកលក្ខខណ្ឌសម្រាប់ទំព័រទី១
+                if (currentQuestion === 0 && n === 1) {
+                    let name = document.getElementById("studentName").value;
+                    let id = document.getElementById("studentId").value;
+                    let classGroup = document.getElementById("groupId").value;
+
+                    if (!name || !id || !classGroup) {
+                        showModal("សូមបំពេញឈ្មោះ លេខរៀង និងថ្នាក់ឱ្យបានគ្រប់គ្រាន់!");
+                        return;
+                    }
+                }
+
                 // បើចុច Next (n === 1) ត្រូវឆែកមើលចម្លើយសិន
                 if (n === 1) {
                     let currentQ = questions[currentQuestion];
@@ -92,7 +119,8 @@
 
                     // បើមិនទាន់ជ្រើសរើស មិនអនុញ្ញាតឱ្យទៅមុខទេ
                     if (!isChecked) {
-                        alert("សូមជ្រើសរើសចម្លើយមួយសិន ទើបអាចបន្តទៅលំហាត់បន្ទាប់បាន!");
+                        //alert("សូមជ្រើសរើសចម្លើយមួយសិន ទើបអាចបន្តទៅលំហាត់បន្ទាប់បាន!");
+                        showModal("សូមជ្រើសរើសចម្លើយមួយសិន ទើបអាចបន្តទៅលំហាត់បន្ទាប់បាន!");
                         return; // បញ្ឈប់ការដំណើរការ Function
                     }
                 }
@@ -109,6 +137,52 @@
 
                 // ហៅមុខងារអាប់ដេតលេខលំហាត់
                 updateIndicator();
+
+                // បន្ទាប់ពីប្ដូរសំណួររួច ត្រូវហៅ updateButtonStates ម្តងទៀត
+                updateButtonStates();
+            }
+
+            /*      function changeQuestion(n) {
+                // ១. ឆែកលក្ខខណ្ឌសម្រាប់ទំព័រទី១
+                if (currentQuestion === 0 && n === 1) {
+                    let name = document.getElementById("studentName").value;
+                    let id = document.getElementById("studentId").value;
+                    let classGroup = document.getElementById("classGroup").value;
+
+                    if (!name || !id || !classGroup) {
+                        showModal("សូមបំពេញឈ្មោះ លេខរៀង និងថ្នាក់ឱ្យបានគ្រប់គ្រាន់!");
+                        return;
+                    }
+                }
+
+                // ២. ឆែកលក្ខខណ្ឌជ្រើសរើសចម្លើយ
+                if (n === 1) {
+                    let selected = questions[currentQuestion].querySelector('input[type="radio"]:checked');
+                    if (!selected) {
+                        showModal("សូមជ្រើសរើសចម្លើយមួយសិន ទើបអាចបន្តទៅមុខបាន!");
+                        return;
+                    }
+                }
+
+                // ៣. ប្ដូរលំហាត់
+                questions[currentQuestion].style.display = "none";
+                currentQuestion += n;
+
+                // បង្ហាញលំហាត់ថ្មី និងធ្វើបច្ចុប្បន្នភាព indicator
+                questions[currentQuestion].style.display = "block";
+                updateIndicator();
+
+               
+            }
+            */
+            // មុខងារសម្រាប់បង្ហាញ Modal ជំនួស Alert
+            function showModal(msg) {
+                document.getElementById("modalMsg").innerText = msg;
+                document.getElementById("customModal").style.display = "block";
+            }
+
+            function closeAlert() {
+                document.getElementById("customModal").style.display = "none";
             }
         </script>
 
@@ -242,11 +316,60 @@
             button:disabled {
                 background-color: #ccc;
             }
-            .question-box {
+            /* .question-box {
                 padding: 20px;
                 border: 1px solid #ddd;
                 border-radius: 10px;
                 margin-bottom: 20px;
+            }*/
+
+            /* ស្រមោលប្រអប់លំហាត់ */
+            .question-box {
+                padding: 20px;
+                background: white;
+                border-radius: 1px;
+                margin: 10px !important;
+                box-shadow:
+                    0 10px 20px rgba(0, 0, 0, 0.1),
+                    0 6px 6px rgba(0, 0, 0, 0.1);
+                margin-bottom: 10px;
+                border: 1px solid #eee;
+            }
+
+            /* ប៊ូតុងទំហំស្មើគ្នា */
+            .controls button {
+                width: 98px; /* កំណត់ទំហំទទឹងឱ្យស្មើគ្នា */
+                padding: 6px;
+                font-weight: bold;
+            }
+
+            /* Modal Popup ចំកណ្ដាល Screen */
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 25px;
+            }
+            .modal-content {
+                background-color: #fff;
+                margin: 15% auto;
+                padding: 20px;
+                border-radius: 10px;
+                width: 300px;
+                text-align: center;
+                box-shadow: 0 25px 25px rgba(0, 0, 0, 0.3);
+                font-size: 14px;
+            }
+
+            button:disabled {
+                background-color: #cccccc !important; /* ពណ៌ប្រផេះ */
+                cursor: not-allowed; /* សញ្ញាព្រួញហាមឃាត់ */
+                opacity: 0.6; /* ស្រអាប់ */
             }
         </style>
     </head>
@@ -303,7 +426,7 @@
                         </div>
                     </div>
 
-                    <div class="question-box" style="display: none">
+                    <div class="question-box" style="display: block">
                         <p><strong>២.</strong> បើ $A=\{a,b,c,d\}$ និង $B=\{c,d,e\}$ តើ $A\cap B$ ស្មើនឹងអ្វី?</p>
                         <div class="options">
                             <label><input type="radio" name="q2" value="a" /> ក. $\{a,b,e\}$</label>
@@ -313,7 +436,7 @@
                         </div>
                     </div>
 
-                    <div class="question-box" style="display: none">
+                    <div class="question-box" style="display: block">
                         <p><strong>៣.</strong> បើ $U=\{1,2,3,4,5,6\}$ និង $A=\{2,4,6\}$ តើ $A'$ ឬ $A^c$ ស្មើនឹងអ្វី?</p>
                         <div class="options">
                             <label><input type="radio" name="q3" value="correct" /> ក. $\{1,3,5\}$</label>
@@ -323,7 +446,7 @@
                         </div>
                     </div>
 
-                    <div class="question-box" style="display: none">
+                    <div class="question-box" style="display: block">
                         <p><strong>៤.</strong> បើ $A=\{1,2,3,4\}$ និង $B=\{3,4,5\}$ តើ $A-B$ ស្មើនឹងអ្វី?</p>
                         <div class="options">
                             <label><input type="radio" name="q4" value="a" /> ក. $\{3,4\}$</label>
@@ -405,7 +528,7 @@
                         </div>
                     </div>
 
-                    <div class="question-box" style="display: none">
+                    <div class="question-block" style="display: block">
                         <p><strong>១១.</strong> តាមរូប Venn ខាងក្រោម តើតំបន់ដែលត្រូវបានបន្លិចតំណាងឱ្យសំណុំមួយណា?</p>
 
                         <script type="text/tikz">
@@ -430,7 +553,7 @@
                         </div>
                     </div>
 
-                    <div class="question-box" style="display: none">
+                    <div class="question-box" style="display: block">
                         <p><strong>១២.</strong> តាមរូប Venn ខាងក្រោម តើតំបន់ដែលត្រូវបានបន្លិចតំណាងឱ្យអ្វី?</p>
 
                         <script type="text/tikz">
@@ -458,8 +581,8 @@
                             <label><input type="radio" name="q12" value="d" /> ឃ. $B-A$</label>
                         </div>
                     </div>
-
-                    <div class="question-box" style="display: none">
+                    <!--
+                    <div class="question-box" style="display: block">
                         <p><strong>១៣.</strong> តាមរូប Venn ខាងក្រោម តើតំបន់ដែលត្រូវបានបន្លិចតំណាងឱ្យសំណុំមួយណា?</p>
 
                         <script type="text/tikz">
@@ -486,7 +609,7 @@
                         </div>
                     </div>
 
-                    <div class="question-box" style="display: none">
+                    <div class="question-box" style="display: block">
                         <p><strong>១៤.</strong> តាមរូប Venn ខាងក្រោម តើតំបន់ដែលត្រូវបានបន្លិចតំណាងឱ្យសំណុំមួយណា?</p>
 
                         <script type="text/tikz">
@@ -516,7 +639,7 @@
                         </div>
                     </div>
 
-                    <div class="question-box" style="display: none">
+                    <div class="question-box" style="display: block">
                         <p><strong>១៥.</strong> តាមរូប Venn ខាងក្រោម តើតំបន់ដែលត្រូវបានបន្លិចតំណាងឱ្យអ្វី?</p>
 
                         <script type="text/tikz">
@@ -544,7 +667,7 @@
                         </div>
                     </div>
 
-                    <div class="question-box" style="display: none">
+                    <div class="question-box" style="display: block">
                         <p>
                             <strong>១៦.</strong> តាមរូបខាងក្រោម តើទំនាក់ទំនង $R$ ពី $A$ ទៅ $B$
                             គឺជាសំណុំគូមានលំដាប់មួយណា?
@@ -944,6 +1067,8 @@
                         </div>
                     </div>
 
+
+-->
                     <div class="controls" style="text-align-last: center">
                         <button type="button" onclick="changeQuestion(-1)">Previous</button>
 
@@ -1012,6 +1137,13 @@
                 }
             }
         </script>
+
+        <div id="customModal" class="modal">
+            <div class="modal-content">
+                <h3 id="modalMsg"></h3>
+                <button onclick="closeAlert()">យល់ព្រម</button>
+            </div>
+        </div>
     </body>
 </html>
 
@@ -1049,8 +1181,14 @@
         }
 
         let totalScore = 0;
-        let totalQuestions = 7; // ឧបមាថាអ្នកមាន ៧ សំណួរ (សូមដាក់លេខសរុបនៃសំណួររបស់អ្នក)
+        //let totalQuestions = 7; // ឧបមាថាអ្នកមាន ៧ សំណួរ (សូមដាក់លេខសរុបនៃសំណួររបស់អ្នក)
         let scorePerQuestion = 1; // ឧបមាថា ១ សំណួរ ១ ពិន្ទុ
+
+        // កំណត់សំណួរទាំងអស់ពី HTML
+        const questions = document.getElementsByClassName("question-box");
+
+        // មិនបាច់ខ្វល់រឿងចំនួនទេ វាស្មើនឹងចំនួនដែលអ្នកមានក្នុង HTML តែម្តង
+        let totalQuestions = questions.length;
 
         // ប្រើ for loop ដើម្បីរត់ឆែករាល់សំណួរទាំងអស់
         for (let i = 1; i <= totalQuestions; i++) {

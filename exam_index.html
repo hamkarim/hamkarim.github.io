@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="km">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Siemreap&display=swap"
+      rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@400;700&display=swap" rel="stylesheet" />
+
+    <title>វិញ្ញាសាគណិតវិទ្យា៖ លំហផលចែក (Quotient Spaces)</title>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css" />
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"]
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"]
+          ],
+          macros: {
+            mybullet: "{\\tiny\\bullet\\;\\;}",
+            mybullett: "{\\quad\\tiny\\bullet\\;\\;}"
+          }
+        },
+        chtml: {
+          scale: 1.2,
+          linebreaks: { automatic: true }
+        },
+        svg: {
+          scale: 1.2,
+          matchFontHeight: true
+        }
+      };
+    </script>
+
+    <style>
+      :root {
+        --primary-color: #2c3e50;
+        --accent-color: #3498db;
+        --success-color: #2ecc71;
+        --danger-color: #e74c3c;
+        --light-bg: #f4f7f6;
+        --white: #ffffff;
+        --border-radius: 8px;
+      }
+
+      body {
+        font-family: Siemreap, sans-serif;
+        font-size: larger;
+        margin: 0;
+        padding: 0;
+        background-color: var(--light-bg);
+        line-height: 1.8;
+      }
+      header {
+        background-color: var(--primary-color);
+        color: var(--white);
+        padding: 20px;
+        text-align: center;
+      }
+      .main-container {
+        display: flex;
+        max-width: 1000px;
+        margin: 20px auto;
+        gap: 20px;
+        padding: 0 15px;
+      }
+      .sidebar {
+        width: 300px;
+        background: var(--white);
+        padding: 15px;
+        border-radius: var(--border-radius);
+      }
+      .question-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 5px;
+      }
+      .question-btn {
+        padding: 5px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        background: #eee;
+      }
+      .content-area {
+        flex: 1;
+        background: var(--white);
+        padding: 20px;
+        border-radius: var(--border-radius);
+      }
+      .option-card {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin: 5px 0;
+        cursor: pointer;
+      }
+      .option-card.selected {
+        background-color: #e3f2fd;
+        border-color: var(--accent-color);
+      }
+      .option-card.correct {
+        background-color: #d4edda;
+        border-color: var(--success-color);
+      }
+      .option-card.incorrect {
+        background-color: #f8d7da;
+        border-color: var(--danger-color);
+      }
+      .explanation-box {
+        margin-top: 15px;
+        padding: 10px;
+        background: #e8f4fd;
+        display: none;
+      }
+
+      .math-large {
+        font-size: 1.3em; /* បង្កើនទំហំ ១៣០% */
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <header><h1>លំហាត់ពិនិត្យការយល់ដឹង៖ លំហផលចែក (Quotient Spaces)</h1></header>
+
+    <div class="main-container">
+      <div class="sidebar">
+        <h2>បញ្ជីសំណួរ</h2>
+        <div class="question-grid" id="sidebar-grid"></div>
+      </div>
+
+      <div class="content-area">
+        <div id="scoreboard" style="font-size: x-large; font-weight: bold; text-align-last: end; color: #e74c3c">
+          ពិន្ទុ៖ ០ / ៥០
+        </div>
+        <div id="current-question-container"></div>
+
+        <div class="control-buttons">
+          <button onclick="prevQuestion()">ថយក្រោយ</button>
+          <button id="submit-btn" onclick="checkAnswer()">ផ្ទៀងផ្ទាត់</button>
+          <button onclick="nextQuestion()">បន្ទាប់</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          id: 1,
+          question: "លំហផលចែក \\(V/W\\) គឺជាសំណុំនៃអ្វី?",
+          options: ["ថ្នាក់សមមូល (កូសេត)", "វ៉ិចទ័រសូន្យ", "លំហរង \\(W\\)", "គ្រប់វ៉ិចទ័រក្នុង \\(V\\)"],
+          correct: 0,
+          explanation:
+            "លំហផលចែក \\(V/W\\) គឺជាសំណុំនៃថ្នាក់សមមូល (កូសេត) ដែលបង្កើតដោយទំនាក់ទំនងសមមូល \\(v \\sim v' \\iff v' - v \\\in W\\) ។"
+        },
+        {
+          id: 2,
+          question: "តើវ៉ិចទ័រពីរ \\(u, v\\) ស្ថិតនៅក្នុងកូសេតតែមួយ លុះត្រាតែមានលក្ខខណ្ឌអ្វី?",
+          options: ["a) \\(u+v \\\in W\\)", "b) \\(u-v \\\in W\\)", "c) \\(u,v \\\in W\\)", "d) គ្មានលក្ខខណ្ឌ"],
+          correct: 1,
+          explanation: "កូសេតពីរស្មើគ្នា \\(u + W = v + W\\) លុះត្រាតែផលសង \\(u - v\\) ស្ថិតនៅក្នុងលំហរង \\(W\\) ។"
+        },
+        // អ្នកអាចបន្ថែមសំណួរទី ៣ ដល់ ៥០ តាមទម្រង់នេះ
+
+        {
+          id: 3,
+          question: "តើធាតុសូន្យ (Additive Identity) នៃលំហផលចែក \\(V/W\\) គឺជាអ្វី?",
+          options: [1],
+          correct: 2,
+          explanation:
+            "ធាតុសូន្យនៅក្នុង \\(V/W\\) គឺកូសេត \\(0 + W\\) ពីព្រោះចំពោះគ្រប់ \\(v + W \\\in V/W\\) គេមាន \\((v+W) + (0+W) = (v+0) + W = v+W\\) ។"
+        },
+
+        {
+          id: 4,
+          question:
+            "ប្រសិនបើ \\(V = \\\mathbb{R}^3\\) និង \\(W\\) ជាប្លង់កាត់តាមគល់តម្រុយ (លំហរងវិមាត្រ ២) តើលំហផលចែក \\(V/W\\) មានទម្រង់ធរណីមាត្រជាអ្វី?",
+          options: [
+            "ចំណុចមួយ (វិមាត្រ ០)",
+            "បន្ទាត់ត្រង់កាត់តាមគល់តម្រុយ (វិមាត្រ ១)",
+            "ប្លង់ពីរស្របគ្នា",
+            "លំហវិមាត្រ ៣ ទាំងមូល"
+          ],
+          correct: 1,
+          explanation:
+            "វិមាត្រនៃ \\(V/W\\) គឺ \\(\\dim(V/W) = \\dim(V) - \\dim(W) = 3 - 2 = 1\\) ។ លំហវ៉ិចទ័រវិមាត្រ ១ គឺស្មើនឹងបន្ទាត់ត្រង់មួយ។"
+        },
+        {
+          id: 5,
+          question:
+            "ឧបមាថា \\(V\\) ជាលំហវ៉ិចទ័រមានវិមាត្រ \\(n\\) ហើយ \\(W\\) ជាលំហរងមានវិមាត្រ \\(k\\)។ តើវិមាត្រនៃលំហផលចែក \\(V/W\\) ស្មើនឹងប៉ុន្មាន?",
+          options: ["\\(n + k\\)", "\\(n \\cdot k\\)", "\\(n - k\\)", "\\(k\\)"],
+          correct: 2,
+          explanation:
+            "តាមទ្រឹស្តីបទវិមាត្រ លំហផលចែក \\(V/W\\) មានវិមាត្រស្មើនឹងវិមាត្រនៃលំហដើម \\(V\\) ដកនឹងវិមាត្រនៃលំហរង \\(W\\) គឺ \\(\\dim(V/W) = \\dim(V) - \\dim(W) = n - k\\) ។"
+        },
+        {
+          id: 6,
+          question: "តើការបូកនៅក្នុងលំហផលចែក \\(V/W\\) ត្រូវបានកំណត់យ៉ាងដូចម្តេច?",
+          options: [],
+          correct: 0,
+          explanation: "ប្រតិបត្តិការបូកត្រូវបានកំណត់ដោយបូកតំណាងកូសេតនីមួយៗគឺ \\((u+W)+(v+W) = (u+v)+W\\) ។"
+        },
+        {
+          id: 7,
+          question: "តើការគុណនឹងស្កាលែនៅក្នុងលំហផលចែក \\(V/W\\) ត្រូវបានកំណត់យ៉ាងដូចម្តេច?",
+          options: [],
+          correct: 1,
+          explanation: "ចំពោះស្កាលែ \\(c \\in F\\) និងកូសេត \\(v+W \\in V/W\\) ការគុណនឹងស្កាលែគឺ \\(c(v+W) = cv+W\\) ។"
+        },
+        {
+          id: 8,
+          question:
+            "ដើម្បីឱ្យប្រតិបត្តិការបូកនៅលើ \\(V/W\\) និយមន័យបានត្រឹមត្រូវ (Well-defined) តើលក្ខខណ្ឌណាដែលសំខាន់បំផុតសម្រាប់ \\(W\\)?",
+          options: [],
+          correct: 0,
+          explanation:
+            "ប្រសិនបើ \\(W\\) មិនមែនជាលំហរងទេ នោះលទ្ធផលនៃប្រតិបត្តិការនឹងអាស្រ័យលើការជ្រើសរើសតំណាងកូសេត ដែលធ្វើឱ្យប្រតិបត្តិការមិនអាចកំណត់បានត្រឹមត្រូវ ។"
+        },
+        {
+          id: 9,
+          question: "តើអាប់លីកាស្យុងកាណូនិក (Canonical Projection) \\(\\pi: V \\to V/W\\) ត្រូវបានកំណត់យ៉ាងដូចម្តេច?",
+          options: [],
+          correct: 1,
+          explanation:
+            "អាប់លីកាស្យុងកាណូនិក បញ្ជូនវ៉ិចទ័រ \\(v \\in V\\) ទៅកាន់កូសេតរបស់វាគឺ \\(v + W\\) នៅក្នុង \\(V/W\\) ។"
+        },
+        {
+          id: 10,
+          question:
+            "ចូរពិនិត្យមើលរូបធរណីមាត្រនៃលំហផលចែក \\(V/W\\) នៅក្នុងសំណួរនេះ។ តើបន្ទាត់នីមួយៗដែលស្របនឹង \\(W\\) តំណាងឱ្យអ្វីនៅក្នុង \\(V/W\\)?",
+          tikz: "\\draw[->, thick] (-2.5,0) -- (2.5,0) node[right] {$x$};\n\\draw[->, thick] (0,-2.5) -- (0,2.5) node[above] {$y$};\n\\draw[blue, ultra thick] (-2,-1) -- (2,1) node[right] {$W$};\n\\draw[red, thick, dashed] (-2,0) -- (2,2) node[right] {$v_1 + W$};\n\\draw[red, thick, dashed] (-2,-2) -- (2,0) node[right] {$v_2 + W$};\n\\filldraw[black] (0.5, 1.25) circle (1.5pt) node[above] {$v_1$};\n\\filldraw[black] (-0.5, -1.25) circle (1.5pt) node[below] {$v_2$};",
+          options: [],
+          correct: 1,
+          explanation:
+            "ក្នុងធរណីមាត្រ កូសេត \\(v + W\\) គឺជាបន្ទាត់ត្រង់ស្របនឹង \\(W\\)។ ដូច្នេះ បន្ទាត់ស្របគ្នានីមួយៗគឺជាធាតុមួយ (វ៉ិចទ័រមួយ) នៃលំហផលចែក \\(V/W\\) ។"
+        },
+        {
+          id: 11,
+          question:
+            "ប្រសិនបើ \\(V\\) ជាលំហវ៉ិចទ័រនៃប៉ូលីណូមដែលមានដឺក្រេយ៉ាងច្រើន \\(n\\) (\\(P_n(x)\\)) និង \\(W = P_{n-1}(x)\\) ជាលំហរងនៃប៉ូលីណូមដឺក្រេយ៉ាងច្រើន \\(n-1\\)។ តើវិមាត្រនៃ \\(V/W\\) ស្មើនឹងប៉ុន្មាន?",
+          options: ["\\(n\\)", "\\(1\\)", "\\(n+1\\)", "\\(0\\)"],
+          correct: 1,
+          explanation:
+            "វិមាត្រនៃ \\(P_n(x)\\) គឺ \\(n+1\\)  និងវិមាត្រនៃ \\(P_{n-1}(x)\\) គឺ \\(n\\)។ ដូច្នេះ \\(\\dim(V/W) = (n+1) - n = 1\\) ។"
+        },
+        {
+          id: 12,
+          question: "ប្រសិនបើ \\(W = V\\) តើលំហផលចែក \\(V/V\\) ស្មើនឹងអ្វី?",
+          options: ["\\(V\\)", "\\(\\{0\\}\\) (លំហសូន្យដែលមានតែធាតុ \\(0+V\\))", "គ្មាននិយមន័យទេ", "សំណុំទទេ"],
+          correct: 1,
+          explanation:
+            "ប្រសិនបើ \\(W = V\\) នោះគ្រប់វ៉ិចទ័រទាំងអស់ស្ថិតនៅក្នុងកូសេតតែមួយគឺ \\(0 + V\\)។ ដូចនេះ \\(V/V\\) មានតែធាតុមួយគត់គឺវ៉ិចទ័រសូន្យ ។"
+        },
+        {
+          id: 13,
+          question:
+            "ប្រសិនបើ \\(W = \\{0\\}\\) ជាលំហរងសូន្យ តើលំហផលចែក \\(V/\\{0\\}\\) អ៊ីសូម៉ូភីស (Isomorphic) ទៅនឹងលំហណា?",
+          options: ["\\(\\{0\\}\\)", "\\(V\\)", "\\(V^*\\) (លំហទ្វេ)", "គ្មានទំនាក់ទំនងទេ"],
+          correct: 1,
+          explanation:
+            "កូសេតនីមួយៗនៃ \\(V/\\{0\\}\\) គឺ \\(v + \\{0\\} = \\{v\\}\\) ដែលមានតែវ៉ិចទ័រ \\(v\\) មួយគត់។ ដូច្នេះមានប៊ីសេកស្យុងធម្មជាតិ និងអ៊ីសូម៉ូភីសរវាង \\(V\\) និង \\(V/\\{0\\}\\) ។"
+        },
+        {
+          id: 14,
+          question:
+            "ឧបមាថា \\(T: V \\to U\\) ជាអាប់លីកាស្យុងលីនេអ៊ែរ។ តាមទ្រឹស្តីបទអ៊ីសូម៉ូភីសទី១ (First Isomorphism Theorem) តើលំហផលចែក \\(V/\\ker(T)\\) អ៊ីសូម៉ូភីសទៅនឹងអ្វី?",
+          options: [],
+          correct: 2,
+          explanation:
+            "តាមទ្រឹស្តីបទអ៊ីសូម៉ូភីសទី១ លំហផលចែកនៃលំហដើមដោយស្នូលរបស់វាគឺអ៊ីសូម៉ូភីសទៅនឹងរូបភាពរបស់វា៖ \\(V/\\ker(T) \\cong \\text{Im}(T)\\) ។"
+        },
+        {
+          id: 15,
+          question: "តើអាប់លីកាស្យុងកាណូនិក \\(\\pi: V \\to V/W\\) ជាប្រភេទអាប់លីកាស្យុងអ្វី?",
+          options: [],
+          correct: 2,
+          explanation:
+            "ចំពោះគ្រប់កូសេត \\(v + W \\in V/W\\) វាតែងតែមានបុរេភាព \\(v \\in V\\) ដែល \\(\\pi(v) = v + W\\) ដូច្នេះវាជាស៊ូសេកស្យុង ។"
+        },
+        {
+          id: 16,
+          question: "តើស្នូល (Kernel) នៃអាប់លីកាស្យុងកាណូនិក \\(\\pi: V \\to V/W\\) ស្មើនឹងអ្វី?",
+          options: [],
+          correct: 2,
+          explanation:
+            "ស្នូលនៃ \\(\\pi\\) គឺសំណុំនៃ \\(v \\in V\\) ដែល \\(\\pi(v) = 0 + W = W\\)។ តាមនិយមន័យ \\(v + W = W \iff v \\in W\\) ដូចនេះ \\(\\ker(\\pi) = W\\) ។"
+        },
+        {
+          id: 17,
+          question:
+            "ប្រសិនបើ \\(\\{v_1, v_2, \\dots, v_k\\}\\) ជាគ្រឹះ (Basis) នៃ \\(W\\) ហើយយើងបំពេញវាឱ្យទៅជាគ្រឹះ \\(\\{v_1, \\dots, v_k, v_{k+1}, \\dots, v_n\\}\\) នៃ \\(V\\)។ តើគ្រឹះនៃ \\(V/W\\) ត្រូវបានបង្កើតឡើងដោយធាតុណា?",
+          options: [],
+          correct: 1,
+          explanation:
+            "កូសេតនៃវ៉ិចទ័របំពេញ \\(\\{v_{k+1}+W, \\dots, v_n+W\\}\\) បង្កើតបានជាគ្រឹះនៃ \\(V/W\\) ព្រោះវាឯករាជ្យលីនេអ៊ែរ និងបង្កើត \\(V/W\\) ។"
+        },
+        {
+          id: 18,
+          question: "ប្រសិនបើ \\(u \\in v + W\\) តើកូសេត \\(u + W\\) ស្មើនឹងអ្វី?",
+          options: [],
+          correct: 0,
+          explanation:
+            "ទំនាក់ទំនងសមមូលគឺស៊ីមេទ្រី និងឆ្លងកាត់។ ប្រសិនបើ \\(u \\in v + W\\) នោះ \\(u \sim v\\) នាំឱ្យថ្នាក់សមមូលរបស់វាស្មើគ្នាគឺ \\(u + W = v + W\\) ។"
+        },
+        {
+          id: 19,
+          question:
+            "ឧបមាថា \\(V = \\mathbb{R}^2\\) និង \\(W = \\{(x, y) \\in \\mathbb{R}^2 \\mid y = 2x\\}\\)។ តើកូសេត \\((1, 5) + W\\) ស្មើនឹងកូសេតមួយណាខាងក្រោម?",
+          options: [],
+          correct: 1,
+          explanation:
+            "ពិនិត្យផលសង \\((2, 7) - (1, 5) = (1, 2)\\)។ ដោយសារ \\(y = 2x \\implies 2 = 2(1)\\) គឺពិត ដូច្នេះ \\((1, 2) \\in W\\) នាំឱ្យ \\((2, 7) + W = (1, 5) + W\\) 局。"
+        },
+        {
+          id: 20,
+          question:
+            "ឧបមាថា \\(V\\) ជាលំហវ៉ិចទ័រ និង \\(W, U\\) ជាលំហរងពីររបស់ \\(V\\) ដែល \\(V = W \\oplus U\\) (ផលបូកផ្ទាល់)។ តើលំហផលចែក \\(V/W\\) អ៊ីសូម៉ូភីស (Isomorphic) ទៅនឹងលំហណា?",
+          options: [],
+          correct: 1,
+          explanation:
+            "តាមទ្រឹស្តីបទផលបូកផ្ទាល់ គ្រប់ធាតុ \\(v \\in V\\) អាចសរសេរជា \\(v = w + u\\) តែមួយគត់។ អាប់លីកាស្យុងលីនេអ៊ែរ \\(g: U \\to V/W\\) ដែល \\(g(u) = u+W\\) ជាអ៊ីសូម៉ូភីស ។"
+        },
+        {
+          id: 21,
+          question: "ប្រសិនបើ \\(V/W\\) ស្មើនឹងលំហសូន្យ \\(\\{0\\}\\) តើវាមានន័យដូចម្តេចចំពោះ \\(W\\)?",
+          options: [],
+          correct: 1,
+          explanation:
+            "ប្រសិនបើ \\(V/W = \\{0\\}\\) នោះមានន័យថាគ្រប់ធាតុទាំងអស់ត្រូវបានបញ្ជូនទៅកូសេតសូន្យ ដូចនេះគ្រប់ធាតុ \\(v \\in V\\) ស្ថិតនៅក្នុង \\(W\\) នាំឱ្យ \\(W = V\\) ។"
+        },
+        {
+          id: 22,
+          question:
+            "តើលក្ខខណ្ឌណាដែលបញ្ជាក់ថា សំណុំនៃកូសេត \\(\\{u_1 + W, u_2 + W, \\dots, u_m + W\\}\\) ជាសំណុំឯករាជ្យលីនេអ៊ែរនៅក្នុង \\(V/W\\)?",
+          options: [],
+          correct: 0,
+          explanation:
+            "សំណុំកូសេតឯករាជ្យលីនេអ៊ែរមានន័យថា បន្សំលីនេអ៊ែររបស់វាស្មើនឹងកូសេតសូន្យ \\(\\sum c_i(u_i+W) = W \iff (\\sum c_i u_i) + W = W \iff \\sum c_i u_i \\in W\\) នាំឱ្យ \\(c_i = 0\\) ។"
+        },
+        {
+          id: 23,
+          question:
+            "ឧបមាថា \\(V = M_{2\\times 2}(\\mathbb{R})\\) ជាលំហម៉ាទ្រីសលំដាប់ \\(2\\times 2\\) និង \\(W = \\{A \\in V \\mid A^T = A\\}\\) ជាលំហរងនៃម៉ាទ្រីសស៊ីមេទ្រី។ តើវិមាត្រនៃ \\(V/W\\) ស្មើនឹងប៉ុន្មាន?",
+          options: ["\\(1\\)", "\\(2\\)", "\\(3\\)", "\\(4\\)"],
+          correct: 0,
+          explanation:
+            "វិមាត្រនៃ \\(M_{2\\times 2}(\\mathbb{R})\\) គឺ ៤ ។ ម៉ាទ្រីសស៊ីមេទ្រីលំដាប់ \\(2\\times 2\\) មានរាង \\(\\begin{pmatrix} a & b \\\\ b & c \\end{pmatrix}\\) ដែលមាន ៣ ប៉ារ៉ាម៉ែត្រសេរី ដូច្នេះ \\(\\dim(W) = 3\\)។ នាំឱ្យ \\(\\dim(V/W) = 4 - 3 = 1\\) ។"
+        },
+        {
+          id: 24,
+          question:
+            "ឧបមាថា \\(T: V \\to V\\) ជាលីនេអ៊ែរអូប៉េរ៉ាទ័រ ហើយ \\(W\\) ជាលំហរងមិនប្រែប្រួលក្រោម \\(T\\) (\\(T(W) \\subseteq W\\))។ តើគេអាចកំណត់អូប៉េរ៉ាទ័រផលចែក \\(\\bar{T}: V/W \\to V/W\\) យ៉ាងដូចម្តេច?",
+          options: [],
+          correct: 0,
+          explanation:
+            "ដោយសារ \\(T(W) \\subseteq W\\) អូប៉េរ៉ាទ័រ \\(\\bar{T}(v+W) = T(v)+W\\) គឺកំណត់បានត្រឹមត្រូវ (Well-defined) ព្រោះប្រសិនបើ \\(v - v' \\in W\\) នោះ \\(T(v) - T(v') = T(v-v') \\in T(W) \\subseteq W\\) ។"
+        },
+        {
+          id: 25,
+          question:
+            "ឧបមាថា \\(V = \\mathbb{R}^4\\) និង \\(W = \\{(x, y, z, w) \\in \\mathbb{R}^4 \\mid x + y = 0,  z + w = 0\\}\\)។ តើវិមាត្រនៃ \\(V/W\\) ស្មើនឹងប៉ុន្មាន?",
+          options: ["\\(1\\)", "\\(2\\)", "\\(3\\)", "\\(4\\)"],
+          correct: 1,
+          explanation:
+            "លំហរង \\(W\\) ត្រូវបានកំណត់ដោយសមីការឯករាជ្យពីរ ដូច្នេះវិមាត្ររបស់វាគឺ \\(\\dim(W) = 4 - 2 = 2\\)។ ដូចនេះ \\(\\dim(V/W) = 4 - 2 = 2\\) ។"
+        },
+        {
+          id: 26,
+          question:
+            "ប្រសិនបើ \\(W_1\\) និង \\(W_2\\) ជាលំហរងពីរនៃ \\(V\\) ដែល \\(W_1 \\subseteq W_2\\)។ តាមទ្រឹស្តីបទអ៊ីសូម៉ូភីសទីបី (Third Isomorphism Theorem) តើលំហផលចែក \\((V/W_1) / (W_2/W_1)\\) អ៊ីសូម៉ូភីសទៅនឹងលំហណា?",
+          options: [],
+          correct: 1,
+          explanation: "តាមទ្រឹស្តីបទអ៊ីសូម៉ូភីសទីបីចំពោះលំហវ៉ិចទ័រ គេមាន \\((V/W_1) / (W_2/W_1) \\cong V/W_2\\) ។"
+        },
+        {
+          id: 27,
+          question:
+            "ប្រសិនបើ \\(V\\) ជាលំហវិមាត្រមិនកំណត់ (Infinite-dimensional) ហើយ \\(W\\) ជាលំហរងវិមាត្រកំណត់ (Finite-dimensional) តើលំហផលចែក \\(V/W\\) ជាលំហវិមាត្រអ្វី?",
+          options: ["វិមាត្រកំណត់", "វិមាត្រមិនកំណត់", "វិមាត្រសូន្យ", "មិនអាចសន្និដ្ឋានបាន"],
+          correct: 1,
+          explanation:
+            "ដោយសារ \\(\\dim(V) = \\dim(W) + \\dim(V/W)\\) ប្រសិនបើ \\(W\\) មានវិមាត្រកំណត់ ហើយ \\(V\\) មានវិមាត្រមិនកំណត់ នោះ \\(V/W\\) ត្រូវតែមានវិមាត្រមិនកំណត់ ។"
+        },
+        {
+          id: 28,
+          question:
+            "តើលំនាំធរណីមាត្រនៃកូសេត \\(v + W\\) នៅក្នុងលំហ \\(\\mathbb{R}^2\\) ដែល \\(W\\) ជាបន្ទាត់កាត់តាមគល់តម្រុយ គឺជាអ្វី?",
+          options: [],
+          correct: 2,
+          explanation:
+            "កូសេត \\(v + W\\) បង្ហាញពីការរំកិលបន្ទាត់ \\(W\\) ដោយវ៉ិចទ័រ \\(v\\) ដែលបង្កើតបានជាបន្ទាត់ត្រង់ទាំងអស់ដែលស្របនឹង \\(W\\) ។"
+        },
+        {
+          id: 29,
+          question:
+            "ចំពោះអាប់លីកាស្យុងលីនេអ៊ែរ \\(T: V \\to U\\) ប្រសិនបើ \\(W \\subseteq \\ker(T)\\) តើវាមានន័យដូចម្តេចចំពោះការបង្កើតអាប់លីកាស្យុងផលចែក \\(\\bar{T}: V/W \\to U\\)?",
+          options: [],
+          correct: 0,
+          explanation:
+            "លក្ខខណ្ឌ \\(W \\subseteq \\ker(T)\\) ធានាថាប្រសិនបើ \\(v - v' \\in W\\) នោះ \\(T(v - v') = 0 \\implies T(v) = T(v')\\) ដូចនេះ \\(\\bar{T}(v+W) = T(v)\\) គឺកំណត់បានត្រឹមត្រូវ ។"
+        },
+        {
+          id: 30,
+          question:
+            "ប្រសិនបើ \\(V\\) ជាលំហនៃអនុគមន៍ជាប់លើចន្លោះ \\([-1, 1]\\) និង \\(W\\) ជាលំហរងនៃអនុគមន៍ដែលស្មើនឹង \\(0\\) ត្រង់ចំណុច \\(x = 0\\)។ តើវិមាត្រនៃ \\(V/W\\) ស្មើនឹងប៉ុន្មាន?",
+          options: ["០", "១", "២", "អនន្ត (Infinite)"],
+          correct: 1,
+          explanation:
+            "ពិនិត្យអាប់លីកាស្យុងវាយតម្លៃ \\(T: V \\to \\mathbb{R}\\) ដែល \\(T(f) = f(0)\\)។ \\(T\\) ជាអាប់លីកាស្យុងលីនេអ៊ែរ surjective ហើយស្នូលរបស់វាគឺ \\(W\\) [5, 6]។ តាមទ្រឹស្តីបទអ៊ីសូម៉ូភីសទី១ \\(V/W \\cong \\mathbb{R}\\) នាំឱ្យ \\(\\dim(V/W) = \\dim(\\mathbb{R}) = 1\\) ។"
+        },
+        {
+          id: 31,
+          question:
+            "ឧបមាថា \\(V = \\mathbb{R}^3\\) និង \\(W = \\text{span}\\{(1, 0, 0)\\}\\)។ តើកូសេតពីរ \\((2, 3, 4) + W\\) និង \\((5, 3, 4) + W\\) មានទំនាក់ទំនងគ្នាយ៉ាងដូចម្តេច?",
+          options: [
+            "ពួកវាជាកូសេតខុសគ្នា និងមិនប្រឡាក់គ្នាឡើយ",
+            "ពួកវាជាកូសេតតែមួយ (ស្មើគ្នា)",
+            "ពួកវាគ្មានវ៉ិចទ័រសូន្យដូចគ្នា",
+            "ពួកវាជាលំហរងពីរផ្សេងគ្នា"
+          ],
+          correct: 1,
+          explanation:
+            "ផលសងនៃវ៉ិចទ័រទាំងពីរគឺ \\((5, 3, 4) - (2, 3, 4) = (3, 0, 0) \\in \\text{span}\\{(1, 0, 0)\\} = W\\)។ ដូចនេះ កូសេតទាំងពីរគឺស្មើគ្នា ។"
+        },
+        {
+          id: 32,
+          question: "តើតូប៉ូវិទ្យាផលចែក (Quotient Topology) លើលំហផលចែក \\(V/W\\) ត្រូវបានកំណត់យ៉ាងដូចម្តេច?",
+          options: [],
+          correct: 0,
+          explanation:
+            "តាមនិយមន័យនៃតូប៉ូវិទ្យាផលចែក សំណុំ \\(U\\) បើកនៅក្នុង \\(V/W\\) លុះត្រាតែរូបភាពបញ្ច្រាសរបស់វាក្រោមលំនាំបញ្ចាំងកាណូនិក \\(\\pi\\) គឺជាសំណុំបើកនៅក្នុងលំហដើម \\(V\\) ។"
+        },
+        {
+          id: 33,
+          question:
+            "ប្រសិនបើ \\(V\\) ជាលំហវ៉ិចទ័រតូប៉ូឡូហ្ស៊ី (Topological Vector Space) ហើយ \\(W\\) ជាលំហរងរបស់វា។ តើលក្ខខណ្ឌណាដែលធានាថា លំហផលចែក \\(V/W\\) គឺជាលំហ Hausdorff (លំហ \\(T_2\\))?",
+          options: [],
+          correct: 0,
+          explanation:
+            "នៅក្នុងលំហវ៉ិចទ័រតូប៉ូឡូហ្ស៊ី លំហផលចែក \\(V/W\\) គឺជាលំហ Hausdorff លុះត្រាតែសិង្ហភាព \\(\\{0\\}\\) នៅក្នុង \\(V/W\\) បិទ ដែលសមមូលនឹងលំហរង \\(W\\) បិទនៅក្នុង \\(V\\) ។"
+        },
+        {
+          id: 34,
+          question:
+            "ឧបមាថា \\(V = P(x)\\) ជាលំហនៃគ្រប់ប៉ូលីណូមទាំងអស់លើ \\(\\mathbb{R}\\) និង \\(W = \\{p(x) \\in P(x) \\mid p(0) = 0 \\text{ និង } p'(0) = 0\\}\\)។ តើវិមាត្រនៃ \\(V/W\\) ស្មើនឹងប៉ុន្មាន?",
+          options: ["០", "១", "២", "អនន្ត"],
+          correct: 2,
+          explanation:
+            "ពិនិត្យអាប់លីកាស្យុង \\(T: P(x) \\to \\mathbb{R}^2\\) ដែល \\(T(p) = (p(0), p'(0))\\)។ វាជាអាប់លីកាស្យុងលីនេអ៊ែរ surjective និងមាន \\(\\ker(T) = W\\) [4, 5]។ តាមទ្រឹស្តីបទអ៊ីសូម៉ូភីសទី១ \\(P(x)/W \\cong \\mathbb{R}^2\\) នាំឱ្យ \\(\\dim(V/W) = 2\\) ។"
+        },
+        {
+          id: 35,
+          question:
+            "ប្រសិនបើ \\(V = W_1 + W_2\\) (តែមិនមែនជាផលបូកផ្ទាល់ទេ) តើលំហផលចែក \\(V/W_1\\) អ៊ីសូម៉ូភីសទៅនឹងអ្វី?",
+          options: [],
+          correct: 0,
+          explanation:
+            "តាមទ្រឹស្តីបទអ៊ីសូម៉ូភីសទីពីរចំពោះលំហវ៉ិចទ័រ គេមាន \\((W_1 + W_2)/W_1 \\cong W_2/(W_1 \\cap W_2)\\) ។"
+        },
+        {
+          id: 36,
+          question:
+            "ឧបមាថា \\(V = \\mathbb{R}^3\\) និង \\(W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid x + y + z = 0\\}\\)。 តើកូសេត \\((1, 1, 1) + W\\) ស្មើនឹងកូសេតមួយណាខាងក្រោម?",
+          options: [],
+          correct: 1,
+          explanation:
+            "ផលសង \\((1, 1, 1) - (0, 0, 3) = (1, 1, -2)\\)។ ពិនិត្យលក្ខខណ្ឌ \\(x+y+z = 1+1+(-2) = 0\\) ដែលពិត ដូច្នេះផលសងស្ថិតនៅក្នុង \\(W\\) នាំឱ្យកូសេតទាំងពីរស្មើគ្នា ។"
+        },
+        {
+          id: 37,
+          question:
+            "ប្រសិនបើ \\(V\\) ជាលំហវ៉ិចទ័រមានវិមាត្រ \\(5\\) និង \\(W\\) ជាលំហរងវិមាត្រ \\(2\\)។ ប្រសិនបើ \\(\\{v_1, v_2\\}\\) ជាគ្រឹះនៃ \\(W\\) ហើយ \\(\\{v_3+W, v_4+W, v_5+W\\}\\) ជាគ្រឹះនៃ \\(V/W\\) តើវ៉ិចទ័រ \\(\\{v_1, v_2, v_3, v_4, v_5\\}\\) ជាអ្វីរបស់ \\(V\\)?",
+          options: ["សំណុំអាស្រ័យលីនេអ៊ែរ", "គ្រឹះនៃ \\(V\\)", "មិនអាចបង្កើត \\(V\\) បានទេ", "សំណុំទទេ"],
+          correct: 1,
+          explanation:
+            "តាមទ្រឹស្តីបទគ្រឹះលំហផលចែក ប្រសិនបើយើងមានគ្រឹះនៃ \\(W\\) និងវ៉ិចទ័រដែលកូសេតរបស់វាបង្កើតបានជាគ្រឹះនៃ \\(V/W\\) នោះសហជីពរបស់វាបង្កើតបានជាគ្រឹះនៃ \\(V\\) ទាំងមូល ។"
+        },
+        {
+          id: 38,
+          question:
+            "តើអាប់លីកាស្យុងកាណូនិក \\(\\pi: V \\to V/W\\) គឺជាអាប់លីកាស្យុងបើក (Open Map) ជានិច្ចនៅក្នុងលំហវ៉ិចទ័រតូប៉ូឡូហ្ស៊ីដែរឬទេ?",
+          options: [],
+          correct: 0,
+          explanation:
+            "នៅក្នុងលំហវ៉ិចទ័រតូប៉ូឡូហ្ស៊ី គ្រប់លំនាំបញ្ចាំងផលចែកកាណូនិក \\(\\pi: V \\to V/W\\) គឺជាអាប់លីកាស្យុងបើកជានិច្ច ដោយមិនអាស្រ័យលើលក្ខខណ្ឌនៃ \\(W\\) ឡើយ ។"
+        },
+        {
+          id: 39,
+          question:
+            "ប្រសិនបើ \\(f: V \\to U\\) ជាអាប់លីកាស្យុងលីនេអ៊ែរ surjective ហើយ \\(\\dim(V) = 6\\) និង \\(\\dim(U) = 4\\)។ តើវិមាត្រនៃស្នូល \\(\\ker(f)\\) ស្មើនឹងប៉ុន្មាន?",
+          options: ["១", "២", "៣", "៤"],
+          correct: 1,
+          explanation:
+            "តាមទ្រឹស្តីបទវិមាត្រ (Rank-Nullity Theorem) គេមាន \\(\\dim(V) = \\dim(\\ker(f)) + \\dim(\\text{Im}(f))\\)។ ដោយសារ \\(f\\) surjective នាំឱ្យ \\(\\dim(\\text{Im}(f)) = \\dim(U) = 4\\)។ ដូចនេះ \\(\\dim(\\ker(f)) = 6 - 4 = 2\\) ។"
+        },
+        {
+          id: 40,
+          question:
+            "ឧបមាថា \\(V = C\\) ជាលំហអនុគមន៍ជាប់ និង \\(W = \\{f \\in V \\mid \\int_0^1 f(t)dt = 0\\}\\)。 តើវិមាត្រនៃ \\(V/W\\) ស្មើនឹងប៉ុន្មាន?",
+          options: ["០", "១", "២", "អនន្ត"],
+          correct: 1,
+          explanation:
+            "ពិនិត្យលីនេអ៊ែរហ្វង់ស្យូណាល់ \\(I(f) = \\int_0^1 f(t)dt\\) ពី \\(V \\to \\mathbb{R}\\)។ ដោយសារ \\(I\\) surjective ស្នូលរបស់វាគឺ \\(W\\) ដូច្នេះ \\(V/W \\cong \\mathbb{R}\\) ដែលមានវិមាត្រ ១ [4, 6]។"
+        },
+        {
+          id: 41,
+          question:
+            "តើកូសេតពីរ \\(v_1 + W\\) និង \\(v_2 + W\\) អាចមានចំណុចរួមគ្នា (ប្រឡាក់គ្នា) ដោយមិនស្មើគ្នាបានដែរឬទេ?",
+          options: [],
+          correct: 1,
+          explanation:
+            "ដោយសារកូសេតគឺជាថ្នាក់សមមូលនៃទំនាក់ទំនងសមមូល ពួកវាបង្កើតបានជាលំនាំរបែងភាគ (Partition) នៃ \\(V\\) ដូច្នេះកូសេតពីរផ្សេងគ្នាត្រូវតែដាច់គ្នា ឬស្មើគ្នាទាំងស្រុង ។"
+        },
+        {
+          id: 42,
+          question:
+            "ប្រសិនបើ \\(V = \\mathbb{R}^3\\) និង \\(W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid x = y = z\\}\\)។ តើវិមាត្រនៃ \\(V/W\\) ស្មើនឹងប៉ុន្មាន?",
+          options: ["០", "១", "២", "៣"],
+          correct: 2,
+          explanation:
+            "លំហរង \\(W\\) គឺជាបន្ទាត់ត្រង់កាត់តាមគល់តម្រុយដែលមានវិមាត្រ ១ (ព្រោះវាត្រូវបានបង្កើតដោយវ៉ិចទ័រ \\((1, 1, 1)\\))។ ដូចនេះ \\(\\dim(V/W) = 3 - 1 = 2\\) ។"
+        },
+        {
+          id: 43,
+          question: "ឧបមាថា \\(W\\) ជាលំហរងនៃ \\(V\\)។ ប្រសិនបើ \\(v \\in W\\) តើកូសេត \\(v + W\\) ស្មើនឹងអ្វី?",
+          options: [],
+          correct: 1,
+          explanation:
+            "ដោយសារ \\(v \\in W\\) នោះផលសង \\(v - 0 = v \\in W\\) នាំឱ្យ \\(v \sim 0\\) ដូចនេះកូសេតរបស់វាស្មើនឹងកូសេតសូន្យគឺ \\(v + W = 0 + W = W\\) ។"
+        },
+        {
+          id: 44,
+          question: "តើលក្ខណៈសម្បត្តិណាមួយខាងក្រោមដែលមិនពិតចំពោះលំហផលចែក \\(V/W\\)?",
+          options: [],
+          correct: 2,
+          explanation:
+            "វិមាត្រនៃលំហផលចែក \\(\\dim(V/W) = \\dim(V) - \\dim(W)\\) គឺត្រូវតែតូចជាង ឬស្មើនឹងវិមាត្រនៃ \\(V\\) ជានិច្ច មិនអាចធំជាងបានឡើយ ។"
+        },
+        {
+          id: 45,
+          question: "ប្រសិនបើ \\(T: V \\to U\\) ជាអនុគមន៍ injective តើស្នូល \\(\\ker(T)\\) ស្មើនឹងអ្វី?",
+          options: ["\\(V\\)", "\\(U\\)", "\\(\\{0\\}\\)", "គ្មានទេ"],
+          correct: 2,
+          explanation:
+            "អាប់លីកាស្យុងលីនេអ៊ែរ injective លុះត្រាតែស្នូលរបស់វាមានតែវ៉ិចទ័រសូន្យគត់គឺ \\(\\ker(T) = \\{0\\}\\) ។"
+        },
+        {
+          id: 46,
+          question:
+            "ប្រសិនបើ \\(V = \\mathbb{R}^2\\) និង \\(W = \\{(x, 0) \\in \\mathbb{R}^2\\}\\) តើកូសេត \\((3, 4) + W\\) អាចតំណាងឱ្យបន្ទាត់មួយណាខាងក្រោម?",
+          options: [
+            "បន្ទាត់ដេក \\(y = 4\\)",
+            "បន្ទាត់ឈរ \\(x = 3\\)",
+            "បន្ទាត់កាត់គល់តម្រុយ",
+            "បន្ទាត់ \\(y = x + 1\\)"
+          ],
+          correct: 0,
+          explanation:
+            "កូសេត \\((3, 4) + W = \\{(3+x, 4) \\mid x \\in \\mathbb{R}\\}\\) ដែលជាសំណុំនៃរាល់ចំណុចដែលមានកូអរដោនេ \\(y = 4\\) ថេរ។ នេះជាបន្ទាត់ដេកស្របនឹងអ័ក្ស \\(x\\) ។"
+        },
+        {
+          id: 47,
+          question:
+            "ឧបមាថា \\(V\\) ជាលំហវ៉ិចទ័រ និង \\(W\\) ជាលំហរងរបស់វា។ ប្រសិនបើ \\(f\\) ជាលីនេអ៊ែរហ្វង់ស្យូណាល់លើ \\(V\\) (\\(f \\in V^*\\)) ដែលបាត់បង់តម្លៃលើ \\(W\\) (ពោលគឺ \\(f(w) = 0\\) ចំពោះគ្រប់ \\(w \\in W\\))។ តើវាបង្កើតបានជាអ្វីលើ \\(V/W\\)?",
+          options: [],
+          correct: 0,
+          explanation:
+            "លក្ខខណ្ឌ \\(f(W) = 0\\) មានន័យថា \\(W \\subseteq \\ker(f)\\) ដូច្នេះវាតែងតែបង្កើតបានជាលីនេអ៊ែរហ្វង់ស្យូណាល់ \\(\\bar{f}\\) លើ \\(V/W\\) ដែលកំណត់បានត្រឹមត្រូវ ។"
+        },
+        {
+          id: 48,
+          question:
+            "នៅក្នុងគំនិតនៃលំហទ្វេ (Dual Space) សំណុំនៃគ្រប់លីនេអ៊ែរហ្វង់ស្យូណាល់លើ \\(V\\) ដែលបាត់បង់តម្លៃលើ \\(W\\) ហៅថាអ្វី?",
+          options: [],
+          correct: 1,
+          explanation:
+            "អានីហ៊ីឡាទ័រ (Annihilator) \\(W^0\\) នៃលំហរង \\(W\\) គឺជាសំណុំ \\(W^0 = \\{f \\in V^* \\mid f(w) = 0, \\forall w \\in W\\}\\)។ វាមានអ៊ីសូម៉ូភីសធម្មជាតិទៅនឹង \\((V/W)^*\\)។"
+        },
+        {
+          id: 49,
+          question: "ប្រសិនបើ \\(V\\) មានវិមាត្រកំណត់ តើវិមាត្រនៃអានីហ៊ីឡាទ័រ \\(W^0\\) ស្មើនឹងប៉ុន្មាន?",
+          options: [],
+          correct: 1,
+          explanation:
+            "ដោយសារ \\(W^0 \\cong (V/W)^*\\) ហើយវិមាត្រនៃលំហទ្វេស្មើនឹងវិមាត្រនៃលំហដើម គេបាន \\(\\dim(W^0) = \\dim((V/W)^*) = \\dim(V/W) = \\dim(V) - \\dim(W)\\) ។"
+        },
+        {
+          id: 50,
+          question:
+            "ឧបមាថា \\(V = \\mathbb{R}^4\\) និង \\(W = \\text{span}\\{(1, 1, 1, 1), (1, -1, 1, -1)\\}\\)។ តើវិមាត្រនៃលំហផលចែក \\(V/W\\) ស្មើនឹងប៉ុន្មាន?",
+          options: ["\\(1\\)", "\\(2\\)", "\\(3\\)", "\\(4\\)"],
+          correct: 1,
+          explanation:
+            "វ៉ិចទ័របង្កើតទាំងពីរនៃ \\(W\\) មិនមែនជាពហុគុណគ្នានឹងគ្នាទេ ដូច្នេះពួកវាឯករាជ្យលីនេអ៊ែរ  នាំឱ្យ \\(\\dim(W) = 2\\)។ ដូចនេះ \\(\\dim(V/W) = 4 - 2 = 2\\) ។"
+        }
+      ];
+
+      let currentQuestionIndex = 0;
+      let userAnswers = Array(questions.length).fill(null);
+      let verifiedAnswers = Array(questions.length).fill(false);
+      let score = 0;
+
+      function initSidebar() {
+        const grid = document.getElementById("sidebar-grid");
+        questions.forEach((q, index) => {
+          const btn = document.createElement("button");
+          btn.className = "question-btn";
+          btn.innerText = index + 1;
+          btn.onclick = () => loadQuestion(index);
+          grid.appendChild(btn);
+        });
+      }
+
+      function loadQuestion(index) {
+        currentQuestionIndex = index;
+        const q = questions[index];
+        const container = document.getElementById("current-question-container");
+
+        let html = `<div class="question-box"><strong>សំណួរទី ${q.id}៖</strong> ${q.question}</div>`;
+        html += '<div class="options-container">';
+        q.options.forEach((opt, i) => {
+          html += `<div class="option-card" id="opt-${i}" onclick="selectOption(${i})">${opt}</div>`;
+        });
+        html += "</div>";
+        html += `<div class="explanation-box" id="exp">${q.explanation}</div>`;
+
+        container.innerHTML = html;
+        if (window.MathJax) MathJax.typesetPromise();
+
+        // នៅក្នុង function loadQuestion(index) របស់អ្នក៖
+        // បន្ទាប់ពី container.innerHTML = html; សូមបន្ថែម៖
+
+        container.querySelectorAll("mjx-container").forEach((el) => {
+          el.style.fontSize = "106%"; // កំណត់ទំហំធំជាងអត្ថបទធម្មតា
+        });
+      }
+
+      function selectOption(idx) {
+        if (verifiedAnswers[currentQuestionIndex]) return;
+        userAnswers[currentQuestionIndex] = idx;
+        document.querySelectorAll(".option-card").forEach((el, i) => {
+          el.className = "option-card" + (i === idx ? " selected" : "");
+        });
+      }
+
+      function checkAnswer() {
+        if (userAnswers[currentQuestionIndex] === null) return alert("សូមជ្រើសរើសចម្លើយ!");
+        verifiedAnswers[currentQuestionIndex] = true;
+        const isCorrect = userAnswers[currentQuestionIndex] === questions[currentQuestionIndex].correct;
+        if (isCorrect) score++;
+
+        document.getElementById("exp").style.display = "block";
+        document.querySelectorAll(".option-card").forEach((el, i) => {
+          if (i === questions[currentQuestionIndex].correct) el.classList.add("correct");
+          else if (i === userAnswers[currentQuestionIndex]) el.classList.add("incorrect");
+        });
+        document.getElementById("scoreboard").innerText = `ពិន្ទុ៖ ${score} / ${questions.length}`;
+      }
+
+      function prevQuestion() {
+        if (currentQuestionIndex > 0) loadQuestion(currentQuestionIndex - 1);
+      }
+      function nextQuestion() {
+        if (currentQuestionIndex < questions.length - 1) loadQuestion(currentQuestionIndex + 1);
+      }
+
+      window.onload = () => {
+        initSidebar();
+        loadQuestion(0);
+      };
+    </script>
+  </body>
+</html>
