@@ -3,6 +3,11 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&display=swap" rel="stylesheet" />
+
         <title>Quiz for 2D on LT</title>
 
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -38,12 +43,14 @@
         <script src="https://tikzjax.com/v1/tikzjax.js"></script>
 
         <style>
-            body {
+            /*  body {
                 font-family: "Khmer OS Battambang", sans-serif;
                 line-height: 1.8;
                 background-color: #f4f7f6;
                 padding: 20px;
-            }
+            } *
+            
+            
             .container {
                 max-width: 800px;
                 margin: auto;
@@ -51,7 +58,77 @@
                 padding: 30px;
                 border-radius: 8px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            } */
+
+            /* កែសម្រួល body ឱ្យប្រើហ្វុងពី Google */
+            body {
+                font-family: "Battambang", "Khmer OS Battambang", sans-serif;
+                line-height: 1.8;
+                background-color: #f4f7f6;
+                padding: 20px;
+                /* បន្ថែមចំណុចនេះដើម្បីកុំឱ្យអ្នកប្រើប្រាស់ Select អក្សរញឹកញាប់ពេលចុចលើទូរសព្ទ */
+                -webkit-tap-highlight-color: transparent;
             }
+
+            /* បង្ការការហៀរចេញក្រៅអេក្រង់ (Overflow) */
+            .container {
+                max-width: 100%; /* ដូរពី 800px មក 100% សម្រាប់ទូរសព្ទ រួចចាំប្រើ Media Query សម្រាប់ PC */
+                margin: auto;
+                background: #fff;
+                padding: 15px; /* បន្ថយ padding សម្រាប់ទូរសព្ទ */
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                box-sizing: border-box; /* សំខាន់សម្រាប់ iOS */
+            }
+
+            .question-box {
+                padding: 15px;
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                margin-bottom: 20px;
+                overflow-x: auto; /* អនុញ្ញាតឱ្យ scroll តែក្នុងប្រអប់សំណួរ បើរូបមន្តវែងពេក */
+            }
+
+            /* ដោះស្រាយបញ្ហា SVG (TikZ) មិនឱ្យខូចទ្រង់ទ្រាយ */
+            svg {
+                max-width: 100%;
+                height: auto !important; /* បង្ខំឱ្យ Safari រក្សាសមាមាត្រ */
+                display: block;
+                margin: 0 auto;
+            }
+
+            /* ដោះស្រាយបញ្ហា Auto-zoom និងទំហំតំបន់ចុច (Touch Target) លើ iOS */
+            .options label {
+                display: block;
+                margin-bottom: 12px; /* បង្កើនគម្លាតបន្តិចងាយស្រួលចុច */
+                cursor: pointer;
+                font-size: 16px; /* ការពារ Auto-zoom លើ Safari */
+                padding: 8px;
+                border-radius: 5px;
+                transition: background 0.2s;
+            }
+
+            /* បង្ខំ iOS ឱ្យយក Style របស់ Button យើង */
+            button {
+                padding: 8px 20px;
+                font-size: 16px; /* ការពារ Auto-zoom */
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 13px;
+                cursor: pointer;
+                -webkit-appearance: none; /* សំខាន់ខ្លាំងសម្រាប់ iOS */
+                appearance: none;
+            }
+
+            /* Media Query សម្រាប់កុំព្យូទ័រ (រក្សាទម្រង់ដើមរបស់អ្នក) */
+            @media (min-width: 768px) {
+                .container {
+                    max-width: 800px;
+                    padding: 30px;
+                }
+            }
+
             h2 {
                 color: #2980b9;
                 border-bottom: 2px solid #2980b9;
