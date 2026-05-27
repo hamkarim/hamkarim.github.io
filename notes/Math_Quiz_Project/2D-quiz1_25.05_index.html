@@ -99,6 +99,13 @@
                 text-align: center;
                 margin: 15px 0;
             }
+            
+            /*No view for this div */
+
+            div.noview {
+                visibility: hidden;
+                display: none;
+            }
         </style>
     </head>
     <body>
@@ -111,7 +118,7 @@
 
                 <span>សូមបំពេញលេខរៀង</span> <input type="number" id="studentId" placeholder="បញ្ចូលលេខរៀង" required />
             </div>
-
+<div class="noview">
             <form id="quizForm">
                 <div class="question-block">
                     <p>
@@ -810,7 +817,7 @@
 
                 <button id="submitBtn" onclick="calculateScore()">បញ្ជូនចម្លើយ</button>
             </form>
-
+</div>
             <!--button type="button" class="submit-btn" onclick="alert('មុខងារផ្ញើចម្លើយកំពុងស្ថិតក្នុងការអភិវឌ្ឍន៍!')">
                 បញ្ជូនចម្លើយ
             </!--button--
