@@ -359,6 +359,7 @@
                             <label><input type="radio" name="q1" value="d" /> ឃ. $Y = X^2 + c$</label>
                         </div>
                     </div>
+    <div class="noview">
 
                     <div class="question-box" style="display: none">
                         <p><b>២.</b> តើអ៊ីពែរបូលសមមូល (equilateral hyperbola) មានលក្ខណៈពិសេសអ្វី?</p>
@@ -746,7 +747,7 @@
                             <label><input type="radio" name="q20" value="d" /> ឃ. $(A, 1), (B, -1), (C, 1)$</label>
                         </div>
                     </div>
-
+</div>
                     <div class="controls" style="text-align-last: center">
                         <button type="button" onclick="changeQuestion(-1)">Previous</button>
 
@@ -851,9 +852,14 @@
             return;
         }
 
+        // កំណត់សំណួរទាំងអស់ពី HTML
+        const questions = document.getElementsByClassName("question-box");
+
         let totalScore = 0;
-        let totalQuestions = 7; // ឧបមាថាអ្នកមាន ៧ សំណួរ (សូមដាក់លេខសរុបនៃសំណួររបស់អ្នក)
         let scorePerQuestion = 1; // ឧបមាថា ១ សំណួរ ១ ពិន្ទុ
+
+        // មិនបាច់ខ្វល់រឿងចំនួនទេ វាស្មើនឹងចំនួនដែលអ្នកមានក្នុង HTML តែម្តង
+        let totalQuestions = questions.length;
 
         // ប្រើ for loop ដើម្បីរត់ឆែករាល់សំណួរទាំងអស់
         for (let i = 1; i <= totalQuestions; i++) {
