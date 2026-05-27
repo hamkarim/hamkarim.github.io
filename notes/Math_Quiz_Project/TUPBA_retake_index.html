@@ -1,0 +1,952 @@
+<!doctype html>
+<html lang="km">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Quiz for 2D on LT</title>
+
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [
+                        ["$", "$"],
+                        ["\\(", "\\)"]
+                    ],
+                    displayMath: [
+                        ["$$", "$$"],
+                        ["\\[", "\\]"]
+                    ],
+                    macros: {
+                        mybullet: "{\\tiny\\bullet\\;\\;}",
+                        mybullett: "{\\quad\\tiny\\bullet\\;\\;}"
+                    }
+                },
+                chtml: {
+                    scale: 1.2,
+                    linebreaks: { automatic: true }
+                },
+                svg: {
+                    scale: 1.2,
+                    matchFontHeight: true
+                }
+            };
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css" />
+        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+        <script>
+            let currentQuestion = 0;
+            const questions = document.getElementsByClassName("question-box");
+
+            /*function changeQuestion(n) {
+                // លាក់សំណួរដែលកំពុងបង្ហាញ
+                questions[currentQuestion].style.display = "none";
+
+                // ប្តូរលេខសំណួរ
+                currentQuestion += n;
+
+                // កំណត់ព្រំដែន (កុំឱ្យហួសសំណួរទីមួយ ឬចុងក្រោយ)
+                if (currentQuestion < 0) currentQuestion = 0;
+                if (currentQuestion >= questions.length) currentQuestion = questions.length - 1;
+
+                // បង្ហាញសំណួរថ្មី
+                questions[currentQuestion].style.display = "block";
+            }*/
+
+            // បន្ថែមមុខងារនេះនៅខាងក្នុង Function changeQuestion()
+            /*function updateIndicator() {
+                let indicator = document.getElementById("question-indicator");
+                let totalQuestions = questions.length;
+                indicator.innerText = "លំហាត់ទី " + (currentQuestion + 1) + " / " + totalQuestions;
+            }*/
+
+            function updateIndicator() {
+                let indicator = document.getElementById("question-indicator");
+                indicator.innerText = "លំហាត់ទី " + (currentQuestion + 1) + " / " + questions.length;
+
+                // បិទប៊ូតុង Previous ពេលនៅសំណួរទី ១
+                document.querySelector('button[onclick="changeQuestion(-1)"]').disabled = currentQuestion === 0;
+
+                // បិទប៊ូតុង Next នៅសំណួរចុងក្រោយ (ស្រេចចិត្ត)
+                document.querySelector('button[onclick="changeQuestion(1)"]').disabled =
+                    currentQuestion === questions.length - 1;
+            }
+
+            function changeQuestion(n) {
+                // បើចុច Next (n === 1) ត្រូវឆែកមើលចម្លើយសិន
+                if (n === 1) {
+                    let currentQ = questions[currentQuestion];
+                    let radioButtons = currentQ.querySelectorAll('input[type="radio"]');
+                    let isChecked = false;
+
+                    // ពិនិត្យមើលថាតើមានប៊ូតុងណាមួយត្រូវបានជ្រើសរើស
+                    for (let rb of radioButtons) {
+                        if (rb.checked) {
+                            isChecked = true;
+                            break;
+                        }
+                    }
+
+                    // បើមិនទាន់ជ្រើសរើស មិនអនុញ្ញាតឱ្យទៅមុខទេ
+                    if (!isChecked) {
+                        alert("សូមជ្រើសរើសចម្លើយមួយសិន ទើបអាចបន្តទៅលំហាត់បន្ទាប់បាន!");
+                        return; // បញ្ឈប់ការដំណើរការ Function
+                    }
+                }
+
+                // ដំណើរការលាក់/បង្ហាញសំណួរ (កូដដដែលពីមុន)
+                questions[currentQuestion].style.display = "none";
+                currentQuestion += n;
+
+                // កំណត់ព្រំដែន
+                if (currentQuestion < 0) currentQuestion = 0;
+                if (currentQuestion >= questions.length) currentQuestion = questions.length - 1;
+
+                questions[currentQuestion].style.display = "block";
+
+                // ហៅមុខងារអាប់ដេតលេខលំហាត់
+                updateIndicator();
+            }
+        </script>
+
+        <style>
+            body {
+                font-family: "Khmer OS Battambang", sans-serif;
+                line-height: 1.8;
+                background-color: #f4f7f6;
+                padding: 20px;
+            }
+            .container {
+                max-width: 800px;
+                margin: auto;
+                background: #fff;
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            h2 {
+                color: #2980b9;
+                border-bottom: 2px solid #2980b9;
+                padding-bottom: 10px;
+                text-align: center;
+            }
+            .question-block {
+                margin-bottom: 25px;
+                padding: 15px;
+                background: #fafafa;
+                border-left: 4px solid #27ae60;
+                border-radius: 4px;
+            }
+            .options {
+                margin-top: 10px;
+                padding-left: 20px;
+            }
+            .options label {
+                display: block;
+                margin-bottom: 8px;
+                cursor: pointer;
+            }
+            .submit-btn {
+                background-color: #2980b9;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                width: 100%;
+                font-family: inherit;
+                margin-top: 20px;
+            }
+            .submit-btn:hover {
+                background-color: #1a5276;
+            }
+            mjx-container {
+                font-size: 115% !important;
+            }
+            svg {
+                max-width: 100%;
+            }
+            .tikz-center {
+                text-align: center;
+                margin: 15px 0;
+            }
+
+            /*No view for this div */
+
+            div.noview {
+                visibility: hidden;
+                display: none;
+            }
+
+            /* ដាក់ក្នុង <style> */
+            .hide-exam {
+                display: none !important;
+            }
+
+            .card {
+                background: white;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                width: 350px;
+                text-align: center;
+            }
+            /*    input {
+                width: 20%;
+                padding: 6px;
+                margin: 4px 0;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }*
+            button {
+                font-weight: bold;
+                font-family: Battambang;
+                background-color: #4caf50;
+                color: white;
+                border: none;
+                padding: 5px 25px;
+                border-radius: 30px;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #45a049;
+            }*/
+
+            #question-indicator {
+                margin: 0 15px;
+                font-weight: bold;
+                color: #555;
+                font-size: 16px;
+            }
+
+            .controls {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                margin: 20px 0;
+            }
+            button {
+                padding: 6px 15px;
+                font-size: 14px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 13px;
+                cursor: pointer;
+            }
+            button:disabled {
+                background-color: #ccc;
+            }
+            .question-box {
+                padding: 20px;
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div id="home-menu">
+                <h2>ប្រលងឡើងវិញ មុខវិជ្ជា៖ ធរណីមាត្រ (TUP-BA 2026)</h2>
+
+                <!-- <div id="student-info">
+                <!-- <span>សូមបំពញឈ្មោះ </span>
+                <input type="text" id="studentName" placeholder="បញ្ចូលឈ្មោះរបស់អ្នក" required /><br />
+
+                <span>សូមបំពេញលេខរៀង</span> <input type="number" id="studentId" placeholder="បញ្ចូលលេខរៀង" required />
+            </div> -->
+
+                <div style="text-align: center; margin-top: 50px">
+                    <h4>សូមបំពេញព័ត៌មាន៖</h4>
+                    <span style="font-size: small; color: red"> ឈ្មោះ </span>
+                    <input type="text" id="studentName" placeholder="ឈ្មោះរបស់អ្នក" /><br />
+                    <span style="font-size: small; color: red"> ល.រ ៖ </span>
+                    <input type="number" id="studentId" placeholder="លេខរៀង" /><br />
+                    <span style="font-size: small; color: red"> វគ្គ ៖ </span>
+                    <input type="number" id="cohoreId" placeholder="វគ្គសិក្សា" /><br />
+                    <span style="font-size: small; color: red"> ក្រុម/ថ្នាក់ ៖ </span>
+                    <input type="text" id="classId" placeholder="ក្រុមសិក្សា" /><br />
+                    <br />
+                    <!--    <h3>សូមជ្រើសរើស៖</h3>
+                    <div style="text-align: center; margin-top: 20px">
+                        <button type="button" onclick="navigate('exam')">ចូលប្រលង!</button>
+                        <button type="button" onclick="navigate('results')">ពិនិត្យលទ្ធផល!</button>
+                    </div> -->
+                </div>
+
+                <div id="results-page" style="display: none">
+                    <iframe
+                        src="https://script.google.com/macros/s/AKfycbxuQlrV_jN9-rKplHBI_8_UlIM9Do81Mpns49A1GjalNWCai8hF40jVMUSnYCzKrDhMzA/exec?page=results"
+                        width="100%"
+                        height="600px"
+                        title="ទំព័រលទ្ធផលប្រលង"
+                        style="border: none">
+                    </iframe>
+                    <button onclick="location.reload()">ត្រលប់ក្រោយ</button>
+                </div>
+
+                <!-- div class="noview"> -->
+                <form id="quizForm">
+                    <div class="question-box" style="display: block">
+                        <p>
+                            <b>១.</b> សម្រាប់អ៊ីពែរបូល ក្នុងតម្រុយនរម៉ាល់មានគល់ $\Omega$ និងអាស៊ីមតូតទាំងពីរ $(\Omega,
+                            \vec{u}, \vec{v})$ តើសមីការរបស់វាមានទម្រង់ដូចម្ដេច?
+                        </p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a" /> ក. $X^2 + Y^2 = c^2$</label>
+                            <label><input type="radio" name="q1" value="correct" /> ខ. $X Y = \frac{c^2}{4}$</label>
+                            <label><input type="radio" name="q1" value="c" /> គ. $X Y = a \cdot b$</label>
+                            <label><input type="radio" name="q1" value="d" /> ឃ. $Y = X^2 + c$</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p><b>២.</b> តើអ៊ីពែរបូលសមមូល (equilateral hyperbola) មានលក្ខណៈពិសេសអ្វី?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q2" value="a" /> ក. មានអេសង់ទ្រីស៊ីតេស្មើ $1$</label>
+                            <label><input type="radio" name="q2" value="b" /> ខ. អាស៊ីមតូតទាំងពីរស្របគ្នា</label>
+                            <label
+                                ><input type="radio" name="q2" value="correct" /> គ. អាស៊ីមតូតទាំងពីរកែងគ្នា
+                                ($a=b$)</label
+                            >
+                            <label><input type="radio" name="q2" value="d" /> ឃ. មិនមានអ័ក្សឆ្លុះ</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>៣.</b> ក្នុងសមីការទូទៅនៃកោនិក $ax^2+by^2+2cx+2dy+e=0$ ប្រសិនបើ $a=0$ និង $c \neq 0$
+                            តើវាបង្កើតបានជាខ្សែកោងអ្វី?
+                        </p>
+                        <div class="options">
+                            <label><input type="radio" name="q3" value="a" /> ក. អេលីប</label>
+                            <label
+                                ><input type="radio" name="q3" value="correct" /> ខ. ប៉ារ៉ាបូលមានអ័ក្សស្រប $(Ox)$</label
+                            >
+                            <label><input type="radio" name="q3" value="c" /> គ. ប៉ារ៉ាបូលមានអ័ក្សស្រប $(Oy)$</label>
+                            <label><input type="radio" name="q3" value="d" /> ឃ. អ៊ីពែរបូល</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <b>៤.</b> ក្នុងសមីការទូទៅនៃកោនិកមានផ្ចិត $ax^2+by^2=k$ បើសិនជា $ab\gt 0$ និង $k\gt 0$
+                        តើកោនិកនោះជាអ្វី?
+                        <div class="options">
+                            <label><input type="radio" name="q4" value="correct" /> ក. អេលីប</label>
+                            <label><input type="radio" name="q4" value="b" /> ខ. អ៊ីពែរបូល</label>
+                            <label><input type="radio" name="q4" value="c" /> គ. ចំណុចមួយ</label>
+                            <label><input type="radio" name="q4" value="d" /> ឃ. គ្មានចំណុច</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <b>៥.</b> ក្នុងសមីការទូទៅនៃកោនិកមានផ្ចិត $ax^2+by^2=k$ បើសិនជា $ab\lt 0$ និង $k \neq 0$
+                        តើកោនិកនោះជាអ្វី?
+                        <div class="options">
+                            <label><input type="radio" name="q5" value="a" /> ក. អេលីប</label>
+                            <label><input type="radio" name="q5" value="b" /> ខ. ប៉ារ៉ាបូល</label>
+                            <label><input type="radio" name="q5" value="c" /> គ. រង្វង់</label>
+                            <label><input type="radio" name="q5" value="correct" /> ឃ. អ៊ីពែរបូល</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p><b>៦.</b> សម្រាប់ប៉ារ៉ាបូល តើអេសង់ទ្រីស៊ីតេ $e$ មានតម្លៃស្មើប៉ុន្មាន?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q6" value="a" /> ក. $e = \frac{1}{2}$</label>
+                            <label><input type="radio" name="q6" value="correct" /> ខ. $e = 1$</label>
+                            <label><input type="radio" name="q6" value="c" /> គ. $e = 0$</label>
+                            <label><input type="radio" name="q6" value="d" /> ឃ. $e = -1$</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p><b>៧.</b> តើប៉ារ៉ាម៉ែត្រ $p$ របស់អេលីប ឬអ៊ីពែរបូល កំណត់ដោយរូបមន្តមួយណា?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q7" value="correct" /> ក. $p = \frac{b^2}{c}$</label>
+                            <label><input type="radio" name="q7" value="b" /> ខ. $p = \frac{a^2}{c}$</label>
+                            <label><input type="radio" name="q7" value="c" /> គ. $p = \frac{c^2}{b}$</label>
+                            <label><input type="radio" name="q7" value="d" /> ឃ. $p = a \cdot b$</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>៨.</b> ផ្អែកតាមរូបភាពខាងក្រោម ដែលបង្ហាញពីសំណុំចំណុចមានចម្ងាយស្មើគ្នាពីកំណុំ $F$
+                            និងបន្ទាត់ប្រាប់ទិស $\mathscr{D}$ ($MF=MH$ នាំឱ្យ $e=1$) តើខ្សែកោងនេះមានឈ្មោះថាអ្វី?
+                        </p>
+                        <div class="tikz-container">
+                            <script type="text/tikz">
+                                \begin{tikzpicture}[scale=0.6]
+                                    % Axes
+                                    \draw[->] (-2,0) -- (4,0) node[right] {$x$};
+                                    \draw[->] (0,-4) -- (0,4) node[above] {$y$};
+
+                                    % Parabola (plotted using standard function y = sqrt(2x) and -sqrt(2x))
+                                    \draw[thick, blue, domain=0:4, samples=100] plot (\x, {sqrt(2*\x)});
+                                    \draw[thick, blue, domain=0:4, samples=100] plot (\x, {-sqrt(2*\x)});
+
+                                    % Directrix
+                                    \draw[red, thick] (-1,-4) -- (-1,4) node[above right] {$\mathcal{D}$};
+
+                                    % Points
+                                    \filldraw[black] (1,0) circle (3pt) node[below right] {$F$};
+                                    \filldraw[black] (2,2) circle (3pt) node[above left] {$M$};
+
+                                    % Dashed lines
+                                    \draw[dashed] (2,2) -- (-1,2) node[left] {$H$};
+                                    \draw[dashed] (2,2) -- (1,0);
+                                \end{tikzpicture}
+                            </script>
+                        </div>
+                        <div class="options">
+                            <label><input type="radio" name="q8" value="a" /> ក. អេលីប</label>
+                            <label><input type="radio" name="q8" value="correct" /> ខ. ប៉ារ៉ាបូល</label>
+                            <label><input type="radio" name="q8" value="c" /> គ. អ៊ីពែរបូល</label>
+                            <label><input type="radio" name="q8" value="d" /> ឃ. រង្វង់</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p><b>៩.</b> យោងតាមរូបភាពនៃអេលីបនេះ តើផលបូកចម្ងាយ $MF + MF'$ ស្មើនឹងអ្វី?</p>
+                        <div class="tikz-container">
+                            <script type="text/tikz">
+                                \begin{tikzpicture}[scale=0.7]
+                                    \draw[->] (-4,0) -- (4,0) node[right] {$x$};
+                                    \draw[->] (0,-3) -- (0,3) node[above] {$y$};
+                                    \draw[thick, blue] (0,0) ellipse (3cm and 2cm);
+                                    \filldraw[black] (-2.236,0) circle (3pt) node[below] {$F'$};
+                                    \filldraw[black] (2.236,0) circle (3pt) node[below] {$F$};
+                                    \filldraw[black] (1.5, 1.732) circle (3pt) node[above right] {$M$};
+                                    \draw[red, thick] (-2.236,0) -- (1.5, 1.732) -- (2.236,0);
+                                \end{tikzpicture}
+                            </script>
+                        </div>
+                        <div class="options">
+                            <label><input type="radio" name="q9" value="correct" /> ក. $2a$</label>
+                            <label><input type="radio" name="q9" value="b" /> ខ. $2b$</label>
+                            <label><input type="radio" name="q9" value="c" /> គ. $2c$</label>
+                            <label><input type="radio" name="q9" value="d" /> ឃ. $a+b$</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p><b>១០.</b> តាមរូបភាពនៃអ៊ីពែរបូលនេះ តើផលសង $|MF - MF'|$ មានតម្លៃស្មើនឹងអ្វី?</p>
+                        <div class="tikz-container">
+                            <script type="text/tikz">
+                                \begin{tikzpicture}[scale=0.6]
+                                    \draw[->] (-4.5,0) -- (4.5,0);
+                                    \draw[->] (0,-3) -- (0,3);
+                                    \draw[thick, blue] plot[domain=-1.3:1.3] ({2*cosh(\x)}, {1.5*sinh(\x)});
+                                    \draw[thick, blue] plot[domain=-1.3:1.3] ({-2*cosh(\x)}, {1.5*sinh(\x)});
+                                    \filldraw[black] (-2.5,0) circle (3pt) node[below left] {$F'$};
+                                    \filldraw[black] (2.5,0) circle (3pt) node[below right] {$F$};
+                                    \filldraw[black] (3.08, 1.67) circle (3pt) node[right] {$M$};
+                                    \draw[red, thick] (-2.5,0) -- (3.08, 1.67) -- (2.5,0);
+                                \end{tikzpicture}
+                            </script>
+                        </div>
+                        <div class="options">
+                            <label><input type="radio" name="q10" value="a" /> ក. $2b$</label>
+                            <label><input type="radio" name="q10" value="b" /> ខ. $2c$</label>
+                            <label><input type="radio" name="q10" value="correct" /> គ. $2a$</label>
+                            <label><input type="radio" name="q10" value="d" /> ឃ. គ្មានចម្លើយ</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>១១.</b> ផ្អែកលើរូបភាពនៃអ៊ីពែរបូល និងបន្ទាត់កាត់ខ្វែងគ្នា (អាស៊ីមតូត)
+                            តើសមីការអាស៊ីមតូតទាំងពីរនោះមានទម្រង់ដូចម្ដេច ប្រសិនបើសមីការអ៊ីពែរបូលគឺ $\frac{X^2}{a^2} -
+                            \frac{Y^2}{b^2} = 1$?
+                        </p>
+                        <div class="tikz-container">
+                            <script type="text/tikz">
+                                \begin{tikzpicture}[scale=0.6]
+                                    \draw[->] (-4,0) -- (4,0) node[right] {$X$};
+                                    \draw[->] (0,-3.5) -- (0,3.5) node[above] {$Y$};
+                                    \draw[dashed, red, thick] (-4,-3) -- (4,3);
+                                    \draw[dashed, red, thick] (-4,3) -- (4,-3);
+                                    \draw[thick, blue] plot[domain=-1.3:1.3] ({2*cosh(\x)}, {1.5*sinh(\x)});
+                                    \draw[thick, blue] plot[domain=-1.3:1.3] ({-2*cosh(\x)}, {1.5*sinh(\x)});
+                                \end{tikzpicture}
+                            </script>
+                        </div>
+                        <div class="options">
+                            <label><input type="radio" name="q11" value="a" /> ក. $Y = \pm \frac{a}{b} X$</label>
+                            <label><input type="radio" name="q11" value="correct" /> ខ. $Y = \pm \frac{b}{a} X$</label>
+                            <label><input type="radio" name="q11" value="c" /> គ. $Y = \pm c X$</label>
+                            <label><input type="radio" name="q11" value="d" /> ឃ. $Y = \pm ab X$</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>១២.</b> ក្នុងតម្រុយអរតូនរមេ បើប៉ារ៉ាបូលមានសមីការ $Y^2 = 2pX$ ដូចរូប តើចំណុចកំណុំ $F$
+                            និងបន្ទាត់ប្រាប់ទិសមានតម្លៃអាប់ស៊ីសប៉ុន្មានរៀងគ្នា?
+                        </p>
+                        <div class="tikz-container">
+                            <script type="text/tikz">
+                                \begin{tikzpicture}[scale=0.6]
+                                    % Axes
+                                    \draw[->] (-3,0) -- (4,0) node[right] {$X$};
+                                    \draw[->] (0,-3.5) -- (0,3.5) node[above] {$Y$};
+
+                                    % Parabola (plotting x = y^2 / 3 using y as the variable)
+                                    \draw[thick, blue, domain=-3.5:3.5, samples=100, variable=\y] plot ({\y*\y/3}, \y);
+
+                                    % Directrix
+                                    \draw[red, thick] (-1.5,-3.5) -- (-1.5,3.5) node[above right] {$X = -\frac{p}{2}$};
+
+                                    % Points
+                                    \filldraw[black] (1.5,0) circle (3pt) node[below right] {$F$};
+                                    \filldraw[black] (0,0) circle (3pt) node[below left] {$S$};
+                                \end{tikzpicture}
+                            </script>
+                        </div>
+                        <div class="options">
+                            <label><input type="radio" name="q12" value="a" /> ក. $F(p, 0)$ និង $X = -p$</label>
+                            <label><input type="radio" name="q12" value="b" /> ខ. $F(0, p/2)$ និង $Y = -p/2$</label>
+                            <label
+                                ><input type="radio" name="q12" value="correct" /> គ. $F(p/2, 0)$ និង $X = -p/2$</label
+                            >
+                            <label><input type="radio" name="q12" value="d" /> ឃ. $F(-p/2, 0)$ និង $X = p/2$</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>១៣.</b> តាមរូបភាពត្រីកោណកែងក្នុងអេលីបនេះ តើទំនាក់ទំនងរវាងប្រវែងអ័ក្សកន្លះធំ $a$,
+                            អ័ក្សកន្លះតូច $b$, និងចម្ងាយពាក់កណ្ដាលកំណុំ $c$ គឺមួយណា?
+                        </p>
+                        <div class="tikz-container">
+                            <script type="text/tikz">
+                                \begin{tikzpicture}[scale=0.8]
+                                    \draw[->] (-4,0) -- (4,0) node[right] {$x$};
+                                    \draw[->] (0,-3) -- (0,3) node[above] {$y$};
+                                    \draw[thick, blue] (0,0) ellipse (3cm and 2cm);
+                                    \filldraw[black] (2.236,0) circle (3pt) node[below] {$c$};
+                                    \filldraw[black] (0,2) circle (3pt) node[left] {$b$};
+                                    \draw[red, thick] (0,0) -- (2.236,0) -- (0,2) -- cycle;
+                                    \node at (1.3, 1.3) {$a$};
+                                    \node at (1.1, -0.3) {$c$};
+                                    \node at (-0.3, 1) {$b$};
+                                \end{tikzpicture}
+                            </script>
+                        </div>
+                        <div class="options">
+                            <label><input type="radio" name="q13" value="a" /> ក. $a^2 = b^2 - c^2$</label>
+                            <label><input type="radio" name="q13" value="b" /> ខ. $c^2 = a^2 + b^2$</label>
+                            <label><input type="radio" name="q13" value="correct" /> គ. $a^2 = b^2 + c^2$</label>
+                            <label><input type="radio" name="q13" value="d" /> ឃ. $b^2 = a^2 + c^2$</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>១៤.</b> យោងតាមរូប តើគេអាចបម្លែងពីរង្វង់ (គំនូសដាច់ៗ) ទៅអេលីបនេះ
+                            តាមរយៈអនុគមន៍អាភីនអរតូកូណាល់លើអ័ក្ស $(\Omega x)$ តាមសមាមាត្រ $k$ ស្មើនឹងប៉ុន្មាន?
+                        </p>
+                        <div class="tikz-container">
+                            <script type="text/tikz">
+                                \begin{tikzpicture}[scale=0.6]
+                                    \draw[->] (-4,0) -- (4,0) node[right] {$x$};
+                                    \draw[->] (0,-4) -- (0,4) node[above] {$y$};
+                                    \draw[dashed, blue] (0,0) circle (3cm);
+                                    \draw[thick, blue] (0,0) ellipse (3cm and 1.5cm);
+                                    \filldraw[black] (2.12, 2.12) circle (3pt) node[above right] {$M_1$};
+                                    \filldraw[black] (2.12, 1.06) circle (3pt) node[right] {$M$};
+                                    \draw[red, dashed] (2.12, 2.12) -- (2.12, 0) node[below left] {$H$};
+                                \end{tikzpicture}
+                            </script>
+                        </div>
+                        <div class="options">
+                            <label><input type="radio" name="q14" value="a" /> ក. $k = \frac{a}{b}$</label>
+                            <label><input type="radio" name="q14" value="correct" /> ខ. $k = \frac{b}{a}$</label>
+                            <label><input type="radio" name="q14" value="c" /> គ. $k = a \cdot b$</label>
+                            <label><input type="radio" name="q14" value="d" /> ឃ. $k = \frac{c}{a}$</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>១៥.</b> តាមសញ្ញាណនៃបារីសង់ តើទំនាក់ទំនងវ៉ិចទ័រមួយណាដែលបញ្ជាក់ថា $G$
+                            ជាបារីសង់នៃប្រព័ន្ធចំណុចមានទម្ងន់ $(A, a)$ និង $(B, b)$ ដោយ $a+b \neq 0$?
+                        </p>
+                        <div class="options">
+                            <label
+                                ><input type="radio" name="q15" value="a" /> ក. $a\vec{GA} - b\vec{GB} = \vec{0}$</label
+                            >
+                            <label
+                                ><input type="radio" name="q15" value="correct" /> ខ. $a\vec{GA} + b\vec{GB} =
+                                \vec{0}$</label
+                            >
+                            <label
+                                ><input type="radio" name="q15" value="c" /> គ. $a\vec{AB} + b\vec{BG} = \vec{0}$</label
+                            >
+                            <label
+                                ><input type="radio" name="q15" value="d" /> ឃ. $\vec{GA} + \vec{GB} = \vec{0}$</label
+                            >
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>១៦.</b> ក្នុងតម្រុយអរតូនរមេ $(O, \vec{i}, \vec{j})$ តើកូអរដោនេនៃបារីសង់ $G(x_G, y_G)$
+                            នៃប្រព័ន្ធចំណុច $(A, a)$ និង $(B, b)$ ដែល $a+b \neq 0$ កំណត់ដោយរូបមន្តមួយណា?
+                        </p>
+                        <div class="options">
+                            <label
+                                ><input type="radio" name="q16" value="a" /> ក. $x_G = \frac{x_A + x_B}{2}, y_G =
+                                \frac{y_A + y_B}{2}$</label
+                            >
+                            <label
+                                ><input type="radio" name="q16" value="b" /> ខ. $x_G = \frac{ax_B + bx_A}{a+b}, y_G =
+                                \frac{ay_B + by_A}{a+b}$</label
+                            >
+                            <label
+                                ><input type="radio" name="q16" value="correct" /> គ. $x_G = \frac{ax_A + bx_B}{a+b},
+                                y_G = \frac{ay_A + by_B}{a+b}$</label
+                            >
+                            <label
+                                ><input type="radio" name="q16" value="d" /> ឃ. $x_G = ax_A + bx_B, y_G = ay_A +
+                                by_B$</label
+                            >
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>១៧.</b> សម្រាប់ចំណុច $M$ ណាមួយក្នុងប្លង់ និង $G$ ជាបារីសង់នៃប្រព័ន្ធ $(A, a)$ និង $(B,
+                            b)$ ដែល $a+b \neq 0$ តើទំនាក់ទំនងវ៉ិចទ័រទីតាំងមួយណាដែលត្រឹមត្រូវ?
+                        </p>
+                        <div class="options">
+                            <label
+                                ><input type="radio" name="q17" value="a" /> ក. $\vec{MA} + \vec{MB} = \vec{MG}$</label
+                            >
+                            <label
+                                ><input type="radio" name="q17" value="correct" /> ខ. $a\vec{MA} + b\vec{MB} =
+                                (a+b)\vec{MG}$</label
+                            >
+                            <label
+                                ><input type="radio" name="q17" value="c" /> គ. $a\vec{MG} + b\vec{MG} =
+                                \vec{AB}$</label
+                            >
+                            <label
+                                ><input type="radio" name="q17" value="d" /> ឃ. $(a+b)\vec{MA} = a\vec{MB} +
+                                b\vec{MG}$</label
+                            >
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>១៨.</b> ប្រសិនបើទម្ងន់នៃចំណុចទាំងពីរមានតម្លៃស្មើគ្នា ($a=b \neq 0$) នោះគេហៅ $G$
+                            ថាជាអ៊ីសូបារីសង់។ តើទីតាំងរបស់ចំណុច $G$ ស្ថិតនៅទីណាធៀបនឹងអង្កត់ $[AB]$?
+                        </p>
+                        <div class="options">
+                            <label
+                                ><input type="radio" name="q18" value="a" /> ក. ជាចំណុចដែលចែកអង្កត់ $[AB]$ តាមផលធៀប
+                                $1:2$</label
+                            >
+                            <label><input type="radio" name="q18" value="b" /> ខ. ជាចំណុចចុងនៃអង្កត់ $[AB]$</label>
+                            <label><input type="radio" name="q18" value="c" /> គ. ជាចំណុចកែងនៃអង្កត់ $[AB]$</label>
+                            <label
+                                ><input type="radio" name="q18" value="correct" /> ឃ. ជាចំណុចកណ្ដាលនៃអង្កត់
+                                $[AB]$</label
+                            >
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>១៩.</b> ក្នុងការគណនាបារីសង់នៃ $3$ ចំណុច គេអាចជំនួសចំណុចពីរដោយបារីសង់របស់វា
+                            ដែលមានទម្ងន់ស្មើនឹងផលបូកទម្ងន់នៃចំណុចទាំងពីរនោះ។ តើលក្ខណៈនេះមានឈ្មោះអ្វី?
+                        </p>
+                        <div class="options">
+                            <label
+                                ><input type="radio" name="q19" value="correct" /> ក. លក្ខណៈបូកផ្គុំ
+                                (ទ្រឹស្ដីបទបារីសង់ដោយផ្នែក)</label
+                            >
+                            <label><input type="radio" name="q19" value="b" /> ខ. លក្ខណៈឆ្លុះ</label>
+                            <label><input type="radio" name="q19" value="c" /> គ. លក្ខណៈត្រង់ជួរ</label>
+                            <label><input type="radio" name="q19" value="d" /> ឃ. លក្ខណៈបំបែក</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>២០.</b> ទីប្រជុំទម្ងន់ (Centroid) $G$ នៃត្រីកោណ $ABC$
+                            គឺជាបារីសង់នៃប្រព័ន្ធចំណុចទម្ងន់ដូចម្ដេច?
+                        </p>
+                        <div class="options">
+                            <label><input type="radio" name="q20" value="a" /> ក. $(A, 1), (B, 2), (C, 1)$</label>
+                            <label><input type="radio" name="q20" value="b" /> ខ. $(A, 2), (B, 2), (C, 1)$</label>
+                            <label><input type="radio" name="q20" value="correct" /> គ. $(A, 1), (B, 1), (C, 1)$</label>
+                            <label><input type="radio" name="q20" value="d" /> ឃ. $(A, 1), (B, -1), (C, 1)$</label>
+                        </div>
+                    </div>
+
+                    <div class="controls" style="text-align-last: center">
+                        <button type="button" onclick="changeQuestion(-1)">Previous</button>
+
+                        <span id="question-indicator">លំហាត់ទី 1 / 20</span>
+
+                        <button type="button" onclick="changeQuestion(1)">Next</button>
+                        <br /><br />
+                    </div>
+                    <div style="text-align: center">
+                        <!-- <button type="button" id="submitBtn" onclick="calculateScore()">បញ្ជូនចម្លើយ</button> -->
+
+                        <button id="submitBtn" onclick="calculateScore()">បញ្ជូនចម្លើយ</button>
+                    </div>
+                </form>
+            </div>
+            <!--button type="button" class="submit-btn" onclick="alert('មុខងារផ្ញើចម្លើយកំពុងស្ថិតក្នុងការអភិវឌ្ឍន៍!')">
+                បញ្ជូនចម្លើយ
+            </!--button--
+
+            <button id="submitBtn" onclick="calculateScore()">បញ្ជូនចម្លើយ</button> -->
+
+            <div
+                id="resultModal"
+                style="
+                    display: none;
+                    position: fixed;
+                    top: 20%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: white;
+                    padding: 20px;
+                    border: 1px solid black;
+                    box-shadow: 2px 2px 10px gray;
+                ">
+                <h2 id="resultText"></h2>
+                <button onclick="closeModal()">បិទ</button>
+            </div>
+        </div>
+
+        <!-- <script>
+            window.addEventListener("load", function () {
+                const urlParams = new URLSearchParams(window.location.search);
+                const examForm = document.getElementById("exam-form");
+                const resultsPage = document.getElementById("results-page");
+
+                console.log("Checking page param:", urlParams.get("page"));
+
+                // ក្នុង JavaScript
+                if (urlParams.get("page") === "results") {
+                    document.getElementById("exam-form").classList.add("hide-exam");
+                    document.getElementById("results-page").style.display = "block";
+                }
+            });
+        </script> -->
+
+        <script>
+            function navigate(action) {
+                console.log("Navigating to: " + action); // សម្រាប់មើលក្នុង Console ថាប៊ូតុងដើរឬអត់
+
+                const targetPage = "2L-quiz1_index.html";
+
+                if (action === "exam") {
+                    window.location.href = targetPage;
+                } else if (action === "results") {
+                    window.location.href = targetPage + "?page=results";
+                }
+            }
+        </script>
+    </body>
+</html>
+
+<script>
+    // ១. ពេលទំព័រដើរភ្លាម ឆែកមើលថាតើគាត់ធ្លាប់ប្រលងហើយឬនៅ
+    /*window.onload = function () {
+        if (localStorage.getItem("hasTakenTest")) {
+            alert("អ្នកបានធ្វើតេស្តនេះរួចហើយ! មិនអាចធ្វើម្ដងទៀតបានទេ។");
+            document.getElementById("submitBtn").disabled = true; // បិទប៊ូតុង
+            // អាចលាក់សំណួរចោលក៏បាន
+        }
+    };*/
+
+    // Function សម្រាប់បិទផ្ទាំង Pop-up
+    function closeModal() {
+        // ស្វែងរកផ្ទាំង Pop-up តាមរយៈ ID រួចបិទវា (លាក់)
+        document.getElementById("resultModal").style.display = "none";
+
+        // ជម្រើសបន្ថែម៖ ដោយសារគាត់ប្រលងរួចហើយ ពេលគាត់ចុចបិទ អ្នកអាចឲ្យវា Refresh ទំព័រនេះចោលតែម្ដង
+        // ដើម្បីកុំឲ្យគាត់ឃើញសំនួរចាស់ទៀត ដោយលុបសញ្ញា // ខាងមុខកូដខាងក្រោម៖
+        // window.location.reload();
+    }
+
+    // ដូរ URL នេះទៅជា Web App URL ដែលអ្នកបាន Copy ពីជំហានទី៣
+    const SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbxuQlrV_jN9-rKplHBI_8_UlIM9Do81Mpns49A1GjalNWCai8hF40jVMUSnYCzKrDhMzA/exec";
+
+    function calculateScore() {
+        let name = document.getElementById("studentName").value;
+        let id = document.getElementById("studentId").value;
+
+        if (name === "" || id === "") {
+            alert("សូមបំពេញឈ្មោះ និងលេខរៀងជាមុនសិន!");
+            return;
+        }
+
+        let totalScore = 0;
+        let totalQuestions = 7; // ឧបមាថាអ្នកមាន ៧ សំណួរ (សូមដាក់លេខសរុបនៃសំណួររបស់អ្នក)
+        let scorePerQuestion = 1; // ឧបមាថា ១ សំណួរ ១ ពិន្ទុ
+
+        // ប្រើ for loop ដើម្បីរត់ឆែករាល់សំណួរទាំងអស់
+        for (let i = 1; i <= totalQuestions; i++) {
+            let questionName = "q" + i;
+            let selectedAnswer = document.querySelector('input[name="' + questionName + '"]:checked');
+
+            // បើគាត់បានជ្រើសរើសចម្លើយ ហើយវាត្រូវ
+            if (selectedAnswer && selectedAnswer.value === "correct") {
+                totalScore += scorePerQuestion;
+            }
+        }
+
+        // ចាប់យកចម្លើយ (ឧទាហរណ៍ដូចសំនួរទី២៦ និង២៧)
+        //let q26Answer = document.querySelector('input[name="q26"]:checked');
+        //let q27Answer = document.querySelector('input[name="q27"]:checked');
+
+        //if (q26Answer && q26Answer.value === "correct") {
+        //    totalScore += 10;
+        //}
+        //if (q27Answer && q27Answer.value === "correct") {
+        //    totalScore += 10;
+        //}
+
+        // បិទប៊ូតុង និងបង្ហាញពាក្យ "កំពុងបញ្ជូន..." ដើម្បីកុំឱ្យគាត់ចុចដដែលៗ
+        let submitBtn = document.getElementById("submitBtn");
+        submitBtn.innerText = "កំពុងបញ្ជូន...";
+        submitBtn.disabled = true;
+
+        // រៀបចំទិន្នន័យសម្រាប់បញ្ជូនទៅ Google Sheets
+        let dataToSend = {
+            name: name,
+            id: id,
+            score: totalScore
+        };
+
+        // ប្រើ Fetch API ដើម្បីបាញ់ទិន្នន័យ
+        fetch(SCRIPT_URL, {
+            method: "POST",
+            body: JSON.stringify(dataToSend),
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            }
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.status === "success") {
+                    /*let resultText = "ការបញ្ជូនជោគជ័យ! សួស្តី " + name + " ពិន្ទុសរុបរបស់អ្នកគឺ៖ " + totalScore;
+                    document.getElementById("resultText").innerText = resultText;
+                    document.getElementById("resultModal").style.display = "block";*/
+                    // ១. រៀបចំអត្ថបទដោយប្រើ HTML tags (<br> សម្រាប់ចុះបន្ទាត់, <hr> សម្រាប់គូសបន្ទាត់)
+                    let resultText =
+                        "ការបញ្ជូនជោគជ័យ!<br><hr>" +
+                        "សួស្តី " +
+                        name +
+                        ", លេខរៀង " +
+                        id +
+                        "<br>" +
+                        "ពិន្ទុសរុបរបស់អ្នកគឺ៖" +
+                        "<br><br>" +
+                        "អ្នកអាចនឹងធ្លាក់ការប្រលងនេះ !";
+
+                    // ២. ត្រូវដូរពី .innerText ទៅជា .innerHTML ទើបវាស្គាល់កូដ HTML ខាងលើ
+                    document.getElementById("resultText").innerHTML = resultText;
+                    document.getElementById("resultModal").style.display = "block";
+
+                    localStorage.setItem("hasTakenTest", "true");
+                } else if (data.status === "duplicate") {
+                    // លោតសារតែមួយ បង្ហាញទាំងឈ្មោះ និងលេខរៀងតែម្ដង
+                    alert(
+                        "ឈ្មោះ " +
+                            name +
+                            " ឬ លេខរៀងទី " +
+                            id +
+                            " បានបញ្ជូនចម្លើយរួចរាល់ហើយ!" +
+                            " អ្នកមិនអាចប្រលងម្ដងទៀតបានទេ។"
+                    );
+
+                    // បើកប៊ូតុងឱ្យគាត់ចុចវិញ (ក្រែងលោគាត់វាយច្រឡំ)
+                    submitBtn.innerText = "បញ្ជូនចម្លើយ";
+                    submitBtn.disabled = false;
+                }
+
+                /*else if (data.status === "duplicate") {
+                    // បែងចែកសារព្រមាន ទៅតាមប្រភេទដែលវាស្ទួន
+                    if (data.type === "id") {
+                        alert("លេខរៀងទី " + id + " នេះបានបញ្ជូនចម្លើយរួចរាល់ហើយ!");
+                    } else if (data.type === "name") {
+                        alert("សិស្សឈ្មោះ '" + name + "' បានបញ្ជូនចម្លើយរួចរាល់ហើយ!");
+                    }
+
+                    submitBtn.innerText = "បញ្ជូនចម្លើយ";
+                    submitBtn.disabled = false;
+                } */
+            })
+            .catch((error) => {
+                console.error("Error!", error.message);
+                alert("សុំទោស មានបញ្ហាក្នុងការបញ្ជូនទិន្នន័យ។ សូមពិនិត្យអ៊ីនធឺណិតរបស់អ្នក!");
+                submitBtn.innerText = "បញ្ជូនចម្លើយ";
+                submitBtn.disabled = false;
+            });
+    }
+</script>
+
+<script>
+    function goToPage(page) {
+        let name = document.getElementById("studentName").value;
+        let id = document.getElementById("studentId").value;
+
+        if (name === "" || id === "") {
+            alert("សូមបំពេញឈ្មោះ និងលេខរៀងជាមុនសិន!");
+            return;
+        }
+
+        // លាក់ Menu ដើម
+        document.getElementById("home-menu").style.display = "none";
+
+        if (page === "exam") {
+            document.getElementById("exam-form").style.display = "block";
+        } else if (page === "results") {
+            document.getElementById("results-page").style.display = "block";
+        }
+    }
+</script>
+<script>
+    // យើងប្រើ Event Listener លើ Document តែម្ដង
+    document.addEventListener("change", function (event) {
+        // ឆែកមើលថាតើអ្វីដែលសិស្សចុចគឺជា Radio button មែនទេ
+        if (event.target.type === "radio") {
+            checkProgress();
+        }
+    });
+
+    function checkProgress() {
+        let allSelected = true;
+        // ឆែកមើលសំណួរទាំងអស់ដែលបានដាក់ក្នុង class "question-box"
+        let questions = document.querySelectorAll(".question-box");
+
+        for (let i = 0; i < questions.length; i++) {
+            let qNum = i + 1;
+            // រកមើល input ដែលបាន check នៅក្នុងសំណួរនីមួយៗ
+            if (!questions[i].querySelector('input[name="q' + qNum + '"]:checked')) {
+                allSelected = false;
+                break;
+            }
+        }
+
+        // បើក ឬ បិទប៊ូតុង Submit
+        document.getElementById("submitBtn").disabled = !allSelected;
+    }
+</script>
