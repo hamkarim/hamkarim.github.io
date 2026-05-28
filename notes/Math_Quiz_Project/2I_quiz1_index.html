@@ -7,7 +7,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&display=swap" rel="stylesheet" />
 
-        <title>Quiz for 2D on LT</title>
+        <title>Quiz for 2I on LT</title>
 
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script>
@@ -430,7 +430,7 @@
     <body>
         <div class="container">
             <div id="home-menu">
-                <h2>ប្រលងឡើងវិញ មុខវិជ្ជា៖ ធរណីមាត្រ (TUP-BA 2026)</h2>
+                <h2>ប្រលងតេស្ដការយល់ដឹង៖ មេរៀនបម្លែងលីនេអ៊ែរ (LT)</h2>
 
                 <!-- <div id="student-info">
                 <!-- <span>សូមបំពញឈ្មោះ </span>
@@ -445,10 +445,8 @@
                     <input type="text" id="studentName" placeholder="ឈ្មោះរបស់អ្នក" /><br />
                     <span style="font-size: small; color: red"> ល.រ ៖ </span>
                     <input type="number" id="studentId" placeholder="លេខរៀង" /><br />
-                    <span style="font-size: small; color: red"> វគ្គ ៖ </span>
-                    <input type="number" id="cohoreId" placeholder="វគ្គសិក្សា" /><br />
                     <span style="font-size: small; color: red"> ក្រុម/ថ្នាក់ ៖ </span>
-                    <input type="text" id="groupId" placeholder="ក្រុមសិក្សា" /><br />
+                    <input type="text" id="groupId" placeholder="ថ្នាក់សិក្សា" /><br />
                     <br />
                     <!--    <h3>សូមជ្រើសរើស៖</h3>
                     <div style="text-align: center; margin-top: 20px">
@@ -470,405 +468,207 @@
 
                 <!-- div class="noview"> -->
                 <form id="quizForm">
+                    
+                    
                     <div class="question-box" style="display: block">
-                        <p>
-                            <b>១.</b> សម្រាប់អ៊ីពែរបូល ក្នុងតម្រុយនរម៉ាល់មានគល់ $\Omega$ និងអាស៊ីមតូតទាំងពីរ $(\Omega,
-                            \vec{u}, \vec{v})$ តើសមីការរបស់វាមានទម្រង់ដូចម្ដេច?
-                        </p>
-                        <div class="options">
-                            <label><input type="radio" name="q1" value="a" /> ក. $X^2 + Y^2 = c^2$</label>
-                            <label><input type="radio" name="q1" value="correct" /> ខ. $X Y = \frac{c^2}{4}$</label>
-                            <label><input type="radio" name="q1" value="c" /> គ. $X Y = a \cdot b$</label>
-                            <label><input type="radio" name="q1" value="d" /> ឃ. $Y = X^2 + c$</label>
-                        </div>
-                    </div>
+    <p><b>១.</b> អនុលោមតាមអ័ក្សយូម (Axioms) តើបម្លែងលីនេអ៊ែរ $T: V \to W$ ត្រូវបំពេញលក្ខខណ្ឌពីរអ្វីខ្លះ?</p>
+    <div class="options">
+        <label><input type="radio" name="q1" value="a" /> ក. $T(u+v)=T(u)-T(v)$ និង $T(\lambda v) = T(v)$</label>
+        <label><input type="radio" name="q1" value="correct" /> ខ. $T(u+v)=T(u)+T(v)$ និង $T(\lambda v) = \lambda T(v)$</label>
+        <label><input type="radio" name="q1" value="c" /> គ. $T(uv)=T(u)T(v)$ និង $T(u+v)=T(u)+T(v)$</label>
+        <label><input type="radio" name="q1" value="d" /> ឃ. $T(\lambda+v)=\lambda+T(v)$ និង $T(0)=0$</label>
+    </div>
+</div>
 
-                    <div class="question-box" style="display: block">
-                        <p><b>២.</b> តើអ៊ីពែរបូលសមមូល (equilateral hyperbola) មានលក្ខណៈពិសេសអ្វី?</p>
-                        <div class="options">
-                            <label><input type="radio" name="q2" value="a" /> ក. មានអេសង់ទ្រីស៊ីតេស្មើ $1$</label>
-                            <label><input type="radio" name="q2" value="b" /> ខ. អាស៊ីមតូតទាំងពីរស្របគ្នា</label>
-                            <label
-                                ><input type="radio" name="q2" value="correct" /> គ. អាស៊ីមតូតទាំងពីរកែងគ្នា
-                                ($a=b$)</label
-                            >
-                            <label><input type="radio" name="q2" value="d" /> ឃ. មិនមានអ័ក្សឆ្លុះ</label>
-                        </div>
-                    </div>
+<div class="question-box" style="display: none">
+    <p><b>២.</b> តើលក្ខខណ្ឌសមមូលតែមួយណា ដែលអាចបញ្ជាក់ថា $T$ ជាអនុវត្តន៍លីនេអ៊ែរបាន?</p>
+    <div class="options">
+        <label><input type="radio" name="q2" value="a" /> ក. $T(\alpha u + \beta v) = T(u) + T(v)$</label>
+        <label><input type="radio" name="q2" value="b" /> ខ. $T(\alpha u + \beta v) = \alpha \beta T(u + v)$</label>
+        <label><input type="radio" name="q2" value="correct" /> គ. $T(\alpha u + \beta v) = \alpha T(u) + \beta T(v)$</label>
+        <label><input type="radio" name="q2" value="d" /> ឃ. $T(\alpha u) + \beta v = \alpha T(u) + \beta T(v)$</label>
+    </div>
+</div>
 
-                    <div class="question-box" style="display: block">
-                        <p>
-                            <b>៣.</b> ក្នុងសមីការទូទៅនៃកោនិក $ax^2+by^2+2cx+2dy+e=0$ ប្រសិនបើ $a=0$ និង $c \neq 0$
-                            តើវាបង្កើតបានជាខ្សែកោងអ្វី?
-                        </p>
-                        <div class="options">
-                            <label><input type="radio" name="q3" value="a" /> ក. អេលីប</label>
-                            <label
-                                ><input type="radio" name="q3" value="correct" /> ខ. ប៉ារ៉ាបូលមានអ័ក្សស្រប $(Ox)$</label
-                            >
-                            <label><input type="radio" name="q3" value="c" /> គ. ប៉ារ៉ាបូលមានអ័ក្សស្រប $(Oy)$</label>
-                            <label><input type="radio" name="q3" value="d" /> ឃ. អ៊ីពែរបូល</label>
-                        </div>
-                    </div>
+<div class="question-box" style="display: none">
+    <p><b>៣.</b> សម្រាប់បម្លែងលីនេអ៊ែរ $T \in \mathcal{L}(V, W)$ ប្រសិនបើ $V = W$ តើគេហៅធាតុរបស់ $\mathcal{L}(V,V)$ ថាជាអ្វី?</p>
+    <div class="options">
+        <label><input type="radio" name="q3" value="correct" /> ក. អូប៉េរ៉ាទ័រលីនេអ៊ែរ (Linear operators)</label>
+        <label><input type="radio" name="q3" value="b" /> ខ. អនុវត្តន៍ទូទៅ (Surjective maps)</label>
+        <label><input type="radio" name="q3" value="c" /> គ. ម៉ាទ្រីសឯកតា (Identity matrix)</label>
+        <label><input type="radio" name="q3" value="d" /> ឃ. អនុវត្តន៍ថេរ (Constant operators)</label>
+    </div>
+</div>
 
-                    <div class="question-box" style="display: block">
-                        <b>៤.</b> ក្នុងសមីការទូទៅនៃកោនិកមានផ្ចិត $ax^2+by^2=k$ បើសិនជា $ab\gt 0$ និង $k\gt 0$
-                        តើកោនិកនោះជាអ្វី?
-                        <div class="options">
-                            <label><input type="radio" name="q4" value="correct" /> ក. អេលីប</label>
-                            <label><input type="radio" name="q4" value="b" /> ខ. អ៊ីពែរបូល</label>
-                            <label><input type="radio" name="q4" value="c" /> គ. ចំណុចមួយ</label>
-                            <label><input type="radio" name="q4" value="d" /> ឃ. គ្មានចំណុច</label>
-                        </div>
-                    </div>
+<div class="question-box" style="display: none">
+    <p><b>៤.</b> បើ $T$ ជាអនុវត្តន៍លីនេអ៊ែរ តើ $T(0)$ មានតម្លៃស្មើនឹងអ្វី?</p>
+    <div class="options">
+        <label><input type="radio" name="q4" value="a" /> ក. $T(0) = 1$</label>
+        <label><input type="radio" name="q4" value="correct" /> ខ. $T(0) = 0$</label>
+        <label><input type="radio" name="q4" value="c" /> គ. $T(0) = -1$</label>
+        <label><input type="radio" name="q4" value="d" /> ឃ. មិនអាចកំណត់បាន</label>
+    </div>
+</div>
 
-                    <div class="question-box" style="display: block">
-                        <b>៥.</b> ក្នុងសមីការទូទៅនៃកោនិកមានផ្ចិត $ax^2+by^2=k$ បើសិនជា $ab\lt 0$ និង $k \neq 0$
-                        តើកោនិកនោះជាអ្វី?
-                        <div class="options">
-                            <label><input type="radio" name="q5" value="a" /> ក. អេលីប</label>
-                            <label><input type="radio" name="q5" value="b" /> ខ. ប៉ារ៉ាបូល</label>
-                            <label><input type="radio" name="q5" value="c" /> គ. រង្វង់</label>
-                            <label><input type="radio" name="q5" value="correct" /> ឃ. អ៊ីពែរបូល</label>
-                        </div>
-                    </div>
+<div class="question-box" style="display: none">
+    <p><b>៥.</b> តើទំនាក់ទំនងមួយណាដែលត្រឹមត្រូវជានិច្ចសម្រាប់អនុវត្តន៍លីនេអ៊ែរ $T$ ចំពោះគ្រប់ $v \in V$?</p>
+    <div class="options">
+        <label><input type="radio" name="q5" value="a" /> ក. $T(-v) = T(v)$</label>
+        <label><input type="radio" name="q5" value="b" /> ខ. $T(-v) = 0$</label>
+        <label><input type="radio" name="q5" value="correct" /> គ. $T(-v) = -T(v)$</label>
+        <label><input type="radio" name="q5" value="d" /> ឃ. $T(v) = -v$</label>
+    </div>
+</div>
 
-                    <div class="question-box" style="display: block">
-                        <p><b>៦.</b> សម្រាប់ប៉ារ៉ាបូល តើអេសង់ទ្រីស៊ីតេ $e$ មានតម្លៃស្មើប៉ុន្មាន?</p>
-                        <div class="options">
-                            <label><input type="radio" name="q6" value="a" /> ក. $e = \frac{1}{2}$</label>
-                            <label><input type="radio" name="q6" value="correct" /> ខ. $e = 1$</label>
-                            <label><input type="radio" name="q6" value="c" /> គ. $e = 0$</label>
-                            <label><input type="radio" name="q6" value="d" /> ឃ. $e = -1$</label>
-                        </div>
-                    </div>
+<div class="question-box" style="display: none">
+    <p><b>៦.</b> នៅក្នុងលំហ $\mathcal{L}(V, W)$ តើផលបូកនៃអនុវត្តន៍លីនេអ៊ែរពីរ $(S+T)(v)$ កំណត់ដោយរូបមន្តមួយណា?</p>
+    <div class="options">
+        <label><input type="radio" name="q6" value="correct" /> ក. $S(v) + T(v)$</label>
+        <label><input type="radio" name="q6" value="b" /> ខ. $S(T(v))$</label>
+        <label><input type="radio" name="q6" value="c" /> គ. $S(v) \cdot T(v)$</label>
+        <label><input type="radio" name="q6" value="d" /> ឃ. $S(v) - T(v)$</label>
+    </div>
+</div>
 
-                    <div class="question-box" style="display: block">
-                        <p><b>៧.</b> តើប៉ារ៉ាម៉ែត្រ $p$ របស់អេលីប ឬអ៊ីពែរបូល កំណត់ដោយរូបមន្តមួយណា?</p>
-                        <div class="options">
-                            <label><input type="radio" name="q7" value="correct" /> ក. $p = \frac{b^2}{c}$</label>
-                            <label><input type="radio" name="q7" value="b" /> ខ. $p = \frac{a^2}{c}$</label>
-                            <label><input type="radio" name="q7" value="c" /> គ. $p = \frac{c^2}{b}$</label>
-                            <label><input type="radio" name="q7" value="d" /> ឃ. $p = a \cdot b$</label>
-                        </div>
-                    </div>
+<div class="question-box" style="display: none">
+    <p><b>៧.</b> ផ្អែកតាមទ្រឹស្ដីបទ តើសំណុំ $\mathcal{L}(V, W)$ រួមជាមួយប្រមាណវិធីបូកនិងគុណនឹងស្កាលែ បង្កើតបានជារចនាសម្ព័ន្ធអ្វី?</p>
+    <div class="options">
+        <label><input type="radio" name="q7" value="a" /> ក. ក្រុបទូទៅ</label>
+        <label><input type="radio" name="q7" value="correct" /> ខ. លំហវ៉ិចទ័រ (Vector Space)</label>
+        <label><input type="radio" name="q7" value="c" /> គ. កង (Ring)</label>
+        <label><input type="radio" name="q7" value="d" /> ឃ. តួ (Field)</label>
+    </div>
+</div>
 
-                    <div class="question-box" style="display: block">
-                        <p>
-                            <b>៨.</b> ផ្អែកតាមរូបភាពខាងក្រោម ដែលបង្ហាញពីសំណុំចំណុចមានចម្ងាយស្មើគ្នាពីកំណុំ $F$
-                            និងបន្ទាត់ប្រាប់ទិស $\mathscr{D}$ ($MF=MH$ នាំឱ្យ $e=1$) តើខ្សែកោងនេះមានឈ្មោះថាអ្វី?
-                        </p>
-                        <div class="tikz-container">
-                            <script type="text/tikz">
-                                \begin{tikzpicture}[scale=0.6]
-                                    % Axes
-                                    \draw[->] (-2,0) -- (4,0) node[right] {$x$};
-                                    \draw[->] (0,-4) -- (0,4) node[above] {$y$};
+<div class="question-box" style="display: none">
+    <p><b>៨.</b> នៅក្នុងលំហ $\mathcal{L}(V, W)$ តើអ្វីជាធាតុណឺត (Additive identity)?</p>
+    <div class="options">
+        <label><input type="radio" name="q8" value="a" /> ក. អនុវត្តន៍ឯកតា $I(v) = v$</label>
+        <label><input type="radio" name="q8" value="b" /> ខ. អនុវត្តន៍ $T(v) = 1$</label>
+        <label><input type="radio" name="q8" value="correct" /> គ. អនុវត្តន៍សូន្យ $0: v \mapsto 0_W$</label>
+        <label><input type="radio" name="q8" value="d" /> ឃ. មិនមានធាតុណឺតទេ</label>
+    </div>
+</div>
 
-                                    % Parabola (plotted using standard function y = sqrt(2x) and -sqrt(2x))
-                                    \draw[thick, blue, domain=0:4, samples=100] plot (\x, {sqrt(2*\x)});
-                                    \draw[thick, blue, domain=0:4, samples=100] plot (\x, {-sqrt(2*\x)});
+<div class="question-box" style="display: none">
+    <p><b>៩.</b> តើផលគុណបណ្ដាក់ (Composition) នៃអនុវត្តន៍លីនេអ៊ែរ $(ST)(u)$ កំណត់ដោយរូបមន្តមួយណា?</p>
+    <div class="options">
+        <label><input type="radio" name="q9" value="a" /> ក. $S(u) + T(u)$</label>
+        <label><input type="radio" name="q9" value="correct" /> ខ. $S(T(u))$</label>
+        <label><input type="radio" name="q9" value="c" /> គ. $T(S(u))$</label>
+        <label><input type="radio" name="q9" value="d" /> ឃ. $S(u) \cdot T(u)$</label>
+    </div>
+</div>
 
-                                    % Directrix
-                                    \draw[red, thick] (-1,-4) -- (-1,4) node[above right] {$\mathcal{D}$};
+<div class="question-box" style="display: none">
+    <p><b>១០.</b> ក្នុងចំណោមលក្ខណៈនៃផលគុណបណ្ដាក់របស់អនុវត្តន៍លីនេអ៊ែរ តើលក្ខណៈមួយណាដែល <b>មិនពិតជាទូទៅ</b> (Not true in general)?</p>
+    <div class="options">
+        <label><input type="radio" name="q10" value="a" /> ក. លក្ខណៈផ្ដុំ $(RS)T = R(ST)$</label>
+        <label><input type="radio" name="q10" value="b" /> ខ. លក្ខណៈបំបែក $(R+S)T = RT + ST$</label>
+        <label><input type="radio" name="q10" value="correct" /> គ. លក្ខណៈត្រឡប់ $ST = TS$</label>
+        <label><input type="radio" name="q10" value="d" /> ឃ. លក្ខណៈស្កាលែ $\lambda(ST) = (\lambda S)T$</label>
+    </div>
+</div>
 
-                                    % Points
-                                    \filldraw[black] (1,0) circle (3pt) node[below right] {$F$};
-                                    \filldraw[black] (2,2) circle (3pt) node[above left] {$M$};
+<div class="question-box" style="display: none">
+    <p><b>១១.</b> តាង $\varphi_1: \mathbb{R}^2 \longrightarrow \mathbb{R}^2$ ជាអនុវត្តន៍កំណត់ដោយ $\varphi_1((x, y))=(x+y, x-y)$។ តើ $\varphi_1$ ជាអនុវត្តន៍លីនេអ៊ែរដែរឬទេ?</p>
+    <div class="options">
+        <label><input type="radio" name="q11" value="correct" /> ក. បាទ, វាជាអនុវត្តន៍លីនេអ៊ែរ</label>
+        <label><input type="radio" name="q11" value="b" /> ខ. ទេ, វាមិនមែនជាអនុវត្តន៍លីនេអ៊ែរទេ</label>
+        <label><input type="radio" name="q11" value="c" /> គ. ជាអនុវត្តន៍លីនេអ៊ែរ លុះត្រាតែ $x=y=0$</label>
+        <label><input type="radio" name="q11" value="d" /> ឃ. មិនអាចសន្និដ្ឋានបាន</label>
+    </div>
+</div>
 
-                                    % Dashed lines
-                                    \draw[dashed] (2,2) -- (-1,2) node[left] {$H$};
-                                    \draw[dashed] (2,2) -- (1,0);
-                                \end{tikzpicture}
-                            </script>
-                        </div>
-                        <div class="options">
-                            <label><input type="radio" name="q8" value="a" /> ក. អេលីប</label>
-                            <label><input type="radio" name="q8" value="correct" /> ខ. ប៉ារ៉ាបូល</label>
-                            <label><input type="radio" name="q8" value="c" /> គ. អ៊ីពែរបូល</label>
-                            <label><input type="radio" name="q8" value="d" /> ឃ. រង្វង់</label>
-                        </div>
-                    </div>
+<div class="question-box" style="display: none">
+    <p><b>១២.</b> តាង $\varphi_2: \mathbb{R}^2 \longrightarrow \mathbb{R}^2$ កំណត់ដោយ $\varphi_2((x, y))=(\sin (x+y), \sin (x-y))$។ តើ $\varphi_2$ ជាអនុវត្តន៍លីនេអ៊ែរដែរឬទេ?</p>
+    <div class="options">
+        <label><input type="radio" name="q12" value="a" /> ក. បាទ, វាជាអនុវត្តន៍លីនេអ៊ែរ</label>
+        <label><input type="radio" name="q12" value="correct" /> ខ. ទេ, វាមិនមែនជាអនុវត្តន៍លីនេអ៊ែរទេ</label>
+        <label><input type="radio" name="q12" value="c" /> គ. ជាអនុវត្តន៍លីនេអ៊ែរ តែលើ $\mathbb{R}^3$ ប៉ុណ្ណោះ</label>
+        <label><input type="radio" name="q12" value="d" /> ឃ. ជាអនុវត្តន៍លីនេអ៊ែរបើ $x+y=1$</label>
+    </div>
+</div>
 
-                    <div class="question-box" style="display: block">
-                        <p><b>៩.</b> យោងតាមរូបភាពនៃអេលីបនេះ តើផលបូកចម្ងាយ $MF + MF'$ ស្មើនឹងអ្វី?</p>
-                        <div class="tikz-container">
-                            <script type="text/tikz">
-                                \begin{tikzpicture}[scale=0.7]
-                                    \draw[->] (-4,0) -- (4,0) node[right] {$x$};
-                                    \draw[->] (0,-3) -- (0,3) node[above] {$y$};
-                                    \draw[thick, blue] (0,0) ellipse (3cm and 2cm);
-                                    \filldraw[black] (-2.236,0) circle (3pt) node[below] {$F'$};
-                                    \filldraw[black] (2.236,0) circle (3pt) node[below] {$F$};
-                                    \filldraw[black] (1.5, 1.732) circle (3pt) node[above right] {$M$};
-                                    \draw[red, thick] (-2.236,0) -- (1.5, 1.732) -- (2.236,0);
-                                \end{tikzpicture}
-                            </script>
-                        </div>
-                        <div class="options">
-                            <label><input type="radio" name="q9" value="correct" /> ក. $2a$</label>
-                            <label><input type="radio" name="q9" value="b" /> ខ. $2b$</label>
-                            <label><input type="radio" name="q9" value="c" /> គ. $2c$</label>
-                            <label><input type="radio" name="q9" value="d" /> ឃ. $a+b$</label>
-                        </div>
-                    </div>
+<div class="question-box" style="display: none">
+    <p><b>១៣.</b> យក $f: V \longrightarrow W$ ជាអនុវត្តន៍លីនេអ៊ែរ។ បើ $S$ ជាសំណុំ Spanning set របស់ $V$ នោះ តើ $f(S)$ ជាអ្វី?</p>
+    <div class="options">
+        <label><input type="radio" name="q13" value="a" /> ក. ជាសំណុំឯករាជ្យលីនេអ៊ែរក្នុង $W$</label>
+        <label><input type="radio" name="q13" value="correct" /> ខ. ជាសំណុំ Spanning set របស់លំហរង $f(V)$</label>
+        <label><input type="radio" name="q13" value="c" /> គ. ជាសំណុំទទេ</label>
+        <label><input type="radio" name="q13" value="d" /> ឃ. ជាមូលដ្ឋាន (Basis) របស់ $W$</label>
+    </div>
+</div>
 
-                    <div class="question-box" style="display: block">
-                        <p><b>១០.</b> តាមរូបភាពនៃអ៊ីពែរបូលនេះ តើផលសង $|MF - MF'|$ មានតម្លៃស្មើនឹងអ្វី?</p>
-                        <div class="tikz-container">
-                            <script type="text/tikz">
-                                \begin{tikzpicture}[scale=0.6]
-                                    \draw[->] (-4.5,0) -- (4.5,0);
-                                    \draw[->] (0,-3) -- (0,3);
-                                    \draw[thick, blue] plot[domain=-1.3:1.3] ({2*cosh(\x)}, {1.5*sinh(\x)});
-                                    \draw[thick, blue] plot[domain=-1.3:1.3] ({-2*cosh(\x)}, {1.5*sinh(\x)});
-                                    \filldraw[black] (-2.5,0) circle (3pt) node[below left] {$F'$};
-                                    \filldraw[black] (2.5,0) circle (3pt) node[below right] {$F$};
-                                    \filldraw[black] (3.08, 1.67) circle (3pt) node[right] {$M$};
-                                    \draw[red, thick] (-2.5,0) -- (3.08, 1.67) -- (2.5,0);
-                                \end{tikzpicture}
-                            </script>
-                        </div>
-                        <div class="options">
-                            <label><input type="radio" name="q10" value="a" /> ក. $2b$</label>
-                            <label><input type="radio" name="q10" value="b" /> ខ. $2c$</label>
-                            <label><input type="radio" name="q10" value="correct" /> គ. $2a$</label>
-                            <label><input type="radio" name="q10" value="d" /> ឃ. គ្មានចម្លើយ</label>
-                        </div>
-                    </div>
+<div class="question-box" style="display: none">
+    <p><b>១៤.</b> បើ $f: V \longrightarrow W$ ជាអនុវត្តន៍លីនេអ៊ែរ ហើយ $f(S)$ ជាសំណុំឯករាជ្យលីនេអ៊ែរ (li) ក្នុង $W$ តើគេអាចទាញសេចក្ដីសន្និដ្ឋានអ្វីបានពី $S$?</p>
+    <div class="options">
+        <label><input type="radio" name="q14" value="correct" /> ក. $S$ ជាសំណុំឯករាជ្យលីនេអ៊ែរ (li) ក្នុង $V$</label>
+        <label><input type="radio" name="q14" value="b" /> ខ. $S$ ជាសំណុំអាស្រ័យលីនេអ៊ែរ (ld) ក្នុង $V$</label>
+        <label><input type="radio" name="q14" value="c" /> គ. $S$ ជា Spanning set របស់ $V$</label>
+        <label><input type="radio" name="q14" value="d" /> ឃ. $S$ មានតែវ៉ិចទ័រសូន្យប៉ុណ្ណោះ</label>
+    </div>
+</div>
 
-                    <div class="question-box" style="display: block">
-                        <p>
-                            <b>១១.</b> ផ្អែកលើរូបភាពនៃអ៊ីពែរបូល និងបន្ទាត់កាត់ខ្វែងគ្នា (អាស៊ីមតូត)
-                            តើសមីការអាស៊ីមតូតទាំងពីរនោះមានទម្រង់ដូចម្ដេច ប្រសិនបើសមីការអ៊ីពែរបូលគឺ $\frac{X^2}{a^2} -
-                            \frac{Y^2}{b^2} = 1$?
-                        </p>
-                        <div class="tikz-container">
-                            <script type="text/tikz">
-                                \begin{tikzpicture}[scale=0.6]
-                                    \draw[->] (-4,0) -- (4,0) node[right] {$X$};
-                                    \draw[->] (0,-3.5) -- (0,3.5) node[above] {$Y$};
-                                    \draw[dashed, red, thick] (-4,-3) -- (4,3);
-                                    \draw[dashed, red, thick] (-4,3) -- (4,-3);
-                                    \draw[thick, blue] plot[domain=-1.3:1.3] ({2*cosh(\x)}, {1.5*sinh(\x)});
-                                    \draw[thick, blue] plot[domain=-1.3:1.3] ({-2*cosh(\x)}, {1.5*sinh(\x)});
-                                \end{tikzpicture}
-                            </script>
-                        </div>
-                        <div class="options">
-                            <label><input type="radio" name="q11" value="a" /> ក. $Y = \pm \frac{a}{b} X$</label>
-                            <label><input type="radio" name="q11" value="correct" /> ខ. $Y = \pm \frac{b}{a} X$</label>
-                            <label><input type="radio" name="q11" value="c" /> គ. $Y = \pm c X$</label>
-                            <label><input type="radio" name="q11" value="d" /> ឃ. $Y = \pm ab X$</label>
-                        </div>
-                    </div>
+<div class="question-box" style="display: none">
+    <p><b>១៥.</b> បើ $S$ ជាសំណុំឯករាជ្យលីនេអ៊ែរ (li) ក្នុង $V$ ហើយ $f$ ជាម៉ូណូម័រភីស (Monomorphism) នោះ តើ $f(S)$ ជាអ្វី?</p>
+    <div class="options">
+        <label><input type="radio" name="q15" value="a" /> ក. សំណុំអាស្រ័យលីនេអ៊ែរ (ld) ក្នុង $W$</label>
+        <label><input type="radio" name="q15" value="b" /> ខ. Spanning set របស់ $W$</label>
+        <label><input type="radio" name="q15" value="correct" /> គ. សំណុំឯករាជ្យលីនេអ៊ែរ (li) ក្នុង $W$</label>
+        <label><input type="radio" name="q15" value="d" /> ឃ. សំណុំដែលមានតែវ៉ិចទ័រសូន្យ</label>
+    </div>
+</div>
 
-                    <div class="question-box" style="display: block">
-                        <p>
-                            <b>១២.</b> ក្នុងតម្រុយអរតូនរមេ បើប៉ារ៉ាបូលមានសមីការ $Y^2 = 2pX$ ដូចរូប តើចំណុចកំណុំ $F$
-                            និងបន្ទាត់ប្រាប់ទិសមានតម្លៃអាប់ស៊ីសប៉ុន្មានរៀងគ្នា?
-                        </p>
-                        <div class="tikz-container">
-                            <script type="text/tikz">
-                                \begin{tikzpicture}[scale=0.6]
-                                    % Axes
-                                    \draw[->] (-3,0) -- (4,0) node[right] {$X$};
-                                    \draw[->] (0,-3.5) -- (0,3.5) node[above] {$Y$};
+<div class="question-box" style="display: none">
+    <p><b>១៦.</b> គេមានបម្លែង $\mathbf{L}: \mathbb{R}^2 \longrightarrow \mathbb{R}^2$ ដែល $\mathbf{L}\left(\begin{bmatrix}1 \\ 1\end{bmatrix}\right)=\begin{bmatrix}2 \\ -3\end{bmatrix}$ និង $\mathbf{L}\left(\begin{bmatrix}0 \\ 1\end{bmatrix}\right)=\begin{bmatrix}1 \\ 2\end{bmatrix}$។ តើ $\mathbf{L}\left(\begin{bmatrix}3 \\ -2\end{bmatrix}\right)$ ស្មើនឹងអ្វី?</p>
+    <div class="options">
+        <label><input type="radio" name="q16" value="a" /> ក. $\begin{bmatrix} 5 \\ -1 \end{bmatrix}$</label>
+        <label><input type="radio" name="q16" value="b" /> ខ. $\begin{bmatrix} 3 \\ -5 \end{bmatrix}$</label>
+        <label><input type="radio" name="q16" value="correct" /> គ. $\begin{bmatrix} 1 \\ -19 \end{bmatrix}$</label>
+        <label><input type="radio" name="q16" value="d" /> ឃ. $\begin{bmatrix} 6 \\ -9 \end{bmatrix}$</label>
+    </div>
+</div>
 
-                                    % Parabola (plotting x = y^2 / 3 using y as the variable)
-                                    \draw[thick, blue, domain=-3.5:3.5, samples=100, variable=\y] plot ({\y*\y/3}, \y);
+<div class="question-box" style="display: none">
+    <p><b>១៧.</b> កំណត់ $T: \mathbb{R}^3 \rightarrow \mathbb{R}^2$ ដោយ $T(x, y, z)=(2 x-4 y+3 z+b, 6 x+c x y z)$។ តើលក្ខខណ្ឌអ្វីដែលធ្វើឱ្យ $T$ ជាអនុវត្តន៍លីនេអ៊ែរ?</p>
+    <div class="options">
+        <label><input type="radio" name="q17" value="a" /> ក. $b=1, c=1$</label>
+        <label><input type="radio" name="q17" value="correct" /> ខ. $b=0$ និង $c=0$</label>
+        <label><input type="radio" name="q17" value="c" /> គ. $b=0$ ឯ $c$ ជាចំនួនពិតណាមួយក៏បាន</label>
+        <label><input type="radio" name="q17" value="d" /> ឃ. $c=0$ ឯ $b$ ជាចំនួនពិតណាមួយក៏បាន</label>
+    </div>
+</div>
 
-                                    % Directrix
-                                    \draw[red, thick] (-1.5,-3.5) -- (-1.5,3.5) node[above right] {$X = -\frac{p}{2}$};
+<div class="question-box" style="display: none">
+    <p><b>១៨.</b> យក $b, c \in \mathbb{R}$ និង $T: \mathcal{P}(\mathbb{R}) \rightarrow \mathbb{R}^2$ កំណត់ដោយ $T p=\left(3 p(4)+5 p^{\prime}(6)+b p(1) p(2), \int_{-1}^2 x^3 p(x) d x+c \sin p(0)\right)$។ ពេលណាទើប $T$ ជាអនុវត្តន៍លីនេអ៊ែរ?</p>
+    <div class="options">
+        <label><input type="radio" name="q18" value="a" /> ក. ពេល $b=1, c=0$</label>
+        <label><input type="radio" name="q18" value="b" /> ខ. វាតែងតែជាលីនេអ៊ែរជានិច្ច</label>
+        <label><input type="radio" name="q18" value="correct" /> គ. លុះត្រាតែ $b=0$ និង $c=0$</label>
+        <label><input type="radio" name="q18" value="d" /> ឃ. លុះត្រាតែ $p(x) = 0$</label>
+    </div>
+</div>
 
-                                    % Points
-                                    \filldraw[black] (1.5,0) circle (3pt) node[below right] {$F$};
-                                    \filldraw[black] (0,0) circle (3pt) node[below left] {$S$};
-                                \end{tikzpicture}
-                            </script>
-                        </div>
-                        <div class="options">
-                            <label><input type="radio" name="q12" value="a" /> ក. $F(p, 0)$ និង $X = -p$</label>
-                            <label><input type="radio" name="q12" value="b" /> ខ. $F(0, p/2)$ និង $Y = -p/2$</label>
-                            <label
-                                ><input type="radio" name="q12" value="correct" /> គ. $F(p/2, 0)$ និង $X = -p/2$</label
-                            >
-                            <label><input type="radio" name="q12" value="d" /> ឃ. $F(-p/2, 0)$ និង $X = p/2$</label>
-                        </div>
-                    </div>
+<div class="question-box" style="display: none">
+    <p><b>១៩.</b> គេឲ្យអនុវត្តន៍ $T \in \mathcal{L}(\mathcal{P}(\mathbb{R}), \mathbb{R})$ កំណត់ដោយ $T(p) = \int_0^1 p(x) d x$។ តើការអះអាងមួយណាត្រឹមត្រូវ?</p>
+    <div class="options">
+        <label><input type="radio" name="q19" value="correct" /> ក. $T$ ពិតជាអនុវត្តន៍លីនេអ៊ែរ</label>
+        <label><input type="radio" name="q19" value="b" /> ខ. $T$ មិនមែនជាអនុវត្តន៍លីនេអ៊ែរទេ ព្រោះវាជាអាំងតេក្រាល</label>
+        <label><input type="radio" name="q19" value="c" /> គ. $T$ មិនមែនជាអនុវត្តន៍លីនេអ៊ែរទេ បើ $p(x)$ ជាពហុធាដឺក្រេទី២</label>
+        <label><input type="radio" name="q19" value="d" /> ឃ. $T$ ជាអនុវត្តន៍លីនេអ៊ែរ លុះត្រាតែ $p(x)=0$</label>
+    </div>
+</div>
 
-                    <div class="question-box" style="display: block">
-                        <p>
-                            <b>១៣.</b> តាមរូបភាពត្រីកោណកែងក្នុងអេលីបនេះ តើទំនាក់ទំនងរវាងប្រវែងអ័ក្សកន្លះធំ $a$,
-                            អ័ក្សកន្លះតូច $b$, និងចម្ងាយពាក់កណ្ដាលកំណុំ $c$ គឺមួយណា?
-                        </p>
-                        <div class="tikz-container">
-                            <script type="text/tikz">
-                                \begin{tikzpicture}[scale=0.8]
-                                    \draw[->] (-4,0) -- (4,0) node[right] {$x$};
-                                    \draw[->] (0,-3) -- (0,3) node[above] {$y$};
-                                    \draw[thick, blue] (0,0) ellipse (3cm and 2cm);
-                                    \filldraw[black] (2.236,0) circle (3pt) node[below] {$c$};
-                                    \filldraw[black] (0,2) circle (3pt) node[left] {$b$};
-                                    \draw[red, thick] (0,0) -- (2.236,0) -- (0,2) -- cycle;
-                                    \node at (1.3, 1.3) {$a$};
-                                    \node at (1.1, -0.3) {$c$};
-                                    \node at (-0.3, 1) {$b$};
-                                \end{tikzpicture}
-                            </script>
-                        </div>
-                        <div class="options">
-                            <label><input type="radio" name="q13" value="a" /> ក. $a^2 = b^2 - c^2$</label>
-                            <label><input type="radio" name="q13" value="b" /> ខ. $c^2 = a^2 + b^2$</label>
-                            <label><input type="radio" name="q13" value="correct" /> គ. $a^2 = b^2 + c^2$</label>
-                            <label><input type="radio" name="q13" value="d" /> ឃ. $b^2 = a^2 + c^2$</label>
-                        </div>
-                    </div>
-
-                    <div class="question-box" style="display: block">
-                        <p>
-                            <b>១៤.</b> យោងតាមរូប តើគេអាចបម្លែងពីរង្វង់ (គំនូសដាច់ៗ) ទៅអេលីបនេះ
-                            តាមរយៈអនុគមន៍អាភីនអរតូកូណាល់លើអ័ក្ស $(\Omega x)$ តាមសមាមាត្រ $k$ ស្មើនឹងប៉ុន្មាន?
-                        </p>
-                        <div class="tikz-container">
-                            <script type="text/tikz">
-                                \begin{tikzpicture}[scale=0.6]
-                                    \draw[->] (-4,0) -- (4,0) node[right] {$x$};
-                                    \draw[->] (0,-4) -- (0,4) node[above] {$y$};
-                                    \draw[dashed, blue] (0,0) circle (3cm);
-                                    \draw[thick, blue] (0,0) ellipse (3cm and 1.5cm);
-                                    \filldraw[black] (2.12, 2.12) circle (3pt) node[above right] {$M_1$};
-                                    \filldraw[black] (2.12, 1.06) circle (3pt) node[right] {$M$};
-                                    \draw[red, dashed] (2.12, 2.12) -- (2.12, 0) node[below left] {$H$};
-                                \end{tikzpicture}
-                            </script>
-                        </div>
-                        <div class="options">
-                            <label><input type="radio" name="q14" value="a" /> ក. $k = \frac{a}{b}$</label>
-                            <label><input type="radio" name="q14" value="correct" /> ខ. $k = \frac{b}{a}$</label>
-                            <label><input type="radio" name="q14" value="c" /> គ. $k = a \cdot b$</label>
-                            <label><input type="radio" name="q14" value="d" /> ឃ. $k = \frac{c}{a}$</label>
-                        </div>
-                    </div>
-
-                    <div class="question-box" style="display: block">
-                        <p>
-                            <b>១៥.</b> តាមសញ្ញាណនៃបារីសង់ តើទំនាក់ទំនងវ៉ិចទ័រមួយណាដែលបញ្ជាក់ថា $G$
-                            ជាបារីសង់នៃប្រព័ន្ធចំណុចមានទម្ងន់ $(A, a)$ និង $(B, b)$ ដោយ $a+b \neq 0$?
-                        </p>
-                        <div class="options">
-                            <label
-                                ><input type="radio" name="q15" value="a" /> ក. $a\vec{GA} - b\vec{GB} = \vec{0}$</label
-                            >
-                            <label
-                                ><input type="radio" name="q15" value="correct" /> ខ. $a\vec{GA} + b\vec{GB} =
-                                \vec{0}$</label
-                            >
-                            <label
-                                ><input type="radio" name="q15" value="c" /> គ. $a\vec{AB} + b\vec{BG} = \vec{0}$</label
-                            >
-                            <label
-                                ><input type="radio" name="q15" value="d" /> ឃ. $\vec{GA} + \vec{GB} = \vec{0}$</label
-                            >
-                        </div>
-                    </div>
-
-                    <div class="question-box" style="display: block">
-                        <p>
-                            <b>១៦.</b> ក្នុងតម្រុយអរតូនរមេ $(O, \vec{i}, \vec{j})$ តើកូអរដោនេនៃបារីសង់ $G(x_G, y_G)$
-                            នៃប្រព័ន្ធចំណុច $(A, a)$ និង $(B, b)$ ដែល $a+b \neq 0$ កំណត់ដោយរូបមន្តមួយណា?
-                        </p>
-                        <div class="options">
-                            <label
-                                ><input type="radio" name="q16" value="a" /> ក. $x_G = \frac{x_A + x_B}{2}, y_G =
-                                \frac{y_A + y_B}{2}$</label
-                            >
-                            <label
-                                ><input type="radio" name="q16" value="b" /> ខ. $x_G = \frac{ax_B + bx_A}{a+b}, y_G =
-                                \frac{ay_B + by_A}{a+b}$</label
-                            >
-                            <label
-                                ><input type="radio" name="q16" value="correct" /> គ. $x_G = \frac{ax_A + bx_B}{a+b},
-                                y_G = \frac{ay_A + by_B}{a+b}$</label
-                            >
-                            <label
-                                ><input type="radio" name="q16" value="d" /> ឃ. $x_G = ax_A + bx_B, y_G = ay_A +
-                                by_B$</label
-                            >
-                        </div>
-                    </div>
-
-                    <div class="question-box" style="display: block">
-                        <p>
-                            <b>១៧.</b> សម្រាប់ចំណុច $M$ ណាមួយក្នុងប្លង់ និង $G$ ជាបារីសង់នៃប្រព័ន្ធ $(A, a)$ និង $(B,
-                            b)$ ដែល $a+b \neq 0$ តើទំនាក់ទំនងវ៉ិចទ័រទីតាំងមួយណាដែលត្រឹមត្រូវ?
-                        </p>
-                        <div class="options">
-                            <label
-                                ><input type="radio" name="q17" value="a" /> ក. $\vec{MA} + \vec{MB} = \vec{MG}$</label
-                            >
-                            <label
-                                ><input type="radio" name="q17" value="correct" /> ខ. $a\vec{MA} + b\vec{MB} =
-                                (a+b)\vec{MG}$</label
-                            >
-                            <label
-                                ><input type="radio" name="q17" value="c" /> គ. $a\vec{MG} + b\vec{MG} =
-                                \vec{AB}$</label
-                            >
-                            <label
-                                ><input type="radio" name="q17" value="d" /> ឃ. $(a+b)\vec{MA} = a\vec{MB} +
-                                b\vec{MG}$</label
-                            >
-                        </div>
-                    </div>
-
-                    <div class="question-box" style="display: block">
-                        <p>
-                            <b>១៨.</b> ប្រសិនបើទម្ងន់នៃចំណុចទាំងពីរមានតម្លៃស្មើគ្នា ($a=b \neq 0$) នោះគេហៅ $G$
-                            ថាជាអ៊ីសូបារីសង់។ តើទីតាំងរបស់ចំណុច $G$ ស្ថិតនៅទីណាធៀបនឹងអង្កត់ $[AB]$?
-                        </p>
-                        <div class="options">
-                            <label
-                                ><input type="radio" name="q18" value="a" /> ក. ជាចំណុចដែលចែកអង្កត់ $[AB]$ តាមផលធៀប
-                                $1:2$</label
-                            >
-                            <label><input type="radio" name="q18" value="b" /> ខ. ជាចំណុចចុងនៃអង្កត់ $[AB]$</label>
-                            <label><input type="radio" name="q18" value="c" /> គ. ជាចំណុចកែងនៃអង្កត់ $[AB]$</label>
-                            <label
-                                ><input type="radio" name="q18" value="correct" /> ឃ. ជាចំណុចកណ្ដាលនៃអង្កត់
-                                $[AB]$</label
-                            >
-                        </div>
-                    </div>
-
-                    <div class="question-box" style="display: block">
-                        <p>
-                            <b>១៩.</b> ក្នុងការគណនាបារីសង់នៃ $3$ ចំណុច គេអាចជំនួសចំណុចពីរដោយបារីសង់របស់វា
-                            ដែលមានទម្ងន់ស្មើនឹងផលបូកទម្ងន់នៃចំណុចទាំងពីរនោះ។ តើលក្ខណៈនេះមានឈ្មោះអ្វី?
-                        </p>
-                        <div class="options">
-                            <label
-                                ><input type="radio" name="q19" value="correct" /> ក. លក្ខណៈបូកផ្គុំ
-                                (ទ្រឹស្ដីបទបារីសង់ដោយផ្នែក)</label
-                            >
-                            <label><input type="radio" name="q19" value="b" /> ខ. លក្ខណៈឆ្លុះ</label>
-                            <label><input type="radio" name="q19" value="c" /> គ. លក្ខណៈត្រង់ជួរ</label>
-                            <label><input type="radio" name="q19" value="d" /> ឃ. លក្ខណៈបំបែក</label>
-                        </div>
-                    </div>
-
-                    <div class="question-box" style="display: block">
-                        <p>
-                            <b>២០.</b> ទីប្រជុំទម្ងន់ (Centroid) $G$ នៃត្រីកោណ $ABC$
-                            គឺជាបារីសង់នៃប្រព័ន្ធចំណុចទម្ងន់ដូចម្ដេច?
-                        </p>
-                        <div class="options">
-                            <label><input type="radio" name="q20" value="a" /> ក. $(A, 1), (B, 2), (C, 1)$</label>
-                            <label><input type="radio" name="q20" value="b" /> ខ. $(A, 2), (B, 2), (C, 1)$</label>
-                            <label><input type="radio" name="q20" value="correct" /> គ. $(A, 1), (B, 1), (C, 1)$</label>
-                            <label><input type="radio" name="q20" value="d" /> ឃ. $(A, 1), (B, -1), (C, 1)$</label>
-                        </div>
-                    </div>
+<div class="question-box" style="display: none">
+    <p><b>២០.</b> តាង $T: \mathcal{P}(\mathbb{R}) \rightarrow \mathcal{P}(\mathbb{R})$ កំណត់ដោយ $(T p)(x)=x^2 p(x)$ សម្រាប់គ្រប់ $x \in \mathbb{R}$។ តើ $T$ ជាអ្វី?</p>
+    <div class="options">
+        <label><input type="radio" name="q20" value="a" /> ក. វាមិនមែនជាបម្លែងលីនេអ៊ែរទេ</label>
+        <label><input type="radio" name="q20" value="correct" /> ខ. វាជាអូប៉េរ៉ាទ័រលីនេអ៊ែរ (Linear Operator) លើ $\mathcal{P}(\mathbb{R})$</label>
+        <label><input type="radio" name="q20" value="c" /> គ. វាគ្រាន់តែជាអនុវត្តន៍ថេរ (Constant Map)</label>
+        <label><input type="radio" name="q20" value="d" /> ឃ. ជាអនុវត្តន៍មិនលីនេអ៊ែរ ដោយសារមានស្វ័យគុណ $x^2$</label>
+    </div>
+</div>
 
                     <div class="controls" style="text-align-last: center">
                         <button type="button" onclick="changeQuestion(-1)">Previous</button>
