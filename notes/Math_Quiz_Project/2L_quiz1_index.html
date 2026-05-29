@@ -1,0 +1,1175 @@
+<!doctype html>
+<html lang="km">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&display=swap" rel="stylesheet" />
+
+        <title>Quiz for 2I on LT</title>
+
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [
+                        ["$", "$"],
+                        ["\\(", "\\)"]
+                    ],
+                    displayMath: [
+                        ["$$", "$$"],
+                        ["\\[", "\\]"]
+                    ],
+                    macros: {
+                        mybullet: "{\\tiny\\bullet\\;\\;}",
+                        mybullett: "{\\quad\\tiny\\bullet\\;\\;}"
+                    }
+                },
+                chtml: {
+                    scale: 1.2,
+                    linebreaks: { automatic: true }
+                },
+                svg: {
+                    scale: 1.2,
+                    matchFontHeight: true
+                }
+            };
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css" />
+        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+        <script>
+            let currentQuestion = 0;
+            const questions = document.getElementsByClassName("question-box");
+
+            /*function changeQuestion(n) {
+                  // លាក់សំណួរដែលកំពុងបង្ហាញ
+                  questions[currentQuestion].style.display = "none";
+
+                  // ប្តូរលេខសំណួរ
+                  currentQuestion += n;
+
+                  // កំណត់ព្រំដែន (កុំឱ្យហួសសំណួរទីមួយ ឬចុងក្រោយ)
+                  if (currentQuestion < 0) currentQuestion = 0;
+                  if (currentQuestion >= questions.length) currentQuestion = questions.length - 1;
+
+                  // បង្ហាញសំណួរថ្មី
+                  questions[currentQuestion].style.display = "block";
+              }*/
+
+            // បន្ថែមមុខងារនេះនៅខាងក្នុង Function changeQuestion()
+            /*function updateIndicator() {
+                  let indicator = document.getElementById("question-indicator");
+                  let totalQuestions = questions.length;
+                  indicator.innerText = "លំហាត់ទី " + (currentQuestion + 1) + " / " + totalQuestions;
+              }*/
+
+            function updateIndicator() {
+                let indicator = document.getElementById("question-indicator");
+                indicator.innerText = "លំហាត់ទី " + (currentQuestion + 1) + " / " + questions.length;
+
+                // បិទប៊ូតុង Previous ពេលនៅសំណួរទី ១
+                document.querySelector('button[onclick="changeQuestion(-1)"]').disabled = currentQuestion === 0;
+
+                // បិទប៊ូតុង Next នៅសំណួរចុងក្រោយ (ស្រេចចិត្ត)
+                document.querySelector('button[onclick="changeQuestion(1)"]').disabled =
+                    currentQuestion === questions.length - 1;
+            }
+
+            // កំណត់ស្ថានភាពដំបូង នៅពេលទំព័រផ្ទុក (Load)
+            window.onload = function () {
+                updateButtonStates(); // ហៅមុខងារនេះដើម្បីបិទប៊ូតុងនៅពេលចាប់ផ្ដើម
+            };
+
+            function updateButtonStates() {
+                // 1. គ្រប់គ្រងប៊ូតុង Previous
+                // បើស្ថិតនៅសំណួរទី ១ (currentQuestion === 0) គឺបិទវា
+                document.querySelector('button[onclick="changeQuestion(-1)"]').disabled = currentQuestion === 0;
+
+                // 2. គ្រប់គ្រងប៊ូតុង បញ្ជូនចម្លើយ (Submit)
+                // ត្រង់នេះយើងប្រើ Logic ដែលយើងធ្លាប់ធ្វើពីមុន៖ បិទវារហូតដល់ឆ្លើយគ្រប់សំណួរ
+                document.getElementById("submitBtn").disabled = true;
+            }
+
+            function changeQuestion(n) {
+                // ១. ឆែកលក្ខខណ្ឌសម្រាប់ទំព័រទី១
+                if (currentQuestion === 0 && n === 1) {
+                    let name = document.getElementById("studentName").value;
+                    let id = document.getElementById("studentId").value;
+                    let classGroup = document.getElementById("groupId").value;
+
+                    if (!name || !id || !classGroup) {
+                        showModal("សូមបំពេញឈ្មោះ លេខរៀង និងថ្នាក់ឱ្យបានគ្រប់គ្រាន់!");
+                        return;
+                    }
+                }
+
+                // បើចុច Next (n === 1) ត្រូវឆែកមើលចម្លើយសិន
+                if (n === 1) {
+                    let currentQ = questions[currentQuestion];
+                    let radioButtons = currentQ.querySelectorAll('input[type="radio"]');
+                    let isChecked = false;
+
+                    // ពិនិត្យមើលថាតើមានប៊ូតុងណាមួយត្រូវបានជ្រើសរើស
+                    for (let rb of radioButtons) {
+                        if (rb.checked) {
+                            isChecked = true;
+                            break;
+                        }
+                    }
+
+                    // បើមិនទាន់ជ្រើសរើស មិនអនុញ្ញាតឱ្យទៅមុខទេ
+                    if (!isChecked) {
+                        //alert("សូមជ្រើសរើសចម្លើយមួយសិន ទើបអាចបន្តទៅលំហាត់បន្ទាប់បាន!");
+                        showModal("សូមជ្រើសរើសចម្លើយមួយសិន ទើបអាចបន្តទៅលំហាត់បន្ទាប់បាន!");
+                        return; // បញ្ឈប់ការដំណើរការ Function
+                    }
+                }
+
+                // ដំណើរការលាក់/បង្ហាញសំណួរ (កូដដដែលពីមុន)
+                questions[currentQuestion].style.display = "none";
+                currentQuestion += n;
+
+                // កំណត់ព្រំដែន
+                if (currentQuestion < 0) currentQuestion = 0;
+                if (currentQuestion >= questions.length) currentQuestion = questions.length - 1;
+
+                questions[currentQuestion].style.display = "block";
+
+                // ហៅមុខងារអាប់ដេតលេខលំហាត់
+                updateIndicator();
+
+                // បន្ទាប់ពីប្ដូរសំណួររួច ត្រូវហៅ updateButtonStates ម្តងទៀត
+                updateButtonStates();
+            }
+
+            /*      function changeQuestion(n) {
+                // ១. ឆែកលក្ខខណ្ឌសម្រាប់ទំព័រទី១
+                if (currentQuestion === 0 && n === 1) {
+                    let name = document.getElementById("studentName").value;
+                    let id = document.getElementById("studentId").value;
+                    let classGroup = document.getElementById("classGroup").value;
+
+                    if (!name || !id || !classGroup) {
+                        showModal("សូមបំពេញឈ្មោះ លេខរៀង និងថ្នាក់ឱ្យបានគ្រប់គ្រាន់!");
+                        return;
+                    }
+                }
+
+                // ២. ឆែកលក្ខខណ្ឌជ្រើសរើសចម្លើយ
+                if (n === 1) {
+                    let selected = questions[currentQuestion].querySelector('input[type="radio"]:checked');
+                    if (!selected) {
+                        showModal("សូមជ្រើសរើសចម្លើយមួយសិន ទើបអាចបន្តទៅមុខបាន!");
+                        return;
+                    }
+                }
+
+                // ៣. ប្ដូរលំហាត់
+                questions[currentQuestion].style.display = "none";
+                currentQuestion += n;
+
+                // បង្ហាញលំហាត់ថ្មី និងធ្វើបច្ចុប្បន្នភាព indicator
+                questions[currentQuestion].style.display = "block";
+                updateIndicator();
+
+               
+            }
+            */
+            // មុខងារសម្រាប់បង្ហាញ Modal ជំនួស Alert
+            function showModal(msg) {
+                document.getElementById("modalMsg").innerText = msg;
+                document.getElementById("customModal").style.display = "block";
+            }
+
+            function closeAlert() {
+                document.getElementById("customModal").style.display = "none";
+            }
+        </script>
+        <style>
+             /* កែសម្រួល body ឱ្យប្រើហ្វុងពី Google */
+             body {
+                 font-family: "Battambang", "Khmer OS Battambang", sans-serif;
+                 line-height: 1.8;
+                 background-color: #f4f7f6;
+                 padding: 20px;
+                 /* បន្ថែមចំណុចនេះដើម្បីកុំឱ្យអ្នកប្រើប្រាស់ Select អក្សរញឹកញាប់ពេលចុចលើទូរសព្ទ */
+                 -webkit-tap-highlight-color: transparent;
+             }
+
+             /* បង្ការការហៀរចេញក្រៅអេក្រង់ (Overflow) */
+             .container {
+                 max-width: 100%; /* ដូរពី 800px មក 100% សម្រាប់ទូរសព្ទ រួចចាំប្រើ Media Query សម្រាប់ PC */
+                 margin: auto;
+                 background: #fff;
+                 padding: 15px; /* បន្ថយ padding សម្រាប់ទូរសព្ទ */
+                 border-radius: 8px;
+                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                 box-sizing: border-box; /* សំខាន់សម្រាប់ iOS */
+             }
+
+            /* .question-box {
+                 padding: 15px;
+                 border: 1px solid #ddd;
+                 border-radius: 10px;
+                 margin-bottom: 20px;
+                 overflow-x: auto; /* អនុញ្ញាតឱ្យ scroll តែក្នុងប្រអប់សំណួរ បើរូបមន្តវែងពេក */
+             } */
+
+             /* ដោះស្រាយបញ្ហា SVG (TikZ) មិនឱ្យខូចទ្រង់ទ្រាយ */
+             svg {
+                 max-width: 100%;
+                 height: auto !important; /* បង្ខំឱ្យ Safari រក្សាសមាមាត្រ */
+                 display: block;
+                 margin: 0 auto;
+             }
+
+             /* ដោះស្រាយបញ្ហា Auto-zoom និងទំហំតំបន់ចុច (Touch Target) លើ iOS */
+             .options label {
+                 display: block;
+                 margin-bottom: 12px; /* បង្កើនគម្លាតបន្តិចងាយស្រួលចុច */
+                 cursor: pointer;
+                 font-size: 16px; /* ការពារ Auto-zoom លើ Safari */
+                 padding: 8px;
+                 border-radius: 5px;
+                 transition: background 0.2s;
+             }
+
+             /* បង្ខំ iOS ឱ្យយក Style របស់ Button យើង */
+             button {
+                 padding: 8px 20px;
+                 font-size: 16px; /* ការពារ Auto-zoom */
+                 background-color: #007bff;
+                 color: white;
+                 border: none;
+                 border-radius: 13px;
+                 cursor: pointer;
+                 -webkit-appearance: none; /* សំខាន់ខ្លាំងសម្រាប់ iOS */
+                 appearance: none;
+             }
+
+             /* Media Query សម្រាប់កុំព្យូទ័រ (រក្សាទម្រង់ដើមរបស់អ្នក) */
+             @media (min-width: 768px) {
+                 .container {
+                     max-width: 800px;
+                     padding: 30px;
+                 }
+             }
+
+             h2 {
+                 color: #2980b9;
+                 border-bottom: 2px solid #2980b9;
+                 padding-bottom: 10px;
+                 text-align: center;
+             }
+             .question-block {
+                 margin-bottom: 25px;
+                 padding: 15px;
+                 background: #fafafa;
+                 border-left: 4px solid #27ae60;
+                 border-radius: 4px;
+             }
+             .options {
+                 margin-top: 10px;
+                 padding-left: 20px;
+             }
+             .options label {
+                 display: block;
+                 margin-bottom: 8px;
+                 cursor: pointer;
+             }
+             .submitBtn {
+                 background-color: #2980b9;
+                 color: white;
+                 padding: 12px 20px;
+                 border: none;
+                 border-radius: 5px;
+                 font-size: 16px;
+                 cursor: pointer;
+                 width: 100%;
+                 font-family: inherit;
+                 margin-top: 20px;
+             }
+             .submitBtn:hover {
+                 background-color: #1a5276;
+             }
+             mjx-container {
+                 font-size: 115% !important;
+             }
+
+             .tikz-center {
+                 text-align: center;
+                 margin: 15px 0;
+             }
+
+             /*No view for this div */
+
+             div.noview {
+                 visibility: hidden;
+                 display: none;
+             }
+
+             /* ដាក់ក្នុង <style> */
+             .hide-exam {
+                 display: none !important;
+             }
+
+             .card {
+                 background: white;
+                 padding: 30px;
+                 border-radius: 15px;
+                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                 width: 350px;
+                 text-align: center;
+             }
+             /*    input {
+                 width: 20%;
+                 padding: 6px;
+                 margin: 4px 0;
+                 border: 1px solid #ccc;
+                 border-radius: 5px;
+             }*
+             button {
+                 font-weight: bold;
+                 font-family: Battambang;
+                 background-color: #4caf50;
+                 color: white;
+                 border: none;
+                 padding: 5px 25px;
+                 border-radius: 30px;
+                 cursor: pointer;
+             }
+             button:hover {
+                 background-color: #45a049;
+             }*/
+
+             #question-indicator {
+                 margin: 0 15px;
+                 font-weight: bold;
+                 color: #555;
+                 font-size: 16px;
+             }
+
+             .controls {
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 gap: 20px;
+                 margin: 20px 0;
+             }
+             button {
+                 padding: 6px 15px;
+                 font-size: 14px;
+                 background-color: #007bff;
+                 color: white;
+                 border: none;
+                 border-radius: 13px;
+                 cursor: pointer;
+             }
+
+             /* .question-box {
+                 padding: 20px;
+                 border: 1px solid #ddd;
+                 border-radius: 10px;
+                 margin-bottom: 20px;
+             }*/
+
+             /* ស្រមោលប្រអប់លំហាត់ */
+             .question-box {
+                 padding: 20px;
+                 background: white;
+                 border-radius: 1px;
+                 margin: 10px !important;
+                 box-shadow:
+                     0 10px 20px rgba(0, 0, 0, 0.1),
+                     0 6px 6px rgba(0, 0, 0, 0.1);
+                 margin-bottom: 10px;
+                 border: 1px solid #eee;
+             }
+
+             /* ប៊ូតុងទំហំស្មើគ្នា */
+             .controls button {
+                 width: 98px; /* កំណត់ទំហំទទឹងឱ្យស្មើគ្នា */
+                 padding: 6px;
+                 font-weight: bold;
+             }
+
+             /* Modal Popup ចំកណ្ដាល Screen */
+             .modal {
+                 display: none;
+                 position: fixed;
+                 z-index: 1000;
+                 left: 0;
+                 top: 0;
+                 width: 100%;
+                 height: 100%;
+                 background-color: rgba(0, 0, 0, 0.5);
+                 border-radius: 25px;
+             }
+             .modal-content {
+                 background-color: #fff;
+                 margin: 15% auto;
+                 padding: 20px;
+                 border-radius: 10px;
+                 width: 300px;
+                 text-align: center;
+                 box-shadow: 0 25px 25px rgba(0, 0, 0, 0.3);
+                 font-size: 14px;
+             }
+
+             button:disabled {
+                 background-color: #cccccc !important; /* ពណ៌ប្រផេះ */
+                 cursor: not-allowed; /* សញ្ញាព្រួញហាមឃាត់ */
+                 opacity: 0.6; /* ស្រអាប់ */
+             }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div id="home-menu">
+                <h2>ប្រលងតេស្ដការយល់ដឹង៖ មេរៀនបម្លែងលីនេអ៊ែរ (LT)</h2>
+
+                <!-- <div id="student-info">
+                <!-- <span>សូមបំពញឈ្មោះ </span>
+                <input type="text" id="studentName" placeholder="បញ្ចូលឈ្មោះរបស់អ្នក" required /><br />
+
+                <span>សូមបំពេញលេខរៀង</span> <input type="number" id="studentId" placeholder="បញ្ចូលលេខរៀង" required />
+            </div> -->
+
+                <div style="text-align: center; margin-top: 50px">
+                    <h4>សូមបំពេញព័ត៌មាន៖</h4>
+                    <span style="font-size: small; color: red"> ឈ្មោះ </span>
+                    <input type="text" id="studentName" placeholder="ឈ្មោះរបស់អ្នក" /><br />
+                    <span style="font-size: small; color: red"> ល.រ ៖ </span>
+                    <input type="number" id="studentId" placeholder="លេខរៀង" /><br />
+                    <span style="font-size: small; color: red"> ក្រុម/ថ្នាក់ ៖ </span>
+                    <input type="text" id="groupId" placeholder="ថ្នាក់សិក្សា" /><br />
+                    <br />
+                    <!--    <h3>សូមជ្រើសរើស៖</h3>
+                    <div style="text-align: center; margin-top: 20px">
+                        <button type="button" onclick="navigate('exam')">ចូលប្រលង!</button>
+                        <button type="button" onclick="navigate('results')">ពិនិត្យលទ្ធផល!</button>
+                    </div> -->
+                </div>
+
+                <div id="results-page" style="display: none">
+                    <iframe
+                        src="https://script.google.com/macros/s/AKfycbxuQlrV_jN9-rKplHBI_8_UlIM9Do81Mpns49A1GjalNWCai8hF40jVMUSnYCzKrDhMzA/exec?page=results"
+                        width="100%"
+                        height="600px"
+                        title="ទំព័រលទ្ធផលប្រលង"
+                        style="border: none">
+                    </iframe>
+                    <button onclick="location.reload()">ត្រលប់ក្រោយ</button>
+                </div>
+
+                <!-- div class="noview"> -->
+                <form id="quizForm">
+                    <div class="question-box" style="display: block">
+                        <p>
+                            <b>១.</b> យោងតាមនិយមន័យប្រមាណវិធីលើ $\mathcal{L}(V,W)$ តើផលបូកនៃពីរអនុវត្តន៍លីនេអ៊ែរ
+                            $(S+T)(v)$ ត្រូវបានកំណត់ដូចម្ដេច?
+                        </p>
+                        <div class="options">
+                            <label><input type="radio" name="q21" value="correct" /> ក. $(S+T)(v) = S(v) + T(v)$</label>
+                            <label><input type="radio" name="q21" value="b" /> ខ. $(S+T)(v) = S(T(v))$</label>
+                            <label><input type="radio" name="q21" value="c" /> គ. $(S+T)(v) = S(v) \cdot T(v)$</label>
+                            <label><input type="radio" name="q21" value="d" /> ឃ. $(S+T)(v) = S(v+T)$</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>២.</b> សម្រាប់ $T \in \mathcal{L}(V,W)$ និងស្កាលែ $\lambda \in \mathbb{F}$
+                            តើប្រមាណវិធីគុណស្កាលែ $(\lambda T)(v)$ កំណត់ដោយរូបមន្តមួយណា?
+                        </p>
+                        <div class="options">
+                            <label
+                                ><input type="radio" name="q22" value="a" /> ក. $(\lambda T)(v) = \lambda + T(v)$</label
+                            >
+                            <label
+                                ><input type="radio" name="q22" value="b" /> ខ. $(\lambda T)(v) = T(\lambda) + v$</label
+                            >
+                            <label
+                                ><input type="radio" name="q22" value="c" /> គ. $(\lambda T)(v) = T(\lambda v)$</label
+                            >
+                            <label
+                                ><input type="radio" name="q22" value="correct" /> ឃ. $(\lambda T)(v) = \lambda
+                                T(v)$</label
+                            >
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>៣.</b> ក្នុងនិយមន័យនៃប្រមាណវិធីបូក $(S+T)(v)$ និងគុណស្កាលែ $(\lambda T)(v)$ តើវ៉ិចទ័រ $v$
+                            ត្រូវយកចេញពីសំណុំមួយណា?
+                        </p>
+                        <div class="options">
+                            <label><input type="radio" name="q23" value="a" /> ក. យកចេញពីលំហ $W$</label>
+                            <label><input type="radio" name="q23" value="correct" /> ខ. យកចេញពីលំហ $V$</label>
+                            <label><input type="radio" name="q23" value="c" /> គ. យកចេញពីតួ $\mathbb{F}$</label>
+                            <label><input type="radio" name="q23" value="d" /> ឃ. យកចេញពី $\mathcal{L}(V,W)$</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>៤.</b> ប្រសិនបើ $S, T \in \mathcal{L}(V,W)$ នោះអនុវត្តន៍ថ្មី $S+T$ ដែលទើបនឹងបង្កើត
+                            គឺជាធាតុនៃសំណុំមួយណា?
+                        </p>
+                        <div class="options">
+                            <label><input type="radio" name="q24" value="a" /> ក. ជាធាតុនៃលំហ $V$</label>
+                            <label><input type="radio" name="q24" value="b" /> ខ. ជាធាតុនៃលំហ $W$</label>
+                            <label
+                                ><input type="radio" name="q24" value="correct" /> គ. ជាធាតុនៃ $\mathcal{L}(V,W)$</label
+                            >
+                            <label><input type="radio" name="q24" value="d" /> ឃ. ជាធាតុនៃ $\mathbb{F}$</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>៥.</b> តើគោលបំណងនៃការកំណត់ប្រមាណវិធីបូក $(S+T)$ និងគុណស្កាលែ $(\lambda T)$ លើសំណុំ
+                            $\mathcal{L}(V,W)$ គឺដើម្បីបញ្ជាក់ថា $\mathcal{L}(V,W)$ ជារចនាសម្ព័ន្ធអ្វី?
+                        </p>
+                        <div class="options">
+                            <label
+                                ><input type="radio" name="q25" value="correct" /> ក. លំហវ៉ិចទ័រ (Vector Space)</label
+                            >
+                            <label><input type="radio" name="q25" value="b" /> ខ. ក្រុមទូទៅ (General Group)</label>
+                            <label><input type="radio" name="q25" value="c" /> គ. កាយ (Field)</label>
+                            <label><input type="radio" name="q25" value="d" /> ឃ. ម៉ាទ្រីស (Matrix)</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>៦.</b> អនុលោមតាមអ័ក្សយូម (Axioms) តើបម្លែងលីនេអ៊ែរ $T: V \to W$
+                            ត្រូវបំពេញលក្ខខណ្ឌពីរអ្វីខ្លះ?
+                        </p>
+                        <div class="options">
+                            <label
+                                ><input type="radio" name="q1" value="a" /> ក. $T(u+v)=T(u)-T(v)$ និង $T(\lambda v) =
+                                T(v)$</label
+                            >
+                            <label
+                                ><input type="radio" name="q1" value="correct" /> ខ. $T(u+v)=T(u)+T(v)$ និង $T(\lambda
+                                v) = \lambda T(v)$</label
+                            >
+                            <label
+                                ><input type="radio" name="q1" value="c" /> គ. $T(uv)=T(u)T(v)$ និង
+                                $T(u+v)=T(u)+T(v)$</label
+                            >
+                            <label
+                                ><input type="radio" name="q1" value="d" /> ឃ. $T(\lambda+v)=\lambda+T(v)$ និង
+                                $T(0)=0$</label
+                            >
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p><b>៧.</b> តើលក្ខខណ្ឌសមមូលតែមួយណា ដែលអាចបញ្ជាក់ថា $T$ ជាអនុវត្តន៍លីនេអ៊ែរបាន?</p>
+                        <div class="options">
+                            <label
+                                ><input type="radio" name="q2" value="a" /> ក. $T(\alpha u + \beta v) = T(u) +
+                                T(v)$</label
+                            >
+                            <label
+                                ><input type="radio" name="q2" value="b" /> ខ. $T(\alpha u + \beta v) = \alpha \beta T(u
+                                + v)$</label
+                            >
+                            <label
+                                ><input type="radio" name="q2" value="correct" /> គ. $T(\alpha u + \beta v) = \alpha
+                                T(u) + \beta T(v)$</label
+                            >
+                            <label
+                                ><input type="radio" name="q2" value="d" /> ឃ. $T(\alpha u) + \beta v = \alpha T(u) +
+                                \beta T(v)$</label
+                            >
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>៨.</b> សម្រាប់បម្លែងលីនេអ៊ែរ $T \in \mathcal{L}(V, W)$ ប្រសិនបើ $V = W$ តើគេហៅធាតុរបស់
+                            $\mathcal{L}(V,V)$ ថាជាអ្វី?
+                        </p>
+                        <div class="options">
+                            <label
+                                ><input type="radio" name="q3" value="correct" /> ក. អូប៉េរ៉ាទ័រលីនេអ៊ែរ (Linear
+                                operators)</label
+                            >
+                            <label><input type="radio" name="q3" value="b" /> ខ. អនុវត្តន៍ទូទៅ (Surjective maps)</label>
+                            <label><input type="radio" name="q3" value="c" /> គ. ម៉ាទ្រីសឯកតា (Identity matrix)</label>
+                            <label
+                                ><input type="radio" name="q3" value="d" /> ឃ. អនុវត្តន៍ថេរ (Constant operators)</label
+                            >
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p><b>៩.</b> បើ $T$ ជាអនុវត្តន៍លីនេអ៊ែរ តើ $T(0)$ មានតម្លៃស្មើនឹងអ្វី?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q4" value="a" /> ក. $T(0) = 1$</label>
+                            <label><input type="radio" name="q4" value="correct" /> ខ. $T(0) = 0$</label>
+                            <label><input type="radio" name="q4" value="c" /> គ. $T(0) = -1$</label>
+                            <label><input type="radio" name="q4" value="d" /> ឃ. មិនអាចកំណត់បាន</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>១០.</b> តើទំនាក់ទំនងមួយណាដែលត្រឹមត្រូវជានិច្ចសម្រាប់អនុវត្តន៍លីនេអ៊ែរ $T$ ចំពោះគ្រប់ $v
+                            \in V$?
+                        </p>
+                        <div class="options">
+                            <label><input type="radio" name="q5" value="a" /> ក. $T(-v) = T(v)$</label>
+                            <label><input type="radio" name="q5" value="b" /> ខ. $T(-v) = 0$</label>
+                            <label><input type="radio" name="q5" value="correct" /> គ. $T(-v) = -T(v)$</label>
+                            <label><input type="radio" name="q5" value="d" /> ឃ. $T(v) = -v$</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>១១.</b> នៅក្នុងលំហ $\mathcal{L}(V, W)$ តើផលបូកនៃអនុវត្តន៍លីនេអ៊ែរពីរ $(S+T)(v)$
+                            កំណត់ដោយរូបមន្តមួយណា?
+                        </p>
+                        <div class="options">
+                            <label><input type="radio" name="q6" value="correct" /> ក. $S(v) + T(v)$</label>
+                            <label><input type="radio" name="q6" value="b" /> ខ. $S(T(v))$</label>
+                            <label><input type="radio" name="q6" value="c" /> គ. $S(v) \cdot T(v)$</label>
+                            <label><input type="radio" name="q6" value="d" /> ឃ. $S(v) - T(v)$</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>១២.</b> ផ្អែកតាមទ្រឹស្ដីបទ តើសំណុំ $\mathcal{L}(V, W)$
+                            រួមជាមួយប្រមាណវិធីបូកនិងគុណនឹងស្កាលែ បង្កើតបានជារចនាសម្ព័ន្ធអ្វី?
+                        </p>
+                        <div class="options">
+                            <label><input type="radio" name="q7" value="a" /> ក. ក្រុបទូទៅ</label>
+                            <label><input type="radio" name="q7" value="correct" /> ខ. លំហវ៉ិចទ័រ (Vector Space)</label>
+                            <label><input type="radio" name="q7" value="c" /> គ. កង (Ring)</label>
+                            <label><input type="radio" name="q7" value="d" /> ឃ. កាយ (Field)</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p><b>១៣.</b> នៅក្នុងលំហ $\mathcal{L}(V, W)$ តើអ្វីជាធាតុណឺត (Additive identity)?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q8" value="a" /> ក. អនុវត្តន៍ឯកតា $I(v) = v$</label>
+                            <label><input type="radio" name="q8" value="b" /> ខ. អនុវត្តន៍ $T(v) = 1$</label>
+                            <label
+                                ><input type="radio" name="q8" value="correct" /> គ. អនុវត្តន៍សូន្យ $0: v \mapsto
+                                0_W$</label
+                            >
+                            <label><input type="radio" name="q8" value="d" /> ឃ. មិនមានធាតុណឺតទេ</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>១៤.</b> តើផលគុណបណ្ដាក់ (Composition) នៃអនុវត្តន៍លីនេអ៊ែរ $(ST)(u)$ កំណត់ដោយរូបមន្តមួយណា?
+                        </p>
+                        <div class="options">
+                            <label><input type="radio" name="q9" value="a" /> ក. $S(u) + T(u)$</label>
+                            <label><input type="radio" name="q9" value="correct" /> ខ. $S(T(u))$</label>
+                            <label><input type="radio" name="q9" value="c" /> គ. $T(S(u))$</label>
+                            <label><input type="radio" name="q9" value="d" /> ឃ. $S(u) \cdot T(u)$</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>១៥.</b> ក្នុងចំណោមលក្ខណៈនៃផលគុណបណ្ដាក់របស់អនុវត្តន៍លីនេអ៊ែរ តើលក្ខណៈមួយណាដែល
+                            <b>មិនពិតជាទូទៅ</b> (Not true in general)?
+                        </p>
+                        <div class="options">
+                            <label><input type="radio" name="q10" value="a" /> ក. លក្ខណៈផ្ដុំ $(RS)T = R(ST)$</label>
+                            <label><input type="radio" name="q10" value="b" /> ខ. លក្ខណៈបំបែក $(R+S)T = RT + ST$</label>
+                            <label><input type="radio" name="q10" value="correct" /> គ. លក្ខណៈត្រឡប់ $ST = TS$</label>
+                            <label
+                                ><input type="radio" name="q10" value="d" /> ឃ. លក្ខណៈស្កាលែ $\lambda(ST) = (\lambda
+                                S)T$</label
+                            >
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>១៦.</b> តាង $\varphi_1: \mathbb{R}^2 \longrightarrow \mathbb{R}^2$ ជាអនុវត្តន៍កំណត់ដោយ
+                            $\varphi_1((x, y))=(x+y, x-y)$។ តើ $\varphi_1$ ជាអនុវត្តន៍លីនេអ៊ែរដែរឬទេ?
+                        </p>
+                        <div class="options">
+                            <label
+                                ><input type="radio" name="q11" value="correct" /> ក. បាទ, វាជាអនុវត្តន៍លីនេអ៊ែរ</label
+                            >
+                            <label
+                                ><input type="radio" name="q11" value="b" /> ខ. ទេ, វាមិនមែនជាអនុវត្តន៍លីនេអ៊ែរទេ</label
+                            >
+                            <label
+                                ><input type="radio" name="q11" value="c" /> គ. ជាអនុវត្តន៍លីនេអ៊ែរ លុះត្រាតែ
+                                $x=y=0$</label
+                            >
+                            <label><input type="radio" name="q11" value="d" /> ឃ. មិនអាចសន្និដ្ឋានបាន</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>១៧.</b> តាង $\varphi_2: \mathbb{R}^2 \longrightarrow \mathbb{R}^2$ កំណត់ដោយ
+                            $\varphi_2((x, y))=(\sin (x+y), \sin (x-y))$។ តើ $\varphi_2$ ជាអនុវត្តន៍លីនេអ៊ែរដែរឬទេ?
+                        </p>
+                        <div class="options">
+                            <label><input type="radio" name="q12" value="a" /> ក. បាទ, វាជាអនុវត្តន៍លីនេអ៊ែរ</label>
+                            <label
+                                ><input type="radio" name="q12" value="correct" /> ខ. ទេ,
+                                វាមិនមែនជាអនុវត្តន៍លីនេអ៊ែរទេ</label
+                            >
+                            <label
+                                ><input type="radio" name="q12" value="c" /> គ. ជាអនុវត្តន៍លីនេអ៊ែរ តែលើ $\mathbb{R}^3$
+                                ប៉ុណ្ណោះ</label
+                            >
+                            <label><input type="radio" name="q12" value="d" /> ឃ. ជាអនុវត្តន៍លីនេអ៊ែរបើ $x+y=1$</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>១៨.</b> យក $f: V \longrightarrow W$ ជាអនុវត្តន៍លីនេអ៊ែរ។ បើ $S$ ជាសំណុំ Spanning set របស់
+                            $V$ នោះ តើ $f(S)$ ជាអ្វី?
+                        </p>
+                        <div class="options">
+                            <label
+                                ><input type="radio" name="q13" value="a" /> ក. ជាសំណុំឯករាជ្យលីនេអ៊ែរក្នុង $W$</label
+                            >
+                            <label
+                                ><input type="radio" name="q13" value="correct" /> ខ. ជាសំណុំ Spanning set របស់លំហរង
+                                $f(V)$</label
+                            >
+                            <label><input type="radio" name="q13" value="c" /> គ. ជាសំណុំទទេ</label>
+                            <label><input type="radio" name="q13" value="d" /> ឃ. ជាមូលដ្ឋាន (Basis) របស់ $W$</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>១៩.</b> បើ $f: V \longrightarrow W$ ជាអនុវត្តន៍លីនេអ៊ែរ ហើយ $f(S)$ ជាសំណុំឯករាជ្យលីនេអ៊ែរ
+                            (li) ក្នុង $W$ តើគេអាចទាញសេចក្ដីសន្និដ្ឋានអ្វីបានពី $S$?
+                        </p>
+                        <div class="options">
+                            <label
+                                ><input type="radio" name="q14" value="correct" /> ក. $S$ ជាសំណុំឯករាជ្យលីនេអ៊ែរ (li)
+                                ក្នុង $V$</label
+                            >
+                            <label
+                                ><input type="radio" name="q14" value="b" /> ខ. $S$ ជាសំណុំអាស្រ័យលីនេអ៊ែរ (ld) ក្នុង
+                                $V$</label
+                            >
+                            <label><input type="radio" name="q14" value="c" /> គ. $S$ ជា Spanning set របស់ $V$</label>
+                            <label><input type="radio" name="q14" value="d" /> ឃ. $S$ មានតែវ៉ិចទ័រសូន្យប៉ុណ្ណោះ</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>២០.</b> បើ $S$ ជាសំណុំឯករាជ្យលីនេអ៊ែរ (li) ក្នុង $V$ ហើយ $f$ ជាម៉ូណូម័រភីស (Monomorphism)
+                            នោះ តើ $f(S)$ ជាអ្វី?
+                        </p>
+                        <div class="options">
+                            <label
+                                ><input type="radio" name="q15" value="a" /> ក. សំណុំអាស្រ័យលីនេអ៊ែរ (ld) ក្នុង
+                                $W$</label
+                            >
+                            <label><input type="radio" name="q15" value="b" /> ខ. Spanning set របស់ $W$</label>
+                            <label
+                                ><input type="radio" name="q15" value="correct" /> គ. សំណុំឯករាជ្យលីនេអ៊ែរ (li) ក្នុង
+                                $W$</label
+                            >
+                            <label><input type="radio" name="q15" value="d" /> ឃ. សំណុំដែលមានតែវ៉ិចទ័រសូន្យ</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>២១.</b> គេមានបម្លែង $\mathbf{L}: \mathbb{R}^2 \longrightarrow \mathbb{R}^2$ ដែល
+                            $\mathbf{L}\left(\begin{bmatrix}1 \\ 1\end{bmatrix}\right)=\begin{bmatrix}2 \\
+                            -3\end{bmatrix}$ និង $\mathbf{L}\left(\begin{bmatrix}0 \\
+                            1\end{bmatrix}\right)=\begin{bmatrix}1 \\ 2\end{bmatrix}$។ តើ
+                            $\mathbf{L}\left(\begin{bmatrix}3 \\ -2\end{bmatrix}\right)$ ស្មើនឹងអ្វី?
+                        </p>
+                        <div class="options">
+                            <label
+                                ><input type="radio" name="q16" value="a" /> ក. $\begin{bmatrix} 5 \\ -1
+                                \end{bmatrix}$</label
+                            >
+                            <label
+                                ><input type="radio" name="q16" value="b" /> ខ. $\begin{bmatrix} 3 \\ -5
+                                \end{bmatrix}$</label
+                            >
+                            <label
+                                ><input type="radio" name="q16" value="correct" /> គ. $\begin{bmatrix} 1 \\ -19
+                                \end{bmatrix}$</label
+                            >
+                            <label
+                                ><input type="radio" name="q16" value="d" /> ឃ. $\begin{bmatrix} 6 \\ -9
+                                \end{bmatrix}$</label
+                            >
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>២២.</b> កំណត់ $T: \mathbb{R}^3 \rightarrow \mathbb{R}^2$ ដោយ $T(x, y, z)=(2 x-4 y+3 z+b,
+                            6 x+c x y z)$។ តើលក្ខខណ្ឌអ្វីដែលធ្វើឱ្យ $T$ ជាអនុវត្តន៍លីនេអ៊ែរ?
+                        </p>
+                        <div class="options">
+                            <label><input type="radio" name="q17" value="a" /> ក. $b=1, c=1$</label>
+                            <label><input type="radio" name="q17" value="correct" /> ខ. $b=0$ និង $c=0$</label>
+                            <label
+                                ><input type="radio" name="q17" value="c" /> គ. $b=0$ ឯ $c$ ជាចំនួនពិតណាមួយក៏បាន</label
+                            >
+                            <label
+                                ><input type="radio" name="q17" value="d" /> ឃ. $c=0$ ឯ $b$ ជាចំនួនពិតណាមួយក៏បាន</label
+                            >
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>២៣.</b> យក $b, c \in \mathbb{R}$ និង $T: \mathcal{P}(\mathbb{R}) \rightarrow
+                            \mathbb{R}^2$ កំណត់ដោយ $T p=\left(3 p(4)+5 p^{\prime}(6)+b p(1) p(2), \int_{-1}^2 x^3 p(x) d
+                            x+c \sin p(0)\right)$។ ពេលណាទើប $T$ ជាអនុវត្តន៍លីនេអ៊ែរ?
+                        </p>
+                        <div class="options">
+                            <label><input type="radio" name="q18" value="a" /> ក. ពេល $b=1, c=0$</label>
+                            <label><input type="radio" name="q18" value="b" /> ខ. វាតែងតែជាលីនេអ៊ែរជានិច្ច</label>
+                            <label
+                                ><input type="radio" name="q18" value="correct" /> គ. លុះត្រាតែ $b=0$ និង $c=0$</label
+                            >
+                            <label><input type="radio" name="q18" value="d" /> ឃ. លុះត្រាតែ $p(x) = 0$</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>២៤.</b> គេឲ្យអនុវត្តន៍ $T \in \mathcal{L}(\mathcal{P}(\mathbb{R}), \mathbb{R})$ កំណត់ដោយ
+                            $T(p) = \int_0^1 p(x) d x$។ តើការអះអាងមួយណាត្រឹមត្រូវ?
+                        </p>
+                        <div class="options">
+                            <label
+                                ><input type="radio" name="q19" value="correct" /> ក. $T$ ពិតជាអនុវត្តន៍លីនេអ៊ែរ</label
+                            >
+                            <label
+                                ><input type="radio" name="q19" value="b" /> ខ. $T$ មិនមែនជាអនុវត្តន៍លីនេអ៊ែរទេ
+                                ព្រោះវាជាអាំងតេក្រាល</label
+                            >
+                            <label
+                                ><input type="radio" name="q19" value="c" /> គ. $T$ មិនមែនជាអនុវត្តន៍លីនេអ៊ែរទេ បើ
+                                $p(x)$ ជាពហុធាដឺក្រេទី២</label
+                            >
+                            <label
+                                ><input type="radio" name="q19" value="d" /> ឃ. $T$ ជាអនុវត្តន៍លីនេអ៊ែរ លុះត្រាតែ
+                                $p(x)=0$</label
+                            >
+                        </div>
+                    </div>
+
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <b>២៥.</b> តាង $T: \mathcal{P}(\mathbb{R}) \rightarrow \mathcal{P}(\mathbb{R})$ កំណត់ដោយ $(T
+                            p)(x)=x^2 p(x)$ សម្រាប់គ្រប់ $x \in \mathbb{R}$។ តើ $T$ ជាអ្វី?
+                        </p>
+                        <div class="options">
+                            <label><input type="radio" name="q20" value="a" /> ក. វាមិនមែនជាបម្លែងលីនេអ៊ែរទេ</label>
+                            <label
+                                ><input type="radio" name="q20" value="correct" /> ខ. វាជាអូប៉េរ៉ាទ័រលីនេអ៊ែរ (Linear
+                                Operator) លើ $\mathcal{P}(\mathbb{R})$</label
+                            >
+                            <label
+                                ><input type="radio" name="q20" value="c" /> គ. វាគ្រាន់តែជាអនុវត្តន៍ថេរ (Constant
+                                Map)</label
+                            >
+                            <label
+                                ><input type="radio" name="q20" value="d" /> ឃ. ជាអនុវត្តន៍មិនលីនេអ៊ែរ ដោយសារមានស្វ័យគុណ
+                                $x^2$</label
+                            >
+                        </div>
+                    </div>
+
+                    <div class="controls" style="text-align-last: center">
+                        <button type="button" onclick="changeQuestion(-1)">Previous</button>
+
+                        <span id="question-indicator">លំហាត់ទី 1 / 20</span>
+
+                        <button type="button" onclick="changeQuestion(1)">Next</button>
+                        <br /><br />
+                    </div>
+                    <div style="text-align: center">
+                        <!-- <button type="button" id="submitBtn" onclick="calculateScore()">បញ្ជូនចម្លើយ</button> -->
+
+                        <button id="submitBtn" onclick="calculateScore()">បញ្ជូនចម្លើយ</button>
+                    </div>
+                </form>
+            </div>
+            <!--button type="button" class="submit-btn" onclick="alert('មុខងារផ្ញើចម្លើយកំពុងស្ថិតក្នុងការអភិវឌ្ឍន៍!')">
+                បញ្ជូនចម្លើយ
+            </!--button--
+
+            <button id="submitBtn" onclick="calculateScore()">បញ្ជូនចម្លើយ</button> -->
+
+            <div
+                id="resultModal"
+                style="
+                    display: none;
+                    position: fixed;
+                    top: 20%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: white;
+                    padding: 20px;
+                    border: 1px solid black;
+                    box-shadow: 2px 2px 10px gray;
+                ">
+                <h2 id="resultText"></h2>
+                <button onclick="closeModal()">បិទ</button>
+            </div>
+        </div>
+
+        <!-- <script>
+            window.addEventListener("load", function () {
+                const urlParams = new URLSearchParams(window.location.search);
+                const examForm = document.getElementById("exam-form");
+                const resultsPage = document.getElementById("results-page");
+
+                console.log("Checking page param:", urlParams.get("page"));
+
+                // ក្នុង JavaScript
+                if (urlParams.get("page") === "results") {
+                    document.getElementById("exam-form").classList.add("hide-exam");
+                    document.getElementById("results-page").style.display = "block";
+                }
+            });
+        </script> -->
+
+        <script>
+            function navigate(action) {
+                console.log("Navigating to: " + action); // សម្រាប់មើលក្នុង Console ថាប៊ូតុងដើរឬអត់
+
+                const targetPage = "2L-quiz1_index.html";
+
+                if (action === "exam") {
+                    window.location.href = targetPage;
+                } else if (action === "results") {
+                    window.location.href = targetPage + "?page=results";
+                }
+            }
+        </script>
+
+        <div id="customModal" class="modal">
+            <div class="modal-content">
+                <h3 id="modalMsg"></h3>
+                <button onclick="closeAlert()">យល់ព្រម</button>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    // ១. ពេលទំព័រដើរភ្លាម ឆែកមើលថាតើគាត់ធ្លាប់ប្រលងហើយឬនៅ
+    /*window.onload = function () {
+        if (localStorage.getItem("hasTakenTest")) {
+            alert("អ្នកបានធ្វើតេស្តនេះរួចហើយ! មិនអាចធ្វើម្ដងទៀតបានទេ។");
+            document.getElementById("submitBtn").disabled = true; // បិទប៊ូតុង
+            // អាចលាក់សំណួរចោលក៏បាន
+        }
+    };*/
+
+    // Function សម្រាប់បិទផ្ទាំង Pop-up
+    function closeModal() {
+        // ស្វែងរកផ្ទាំង Pop-up តាមរយៈ ID រួចបិទវា (លាក់)
+        document.getElementById("resultModal").style.display = "none";
+
+        // ជម្រើសបន្ថែម៖ ដោយសារគាត់ប្រលងរួចហើយ ពេលគាត់ចុចបិទ អ្នកអាចឲ្យវា Refresh ទំព័រនេះចោលតែម្ដង
+        // ដើម្បីកុំឲ្យគាត់ឃើញសំនួរចាស់ទៀត ដោយលុបសញ្ញា // ខាងមុខកូដខាងក្រោម៖
+        // window.location.reload();
+    }
+
+    // ដូរ URL នេះទៅជា Web App URL ដែលអ្នកបាន Copy ពីជំហានទី៣
+    const SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbxuQlrV_jN9-rKplHBI_8_UlIM9Do81Mpns49A1GjalNWCai8hF40jVMUSnYCzKrDhMzA/exec";
+
+    function calculateScore() {
+        let name = document.getElementById("studentName").value;
+        let id = document.getElementById("studentId").value;
+
+        if (name === "" || id === "") {
+            alert("សូមបំពេញឈ្មោះ និងលេខរៀងជាមុនសិន!");
+            return;
+        }
+
+        let totalScore = 0;
+        //let totalQuestions = 7; // ឧបមាថាអ្នកមាន ៧ សំណួរ (សូមដាក់លេខសរុបនៃសំណួររបស់អ្នក)
+        let scorePerQuestion = 1; // ឧបមាថា ១ សំណួរ ១ ពិន្ទុ
+
+        // កំណត់សំណួរទាំងអស់ពី HTML
+        const questions = document.getElementsByClassName("question-box");
+
+        // មិនបាច់ខ្វល់រឿងចំនួនទេ វាស្មើនឹងចំនួនដែលអ្នកមានក្នុង HTML តែម្តង
+        let totalQuestions = questions.length;
+
+        // ប្រើ for loop ដើម្បីរត់ឆែករាល់សំណួរទាំងអស់
+        for (let i = 1; i <= totalQuestions; i++) {
+            let questionName = "q" + i;
+            let selectedAnswer = document.querySelector('input[name="' + questionName + '"]:checked');
+
+            // បើគាត់បានជ្រើសរើសចម្លើយ ហើយវាត្រូវ
+            if (selectedAnswer && selectedAnswer.value === "correct") {
+                totalScore += scorePerQuestion;
+            }
+        }
+
+        // ចាប់យកចម្លើយ (ឧទាហរណ៍ដូចសំនួរទី២៦ និង២៧)
+        //let q26Answer = document.querySelector('input[name="q26"]:checked');
+        //let q27Answer = document.querySelector('input[name="q27"]:checked');
+
+        //if (q26Answer && q26Answer.value === "correct") {
+        //    totalScore += 10;
+        //}
+        //if (q27Answer && q27Answer.value === "correct") {
+        //    totalScore += 10;
+        //}
+
+        // បិទប៊ូតុង និងបង្ហាញពាក្យ "កំពុងបញ្ជូន..." ដើម្បីកុំឱ្យគាត់ចុចដដែលៗ
+        let submitBtn = document.getElementById("submitBtn");
+        submitBtn.innerText = "កំពុងបញ្ជូន...";
+        submitBtn.disabled = true;
+
+        // រៀបចំទិន្នន័យសម្រាប់បញ្ជូនទៅ Google Sheets
+        let dataToSend = {
+            name: name,
+            id: id,
+            score: totalScore
+        };
+
+        // ប្រើ Fetch API ដើម្បីបាញ់ទិន្នន័យ
+        fetch(SCRIPT_URL, {
+            method: "POST",
+            body: JSON.stringify(dataToSend),
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            }
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.status === "success") {
+                    /*let resultText = "ការបញ្ជូនជោគជ័យ! សួស្តី " + name + " ពិន្ទុសរុបរបស់អ្នកគឺ៖ " + totalScore;
+                    document.getElementById("resultText").innerText = resultText;
+                    document.getElementById("resultModal").style.display = "block";*/
+                    // ១. រៀបចំអត្ថបទដោយប្រើ HTML tags (<br> សម្រាប់ចុះបន្ទាត់, <hr> សម្រាប់គូសបន្ទាត់)
+                    let resultText =
+                        "ការបញ្ជូនជោគជ័យ!<br><hr>" +
+                        "សួស្តី " +
+                        name +
+                        ", លេខរៀង " +
+                        id +
+                        "<br>" +
+                        "ពិន្ទុសរុបរបស់អ្នកគឺ៖" +
+                        "<br><br>" +
+                        "អ្នកអាចនឹងធ្លាក់ការប្រលងនេះ !";
+
+                    // ២. ត្រូវដូរពី .innerText ទៅជា .innerHTML ទើបវាស្គាល់កូដ HTML ខាងលើ
+                    document.getElementById("resultText").innerHTML = resultText;
+                    document.getElementById("resultModal").style.display = "block";
+
+                    localStorage.setItem("hasTakenTest", "true");
+                } else if (data.status === "duplicate") {
+                    // លោតសារតែមួយ បង្ហាញទាំងឈ្មោះ និងលេខរៀងតែម្ដង
+                    alert(
+                        "ឈ្មោះ " +
+                            name +
+                            " ឬ លេខរៀងទី " +
+                            id +
+                            " បានបញ្ជូនចម្លើយរួចរាល់ហើយ!" +
+                            " អ្នកមិនអាចប្រលងម្ដងទៀតបានទេ។"
+                    );
+
+                    // បើកប៊ូតុងឱ្យគាត់ចុចវិញ (ក្រែងលោគាត់វាយច្រឡំ)
+                    submitBtn.innerText = "បញ្ជូនចម្លើយ";
+                    submitBtn.disabled = false;
+                }
+
+                /*else if (data.status === "duplicate") {
+                    // បែងចែកសារព្រមាន ទៅតាមប្រភេទដែលវាស្ទួន
+                    if (data.type === "id") {
+                        alert("លេខរៀងទី " + id + " នេះបានបញ្ជូនចម្លើយរួចរាល់ហើយ!");
+                    } else if (data.type === "name") {
+                        alert("សិស្សឈ្មោះ '" + name + "' បានបញ្ជូនចម្លើយរួចរាល់ហើយ!");
+                    }
+
+                    submitBtn.innerText = "បញ្ជូនចម្លើយ";
+                    submitBtn.disabled = false;
+                } */
+            })
+            .catch((error) => {
+                console.error("Error!", error.message);
+                alert("សុំទោស មានបញ្ហាក្នុងការបញ្ជូនទិន្នន័យ។ សូមពិនិត្យអ៊ីនធឺណិតរបស់អ្នក!");
+                submitBtn.innerText = "បញ្ជូនចម្លើយ";
+                submitBtn.disabled = false;
+            });
+    }
+</script>
+
+<script>
+    function goToPage(page) {
+        let name = document.getElementById("studentName").value;
+        let id = document.getElementById("studentId").value;
+
+        if (name === "" || id === "") {
+            alert("សូមបំពេញឈ្មោះ និងលេខរៀងជាមុនសិន!");
+            return;
+        }
+
+        // លាក់ Menu ដើម
+        document.getElementById("home-menu").style.display = "none";
+
+        if (page === "exam") {
+            document.getElementById("exam-form").style.display = "block";
+        } else if (page === "results") {
+            document.getElementById("results-page").style.display = "block";
+        }
+    }
+</script>
+<script>
+    // យើងប្រើ Event Listener លើ Document តែម្ដង
+    document.addEventListener("change", function (event) {
+        // ឆែកមើលថាតើអ្វីដែលសិស្សចុចគឺជា Radio button មែនទេ
+        if (event.target.type === "radio") {
+            checkProgress();
+        }
+    });
+
+    function checkProgress() {
+        let allSelected = true;
+        // ឆែកមើលសំណួរទាំងអស់ដែលបានដាក់ក្នុង class "question-box"
+        let questions = document.querySelectorAll(".question-box");
+
+        for (let i = 0; i < questions.length; i++) {
+            let qNum = i + 1;
+            // រកមើល input ដែលបាន check នៅក្នុងសំណួរនីមួយៗ
+            if (!questions[i].querySelector('input[name="q' + qNum + '"]:checked')) {
+                allSelected = false;
+                break;
+            }
+        }
+
+        // បើក ឬ បិទប៊ូតុង Submit
+        document.getElementById("submitBtn").disabled = !allSelected;
+    }
+</script>
