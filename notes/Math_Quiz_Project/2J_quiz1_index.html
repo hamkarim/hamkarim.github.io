@@ -425,6 +425,16 @@
                  cursor: not-allowed; /* សញ្ញាព្រួញហាមឃាត់ */
                  opacity: 0.6; /* ស្រអាប់ */
              }
+
+            /* Flexbox container to center the TikZ table */
+            .table-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
         </style>
     </head>
     <body>
@@ -466,414 +476,118 @@
                     <button onclick="location.reload()">ត្រលប់ក្រោយ</button>
                 </div>
 
-                <div class="noview">
-                    <!-- div class="noview"> -->
-                    <form id="quizForm">
-                        <div class="question-box" style="display: block">
-                            <p>
-                                <b>១.</b> អនុលោមតាមអ័ក្សយូម (Axioms) តើបម្លែងលីនេអ៊ែរ $T: V \to W$
-                                ត្រូវបំពេញលក្ខខណ្ឌពីរអ្វីខ្លះ?
-                            </p>
-                            <div class="options">
-                                <label
-                                    ><input type="radio" name="q1" value="a" /> ក. $T(u+v)=T(u)-T(v)$ និង $T(\lambda v)
-                                    = T(v)$</label
-                                >
-                                <label
-                                    ><input type="radio" name="q1" value="correct" /> ខ. $T(u+v)=T(u)+T(v)$ និង
-                                    $T(\lambda v) = \lambda T(v)$</label
-                                >
-                                <label
-                                    ><input type="radio" name="q1" value="c" /> គ. $T(uv)=T(u)T(v)$ និង
-                                    $T(u+v)=T(u)+T(v)$</label
-                                >
-                                <label
-                                    ><input type="radio" name="q1" value="d" /> ឃ. $T(\lambda+v)=\lambda+T(v)$ និង
-                                    $T(0)=0$</label
-                                >
-                            </div>
+                <!-- div class="noview"> -->
+                <form id="quizForm">
+                    <div class="question-box" style="display: block">
+                        <p>
+                            <strong>១.</strong> ចំពោះ $T\left( \left[ \begin{array} {c} x \\ y \end{array}
+                            \right]\right)= \left[ \begin{array} {c} 2x+5y \\ x-3y \\ y \end{array} \right]$, តើម៉ាទ្រីស
+                            $A$ មានទម្រង់ដូចម្ដេច?
+                        </p>
+                        <div class="options">
+                            <input type="radio" name="q1" value="wrong" /> A. $\begin{pmatrix} 2 & 5 \\ 1 & -3
+                            \end{pmatrix}$<br />
+                            <input type="radio" name="q1" value="correct" /> B. $\begin{pmatrix} 2 & 5 \\ 1 & -3 \\ 0 &
+                            1 \end{pmatrix}$<br />
+                            <input type="radio" name="q1" value="wrong" /> C. $\begin{pmatrix} 2 & 1 & 0 \\ 5 & -3 & 1
+                            \end{pmatrix}$<br />
+                            <input type="radio" name="q1" value="wrong" /> D. គ្មានម៉ាទ្រីសទេ<br />
                         </div>
+                    </div>
 
-                        <div class="question-box" style="display: none">
-                            <p><b>២.</b> តើលក្ខខណ្ឌសមមូលតែមួយណា ដែលអាចបញ្ជាក់ថា $T$ ជាអនុវត្តន៍លីនេអ៊ែរបាន?</p>
-                            <div class="options">
-                                <label
-                                    ><input type="radio" name="q2" value="a" /> ក. $T(\alpha u + \beta v) = T(u) +
-                                    T(v)$</label
-                                >
-                                <label
-                                    ><input type="radio" name="q2" value="b" /> ខ. $T(\alpha u + \beta v) = \alpha \beta
-                                    T(u + v)$</label
-                                >
-                                <label
-                                    ><input type="radio" name="q2" value="correct" /> គ. $T(\alpha u + \beta v) = \alpha
-                                    T(u) + \beta T(v)$</label
-                                >
-                                <label
-                                    ><input type="radio" name="q2" value="d" /> ឃ. $T(\alpha u) + \beta v = \alpha T(u)
-                                    + \beta T(v)$</label
-                                >
-                            </div>
+                    <div class="question-box" style="display: block">
+                        <p>
+                            <strong>២.</strong> តើ $T\left( \left[ \begin{array} {c} x \\ y \end{array} \right]\right)=
+                            \left[ \begin{array} {c} x-y \\ x-1 \\ 0 \\ y+2 \end{array} \right]$ ជាបម្លែងលីនេអ៊ែរដែរឬទេ?
+                        </p>
+                        <div class="options">
+                            <input type="radio" name="q2" value="wrong" /> ក. ជាបម្លែងលីនេអ៊ែរ<br />
+                            <input type="radio" name="q2" value="correct" /> ខ. មិនមែនជាបម្លែងលីនេអ៊ែរ<br />
                         </div>
+                    </div>
 
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <b>៣.</b> សម្រាប់បម្លែងលីនេអ៊ែរ $T \in \mathcal{L}(V, W)$ ប្រសិនបើ $V = W$
-                                តើគេហៅធាតុរបស់ $\mathcal{L}(V,V)$ ថាជាអ្វី?
-                            </p>
-                            <div class="options">
-                                <label
-                                    ><input type="radio" name="q3" value="correct" /> ក. អូប៉េរ៉ាទ័រលីនេអ៊ែរ (Linear
-                                    operators)</label
-                                >
-                                <label
-                                    ><input type="radio" name="q3" value="b" /> ខ. អនុវត្តន៍ទូទៅ (Surjective
-                                    maps)</label
-                                >
-                                <label
-                                    ><input type="radio" name="q3" value="c" /> គ. ម៉ាទ្រីសឯកតា (Identity matrix)</label
-                                >
-                                <label
-                                    ><input type="radio" name="q3" value="d" /> ឃ. អនុវត្តន៍ថេរ (Constant
-                                    operators)</label
-                                >
-                            </div>
+                    <div class="question-box" style="display: block">
+                        <p>
+                            <strong>៤.</strong> តើ $T: \mathbb{R}^3 \to \mathbb{R}^2$ ដែល $T(x,y,z)^T = (y-z, x+z)^T$
+                            ជាបម្លែងលីនេអ៊ែរដែរឬទេ?
+                        </p>
+                        <div class="options">
+                            <input type="radio" name="q4" value="correct" /> ក. ជាបម្លែងលីនេអ៊ែរ<br />
+                            <input type="radio" name="q4" value="wrong" /> ខ. មិនមែនជាបម្លែងលីនេអ៊ែរ<br />
                         </div>
+                    </div>
 
-                        <div class="question-box" style="display: none">
-                            <p><b>៤.</b> បើ $T$ ជាអនុវត្តន៍លីនេអ៊ែរ តើ $T(0)$ មានតម្លៃស្មើនឹងអ្វី?</p>
-                            <div class="options">
-                                <label><input type="radio" name="q4" value="a" /> ក. $T(0) = 1$</label>
-                                <label><input type="radio" name="q4" value="correct" /> ខ. $T(0) = 0$</label>
-                                <label><input type="radio" name="q4" value="c" /> គ. $T(0) = -1$</label>
-                                <label><input type="radio" name="q4" value="d" /> ឃ. មិនអាចកំណត់បាន</label>
-                            </div>
+                    <div class="question-box" style="display: block">
+                        <p>
+                            <strong>៥.</strong> ប្រសិនបើ $T: \mathbb{R}^n \to \mathbb{R}^m$ ជាបម្លែងលីនេអ៊ែរ, តើសំណុំ
+                            $\{\vec{x} \in \mathbb{R}^n : T(\vec{x})=\vec{0}\}$ ជាអ្វី?
+                        </p>
+                        <div class="options">
+                            <input type="radio" name="q5" value="correct" /> A. សំណុំទទេ<br />
+                            <input type="radio" name="q5" value="wrong" /> B. លំហរងនៃ $\mathbb{R}^m$<br />
+                            <input type="radio" name="q5" value="correct" /> C. លំហរងនៃ $\mathbb{R}^n$<br />
+                            <input type="radio" name="q5" value="wrong" /> D. វ៉ិចទ័រឯកតា<br />
                         </div>
+                    </div>
 
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <b>៥.</b> តើទំនាក់ទំនងមួយណាដែលត្រឹមត្រូវជានិច្ចសម្រាប់អនុវត្តន៍លីនេអ៊ែរ $T$ ចំពោះគ្រប់
-                                $v \in V$?
-                            </p>
-                            <div class="options">
-                                <label><input type="radio" name="q5" value="a" /> ក. $T(-v) = T(v)$</label>
-                                <label><input type="radio" name="q5" value="b" /> ខ. $T(-v) = 0$</label>
-                                <label><input type="radio" name="q5" value="correct" /> គ. $T(-v) = -T(v)$</label>
-                                <label><input type="radio" name="q5" value="d" /> ឃ. $T(v) = -v$</label>
-                            </div>
+                    <div class="question-box" style="display: block">
+                        <p>
+                            <strong>៦.</strong> ប្រសិនបើ $T(5,3)^T = (0,1)^T$ និង $T(3,5)^T = (1,0)^T$, តើ $T(7,1)^T$
+                            ស្មើនឹងអ្វី?
+                        </p>
+                        <div class="options">
+                            <input type="radio" name="q6" value="wrong" /> ក. $(-1, 1)^T$<br />
+                            <input type="radio" name="q6" value="correct" /> ខ. $(-1/2, 3/2)^T$<br />
+                            <input type="radio" name="q6" value="wrong" /> គ. $(1, 1)^T$<br />
+                            <input type="radio" name="q6" value="wrong" /> ឃ. $(0, 0)^T$<br />
                         </div>
+                    </div>
 
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <b>៦.</b> នៅក្នុងលំហ $\mathcal{L}(V, W)$ តើផលបូកនៃអនុវត្តន៍លីនេអ៊ែរពីរ $(S+T)(v)$
-                                កំណត់ដោយរូបមន្តមួយណា?
-                            </p>
-                            <div class="options">
-                                <label><input type="radio" name="q6" value="correct" /> ក. $S(v) + T(v)$</label>
-                                <label><input type="radio" name="q6" value="b" /> ខ. $S(T(v))$</label>
-                                <label><input type="radio" name="q6" value="c" /> គ. $S(v) \cdot T(v)$</label>
-                                <label><input type="radio" name="q6" value="d" /> ឃ. $S(v) - T(v)$</label>
-                            </div>
+                    <div class="question-box" style="display: block">
+                        <p><strong>៩.</strong> តើ $T(v)=0$ សម្រាប់គ្រប់ $v$ ជាបម្លែងលីនេអ៊ែរដែរឬទេ?</p>
+                        <div class="options">
+                            <input type="radio" name="q9" value="correct" /> ក. មែន<br />
+                            <input type="radio" name="q9" value="wrong" /> ខ. មិនមែន<br />
                         </div>
+                    </div>
 
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <b>៧.</b> ផ្អែកតាមទ្រឹស្ដីបទ តើសំណុំ $\mathcal{L}(V, W)$
-                                រួមជាមួយប្រមាណវិធីបូកនិងគុណនឹងស្កាលែ បង្កើតបានជារចនាសម្ព័ន្ធអ្វី?
-                            </p>
-                            <div class="options">
-                                <label><input type="radio" name="q7" value="a" /> ក. ក្រុបទូទៅ</label>
-                                <label
-                                    ><input type="radio" name="q7" value="correct" /> ខ. លំហវ៉ិចទ័រ (Vector
-                                    Space)</label
-                                >
-                                <label><input type="radio" name="q7" value="c" /> គ. កង (Ring)</label>
-                                <label><input type="radio" name="q7" value="d" /> ឃ. តួ (Field)</label>
-                            </div>
+                    <div class="question-box" style="display: block">
+                        <p><strong>១១.</strong> តើការបង្វិលជុំវិញគល់តម្រុយមានម៉ាទ្រីសតំណាងដែរឬទេ?</p>
+                        <div class="options">
+                            <input type="radio" name="q11" value="correct" /> ក. មាន<br />
+                            <input type="radio" name="q11" value="wrong" /> ខ. គ្មាន<br />
                         </div>
+                    </div>
 
-                        <div class="question-box" style="display: none">
-                            <p><b>៨.</b> នៅក្នុងលំហ $\mathcal{L}(V, W)$ តើអ្វីជាធាតុណឺត (Additive identity)?</p>
-                            <div class="options">
-                                <label><input type="radio" name="q8" value="a" /> ក. អនុវត្តន៍ឯកតា $I(v) = v$</label>
-                                <label><input type="radio" name="q8" value="b" /> ខ. អនុវត្តន៍ $T(v) = 1$</label>
-                                <label
-                                    ><input type="radio" name="q8" value="correct" /> គ. អនុវត្តន៍សូន្យ $0: v \mapsto
-                                    0_W$</label
-                                >
-                                <label><input type="radio" name="q8" value="d" /> ឃ. មិនមានធាតុណឺតទេ</label>
-                            </div>
+                    <div class="question-box" style="display: block">
+                        <p>
+                            <strong>១២.</strong> តើ $\{\vec{x} \in \mathbb{R}^n: T(\vec{x})=\vec{x}\}$ ជាលំហរងនៃ
+                            $\mathbb{R}^n$ ដែរឬទេ?
+                        </p>
+                        <div class="options">
+                            <input type="radio" name="q12" value="wrong" /> A. មិនមែនទេ<br />
+                            <input type="radio" name="q12" value="correct" /> B. ជាលំហរងជានិច្ច<br />
+                            <input type="radio" name="q12" value="wrong" /> C. ជាលំហរងប្រសិនបើ $T(\vec{x})=0$<br />
+                            <input type="radio" name="q12" value="wrong" /> D. គ្មានចម្លើយត្រឹមត្រូវ<br />
                         </div>
+                    </div>
 
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <b>៩.</b> តើផលគុណបណ្ដាក់ (Composition) នៃអនុវត្តន៍លីនេអ៊ែរ $(ST)(u)$
-                                កំណត់ដោយរូបមន្តមួយណា?
-                            </p>
-                            <div class="options">
-                                <label><input type="radio" name="q9" value="a" /> ក. $S(u) + T(u)$</label>
-                                <label><input type="radio" name="q9" value="correct" /> ខ. $S(T(u))$</label>
-                                <label><input type="radio" name="q9" value="c" /> គ. $T(S(u))$</label>
-                                <label><input type="radio" name="q9" value="d" /> ឃ. $S(u) \cdot T(u)$</label>
-                            </div>
-                        </div>
+                    <div class="table-container page-break"></div>
 
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <b>១០.</b> ក្នុងចំណោមលក្ខណៈនៃផលគុណបណ្ដាក់របស់អនុវត្តន៍លីនេអ៊ែរ តើលក្ខណៈមួយណាដែល
-                                <b>មិនពិតជាទូទៅ</b> (Not true in general)?
-                            </p>
-                            <div class="options">
-                                <label
-                                    ><input type="radio" name="q10" value="a" /> ក. លក្ខណៈផ្ដុំ $(RS)T = R(ST)$</label
-                                >
-                                <label
-                                    ><input type="radio" name="q10" value="b" /> ខ. លក្ខណៈបំបែក $(R+S)T = RT +
-                                    ST$</label
-                                >
-                                <label
-                                    ><input type="radio" name="q10" value="correct" /> គ. លក្ខណៈត្រឡប់ $ST = TS$</label
-                                >
-                                <label
-                                    ><input type="radio" name="q10" value="d" /> ឃ. លក្ខណៈស្កាលែ $\lambda(ST) = (\lambda
-                                    S)T$</label
-                                >
-                            </div>
-                        </div>
+                    <div class="controls" style="text-align-last: center">
+                        <button type="button" onclick="changeQuestion(-1)">Previous</button>
 
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <b>១១.</b> តាង $\varphi_1: \mathbb{R}^2 \longrightarrow \mathbb{R}^2$
-                                ជាអនុវត្តន៍កំណត់ដោយ $\varphi_1((x, y))=(x+y, x-y)$។ តើ $\varphi_1$
-                                ជាអនុវត្តន៍លីនេអ៊ែរដែរឬទេ?
-                            </p>
-                            <div class="options">
-                                <label
-                                    ><input type="radio" name="q11" value="correct" /> ក. បាទ,
-                                    វាជាអនុវត្តន៍លីនេអ៊ែរ</label
-                                >
-                                <label
-                                    ><input type="radio" name="q11" value="b" /> ខ. ទេ,
-                                    វាមិនមែនជាអនុវត្តន៍លីនេអ៊ែរទេ</label
-                                >
-                                <label
-                                    ><input type="radio" name="q11" value="c" /> គ. ជាអនុវត្តន៍លីនេអ៊ែរ លុះត្រាតែ
-                                    $x=y=0$</label
-                                >
-                                <label><input type="radio" name="q11" value="d" /> ឃ. មិនអាចសន្និដ្ឋានបាន</label>
-                            </div>
-                        </div>
+                        <span id="question-indicator">លំហាត់ទី 1 / 25</span>
 
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <b>១២.</b> តាង $\varphi_2: \mathbb{R}^2 \longrightarrow \mathbb{R}^2$ កំណត់ដោយ
-                                $\varphi_2((x, y))=(\sin (x+y), \sin (x-y))$។ តើ $\varphi_2$ ជាអនុវត្តន៍លីនេអ៊ែរដែរឬទេ?
-                            </p>
-                            <div class="options">
-                                <label><input type="radio" name="q12" value="a" /> ក. បាទ, វាជាអនុវត្តន៍លីនេអ៊ែរ</label>
-                                <label
-                                    ><input type="radio" name="q12" value="correct" /> ខ. ទេ,
-                                    វាមិនមែនជាអនុវត្តន៍លីនេអ៊ែរទេ</label
-                                >
-                                <label
-                                    ><input type="radio" name="q12" value="c" /> គ. ជាអនុវត្តន៍លីនេអ៊ែរ តែលើ
-                                    $\mathbb{R}^3$ ប៉ុណ្ណោះ</label
-                                >
-                                <label
-                                    ><input type="radio" name="q12" value="d" /> ឃ. ជាអនុវត្តន៍លីនេអ៊ែរបើ $x+y=1$</label
-                                >
-                            </div>
-                        </div>
+                        <button type="button" onclick="changeQuestion(1)">Next</button>
+                        <br /><br />
+                    </div>
+                    <div style="text-align: center">
+                        <!-- <button type="button" id="submitBtn" onclick="calculateScore()">បញ្ជូនចម្លើយ</button> -->
 
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <b>១៣.</b> យក $f: V \longrightarrow W$ ជាអនុវត្តន៍លីនេអ៊ែរ។ បើ $S$ ជាសំណុំ Spanning set
-                                របស់ $V$ នោះ តើ $f(S)$ ជាអ្វី?
-                            </p>
-                            <div class="options">
-                                <label
-                                    ><input type="radio" name="q13" value="a" /> ក. ជាសំណុំឯករាជ្យលីនេអ៊ែរក្នុង
-                                    $W$</label
-                                >
-                                <label
-                                    ><input type="radio" name="q13" value="correct" /> ខ. ជាសំណុំ Spanning set របស់លំហរង
-                                    $f(V)$</label
-                                >
-                                <label><input type="radio" name="q13" value="c" /> គ. ជាសំណុំទទេ</label>
-                                <label
-                                    ><input type="radio" name="q13" value="d" /> ឃ. ជាមូលដ្ឋាន (Basis) របស់ $W$</label
-                                >
-                            </div>
-                        </div>
-
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <b>១៤.</b> បើ $f: V \longrightarrow W$ ជាអនុវត្តន៍លីនេអ៊ែរ ហើយ $f(S)$
-                                ជាសំណុំឯករាជ្យលីនេអ៊ែរ (li) ក្នុង $W$ តើគេអាចទាញសេចក្ដីសន្និដ្ឋានអ្វីបានពី $S$?
-                            </p>
-                            <div class="options">
-                                <label
-                                    ><input type="radio" name="q14" value="correct" /> ក. $S$ ជាសំណុំឯករាជ្យលីនេអ៊ែរ
-                                    (li) ក្នុង $V$</label
-                                >
-                                <label
-                                    ><input type="radio" name="q14" value="b" /> ខ. $S$ ជាសំណុំអាស្រ័យលីនេអ៊ែរ (ld)
-                                    ក្នុង $V$</label
-                                >
-                                <label
-                                    ><input type="radio" name="q14" value="c" /> គ. $S$ ជា Spanning set របស់ $V$</label
-                                >
-                                <label
-                                    ><input type="radio" name="q14" value="d" /> ឃ. $S$ មានតែវ៉ិចទ័រសូន្យប៉ុណ្ណោះ</label
-                                >
-                            </div>
-                        </div>
-
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <b>១៥.</b> បើ $S$ ជាសំណុំឯករាជ្យលីនេអ៊ែរ (li) ក្នុង $V$ ហើយ $f$ ជាម៉ូណូម័រភីស
-                                (Monomorphism) នោះ តើ $f(S)$ ជាអ្វី?
-                            </p>
-                            <div class="options">
-                                <label
-                                    ><input type="radio" name="q15" value="a" /> ក. សំណុំអាស្រ័យលីនេអ៊ែរ (ld) ក្នុង
-                                    $W$</label
-                                >
-                                <label><input type="radio" name="q15" value="b" /> ខ. Spanning set របស់ $W$</label>
-                                <label
-                                    ><input type="radio" name="q15" value="correct" /> គ. សំណុំឯករាជ្យលីនេអ៊ែរ (li)
-                                    ក្នុង $W$</label
-                                >
-                                <label><input type="radio" name="q15" value="d" /> ឃ. សំណុំដែលមានតែវ៉ិចទ័រសូន្យ</label>
-                            </div>
-                        </div>
-
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <b>១៦.</b> គេមានបម្លែង $\mathbf{L}: \mathbb{R}^2 \longrightarrow \mathbb{R}^2$ ដែល
-                                $\mathbf{L}\left(\begin{bmatrix}1 \\ 1\end{bmatrix}\right)=\begin{bmatrix}2 \\
-                                -3\end{bmatrix}$ និង $\mathbf{L}\left(\begin{bmatrix}0 \\
-                                1\end{bmatrix}\right)=\begin{bmatrix}1 \\ 2\end{bmatrix}$។ តើ
-                                $\mathbf{L}\left(\begin{bmatrix}3 \\ -2\end{bmatrix}\right)$ ស្មើនឹងអ្វី?
-                            </p>
-                            <div class="options">
-                                <label
-                                    ><input type="radio" name="q16" value="a" /> ក. $\begin{bmatrix} 5 \\ -1
-                                    \end{bmatrix}$</label
-                                >
-                                <label
-                                    ><input type="radio" name="q16" value="b" /> ខ. $\begin{bmatrix} 3 \\ -5
-                                    \end{bmatrix}$</label
-                                >
-                                <label
-                                    ><input type="radio" name="q16" value="correct" /> គ. $\begin{bmatrix} 1 \\ -19
-                                    \end{bmatrix}$</label
-                                >
-                                <label
-                                    ><input type="radio" name="q16" value="d" /> ឃ. $\begin{bmatrix} 6 \\ -9
-                                    \end{bmatrix}$</label
-                                >
-                            </div>
-                        </div>
-
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <b>១៧.</b> កំណត់ $T: \mathbb{R}^3 \rightarrow \mathbb{R}^2$ ដោយ $T(x, y, z)=(2 x-4 y+3
-                                z+b, 6 x+c x y z)$។ តើលក្ខខណ្ឌអ្វីដែលធ្វើឱ្យ $T$ ជាអនុវត្តន៍លីនេអ៊ែរ?
-                            </p>
-                            <div class="options">
-                                <label><input type="radio" name="q17" value="a" /> ក. $b=1, c=1$</label>
-                                <label><input type="radio" name="q17" value="correct" /> ខ. $b=0$ និង $c=0$</label>
-                                <label
-                                    ><input type="radio" name="q17" value="c" /> គ. $b=0$ ឯ $c$
-                                    ជាចំនួនពិតណាមួយក៏បាន</label
-                                >
-                                <label
-                                    ><input type="radio" name="q17" value="d" /> ឃ. $c=0$ ឯ $b$
-                                    ជាចំនួនពិតណាមួយក៏បាន</label
-                                >
-                            </div>
-                        </div>
-
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <b>១៨.</b> យក $b, c \in \mathbb{R}$ និង $T: \mathcal{P}(\mathbb{R}) \rightarrow
-                                \mathbb{R}^2$ កំណត់ដោយ $T p=\left(3 p(4)+5 p^{\prime}(6)+b p(1) p(2), \int_{-1}^2 x^3
-                                p(x) d x+c \sin p(0)\right)$។ ពេលណាទើប $T$ ជាអនុវត្តន៍លីនេអ៊ែរ?
-                            </p>
-                            <div class="options">
-                                <label><input type="radio" name="q18" value="a" /> ក. ពេល $b=1, c=0$</label>
-                                <label><input type="radio" name="q18" value="b" /> ខ. វាតែងតែជាលីនេអ៊ែរជានិច្ច</label>
-                                <label
-                                    ><input type="radio" name="q18" value="correct" /> គ. លុះត្រាតែ $b=0$ និង
-                                    $c=0$</label
-                                >
-                                <label><input type="radio" name="q18" value="d" /> ឃ. លុះត្រាតែ $p(x) = 0$</label>
-                            </div>
-                        </div>
-
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <b>១៩.</b> គេឲ្យអនុវត្តន៍ $T \in \mathcal{L}(\mathcal{P}(\mathbb{R}), \mathbb{R})$
-                                កំណត់ដោយ $T(p) = \int_0^1 p(x) d x$។ តើការអះអាងមួយណាត្រឹមត្រូវ?
-                            </p>
-                            <div class="options">
-                                <label
-                                    ><input type="radio" name="q19" value="correct" /> ក. $T$
-                                    ពិតជាអនុវត្តន៍លីនេអ៊ែរ</label
-                                >
-                                <label
-                                    ><input type="radio" name="q19" value="b" /> ខ. $T$ មិនមែនជាអនុវត្តន៍លីនេអ៊ែរទេ
-                                    ព្រោះវាជាអាំងតេក្រាល</label
-                                >
-                                <label
-                                    ><input type="radio" name="q19" value="c" /> គ. $T$ មិនមែនជាអនុវត្តន៍លីនេអ៊ែរទេ បើ
-                                    $p(x)$ ជាពហុធាដឺក្រេទី២</label
-                                >
-                                <label
-                                    ><input type="radio" name="q19" value="d" /> ឃ. $T$ ជាអនុវត្តន៍លីនេអ៊ែរ លុះត្រាតែ
-                                    $p(x)=0$</label
-                                >
-                            </div>
-                        </div>
-
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <b>២០.</b> តាង $T: \mathcal{P}(\mathbb{R}) \rightarrow \mathcal{P}(\mathbb{R})$ កំណត់ដោយ
-                                $(T p)(x)=x^2 p(x)$ សម្រាប់គ្រប់ $x \in \mathbb{R}$។ តើ $T$ ជាអ្វី?
-                            </p>
-                            <div class="options">
-                                <label><input type="radio" name="q20" value="a" /> ក. វាមិនមែនជាបម្លែងលីនេអ៊ែរទេ</label>
-                                <label
-                                    ><input type="radio" name="q20" value="correct" /> ខ. វាជាអូប៉េរ៉ាទ័រលីនេអ៊ែរ
-                                    (Linear Operator) លើ $\mathcal{P}(\mathbb{R})$</label
-                                >
-                                <label
-                                    ><input type="radio" name="q20" value="c" /> គ. វាគ្រាន់តែជាអនុវត្តន៍ថេរ (Constant
-                                    Map)</label
-                                >
-                                <label
-                                    ><input type="radio" name="q20" value="d" /> ឃ. ជាអនុវត្តន៍មិនលីនេអ៊ែរ
-                                    ដោយសារមានស្វ័យគុណ $x^2$</label
-                                >
-                            </div>
-                        </div>
-
-                        <div class="controls" style="text-align-last: center">
-                            <button type="button" onclick="changeQuestion(-1)">Previous</button>
-
-                            <span id="question-indicator">លំហាត់ទី 1 / 20</span>
-
-                            <button type="button" onclick="changeQuestion(1)">Next</button>
-                            <br /><br />
-                        </div>
-                        <div style="text-align: center">
-                            <!-- <button type="button" id="submitBtn" onclick="calculateScore()">បញ្ជូនចម្លើយ</button> -->
-
-                            <button id="submitBtn" onclick="calculateScore()">បញ្ជូនចម្លើយ</button>
-                        </div>
-                    </form>
-                </div>
+                        <button id="submitBtn" onclick="calculateScore()">បញ្ជូនចម្លើយ</button>
+                    </div>
+                </form>
             </div>
             <!--button type="button" class="submit-btn" onclick="alert('មុខងារផ្ញើចម្លើយកំពុងស្ថិតក្នុងការអភិវឌ្ឍន៍!')">
                 បញ្ជូនចម្លើយ
@@ -899,7 +613,8 @@
             </div>
         </div>
 
-        <!-- <script>
+        <!-- 
+        <script>
             window.addEventListener("load", function () {
                 const urlParams = new URLSearchParams(window.location.search);
                 const examForm = document.getElementById("exam-form");
@@ -913,7 +628,8 @@
                     document.getElementById("results-page").style.display = "block";
                 }
             });
-        </script> -->
+        </script> 
+        -->
 
         <script>
             function navigate(action) {
