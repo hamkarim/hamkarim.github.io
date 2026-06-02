@@ -105,32 +105,49 @@
                         showModal("សូមបំពេញឈ្មោះ លេខរៀង និងថ្នាក់ឱ្យបានគ្រប់គ្រាន់!");
                         return;
                     }
+                    
+                    questions[currentQuestion].style.display = "none";
+    currentQuestion += n;
+
+    // កំណត់ព្រំដែន
+    if (currentQuestion < 0) currentQuestion = 0;
+    if (currentQuestion >= questions.length) currentQuestion = questions.length - 1;
+
+    questions[currentQuestion].style.display = "block";
+
+    updateIndicator();
+    updateButtonStates();
+
+    // ថែមកូដមួយបន្ទាត់នេះ ទីនេះ!
+    activateAntiCheat();
+                    
+                    
                     // ហៅមុខងារបង្កើត Watermark បន្ទាប់ពីសិស្សបំពេញព័ត៌មានរួច
                     generateWatermark(name, id);
                 }
-                
+
                 // មុខងារបង្កើតអក្សរ Watermark ពេញអេក្រង់
-function generateWatermark(studentName, studentId) {
-    const container = document.getElementById("watermark-container");
-    container.innerHTML = ""; // លុបចាស់ៗចោលមុននឹងបង្កើតថ្មី
-    container.style.display = "block"; // បង្ហាញ Watermark
+                function generateWatermark(studentName, studentId) {
+                    const container = document.getElementById("watermark-container");
+                    container.innerHTML = ""; // លុបចាស់ៗចោលមុននឹងបង្កើតថ្មី
+                    container.style.display = "block"; // បង្ហាញ Watermark
 
-    const text = studentName + " - ល.រ: " + studentId;
-    const spacingX = 200; // គម្លាតរវាងអក្សរ (ផ្ដេក)
-    const spacingY = 150; // គម្លាតរវាងអក្សរ (បញ្ឈរ)
+                    const text = studentName + " - ល.រ: " + studentId;
+                    const spacingX = 200; // គម្លាតរវាងអក្សរ (ផ្ដេក)
+                    const spacingY = 150; // គម្លាតរវាងអក្សរ (បញ្ឈរ)
 
-    // បង្កើតអក្សរច្រើនៗពេញអេក្រង់
-    for (let i = -100; i < window.innerWidth + 200; i += spacingX) {
-        for (let j = -100; j < window.innerHeight + 200; j += spacingY) {
-            let span = document.createElement("div");
-            span.className = "watermark-text";
-            span.innerText = text;
-            span.style.left = i + "px";
-            span.style.top = j + "px";
-            container.appendChild(span);
-        }
-    }
-}
+                    // បង្កើតអក្សរច្រើនៗពេញអេក្រង់
+                    for (let i = -100; i < window.innerWidth + 200; i += spacingX) {
+                        for (let j = -100; j < window.innerHeight + 200; j += spacingY) {
+                            let span = document.createElement("div");
+                            span.className = "watermark-text";
+                            span.innerText = text;
+                            span.style.left = i + "px";
+                            span.style.top = j + "px";
+                            container.appendChild(span);
+                        }
+                    }
+                }
 
                 // បើចុច Next (n === 1) ត្រូវឆែកមើលចម្លើយសិន
                 if (n === 1) {
@@ -1194,5 +1211,76 @@ function generateWatermark(studentName, studentId) {
         } else {
             document.body.style.opacity = "1";
         }
+    });
+</script>
+
+<script>
+    // ១. បង្កើតអថេរដើម្បីឆែកមើលថា តើសិស្សកំពុងស្ថិតក្នុងការប្រលងឬនៅ?
+    let isExamActive = false;
+
+    // ២. ចាប់យកការចុចដើម្បីដឹងថាពេលណាការប្រលងចាប់ផ្តើម
+    // ដោយផ្អែកលើកូដរបស់លោកគ្រូ ពេលសិស្សចុច Next ពីទំព័រទី១ (currentQuestion === 0) គឺចូលប្រលង
+    function activateAntiCheat() {
+        if (currentQuestion > 0) {
+            isExamActive = true;
+        }
+    }
+
+    // លោកគ្រូត្រូវហៅមុខងារ activateAntiCheat() នេះ នៅក្នុងមុខងារ changeQuestion(n) របស់លោកគ្រូ
+    // ឧទាហរណ៍៖ បន្ទាប់ពីកូដប្តូរសំណួររួច សូមបន្ថែម activateAntiCheat(); ពីក្រោម។
+
+    // ៣. រារាំងការចុច Shortcut Keys លើ PC (ដើរតែពេលកំពុងប្រលង)
+    document.addEventListener("keydown", function (e) {
+        if (!isExamActive) return; // បើមិនទាន់ចូលប្រលងទេ មិនបិទមុខងារអីទាំងអស់
+
+        // បិទ PrintScreen Key (ដំណើរការលើ PC មួយចំនួន)
+        if (e.key === "PrintScreen" || e.keyCode === 44) {
+            navigator.clipboard.writeText(""); // លុបរូបដែលថតជាប់ចេញ
+            showModal("មិនអនុញ្ញាតឱ្យថតអេក្រង់ (Screenshot) ទេ ពេលកំពុងប្រលង!");
+            e.preventDefault();
+        }
+
+        // បិទ Shortcut កាត់ (Ctrl+P, Ctrl+C, Ctrl+S, Ctrl+A, Windows+Shift+S)
+        if (e.ctrlKey || e.metaKey) {
+            // e.metaKey សម្រាប់ Mac (Command Key)
+            const blockedKeys = ["c", "p", "s", "a", "x", "u"];
+            if (blockedKeys.includes(e.key.toLowerCase())) {
+                e.preventDefault();
+                showModal("មិនអនុញ្ញាតឱ្យប្រើប្រាស់ Keyboard Shortcut នេះទេ!");
+            }
+        }
+
+        // បិទ F12 មិនឱ្យមើលកូដវិញ្ញាសា
+        if (e.key === "F12" || e.keyCode === 123) {
+            e.preventDefault();
+        }
+    });
+
+    // ៤. រារាំងការចុច Right-Click លើ Mouse
+    document.addEventListener("contextmenu", function (e) {
+        if (isExamActive) {
+            e.preventDefault(); // បិទមិនឱ្យចេញ Menu Right-Click
+        }
+    });
+
+    // ៥. មុខងារពិសេស (Anti-Cheating): លាក់វិញ្ញាសាពេលប្តូរ Tab ឬចេញពី Browser
+    // ការពារទាំងលើ PC និង ទូរសព្ទដៃ ពេលគេព្យាយាមចេញទៅបើកមើលមេរៀន
+    document.addEventListener("visibilitychange", function () {
+        if (isExamActive) {
+            if (document.hidden) {
+                document.body.style.opacity = "0"; // ធ្វើឱ្យអេក្រង់សទទេពេលចេញពី Tab
+            } else {
+                document.body.style.opacity = "1"; // បង្ហាញវិញ្ញាសាវិញពេលចូល Tab វិញ
+            }
+        }
+    });
+
+    // ៦. រារាំងការ Copy និង Paste តាមរយៈការចុចលើអេក្រង់ទូរសព្ទ (Touch & Hold)
+    ["copy", "cut", "paste"].forEach(function (eventType) {
+        document.addEventListener(eventType, function (e) {
+            if (isExamActive) {
+                e.preventDefault();
+            }
+        });
     });
 </script>
