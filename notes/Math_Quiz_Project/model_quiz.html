@@ -1,0 +1,1230 @@
+<!doctype html>
+<html lang="km">
+    <head>
+        <meta charset="UTF-8" />
+        <title>វិញ្ញាសាពីជគណិតលីនេអ៊ែរ</title>
+        <style>
+            body {
+                font-family: "Segoe UI", sans-serif;
+                line-height: 1.6;
+                max-width: 800px;
+                margin: auto;
+                padding: 20px;
+                background: #f4f4f9;
+            }
+            .question-box {
+                background: #fff;
+                margin-bottom: 20px;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+            .options {
+                margin-top: 10px;
+            }
+            label {
+                display: block;
+                padding: 5px;
+                cursor: pointer;
+            }
+            label:hover {
+                background: #f0f0f0;
+            }
+            button {
+                width: 100%;
+                padding: 15px;
+                background: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 18px;
+                cursor: pointer;
+            }
+            button:hover {
+                background: #0056b3;
+            }
+            #result {
+                margin-top: 20px;
+                text-align: center;
+                font-size: 20px;
+                color: #333;
+            }
+
+            mjx-container {
+                font-size: 115% !important;
+            }
+        </style>
+
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [
+                        ["$", "$"],
+                        ["\\(", "\\)"]
+                    ],
+                    displayMath: [
+                        ["$$", "$$"],
+                        ["\\[", "\\]"]
+                    ],
+                    macros: {
+                        mybullet: "{\\tiny\\bullet\\;\\;}",
+                        mybullett: "{\\quad\\tiny\\bullet\\;\\;}"
+                    }
+                },
+                chtml: {
+                    scale: 1.2,
+                    linebreaks: { automatic: true }
+                },
+                svg: {
+                    scale: 1.2,
+                    matchFontHeight: true
+                }
+            };
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css" />
+        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+    </head>
+    <body>
+        <!--     <form id="quiz-form">
+            <script>
+                const quizData = [
+                    {
+                        q: "១. នៅក្នុងប្លង់ទ្វេវិមាត្រ (លំហ $\\mathbb{R}^2$) តើវ៉ិចទ័រមួយត្រូវបានតំណាងដោយអ្វី?",
+                        o: [
+                            "ក) ចំនួនពិតតែមួយគត់",
+                            "ខ) កូអរដោនេពីរ $(x, y)$",
+                            "គ) កូអរដោនេបី $(x, y, z)$",
+                            "ឃ) សមីការបន្ទាត់មួយ"
+                        ],
+                        c: 1
+                    },
+                    {
+                        q: "២. ប្រសិនបើ $\\vec{u} = (1, 2)$ និង $\\vec{v} = (3, 1)$ តើផលបូក $\\vec{u} + \\vec{v}$ ស្មើប៉ុន្មាន?",
+                        o: ["ក) $(2, -1)$", "ខ) $(4, 3)$", "គ) $(3, 2)$", "ឃ) $(1, 3)$"],
+                        c: 1
+                    },
+                    {
+                        q: "៣. ប្រសិនបើ $c = 2$ និង $\\vec{v} = (-1, 4)$ តើ $c\\vec{v}$ ស្មើនឹងអ្វី?",
+                        o: ["ក) $(-2, 8)$", "ខ) $(1, 6)$", "គ) $(-1, 8)$", "ឃ) $(2, 4)$"],
+                        c: 0
+                    },
+                    {
+                        q: "៤. តើផលបូក $\\vec{v} + \\vec{0}$ ស្មើនឹងអ្វី?",
+                        o: ["ក) $\\vec{0}$", "ខ) $1$", "គ) $\\vec{v}$", "ឃ) $-\\vec{v}$"],
+                        c: 2
+                    },
+                    {
+                        q: "៥. តើលក្ខខណ្ឌចាំបាច់ទី១ ដែលសំណុំមួយត្រូវមាន ដើម្បីជាលំហរងវ៉ិចទ័រ?",
+                        o: [
+                            "ក) មានចំនួនអវិជ្ជមាន",
+                            "ខ) ត្រូវតែមានផ្ទុកវ៉ិចទ័រសូន្យ $\\vec{0}$",
+                            "គ) ត្រូវតែមានផ្ទុកប្រភាគ",
+                            "ឃ) មិនមានលក្ខខណ្ឌ"
+                        ],
+                        c: 1
+                    },
+                    {
+                        q: "៦. តើមួយណាជាលំហរង (Subspace) នៅក្នុង $\\mathbb{R}^2$?",
+                        o: [
+                            "ក) បន្ទាត់កាត់តាមគល់តម្រុយ $(0,0)$",
+                            "ខ) បន្ទាត់មិនកាត់តាមគល់តម្រុយ",
+                            "គ) រង្វង់ផ្ចិតគល់តម្រុយ",
+                            "ឃ) ចំណុចនៅឆ្ងាយពីគល់តម្រុយ"
+                        ],
+                        c: 0
+                    },
+                    {
+                        q: "៧. តើវ៉ិចទ័រផ្ទុយនៃ $\\vec{u} = (5, -3)$ គឺអ្វី?",
+                        o: ["ក) $(-5, -3)$", "ខ) $(5, 3)$", "គ) $(-5, 3)$", "ឃ) $(0, 0)$"],
+                        c: 2
+                    },
+                    {
+                        q: "៨. តើសមភាពណាបង្ហាញពីលក្ខណៈត្រឡប់ (Commutativity)?",
+                        o: [
+                            "ក) $\\vec{u}+(\\vec{v}+\\vec{w}) = (\\vec{u}+\\vec{v})+\\vec{w}$",
+                            "ខ) $\\vec{u} + \\vec{v} = \\vec{v} + \\vec{u}$",
+                            "គ) $c(\\vec{u}+\\vec{v}) = c\\vec{u}+c\\vec{v}$",
+                            "ឃ) $\\vec{u}+\\vec{0} = \\vec{u}$"
+                        ],
+                        c: 1
+                    },
+                    {
+                        q: "៩. តើទម្រង់ទូទៅនៃបន្សំលីនេអ៊ែរនៃ $\\vec{u}$ និង $\\vec{v}$ គឺអ្វី?",
+                        o: [
+                            "ក) $a\\vec{u} \\times b\\vec{v}$",
+                            "ខ) $a\\vec{u} / b\\vec{v}$",
+                            "គ) $a\\vec{u} + b\\vec{v}$",
+                            "ឃ) $a+b+\\vec{u}+\\vec{v}$"
+                        ],
+                        c: 2
+                    },
+                    {
+                        q: "១០. តើ $\\vec{w} + (-\\vec{w})$ ស្មើនឹងអ្វី?",
+                        o: ["ក) $\\vec{w}$", "ខ) $0$", "គ) $2\\vec{w}$", "ឃ) $\\vec{0}$"],
+                        c: 3
+                    },
+                    {
+                        q: "១១. ក្នុងប្លង់ $ax+by+cz=d$ តើលក្ខខណ្ឌណាទើបជាលំហរង?",
+                        o: ["ក) $d=1$", "ខ) $d=0$", "គ) $a,b,c > 0$", "ឃ) គ្រប់ប្លង់"],
+                        c: 1
+                    },
+                    {
+                        q: "១២. តើសំណុំមួយណាជាលំហរងពិតប្រាកដក្នុង $\\mathbb{R}^3$?",
+                        o: [
+                            "ក) ស្វ៊ែរ $x^2+y^2+z^2=1$",
+                            "ខ) បន្ទាត់ $x=t, y=t+1, z=2t$",
+                            "គ) ប្លង់ $2x-3y+4z=0$",
+                            "ឃ) $x,y,z \\ge 0$"
+                        ],
+                        c: 2
+                    },
+                    {
+                        q: "១៣. ប្រសព្វនៃប្លង់ពីរឆ្លងកាត់គល់តម្រុយក្នុង $\\mathbb{R}^3$ គឺជាអ្វី?",
+                        o: [
+                            "ក) បន្ទាត់ឆ្លងកាត់គល់តម្រុយ",
+                            "ខ) ចំណុច $(0,0,0)$",
+                            "គ) បន្ទាត់មិនឆ្លងកាត់គល់តម្រុយ",
+                            "ឃ) សំណុំទទេ"
+                        ],
+                        c: 0
+                    },
+                    {
+                        q: "១៤. តើ $L_1 \\cup L_2$ ជាលំហរងដែរឬទេ?",
+                        o: ["ក) បាទ", "ខ) ទេ", "គ) បាទ បង្កើតបានជាប្លង់", "ឃ) ទេ (ខុសច្បាប់គុណស្កាលែ)"],
+                        c: 1
+                    },
+                    {
+                        q: "១៥. តើ $S = \{ t(a, b, c) \\mid t \\in \\mathbb{R} \}$ មានន័យដូចម្តេច?",
+                        o: ["ក) គោល", "ខ) លំហរងវិមាត្រ ២", "គ) សំណុំបង្ក (Span)", "ឃ) បន្សំលីនេអ៊ែរឯកតា"],
+                        c: 2
+                    },
+                    {
+                        q: "១៦. តើ $S = \{ (x, y, z) \\mid x+y+z=0 \\text{ and } x-y=0 \}$ ជាអ្វី?",
+                        o: ["ក) ប្លង់", "ខ) បន្ទាត់", "គ) ចំណុច $(0,0,0)$", "ឃ) លំហ $\\mathbb{R}^3$"],
+                        c: 2
+                    },
+                    {
+                        q: "១៧. លំហរងក្នុង $\\mathbb{R}^3$ មានវិមាត្រប៉ុន្មានខ្លះ?",
+                        o: ["ក) តែ ៣", "ខ) តែ ១ និង ២", "គ) ០, ១, ២, ឬ ៣", "ឃ) ១ ដល់អនន្ត"],
+                        c: 2
+                    },
+                    {
+                        q: "១៨. វ៉ិចទ័រណាស្ថិតក្នុងប្លង់ដែលមានណរម៉ាល់ $(1, -2, 1)$?",
+                        o: ["ក) $(1, 1, 1)$", "ខ) $(1, 0, 0)$", "គ) $(2, 1, 0)$", "ឃ) $(1, -2, 1)$"],
+                        c: 2
+                    },
+                    {
+                        q: "១៩. តើភាពខុសគ្នារវាងលំហអាហ្វីន និងលំហវ៉ិចទ័រគឺអ្វី?",
+                        o: ["ក) វិមាត្រ", "ខ) មិនមានគល់តម្រុយ", "គ) មិនមានវ៉ិចទ័រ", "ឃ) មិនអាចផ្ទុកប្លង់"],
+                        c: 1
+                    },
+                    {
+                        q: "២០. តើ $A - B$ ក្នុងលំហអាហ្វីនជាអ្វី?",
+                        o: ["ក) ចំណុច", "ខ) ស្កាលែ", "គ) វ៉ិចទ័រ", "ឃ) សូន្យ"],
+                        c: 2
+                    },
+                    {
+                        q: "២១. តើ $\\alpha A + \\beta B$ ជាចំណុចលុះត្រាតែអ្វី?",
+                        o: [
+                            "ក) $\\alpha+\\beta=0$",
+                            "ខ) $\\alpha+\\beta=1$",
+                            "គ) $\\alpha=\\beta$",
+                            "ឃ) $\\alpha\\beta=1$"
+                        ],
+                        c: 1
+                    },
+                    {
+                        q: "២២. លំហរងអាហ្វីនកំណត់ដោយអ្វី?",
+                        o: ["ក) ចំណុចនិងស្កាលែ", "ខ) វ៉ិចទ័រពីរ", "គ) ចំណុចនិងលំហរងវ៉ិចទ័រប្រាប់ទិស", "ឃ) គល់តម្រុយ"],
+                        c: 2
+                    },
+                    {
+                        q: "២៣. សមីការប៉ារ៉ាម៉ែត្របន្ទាត់កាត់ $A$ វ៉ិចទ័រ $\\vec{u}$ គឺ?",
+                        o: [
+                            "ក) $M=tA+\\vec{u}$",
+                            "ខ) $M=A+t\\vec{u}$",
+                            "គ) $M=A \\cdot t\\vec{u}$",
+                            "ឃ) $M=\\vec{u}+t$"
+                        ],
+                        c: 1
+                    },
+                    {
+                        q: "២៤. បន្សំអាហ្វីននៃចំណុច ៣ មិនរត់ត្រង់ជួរគឺ?",
+                        o: ["ក) បន្ទាត់", "ខ) ប្លង់", "គ) លំហ 3D", "ឃ) ត្រីកោណ"],
+                        c: 1
+                    },
+                    {
+                        q: "២៥. បន្ទាត់ពីរក្នុង 3D ក្រៅពីកាត់/ស្រប/ត្រួត មានអ្វីទៀត?",
+                        o: ["ក) កាត់កែង", "ខ) បន្ទាត់អនន្ត", "គ) ខ្វែងគ្នា (Skew)", "ឃ) គ្មាន"],
+                        c: 2
+                    },
+                    {
+                        q: "២៦. ចំណុចកណ្តាលអង្កត់ $[AB]$ គឺ?",
+                        o: ["ក) $A-B$", "ខ) $2A+2B$", "គ) $A+B$", "ឃ) $1/2A + 1/2B$"],
+                        c: 3
+                    },
+                    {
+                        q: "២៧. ប្លង់ស្របដាច់ខាតមានលក្ខខណ្ឌអ្វី?",
+                        o: [
+                            "ក) មានចំណុចរួម",
+                            "ខ) វ៉ិចទ័រប្រាប់ទិសដូចគ្នា គ្មានចំណុចរួម",
+                            "គ) វ៉ិចទ័រខុសគ្នា",
+                            "ឃ) មុំកែង"
+                        ],
+                        c: 1
+                    },
+                    {
+                        q: "២៨. ទំនាក់ទំនងហ្សាលគឺ?",
+                        o: [
+                            "ក) $\\vec{AB}+\\vec{BC}=\\vec{AC}$",
+                            "ខ) $\\vec{AB}\\cdot\\vec{BC}=\\vec{AC}$",
+                            "គ) $\\vec{AB}-\\vec{BC}=\\vec{AC}$",
+                            "ឃ) $\\vec{AB}+\\vec{AC}=\\vec{BC}$"
+                        ],
+                        c: 0
+                    },
+                    {
+                        q: "២៩. ប្លង់ពីរក្នុង $\\mathbb{R}^3$ កាត់គ្នាប្រសព្វបានអ្វី?",
+                        o: ["ក) ចំណុច", "ខ) បន្ទាត់", "គ) ប្លង់", "ឃ) លំហ"],
+                        c: 1
+                    },
+                    {
+                        q: "៣០. ភាពខុសគ្នារវាងចំណុច និងវ៉ិចទ័រ?",
+                        o: [
+                            "ក) ចំណុចមានច្រើនជាង",
+                            "ខ) ចំណុចជាទីតាំង វ៉ិចទ័រជាការរំកិល",
+                            "គ) វិមាត្រ",
+                            "ឃ) គ្មានខុសគ្នា"
+                        ],
+                        c: 1
+                    },
+                    {
+                        q: "៣១. $\\alpha A + \\beta B$ ជាចំណុចលុះត្រាតែ?",
+                        o: [
+                            "ក) $\\alpha+\\beta=0$",
+                            "ខ) $\\alpha=\\beta$",
+                            "គ) $\\alpha\\beta=1$",
+                            "ឃ) $\\alpha+\\beta=1$"
+                        ],
+                        c: 3
+                    },
+                    {
+                        q: "៣២. លំហរងអាហ្វីនក្នុង $\\mathbb{R}^2$ មានវិមាត្រអ្វីខ្លះ?",
+                        o: ["ក) ១ និង ២", "ខ) ០, ១, និង ២", "គ) ១", "ឃ) ១, ២, និង ៣"],
+                        c: 1
+                    },
+                    {
+                        q: "៣៣. បន្ទាត់ $ax+by=c$ ជាលំហរងវ៉ិចទ័រនៅពេល?",
+                        o: ["ក) $a=b$", "ខ) $c=1$", "គ) $c=0$", "ឃ) $a,b>0$"],
+                        c: 2
+                    },
+                    {
+                        q: "៣៤. បន្ទាត់កាត់ $(1, 2)$ វ៉ិចទ័រ $(3, -1)$?",
+                        o: ["ក) $x=3+t, y=-1+2t$", "ខ) $x=1+3t, y=2-t$", "គ) $x=1-3t, y=2-t$", "ឃ) $x=3t, y=-2t$"],
+                        c: 1
+                    },
+                    {
+                        q: "៣៥. បន្ទាត់ $2x-y=3$ និង $4x-2y=5$?",
+                        o: ["ក) កាត់គ្នា", "ខ) ត្រួតស៊ីគ្នា", "គ) កាត់កែង", "ឃ) ស្របគ្នាដាច់ខាត"],
+                        c: 3
+                    },
+                    {
+                        q: "៣៦. បន្ទាត់ពីរមិនស្របគ្នាកាត់គ្នានៅ?",
+                        o: ["ក) មិនកាត់", "ខ) កាត់ជាបន្ទាត់", "គ) ចំណុចតែមួយ", "ឃ) ពីរចំណុច"],
+                        c: 2
+                    },
+                    {
+                        q: "៣៧. បំព្រិលបន្ទាត់ $D$ តាម $\\vec{v}$ (មិនស្រប) បាន?",
+                        o: ["ក) $D'$ ស្របនឹង $D$", "ខ) កាត់កែង", "គ) ចំណុច", "ឃ) $D$ ដដែល"],
+                        c: 0
+                    },
+                    {
+                        q: "៣៨. តម្រុយអាហ្វីនក្នុង $\\mathbb{R}^2$ ត្រូវការ?",
+                        o: ["ក) ២ ចំណុច", "ខ) ៣ ចំណុចមិនរត់ត្រង់ជួរ", "គ) ៤ ចំណុច", "ឃ) ១ ចំណុច១ស្កាលែ"],
+                        c: 1
+                    },
+                    {
+                        q: "៣៩. ទិសដៅនៃបន្ទាត់កាត់ $A, B$ បង្កើតដោយ?",
+                        o: ["ក) $\\vec{AB}$", "ខ) ចំណុចកណ្តាល", "គ) វ៉ិចទ័រណរម៉ាល់", "ឃ) ផលគុណស្កាលែ"],
+                        c: 0
+                    },
+                    {
+                        q: "៤០. $M=(1-t)A+tB, 0\\le t \\le 1$ ជា?",
+                        o: ["ក) បន្ទាត់អនន្ត", "ខ) កន្លះបន្ទាត់", "គ) អង្កត់", "ឃ) រង្វង់"],
+                        c: 2
+                    },
+                    {
+                        q: "៤១. ៤ ចំណុចមិនអាស្រ័យលីនេអ៊ែរអាហ្វីននៅពេល?",
+                        o: [
+                            "ក) រត់ត្រង់ជួរ",
+                            "ខ) $\\vec{AB}, \\vec{AC}, \\vec{AD}$ សេរី",
+                            "គ) ស្របគ្នា",
+                            "ឃ) ស្ថិតក្នុងប្លង់តែមួយ"
+                        ],
+                        c: 1
+                    },
+                    {
+                        q: "៤២. បន្ទាត់ $L$ មិនស្របប្លង់ $P$ ក្នុង 3D?",
+                        o: ["ក) ស្របដាច់ខាត", "ខ) ស្ថិតក្នុងប្លង់", "គ) កាត់ត្រង់ចំណុចតែមួយ", "ឃ) មិនកាត់"],
+                        c: 2
+                    },
+                    {
+                        q: "៤៣. កូអរដោនេបារីសង់ $(1/2, 1/3, 1/6)$?",
+                        o: ["ក) ក្រៅប្លង់", "ខ) ចំណុចកណ្តាល", "គ) ក្នុងត្រីកោណ", "ឃ) លើបន្ទាត់"],
+                        c: 2
+                    },
+                    {
+                        q: "៤៤. ប្លង់ពីរវិមាត្រ ២ ក្នុង $\\mathbb{R}^4$ កាត់គ្នាអាចមានវិមាត្រ?",
+                        o: ["ក) ១", "ខ) ០, ១, ឬ ២", "គ) ២", "ឃ) មិនកាត់"],
+                        c: 1
+                    },
+                    {
+                        q: "៤៥. Affine Hull នៃបន្ទាត់ខ្វែងគ្នាពីរគឺ?",
+                        o: ["ក) វិមាត្រ ២", "ខ) វិមាត្រ ៣", "គ) វិមាត្រ ៤", "ឃ) មិនកំណត់"],
+                        c: 1
+                    }
+                ];
+
+                quizData.forEach((item, index) => {
+                    let qBox = document.createElement("div");
+                    qBox.className = "question-box";
+                    qBox.innerHTML = `<p><strong>${item.q}</strong></p>`;
+                    item.o.forEach((opt, oIdx) => {
+                        qBox.innerHTML += `<label><input type="radio" name="q${index}" value="${oIdx === item.c ? "correct" : "wrong"}" required> ${opt}</label>`;
+                    });
+                    document.getElementById("quiz-form").appendChild(qBox);
+                });
+            </script>
+
+            <button type="submit">ផ្ញើរចម្លើយ (Submit)</button>
+        </form>-->
+
+        <form id="quiz-form">
+            <div class="question-box">
+                <p>
+                    <strong>១.</strong> នៅក្នុងប្លង់ទ្វេវិមាត្រ (លំហ $\mathbb{R}^2$) តើវ៉ិចទ័រមួយត្រូវបានតំណាងដោយអ្វី?
+                </p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="wrong" required /> A. ចំនួនពិតតែមួយគត់</label><br />
+                    <label><input type="radio" name="q1" value="correct" required /> B. កូអរដោនេពីរ $(x, y)$</label
+                    ><br />
+                    <label><input type="radio" name="q1" value="wrong" required /> C. កូអរដោនេបី $(x, y, z)$</label
+                    ><br />
+                    <label><input type="radio" name="q1" value="wrong" required /> D. សមីការបន្ទាត់មួយ</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>២.</strong> ប្រសិនបើ $\vec{u} = (1, 2)$ និង $\vec{v} = (3, 1)$ តើផលបូក $\vec{u} + \vec{v}$
+                    ស្មើនឹងប៉ុន្មាន?
+                </p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="wrong" required /> A. $(2, -1)$</label><br />
+                    <label><input type="radio" name="q2" value="correct" required /> B. $(4, 3)$</label><br />
+                    <label><input type="radio" name="q2" value="wrong" required /> C. $(3, 2)$</label><br />
+                    <label><input type="radio" name="q2" value="wrong" required /> D. $(1, 3)$</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p><strong>៣.</strong> ប្រសិនបើ $c = 2$ និង $\vec{v} = (-1, 4)$ តើកន្សោម $c\vec{v}$ ស្មើនឹងអ្វី?</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="correct" required /> A. $(-2, 8)$</label><br />
+                    <label><input type="radio" name="q3" value="wrong" required /> B. $(1, 6)$</label><br />
+                    <label><input type="radio" name="q3" value="wrong" required /> C. $(-1, 8)$</label><br />
+                    <label><input type="radio" name="q3" value="wrong" required /> D. $(2, 4)$</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>៤.</strong> សម្រាប់គ្រប់វ៉ិចទ័រ $\vec{v}$ នៅក្នុងលំហវ៉ិចទ័រ តើផលបូក $\vec{v} + \vec{0}$
+                    ស្មើនឹងអ្វី?
+                </p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="wrong" required /> A. $\vec{0}$</label><br />
+                    <label><input type="radio" name="q4" value="wrong" required /> B. $1$</label><br />
+                    <label><input type="radio" name="q4" value="correct" required /> C. $\vec{v}$</label><br />
+                    <label><input type="radio" name="q4" value="wrong" required /> D. $-\vec{v}$</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p><strong>៥.</strong> តើលក្ខខណ្ឌចាំបាច់ទី១ ដែលសំណុំមួយត្រូវមាន ដើម្បីជា "លំហរងវ៉ិចទ័រ" គឺជាអ្វី?</p>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="wrong" required /> A. ត្រូវតែមានចំនួនអវិជ្ជមាន</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q5" value="correct" required /> B. ត្រូវតែមានផ្ទុកវ៉ិចទ័រសូន្យ
+                        $\vec{0}$</label
+                    ><br />
+                    <label><input type="radio" name="q5" value="wrong" required /> C. ត្រូវតែមានផ្ទុកប្រភាគ</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q5" value="wrong" required /> D. មិនចាំបាច់មានលក្ខខណ្ឌអ្វីទេ</label
+                    >
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p><strong>៦.</strong> តើមួយណាខាងក្រោមតំណាងឱ្យ "លំហរង" (Subspace) នៅក្នុង $\mathbb{R}^2$?</p>
+                <div class="options">
+                    <label
+                        ><input type="radio" name="q6" value="correct" required /> A. បន្ទាត់ដែលកាត់តាមគល់តម្រុយ
+                        $(0,0)$</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q6" value="wrong" required /> B. បន្ទាត់ដែលមិនកាត់តាមគល់តម្រុយ</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q6" value="wrong" required /> C. រង្វង់ដែលមានផ្ចិតនៅគល់តម្រុយ</label
+                    ><br />
+                    <label><input type="radio" name="q6" value="wrong" required /> D. ចំណុចមួយនៅឆ្ងាយពីគល់តម្រុយ</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p><strong>៧.</strong> តើវ៉ិចទ័រផ្ទុយ (Additive Inverse) នៃវ៉ិចទ័រ $\vec{u} = (5, -3)$ គឺអ្វី?</p>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="wrong" required /> A. $(-5, -3)$</label><br />
+                    <label><input type="radio" name="q7" value="wrong" required /> B. $(5, 3)$</label><br />
+                    <label><input type="radio" name="q7" value="correct" required /> C. $(-5, 3)$</label><br />
+                    <label><input type="radio" name="q7" value="wrong" required /> D. $(0, 0)$</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p><strong>៨.</strong> ការបូកវ៉ិចទ័រមានលក្ខណៈត្រឡប់។ តើសមភាពមួយណាបង្ហាញពីលក្ខណៈនេះ?</p>
+                <div class="options">
+                    <label
+                        ><input type="radio" name="q8" value="wrong" required /> A. $\vec{u} + (\vec{v} + \vec{w}) =
+                        (\vec{u} + \vec{v}) + \vec{w}$</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q8" value="correct" required /> B. $\vec{u} + \vec{v} = \vec{v} +
+                        \vec{u}$</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q8" value="wrong" required /> C. $c(\vec{u} + \vec{v}) = c\vec{u} +
+                        c\vec{v}$</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q8" value="wrong" required /> D. $\vec{u} + \vec{0} = \vec{u}$</label
+                    >
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p><strong>៩.</strong> តើទម្រង់ទូទៅនៃបន្សំលីនេអ៊ែររវាងវ៉ិចទ័រ $\vec{u}$ និង $\vec{v}$ គឺអ្វី?</p>
+                <div class="options">
+                    <label><input type="radio" name="q9" value="wrong" required /> A. $a\vec{u} \times b\vec{v}$</label
+                    ><br />
+                    <label><input type="radio" name="q9" value="wrong" required /> B. $\frac{a\vec{u}}{b\vec{v}}$</label
+                    ><br />
+                    <label><input type="radio" name="q9" value="correct" required /> C. $a\vec{u} + b\vec{v}$</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q9" value="wrong" required /> D. $a + b + \vec{u} + \vec{v}$</label
+                    >
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>១០.</strong> ប្រសិនបើគេយកវ៉ិចទ័រ $\vec{w}$ បូកជាមួយនឹងវ៉ិចទ័រផ្ទុយរបស់វា $(-\vec{w})$
+                    តើលទ្ធផលគឺអ្វី?
+                </p>
+                <div class="options">
+                    <label><input type="radio" name="q10" value="wrong" required /> A. វ៉ិចទ័រដើម $\vec{w}$</label
+                    ><br />
+                    <label><input type="radio" name="q10" value="wrong" required /> B. ចំនួនសូន្យ $0$</label><br />
+                    <label><input type="radio" name="q10" value="wrong" required /> C. វ៉ិចទ័រទ្វេដង $2\vec{w}$</label
+                    ><br />
+                    <label><input type="radio" name="q10" value="correct" required /> D. វ៉ិចទ័រសូន្យ $\vec{0}$</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>១១.</strong> តើសមីការប្លង់ $ax + by + cz = d$ មួយណាទើបអាចចាត់ទុកជា "លំហរង" នៃ $\mathbb{R}^3$
+                    បាន?
+                </p>
+                <div class="options">
+                    <label><input type="radio" name="q11" value="wrong" required /> A. ត្រូវតែមាន $d = 1$</label><br />
+                    <label><input type="radio" name="q11" value="correct" required /> B. ត្រូវតែមាន $d = 0$</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q11" value="wrong" required /> C. ត្រូវតែមាន $a, b, c$
+                        ជាលេខវិជ្ជមាន</label
+                    ><br />
+                    <label><input type="radio" name="q11" value="wrong" required /> D. គ្រប់ប្លង់ទាំងអស់</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p><strong>១២.</strong> តើសំណុំមួយណាដែលជាលំហរង (Vector Subspace) ពិតប្រាកដក្នុង $\mathbb{R}^3$?</p>
+                <div class="options">
+                    <label
+                        ><input type="radio" name="q12" value="wrong" required /> A. ស្វ៊ែរ $x^2 + y^2 + z^2 = 1$</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q12" value="wrong" required /> B. បន្ទាត់ $x = t, y = t + 1, z =
+                        2t$</label
+                    ><br />
+                    <label><input type="radio" name="q12" value="correct" required /> C. ប្លង់ $2x - 3y + 4z = 0$</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q12" value="wrong" required /> D. វ៉ិចទ័រដែល $x, y, z \ge 0$</label
+                    >
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p><strong>១៣.</strong> តើប្រជុំនៃប្លង់ពីរ $P_1 \cap P_2$ (កាត់តាមគល់តម្រុយ) តំណាងឱ្យអ្វី?</p>
+                <div class="options">
+                    <label
+                        ><input type="radio" name="q13" value="correct" required /> A.
+                        ជាបន្ទាត់មួយកាត់តាមគល់តម្រុយ</label
+                    ><br />
+                    <label><input type="radio" name="q13" value="wrong" required /> B. ជាចំណុចតែមួយគត់ $(0,0,0)$</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q13" value="wrong" required /> C. ជាបន្ទាត់មួយមិនកាត់គល់តម្រុយ</label
+                    ><br />
+                    <label><input type="radio" name="q13" value="wrong" required /> D. ជាសំណុំទទេ</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>១៤.</strong> តើប្រជុំនៃបន្ទាត់ពីរ $L_1 \cup L_2$ (កាត់តាមគល់តម្រុយ) ជាលំហរងនៃ $\mathbb{R}^3$
+                    ដែរឬទេ?
+                </p>
+                <div class="options">
+                    <label><input type="radio" name="q14" value="wrong" required /> A. បាទ ជាលំហរងជានិច្ច</label><br />
+                    <label
+                        ><input type="radio" name="q14" value="correct" required /> B. ទេ
+                        ព្រោះវាមិនបិទជិតចំពោះការបូកវ៉ិចទ័រ</label
+                    ><br />
+                    <label><input type="radio" name="q14" value="wrong" required /> C. បាទ បង្កើតបានជាប្លង់</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q14" value="wrong" required /> D. ទេ ព្រោះមិនបិទជិតចំពោះស្កាលែ</label
+                    >
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p><strong>១៥.</strong> តើទម្រង់ $S = \{ t(a, b, c) \mid t \in \mathbb{R} \}$ មានន័យដូចម្តេច?</p>
+                <div class="options">
+                    <label><input type="radio" name="q15" value="wrong" required /> A. គោលនៃ $\mathbb{R}^3$</label
+                    ><br />
+                    <label><input type="radio" name="q15" value="wrong" required /> B. លំហរងវិមាត្រ ២</label><br />
+                    <label
+                        ><input type="radio" name="q15" value="correct" required /> C. សំណុំបង្ក (Span)
+                        ដោយវ៉ិចទ័រតែមួយ</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q15" value="wrong" required /> D. បន្សំលីនេអ៊ែរនៃវ៉ិចទ័រឯកតា</label
+                    >
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>១៦.</strong> តើសំណុំ $S = \{ (x, y, z) \mid x + y + z = 0 \text{ and } x - y = 0 \}$
+                    តំណាងឱ្យអ្វី?
+                </p>
+                <div class="options">
+                    <label><input type="radio" name="q16" value="wrong" required /> A. ប្លង់មួយ</label><br />
+                    <label
+                        ><input type="radio" name="q16" value="correct" required /> B. បន្ទាត់មួយកាត់តាមគល់តម្រុយ</label
+                    ><br />
+                    <label><input type="radio" name="q16" value="wrong" required /> C. ចំណុចតែមួយគត់</label><br />
+                    <label
+                        ><input type="radio" name="q16" value="wrong" required /> D. លំហ $\mathbb{R}^3$ ទាំងមូល</label
+                    >
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p><strong>១៧.</strong> តើលំហរងក្នុង $\mathbb{R}^3$ អាចមានវិមាត្រប៉ុន្មានខ្លះ?</p>
+                <div class="options">
+                    <label><input type="radio" name="q17" value="wrong" required /> A. មានតែ ៣</label><br />
+                    <label><input type="radio" name="q17" value="wrong" required /> B. មានតែ ១ និង ២</label><br />
+                    <label><input type="radio" name="q17" value="correct" required /> C. ០, ១, ២, ឬ ៣</label><br />
+                    <label><input type="radio" name="q17" value="wrong" required /> D. ចាប់ពី ១ ដល់អនន្ត</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>១៨.</strong> ប្លង់មានវ៉ិចទ័រណរម៉ាល់ $\vec{n} = (1, -2, 1)$។
+                    តើវ៉ិចទ័រមួយណាស្ថិតក្នុងប្លង់នេះ?
+                </p>
+                <div class="options">
+                    <label><input type="radio" name="q18" value="wrong" required /> A. $(1, 1, 1)$</label><br />
+                    <label><input type="radio" name="q18" value="wrong" required /> B. $(1, 0, 0)$</label><br />
+                    <label><input type="radio" name="q18" value="correct" required /> C. $(2, 1, 0)$</label><br />
+                    <label><input type="radio" name="q18" value="wrong" required /> D. $(1, -2, 1)$</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p><strong>១៩.</strong> តើអ្វីជាលក្ខណៈខុសគ្នាសំខាន់រវាង "លំហអាហ្វីន" និង "លំហវ៉ិចទ័រ"?</p>
+                <div class="options">
+                    <label><input type="radio" name="q19" value="wrong" required /> A. លំហអាហ្វីនមានវិមាត្រតែ ២</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q19" value="correct" required /> B. លំហអាហ្វីនមិនមានគល់តម្រុយ</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q19" value="wrong" required /> C.
+                        លំហអាហ្វីនមិនមានវ៉ិចទ័រប្រាប់ទិស</label
+                    ><br />
+                    <label><input type="radio" name="q19" value="wrong" required /> D. លំហអាហ្វីនមិនផ្ទុកបន្ទាត់</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p><strong>២០.</strong> ប្រសិនបើគេយកចំណុចមួយដកចំណុចមួយទៀតក្នុងលំហអាហ្វីន ($A - B$) តើបានអ្វី?</p>
+                <div class="options">
+                    <label><input type="radio" name="q20" value="wrong" required /> A. ចំណុចមួយ</label><br />
+                    <label><input type="radio" name="q20" value="wrong" required /> B. ស្កាលែ</label><br />
+                    <label><input type="radio" name="q20" value="correct" required /> C. វ៉ិចទ័រមួយ</label><br />
+                    <label><input type="radio" name="q20" value="wrong" required /> D. សូន្យជានិច្ច</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>២១.</strong> ក្នុងលំហអាហ្វីន កន្សោម $\alpha A + \beta B$ តំណាងឱ្យចំណុចថ្មី
+                    លុះត្រាតែលក្ខខណ្ឌអ្វីផ្ទៀងផ្ទាត់?
+                </p>
+                <div class="options">
+                    <label><input type="radio" name="q21" value="wrong" required /> A. $\alpha + \beta = 0$</label
+                    ><br />
+                    <label><input type="radio" name="q21" value="correct" required /> B. $\alpha + \beta = 1$</label
+                    ><br />
+                    <label><input type="radio" name="q21" value="wrong" required /> C. $\alpha = \beta$</label><br />
+                    <label><input type="radio" name="q21" value="wrong" required /> D. $\alpha \cdot \beta = 1$</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p><strong>២២.</strong> លំហរងអាហ្វីនមួយត្រូវបានកំណត់ដោយធាតុសំខាន់ពីរ។ តើធាតុទាំងពីរនោះគឺជាអ្វី?</p>
+                <div class="options">
+                    <label><input type="radio" name="q22" value="wrong" required /> A. ចំណុចមួយ និងស្កាលែមួយ</label
+                    ><br />
+                    <label><input type="radio" name="q22" value="wrong" required /> B. វ៉ិចទ័រពីរ</label><br />
+                    <label
+                        ><input type="radio" name="q22" value="correct" required /> C. ចំណុចមួយ
+                        និងលំហរងវ៉ិចទ័រប្រាប់ទិសមួយ</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q22" value="wrong" required /> D. ចំណុចគល់តម្រុយ និងបន្ទាត់មួយ</label
+                    >
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>២៣.</strong> តើសមីការប៉ារ៉ាម៉ែត្រនៃបន្ទាត់អាហ្វីន កាត់ចំណុច $A$ និងមានវ៉ិចទ័រប្រាប់ទិស
+                    $\vec{u}$ គឺអ្វី?
+                </p>
+                <div class="options">
+                    <label><input type="radio" name="q23" value="wrong" required /> A. $M = tA + \vec{u}$</label><br />
+                    <label><input type="radio" name="q23" value="correct" required /> B. $M = A + t\vec{u}$</label
+                    ><br />
+                    <label><input type="radio" name="q23" value="wrong" required /> C. $M = A \cdot t\vec{u}$</label
+                    ><br />
+                    <label><input type="radio" name="q23" value="wrong" required /> D. $M = \vec{u} + t$</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>២៤.</strong> ឧបមាថាចំណុច ៣ ផ្សេងគ្នា $A, B, C$ មិនរត់ត្រង់ជួរ។
+                    តើលំហរងអាហ្វីនដែលបង្កើតដោយចំណុចទាំងបីនេះមានរូបរាងអ្វី?
+                </p>
+                <div class="options">
+                    <label><input type="radio" name="q24" value="wrong" required /> A. បន្ទាត់មួយ (វិមាត្រ ១)</label
+                    ><br />
+                    <label><input type="radio" name="q24" value="correct" required /> B. ប្លង់មួយ (វិមាត្រ ២)</label
+                    ><br />
+                    <label><input type="radio" name="q24" value="wrong" required /> C. លំហ 3D (វិមាត្រ ៣)</label><br />
+                    <label><input type="radio" name="q24" value="wrong" required /> D. ត្រីកោណមួយ</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>២៥.</strong> នៅក្នុងលំហអាហ្វីន $\mathbb{R}^3$, ក្រៅពីកាត់គ្នា ស្របគ្នា និងត្រួតស៊ីគ្នា
+                    តើបន្ទាត់ពីរអាចមានស្ថានភាពអ្វីទៀត?
+                </p>
+                <div class="options">
+                    <label><input type="radio" name="q25" value="wrong" required /> A. កាត់កែងគ្នាជានិច្ច</label><br />
+                    <label><input type="radio" name="q25" value="wrong" required /> B. ជាបន្ទាត់អនន្ត</label><br />
+                    <label><input type="radio" name="q25" value="correct" required /> C. ខ្វែងគ្នា (Skew lines)</label
+                    ><br />
+                    <label><input type="radio" name="q25" value="wrong" required /> D. គ្មានស្ថានភាពអ្វីផ្សេងទៀត</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p><strong>២៦.</strong> ចំណុចកណ្តាល $I$ នៃអង្កត់ $[AB]$ ក្នុងលំហអាហ្វីន អាចសរសេរបានជាកន្សោមណា?</p>
+                <div class="options">
+                    <label><input type="radio" name="q26" value="wrong" required /> A. $I = A - B$</label><br />
+                    <label><input type="radio" name="q26" value="wrong" required /> B. $I = 2A + 2B$</label><br />
+                    <label><input type="radio" name="q26" value="wrong" required /> C. $I = A + B$</label><br />
+                    <label
+                        ><input type="radio" name="q26" value="correct" required /> D. $I = \frac{1}{2}A +
+                        \frac{1}{2}B$</label
+                    >
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>២៧.</strong> តើលក្ខខណ្ឌអ្វីដែលធ្វើឱ្យប្លង់អាហ្វីន $P_1$ និង $P_2$ ស្របគ្នាដាច់ខាត (Strictly
+                    parallel)?
+                </p>
+                <div class="options">
+                    <label><input type="radio" name="q27" value="wrong" required /> A. ពួកវាមានចំណុចរួមយ៉ាងតិចមួយ</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q27" value="correct" required /> B. មានវ៉ិចទ័រប្រាប់ទិសដូចគ្នា
+                        ប៉ុន្តែគ្មានចំណុចរួម</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q27" value="wrong" required /> C.
+                        ពួកវាមានវ៉ិចទ័រប្រាប់ទិសខុសគ្នា</label
+                    ><br />
+                    <label><input type="radio" name="q27" value="wrong" required /> D. ពួកវាបង្កើតបានជាមុំកែង</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>២៨.</strong> ប្រសិនបើ $A, B, C$ ជាចំណុចក្នុងលំហអាហ្វីន តើទំនាក់ទំនងហ្សាល (Chasles)
+                    ត្រូវបានសរសេរយ៉ាងដូចម្តេច?
+                </p>
+                <div class="options">
+                    <label
+                        ><input type="radio" name="q28" value="correct" required /> A. $\vec{AB} + \vec{BC} =
+                        \vec{AC}$</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q28" value="wrong" required /> B. $\vec{AB} \cdot \vec{BC} =
+                        \vec{AC}$</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q28" value="wrong" required /> C. $\vec{AB} - \vec{BC} =
+                        \vec{AC}$</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q28" value="wrong" required /> D. $\vec{AB} + \vec{AC} =
+                        \vec{BC}$</label
+                    >
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>២៩.</strong> ប្រសិនបើប្លង់ពីរផ្សេងគ្នាក្នុង $\mathbb{R}^3$ កាត់គ្នា
+                    តើលំហរងប្រសព្វនោះមានវិមាត្រប៉ុន្មាន?
+                </p>
+                <div class="options">
+                    <label><input type="radio" name="q29" value="wrong" required /> A. ០ (ចំណុច)</label><br />
+                    <label><input type="radio" name="q29" value="correct" required /> B. ១ (បន្ទាត់)</label><br />
+                    <label><input type="radio" name="q29" value="wrong" required /> C. ២ (ប្លង់)</label><br />
+                    <label><input type="radio" name="q29" value="wrong" required /> D. ៣ (លំហ)</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>៣០.</strong> ក្នុងប្លង់អាហ្វីន $\mathbb{R}^2$ តើអ្វីជាភាពខុសគ្នាសំខាន់រវាង "ចំណុច" និង
+                    "វ៉ិចទ័រ"?
+                </p>
+                <div class="options">
+                    <label
+                        ><input type="radio" name="q30" value="wrong" required /> A. វ៉ិចទ័រមានតែមួយ
+                        ចំណុចមានច្រើន</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q30" value="correct" required /> B. ចំណុចជា "ទីតាំង" វ៉ិចទ័រជា
+                        "ការរំកិល"</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q30" value="wrong" required /> C. ចំណុចមានវិមាត្រ ២ វ៉ិចទ័រមាន
+                        ៣</label
+                    ><br />
+                    <label><input type="radio" name="q30" value="wrong" required /> D. មិនមានភាពខុសគ្នាទេ</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>៣១.</strong> ក្នុងប្លង់អាហ្វីន $\mathbb{R}^2$, $A$ និង $B$ ជាចំណុចផ្សេងគ្នា។ បន្សំ $\alpha A
+                    + \beta B$ បង្កើតបានជា "ចំណុច" លុះត្រាតែ:
+                </p>
+                <div class="options">
+                    <label><input type="radio" name="q31" value="wrong" required /> A. $\alpha + \beta = 0$</label
+                    ><br />
+                    <label><input type="radio" name="q31" value="wrong" required /> B. $\alpha = \beta$</label><br />
+                    <label><input type="radio" name="q31" value="wrong" required /> C. $\alpha \cdot \beta = 1$</label
+                    ><br />
+                    <label><input type="radio" name="q31" value="correct" required /> D. $\alpha + \beta = 1$</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p><strong>៣២.</strong> តើលំហរងអាហ្វីននៅក្នុង $\mathbb{R}^2$ អាចមានវិមាត្រប៉ុន្មានខ្លះ?</p>
+                <div class="options">
+                    <label><input type="radio" name="q32" value="wrong" required /> A. ១ និង ២</label><br />
+                    <label><input type="radio" name="q32" value="correct" required /> B. ០, ១, និង ២</label><br />
+                    <label><input type="radio" name="q32" value="wrong" required /> C. ១ តែប៉ុណ្ណោះ</label><br />
+                    <label><input type="radio" name="q32" value="wrong" required /> D. ១, ២, និង ៣</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p><strong>៣៣.</strong> បន្ទាត់អាហ្វីន $ax + by = c$ ជា "លំហរងវ៉ិចទ័រ" នៅពេលណា?</p>
+                <div class="options">
+                    <label><input type="radio" name="q33" value="wrong" required /> A. $a = b$</label><br />
+                    <label><input type="radio" name="q33" value="wrong" required /> B. $c = 1$</label><br />
+                    <label><input type="radio" name="q33" value="correct" required /> C. $c = 0$</label><br />
+                    <label><input type="radio" name="q33" value="wrong" required /> D. $a \gt 0$ និង $b \gt 0$</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>៣៤.</strong> បន្ទាត់កាត់ $A(1, 2)$ មានវ៉ិចទ័រប្រាប់ទិស $\vec{u}(3, -1)$។
+                    តើសមីការប៉ារ៉ាម៉ែត្រគឺអ្វី?
+                </p>
+                <div class="options">
+                    <label><input type="radio" name="q34" value="wrong" required /> A. $x = 3 + t, y = -1 + 2t$</label
+                    ><br />
+                    <label><input type="radio" name="q34" value="correct" required /> B. $x = 1 + 3t, y = 2 - t$</label
+                    ><br />
+                    <label><input type="radio" name="q34" value="wrong" required /> C. $x = 1 - 3t, y = 2 - t$</label
+                    ><br />
+                    <label><input type="radio" name="q34" value="wrong" required /> D. $x = 3t, y = -2t$</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p><strong>៣៥.</strong> បន្ទាត់ $2x - y = 3$ និង $4x - 2y = 5$ មានទំនាក់ទំនងយ៉ាងណា?</p>
+                <div class="options">
+                    <label><input type="radio" name="q35" value="wrong" required /> A. កាត់គ្នា</label><br />
+                    <label><input type="radio" name="q35" value="wrong" required /> B. ត្រួតស៊ីគ្នា</label><br />
+                    <label><input type="radio" name="q35" value="wrong" required /> C. កាត់កែងគ្នា</label><br />
+                    <label><input type="radio" name="q35" value="correct" required /> D. ស្របគ្នាដាច់ខាត</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p><strong>៣៦.</strong> ក្នុង $\mathbb{R}^2$ បន្ទាត់ពីរមិនស្របគ្នា កាត់គ្នានៅ?</p>
+                <div class="options">
+                    <label><input type="radio" name="q36" value="wrong" required /> A. មិនកាត់គ្នាទេ</label><br />
+                    <label><input type="radio" name="q36" value="wrong" required /> B. បង្កើតបានជាបន្ទាត់</label><br />
+                    <label><input type="radio" name="q36" value="correct" required /> C. ចំណុចតែមួយគត់</label><br />
+                    <label><input type="radio" name="q36" value="wrong" required /> D. ២ ចំណុច</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>៣៧.</strong> ការធ្វើបំព្រិល (Translation) បន្ទាត់អាហ្វីនតាមវ៉ិចទ័រ $\vec{v}$ (មិនស្រប)
+                    បានអ្វី?
+                </p>
+                <div class="options">
+                    <label><input type="radio" name="q37" value="correct" required /> A. បន្ទាត់ស្របនឹងបន្ទាត់ដើម</label
+                    ><br />
+                    <label><input type="radio" name="q37" value="wrong" required /> B. បន្ទាត់កាត់កែង</label><br />
+                    <label><input type="radio" name="q37" value="wrong" required /> C. ចំណុចមួយ</label><br />
+                    <label><input type="radio" name="q37" value="wrong" required /> D. បន្ទាត់ដដែល</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>៣៨.</strong> តើគេត្រូវការចំណុចប៉ុន្មាន ដើម្បីបង្កើត "តម្រុយអាហ្វីន" ពេញលេញក្នុងប្លង់
+                    $\mathbb{R}^2$?
+                </p>
+                <div class="options">
+                    <label><input type="radio" name="q38" value="wrong" required /> A. ២ ចំណុច</label><br />
+                    <label><input type="radio" name="q38" value="correct" required /> B. ៣ ចំណុច មិនរត់ត្រង់ជួរ</label
+                    ><br />
+                    <label><input type="radio" name="q38" value="wrong" required /> C. ៤ ចំណុច</label><br />
+                    <label><input type="radio" name="q38" value="wrong" required /> D. ១ ចំណុច និង ១ ស្កាលែ</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p><strong>៣៩.</strong> "ទិសដៅ" នៃបន្ទាត់ $D$ ឆ្លងកាត់ $A$ និង $B$ បង្កើតដោយអ្វី?</p>
+                <div class="options">
+                    <label><input type="radio" name="q39" value="correct" required /> A. វ៉ិចទ័រ $\vec{AB}$</label
+                    ><br />
+                    <label><input type="radio" name="q39" value="wrong" required /> B. ចំណុចកណ្តាលនៃ $A, B$</label
+                    ><br />
+                    <label><input type="radio" name="q39" value="wrong" required /> C. វ៉ិចទ័រណរម៉ាល់</label><br />
+                    <label><input type="radio" name="q39" value="wrong" required /> D. ផលគុណស្កាលែ</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p><strong>៤០.</strong> សំណុំចំណុច $M = (1-t)A + tB$ ដែល $0 \le t \le 1$ គឺជាអ្វី?</p>
+                <div class="options">
+                    <label><input type="radio" name="q40" value="wrong" required /> A. បន្ទាត់អនន្ត</label><br />
+                    <label><input type="radio" name="q40" value="wrong" required /> B. កន្លះបន្ទាត់</label><br />
+                    <label><input type="radio" name="q40" value="correct" required /> C. អង្កត់ $[AB]$</label><br />
+                    <label><input type="radio" name="q40" value="wrong" required /> D. រង្វង់</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>៤១.</strong> លក្ខខណ្ឌនៃចំណុច ៤ ក្នុងលំហអាហ្វីន ដើម្បីឱ្យ "មិនអាស្រ័យលីនេអ៊ែរអាហ្វីន"
+                    គឺជាអ្វី?
+                </p>
+                <div class="options">
+                    <label><input type="radio" name="q41" value="wrong" required /> A. ចំណុចទាំង ៤ រត់ត្រង់ជួរ</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q41" value="correct" required /> B. វ៉ិចទ័រ $\vec{AB}, \vec{AC},
+                        \vec{AD}$ ឯករាជ្យលីនេអ៊ែរ</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q41" value="wrong" required /> C. វ៉ិចទ័រ $\vec{AB}, \vec{CD}$
+                        ស្របគ្នា</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q41" value="wrong" required /> D. ចំណុចទាំង ៤
+                        ស្ថិតក្នុងប្លង់តែមួយ</label
+                    >
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>៤២.</strong> បន្ទាត់ $L$ វ៉ិចទ័រ $\vec{u}$ និងប្លង់ $P$។ ប្រសិនបើ $\vec{u}$
+                    មិនស្ថិតក្នុងលំហរងវ៉ិចទ័ររបស់ $P$ តើទំនាក់ទំនងរវាង $L$ និង $P$ គឺអ្វី?
+                </p>
+                <div class="options">
+                    <label><input type="radio" name="q42" value="wrong" required /> A. $L$ ស្របនឹង $P$</label><br />
+                    <label><input type="radio" name="q42" value="wrong" required /> B. $L$ ស្ថិតក្នុង $P$</label><br />
+                    <label
+                        ><input type="radio" name="q42" value="correct" required /> C. $L$ កាត់ $P$
+                        ត្រង់ចំណុចតែមួយ</label
+                    ><br />
+                    <label><input type="radio" name="q42" value="wrong" required /> D. មិនមានចំណុចរួមទេ</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>៤៣.</strong> $M$ មានកូអរដោនេបារីសង់ $(1/2, 1/3, 1/6)$ ធៀបនឹងតម្រុយ $(A, B, C)$
+                    តើសំណើណាត្រឹមត្រូវ?
+                </p>
+                <div class="options">
+                    <label><input type="radio" name="q43" value="wrong" required /> A. $M$ នៅក្រៅប្លង់ $(ABC)$</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q43" value="wrong" required /> B. $M$ ជាចំណុចកណ្តាលអង្កត់
+                        $[AB]$</label
+                    ><br />
+                    <label
+                        ><input type="radio" name="q43" value="correct" required /> C. $M$ ស្ថិតក្នុងត្រីកោណ
+                        $ABC$</label
+                    ><br />
+                    <label><input type="radio" name="q43" value="wrong" required /> D. $M$ ស្ថិតលើបន្ទាត់ $(AB)$</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p><strong>៤៤.</strong> ប្លង់អាហ្វីនពីរ (វិមាត្រ ២) ក្នុង $\mathbb{R}^4$ កាត់គ្នានៅវិមាត្រប៉ុន្មាន?</p>
+                <div class="options">
+                    <label><input type="radio" name="q44" value="wrong" required /> A. ១</label><br />
+                    <label><input type="radio" name="q44" value="correct" required /> B. ០, ១, ឬ ២</label><br />
+                    <label><input type="radio" name="q44" value="wrong" required /> C. ២</label><br />
+                    <label><input type="radio" name="q44" value="wrong" required /> D. មិនអាចកាត់គ្នាបាន</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <p>
+                    <strong>៤៥.</strong> $L_1, L_2$ ជាបន្ទាត់ខ្វែងគ្នា (Skew) ក្នុង $\mathbb{R}^3$។ Affine Hull
+                    តូចបំផុតមានវិមាត្រប៉ុន្មាន?
+                </p>
+                <div class="options">
+                    <label><input type="radio" name="q45" value="wrong" required /> A. ២</label><br />
+                    <label><input type="radio" name="q45" value="correct" required /> B. ៣</label><br />
+                    <label><input type="radio" name="q45" value="wrong" required /> C. ៤</label><br />
+                    <label><input type="radio" name="q45" value="wrong" required /> D. មិនកំណត់</label>
+                </div>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div
+            class="answer-key-box"
+            style="margin-top: 40px; padding: 20px; background-color: #e9ecef; border-radius: 8px">
+            <h3>តារាងសង្ខេបចម្លើយត្រឹមត្រូវ</h3>
+            <table border="1" style="width: 100%; border-collapse: collapse; text-align: center">
+                <thead>
+                    <tr style="background-color: #007bff; color: white">
+                        <th>សំណួរ</th>
+                        <th>ចម្លើយ</th>
+                        <th>សំណួរ</th>
+                        <th>ចម្លើយ</th>
+                        <th>សំណួរ</th>
+                        <th>ចម្លើយ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>១</td>
+                        <td>B</td>
+                        <td>១៦</td>
+                        <td>B</td>
+                        <td>៣១</td>
+                        <td>D</td>
+                    </tr>
+                    <tr>
+                        <td>២</td>
+                        <td>B</td>
+                        <td>១៧</td>
+                        <td>C</td>
+                        <td>៣២</td>
+                        <td>B</td>
+                    </tr>
+                    <tr>
+                        <td>៣</td>
+                        <td>A</td>
+                        <td>១៨</td>
+                        <td>C</td>
+                        <td>៣៣</td>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td>៤</td>
+                        <td>C</td>
+                        <td>១៩</td>
+                        <td>B</td>
+                        <td>៣៤</td>
+                        <td>B</td>
+                    </tr>
+                    <tr>
+                        <td>៥</td>
+                        <td>B</td>
+                        <td>២០</td>
+                        <td>C</td>
+                        <td>៣៥</td>
+                        <td>D</td>
+                    </tr>
+                    <tr>
+                        <td>៦</td>
+                        <td>A</td>
+                        <td>២១</td>
+                        <td>B</td>
+                        <td>៣៦</td>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td>៧</td>
+                        <td>C</td>
+                        <td>២២</td>
+                        <td>C</td>
+                        <td>៣៧</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>៨</td>
+                        <td>B</td>
+                        <td>២៣</td>
+                        <td>B</td>
+                        <td>៣៨</td>
+                        <td>B</td>
+                    </tr>
+                    <tr>
+                        <td>៩</td>
+                        <td>C</td>
+                        <td>២៤</td>
+                        <td>B</td>
+                        <td>៣៩</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>១០</td>
+                        <td>D</td>
+                        <td>២៥</td>
+                        <td>C</td>
+                        <td>៤០</td>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td>១១</td>
+                        <td>B</td>
+                        <td>២៦</td>
+                        <td>D</td>
+                        <td>៤១</td>
+                        <td>B</td>
+                    </tr>
+                    <tr>
+                        <td>១២</td>
+                        <td>C</td>
+                        <td>២៧</td>
+                        <td>B</td>
+                        <td>៤២</td>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td>១៣</td>
+                        <td>A</td>
+                        <td>២៨</td>
+                        <td>A</td>
+                        <td>៤៣</td>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td>១៤</td>
+                        <td>B</td>
+                        <td>២៩</td>
+                        <td>B</td>
+                        <td>៤៤</td>
+                        <td>B</td>
+                    </tr>
+                    <tr>
+                        <td>១៥</td>
+                        <td>C</td>
+                        <td>៣០</td>
+                        <td>B</td>
+                        <td>៤៥</td>
+                        <td>B</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="result"></div>
+
+        <script>
+            document.getElementById("quiz-form").addEventListener("submit", function (e) {
+                e.preventDefault();
+                let score = 0;
+                const formData = new FormData(this);
+                for (let entry of formData.entries()) {
+                    if (entry[1] === "correct") score++;
+                }
+                document.getElementById("result").innerText = `អ្នកទទួលបានពិន្ទុ: ${score} / 45`;
+            });
+        </script>
+    </body>
+</html>

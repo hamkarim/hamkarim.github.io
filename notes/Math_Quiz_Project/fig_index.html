@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="km">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&display=swap" rel="stylesheet" />
+
+        <title>មជ្ឈមណ្ឌលសិក្សាផលគុណដេកាតអន្តរកម្ម</title>
+
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [
+                        ["$", "$"],
+                        ["\\(", "\\)"]
+                    ],
+                    displayMath: [
+                        ["$$", "$$"],
+                        ["\\[", "\\]"]
+                    ],
+                    macros: {
+                        mybullet: "{\\tiny\\bullet\\;\\;}",
+                        mybullett: "{\\quad\\tiny\\bullet\\;\\;}"
+                    }
+                },
+                chtml: {
+                    scale: 1.2,
+                    linebreaks: { automatic: true }
+                },
+                svg: {
+                    scale: 1.2,
+                    matchFontHeight: true
+                }
+            };
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css" />
+        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+        <style>
+            body {
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #f0f4f8;
+                margin: 0;
+                padding: 20px;
+                color: #2d3748;
+            }
+
+            mjx-container {
+                font-size: 115% !important;
+            }
+            /* ដោះស្រាយបញ្ហា SVG (TikZ) មិនឱ្យខូចទ្រង់ទ្រាយ */
+            svg {
+                max-width: 100%;
+                height: auto !important; /* បង្ខំឱ្យ Safari រក្សាសមាមាត្រ */
+                display: block;
+                margin: 0 auto;
+            }
+            .container {
+                max-width: 1000px;
+                margin: auto;
+                background: white;
+                padding: 30px;
+                border-radius: 16px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            }
+            h1 {
+                color: #1a73e8;
+                margin-top: 0;
+                text-align: center;
+                font-size: 24px;
+                border-bottom: 2px solid #e2e8f0;
+                padding-bottom: 15px;
+            }
+            .setup-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+                background-color: #f8fafc;
+                padding: 15px;
+                border-radius: 10px;
+                border: 1px solid #e2e8f0;
+                margin-bottom: 20px;
+            }
+            .setup-item {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+            .setup-item label {
+                font-weight: bold;
+                font-size: 14px;
+                color: #4a5568;
+            }
+            select,
+            input {
+                padding: 10px;
+                border: 1px solid #cbd5e1;
+                border-radius: 6px;
+                font-size: 14px;
+                background-color: white;
+                outline: none;
+            }
+            select:focus,
+            input:focus {
+                border-color: #1a73e8;
+                box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+            }
+            .dynamic-panel {
+                background-color: #fff;
+                border: 1px dashed #cbd5e1;
+                padding: 20px;
+                border-radius: 10px;
+                margin-bottom: 25px;
+            }
+            .set-input-box {
+                margin-bottom: 15px;
+            }
+            .set-input-box:last-child {
+                margin-bottom: 0;
+            }
+            .set-input-box h4 {
+                margin: 0 0 8px 0;
+                color: #2d3748;
+                font-size: 15px;
+            }
+            .interval-inputs {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .interval-inputs input {
+                width: 90px;
+            }
+            .btn-draw {
+                display: block;
+                width: 100%;
+                padding: 12px;
+                background-color: #1a73e8;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background 0.2s;
+            }
+            .btn-draw:hover {
+                background-color: #1557b0;
+            }
+            .viewer-container {
+                margin-top: 25px;
+                background-color: #f8fafc;
+                border-radius: 12px;
+                padding: 15px;
+                border: 1px solid #e2e8f0;
+                position: relative;
+            }
+            #canvas3d {
+                width: 100%;
+                height: 480px;
+                border-radius: 8px;
+                background-color: #f1f5f9;
+            }
+            svg {
+                display: block;
+                margin: auto;
+                max-width: 100%;
+                background-color: #ffffff;
+                border-radius: 8px;
+                border: 1px solid #e2e8f0;
+            }
+            .legend-box {
+                position: absolute;
+                top: 25px;
+                left: 25px;
+                background: rgba(255, 255, 255, 0.95);
+                padding: 12px;
+                border-radius: 8px;
+                font-size: 13px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                pointer-events: none;
+                border: 1px solid #e2e8f0;
+            }
+            .legend-item {
+                display: flex;
+                align-items: center;
+                margin-bottom: 6px;
+            }
+            .legend-color {
+                width: 25px;
+                height: 5px;
+                margin-right: 8px;
+                display: inline-block;
+                border-radius: 2px;
+            }
+            .explanation-box {
+                margin-top: 20px;
+                padding: 15px;
+                background-color: #eff6ff;
+                border-left: 5px solid #1a73e8;
+                border-radius: 6px;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <!-- បណ្ណាល័យសម្រាប់គូររូបភាព 3D -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>មជ្ឈមណ្ឌលសិក្សាផលគុណដេកាតអន្តរកម្ម (2D & 3D)</h1>
+
+            <!-- បន្ទះកំណត់រចនាសម្ព័ន្ធដំបូង -->
+            <div class="setup-grid">
+                <div class="setup-item">
+                    <label for="dim-select">ជ្រើសរើសវិមាត្រ៖</label>
+                    <select id="dim-select" onchange="updateUI()">
+                        <option value="2D">២វិមាត្រ (2D: A &times; B)</option>
+                        <option value="3D">៣វិមាត្រ (3D: A &times; B &times; C)</option>
+                    </select>
+                </div>
+                <div class="setup-item">
+                    <label for="type-a">ប្រភេទសំណុំ A (អ័ក្ស X):</label>
+                    <select id="type-a" onchange="updateUI()">
+                        <option value="discrete">សំណុំដាច់ (Discrete)</option>
+                        <option value="continuous" selected>សំណុំជាប់ (Continuous)</option>
+                    </select>
+                </div>
+                <div class="setup-item">
+                    <label for="type-b">ប្រភេទសំណុំ B (អ័ក្ស Y):</label>
+                    <select id="type-b" onchange="updateUI()">
+                        <option value="discrete">សំណុំដាច់ (Discrete)</option>
+                        <option value="continuous" selected>សំណុំជាប់ (Continuous)</option>
+                    </select>
+                </div>
+                <div class="setup-item" id="type-c-container" style="display: none">
+                    <label for="type-c">ប្រភេទសំណុំ C (អ័ក្ស Z):</label>
+                    <select id="type-c" onchange="updateUI()">
+                        <option value="discrete" selected>សំណុំដាច់ (Discrete)</option>
+                        <option value="continuous">សំណុំជាប់ (Continuous)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- ប្រអប់បញ្ចូលទិន្នន័យដែលផ្លាស់ប្តូរតាមស្ថានភាពជ្រើសរើស -->
+            <div class="dynamic-panel" id="dynamic-inputs"></div>
+
+            <button class="btn-draw" onclick="renderPlot()">បង្កើតរូបតំណាងធរណីមាត្រ</button>
+
+            <!-- តំបន់បង្ហាញគំនូរលទ្ធផល -->
+            <div class="viewer-container">
+                <!-- សម្រាប់បង្ហាញ 2D -->
+                <div id="canvas-container-2d" style="display: block">
+                    <svg id="plotSvg" width="600" height="450"></svg>
+                </div>
+
+                <!-- សម្រាប់បង្ហាញ 3D -->
+                <div id="canvas-container-3d" style="display: none">
+                    <div id="canvas3d"></div>
+                    <div class="legend-box">
+                        <strong>សញ្ញាសម្គាល់អ័ក្ស 3D៖</strong>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: red"></span> អ័ក្ស X (សំណុំ A)
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: green"></span> អ័ក្ស Y (សំណុំ B)
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: blue"></span> អ័ក្ស Z (សំណុំ C)
+                        </div>
+                        <span style="font-size: 11px; color: #64748b">*ប្រើ Mouse ដើម្បីបង្វិល និង Zoom</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ប្រអប់ការពន្យល់គណិតវិទ្យា -->
+            <div class="explanation-box" id="explanation-text"></div>
+        </div>
+
+        <script>
+            let scene, camera, renderer, controls, plotGroup;
+
+            // មុខងារកែប្រែទម្រង់បញ្ចូលទិន្នន័យទៅតាមជម្រើស
+            function updateUI() {
+                const dim = document.getElementById("dim-select").value;
+                const typeA = document.getElementById("type-a").value;
+                const typeB = document.getElementById("type-b").value;
+                const typeCContainer = document.getElementById("type-c-container");
+
+                let html = "";
+
+                // សំណុំ A
+                html += `<div class="set-input-box">
+        <h4>សំណុំ A (អ័ក្ស X) — ${typeA === "discrete" ? "សំណុំដាច់" : "សំណុំជាប់"}</h4>`;
+                if (typeA === "discrete") {
+                    html += `<input type="text" id="input-a" value="1, 2, 3">`;
+                } else {
+                    html += `<div class="interval-inputs">ចន្លោះចាប់ពី <input type="number" id="min-a" value="1"> ដល់ <input type="number" id="max-a" value="4"></div>`;
+                }
+                html += `</div>`;
+
+                // សំណុំ B
+                html += `<div class="set-input-box">
+        <h4>សំណុំ B (អ័ក្ស Y) — ${typeB === "discrete" ? "សំណុំដាច់" : "សំណុំជាប់"}</h4>`;
+                if (typeB === "discrete") {
+                    html += `<input type="text" id="input-b" value="2, 4">`;
+                } else {
+                    html += `<div class="interval-inputs">ចន្លោះចាប់ពី <input type="number" id="min-b" value="1"> ដល់ <input type="number" id="max-b" value="3"></div>`;
+                }
+                html += `</div>`;
+
+                // សំណុំ C (បង្ហាញតែក្នុងករណី 3D ប៉ុណ្ណោះ)
+                if (dim === "3D") {
+                    typeCContainer.style.display = "block";
+                    const typeC = document.getElementById("type-c").value;
+                    html += `<div class="set-input-box">
+            <h4>សំណុំ C (អ័ក្ស Z) — ${typeC === "discrete" ? "សំណុំដាច់" : "សំណុំជាប់"}</h4>`;
+                    if (typeC === "discrete") {
+                        html += `<input type="text" id="input-c" value="1, 3">`;
+                    } else {
+                        html += `<div class="interval-inputs">ចន្លោះចាប់ពី <input type="number" id="min-c" value="1"> ដល់ <input type="number" id="max-c" value="3"></div>`;
+                    }
+                    html += `</div>`;
+                } else {
+                    typeCContainer.style.display = "none";
+                }
+
+                document.getElementById("dynamic-inputs").innerHTML = html;
+            }
+
+            // មុខងារបញ្ជាគូររួម
+            function renderPlot() {
+                const dim = document.getElementById("dim-select").value;
+                if (dim === "2D") {
+                    document.getElementById("canvas-container-2d").style.display = "block";
+                    document.getElementById("canvas-container-3d").style.display = "none";
+                    draw2D();
+                } else {
+                    document.getElementById("canvas-container-2d").style.display = "none";
+                    document.getElementById("canvas-container-3d").style.display = "block";
+
+                    // បង្កើតឆាក 3D ប្រសិនបើមិនទាន់មាន
+                    if (!renderer) {
+                        init3D();
+                    } else {
+                        onWindowResize();
+                    }
+                    draw3D();
+                }
+            }
+
+            // ==================== ផ្នែកគូរ ២វិមាត្រ (2D) ====================
+            function draw2D() {
+                const svg = document.getElementById("plotSvg");
+                svg.innerHTML = "";
+                const width = 600,
+                    height = 450,
+                    margin = 60;
+
+                const typeA = document.getElementById("type-a").value;
+                const typeB = document.getElementById("type-b").value;
+
+                let aVals = [],
+                    bVals = [];
+                let minA, maxA, minB, maxB;
+
+                if (typeA === "discrete") {
+                    aVals = document
+                        .getElementById("input-a")
+                        .value.split(",")
+                        .map(Number)
+                        .filter((n) => !isNaN(n));
+                } else {
+                    minA = parseFloat(document.getElementById("min-a").value);
+                    maxA = parseFloat(document.getElementById("max-a").value);
+                    if (minA > maxA) [minA, maxA] = [maxA, minA];
+                }
+
+                if (typeB === "discrete") {
+                    bVals = document
+                        .getElementById("input-b")
+                        .value.split(",")
+                        .map(Number)
+                        .filter((n) => !isNaN(n));
+                } else {
+                    minB = parseFloat(document.getElementById("min-b").value);
+                    maxB = parseFloat(document.getElementById("max-b").value);
+                    if (minB > maxB) [minB, maxB] = [maxB, minB];
+                }
+
+                // គណនាទំហំប្លង់កូអរដោនេ
+                const minX = typeA === "discrete" ? Math.min(...aVals, 0) : Math.min(minA, 0);
+                const maxX = typeA === "discrete" ? Math.max(...aVals) + 1 : maxA + 1;
+                const minY = typeB === "discrete" ? Math.min(...bVals, 0) : Math.min(minB, 0);
+                const maxY = typeB === "discrete" ? Math.max(...bVals) + 1 : maxB + 1;
+
+                const scaleX = (x) => margin + ((x - minX) * (width - 2 * margin)) / (maxX - minX);
+                const scaleY = (y) => height - margin - ((y - minY) * (height - 2 * margin)) / (maxY - minY);
+
+                // គូរខ្សែក្រឡាចត្រង្គជំនួយ
+                let grid = "";
+                for (let x = Math.floor(minX); x <= Math.ceil(maxX); x++) {
+                    grid += `<line x1="${scaleX(x)}" y1="${margin}" x2="${scaleX(x)}" y2="${height - margin}" stroke="#f1f5f9" />`;
+                }
+                for (let y = Math.floor(minY); y <= Math.ceil(maxY); y++) {
+                    grid += `<line x1="${margin}" y1="${scaleY(y)}" x2="${width - margin}" y2="${scaleY(y)}" stroke="#f1f5f9" />`;
+                }
+                svg.innerHTML += grid;
+
+                // គូរអ័ក្ស X និង Y
+                const xAxisY = scaleY(0);
+                const yAxisX = scaleX(0);
+                svg.innerHTML += `
+        <line x1="${scaleX(minX)}" y1="${xAxisY}" x2="${scaleX(maxX)}" y2="${xAxisY}" stroke="#475569" stroke-width="2" />
+        <line x1="${yAxisX}" y1="${scaleY(minY)}" x2="${yAxisX}" y2="${scaleY(maxY)}" stroke="#475569" stroke-width="2" />
+        <text x="${scaleX(maxX) - 15}" y="${xAxisY + 20}" font-weight="bold">A</text>
+        <text x="${yAxisX - 20}" y="${scaleY(maxY) + 15}" font-weight="bold">B</text>
+    `;
+
+                // គូរលទ្ធផលទៅតាមករណីនីមួយៗ
+                let explanation = "";
+
+                if (typeA === "discrete" && typeB === "discrete") {
+                    // ១. សំណុំដាច់ x សំណុំដាច់ (ចំណុច)
+                    aVals.forEach((x) => {
+                        bVals.forEach((y) => {
+                            svg.innerHTML += `<circle cx="${scaleX(x)}" cy="${scaleY(y)}" r="6" fill="#e91e63" />`;
+                        });
+                    });
+                    explanation = `<strong>សំណុំដាច់ &times; សំណុំដាច់៖</strong> លទ្ធផលជាបណ្តុំចំណុចដាច់ៗកូអរដោនេ $(x, y)$។ ធាតុនីមួយៗរបស់ A ផ្គូផ្គងជាមួយធាតុនីមួយៗរបស់ B បង្កើតបានជាចំណុចដាច់ៗចំនួន ${aVals.length * bVals.length} ចំណុច។`;
+                } else if (typeA === "continuous" && typeB === "continuous") {
+                    // ២. សំណុំជាប់ x សំណុំជាប់ (ផ្ទៃចតុកោណកែង)
+                    const rx = scaleX(minA);
+                    const ry = scaleY(maxB);
+                    const rw = scaleX(maxA) - scaleX(minA);
+                    const rh = scaleY(minB) - scaleY(maxB);
+                    svg.innerHTML += `<rect x="${rx}" y="${ry}" width="${rw}" height="${rh}" fill="rgba(26, 115, 232, 0.3)" stroke="#1a73e8" stroke-width="2" />`;
+                    explanation = `<strong>សំណុំជាប់ &times; សំណុំជាប់៖</strong> លទ្ធផលជាផ្ទៃចតុកោណកែងពេញលាតសន្ធឹងពី $x \\in [${minA}, ${maxA}]$ និង $y \\in [${minB}, ${maxB}]$។`;
+                } else if (typeA === "continuous" && typeB === "discrete") {
+                    // ៣. សំណុំជាប់ x សំណុំដាច់ (ខ្សែបន្ទាត់ដេក)
+                    bVals.forEach((y) => {
+                        svg.innerHTML += `<line x1="${scaleX(minA)}" y1="${scaleY(y)}" x2="${scaleX(maxA)}" y2="${scaleY(y)}" stroke="#0f172a" stroke-width="3" />`;
+                    });
+                    explanation = `<strong>សំណុំជាប់ &times; សំណុំដាច់៖</strong> លទ្ធផលជាបណ្តុំខ្សែបន្ទាត់ដេកស្របនឹងអ័ក្ស X។ ដោយសារ $y$ មានតម្លៃដាច់ៗ ចំណែកឯ $x$ អាចយកតម្លៃគ្រប់គ្នាក្នុងចន្លោះ $[${minA}, ${maxA}]$។`;
+                } else if (typeA === "discrete" && typeB === "continuous") {
+                    // ៤. សំណុំដាច់ x សំណុំជាប់ (ខ្សែបន្ទាត់ឈរ)
+                    aVals.forEach((x) => {
+                        svg.innerHTML += `<line x1="${scaleX(x)}" y1="${scaleY(minB)}" x2="${scaleX(x)}" y2="${scaleY(maxB)}" stroke="#0f172a" stroke-width="3" />`;
+                    });
+                    explanation = `<strong>សំណុំដាច់ &times; សំណុំជាប់៖</strong> លទ្ធផលជាបណ្តុំខ្សែបន្ទាត់ឈរស្របនឹងអ័ក្ស Y។ ដោយសារ $x$ មានតម្លៃដាច់ៗ ចំណែកឯ $y$ អាចយកតម្លៃគ្រប់គ្នាក្នុងចន្លោះ $[${minB}, ${maxB}]$។`;
+                }
+
+                document.getElementById("explanation-text").innerHTML =
+                    `<strong>ការពន្យល់គណិតវិទ្យា៖</strong> ${explanation}`;
+            }
+
+            // ==================== ផ្នែកគូរ ៣វិមាត្រ (3D) ====================
+            function init3D() {
+                const container = document.getElementById("canvas3d");
+                const width = container.clientWidth;
+                const height = container.clientHeight;
+
+                scene = new THREE.Scene();
+                scene.background = new THREE.Color(0xf1f5f9);
+
+                camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+
+                renderer = new THREE.WebGLRenderer({ antialias: true });
+                renderer.setSize(width, height);
+                container.appendChild(renderer.domElement);
+
+                controls = new THREE.OrbitControls(camera, renderer.domElement);
+                controls.enableDamping = true;
+                controls.dampingFactor = 0.05;
+
+                // ពន្លឺ
+                const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+                scene.add(ambientLight);
+
+                const dirLight1 = new THREE.DirectionalLight(0xffffff, 0.8);
+                dirLight1.position.set(15, 25, 20);
+                scene.add(dirLight1);
+
+                const axesHelper = new THREE.AxesHelper(15);
+                scene.add(axesHelper);
+
+                plotGroup = new THREE.Group();
+                scene.add(plotGroup);
+
+                window.addEventListener("resize", onWindowResize);
+                animate();
+            }
+
+            function onWindowResize() {
+                const container = document.getElementById("canvas3d");
+                const width = container.clientWidth;
+                const height = container.clientHeight;
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+                renderer.setSize(width, height);
+            }
+
+            function animate() {
+                requestAnimationFrame(animate);
+                controls.update();
+                renderer.render(scene, camera);
+            }
+
+            function draw3D() {
+                // សម្អាតវត្ថុចាស់ៗចេញ
+                while (plotGroup.children.length > 0) {
+                    plotGroup.remove(plotGroup.children[0]);
+                }
+
+                const typeA = document.getElementById("type-a").value;
+                const typeB = document.getElementById("type-b").value;
+                const typeC = document.getElementById("type-c").value;
+
+                let aVals = [],
+                    bVals = [],
+                    cVals = [];
+                let minA, maxA, minB, maxB, minC, maxC;
+
+                // ទាញទិន្នន័យ A
+                if (typeA === "discrete") {
+                    aVals = document
+                        .getElementById("input-a")
+                        .value.split(",")
+                        .map(Number)
+                        .filter((n) => !isNaN(n));
+                } else {
+                    minA = parseFloat(document.getElementById("min-a").value);
+                    maxA = parseFloat(document.getElementById("max-a").value);
+                    if (minA > maxA) [minA, maxA] = [maxA, minA];
+                }
+
+                // ទាញទិន្នន័យ B
+                if (typeB === "discrete") {
+                    bVals = document
+                        .getElementById("input-b")
+                        .value.split(",")
+                        .map(Number)
+                        .filter((n) => !isNaN(n));
+                } else {
+                    minB = parseFloat(document.getElementById("min-b").value);
+                    maxB = parseFloat(document.getElementById("max-b").value);
+                    if (minB > maxB) [minB, maxB] = [maxB, minB];
+                }
+
+                // ទាញទិន្នន័យ C
+                if (typeC === "discrete") {
+                    cVals = document
+                        .getElementById("input-c")
+                        .value.split(",")
+                        .map(Number)
+                        .filter((n) => !isNaN(n));
+                } else {
+                    minC = parseFloat(document.getElementById("min-c").value);
+                    maxC = parseFloat(document.getElementById("max-c").value);
+                    if (minC > maxC) [minC, maxC] = [maxC, minC];
+                }
+
+                // កំណត់ទំហំសម្រាប់កំណត់កាមេរ៉ា
+                let minX = typeA === "discrete" ? Math.min(...aVals) : minA;
+                let maxX = typeA === "discrete" ? Math.max(...aVals) : maxA;
+                let minY = typeB === "discrete" ? Math.min(...bVals) : minB;
+                let maxY = typeB === "discrete" ? Math.max(...bVals) : maxB;
+                let minZ = typeC === "discrete" ? Math.min(...cVals) : minC;
+                let maxZ = typeC === "discrete" ? Math.max(...cVals) : maxC;
+
+                let explanation = "";
+
+                // សរសេរកូដគូរទៅតាមការផ្លាស់ប្តូរទាំង ៨ ករណីរបស់សិស្ស
+                if (typeA === "discrete" && typeB === "discrete" && typeC === "discrete") {
+                    // ១. Discrete x Discrete x Discrete (គ្រាប់ស្វ៊ែរ 3D)
+                    const sGeo = new THREE.SphereGeometry(0.15, 16, 16);
+                    const sMat = new THREE.MeshPhongMaterial({ color: 0xe91e63, shininess: 80 });
+                    aVals.forEach((x) => {
+                        bVals.forEach((y) => {
+                            cVals.forEach((z) => {
+                                const sphere = new THREE.Mesh(sGeo, sMat);
+                                sphere.position.set(x, y, z);
+                                plotGroup.add(sphere);
+                            });
+                        });
+                    });
+                    explanation = `<strong>សំណុំដាច់ &times; សំណុំដាច់ &times; សំណុំដាច់៖</strong> លទ្ធផលជាបណ្តុំចំណុចដាច់ៗក្នុងលំហ 3D ចំនួន ${aVals.length * bVals.length * cVals.length} ចំណុច។`;
+                } else if (typeA === "continuous" && typeB === "continuous" && typeC === "continuous") {
+                    // ២. Continuous x Continuous x Continuous (ប្រអប់ 3D)
+                    const w = maxA - minA;
+                    const h = maxB - minB;
+                    const d = maxC - minC;
+                    const boxGeo = new THREE.BoxGeometry(w || 0.05, h || 0.05, d || 0.05);
+                    const boxMat = new THREE.MeshPhongMaterial({
+                        color: 0x1a73e8,
+                        transparent: true,
+                        opacity: 0.5,
+                        side: THREE.DoubleSide
+                    });
+                    const box = new THREE.Mesh(boxGeo, boxMat);
+                    box.position.set((minA + maxA) / 2, (minB + maxB) / 2, (minC + maxC) / 2);
+
+                    const edges = new THREE.EdgesGeometry(boxGeo);
+                    const line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0x0d47a1 }));
+                    box.add(line);
+                    plotGroup.add(box);
+
+                    explanation = `<strong>សំណុំជាប់ &times; សំណុំជាប់ &times; សំណុំជាប់៖</strong> លទ្ធផលជាប្រអប់ចតុកោណកែងពេញ (Solid Cuboid) ក្នុងលំហ 3D។`;
+                } else {
+                    // ករណីកូនកាត់ (Mixed Sets)
+                    const numContinuous = [typeA, typeB, typeC].filter((t) => t === "continuous").length;
+
+                    if (numContinuous === 2) {
+                        // ករណី ២ ជាប់, ១ ដាច់ (លទ្ធផលជាបន្ទះសន្លឹក ២វិមាត្រដាច់ៗគ្នា)
+                        if (typeA === "continuous" && typeB === "continuous" && typeC === "discrete") {
+                            cVals.forEach((z) => {
+                                drawFlatBox(maxA - minA, maxB - minB, 0.02, (minA + maxA) / 2, (minB + maxB) / 2, z);
+                            });
+                            explanation = `<strong>សំណុំជាប់ &times; សំណុំជាប់ &times; សំណុំដាច់៖</strong> លទ្ធផលជាបន្ទះសន្លឹក ២វិមាត្រ (Flat sheets) ស្របគ្នាក្នុងលំហ 3D ទៅតាមកម្ពស់អ័ក្ស Z នីមួយៗ។`;
+                        } else if (typeA === "continuous" && typeB === "discrete" && typeC === "continuous") {
+                            bVals.forEach((y) => {
+                                drawFlatBox(maxA - minA, 0.02, maxC - minC, (minA + maxA) / 2, y, (minC + maxC) / 2);
+                            });
+                            explanation = `<strong>សំណុំជាប់ &times; សំណុំដាច់ &times; សំណុំជាប់៖</strong> លទ្ធផលជាបន្ទះសន្លឹក ២វិមាត្រ (Flat sheets) ស្របគ្នាកាត់តាមអ័ក្ស Y នីមួយៗ។`;
+                        } else if (typeA === "discrete" && typeB === "continuous" && typeC === "continuous") {
+                            aVals.forEach((x) => {
+                                drawFlatBox(0.02, maxB - minB, maxC - minC, x, (minB + maxB) / 2, (minC + maxC) / 2);
+                            });
+                            explanation = `<strong>សំណុំដាច់ &times; សំណុំជាប់ &times; សំណុំជាប់៖</strong> លទ្ធផលជាបន្ទះសន្លឹក ២វិមាត្រ (Flat sheets) ស្របគ្នាកាត់តាមអ័ក្ស X នីមួយៗ។`;
+                        }
+                    } else {
+                        // ករណី ១ ជាប់, ២ ដាច់ (លទ្ធផលជាសរសៃខ្សែបន្ទាត់ក្នុងលំហ 3D)
+                        if (typeA === "continuous" && typeB === "discrete" && typeC === "discrete") {
+                            bVals.forEach((y) => {
+                                cVals.forEach((z) => {
+                                    draw3DLine(minA, y, z, maxA, y, z);
+                                });
+                            });
+                            explanation = `<strong>សំណុំជាប់ &times; សំណុំដាច់ &times; សំណុំដាច់៖</strong> លទ្ធផលជាសរសៃខ្សែបន្ទាត់ដាច់ៗគ្នា (Line segments) ស្របទៅនឹងអ័ក្ស X។`;
+                        } else if (typeA === "discrete" && typeB === "continuous" && typeC === "discrete") {
+                            aVals.forEach((x) => {
+                                cVals.forEach((z) => {
+                                    draw3DLine(x, minB, z, x, maxB, z);
+                                });
+                            });
+                            explanation = `<strong>សំណុំដាច់ &times; សំណុំជាប់ &times; សំណុំដាច់៖</strong> លទ្ធផលជាសរសៃខ្សែបន្ទាត់ដាច់ៗគ្នា (Line segments) ស្របទៅនឹងអ័ក្ស Y។`;
+                        } else if (typeA === "discrete" && typeB === "discrete" && typeC === "continuous") {
+                            aVals.forEach((x) => {
+                                bVals.forEach((y) => {
+                                    draw3DLine(x, y, minC, x, y, maxC);
+                                });
+                            });
+                            explanation = `<strong>សំណុំដាច់ &times; សំណុំដាច់ &times; សំណុំជាប់៖</strong> លទ្ធផលជាសរសៃខ្សែបន្ទាត់ដាច់ៗគ្នា (Line segments) ស្របទៅនឹងអ័ក្ស Z។`;
+                        }
+                    }
+                }
+
+                adjustCamera(minX, maxX, minY, maxY, minZ, maxZ);
+                document.getElementById("explanation-text").innerHTML =
+                    `<strong>ការពន្យល់គណិតវិទ្យា៖</strong> ${explanation}`;
+            }
+
+            // មុខងារគូរខ្សែបន្ទាត់ 3D
+            function draw3DLine(x1, y1, z1, x2, y2, z2) {
+                const points = [];
+                points.push(new THREE.Vector3(x1, y1, z1));
+                points.push(new THREE.Vector3(x2, y2, z2));
+                const geo = new THREE.BufferGeometry().setFromPoints(points);
+                const mat = new THREE.LineBasicMaterial({ color: 0x0f172a, linewidth: 2 });
+                const line = new THREE.Line(geo, mat);
+                plotGroup.add(line);
+            }
+
+            // មុខងារគូរផ្ទះប្លង់ស្តើងៗ (Flat sheet)
+            function drawFlatBox(w, h, d, x, y, z) {
+                const boxGeo = new THREE.BoxGeometry(w || 0.05, h || 0.05, d || 0.05);
+                const boxMat = new THREE.MeshPhongMaterial({
+                    color: 0x10b981,
+                    transparent: true,
+                    opacity: 0.6,
+                    side: THREE.DoubleSide
+                });
+                const box = new THREE.Mesh(boxGeo, boxMat);
+                box.position.set(x, y, z);
+
+                const edges = new THREE.EdgesGeometry(boxGeo);
+                const line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0x047857 }));
+                box.add(line);
+                plotGroup.add(box);
+            }
+
+            // តម្រង់កាមេរ៉ា
+            function adjustCamera(minX, maxX, minY, maxY, minZ, maxZ) {
+                const centerX = (minX + maxX) / 2;
+                const centerY = (minY + maxY) / 2;
+                const centerZ = (minZ + maxZ) / 2;
+
+                controls.target.set(centerX, centerY, centerZ);
+
+                const rangeX = maxX - minX;
+                const rangeY = maxY - minY;
+                const rangeZ = maxZ - minZ;
+                const maxRange = Math.max(rangeX, rangeY, rangeZ, 2);
+
+                camera.position.set(centerX + maxRange * 1.8, centerY + maxRange * 1.8, centerZ + maxRange * 1.8);
+                camera.lookAt(centerX, centerY, centerZ);
+            }
+
+            // ចាប់ផ្តើមកម្មវិធីដំបូង
+            window.onload = function () {
+                updateUI();
+            };
+        </script>
+    </body>
+</html>

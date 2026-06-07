@@ -5,17 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>វិញ្ញាសាគណិតវិទ្យា៖ តក្កវិទ្យា (MCQs)</title>
     
-    <script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']]
-    }
-  };
-</script>
+   
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [
+                        ["$", "$"],
+                        ["\\(", "\\)"]
+                    ],
+                    displayMath: [
+                        ["$$", "$$"],
+                        ["\\[", "\\]"]
+                    ],
+                    macros: {
+                        mybullet: "{\\tiny\\bullet\\;\\;}",
+                        mybullett: "{\\quad\\tiny\\bullet\\;\\;}"
+                    }
+                },
+                chtml: {
+                    scale: 1.2,
+                    linebreaks: { automatic: true }
+                },
+                svg: {
+                    scale: 1.2,
+                    matchFontHeight: true
+                }
+            };
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css" />
+        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
     <style>
         body { font-family: 'Khmer OS Battambang', sans-serif; line-height: 1.8; background-color: #f4f7f6; padding: 20px; }
         .container { max-width: 800px; margin: auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
@@ -28,6 +48,10 @@
         .submit-btn { background-color: #2980b9; color: white; padding: 12px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; width: 100%; font-family: inherit; }
         .submit-btn:hover { background-color: #1a5276; }
         .logic-box { background: #1a252f; padding: 15px; border-radius: 5px; margin: 15px 0; font-family: 'Courier New', Courier, monospace; font-size: 1em; border: 1px dashed #e74c3c; color: #ecf0f1; overflow-x: auto; }
+        
+        mjx-container {
+                 font-size: 115% !important;
+             }
 
     </style>
     

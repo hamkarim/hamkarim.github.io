@@ -105,23 +105,22 @@
                         showModal("សូមបំពេញឈ្មោះ លេខរៀង និងថ្នាក់ឱ្យបានគ្រប់គ្រាន់!");
                         return;
                     }
-                    
+
                     questions[currentQuestion].style.display = "none";
-    currentQuestion += n;
+                    currentQuestion += n;
 
-    // កំណត់ព្រំដែន
-    if (currentQuestion < 0) currentQuestion = 0;
-    if (currentQuestion >= questions.length) currentQuestion = questions.length - 1;
+                    // កំណត់ព្រំដែន
+                    if (currentQuestion < 0) currentQuestion = 0;
+                    if (currentQuestion >= questions.length) currentQuestion = questions.length - 1;
 
-    questions[currentQuestion].style.display = "block";
+                    questions[currentQuestion].style.display = "block";
 
-    updateIndicator();
-    updateButtonStates();
+                    updateIndicator();
+                    updateButtonStates();
 
-    // ថែមកូដមួយបន្ទាត់នេះ ទីនេះ!
-    activateAntiCheat();
-                    
-                    
+                    // ថែមកូដមួយបន្ទាត់នេះ ទីនេះ!
+                    activateAntiCheat();
+
                     // ហៅមុខងារបង្កើត Watermark បន្ទាប់ពីសិស្សបំពេញព័ត៌មានរួច
                     generateWatermark(name, id);
                 }
