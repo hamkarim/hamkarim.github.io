@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="km">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Siemreap&display=swap"
+            rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@400;700&display=swap"
+            rel="stylesheet" />
+
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [
+                        ["$", "$"],
+                        ["\\(", "\\)"]
+                    ],
+                    displayMath: [
+                        ["$$", "$$"],
+                        ["\\[", "\\]"]
+                    ],
+                    macros: {
+                        mybullet: "{\\tiny\\bullet\\;\\;}",
+                        mybullett: "{\\quad\\tiny\\bullet\\;\\;}"
+                    }
+                },
+                chtml: {
+                    scale: 1.2,
+                    linebreaks: { automatic: true }
+                },
+                svg: {
+                    scale: 1.2,
+                    matchFontHeight: true
+                }
+            };
+        </script>
+
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <title>Simulation: ទំនាក់ទំនងមិត្តភាព (Graph Theory)</title>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <style>
+            body {
+                font-family: "Kantumruy Pro", "Hanuman", Arial, sans-serif;
+                background-color: #1e1e24;
+                color: #ffffff;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+            mjx-container {
+                font-size: 115% !important;
+            }
+
+            svg {
+                max-width: 100%;
+            }
+
+            h2 {
+                margin-bottom: 5px;
+                color: #f0f0f0;
+            }
+            p.subtitle {
+                color: #aaaaaa;
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+
+            #canvas-container {
+                background-color: #2b2b36;
+                border-radius: 12px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+                border: 1px solid #444;
+                margin-bottom: 20px;
+            }
+
+            /* រចនាប័ទ្មសម្រាប់ចំណុច (Nodes) និងខ្សែ (Links) */
+            .node-v1 {
+                fill: #6baed6;
+                stroke: #3182bd;
+                stroke-width: 2px;
+            }
+            .node-v2 {
+                fill: #74c476;
+                stroke: #31a354;
+                stroke-width: 2px;
+            }
+            .node-text {
+                fill: #ffffff;
+                font-weight: bold;
+                font-family: sans-serif;
+                pointer-events: none;
+                text-anchor: middle;
+                dominant-baseline: central;
+            }
+            .link {
+                stroke: #888888;
+                stroke-opacity: 0.6;
+                stroke-width: 2px;
+            }
+
+            /* រចនាប័ទ្មសម្រាប់ផ្ទាំងបញ្ជា */
+            .controls {
+                display: flex;
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+            button {
+                padding: 12px 24px;
+                font-size: 16px;
+                font-family: "Kantumruy Pro", "Hanuman", sans-serif;
+                cursor: pointer;
+                border: none;
+                border-radius: 8px;
+                font-weight: bold;
+                transition: all 0.2s;
+            }
+            #btn-step {
+                background-color: #3182bd;
+                color: white;
+            }
+            #btn-step:hover:not(:disabled) {
+                background-color: #6baed6;
+            }
+            #btn-step:disabled {
+                background-color: #555;
+                color: #888;
+                cursor: not-allowed;
+            }
+            #btn-reset {
+                background-color: #e6550d;
+                color: white;
+            }
+            #btn-reset:hover {
+                background-color: #fd8d3c;
+            }
+
+            .stats {
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+                max-width: 600px;
+                background: #333344;
+                padding: 15px;
+                border-radius: 8px;
+                font-size: 18px;
+            }
+            .stat-box {
+                text-align: center;
+            }
+            .stat-value {
+                font-size: 24px;
+                font-weight: bold;
+                color: #ffeb3b;
+                display: block;
+                margin-top: 5px;
+            }
+            #message {
+                color: #4caf50;
+                font-weight: bold;
+                font-size: 18px;
+                margin-top: 15px;
+                min-height: 25px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>ក្រាហ្វមិត្តភាព K<sub>4,3</sub> (Open Triangle Elimination)</h2>
+        <p class="subtitle">ស្វែងរក និងកាត់ផ្តាច់ត្រីកោណបើក រហូតដល់គ្រប់គ្នាមានមិត្ត $\le 1$</p>
+
+        <div id="canvas-container"></div>
+
+        <div class="controls">
+            <button id="btn-step" onclick="applyStep()">Find & Replace</button>
+            <button id="btn-reset" onclick="initGraph()">Reset</button>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">ចំនួនមិត្តភាព <span id="edge-count" class="stat-value">0</span></div>
+            <div class="stat-box">Max Degree <span id="max-degree" class="stat-value">0</span></div>
+        </div>
+
+        <div id="message"></div>
+
+        <script>
+            const width = 800;
+            const height = 400;
+            const radius = 20;
+
+            let svg = d3.select("#canvas-container").append("svg").attr("width", width).attr("height", height);
+
+            let linkGroup = svg.append("g").attr("class", "links");
+            let nodeGroup = svg.append("g").attr("class", "nodes");
+
+            let nodes = [];
+            let links = [];
+            let simulation;
+
+            // ទិន្នន័យដើម K_4,3
+            const initialNodes = [
+                { id: "A", group: 1 },
+                { id: "B", group: 1 },
+                { id: "C", group: 1 },
+                { id: "D", group: 1 },
+                { id: "X", group: 2 },
+                { id: "Y", group: 2 },
+                { id: "Z", group: 2 }
+            ];
+
+            function initGraph() {
+                // ចម្លងទិន្នន័យថ្មី ដើម្បីកុំឲ្យប៉ះពាល់ទិន្នន័យចាស់
+                nodes = initialNodes.map((d) => Object.create(d));
+                links = [];
+
+                // បង្កើតខ្សែភ្ជាប់គ្រប់គ្នាពី Group 1 ទៅ Group 2 (Bipartite ពេញលេញ)
+                let v1 = nodes.filter((n) => n.group === 1);
+                let v2 = nodes.filter((n) => n.group === 2);
+                v1.forEach((u) => {
+                    v2.forEach((v) => {
+                        links.push({ source: u.id, target: v.id });
+                    });
+                });
+
+                document.getElementById("btn-step").disabled = false;
+                document.getElementById("message").innerText = "";
+
+                updateGraph();
+            }
+
+            function updateGraph() {
+                // គណនាស្ថិតិ
+                let counts = {};
+                nodes.forEach((n) => (counts[n.id] = 0));
+                links.forEach((l) => {
+                    counts[typeof l.source === "object" ? l.source.id : l.source]++;
+                    counts[typeof l.target === "object" ? l.target.id : l.target]++;
+                });
+                let maxDeg = Math.max(...Object.values(counts));
+
+                document.getElementById("edge-count").innerText = links.length;
+                document.getElementById("max-degree").innerText = maxDeg;
+
+                // ភ្ជាប់ខ្សែបន្ទាត់ទៅកាន់ SVG
+                let link = linkGroup.selectAll("line").data(links, (d) => {
+                    let s = typeof d.source === "object" ? d.source.id : d.source;
+                    let t = typeof d.target === "object" ? d.target.id : d.target;
+                    return s < t ? s + "-" + t : t + "-" + s;
+                });
+                link.exit().remove();
+                let linkEnter = link.enter().append("line").attr("class", "link");
+                link = linkEnter.merge(link);
+
+                // ភ្ជាប់ចំណុច (Nodes) ទៅកាន់ SVG
+                let node = nodeGroup.selectAll("g").data(nodes, (d) => d.id);
+                node.exit().remove();
+
+                let nodeEnter = node
+                    .enter()
+                    .append("g")
+                    .call(d3.drag().on("start", dragstarted).on("drag", dragged).on("end", dragended));
+
+                nodeEnter
+                    .append("circle")
+                    .attr("r", radius)
+                    .attr("class", (d) => (d.group === 1 ? "node-v1" : "node-v2"));
+
+                nodeEnter
+                    .append("text")
+                    .attr("class", "node-text")
+                    .text((d) => d.id);
+
+                node = nodeEnter.merge(node);
+
+                // កំណត់កម្លាំងរូបវិទ្យា (Force Simulation)
+                if (simulation) simulation.stop();
+                simulation = d3
+                    .forceSimulation(nodes)
+                    .force(
+                        "link",
+                        d3
+                            .forceLink(links)
+                            .id((d) => d.id)
+                            .distance(100)
+                    )
+                    .force("charge", d3.forceManyBody().strength(-400))
+                    .force("center", d3.forceCenter(width / 2, height / 2))
+                    .force("x", d3.forceX(width / 2).strength(0.05)) // ទាញកុំឲ្យខ្ទាតបាត់
+                    .force("y", d3.forceY(height / 2).strength(0.05)) // ទាញកុំឲ្យខ្ទាតបាត់
+                    .on("tick", () => {
+                        link.attr("x1", (d) => Math.max(radius, Math.min(width - radius, d.source.x)))
+                            .attr("y1", (d) => Math.max(radius, Math.min(height - radius, d.source.y)))
+                            .attr("x2", (d) => Math.max(radius, Math.min(width - radius, d.target.x)))
+                            .attr("y2", (d) => Math.max(radius, Math.min(height - radius, d.target.y)));
+
+                        node.attr("transform", (d) => {
+                            d.x = Math.max(radius, Math.min(width - radius, d.x));
+                            d.y = Math.max(radius, Math.min(height - radius, d.y));
+                            return `translate(${d.x},${d.y})`;
+                        });
+                    });
+            }
+
+            // មុខងារត្រួតពិនិត្យថាចំណុចពីរតភ្ជាប់គ្នាឬទេ
+            function areConnected(id1, id2) {
+                return links.some(
+                    (l) => (l.source.id === id1 && l.target.id === id2) || (l.source.id === id2 && l.target.id === id1)
+                );
+            }
+
+            // ក្បួនដោះស្រាយសម្រាប់អនុវត្ត ១ ជំហាន
+            function applyStep() {
+                let foundTriangle = false;
+
+                // ដើររកគ្រប់ចំណុច 'v' ទាំងអស់
+                for (let i = 0; i < nodes.length; i++) {
+                    let v = nodes[i];
+                    // រកមិត្តរបស់ v ទាំងអស់
+                    let neighbors = [];
+                    links.forEach((l) => {
+                        if (l.source.id === v.id) neighbors.push(l.target.id);
+                        if (l.target.id === v.id) neighbors.push(l.source.id);
+                    });
+
+                    // បើ v មានមិត្តចាប់ពី ២ ឡើងទៅ
+                    if (neighbors.length >= 2) {
+                        // ឆែកមើលគ្រប់គូនៃមិត្តរបស់ v (u និង w)
+                        for (let j = 0; j < neighbors.length; j++) {
+                            for (let k = j + 1; k < neighbors.length; k++) {
+                                let u = neighbors[j];
+                                let w = neighbors[k];
+
+                                // បើ u និង w មិនទាន់ជាមិត្តនឹងគ្នា (Open Triangle!)
+                                if (!areConnected(u, w)) {
+                                    // 1. លុប v-u
+                                    links = links.filter(
+                                        (l) =>
+                                            !(
+                                                (l.source.id === v.id && l.target.id === u) ||
+                                                (l.source.id === u && l.target.id === v.id)
+                                            )
+                                    );
+                                    // 2. លុប v-w
+                                    links = links.filter(
+                                        (l) =>
+                                            !(
+                                                (l.source.id === v.id && l.target.id === w) ||
+                                                (l.source.id === w && l.target.id === v.id)
+                                            )
+                                    );
+                                    // 3. បន្ថែម u-w
+                                    links.push({ source: u, target: w });
+
+                                    foundTriangle = true;
+                                    break;
+                                }
+                            }
+                            if (foundTriangle) break;
+                        }
+                    }
+                    if (foundTriangle) break;
+                }
+
+                updateGraph();
+
+                // បើក្បួនដោះស្រាយរកលែងឃើញត្រីកោណបើក មានន័យថា max degree <= 1
+                if (!foundTriangle) {
+                    document.getElementById("btn-step").disabled = true;
+                    document.getElementById("message").innerText = "ស្ថានភាពចុងក្រោយគឺ គ្រប់ចំណុចមានមិត្ត \u2264 ១";
+                }
+            }
+
+            // មុខងារអូសទាញចំណុច (Drag & Drop)
+            function dragstarted(event, d) {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                d.fx = d.x;
+                d.fy = d.y;
+            }
+            function dragged(event, d) {
+                d.fx = event.x;
+                d.fy = event.y;
+            }
+            function dragended(event, d) {
+                if (!event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+            }
+
+            // ចាប់ផ្តើមគូរក្រាហ្វនៅពេលបើកទំព័រដំបូង
+            initGraph();
+        </script>
+    </body>
+</html>
