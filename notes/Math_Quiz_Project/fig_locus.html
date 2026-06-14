@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="km">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>គំនូរធរណីមាត្រអេលីប និង Locus នៃចំណុច P</title>
+
+        <!-- រួមបញ្ចូលបណ្ណាល័យ TikZJax សម្រាប់ដំណើរការកូដ TikZ លើ HTML --
+        <link rel="stylesheet" href="https://tikzjax.com" />
+        <script src="https://tikzjax.com"></script> -->
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [
+                        ["$", "$"],
+                        ["\\(", "\\)"]
+                    ],
+                    displayMath: [
+                        ["$$", "$$"],
+                        ["\\[", "\\]"]
+                    ],
+                    processEscapes: true
+                },
+                options: {
+                    enableMenu: false
+                }
+            };
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css" />
+        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+        <style>
+            body {
+                font-family: "Khmer OS Battambang", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-color: #f7f9fa;
+                margin: 0;
+                padding: 20px;
+            }
+            .container {
+                background-color: #ffffff;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                padding: 30px;
+                text-align: center;
+                max-width: 600px;
+            }
+            h2 {
+                color: #2c3e50;
+                margin-bottom: 5px;
+            }
+            p {
+                color: #7f8c8d;
+                margin-bottom: 25px;
+                font-size: 14px;
+            }
+            .canvas-area {
+                border: 1px solid #e2e8f0;
+                border-radius: 6px;
+                padding: 10px;
+                background: #ffffff;
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>គន្លងនៃចំណុច P (Director Circle)</h2>
+            <p>បន្ទាត់ប៉ះពីរកែងគ្នាបង្កើតបានជាគន្លងរង្វង់ជុំវិញអេលីប</p>
+
+            <div class="canvas-area">
+                <!-- ប្លុកកូដ TikZ ដែលបានបន្លាយបន្ទាត់ប៉ះឱ្យវែងជាងមុន -->
+                <script type="text/tikz">
+                    \begin{tikzpicture}[>=stealth, scale=1.2]
+
+                        % ១. គូរអ័ក្សកូអរដោនេ
+                        \draw[->, thick, gray] (-4.5,0) -- (4.5,0) node[right, black] {$x$};
+                        \draw[->, thick, gray] (0,-3.5) -- (0,3.5) node[above, black] {$y$};
+                        \node[below left] at (0,0) {$O$};
+
+                        % ២. កំណត់តម្លៃប្រវែងអ័ក្សអេលីប
+                        \def\a{3}
+                        \def\b{1.5}
+                        \def\R{3.354}
+
+                        % ៣. គូររង្វង់ប្រាប់ទិស (Director Circle / Locus of P)
+                        \draw[dashed, blue, thick] (0,0) circle (\R);
+                        \node[blue, above right] at (45:\R) {$x^2 + y^2 = a^2 + b^2$};
+
+                        % ៤. គូររាងអេលីប (Ellipse)
+                        \draw[red, very thick] (0,0) ellipse ({\a} and {\b});
+                        \node[red, below left] at (2.2, 0.8) {$(E)$};
+
+                        % ៥. កំណត់កូអរដោនេចំណុច P (1.677, 2.905)
+                        \coordinate (P) at (1.677, 2.905);
+                        \fill[black] (P) circle (2pt) node[above right] {$P(x,y)$};
+
+                        % ៦. គូរបន្ទាត់ប៉ះទាំងពីរ (បន្លាយដែនកំណត់បន្ទាត់ទីពីរដល់ 3.5 ដើម្បីឱ្យប៉ះអេលីប)
+                        \draw[thick, green!60!black, domain=-4:4] plot (\x, { 0.485*(\x - 1.677) + 2.905 });
+                        \draw[thick, green!60!black, domain=-0.2:3.5] plot (\x, { -2.06*(\x - 1.677) + 2.905 });
+
+                        % ៧. គូរនិមិត្តសញ្ញាមុំកែងត្រង់ចំណុច P
+                        \begin{scope}[rotate around={26:(P)}]
+                            \draw[thick, black] ($(P)+(-0.25,0)$) -- ($(P)+(-0.25,-0.25)$) -- ($(P)+(0,-0.25)$);
+                        \end{scope}
+
+                    \end{tikzpicture}
+                </script>
+            </div>
+        </div>
+    </body>
+</html>

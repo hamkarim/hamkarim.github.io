@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="km">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>វិញ្ញាសាគណិតវិទ្យា៖ ផ្នែកកោនិក</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Siemreap&family=Noto+Serif+Khmer:wght@400;700&display=swap"
+            rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [
+                        ["$", "$"],
+                        ["\\(", "\\)"]
+                    ],
+                    displayMath: [
+                        ["$$", "$$"],
+                        ["\\[", "\\]"]
+                    ],
+                    processEscapes: true
+                },
+                options: {
+                    enableMenu: false
+                }
+            };
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css" />
+        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+        <style>
+            /* Base Setup */
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                background-color: #2b2b2b; /* Dark background outside slides */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                font-family: "Siemreap", sans-serif;
+                overflow: hidden;
+            }
+
+            /* 16:9 Slide Container */
+            .slide-container {
+                display: none; /* Hidden by default */
+                background-color: #fff;
+                border-radius: 4px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                flex-direction: column;
+                height: 720px;
+                width: 1280px;
+                position: relative;
+                padding: 60px;
+                overflow: hidden;
+            }
+
+            /* Active Slide */
+            .slide-container.active {
+                display: flex;
+                animation: fadeIn 0.4s ease-in-out;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: scale(0.98);
+                }
+                to {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            /* Background Design Elements */
+            .slide-container::before {
+                content: "";
+                position: absolute;
+                top: -100px;
+                right: -100px;
+                width: 400px;
+                height: 400px;
+                background: linear-gradient(135deg, rgba(44, 62, 80, 0.05) 0%, rgba(52, 152, 219, 0.05) 100%);
+                border-radius: 50%;
+                z-index: 0;
+            }
+
+            /* Slide Progress Counter */
+            .slide-counter {
+                position: absolute;
+                bottom: 20px;
+                right: 30px;
+                font-size: 16px;
+                color: #7f8c8d;
+                font-family: Arial, sans-serif;
+                z-index: 10;
+            }
+
+            /* Typography */
+            h1,
+            h2,
+            h3,
+            h4 {
+                font-family: "Battambang", sans-serif;
+                color: #2c3e50;
+                margin: 0;
+                z-index: 1;
+            }
+
+            .slide-title {
+                font-size: 42px;
+                border-left: 8px solid #2c3e50;
+                padding-left: 20px;
+                margin-bottom: 40px;
+                font-weight: 700;
+            }
+
+            p,
+            li {
+                font-size: 24px;
+                line-height: 1.8;
+                color: #34495e;
+                z-index: 1;
+            }
+
+            .math-display {
+                background-color: #f8f9fa;
+                padding: 15px;
+                border-radius: 10px;
+                border: 1px solid #e9ecef;
+                margin: 20px 0;
+                text-align: center;
+            }
+
+            /* Layout Helpers */
+            .content-area {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+                justify-content: flex-start;
+                z-index: 1;
+            }
+
+            .two-column {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                width: 100%;
+            }
+
+            /* Highlight Boxes */
+            .hint-box {
+                background-color: #fff9db;
+                border-left: 6px solid #fcc419;
+                padding: 20px;
+                margin-top: 20px;
+                border-radius: 0 10px 10px 0;
+                font-size: 12px !important;
+            }
+
+            .hint-box p,
+            .hint-box li {
+                font-size: 18px !important;
+            }
+
+            .hint-title {
+                font-weight: bold;
+                color: #e67e22;
+                display: block;
+                margin-bottom: 10px;
+                font-family: "Battambang", sans-serif;
+                font-size: 22px;
+            }
+
+            /* Specific Layouts */
+            .title-slide {
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            }
+
+            .title-slide h1 {
+                color: #fff;
+                font-size: 60px;
+                margin-bottom: 20px;
+            }
+
+            .title-slide p {
+                color: #bdc3c7;
+                font-size: 30px;
+            }
+
+            .bullet-list {
+                list-style: none;
+                padding: 0;
+            }
+
+            .bullet-list li {
+                position: relative;
+                padding-left: 40px;
+                margin-bottom: 15px;
+            }
+
+            .bullet-list li::before {
+                content: "\f058";
+                font-family: "Font Awesome 6 Free";
+                font-weight: 900;
+                position: absolute;
+                left: 0;
+                color: #27ae60;
+            }
+
+            mjx-container {
+                font-size: 115% !important;
+            }
+
+            svg {
+                max-width: 115%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="slide-container title-slide active" id="slide1">
+            <h1>លំហាត់ត្រៀមប្រឡងសញ្ញាបត្រមធ្យមសិក្សាទុតិយភូមិ</h1>
+            <h2 style="color: #3498db; font-size: 45px">ប្រធានបទ៤៖ ការសិក្សាផ្នែកកោនិក និង ធរណីមាត្រក្នុងលំហ</h2>
+            <p>បង្រៀនដោយ៖ ហាំ ការីម</p>
+            <div class="slide-counter" style="color: #fff">1 / 8</div>
+        </div>
+
+        <div class="slide-container" id="slide2">
+            <h2 class="slide-title">១. ការបំប្លែងសមីការជាអេលីប</h2>
+            <div class="content-area">
+                <p>គេមានសមីការ $9x^2 + 25y^2 - 18x + 100y - 116 = 0$ ។</p>
+                <p><b>ក.</b> បង្ហាញថាសមីការនេះជាសមីការអេលីប រួចទាញរកកូអរដោនេផ្ចិត កំពូល និងកំណុំនៃអេលីបនេះ។</p>
+                <p><b>ខ.</b> សង់អេលីបនេះក្នុងតម្រុយអរតូណរម៉ាល់ $(O, \vec{i}, \vec{j})$ ។</p>
+
+                <div class="hint-box">
+                    <span class="hint-title">💡 ចំណុចគន្លឹះ ៖</span>
+                    <ul class="bullet-list">
+                        <li>ត្រូវចាប់ផ្ដុំតួ $x$ និងតួ $y$ ដាក់ដាច់ពីគ្នា។</li>
+                        <li>
+                            បំពេញជាការេ ដើម្បីឱ្យចូលរាងស្តង់ដា $\frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = 1$
+                            រួចទើបទាញរកធាតុផ្សេងៗ។
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="slide-counter">2 / 8</div>
+        </div>
+
+        <div class="slide-container" id="slide3">
+            <h2 class="slide-title">២. រកសមីការស្តង់ដារបស់អេលីប</h2>
+            <div class="content-area">
+                <p>ក្នុងប្លង់កូអរដោនេ $Oxy$ គេមានអេលីប $(E)$ មួយដែលមាន៖</p>
+                <ul class="bullet-list">
+                    <li>ប្រវែងអ័ក្សធំស្មើនឹង $8$</li>
+                    <li>កំណុំមួយត្រង់ចំណុច $F_1(-\sqrt{7}, 0)$</li>
+                </ul>
+                <p>ចូរសរសេរសមីការស្តង់ដារនៃអេលីប $(E)$ ។</p>
+
+                <div class="hint-box">
+                    <span class="hint-title">💡 ចំណុចគន្លឹះ ៖</span>
+                    <ul class="bullet-list">
+                        <li>ប្រវែងអ័ក្សធំ $2a = 8$ នាំឱ្យទាញបាន $a$ ។</li>
+                        <li>
+                            កំណុំ $c = \sqrt{7}$ ។ តាមទំនាក់ទំនងកោនិក $b^2 = a^2 - c^2$ យើងអាចរក $b^2$ រួចសរសេរសមីការ។
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="slide-counter">3 / 8</div>
+        </div>
+
+        <div class="slide-container" id="slide4">
+            <h2 class="slide-title">៣. រកសមីការបន្ទាត់ប៉ះអ៊ីពែបូល</h2>
+            <div class="content-area">
+                <p>
+                    គេមានអ៊ីពែរបូល $(\mathcal{H})$ ដែលមានសមីការ $\displaystyle\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$ ។
+                    តាង $M(x_0, y_0)$ ជាចំណុចមួយស្ថិតនៅលើអ៊ីពែបូលនេះ។
+                </p>
+                <p>
+                    <b>សំណួរ៖</b> ចូរបង្ហាញថាសមីការបន្ទាត់ប៉ះនឹងអ៊ីពែបូល $(\mathcal{H})$ ត្រង់ចំណុច $M$ គឺមានរាង៖ $$
+                    \frac{x_0 x}{a^2} - \frac{y_0 y}{b^2} = 1 $$
+                </p>
+
+                <div class="hint-box">
+                    <span class="hint-title">💡 ចំណុចគន្លឹះ ៖</span>
+                    <p>
+                        លំហាត់នេះទាមទារឱ្យប្រើដេរីវេ Implicit លើសមីការកោនិក ដើម្បីរកមេគុណប្រាប់ទិស $m = y'$
+                        នៃបន្ទាត់ប៉ះ។
+                    </p>
+                </div>
+            </div>
+            <div class="slide-counter">4 / 8</div>
+        </div>
+
+        <div class="slide-container" id="slide5">
+            <h2 class="slide-title">៤. កំណត់គន្លងរបស់ចំណុច P (Locus : គន្លង) ចំពោះអេលីប</h2>
+            <div class="content-area">
+                <p>តាង $(E)$ ជាអេលីបដែលមានសមីការ $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$។</p>
+                <p>គេគូសបន្ទាត់ពីរកែងគ្នាដែលកាត់គ្នាត្រង់ចំណុច $P$ ហើយបន្ទាត់ទាំងពីរនេះប៉ះទៅនឹងអេលីប $(E)$។</p>
+                <p><b>សំណួរ៖</b> ចូររកគន្លង (Locus) របស់ចំណុច $P$ ពេលបន្ទាត់ទាំងពីរផ្លាស់ទី។</p>
+
+                <div class="hint-box">
+                    <span class="hint-title">💡 ចំណុចគន្លឹះ ៖</span>
+                    <ul class="bullet-list">
+                        <li>សរសេរសមីការបន្ទាត់ប៉ះជាទម្រង់ $y = mx \pm \sqrt{a^2m^2 + b^2}$។</li>
+                        <li>
+                            ប្រើលក្ខខណ្ឌនៃចំណោទបន្ទត់កែង ($m_1 \cdot m_2 = -1$) ដើម្បីទាញរកទំនាក់ទំនងរវាង $x$ និង $y$
+                            របស់ចំណុច $P$ ដែលនឹងចេញជារង្វង់ប្រាប់ទិស (Director Circle)។
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="slide-counter">5 / 8</div>
+        </div>
+
+        <div class="slide-container" id="slide6">
+            <h2 class="slide-title">៥. អ៊ីពែរបូលកែង $xy = c^2$</h2>
+            <div class="content-area">
+                <p>គេមានចំណុច $P \left(c t, \frac{c}{t}\right)$ ស្ថិតនៅលើអ៊ីពែរបូលកែងនឹង $xy = c^2$។</p>
+                <p><b>ក.</b> ចូរស្រាយបញ្ជាក់ថាសមីការបន្ទាត់ប៉ះ ទៅនឹងអ៊ីពែបូលត្រង់ចំណុច $P$ គឺ $x + t^2 y = 2ct$។</p>
+                <p>
+                    <b>ខ.</b> បន្ទាត់ប៉ះនេះកាត់អ័ក្ស $x$ ត្រង់ $A$ និងអ័ក្ស $y$ ត្រង់ $B$។ បង្ហាញថាផ្ទៃក្រឡាត្រីកោណ
+                    $OAB$ (ដោយ $O$ ជាគល់តម្រុយ) គឺជាតម្លៃថេរ មិនអាស្រ័យនឹងតម្លៃ $t$ ឡើយ។
+                </p>
+
+                <div class="hint-box">
+                    <span class="hint-title">💡 ចំណុចគន្លឹះ ៖</span>
+                    <ul class="bullet-list">
+                        <li>
+                            (ក) ប្រើដេរីវេនៃអនុគមន៍ $y = \frac{c^2}{x}$ ដើម្បីទាញរកមេគុណប្រាប់ទិស
+                            រួចសរសេរសមីការបន្ទាត់ប៉ះ។
+                        </li>
+                        <li>(ខ) រកកូអរដោនេចំណុច $A$ និង $B$ រួចគណនាក្រឡាផ្ទៃ $S = \frac{1}{2} \times OA \times OB$។</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="slide-counter">6 / 8</div>
+        </div>
+
+        <div class="slide-container" id="slide7">
+            <h2 class="slide-title">៦. ប៉ារ៉ាបូល និងរង្វង់</h2>
+            <div class="content-area">
+                <p>
+                    គេមានប៉ារ៉ាបូល $(P)$ មួយដែលមានសមីការ $x^2 - 4x - 8y + 28 = 0$ ។ តាង $V$ ជាកំពូល និង $F$
+                    ជាកំណុំនៃប៉ារ៉ាបូល $(P)$ នេះ។
+                </p>
+                <p><b>សំណួរ៖</b> ចូររកសមីការទូទៅនៃរង្វង់ $(C)$ ដែលមានអង្កត់ $VF$ ជាអង្កត់ផ្ចិតរបស់វា។</p>
+
+                <div class="hint-box">
+                    <span class="hint-title">💡 ចំណុចគន្លឹះ ៖</span>
+                    <ul class="bullet-list" style="font-size: 20px">
+                        <li>
+                            បំពេញជាការេដើម្បីបំប្លែងសមីការប៉ារ៉ាបូលទៅជាទម្រង់ $(x-h)^2 = 4p(y-k)$ ដើម្បីរកកូអរដោនេ $V$
+                            និង $F$ ។
+                        </li>
+                        <li>ផ្ចិតនៃរង្វង់គឺជាចំណុចកណ្ដាលនៃអង្កត់ $VF$ ហើយកាំគឺស្មើនឹង $\frac{VF}{2}$។</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="slide-counter">7 / 8</div>
+        </div>
+
+        <div class="slide-container title-slide" id="slide8">
+            <h1>សូមអរគុណសម្រាប់ការយកចិត្តទុកដាក់!</h1>
+            <p style="margin-top: 30px">តើមានសំណួរអ្វីបន្ថែមដែរឬទេ?</p>
+            <div class="slide-counter" style="color: #fff">8 / 8</div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const slides = document.querySelectorAll(".slide-container");
+                let currentSlide = 0;
+
+                function showSlide(index) {
+                    slides.forEach((slide, i) => {
+                        slide.classList.remove("active");
+                        if (i === index) slide.classList.add("active");
+                    });
+                }
+
+                // Keyboard Navigation
+                document.addEventListener("keydown", (e) => {
+                    if (e.key === "ArrowRight" || e.key === "Spacebar" || e.key === " ") {
+                        if (currentSlide < slides.length - 1) {
+                            currentSlide++;
+                            showSlide(currentSlide);
+                        }
+                    } else if (e.key === "ArrowLeft") {
+                        if (currentSlide > 0) {
+                            currentSlide--;
+                            showSlide(currentSlide);
+                        }
+                    }
+                });
+
+                // Click Navigation (Click right half to go forward, left half to go back)
+                document.body.addEventListener("click", (e) => {
+                    const clickX = e.clientX;
+                    const windowWidth = window.innerWidth;
+
+                    if (clickX > windowWidth / 2) {
+                        if (currentSlide < slides.length - 1) {
+                            currentSlide++;
+                            showSlide(currentSlide);
+                        }
+                    } else {
+                        if (currentSlide > 0) {
+                            currentSlide--;
+                            showSlide(currentSlide);
+                        }
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
