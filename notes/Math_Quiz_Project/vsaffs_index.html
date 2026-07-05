@@ -1,11 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="km">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>វិញ្ញាសាគណិតវិទ្យា៖ តក្កវិទ្យា (MCQs)</title>
-    
-   
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>វិញ្ញាសាគណិតវិទ្យា៖ តក្កវិទ្យា (MCQs)</title>
+
         <script>
             window.MathJax = {
                 tex: {
@@ -36,26 +35,86 @@
 
         <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css" />
         <script src="https://tikzjax.com/v1/tikzjax.js"></script>
-    <style>
-        body { font-family: 'Khmer OS Battambang', sans-serif; line-height: 1.8; background-color: #f4f7f6; padding: 20px; }
-        .container { max-width: 800px; margin: auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        h2 { color: #2980b9; border-bottom: 2px solid #2980b9; padding-bottom: 10px; text-align: center; }
-        .input-group { margin-bottom: 20px; }
-        .input-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-family: inherit; }
-        .question-block { margin-bottom: 25px; padding: 15px; background: #fafafa; border-left: 4px solid #27ae60; border-radius: 4px; }
-        .options { margin-top: 10px; padding-left: 20px; }
-        .options label { display: block; margin-bottom: 8px; cursor: pointer; }
-        .submit-btn { background-color: #2980b9; color: white; padding: 12px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; width: 100%; font-family: inherit; }
-        .submit-btn:hover { background-color: #1a5276; }
-        .logic-box { background: #1a252f; padding: 15px; border-radius: 5px; margin: 15px 0; font-family: 'Courier New', Courier, monospace; font-size: 1em; border: 1px dashed #e74c3c; color: #ecf0f1; overflow-x: auto; }
-        
-        mjx-container {
-                 font-size: 115% !important;
-             }
+        <style>
+            body {
+                font-family: "Khmer OS Battambang", sans-serif;
+                line-height: 1.8;
+                background-color: #f4f7f6;
+                padding: 20px;
+            }
+            .container {
+                max-width: 800px;
+                margin: auto;
+                background: #fff;
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            h2 {
+                color: #2980b9;
+                border-bottom: 2px solid #2980b9;
+                padding-bottom: 10px;
+                text-align: center;
+            }
+            .input-group {
+                margin-bottom: 20px;
+            }
+            .input-group input {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                font-family: inherit;
+            }
+            .question-block {
+                margin-bottom: 25px;
+                padding: 15px;
+                background: #fafafa;
+                border-left: 4px solid #27ae60;
+                border-radius: 4px;
+            }
+            .options {
+                margin-top: 10px;
+                padding-left: 20px;
+            }
+            .options label {
+                display: block;
+                margin-bottom: 8px;
+                cursor: pointer;
+            }
+            .submit-btn {
+                background-color: #2980b9;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                width: 100%;
+                font-family: inherit;
+            }
+            .submit-btn:hover {
+                background-color: #1a5276;
+            }
+            .logic-box {
+                background: #1a252f;
+                padding: 15px;
+                border-radius: 5px;
+                margin: 15px 0;
+                font-family: "Courier New", Courier, monospace;
+                font-size: 1em;
+                border: 1px dashed #e74c3c;
+                color: #ecf0f1;
+                overflow-x: auto;
+            }
 
-    </style>
-    
-    <!--style>
+            mjx-container {
+                font-size: 115% !important;
+            }
+        </style>
+
+        <!--style>
         body { font-family: 'Khmer OS Battambang', sans-serif; line-height: 1.8; background-color: #2c3e50; padding: 20px; color: #ecf0f1; }
         .container { max-width: 850px; margin: auto; background: #34495e; padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border-top: 8px solid #e74c3c; }
         h2 { color: #e74c3c; border-bottom: 2px solid #c0392b; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
@@ -68,9 +127,10 @@
         .submit-btn { background-color: #e74c3c; color: white; padding: 16px 20px; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; width: 100%; font-family: inherit; margin-top: 20px; text-transform: uppercase; font-weight: bold; transition: 0.3s; }
         .submit-btn:hover { background-color: #c0392b; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4); }
     </!--style -->
-</head>
-<body>
-<div><!--class="Headertext"-->
+    </head>
+    <body>
+        <div>
+            <!--class="Headertext"-->
             \( \newcommand{\vecs}[1]{\overset { \scriptstyle \rightharpoonup} {\mathbf{#1}}&nbsp;}&nbsp;\) \(
             \newcommand{\vecd}[1]{\overset{-\!-\!\rightharpoonup}{\vphantom{a}\smash&nbsp;{#1}}} \)
             \(\newcommand{\id}{\mathrm{id}}\) \( \newcommand{\Span}{\mathrm{span}}\) \(
@@ -86,484 +146,839 @@
             \renewcommand{\det}{\mathbf{det\,\!}}\) \( \newcommand{\minor}{\mathbf{minor}}\) \(
             \newcommand{\inner}[2]{\langle #1, #2 \rangle}\) \( \newcommand{\Span}{\mathrm{span}}\)
             \(\newcommand{\E}{\mathbf{V}}\) \(\newcommand{\K}{\mathbb{K}}\) \(\newcommand{\F}{\mathbb{F}}\)
-            \(\newcommand{\R}{\mathbb{R}}\)
-        \(\newcommand{\vv}[1]{\overrightarrow{#1}}\)
-        </div> 
-<div class="container">
-    <h2>Quiz: មូលដ្ឋានគ្រឹះនៃលំហវ៉ិចទ័រ និង អាហ្វីន <br/>
-    រយៈពេល ៦០ នាទី TUP-BA-2026
-    </h2>
-    <form action="submit_quiz.php" method="POST">
-        
-        <div class="input-group">
-            <input type="text" name="student_id" placeholder="បញ្ចូលលេខរៀង *" required>
+            \(\newcommand{\R}{\mathbb{R}}\) \(\newcommand{\vv}[1]{\overrightarrow{#1}}\)
         </div>
-        <div class="input-group">
-            <input type="text" name="student_name" placeholder="បញ្ចូលឈ្មោះពេញ *" required>
-        </div>
+        <div class="container">
+            <h2>
+                Quiz: មូលដ្ឋានគ្រឹះនៃលំហវ៉ិចទ័រ និង អាហ្វីន <br />
+                រយៈពេល ៦០ នាទី TUP-BA-2026
+            </h2>
+            <form action="submit_quiz.php" method="POST">
+                <div class="input-group">
+                    <input type="text" name="student_id" placeholder="បញ្ចូលលេខរៀង *" required />
+                </div>
+                <div class="input-group">
+                    <input type="text" name="student_name" placeholder="បញ្ចូលឈ្មោះពេញ *" required />
+                </div>
 
-        <div class="instruction">
-            <strong>ការណែនាំ៖</strong> លំហាត់នេះមានកម្រិតងាយស្រួល សម្រាប់សាកល្បងការយល់ដឹងជាមូលដ្ឋានទៅលើ វ៉ិចទ័រ ការបូកវ៉ិចទ័រ និងសញ្ញាណនៃលំហរង និងលំហអាហ្វីន។
-        </div>
-        
-        <div class="question-block">
-            <strong>១. នៅក្នុងប្លង់ទ្វេវិមាត្រ (លំហ \(\mathbb{R}^2\)) តើវ៉ិចទ័រមួយត្រូវបានតំណាងដោយអ្វី?</strong>
-            <div class="options">
-                <label><input type="radio" name="q1" value="A" required> ក) ចំនួនពិតតែមួយគត់</label>
-                <label><input type="radio" name="q1" value="B" required> ខ) កូអរដោនេពីរ $(x, y)$</label>
-                <label><input type="radio" name="q1" value="C" required> គ) កូអរដោនេបី $(x, y, z)$</label>
-                <label><input type="radio" name="q1" value="D" required> ឃ) សមីការបន្ទាត់មួយ</label>
-            </div>
-        </div>
+                <div class="instruction">
+                    <strong>ការណែនាំ៖</strong> លំហាត់នេះមានកម្រិតងាយស្រួល សម្រាប់សាកល្បងការយល់ដឹងជាមូលដ្ឋានទៅលើ វ៉ិចទ័រ
+                    ការបូកវ៉ិចទ័រ និងសញ្ញាណនៃលំហរង និងលំហអាហ្វីន។
+                </div>
 
-        <div class="question-block">
-            <strong>២. ប្រមាណវិធីបូកវ៉ិចទ័រ៖ ប្រសិនបើគេមានវ៉ិចទ័រ $\vec{u} = (1, 2)$ និង $\vec{v} = (3, 1)$ តើផលបូក $\vec{u} + \vec{v}$ ស្មើនឹងប៉ុន្មាន?</strong>
-            <!--img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Vector_addition.svg/512px-Vector_addition.svg.png" alt="វិធាននៃការបូកវ៉ិចទ័រ (ចតុកោណកែង និង ត្រីកោណ)" class="q-image" style="max-width: 250px;"-->
-            <div class="options">
-                <label><input type="radio" name="q2" value="A" required> ក) $(2, -1)$</label>
-                <label><input type="radio" name="q2" value="B" required> ខ) $(4, 3)$</label>
-                <label><input type="radio" name="q2" value="C" required> គ) $(3, 2)$</label>
-                <label><input type="radio" name="q2" value="D" required> ឃ) $(1, 3)$</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong>១. នៅក្នុងប្លង់ទ្វេវិមាត្រ (លំហ \(\mathbb{R}^2\)) តើវ៉ិចទ័រមួយត្រូវបានតំណាងដោយអ្វី?</strong>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="A" required /> ក) ចំនួនពិតតែមួយគត់</label>
+                        <label><input type="radio" name="q1" value="B" required /> ខ) កូអរដោនេពីរ $(x, y)$</label>
+                        <label><input type="radio" name="q1" value="C" required /> គ) កូអរដោនេបី $(x, y, z)$</label>
+                        <label><input type="radio" name="q1" value="D" required /> ឃ) សមីការបន្ទាត់មួយ</label>
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>៣. ប្រមាណវិធីគុណវ៉ិចទ័រនឹងស្កាលែ (ចំនួនពិត)៖ ប្រសិនបើ $c = 2$ និង $\vec{v} = (-1, 4)$ តើកន្សោម $c\vec{v}$ មានតម្លៃស្មើនឹងអ្វី?</strong>
-            <div class="options">
-                <label><input type="radio" name="q3" value="A" required> ក) $(-2, 8)$</label>
-                <label><input type="radio" name="q3" value="B" required> ខ) $(1, 6)$</label>
-                <label><input type="radio" name="q3" value="C" required> គ) $(-1, 8)$</label>
-                <label><input type="radio" name="q3" value="D" required> ឃ) $(2, 4)$</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >២. ប្រមាណវិធីបូកវ៉ិចទ័រ៖ ប្រសិនបើគេមានវ៉ិចទ័រ $\vec{u} = (1, 2)$ និង $\vec{v} = (3, 1)$ តើផលបូក
+                        $\vec{u} + \vec{v}$ ស្មើនឹងប៉ុន្មាន?</strong
+                    >
+                    <!--img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Vector_addition.svg/512px-Vector_addition.svg.png" alt="វិធាននៃការបូកវ៉ិចទ័រ (ចតុកោណកែង និង ត្រីកោណ)" class="q-image" style="max-width: 250px;"-->
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="A" required /> ក) $(2, -1)$</label>
+                        <label><input type="radio" name="q2" value="B" required /> ខ) $(4, 3)$</label>
+                        <label><input type="radio" name="q2" value="C" required /> គ) $(3, 2)$</label>
+                        <label><input type="radio" name="q2" value="D" required /> ឃ) $(1, 3)$</label>
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>៤. លក្ខណៈនៃវ៉ិចទ័រសូន្យ៖ សម្រាប់គ្រប់វ៉ិចទ័រ $\vec{v}$ នៅក្នុងលំហវ៉ិចទ័រ តើផលបូក $\vec{v} + \vec{0}$ ស្មើនឹងអ្វី?</strong>
-            <div class="options">
-                <label><input type="radio" name="q4" value="A" required> ក) $\vec{0}$</label>
-                <label><input type="radio" name="q4" value="B" required> ខ) $1$</label>
-                <label><input type="radio" name="q4" value="C" required> គ) $\vec{v}$</label>
-                <label><input type="radio" name="q4" value="D" required> ឃ) $-\vec{v}$</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >៣. ប្រមាណវិធីគុណវ៉ិចទ័រនឹងស្កាលែ (ចំនួនពិត)៖ ប្រសិនបើ $c = 2$ និង $\vec{v} = (-1, 4)$ តើកន្សោម
+                        $c\vec{v}$ មានតម្លៃស្មើនឹងអ្វី?</strong
+                    >
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="A" required /> ក) $(-2, 8)$</label>
+                        <label><input type="radio" name="q3" value="B" required /> ខ) $(1, 6)$</label>
+                        <label><input type="radio" name="q3" value="C" required /> គ) $(-1, 8)$</label>
+                        <label><input type="radio" name="q3" value="D" required /> ឃ) $(2, 4)$</label>
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>៥. នៅក្នុងនិយមន័យនៃ "លំហរងវ៉ិចទ័រ" (Vector Subspace) តើលក្ខខណ្ឌចាំបាច់ទី១ ដែលសំណុំមួយត្រូវតែមានជានិច្ច គឺជាអ្វី?</strong>
-            <div class="options">
-                <label><input type="radio" name="q5" value="A" required> ក) ត្រូវតែមានចំនួនអវិជ្ជមាន</label>
-                <label><input type="radio" name="q5" value="B" required> ខ) ត្រូវតែមានផ្ទុកវ៉ិចទ័រសូន្យ $\vec{0}$ ជានិច្ច</label>
-                <label><input type="radio" name="q5" value="C" required> គ) ត្រូវតែមានផ្ទុកប្រភាគ</label>
-                <label><input type="radio" name="q5" value="D" required> ឃ) មិនចាំបាច់មានលក្ខខណ្ឌអ្វីទេ</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >៤. លក្ខណៈនៃវ៉ិចទ័រសូន្យ៖ សម្រាប់គ្រប់វ៉ិចទ័រ $\vec{v}$ នៅក្នុងលំហវ៉ិចទ័រ តើផលបូក $\vec{v} +
+                        \vec{0}$ ស្មើនឹងអ្វី?</strong
+                    >
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="A" required /> ក) $\vec{0}$</label>
+                        <label><input type="radio" name="q4" value="B" required /> ខ) $1$</label>
+                        <label><input type="radio" name="q4" value="C" required /> គ) $\vec{v}$</label>
+                        <label><input type="radio" name="q4" value="D" required /> ឃ) $-\vec{v}$</label>
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>៦. ផ្អែកលើលក្ខខណ្ឌនៃលំហរងខាងលើ តើមួយណាខាងក្រោមតំណាងឱ្យ "លំហរង" (Subspace) នៅក្នុង $\mathbb{R}^2$?</strong>
-            <!--img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Subspace_illustration.svg/400px-Subspace_illustration.svg.png" alt="Subspace Line through Origin" class="q-image" style="max-width: 280px; background-color: white; padding: 10px;"-->
-            <div class="options">
-                <label><input type="radio" name="q6" value="A" required> ក) បន្ទាត់ដែលកាត់តាមគល់តម្រុយ $(0,0)$</label>
-                <label><input type="radio" name="q6" value="B" required> ខ) បន្ទាត់ដែលមិនកាត់តាមគល់តម្រុយ</label>
-                <label><input type="radio" name="q6" value="C" required> គ) រង្វង់ដែលមានផ្ចិតនៅគល់តម្រុយ</label>
-                <label><input type="radio" name="q6" value="D" required> ឃ) ចំណុចមួយនៅឆ្ងាយពីគល់តម្រុយ</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >៥. នៅក្នុងនិយមន័យនៃ "លំហរងវ៉ិចទ័រ" (Vector Subspace) តើលក្ខខណ្ឌចាំបាច់ទី១
+                        ដែលសំណុំមួយត្រូវតែមានជានិច្ច គឺជាអ្វី?</strong
+                    >
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="A" required /> ក) ត្រូវតែមានចំនួនអវិជ្ជមាន</label>
+                        <label
+                            ><input type="radio" name="q5" value="B" required /> ខ) ត្រូវតែមានផ្ទុកវ៉ិចទ័រសូន្យ
+                            $\vec{0}$ ជានិច្ច</label
+                        >
+                        <label><input type="radio" name="q5" value="C" required /> គ) ត្រូវតែមានផ្ទុកប្រភាគ</label>
+                        <label
+                            ><input type="radio" name="q5" value="D" required /> ឃ) មិនចាំបាច់មានលក្ខខណ្ឌអ្វីទេ</label
+                        >
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>៧. តើវ៉ិចទ័រផ្ទុយ (Additive Inverse) នៃវ៉ិចទ័រ $\vec{u} = (5, -3)$ គឺអ្វី?</strong>
-            <div class="options">
-                <label><input type="radio" name="q7" value="A" required> ក) $(-5, -3)$</label>
-                <label><input type="radio" name="q7" value="B" required> ខ) $(5, 3)$</label>
-                <label><input type="radio" name="q7" value="C" required> គ) $(-5, 3)$</label>
-                <label><input type="radio" name="q7" value="D" required> ឃ) $(0, 0)$</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >៦. ផ្អែកលើលក្ខខណ្ឌនៃលំហរងខាងលើ តើមួយណាខាងក្រោមតំណាងឱ្យ "លំហរង" (Subspace) នៅក្នុង
+                        $\mathbb{R}^2$?</strong
+                    >
+                    <!--img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Subspace_illustration.svg/400px-Subspace_illustration.svg.png" alt="Subspace Line through Origin" class="q-image" style="max-width: 280px; background-color: white; padding: 10px;"-->
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q6" value="A" required /> ក) បន្ទាត់ដែលកាត់តាមគល់តម្រុយ
+                            $(0,0)$</label
+                        >
+                        <label
+                            ><input type="radio" name="q6" value="B" required /> ខ) បន្ទាត់ដែលមិនកាត់តាមគល់តម្រុយ</label
+                        >
+                        <label
+                            ><input type="radio" name="q6" value="C" required /> គ) រង្វង់ដែលមានផ្ចិតនៅគល់តម្រុយ</label
+                        >
+                        <label><input type="radio" name="q6" value="D" required /> ឃ) ចំណុចមួយនៅឆ្ងាយពីគល់តម្រុយ</label>
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>៨. ការបូកវ៉ិចទ័រមានលក្ខណៈត្រឡប់ (Commutativity)។ តើសមភាពមួយណាខាងក្រោមដែលបង្ហាញពីលក្ខណៈនេះបានត្រឹមត្រូវ?</strong>
-            <div class="options">
-                <label><input type="radio" name="q8" value="A" required> ក) $\vec{u} + (\vec{v} + \vec{w}) = (\vec{u} + \vec{v}) + \vec{w}$</label>
-                <label><input type="radio" name="q8" value="B" required> ខ) $\vec{u} + \vec{v} = \vec{v} + \vec{u}$</label>
-                <label><input type="radio" name="q8" value="C" required> គ) $c(\vec{u} + \vec{v}) = c\vec{u} + c\vec{v}$</label>
-                <label><input type="radio" name="q8" value="D" required> ឃ) $\vec{u} + \vec{0} = \vec{u}$</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong>៧. តើវ៉ិចទ័រផ្ទុយ (Additive Inverse) នៃវ៉ិចទ័រ $\vec{u} = (5, -3)$ គឺអ្វី?</strong>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="A" required /> ក) $(-5, -3)$</label>
+                        <label><input type="radio" name="q7" value="B" required /> ខ) $(5, 3)$</label>
+                        <label><input type="radio" name="q7" value="C" required /> គ) $(-5, 3)$</label>
+                        <label><input type="radio" name="q7" value="D" required /> ឃ) $(0, 0)$</label>
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>៩. តើទម្រង់ទូទៅនៃបន្សំលីនេអ៊ែរ (ប្រើប្រមាណវិធីបូក និង គុណ) រវាងពីរវ៉ិចទ័រ $\vec{u}$ និង $\vec{v}$ ដោយមាន $a$ និង $b$ ជាស្កាលែរ គឺជាអ្វី?</strong>
-            <div class="options">
-                <label><input type="radio" name="q9" value="A" required> ក) $a\vec{u} \times b\vec{v}$</label>
-                <label><input type="radio" name="q9" value="B" required> ខ) $\frac{a\vec{u}}{b\vec{v}}$</label>
-                <label><input type="radio" name="q9" value="C" required> គ) $a\vec{u} + b\vec{v}$</label>
-                <label><input type="radio" name="q9" value="D" required> ឃ) $a + b + \vec{u} + \vec{v}$</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >៨. ការបូកវ៉ិចទ័រមានលក្ខណៈត្រឡប់ (Commutativity)។
+                        តើសមភាពមួយណាខាងក្រោមដែលបង្ហាញពីលក្ខណៈនេះបានត្រឹមត្រូវ?</strong
+                    >
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q8" value="A" required /> ក) $\vec{u} + (\vec{v} + \vec{w}) =
+                            (\vec{u} + \vec{v}) + \vec{w}$</label
+                        >
+                        <label
+                            ><input type="radio" name="q8" value="B" required /> ខ) $\vec{u} + \vec{v} = \vec{v} +
+                            \vec{u}$</label
+                        >
+                        <label
+                            ><input type="radio" name="q8" value="C" required /> គ) $c(\vec{u} + \vec{v}) = c\vec{u} +
+                            c\vec{v}$</label
+                        >
+                        <label
+                            ><input type="radio" name="q8" value="D" required /> ឃ) $\vec{u} + \vec{0} = \vec{u}$</label
+                        >
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>១០. ប្រសិនបើគេយកវ៉ិចទ័រ $\vec{w}$ បូកជាមួយនឹងវ៉ិចទ័រផ្ទុយរបស់វា $(-\vec{w})$ តើលទ្ធផលដែលទទួលបានគឺជាអ្វី?</strong>
-            <div class="options">
-                <label><input type="radio" name="q10" value="A" required> ក) វ៉ិចទ័រដើម $\vec{w}$</label>
-                <label><input type="radio" name="q10" value="B" required> ខ) ចំនួនសូន្យ $0$ (ជាស្កាលែ)</label>
-                <label><input type="radio" name="q10" value="C" required> គ) វ៉ិចទ័រទ្វេដង $2\vec{w}$</label>
-                <label><input type="radio" name="q10" value="D" required> ឃ) វ៉ិចទ័រសូន្យ $\vec{0}$</label>
-            </div>
-        </div>
-        
-        <div class="question-block">
-            <strong>១១. តាមលក្ខខណ្ឌនៃលំហរងវ៉ិចទ័រ តើសមីការប្លង់ \( P: ax + by + cz = d \) មួយណាទើបអាចចាត់ទុកជា "លំហរង" នៃ \( \mathbb{R}^3 \) បាន?</strong>
-            <div class="options">
-                <label><input type="radio" name="q11" value="A" required> ក) ត្រូវតែមាន \( d = 1 \)</label>
-                <label><input type="radio" name="q11" value="B"> ខ) ត្រូវតែមាន \( d = 0 \)</label>
-                <label><input type="radio" name="q11" value="C"> គ) ត្រូវតែមាន \( a, b, c \) ជាលេខវិជ្ជមាន</label>
-                <label><input type="radio" name="q11" value="D"> ឃ) គ្រប់ប្លង់ទាំងអស់ក្នុង \( \mathbb{R}^3 \) សុទ្ធតែជាលំហរង</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >៩. តើទម្រង់ទូទៅនៃបន្សំលីនេអ៊ែរ (ប្រើប្រមាណវិធីបូក និង គុណ) រវាងពីរវ៉ិចទ័រ $\vec{u}$ និង
+                        $\vec{v}$ ដោយមាន $a$ និង $b$ ជាស្កាលែរ គឺជាអ្វី?</strong
+                    >
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="A" required /> ក) $a\vec{u} \times b\vec{v}$</label>
+                        <label
+                            ><input type="radio" name="q9" value="B" required /> ខ) $\frac{a\vec{u}}{b\vec{v}}$</label
+                        >
+                        <label><input type="radio" name="q9" value="C" required /> គ) $a\vec{u} + b\vec{v}$</label>
+                        <label
+                            ><input type="radio" name="q9" value="D" required /> ឃ) $a + b + \vec{u} + \vec{v}$</label
+                        >
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>១២. ក្នុងចំណោមសំណុំរងនៃ \( \mathbb{R}^3 \) ខាងក្រោម តើសំណុំមួយណាដែលជាលំហរង (Vector Subspace) ពិតប្រាកដ?</strong>
-            <div class="options">
-                <label><input type="radio" name="q12" value="A" required> ក) សំណុំនៃចំណុចទាំងអស់នៅលើស្វ៊ែរ \( x^2 + y^2 + z^2 = 1 \)</label>
-                <label><input type="radio" name="q12" value="B"> ខ) សំណុំនៃចំណុចដែលផ្ទៀងផ្ទាត់សមីការបន្ទាត់ \( x = t, y = t + 1, z = 2t \)</label>
-                <label><input type="radio" name="q12" value="C"> គ) សំណុំនៃចំណុចដែលផ្ទៀងផ្ទាត់សមីការប្លង់ \( 2x - 3y + 4z = 0 \)</label>
-                <label><input type="radio" name="q12" value="D"> ឃ) សំណុំនៃវ៉ិចទ័រ \( (x, y, z) \) ដែល \( x \ge 0, y \ge 0, z \ge 0 \)</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >១០. ប្រសិនបើគេយកវ៉ិចទ័រ $\vec{w}$ បូកជាមួយនឹងវ៉ិចទ័រផ្ទុយរបស់វា $(-\vec{w})$
+                        តើលទ្ធផលដែលទទួលបានគឺជាអ្វី?</strong
+                    >
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="A" required /> ក) វ៉ិចទ័រដើម $\vec{w}$</label>
+                        <label><input type="radio" name="q10" value="B" required /> ខ) ចំនួនសូន្យ $0$ (ជាស្កាលែ)</label>
+                        <label><input type="radio" name="q10" value="C" required /> គ) វ៉ិចទ័រទ្វេដង $2\vec{w}$</label>
+                        <label><input type="radio" name="q10" value="D" required /> ឃ) វ៉ិចទ័រសូន្យ $\vec{0}$</label>
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>១៣. ឧបមាថា \( P_1 \) និង \( P_2 \) ជាប្លង់ពីរផ្សេងគ្នាដែលសុទ្ធតែឆ្លងកាត់គល់តម្រុយ \( (0,0,0) \) ក្នុង \( \mathbb{R}^3 \)។ តើប្រពន្ធនៃប្លង់ទាំងពីរនេះ \( P_1 \cap P_2 \) តំណាងឱ្យអ្វី ហើយវាជាលំហរងដែរឬទេ?</strong>
-            <div class="options">
-                <label><input type="radio" name="q13" value="A" required> ក) ជាបន្ទាត់មួយដែលឆ្លងកាត់គល់តម្រុយ ហើយវាជាលំហរង។</label>
-                <label><input type="radio" name="q13" value="B"> ខ) ជាចំណុចតែមួយគត់គឺ \( (0,0,0) \) ហើយវាមិនមែនជាលំហរងទេ។</label>
-                <label><input type="radio" name="q13" value="C"> គ) ជាបន្ទាត់មួយដែលមិនឆ្លងកាត់គល់តម្រុយ ដូច្នេះវាមិនមែនជាលំហរងទេ។</label>
-                <label><input type="radio" name="q13" value="D"> ឃ) ជាសំណុំទទេ \( \emptyset \) ។</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >១១. តាមលក្ខខណ្ឌនៃលំហរងវ៉ិចទ័រ តើសមីការប្លង់ \( P: ax + by + cz = d \) មួយណាទើបអាចចាត់ទុកជា
+                        "លំហរង" នៃ \( \mathbb{R}^3 \) បាន?</strong
+                    >
+                    <div class="options">
+                        <label><input type="radio" name="q11" value="A" required /> ក) ត្រូវតែមាន \( d = 1 \)</label>
+                        <label><input type="radio" name="q11" value="B" /> ខ) ត្រូវតែមាន \( d = 0 \)</label>
+                        <label
+                            ><input type="radio" name="q11" value="C" /> គ) ត្រូវតែមាន \( a, b, c \)
+                            ជាលេខវិជ្ជមាន</label
+                        >
+                        <label
+                            ><input type="radio" name="q11" value="D" /> ឃ) គ្រប់ប្លង់ទាំងអស់ក្នុង \( \mathbb{R}^3 \)
+                            សុទ្ធតែជាលំហរង</label
+                        >
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>១៤. ឧបមាថា \( L_1 \) និង \( L_2 \) ជាបន្ទាត់ពីរផ្សេងគ្នាដែលឆ្លងកាត់គល់តម្រុយក្នុង \( \mathbb{R}^3 \)។ តើប្រជុំនៃបន្ទាត់ទាំងពីរនេះ \( L_1 \cup L_2 \) ជាលំហរងនៃ \( \mathbb{R}^3 \) ដែរឬទេ?</strong>
-            <div class="options">
-                <label><input type="radio" name="q14" value="A" required> ក) បាទ/ចាស វាជាលំហរងជានិច្ច ព្រោះវាមានផ្ទុក \( \vec{0} \)។</label>
-                <label><input type="radio" name="q14" value="B"> ខ) ទេ វាមិនមែនជាលំហរងទេ ព្រោះវាមិនបិទជិតចំពោះប្រមាណវិធីបូកវ៉ិចទ័រ (Not closed under addition)។</label>
-                <label><input type="radio" name="q14" value="C"> គ) បាទ/ចាស វាបង្កើតបានជាប្លង់មួយដែលជាលំហរង។</label>
-                <label><input type="radio" name="q14" value="D"> ឃ) ទេ ព្រោះវាមិនបិទជិតចំពោះប្រមាណវិធីគុណនឹងស្កាលែ។</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >១២. ក្នុងចំណោមសំណុំរងនៃ \( \mathbb{R}^3 \) ខាងក្រោម តើសំណុំមួយណាដែលជាលំហរង (Vector Subspace)
+                        ពិតប្រាកដ?</strong
+                    >
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q12" value="A" required /> ក) សំណុំនៃចំណុចទាំងអស់នៅលើស្វ៊ែរ \(
+                            x^2 + y^2 + z^2 = 1 \)</label
+                        >
+                        <label
+                            ><input type="radio" name="q12" value="B" /> ខ) សំណុំនៃចំណុចដែលផ្ទៀងផ្ទាត់សមីការបន្ទាត់ \( x
+                            = t, y = t + 1, z = 2t \)</label
+                        >
+                        <label
+                            ><input type="radio" name="q12" value="C" /> គ) សំណុំនៃចំណុចដែលផ្ទៀងផ្ទាត់សមីការប្លង់ \( 2x
+                            - 3y + 4z = 0 \)</label
+                        >
+                        <label
+                            ><input type="radio" name="q12" value="D" /> ឃ) សំណុំនៃវ៉ិចទ័រ \( (x, y, z) \) ដែល \( x \ge
+                            0, y \ge 0, z \ge 0 \)</label
+                        >
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>១៥. បន្ទាត់មួយកាត់គល់តម្រុយក្នុង \( \mathbb{R}^3 \) អាចសរសេរជាទម្រង់សំណុំបានថា \[ S = \{ t(a, b, c) \mid t \in \mathbb{R} \} \] តើទម្រង់នេះមានន័យដូចម្តេចក្នុងភាសាពិជគណិតលីនេអ៊ែរ?</strong>
-            <div class="options">
-                <label><input type="radio" name="q15" value="A" required> ក) វាជាគោល (Basis) នៃ \( \mathbb{R}^3 \)</label>
-                <label><input type="radio" name="q15" value="B"> ខ) វាជាលំហរងដែលមានវិមាត្រស្មើ ២</label>
-                <label><input type="radio" name="q15" value="C"> គ) វាជាសំណុំបង្ក (Span) ដោយវ៉ិចទ័រតែមួយគត់ \( \vec{v} = (a, b, c) \)</label>
-                <label><input type="radio" name="q15" value="D"> ឃ) វាជាបន្សំលីនេអ៊ែរនៃវ៉ិចទ័រឯកតាទាំងបី</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >១៣. ឧបមាថា \( P_1 \) និង \( P_2 \) ជាប្លង់ពីរផ្សេងគ្នាដែលសុទ្ធតែឆ្លងកាត់គល់តម្រុយ \( (0,0,0) \)
+                        ក្នុង \( \mathbb{R}^3 \)។ តើប្រពន្ធនៃប្លង់ទាំងពីរនេះ \( P_1 \cap P_2 \) តំណាងឱ្យអ្វី
+                        ហើយវាជាលំហរងដែរឬទេ?</strong
+                    >
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q13" value="A" required /> ក) ជាបន្ទាត់មួយដែលឆ្លងកាត់គល់តម្រុយ
+                            ហើយវាជាលំហរង។</label
+                        >
+                        <label
+                            ><input type="radio" name="q13" value="B" /> ខ) ជាចំណុចតែមួយគត់គឺ \( (0,0,0) \)
+                            ហើយវាមិនមែនជាលំហរងទេ។</label
+                        >
+                        <label
+                            ><input type="radio" name="q13" value="C" /> គ) ជាបន្ទាត់មួយដែលមិនឆ្លងកាត់គល់តម្រុយ
+                            ដូច្នេះវាមិនមែនជាលំហរងទេ។</label
+                        >
+                        <label><input type="radio" name="q13" value="D" /> ឃ) ជាសំណុំទទេ \( \emptyset \) ។</label>
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>១៦. គេឱ្យសំណុំ \[ S = \{ (x, y, z) \in \mathbb{R}^3 \mid x + y + z = 0 \text{ and } x - y = 0 \} \] តើ \( S \) តំណាងឱ្យរូបរាងធរណីមាត្រអ្វី?</strong>
-            <div class="options">
-                <label><input type="radio" name="q16" value="A" required> ក) ជាប្លង់មួយកាត់តាមគល់តម្រុយ</label>
-                <label><input type="radio" name="q16" value="B"> ខ) ជាបន្ទាត់មួយកាត់តាមគល់តម្រុយ ដែលមានវ៉ិចទ័រប្រាប់ទិស \( (1, 1, -2) \)</label>
-                <label><input type="radio" name="q16" value="C"> គ) ជាចំណុចតែមួយគត់គឺគល់តម្រុយ \( (0,0,0) \)</label>
-                <label><input type="radio" name="q16" value="D"> ឃ) ជាលំហ \( \mathbb{R}^3 \) ទាំងមូល</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >១៤. ឧបមាថា \( L_1 \) និង \( L_2 \) ជាបន្ទាត់ពីរផ្សេងគ្នាដែលឆ្លងកាត់គល់តម្រុយក្នុង \(
+                        \mathbb{R}^3 \)។ តើប្រជុំនៃបន្ទាត់ទាំងពីរនេះ \( L_1 \cup L_2 \) ជាលំហរងនៃ \( \mathbb{R}^3 \)
+                        ដែរឬទេ?</strong
+                    >
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q14" value="A" required /> ក) បាទ/ចាស វាជាលំហរងជានិច្ច
+                            ព្រោះវាមានផ្ទុក \( \vec{0} \)។</label
+                        >
+                        <label
+                            ><input type="radio" name="q14" value="B" /> ខ) ទេ វាមិនមែនជាលំហរងទេ
+                            ព្រោះវាមិនបិទជិតចំពោះប្រមាណវិធីបូកវ៉ិចទ័រ (Not closed under addition)។</label
+                        >
+                        <label
+                            ><input type="radio" name="q14" value="C" /> គ) បាទ/ចាស
+                            វាបង្កើតបានជាប្លង់មួយដែលជាលំហរង។</label
+                        >
+                        <label
+                            ><input type="radio" name="q14" value="D" /> ឃ) ទេ
+                            ព្រោះវាមិនបិទជិតចំពោះប្រមាណវិធីគុណនឹងស្កាលែ។</label
+                        >
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>១៧. តើលំហរង (Subspace) នៅក្នុងលំហ \( \mathbb{R}^3 \) អាចមានវិមាត្រ (Dimension) ប៉ុន្មានខ្លះ?</strong>
-            <div class="options">
-                <label><input type="radio" name="q17" value="A" required> ក) មានតែ ៣ ប៉ុណ្ណោះ</label>
-                <label><input type="radio" name="q17" value="B"> ខ) មានតែ ១ (បន្ទាត់) និង ២ (ប្លង់)</label>
-                <label><input type="radio" name="q17" value="C"> គ) អាចមានវិមាត្រ ០, ១, ២, ឬ ៣</label>
-                <label><input type="radio" name="q17" value="D"> ឃ) អាចមានវិមាត្រចាប់ពី ១ ដល់អនន្ត</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >១៥. បន្ទាត់មួយកាត់គល់តម្រុយក្នុង \( \mathbb{R}^3 \) អាចសរសេរជាទម្រង់សំណុំបានថា \[ S = \{ t(a,
+                        b, c) \mid t \in \mathbb{R} \} \] តើទម្រង់នេះមានន័យដូចម្តេចក្នុងភាសាពិជគណិតលីនេអ៊ែរ?</strong
+                    >
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q15" value="A" required /> ក) វាជាគោល (Basis) នៃ \( \mathbb{R}^3
+                            \)</label
+                        >
+                        <label><input type="radio" name="q15" value="B" /> ខ) វាជាលំហរងដែលមានវិមាត្រស្មើ ២</label>
+                        <label
+                            ><input type="radio" name="q15" value="C" /> គ) វាជាសំណុំបង្ក (Span) ដោយវ៉ិចទ័រតែមួយគត់ \(
+                            \vec{v} = (a, b, c) \)</label
+                        >
+                        <label
+                            ><input type="radio" name="q15" value="D" /> ឃ) វាជាបន្សំលីនេអ៊ែរនៃវ៉ិចទ័រឯកតាទាំងបី</label
+                        >
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>១៨. ឧបមាថាប្លង់ \( P \) មួយកាត់តាមគល់តម្រុយក្នុង \( \mathbb{R}^3 \) ដែលមានវ៉ិចទ័រណរម៉ាល់ (Normal Vector) \( \vec{n} = (1, -2, 1) \)។ ក្នុងចំណោមវ៉ិចទ័រខាងក្រោម តើវ៉ិចទ័រមួយណាដែលស្ថិតនៅក្នុងប្លង់លំហរង \( P \) នេះ?</strong>
-            <div class="options">
-                <label><input type="radio" name="q18" value="A" required> ក) \( (1, 1, 1) \)</label>
-                <label><input type="radio" name="q18" value="B"> ខ) \( (1, 0, 0) \)</label>
-                <label><input type="radio" name="q18" value="C"> គ) \( (2, 1, 0) \)</label>
-                <label><input type="radio" name="q18" value="D"> ឃ) \( (1, -2, 1) \)</label>
-            </div>
-        </div>
-        
-        
-        <div class="question-block">
-            <strong>១៩. តើអ្វីជាលក្ខណៈខុសគ្នាសំខាន់បំផុតរវាង "លំហអាហ្វីន" (Affine Space) និង "លំហវ៉ិចទ័រ" (Vector Space)?</strong>
-            <div class="options">
-                <label><input type="radio" name="q19" value="A" required> ក) លំហអាហ្វីនមានវិមាត្រតែ ២ ប៉ុណ្ណោះ។</label>
-                <label><input type="radio" name="q19" value="B"> ខ) លំហអាហ្វីនមិនមាន "ចំណុចគល់តម្រុយ" (Origin) កំណត់ទុកជាមុននោះទេ។</label>
-                <label><input type="radio" name="q19" value="C"> គ) លំហអាហ្វីនមិនមានវ៉ិចទ័រប្រាប់ទិសទេ។</label>
-                <label><input type="radio" name="q19" value="D"> ឃ) លំហអាហ្វីនមិនអាចផ្ទុកបន្ទាត់ ឬប្លង់បានទេ។</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >១៦. គេឱ្យសំណុំ \[ S = \{ (x, y, z) \in \mathbb{R}^3 \mid x + y + z = 0 \text{ and } x - y = 0
+                        \} \] តើ \( S \) តំណាងឱ្យរូបរាងធរណីមាត្រអ្វី?</strong
+                    >
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q16" value="A" required /> ក) ជាប្លង់មួយកាត់តាមគល់តម្រុយ</label
+                        >
+                        <label
+                            ><input type="radio" name="q16" value="B" /> ខ) ជាបន្ទាត់មួយកាត់តាមគល់តម្រុយ
+                            ដែលមានវ៉ិចទ័រប្រាប់ទិស \( (1, 1, -2) \)</label
+                        >
+                        <label
+                            ><input type="radio" name="q16" value="C" /> គ) ជាចំណុចតែមួយគត់គឺគល់តម្រុយ \( (0,0,0)
+                            \)</label
+                        >
+                        <label><input type="radio" name="q16" value="D" /> ឃ) ជាលំហ \( \mathbb{R}^3 \) ទាំងមូល</label>
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>២០. នៅក្នុងលំហអាហ្វីន ប្រសិនបើគេយកចំណុចមួយ (Point) ដកនឹងចំណុចមួយទៀត (ឧទាហរណ៍ \( A - B \)) តើលទ្ធផលទទួលបានគឺជាអ្វី?</strong>
-            <div class="options">
-                <label><input type="radio" name="q20" value="A" required> ក) ចំណុចមួយទៀត</label>
-                <label><input type="radio" name="q20" value="B"> ខ) ស្កាលែ (ចំនួនពិត)</label>
-                <label><input type="radio" name="q20" value="C"> គ) វ៉ិចទ័រមួយ (Vector)</label>
-                <label><input type="radio" name="q20" value="D"> ឃ) សូន្យជានិច្ច</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >១៧. តើលំហរង (Subspace) នៅក្នុងលំហ \( \mathbb{R}^3 \) អាចមានវិមាត្រ (Dimension)
+                        ប៉ុន្មានខ្លះ?</strong
+                    >
+                    <div class="options">
+                        <label><input type="radio" name="q17" value="A" required /> ក) មានតែ ៣ ប៉ុណ្ណោះ</label>
+                        <label><input type="radio" name="q17" value="B" /> ខ) មានតែ ១ (បន្ទាត់) និង ២ (ប្លង់)</label>
+                        <label><input type="radio" name="q17" value="C" /> គ) អាចមានវិមាត្រ ០, ១, ២, ឬ ៣</label>
+                        <label><input type="radio" name="q17" value="D" /> ឃ) អាចមានវិមាត្រចាប់ពី ១ ដល់អនន្ត</label>
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>២១. ឧបមាថា \( A \) និង \( B \) ជាពីរចំណុចក្នុងលំហអាហ្វីន។ តើកន្សោមបន្សំ \( \alpha A + \beta B \) តំណាងឱ្យ "ចំណុចថ្មីមួយទៀត" ក្នុងលំហអាហ្វីនបាន លុះត្រាតែលក្ខខណ្ឌអ្វីត្រូវបានផ្ទៀងផ្ទាត់?</strong>
-            <div class="options">
-                <label><input type="radio" name="q21" value="A" required> ក) \( \alpha + \beta = 0 \)</label>
-                <label><input type="radio" name="q21" value="B"> ខ) \( \alpha + \beta = 1 \)</label>
-                <label><input type="radio" name="q21" value="C"> គ) \( \alpha = \beta \)</label>
-                <label><input type="radio" name="q21" value="D"> ឃ) \( \alpha \cdot \beta = 1 \)</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >១៨. ឧបមាថាប្លង់ \( P \) មួយកាត់តាមគល់តម្រុយក្នុង \( \mathbb{R}^3 \) ដែលមានវ៉ិចទ័រណរម៉ាល់
+                        (Normal Vector) \( \vec{n} = (1, -2, 1) \)។ ក្នុងចំណោមវ៉ិចទ័រខាងក្រោម
+                        តើវ៉ិចទ័រមួយណាដែលស្ថិតនៅក្នុងប្លង់លំហរង \( P \) នេះ?</strong
+                    >
+                    <div class="options">
+                        <label><input type="radio" name="q18" value="A" required /> ក) \( (1, 1, 1) \)</label>
+                        <label><input type="radio" name="q18" value="B" /> ខ) \( (1, 0, 0) \)</label>
+                        <label><input type="radio" name="q18" value="C" /> គ) \( (2, 1, 0) \)</label>
+                        <label><input type="radio" name="q18" value="D" /> ឃ) \( (1, -2, 1) \)</label>
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>២២. លំហរងអាហ្វីន (Affine Subspace) មួយត្រូវបានកំណត់ដោយធាតុសំខាន់ពីរ។ តើធាតុទាំងពីរនោះគឺជាអ្វី?</strong>
-            <div class="options">
-                <label><input type="radio" name="q22" value="A" required> ក) ចំណុចមួយ និង ស្កាលែមួយ</label>
-                <label><input type="radio" name="q22" value="B"> ខ) វ៉ិចទ័រពីរ</label>
-                <label><input type="radio" name="q22" value="C"> គ) ចំណុចមួយ និង លំហរងវ៉ិចទ័រប្រាប់ទិសមួយ (Direction Vector Subspace)</label>
-                <label><input type="radio" name="q22" value="D"> ឃ) ចំណុចគល់តម្រុយ និង បន្ទាត់មួយ</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >១៩. តើអ្វីជាលក្ខណៈខុសគ្នាសំខាន់បំផុតរវាង "លំហអាហ្វីន" (Affine Space) និង "លំហវ៉ិចទ័រ" (Vector
+                        Space)?</strong
+                    >
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q19" value="A" required /> ក) លំហអាហ្វីនមានវិមាត្រតែ ២
+                            ប៉ុណ្ណោះ។</label
+                        >
+                        <label
+                            ><input type="radio" name="q19" value="B" /> ខ) លំហអាហ្វីនមិនមាន "ចំណុចគល់តម្រុយ" (Origin)
+                            កំណត់ទុកជាមុននោះទេ។</label
+                        >
+                        <label
+                            ><input type="radio" name="q19" value="C" /> គ) លំហអាហ្វីនមិនមានវ៉ិចទ័រប្រាប់ទិសទេ។</label
+                        >
+                        <label
+                            ><input type="radio" name="q19" value="D" /> ឃ) លំហអាហ្វីនមិនអាចផ្ទុកបន្ទាត់
+                            ឬប្លង់បានទេ។</label
+                        >
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>២៣. តើសមីការប៉ារ៉ាម៉ែត្រនៃបន្ទាត់អាហ្វីន ដែលកាត់ចំណុច \( A \) និងមានវ៉ិចទ័រប្រាប់ទិស \( \vec{u} \) គឺមានទម្រង់យ៉ាងដូចម្តេច? (\( t \in \mathbb{R} \))</strong>
-            <div class="options">
-                <label><input type="radio" name="q23" value="A" required> ក) \( M = tA + \vec{u} \)</label>
-                <label><input type="radio" name="q23" value="B"> ខ) \( M = A + t\vec{u} \)</label>
-                <label><input type="radio" name="q23" value="C"> គ) \( M = A \cdot t\vec{u} \)</label>
-                <label><input type="radio" name="q23" value="D"> ឃ) \( M = \vec{u} + t \)</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >២០. នៅក្នុងលំហអាហ្វីន ប្រសិនបើគេយកចំណុចមួយ (Point) ដកនឹងចំណុចមួយទៀត (ឧទាហរណ៍ \( A - B \))
+                        តើលទ្ធផលទទួលបានគឺជាអ្វី?</strong
+                    >
+                    <div class="options">
+                        <label><input type="radio" name="q20" value="A" required /> ក) ចំណុចមួយទៀត</label>
+                        <label><input type="radio" name="q20" value="B" /> ខ) ស្កាលែ (ចំនួនពិត)</label>
+                        <label><input type="radio" name="q20" value="C" /> គ) វ៉ិចទ័រមួយ (Vector)</label>
+                        <label><input type="radio" name="q20" value="D" /> ឃ) សូន្យជានិច្ច</label>
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>២៤. ឧបមាថាចំណុច ៣ ផ្សេងគ្នា \( A, B, C \) មិនរត់ត្រង់ជួរ (Non-collinear) ក្នុងលំហអាហ្វីន។ តើលំហរងអាហ្វីនដែលបង្កើតដោយចំណុចទាំងបីនេះ (Affine Span) មានរូបរាងធរណីមាត្រជាអ្វី?</strong>
-            <div class="options">
-                <label><input type="radio" name="q24" value="A" required> ក) បន្ទាត់មួយ (វិមាត្រ ១)</label>
-                <label><input type="radio" name="q24" value="B"> ខ) ប្លង់មួយ (វិមាត្រ ២)</label>
-                <label><input type="radio" name="q24" value="C"> គ) លំហ 3D (វិមាត្រ ៣)</label>
-                <label><input type="radio" name="q24" value="D"> ឃ) ត្រីកោណមួយ (មិនមែនជាលំហរងទេ)</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >២១. ឧបមាថា \( A \) និង \( B \) ជាពីរចំណុចក្នុងលំហអាហ្វីន។ តើកន្សោមបន្សំ \( \alpha A + \beta B
+                        \) តំណាងឱ្យ "ចំណុចថ្មីមួយទៀត" ក្នុងលំហអាហ្វីនបាន
+                        លុះត្រាតែលក្ខខណ្ឌអ្វីត្រូវបានផ្ទៀងផ្ទាត់?</strong
+                    >
+                    <div class="options">
+                        <label><input type="radio" name="q21" value="A" required /> ក) \( \alpha + \beta = 0 \)</label>
+                        <label><input type="radio" name="q21" value="B" /> ខ) \( \alpha + \beta = 1 \)</label>
+                        <label><input type="radio" name="q21" value="C" /> គ) \( \alpha = \beta \)</label>
+                        <label><input type="radio" name="q21" value="D" /> ឃ) \( \alpha \cdot \beta = 1 \)</label>
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>២៥. នៅក្នុងលំហអាហ្វីន \( \mathbb{R}^3 \) បន្ទាត់ពីរអាចមានទំនាក់ទំនងនឹងគ្នាជាច្រើនយ៉ាង។ ក្រៅពី កាត់គ្នា ស្របគ្នា និងត្រួតស៊ីគ្នា តើបន្ទាត់ពីរក្នុងលំហ 3D អាចមានស្ថានភាពអ្វីទៀត?</strong>
-            <div class="options">
-                <label><input type="radio" name="q25" value="A" required> ក) កាត់កែងគ្នាជានិច្ច</label>
-                <label><input type="radio" name="q25" value="B"> ខ) ជាបន្ទាត់អនន្ត</label>
-                <label><input type="radio" name="q25" value="C"> គ) ខ្វែងគ្នា (Skew lines - មិនស្រប មិនកាត់ និងមិនស្ថិតក្នុងប្លង់តែមួយ)</label>
-                <label><input type="radio" name="q25" value="D"> ឃ) គ្មានស្ថានភាពអ្វីផ្សេងទៀតទេ</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >២២. លំហរងអាហ្វីន (Affine Subspace) មួយត្រូវបានកំណត់ដោយធាតុសំខាន់ពីរ។
+                        តើធាតុទាំងពីរនោះគឺជាអ្វី?</strong
+                    >
+                    <div class="options">
+                        <label><input type="radio" name="q22" value="A" required /> ក) ចំណុចមួយ និង ស្កាលែមួយ</label>
+                        <label><input type="radio" name="q22" value="B" /> ខ) វ៉ិចទ័រពីរ</label>
+                        <label
+                            ><input type="radio" name="q22" value="C" /> គ) ចំណុចមួយ និង លំហរងវ៉ិចទ័រប្រាប់ទិសមួយ
+                            (Direction Vector Subspace)</label
+                        >
+                        <label><input type="radio" name="q22" value="D" /> ឃ) ចំណុចគល់តម្រុយ និង បន្ទាត់មួយ</label>
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>២៦. ចំណុចកណ្តាល \( I \) នៃអង្កត់ \( [AB] \) ក្នុងលំហអាហ្វីន អាចសរសេរបានជាទម្រង់ត្រឹមត្រូវតាមរយៈកន្សោមណា?</strong>
-            <div class="options">
-                <label><input type="radio" name="q26" value="A" required> ក) \( I = A - B \)</label>
-                <label><input type="radio" name="q26" value="B"> ខ) \( I = 2A + 2B \)</label>
-                <label><input type="radio" name="q26" value="C"> គ) \( I = A + B \)</label>
-                <label><input type="radio" name="q26" value="D"> ឃ) \( I = \frac{1}{2}A + \frac{1}{2}B \)</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >២៣. តើសមីការប៉ារ៉ាម៉ែត្រនៃបន្ទាត់អាហ្វីន ដែលកាត់ចំណុច \( A \) និងមានវ៉ិចទ័រប្រាប់ទិស \( \vec{u}
+                        \) គឺមានទម្រង់យ៉ាងដូចម្តេច? (\( t \in \mathbb{R} \))</strong
+                    >
+                    <div class="options">
+                        <label><input type="radio" name="q23" value="A" required /> ក) \( M = tA + \vec{u} \)</label>
+                        <label><input type="radio" name="q23" value="B" /> ខ) \( M = A + t\vec{u} \)</label>
+                        <label><input type="radio" name="q23" value="C" /> គ) \( M = A \cdot t\vec{u} \)</label>
+                        <label><input type="radio" name="q23" value="D" /> ឃ) \( M = \vec{u} + t \)</label>
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>២៧. ឧបមាថា \( P_1 \) និង \( P_2 \) ជាប្លង់អាហ្វីនពីរ។ តើលក្ខខណ្ឌអ្វីដែលធ្វើឱ្យប្លង់ទាំងពីរនេះស្របគ្នាដាច់ខាត (Strictly parallel)?</strong>
-            <div class="options">
-                <label><input type="radio" name="q27" value="A" required> ក) ពួកវាមានចំណុចរួមយ៉ាងតិចមួយ។</label>
-                <label><input type="radio" name="q27" value="B"> ខ) ពួកវាមានលំហរងវ៉ិចទ័រប្រាប់ទិសដូចគ្នា ប៉ុន្តែមិនមានចំណុចរួមណាមួយឡើយ។</label>
-                <label><input type="radio" name="q27" value="C"> គ) ពួកវាមានវ៉ិចទ័រប្រាប់ទិសខុសគ្នាទាំងស្រុង។</label>
-                <label><input type="radio" name="q27" value="D"> ឃ) ពួកវាបង្កើតបានជាមុំកែង។</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >២៤. ឧបមាថាចំណុច ៣ ផ្សេងគ្នា \( A, B, C \) មិនរត់ត្រង់ជួរ (Non-collinear) ក្នុងលំហអាហ្វីន។
+                        តើលំហរងអាហ្វីនដែលបង្កើតដោយចំណុចទាំងបីនេះ (Affine Span) មានរូបរាងធរណីមាត្រជាអ្វី?</strong
+                    >
+                    <div class="options">
+                        <label><input type="radio" name="q24" value="A" required /> ក) បន្ទាត់មួយ (វិមាត្រ ១)</label>
+                        <label><input type="radio" name="q24" value="B" /> ខ) ប្លង់មួយ (វិមាត្រ ២)</label>
+                        <label><input type="radio" name="q24" value="C" /> គ) លំហ 3D (វិមាត្រ ៣)</label>
+                        <label><input type="radio" name="q24" value="D" /> ឃ) ត្រីកោណមួយ (មិនមែនជាលំហរងទេ)</label>
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>២៨. ប្រសិនបើ \( A, B, C \) ជាចំណុចក្នុងលំហអាហ្វីន ទំនាក់ទំនងហ្សាលនៃវ៉ិចទ័រ ត្រូវបានសរសេរយ៉ាងដូចម្តេច?</strong>
-            <div class="options">
-                <label><input type="radio" name="q28" value="A" required> ក) \( \vv{AB} + \vv{BC} = \vv{AC} \)</label>
-                <label><input type="radio" name="q28" value="B"> ខ) \( \vv{AB} \cdot \vv{BC} = \vv{AC} \)</label>
-                <label><input type="radio" name="q28" value="C"> គ) \( \vv{AB} - \vv{BC} = \vv{AC} \)</label>
-                <label><input type="radio" name="q28" value="D"> ឃ) \( \vv{AB} + \vv{AC} = \vv{BC} \)</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >២៥. នៅក្នុងលំហអាហ្វីន \( \mathbb{R}^3 \) បន្ទាត់ពីរអាចមានទំនាក់ទំនងនឹងគ្នាជាច្រើនយ៉ាង។ ក្រៅពី
+                        កាត់គ្នា ស្របគ្នា និងត្រួតស៊ីគ្នា តើបន្ទាត់ពីរក្នុងលំហ 3D អាចមានស្ថានភាពអ្វីទៀត?</strong
+                    >
+                    <div class="options">
+                        <label><input type="radio" name="q25" value="A" required /> ក) កាត់កែងគ្នាជានិច្ច</label>
+                        <label><input type="radio" name="q25" value="B" /> ខ) ជាបន្ទាត់អនន្ត</label>
+                        <label
+                            ><input type="radio" name="q25" value="C" /> គ) ខ្វែងគ្នា (Skew lines - មិនស្រប មិនកាត់
+                            និងមិនស្ថិតក្នុងប្លង់តែមួយ)</label
+                        >
+                        <label><input type="radio" name="q25" value="D" /> ឃ) គ្មានស្ថានភាពអ្វីផ្សេងទៀតទេ</label>
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>២៩. លំហរងអាហ្វីនពីរដែលកាត់គ្នា នឹងបង្កើតបានជាលំហរងអាហ្វីនមួយទៀត។ ប្រសិនបើប្លង់ពីរផ្សេងគ្នាក្នុង \( \mathbb{R}^3 \) កាត់គ្នា តើលំហរងប្រសព្វនោះមានវិមាត្រប៉ុន្មាន?</strong>
-            <div class="options">
-                <label><input type="radio" name="q29" value="A" required> ក) ០ (ជាចំណុច)</label>
-                <label><input type="radio" name="q29" value="B"> ខ) ១ (ជាបន្ទាត់)</label>
-                <label><input type="radio" name="q29" value="C"> គ) ២ (ជាប្លង់)</label>
-                <label><input type="radio" name="q29" value="D"> ឃ) ៣ (ជាលំហ)</label>
-            </div>
-        </div>
-        
-        <div class="question-block">
-            <strong>៣០. នៅក្នុងប្លង់អាហ្វីន \( \mathbb{R}^2 \) តើអ្វីជាភាពខុសគ្នាសំខាន់បំផុតរវាង "ចំណុច" (Point) និង "វ៉ិចទ័រ" (Vector)?</strong>
-            <div class="options">
-                <label><input type="radio" name="q30" value="A" required> ក) វ៉ិចទ័រមានតែមួយគត់ ចំណែកចំណុចមានច្រើនរាប់មិនអស់។</label>
-                <label><input type="radio" name="q30" value="B"> ខ) ចំណុចតំណាងឱ្យ "ទីតាំង" ឯវ៉ិចទ័រតំណាងឱ្យ "បម្រែបម្រួលទីតាំង" ឬ "ការរំកិល"។</label>
-                <label><input type="radio" name="q30" value="C"> គ) ចំណុចមានវិមាត្រ ២ ចំណែកវ៉ិចទ័រមានវិមាត្រ ៣។</label>
-                <label><input type="radio" name="q30" value="D"> ឃ) មិនមានភាពខុសគ្នាទេ ពួកវាដូចគ្នាទាំងស្រុងក្នុងលំហអាហ្វីន។</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >២៦. ចំណុចកណ្តាល \( I \) នៃអង្កត់ \( [AB] \) ក្នុងលំហអាហ្វីន
+                        អាចសរសេរបានជាទម្រង់ត្រឹមត្រូវតាមរយៈកន្សោមណា?</strong
+                    >
+                    <div class="options">
+                        <label><input type="radio" name="q26" value="A" required /> ក) \( I = A - B \)</label>
+                        <label><input type="radio" name="q26" value="B" /> ខ) \( I = 2A + 2B \)</label>
+                        <label><input type="radio" name="q26" value="C" /> គ) \( I = A + B \)</label>
+                        <label
+                            ><input type="radio" name="q26" value="D" /> ឃ) \( I = \frac{1}{2}A + \frac{1}{2}B \)</label
+                        >
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>៣១. ឧបមាថា \( A \) និង \( B \) ជាពីរចំណុចផ្សេងគ្នាក្នុងប្លង់អាហ្វីន \( \mathbb{R}^2 \)។ តើកន្សោមបន្សំ \( \alpha A + \beta B \) បង្កើតបានជា "ចំណុចមួយ" (Point) លុះត្រាតែលក្ខខណ្ឌអ្វីត្រូវបានផ្ទៀងផ្ទាត់?</strong>
-            <div class="options">
-                <label><input type="radio" name="q31" value="A" required> ក) \( \alpha + \beta = 0 \)</label>
-                <label><input type="radio" name="q31" value="B"> ខ) \( \alpha = \beta \)</label>
-                <label><input type="radio" name="q31" value="C"> គ) \( \alpha \cdot \beta = 1 \)</label>
-                <label><input type="radio" name="q31" value="D"> ឃ) \( \alpha + \beta = 1 \)</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >២៧. ឧបមាថា \( P_1 \) និង \( P_2 \) ជាប្លង់អាហ្វីនពីរ។
+                        តើលក្ខខណ្ឌអ្វីដែលធ្វើឱ្យប្លង់ទាំងពីរនេះស្របគ្នាដាច់ខាត (Strictly parallel)?</strong
+                    >
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q27" value="A" required /> ក) ពួកវាមានចំណុចរួមយ៉ាងតិចមួយ។</label
+                        >
+                        <label
+                            ><input type="radio" name="q27" value="B" /> ខ) ពួកវាមានលំហរងវ៉ិចទ័រប្រាប់ទិសដូចគ្នា
+                            ប៉ុន្តែមិនមានចំណុចរួមណាមួយឡើយ។</label
+                        >
+                        <label
+                            ><input type="radio" name="q27" value="C" /> គ)
+                            ពួកវាមានវ៉ិចទ័រប្រាប់ទិសខុសគ្នាទាំងស្រុង។</label
+                        >
+                        <label><input type="radio" name="q27" value="D" /> ឃ) ពួកវាបង្កើតបានជាមុំកែង។</label>
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>៣២. តើលំហរងអាហ្វីន (Affine Subspace) នៅក្នុង \( \mathbb{R}^2 \) អាចមានវិមាត្រ (Dimension) អ្វីខ្លះ?</strong>
-            <div class="options">
-                <label><input type="radio" name="q32" value="A" required> ក) វិមាត្រ ១ (បន្ទាត់) និង ២ (ប្លង់)</label>
-                <label><input type="radio" name="q32" value="B"> ខ) វិមាត្រ ០ (ចំណុច), ១ (បន្ទាត់), និង ២ (ប្លង់ \( \mathbb{R}^2 \) ទាំងមូល)</label>
-                <label><input type="radio" name="q32" value="C"> គ) វិមាត្រ ១ (បន្ទាត់) ប៉ុណ្ណោះ</label>
-                <label><input type="radio" name="q32" value="D"> ឃ) វិមាត្រ ១ (បន្ទាត់), ២ (ប្លង់), និង ៣ (លំហ)</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >២៨. ប្រសិនបើ \( A, B, C \) ជាចំណុចក្នុងលំហអាហ្វីន ទំនាក់ទំនងហ្សាលនៃវ៉ិចទ័រ
+                        ត្រូវបានសរសេរយ៉ាងដូចម្តេច?</strong
+                    >
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q28" value="A" required /> ក) \( \vv{AB} + \vv{BC} = \vv{AC}
+                            \)</label
+                        >
+                        <label
+                            ><input type="radio" name="q28" value="B" /> ខ) \( \vv{AB} \cdot \vv{BC} = \vv{AC} \)</label
+                        >
+                        <label><input type="radio" name="q28" value="C" /> គ) \( \vv{AB} - \vv{BC} = \vv{AC} \)</label>
+                        <label><input type="radio" name="q28" value="D" /> ឃ) \( \vv{AB} + \vv{AC} = \vv{BC} \)</label>
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>៣៣. សមីការបន្ទាត់ទូទៅ \( ax + by = c \) តំណាងឱ្យលំហរងអាហ្វីនមួយនៅក្នុង \( \mathbb{R}^2 \)។ តើក្នុងករណីណាទើបបន្ទាត់នេះ អាចចាត់ទុកជា "លំហរងវ៉ិចទ័រ" (Vector Subspace) ផងដែរ?</strong>
-            <div class="options">
-                <label><input type="radio" name="q33" value="A" required> ក) នៅពេលដែល \( a = b \)</label>
-                <label><input type="radio" name="q33" value="B"> ខ) នៅពេលដែល \( c = 1 \)</label>
-                <label><input type="radio" name="q33" value="C"> គ) នៅពេលដែល \( c = 0 \)</label>
-                <label><input type="radio" name="q33" value="D"> ឃ) នៅពេលដែល \( a \gt 0 \) និង \( b \gt 0 \)</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >២៩. លំហរងអាហ្វីនពីរដែលកាត់គ្នា នឹងបង្កើតបានជាលំហរងអាហ្វីនមួយទៀត។ ប្រសិនបើប្លង់ពីរផ្សេងគ្នាក្នុង
+                        \( \mathbb{R}^3 \) កាត់គ្នា តើលំហរងប្រសព្វនោះមានវិមាត្រប៉ុន្មាន?</strong
+                    >
+                    <div class="options">
+                        <label><input type="radio" name="q29" value="A" required /> ក) ០ (ជាចំណុច)</label>
+                        <label><input type="radio" name="q29" value="B" /> ខ) ១ (ជាបន្ទាត់)</label>
+                        <label><input type="radio" name="q29" value="C" /> គ) ២ (ជាប្លង់)</label>
+                        <label><input type="radio" name="q29" value="D" /> ឃ) ៣ (ជាលំហ)</label>
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>៣៤. បន្ទាត់អាហ្វីនមួយឆ្លងកាត់ចំណុច \( A(1, 2) \) និងមានវ៉ិចទ័រប្រាប់ទិស \( \vec{u}(3, -1) \)។ តើសមីការប៉ារ៉ាម៉ែត្ររបស់បន្ទាត់នេះគឺអ្វី? (\( t \in \mathbb{R} \))</strong>
-            <div class="options">
-                <label><input type="radio" name="q34" value="A" required> ក) \( \begin{cases} x = 3 + t \\ y = -1 + 2t \end{cases} \)</label>
-                <label><input type="radio" name="q34" value="B"> ខ) \( \begin{cases} x = 1 + 3t \\ y = 2 - t \end{cases} \)</label>
-                <label><input type="radio" name="q34" value="C"> គ) \( \begin{cases} x = 1 - 3t \\ y = 2 - t \end{cases} \)</label>
-                <label><input type="radio" name="q34" value="D"> ឃ) \( \begin{cases} x = 3t \\ y = -2t \end{cases} \)</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >៣០. នៅក្នុងប្លង់អាហ្វីន \( \mathbb{R}^2 \) តើអ្វីជាភាពខុសគ្នាសំខាន់បំផុតរវាង "ចំណុច" (Point)
+                        និង "វ៉ិចទ័រ" (Vector)?</strong
+                    >
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q30" value="A" required /> ក) វ៉ិចទ័រមានតែមួយគត់
+                            ចំណែកចំណុចមានច្រើនរាប់មិនអស់។</label
+                        >
+                        <label
+                            ><input type="radio" name="q30" value="B" /> ខ) ចំណុចតំណាងឱ្យ "ទីតាំង" ឯវ៉ិចទ័រតំណាងឱ្យ
+                            "បម្រែបម្រួលទីតាំង" ឬ "ការរំកិល"។</label
+                        >
+                        <label
+                            ><input type="radio" name="q30" value="C" /> គ) ចំណុចមានវិមាត្រ ២ ចំណែកវ៉ិចទ័រមានវិមាត្រ
+                            ៣។</label
+                        >
+                        <label
+                            ><input type="radio" name="q30" value="D" /> ឃ) មិនមានភាពខុសគ្នាទេ
+                            ពួកវាដូចគ្នាទាំងស្រុងក្នុងលំហអាហ្វីន។</label
+                        >
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>៣៥. បន្ទាត់ពីរក្នុងប្លង់អាហ្វីនមានសមីការ \( 2x - y = 3 \) និង \( 4x - 2y = 5 \)។ តើបន្ទាត់ទាំងពីរនេះមានទំនាក់ទំនងយ៉ាងដូចម្តេច?</strong>
-            <div class="options">
-                <label><input type="radio" name="q35" value="A" required> ក) កាត់គ្នាត្រង់ចំណុចតែមួយគត់</label>
-                <label><input type="radio" name="q35" value="B"> ខ) ត្រួតស៊ីគ្នាទាំងស្រុង (បន្ទាត់តែមួយ)</label>
-                <label><input type="radio" name="q35" value="C"> គ) កាត់កែងគ្នា</label>
-                <label><input type="radio" name="q35" value="D"> ឃ) ស្របគ្នាដាច់ខាត (Strictly parallel)</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >៣១. ឧបមាថា \( A \) និង \( B \) ជាពីរចំណុចផ្សេងគ្នាក្នុងប្លង់អាហ្វីន \( \mathbb{R}^2 \)។
+                        តើកន្សោមបន្សំ \( \alpha A + \beta B \) បង្កើតបានជា "ចំណុចមួយ" (Point)
+                        លុះត្រាតែលក្ខខណ្ឌអ្វីត្រូវបានផ្ទៀងផ្ទាត់?</strong
+                    >
+                    <div class="options">
+                        <label><input type="radio" name="q31" value="A" required /> ក) \( \alpha + \beta = 0 \)</label>
+                        <label><input type="radio" name="q31" value="B" /> ខ) \( \alpha = \beta \)</label>
+                        <label><input type="radio" name="q31" value="C" /> គ) \( \alpha \cdot \beta = 1 \)</label>
+                        <label><input type="radio" name="q31" value="D" /> ឃ) \( \alpha + \beta = 1 \)</label>
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>៣៦. នៅក្នុងប្លង់អាហ្វីន \( \mathbb{R}^2 \) ប្រសិនបើបន្ទាត់ពីរមិនស្របគ្នា (Non-parallel) តើចំណុចប្រសព្វរបស់ពួកវាមានស្ថានភាពបែបណា?</strong>
-            <div class="options">
-                <label><input type="radio" name="q36" value="A" required> ក) ពួកវាមិនកាត់គ្នាទេ</label>
-                <label><input type="radio" name="q36" value="B"> ខ) ពួកវាកាត់គ្នាបង្កើតបានជាបន្ទាត់មួយទៀត</label>
-                <label><input type="radio" name="q36" value="C"> គ) ពួកវាកាត់គ្នាត្រង់ចំណុចតែមួយគត់ជានិច្ច</label>
-                <label><input type="radio" name="q36" value="D"> ឃ) ពួកវាកាត់គ្នាត្រង់ពីរចំណុច</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >៣២. តើលំហរងអាហ្វីន (Affine Subspace) នៅក្នុង \( \mathbb{R}^2 \) អាចមានវិមាត្រ (Dimension)
+                        អ្វីខ្លះ?</strong
+                    >
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q32" value="A" required /> ក) វិមាត្រ ១ (បន្ទាត់) និង ២
+                            (ប្លង់)</label
+                        >
+                        <label
+                            ><input type="radio" name="q32" value="B" /> ខ) វិមាត្រ ០ (ចំណុច), ១ (បន្ទាត់), និង ២ (ប្លង់
+                            \( \mathbb{R}^2 \) ទាំងមូល)</label
+                        >
+                        <label><input type="radio" name="q32" value="C" /> គ) វិមាត្រ ១ (បន្ទាត់) ប៉ុណ្ណោះ</label>
+                        <label
+                            ><input type="radio" name="q32" value="D" /> ឃ) វិមាត្រ ១ (បន្ទាត់), ២ (ប្លង់), និង ៣
+                            (លំហ)</label
+                        >
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>៣៧. ប្រមាណវិធីបំព្រិល (Translation)៖ ប្រសិនបើគេធ្វើបំព្រិលបន្ទាត់អាហ្វីន \( D \) តាមរយៈវ៉ិចទ័រ \( \vec{v} \) (ដែល \( \vec{v} \) មិនមែនជាវ៉ិចទ័រប្រាប់ទិសរបស់ \( D \)) តើលទ្ធផល \( D' \) ទទួលបានគឺជាអ្វី?</strong>
-            <div class="options">
-                <label><input type="radio" name="q37" value="A" required> ក) បន្ទាត់ \( D' \) ដែលស្របនឹង \( D \)</label>
-                <label><input type="radio" name="q37" value="B"> ខ) បន្ទាត់ \( D' \) ដែលកាត់កែងនឹង \( D \)</label>
-                <label><input type="radio" name="q37" value="C"> គ) ចំណុចមួយ</label>
-                <label><input type="radio" name="q37" value="D"> ឃ) បន្ទាត់ដដែល (\( D' = D \))</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >៣៣. សមីការបន្ទាត់ទូទៅ \( ax + by = c \) តំណាងឱ្យលំហរងអាហ្វីនមួយនៅក្នុង \( \mathbb{R}^2 \)។
+                        តើក្នុងករណីណាទើបបន្ទាត់នេះ អាចចាត់ទុកជា "លំហរងវ៉ិចទ័រ" (Vector Subspace) ផងដែរ?</strong
+                    >
+                    <div class="options">
+                        <label><input type="radio" name="q33" value="A" required /> ក) នៅពេលដែល \( a = b \)</label>
+                        <label><input type="radio" name="q33" value="B" /> ខ) នៅពេលដែល \( c = 1 \)</label>
+                        <label><input type="radio" name="q33" value="C" /> គ) នៅពេលដែល \( c = 0 \)</label>
+                        <label
+                            ><input type="radio" name="q33" value="D" /> ឃ) នៅពេលដែល \( a \gt 0 \) និង \( b \gt 0
+                            \)</label
+                        >
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>៣៨. ដើម្បីបង្កើតបានជា "តម្រុយអាហ្វីន" (Affine Frame / Repère Affine) មួយពេញលេញនៅក្នុងប្លង់ \( \mathbb{R}^2 \) តើគេត្រូវការចំណុចអប្បបរមាចំនួនប៉ុន្មាន?</strong>
-            <div class="options">
-                <label><input type="radio" name="q38" value="A" required> ក) ២ ចំណុចផ្សេងគ្នា</label>
-                <label><input type="radio" name="q38" value="B"> ខ) ៣ ចំណុច ដែលមិនរត់ត្រង់ជួរ (Non-collinear)</label>
-                <label><input type="radio" name="q38" value="C"> គ) ៤ ចំណុច</label>
-                <label><input type="radio" name="q38" value="D"> ឃ) ១ ចំណុច និង ១ ស្កាលែ</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >៣៤. បន្ទាត់អាហ្វីនមួយឆ្លងកាត់ចំណុច \( A(1, 2) \) និងមានវ៉ិចទ័រប្រាប់ទិស \( \vec{u}(3, -1) \)។
+                        តើសមីការប៉ារ៉ាម៉ែត្ររបស់បន្ទាត់នេះគឺអ្វី? (\( t \in \mathbb{R} \))</strong
+                    >
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q34" value="A" required /> ក) \( \begin{cases} x = 3 + t \\ y =
+                            -1 + 2t \end{cases} \)</label
+                        >
+                        <label
+                            ><input type="radio" name="q34" value="B" /> ខ) \( \begin{cases} x = 1 + 3t \\ y = 2 - t
+                            \end{cases} \)</label
+                        >
+                        <label
+                            ><input type="radio" name="q34" value="C" /> គ) \( \begin{cases} x = 1 - 3t \\ y = 2 - t
+                            \end{cases} \)</label
+                        >
+                        <label
+                            ><input type="radio" name="q34" value="D" /> ឃ) \( \begin{cases} x = 3t \\ y = -2t
+                            \end{cases} \)</label
+                        >
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>៣៩. បន្ទាត់អាហ្វីន \( D \) ឆ្លងកាត់ចំណុច \( A \) និង \( B \) (\( A \neq B \))។ តើ "ទិសដៅ" (Direction) នៃបន្ទាត់ \( D \) ដែលតំណាងឱ្យលំហរងវ៉ិចទ័រ ត្រូវបានបង្កើតឡើងដោយអ្វី?</strong>
-            <div class="options">
-                <label><input type="radio" name="q39" value="A" required> ក) លំហរងវ៉ិចទ័រដែលបង្កើត (Span) ដោយវ៉ិចទ័រ \( \vec{AB} \)</label>
-                <label><input type="radio" name="q39" value="B"> ខ) ចំណុចកណ្តាលនៃ \( A \) និង \( B \)</label>
-                <label><input type="radio" name="q39" value="C"> គ) វ៉ិចទ័រណរម៉ាល់នៃបន្ទាត់ \( D \)</label>
-                <label><input type="radio" name="q39" value="D"> ឃ) ផលគុណស្កាលែនៃចំណុច \( A \) និង \( B \)</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >៣៥. បន្ទាត់ពីរក្នុងប្លង់អាហ្វីនមានសមីការ \( 2x - y = 3 \) និង \( 4x - 2y = 5 \)។
+                        តើបន្ទាត់ទាំងពីរនេះមានទំនាក់ទំនងយ៉ាងដូចម្តេច?</strong
+                    >
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q35" value="A" required /> ក) កាត់គ្នាត្រង់ចំណុចតែមួយគត់</label
+                        >
+                        <label
+                            ><input type="radio" name="q35" value="B" /> ខ) ត្រួតស៊ីគ្នាទាំងស្រុង (បន្ទាត់តែមួយ)</label
+                        >
+                        <label><input type="radio" name="q35" value="C" /> គ) កាត់កែងគ្នា</label>
+                        <label
+                            ><input type="radio" name="q35" value="D" /> ឃ) ស្របគ្នាដាច់ខាត (Strictly parallel)</label
+                        >
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>៤០. នៅក្នុងប្លង់អាហ្វីន តើសំណុំនៃចំណុច \( M = (1-t)A + tB \) ដែលលក្ខខណ្ឌ \( 0 \le t \le 1 \) តំណាងឱ្យរូបរាងធរណីមាត្រអ្វី?</strong>
-            <div class="options">
-                <label><input type="radio" name="q40" value="A" required> ក) បន្ទាត់អនន្តកាត់តាម \( A \) និង \( B \)</label>
-                <label><input type="radio" name="q40" value="B"> ខ) កន្លះបន្ទាត់មានគល់ត្រង់ \( A \)</label>
-                <label><input type="radio" name="q40" value="C"> គ) អង្កត់ (Line Segment) ដែលភ្ជាប់ពី \( A \) ទៅ \( B \)</label>
-                <label><input type="radio" name="q40" value="D"> ឃ) រង្វង់ដែលមានអង្កត់ផ្ចិត \( [AB] \)</label>
-            </div>
-        </div>
-        
-        <div class="question-block">
-            <strong>៤១. គេឱ្យចំណុច ៤ ក្នុងលំហអាហ្វីន \( A, B, C, D \)។ តើលក្ខខណ្ឌចាំបាច់ និងគ្រប់គ្រាន់ដើម្បីឱ្យចំណុចទាំង ៤ នេះ "មិនអាស្រ័យលីនេអ៊ែរគ្នា" (Affinely Independent) គឺជាអ្វី?</strong>
-            <div class="options">
-                <label><input type="radio" name="q41" value="A" required> ក) ចំណុចទាំង ៤ រត់ត្រង់ជួរគ្នា។</label>
-                <label><input type="radio" name="q41" value="B"> ខ) វ៉ិចទ័រ \( \vv{AB}, \vv{AC}, \vv{AD} \) គឺជាគ្រួសារសេរី (Linearly Independent)។</label>
-                <label><input type="radio" name="q41" value="C"> គ) វ៉ិចទ័រ \( \vv{AB} \) និង \( \vv{CD} \) ស្របគ្នា។</label>
-                <label><input type="radio" name="q41" value="D"> ឃ) ចំណុចទាំង ៤ ស្ថិតនៅក្នុងប្លង់តែមួយ។</label>
-            </div>
-        </div>
+                <div class="question-block">
+                    <strong
+                        >៣៦. នៅក្នុងប្លង់អាហ្វីន \( \mathbb{R}^2 \) ប្រសិនបើបន្ទាត់ពីរមិនស្របគ្នា (Non-parallel)
+                        តើចំណុចប្រសព្វរបស់ពួកវាមានស្ថានភាពបែបណា?</strong
+                    >
+                    <div class="options">
+                        <label><input type="radio" name="q36" value="A" required /> ក) ពួកវាមិនកាត់គ្នាទេ</label>
+                        <label
+                            ><input type="radio" name="q36" value="B" /> ខ) ពួកវាកាត់គ្នាបង្កើតបានជាបន្ទាត់មួយទៀត</label
+                        >
+                        <label
+                            ><input type="radio" name="q36" value="C" /> គ)
+                            ពួកវាកាត់គ្នាត្រង់ចំណុចតែមួយគត់ជានិច្ច</label
+                        >
+                        <label><input type="radio" name="q36" value="D" /> ឃ) ពួកវាកាត់គ្នាត្រង់ពីរចំណុច</label>
+                    </div>
+                </div>
 
-        <div class="question-block">
-            <strong>៤២. ក្នុងលំហអាហ្វីន \( \mathbb{R}^3 \), គេមានបន្ទាត់ \( L \) និងប្លង់ \( P \)។ ប្រសិនបើវ៉ិចទ័រប្រាប់ទិស \( \vec{u} \) នៃបន្ទាត់ \( L \) មិនស្ថិតក្នុងលំហរងវ៉ិចទ័រប្រាប់ទិសនៃប្លង់ \( P \) ទេ តើទំនាក់ទំនងរវាង \( L \) និង \( P \) គឺជាអ្វី?</strong>
-            <div class="options">
-                <label><input type="radio" name="q42" value="A" required> ក) បន្ទាត់ \( L \) ស្របដាច់ខាតនឹងប្លង់ \( P \)</label>
-                <label><input type="radio" name="q42" value="B"> ខ) បន្ទាត់ \( L \) ស្ថិតនៅក្នុងប្លង់ \( P \)</label>
-                <label><input type="radio" name="q42" value="C"> គ) បន្ទាត់ \( L \) កាត់ប្លង់ \( P \) ត្រង់ចំណុចតែមួយគត់</label>
-                <label><input type="radio" name="q42" value="D"> ឃ) បន្ទាត់ \( L \) និងប្លង់ \( P \) មិនមានចំណុចរួមគ្នាទេ</label>
-            </div>
+                <div class="question-block">
+                    <strong
+                        >៣៧. ប្រមាណវិធីបំព្រិល (Translation)៖ ប្រសិនបើគេធ្វើបំព្រិលបន្ទាត់អាហ្វីន \( D \) តាមរយៈវ៉ិចទ័រ
+                        \( \vec{v} \) (ដែល \( \vec{v} \) មិនមែនជាវ៉ិចទ័រប្រាប់ទិសរបស់ \( D \)) តើលទ្ធផល \( D' \)
+                        ទទួលបានគឺជាអ្វី?</strong
+                    >
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q37" value="A" required /> ក) បន្ទាត់ \( D' \) ដែលស្របនឹង \( D
+                            \)</label
+                        >
+                        <label
+                            ><input type="radio" name="q37" value="B" /> ខ) បន្ទាត់ \( D' \) ដែលកាត់កែងនឹង \( D
+                            \)</label
+                        >
+                        <label><input type="radio" name="q37" value="C" /> គ) ចំណុចមួយ</label>
+                        <label><input type="radio" name="q37" value="D" /> ឃ) បន្ទាត់ដដែល (\( D' = D \))</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <strong
+                        >៣៨. ដើម្បីបង្កើតបានជា "តម្រុយអាហ្វីន" (Affine Frame / Repère Affine) មួយពេញលេញនៅក្នុងប្លង់ \(
+                        \mathbb{R}^2 \) តើគេត្រូវការចំណុចអប្បបរមាចំនួនប៉ុន្មាន?</strong
+                    >
+                    <div class="options">
+                        <label><input type="radio" name="q38" value="A" required /> ក) ២ ចំណុចផ្សេងគ្នា</label>
+                        <label
+                            ><input type="radio" name="q38" value="B" /> ខ) ៣ ចំណុច ដែលមិនរត់ត្រង់ជួរ
+                            (Non-collinear)</label
+                        >
+                        <label><input type="radio" name="q38" value="C" /> គ) ៤ ចំណុច</label>
+                        <label><input type="radio" name="q38" value="D" /> ឃ) ១ ចំណុច និង ១ ស្កាលែ</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <strong
+                        >៣៩. បន្ទាត់អាហ្វីន \( D \) ឆ្លងកាត់ចំណុច \( A \) និង \( B \) (\( A \neq B \))។ តើ "ទិសដៅ"
+                        (Direction) នៃបន្ទាត់ \( D \) ដែលតំណាងឱ្យលំហរងវ៉ិចទ័រ ត្រូវបានបង្កើតឡើងដោយអ្វី?</strong
+                    >
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q39" value="A" required /> ក) លំហរងវ៉ិចទ័រដែលបង្កើត (Span)
+                            ដោយវ៉ិចទ័រ \( \vec{AB} \)</label
+                        >
+                        <label><input type="radio" name="q39" value="B" /> ខ) ចំណុចកណ្តាលនៃ \( A \) និង \( B \)</label>
+                        <label><input type="radio" name="q39" value="C" /> គ) វ៉ិចទ័រណរម៉ាល់នៃបន្ទាត់ \( D \)</label>
+                        <label
+                            ><input type="radio" name="q39" value="D" /> ឃ) ផលគុណស្កាលែនៃចំណុច \( A \) និង \( B
+                            \)</label
+                        >
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <strong
+                        >៤០. នៅក្នុងប្លង់អាហ្វីន តើសំណុំនៃចំណុច \( M = (1-t)A + tB \) ដែលលក្ខខណ្ឌ \( 0 \le t \le 1 \)
+                        តំណាងឱ្យរូបរាងធរណីមាត្រអ្វី?</strong
+                    >
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q40" value="A" required /> ក) បន្ទាត់អនន្តកាត់តាម \( A \) និង \(
+                            B \)</label
+                        >
+                        <label><input type="radio" name="q40" value="B" /> ខ) កន្លះបន្ទាត់មានគល់ត្រង់ \( A \)</label>
+                        <label
+                            ><input type="radio" name="q40" value="C" /> គ) អង្កត់ (Line Segment) ដែលភ្ជាប់ពី \( A \) ទៅ
+                            \( B \)</label
+                        >
+                        <label><input type="radio" name="q40" value="D" /> ឃ) រង្វង់ដែលមានអង្កត់ផ្ចិត \( [AB] \)</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <strong
+                        >៤១. គេឱ្យចំណុច ៤ ក្នុងលំហអាហ្វីន \( A, B, C, D \)។ តើលក្ខខណ្ឌចាំបាច់
+                        និងគ្រប់គ្រាន់ដើម្បីឱ្យចំណុចទាំង ៤ នេះ "មិនអាស្រ័យលីនេអ៊ែរគ្នា" (Affinely Independent)
+                        គឺជាអ្វី?</strong
+                    >
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q41" value="A" required /> ក) ចំណុចទាំង ៤ រត់ត្រង់ជួរគ្នា។</label
+                        >
+                        <label
+                            ><input type="radio" name="q41" value="B" /> ខ) វ៉ិចទ័រ \( \vv{AB}, \vv{AC}, \vv{AD} \)
+                            គឺជាគ្រួសារសេរី (Linearly Independent)។</label
+                        >
+                        <label
+                            ><input type="radio" name="q41" value="C" /> គ) វ៉ិចទ័រ \( \vv{AB} \) និង \( \vv{CD} \)
+                            ស្របគ្នា។</label
+                        >
+                        <label
+                            ><input type="radio" name="q41" value="D" /> ឃ) ចំណុចទាំង ៤ ស្ថិតនៅក្នុងប្លង់តែមួយ។</label
+                        >
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <strong
+                        >៤២. ក្នុងលំហអាហ្វីន \( \mathbb{R}^3 \), គេមានបន្ទាត់ \( L \) និងប្លង់ \( P \)។
+                        ប្រសិនបើវ៉ិចទ័រប្រាប់ទិស \( \vec{u} \) នៃបន្ទាត់ \( L \)
+                        មិនស្ថិតក្នុងលំហរងវ៉ិចទ័រប្រាប់ទិសនៃប្លង់ \( P \) ទេ តើទំនាក់ទំនងរវាង \( L \) និង \( P \)
+                        គឺជាអ្វី?</strong
+                    >
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q42" value="A" required /> ក) បន្ទាត់ \( L \) ស្របដាច់ខាតនឹងប្លង់
+                            \( P \)</label
+                        >
+                        <label
+                            ><input type="radio" name="q42" value="B" /> ខ) បន្ទាត់ \( L \) ស្ថិតនៅក្នុងប្លង់ \( P
+                            \)</label
+                        >
+                        <label
+                            ><input type="radio" name="q42" value="C" /> គ) បន្ទាត់ \( L \) កាត់ប្លង់ \( P \)
+                            ត្រង់ចំណុចតែមួយគត់</label
+                        >
+                        <label
+                            ><input type="radio" name="q42" value="D" /> ឃ) បន្ទាត់ \( L \) និងប្លង់ \( P \)
+                            មិនមានចំណុចរួមគ្នាទេ</label
+                        >
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <strong
+                        >៤៣. ចំណុច \( M \) មួយមានកូអរដោនេបារីសង់ \( (1/2, 1/3, 1/6) \) ធៀបនឹងតម្រុយអាហ្វីន \( (A, B, C)
+                        \)។ តើសំណើមួយណាដែលត្រឹមត្រូវ?</strong
+                    >
+                    <div class="options">
+                        <label
+                            ><input type="radio" name="q43" value="A" required /> ក) \( M \)
+                            ស្ថិតនៅក្រៅប្លង់ដែលបង្កើតដោយ \( A, B, C \)</label
+                        >
+                        <label
+                            ><input type="radio" name="q43" value="B" /> ខ) \( M \) ជាចំណុចកណ្តាលនៃអង្កត់ \( [AB]
+                            \)</label
+                        >
+                        <label
+                            ><input type="radio" name="q43" value="C" /> គ) \( M \) ស្ថិតនៅក្នុងត្រីកោណ \( ABC \)
+                            ព្រោះមេគុណបារីសង់ទាំងអស់វិជ្ជមាន និងមានផលបូកស្មើ ១</label
+                        >
+                        <label
+                            ><input type="radio" name="q43" value="D" /> ឃ) \( M \) ស្ថិតនៅលើបន្ទាត់ \( (AB) \)</label
+                        >
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <strong
+                        >៤៤. ប្លង់អាហ្វីនពីរក្នុង \( \mathbb{R}^4 \) ដែលមានវិមាត្រ ២ ដូចគ្នា (ជាប្លង់)។
+                        តើវិមាត្រនៃប្រសព្វរបស់ពួកវា (ប្រសិនបើមិនទទេ) អាចមានតម្លៃអ្វីខ្លះ?</strong
+                    >
+                    <div class="options">
+                        <label><input type="radio" name="q44" value="A" required /> ក) មានតែវិមាត្រ ១ ប៉ុណ្ណោះ</label>
+                        <label><input type="radio" name="q44" value="B" /> ខ) អាចមានវិមាត្រ ០, ១, ឬ ២</label>
+                        <label><input type="radio" name="q44" value="C" /> គ) មានតែវិមាត្រ ២ ប៉ុណ្ណោះ</label>
+                        <label
+                            ><input type="radio" name="q44" value="D" /> ឃ) មិនអាចកាត់គ្នាបានទេក្នុងលំហ ៤ វិមាត្រ</label
+                        >
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <strong
+                        >៤៥. ឧបមាថា \( L_1 \) និង \( L_2 \) ជាបន្ទាត់អាហ្វីនពីរក្នុង \( \mathbb{R}^3 \) ដែល "ខ្វែងគ្នា"
+                        (Skew lines)។ តើលំហរងអាហ្វីនដែលតូចបំផុតដែលផ្ទុកបន្ទាត់ទាំងពីរនេះ (Affine Hull)
+                        មានវិមាត្រប៉ុន្មាន?</strong
+                    >
+                    <div class="options">
+                        <label><input type="radio" name="q45" value="A" required /> ក) វិមាត្រ ២ (ជាប្លង់)</label>
+                        <label
+                            ><input type="radio" name="q45" value="B" /> ខ) វិមាត្រ ៣ (ជាលំហ \( \mathbb{R}^3 \)
+                            ទាំងមូល)</label
+                        >
+                        <label><input type="radio" name="q45" value="C" /> គ) វិមាត្រ ៤</label>
+                        <label><input type="radio" name="q45" value="D" /> ឃ) មិនអាចកំណត់បាន</label>
+                    </div>
+                </div>
+
+                <!--   <button type="submit" class="submit-btn">បញ្ជូនចម្លើយ (Submit Cartesian Quiz)</button>-->
+            </form>
         </div>
-
-        <div class="question-block">
-            <strong>៤៣. ចំណុច \( M \) មួយមានកូអរដោនេបារីសង់ \( (1/2, 1/3, 1/6) \) ធៀបនឹងតម្រុយអាហ្វីន \( (A, B, C) \)។ តើសំណើមួយណាដែលត្រឹមត្រូវ?</strong>
-            <div class="options">
-                <label><input type="radio" name="q43" value="A" required> ក) \( M \) ស្ថិតនៅក្រៅប្លង់ដែលបង្កើតដោយ \( A, B, C \)</label>
-                <label><input type="radio" name="q43" value="B"> ខ) \( M \) ជាចំណុចកណ្តាលនៃអង្កត់ \( [AB] \)</label>
-                <label><input type="radio" name="q43" value="C"> គ) \( M \) ស្ថិតនៅក្នុងត្រីកោណ \( ABC \) ព្រោះមេគុណបារីសង់ទាំងអស់វិជ្ជមាន និងមានផលបូកស្មើ ១</label>
-                <label><input type="radio" name="q43" value="D"> ឃ) \( M \) ស្ថិតនៅលើបន្ទាត់ \( (AB) \)</label>
-            </div>
-        </div>
-
-        <div class="question-block">
-            <strong>៤៤. ប្លង់អាហ្វីនពីរក្នុង \( \mathbb{R}^4 \) ដែលមានវិមាត្រ ២ ដូចគ្នា (ជាប្លង់)។ តើវិមាត្រនៃប្រសព្វរបស់ពួកវា (ប្រសិនបើមិនទទេ) អាចមានតម្លៃអ្វីខ្លះ?</strong>
-            <div class="options">
-                <label><input type="radio" name="q44" value="A" required> ក) មានតែវិមាត្រ ១ ប៉ុណ្ណោះ</label>
-                <label><input type="radio" name="q44" value="B"> ខ) អាចមានវិមាត្រ ០, ១, ឬ ២</label>
-                <label><input type="radio" name="q44" value="C"> គ) មានតែវិមាត្រ ២ ប៉ុណ្ណោះ</label>
-                <label><input type="radio" name="q44" value="D"> ឃ) មិនអាចកាត់គ្នាបានទេក្នុងលំហ ៤ វិមាត្រ</label>
-            </div>
-        </div>
-
-        <div class="question-block">
-            <strong>៤៥. ឧបមាថា \( L_1 \) និង \( L_2 \) ជាបន្ទាត់អាហ្វីនពីរក្នុង \( \mathbb{R}^3 \) ដែល "ខ្វែងគ្នា" (Skew lines)។ តើលំហរងអាហ្វីនដែលតូចបំផុតដែលផ្ទុកបន្ទាត់ទាំងពីរនេះ (Affine Hull) មានវិមាត្រប៉ុន្មាន?</strong>
-            <div class="options">
-                <label><input type="radio" name="q45" value="A" required> ក) វិមាត្រ ២ (ជាប្លង់)</label>
-                <label><input type="radio" name="q45" value="B"> ខ) វិមាត្រ ៣ (ជាលំហ \( \mathbb{R}^3 \) ទាំងមូល)</label>
-                <label><input type="radio" name="q45" value="C"> គ) វិមាត្រ ៤</label>
-                <label><input type="radio" name="q45" value="D"> ឃ) មិនអាចកំណត់បាន</label>
-            </div>
-        </div>
-
-     <!--   <button type="submit" class="submit-btn">បញ្ជូនចម្លើយ (Submit Cartesian Quiz)</button>-->
-    </form>
-</div>    
-    
-    
-</body>
-
+    </body>
 </html>

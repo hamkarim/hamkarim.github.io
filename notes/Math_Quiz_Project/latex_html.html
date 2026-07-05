@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="km">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>កម្មវិធីបង្ហាញ LaTeX ទៅជា HTML</title>
+
+        <!-- កំណត់ទម្រង់ MathJax សម្រាប់គណិតវិទ្យា inline $...$ និង block \[...\] -->
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [["$", "$"]],
+                    displayMath: [["\\[", "\\]"]],
+                    processEscapes: true
+                },
+                options: {
+                    skipHtmlTags: ["script", "noscript", "style", "textarea", "pre"]
+                }
+            };
+        </script>
+        <script id="MathJax-script" async src="https://jsdelivr.net"></script>
+
+        <style>
+            body {
+                font-family: "Khmer OS Battambang", "Segoe UI", sans-serif;
+                line-height: 1.8;
+                max-width: 850px;
+                margin: 30px auto;
+                padding: 20px;
+                color: #2c3e50;
+                background-color: #f9f9f9;
+            }
+            .container {
+                background: white;
+                padding: 40px;
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            }
+            h2 {
+                color: #1a5276;
+                border-bottom: 2px solid #2980b9;
+                padding-bottom: 8px;
+                margin-top: 30px;
+            }
+            h3 {
+                color: #2e4053;
+                margin-top: 25px;
+            }
+            ul {
+                padding-left: 20px;
+                margin: 15px 0;
+            }
+            li {
+                margin-bottom: 10px;
+                list-style-type: disc;
+            }
+            strong {
+                color: #000;
+                font-weight: bold;
+            }
+            em {
+                font-style: italic;
+                color: #e67e22;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container" id="latex-content">
+            <!-- បញ្ចូលកូដ LaTeX ដើមរបស់អ្នកទាំងអស់នៅទីនេះ -->
+            \section{មូលដ្ឋានគ្រឹះនៃទ្រឹស្ដីសំណុំ} \textbf{សំណុំ} $X$ គឺជាបណ្ដុំនៃវត្ថុខុសៗគ្នា ហៅថា \emph{សមាជិក/ធាតុ}
+            របស់ $X$ ហើយ គេសរសេរ $x\in X$ មានន័យថា “$x$ គឺជាធាតុរបស់ $X$”។ នៅក្នុងមេរៀននេះ យើងសន្មតថាសំណុំមួយ
+            ត្រូវបានកំណត់ច្បាស់លាស់ និងប្រើប្រាស់ទ្រឹស្ដីបែបបុរាណ (naïve set theory)។ \subsection{ប្រមាណវិធីលើសំណុំ}
+            ឧបមាថា $A,B,C$ ជាសំណុំ។ យើងកំណត់៖ \begin{itemize} \item \textbf{ប្រជុំ (Union)}: \[ A\cup B=\{x\mid x\in A
+            \text{ ឬ } x\in B\}. \] \item \textbf{ប្រសព្វ (Intersection)}: \[ A\cap B=\{x\mid x\in A \text{ និង } x\in
+            B\}. \] \item \textbf{ផលសង (Difference)}: \[ A\setminus B =\{x\mid x\in A \text{ និង } x\notin B\}. \] \item
+            \textbf{សំណុំបំពេញ (Complement)} នៃ $A$ ក្នុងសកល $U$: \[ A^{c}=U\setminus A. \] \end{itemize}
+            សំណុំទទេត្រូវបានតាងដោយ $\varnothing$។ សំណុំ $X$ ត្រូវបានហៅថា \emph{កំណត់} (finite)
+            ប្រសិនបើមានអនុគមន៍ប៊ីហ្សិកទីវ (bijection) រវាង $X$ និងចន្លោះចំនួនគត់ $\{1,2,\dots,n\}$ បើមិនដូច្នោះទេ
+            វាជាសំណុំអនន្ត (infinite)។ \subsection{គូមានលំដាប់} ចំពោះសមាជិក $x,y$, \textbf{គូមានលំដាប់} $(x,y)$
+            ត្រូវបានកំណត់ជាសំណុំ $\{\{x\},\{x,y\}\}$ (ការសាងសង់តាមបែប Kuratowski)។ និយមន័យនេះធានាថា $(x,y)=(u,v)$ លុះតែ
+            $x=u$ និង $y=v$។ ប្រសិនបើមានសំណុំ $A,B$ នោះ \textbf{ផលគុណខដេស៊ីយ៉ន} របស់វាគឺ៖ \[ A\times B=\{(a,b)\mid a\in
+            A,\;b\in B\}. \]
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                let contentDiv = document.getElementById("latex-content");
+                let rawText = contentDiv.innerHTML;
+
+                // ១. បំប្លែង \section{...} ទៅជា <h2>...</h2>
+                rawText = rawText.replace(/\\section\*?\{([^}]+)\}/g, "<h2>$1</h2>");
+
+                // ២. បំប្លែង \subsection{...} ទៅជា <h3>...</h3>
+                rawText = rawText.replace(/\\subsection\*?\{([^}]+)\}/g, "<h3>$1</h3>");
+
+                // ៣. បំប្លែង \textbf{...} ទៅជា <strong>...</strong>
+                rawText = rawText.replace(/\\textbf\{([^}]+)\}/g, "<strong>$1</strong>");
+
+                // ៤. បំប្លែង \emph{...} ទៅជា <em>...</em>
+                rawText = rawText.replace(/\\emph\{([^}]+)\}/g, "<em>$1</em>");
+
+                // ៥. បំប្លែង \begin{itemize} ... \end{itemize} និង \item
+                rawText = rawText.replace(/\\begin\{itemize\}/g, "<ul>");
+                rawText = rawText.replace(/\\end\{itemize\}/g, "</ul>");
+                rawText = rawText.replace(/\\item/g, "<li>");
+
+                // បិទ Tag <li> នីមួយៗឱ្យបានត្រឹមត្រូវ
+                rawText = rawText.replace(/<li>([\s\S]*?)(?=<li>|<ul>|<\/ul>)/g, "<li>$1</li>");
+
+                // ៦. ដាក់បញ្ចូលអត្ថបទដែលបានកែប្រែទៅក្នុង HTML វិញ
+                contentDiv.innerHTML = rawText;
+
+                // ៧. បញ្ជាឱ្យ MathJax ធ្វើការ Render និមិត្តសញ្ញាគណិតវិទ្យាដែលនៅសល់ ($ និង \[)
+                if (window.MathJax && window.MathJax.typeset) {
+                    window.MathJax.typeset();
+                }
+        </script>
+    </body>
+</html>
