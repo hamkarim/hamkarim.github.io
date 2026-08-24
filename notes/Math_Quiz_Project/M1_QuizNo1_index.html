@@ -8,7 +8,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&display=swap" rel="stylesheet" />
 
-        <title>Quiz No.1: TUP-BA-S3</title>
+        <title>M1-S2: Quiz No.1</title>
 
         <!--    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
         <script>
@@ -743,7 +743,7 @@
         <div id="watermark-container"></div>
         <div class="container">
             <div id="home-menu">
-                <h2>Quiz No. 1: សេចក្ដីផ្ដើមធរណីមាត្រ</h2>
+                <h2>Midterm: ទំនាក់ទំនងសមមូល និង ទំនាក់ទំនងលំដាប់</h2>
 
                 <!-- <div id="student-info">
                 <!-- <span>សូមបំពញឈ្មោះ </span>
@@ -791,15 +791,9 @@
                             style="width: 175px; padding: 3px; font-family: &quot;Battambang&quot;">
                             <option value="">-- សូមជ្រើសរើសថ្នាក់ --</option>
                             <option value="M1">M1</option>
-                            <option value="M2">M2</option>
-                            <option value="M3">M3</option>
-                            <option value="M4">M4</option>
-                            <option value="M5">M5</option>
                             <option value="M6">M6</option>
-                            <option value="A1">A1</option>
                             <option value="A2">A2</option>
-                            <option value="B1">B1</option>
-                            <option value="B2">B2</option></select
+                            <option value="B1">B1</option></select
                         ><br />
 
                         <!-- ចំណុចកែប្រែទី២៖ ប្តូរ type="number" ទៅជា type="text" និងបន្ថែម oninput, readonly -->
@@ -885,155 +879,539 @@
                         <!-- លំហាត់ទី ១ -->
                         <div class="question-box" style="display: block">
                             <p>
-                                <strong>១.</strong> យោងតាមប្រភពកំណើតនៃពាក្យ (Etymology) តើពាក្យ "Geometry" (ធរណីមាត្រ)
-                                មានន័យដើមថាដូចម្ដេច?
+                                <strong>១.</strong> តើទំនាក់ទំនង $\mathcal R$ មួយលើសំណុំ $A$ ហៅថា
+                                <strong>ទំនាក់ទំនងសមមូល (Equivalence Relation)</strong>
+                                លុះត្រាតែវាមានលក្ខណៈដូចម្ដេចខ្លះ?
                             </p>
                             <div class="options">
-                                <input type="radio" name="q1" value="wrong" /> A. ការសិក្សាអំពីទំហំនៃចក្រវាឡ<br />
-                                <input type="radio" name="q1" value="correct" /> B. ការវាស់ស្ទង់ផែនដី (Earth measure)<br />
-                                <input type="radio" name="q1" value="wrong" /> C. ការគណនាផ្ទៃក្រឡា និងមាឌ<br />
-                                <input type="radio" name="q1" value="wrong" /> D. ការសិក្សាពីបន្ទាត់ និងមុំ<br />
+                                <input type="radio" name="q1" value="A" /> A.Reflexive និង Symmetric<br />
+                                <input type="radio" name="q1" value="B" /> B. Reflexive និង Transitive<br />
+                                <input type="radio" name="q1" value="C" /> C. Reflexive, Symmetric និង Transitive
+                                <br />
+                                <input type="radio" name="q1" value="D" /> D. Symmetric, Transitive និង Antisymmetric<br />
                             </div>
                         </div>
 
                         <!-- លំហាត់ទី ២ -->
                         <div class="question-box" style="display: none">
                             <p>
-                                <strong>២.</strong> ជនជាតិអេស៊ីប និងបាប៊ីឡូន
-                                បានប្រើប្រាស់បច្ចេកទេសធរណីមាត្របានយ៉ាងល្អក្នុងជីវិតប្រចាំថ្ងៃ។ ប៉ុន្តែ
-                                តើជនជាតិណាដែលបានផ្តួចផ្តើមប្រែក្លាយធរណីមាត្រទៅជា "ប្រព័ន្ធបែបគណិតវិទ្យាទ្រឹស្ដី"
-                                ដែលមាននិយមន័យ និងសម្រាយបញ្ជាក់?
+                                <strong>២.</strong> តាង $p \in \mathbb{N}, p \ge 2$។ គេកំណត់ទំនាក់ទំនង $\mathcal R$
+                                លើសំណុំចំនួនគត់ធម្មជាតិ $\mathbb{N}$ ដោយ $x\mathcal Ry$ លុះត្រាតែ $p$ ចែកដាច់ $(x - y)$។
+                                តើ $\mathcal R$ ជាទំនាក់ទំនងប្រភេទអ្វី?
                             </p>
                             <div class="options">
-                                <input type="radio" name="q2" value="wrong" /> A. ជនជាតិរ៉ូម៉ាំង (Romans)<br />
-                                <input type="radio" name="q2" value="correct" /> B. ជនជាតិក្រិក (Greeks)<br />
-                                <input type="radio" name="q2" value="wrong" /> C. ជនជាតិអារ៉ាប់ (Arabs)<br />
-                                <input type="radio" name="q2" value="wrong" /> D. ជនជាតិចិន (Chinese)<br />
+                                <input type="radio" name="q2" value="A" /> A. ទំនាក់ទំនងលំដាប់ដោយផ្នែក (Partial
+                                order)<br />
+                                <input type="radio" name="q2" value="B" /> B. ទំនាក់ទំនងសមមូល (Equivalence relation)<br />
+                                <input type="radio" name="q2" value="C" /> C. អនុគមន៍មួយទល់មួយ (Injective function)<br />
+                                <input type="radio" name="q2" value="D" /> D. ទំនាក់ទំនងលំដាប់គ្រប់ (Total order)<br />
                             </div>
                         </div>
 
-                        <!-- លំហាត់ទី ៣ -->
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <strong>៣.</strong> ការសិក្សាទៅលើ "ត្រីធាតុពីតាគ័រ" ក្នុងសមីការ $a^2+b^2=c^2$
-                                បានឈានទៅដល់ការស្រាវជ្រាវសមីការ $a^n+b^n=c^n$ (ដែល $n\gt 2$) ឬហៅថា ទ្រឹស្ដីបទចុងក្រោយរបស់
-                                Fermat។ តើអ្នកណាជាអ្នករកឃើញសម្រាយបញ្ជាក់ដ៏ល្បីនេះនៅឆ្នាំ ១៩៩៥?
-                            </p>
-                            <div class="options">
-                                <input type="radio" name="q3" value="wrong" /> A. J.A. Garfield<br />
-                                <input type="radio" name="q3" value="wrong" /> B. A.M. Legendre<br />
-                                <input type="radio" name="q3" value="correct" /> C. Andrew Wiles<br />
-                                <input type="radio" name="q3" value="wrong" /> D. David Hilbert<br />
-                            </div>
-                        </div>
-
-                        <!-- លំហាត់ទី ៤ -->
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <strong>៤.</strong> តើសៀវភៅគណិតវិទ្យាដ៏ពិសេសឈ្មោះថា "Elements"
-                                ដែលមានលក្ខណៈពេញលេញអស់រយៈពេលជាង ២០០០ឆ្នាំ ត្រូវបានតាក់តែងឡើងដោយនរណា និងនៅប្រហែលឆ្នាំណា?
-                            </p>
-                            <div class="options">
-                                <input type="radio" name="q4" value="wrong" /> A. ពីតាគ័រ (៥០០ មុនគ.ស.)<br />
-                                <input type="radio" name="q4" value="wrong" /> B. តាឡេស (៦០០ មុនគ.ស.)<br />
-                                <input type="radio" name="q4" value="correct" /> C. អឺគ្លីត (៣០០ មុនគ.ស.)<br />
-                                <input type="radio" name="q4" value="wrong" /> D. អាកស៊ីម៉ែត (២០០ មុនគ.ស.)<br />
-                            </div>
-                        </div>
+                        <!-- លំហាត់ទី ៤ --
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <strong>៤.</strong> យោងតាមទ្រឹស្ដីនៃទំនាក់ទំនង តើថ្នាក់សមមូល (Equivalence classes)
+                            ទាំងអស់នៃទំនាក់ទំនងសមមូលមួយលើសំណុំ $A$ បង្កើតបានជាអ្វីសម្រាប់សំណុំ $A$ នោះ?
+                        </p>
+                        <div class="options">
+                            <input type="radio" name="q4" value="wrong" /> A. សំណុំរងទទេ (Empty subset)<br />
+                            <input type="radio" name="q4" value="correct" /> B. បំណែក (Partition) នៃសំណុំ $A$<br />
+                            <input type="radio" name="q4" value="wrong" /> C. ផលគុណដេកាត (Cartesian product) នៃ $A
+                            \times A$<br />
+                            <input type="radio" name="q4" value="wrong" /> D. ទំនាក់ទំនងច្រាស (Inverse relation)<br />
+                        </div> 
+                    </div> -->
 
                         <!-- លំហាត់ទី ៥ -->
                         <div class="question-box" style="display: none">
                             <p>
-                                <strong>៥.</strong> តើគណិតវិទូរុស្ស៊ី N.I. Lobačevskiĭ
-                                បានបង្កើតប្រភេទធរណីមាត្រថ្មីមួយឈ្មោះថាអ្វី បន្ទាប់ពីលោកមិនបានពិចារណាបញ្ចូល
-                                "ស្វ័យសត្យរងប៉ារ៉ាឡែល" របស់អឺគ្លីត?
+                                <strong>៣.</strong> ឧបមាថា $\mathcal R$ និង $\mathcal S$
+                                ជាទំនាក់ទំនងសមមូលពីរផ្សេងគ្នាលើសំណុំ $X$ តែមួយ។ តើប្រមាណវិធីមួយណារវាង $\mathcal R$ និង
+                                $\mathcal S$ ដែល <strong>តែងតែ</strong> ជាទំនាក់ទំនងសមមូលជានិច្ច?
                             </p>
                             <div class="options">
-                                <input type="radio" name="q5" value="wrong" /> A. ធរណីមាត្រប្រូសិ៍ទីវ (Projective
-                                Geometry)<br />
-                                <input type="radio" name="q5" value="wrong" /> B. ធរណីមាត្រអេលីប (Elliptic Geometry)<br />
-                                <input type="radio" name="q5" value="wrong" /> C. ធរណីមាត្រលំហអានន្ត (Infinite Space
-                                Geometry)<br />
-                                <input type="radio" name="q5" value="correct" /> D. ធរណីមាត្រអ៊ីពែរបូល (Hyperbolic
-                                Geometry)<br />
+                                <input type="radio" name="q3" value="A" /> A. ប្រជុំ $\mathcal R \cup \mathcal S$<br />
+                                <input type="radio" name="q3" value="B" /> B. ប្រសព្វ $\mathcal R \cap \mathcal S$<br />
+                                <input type="radio" name="q3" value="C" /> C. ផលដក $\mathcal R \setminus \mathcal S$<br />
+                                <input type="radio" name="q3" value="D" /> D. បណ្ដុំ $\mathcal R \circ \mathcal S$<br />
                             </div>
                         </div>
 
                         <!-- លំហាត់ទី ៦ -->
                         <div class="question-box" style="display: none">
                             <p>
-                                <strong>៦.</strong> ផ្អែកលើមេរៀន តើការអះអាងមួយណាខាងក្រោមនេះ ស្ថិតនៅក្នុងចំណោម
-                                <strong>"ស្វ័យសត្យ (Axioms)"</strong> ទាំង ៥ របស់អឺគ្លីត?
+                                <strong>៤.</strong> គេឱ្យ $\mathcal R$ ជាទំនាក់ទំនងសមមូលលើសំណុំ $X$ ហើយ $Y \subseteq X$
+                                ជាសំណុំរងនៃ $X$។ តើទំនាក់ទំនង $\mathcal R \cap (Y \times Y)$ ជាអ្វី?
                             </p>
                             <div class="options">
-                                <input type="radio" name="q6" value="wrong" /> A. តាមពីរចំណុច គេគូសបានបន្ទាត់តែមួយគត់<br />
-                                <input type="radio" name="q6" value="wrong" /> B. គ្រប់មុំកែងទាំងអស់ ស្មើគ្នា<br />
-                                <input type="radio" name="q6" value="correct" /> C. វត្ថុពីរដែលត្រួតស៊ីគ្នាទាំងស្រុង
-                                គឺស្មើគ្នា<br />
-                                <input type="radio" name="q6" value="wrong" /> D.
-                                បន្ទាត់មួយអាចបន្លាយបានដោយគ្មានទីបញ្ចប់<br />
+                                <input type="radio" name="q4" value="A" /> A. ជាទំនាក់ទំនងសមមូលលើសំណុំ $Y$<br />
+                                <input type="radio" name="q4" value="B" /> B. ជាទំនាក់ទំនងលំដាប់ដោយផ្នែកលើសំណុំ $Y$<br />
+                                <input type="radio" name="q4" value="C" /> C. មិនមែនជាទំនាក់ទំនងសមមូលទេ<br />
+                                <input type="radio" name="q4" value="D" /> D. ជាបំណែងចែកនៃសំណុំ $X$<br />
                             </div>
                         </div>
 
                         <!-- លំហាត់ទី ៧ -->
                         <div class="question-box" style="display: none">
                             <p>
-                                <strong>៧.</strong> តើស្វ័យសត្យរងទី ៥ របស់អឺគ្លីត មានឈ្មោះហៅម្យ៉ាងទៀតថាអ្វី
-                                ដែលជាប្រធានបទធ្វើឱ្យគណិតវិទូជាច្រើនព្យាយាមរកសម្រាយបញ្ជាក់អស់រាប់សតវត្ស តែមិនបានសម្រេច?
+                                <strong>៥.</strong> តាង $\mathcal R$ ជាទំនាក់ទំនងមួយដែលមានលក្ខណៈ Reflexive និង
+                                Transitive ។ គេបង្កើតទំនាក់ទំនងថ្មី $\mathcal S$ មួយដោយ $x\mathcal Sy$ លុះត្រាតែ
+                                $x\mathcal Ry$ និង $y\mathcal Rx$។ តើ $\mathcal S$ ជាទំនាក់ទំនងប្រភេទណា?
                             </p>
                             <div class="options">
-                                <input type="radio" name="q7" value="wrong" /> A. ស្វ័យសត្យរងនៃរង្វង់<br />
-                                <input type="radio" name="q7" value="correct" /> B. ស្វ័យសត្យរងប៉ារ៉ាឡែល (Parallel
-                                postulate)<br />
-                                <input type="radio" name="q7" value="wrong" /> C. ស្វ័យសត្យរងមុំកែង<br />
-                                <input type="radio" name="q7" value="wrong" /> D. ស្វ័យសត្យរងបន្ទាត់ត្រង់<br />
+                                <input type="radio" name="q5" value="A" /> A. ទំនាក់ទំនង Antisymmetric <br />
+                                <input type="radio" name="q5" value="B" /> B. ទំនាក់ទំនងលំដាប់ដោយផ្នែក (Partial
+                                order)<br />
+                                <input type="radio" name="q5" value="C" /> C. ទំនាក់ទំនងសមមូល (Equivalence relation)<br />
+                                <input type="radio" name="q5" value="D" /> D. ទំនាក់ទំនង Irreflexive<br />
                             </div>
                         </div>
 
-                        <!-- លំហាត់ទី ៨ -->
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <strong>៨.</strong> ភាពឯករាជ្យនៃ "ស្វ័យសត្យរងប៉ារ៉ាឡែល" ពីស្វ័យសត្យរងផ្សេងទៀតរបស់អឺគ្លីត
-                                ត្រូវបានបញ្ជាក់យ៉ាងច្បាស់លាស់នៅឆ្នាំ ១៨៦៨ ដោយគណិតវិទូរូបណា?
-                            </p>
-                            <div class="options">
-                                <input type="radio" name="q8" value="correct" /> A. Eugenio Beltrami<br />
-                                <input type="radio" name="q8" value="wrong" /> B. David Hilbert<br />
-                                <input type="radio" name="q8" value="wrong" /> C. R. Penrose<br />
-                                <input type="radio" name="q8" value="wrong" /> D. J. Hadamard<br />
-                            </div>
+                        <!-- លំហាត់ទី ៨ --
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <strong>៨.</strong> ទំនាក់ទំនង $\mathcal R$ មួយហៅថា
+                            <strong>ទំនាក់ទំនងរង្វិល (Circular)</strong> បើ $a\mathcal Rb$ និង $b\mathcal Rc$ នាំឱ្យ
+                            $c\mathcal Ra$។ តើ $\mathcal R$ អាចក្លាយជាទំនាក់ទំនងសមមូលបាន
+                            លុះត្រាតែវាមានបន្ថែមនូវលក្ខណៈអ្វី?
+                        </p>
+                        <div class="options">
+                            <input type="radio" name="q8" value="wrong" /> A. Symmetric<br />
+                            <input type="radio" name="q8" value="wrong" /> B. Transitive<br />
+                            <input type="radio" name="q8" value="correct" /> C. Reflexive<br />
+                            <input type="radio" name="q8" value="wrong" /> D. Antisymmetric<br />
                         </div>
+                    </div> -->
 
                         <!-- លំហាត់ទី ៩ -->
                         <div class="question-box" style="display: none">
                             <p>
-                                <strong>៩.</strong> តាមទស្សនៈរបស់អ្នករូបវិទូ-គណិតវិទូ R. Penrose តើស្វ័យសត្យរងទាំង ៤
-                                ដំបូងរបស់អឺគ្លីត ជាមូលដ្ឋានតំណាងឱ្យអ្វី?
+                                <strong>៦.</strong> តើទំនាក់ទំនងមួយណាខាងក្រោមនេះ
+                                <strong>មិនមែន</strong> ជាទំនាក់ទំនងសមមូលលើសំណុំចំនួនពិត $\mathbb{R}$?
                             </p>
                             <div class="options">
-                                <input type="radio" name="q9" value="wrong" /> A. លំហបីវិមាត្រមានរាងជាស្វ៊ែរ<br />
-                                <input type="radio" name="q9" value="correct" /> B. លំហមេទ្រីកពីរវិមាត្រដែលមានលក្ខណៈ
-                                homogeneity និង isotropy ទាំងស្រុង<br />
-                                <input type="radio" name="q9" value="wrong" /> C.
-                                លំហអ៊ីពែរបូលដែលលាតសន្ធឹងដោយមានទីបញ្ចប់<br />
-                                <input type="radio" name="q9" value="wrong" /> D. លំហកោងនៃទ្រឹស្ដីរ៉ឺឡាទីវីតេ<br />
+                                <input type="radio" name="q6" value="A" /> A. $x\mathcal Ry \iff x = y$<br />
+                                <input type="radio" name="q6" value="B" /> B. $x\mathcal Ry \iff |x| = |y|$<br />
+                                <input type="radio" name="q6" value="C" /> C. $x\mathcal Ry \iff x - y$ ជាចំនួនសនិទាន<br />
+                                <input type="radio" name="q6" value="D" /> D. $x\mathcal Ry \iff x \le y$<br />
                             </div>
                         </div>
 
                         <!-- លំហាត់ទី ១០ -->
                         <div class="question-box" style="display: none">
                             <p>
-                                <strong>១០.</strong> ដោយសារតែអឺគ្លីតជាអ្នកគិតដំបូងគេ
-                                ដែលបានរៀបចំទ្រឹស្តីវិទ្យាសាស្ត្រយ៉ាងមានរចនាសម្ព័ន្ធដោយមិនពឹងផ្អែកលើកត្តាខាងក្រៅតក្កវិជ្ជា
-                                តើអ្នកជំនាញតក្កវិជ្ជាលោក D. Tamari បានចាត់ទុកគាត់ថាជាអ្វី?
+                                <strong>៧.</strong> គេឱ្យ $\mathcal P$ ជាទំនាក់ទំនងសមមូលលើ $\mathbb{R} \times
+                                (\mathbb{R} \setminus \{0\})$ កំណត់ដោយ $(x,y) \mathcal P (z,w)$ លុះត្រាតែ $xw = yz$។
+                                តើថ្នាក់សមមូលនីមួយៗរបស់វា អាចតំណាងដោយធាតុតែមួយគត់ (Unique representative)
+                                ក្នុងទម្រង់បែបណា?
                             </p>
                             <div class="options">
-                                <input type="radio" name="q10" value="wrong" /> A. បិតានៃធរណីមាត្រវិភាគ<br />
-                                <input type="radio" name="q10" value="correct" /> B.
-                                ស្ថាបនិកនៃទស្សនៈវិស័យវិទ្យាសាស្ត្រទំនើប<br />
-                                <input type="radio" name="q10" value="wrong" /> C. អ្នកបង្កើតទ្រឹស្ដីចំនួន
-                                និងវិភាគបន្សំ<br />
-                                <input type="radio" name="q10" value="wrong" /> D. ស្ថាបនិកនៃធរណីមាត្រអ៊ីពែរបូល<br />
+                                <input type="radio" name="q7" value="A" /> A. $(0, r)$ ដែល $r \in \mathbb{R}$<br />
+                                <input type="radio" name="q7" value="B" /> B. $(r, r)$ ដែល $r \in \mathbb{R}$<br />
+                                <input type="radio" name="q7" value="C" /> C. $(r, 1)$ ដែល $r \in \mathbb{R}$<br />
+                                <input type="radio" name="q7" value="D" /> D. $(1, r)$ ដែល $r \in \mathbb{R}$<br />
+                            </div>
+                        </div>
+
+                        <!-- លំហាត់ទី ១១ -->
+                        <div class="question-box" style="display: none">
+                            <p>
+                                <strong>៨.</strong> លើសំណុំ $A = \{0, 1, 2, 3\}$ តើទំនាក់ទំនងមួយណាខាងក្រោម
+                                ជាទំនាក់ទំនងសមមូល?
+                            </p>
+                            <div class="options">
+                                <input type="radio" name="q8" value="A" /> A. $\{(0, 0), (1, 1), (2, 2), (3, 3)\}$<br />
+                                <input type="radio" name="q8" value="B" /> B. $\{(0, 0), (1, 1), (2, 2)\}$<br />
+                                <input type="radio" name="q8" value="C" /> C. $\{(0, 1), (1, 2), (2, 3)\}$<br />
+                                <input type="radio" name="q8" value="D" /> D. $\{(0, 0), (1, 1), (2, 2), (3, 3), (1,
+                                2)\}$<br />
+                            </div>
+                        </div>
+
+                        <!-- លំហាត់ទី ១២ -->
+                        <div class="question-box" style="display: none">
+                            <p>
+                                <strong>៩.</strong> សំណុំរងពីរនៃបំណែក (Partition) ដែលបានមកពីថ្នាក់សមមូល (Equivalence
+                                classes) នៃទំនាក់ទំនងសមមូលមួយ ត្រូវតែមានលក្ខណៈដូចម្ដេច
+                                ប្រសិនបើពួកវាមិនមែនជាថ្នាក់សមមូលតែមួយ?
+                            </p>
+                            <div class="options">
+                                <input type="radio" name="q9" value="A" /> A. ជាសំណុំដូចគ្នា (Identical)<br />
+                                <input type="radio" name="q9" value="B" /> B. មានធាតុរួមគ្នាតែមួយគត់<br />
+                                <input type="radio" name="q9" value="C" /> C. គ្មានធាតុរួមគ្នាដាច់ខាត (Disjoint)<br />
+                                <input type="radio" name="q9" value="D" /> D. ជាសំណុំទទេទាំងពីរ<br />
+                            </div>
+                        </div>
+
+                        <!-- លំហាត់ទី ១៣ --
+                    <div class="question-box" style="display: none">
+                        <p>
+                            <strong>១៣.</strong> តើទំនាក់ទំនង $\mathcal R$ មួយលើសំណុំ $A$ ត្រូវបានហៅថាជា
+                            <strong>ទំនាក់ទំនងលំដាប់ដោយផ្នែក (Partial Ordering Relation - POR)</strong>
+                            លុះត្រាតែវាមានលក្ខណៈដូចម្ដេចខ្លះ?
+                        </p>
+                        <div class="options">
+                            <input type="radio" name="q13" value="wrong" /> A. Reflexive, Symmetric និង Transitive<br />
+                            <input type="radio" name="q13" value="correct" /> B. Reflexive, Antisymmetric និង
+                            Transitive<br />
+                            <input type="radio" name="q13" value="wrong" /> C. Irreflexive, Antisymmetric និង
+                            Transitive<br />
+                            <input type="radio" name="q13" value="wrong" /> D. Reflexive, Antisymmetric និង
+                            Intransitive<br />
+                        </div>
+                    </div> -->
+
+                        <!-- លំហាត់ទី ១៤ -->
+                        <div class="question-box" style="display: none">
+                            <p>
+                                <strong>១០.</strong> នៅក្នុងទំនាក់ទំនងលំដាប់ដោយផ្នែកមួយ (Partial Order)
+                                តើលក្ខខណ្ឌអ្វីដែលធ្វើឱ្យវាក្លាយជា
+                                <strong>ទំនាក់ទំនងលំដាប់គ្រប់ (Total Ordering Relation - TOR / Linear Order)</strong>?
+                            </p>
+                            <div class="options">
+                                <input type="radio" name="q10" value="A" /> A.
+                                គ្រប់ធាតុទាំងអស់នៅក្នុងសំណុំសុទ្ធតែស្មើគ្នា<br />
+                                <input type="radio" name="q10" value="B" /> B. វាមានធាតុធំបំផុត (Greatest element)
+                                តែមួយគត់<br />
+                                <input type="radio" name="q10" value="C" /> C.
+                                គ្រប់គូនៃធាតុផ្សេងគ្នាសុទ្ធតែអាចប្រៀបធៀបគ្នាបាន ពោលគឺ $a \le b$ ឬ $b \le a$<br />
+                                <input type="radio" name="q10" value="D" /> D. វាគ្មានធាតុអប្បបរមា (Minimal elements)<br />
+                            </div>
+                        </div>
+
+                        <!-- លំហាត់ទី ១៥ -->
+                        <div class="question-box" style="display: none">
+                            <p>
+                                <strong>១១.</strong> ផ្អែកលើមេរៀន តើ
+                                <strong>ដ្យាក្រាម Hasse (Hasse Diagram)</strong> ត្រូវបានប្រើប្រាស់សម្រាប់តំណាងឱ្យអ្វី?
+                            </p>
+                            <div class="options">
+                                <input type="radio" name="q11" value="A" /> A. ទំនាក់ទំនងសមមូល (Equivalence Relation)
+                                ទាំងអស់<br />
+                                <input type="radio" name="q11" value="B" /> B. ទំនាក់ទំនងលំដាប់ដោយផ្នែក (POR)
+                                ដោយលុបចោលរង្វិលជុំ (Self-loops) និងអង្កត់ធ្នូឆ្លង (Transitive edges)<br />
+                                <input type="radio" name="q11" value="C" /> C. អនុគមន៍មួយទល់មួយ និងអនុគមន៍ពេញញ៉ាំង<br />
+                                <input type="radio" name="q11" value="D" /> D. បំណែងចែក (Partition) នៃថ្នាក់សមមូល<br />
+                            </div>
+                        </div>
+
+                        <!-- លំហាត់ទី ១៦ -->
+                        <div class="question-box" style="display: none">
+                            <p>
+                                <strong>១២.</strong> គេឱ្យសំណុំ $A = \{1, 2, 3, 6\}$ និងទំនាក់ទំនង $R$ ជាទំនាក់ទំនង
+                                "ចែកដាច់ ($a \mid b$)" លើសំណុំ $A$។ តើការអះអាងមួយណាពិតប្រាកដចំពោះ $R$?
+                            </p>
+                            <div class="options">
+                                <input type="radio" name="q12" value="A" /> A. $\mathcal R$ ជាទំនាក់ទំនងលំដាប់សរុប
+                                (Total Order)<br />
+                                <input type="radio" name="q12" value="B" /> B. $\mathcal R$ ជាទំនាក់ទំនងលំដាប់ដោយផ្នែក
+                                ប៉ុន្តែមិនមែនជាលំដាប់សរុបទេ ព្រោះ $2$ និង $3$ មិនអាចប្រៀបធៀបគ្នាបាន<br />
+                                <input type="radio" name="q12" value="C" /> C. $\mathcal R$ ជាទំនាក់ទំនងសមមូល
+                                (Equivalence Relation)<br />
+                                <input type="radio" name="q12" value="D" /> D. $\mathcal R$
+                                មិនមែនជាទំនាក់ទំនងលំដាប់ដោយផ្នែកទេ ព្រោះវាមិនមានលក្ខណៈឆ្លុះ<br />
+                            </div>
+                        </div>
+
+                        <!-- លំហាត់ទី ១៧ -->
+                        <div class="question-box" style="display: none">
+                            <p>
+                                <strong>១៣.</strong> យោងតាមទ្រឹស្ដីនៃសំណុំលំដាប់ដោយផ្នែក (Poset) ប្រសិនបើវាមាន
+                                <strong>ធាតុអប្បបរមា (Minimum element ឬ Least element)</strong>
+                                តើវានឹងមានលក្ខណៈដូចម្ដេច?
+                            </p>
+                            <div class="options">
+                                <input type="radio" name="q13" value="A" /> A. វាអាចមានធាតុអប្បបរមាច្រើនជាងមួយបាន<br />
+                                <input type="radio" name="q13" value="B" /> B. វាត្រូវតែជាធាតុអតិបរមា (Maximum element)
+                                ផងដែរ<br />
+                                <input type="radio" name="q13" value="C" /> C. ធាតុអប្បបរមានោះគឺមានតែមួយគត់ជានិច្ច
+                                (Unique) ប្រសិនបើវាមាន<br />
+                                <input type="radio" name="q13" value="D" /> D. ធាតុអប្បបរមាមិនអាចជា Minimal element
+                                បានទេ<br />
+                            </div>
+                        </div>
+
+                        <!-- លំហាត់ទី ១៨ -->
+                        <div class="question-box" style="display: none">
+                            <p>
+                                <strong>១៤.</strong> តាង $\mathcal{P}(X)$ ជាសំណុំនៃសំណុំរងទាំងអស់របស់ $X$ (Power set)
+                                ហើយ $R$ ជាទំនាក់ទំនងបញ្ចុលគ្នា ($\subseteq$)។ ប្រសិនបើ $X$ មានធាតុយ៉ាងតិចចំនួន ២ តើ
+                                $(\mathcal{P}(X), \subseteq)$ ជាទំនាក់ទំនងប្រភេទណា?
+                            </p>
+                            <div class="options">
+                                <input type="radio" name="q14" value="A" /> A. ទំនាក់ទំនងលំដាប់សរុប (Total Order)<br />
+                                <input type="radio" name="q14" value="B" /> B. ទំនាក់ទំនងលំដាប់ដោយផ្នែក (Partial Order)
+                                តែមិនមែនជាលំដាប់សរុបទេ<br />
+                                <input type="radio" name="q14" value="C" /> C. ទំនាក់ទំនងសមមូល (Equivalence Relation)<br />
+                                <input type="radio" name="q14" value="D" /> D. មិនមែនជាទំនាក់ទំនងលំដាប់ដោយផ្នែកទេ<br />
+                            </div>
+                        </div>
+
+                        <!-- លំហាត់ទី ១៩ -->
+                        <div class="question-box" style="display: none">
+                            <p>
+                                <strong>១៥.</strong> ឧបមាថា $\mathcal P_1$ និង $\mathcal P_2$
+                                សុទ្ធតែជាទំនាក់ទំនងលំដាប់ដោយផ្នែក (Partial orderings) លើសំណុំ $A$ តែមួយ។
+                                តើប្រមាណវិធីប្រសព្វ $\mathcal P_1 \cap \mathcal P_2$ ជាអ្វី?
+                            </p>
+                            <div class="options">
+                                <input type="radio" name="q15" value="A" /> A. មិនមែនជាទំនាក់ទំនងលំដាប់ដោយផ្នែកទេ<br />
+                                <input type="radio" name="q15" value="B" /> B. តែងតែជាទំនាក់ទំនងលំដាប់ដោយផ្នែក (Partial
+                                ordering) ជានិច្ច<br />
+                                <input type="radio" name="q15" value="C" /> C. តែងតែជាទំនាក់ទំនងលំដាប់សរុប (Total
+                                ordering)<br />
+                                <input type="radio" name="q15" value="D" /> D. ជាទំនាក់ទំនងសមមូល (Equivalence
+                                Relation)<br />
+                            </div>
+                        </div>
+
+                        <!-- លំហាត់ទី ២០ -->
+                        <div class="question-box" style="display: none">
+                            <p>
+                                <strong>១៦.</strong> សម្រាប់ការរៀបចំលំដាប់តាមវចនានុក្រម (Lexicographic ordering) លើសំណុំ
+                                $\mathbb{N} \times \mathbb{N}$ តើលក្ខខណ្ឌមួយណាដែលកំណត់ថា $(a,b) \prec (c,d)$?
+                            </p>
+                            <div class="options">
+                                <input type="radio" name="q16" value="A" /> A. $a \lt c$ ឬ ($a = c$ និង $b \lt d$)<br />
+                                <input type="radio" name="q16" value="B" /> B. $a \lt c$ និង $b \lt d$<br />
+                                <input type="radio" name="q16" value="C" /> C. $a \le c$ និង $b \le d$<br />
+                                <input type="radio" name="q16" value="D" /> D. $a+b \lt c+d$<br />
+                            </div>
+                        </div>
+
+                        <!-- លំហាត់ទី ២១ -->
+                        <div class="question-box" style="display: none">
+                            <p>
+                                <strong>១៧.</strong> តើ <strong>ថ្នាក់សមមូល (Equivalence Class)</strong> តាងដោយ $[a]$
+                                នៃធាតុ $a$ តាមរយៈទំនាក់ទំនងសមមូល $\mathcal R$ លើសំណុំ $A$ គឺជាអ្វី?
+                            </p>
+                            <div class="options">
+                                <input type="radio" name="q17" value="A" /> A. សំណុំនៃធាតុ $x \in A$
+                                ទាំងអស់ដែលមានទំនាក់ទំនងជាមួយ $a$ ពោលគឺ $xRa$<br />
+                                <input type="radio" name="q17" value="B" /> B. សំណុំនៃធាតុទាំងអស់ក្នុង $A$
+                                ដែលគ្មានទំនាក់ទំនងជាមួយ $a$<br />
+                                <input type="radio" name="q17" value="C" /> C. សំណុំរងនៃ $A$ ដែលមានតែធាតុ $a$ មួយគត់<br />
+                                <input type="radio" name="q17" value="D" /> D. សំណុំនៃទំនាក់ទំនងលក្ខណៈខ្លួនឯង
+                                (Reflexive)<br />
+                            </div>
+                        </div>
+
+                        <!-- លំហាត់ទី ២២ -->
+                        <div class="question-box" style="display: none">
+                            <p>
+                                <strong>១៨.</strong> ឧបមាថា $[a]$ និង $[b]$ ជាថ្នាក់សមមូលពីរផ្សេងគ្នា (មិនស្មើគ្នា)
+                                នៃទំនាក់ទំនងសមមូល $\mathcal R$ លើសំណុំ $A$។
+                                តើលក្ខខណ្ឌមួយណាដែលពិតប្រាកដជានិច្ចចំពោះសំណុំទាំងពីរនេះ?
+                            </p>
+                            <div class="options">
+                                <input type="radio" name="q18" value="A" /> A. ប្រជុំនៃ $[a]$ និង $[b]$
+                                ស្មើនឹងសំណុំទទេ<br />
+                                <input type="radio" name="q18" value="B" /> B. ពួកវាមានធាតុរួមគ្នាយ៉ាងតិចមួយ<br />
+                                <input type="radio" name="q18" value="C" /> C. ពួកវាគ្មានធាតុរួមគ្នាដាច់ខាត (Disjoint)
+                                ពោលគឺ $[a] \cap [b] = \emptyset$<br />
+                                <input type="radio" name="q18" value="D" /> D. ថ្នាក់សមមូល $[a]$ ត្រូវតែជាសំណុំរងនៃ
+                                $[b]$<br />
+                            </div>
+                        </div>
+
+                        <!-- លំហាត់ទី ២៣ -->
+                        <div class="question-box" style="display: none">
+                            <p>
+                                <strong>១៩.</strong> តើ <strong>សំណុំផលចែក (Quotient Set)</strong> (តាងដោយ
+                                $A\mid_{\mathcal R}$) នៃសំណុំ $A$ តាមរយៈទំនាក់ទំនងសមមូល $\mathcal R$
+                                ត្រូវបានកំណត់ថាជាអ្វី?
+                            </p>
+                            <div class="options">
+                                <input type="radio" name="q19" value="A" /> A. ជាសំណុំនៃគូធាតុ $(x,y)$
+                                ទាំងអស់ដែលមិនមានទំនាក់ទំនងនឹងគ្នា<br />
+                                <input type="radio" name="q19" value="B" /> B. ជាបំណែក (Partition)
+                                ដែលមានតែមួយសំណុំរងប៉ុណ្ណោះ<br />
+                                <input type="radio" name="q19" value="C" /> C. ជាផលចែកចំនួនធាតុរបស់ $A$
+                                ជាមួយនឹងចំនួនធាតុរបស់ $\mathcal R$<br />
+                                <input type="radio" name="q19" value="D" /> D.
+                                ជាសំណុំដែលបណ្ដុំទៅដោយថ្នាក់សមមូលទាំងអស់របស់ $A$ តាមរយៈ $\mathcal R$<br />
+                            </div>
+                        </div>
+
+                        <!-- លំហាត់ទី ២៤ -->
+                        <div class="question-box" style="display: none">
+                            <p>
+                                <strong>២០.</strong> នៅក្នុងសំណុំលំដាប់ដោយផ្នែក (Poset) មួយ តើ
+                                <strong>ធាតុអតិបរមា (Maximal Element)</strong> នៃសំណុំរង $B$ មានន័យដូចម្ដេច?
+                            </p>
+                            <div class="options">
+                                <input type="radio" name="q20" value="A" /> A. ជាធាតុមួយដែលធំជាងគេបង្អស់
+                                និងតែងតែអាចប្រៀបធៀបជាមួយគ្រប់ធាតុទាំងអស់ក្នុង $B$<br />
+                                <input type="radio" name="q20" value="B" /> B. ជាធាតុ $a \in B$
+                                ដែលគ្មានធាតុណាមួយផ្សេងទៀតក្នុង $B$ ធំជាងវាឡើយ ពោលគឺគ្មាន $x \in B$ ណាដែល $a \prec x$
+                                ទេ<br />
+                                <input type="radio" name="q20" value="C" /> C. ជាធាតុដែលនៅក្រៅសំណុំ $B$ ហើយធំជាង
+                                ឬស្មើគ្រប់ធាតុរបស់ $B$<br />
+                                <input type="radio" name="q20" value="D" /> D. ជាធាតុដែលតូចជាងគេបំផុតនៅក្នុងសំណុំ $B$<br />
+                            </div>
+                        </div>
+
+                        <!-- លំហាត់ទី ២៥ -->
+                        <div class="question-box" style="display: none">
+                            <p>
+                                <strong>២១.</strong> ឧបមាថា $S$ ជាសំណុំរងនៃ Poset មួយ។ ប្រសិនបើ $S$ មាន គោលលើ (Upper
+                                bounds) ជាច្រើន តើ <strong>គោលលើតូចបំផុត (Least Upper Bound ឬ Supremum)</strong> របស់
+                                $S$ គឺជាអ្វី?
+                            </p>
+                            <div class="options">
+                                <input type="radio" name="q21" value="A" /> A. ជាគោលលើមួយដែលធំជាងគ្រប់គោលលើទាំងអស់របស់
+                                $S$<br />
+                                <input type="radio" name="q21" value="B" /> B. ជាធាតុមួយក្នុង $S$ ដែលតូចជាងគេបង្អស់<br />
+                                <input type="radio" name="q21" value="C" /> C. ជាគោលលើមួយរបស់ $S$ ដែលតូចជាង
+                                ឬស្មើគ្រប់គោលលើដទៃទៀតទាំងអស់របស់ $S$<br />
+                                <input type="radio" name="q21" value="D" /> D. ជាធាតុអតិបរមា (Maximal element) របស់សំណុំ
+                                $S$<br />
+                            </div>
+                        </div>
+
+                        <!-- លំហាត់ទី ២៦ -->
+                        <div class="question-box" style="display: none">
+                            <p>
+                                <strong>២២.</strong> ផ្អែកលើការសង្កេតមើល
+                                <strong>ដ្យាក្រាម Hasse (Hasse Diagram)</strong> នៃសំណុំលំដាប់ដោយផ្នែកមួយ
+                                តើយើងអាចសម្គាល់ <strong>ធាតុអប្បបរមា (Minimal elements)</strong> បានដោយរបៀបណា?
+                            </p>
+                            <div class="options">
+                                <input type="radio" name="q22" value="A" /> A. ពួកវាជាចំណុចដែលនៅខាងលើគេបង្អស់
+                                គ្មានខ្សែគូសចេញទៅលើបន្តទៀត<br />
+                                <input type="radio" name="q22" value="B" /> B. វាមានតែមួយចំណុចគត់ជានិច្ចនៅបាតក្រាហ្វ<br />
+                                <input type="radio" name="q22" value="C" /> C. វាជាចំណុចកណ្ដាលនៃក្រាហ្វ
+                                ដែលភ្ជាប់ទៅគ្រប់ចំណុចផ្សេងទៀត<br />
+                                <input type="radio" name="q22" value="D" /> D. ពួកវាជាចំណុចដែលនៅខាងក្រោមគេ
+                                ដោយមិនមានខ្សែគូសចុះមកក្រោមតភ្ជាប់ទៅចំណុចណាផ្សេងទៀតឡើយ<br />
+                            </div>
+                        </div>
+
+                        <!-- លំហាត់ទី ២៧ -->
+                        <div class="question-box" style="display: none">
+                            <p>
+                                <strong>២៣.</strong> ផ្អែកលើដ្យាក្រាម Hasse នៃសំណុំលំដាប់ដោយផ្នែកខាងក្រោម តើសំណុំនៃ
+                                <strong>ធាតុអតិបរមា (Maximal Elements)</strong> គឺជាអ្វី?
+                            </p>
+                            <div class="tikz-center">
+                                <script type="text/tikz">
+                                    \begin{tikzpicture}[node distance=1.5cm, every node/.style={circle, draw, minimum size=0.6cm}]
+                                        \node (d) at (0, 2) {d};
+                                        \node (e) at (2, 2) {e};
+                                        \node (c) at (1, 1) {c};
+                                        \node (a) at (0, 0) {a};
+                                        \node (b) at (2, 0) {b};
+
+                                        \draw (a) -- (c);
+                                        \draw (b) -- (c);
+                                        \draw (c) -- (d);
+                                        \draw (c) -- (e);
+                                    \end{tikzpicture}
+                                </script>
+                            </div>
+                            <div class="options">
+                                <input type="radio" name="q23" value="A" /> A. $\{a, b\}$<br />
+                                <input type="radio" name="q23" value="B" /> B. $\{c\}$<br />
+                                <input type="radio" name="q23" value="C" /> C. $\{d, e\}$<br />
+                                <input type="radio" name="q23" value="D" /> D. គ្មានធាតុអតិបរមាទេ<br />
+                            </div>
+                        </div>
+
+                        <!-- លំហាត់ទី ២៨ -->
+                        <div class="question-box" style="display: none">
+                            <p>
+                                <strong>២៤.</strong> តាមរយៈដ្យាក្រាម Hasse ខាងក្រោម តើមួយណាជា
+                                <strong>ធាតុធំបំផុត (Greatest element)</strong> និង
+                                <strong>ធាតុតូចបំផុត (Least element)</strong> នៃសំណុំនេះ?
+                            </p>
+                            <div class="tikz-center">
+                                <script type="text/tikz">
+                                    \begin{tikzpicture}[node distance=1.5cm, every node/.style={circle, draw, minimum size=0.6cm}]
+                                        \node (4) at (1, 2) {4};
+                                        \node (2) at (0, 1) {2};
+                                        \node (3) at (2, 1) {3};
+                                        \node (1) at (1, 0) {1};
+
+                                        \draw (1) -- (2);
+                                        \draw (1) -- (3);
+                                        \draw (2) -- (4);
+                                        \draw (3) -- (4);
+                                    \end{tikzpicture}
+                                </script>
+                            </div>
+                            <div class="options">
+                                <input type="radio" name="q24" value="A" /> A. ធាតុធំបំផុតគឺ $4$, ធាតុតូចបំផុតគឺ $1$<br />
+                                <input type="radio" name="q24" value="B" /> B. ធាតុធំបំផុតគឺ $4$, គ្មានធាតុតូចបំផុតទេ<br />
+                                <input type="radio" name="q24" value="C" /> C. ធាតុធំបំផុតគឺ $2$ និង $3$, ធាតុតូចបំផុតគឺ
+                                $1$<br />
+                                <input type="radio" name="q24" value="D" /> D. គ្មានទាំងធាតុធំបំផុត និងធាតុតូចបំផុត<br />
+                            </div>
+                        </div>
+
+                        <!-- លំហាត់ទី ២៩ -->
+                        <div class="question-box" style="display: none">
+                            <p>
+                                <strong>២៥.</strong> ពិនិត្យមើលដ្យាក្រាម Hasse ខាងក្រោម។ ចំពោះសំណុំរង $S = \{2, 3\}$ តើ
+                                <strong>គោលលើតូចបំផុត (Least Upper Bound / LUB)</strong> របស់វាគឺជាធាតុមួយណា?
+                            </p>
+                            <div class="tikz-center">
+                                <script type="text/tikz">
+                                    \begin{tikzpicture}[node distance=1.5cm, every node/.style={circle, draw, minimum size=0.6cm}]
+                                        \node (5) at (1, 2) {5};
+                                        \node (4) at (-1, 2) {4};
+                                        \node (2) at (0, 1) {2};
+                                        \node (3) at (2, 1) {3};
+                                        \node (1) at (1, 0) {1};
+
+                                        \draw (1) -- (2);
+                                        \draw (1) -- (3);
+                                        \draw (2) -- (4);
+                                        \draw (2) -- (5);
+                                        \draw (3) -- (5);
+                                    \end{tikzpicture}
+                                </script>
+                            </div>
+                            <div class="options">
+                                <input type="radio" name="q25" value="A" /> A. ធាតុ $1$<br />
+                                <input type="radio" name="q25" value="B" /> B. ធាតុ $4$<br />
+                                <input type="radio" name="q25" value="C" /> C. ធាតុ $5$<br />
+                                <input type="radio" name="q25" value="D" /> D. មិនមាន LUB ទេ<br />
+                            </div>
+                        </div>
+
+                        <!-- លំហាត់ទី ៣០ -->
+                        <div class="question-box" style="display: none">
+                            <p>
+                                <strong>២៦.</strong> ខាងក្រោមនេះជាដ្យាក្រាម Hasse នៃទំនាក់ទំនង "ចែកដាច់" លើសំណុំ $\{1,
+                                2, 3, 4, 6, 12\}$។ ចំពោះសំណុំរង $A = \{4, 6\}$ តើ
+                                <strong>គោលក្រោមធំបំផុត (Greatest Lower Bound / GLB)</strong> របស់វាគឺជាធាតុមួយណា?
+                            </p>
+                            <div class="tikz-center">
+                                <script type="text/tikz">
+                                    \begin{tikzpicture}[node distance=1.5cm, every node/.style={circle, draw, minimum size=0.6cm}]
+                                        \node (12) at (1.5, 3) {12};
+                                        \node (4) at (0, 2) {4};
+                                        \node (6) at (3, 2) {6};
+                                        \node (2) at (1.5, 1) {2};
+                                        \node (3) at (4.5, 1) {3};
+                                        \node (1) at (3, 0) {1};
+
+                                        \draw (1) -- (2);
+                                        \draw (1) -- (3);
+                                        \draw (2) -- (4);
+                                        \draw (2) -- (6);
+                                        \draw (3) -- (6);
+                                        \draw (4) -- (12);
+                                        \draw (6) -- (12);
+                                    \end{tikzpicture}
+                                </script>
+                            </div>
+                            <div class="options">
+                                <input type="radio" name="q26" value="A" /> A. ធាតុ $12$<br />
+                                <input type="radio" name="q26" value="B" /> B. ធាតុ $1$<br />
+                                <input type="radio" name="q26" value="C" /> C. ធាតុ $2$<br />
+                                <input type="radio" name="q26" value="D" /> D. ធាតុ $3$<br />
                             </div>
                         </div>
 
@@ -1058,7 +1436,7 @@
                             </button>
 
                             <span id="question-indicator" style="margin: 0 15px; font-weight: bold"
-                                >លំហាត់ទី 1 / 10</span
+                                >លំហាត់ទី 1 / 26</span
                             >
 
                             <!-- បន្ថែម id="nextBtn" -->
@@ -1444,6 +1822,7 @@
     // ដូរ URL នេះទៅជា Web App URL ដែលអ្នកបាន Copy ពីជំហានទី៣
     const SCRIPT_URL =
         "https://script.google.com/macros/s/AKfycbzE2eKjlyXaAgdQ-6_qjtQ6TVWRV6m5K11cqMZcSWBL_QYCWHZ4kkM0MEgLvSg2IzTL/exec";
+    /*"https://script.google.com/macros/s/AKfycbzE2eKjlyXaAgdQ-6_qjtQ6TVWRV6m5K11cqMZcSWBL_QYCWHZ4kkM0MEgLvSg2IzTL/exec"; --v3*/
     //"https://script.google.com/macros/s/AKfycbxuQlrV_jN9-rKplHBI_8_UlIM9Do81Mpns49A1GjalNWCai8hF40jVMUSnYCzKrDhMzA/exec"; --Old//
 
     function calculateScore() {
