@@ -42,6 +42,12 @@
         <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css" />
         <script src="https://tikzjax.com/v1/tikzjax.js"></script>
 
+        <!--<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css" />-->
+
+        <!-- កូដសម្រាប់ TikZJax -->
+        <!--<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css" />
+        <script id="tikz-script" src="https://tikzjax.com/v1/tikzjax.js"></script>-->
+
         <script>
             // ១. អថេរសម្រាប់កត់ចំណាំទីតាំងលំហាត់ (០ គឺលំហាត់ទី ១)
             let currentQuestionIndex = 0;
@@ -793,11 +799,13 @@
                             <option value="M3">M3</option>
                             <option value="M4">M4</option>
                             <option value="M5">M5</option>
+                            <!--
                             <option value="M6">M6</option>
                             <option value="A1">A1</option>
                             <option value="A2">A2</option>
                             <option value="B1">B1</option>
-                            <option value="B2">B2</option></select
+                            <option value="B2">B2</option>
+                            --></select
                         ><br />
 
                         <!-- ចំណុចកែប្រែទី២៖ ប្តូរ type="number" ទៅជា type="text" និងបន្ថែម oninput, readonly -->
@@ -880,160 +888,21 @@
                 <!-- ========================================== -->
                 <div id="exam-section" style="display: none">
                     <form id="quizForm">
-                        <!-- លំហាត់ទី ១ -->
-                        <div class="question-box" style="display: block">
-                            <p>
-                                <strong>១.</strong> យោងតាមប្រភពកំណើតនៃពាក្យ (Etymology) តើពាក្យ "Geometry" (ធរណីមាត្រ)
-                                មានន័យដើមថាដូចម្ដេច?
-                            </p>
-                            <div class="options">
-                                <input type="radio" name="q1" value="wrong" /> A. ការសិក្សាអំពីទំហំនៃចក្រវាឡ<br />
-                                <input type="radio" name="q1" value="correct" /> B. ការវាស់ស្ទង់ផែនដី (Earth measure)<br />
-                                <input type="radio" name="q1" value="wrong" /> C. ការគណនាផ្ទៃក្រឡា និងមាឌ<br />
-                                <input type="radio" name="q1" value="wrong" /> D. ការសិក្សាពីបន្ទាត់ និងមុំ<br />
-                            </div>
+                        <!-- នេះជាកន្លែងដែល JS នឹងយកសំណួរមកតម្រៀបបញ្ជូលអូតូ -->
+                        <div id="quiz-container">
+                            <h3 id="loading-text" style="text-align: center; color: #007bff; margin: 40px 0">
+                                ⏳ កំពុងទាញយកវិញ្ញាសា...
+                            </h3>
                         </div>
 
-                        <!-- លំហាត់ទី ២ -->
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <strong>២.</strong> ជនជាតិអេស៊ីប និងបាប៊ីឡូន
-                                បានប្រើប្រាស់បច្ចេកទេសធរណីមាត្របានយ៉ាងល្អក្នុងជីវិតប្រចាំថ្ងៃ។ ប៉ុន្តែ
-                                តើជនជាតិណាដែលបានផ្តួចផ្តើមប្រែក្លាយធរណីមាត្រទៅជា "ប្រព័ន្ធបែបគណិតវិទ្យាទ្រឹស្ដី"
-                                ដែលមាននិយមន័យ និងសម្រាយបញ្ជាក់?
-                            </p>
-                            <div class="options">
-                                <input type="radio" name="q2" value="wrong" /> A. ជនជាតិរ៉ូម៉ាំង (Romans)<br />
-                                <input type="radio" name="q2" value="correct" /> B. ជនជាតិក្រិក (Greeks)<br />
-                                <input type="radio" name="q2" value="wrong" /> C. ជនជាតិអារ៉ាប់ (Arabs)<br />
-                                <input type="radio" name="q2" value="wrong" /> D. ជនជាតិចិន (Chinese)<br />
-                            </div>
-                        </div>
-
-                        <!-- លំហាត់ទី ៣ -->
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <strong>៣.</strong> ការសិក្សាទៅលើ "ត្រីធាតុពីតាគ័រ" ក្នុងសមីការ $a^2+b^2=c^2$
-                                បានឈានទៅដល់ការស្រាវជ្រាវសមីការ $a^n+b^n=c^n$ (ដែល $n\gt 2$) ឬហៅថា ទ្រឹស្ដីបទចុងក្រោយរបស់
-                                Fermat។ តើអ្នកណាជាអ្នករកឃើញសម្រាយបញ្ជាក់ដ៏ល្បីនេះនៅឆ្នាំ ១៩៩៥?
-                            </p>
-                            <div class="options">
-                                <input type="radio" name="q3" value="wrong" /> A. J.A. Garfield<br />
-                                <input type="radio" name="q3" value="wrong" /> B. A.M. Legendre<br />
-                                <input type="radio" name="q3" value="correct" /> C. Andrew Wiles<br />
-                                <input type="radio" name="q3" value="wrong" /> D. David Hilbert<br />
-                            </div>
-                        </div>
-
-                        <!-- លំហាត់ទី ៤ -->
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <strong>៤.</strong> តើសៀវភៅគណិតវិទ្យាដ៏ពិសេសឈ្មោះថា "Elements"
-                                ដែលមានលក្ខណៈពេញលេញអស់រយៈពេលជាង ២០០០ឆ្នាំ ត្រូវបានតាក់តែងឡើងដោយនរណា និងនៅប្រហែលឆ្នាំណា?
-                            </p>
-                            <div class="options">
-                                <input type="radio" name="q4" value="wrong" /> A. ពីតាគ័រ (៥០០ មុនគ.ស.)<br />
-                                <input type="radio" name="q4" value="wrong" /> B. តាឡេស (៦០០ មុនគ.ស.)<br />
-                                <input type="radio" name="q4" value="correct" /> C. អឺគ្លីត (៣០០ មុនគ.ស.)<br />
-                                <input type="radio" name="q4" value="wrong" /> D. អាកស៊ីម៉ែត (២០០ មុនគ.ស.)<br />
-                            </div>
-                        </div>
-
-                        <!-- លំហាត់ទី ៥ -->
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <strong>៥.</strong> តើគណិតវិទូរុស្ស៊ី N.I. Lobačevskiĭ
-                                បានបង្កើតប្រភេទធរណីមាត្រថ្មីមួយឈ្មោះថាអ្វី បន្ទាប់ពីលោកមិនបានពិចារណាបញ្ចូល
-                                "ស្វ័យសត្យរងប៉ារ៉ាឡែល" របស់អឺគ្លីត?
-                            </p>
-                            <div class="options">
-                                <input type="radio" name="q5" value="wrong" /> A. ធរណីមាត្រប្រូសិ៍ទីវ (Projective
-                                Geometry)<br />
-                                <input type="radio" name="q5" value="wrong" /> B. ធរណីមាត្រអេលីប (Elliptic Geometry)<br />
-                                <input type="radio" name="q5" value="wrong" /> C. ធរណីមាត្រលំហអានន្ត (Infinite Space
-                                Geometry)<br />
-                                <input type="radio" name="q5" value="correct" /> D. ធរណីមាត្រអ៊ីពែរបូល (Hyperbolic
-                                Geometry)<br />
-                            </div>
-                        </div>
-
-                        <!-- លំហាត់ទី ៦ -->
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <strong>៦.</strong> ផ្អែកលើមេរៀន តើការអះអាងមួយណាខាងក្រោមនេះ ស្ថិតនៅក្នុងចំណោម
-                                <strong>"ស្វ័យសត្យ (Axioms)"</strong> ទាំង ៥ របស់អឺគ្លីត?
-                            </p>
-                            <div class="options">
-                                <input type="radio" name="q6" value="wrong" /> A. តាមពីរចំណុច គេគូសបានបន្ទាត់តែមួយគត់<br />
-                                <input type="radio" name="q6" value="wrong" /> B. គ្រប់មុំកែងទាំងអស់ ស្មើគ្នា<br />
-                                <input type="radio" name="q6" value="correct" /> C. វត្ថុពីរដែលត្រួតស៊ីគ្នាទាំងស្រុង
-                                គឺស្មើគ្នា<br />
-                                <input type="radio" name="q6" value="wrong" /> D.
-                                បន្ទាត់មួយអាចបន្លាយបានដោយគ្មានទីបញ្ចប់<br />
-                            </div>
-                        </div>
-
-                        <!-- លំហាត់ទី ៧ -->
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <strong>៧.</strong> តើស្វ័យសត្យរងទី ៥ របស់អឺគ្លីត មានឈ្មោះហៅម្យ៉ាងទៀតថាអ្វី
-                                ដែលជាប្រធានបទធ្វើឱ្យគណិតវិទូជាច្រើនព្យាយាមរកសម្រាយបញ្ជាក់អស់រាប់សតវត្ស តែមិនបានសម្រេច?
-                            </p>
-                            <div class="options">
-                                <input type="radio" name="q7" value="wrong" /> A. ស្វ័យសត្យរងនៃរង្វង់<br />
-                                <input type="radio" name="q7" value="correct" /> B. ស្វ័យសត្យរងប៉ារ៉ាឡែល (Parallel
-                                postulate)<br />
-                                <input type="radio" name="q7" value="wrong" /> C. ស្វ័យសត្យរងមុំកែង<br />
-                                <input type="radio" name="q7" value="wrong" /> D. ស្វ័យសត្យរងបន្ទាត់ត្រង់<br />
-                            </div>
-                        </div>
-
-                        <!-- លំហាត់ទី ៨ -->
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <strong>៨.</strong> ភាពឯករាជ្យនៃ "ស្វ័យសត្យរងប៉ារ៉ាឡែល" ពីស្វ័យសត្យរងផ្សេងទៀតរបស់អឺគ្លីត
-                                ត្រូវបានបញ្ជាក់យ៉ាងច្បាស់លាស់នៅឆ្នាំ ១៨៦៨ ដោយគណិតវិទូរូបណា?
-                            </p>
-                            <div class="options">
-                                <input type="radio" name="q8" value="correct" /> A. Eugenio Beltrami<br />
-                                <input type="radio" name="q8" value="wrong" /> B. David Hilbert<br />
-                                <input type="radio" name="q8" value="wrong" /> C. R. Penrose<br />
-                                <input type="radio" name="q8" value="wrong" /> D. J. Hadamard<br />
-                            </div>
-                        </div>
-
-                        <!-- លំហាត់ទី ៩ -->
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <strong>៩.</strong> តាមទស្សនៈរបស់អ្នករូបវិទូ-គណិតវិទូ R. Penrose តើស្វ័យសត្យរងទាំង ៤
-                                ដំបូងរបស់អឺគ្លីត ជាមូលដ្ឋានតំណាងឱ្យអ្វី?
-                            </p>
-                            <div class="options">
-                                <input type="radio" name="q9" value="wrong" /> A. លំហបីវិមាត្រមានរាងជាស្វ៊ែរ<br />
-                                <input type="radio" name="q9" value="correct" /> B. លំហមេទ្រីកពីរវិមាត្រដែលមានលក្ខណៈ
-                                homogeneity និង isotropy ទាំងស្រុង<br />
-                                <input type="radio" name="q9" value="wrong" /> C.
-                                លំហអ៊ីពែរបូលដែលលាតសន្ធឹងដោយមានទីបញ្ចប់<br />
-                                <input type="radio" name="q9" value="wrong" /> D. លំហកោងនៃទ្រឹស្ដីរ៉ឺឡាទីវីតេ<br />
-                            </div>
-                        </div>
-
-                        <!-- លំហាត់ទី ១០ -->
-                        <div class="question-box" style="display: none">
-                            <p>
-                                <strong>១០.</strong> ដោយសារតែអឺគ្លីតជាអ្នកគិតដំបូងគេ
-                                ដែលបានរៀបចំទ្រឹស្តីវិទ្យាសាស្ត្រយ៉ាងមានរចនាសម្ព័ន្ធដោយមិនពឹងផ្អែកលើកត្តាខាងក្រៅតក្កវិជ្ជា
-                                តើអ្នកជំនាញតក្កវិជ្ជាលោក D. Tamari បានចាត់ទុកគាត់ថាជាអ្វី?
-                            </p>
-                            <div class="options">
-                                <input type="radio" name="q10" value="wrong" /> A. បិតានៃធរណីមាត្រវិភាគ<br />
-                                <input type="radio" name="q10" value="correct" /> B.
-                                ស្ថាបនិកនៃទស្សនៈវិស័យវិទ្យាសាស្ត្រទំនើប<br />
-                                <input type="radio" name="q10" value="wrong" /> C. អ្នកបង្កើតទ្រឹស្ដីចំនួន
-                                និងវិភាគបន្សំ<br />
-                                <input type="radio" name="q10" value="wrong" /> D. ស្ថាបនិកនៃធរណីមាត្រអ៊ីពែរបូល<br />
-                            </div>
-                        </div>
+                        <!-- តើជ្រុង $x$ នៃត្រីកោណកែងខាងក្រោម មានប្រវែងប៉ុន្មាន?
+                        <br /><br />
+                        <div class="tikz-code" style="text-align: center">
+                            \begin{tikzpicture}[scale=1.2] % គូរត្រីកោណ \draw[thick] (0,0) -- (4,0) -- (0,3) -- cycle; %
+                            គូសសញ្ញាមុំកែង \draw (0.3,0) -- (0.3,0.3) -- (0,0.3); % ដាក់លេខប្រវែងជ្រុង \node[below] at
+                            (2,0) {$4$}; \node[left] at (0,1.5) {$3$}; \node[above right, red] at (2,1.5) {$x$};
+                            \end{tikzpicture}
+                        </div>-->
 
                         <div class="table-container page-break"></div>
 
@@ -1441,7 +1310,9 @@
 
     // ដូរ URL នេះទៅជា Web App URL ដែលអ្នកបាន Copy ពីជំហានទី៣
     const SCRIPT_URL =
-        "https://script.google.com/macros/s/AKfycbzE2eKjlyXaAgdQ-6_qjtQ6TVWRV6m5K11cqMZcSWBL_QYCWHZ4kkM0MEgLvSg2IzTL/exec";
+        "https://script.google.com/macros/s/AKfycbya1nMIdZ4sQ9s5NxG02MLm3r8Ltt0PgPbUJkdLBmakmk70pLP743WhqcwmuJV2w_64/exec";
+    //"https://script.google.com/macros/s/AKfycbxN3S2Jj3CPy3ZzENkGhbYqRhLGWFS9rNx8UO45S8SRn7Puic2XzEhdvcz9e3LXsUyS/exec";
+    //"https://script.google.com/macros/s/AKfycbzE2eKjlyXaAgdQ-6_qjtQ6TVWRV6m5K11cqMZcSWBL_QYCWHZ4kkM0MEgLvSg2IzTL/exec"--old;
     //"https://script.google.com/macros/s/AKfycbxuQlrV_jN9-rKplHBI_8_UlIM9Do81Mpns49A1GjalNWCai8hF40jVMUSnYCzKrDhMzA/exec"; --Old//
 
     function calculateScore() {
@@ -1773,4 +1644,148 @@
             idInput.value = currentClassPrefix;
         }
     }
+</script>
+
+<script>
+    // ទាញលំហាត់ពី google sheet
+    // មុខងារសម្រាប់ទាញយកសំណួរពី Google Sheet (ប្រើ Fetch API វិញ)
+    function fetchDynamicQuestions() {
+        // SCRIPT_URL គឺជា Link Web App របស់លោកគ្រូ ដែលមានស្រាប់នៅខាងលើ
+        // យើងថែមពាក្យ ?action=getQuestions ពីក្រោយ ដើម្បីប្រាប់ Backend ឲ្យបាញ់លំហាត់មក
+        let fetchUrl = SCRIPT_URL + "?action=getQuestions";
+
+        fetch(fetchUrl)
+            .then((response) => response.json())
+            .then((data) => {
+                // ពេលបានទិន្នន័យមក ហៅមុខងាររៀបចំ HTML ដែលមានស្រាប់
+                renderQuestions(data);
+            })
+            .catch((err) => {
+                console.error("Fetch error:", err);
+                document.getElementById("loading-text").innerHTML =
+                    "<span style='color:red;'>មានបញ្ហាក្នុងការទាញយកវិញ្ញាសា! សូមពិនិត្យអ៊ីនធឺណិតរបស់អ្នក ហើយ Refresh ម្ដងទៀត។</span>";
+            });
+    }
+
+    // មុខងារសម្រាប់រៀបចំសំណួរចូលទៅក្នុងទំព័រ HTML
+    function renderQuestions(data) {
+        let container = document.getElementById("quiz-container");
+        container.innerHTML = ""; // លុបអក្សរ "កំពុងទាញយក..." ចោល
+
+        if (data.length === 0) {
+            container.innerHTML =
+                "<h3 style='text-align:center; color:red;'>មិនទាន់មានលំហាត់ក្នុងប្រព័ន្ធនៅឡើយទេ!</h3>";
+            return;
+        }
+
+        let html = "";
+        // បង្កើតប្រអប់ HTML សម្រាប់សំណួរនីមួយៗ តាមរយៈទិន្នន័យ (data)
+        for (let i = 0; i < data.length; i++) {
+            let displayStyle = i === 0 ? "block" : "none"; // បង្ហាញតែសំណួរទី១
+            let qNum = i + 1;
+            let q = data[i];
+
+            html += `
+        <div class="question-box" style="display: ${displayStyle}">
+            <p><strong>${qNum}.</strong> ${q.text}</p>
+            <div class="options">
+                <label><input type="radio" name="q${qNum}" value="A" /> A. ${q.optA}</label>
+                <label><input type="radio" name="q${qNum}" value="B" /> B. ${q.optB}</label>
+                <label><input type="radio" name="q${qNum}" value="C" /> C. ${q.optC}</label>
+                <label><input type="radio" name="q${qNum}" value="D" /> D. ${q.optD}</label>
+            </div>
+        </div>
+        `;
+        }
+
+        // បញ្ចូលកូដដែលបង្កើតរួចទៅក្នុងអេក្រង់
+        container.innerHTML = html;
+
+        /*// បញ្ជាឲ្យ MathJax រៀបចំរូបមន្ត LaTeX ឡើងវិញឲ្យស្អាត
+        if (window.MathJax) {
+            MathJax.typesetPromise();
+        }
+
+        // ដូរលេខរៀងទំព័រ
+        document.getElementById("question-indicator").innerText = "លំហាត់ទី 1 / " + data.length;*/
+
+        /*// បញ្ជាឲ្យ MathJax រៀបចំរូបមន្ត LaTeX ឡើងវិញ
+        if (window.MathJax) {
+            MathJax.typesetPromise();
+        }
+
+        // =========================================================
+        // តិចនិកពិសេស៖ បង្ខំឲ្យ TikZJax ដំណើរការគូររូបភាពឡើងវិញ
+        // =========================================================
+        let tikzBlocks = document.querySelectorAll(".tikz-code");
+        if (tikzBlocks.length > 0) {
+            tikzBlocks.forEach((block) => {
+                // ១. បង្កើត tag <script type="text/tikz"> ថ្មីមួយ
+                let scriptTag = document.createElement("script");
+                scriptTag.type = "text/tikz";
+
+                // ២. យកអក្សរ TikZ ចេញពីប្រអប់ មកដាក់ចូលក្នុង script
+                scriptTag.textContent = block.textContent;
+                block.innerHTML = ""; // លុបអក្សរធម្មតាចោល
+                block.appendChild(scriptTag);
+            });
+
+            // ៣. លុប TikZJax ចាស់ចោល ហើយ Load វាចូលម្ដងទៀត ដើម្បីឲ្យវាភ្ញាក់!
+            let oldTikz = document.getElementById("tikz-script");
+            if (oldTikz) oldTikz.remove();
+
+            let newTikz = document.createElement("script");
+            newTikz.id = "tikz-script";
+            newTikz.src = "https://tikzjax.com/v1/tikzjax.js";
+            document.head.appendChild(newTikz);
+        }*/
+
+        // បញ្ជាឲ្យ MathJax រៀបចំរូបមន្ត LaTeX ឡើងវិញ
+        if (window.MathJax) {
+            MathJax.typesetPromise();
+        }
+
+        // =========================================================
+        // តិចនិកពិសេស៖ បង្ខំឲ្យ TikZJax ដំណើរការគូររូបភាពឡើងវិញ (កែសម្រួលថ្មី)
+        // =========================================================
+        let tikzBlocks = document.querySelectorAll(".tikz-code");
+        if (tikzBlocks.length > 0) {
+            tikzBlocks.forEach((block) => {
+                // ១. បង្កើត tag <script type="text/tikz">
+                let scriptTag = document.createElement("script");
+                scriptTag.type = "text/tikz";
+                scriptTag.textContent = block.textContent; // ចាប់យកកូដ TikZ ដើម
+
+                block.innerHTML = ""; // លុបអក្សរចោល
+                block.appendChild(scriptTag); // ដាក់កូដ script ចូលវិញ
+            });
+
+            // ២. លុប TikZJax ចាស់ចោល
+            let oldTikz = document.getElementById("tikz-script");
+            if (oldTikz) oldTikz.remove();
+
+            // ៣. បញ្ចូល TikZJax ថ្មី + តិចនិកបញ្ឆោត Browser ឲ្យគូររូបឡើងវិញ
+            let newTikz = document.createElement("script");
+            newTikz.id = "tikz-script";
+            // ថែម ?v=ពេលវេលា ដើម្បីប្រាប់ Browser ថាវាជា File ថ្មី ត្រូវតែដំណើរការភ្លាម!
+            newTikz.src = "https://tikzjax.com/v1/tikzjax.js?v=" + new Date().getTime();
+
+            // ដាក់វាទៅក្នុង <body> ដើម្បីឲ្យវារត់កូដ
+            document.body.appendChild(newTikz);
+        }
+        // =========================================================
+        // =========================================================
+
+        // ដូរលេខរៀងទំព័រ
+        document.getElementById("question-indicator").innerText = "លំហាត់ទី 1 / " + data.length;
+
+        // ហៅមុខងារនេះដើម្បីឲ្យវាឆែកបិទ/បើកប៊ូតុង Next, Prev, Submit ឡើងវិញ
+        currentQuestionIndex = 0;
+        checkProgress();
+    }
+
+    // ហៅទិន្នន័យអូតូ ពេលសិស្សបើកវេបសាយដំបូងភ្លាម (Pre-load)
+    window.addEventListener("load", function () {
+        fetchDynamicQuestions();
+    });
 </script>
