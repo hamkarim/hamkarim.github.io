@@ -1045,60 +1045,60 @@
             //        }
             //    }
             /*function navigate(action) {
-                // ១. ចាប់យកទិន្នន័យដែលសិស្សបានវាយបញ្ចូល
-                let nameKh = document.getElementById("studentName").value.trim();
-                let nameEn = document.getElementById("studentNameLatin").value.trim();
-                let groupId = document.getElementById("groupId").value;
-                let studentId = document.getElementById("studentId").value.trim();
+                        // ១. ចាប់យកទិន្នន័យដែលសិស្សបានវាយបញ្ចូល
+                        let nameKh = document.getElementById("studentName").value.trim();
+                        let nameEn = document.getElementById("studentNameLatin").value.trim();
+                        let groupId = document.getElementById("groupId").value;
+                        let studentId = document.getElementById("studentId").value.trim();
 
-                // ២. ឆែកមើលថា តើគាត់បំពេញគ្រប់អស់ឬនៅ? (យ៉ាងហោចណាស់ត្រូវមាន ឈ្មោះឡាតាំង, ថ្នាក់, និង ID)
-                if (nameEn === "" || groupId === "" || studentId === "" || studentId === groupId + "-") {
-                    alert("សូមបំពេញ ឈ្មោះឡាតាំង ថ្នាក់ និងលេខរៀង ឲ្យបានត្រឹមត្រូវជាមុនសិន!");
-                    return; // បញ្ឈប់កុំឲ្យដើរទៅមុខ
-                }
+                        // ២. ឆែកមើលថា តើគាត់បំពេញគ្រប់អស់ឬនៅ? (យ៉ាងហោចណាស់ត្រូវមាន ឈ្មោះឡាតាំង, ថ្នាក់, និង ID)
+                        if (nameEn === "" || groupId === "" || studentId === "" || studentId === groupId + "-") {
+                            alert("សូមបំពេញ ឈ្មោះឡាតាំង ថ្នាក់ និងលេខរៀង ឲ្យបានត្រឹមត្រូវជាមុនសិន!");
+                            return; // បញ្ឈប់កុំឲ្យដើរទៅមុខ
+                        }
 
-                // ៣. បើគាត់ចុច "ចូលប្រលង!"
-                if (action === "exam") {
-                    let confirmExam = confirm("តើប្អូនពិតជាចង់ចាប់ផ្តើមការប្រលងឥឡូវនេះមែនទេ?");
-                    if (confirmExam) {
-                        // លាក់ផ្ទាំងព័ត៌មាន (Intro)
-                        document.getElementById("intro-section").style.display = "none";
-                        // បង្ហាញផ្ទាំងវិញ្ញាសា (Exam)
-                        document.getElementById("exam-section").style.display = "block";
+                        // ៣. បើគាត់ចុច "ចូលប្រលង!"
+                        if (action === "exam") {
+                            let confirmExam = confirm("តើប្អូនពិតជាចង់ចាប់ផ្តើមការប្រលងឥឡូវនេះមែនទេ?");
+                            if (confirmExam) {
+                                // លាក់ផ្ទាំងព័ត៌មាន (Intro)
+                                document.getElementById("intro-section").style.display = "none";
+                                // បង្ហាញផ្ទាំងវិញ្ញាសា (Exam)
+                                document.getElementById("exam-section").style.display = "block";
 
-                        // បើលោកគ្រូមានមុខងារ Anti-Cheat ឬ Timer អាចហៅវាឲ្យចាប់ផ្តើមនៅទីនេះបាន
-                        if (typeof activateAntiCheat === "function") activateAntiCheat();
-                        if (typeof startTimer === "function") startTimer();
-                    }
-                }
+                                // បើលោកគ្រូមានមុខងារ Anti-Cheat ឬ Timer អាចហៅវាឲ្យចាប់ផ្តើមនៅទីនេះបាន
+                                if (typeof activateAntiCheat === "function") activateAntiCheat();
+                                if (typeof startTimer === "function") startTimer();
+                            }
+                        }
 
-                // ៤. បើគាត់ចុច "ពិនិត្យលទ្ធផល!"
-                else if (action === "results") {
-                    let btn = document.getElementById("checkResultBtn");
-                    let originalText = btn.innerText;
+                        // ៤. បើគាត់ចុច "ពិនិត្យលទ្ធផល!"
+                        else if (action === "results") {
+                            let btn = document.getElementById("checkResultBtn");
+                            let originalText = btn.innerText;
 
-                    // ដូរអក្សរប៊ូតុងពេលកំពុងស្វែងរក
-                    btn.innerText = "កំពុងស្វែងរក...";
-                    btn.disabled = true;
+                            // ដូរអក្សរប៊ូតុងពេលកំពុងស្វែងរក
+                            btn.innerText = "កំពុងស្វែងរក...";
+                            btn.disabled = true;
 
-                    // ហៅមុខងារ Backend (Code.gs) ឲ្យឆែកពិន្ទុភ្លាមៗតែម្តង ដោយផ្អែកលើ ID ដែលគាត់បានវាយ
-                    google.script.run
-                        .withSuccessHandler(function (res) {
-                            btn.innerText = originalText;
-                            btn.disabled = false;
+                            // ហៅមុខងារ Backend (Code.gs) ឲ្យឆែកពិន្ទុភ្លាមៗតែម្តង ដោយផ្អែកលើ ID ដែលគាត់បានវាយ
+                            google.script.run
+                                .withSuccessHandler(function (res) {
+                                    btn.innerText = originalText;
+                                    btn.disabled = false;
 
-                            // បង្ហាញលទ្ធផលក្នុង Pop-up Modal ដែលលោកគ្រូមានស្រាប់
-                            document.getElementById("resultText").innerHTML = res;
-                            document.getElementById("resultModal").style.display = "block";
-                        })
-                        .withFailureHandler(function (err) {
-                            btn.innerText = originalText;
-                            btn.disabled = false;
-                            alert("មានបញ្ហាក្នុងការទាញយកទិន្នន័យ។ សូមសាកល្បងម្តងទៀត!");
-                        })
-                        .getStudentScore(studentId); // បាញ់ ID (ឧ. M1-12) ទៅឆែក
-                }
-            }*/
+                                    // បង្ហាញលទ្ធផលក្នុង Pop-up Modal ដែលលោកគ្រូមានស្រាប់
+                                    document.getElementById("resultText").innerHTML = res;
+                                    document.getElementById("resultModal").style.display = "block";
+                                })
+                                .withFailureHandler(function (err) {
+                                    btn.innerText = originalText;
+                                    btn.disabled = false;
+                                    alert("មានបញ្ហាក្នុងការទាញយកទិន្នន័យ។ សូមសាកល្បងម្តងទៀត!");
+                                })
+                                .getStudentScore(studentId); // បាញ់ ID (ឧ. M1-12) ទៅឆែក
+                        }
+                    }*/
 
             function navigate(action) {
                 let nameEn = document.getElementById("studentNameLatin").value.trim();
@@ -1121,6 +1121,44 @@
                     document.getElementById("examConfirmModal").style.display = "flex";
                 } else if (action === "results") {
                     // ... កូដចាស់សម្រាប់ឆែកលទ្ធផលនៅរក្សាដដែល ...
+
+                    let btn = document.getElementById("checkResultBtn");
+                    let originalText = btn.innerText;
+
+                    // ដូរអក្សរប៊ូតុងពេលកំពុងស្វែងរក
+                    btn.innerText = "កំពុងស្វែងរក...";
+                    btn.disabled = true;
+
+                    // បង្កើត URL សម្រាប់សុំទិន្នន័យពិន្ទុ ពី Backend (Code.gs)
+                    let fetchUrl = SCRIPT_URL + "?action=getScore&id=" + encodeURIComponent(studentId);
+
+                    // ប្រើ Fetch API ជំនួសឲ្យ google.script.run
+                    fetch(fetchUrl)
+                        .then((response) => response.json())
+                        .then((data) => {
+                            btn.innerText = originalText;
+                            btn.disabled = false;
+
+                            // បង្ហាញលទ្ធផលក្នុង Pop-up Modal
+                            document.getElementById("resultText").innerHTML = data.result;
+                            document.getElementById("resultModal").style.display = "flex";
+                        })
+                        .catch((error) => {
+                            console.error("Fetch Error:", error);
+                            btn.innerText = originalText;
+                            btn.disabled = false;
+
+                            // លោតសារព្រមានបើសេវាអ៊ីនធឺណិតខ្សោយ
+                            if (typeof customAlert === "function") {
+                                customAlert(
+                                    "មានបញ្ហាក្នុងការទាញយកទិន្នន័យពិន្ទុ។ សូមពិនិត្យអ៊ីនធឺណិតរបស់អ្នក!",
+                                    "បញ្ហាបណ្តាញ",
+                                    "🌐"
+                                );
+                            } else {
+                                alert("មានបញ្ហាក្នុងការទាញយកទិន្នន័យពិន្ទុ។");
+                            }
+                        });
                 }
             }
 
@@ -1140,19 +1178,19 @@
 
             // បើចុច "បាទ/ចាស ចាប់ផ្តើម" -> ចូលប្រលងពិតប្រាកដ
             /*function startExamNow() {
-                // ១. បិទ Popup
-                document.getElementById("examConfirmModal").style.display = "none";
+                        // ១. បិទ Popup
+                        document.getElementById("examConfirmModal").style.display = "none";
 
-                // ២. លាក់ផ្ទាំងព័ត៌មាន (Intro)
-                document.getElementById("intro-section").style.display = "none";
+                        // ២. លាក់ផ្ទាំងព័ត៌មាន (Intro)
+                        document.getElementById("intro-section").style.display = "none";
 
-                // ៣. បង្ហាញផ្ទាំងវិញ្ញាសា (Exam)
-                document.getElementById("exam-section").style.display = "block";
+                        // ៣. បង្ហាញផ្ទាំងវិញ្ញាសា (Exam)
+                        document.getElementById("exam-section").style.display = "block";
 
-                // ៤. ហៅមុខងារ Anti-Cheat និង Timer ឲ្យដំណើរការ (បើមាន)
-                if (typeof activateAntiCheat === "function") activateAntiCheat();
-                if (typeof startTimer === "function") startTimer();
-            }*/
+                        // ៤. ហៅមុខងារ Anti-Cheat និង Timer ឲ្យដំណើរការ (បើមាន)
+                        if (typeof activateAntiCheat === "function") activateAntiCheat();
+                        if (typeof startTimer === "function") startTimer();
+                    }*/
             // ជំនួសមុខងារ startExamNow ទាំងស្រុង៖
             function startExamNow() {
                 document.getElementById("examConfirmModal").style.display = "none";
@@ -1324,7 +1362,8 @@
 
     // ដូរ URL នេះទៅជា Web App URL ដែលអ្នកបាន Copy ពីជំហានទី៣
     const SCRIPT_URL =
-        "https://script.google.com/macros/s/AKfycbya1nMIdZ4sQ9s5NxG02MLm3r8Ltt0PgPbUJkdLBmakmk70pLP743WhqcwmuJV2w_64/exec";
+        "https://script.google.com/macros/s/AKfycbyy9OjndnLUYqnQU1q-6t48j39hcR2TflX3ppCwv3HLXLhZSk6dMUk1ZF7WcXS-85aq/exec";
+    //"https://script.google.com/macros/s/AKfycbya1nMIdZ4sQ9s5NxG02MLm3r8Ltt0PgPbUJkdLBmakmk70pLP743WhqcwmuJV2w_64/exec";
     //"https://script.google.com/macros/s/AKfycbxN3S2Jj3CPy3ZzENkGhbYqRhLGWFS9rNx8UO45S8SRn7Puic2XzEhdvcz9e3LXsUyS/exec";
     //"https://script.google.com/macros/s/AKfycbzE2eKjlyXaAgdQ-6_qjtQ6TVWRV6m5K11cqMZcSWBL_QYCWHZ4kkM0MEgLvSg2IzTL/exec"--old;
     //"https://script.google.com/macros/s/AKfycbxuQlrV_jN9-rKplHBI_8_UlIM9Do81Mpns49A1GjalNWCai8hF40jVMUSnYCzKrDhMzA/exec"; --Old//
