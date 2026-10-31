@@ -1,0 +1,711 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xparse}
+\usepackage{amssymb}
+\usepackage{xstring} % កញ្ចប់ជំនួយសម្រាប់បំបែកសញ្ញាក្បៀស (,) យ៉ាងមានប្រសិទ្ធភាព
+
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{hyperref}
+
+\usepackage[no-math]{fontspec}%
+\setmainfont[Script=Khmer]{Ang DaunTep}
+
+%%%%%%%
+%%%%%%%%%%%%%%%%
+\XeTeXlinebreaklocale "kh" % uses ICU to find line breaks on the basis of a dictionary lookup-- make this optional? (in case a user might prefer a preprocessor % allow linebreaks
+\XeTeXlinebreakskip = 0pt plus 1pt minus 1pt % for line breakskip
+%%%%%
+\defaultfontfeatures{Mapping=tex-text}
+\defaultfontfeatures{Ligatures=TeX} % makes this a feature for all selected fonts
+\newcommand\eng[1]{{\englishfont #1}}
+
+% បង្កើត counter សម្រាប់ nitem
+%\newcounter{nitemctr}
+%\newlength{\nitemlabelwidth}
+%\setlength{\nitemlabelwidth}{1.6em} % ទំហំប្រអប់លេខរៀង និងគម្លាតទៅអក្សរ
+%\newlength{\currentindent}
+%
+%\ExplSyntaxOn
+%\tl_new:N \l_nitem_raw_tl
+%\tl_new:N \l_nitem_label_tl
+%\tl_new:N \l_nitem_indent_tl
+%
+%\NewDocumentCommand{\nitem}{O{}}
+%  {
+%    \par
+%    \vspace{0.9ex} % គម្លាតរវាងជួរ
+%    \noindent
+%    
+%    % កំណត់តម្លៃលំនាំដើម (Defaults)
+%    \setlength{\currentindent}{0.8cm}
+%    \tl_clear:N \l_nitem_label_tl
+%    
+%    \tl_set:Nn \l_nitem_raw_tl { #1 }
+%    
+%    \tl_if_empty:NTF \l_nitem_raw_tl
+%      { % ១. ករណី \nitem ធម្មតា -> ឡើងលេខរៀងស្វ័យប្រវត្តិ
+%        \stepcounter{nitemctr}
+%        \tl_set:Nx \l_nitem_label_tl { \arabic{nitemctr}. }
+%      }
+%      {
+%        % ពិនិត្យមើលថាតើមានសញ្ញាក្បៀស (,) នៅក្នុង [...] ដែរឬទេ
+%        \tl_if_in:NnTF \l_nitem_raw_tl { , }
+%          { % ២. ករណីមាន argument ពីរ បំបែកដោយសញ្ញាក្បៀស (ឧទាហរណ៍៖ \nitem[i), 2cm])
+%            \seq_set_split:Nnn \l_tmpa_seq { , } { #1 }
+%            
+%            % ទាញយក Label និងលុបចន្លោះទទេ (Spaces)
+%            \tl_set:Nx \l_nitem_label_tl { \seq_item:Nn \l_tmpa_seq { 1 } }
+%            \tl_trim_spaces:N \l_nitem_label_tl
+%            
+%            % ករណីទុកខាងមុខសញ្ញាក្បៀសទំនេរ ឧទាហរណ៍៖ \nitem[, 2cm]
+%            \tl_if_empty:NT % ប្រសិនបើ label ទំនេរ ឱ្យឡើងលេខរៀងស្វ័យប្រវត្ត
+%              \l_nitem_label_tl { \stepcounter{nitemctr} \tl_set:Nx \l_nitem_label_tl { \arabic{nitemctr}. } }
+%
+%            % ទាញយកប្រវែង Indent និងលុបចន្លោះទទេ (Spaces) ព្រមទាំងពន្លាតតម្លៃឱ្យទៅជាខ្នាតត្រឹមត្រូវ
+%            \tl_set:Nx \l_nitem_indent_tl { \seq_item:Nn \l_tmpa_seq { 2 } }
+%            \tl_trim_spaces:N \l_nitem_indent_tl
+%            \setlength{\currentindent}{ \l_nitem_indent_tl }
+%          }
+%          { % ៣. ករណីមាន argument តែមួយគត់ក្នុង [...] (គ្មានសញ្ញាក្បៀស)
+%            \tl_trim_spaces:N \l_nitem_raw_tl
+%            % ពិនិត្យមើលថា តើវាជាប្រវែងខ្នាត (cm, pt, em, ex, in) ឬជាស្លាកអក្សរ
+%            \regex_match:nnTF { (cm|pt|em|ex|in) } { #1 }
+%              { % បើវាជាប្រវែងខ្នាត (ឧទាហរណ៍៖ \nitem[2cm])
+%                \setlength{\currentindent}{ #1 }
+%                \stepcounter{nitemctr}
+%                \tl_set:Nx \l_nitem_label_tl { \arabic{nitemctr}. }
+%              }
+%              { % បើវាជាស្លាកអក្សរ ឬសញ្ញា (ឧទាហរណ៍៖ \nitem[i)] ឬ \nitem[$\bullet$])
+%                \tl_set_eq:NN \l_nitem_label_tl \l_nitem_raw_tl
+%              }
+%          }
+%      }
+%      
+%    % *** កំណត់ទម្រង់កាត់បន្ទាត់ \hangindent មុនពេលប្រើ \hspace ***
+%    \hangindent=\dimexpr\currentindent + \nitemlabelwidth\relax
+%    \hangafter=1
+%    
+%    % បន្ទាប់មកទើបបង្កើតគម្លាត និងបង្ហាញស្លាកលេខរៀង
+%    \hspace{\currentindent}
+%    \makebox[\nitemlabelwidth][l]{\l_nitem_label_tl}
+%  }
+%\ExplSyntaxOff
+%
+% Command សម្រាប់បើកបញ្ជីថ្មី ដើម្បី Reset លេខរៀង និងបន្ថែមគម្លាតលើ-ក្រោម
+%\newcommand{\bnitem}{\par\vspace{1.2ex}\setcounter{nitemctr}{0}}
+%\newcommand{\enitem}{\par\vspace{1.2ex}}
+
+% បង្កើត counter សម្រាប់ nitem
+\newcounter{nitemctr}
+\newlength{\nitemlabelwidth}
+\setlength{\nitemlabelwidth}{1.6em}
+\newlength{\currentindent}
+
+\ExplSyntaxOn
+\tl_new:N \l_nitem_raw_tl
+\tl_new:N \l_nitem_label_tl
+\tl_new:N \l_nitem_indent_tl
+
+% កែប្រែ \bnitem ឱ្យដំណើរការក្នុងប្រព័ន្ធ Expl3 ដើម្បីកុំឱ្យទាស់ Error
+\NewDocumentCommand{\bnitem}{}
+  {
+    \par\vspace{1.2ex}
+    % កំណត់ counter ឱ្យត្រឡប់មកលេខ 0 វិញដោយសុវត្ថិភាព
+    \setcounter{nitemctr}{0}
+  }
+
+\NewDocumentCommand{\enitem}{}
+  {
+    \par\vspace{1ex}
+  }
+
+\NewDocumentCommand{\nitem}{O{}}
+  {
+    \par
+    \vspace{0.9ex}
+    \noindent
+    
+    \setlength{\currentindent}{0.8cm}
+    \tl_clear:N \l_nitem_label_tl
+    
+    \tl_set:Nn \l_nitem_raw_tl { #1 }
+    
+    \tl_if_empty:NTF \l_nitem_raw_tl
+      {
+        \stepcounter{nitemctr}
+        \tl_set:Nx \l_nitem_label_tl { \arabic{nitemctr}. }
+      }
+      {
+        \tl_if_in:NnTF \l_nitem_raw_tl { , }
+          {
+            \seq_set_split:Nnn \l_tmpa_seq { , } { #1 }
+            \tl_set:Nx \l_nitem_label_tl { \seq_item:Nn \l_tmpa_seq { 1 } }
+            \tl_trim_spaces:N \l_nitem_label_tl
+            
+            \tl_if_empty:NT \l_nitem_label_tl 
+              { 
+                \stepcounter{nitemctr} 
+                \tl_set:Nx \l_nitem_label_tl { \arabic{nitemctr}. } 
+              }
+
+            \tl_set:Nx \l_nitem_indent_tl { \seq_item:Nn \l_tmpa_seq { 2 } }
+            \tl_trim_spaces:N \l_nitem_indent_tl
+            \setlength{\currentindent}{ \l_nitem_indent_tl }
+          }
+          {
+            \tl_trim_spaces:N \l_nitem_raw_tl
+            \regex_match:nnTF { (cm|pt|em|ex|in) } { #1 }
+              {
+                \setlength{\currentindent}{ #1 }
+                \stepcounter{nitemctr}
+                \tl_set:Nx \l_nitem_label_tl { \arabic{nitemctr}. }
+              }
+              {
+                \tl_set_eq:NN \l_nitem_label_tl \l_nitem_raw_tl
+              }
+          }
+      }
+      
+    \hangindent=\dimexpr\currentindent + \nitemlabelwidth\relax
+    \hangafter=1
+    
+    \hspace{\currentindent}
+    \makebox[\nitemlabelwidth][l]{\l_nitem_label_tl}
+  }
+\ExplSyntaxOff
+
+
+\begin{document}
+
+\section{ការតេស្តប្រព័ន្ធ \texttt{\textbackslash nitem[..., ...]} ពេញលេញ}
+
+\bnitem
+\nitem ករណីធម្មតា៖ (ឡើងលេខ ១ ស្វ័យប្រវត្តិ, ចូលបន្ទាត់ 1.6cm)
+
+\nitem $x$ មិនមែនជាធាតុនៃ $X$ (តាងដោយ $x \notin X$)។ 
+
+\nitem ដើម្បីដោះស្រាយ 
+
+\enitem
+
+ធាតុទាំងឡាយក៏ត្រូវបានគេហៅថាលក្ខណៈរូបបានម្តងថា \textbf{ចំណុច} ផងដែរ។ 
+
+(ឡើងលេខ ២ ស្វ័យប្រវត្តិ, ចូលបន្ទាត់ 1.6cm ព្រមទាំងតម្រឹមជួរទីពីរស្អាត)
+
+
+
+\nitem[$\bullet$] ករណីដាក់ស្លាកមួយគត់៖ (ប្តូរជាចំណុចមូល, រក្សាចូលបន្ទាត់ 1.6cm)
+
+\nitem[2cm] ករណីដាក់ប្រវែងមួយគត់៖ (ឡើងលេខ ៤ ស្វ័យប្រវត្តិ, ប្តូរចូលបន្ទាត់ទៅ 2.5cm)
+
+
+\nitem[i.] ករណីកំណត់ទាំងពីរបូករួមគ្នាក្នុង \texttt{[...]} តែមួយ៖ (ប្រើស្លាក i) និងប្តូរចូលបន្ទាត់ត្រឹមតែ 1cm គត់)
+
+\nitem[a), 0.3cm] ករណីចង់ឡើងលេខរៀងស្វ័យប្រវត្តិ (លេខ ៦) តែចង់ប្តូរប្រវែងទៅ 3cm៖ (ទុកខាងមុខសញ្ញាក្បៀសទំនេរ)
+
+\section{ការប្រើប្រាស់ប្រព័ន្ធបញ្ជាថ្មី}
+
+\bnitem
+\nitem ធាតុទីមួយ ចាប់ផ្ដើមពីលេខ ១ ឡើងវិញដោយស្វ័យប្រវត្តិ។
+\nitem
+\nitem[i), 1.2cm] ធាតុទីពីរ ប្ដូរស្លាកសញ្ញា និងចូលបន្ទាត់ 2cm។
+\enitem
+
+\bnitem
+\nitem បើកបញ្ជីសារជាថ្មី វានឹងចាប់ផ្ដើមពីលេខ ១ មករកយើងវិញយ៉ាងត្រឹមត្រូវ។
+\nitem ធាតុបន្តបន្ទាប់ឡើងលេខ ២។
+\enitem
+
+
+%%%%%%
+\newpage
+
+\begin{center} 
+\Huge\textbf{គម្រោងសិក្សាស្រាវជ្រាវ៖ ការអនុវត្តគណិតវិទ្យាក្នុងជីវភាពរស់នៅ}\\ \Large\textbf{ប្រធានបទ៖ ការវិភាគនិងដោះស្រាយបញ្ហាជាក់ស្តែងដោយប្រើប្រាស់ឧបករណ៍គណិតវិទ្យាគ្រឹះ} 
+\end{center}
+\vspace{0.5cm}
+\section*{សេចក្តីផ្តើម (Introduction)}
+គណិតវិទ្យាមិនមែនត្រឹមតែជាទ្រឹស្ដីនៅលើក្តារខៀន ឬនៅក្នុងសៀវភៅនោះទេ។ នៅក្នុងគម្រោងសិក្សានេះ យើងនឹងលើកយកស្ថានភាពជាក់ស្តែងនៅក្នុងជីវភាពប្រចាំថ្ងៃចំនួន ៤ មកសិក្សា វិភាគ និងដោះស្រាយ ដោយប្រើប្រាស់ឧបករណ៍គណិតវិទ្យាមូលដ្ឋានគ្រឹះរួមមាន៖ $\textbf{លីមីត ស្វ៊ីត ដេរីវេ និងអាំងតេក្រាល}$។ គោលបំណងគឺដើម្បីបង្ហាញពីផ្សារភ្ជាប់រវាងទ្រឹស្ដីវិទ្យាសាស្ត្រ និងការអនុវត្តជាក់ស្តែង។
+------------------------------
+\section*{ករណីសិក្សាទី១៖ ការគណនាល្បឿនអ៊ីនធឺណិតអតិបរមា (លីមីត - Limits)}
+$\textbf{ស្ថានភាពជាក់ស្តែង៖}$ ក្រុមហ៊ុនផ្តល់សេវាអ៊ីនធឺណិតមួយបានដំឡើងប្រព័ន្ធខ្សែកាបអុបទិកថ្មី។ បរិមាណទិន្នន័យដែលទាញយកបាន (គិតជា Megabytes) ក្នុងរយៈពេល $t$ វិនាទី កំណត់ដោយអនុគមន៍៖
+$$D(t) = \frac{300t^2 + 50t}{t^2 + 4t + 1}$$ 
+$\textbf{សំណួរស្រាវជ្រាវ៖}$ នៅពេលដែលពេលវេលាកើនឡើងជាអនន្ត ($t \to \infty$) តើល្បឿនទាញយកទិន្នន័យរបស់ប្រព័ន្ធនេះនឹងខិតជិតទៅរកតម្លៃថេរអតិបរមាមួយណា?
+$\textbf{ដំណោះស្រាយតាមបែបគណិតវិទ្យ៖}$
+ដើម្បីស្វែងរកតម្លៃអតិបរមានៅពេលយូរអង្វែង យើងត្រូវគណនាលីមីតនៃអនុគមន៍នេះកាលណា $t$ ខិតជិតទៅរកអនន្ត៖
+$$\lim_{t \to \infty} D(t) = \lim_{t \to \infty} \frac{300t^2 + 50t}{t^2 + 4t + 1}$$ 
+ដោយទាញ $t^2$ ជាកត្តារួមនៅភាគយកនិងភាគបែង៖
+$$= \lim_{t \to \infty} \frac{t^2 \left( 300 + \frac{50}{t} \right)}{t^2 \left( 1 + \frac{4}{t} + \frac{1}{t^2} \right)} = \frac{300 + 0}{1 + 0 + 0} = 300 \text{ MB/s}$$ 
+$\textbf{សន្និដ្ឋាន៖}$ ល្បឿនអ៊ីនធឺណិតអតិបរមាដែលប្រព័ន្ធនេះអាចរត់បានគឺ $300\text{ MB/s}$។
+------------------------------
+\section*{ករណីសិក្សាទី២៖ ផែនការសន្សំប្រាក់ដើម្បីទិញផ្ទះ (ស្វ៊ីតគណិតវិទ្យា - Sequences)}
+$\textbf{ស្ថានភាពជាក់ស្តែង៖}$ យុវជនម្នាក់ចាប់ផ្តើមសន្សំប្រាក់ក្នុងខែដំបូងបានចំនួន $100\$$។ ដោយសារប្រាក់ខែរបស់គាត់កើនឡើងជារៀងរាល់ឆ្នាំ គាត់សម្រេចចិត្តបង្កើនប្រាក់សន្សំនៅខែបន្ទាប់ៗចំនួន $15\$$ បន្ថែមជានិច្ចធៀបនឹងខែមុន (ខែទី២ សន្សំ $115\$$, ខែទី៣ សន្សំ $130\$$...)។
+$\textbf{សំណួរស្រាវជ្រាវ៖}$ តើស្វ៊ីតនៃប្រាក់សន្សំនោះជាស្វ៊ីតកើន ឬចុះ? តើក្នុងរយៈពេល ៣ឆ្នាំ (៣៦ខែ) គាត់សន្សំប្រាក់បានសរុបប៉ុន្មាន?
+$\textbf{ដំណោះស្រាយតាមបែបគណិតវិទ្យ៖} \begin{itemize} \item$ ស្វ៊ីតនៃប្រាក់សន្សំប្រចាំខែគឺជារូបមន្តស្វ៊ីតនព្វន្ត៖ $u_n = u_1 + (n-1)d$ ដែល $u_1 = 100$ និងផលសង្គមរួម $d = 15$។
+\item ដោយសារ $d = 15 > 0$ នាំឱ្យ $u_{n+1} - u_n = 15 > 0$ ដូចនេះ $\textbf{ស្វ៊ីតនេះជាស្វ៊ីតកើនដាច់ខាត}$។
+\item គណនាផលបូកសរុបនៃប្រាក់សន្សំរយៈពេល ៣៦ខែ ($S_{36}$)៖
+$$S_{n} = \frac{n}{2} [2u_1 + (n-1)d]$$ 
+$$S_{36} = \frac{36}{2} [2(100) + (36-1)15] = 18 \times [200 + 525] = 18 \times 725 = 13,050\$$$ 
+$\end{itemize} \textbf{សន្និដ្ឋាន៖}$ ក្នុងរយៈពេល ៣ឆ្នាំ យុវជននោះនឹងមានប្រាក់សន្សំសរុបចំនួន $13,050\$$។
+------------------------------
+\section*{ករណីសិក្សាទី៣៖ ការកំណត់តម្លៃលក់ដើម្បីទទួលបានប្រាក់ចំណេញអតិបរមា (ដេរីវេ - Derivatives)}
+$\textbf{ស្ថានភាពជាក់ស្តែង៖}$ អាជីវកម្មខ្នាតតូចមួយផលិតនិងលក់កាបូបដៃ។ អនុគមន៍ប្រាក់ចំណេញប្រចាំខែ (គិតជាដុល្លារ) អាស្រ័យនឹងតម្លៃលក់ $x$ នៃកាបូបមួយក្នុងមួយគ្រឿង កំណត់ដោយ៖
+$$P(x) = -2x^2 + 240x - 4000$$ 
+$\textbf{សំណួរស្រាវជ្រាវ៖}$ តើអាជីវកម្មនេះគួរលក់កាបូបមួយតម្លៃប៉ុន្មាន ដើម្បីទទួលបានប្រាក់ចំណេញខ្ពស់បំផុត (អតិបរមា)?
+$\textbf{ដំណោះស្រាយតាមបែបគណិតវិទ្យ៖}$
+ដើម្បីរកតម្លៃ $x$ ដែលធ្វើឱ្យ $P(x)$ មានតម្លៃអតិបរមា យើងត្រូវគណនាដេរីវេទីមួយ $P'(x)$ រួចឱ្យវាស្មើ $0$៖
+$$P'(x) = \frac{d}{dx}(-2x^2 + 240x - 4000) = -4x + 240$$ 
+ឱ្យ $P'(x) = 0$ នាំឱ្យ៖
+$$-4x + 240 = 0 \implies 4x = 240 \implies x = 60$$ 
+ពិនិត្យដេរីវេទីពីរ៖ $P''(x) = -4 < 0$ (បញ្ជាក់ថាត្រង់ $x=60$ ពិតជាចំណុចអតិបរមា)។
+$$P(60) = -2(60)^2 + 240(60) - 4000 = -7200 + 14400 - 4000 = 3,200\$$$ 
+$\textbf{សន្និដ្ឋាន៖}$ ក្រុមហ៊ុនគួរតែលក់កាបូបក្នុងតម្លៃ $60\$$ ក្នុងមួយគ្រឿង ដើម្បីទទួលបានប្រាក់ចំណេញអតិបរមា $3,200\$$ ក្នុងមួយខែ។
+------------------------------
+\section*{ករណីសិក្សាទី៤៖ ការគណនាថ្លៃអគ្គិសនីសរុបប្រចាំថ្ងៃ (អាំងតេក្រាល - Integrals)}
+$\textbf{ស្ថានភាពជាក់ស្តែង៖}$ ការប្រើប្រាស់ថាមពលអគ្គិសនីនៅក្នុងរោងចក្រមួយប្រែប្រួលទៅតាមម៉ោងនៅក្នុងមួយថ្ងៃៗ។ អនុគមន៍ល្បឿននៃការប្រើប្រាស់ថាមពល (គិតជា Kilowatt-hour ក្នុងមួយម៉ោង) កំណត់ដោយ៖
+$$E(t) = 3t^2 - 12t + 20 \quad (0 \le t \le 10 \text{ ម៉ោង})$$ 
+$\textbf{សំណួរស្រាវជ្រាវ៖}$ តើថាមពលអគ្គិសនីសរុបដែលរោងចក្រប្រើប្រាស់ចាប់ពីម៉ោងចាប់ផ្តើម ($t=0$) ដល់ម៉ោងទី១០ ($t=10$) មានបរិមាណប៉ុន្មាន?
+$\textbf{ដំណោះស្រាយតាមបែបគណិតវិទ្យ៖}$
+បរិមាណថាមពលសរុបគឺជាអាំងតេក្រាលកំណត់នៃអនុគមន៍ល្បឿនប្រើប្រាស់ថាមពល លើចន្លោះចាប់ពី $0$ ដល់ $10$៖
+$$\text{Total Energy} = \int_{0}^{10} (3t^2 - 12t + 20) \, dt$$ 
+រកព្រីមីទីវនៃអនុគមន៍៖
+$$= \left[ t^3 - 6t^2 + 20t \right]_{0}^{10}$$ 
+ជំនួសតម្លៃព្រំ $10$ និង $0$ ចូល៖
+$$= \left( 10^3 - 6(10)^2 + 20(10) \right) - \left( 0^3 - 6(0)^2 + 20(0) \right)$$ 
+$$= (1000 - 600 + 200) - 0 = 600 \text{ kWh}$$ 
+$\textbf{សន្និដ្ឋាន៖}$ រោងចក្រប្រើប្រាស់ថាមពលអគ្គិសនីសរុបអស់ $600\text{ kWh}$ ក្នុងរយៈពេល ១០ម៉ោងនោះ។
+------------------------------
+\section*{សន្និដ្ឋានរួម (Conclusion)}
+ឆ្លងកាត់ករណីសិក្សាទាំង ៤ ខាងលើ យើងឃើញថា បញ្ហាស្មុគស្មាញក្នុងជីវភាពរស់នៅ ការធ្វើអាជីវកម្ម និងវិស្វកម្ម អាចត្រូវបានសម្រួល និងដោះស្រាយយ៉ាងមានប្រសិទ្ធភាពតាមរយៈការបំប្លែងវាទៅជាសមីការគណិតវិទ្យា។ លីមីតជួយយើងមើលឃើញពីនិន្នាការយូរអង្វែង ស្វ៊ីតជួយក្នុងការរៀបចំផែនការហិរញ្ញវត្ថុជំហានៗ ដេរីវេជួយក្នុងការស្វែងរកចំណុចប្រសើរបំផុត (Optimization) និងអាំងតេក្រាលជួយក្នុងការគណនាផលបូកសរុបនៃបរិមាណដែលប្រែប្រួល។
+------------------------------
+To advance this project further, let me know if you would like to:
+
+* Add a cobweb economic model using sequence functions.
+* Generate specific Maple visualization code for each of these four case studies.
+* Structure this layout into LaTeX Beamer presentation slides instead.
+
+
+\newpage
+%%%%
+\section*{ទំនាក់ទំនងលំដាប់ផ្នែក (Partial Order Relation, POR)}
+ទំនាក់ទំនងលំដាប់ផ្នែក (POR) គឺជាទំនាក់ទំនងដែលមានលក្ខណៈ \textbf{សំយោគ}, \textbf{ប្រឆាំងសមមូល}, និង \textbf{បន្តបន្ទាប់}។  
+ទំនាក់ទំនងលំដាប់ពេញលេញ (Total Order Relation, TOR) គឺជា POR ដែលគ្រប់គូធាតុអាចប្រៀបធៀបបាន។  
+
+ធាតុពិសេសនៃសំណុំមួយក្នុង poset រួមមាន៖ \textbf{ធាតុតូចបំផុត/ធាតុធំបំផុត}, \textbf{ធាតុអប្បបរមា/អតិបរមា}, និង \textbf{ព្រំខាងក្រោម/ព្រំខាងលើ}។
+
+\subsection*{លក្ខណៈនៃ POR}
+ទំនាក់ទំនង $\le$ លើសំណុំ $P$ គឺជា POR ប្រសិនបើវាមានលក្ខណៈ៖
+\begin{itemize}
+  \item \textbf{សំយោគ}: $a \le a$ សម្រាប់គ្រប់ $a \in P$។
+  \item \textbf{ប្រឆាំងសមមូល}: ប្រសិនបើ $a \le b$ និង $b \le a$ នោះ $a = b$។
+  \item \textbf{បន្តបន្ទាប់}: ប្រសិនបើ $a \le b$ និង $b \le c$ នោះ $a \le c$។
+\end{itemize}
+
+\subsection*{លក្ខណៈនៃ TOR}
+POR មួយគឺជា TOR ប្រសិនបើវាមានលក្ខណៈបន្ថែម៖
+\begin{itemize}
+  \item \textbf{អាចប្រៀបធៀបបាន}: សម្រាប់គ្រប់ $a, b \in P$ មាន $a \le b$ ឬ $b \le a$។
+\end{itemize}
+
+\section*{ធាតុពិសេសក្នុងសំណុំ $S \subseteq P$}
+អនុវត្តលើ poset $(P, \le)$ និងសំណុំរង $S \subseteq P$។
+
+\subsection*{ព្រំ (Bounds)}
+\begin{itemize}
+  \item \textbf{ព្រំខាងក្រោម}: $x \in P$ ដែល $x \le s$ សម្រាប់គ្រប់ $s \in S$។
+  \item \textbf{ព្រំខាងលើ}: $x \in P$ ដែល $s \le x$ សម្រាប់គ្រប់ $s \in S$។
+  \item \textbf{Infimum (GLB)}: ព្រំខាងក្រោមធំបំផុត។
+  \item \textbf{Supremum (LUB)}: ព្រំខាងលើតូចបំផុត។
+\end{itemize}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9, every node/.style={circle, draw, minimum size=6mm}]
+\node (x) at (0,0) {$x$};
+\node (s1) at (2,1) {$s_1$};
+\node (s2) at (2,-1) {$s_2$};
+\node (ub) at (4,0) {$x'$};
+
+\draw (x)--(s1);
+\draw (x)--(s2);
+\draw (s1)--(ub);
+\draw (s2)--(ub);
+
+\node[below=2mm of x] {ព្រំខាងក្រោម};
+\node[below=2mm of ub] {ព្រំខាងលើ};
+\end{tikzpicture}
+\end{center}
+
+\subsection*{ធាតុអតិបរមា និងអប្បបរមា}
+\begin{itemize}
+  \item \textbf{Least Element}: $m \in S$ ដែល $m \le s$ សម្រាប់គ្រប់ $s \in S$។
+  \item \textbf{Greatest Element}: $m \in S$ ដែល $s \le m$ សម្រាប់គ្រប់ $s \in S$។
+\end{itemize}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9, every node/.style={circle, draw, minimum size=6mm}]
+\node (m) at (0,0) {$m$};
+\node (s1) at (2,1) {$s_1$};
+\node (s2) at (2,-1) {$s_2$};
+
+\draw (m)--(s1);
+\draw (m)--(s2);
+
+\node[below=2mm of m] {Least Element};
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9, every node/.style={circle, draw, minimum size=6mm}]
+\node (s1) at (0,1) {$s_1$};
+\node (s2) at (0,-1) {$s_2$};
+\node (m) at (2,0) {$m$};
+
+\draw (s1)--(m);
+\draw (s2)--(m);
+
+\node[below=2mm of m] {Greatest Element};
+\end{tikzpicture}
+\end{center}
+
+\subsection*{Minimal និង Maximal}
+\begin{itemize}
+  \item \textbf{Minimal Element}: $m \in S$ ដែលគ្មាន $s \in S$ ដែល $s < m$។
+  \item \textbf{Maximal Element}: $m \in S$ ដែលគ្មាន $s \in S$ ដែល $m < s$។
+\end{itemize}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9, every node/.style={circle, draw, minimum size=6mm}]
+\node (m) at (0,0) {$m$};
+\node (s1) at (2,1) {$s_1$};
+\node (s2) at (2,-1) {$s_2$};
+
+\draw (m)--(s1);
+\draw (m)--(s2);
+
+\node[below=2mm of m] {Minimal Element};
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9, every node/.style={circle, draw, minimum size=6mm}]
+\node (s1) at (0,1) {$s_1$};
+\node (s2) at (0,-1) {$s_2$};
+\node (m) at (2,0) {$m$};
+
+\draw (s1)--(m);
+\draw (s2)--(m);
+
+\node[below=2mm of m] {Maximal Element};
+\end{tikzpicture}
+\end{center}
+
+\newpage
+
+\section*{ទំនាក់ទំនងលំដាប់ដោយផ្នែក (POR)}
+ទំនាក់ទំនងលំដាប់ដោយផ្នែក (Partial Order Relation - POR) គឺជាទំនាក់ទំនងទាំងឡាយណាដែលមានលក្ខណៈឆ្លុះ លក្ខណៈច្រាសស៊ីមេទ្រី និងលក្ខណៈឆ្លង។ ទំនាក់ទំនងលំដាប់ពេញលេញ (Total Order Relation - TOR) គឺជា POR មួយដែលគ្រប់គូនៃធាតុទាំងអស់អាចប្រៀបធៀបគ្នាបាន។ ធាតុពិសេសៗនៃសំណុំរងនៅក្នុងសំណុំលំដាប់ដោយផ្នែក (Poset) រួមមាន៖ ធាតុទូចបំផុត/ធំបំផុត ធាតុអប្បបរមា/អតិបរមា និងគោលក្រោម/គោលលើ។
+
+\subsection*{លក្ខណៈនៃទំនាក់ទំនងលំដាប់ដោយផ្នែក (POR)}
+ទំនាក់ទំនង $\le$ លើសំណុំ $P$ មួយ គឺជាលំដាប់ដោយផ្នែក ប្រសិនបើវាមានលក្ខណៈបីយ៉ាង៖
+\begin{itemize}
+    \item \textbf{លក្ខណៈឆ្លុះ (Reflexive):} $a \le a$ ចំពោះគ្រប់ $a \in P$។
+    \item \textbf{លក្ខណៈច្រាសស៊ីមេទ្រី (Antisymmetric):} ប្រសិនបើ $a \le b$ និង $b \le a$ នោះ $a = b$។
+    \item \textbf{លក្ខណៈឆ្លង (Transitive):} ប្រសិនបើ $a \le b$ និង $b \le c$ នោះ $a \le c$។
+    \item សំណុំមួយដែលមានទំនាក់ទំនង POR ហៅថា \textbf{Poset} (Partially Ordered Set)។
+\end{itemize}
+
+\subsection*{ទំនាក់ទំនងលំដាប់ពេញលេញ (TOR)}
+លំដាប់ដោយផ្នែក $\le$ គឺជាលំដាប់ពេញលេញ (ឬលំដាប់លីនេអ៊ែរ) ប្រសិនបើវាបន្ថែមលក្ខខណ្ឌមួយទៀត៖
+\begin{itemize}
+    \item \textbf{អាចប្រៀបធៀបបាន (Comparable):} ចំពោះគ្រប់ $a, b \in P$ គេបាន $a \le b$ ឬ $b \le a$។
+    \item គ្រប់គូនៃធាតុទាំងអស់គឺសុទ្ធតែអាចប្រៀបធៀបគ្នាបាន។
+\end{itemize}
+
+\subsection*{ធាតុពិសេសៗនៃសំណុំរង ($S \subseteq P$)}
+តាង $(P, \le)$ ជា Poset មួយ និង $S$ ជាសំណុំរងនៃ $P$។
+
+\subsection*{គោល (Bounds)}
+\begin{itemize}
+    \item \textbf{គោលក្រោម (Lower Bound):} ជាធាតុ $x \in P$ ដែល $x \le s$ ចំពោះគ្រប់ $s \in S$។
+    \item \textbf{គោលលើ (Upper Bound):} ជាធាតុ $x \in P$ ដែល $s \le x$ ចំពោះគ្រប់ $s \in S$។
+    \item \textbf{អាំងហ្វីមូម ឬគោលក្រោមធំបំផុត (Infimum / GLB):} ជាគោលក្រោមដែលធំជាងគេបំផុតនៃ $S$។
+    \item \textbf{ស៊ុប្រេមូម ឬគោលលើតូចបំផុត (Supremum / LUB):} ជាគោលលើដែលតូចជាងគេបំផុតនៃ $S$។
+\end{itemize}
+
+% រូបភាពបង្ហាញពី Bounds (គោល)
+\begin{center}
+\begin{tikzpicture}[scale=0.8, every node/.style={circle, draw, inner sep=2pt}]
+    % សំណុំរង S (ពណ៌ខៀវ)
+    \node[fill=blue!20, label=right:$s_1$] (s1) at (0,2) {};
+    \node[fill=blue!20, label=left:$s_2$] (s2) at (-1,3) {};
+    \node[fill=blue!20, label=right:$s_3$] (s3) at (1,3) {};
+    
+    % គោលលើ និង ស៊ុប្រេមូម (ពណ៌ក្រហម)
+    \node[fill=red!20, label=above right:{\textbf{Supremum (LUB)} / Upper Bound}] (lub) at (0,4.5) {};
+    \node[fill=red!10, label=above:$x_{ub}$] (ub) at (0,6) {};
+    
+    % គោលក្រោម និង អាំងហ្វីមូម (ពណ៌បៃតង)
+    \node[fill=green!30, label=below right:{\textbf{Infimum (GLB)} / Lower Bound}] (glb) at (0,0.5) {};
+    \node[fill=green!10, label=below:$x_{lb}$] (lb) at (0,-1) {};
+    
+    % តំណភ្ជាប់ទំនាក់ទំនង
+    \draw (lb) -- (glb);
+    \draw (glb) -- (s1);
+    \draw (s1) -- (s2);
+    \draw (s1) -- (s3);
+    \draw (s2) -- (lub);
+    \draw (s3) -- (lub);
+    \draw (lub) -- (ub);
+    
+    % គូសវង់ព័ទ្ធសំណុំរង S
+    \draw[dashed, blue, thick] (0,2.7) circle (1.5cm);
+    \node[draw=none, blue] at (-2,2.7) {$S$};
+\end{tikzpicture}
+\end{center}
+
+\subsection*{ធាតុទូចបំផុត និងធំបំផុតនៅក្នុងសំណុំរង (Extremes inside the subset)}
+\begin{itemize}
+    \item \textbf{ធាតុទូចបំផុត (Least Element):} ជាធាតុ $m \in S$ ដែល $m \le s$ ចំពោះគ្រប់ $s \in S$។
+    \item \textbf{ធាតុធំបំផុត (Greatest Element):} ជាធាតុ $m \in S$ ដែល $s \le m$ ចំពោះគ្រប់ $s \in S$។
+\end{itemize}
+
+% រូបភាពបង្ហាញពី Least Element និង Greatest Element
+\begin{center}
+\begin{tikzpicture}[scale=0.8, every node/.style={circle, draw, inner sep=2pt}]
+    % សំណុំរង S ពណ៌ខៀវដែលមាន Least និង Greatest
+    \node[fill=blue!40, label=above:{\textbf{Greatest Element}}] (greatest) at (0,4) {};
+    \node[fill=blue!10, label=left:$s_1$] (s1) at (-1,2.5) {};
+    \node[fill=blue!10, label=right:$s_2$] (s2) at (1,2.5) {};
+    \node[fill=blue!40, label=below:{\textbf{Least Element}}] (least) at (0,1) {};
+    
+    % តំណភ្ជាប់
+    \draw (least) -- (s1) -- (greatest);
+    \draw (least) -- (s2) -- (greatest);
+    
+    % គូសវង់ព័ទ្ធសំណុំរង S
+    \draw[dashed, blue, thick] (0,2.5) ellipse (1.8cm and 2cm);
+    \node[draw=none, blue] at (-2.3,2.5) {$S$};
+\end{tikzpicture}
+\end{center}
+
+\subsection*{ធាតុអប្បបរមា និងអតិបរមា (Minimal and Maximal elements)}
+\begin{itemize}
+    \item \textbf{ធាតុអប្បបរមា (Minimal Element):} ជាធាតុ $m \in S$ ដែលគ្មានធាតុ $s \in S$ ណាខុសពីវា ដែលផ្ទៀងផ្ទាត់ $s < m$ ឡើយ (គ្មានធាតុណាតូចជាងវាទៀតទេ)។
+    \item \textbf{ធាតុអតិបរមា (Maximal Element):} ជាធាតុ $m \in S$ ដែលគ្មានធាតុ $s \in S$ ណាខុសពីវា ដែលផ្ទៀងផ្ទាត់ $m < s$ ឡើយ (គ្មានធាតុណាធំជាងវាទៀតទេ)។
+\end{itemize}
+
+% រូបភាពបង្ហាញពី Minimal Elements និង Maximal Elements (ករណីមានច្រើន និងមិនអាចប្រៀបធៀបគ្នា)
+\begin{center}
+\begin{tikzpicture}[scale=0.8, every node/.style={circle, draw, inner sep=2pt}]
+    % ធាតុអតិបរមា (Maximal Elements) ពណ៌លឿង
+    \node[fill=orange!40, label=above:{\textbf{Maximal 1}}] (max1) at (-1.5,4) {};
+    \node[fill=orange!40, label=above:{\textbf{Maximal 2}}] (max2) at (1.5,4) {};
+    
+    % ធាតុនៅកណ្តាល
+    \node[fill=blue!10, label=left:$s_1$] (s1) at (-1.5,2.5) {};
+    \node[fill=blue!10, label=right:$s_2$] (s2) at (1.5,2.5) {};
+    
+    % ធាតុអប្បបរមា (Minimal Elements) ពណ៌ស្វាយ
+    \node[fill=purple!40, label=below:{\textbf{Minimal 1}}] (min1) at (-1.5,1) {};
+    \node[fill=purple!40, label=below:{\textbf{Minimal 2}}] (min2) at (1.5,1) {};
+    
+    % តំណភ្ជាប់ដែលបង្ហាញពីការមិនអាចប្រៀបធៀបគ្នារវាងឆ្វេងនិងស្តាំផ្ទាល់
+    \draw (min1) -- (s1) -- (max1);
+    \draw (min2) -- (s2) -- (max2);
+    \draw (min1) -- (s2); % តំណខ្វែងដើម្បីបង្កើតភាពស្មុគស្មាញនៃលំដាប់ដោយផ្នែក
+    \draw (s1) -- (max2);
+    
+    % គូសវង់ព័ទ្ធសំណុំរង S
+    \draw[dashed, blue, thick] (0,2.5) ellipse (2.8cm and 2.3cm);
+    \node[draw=none, blue] at (-3.3,2.5) {$S$};
+\end{tikzpicture}
+\end{center}
+
+
+%%%
+\newpage
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[node distance=1.5cm, every node/.style={circle, draw, minimum size=0.6cm}]
+                                    \node (d) at (0, 2) {d};
+                                    \node (e) at (2, 2) {e};
+                                    \node (c) at (1, 1) {c};
+                                    \node (a) at (0, 0) {a};
+                                    \node (b) at (2, 0) {b};
+
+                                    \draw (a) -- (c);
+                                    \draw (b) -- (c);
+                                    \draw (c) -- (d);
+                                    \draw (c) -- (e);
+                                \end{tikzpicture}
+
+\caption{លំហាត់ ២៣}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[node distance=1.5cm, every node/.style={circle, draw, minimum size=0.6cm}]
+                                    \node (4) at (1, 2) {4};
+                                    \node (2) at (0, 1) {2};
+                                    \node (3) at (2, 1) {3};
+                                    \node (1) at (1, 0) {1};
+
+                                    \draw (1) -- (2);
+                                    \draw (1) -- (3);
+                                    \draw (2) -- (4);
+                                    \draw (3) -- (4);
+                                \end{tikzpicture}
+\caption{លំហាត់ ២៤}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[node distance=1.5cm, every node/.style={circle, draw, minimum size=0.6cm}]
+                                    \node (5) at (1, 2) {5};
+                                    \node (4) at (-1, 2) {4};
+                                    \node (2) at (0, 1) {2};
+                                    \node (3) at (2, 1) {3};
+                                    \node (1) at (1, 0) {1};
+
+                                    \draw (1) -- (2);
+                                    \draw (1) -- (3);
+                                    \draw (2) -- (4);
+                                    \draw (2) -- (5);
+                                    \draw (3) -- (5);
+                                \end{tikzpicture}
+\caption{លំហាត់ ២៥}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[node distance=1.5cm, every node/.style={circle, draw, minimum size=0.6cm}]
+                                    \node (12) at (1.5, 3) {12};
+                                    \node (4) at (0, 2) {4};
+                                    \node (6) at (3, 2) {6};
+                                    \node (2) at (1.5, 1) {2};
+                                    \node (3) at (4.5, 1) {3};
+                                    \node (1) at (3, 0) {1};
+
+                                    \draw (1) -- (2);
+                                    \draw (1) -- (3);
+                                    \draw (2) -- (4);
+                                    \draw (2) -- (6);
+                                    \draw (3) -- (6);
+                                    \draw (4) -- (12);
+                                    \draw (6) -- (12);
+                                \end{tikzpicture}
+\caption{លំហាត់ ២៦}
+\end{figure}
+
+
+
+
+\end{document}
+
+
+
+\documentclass[border=5mm]{standalone}
+
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{matrix}
+
+\begin{document}
+
+% --- Union ---
+\begin{tikzpicture}
+  \begin{scope}
+    \fill[blue!30] (0,0) circle (1.5);
+    \fill[blue!30] (2,0) circle (1.5);
+    \draw (0,0) circle (1.5) node[left] {$X$};
+    \draw (2,0) circle (1.5) node[right] {$Y$};
+  \end{scope}
+\node at (1,-2) {Union $X \cup Y$};
+\end{tikzpicture}
+
+% --- Intersection ---
+%\begin{tikzpicture}
+%  \node at (0,2.5) {Intersection $A \cap B$};
+%  \begin{scope}
+%    \fill[green!50] (0,0) circle (1.5);
+%    \fill[green!50] (2,0) circle (1.5);
+%    \fill[green!80] (0,0) circle (1.5);
+%    \clip (0,0) circle (1.5);
+%    \fill[green!80] (2,0) circle (1.5);
+%    \draw (0,0) circle (1.5) node[left] {$A$};
+%    \draw (2,0) circle (1.5) node[right] {$B$};
+%  \end{scope}
+%\end{tikzpicture}
+
+% --- Intersection A ∩ B ---
+\begin{tikzpicture}
+  % Title
+  % Draw circles
+  \begin{scope}
+    % Left circle (X)
+    \draw (0,0) circle (1.5);
+    % Clip intersection region
+    \begin{scope}
+      \clip (0,0) circle (1.5);
+      \fill[green!80!black] (2,0) circle (1.5);
+    \end{scope}
+    % Right circle (Y)
+    \draw (2,0) circle (1.5);
+    \draw (0,0) circle (1.5);
+\node[below] at (1,-2) {Intersection}; %$A \cap B$};
+  % Labels
+  \node at (-0.7,0) {$X$};
+  \node at (2.7,0) {$Y$};
+  \end{scope}
+\end{tikzpicture}
+
+
+% --- Difference ---
+\begin{tikzpicture}
+  %\node at (0,2.5) {Difference $A \setminus B$};
+  \begin{scope}
+  \filldraw[red!40] (0,0) circle (1.5); %node[left] {$X$};
+   \begin{scope}
+    \clip (0,0) circle (1.5);
+    \fill[white] (2,0) circle (1.5);
+  \end{scope}
+    \draw[red!60!black] (0,0) circle (1.5);
+    \draw (2,0) circle (1.5); %node[right] {$Y$};
+    \node[below] at (1,-2) {Difference}; %$A \cap B$};
+% Labels
+  \node at (-1.7,0) {$X$};
+  \node at (3.7,0) {$Y$};
+  \node[rotate=80] at (-0.3,0) {$X\setminus Y$};
+  \end{scope}
+\end{tikzpicture}
+
+% --- Cartesian Product ---
+\begin{tikzpicture}
+  \node at (0,4.5) {Cartesian Product $A \times B$};
+  % Draw grid for Cartesian product
+  \draw[step=1cm,gray,very thin] (-0.5,-0.5) grid (3.5,3.5);
+  \foreach \x in {0,1,2,3}
+    \foreach \y in {0,1,2,3}
+      \fill[blue!40] (\x,\y) circle (0.1);
+  % Labels
+  \node[left] at (-0.5,0) {$a_1$};
+  \node[left] at (-0.5,1) {$a_2$};
+  \node[left] at (-0.5,2) {$a_3$};
+  \node[left] at (-0.5,3) {$a_4$};
+  \node[below] at (0,-0.5) {$b_1$};
+  \node[below] at (1,-0.5) {$b_2$};
+  \node[below] at (2,-0.5) {$b_3$};
+  \node[below] at (3,-0.5) {$b_4$};
+\end{tikzpicture}
+
+
+
+\end{document}
+
+
+

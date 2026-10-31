@@ -1,0 +1,336 @@
+\documentclass[]{article}
+\usepackage{tikz}
+\usepackage[most]{tcolorbox}
+
+\usepackage{fontspec} % សម្រាប់គ្រប់គ្រង និងហៅប្រើប្រាស់ពុម្ពអក្សរ (Fonts) យូនីកូដ
+\usepackage{calc}     % សម្រាប់ជួយគណនាប្រវែងប្រព័ន្ធប្ដូរខ្នាត (Dimension) កុំឱ្យទាស់ Error
+
+
+% ការកំណត់ពុម្ពអក្សរ
+%\setmainfont{Khmer OS Battambang}
+
+\newfontfamily\khmerbold{Khmer OS Muol Light} % សម្រាប់ធ្វើ Word Art ចំណងជើងខ្មែរ
+\newfontfamily\engtitle{Arial Black}          % សម្រាប់ធ្វើ Word Art ចំណងជើងអង់គ្លេស
+
+\setmainfont{Ang DaunTep} 
+% ឬអ្នកអាចប្ដូរទៅជា Font ផ្សេងទៀតដែលមានក្នុងម៉ាស៊ីនរបស់អ្នក ដូចជា Khmer OS Content, 
+% មូល (MoolBoran) ឬ Kantumruy Pro ជាដើម។
+\newcounter{nitemctr}
+\newlength{\nitemlabelwidth}
+\setlength{\nitemlabelwidth}{1.6em}
+
+\ExplSyntaxOn
+% ប្រកាសអថេរតាមស្តង់ដារ Expl3
+\tl_new:N \l_nitem_raw_tl
+\tl_new:N \l_nitem_label_tl
+\tl_new:N \l_nitem_indent_raw_tl
+\dim_new:N \l_nitem_indent_dim
+
+\NewDocumentCommand{\bnitem}{}
+  {
+    \par\vspace{1.2ex}
+    \setcounter{nitemctr}{0}
+  }
+
+\NewDocumentCommand{\enitem}{}
+  {
+    \par\vspace{1ex}
+  }
+
+\NewDocumentCommand{\nitem}{O{}}
+  {
+    \par
+    \vspace{0.9ex}
+    \noindent
+    
+    % កំណត់តម្លៃ Indent លំនាំដើម (Default)
+    \dim_set:Nn \l_nitem_indent_dim { 0.8cm }
+    \tl_clear:N \l_nitem_label_tl
+    
+    \tl_set:Nn \l_nitem_raw_tl { #1 }
+    
+    \tl_if_empty:NTF \l_nitem_raw_tl
+      {
+        % ករណីគ្មាន Option: \nitem
+        \stepcounter{nitemctr}
+        \tl_set:Nx \l_nitem_label_tl { \arabic{nitemctr}. }
+      }
+      {
+        \tl_if_in:NnTF \l_nitem_raw_tl { , }
+          {
+            % ករណីមានដកឃ្លា និងស្លាកសញ្ញា: \nitem[A, 1.5cm]
+            \seq_set_split:Nnn \l_tmpa_seq { , } { #1 }
+            \tl_set:Nx \l_nitem_label_tl { \seq_item:Nn \l_tmpa_seq { 1 } }
+            \tl_trim_spaces:N \l_nitem_label_tl
+            
+            \tl_if_empty:NT \l_nitem_label_tl 
+              { 
+                \stepcounter{nitemctr} 
+                \tl_set:Nx \l_nitem_label_tl { \arabic{nitemctr}. } 
+              }
+
+            \tl_set:Nx \l_nitem_indent_raw_tl { \seq_item:Nn \l_tmpa_seq { 2 } }
+            \tl_trim_spaces:N \l_nitem_indent_raw_tl
+            
+            % បំប្លែង String ទៅជា Dimension ដោយសុវត្ថិភាព
+            \dim_set:Nn \l_nitem_dim_tmp { \l_nitem_indent_raw_tl }
+            \dim_set_eq:NN \l_nitem_indent_dim \l_nitem_dim_tmp
+          }
+          {
+            \tl_trim_spaces:N \l_nitem_raw_tl
+            % ពិនិត្យថាជាលេខខ្នាតប្រវែង (ដាច់ខាតត្រូវផ្តើមដោយលេខ និងបញ្ចប់ដោយខ្នាត)
+            \regex_match:nnTF { ^(?i)[0-9.]+(cm|pt|em|ex|in|mm)$ } { #1 }
+              {
+                % ករណីដាក់តែខ្នាតប្រវែង: \nitem[2cm]
+                \dim_set:Nn \l_nitem_dim_tmp { #1 }
+                \dim_set_eq:NN \l_nitem_indent_dim \l_nitem_dim_tmp
+                \stepcounter{nitemctr}
+                \tl_set:Nx \l_nitem_label_tl { \arabic{nitemctr}. }
+              }
+              {
+                % ករណីដាក់តែស្លាកសញ្ញាផ្ទាល់ខ្លួន: \nitem[ដកស្រង់-]
+                \tl_set_eq:NN \l_nitem_label_tl \l_nitem_raw_tl
+              }
+          }
+      }
+      
+    % គណនាការហូតខ្សែកថាខណ្ឌ (Hanging Indent) សម្រាប់អត្ថបទដែលវែងធ្លាក់បន្ទាត់
+    \hangindent=\dimexpr\l_nitem_indent_dim + \nitemlabelwidth\relax
+    \hangafter=1
+    
+    \hspace{\l_nitem_indent_dim}
+    \makebox[\nitemlabelwidth][l]{\l_nitem_label_tl}
+  }
+  
+% បង្កើតអថេរបម្រុងទុកការពារ Error ពេលបំប្លែងខ្នាត
+\dim_new:N \l_nitem_dim_tmp
+\ExplSyntaxOff
+
+%%%%%%
+% -------------------------------------------------------------
+% ១. ប្រកាសអថេរសម្រាប់ប្រព័ន្ធរង្វិលជុំ (Loop) ទុកជាមុន
+% -------------------------------------------------------------
+%\ExplSyntaxOn
+%\seq_new:N \l_engtokh_words_seq
+%\tl_new:N \l_engtokh_header_tl
+%\int_new:N \l_engtokh_counter_int
+%\ExplSyntaxOff
+%
+% -------------------------------------------------------------
+% ២. បង្កើតបរិស្ថាន tcolorbox (ដាក់នៅក្រៅ ExplSyntax ដើម្បីកុំឱ្យបាត់ដកឃ្លា)
+% -------------------------------------------------------------
+%\newtcolorbox{engtokhEnv}[1]{
+%  enhanced,
+%  colback=blue!5!white,
+%  colframe=blue!65!black,
+%  arc=4mm,
+%  boxrule=1.5pt,
+%  attach boxed title to top left={xshift=0.5cm, yshift=-3mm, yshifttext=-1mm},
+%  boxed title style={
+%    enhanced,
+%    colback=blue!80!black,
+%    colframe=blue!50!white,
+%    arc=2mm,
+%    boxrule=1pt,
+%    interior style={left color=blue!80!black, right color=cyan!80!black}
+%  },
+%  title={\textcolor{white}{\engtitle\bfseries\slshape TRANSLATION}: \textit{(English $\rightarrow$ ខ្មែរ)}},
+%  drop fuzzy shadow,
+%  left=12pt, right=12pt, top=14pt, bottom=10pt,
+%  before upper={#1}
+%}
+%
+% -------------------------------------------------------------
+% ៣. បង្កើត Command សម្រាប់ដំណើរការរង្វិលជុំពាក្យគន្លឹះ
+% -------------------------------------------------------------
+%\ExplSyntaxOn
+%\NewDocumentCommand{\engtokh}{ o m }
+%  {
+%    \tl_clear:N \l_engtokh_header_tl
+%    \int_zero:N \l_engtokh_counter_int
+%    
+%    \IfNoValueTF {#1}
+%      {
+%        \tl_set:Nn \l_engtokh_header_tl { \noindent{\large\bfseries\textcolor{blue!80!black}{Vocabulary}} }
+%      }
+%      {
+%        \seq_set_split:Nnn \l_engtokh_words_seq { , } { #1 }
+%        
+%        \seq_map_inline:Nn \l_engtokh_words_seq
+%          {
+%            \int_incr:N \l_engtokh_counter_int
+%            \int_compare:nT { \l_engtokh_counter_int > 1 }
+%              {
+%                \tl_put_right:Nn \l_engtokh_header_tl { \par\vspace{0.4ex} }
+%              }
+%            \tl_put_right:Nn \l_engtokh_header_tl { \noindent{\large\bfseries\textcolor{blue!80!black}{##1}} }
+%          }
+%      }
+%      
+%    % បន្ថែមបន្ទាត់ខណ្ឌក្រាស់ស្តើងស្អាតដូចទម្រង់ដែលអ្នកបានច្នៃ
+%    \tl_put_right:Nn \l_engtokh_header_tl 
+%      { 
+%        \par\nopagebreak\vspace{0.8ex}
+%        \hrule height 0.5pt depth 0pt width \linewidth \color{blue!20!black}\relax
+%        \vspace{1.5ex} 
+%      }
+%    
+%    % ហៅប្រអប់ដែលនៅខាងក្រៅមកប្រើប្រាស់
+%    \begin{engtokhEnv}{\l_engtokh_header_tl}
+%      #2
+%    \end{engtokhEnv}
+%  }
+%\ExplSyntaxOff
+%%%%%%
+
+
+% -------------------------------------------------------------
+% ១. ប្រកាសអថេរសម្រាប់ប្រព័ន្ធ Expl3 ទុកជាមុន
+% -------------------------------------------------------------
+\ExplSyntaxOn
+\seq_new:N \l_engtokh_words_seq
+\int_new:N \l_engtokh_get_idx_int
+\ExplSyntaxOff
+
+% -------------------------------------------------------------
+% ២. បង្កើតប្រអប់ tcolorbox (ដាក់នៅក្រៅ ExplSyntax ដើម្បីរក្សាដកឃ្លា)
+% -------------------------------------------------------------
+% ប្រអប់ អង់គ្លេស -> ខ្មែរ (ពណ៌ខៀវ)
+\newtcolorbox{engtokhEnv}{
+  enhanced,
+  colback=blue!5!white,
+  colframe=blue!65!black,
+  arc=4mm,
+  boxrule=1.5pt,
+  attach boxed title to top left={xshift=0.5cm, yshift=-3mm, yshifttext=-1mm},
+  boxed title style={
+    enhanced,
+    colback=blue!80!black,
+    colframe=blue!50!white,
+    arc=2mm,
+    boxrule=1pt,
+    interior style={left color=blue!80!black, right color=cyan!80!black}
+  },
+  title={\textcolor{white}{\bfseries\slshape ពាក្យគន្លឹះ}: \textit{(English $\rightarrow$ ខ្មែរ)}},
+  drop fuzzy shadow,
+  left=12pt, right=12pt, top=8pt, bottom=10pt
+}
+
+% ប្រអប់ ខ្មែរ -> អង់គ្លេស (ពណ៌បៃតងព្រលែត)
+\newtcolorbox{khtoengEnv}{
+  enhanced,
+  colback=teal!5!white,
+  colframe=teal!65!black,
+  arc=4mm,
+  boxrule=1.5pt,
+  attach boxed title to top left={xshift=0.5cm, yshift=-3mm, yshifttext=-1mm},
+  boxed title style={
+    enhanced,
+    colback=teal!80!black,
+    colframe=teal!50!white,
+    arc=2mm,
+    boxrule=1pt,
+    interior style={left color=teal!80!black, right color=teal!40!cyan}
+  },
+  title={\textcolor{white}{\engtitle\bfseries\slshape ពាក្យគន្លឹះ}: \textit{(ខ្មែរ $\rightarrow$ English)}},
+  drop fuzzy shadow,
+  left=12pt, right=12pt, top=8pt, bottom=10pt
+}
+
+% -------------------------------------------------------------
+% ៣. បង្កើតមាក្រូដំណើរការទាញពាក្យ និងគូសបន្ទាត់
+% -------------------------------------------------------------
+\ExplSyntaxOn
+\NewDocumentCommand{\nextword}{}
+  {
+    \int_incr:N \l_engtokh_get_idx_int
+    \int_compare:nT { \l_engtokh_get_idx_int > 1 }
+      {
+        \par\vspace{1.2ex} % គម្លាតចុះបន្ទាត់រវាងប្លុកពាក្យនីមួយៗ
+      }
+    % ទាញយកពាក្យតាមលំដាប់លំដោយមកបង្ហាញ រួចគូសបន្ទាត់ពីក្រោម (Underline)
+    \noindent{$\bullet$\quad 
+	\bfseries
+	%\underline{\seq_item:Nn \l_engtokh_words_seq { \l_engtokh_get_idx_int }}
+	}
+    %\par\vspace{0.8ex}
+  }
+
+% បញ្ជា \engtokh
+\NewDocumentCommand{\engtokh}{ o m }
+  {
+    \int_zero:N \l_engtokh_get_idx_int
+    \seq_clear:N \l_engtokh_words_seq
+    \IfNoValueTF {#1}
+      { \seq_put_right:Nn \l_engtokh_words_seq { Vocabulary } }
+      { \seq_set_split:Nnn \l_engtokh_words_seq { , } { #1 } }
+      
+    \begin{engtokhEnv}
+      \color{blue!40!black} % កំណត់ពណ៌អក្សរចំណងជើងពាក្យគន្លឹះក្នុងប្រអប់ខៀវ
+      #2
+    \end{engtokhEnv}
+  }
+
+% បញ្ជា \khtoeng
+\NewDocumentCommand{\khtoeng}{ o m }
+  {
+    \int_zero:N \l_engtokh_get_idx_int
+    \seq_clear:N \l_engtokh_words_seq
+    \IfNoValueTF {#1}
+      { \seq_put_right:Nn \l_engtokh_words_seq { វាក្យសព្ទ } }
+      { \seq_set_split:Nnn \l_engtokh_words_seq { , } { #1 } }
+      
+    \begin{khtoengEnv}
+      \color{teal!40!black} % កំណត់ពណ៌អក្សរចំណងជើងពាក្យគន្លឹះក្នុងប្រអប់បៃតង
+      #2
+    \end{khtoengEnv}
+  }
+\ExplSyntaxOff
+
+
+
+
+
+\begin{document}
+
+\title{Title}
+\author{Author}
+\date{Today}
+\maketitle
+
+\bnitem
+  \nitem នេះជាទម្រង់ធម្មតា (Default) វាឡើងលេខរៀងអូតូ (1.) និងដកឃ្លា 0.8cm។
+  
+  \nitem[ក., 1.5cm] នេះជាទម្រង់ប្តូរស្លាកសញ្ញា (Custom Label) ដោយរក្សាគម្លាត 0.8cm ដដែល។
+  
+  \nitem នេះជាទម្រង់ប្តូរតែគម្លាតឱ្យធំជាងមុន ប៉ុន្តែរក្សាការឡើងលេខរៀងអូតូ (2.)។
+  
+  \nitem[$-$, 2cm] នេះជាទម្រង់ពិសេស ប្តូរទាំងស្លាកសញ្ញា និងប្តូរទាំងគម្លាតដកឃ្លា។
+  
+  \nitem អត្ថបទសាកល្បងវែង ៖ ឡាតិក (LaTeX) គឺជាកម្មវិធីរៀបចំទំព័រអត្ថបទដ៏មានប្រជាប្រិយភាព សម្រាប់ឯកសារវិទ្យាសាស្ត្រ និងគណិតវិទ្យា។ បើបន្ទាត់វែងធ្លាក់ចុះក្រោម វានឹងដកឃ្លាស្មើគ្នាយ៉ាងស្រស់ស្អាត (Hanging Indent)។
+\enitem
+
+
+% ករណីទី១៖ មាន ១ ពាក្យ
+%\engtokh[Artificial Intelligence (AI)]{
+%  \textbf{នាម (n.)} ៖ បញ្ញាសិប្បនិម្មិត។ \\
+%  \textbf{សេចក្តីពន្យល់} ៖ សំដៅលើប្រព័ន្ធបច្ចេកវិទ្យាដែលមានសមត្ថភាពគិតដូចមនុស្ស។
+%}
+%
+%\vspace{3ex}
+%
+% ករណីទី២៖ មាន ២ ពាក្យ ឬច្រើនពាក្យ
+%\engtokh[Machine Learning (ML), Deep Learning (DL)]{
+%  \textbf{Machine Learning} ៖ ការរៀនរបស់ម៉ាស៊ីន (ជាផ្នែកមួយនៃ AI)។ \\
+%  \textbf{Deep Learning} ៖ ការរៀនស៊ីជម្រៅ (ប្រើប្រាស់ប្រព័ន្ធ Neural Networks)។
+%}
+
+\engtokh[]{
+  \nextword % វានឹងទាញយកពាក្យទី១ "Machine Learning (ML)" មកគូសបន្ទាត់ពីក្រោមអូតូ
+  \textbf{Machine Learning} ៖ ការរៀនរបស់ម៉ាស៊ីន (ជាផ្នែកមួយនៃ AI)។
+  \nextword % វានឹងទាញយកពាក្យទី២ "Deep Learning (DL)" មកគូសបន្ទាត់ពីក្រោមអូតូ
+  \textbf{Deep Learning} ៖ ការរៀនស៊ីជម្រៅ (ប្រើប្រាស់ប្រព័ន្ធ Neural Networks)។
+}
+
+
+\end{document}
